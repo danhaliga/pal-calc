@@ -1,5 +1,5 @@
 'use strict';
-/* Comenzi: materialul ales, corpurile din comandă și listele de producție. */
+/* Comenzi: materialele alese, corpurile din comandă și listele de producție. */
 
 const express = require('express');
 const { z } = require('zod');
@@ -7,30 +7,37 @@ const { db } = require('./db');
 const { requireAuth } = require('./auth');
 const credit = require('./credit');
 const util = require('./util');
+const materiale = require('./materiale');
+const Catalog = require('../shared/catalog');
 const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
 const PalRaport = require('../shared/raport');
 
 const router = express.Router();
 
-const BRANDS = [
-  { id: 'egger', nume: 'Egger' },
-  { id: 'kronospan', nume: 'Kronospan' }
-];
-const CANTURI = [0.4, 0.8, 1, 2];
-const GROSIMI_PAL = [16, 18, 25];
+const GROSIMI_PAL = [8, 10, 12, 16, 18, 19, 22, 25, 28, 38];
+const FORMATE_ID = ['intreaga', 'jum-lat', 'jum-lung', 'sfert'];
 
-const schema = z.object({
+/* adaosul la cant e treabă de atelier, nu apare în hârtiile clientului */
+const adaosCant = () => Number(process.env.CANT_SPARE_PCT || 15);
+
+const schemaComanda = z.object({
   name: z.string().trim().min(1, 'Dă un nume comenzii.').max(80),
-  brand: z.enum(['egger', 'kronospan']),
-  decor: z.string().trim().max(80).optional().or(z.literal('')),
-  cant_decor: z.string().trim().max(80).optional().or(z.literal('')),
+  brand: z.string().trim().min(1).max(40),
+  decor_cod: z.string().trim().max(60).optional().or(z.literal('')),
   pal_mm: z.coerce.number().refine(v => GROSIMI_PAL.includes(v), 'Grosime de PAL neacceptată.'),
-  cant_gros: z.coerce.number().refine(v => CANTURI.includes(v), 'Grosime de cant neacceptată.'),
-  cant_subtire: z.coerce.number().refine(v => CANTURI.includes(v), 'Grosime de cant neacceptată.'),
-  adaos_cant: z.coerce.number().min(10).max(50),
+  cant_gros: z.coerce.number().min(0).max(5),
+  cant_subtire: z.coerce.number().min(0).max(5),
   note: z.string().trim().max(500).optional().or(z.literal(''))
 });
+
+function formateDinBody(body) {
+  let alese = body.formate;
+  if (!alese) return ['intreaga'];
+  if (!Array.isArray(alese)) alese = [alese];
+  const curate = alese.filter(f => FORMATE_ID.includes(f));
+  return curate.length ? curate : ['intreaga'];
+}
 
 /* ---------- acces ---------- */
 
@@ -45,32 +52,56 @@ function notFound(next) {
   next(err);
 }
 
-function corpuriComenzii(orderId) {
+function corpuriComenzii(orderId, mats) {
+  const roluri = materiale.peRoluri(mats || materiale.aleComenzii(orderId));
+  const dupaId = {};
+  (mats || []).forEach(m => { dupaId[m.id] = m; });
+
   return db.prepare('SELECT * FROM corps WHERE order_id = ? ORDER BY poz, id').all(orderId)
     .map(row => ({
       id: row.id,
       name: row.name,
       poz: row.poz,
-      params: Object.assign(PalCalc.defaults(), JSON.parse(row.params))
+      params: Object.assign(PalCalc.defaults(), JSON.parse(row.params)),
+      matCorpId: row.mat_corp_id,
+      matFrontId: row.mat_front_id,
+      materiale: {
+        corp: dupaId[row.mat_corp_id] || roluri.corp,
+        front: dupaId[row.mat_front_id] || roluri.front,
+        sertar: roluri.sertar
+      }
     }));
 }
 
-function raportComenzii(order) {
-  return PalRaport.raport(order, corpuriComenzii(order.id), { effortMs: 250 });
+function raportComenzii(order, optiuni) {
+  const mats = materiale.aleComenzii(order.id);
+  const corpuri = corpuriComenzii(order.id, mats);
+  const comanda = Object.assign({}, order, {
+    materiale: mats,
+    formate: JSON.parse(order.formate || '["intreaga"]')
+  });
+  return PalRaport.raport(comanda, corpuri,
+    Object.assign({ effortMs: 250, adaosCant: adaosCant() }, optiuni || {}));
 }
 
 /* ---------- lista de comenzi ---------- */
 
 router.get('/orders', requireAuth, (req, res) => {
   const rows = db.prepare(`
-    SELECT o.*, (SELECT COUNT(*) FROM corps c WHERE c.order_id = o.id) AS nrCorpuri
+    SELECT o.*,
+           (SELECT COUNT(*) FROM corps c WHERE c.order_id = o.id) AS nrCorpuri,
+           (SELECT COUNT(*) FROM order_materials m WHERE m.order_id = o.id) AS nrMateriale
     FROM orders o WHERE o.user_id = ? ORDER BY o.created_at DESC, o.id DESC
   `).all(req.user.id);
+
+  rows.forEach(o => {
+    o.materiale = db.prepare('SELECT * FROM order_materials WHERE order_id = ? ORDER BY poz LIMIT 3')
+                    .all(o.id);
+  });
 
   res.render('orders/index', {
     title: 'Comenzile mele',
     comenzi: rows,
-    brands: BRANDS,
     sold: credit.sold(req.user.id),
     pretCorp: credit.pretCorp()
   });
@@ -79,30 +110,51 @@ router.get('/orders', requireAuth, (req, res) => {
 router.get('/orders/new', requireAuth, (req, res) => {
   res.render('orders/new', {
     title: 'Comandă nouă',
-    brands: BRANDS, canturi: CANTURI, grosimi: GROSIMI_PAL,
-    values: { name: '', brand: 'egger', decor: '', cant_decor: '',
-              pal_mm: 18, cant_gros: 2, cant_subtire: 0.4, adaos_cant: 15, note: '' },
+    marci: Catalog.MARCI,
+    grosimi: GROSIMI_PAL,
+    cantStandard: materiale.CANT_STANDARD,
+    values: { name: '', brand: 'Egger', decor_cod: '', pal_mm: 18,
+              cant_gros: 2, cant_subtire: 0.4, note: '', formate: ['intreaga', 'jum-lat', 'jum-lung', 'sfert'] },
     error: null
   });
 });
 
 router.post('/orders', requireAuth, (req, res) => {
-  const parsed = schema.safeParse(req.body);
+  const parsed = schemaComanda.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).render('orders/new', {
       title: 'Comandă nouă',
-      brands: BRANDS, canturi: CANTURI, grosimi: GROSIMI_PAL,
-      values: req.body, error: parsed.error.issues[0].message
+      marci: Catalog.MARCI, grosimi: GROSIMI_PAL, cantStandard: materiale.CANT_STANDARD,
+      values: Object.assign({}, req.body, { formate: formateDinBody(req.body) }),
+      error: parsed.error.issues[0].message
     });
   }
-  const d = parsed.data;
-  const info = db.prepare(`
-    INSERT INTO orders (user_id, name, brand, decor, cant_decor, pal_mm, cant_gros, cant_subtire, adaos_cant, note)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `).run(req.user.id, d.name, d.brand, d.decor || null, d.cant_decor || null,
-         d.pal_mm, d.cant_gros, d.cant_subtire, d.adaos_cant, d.note || null);
 
-  res.redirect(`/orders/${info.lastInsertRowid}`);
+  const d = parsed.data;
+  const brand = Catalog.numeMarca(d.brand);
+  const decor = d.decor_cod ? Catalog.decor(brand, d.decor_cod) : null;
+
+  const creeaza = db.transaction(() => {
+    const info = db.prepare(`
+      INSERT INTO orders (user_id, name, brand, decor, cant_decor, pal_mm, cant_gros, cant_subtire,
+                          adaos_cant, note, formate)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(req.user.id, d.name, brand, decor ? decor.cod : null, null,
+           d.pal_mm, d.cant_gros, d.cant_subtire, adaosCant(), d.note || null,
+           JSON.stringify(formateDinBody(req.body)));
+
+    const orderId = Number(info.lastInsertRowid);
+    materiale.creeaza(orderId, {
+      nume: decor ? (decor.nume + ' ' + decor.cod) : 'Material principal',
+      rol: 'corp', brand,
+      decor_cod: decor ? decor.cod : '',
+      pal_mm: d.pal_mm, cant_gros: d.cant_gros, cant_subtire: d.cant_subtire,
+      cant_decor_cod: decor ? decor.cod : ''
+    });
+    return orderId;
+  });
+
+  res.redirect(`/orders/${creeaza()}`);
 });
 
 /* ---------- o comandă ---------- */
@@ -116,7 +168,14 @@ router.get('/orders/:id', requireAuth, (req, res, next) => {
   res.render('orders/show', {
     title: order.name,
     order, raport,
-    brands: BRANDS, canturi: CANTURI, grosimi: GROSIMI_PAL,
+    materiale: materiale.aleComenzii(order.id),
+    roluri: materiale.ROLURI,
+    marci: Catalog.MARCI,
+    grosimi: GROSIMI_PAL,
+    cantStandard: materiale.CANT_STANDARD,
+    formateId: FORMATE_ID,
+    formateAlese: JSON.parse(order.formate || '["intreaga"]'),
+    formateToate: PalRaport.FORMATE,
     sold: credit.sold(req.user.id),
     pretCorp: credit.pretCorp(),
     adaugat: req.query.adaugat === '1'
@@ -127,32 +186,12 @@ router.post('/orders/:id', requireAuth, (req, res, next) => {
   const order = getOwned(req.params.id, req.user.id);
   if (!order) return notFound(next);
 
-  const parsed = schema.safeParse(req.body);
-  if (!parsed.success) {
-    const err = new Error(parsed.error.issues[0].message);
-    err.status = 400;
-    return next(err);
-  }
-  const d = parsed.data;
-  db.prepare(`
-    UPDATE orders SET name = ?, brand = ?, decor = ?, cant_decor = ?, pal_mm = ?,
-           cant_gros = ?, cant_subtire = ?, adaos_cant = ?, note = ?, updated_at = datetime('now')
-    WHERE id = ?
-  `).run(d.name, d.brand, d.decor || null, d.cant_decor || null, d.pal_mm,
-         d.cant_gros, d.cant_subtire, d.adaos_cant, d.note || null, order.id);
+  const name = String(req.body.name || order.name).trim().slice(0, 80) || order.name;
+  const note = String(req.body.note || '').trim().slice(0, 500);
 
-  /* materialul comenzii se aplică tuturor corpurilor, ca listele să fie coerente */
-  if (req.body.aplica_material === '1') {
-    const corpuri = db.prepare('SELECT * FROM corps WHERE order_id = ?').all(order.id);
-    const upd = db.prepare("UPDATE corps SET params = ?, updated_at = datetime('now') WHERE id = ?");
-    db.transaction(() => {
-      corpuri.forEach(c => {
-        const p = Object.assign(PalCalc.defaults(), JSON.parse(c.params));
-        p.t = d.pal_mm; p.cg = d.cant_gros; p.cs = d.cant_subtire;
-        upd.run(JSON.stringify(p), c.id);
-      });
-    })();
-  }
+  db.prepare(`UPDATE orders SET name = ?, note = ?, formate = ?, updated_at = datetime('now')
+              WHERE id = ?`)
+    .run(name, note || null, JSON.stringify(formateDinBody(req.body)), order.id);
 
   res.redirect(`/orders/${order.id}`);
 });
@@ -187,16 +226,15 @@ router.get('/orders/:id/corp-nou', requireAuth, (req, res, next) => {
   });
 });
 
-const adaugaCorp = db.transaction((userId, order, params, cost) => {
-  const ramas = credit.scade(userId, cost, 'corp', null,
-    'corp în comanda „' + order.name + '”');
+const adaugaCorp = db.transaction((userId, order, params, cost, matCorpId) => {
+  const ramas = credit.scade(userId, cost, 'corp', null, 'corp în comanda „' + order.name + '”');
   if (ramas === null) throw new Error('CREDIT_INSUFICIENT');
 
   const poz = db.prepare('SELECT COALESCE(MAX(poz), 0) AS m FROM corps WHERE order_id = ?')
                 .get(order.id).m + 1;
   const info = db.prepare(
-    'INSERT INTO corps (user_id, order_id, name, params, status, poz) VALUES (?, ?, ?, ?, ?, ?)'
-  ).run(userId, order.id, params.nume, JSON.stringify(params), 'paid', poz);
+    'INSERT INTO corps (user_id, order_id, name, params, status, poz, mat_corp_id) VALUES (?, ?, ?, ?, ?, ?, ?)'
+  ).run(userId, order.id, params.nume, JSON.stringify(params), 'paid', poz, matCorpId);
 
   const corpId = Number(info.lastInsertRowid);
   db.prepare('UPDATE credit_tx SET ref = ? WHERE id = (SELECT MAX(id) FROM credit_tx WHERE user_id = ?)')
@@ -210,18 +248,22 @@ router.post('/orders/:id/corps', requireAuth, (req, res, next) => {
 
   const params = req.body.model ? PalModels.paramsFor(String(req.body.model)) : PalCalc.defaults();
   if (!params) {
-    const err = new Error('Model necunoscut.');
-    err.status = 400;
-    return next(err);
+    return next(Object.assign(new Error('Model necunoscut.'), { status: 400 }));
   }
 
-  /* materialul vine din comandă, nu din model */
-  params.t = order.pal_mm;
-  params.cg = order.cant_gros;
-  params.cs = order.cant_subtire;
+  const mats = materiale.aleComenzii(order.id);
+  const roluri = materiale.peRoluri(mats);
+  const matCorp = roluri.corp;
+
+  /* materialul comenzii dă grosimea plăcii și canturile */
+  if (matCorp) {
+    params.t = matCorp.pal_mm;
+    params.cg = matCorp.cant_gros;
+    params.cs = matCorp.cant_subtire;
+  }
 
   try {
-    const corpId = adaugaCorp(req.user.id, order, params, credit.pretCorp());
+    const corpId = adaugaCorp(req.user.id, order, params, credit.pretCorp(), matCorp ? matCorp.id : null);
     res.redirect(`/corps/${corpId}`);
   } catch (e) {
     if (e.message === 'CREDIT_INSUFICIENT') return res.redirect('/credit?insuficient=1');
@@ -229,11 +271,38 @@ router.post('/orders/:id/corps', requireAuth, (req, res, next) => {
   }
 });
 
+/* materialul unui corp (carcasă / fronturi) */
+router.post('/corps/:id/material', requireAuth, (req, res, next) => {
+  const corp = db.prepare('SELECT * FROM corps WHERE id = ?').get(Number(req.params.id));
+  if (!corp || corp.user_id !== req.user.id) {
+    return next(Object.assign(new Error('Corpul nu există.'), { status: 404 }));
+  }
+
+  const ale = corp.order_id ? materiale.aleComenzii(corp.order_id) : [];
+  const valid = id => (id && ale.some(m => m.id === Number(id))) ? Number(id) : null;
+  const matCorp = valid(req.body.mat_corp_id);
+  const matFront = valid(req.body.mat_front_id);
+
+  db.prepare("UPDATE corps SET mat_corp_id = ?, mat_front_id = ?, updated_at = datetime('now') WHERE id = ?")
+    .run(matCorp, matFront, corp.id);
+
+  /* grosimea și cantul carcasei intră în parametrii corpului */
+  if (matCorp) {
+    const m = ale.find(x => x.id === matCorp);
+    const params = Object.assign(PalCalc.defaults(), JSON.parse(corp.params),
+      { t: m.pal_mm, cg: m.cant_gros, cs: m.cant_subtire });
+    db.prepare('UPDATE corps SET params = ? WHERE id = ?').run(JSON.stringify(params), corp.id);
+  }
+
+  res.redirect(`/corps/${corp.id}`);
+});
+
 /* ---------- listele de producție ---------- */
 
 const PRINTURI = {
   corpuri: { view: 'orders/print-corpuri', titlu: 'Listă corpuri' },
   debitare: { view: 'orders/print-debitare', titlu: 'Listă piese pentru debitare' },
+  incadrare: { view: 'orders/print-incadrare', titlu: 'Încadrarea în coli' },
   montaj: { view: 'orders/print-montaj', titlu: 'Fișe de montaj' },
   cnc: { view: 'orders/print-cnc', titlu: 'Prelucrări CNC' }
 };
@@ -250,8 +319,11 @@ router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
     title: cfg.titlu + ' – ' + order.name,
     titlu: cfg.titlu,
     order, raport,
+    materiale: materiale.aleComenzii(order.id),
     planse: PalRaport.planseCnc,
-    brandNume: (BRANDS.find(b => b.id === order.brand) || {}).nume || order.brand,
+    planColi: PalRaport.planColi,
+    /* adaosul la cant rămâne intern: clientul vede metrii exacți */
+    aratAdaos: !!req.user.is_admin,
     print: true
   });
 });
@@ -263,13 +335,15 @@ router.get('/orders/:id/export.csv', requireAuth, (req, res, next) => {
   if (!order) return notFound(next);
 
   const raport = raportComenzii(order);
-  const head = ['Corp', 'Cod', 'Piesa', 'Buc', 'Taiere L', 'Taiere l', 'Material',
+  const head = ['Corp', 'Cod', 'Piesa', 'Buc', 'Taiere L', 'Taiere l', 'Material', 'Decor',
                 'Cant L1', 'Cant L2', 'Cant l1', 'Cant l2', 'Fibra', 'CNC', 'Nota'];
   const linii = [head.join(';')];
 
   raport.piese.forEach(p => {
     linii.push([
-      p.corpNume, p.cod, p.nume, p.buc, p.TL, p.Tl, p.material.tip + ' ' + p.material.gros,
+      p.corpNume, p.cod, p.nume, p.buc, p.TL, p.Tl,
+      p.material.tip + ' ' + p.material.gros,
+      p.material.decorNume || p.material.decor || '',
       p.cant.muchii[0], p.cant.muchii[1], p.cant.muchii[2], p.cant.muchii[3],
       p.fibra, p.cnc ? 'DA' : '', p.nota
     ].map(v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"').join(';'));
@@ -280,4 +354,4 @@ router.get('/orders/:id/export.csv', requireAuth, (req, res, next) => {
   res.send('﻿' + linii.join('\n'));
 });
 
-module.exports = { router, getOwned, corpuriComenzii, raportComenzii, BRANDS, CANTURI, GROSIMI_PAL };
+module.exports = { router, getOwned, corpuriComenzii, raportComenzii, GROSIMI_PAL, FORMATE_ID, adaosCant };

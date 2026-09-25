@@ -17,6 +17,7 @@
   <span class="doc-links">
     <a href="/orders/<%= order.id %>/print/corpuri">Corpuri</a>
     <a href="/orders/<%= order.id %>/print/debitare">Debitare</a>
+    <a href="/orders/<%= order.id %>/print/incadrare">Încadrare</a>
     <a href="/orders/<%= order.id %>/print/montaj">Montaj</a>
     <a href="/orders/<%= order.id %>/print/cnc">CNC</a>
     <a href="/orders/<%= order.id %>/export.csv">CSV</a>
@@ -29,9 +30,11 @@
     <h1><%= titlu %></h1>
     <div class="doc-sub">
       <b><%= order.name %></b>
-      · <%= brandNume %><%= order.decor ? ' ' + order.decor : '' %>
-      · PAL <%= order.pal_mm %> mm
-      · cant <%= order.cant_gros %> / <%= order.cant_subtire %> mm<%= order.cant_decor ? ' ' + order.cant_decor : '' %>
+      <% materiale.forEach(function (m, i) { %>
+        · <%= m.nume %>
+        <span class="muted">(<%= m.brand %> <%= [m.decor_cod, m.decor_nume].filter(Boolean).join(' ') %>,
+        PAL <%= m.pal_mm %>, cant <%= m.cant_gros %>/<%= m.cant_subtire %>)</span>
+      <% }); %>
     </div>
   </div>
   <div class="doc-meta">

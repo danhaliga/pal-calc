@@ -1,0 +1,66 @@
+<p class="doc-nota">
+  Încadrarea pieselor în coli, cu tăieri de tip ghilotină și disc de 4 mm. Fiecare piesă e scrisă
+  cu codul ei din lista de debitare. Zonele hașurate sunt resturile recuperabile.
+  <b>Coli de cumpărat:</b> <%= raport.totaluri.coli %> — detaliat pe material mai jos.
+</p>
+
+<table class="doc-tbl">
+  <thead><tr>
+    <th>Material</th><th class="num">Piese</th><th>Coli folosite</th>
+    <th class="num">Echivalent coli</th><th class="num">De cumpărat</th><th class="num">Deșeu</th>
+  </tr></thead>
+  <tbody>
+    <% raport.materiale.forEach(function (m) { %>
+      <tr>
+        <td><b><%= m.nume %></b></td>
+        <td class="num"><%= m.bucati %></td>
+        <td class="small"><%= m.bucatiColi.map(function (b) { return b.n + ' × ' + b.format.nume; }).join(' + ') %></td>
+        <td class="num"><%= m.echivalent %></td>
+        <td class="num"><b><%= m.coliIntregi %></b></td>
+        <td class="num"><%= m.deseuPct %>%</td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<% raport.materiale.forEach(function (m) { %>
+  <section class="doc-sect">
+    <h2><%= m.nume %> — <%= m.bins.length %> coli</h2>
+
+    <% if (m.neplasate) { %>
+      <div class="doc-warn"><%= m.neplasate %> piese nu au încăput în formatele alese:
+        sunt mai mari decât coala. Verifică dimensiunile.</div>
+    <% } %>
+
+    <div class="coli-grid">
+      <% m.bins.forEach(function (bin, i) { %>
+        <figure class="coala-card">
+          <figcaption class="coala-cap">
+            <b>Coala <%= i + 1 %>/<%= m.bins.length %></b> — <%= bin.format.nume %>
+            <span class="muted">· <%= bin.placements.length %> piese ·
+              utilizare <%= Math.round(bin.fillPct) %>% ·
+              <%= bin.cuts.length %> tăieri</span>
+          </figcaption>
+          <%- planColi(bin, m) %>
+          <figcaption class="coala-lista">
+            <% var grupe = {};
+               bin.placements.forEach(function (pl) {
+                 var k = pl.piece.label + '|' + Math.round(pl.w) + '×' + Math.round(pl.h);
+                 grupe[k] = (grupe[k] || 0) + 1;
+               }); %>
+            <%= Object.keys(grupe).map(function (k) {
+                 var p = k.split('|');
+                 return p[0] + ' (' + p[1] + ')' + (grupe[k] > 1 ? ' ×' + grupe[k] : '');
+               }).join(' · ') %>
+          </figcaption>
+        </figure>
+      <% }); %>
+    </div>
+  </section>
+<% }); %>
+
+<p class="doc-nota">
+  O coală întreagă înseamnă <%= raport.materiale.length && raport.materiale[0].bins.length ? '2800 × 2070' : '2800 × 2070' %> mm.
+  Jumătățile și sferturile se taie din ea, de aceea „echivalent coli” poate fi cu virgulă, iar
+  „de cumpărat” e rotunjit în sus.
+</p>

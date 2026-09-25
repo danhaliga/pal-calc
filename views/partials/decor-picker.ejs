@@ -1,0 +1,19 @@
+<%# selector de decor: primește p = { prefix, brandId, palId, cantGrosId, cantSubtireId, valoare } %>
+<div class="decor-picker" data-decor
+     data-brand="<%= p.brandId %>"
+     data-pal="<%= p.palId || '' %>"
+     data-cant-gros="<%= p.cantGrosId || '' %>"
+     data-cant-subtire="<%= p.cantSubtireId || '' %>">
+  <input type="hidden" name="decor_cod" value="<%= p.valoare || '' %>">
+  <button type="button" class="decor-buton">
+    <span class="decor-sw" style="background:#cfd6dd"></span><span>Alege decorul…</span>
+  </button>
+  <div class="decor-panou hidden">
+    <div class="decor-bara">
+      <input type="search" class="decor-cauta" placeholder="caută după nume sau cod (ex: stejar, W1000)">
+      <select class="decor-grup"></select>
+      <span class="decor-contor muted small"></span>
+    </div>
+    <div class="decor-grila"></div>
+  </div>
+</div>

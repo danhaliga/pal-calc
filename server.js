@@ -14,6 +14,7 @@ const auth = require('./src/auth');
 const csrf = require('./src/csrf');
 const corps = require('./src/corps');
 const orders = require('./src/orders');
+const materiale = require('./src/materiale');
 const credit = require('./src/credit');
 const payments = require('./src/payments');
 const admin = require('./src/admin');
@@ -109,6 +110,7 @@ app.get('/', (req, res) => {
 
 app.use(auth.router);
 app.use(credit.router);
+app.use(materiale.router);
 app.use(orders.router);
 app.use(corps.router);
 app.use(payments.router);

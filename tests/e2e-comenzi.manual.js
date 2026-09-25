@@ -34,7 +34,15 @@ async function csrf(j, path) {
   return m[1];
 }
 
-const form = o => new URLSearchParams(o).toString();
+/* valorile de tip listă (ex. formate) se trimit ca intrări repetate */
+function form(o) {
+  const p = new URLSearchParams();
+  for (const [k, v] of Object.entries(o)) {
+    if (Array.isArray(v)) v.forEach(x => p.append(k, x));
+    else p.append(k, v);
+  }
+  return p.toString();
+}
 const FORM = { 'content-type': 'application/x-www-form-urlencoded' };
 
 let failed = 0;
@@ -82,15 +90,31 @@ function check(name, cond, extra = '') {
   t = await csrf(A, '/orders/new');
   res = await req(A, '/orders', {
     method: 'POST', headers: FORM,
-    body: form({ _csrf: t, name: 'Bucătărie Ionescu', brand: 'kronospan', decor: 'K350 Stejar',
-                 cant_decor: 'Stejar', pal_mm: 18, cant_gros: 2, cant_subtire: 0.4, adaos_cant: 15, note: '' })
+    body: form({ _csrf: t, name: 'Bucătărie Ionescu', brand: 'Kronospan', decor_cod: 'K023 SU',
+                 pal_mm: 18, cant_gros: 2, cant_subtire: 0.4, note: '',
+                 formate: ['intreaga', 'jum-lat', 'jum-lung', 'sfert'] })
   });
   const orderId = Number((res.headers.get('location') || '').split('/').pop());
   check('comandă creată', res.status === 302 && orderId > 0, res.headers.get('location'));
 
   html = await (await req(A, `/orders/${orderId}`)).text();
-  check('comanda arată materialul ales', html.includes('Kronospan') && html.includes('K350 Stejar'));
+  check('comanda arată materialul ales din catalog',
+        html.includes('Kronospan') && html.includes('K023 SU') && html.includes('Venato'),
+        'lipsește decorul');
   check('comanda arată data', /\d{4}-\d{2}-\d{2}/.test(html));
+  check('formatele de coală sunt salvate', html.includes('jumătate 1400×2070'), 'lipsesc formatele');
+
+  /* --- al doilea material, în alt decor, pentru fronturi --- */
+  t = await csrf(A, `/orders/${orderId}`);
+  res = await req(A, `/orders/${orderId}/materials`, {
+    method: 'POST', headers: FORM,
+    body: form({ _csrf: t, nume: 'Fronturi stejar', rol: 'front', brand: 'Egger',
+                 decor_cod: 'H1180 ST37', pal_mm: 18, cant_gros: 2, cant_subtire: 0.4 })
+  });
+  check('material nou adăugat', res.status === 302, String(res.status));
+  html = await (await req(A, `/orders/${orderId}`)).text();
+  check('comanda are două materiale',
+        html.includes('Fronturi stejar') && html.includes('Stejar Halifax'), 'lipsește materialul');
 
   /* --- adaug corpuri: creditul scade la fiecare --- */
   t = await csrf(A, `/orders/${orderId}/corp-nou`);
@@ -121,15 +145,18 @@ function check(name, cond, extra = '') {
   /* --- pagina comenzii adună totul --- */
   html = await (await req(A, `/orders/${orderId}`)).text();
   check('lista de corpuri are 4 poziții', (html.match(/\/corps\/\d+"/g) || []).length >= 4);
-  check('apare necesarul de plăci', /plăci PAL 18/.test(html), 'lipsește necesarul');
-  check('apare cantul cu adaos', html.includes('+ 15%'), 'lipsește adaosul la cant');
+  check('apare necesarul de coli', html.includes('coli întregi') && html.includes('Echivalent'),
+        'lipsește necesarul');
+  check('clientul NU vede adaosul la cant', !html.includes('Cu adaos'), 'adaosul nu trebuie arătat aici');
+  check('apare cantul în metri liniari', html.includes('Metri liniari'), 'lipsește cantul');
   check('apare feroneria', html.includes('Balama cupă'), 'lipsește feroneria');
   check('apare lista de piese', html.includes('Piese de debitat'));
   check('piesele de colț sunt marcate CNC', html.includes('chip cnc') || html.includes('>CNC<'));
 
-  /* --- cele patru liste --- */
-  for (const [tip, semn] of [['corpuri', 'Necesar de materiale'],
+  /* --- listele de producție --- */
+  for (const [tip, semn] of [['corpuri', 'Necesar de plăci'],
                              ['debitare', 'Cant de comandat'],
+                             ['incadrare', 'Încadrarea pieselor în coli'],
                              ['montaj', 'Ordinea de montaj'],
                              ['cnc', 'Planșe']]) {
     const r = await req(A, `/orders/${orderId}/print/${tip}`);
@@ -140,6 +167,12 @@ function check(name, cond, extra = '') {
   const cnc = await (await req(A, `/orders/${orderId}/print/cnc`)).text();
   check('planșa CNC conține desenul piesei', cnc.includes('cnc-piesa') && cnc.includes('<svg'));
   check('planșa CNC dă cota decupajului', /decupaj \d+ × \d+ mm din colț/.test(cnc));
+
+  const inc = await (await req(A, `/orders/${orderId}/print/incadrare`)).text();
+  check('încadrarea desenează colile', inc.includes('coala-fond') && inc.includes('coala-piesa'));
+  check('încadrarea spune câte coli se cumpără', /De cumpărat/.test(inc));
+  check('încadrarea folosește și bucăți de coală',
+        /jumătate|sfert/.test(inc), 'nu apare nicio bucată de coală');
 
   const rcsv = await req(A, `/orders/${orderId}/export.csv`);
   const csv = await rcsv.text();

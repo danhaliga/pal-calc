@@ -75,6 +75,20 @@ table.doc-tbl .tag { font-size: 10.5px; }
 @media (max-width: 800px) { .doc-doua { grid-template-columns: 1fr; } }
 .doc-pasi { font-size: 12px; color: var(--ink); padding-left: 18px; margin: 0; line-height: 1.7; }
 
+/* încadrarea în coli */
+.coli-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.coala-card {
+  margin: 0; border: 1px solid var(--line); border-radius: 6px; padding: 10px;
+  background: var(--panel); break-inside: avoid;
+}
+.coala-cap { font-size: 12px; margin-bottom: 6px; }
+.coala-lista { font-size: 10.5px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+svg.coala-svg { width: 100%; height: auto; display: block; }
+svg.coala-svg .coala-fond { fill: #e9dcc0; stroke: #5a6069; stroke-width: 6; }
+svg.coala-svg .coala-piesa { fill: rgba(255,255,255,.55); stroke: #4a5158; stroke-width: 5; }
+svg.coala-svg .coala-rest { fill: rgba(90,96,105,.25); stroke: #6b737d; stroke-width: 4; stroke-dasharray: 22 14; }
+svg.coala-svg .coala-text { fill: #20252c; font-family: "IBM Plex Mono", monospace; }
+
 /* planșe CNC */
 .cnc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
 .cnc-card {

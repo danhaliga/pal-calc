@@ -1,12 +1,16 @@
 <p class="doc-nota">
-  Cotele din coloanele <b>Tăiere</b> sunt cotele de debitare, adică cota finită minus cantul
-  de pe fiecare latură. Coloanele de cant spun ce grosime se aplică pe fiecare muchie:
-  <b>L1/L2</b> sunt muchiile lungi, <b>l1/l2</b> cele scurte.
+  Cotele din coloanele <b>Tăiere</b> sunt cotele de debitare: cota finită minus cantul de pe fiecare
+  latură. Coloanele de cant spun ce grosime se aplică pe fiecare muchie: <b>L1/L2</b> sunt muchiile
+  lungi, <b>l1/l2</b> cele scurte. Coloana <b>Finit</b> este cota după cantuire.
 </p>
 
 <% raport.materiale.forEach(function (m) { %>
   <section class="doc-sect">
-    <h2><%= m.nume %> — <%= m.placi %> plăci de <%= m.format %></h2>
+    <h2>
+      <%= m.nume %> —
+      <%= m.bucatiColi.map(function (b) { return b.n + ' × ' + b.format.nume; }).join(' + ') %>
+      (<%= m.coliIntregi %> coli întregi de cumpărat)
+    </h2>
     <table class="doc-tbl">
       <thead><tr>
         <th class="num">Cod</th>
@@ -15,10 +19,12 @@
         <th class="num">Buc</th>
         <th class="num">Tăiere L</th>
         <th class="num">Tăiere l</th>
-        <th class="num">Cant L1</th>
-        <th class="num">Cant L2</th>
-        <th class="num">Cant l1</th>
-        <th class="num">Cant l2</th>
+        <th class="num">Finit L</th>
+        <th class="num">Finit l</th>
+        <th class="num">L1</th>
+        <th class="num">L2</th>
+        <th class="num">l1</th>
+        <th class="num">l2</th>
         <th>Fibră</th>
         <th>Observații</th>
       </tr></thead>
@@ -31,6 +37,8 @@
             <td class="num"><b><%= p.buc %></b></td>
             <td class="num"><b><%= p.TL %></b></td>
             <td class="num"><b><%= p.Tl %></b></td>
+            <td class="num"><%= p.L %></td>
+            <td class="num"><%= p.l %></td>
             <% if (p.cant.special) { %>
               <td class="num" colspan="4">cant pe muchiile frontale — vezi planșa CNC</td>
             <% } else { %>
@@ -48,7 +56,10 @@
         <tr>
           <td colspan="3"><b>Total <%= m.nume %></b></td>
           <td class="num"><b><%= m.bucati %></b></td>
-          <td colspan="8"><%= m.m2piese %> m² piese · <%= m.placi %> plăci · deșeu <%= m.deseuPct %>%</td>
+          <td colspan="10">
+            <%= m.m2piese %> m² piese · deșeu <%= m.deseuPct %>% ·
+            încadrarea pe coli e pe fișa separată
+          </td>
         </tr>
       </tfoot>
     </table>
@@ -59,26 +70,24 @@
   <h2>Cant de comandat</h2>
   <table class="doc-tbl">
     <thead><tr>
-      <th>Grosime</th><th>Culoare</th><th class="num">Calculat</th>
-      <th class="num">Cu adaos <%= raport.cant.adaosPct %>%</th><th class="num">Role 50 m</th>
+      <th>Grosime</th><th>Decor</th><th class="num">Metri liniari</th>
+      <% if (aratAdaos) { %><th class="num">Cu adaos <%= raport.cant.adaosPct %>%</th><th class="num">Role 50 m</th><% } %>
     </tr></thead>
     <tbody>
       <% raport.cant.linii.forEach(function (c) { %>
         <tr>
           <td><b><%= c.mm %> mm</b></td>
-          <td><%= order.cant_decor || '—' %></td>
-          <td class="num"><%= c.ml %> ml</td>
-          <td class="num"><b><%= c.cuAdaos %> ml</b></td>
-          <td class="num"><%= c.role %></td>
+          <td><%= c.decor %></td>
+          <td class="num"><b><%= c.ml %> ml</b></td>
+          <% if (aratAdaos) { %><td class="num"><%= c.cuAdaos %> ml</td><td class="num"><%= c.role %></td><% } %>
         </tr>
       <% }); %>
     </tbody>
     <tfoot>
       <tr>
         <td colspan="2"><b>Total</b></td>
-        <td class="num"><%= raport.cant.total %> ml</td>
-        <td class="num"><b><%= raport.cant.totalCuAdaos %> ml</b></td>
-        <td></td>
+        <td class="num"><b><%= raport.cant.total %> ml</b></td>
+        <% if (aratAdaos) { %><td class="num"><%= raport.cant.totalCuAdaos %> ml</td><td></td><% } %>
       </tr>
     </tfoot>
   </table>
@@ -87,7 +96,7 @@
 <% if (raport.cnc.length) { %>
   <p class="doc-nota">
     <b>Atenție:</b> <%= raport.cnc.length %> poziții au nevoie de prelucrare după debitare
-    (decupaje de colț, tăieri la 45°, nuturi). Sunt marcate cu „CNC” în coloana de observații,
-    iar planșele cotate sunt pe fișa separată de prelucrări.
+    (decupaje de colț, tăieri la 45°, nuturi). Sunt marcate „CNC” în observații, iar planșele
+    cotate sunt pe fișa separată de prelucrări.
   </p>
 <% } %>
