@@ -75,6 +75,14 @@ table.doc-tbl .tag { font-size: 10.5px; }
 @media (max-width: 800px) { .doc-doua { grid-template-columns: 1fr; } }
 .doc-pasi { font-size: 12px; color: var(--ink); padding-left: 18px; margin: 0; line-height: 1.7; }
 
+/* ansamblu */
+.an-plan-print, .an-elev-print {
+  border: 1px solid var(--line); border-radius: 6px; padding: 8px; margin-bottom: 8px;
+  background: var(--panel); break-inside: avoid;
+}
+.an-plan-print svg.an-svg { max-height: 380px; }
+.an-elev-print svg.an-svg { max-height: 240px; }
+
 /* încadrarea în coli */
 .coli-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
 .coala-card {

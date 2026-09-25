@@ -1,0 +1,149 @@
+<div class="top">
+  <div>
+    <div class="crumbs"><a href="/orders/<%= order.id %>">← <%= order.name %></a></div>
+    <h1>Ansamblu</h1>
+    <div class="muted small">
+      Cameră <%= ansamblu.camera.A %> × <%= ansamblu.camera.B %> × <%= ansamblu.camera.H %> mm ·
+      <%= ansamblu.asezari.length %> corpuri așezate
+    </div>
+  </div>
+  <div class="btns" style="margin:0">
+    <form method="post" action="/orders/<%= order.id %>/aseaza" class="inline">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <input type="hidden" name="inaltime_sus" value="1400">
+      <button class="btn primary" type="submit"
+              title="Alipește corpurile cap la cap, jos pe podea și sus la 1400 mm">
+        Așază automat, alipit
+      </button>
+    </form>
+    <a class="btn" href="/orders/<%= order.id %>/print/ansamblu">Planșă de tipărit</a>
+  </div>
+</div>
+
+<% if (ansamblu.probleme.length) { %>
+  <div class="warn err">
+    <b>De reglat:</b>
+    <% ansamblu.probleme.forEach(function (p) { %><div><%= p.text %></div><% }); %>
+  </div>
+<% } %>
+
+<div class="ansamblu-sus">
+  <div class="panel">
+    <h2>Camera, văzută de sus</h2>
+    <div class="an-plan"><%- ansamblu.plan %></div>
+    <p class="legend">
+      Numerele sunt pozițiile din comandă. Corpurile suspendate sunt desenate cu contur punctat.
+      Colțul de pornire al fiecărui perete este cel din stânga-jos.
+    </p>
+  </div>
+
+  <div class="panel">
+    <h2>Camera</h2>
+    <form method="post" action="/orders/<%= order.id %>/camera">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <div class="f">
+        <label>Latura A (mm)<input type="number" name="A" min="500" max="20000" step="10"
+               value="<%= ansamblu.camera.A %>"></label>
+        <label>Latura B (mm)<input type="number" name="B" min="500" max="20000" step="10"
+               value="<%= ansamblu.camera.B %>"></label>
+        <label>Înălțime (mm)<input type="number" name="H" min="1500" max="5000" step="10"
+               value="<%= ansamblu.camera.H %>"></label>
+      </div>
+      <button class="btn primary" type="submit" style="margin-top:10px">Salvează camera</button>
+    </form>
+
+    <h2 style="margin-top:18px">Ocupare pereți</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Perete</th><th class="num">Lungime</th><th class="num">Jos</th><th class="num">Sus</th></tr></thead>
+      <tbody>
+        <% ansamblu.pereti.forEach(function (p) { %>
+          <tr>
+            <td><b><%= p.id %></b> <span class="muted small"><%= p.nume %></span></td>
+            <td class="num"><%= p.lungime %></td>
+            <td class="num <%= p.ocupatJos > p.lungime ? 'peste' : '' %>"><%= p.ocupatJos %></td>
+            <td class="num <%= p.ocupatSus > p.lungime ? 'peste' : '' %>"><%= p.ocupatSus %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table></div>
+
+    <% if (ansamblu.goluri.length) { %>
+      <h2 style="margin-top:16px">Goluri rămase</h2>
+      <ul class="ticks">
+        <% ansamblu.goluri.forEach(function (g) { %>
+          <li>Peretele <b><%= g.perete %></b><%= g.h > 0 ? ' (sus)' : '' %>:
+            <%= g.lung %> mm, de la <%= g.de_la %> la <%= g.pana_la %></li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </div>
+</div>
+
+<!-- ---------------- vederea 3D a ansamblului ---------------- -->
+<div class="panel">
+  <div class="top" style="margin-bottom:8px">
+    <h2 style="margin:0">Ansamblul în 3D</h2>
+    <div class="btns" style="margin:0">
+      <button class="btn small" data-vedere="iso">Izometric</button>
+      <button class="btn small" data-vedere="fata">Din față</button>
+      <button class="btn small" data-vedere="sus">De sus</button>
+      <label class="check" style="margin-left:8px"><input type="checkbox" id="anPereti" checked> Pereți</label>
+    </div>
+  </div>
+  <div class="cvwrap" id="anWrap"><canvas id="anCanvas"></canvas></div>
+  <div class="info" id="anInfo"></div>
+</div>
+
+<!-- ---------------- elevațiile ---------------- -->
+<% pereti.forEach(function (per) {
+     var p = ansamblu.pereti.find(function (x) { return x.id === per.id; });
+     if (!p || !p.corpuri.length) return; %>
+  <div class="panel">
+    <h2>Peretele <%= per.id %> — <%= per.nume.toLowerCase() %> (<%= p.lungime %> mm)</h2>
+    <div class="an-elev"><%- elevatie(ansamblu.asezari, ansamblu.camera, per.id) %></div>
+  </div>
+<% }); %>
+
+<!-- ---------------- poziția fiecărui corp ---------------- -->
+<div class="panel">
+  <h2>Poziția corpurilor</h2>
+  <p class="hint">
+    Distanța se măsoară de la colțul de pornire al peretelui, iar înălțimea de la podea,
+    până la fundul corpului. Pentru corpurile de jos, înălțimea este 0 (sau înălțimea soclului).
+  </p>
+  <div class="tbl"><table>
+    <thead><tr>
+      <th class="num">#</th><th>Corp</th><th class="num">Lățime</th><th class="num">Adâncime</th>
+      <th>Perete</th><th class="num">Distanță (mm)</th><th class="num">Înălțime (mm)</th><th></th>
+    </tr></thead>
+    <tbody>
+      <% ansamblu.asezari.forEach(function (a, i) { %>
+        <tr>
+          <td class="num"><%= i + 1 %></td>
+          <td><a href="/corps/<%= a.id %>"><%= a.nume %></a></td>
+          <td class="num"><%= a.W %></td>
+          <td class="num"><%= a.D %></td>
+          <td colspan="4">
+            <form method="post" action="/corps/<%= a.id %>/pozitie" class="mat-inline">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <select name="perete">
+                <% pereti.forEach(function (per) { %>
+                  <option value="<%= per.id %>" <%= a.perete.id === per.id ? 'selected' : '' %>>
+                    <%= per.id %> — <%= per.nume.toLowerCase() %>
+                  </option>
+                <% }); %>
+              </select>
+              <input type="number" name="d" value="<%= a.poz.d %>" step="10" min="0" style="width:96px">
+              <input type="number" name="h" value="<%= a.poz.h %>" step="10" min="0" style="width:96px">
+              <button class="btn small" type="submit">Pune</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table></div>
+</div>
+
+<script type="application/json" id="page-data"><%- jsonPentruPagina({ orderId: order.id }) %></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/static/ansamblu.js?v=<%= assetV %>"></script>

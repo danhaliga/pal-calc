@@ -1,0 +1,77 @@
+<p class="doc-nota">
+  Camera <b><%= ansamblu.camera.A %> × <%= ansamblu.camera.B %> × <%= ansamblu.camera.H %> mm</b>.
+  Corpurile sunt alipite cap la cap; distanța fiecăruia se măsoară de la colțul de pornire al
+  peretelui, iar înălțimea de la podea până la fundul corpului.
+</p>
+
+<% if (ansamblu.probleme.length) { %>
+  <div class="doc-warn">
+    <% ansamblu.probleme.forEach(function (p) { %><div>⚠ <%= p.text %></div><% }); %>
+  </div>
+<% } %>
+
+<section class="doc-sect">
+  <h2>Plan — vedere de sus</h2>
+  <div class="an-plan-print"><%- ansamblu.plan %></div>
+</section>
+
+<% pereti.forEach(function (per) {
+     var p = ansamblu.pereti.find(function (x) { return x.id === per.id; });
+     if (!p || !p.corpuri.length) return; %>
+  <section class="doc-sect">
+    <h2>Peretele <%= per.id %> — <%= per.nume.toLowerCase() %>, <%= p.lungime %> mm</h2>
+    <div class="an-elev-print"><%- elevatie(ansamblu.asezari, ansamblu.camera, per.id) %></div>
+    <table class="doc-tbl mic">
+      <thead><tr>
+        <th class="num">#</th><th>Corp</th><th class="num">Lățime</th><th class="num">Înălțime</th>
+        <th class="num">Adâncime</th><th class="num">De la colț</th><th class="num">De la podea</th>
+      </tr></thead>
+      <tbody>
+        <% p.corpuri.slice().sort(function (a, b) { return a.poz.h - b.poz.h || a.poz.d - b.poz.d; })
+             .forEach(function (a, i) { %>
+          <tr>
+            <td class="num"><%= i + 1 %></td>
+            <td><%= a.nume %></td>
+            <td class="num"><%= a.W %></td>
+            <td class="num"><%= a.H %></td>
+            <td class="num"><%= a.D %></td>
+            <td class="num"><b><%= a.poz.d %></b></td>
+            <td class="num"><b><%= a.poz.h %></b></td>
+          </tr>
+        <% }); %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2"><b>Ocupat</b></td>
+          <td class="num"><b><%= p.ocupatJos %></b> jos</td>
+          <td colspan="2"><b><%= p.ocupatSus %></b> sus</td>
+          <td colspan="2">din <%= p.lungime %> mm</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+<% }); %>
+
+<% if (ansamblu.goluri.length) { %>
+  <section class="doc-sect">
+    <h2>Goluri rămase</h2>
+    <table class="doc-tbl mic">
+      <thead><tr><th>Perete</th><th>Nivel</th><th class="num">De la</th><th class="num">Până la</th><th class="num">Lungime</th></tr></thead>
+      <tbody>
+        <% ansamblu.goluri.forEach(function (g) { %>
+          <tr>
+            <td><%= g.perete %></td>
+            <td><%= g.h > 0 ? 'suspendat (' + g.h + ' mm)' : 'jos' %></td>
+            <td class="num"><%= g.de_la %></td>
+            <td class="num"><%= g.pana_la %></td>
+            <td class="num"><b><%= g.lung %> mm</b></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <p class="doc-nota">
+      Golurile se închid cu panouri de mascare sau prin ajustarea unui corp. Un gol sub 40 mm
+      se rezolvă de obicei cu o baghetă, nu cu un corp nou.
+    </p>
+  </section>
+<% } %>

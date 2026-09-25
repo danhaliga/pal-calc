@@ -12,6 +12,7 @@ const Catalog = require('../shared/catalog');
 const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
 const PalRaport = require('../shared/raport');
+const PalAnsamblu = require('../shared/ansamblu');
 
 const router = express.Router();
 
@@ -50,6 +51,64 @@ function notFound(next) {
   const err = new Error('Comanda nu există.');
   err.status = 404;
   next(err);
+}
+
+/* corpurile cu poziția lor în cameră, pentru ansamblu */
+function corpuriPozitionate(orderId) {
+  return db.prepare('SELECT * FROM corps WHERE order_id = ? ORDER BY poz, id').all(orderId)
+    .map(row => ({
+      id: row.id,
+      nume: row.name,
+      poz: row.poz,
+      params: Object.assign(PalCalc.defaults(), JSON.parse(row.params)),
+      pozitie: row.pozitie
+    }));
+}
+
+function comandaCuCamera(order) {
+  let cam;
+  try { cam = JSON.parse(order.camera || '{}'); } catch (e) { cam = {}; }
+  return Object.assign({}, order, { camera: PalAnsamblu.camera(cam) });
+}
+
+/* Așezarea automată: corpurile adânci merg jos, cele subțiri sus, fiecare grup
+   alipit de la un perete la altul. Un corp de colț ocupă și începutul peretelui
+   următor, așa că acolo se pornește după el. */
+function asazaAutomat(corpuri, cam, inaltimeSus) {
+  /* adâncimea reală, nu gabaritul în plan: altfel un colț suspendat, care ocupă
+     mult în plan, ar fi luat drept corp de jos */
+  const adanc = c => PalAnsamblu.gabarit(c.params).adancimeReala;
+  const jos = corpuri.filter(c => adanc(c) >= 450);
+  const sus = corpuri.filter(c => adanc(c) < 450);
+  const pereti = ['A', 'B', 'C', 'D'];
+  const pozitii = [];
+
+  const aseaza = (lista, h) => {
+    let iPerete = 0;
+    let d = 0;
+    let offsetUrmator = 0;
+
+    lista.forEach(c => {
+      const g = PalAnsamblu.gabarit(c.params);
+      let lung = PalAnsamblu.lungimePerete(cam, pereti[iPerete]);
+
+      /* dacă nu mai încape, trecem pe peretele următor */
+      while (d + g.latime > lung + 0.5 && iPerete < pereti.length - 1) {
+        iPerete++;
+        d = offsetUrmator;
+        offsetUrmator = 0;
+        lung = PalAnsamblu.lungimePerete(cam, pereti[iPerete]);
+      }
+
+      pozitii.push({ id: c.id, perete: pereti[iPerete], d: Math.round(d * 10) / 10, h });
+      d += g.latime;
+      if (g.colt) offsetUrmator = g.W2;     /* colțul mănâncă și din peretele următor */
+    });
+  };
+
+  aseaza(jos, 0);
+  aseaza(sus, inaltimeSus);
+  return pozitii;
 }
 
 function corpuriComenzii(orderId, mats) {
@@ -297,9 +356,105 @@ router.post('/corps/:id/material', requireAuth, (req, res, next) => {
   res.redirect(`/corps/${corp.id}`);
 });
 
+/* ---------- ansamblul: corpurile alipite în cameră ---------- */
+
+router.get('/orders/:id/ansamblu', requireAuth, (req, res, next) => {
+  const order = getOwned(req.params.id, req.user.id);
+  if (!order) return notFound(next);
+
+  const cu = comandaCuCamera(order);
+  const corpuri = corpuriPozitionate(order.id);
+  const ans = PalAnsamblu.ansamblu(cu, corpuri);
+
+  res.render('orders/ansamblu', {
+    title: 'Ansamblu – ' + order.name,
+    order: cu,
+    ansamblu: ans,
+    pereti: PalAnsamblu.PERETI,
+    elevatie: PalAnsamblu.elevatie,
+    corpuri
+  });
+});
+
+const schemaCamera = z.object({
+  A: z.coerce.number().min(500).max(20000),
+  B: z.coerce.number().min(500).max(20000),
+  H: z.coerce.number().min(1500).max(5000)
+});
+
+router.post('/orders/:id/camera', requireAuth, (req, res, next) => {
+  const order = getOwned(req.params.id, req.user.id);
+  if (!order) return notFound(next);
+
+  const parsed = schemaCamera.safeParse(req.body);
+  if (!parsed.success) {
+    return next(Object.assign(new Error(parsed.error.issues[0].message), { status: 400 }));
+  }
+  db.prepare("UPDATE orders SET camera = ?, updated_at = datetime('now') WHERE id = ?")
+    .run(JSON.stringify(parsed.data), order.id);
+  res.redirect(`/orders/${order.id}/ansamblu`);
+});
+
+router.post('/orders/:id/aseaza', requireAuth, (req, res, next) => {
+  const order = getOwned(req.params.id, req.user.id);
+  if (!order) return notFound(next);
+
+  const cu = comandaCuCamera(order);
+  const corpuri = corpuriPozitionate(order.id);
+  const inaltimeSus = Math.min(2400, Math.max(0, Number(req.body.inaltime_sus) || 1400));
+  const pozitii = asazaAutomat(corpuri, cu.camera, inaltimeSus);
+
+  const upd = db.prepare("UPDATE corps SET pozitie = ?, updated_at = datetime('now') WHERE id = ? AND user_id = ?");
+  db.transaction(() => {
+    pozitii.forEach(p => upd.run(JSON.stringify({ perete: p.perete, d: p.d, h: p.h }), p.id, req.user.id));
+  })();
+
+  res.redirect(`/orders/${order.id}/ansamblu`);
+});
+
+router.post('/corps/:id/pozitie', requireAuth, (req, res, next) => {
+  const corp = db.prepare('SELECT * FROM corps WHERE id = ?').get(Number(req.params.id));
+  if (!corp || corp.user_id !== req.user.id) {
+    return next(Object.assign(new Error('Corpul nu există.'), { status: 404 }));
+  }
+
+  const perete = PalAnsamblu.peretele(String(req.body.perete || 'A')).id;
+  const d = Math.max(0, Number(req.body.d) || 0);
+  const h = Math.max(0, Number(req.body.h) || 0);
+
+  db.prepare("UPDATE corps SET pozitie = ?, updated_at = datetime('now') WHERE id = ?")
+    .run(JSON.stringify({ perete, d, h }), corp.id);
+
+  res.redirect(`/orders/${corp.order_id}/ansamblu`);
+});
+
+/* datele ansamblului pentru vederea 3D din pagină */
+router.get('/api/orders/:id/ansamblu', requireAuth, (req, res, next) => {
+  const order = getOwned(req.params.id, req.user.id);
+  if (!order) return notFound(next);
+
+  const cu = comandaCuCamera(order);
+  const corpuri = corpuriPozitionate(order.id);
+  const ans = PalAnsamblu.ansamblu(cu, corpuri);
+
+  res.json({
+    camera: ans.camera,
+    corpuri: ans.asezari.map(a => {
+      const c = corpuri.filter(x => x.id === a.id)[0];
+      const rez = PalCalc.calc(c.params);
+      return {
+        id: a.id, nume: a.nume,
+        origine: a.origine, rotatie: a.rotatie,
+        piese: rez.P.map(p => ({ nume: p.nume, boxes: p.boxes }))
+      };
+    })
+  });
+});
+
 /* ---------- listele de producție ---------- */
 
 const PRINTURI = {
+  ansamblu: { view: 'orders/print-ansamblu', titlu: 'Planșă de ansamblu' },
   corpuri: { view: 'orders/print-corpuri', titlu: 'Listă corpuri' },
   debitare: { view: 'orders/print-debitare', titlu: 'Listă piese pentru debitare' },
   incadrare: { view: 'orders/print-incadrare', titlu: 'Încadrarea în coli' },
@@ -315,10 +470,16 @@ router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
   if (!cfg) return notFound(next);
 
   const raport = raportComenzii(order);
+  const cu = comandaCuCamera(order);
+  const ans = PalAnsamblu.ansamblu(cu, corpuriPozitionate(order.id));
+
   res.render(cfg.view, {
     title: cfg.titlu + ' – ' + order.name,
     titlu: cfg.titlu,
-    order, raport,
+    order: cu, raport,
+    ansamblu: ans,
+    pereti: PalAnsamblu.PERETI,
+    elevatie: PalAnsamblu.elevatie,
     materiale: materiale.aleComenzii(order.id),
     planse: PalRaport.planseCnc,
     planColi: PalRaport.planColi,
