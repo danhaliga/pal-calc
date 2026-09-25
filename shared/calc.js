@@ -26,12 +26,17 @@
   function defaults() {
     return {
       nume: 'Corp bucătărie jos', W: 800, H: 720, D: 560, constr: 'intre',
+      tip: 'drept', W2: 900, orb: 550,
       t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 3,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2,
       nPol: 1, jp: 1, rp: 20,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 16, lg: ''
     };
   }
+
+  /* tipurile de corp pe care le stie calculul */
+  var TIPURI = ['drept', 'colt-orb', 'colt-L', 'colt-diagonal'];
+  function esteColt(tip) { return tip === 'colt-L' || tip === 'colt-diagonal'; }
 
   function balamale(h) { return h <= 900 ? 2 : h <= 1600 ? 3 : h <= 2000 ? 4 : 5; }
 
@@ -60,6 +65,115 @@
     var F = function (o) {
       return Object.assign({ px: '-', nx: '-', py: '-', ny: '-', pz: '-', nz: '-' }, o);
     };
+    /* panou cu contur poligonal in plan (blat/fund/polita de colt), extrudat pe verticala */
+    var bp = function (x, y, z, poly, gros, ex, grp) {
+      return { x: x, y: y, z: z, sx: 0, sy: gros, sz: 0, poly: poly,
+               f: F({ py: 'f', ny: 'f' }), ex: ex, grp: grp };
+    };
+
+    /* ============ corpuri de colț (în L sau cu front diagonal) ============
+       A = latura pe peretele 1 (W), B = latura pe peretele 2 (W2),
+       D = adâncimea brațelor. Blatul, fundul și polițele nu sunt dreptunghiuri:
+       se debitează dreptunghiul de gabarit și apoi se decupează colțul. */
+    if (esteColt(c.tip)) {
+      var dg = c.tip === 'colt-diagonal';
+      var A = W, B = +c.W2;
+      var bA = r1(A - t), bB = r1(B - t);        /* panoul orizontal, între laterale */
+      var brA = r1(bA - D), brB = r1(bB - D);    /* decupajul din colțul opus */
+      var diagL = r1(Math.sqrt(brA * brA + brB * brB));
+      var aplK = c.montaj === 'aplicat';
+      var uHK = r1(aplK ? H - 2 * rm : Hint - 2 * rinc);
+      var FDK = F({ pz: 'f', nz: 'f', px: 'g', nx: 'g', py: 'g', ny: 'g' });
+      var jpK = +c.jp;
+      var usiK = [];
+
+      if (brA <= 0 || brB <= 0) {
+        warn.push('Adâncimea de ' + fmt(D) + ' mm este prea mare pentru laturile de ' +
+                  fmt(A) + ' și ' + fmt(B) + ' mm: nu mai rămâne colț de debitat.');
+      }
+      if (nSer > 0) {
+        warn.push('Sertarele nu se calculează la corpurile de colț; folosește un corp drept alături.');
+      }
+
+      /* laterale: câte una la capătul fiecărui braț */
+      add('Laterală', 2, H, D, 'g', '-', 's', 's', 'L (vertical)',
+          'câte una la capătul fiecărui braț', [
+        bx(A - t, 0, 0, t, H, D, F({ px: 'f', nx: 'f', pz: 'g', py: 's', ny: 's' }), [1, 0, 0], 'corp'),
+        bx(0, 0, B - t, D, H, t, F({ pz: 'f', nz: 'f', px: 'g', py: 's', ny: 's' }), [0, 0, 1], 'corp')
+      ]);
+
+      /* blat și fund: panou în L sau pentagon */
+      var polyOr = dg
+        ? [[0, 0], [bA, 0], [bA, D], [D, bB], [0, bB]]
+        : [[0, 0], [bA, 0], [bA, D], [D, D], [D, bB], [0, bB]];
+      var notaPanou = dg
+        ? 'pentagon: din dreptunghiul ' + fmt(bA) + '×' + fmt(bB) + ' se taie colțul la 45° ' +
+          '(catete ' + fmt(brA) + ' și ' + fmt(brB) + '); muchia diagonală ' + fmt(diagL) + ' mm, cu cant'
+        : 'formă de L: din dreptunghiul ' + fmt(bA) + '×' + fmt(bB) + ' se decupează colțul ' +
+          fmt(brA) + '×' + fmt(brB) + '; cant pe cele două muchii frontale';
+
+      add('Blat', 1, bA, bB, '-', '-', '-', '-', 'L', notaPanou,
+        [bp(0, H - t, 0, polyOr, t, [0, 1, 0], 'corp')]);
+      add('Fund', 1, bA, bB, '-', '-', '-', '-', 'L', notaPanou,
+        [bp(0, 0, 0, polyOr, t, [0, -1, 0], 'corp')]);
+
+      /* spate: câte un panou pe fiecare perete */
+      var numeSp = 'Spate ' + (tp >= 8 ? 'PAL' : 'PFL');
+      var FSK = F({ pz: 'p', nz: 'p', px: 'p', nx: 'p', py: 'p', ny: 'p' });
+      add(numeSp + ' – peretele 1', 1, H - 3, A - 3, '-', '-', '-', '-', '–', 'capsat pe latura dinspre perete',
+        [bx(1.5, 1.5, -tp, A - 3, H - 3, tp, FSK, [0, 0, -1], 'spate')]);
+      add(numeSp + ' – peretele 2', 1, H - 3, B - tp - 3, '-', '-', '-', '-', '–', 'capsat pe cealaltă latură',
+        [bx(-tp, 1.5, 1.5, tp, H - 3, B - tp - 3, FSK, [-1, 0, 0], 'spate')]);
+
+      /* fronturi (nUsi = 0 înseamnă colț deschis) */
+      if (nUsi > 0 && dg) {
+        var uLK = r1(diagL - 2 * rm);
+        var mx = (bA + D) / 2, mz = (D + bB) / 2;     /* mijlocul diagonalei */
+        add('Ușă diagonală', 1, uHK, uLK, 'g', 'g', 'g', 'g', 'L (vertical)',
+            balamale(uHK) + ' balamale, cot ' + c.balama + '; front pe diagonală',
+            [{ x: mx - uLK / 2, y: aplK ? rm : t + rinc, z: mz - t / 2,
+               sx: uLK, sy: uHK, sz: t, f: FDK, ex: [1.1, 0, 1.1], grp: 'fronturi',
+               ry: Math.atan2(-(bB - D), D - bA), rotCenter: true }]);
+        usiK.push({ L: uLK, H: uHK });
+        if (uLK > 600) warn.push('Ușă diagonală mai lată de 600 mm: pune două fronturi sau micșorează laturile.');
+      } else if (nUsi > 0) {
+        var uL1 = r1(brA - rm - ri / 2), uL2 = r1(brB - rm - ri / 2);
+        var yF = aplK ? rm : t + rinc;
+        add('Ușă braț 1', 1, uHK, uL1, 'g', 'g', 'g', 'g', 'L (vertical)',
+            balamale(uHK) + ' balamale, cot ' + c.balama + '; se poate cupla în balama-carte cu ușa 2',
+            [bx(D + rm, yF, D, uL1, uHK, t, FDK, [0, 0, 1.6], 'fronturi')]);
+        add('Ușă braț 2', 1, uHK, uL2, 'g', 'g', 'g', 'g', 'L (vertical)',
+            balamale(uHK) + ' balamale, cot ' + c.balama,
+            [bx(D, yF, D + rm, t, uHK, uL2, FDK, [1.6, 0, 0], 'fronturi')]);
+        usiK.push({ L: uL1, H: uHK });
+        usiK.push({ L: uL2, H: uHK });
+      }
+
+      /* polițe: aceeași formă ca blatul, retrase față de fronturi */
+      if (nPol > 0) {
+        var pA = r1(bA - jpK), pB = r1(bB - jpK);
+        var pD = r1(D - (+c.rp));
+        var pbrA = r1(pA - pD), pbrB = r1(pB - pD);
+        var polyPol = dg
+          ? [[0, 0], [pA, 0], [pA, pD], [pD, pB], [0, pB]]
+          : [[0, 0], [pA, 0], [pA, pD], [pD, pD], [pD, pB], [0, pB]];
+        var boxesPol = [];
+        for (var ip = 1; ip <= nPol; ip++) {
+          var ycK = t + (Hint) * ip / (nPol + 1);
+          boxesPol.push(bp(jpK / 2, ycK - t / 2, jpK / 2, polyPol, t, [0, 0, 0.6], 'polite'));
+        }
+        add('Poliță', nPol, pA, pB, '-', '-', '-', '-', 'L',
+            (dg ? 'pentagon' : 'formă de L') + ': din dreptunghiul ' + fmt(pA) + '×' + fmt(pB) +
+            ' se decupează colțul ' + fmt(pbrA) + '×' + fmt(pbrB) + '; cant pe muchiile frontale',
+            boxesPol);
+        if (pA > 800 || pB > 800) {
+          warn.push('Poliță de colț cu laturi peste 800 mm: folosește PAL 25 sau un suport suplimentar.');
+        }
+      }
+
+      return { P: P, warn: warn, usi: usiK, Wint: bA, Hint: Hint, Dint: D,
+               W: A, H: H, D: B, colt: { A: A, B: B, brA: brA, brB: brB, diag: diagL, dg: dg } };
+    }
 
     /* ---- corp ---- */
     if (c.constr === 'intre') {
@@ -102,7 +216,12 @@
     var yTop = apl ? H - rm : H - t - rinc;
     var yBot = apl ? rm : t + rinc;
     var zF = apl ? D : D - t;
-    var fL = apl ? W - 2 * rm : Wint - 2 * rinc;
+    /* la corpul de colț orb, o parte din front rămâne acoperită de corpul vecin */
+    var orb = c.tip === 'colt-orb' ? Math.max(0, +c.orb) : 0;
+    var fL = (apl ? W - 2 * rm : Wint - 2 * rinc) - orb;
+    if (orb > 0 && fL <= 0) {
+      warn.push('Zona oarbă de ' + fmt(orb) + ' mm acoperă tot frontul: micșoreaz-o sau lărgește corpul.');
+    }
     var FD = F({ pz: 'f', nz: 'f', px: 'g', nx: 'g', py: 'g', ny: 'g' });
     var usedTop = nSer > 0 ? nSer * (+c.hFront) + nSer * ri : 0;
 
@@ -119,7 +238,8 @@
           boxesU.push(bx(xoff + i * (uL + ri), yBot, zF, uL, uH, t, FD, [0, 0, 1.6], 'fronturi'));
         }
         add('Ușă', nUsi, uH, uL, 'g', 'g', 'g', 'g', 'L (vertical)',
-          balamale(uH) + ' balamale/ușă, cot ' + c.balama, boxesU);
+          balamale(uH) + ' balamale/ușă, cot ' + c.balama +
+          (orb > 0 ? '; zonă oarbă de ' + fmt(orb) + ' mm, acoperită de corpul vecin' : ''), boxesU);
         usi.push({ L: uL, H: uH });
         if (uL > 600) warn.push('Ușă mai lată de 600 mm: risc de deformare și solicitare mare pe balamale.');
         if (uH > 2000) warn.push('Ușă peste 2000 mm: folosește 5 balamale sau împarte frontul.');
@@ -207,6 +327,9 @@
       paramsSchema = z.object({
         nume: z.string().trim().min(1).max(80).catch('Corp'),
         W: mm(100, 3000), H: mm(100, 3000), D: mm(100, 3000),
+        tip: z.enum(TIPURI).catch('drept'),
+        W2: mm(100, 3000).catch(900),
+        orb: mm(0, 2000).catch(0),
         constr: z.enum(['intre', 'peste']),
         t: mm(6, 50), cg: mm(0, 5), cs: mm(0, 5),
         spate: z.enum(['aplicat', 'nut', 'pal']),

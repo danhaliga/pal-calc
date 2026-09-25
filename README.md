@@ -52,17 +52,36 @@ fără diferență între majuscule și minuscule). Rulat pe un cont existent, s
 
 ## Catalogul de modele
 
-„+ Corp nou” deschide `/corps/new`, un catalog cu 18 modele grupate pe categorii (bucătărie jos,
-bucătărie suspendate, living/dormitor, baie), fiecare cu o schiță frontală generată din parametri.
+„+ Corp nou” deschide `/corps/new`, un catalog cu 26 de modele grupate pe categorii (bucătărie jos,
+bucătărie suspendate, living/dormitor, baie, corpuri de colț), fiecare cu o schiță generată din
+parametri — vedere frontală la corpurile drepte, vedere în plan la cele de colț.
 Alegerea unui model creează corpul cu acele cote; pe urmă se editează liber.
 
 Catalogul stă în [`shared/models.js`](shared/models.js) — doar seturi de parametri, fără logică nouă
 de calcul. `tests/models.test.js` verifică pentru fiecare model că parametrii sunt valizi, că piesele
 ies cu cote pozitive și că **nu apar avertismente**; un model care nu se poate produce corect pică testul.
 
-Ce nu poate genera motorul deocamdată: corpuri de colț, montant central (de aceea polițele peste
-800 mm avertizează), uși glisante sau cu ramă și sticlă, soclu/picioare/blat, decupaje pentru
-chiuvetă sau plită, antresol.
+Ce nu poate genera motorul deocamdată: sertare în corpurile de colț, montant central (de aceea
+polițele peste 800 mm avertizează), uși glisante sau cu ramă și sticlă, soclu/picioare/blat,
+decupaje pentru chiuvetă sau plită, antresol.
+
+## Corpuri de colț
+
+Parametrul `tip` acceptă patru valori, iar `tests/colt.test.js` verifică geometria fiecăreia:
+
+| `tip` | Ce produce | Piese |
+|---|---|---|
+| `drept` | corpul obișnuit | toate dreptunghiulare |
+| `colt-orb` | corp dreptunghiular al cărui front e acoperit parțial de corpul vecin (`orb` mm) | toate dreptunghiulare |
+| `colt-L` | corp în L, cu două fronturi la 90° (se pot cupla în balama-carte) | blat, fund și polițe în L |
+| `colt-diagonal` | corp cu un singur front, pe diagonală | blat, fund și polițe pentagonale |
+
+La `colt-L` și `colt-diagonal`, `W` este latura pe primul perete, `W2` latura pe al doilea, iar `D`
+adâncimea brațelor. Panourile orizontale **nu sunt dreptunghiuri**: lista de debitare dă dreptunghiul
+de gabarit (ce se taie efectiv din placă), iar nota fiecărei piese dă decupajul — de exemplu
+*„din dreptunghiul 882×882 se decupează colțul 322×322”* sau *„se taie colțul la 45°, muchia
+diagonală 455.4 mm”*. Cantul acestor panouri se aplică după decupare, pe muchiile frontale.
+Vederea 3D desenează forma reală (contur extrudat), nu un simplu paralelipiped.
 
 ## Gratuit vs. plătit
 

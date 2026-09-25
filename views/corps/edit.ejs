@@ -19,14 +19,23 @@
       <fieldset>
         <div class="f">
           <label class="full">Denumire<input id="nume" type="text" maxlength="80"></label>
-          <label>Lățime (L)<input id="W" type="number" min="100" max="3000" step="1"></label>
+          <label class="full">Tip corp<select id="tip">
+            <option value="drept">Drept</option>
+            <option value="colt-orb">De colț, orb (ușă îngustă)</option>
+            <option value="colt-L">De colț, în L (două fronturi)</option>
+            <option value="colt-diagonal">De colț, front diagonal</option>
+          </select></label>
+          <label><span id="labelW">Lățime (L)</span><input id="W" type="number" min="100" max="3000" step="1"></label>
           <label>Înălțime (H)<input id="H" type="number" min="100" max="3000" step="1"></label>
-          <label>Adâncime (A)<input id="D" type="number" min="100" max="3000" step="1"></label>
-          <label>Construcție<select id="constr">
+          <label><span id="labelD">Adâncime (A)</span><input id="D" type="number" min="100" max="3000" step="1"></label>
+          <label id="wrapW2">Latura pe peretele 2<input id="W2" type="number" min="100" max="3000" step="1"></label>
+          <label id="wrapOrb">Lățime zonă oarbă<input id="orb" type="number" min="0" max="2000" step="1"></label>
+          <label id="wrapConstr">Construcție<select id="constr">
             <option value="intre">Blat/fund între laterale</option>
             <option value="peste">Laterale între blat și fund</option>
           </select></label>
         </div>
+        <p class="legend hidden" id="notaColt"></p>
       </fieldset>
 
       <fieldset>

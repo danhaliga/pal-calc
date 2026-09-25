@@ -25,7 +25,10 @@
     { id: 'living', nume: 'Living și dormitor',
       descriere: 'Dulapuri, biblioteci, comode, corpuri TV.' },
     { id: 'baie', nume: 'Baie',
-      descriere: 'Corpuri rezistente la umezeală, adâncimi mici.' }
+      descriere: 'Corpuri rezistente la umezeală, adâncimi mici.' },
+    { id: 'colt', nume: 'Corpuri de colț',
+      descriere: 'Pentru colțul dintre doi pereți. Blatul, fundul și polițele se debitează ' +
+                 'ca dreptunghi de gabarit și apoi se decupează — cotele decupajului sunt în lista de piese.' }
   ];
 
   /* inaltimea unui front de sertar cand fronturile umplu toata inaltimea */
@@ -135,6 +138,58 @@
       id: 'baie-coloana', cat: 'baie', nume: 'Coloană de baie',
       descriere: 'Corp înalt și îngust, cu patru polițe și o ușă.',
       set: { nume: 'Coloană baie', W: 400, H: 1800, D: 300, nUsi: 1, nPol: 4 }
+    },
+
+    /* ---------------- corpuri de colț ---------------- */
+    {
+      id: 'colt-jos-L', cat: 'colt', nume: 'Colț bucătărie jos, în L',
+      descriere: 'Corpul clasic de colț sub blat, cu două fronturi cuplate în balama-carte. ' +
+                 'Fără poliță: la această deschidere s-ar lăsa, se folosește carusel.',
+      set: { nume: 'Colț jos în L', tip: 'colt-L', W: 900, W2: 900, H: 720, D: 560,
+             nUsi: 2, nPol: 0, nSer: 0 }
+    },
+    {
+      id: 'colt-jos-diagonal', cat: 'colt', nume: 'Colț bucătărie jos, diagonal',
+      descriere: 'Front unic pe diagonală, de circa 450 mm. Interiorul rămâne accesibil pe toată lățimea.',
+      set: { nume: 'Colț jos diagonal', tip: 'colt-diagonal', W: 900, W2: 900, H: 720, D: 560,
+             nUsi: 1, nPol: 0, nSer: 0 }
+    },
+    {
+      id: 'colt-jos-orb', cat: 'colt', nume: 'Colț bucătărie jos, orb',
+      descriere: 'Corp dreptunghiular la care corpul vecin acoperă 550 mm din front. ' +
+                 'Cel mai simplu de debitat: toate piesele rămân dreptunghiuri.',
+      set: { nume: 'Colț jos orb', tip: 'colt-orb', W: 1000, H: 720, D: 560, orb: 550,
+             nUsi: 1, nPol: 0, nSer: 0 }
+    },
+    {
+      id: 'colt-sus-L', cat: 'colt', nume: 'Colț suspendat, în L',
+      descriere: 'Corp de perete pe colț, cu două fronturi și două polițe.',
+      set: { nume: 'Colț suspendat în L', tip: 'colt-L', W: 600, W2: 600, H: 720, D: 320,
+             nUsi: 2, nPol: 2, nSer: 0 }
+    },
+    {
+      id: 'colt-sus-diagonal', cat: 'colt', nume: 'Colț suspendat, diagonal',
+      descriere: 'Varianta cu un singur front pe diagonală, cu două polițe.',
+      set: { nume: 'Colț suspendat diagonal', tip: 'colt-diagonal', W: 600, W2: 600, H: 720, D: 320,
+             nUsi: 1, nPol: 2, nSer: 0 }
+    },
+    {
+      id: 'colt-living-deschis', cat: 'colt', nume: 'Colțar deschis pentru living',
+      descriere: 'Corp înalt de colț, fără uși, cu patru polițe în L. Bun și ca etajeră de capăt.',
+      set: { nume: 'Colțar living', tip: 'colt-L', W: 800, W2: 800, H: 1800, D: 300,
+             nUsi: 0, nPol: 4, nSer: 0 }
+    },
+    {
+      id: 'colt-baie', cat: 'colt', nume: 'Colț de baie, diagonal',
+      descriere: 'Corp mic de colț, cu o poliță și front pe diagonală.',
+      set: { nume: 'Colț baie', tip: 'colt-diagonal', W: 500, W2: 500, H: 500, D: 300,
+             nUsi: 1, nPol: 1, nSer: 0 }
+    },
+    {
+      id: 'colt-dressing', cat: 'colt', nume: 'Colț de dressing',
+      descriere: 'Corp de colț înalt pentru dressing sau dormitor, cu două fronturi și trei polițe.',
+      set: { nume: 'Colț dressing', tip: 'colt-L', W: 800, W2: 800, H: 2000, D: 560,
+             nUsi: 2, nPol: 3, nSer: 0 }
     }
   ];
 
@@ -150,9 +205,49 @@
     return Object.assign(PalCalc.defaults(), m.set);
   }
 
+  /* Schita in plan pentru corpurile de colt: acolo vederea frontala nu spune nimic. */
+  function sketchColt(p) {
+    var A = +p.W, B = +p.W2, D = +p.D, t = +p.t, rm = +p.rm;
+    var dg = p.tip === 'colt-diagonal';
+    var o = [];
+
+    if (p.tip === 'colt-orb') {
+      var orb = +p.orb;
+      o.push('<rect x="0" y="0" width="' + A + '" height="' + D + '" class="sk-corp"/>');
+      o.push('<rect x="' + (A - orb) + '" y="0" width="' + orb + '" height="' + D + '" class="sk-orb"/>');
+      o.push('<line x1="' + rm + '" y1="' + (D - t / 2) + '" x2="' + (A - orb - rm) +
+             '" y2="' + (D - t / 2) + '" class="sk-usa"/>');
+      return '<svg viewBox="' + (-t) + ' ' + (-t) + ' ' + (A + 2 * t) + ' ' + (D + 2 * t) +
+             '" class="sk" preserveAspectRatio="xMidYMid meet" role="img" ' +
+             'aria-label="Plan corp orb"><g>' + o.join('') + '</g></svg>';
+    }
+
+    var pts = dg
+      ? [[0, 0], [A, 0], [A, D], [D, B], [0, B]]
+      : [[0, 0], [A, 0], [A, D], [D, D], [D, B], [0, B]];
+    o.push('<polygon points="' + pts.map(function (q) { return q.join(','); }).join(' ') + '" class="sk-corp"/>');
+
+    if (+p.nUsi > 0) {
+      if (dg) {
+        o.push('<line x1="' + A + '" y1="' + D + '" x2="' + D + '" y2="' + B + '" class="sk-usa"/>');
+      } else {
+        o.push('<line x1="' + D + '" y1="' + D + '" x2="' + A + '" y2="' + D + '" class="sk-usa"/>');
+        o.push('<line x1="' + D + '" y1="' + D + '" x2="' + D + '" y2="' + B + '" class="sk-usa"/>');
+      }
+    }
+    /* pereții */
+    o.push('<line x1="0" y1="0" x2="' + A + '" y2="0" class="sk-perete"/>');
+    o.push('<line x1="0" y1="0" x2="0" y2="' + B + '" class="sk-perete"/>');
+
+    return '<svg viewBox="' + (-t) + ' ' + (-t) + ' ' + (A + 2 * t) + ' ' + (B + 2 * t) +
+           '" class="sk" preserveAspectRatio="xMidYMid meet" role="img" ' +
+           'aria-label="Plan corp de colț"><g>' + o.join('') + '</g></svg>';
+  }
+
   /* Schita frontala a corpului, in SVG (unitati = mm).
      Deseneaza carcasa, sertarele de sus in jos, usile sub ele si politele. */
   function sketch(p) {
+    if (p.tip && p.tip !== 'drept') return sketchColt(p);
     var W = +p.W, H = +p.H, t = +p.t;
     var rm = +p.rm, ri = +p.ri, rinc = +p.rinc;
     var nU = +p.nUsi, nS = +p.nSer, nP = +p.nPol;
@@ -207,6 +302,9 @@
   /* rezumat scurt pentru cardul din catalog */
   function rezumat(p) {
     var b = [];
+    if (p.tip === 'colt-L') b.push('colț în L');
+    else if (p.tip === 'colt-diagonal') b.push('colț diagonal');
+    else if (p.tip === 'colt-orb') b.push('colț orb');
     if (+p.nUsi) b.push(+p.nUsi + (+p.nUsi === 1 ? ' ușă' : ' uși'));
     if (+p.nSer) b.push(+p.nSer + (+p.nSer === 1 ? ' sertar' : ' sertare'));
     if (+p.nPol) b.push(+p.nPol + (+p.nPol === 1 ? ' poliță' : ' polițe'));

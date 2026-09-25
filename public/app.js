@@ -12,8 +12,31 @@ var CORP_ID = DATA.corpId;
 var params = DATA.params;
 var paid = !!DATA.paid;
 
-var fields = ['nume','W','H','D','constr','t','cg','cs','spate','tp','nUsi','montaj','balama',
+var fields = ['nume','tip','W','H','D','W2','orb','constr','t','cg','cs','spate','tp','nUsi','montaj','balama',
               'rm','ri','rinc','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg'];
+
+/* ce câmpuri are sens să vadă utilizatorul, în funcție de tipul corpului */
+function aplicaTip() {
+  var tip = params.tip || 'drept';
+  var colt = tip === 'colt-L' || tip === 'colt-diagonal';
+  var arata = function (id, da) { var el = $(id); if (el) el.classList.toggle('hidden', !da); };
+
+  arata('wrapW2', colt);
+  arata('wrapOrb', tip === 'colt-orb');
+  arata('wrapConstr', !colt);
+  $('labelW').textContent = colt ? 'Latura pe peretele 1' : 'Lățime (L)';
+  $('labelD').textContent = colt ? 'Adâncime brațe' : 'Adâncime (A)';
+
+  var nota = $('notaColt');
+  nota.classList.toggle('hidden', tip === 'drept');
+  if (tip === 'colt-orb') {
+    nota.textContent = 'Corp dreptunghiular normal: doar frontul este mai îngust, ' +
+      'pentru că restul rămâne acoperit de corpul vecin.';
+  } else if (colt) {
+    nota.textContent = 'Blatul, fundul și polițele nu sunt dreptunghiuri: se debitează dreptunghiul ' +
+      'de gabarit din listă, apoi se decupează colțul după nota fiecărei piese. Sertarele nu se calculează aici.';
+  }
+}
 
 var fmt = function (v) { return Number.isInteger(v) ? String(v) : Number(v).toFixed(1); };
 var r1 = function (v) { return Math.round(v * 10) / 10; };
@@ -123,6 +146,7 @@ function renderTable() {
 
 function render() {
   fields.forEach(function (f) { if ($(f)) $(f).value = params[f]; });
+  aplicaTip();
 
   var res = window.PalCalc.calc(params);
   lastRes = res;
@@ -265,9 +289,28 @@ function build3D(c, res) {
 
   res.P.forEach(function (p, pi) {
     p.boxes.forEach(function (b, bi) {
-      var geo = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
-      var mesh = new THREE.Mesh(geo, ORDER.map(function (k) { return T.mats[b.f[k] || '-']; }));
-      mesh.userData = { p: p, pi: pi, bi: bi, b: b, base: [b.x + b.sx / 2, b.y + b.sy / 2, b.z + b.sz / 2] };
+      var geo, mat, base;
+
+      if (b.poly) {
+        /* panou de colț: contur în plan, extrudat pe grosimea PAL-ului.
+           Forma se desenează în XY și se culcă pe orizontală, deci z se inversează. */
+        var shape = new THREE.Shape();
+        b.poly.forEach(function (pt, i) {
+          if (i) shape.lineTo(pt[0], -pt[1]); else shape.moveTo(pt[0], -pt[1]);
+        });
+        geo = new THREE.ExtrudeGeometry(shape, { depth: b.sy, bevelEnabled: false });
+        geo.rotateX(-Math.PI / 2);
+        mat = T.mats[b.f.py || 'f'];
+        base = [b.x, b.y, b.z];
+      } else {
+        geo = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
+        mat = ORDER.map(function (k) { return T.mats[b.f[k] || '-']; });
+        base = [b.x + b.sx / 2, b.y + b.sy / 2, b.z + b.sz / 2];
+      }
+
+      var mesh = new THREE.Mesh(geo, mat);
+      if (b.ry) mesh.rotation.y = b.ry;
+      mesh.userData = { p: p, pi: pi, bi: bi, b: b, base: base };
       mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), T.lineMat));
       g.add(mesh); T.meshes.push(mesh);
     });
@@ -317,8 +360,9 @@ function select(mesh) {
   var tr = document.querySelector('#rows tr[data-pi="' + pi + '"]');
   if (tr) tr.classList.add('sel');
 
-  var th = Math.min(b.sx, b.sy, b.sz);
-  var cants = ORDER.filter(function (k) { return b.f[k] !== 'f' && b.f[k] !== 'p'; })
+  var th = b.poly ? b.sy : Math.min(b.sx, b.sy, b.sz);
+  /* la panourile de colț cantul nu se poate descrie pe cele 4 muchii: e în notă */
+  var cants = b.poly ? [] : ORDER.filter(function (k) { return b.f[k] !== 'f' && b.f[k] !== 'p'; })
     .map(function (k) {
       return FACE_RO[k] + ' ' + (b.f[k] === 'g' ? params.cg : b.f[k] === 's' ? params.cs : '–');
     });
@@ -333,7 +377,7 @@ function select(mesh) {
     '<div><b>' + esc(p.nume) + '</b> <span class="tag">' + (p.buc > 1 ? p.buc + ' buc' : '1 buc') + '</span></div>' +
     '<div>finit <span class="k">' + fmt(p.L) + ' × ' + fmt(p.l) + ' × ' + fmt(r1(th)) + '</span> mm</div>' +
     taiere +
-    (paid ? '<div>cant: ' + (cants.length ? cants.join(', ') : 'fără') + '</div>' : '') +
+    (paid && !b.poly ? '<div>cant: ' + (cants.length ? cants.join(', ') : 'fără') + '</div>' : '') +
     (p.nota ? '<div class="tag">' + esc(p.nota) + '</div>' : '');
 }
 

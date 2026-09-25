@@ -56,15 +56,48 @@ test('modelele cu sertare încap în înălțimea corpului', () => {
   }
 });
 
-test('schița este un SVG proporțional cu corpul', () => {
+test('corpurile drepte au schiță frontală, proporțională cu corpul', () => {
   for (const m of MODELS) {
     const p = paramsFor(m.id);
+    if (p.tip !== 'drept') continue;
     const svg = sketch(p);
     assert.match(svg, /^<svg /, `${m.id}: nu e SVG`);
     assert.ok(svg.includes(`viewBox="0 0 ${p.W} ${p.H}"`), `${m.id}: viewBox greșit`);
     const fronturi = (svg.match(/class="sk-front"/g) || []).length;
     assert.equal(fronturi, +p.nUsi + +p.nSer, `${m.id}: număr greșit de fronturi desenate`);
   }
+});
+
+test('corpurile de colț au schiță în plan, cu forma reală', () => {
+  const forme = { 'colt-L': 6, 'colt-diagonal': 5 };
+  for (const m of MODELS) {
+    const p = paramsFor(m.id);
+    if (p.tip === 'drept') continue;
+    const svg = sketch(p);
+    assert.match(svg, /^<svg /, `${m.id}: nu e SVG`);
+
+    if (p.tip === 'colt-orb') {
+      assert.ok(svg.includes('class="sk-orb"'), `${m.id}: lipsește zona oarbă`);
+      continue;
+    }
+    const pts = svg.match(/<polygon points="([^"]+)"/);
+    assert.ok(pts, `${m.id}: lipsește conturul în plan`);
+    assert.equal(pts[1].trim().split(/\s+/).length, forme[p.tip], `${m.id}: formă greșită`);
+
+    const usi = (svg.match(/class="sk-usa"/g) || []).length;
+    const asteptat = +p.nUsi === 0 ? 0 : (p.tip === 'colt-L' ? 2 : 1);
+    assert.equal(usi, asteptat, `${m.id}: număr greșit de fronturi în plan`);
+  }
+});
+
+test('catalogul acoperă colțuri pentru bucătărie jos, suspendate și alte camere', () => {
+  const colturi = MODELS.filter(m => m.cat === 'colt');
+  assert.ok(colturi.length >= 6, 'prea puține corpuri de colț');
+  const tipuri = new Set(colturi.map(m => paramsFor(m.id).tip));
+  assert.deepEqual([...tipuri].sort(), ['colt-L', 'colt-diagonal', 'colt-orb']);
+  assert.ok(colturi.some(m => paramsFor(m.id).D >= 500), 'lipsește un colț de corp jos');
+  assert.ok(colturi.some(m => paramsFor(m.id).D <= 320), 'lipsește un colț suspendat');
+  assert.ok(colturi.some(m => paramsFor(m.id).H >= 1800), 'lipsește un colț înalt, pentru altă cameră');
 });
 
 test('rezumatul descrie conținutul corpului', () => {
