@@ -217,6 +217,27 @@ function check(name, cond, extra = '') {
   check('CSV-ul are antet și linii', csv.includes('Taiere L') && csv.split('\n').length > 10,
         `status ${rcsv.status}, ${csv.split('\n').length} linii, început: ${csv.slice(0, 60)}`);
 
+  /* --- duplicarea costă la fel ca un corp nou și rămâne în comandă --- */
+  const soldInainteDeCopie = await (await req(A, '/credit')).text();
+  const potrivire = soldInainteDeCopie.match(/class="v">([\d.]+)\s*<span>lei/);
+  const inainteCopie = potrivire ? Number(potrivire[1]) : null;
+
+  t = await csrf(A, `/orders/${orderId}`);
+  res = await req(A, `/corps/${corp1}/duplicate`, { method: 'POST', headers: FORM, body: form({ _csrf: t }) });
+  const copieId = Number((res.headers.get('location') || '').split('/').pop());
+  check('duplicarea creează un corp nou', res.status === 302 && copieId > 0, res.headers.get('location'));
+
+  const dupaCopie = (await (await req(A, '/credit')).text()).match(/class="v">([\d.]+)\s*<span>lei/);
+  check('copia scade creditul ca un corp nou',
+        inainteCopie !== null && dupaCopie && Math.abs((inainteCopie - Number(dupaCopie[1])) - 5) < 0.001,
+        `${inainteCopie} → ${dupaCopie && dupaCopie[1]}`);
+
+  html = await (await req(A, `/orders/${orderId}`)).text();
+  check('copia rămâne în aceeași comandă', html.includes('/corps/' + copieId));
+
+  const pieseCopie = await (await req(A, `/api/corps/${copieId}/pieces`)).json();
+  check('copia e deja plătită, nu draft', pieseCopie.paid === true);
+
   /* --- izolarea între utilizatori --- */
   t = await csrf(B, '/register');
   await req(B, '/register', {

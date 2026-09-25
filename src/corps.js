@@ -152,17 +152,43 @@ router.get('/corps/:id', requireAuth, (req, res, next) => {
   });
 });
 
+/* Copia unui corp costă la fel ca un corp nou: fiecare corp dintr-o comandă
+   se plătește, chiar dacă același model a mai fost folosit altundeva.
+   Copia rămâne în comanda originalului, cu materialele lui. */
+const dupliceazaCorp = db.transaction((userId, corp, params, cost) => {
+  const ramas = credit.scade(userId, cost, 'corp', null,
+    corp.order_id ? 'copie de corp în comandă' : 'copie de corp');
+  if (ramas === null) throw new Error('CREDIT_INSUFICIENT');
+
+  const poz = corp.order_id
+    ? db.prepare('SELECT COALESCE(MAX(poz), 0) AS m FROM corps WHERE order_id = ?').get(corp.order_id).m + 1
+    : 0;
+
+  const info = db.prepare(
+    'INSERT INTO corps (user_id, order_id, name, params, status, poz, mat_corp_id, mat_front_id) ' +
+    'VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+  ).run(userId, corp.order_id, params.nume, JSON.stringify(params), 'paid', poz,
+        corp.mat_corp_id, corp.mat_front_id);
+
+  const corpId = Number(info.lastInsertRowid);
+  db.prepare('UPDATE credit_tx SET ref = ? WHERE id = (SELECT MAX(id) FROM credit_tx WHERE user_id = ?)')
+    .run(String(corpId), userId);
+  return corpId;
+});
+
 router.post('/corps/:id/duplicate', requireAuth, (req, res, next) => {
   const corp = getOwned(req.params.id, req.user.id);
   if (!corp) return notFound(next);
 
   const params = parseParams(corp.params);
-  const name = `${corp.name} (copie)`.slice(0, 80);
-  params.nume = name;
-  const info = db.prepare(
-    'INSERT INTO corps (user_id, name, params, status) VALUES (?, ?, ?, ?)'
-  ).run(req.user.id, name, JSON.stringify(params), 'draft');
-  res.redirect(`/corps/${info.lastInsertRowid}`);
+  params.nume = `${corp.name} (copie)`.slice(0, 80);
+
+  try {
+    res.redirect(`/corps/${dupliceazaCorp(req.user.id, corp, params, credit.pretCorp())}`);
+  } catch (e) {
+    if (e.message === 'CREDIT_INSUFICIENT') return res.redirect('/credit?insuficient=1');
+    next(e);
+  }
 });
 
 /* ---- API ---- */

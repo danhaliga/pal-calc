@@ -35,7 +35,8 @@
             <a class="btn small" href="/corps/<%= c.id %>">Deschide</a>
             <form method="post" action="/corps/<%= c.id %>/duplicate" class="inline">
               <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-              <button class="btn small" type="submit">Duplică</button>
+              <button class="btn small" type="submit"
+                      title="Copia se plătește ca orice corp nou">Duplică (<%= priceLei %> lei)</button>
             </form>
             <button class="btn small danger" data-delete="<%= c.id %>" data-name="<%= c.name %>">Șterge</button>
           </div>
