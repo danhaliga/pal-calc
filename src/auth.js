@@ -18,8 +18,11 @@ const registerSchema = z.object({
   message: 'Parolele nu coincid.', path: ['password2']
 });
 
+/* La login acceptam si un nume de utilizator simplu (conturi create cu
+   scripts/create-user.js), nu doar email. Cautarea se face oricum pe egalitate
+   exacta, iar inregistrarea publica ramane restrictiva. */
 const loginSchema = z.object({
-  email: z.string().trim().toLowerCase().email('Adresa de email nu este validă.').max(160),
+  email: z.string().trim().toLowerCase().min(2, 'Introdu emailul sau numele de utilizator.').max(160),
   password: z.string().min(1, 'Introdu parola.').max(200)
 });
 

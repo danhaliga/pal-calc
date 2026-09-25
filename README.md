@@ -27,12 +27,26 @@ Apoi deschide <http://localhost:3000>.
 `npm run seed` creează contul de administrator din `.env` (implicit `admin@local.test` / `admin1234`)
 și patru corpuri exemplu. Schimbă parola din `.env` înainte de orice utilizare reală.
 
+### Conturi de test
+
+Înregistrarea publică cere email valid și parolă de minim 8 caractere. Pentru conturi de test poți
+ocoli aceste reguli, direct în baza de date:
+
+```bash
+node scripts/create-user.js danh dan --name "Cont de test"
+```
+
+Câmpul de login acceptă și un nume simplu, nu doar email (căutarea se face pe egalitate exactă,
+fără diferență între majuscule și minuscule). Rulat pe un cont existent, scriptul îi schimbă parola.
+**Nu folosi astfel de conturi în producție.**
+
 | Comandă | Ce face |
 |---|---|
 | `npm run dev` | pornește serverul cu reîncărcare la modificarea fișierelor |
 | `npm start` | pornește serverul simplu |
 | `npm run migrate` | aplică migrațiile din `db/migrations/` (rulează și la pornire) |
 | `npm run seed` | creează contul admin și corpurile exemplu (se poate rula de mai multe ori) |
+| `node scripts/create-user.js <utilizator> <parola> [--admin]` | cont creat direct în baza de date, fără regulile formularului |
 | `npm test` | testele motorului de calcul |
 | `node tests/e2e.manual.js` | verificare end-to-end pe serverul pornit (auth, gating, plată, izolare) |
 
