@@ -26,6 +26,9 @@
       descriere: 'Dulapuri, biblioteci, comode, corpuri TV.' },
     { id: 'baie', nume: 'Baie',
       descriere: 'Corpuri rezistente la umezeală, adâncimi mici.' },
+    { id: 'atipic', nume: 'Corpuri atipice',
+      descriere: 'Desenate din laturi și unghiuri: fiecare latură devine un panou, iar spatele și ' +
+                 'frontul se decupează după contur. Toate piesele merg la CNC după debitare.' },
     { id: 'colt', nume: 'Corpuri de colț',
       descriere: 'Pentru colțul dintre doi pereți. Blatul, fundul și polițele se debitează ' +
                  'ca dreptunghi de gabarit și apoi se decupează — cotele decupajului sunt în lista de piese.' }
@@ -185,6 +188,31 @@
       set: { nume: 'Colț baie', tip: 'colt-diagonal', W: 500, W2: 500, H: 500, D: 300,
              nUsi: 1, nPol: 1, nSer: 0 }
     },
+    /* ---------------- corpuri atipice ---------------- */
+    {
+      id: 'atipic-sub-scara', cat: 'atipic', nume: 'Corp sub scară',
+      descriere: 'Trapez cu latura din dreapta joasă și panta care urcă spre stânga. ' +
+                 'Schimbă laturile și unghiurile după scara ta.',
+      set: { nume: 'Corp sub scară', tip: 'atipic', D: 560, nUsi: 1, nPol: 0, nSer: 0,
+             contur: [{ lung: 900, unghi: 90 }, { lung: 400, unghi: 114 },
+                      { lung: 985, unghi: 66 }, { lung: 800, unghi: 90 }] }
+    },
+    {
+      id: 'atipic-mansarda', cat: 'atipic', nume: 'Corp de mansardă',
+      descriere: 'Cinci laturi: partea de sus urmează panta acoperișului, cu o porțiune dreaptă.',
+      set: { nume: 'Corp mansardă', tip: 'atipic', D: 450, nUsi: 1, nPol: 0, nSer: 0,
+             contur: [{ lung: 1200, unghi: 90 }, { lung: 700, unghi: 135 },
+                      { lung: 566, unghi: 135 }, { lung: 800, unghi: 90 },
+                      { lung: 1100, unghi: 90 }] }
+    },
+    {
+      id: 'atipic-liber', cat: 'atipic', nume: 'Contur liber',
+      descriere: 'Pornești de la un dreptunghi și adaugi sau muți laturile cum ai nevoie.',
+      set: { nume: 'Corp atipic', tip: 'atipic', D: 560, nUsi: 0, nPol: 0, nSer: 0,
+             contur: [{ lung: 800, unghi: 90 }, { lung: 720, unghi: 90 },
+                      { lung: 800, unghi: 90 }, { lung: 720, unghi: 90 }] }
+    },
+
     {
       id: 'colt-dressing', cat: 'colt', nume: 'Colț de dressing',
       descriere: 'Corp de colț înalt pentru dressing sau dormitor, cu două fronturi și trei polițe.',
@@ -203,6 +231,26 @@
     var m = byId(id);
     if (!m) return null;
     return Object.assign(PalCalc.defaults(), m.set);
+  }
+
+  /* Schita unui corp atipic: chiar conturul lui, vazut din fata. */
+  function sketchContur(p) {
+    var g = PalCalc.conturGeometrie(p.contur || []);
+    if (!g.puncte.length) return '<svg viewBox="0 0 10 10" class="sk"></svg>';
+    var W = Math.max(g.W, 10), H = Math.max(g.H, 10);
+    var t = +p.t || 18;
+    var o = [];
+    o.push('<polygon points="' + g.puncte.map(function (q) {
+      return q[0] + ',' + (H - q[1]);
+    }).join(' ') + '" class="sk-corp"/>');
+    if (+p.nUsi > 0) {
+      o.push('<polygon points="' + g.puncte.map(function (q) {
+        return (q[0] * 0.88 + W * 0.06) + ',' + (H - (q[1] * 0.88 + H * 0.06));
+      }).join(' ') + '" class="sk-front"/>');
+    }
+    return '<svg viewBox="' + (-t) + ' ' + (-t) + ' ' + (W + 2 * t) + ' ' + (H + 2 * t) +
+           '" class="sk" preserveAspectRatio="xMidYMid meet" role="img" ' +
+           'aria-label="Contur corp atipic"><g>' + o.join('') + '</g></svg>';
   }
 
   /* Schita in plan pentru corpurile de colt: acolo vederea frontala nu spune nimic. */
@@ -247,6 +295,7 @@
   /* Schita frontala a corpului, in SVG (unitati = mm).
      Deseneaza carcasa, sertarele de sus in jos, usile sub ele si politele. */
   function sketch(p) {
+    if (p.tip === 'atipic') return sketchContur(p);
     if (p.tip && p.tip !== 'drept') return sketchColt(p);
     var W = +p.W, H = +p.H, t = +p.t;
     var rm = +p.rm, ri = +p.ri, rinc = +p.rinc;
@@ -302,6 +351,7 @@
   /* rezumat scurt pentru cardul din catalog */
   function rezumat(p) {
     var b = [];
+    if (p.tip === 'atipic') b.push((p.contur || []).length + ' laturi');
     if (p.tip === 'colt-L') b.push('colț în L');
     else if (p.tip === 'colt-diagonal') b.push('colț diagonal');
     else if (p.tip === 'colt-orb') b.push('colț orb');

@@ -103,9 +103,28 @@
     return out;
   }
 
+  /* conturul unei piese decupate: fie panou orizontal (colț), fie panou frontal (corp atipic) */
   function polyPiesa(p) {
-    for (var i = 0; i < p.boxes.length; i++) if (p.boxes[i].poly) return p.boxes[i].poly;
+    for (var i = 0; i < p.boxes.length; i++) {
+      if (p.boxes[i].poly) return p.boxes[i].poly;
+      if (p.boxes[i].polyFata) return p.boxes[i].polyFata;
+    }
     return null;
+  }
+
+  /* piesele tăiate la unghi (laturile unui corp atipic) cer și ele CNC */
+  function areUnghiuri(p) {
+    return /^Panou \d+ \(/.test(p.nume) && /tăiere .*°/.test(p.nota || '');
+  }
+
+  /* un contur care e chiar dreptunghiul de gabarit nu are ce decupa */
+  function esteDreptunghi(poly) {
+    if (!poly || poly.length !== 4) return false;
+    var b = polyBounds(poly);
+    return poly.every(function (p) {
+      return (Math.abs(p[0] - b.x0) < 0.5 || Math.abs(p[0] - b.x1) < 0.5) &&
+             (Math.abs(p[1] - b.y0) < 0.5 || Math.abs(p[1] - b.y1) < 0.5);
+    });
   }
 
   /* ---------- cantul unei piese ---------- */
@@ -148,26 +167,51 @@
     var out = [];
     var poly = polyPiesa(p);
 
+    /* laturile unui corp atipic: se taie la unghi la ambele capete */
+    if (areUnghiuri(p)) {
+      out.push({
+        corp: corp.nume, corpId: corp.id, piesa: p.nume, buc: p.buc,
+        tip: 'Tăiere la unghi', gabarit: { L: p.TL, l: p.Tl },
+        poly: null, bounds: null, muchii: [], detalii: p.nota
+      });
+    }
+
     if (poly) {
       var b = polyBounds(poly);
       var muchii = muchiiFrontale(poly);
       var diagonal = muchii.length === 1;
       var detalii;
 
-      if (diagonal) {
-        detalii = 'tăiere la 45°, muchie diagonală ' + r1(muchii[0].lung) + ' mm, cantuită';
-      } else {
-        var cx = muchii[0].la[0], cy = muchii[0].la[1];
-        detalii = 'decupaj ' + r1(b.x1 - cx) + ' × ' + r1(b.y1 - cy) + ' mm din colț; muchii cantuite ' +
-                  muchii.map(function (m) { return r1(m.lung); }).join(' + ') + ' mm';
+      if (c.tip === 'atipic' && !esteDreptunghi(poly)) {
+        var bb = polyBounds(poly);
+        out.push({
+          corp: corp.nume, corpId: corp.id, piesa: p.nume, buc: p.buc,
+          tip: 'Decupare după contur',
+          gabarit: { L: p.TL, l: p.Tl },
+          poly: poly, bounds: bb, muchii: muchiiFrontale(poly),
+          detalii: 'se taie dreptunghiul ' + r1(bb.x1 - bb.x0) + ' × ' + r1(bb.y1 - bb.y0) +
+                   ' mm și se decupează conturul din desen'
+        });
+        return out;
       }
 
-      out.push({
-        corp: corp.nume, corpId: corp.id, piesa: p.nume, buc: p.buc,
-        tip: diagonal ? 'Tăiere la 45°' : 'Decupaj colț interior',
-        gabarit: { L: p.TL, l: p.Tl },
-        poly: poly, bounds: b, muchii: muchii, detalii: detalii
-      });
+      /* un contur care e chiar dreptunghiul de gabarit nu are ce prelucra */
+      if (muchii.length) {
+        if (diagonal) {
+          detalii = 'tăiere la 45°, muchie diagonală ' + r1(muchii[0].lung) + ' mm, cantuită';
+        } else {
+          var cx = muchii[0].la[0], cy = muchii[0].la[1];
+          detalii = 'decupaj ' + r1(b.x1 - cx) + ' × ' + r1(b.y1 - cy) + ' mm din colț; muchii cantuite ' +
+                    muchii.map(function (m) { return r1(m.lung); }).join(' + ') + ' mm';
+        }
+
+        out.push({
+          corp: corp.nume, corpId: corp.id, piesa: p.nume, buc: p.buc,
+          tip: diagonal ? 'Tăiere la 45°' : 'Decupaj colț interior',
+          gabarit: { L: p.TL, l: p.Tl },
+          poly: poly, bounds: b, muchii: muchii, detalii: detalii
+        });
+      }
     }
 
     if ((c.spate === 'nut' || c.spate === 'pal') && /^(Laterală|Blat|Fund)$/.test(p.nume)) {

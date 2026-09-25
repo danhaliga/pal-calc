@@ -197,6 +197,19 @@ svg.sk .sk-usa{stroke:#b3261e;stroke-width:26;stroke-linecap:round}
 svg.sk .sk-perete{stroke:#5c4a2e;stroke-width:26;stroke-linecap:square;opacity:.5}
 svg.sk .sk-orb{fill:#8d7a5c;opacity:.8;stroke:none}
 
+/* ---------- editorul de contur (corp atipic) ---------- */
+.contur-lucru{display:grid;grid-template-columns:1fr 200px;gap:14px;align-items:start}
+@media(max-width:900px){.contur-lucru{grid-template-columns:1fr}}
+.contur-tabel{font-size:12.5px}
+.contur-tabel input.dim{width:74px}
+.contur-preview{background:var(--row);border:1px solid var(--line);border-radius:6px;padding:8px;
+  display:flex;align-items:center;justify-content:center;min-height:150px}
+svg.ct-svg{width:100%;height:auto;max-height:230px}
+svg.ct-svg .ct-forma{fill:#c9ab7d;fill-opacity:.45;stroke:none}
+svg.ct-svg .ct-latura{stroke:#5c4a2e;stroke-width:8;stroke-linecap:round}
+svg.ct-svg .ct-lipsa{stroke:#b3261e;stroke-width:8;stroke-dasharray:24 16}
+svg.ct-svg .ct-cota{fill:#43372a;font-family:"IBM Plex Mono",monospace}
+
 /* ---------- selector de decoruri ---------- */
 .decor-sw{display:inline-block;width:20px;height:20px;border-radius:4px;vertical-align:-4px;
   border:1px solid rgba(0,0,0,.2);flex:0 0 auto}

@@ -97,6 +97,12 @@ function check(name, cond, extra = '') {
   const orderId = Number((res.headers.get('location') || '').split('/').pop());
   check('comandă creată', res.status === 302 && orderId > 0, res.headers.get('location'));
 
+  /* pagina de listă trebuie să se deschidă în orice stare a comenzii */
+  let rLista = await req(A, '/orders');
+  const htmlLista = await rLista.text();
+  check('lista de comenzi se deschide', rLista.status === 200 && htmlLista.includes('Bucătărie Ionescu'),
+        String(rLista.status));
+
   html = await (await req(A, `/orders/${orderId}`)).text();
   check('comanda arată materialul ales din catalog',
         html.includes('Kronospan') && html.includes('K023 SU') && html.includes('Venato'),
@@ -167,6 +173,38 @@ function check(name, cond, extra = '') {
   const cnc = await (await req(A, `/orders/${orderId}/print/cnc`)).text();
   check('planșa CNC conține desenul piesei', cnc.includes('cnc-piesa') && cnc.includes('<svg'));
   check('planșa CNC dă cota decupajului', /decupaj \d+ × \d+ mm din colț/.test(cnc));
+
+  /* corp atipic: contur din laturi și unghiuri, toate piesele la CNC */
+  t = await csrf(A, `/orders/${orderId}/corp-nou`);
+  res = await req(A, `/orders/${orderId}/corps`, {
+    method: 'POST', headers: FORM, body: form({ _csrf: t, model: 'baza-2usi' })
+  });
+  const corpAtipic = Number((res.headers.get('location') || '').split('/').pop());
+  res = await req(A, `/api/corps/${corpAtipic}`, {
+    method: 'PUT',
+    headers: { 'content-type': 'application/json', 'x-csrf-token': t },
+    body: JSON.stringify({
+      name: 'Corp sub scară',
+      params: {
+        tip: 'atipic', D: 560, nUsi: 1, nPol: 0,
+        contur: [{ lung: 900, unghi: 90 }, { lung: 400, unghi: 114 },
+                 { lung: 985, unghi: 66 }, { lung: 800, unghi: 90 }]
+      }
+    })
+  });
+  const salvat = await res.json();
+  check('corpul atipic se salvează cu contur cu tot',
+        res.status === 200 && salvat.params.contur && salvat.params.contur.length === 4,
+        JSON.stringify(salvat).slice(0, 140));
+
+  const pieseAtipic = await (await req(A, `/api/corps/${corpAtipic}/pieces`)).json();
+  check('corpul atipic dă un panou pe fiecare latură',
+        pieseAtipic.pieces.filter(p => /^Panou/.test(p.nume)).length === 4,
+        pieseAtipic.pieces.map(p => p.nume).join(', '));
+
+  const htmlCnc = await (await req(A, `/orders/${orderId}/print/cnc`)).text();
+  check('laturile atipice apar ca tăieri la unghi', htmlCnc.includes('Tăiere la unghi'));
+  check('spatele atipic apare ca decupare după contur', htmlCnc.includes('Decupare după contur'));
 
   const inc = await (await req(A, `/orders/${orderId}/print/incadrare`)).text();
   check('încadrarea desenează colile', inc.includes('coala-fond') && inc.includes('coala-piesa'));

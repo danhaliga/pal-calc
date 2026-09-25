@@ -30,6 +30,7 @@
             <option value="colt-orb">De colț, orb (ușă îngustă)</option>
             <option value="colt-L">De colț, în L (două fronturi)</option>
             <option value="colt-diagonal">De colț, front diagonal</option>
+            <option value="atipic">Atipic (desenat din laturi și unghiuri)</option>
           </select></label>
           <label><span id="labelW">Lățime (L)</span><input id="W" type="number" min="100" max="3000" step="1"></label>
           <label>Înălțime (H)<input id="H" type="number" min="100" max="3000" step="1"></label>
@@ -42,6 +43,36 @@
           </select></label>
         </div>
         <p class="legend hidden" id="notaColt"></p>
+      </fieldset>
+
+      <fieldset id="conturBox" class="hidden">
+        <legend>Conturul corpului, văzut din față</legend>
+        <p class="legend" style="margin-top:0">
+          Mergi din latură în latură: dai lungimea laturii și unghiul din colțul unde se întâlnește
+          cu următoarea. Conturul e bun când se închide. Prima latură pornește spre dreapta.
+        </p>
+
+        <div class="contur-lucru">
+          <div>
+            <table class="grid contur-tabel">
+              <thead><tr>
+                <th class="c">#</th><th>Latura</th><th class="c">Lungime (mm)</th>
+                <th class="c">Unghi la capăt (°)</th><th></th>
+              </tr></thead>
+              <tbody id="conturTabel"></tbody>
+            </table>
+            <div class="btns">
+              <button type="button" class="btn small" id="conturAdauga">+ Latură</button>
+              <button type="button" class="btn small" id="conturInchide">Închide conturul</button>
+              <button type="button" class="btn small" id="conturReset">Pornește de la dreptunghi</button>
+            </div>
+            <div id="conturStare" class="legend"></div>
+          </div>
+          <div class="contur-preview" id="conturPreview"></div>
+        </div>
+      </fieldset>
+
+      <fieldset class="hidden" id="fieldsetInchis">
       </fieldset>
 
       <fieldset>

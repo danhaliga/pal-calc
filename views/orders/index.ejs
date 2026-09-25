@@ -22,11 +22,18 @@
         <a class="corp-main" href="/orders/<%= o.id %>">
           <h2><%= o.name %></h2>
           <div class="dims">
-            <%= (brands.find(function (b) { return b.id === o.brand; }) || {}).nume || o.brand %>
-            <%= o.decor ? '· ' + o.decor : '' %>
-            · PAL <%= o.pal_mm %> mm · cant <%= o.cant_gros %>/<%= o.cant_subtire %> mm
+            <% (o.materiale || []).forEach(function (m) { %>
+              <span class="decor-sw mic" title="<%= m.brand %> <%= m.decor_cod || '' %>"
+                    style="background:<%= m.hex || '#cfd6dd' %>"></span>
+            <% }); %>
+            <%= (o.materiale || []).map(function (m) { return m.nume; }).join(' · ') || 'fără material' %>
+            <%= o.nrMateriale > 3 ? ' +' + (o.nrMateriale - 3) : '' %>
           </div>
-          <div class="meta"><%= o.nrCorpuri %> corpuri · deschisă <%= o.created_at.slice(0, 10) %></div>
+          <div class="meta">
+            <%= o.nrCorpuri %> corpuri ·
+            <%= o.nrMateriale %> <%= o.nrMateriale === 1 ? 'material' : 'materiale' %> ·
+            deschisă <%= o.created_at.slice(0, 10) %>
+          </div>
         </a>
         <div class="corp-side">
           <div class="btns">

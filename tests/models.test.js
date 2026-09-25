@@ -68,11 +68,26 @@ test('corpurile drepte au schiță frontală, proporțională cu corpul', () => 
   }
 });
 
+test('corpurile atipice au schița conturului lor', () => {
+  const atipice = MODELS.filter(m => paramsFor(m.id).tip === 'atipic');
+  assert.ok(atipice.length >= 2, 'prea puține corpuri atipice în catalog');
+
+  for (const m of atipice) {
+    const p = paramsFor(m.id);
+    const svg = sketch(p);
+    assert.match(svg, /^<svg /, `${m.id}: nu e SVG`);
+    const pts = svg.match(/<polygon points="([^"]+)"/);
+    assert.ok(pts, `${m.id}: lipsește conturul`);
+    assert.equal(pts[1].trim().split(/\s+/).length, p.contur.length,
+      `${m.id}: conturul are alt număr de colțuri decât laturi`);
+  }
+});
+
 test('corpurile de colț au schiță în plan, cu forma reală', () => {
   const forme = { 'colt-L': 6, 'colt-diagonal': 5 };
   for (const m of MODELS) {
     const p = paramsFor(m.id);
-    if (p.tip === 'drept') continue;
+    if (p.tip === 'drept' || p.tip === 'atipic') continue;
     const svg = sketch(p);
     assert.match(svg, /^<svg /, `${m.id}: nu e SVG`);
 

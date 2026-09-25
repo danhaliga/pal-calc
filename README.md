@@ -65,6 +65,22 @@ Ce nu poate genera motorul deocamdată: sertare în corpurile de colț, montant 
 polițele peste 800 mm avertizează), uși glisante sau cu ramă și sticlă, soclu/picioare/blat,
 decupaje pentru chiuvetă sau plită, antresol.
 
+## Corpuri atipice
+
+`tip: 'atipic'` construiește corpul din contur, nu din cote fixe. Conturul e o listă de laturi:
+lungimea laturii și unghiul interior din colțul unde se întâlnește cu următoarea. Editorul desenează
+forma în timp real și spune dacă se închide (pentru N laturi, suma unghiurilor trebuie să fie
+(N−2) × 180°).
+
+Din contur ies piesele:
+
+- **fiecare latură** devine un panou de lungimea laturii × adâncimea corpului, tăiat la unghi la
+  ambele capete (nota piesei dă unghiurile);
+- **spatele și frontul** se decupează după contur — planșa cotată e în lista CNC;
+- toate piesele unui corp atipic ajung în lista de prelucrări, pentru că niciuna nu se taie doar drept.
+
+Catalogul are trei modele de pornire: corp sub scară, corp de mansardă și contur liber.
+
 ## Corpuri de colț
 
 Parametrul `tip` acceptă patru valori, iar `tests/colt.test.js` verifică geometria fiecăreia:

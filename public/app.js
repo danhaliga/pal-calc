@@ -19,13 +19,21 @@ var fields = ['nume','tip','W','H','D','W2','orb','constr','t','cg','cs','spate'
 function aplicaTip() {
   var tip = params.tip || 'drept';
   var colt = tip === 'colt-L' || tip === 'colt-diagonal';
+  var atipic = tip === 'atipic';
   var arata = function (id, da) { var el = $(id); if (el) el.classList.toggle('hidden', !da); };
 
   arata('wrapW2', colt);
   arata('wrapOrb', tip === 'colt-orb');
-  arata('wrapConstr', !colt);
+  arata('wrapConstr', !colt && !atipic);
+  arata('conturBox', atipic);
+  var wrapW = $('W') ? $('W').closest('label') : null;
+  var wrapH = $('H') ? $('H').closest('label') : null;
+  if (wrapW) wrapW.classList.toggle('hidden', atipic);
+  if (wrapH) wrapH.classList.toggle('hidden', atipic);
+
   $('labelW').textContent = colt ? 'Latura pe peretele 1' : 'Lățime (L)';
-  $('labelD').textContent = colt ? 'Adâncime brațe' : 'Adâncime (A)';
+  $('labelD').textContent = (colt || atipic) ? 'Adâncime brațe' : 'Adâncime (A)';
+  if (atipic) $('labelD').textContent = 'Adâncime corp';
 
   var nota = $('notaColt');
   nota.classList.toggle('hidden', tip === 'drept');
@@ -35,7 +43,139 @@ function aplicaTip() {
   } else if (colt) {
     nota.textContent = 'Blatul, fundul și polițele nu sunt dreptunghiuri: se debitează dreptunghiul ' +
       'de gabarit din listă, apoi se decupează colțul după nota fiecărei piese. Sertarele nu se calculează aici.';
+  } else if (atipic) {
+    nota.textContent = 'Fiecare latură a conturului devine un panou de adâncimea corpului, tăiat la ' +
+      'unghi la capete. Spatele și frontul se decupează după contur. Toate piesele merg la CNC.';
+    if (!params.contur || !params.contur.length) {
+      params.contur = window.PalCalc.conturImplicit(+params.W || 800, +params.H || 720);
+    }
+    var tbody = $('conturTabel');
+    if (!tbody || tbody.children.length !== params.contur.length) randeazaContur();
+    else actualizeazaContur();
   }
+}
+
+/* ---------------- conturul corpului atipic ---------------- */
+
+/* Rândurile se redesenează doar când se schimbă numărul de laturi: altfel
+   câmpul în care scrii ar fi înlocuit la fiecare tastă și ai pierde cursorul. */
+function randeazaContur() {
+  var tbody = $('conturTabel');
+  if (!tbody) return;
+  var contur = params.contur || [];
+
+  tbody.innerHTML = contur.map(function (s, i) {
+    return '<tr>' +
+      '<td class="c" style="color:var(--muted)">' + (i + 1) + '</td>' +
+      '<td class="small" data-nume="' + i + '">—</td>' +
+      '<td class="c"><input class="dim" type="number" min="10" max="4000" step="1" ' +
+        'data-contur="' + i + '" data-camp="lung" value="' + s.lung + '"></td>' +
+      '<td class="c"><input class="dim" type="number" min="1" max="359" step="0.5" ' +
+        'data-contur="' + i + '" data-camp="unghi" value="' + s.unghi + '"></td>' +
+      '<td class="c"><button type="button" class="mini danger" data-sterge-latura="' + i + '">✕</button></td>' +
+      '</tr>';
+  }).join('');
+
+  actualizeazaContur();
+}
+
+/* numele laturilor, starea conturului și desenul — fără a atinge câmpurile */
+function actualizeazaContur() {
+  var tbody = $('conturTabel');
+  if (!tbody) return;
+
+  var g = window.PalCalc.conturGeometrie(params.contur || []);
+  g.laturi.forEach(function (l, i) {
+    var cel = tbody.querySelector('[data-nume="' + i + '"]');
+    if (cel) cel.textContent = l.nume;
+  });
+
+  var stare = $('conturStare');
+  if (g.inchis) {
+    stare.innerHTML = '<span style="color:var(--accent)">✔ Conturul se închide.</span> ' +
+      'Gabarit ' + g.W + ' × ' + g.H + ' mm, ' + g.nrLaturi + ' laturi, ' +
+      'suma unghiurilor ' + g.sumaUnghiuri + '°.';
+  } else {
+    stare.innerHTML = '<span style="color:var(--danger)">Conturul nu se închide:</span> ' +
+      'mai rămân ' + g.eroare + ' mm. Pentru ' + g.nrLaturi + ' laturi, suma unghiurilor trebuie ' +
+      'să fie ' + g.sumaCeruta + '°, acum este ' + g.sumaUnghiuri + '°.';
+  }
+
+  $('conturPreview').innerHTML = desenContur(g);
+}
+
+function desenContur(g) {
+  if (!g.puncte.length) return '';
+  var W = Math.max(g.W, 10), H = Math.max(g.H, 10);
+  var pad = Math.max(W, H) * 0.16;
+  var fs = Math.max(W, H) / 22;
+  var o = [];
+
+  o.push('<polygon points="' + g.puncte.map(function (p) {
+    return p[0] + ',' + (H - p[1]);
+  }).join(' ') + '" class="ct-forma"/>');
+
+  g.laturi.forEach(function (l, i) {
+    var x1 = l.de_la[0], y1 = H - l.de_la[1], x2 = l.la[0], y2 = H - l.la[1];
+    o.push('<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" class="ct-latura"/>');
+    var mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+    o.push('<text x="' + mx + '" y="' + my + '" class="ct-cota" text-anchor="middle" ' +
+           'dominant-baseline="central" font-size="' + fs + '">' + (i + 1) + ': ' + l.lung + '</text>');
+  });
+
+  if (!g.inchis) {
+    var p0 = g.puncte[0];
+    var ultim = g.laturi[g.laturi.length - 1];
+    if (ultim) {
+      o.push('<line x1="' + ultim.la[0] + '" y1="' + (H - ultim.la[1]) + '" x2="' + p0[0] +
+             '" y2="' + (H - p0[1]) + '" class="ct-lipsa"/>');
+    }
+  }
+
+  return '<svg viewBox="' + (-pad) + ' ' + (-pad) + ' ' + (W + 2 * pad) + ' ' + (H + 2 * pad) +
+         '" class="ct-svg" preserveAspectRatio="xMidYMid meet">' + o.join('') + '</svg>';
+}
+
+function legaContur() {
+  var tbody = $('conturTabel');
+  if (!tbody) return;
+
+  tbody.addEventListener('input', function (e) {
+    var i = e.target.dataset.contur;
+    if (i === undefined) return;
+    params.contur[+i][e.target.dataset.camp] = +e.target.value;
+    actualizeazaContur();
+    render();
+    scheduleSave();
+  });
+
+  tbody.addEventListener('click', function (e) {
+    var i = e.target.dataset.stergeLatura;
+    if (i === undefined) return;
+    params.contur.splice(+i, 1);
+    randeazaContur(); render(); scheduleSave();
+  });
+
+  $('conturAdauga').onclick = function () {
+    var ultim = params.contur[params.contur.length - 1] || { lung: 400, unghi: 90 };
+    params.contur.push({ lung: ultim.lung, unghi: 90 });
+    randeazaContur(); render(); scheduleSave();
+  };
+
+  /* adaugă latura care lipsește ca să se închidă conturul */
+  $('conturInchide').onclick = function () {
+    var g = window.PalCalc.conturGeometrie(params.contur);
+    if (g.inchis) { toast('Conturul e deja închis.'); return; }
+    if (g.eroare < 1) return;
+    params.contur.push({ lung: Math.round(g.eroare), unghi: 90 });
+    randeazaContur(); render(); scheduleSave();
+    toast('Am adăugat o latură de ' + Math.round(g.eroare) + ' mm. Reglează unghiurile.');
+  };
+
+  $('conturReset').onclick = function () {
+    params.contur = window.PalCalc.conturImplicit(+params.W || 800, +params.H || 720);
+    randeazaContur(); render(); scheduleSave();
+  };
 }
 
 var fmt = function (v) { return Number.isInteger(v) ? String(v) : Number(v).toFixed(1); };
@@ -302,6 +442,15 @@ function build3D(c, res) {
         geo.rotateX(-Math.PI / 2);
         mat = T.mats[b.f.py || 'f'];
         base = [b.x, b.y, b.z];
+      } else if (b.polyFata) {
+        /* panou vertical decupat după contur (corp atipic): forma e chiar în planul frontal */
+        var shapeF = new THREE.Shape();
+        b.polyFata.forEach(function (pt, i) {
+          if (i) shapeF.lineTo(pt[0], pt[1]); else shapeF.moveTo(pt[0], pt[1]);
+        });
+        geo = new THREE.ExtrudeGeometry(shapeF, { depth: b.sz, bevelEnabled: false });
+        mat = T.mats[b.f.pz || 'f'];
+        base = [b.x, b.y, b.z];
       } else {
         geo = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
         mat = ORDER.map(function (k) { return T.mats[b.f[k] || '-']; });
@@ -310,6 +459,7 @@ function build3D(c, res) {
 
       var mesh = new THREE.Mesh(geo, mat);
       if (b.ry) mesh.rotation.y = b.ry;
+      if (b.rz) mesh.rotation.z = b.rz;
       mesh.userData = { p: p, pi: pi, bi: bi, b: b, base: base };
       mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), T.lineMat));
       g.add(mesh); T.meshes.push(mesh);
@@ -360,9 +510,10 @@ function select(mesh) {
   var tr = document.querySelector('#rows tr[data-pi="' + pi + '"]');
   if (tr) tr.classList.add('sel');
 
-  var th = b.poly ? b.sy : Math.min(b.sx, b.sy, b.sz);
-  /* la panourile de colț cantul nu se poate descrie pe cele 4 muchii: e în notă */
-  var cants = b.poly ? [] : ORDER.filter(function (k) { return b.f[k] !== 'f' && b.f[k] !== 'p'; })
+  var formaLibera = !!(b.poly || b.polyFata);
+  var th = b.poly ? b.sy : b.polyFata ? b.sz : Math.min(b.sx, b.sy, b.sz);
+  /* la panourile decupate cantul nu se poate descrie pe cele 4 muchii: e în notă */
+  var cants = formaLibera ? [] : ORDER.filter(function (k) { return b.f[k] !== 'f' && b.f[k] !== 'p'; })
     .map(function (k) {
       return FACE_RO[k] + ' ' + (b.f[k] === 'g' ? params.cg : b.f[k] === 's' ? params.cs : '–');
     });
@@ -377,7 +528,7 @@ function select(mesh) {
     '<div><b>' + esc(p.nume) + '</b> <span class="tag">' + (p.buc > 1 ? p.buc + ' buc' : '1 buc') + '</span></div>' +
     '<div>finit <span class="k">' + fmt(p.L) + ' × ' + fmt(p.l) + ' × ' + fmt(r1(th)) + '</span> mm</div>' +
     taiere +
-    (paid && !b.poly ? '<div>cant: ' + (cants.length ? cants.join(', ') : 'fără') + '</div>' : '') +
+    (paid && !formaLibera ? '<div>cant: ' + (cants.length ? cants.join(', ') : 'fără') + '</div>' : '') +
     (p.nota ? '<div class="tag">' + esc(p.nota) + '</div>' : '');
 }
 
@@ -445,6 +596,7 @@ function toast(m) {
 /* ---------------- pornire ---------------- */
 
 init3D();
+legaContur();
 render();
 loadPieces();
 setState('salvat');

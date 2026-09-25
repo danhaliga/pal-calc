@@ -26,7 +26,7 @@
   function defaults() {
     return {
       nume: 'Corp bucătărie jos', W: 800, H: 720, D: 560, constr: 'intre',
-      tip: 'drept', W2: 900, orb: 550,
+      tip: 'drept', W2: 900, orb: 550, contur: [],
       t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 3,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2,
       nPol: 1, jp: 1, rp: 20,
@@ -35,8 +35,77 @@
   }
 
   /* tipurile de corp pe care le stie calculul */
-  var TIPURI = ['drept', 'colt-orb', 'colt-L', 'colt-diagonal'];
+  var TIPURI = ['drept', 'colt-orb', 'colt-L', 'colt-diagonal', 'atipic'];
   function esteColt(tip) { return tip === 'colt-L' || tip === 'colt-diagonal'; }
+
+  /* ---------- conturul unui corp atipic ----------
+     Se merge din latura in latura: lungimea laturii, apoi unghiul interior
+     din varful unde se intalneste cu urmatoarea. Conturul e bun cand se inchide. */
+
+  function numeDirectie(dir) {
+    var d = ((dir % 360) + 360) % 360;
+    if (Math.abs(d - 0) < 0.5) return 'jos';
+    if (Math.abs(d - 90) < 0.5) return 'dreapta';
+    if (Math.abs(d - 180) < 0.5) return 'sus';
+    if (Math.abs(d - 270) < 0.5) return 'stânga';
+    return 'înclinată ' + r1(d) + '°';
+  }
+
+  function conturGeometrie(contur) {
+    var laturi = [], pts = [], x = 0, y = 0, dir = 0;
+    contur = (contur || []).filter(function (s) { return +s.lung > 0; });
+
+    for (var i = 0; i < contur.length; i++) {
+      var lung = +contur[i].lung;
+      var unghi = +contur[i].unghi;
+      var rad = dir * Math.PI / 180;
+      var x2 = x + lung * Math.cos(rad);
+      var y2 = y + lung * Math.sin(rad);
+
+      pts.push([x, y]);
+      laturi.push({
+        idx: i, lung: r1(lung), dir: dir, nume: numeDirectie(dir),
+        de_la: [x, y], la: [x2, y2],
+        unghiEnd: unghi,
+        unghiStart: +contur[(i - 1 + contur.length) % contur.length].unghi
+      });
+
+      x = x2; y = y2;
+      dir = ((dir + 180 - unghi) % 360 + 360) % 360;
+    }
+
+    var eroare = Math.hypot(x, y);
+    var sumaUnghiuri = contur.reduce(function (s, l) { return s + (+l.unghi); }, 0);
+
+    /* aducem conturul in coordonate pozitive, cu originea in coltul stanga-jos */
+    var minX = 0, minY = 0;
+    pts.forEach(function (p) { minX = Math.min(minX, p[0]); minY = Math.min(minY, p[1]); });
+    var puncte = pts.map(function (p) { return [r1(p[0] - minX), r1(p[1] - minY)]; });
+    laturi.forEach(function (l) {
+      l.de_la = [r1(l.de_la[0] - minX), r1(l.de_la[1] - minY)];
+      l.la = [r1(l.la[0] - minX), r1(l.la[1] - minY)];
+    });
+
+    var maxX = 0, maxY = 0;
+    puncte.forEach(function (p) { maxX = Math.max(maxX, p[0]); maxY = Math.max(maxY, p[1]); });
+
+    return {
+      puncte: puncte, laturi: laturi,
+      inchis: eroare < 1 && contur.length >= 3,
+      eroare: r1(eroare),
+      sumaUnghiuri: r1(sumaUnghiuri),
+      sumaCeruta: contur.length >= 3 ? (contur.length - 2) * 180 : 0,
+      W: r1(maxX), H: r1(maxY),
+      nrLaturi: contur.length
+    };
+  }
+
+  function conturImplicit(W, H) {
+    return [
+      { lung: W, unghi: 90 }, { lung: H, unghi: 90 },
+      { lung: W, unghi: 90 }, { lung: H, unghi: 90 }
+    ];
+  }
 
   function balamale(h) { return h <= 900 ? 2 : h <= 1600 ? 3 : h <= 2000 ? 4 : 5; }
 
@@ -70,6 +139,69 @@
       return { x: x, y: y, z: z, sx: 0, sy: gros, sz: 0, poly: poly,
                f: F({ py: 'f', ny: 'f' }), ex: ex, grp: grp };
     };
+
+    /* ============ corp atipic: definit prin conturul văzut din față ============
+       Fiecare latură a conturului devine un panou de adâncimea corpului, tăiat
+       la unghi la ambele capete. Spatele și frontul se decupează după contur. */
+    if (c.tip === 'atipic') {
+      var g = conturGeometrie(c.contur && c.contur.length ? c.contur : conturImplicit(W, H));
+      var Da = D;
+      var FDa = F({ pz: 'f', nz: 'f', px: 'g', nx: 'g', py: 'g', ny: 'g' });
+      var usiA = [];
+
+      if (!g.inchis) {
+        warn.push('Conturul nu se închide: mai rămâne o distanță de ' + fmt(g.eroare) +
+                  ' mm. Suma unghiurilor este ' + fmt(g.sumaUnghiuri) + '°, iar pentru ' +
+                  g.nrLaturi + ' laturi trebuie ' + fmt(g.sumaCeruta) + '°.');
+      }
+      if (g.nrLaturi < 3) {
+        warn.push('Un contur are nevoie de cel puțin trei laturi.');
+      }
+
+      /* panourile de pe laturi */
+      g.laturi.forEach(function (lat, i) {
+        var taiere = 'tăiere ' + fmt(r1(lat.unghiStart / 2)) + '° la un capăt și ' +
+                     fmt(r1(lat.unghiEnd / 2)) + '° la celălalt (îmbinare la 45° pe unghi drept); ' +
+                     'cota este pe muchia exterioară';
+        var mx = (lat.de_la[0] + lat.la[0]) / 2;
+        var my = (lat.de_la[1] + lat.la[1]) / 2;
+
+        add('Panou ' + (i + 1) + ' (' + lat.nume + ')', 1, lat.lung, Da, 'g', '-', '-', '-',
+            'L', taiere,
+            [{ x: mx - lat.lung / 2, y: my - t / 2, z: 0,
+               sx: lat.lung, sy: t, sz: Da, f: F({ py: 'f', ny: 'f', pz: 'g' }),
+               ex: [0, 0, 0], grp: 'corp',
+               rz: lat.dir * Math.PI / 180 }]);
+      });
+
+      /* spatele și frontul, decupate după contur */
+      if (c.spate !== 'fara') {
+        add('Spate ' + (tp >= 8 ? 'PAL' : 'PFL'), 1, g.W, g.H, '-', '-', '-', '-', '–',
+            'se decupează după conturul corpului',
+            [{ x: 0, y: 0, z: -tp, sx: g.W, sy: g.H, sz: tp,
+               polyFata: g.puncte, f: F({ pz: 'p', nz: 'p' }), ex: [0, 0, -1], grp: 'spate' }]);
+      }
+
+      if (nUsi > 0) {
+        var rmA = rm;
+        add('Front', 1, r1(g.W - 2 * rmA), r1(g.H - 2 * rmA), 'g', 'g', 'g', 'g', 'L (vertical)',
+            'se decupează după conturul corpului, micșorat cu rostul de ' + fmt(rmA) + ' mm',
+            [{ x: 0, y: 0, z: Da, sx: g.W, sy: g.H, sz: t,
+               polyFata: g.puncte, f: FDa, ex: [0, 0, 1.6], grp: 'fronturi' }]);
+        usiA.push({ L: r1(g.H - 2 * rmA), H: r1(g.H - 2 * rmA) });
+      }
+
+      if (nPol > 0) {
+        warn.push('Polițele nu se calculează automat la corpurile atipice: adaugă-le ca piese separate.');
+      }
+
+      return {
+        P: P, warn: warn, usi: usiA,
+        Wint: r1(g.W - 2 * t), Hint: r1(g.H - 2 * t), Dint: r1(Da - tp),
+        W: g.W, H: g.H, D: Da,
+        contur: g
+      };
+    }
 
     /* ============ corpuri de colț (în L sau cu front diagonal) ============
        A = latura pe peretele 1 (W), B = latura pe peretele 2 (W2),
@@ -330,6 +462,10 @@
         tip: z.enum(TIPURI).catch('drept'),
         W2: mm(100, 3000).catch(900),
         orb: mm(0, 2000).catch(0),
+        contur: z.array(z.object({
+          lung: z.coerce.number().min(10).max(4000),
+          unghi: z.coerce.number().min(1).max(359)
+        })).max(32).catch([]),
         constr: z.enum(['intre', 'peste']),
         t: mm(6, 50), cg: mm(0, 5), cs: mm(0, 5),
         spate: z.enum(['aplicat', 'nut', 'pal']),
@@ -353,6 +489,9 @@
     defaults: defaults,
     balamale: balamale,
     csv: csv,
+    conturGeometrie: conturGeometrie,
+    conturImplicit: conturImplicit,
+    TIPURI: TIPURI,
     paramsSchema: paramsSchema,
     NUT_OFF: NUT_OFF,
     NUT_AD: NUT_AD,
