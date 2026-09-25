@@ -92,6 +92,7 @@ const ASSET_V = Date.now().toString(36);
 
 app.use((req, res, next) => {
   res.locals.assetV = ASSET_V;
+  res.locals.jsonPentruPagina = require('./src/util').jsonPentruPagina;
   res.locals.appName = 'PAL Calc';
   res.locals.paymentDriver = payments.driver();
   res.locals.priceLei = (payments.priceCents() / 100).toFixed(2);

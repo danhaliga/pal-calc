@@ -26,17 +26,22 @@ const loginSchema = z.object({
   password: z.string().min(1, 'Introdu parola.').max(200)
 });
 
+/* limita se poate ridica din .env pentru teste automate */
+const LIMITA = Number(process.env.LOGIN_RATE_LIMIT || 10);
+
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  limit: 10,
+  limit: LIMITA,
   standardHeaders: true,
   legacyHeaders: false,
   message: 'Prea multe încercări. Încearcă din nou peste 15 minute.',
   handler: (req, res) => {
-    res.status(429).render('login', {
-      title: 'Autentificare',
+    /* răspunde pe pagina de unde a venit cererea, nu mereu pe cea de login */
+    const peRegister = req.path === '/register';
+    res.status(429).render(peRegister ? 'register' : 'login', {
+      title: peRegister ? 'Cont nou' : 'Autentificare',
       error: 'Prea multe încercări de pe această adresă. Încearcă din nou peste 15 minute.',
-      values: {}
+      values: { email: req.body && req.body.email ? String(req.body.email) : '' }
     });
   }
 });

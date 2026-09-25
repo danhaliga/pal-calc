@@ -22,4 +22,20 @@ function dispozitieAtasament(nume, extensie) {
   return `attachment; filename="${ascii}"; filename*=UTF-8''${complet}`;
 }
 
-module.exports = { faraDiacritice, numeFisier, dispozitieAtasament };
+/* JSON pus într-un <script> din pagină: dacă textul conține </script>, browserul
+   închide blocul acolo și restul devine HTML viu. Escapăm caracterele periculoase.
+   Separatorii de linie U+2028/U+2029 sunt dați ca tipar construit din șir, ca să nu
+   ajungă caractere invizibile în codul sursă. */
+const SEPARATORI_LINIE = new RegExp('[\\u2028\\u2029]', 'g');
+
+function jsonPentruPagina(valoare) {
+  return JSON.stringify(valoare === undefined ? null : valoare)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+    .replace(SEPARATORI_LINIE, function (c) {
+      return '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0');
+    });
+}
+
+module.exports = { faraDiacritice, numeFisier, dispozitieAtasament, jsonPentruPagina };

@@ -49,5 +49,5 @@
   </p>
 <% } %>
 
-<script type="application/json" id="page-data"><%- JSON.stringify({ csrf: csrfToken }) %></script>
+<script type="application/json" id="page-data"><%- jsonPentruPagina({ csrf: csrfToken }) %></script>
 <script src="/static/corps-list.js?v=<%= assetV %>"></script>
