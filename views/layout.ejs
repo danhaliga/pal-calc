@@ -23,7 +23,11 @@
     </a>
     <nav>
       <% if (user) { %>
-        <a href="/corps" class="<%= currentPath.startsWith('/corps') ? 'on' : '' %>">Corpurile mele</a>
+        <a href="/orders" class="<%= currentPath.startsWith('/orders') ? 'on' : '' %>">Comenzi</a>
+        <a href="/corps" class="<%= currentPath.startsWith('/corps') ? 'on' : '' %>">Corpuri</a>
+        <a href="/credit" class="credit-link <%= currentPath === '/credit' ? 'on' : '' %>">
+          Credit: <b><%= soldLei %> lei</b>
+        </a>
         <% if (user.is_admin) { %><a href="/admin" class="<%= currentPath === '/admin' ? 'on' : '' %>">Administrare</a><% } %>
         <span class="who" title="<%= user.email %>"><%= user.name || user.email %></span>
         <form method="post" action="/logout" class="inline">

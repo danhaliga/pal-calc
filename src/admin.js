@@ -9,9 +9,10 @@ const router = express.Router();
 
 router.get('/admin', requireAuth, requireAdmin, (req, res) => {
   const users = db.prepare(`
-    SELECT u.id, u.email, u.name, u.is_admin, u.created_at,
+    SELECT u.id, u.email, u.name, u.is_admin, u.created_at, u.credit_cents,
            (SELECT COUNT(*) FROM corps c WHERE c.user_id = u.id) AS corps,
-           (SELECT COUNT(*) FROM corps c WHERE c.user_id = u.id AND c.status = 'paid') AS paid
+           (SELECT COUNT(*) FROM corps c WHERE c.user_id = u.id AND c.status = 'paid') AS paid,
+           (SELECT COUNT(*) FROM orders o WHERE o.user_id = u.id) AS comenzi
     FROM users u ORDER BY u.created_at DESC, u.id DESC
   `).all();
 

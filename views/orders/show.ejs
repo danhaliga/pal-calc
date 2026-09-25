@@ -1,0 +1,219 @@
+<div class="top">
+  <div>
+    <div class="crumbs"><a href="/orders">← Comenzile mele</a></div>
+    <h1><%= order.name %></h1>
+    <div class="muted small">
+      Comanda nr. <%= order.id %> · deschisă <%= order.created_at.slice(0, 10) %>
+      · <%= raport.totaluri.corpuri %> corpuri · <%= raport.totaluri.bucati %> piese
+    </div>
+  </div>
+  <div class="btns" style="margin:0">
+    <a class="btn primary" href="/orders/<%= order.id %>/corp-nou">+ Adaugă corp (<%= (pretCorp / 100).toFixed(2) %> lei)</a>
+    <a class="btn" href="/credit">Credit: <b><%= (sold / 100).toFixed(2) %> lei</b></a>
+  </div>
+</div>
+
+<% if (adaugat) { %><div class="warn ok">Corpul a fost adăugat în comandă.</div><% } %>
+<% if (sold < pretCorp) { %>
+  <div class="warn err">
+    Creditul nu mai ajunge pentru un corp nou. <a href="/credit">Alimentează</a>.
+  </div>
+<% } %>
+
+<!-- ---------------- materialul comenzii ---------------- -->
+<details class="panel" <%= raport.totaluri.corpuri ? '' : 'open' %>>
+  <summary><b>Material:</b>
+    <%= (brands.find(function (b) { return b.id === order.brand; }) || {}).nume || order.brand %>
+    <%= order.decor || '' %> · PAL <%= order.pal_mm %> mm ·
+    cant <%= order.cant_gros %>/<%= order.cant_subtire %> mm <%= order.cant_decor || '' %>
+    · adaos cant <%= order.adaos_cant %>%
+  </summary>
+
+  <form method="post" action="/orders/<%= order.id %>" style="margin-top:14px">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="f3">
+      <label class="full">Nume comandă<input type="text" name="name" maxlength="80" value="<%= order.name %>" required></label>
+      <label>Producător<select name="brand">
+        <% brands.forEach(function (b) { %>
+          <option value="<%= b.id %>" <%= order.brand === b.id ? 'selected' : '' %>><%= b.nume %></option>
+        <% }); %>
+      </select></label>
+      <label>Grosime PAL<select name="pal_mm">
+        <% grosimi.forEach(function (g) { %>
+          <option value="<%= g %>" <%= Number(order.pal_mm) === g ? 'selected' : '' %>><%= g %> mm</option>
+        <% }); %>
+      </select></label>
+      <label>Decor PAL<input type="text" name="decor" maxlength="80" value="<%= order.decor || '' %>"></label>
+      <label>Cant gros<select name="cant_gros">
+        <% canturi.forEach(function (c) { %>
+          <option value="<%= c %>" <%= Number(order.cant_gros) === c ? 'selected' : '' %>><%= c %> mm</option>
+        <% }); %>
+      </select></label>
+      <label>Cant subțire<select name="cant_subtire">
+        <% canturi.forEach(function (c) { %>
+          <option value="<%= c %>" <%= Number(order.cant_subtire) === c ? 'selected' : '' %>><%= c %> mm</option>
+        <% }); %>
+      </select></label>
+      <label>Culoare cant<input type="text" name="cant_decor" maxlength="80" value="<%= order.cant_decor || '' %>"></label>
+      <label>Adaos cant<select name="adaos_cant">
+        <% [10, 12, 15, 20].forEach(function (a) { %>
+          <option value="<%= a %>" <%= Number(order.adaos_cant) === a ? 'selected' : '' %>><%= a %> %</option>
+        <% }); %>
+      </select></label>
+      <label class="full">Observații<input type="text" name="note" maxlength="500" value="<%= order.note || '' %>"></label>
+    </div>
+    <label class="check" style="margin-top:10px">
+      <input type="checkbox" name="aplica_material" value="1" checked>
+      Aplică materialul la toate corpurile din comandă
+    </label>
+    <div class="btns">
+      <button class="btn primary" type="submit">Salvează</button>
+      <button class="btn danger" type="submit" formaction="/orders/<%= order.id %>/delete"
+              onclick="return confirm('Ștergi comanda și toate corpurile ei?')">Șterge comanda</button>
+    </div>
+  </form>
+</details>
+
+<!-- ---------------- corpurile ---------------- -->
+<div class="panel">
+  <div class="top" style="margin-bottom:8px">
+    <h2 style="margin:0">Corpuri în comandă</h2>
+    <a class="btn small primary" href="/orders/<%= order.id %>/corp-nou">+ Adaugă corp</a>
+  </div>
+
+  <% if (!raport.corpuri.length) { %>
+    <p class="muted">Niciun corp încă. Apasă „Adaugă corp”, alege un model și modifică-i cotele.</p>
+  <% } else { %>
+    <div class="tbl"><table>
+      <thead><tr>
+        <th class="num">#</th><th>Corp</th><th>Dimensiuni</th><th class="num">Piese</th>
+        <th>Conține</th><th></th>
+      </tr></thead>
+      <tbody>
+        <% raport.corpuri.forEach(function (c) { %>
+          <tr>
+            <td class="num"><%= c.poz %></td>
+            <td>
+              <a href="/corps/<%= c.id %>"><b><%= c.nume %></b></a>
+              <% if (c.avertismente.length) { %>
+                <div class="tag" style="color:var(--cant)">⚠ <%= c.avertismente[0] %></div>
+              <% } %>
+            </td>
+            <td class="num"><%= c.dimensiuni %></td>
+            <td class="num"><%= c.bucati %></td>
+            <td class="small muted">
+              <%= [+c.params.nUsi ? c.params.nUsi + ' uși' : null,
+                   +c.params.nSer ? c.params.nSer + ' sertare' : null,
+                   +c.params.nPol ? c.params.nPol + ' polițe' : null].filter(Boolean).join(' · ') || '—' %>
+            </td>
+            <td class="num">
+              <a class="btn small" href="/corps/<%= c.id %>">Editează</a>
+              <button class="btn small danger" data-delete="<%= c.id %>" data-name="<%= c.nume %>">Șterge</button>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table></div>
+  <% } %>
+</div>
+
+<% if (raport.corpuri.length) { %>
+<!-- ---------------- necesar ---------------- -->
+<div class="panel">
+  <div class="top" style="margin-bottom:8px">
+    <h2 style="margin:0">Necesar de materiale</h2>
+    <div class="btns" style="margin:0">
+      <a class="btn small" href="/orders/<%= order.id %>/print/corpuri">Listă corpuri</a>
+      <a class="btn small primary" href="/orders/<%= order.id %>/print/debitare">Listă debitare</a>
+      <a class="btn small" href="/orders/<%= order.id %>/print/montaj">Fișe montaj</a>
+      <a class="btn small <%= raport.cnc.length ? '' : 'hidden' %>" href="/orders/<%= order.id %>/print/cnc">
+        CNC (<%= raport.cnc.length %>)
+      </a>
+      <a class="btn small" href="/orders/<%= order.id %>/export.csv">CSV</a>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <% raport.materiale.forEach(function (m) { %>
+      <div class="kpi">
+        <div class="v"><%= m.placi %></div>
+        <div class="l">plăci <%= m.nume %></div>
+        <div class="muted small"><%= m.format %> · deșeu <%= m.deseuPct %>%</div>
+      </div>
+    <% }); %>
+    <% raport.cant.linii.forEach(function (c) { %>
+      <div class="kpi">
+        <div class="v"><%= c.cuAdaos %> <span style="font-size:13px">ml</span></div>
+        <div class="l">cant <%= c.mm %> mm</div>
+        <div class="muted small"><%= c.ml %> ml + <%= raport.cant.adaosPct %>%</div>
+      </div>
+    <% }); %>
+  </div>
+
+  <div class="doua-coloane" style="margin-top:16px">
+    <div>
+      <h2>Feronerie (estimativ)</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>Articol</th><th class="num">Cant.</th><th>Obs.</th></tr></thead>
+        <tbody>
+          <% raport.feronerie.forEach(function (f) { %>
+            <tr><td><%= f.nume %></td><td class="num"><b><%= f.qty %></b> <%= f.um %></td>
+                <td class="muted small"><%= f.obs %></td></tr>
+          <% }); %>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div>
+      <h2>Prelucrări după debitare</h2>
+      <% if (!raport.cnc.length) { %>
+        <p class="muted small">Nicio piesă nu are nevoie de CNC: toate se taie drept.</p>
+      <% } else { %>
+        <div class="tbl"><table>
+          <thead><tr><th>Corp</th><th>Piesă</th><th>Operație</th></tr></thead>
+          <tbody>
+            <% raport.cnc.forEach(function (x) { %>
+              <tr><td class="small"><%= x.corp %></td><td class="small"><%= x.piesa %></td>
+                  <td class="small"><%= x.tip %></td></tr>
+            <% }); %>
+          </tbody>
+        </table></div>
+        <p class="hint">Planșele cotate sunt în <a href="/orders/<%= order.id %>/print/cnc">lista CNC</a>.</p>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<!-- ---------------- piesele ---------------- -->
+<div class="panel">
+  <div class="top" style="margin-bottom:8px">
+    <h2 style="margin:0">Piese de debitat (<%= raport.totaluri.bucati %> bucăți)</h2>
+    <a class="btn small primary" href="/orders/<%= order.id %>/print/debitare">Deschide lista de tipărit</a>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr>
+      <th>Cod</th><th>Corp</th><th>Piesă</th><th class="num">Buc</th>
+      <th class="num">Tăiere L</th><th class="num">Tăiere l</th>
+      <th>Cant L1·L2·l1·l2</th><th>Material</th><th>Fibră</th>
+    </tr></thead>
+    <tbody>
+      <% raport.piese.forEach(function (p) { %>
+        <tr>
+          <td class="num"><%= p.cod %></td>
+          <td class="small"><%= p.corpNume %></td>
+          <td><%= p.nume %><% if (p.cnc) { %> <span class="chip cnc">CNC</span><% } %></td>
+          <td class="num"><%= p.buc %></td>
+          <td class="num"><b><%= p.TL %></b></td>
+          <td class="num"><b><%= p.Tl %></b></td>
+          <td class="small"><%= p.cant.special ? 'muchii frontale' : p.cant.muchii.join(' · ') %></td>
+          <td class="small"><%= p.material.tip %> <%= p.material.gros %></td>
+          <td class="small"><%= p.fibra %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table></div>
+</div>
+<% } %>
+
+<script type="application/json" id="page-data"><%- JSON.stringify({ csrf: csrfToken }) %></script>
+<script src="/static/corps-list.js?v=<%= assetV %>"></script>

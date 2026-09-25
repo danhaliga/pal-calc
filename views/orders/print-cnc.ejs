@@ -1,0 +1,63 @@
+<% if (!raport.cnc.length) { %>
+  <p class="doc-nota">
+    Comanda nu are piese care să ceară prelucrare după debitare: toate se taie drept,
+    pe panglică sau la debitare.
+  </p>
+<% } else { %>
+
+<p class="doc-nota">
+  Piesele de mai jos se debitează la <b>cota de gabarit</b> (dreptunghiul din tabel) și abia apoi
+  se prelucrează. Planșele sunt cotate în mm, văzute de sus, cu colțul dinspre pereți în stânga-jos.
+  Liniile roșii sunt muchiile care se cantuiesc după prelucrare.
+</p>
+
+<table class="doc-tbl">
+  <thead><tr>
+    <th>Corp</th><th>Piesă</th><th class="num">Buc</th>
+    <th class="num">Gabarit de debitat</th><th>Operație</th><th>Detalii</th>
+  </tr></thead>
+  <tbody>
+    <% raport.cnc.forEach(function (x) { %>
+      <tr>
+        <td><%= x.corp %></td>
+        <td><%= x.piesa %></td>
+        <td class="num"><%= x.buc %></td>
+        <td class="num"><%= x.gabarit.L %> × <%= x.gabarit.l %></td>
+        <td><b><%= x.tip %></b></td>
+        <td class="small"><%= x.detalii %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<section class="doc-sect">
+  <h2>Planșe</h2>
+  <div class="cnc-grid">
+    <% raport.cnc.filter(function (x) { return x.poly; }).forEach(function (x) { %>
+      <figure class="cnc-card">
+        <%- planse(x) %>
+        <figcaption>
+          <b><%= x.piesa %></b> — <%= x.corp %><br>
+          <span class="muted"><%= x.buc %> buc · gabarit <%= x.gabarit.L %> × <%= x.gabarit.l %> mm</span><br>
+          <span class="small"><%= x.detalii %></span>
+        </figcaption>
+      </figure>
+    <% }); %>
+  </div>
+
+  <% var nuturi = raport.cnc.filter(function (x) { return !x.poly; }); %>
+  <% if (nuturi.length) { %>
+    <h2>Nuturi</h2>
+    <table class="doc-tbl">
+      <thead><tr><th>Corp</th><th>Piesă</th><th class="num">Buc</th><th>Detalii</th></tr></thead>
+      <tbody>
+        <% nuturi.forEach(function (x) { %>
+          <tr><td><%= x.corp %></td><td><%= x.piesa %></td><td class="num"><%= x.buc %></td>
+              <td class="small"><%= x.detalii %></td></tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } %>
+</section>
+
+<% } %>

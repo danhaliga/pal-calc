@@ -1,13 +1,35 @@
+<% var inComanda = (typeof order !== 'undefined' && order);
+   var actiune = inComanda ? '/orders/' + order.id + '/corps' : '/corps'; %>
+
 <div class="top">
   <div>
+    <div class="crumbs">
+      <a href="<%= inComanda ? '/orders/' + order.id : '/corps' %>">← <%= inComanda ? order.name : 'Corpurile mele' %></a>
+    </div>
     <h1>Alege un model</h1>
     <p class="sub">
       Pornești de la un model apropiat și apoi modifici cotele. Toate modelele de mai jos sunt
       configurații pe care calculul le produce complet — dimensiunile sunt uzuale, nu obligatorii.
+      <% if (inComanda) { %>
+        Materialul vine din comandă: PAL <%= order.pal_mm %> mm, cant
+        <%= order.cant_gros %>/<%= order.cant_subtire %> mm.
+      <% } %>
     </p>
   </div>
-  <a class="btn" href="/corps">← Înapoi</a>
+  <% if (typeof pretCorp !== 'undefined') { %>
+    <div class="cost-card">
+      <div class="l">Un corp costă</div>
+      <div class="v"><%= (pretCorp / 100).toFixed(2) %> lei</div>
+      <div class="muted small">credit: <%= (sold / 100).toFixed(2) %> lei</div>
+    </div>
+  <% } %>
 </div>
+
+<% if (typeof sold !== 'undefined' && sold < pretCorp) { %>
+  <div class="warn err">
+    Nu ai destul credit. <a href="/credit">Alimentează</a> ca să poți adăuga un corp.
+  </div>
+<% } %>
 
 <div class="filtre" id="filtre">
   <button class="btn small on" data-cat="toate" type="button">Toate</button>
@@ -22,7 +44,7 @@
     <p class="hint"><%= c.descriere %></p>
     <div class="model-grid">
       <% models.filter(function (m) { return m.cat === c.id; }).forEach(function (m) { %>
-        <form method="post" action="/corps" class="model-form">
+        <form method="post" action="<%= actiune %>" class="model-form">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <input type="hidden" name="model" value="<%= m.id %>">
           <button class="model-card" type="submit" title="Creează un corp după acest model">
@@ -43,7 +65,7 @@
 <section class="grup" data-cat="gol">
   <h2>Fără model</h2>
   <div class="model-grid">
-    <form method="post" action="/corps" class="model-form">
+    <form method="post" action="<%= actiune %>" class="model-form">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <button class="model-card gol" type="submit">
         <span class="model-body">

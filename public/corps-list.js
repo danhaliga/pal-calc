@@ -15,8 +15,10 @@ document.addEventListener('click', function (e) {
     headers: { 'x-csrf-token': DATA.csrf }
   }).then(function (r) {
     if (!r.ok) throw new Error('nu s-a putut șterge');
-    var card = btn.closest('.corp-card');
-    if (card) card.remove();
+    /* în listă corpul e un card, în comandă un rând de tabel */
+    var rand = btn.closest('.corp-card') || btn.closest('tr');
+    if (rand && rand.closest('table')) { location.reload(); return; }
+    if (rand) rand.remove();
     if (!document.querySelector('.corp-card')) location.reload();
   }).catch(function () {
     btn.disabled = false;

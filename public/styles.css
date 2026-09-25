@@ -197,6 +197,33 @@ svg.sk .sk-usa{stroke:#b3261e;stroke-width:26;stroke-linecap:round}
 svg.sk .sk-perete{stroke:#5c4a2e;stroke-width:26;stroke-linecap:square;opacity:.5}
 svg.sk .sk-orb{fill:#8d7a5c;opacity:.8;stroke:none}
 
+/* ---------- credit și comenzi ---------- */
+.credit-link{white-space:nowrap}
+.credit-link b{font-family:"IBM Plex Mono",monospace}
+.credit-grid{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:16px;align-items:start;margin-bottom:16px}
+@media(max-width:700px){.credit-grid{grid-template-columns:1fr}}
+.credit-grid .panel{margin-top:0}
+.sold-card .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.sold-card .v{font-size:34px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1;margin:2px 0 6px}
+.sold-card .v span{font-size:16px;color:var(--muted)}
+.pachete{display:flex;gap:8px;flex-wrap:wrap}
+.pachet{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 16px;min-width:96px}
+.pachet b{font-size:16px}
+.pachet span{font-size:11px;color:var(--muted)}
+td.plus{color:var(--accent)}
+td.minus{color:var(--muted)}
+.cost-card{border:1px solid var(--line);border-radius:8px;padding:10px 14px;background:var(--panel);text-align:right}
+.cost-card .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.cost-card .v{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.doua-coloane{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media(max-width:820px){.doua-coloane{grid-template-columns:1fr}}
+.chip.cnc{background:var(--warn-bg);border-color:var(--cant);color:var(--cant)}
+details.panel summary{list-style:none;cursor:pointer;font-size:13px;color:var(--muted)}
+details.panel summary b{color:var(--ink)}
+details.panel summary::-webkit-details-marker{display:none}
+details.panel summary::before{content:'▸ ';color:var(--accent)}
+details.panel[open] summary::before{content:'▾ '}
+
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
 .kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px}
 .kpi .v{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}

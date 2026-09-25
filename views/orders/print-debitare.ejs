@@ -1,0 +1,93 @@
+<p class="doc-nota">
+  Cotele din coloanele <b>Tăiere</b> sunt cotele de debitare, adică cota finită minus cantul
+  de pe fiecare latură. Coloanele de cant spun ce grosime se aplică pe fiecare muchie:
+  <b>L1/L2</b> sunt muchiile lungi, <b>l1/l2</b> cele scurte.
+</p>
+
+<% raport.materiale.forEach(function (m) { %>
+  <section class="doc-sect">
+    <h2><%= m.nume %> — <%= m.placi %> plăci de <%= m.format %></h2>
+    <table class="doc-tbl">
+      <thead><tr>
+        <th class="num">Cod</th>
+        <th>Corp</th>
+        <th>Piesă</th>
+        <th class="num">Buc</th>
+        <th class="num">Tăiere L</th>
+        <th class="num">Tăiere l</th>
+        <th class="num">Cant L1</th>
+        <th class="num">Cant L2</th>
+        <th class="num">Cant l1</th>
+        <th class="num">Cant l2</th>
+        <th>Fibră</th>
+        <th>Observații</th>
+      </tr></thead>
+      <tbody>
+        <% raport.piese.filter(function (p) { return p.material.key === m.key; }).forEach(function (p) { %>
+          <tr>
+            <td class="num"><%= p.cod %></td>
+            <td class="small"><%= p.corpNume %></td>
+            <td><%= p.nume %></td>
+            <td class="num"><b><%= p.buc %></b></td>
+            <td class="num"><b><%= p.TL %></b></td>
+            <td class="num"><b><%= p.Tl %></b></td>
+            <% if (p.cant.special) { %>
+              <td class="num" colspan="4">cant pe muchiile frontale — vezi planșa CNC</td>
+            <% } else { %>
+              <td class="num"><%= p.cant.muchii[0] %></td>
+              <td class="num"><%= p.cant.muchii[1] %></td>
+              <td class="num"><%= p.cant.muchii[2] %></td>
+              <td class="num"><%= p.cant.muchii[3] %></td>
+            <% } %>
+            <td class="small"><%= p.fibra %></td>
+            <td class="small"><%= p.cnc ? 'CNC după debitare. ' : '' %><%= p.nota %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3"><b>Total <%= m.nume %></b></td>
+          <td class="num"><b><%= m.bucati %></b></td>
+          <td colspan="8"><%= m.m2piese %> m² piese · <%= m.placi %> plăci · deșeu <%= m.deseuPct %>%</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+<% }); %>
+
+<section class="doc-sect">
+  <h2>Cant de comandat</h2>
+  <table class="doc-tbl">
+    <thead><tr>
+      <th>Grosime</th><th>Culoare</th><th class="num">Calculat</th>
+      <th class="num">Cu adaos <%= raport.cant.adaosPct %>%</th><th class="num">Role 50 m</th>
+    </tr></thead>
+    <tbody>
+      <% raport.cant.linii.forEach(function (c) { %>
+        <tr>
+          <td><b><%= c.mm %> mm</b></td>
+          <td><%= order.cant_decor || '—' %></td>
+          <td class="num"><%= c.ml %> ml</td>
+          <td class="num"><b><%= c.cuAdaos %> ml</b></td>
+          <td class="num"><%= c.role %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2"><b>Total</b></td>
+        <td class="num"><%= raport.cant.total %> ml</td>
+        <td class="num"><b><%= raport.cant.totalCuAdaos %> ml</b></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+</section>
+
+<% if (raport.cnc.length) { %>
+  <p class="doc-nota">
+    <b>Atenție:</b> <%= raport.cnc.length %> poziții au nevoie de prelucrare după debitare
+    (decupaje de colț, tăieri la 45°, nuturi). Sunt marcate cu „CNC” în coloana de observații,
+    iar planșele cotate sunt pe fișa separată de prelucrări.
+  </p>
+<% } %>

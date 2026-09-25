@@ -1,5 +1,11 @@
 <div class="top">
-  <div class="crumbs"><a href="/corps">← Corpurile mele</a></div>
+  <div class="crumbs">
+    <% if (typeof order !== 'undefined' && order) { %>
+      <a href="/orders/<%= order.id %>">← <%= order.name %></a>
+    <% } else { %>
+      <a href="/corps">← Corpurile mele</a>
+    <% } %>
+  </div>
   <div class="status-line">
     <span class="chip <%= corp.paid ? 'paid' : 'draft' %>"><%= corp.paid ? 'Plătit' : 'Draft' %></span>
     <span id="saveState" class="muted small">salvat</span>

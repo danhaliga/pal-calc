@@ -83,6 +83,42 @@ de gabarit (ce se taie efectiv din placă), iar nota fiecărei piese dă decupaj
 diagonală 455.4 mm”*. Cantul acestor panouri se aplică după decupare, pe muchiile frontale.
 Vederea 3D desenează forma reală (contur extrudat), nu un simplu paralelipiped.
 
+## Fluxul de lucru
+
+1. **Îți alimentezi creditul** (`/credit`) — 50, 100, 200 sau 500 lei, prin driverul de plată.
+2. **Deschizi o comandă** (`/orders/new`): nume, data (automat), producătorul PAL-ului
+   (**Egger** sau **Kronospan**), decorul, grosimea PAL-ului și **cantul** (0.4 / 0.8 / 1 / 2 mm)
+   cu culoarea lui. Grosimea cantului intră direct în cotele de tăiere.
+3. **Adaugi un corp** în comandă: alegi modelul din catalog, iar în acel moment se scade din
+   credit prețul unui corp (implicit **5 lei**, din `PRICE_PER_CORP_CENTS`).
+4. **Modifici cotele** în editor, cu 3D și listă de piese; se salvează automat.
+5. Repeți pentru fiecare corp. Sub lista de corpuri apar **necesarul de plăci**, **metrii de cant
+   cu adaos**, **feroneria** și **prelucrările CNC**.
+6. Tipărești cele patru liste.
+
+### Cele patru liste
+
+| Listă | Rută | Ce conține |
+|---|---|---|
+| **Corpuri** | `/orders/:id/print/corpuri` | corpurile comenzii, plus necesarul de plăci și de cant |
+| **Debitare** | `/orders/:id/print/debitare` | piesele grupate pe material, cu cota de tăiere și cantul pe fiecare muchie — de dat la fabrică |
+| **Montaj** | `/orders/:id/print/montaj` | câte o fișă pe corp: piese, feronerie (balamale, glisiere, șuruburi) și ordinea de montaj |
+| **CNC** | `/orders/:id/print/cnc` | piesele care cer prelucrare după debitare, cu **planșe cotate** |
+
+Tot ce se calculează acolo: `shared/raport.js` (verificat de `tests/raport.test.js`).
+
+- **Plăcile** nu se estimează din suprafață: piesele trec prin motorul de croire
+  (`shared/nesting.js`, tăieri de tip ghilotină, disc de 4 mm, fibra respectată), deci numărul
+  de plăci este cel real, cu procentul de deșeu afișat.
+- **Cantul** se calculează pe muchii, pe fiecare grosime separat, și primește **adaosul**
+  ales pe comandă (minim 10%, implicit 15%), plus numărul de role de 50 m.
+- **Feroneria** e estimativă, dedusă din construcția corpului: balamale după înălțimea ușii,
+  seturi de glisiere după numărul de sertare, confirmați și dibluri pe îmbinări, holșuruburi
+  pentru spate la fiecare 150 mm, suporți de poliță, mânere.
+- **CNC**: piesele de colț (blat, fund, polițe) nu sunt dreptunghiuri. Ele se debitează la cota
+  de gabarit și apoi se decupează; planșa dă conturul cotat, cu muchiile de cantuit marcate.
+  Tot aici intră și nuturile pentru spate.
+
 ## Gratuit vs. plătit
 
 | | Corp `draft` | Corp `paid` |
@@ -105,16 +141,20 @@ Pentru un corp `draft`, câmpurile `TL`, `Tl` și `c` **nu pleacă de pe server*
 
 ## Plata
 
+Plata este pe **credit**: alimentezi o dată, apoi fiecare corp adăugat scade din sold.
 Se configurează din `.env`:
 
 ```
 PAYMENT_DRIVER=fake      # 'fake' sau 'stripe'
-PRICE_PER_CORP_CENTS=1500
+PRICE_PER_CORP_CENTS=500 # cât costă un corp (5 lei)
 CURRENCY=ron
 ```
 
-**`fake`** (implicit): apăsarea butonului marchează corpul ca plătit pe loc și scrie un rând în
-`payments` cu `provider='fake'`. În pagină apare bara „Plată de test”.
+Fiecare mișcare de credit e scrisă în `credit_tx`, cu soldul rezultat, așa că istoricul din
+`/credit` se poate verifica rând cu rând.
+
+**`fake`** (implicit): alimentarea intră pe loc, fără card, și scrie un rând în `payments`
+cu `provider='fake'`. În pagină apare bara „Plată de test”.
 
 **`stripe`**: completezi cheile de test și repornești. Nu trebuie schimbat cod.
 

@@ -7,6 +7,8 @@ const { db } = require('./db');
 const { requireAuth } = require('./auth');
 const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
+const credit = require('./credit');
+const util = require('./util');
 
 const router = express.Router();
 
@@ -71,14 +73,16 @@ function piecesFor(corp) {
 /* ---- pagini ---- */
 
 router.get('/corps', requireAuth, (req, res) => {
-  const rows = db.prepare(
-    'SELECT * FROM corps WHERE user_id = ? ORDER BY updated_at DESC, id DESC'
-  ).all(req.user.id);
+  const rows = db.prepare(`
+    SELECT c.*, o.name AS order_name
+    FROM corps c LEFT JOIN orders o ON o.id = c.order_id
+    WHERE c.user_id = ? ORDER BY c.updated_at DESC, c.id DESC
+  `).all(req.user.id);
 
   res.render('corps/index', {
-    title: 'Corpurile mele',
-    corps: rows.map(rowToCorp),
-    priceLei: (Number(process.env.PRICE_PER_CORP_CENTS || 1500) / 100).toFixed(2),
+    title: 'Toate corpurile',
+    corps: rows.map(r => Object.assign(rowToCorp(r), { orderName: r.order_name, orderId: r.order_id })),
+    priceLei: (credit.pretCorp() / 100).toFixed(2),
     justPaid: req.query.paid === '1'
   });
 });
@@ -102,26 +106,47 @@ router.get('/corps/new', requireAuth, (req, res) => {
   });
 });
 
-router.post('/corps', requireAuth, (req, res) => {
-  /* pornim de la un model din catalog, dacă a fost ales */
-  const fromModel = req.body.model ? PalModels.paramsFor(String(req.body.model)) : null;
-  const params = fromModel || PalCalc.defaults();
-  const name = (req.body.name || params.nume || 'Corp nou').toString().trim().slice(0, 80);
-  params.nume = name;
+/* Corp în afara unei comenzi. Costă la fel ca unul dintr-o comandă:
+   creditul se consumă la creare, nu la deblocare. */
+const creeazaCorp = db.transaction((userId, params, cost) => {
+  const ramas = credit.scade(userId, cost, 'corp', null, 'corp fără comandă');
+  if (ramas === null) throw new Error('CREDIT_INSUFICIENT');
   const info = db.prepare(
     'INSERT INTO corps (user_id, name, params, status) VALUES (?, ?, ?, ?)'
-  ).run(req.user.id, name, JSON.stringify(params), 'draft');
-  res.redirect(`/corps/${info.lastInsertRowid}`);
+  ).run(userId, params.nume, JSON.stringify(params), 'paid');
+  const corpId = Number(info.lastInsertRowid);
+  db.prepare('UPDATE credit_tx SET ref = ? WHERE id = (SELECT MAX(id) FROM credit_tx WHERE user_id = ?)')
+    .run(String(corpId), userId);
+  return corpId;
+});
+
+router.post('/corps', requireAuth, (req, res, next) => {
+  const fromModel = req.body.model ? PalModels.paramsFor(String(req.body.model)) : null;
+  const params = fromModel || PalCalc.defaults();
+  params.nume = (req.body.name || params.nume || 'Corp nou').toString().trim().slice(0, 80);
+
+  try {
+    res.redirect(`/corps/${creeazaCorp(req.user.id, params, credit.pretCorp())}`);
+  } catch (e) {
+    if (e.message === 'CREDIT_INSUFICIENT') return res.redirect('/credit?insuficient=1');
+    next(e);
+  }
 });
 
 router.get('/corps/:id', requireAuth, (req, res, next) => {
   const corp = getOwned(req.params.id, req.user.id);
   if (!corp) return notFound(next);
 
+  const order = corp.order_id
+    ? db.prepare('SELECT id, name FROM orders WHERE id = ?').get(corp.order_id)
+    : null;
+
   res.render('corps/edit', {
     title: corp.name,
     corp: rowToCorp(corp),
-    priceLei: (Number(process.env.PRICE_PER_CORP_CENTS || 1500) / 100).toFixed(2),
+    order,
+    priceLei: (credit.pretCorp() / 100).toFixed(2),
+    sold: credit.sold(req.user.id),
     paymentDriver: process.env.PAYMENT_DRIVER || 'fake',
     justPaid: req.query.paid === '1'
   });
@@ -201,11 +226,34 @@ router.get('/corps/:id/export.csv', requireAuth, (req, res, next) => {
 
   const params = parseParams(corp.params);
   const body = PalCalc.csv([params]);
-  const safe = corp.name.replace(/[^\p{L}\p{N} _-]/gu, '').trim().replace(/\s+/g, '-') || 'corp';
 
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-  res.setHeader('Content-Disposition', `attachment; filename="debitare-${safe}.csv"`);
+  res.setHeader('Content-Disposition', util.dispozitieAtasament('debitare-' + corp.name));
   res.send('﻿' + body); /* BOM, ca Excel sa deschida corect diacriticele */
+});
+
+/* Deblocarea unui corp mai vechi, rămas în starea draft: se plătește din credit. */
+const deblocheaza = db.transaction((userId, corpId, cost) => {
+  const ramas = credit.scade(userId, cost, 'corp', corpId, 'deblocare corp');
+  if (ramas === null) throw new Error('CREDIT_INSUFICIENT');
+  db.prepare(
+    "UPDATE corps SET status = 'paid', paid_at = COALESCE(paid_at, datetime('now')), " +
+    "updated_at = datetime('now') WHERE id = ? AND user_id = ?"
+  ).run(corpId, userId);
+});
+
+router.post('/corps/:id/pay', requireAuth, (req, res, next) => {
+  const corp = getOwned(req.params.id, req.user.id);
+  if (!corp) return notFound(next);
+  if (corp.status === 'paid') return res.redirect(`/corps/${corp.id}`);
+
+  try {
+    deblocheaza(req.user.id, corp.id, credit.pretCorp());
+    res.redirect(`/corps/${corp.id}?paid=1`);
+  } catch (e) {
+    if (e.message === 'CREDIT_INSUFICIENT') return res.redirect('/credit?insuficient=1');
+    next(e);
+  }
 });
 
 module.exports = { router, getOwned, piecesFor, parseParams };

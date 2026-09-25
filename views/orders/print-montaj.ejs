@@ -1,0 +1,87 @@
+<p class="doc-nota">
+  Câte o fișă pentru fiecare corp: piesele lui, cotele finite și de tăiere, și feroneria necesară.
+  Cantitățile de feronerie sunt estimative, calculate din construcția corpului.
+</p>
+
+<% raport.corpuri.forEach(function (c, idx) { %>
+  <section class="doc-corp">
+    <h2><span class="poz"><%= c.poz %></span> <%= c.nume %></h2>
+    <div class="doc-sub2">
+      <%= c.dimensiuni %> mm ·
+      PAL <%= c.params.t %> mm ·
+      <%= [+c.params.nUsi ? c.params.nUsi + ' uși' : null,
+           +c.params.nSer ? c.params.nSer + ' sertare' : null,
+           +c.params.nPol ? c.params.nPol + ' polițe' : null].filter(Boolean).join(' · ') || 'corp deschis' %>
+      · <%= c.params.spate === 'aplicat' ? 'spate aplicat' : 'spate în nut' %>
+    </div>
+
+    <% if (c.avertismente.length) { %>
+      <div class="doc-warn"><% c.avertismente.forEach(function (w) { %><div>⚠ <%= w %></div><% }); %></div>
+    <% } %>
+
+    <div class="doc-doua">
+      <div>
+        <h3>Piese</h3>
+        <table class="doc-tbl mic">
+          <thead><tr>
+            <th class="num">Cod</th><th>Piesă</th><th class="num">Buc</th>
+            <th class="num">Finit</th><th class="num">Tăiere</th><th>Cant</th>
+          </tr></thead>
+          <tbody>
+            <% c.piese.forEach(function (p) { %>
+              <tr>
+                <td class="num"><%= p.cod %></td>
+                <td><%= p.nume %>
+                  <% if (p.nota) { %><div class="tag"><%= p.nota %></div><% } %>
+                </td>
+                <td class="num"><%= p.buc %></td>
+                <td class="num"><%= p.L %> × <%= p.l %></td>
+                <td class="num"><b><%= p.TL %> × <%= p.Tl %></b></td>
+                <td class="small"><%= p.cant.special ? 'muchii frontale' : p.cant.muchii.join('·') %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Feronerie</h3>
+        <table class="doc-tbl mic">
+          <thead><tr><th>Articol</th><th class="num">Cant.</th></tr></thead>
+          <tbody>
+            <% c.feronerie.forEach(function (f) { %>
+              <tr>
+                <td><%= f.nume %><% if (f.obs) { %><div class="tag"><%= f.obs %></div><% } %></td>
+                <td class="num"><b><%= f.qty %></b> <%= f.um %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+
+        <h3>Ordinea de montaj</h3>
+        <ol class="doc-pasi">
+          <li>Aplică cantul pe muchiile marcate, apoi curăță surplusul.</li>
+          <li>Găurește pentru confirmat: laterale cu fundul și blatul.</li>
+          <% if (+c.params.nPol) { %><li>Dă găurile pentru suporții de poliță, la înălțimile dorite.</li><% } %>
+          <li>Asamblează carcasa și verifică diagonalele înainte de a strânge.</li>
+          <li>Prinde spatele — el ține corpul în echer.</li>
+          <% if (+c.params.nSer) { %><li>Montează glisierele și cutiile de sertar, apoi reglează fronturile.</li><% } %>
+          <% if (+c.params.nUsi) { %><li>Montează cupele de balama și ușile, apoi reglează rosturile.</li><% } %>
+        </ol>
+      </div>
+    </div>
+  </section>
+<% }); %>
+
+<section class="doc-sect">
+  <h2>Feronerie — total comandă</h2>
+  <table class="doc-tbl">
+    <thead><tr><th>Articol</th><th class="num">Cantitate</th><th>Observații</th></tr></thead>
+    <tbody>
+      <% raport.feronerie.forEach(function (f) { %>
+        <tr><td><%= f.nume %></td><td class="num"><b><%= f.qty %></b> <%= f.um %></td>
+            <td class="small"><%= f.obs %></td></tr>
+      <% }); %>
+    </tbody>
+  </table>
+</section>

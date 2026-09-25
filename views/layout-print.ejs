@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title><%= title %></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/styles.css?v=<%= assetV %>">
+<link rel="stylesheet" href="/static/print.css?v=<%= assetV %>">
+</head>
+<body class="doc">
+
+<div class="doc-bar no-print">
+  <a href="/orders/<%= order.id %>">← Înapoi la comandă</a>
+  <span class="doc-links">
+    <a href="/orders/<%= order.id %>/print/corpuri">Corpuri</a>
+    <a href="/orders/<%= order.id %>/print/debitare">Debitare</a>
+    <a href="/orders/<%= order.id %>/print/montaj">Montaj</a>
+    <a href="/orders/<%= order.id %>/print/cnc">CNC</a>
+    <a href="/orders/<%= order.id %>/export.csv">CSV</a>
+  </span>
+  <button onclick="window.print()" class="btn small primary">Tipărește</button>
+</div>
+
+<header class="doc-head">
+  <div>
+    <h1><%= titlu %></h1>
+    <div class="doc-sub">
+      <b><%= order.name %></b>
+      · <%= brandNume %><%= order.decor ? ' ' + order.decor : '' %>
+      · PAL <%= order.pal_mm %> mm
+      · cant <%= order.cant_gros %> / <%= order.cant_subtire %> mm<%= order.cant_decor ? ' ' + order.cant_decor : '' %>
+    </div>
+  </div>
+  <div class="doc-meta">
+    <div>Comanda nr. <b><%= order.id %></b></div>
+    <div><%= order.created_at.slice(0, 10) %></div>
+    <div class="muted">tipărit <%= new Date().toLocaleDateString('ro-RO') %></div>
+  </div>
+</header>
+
+<main class="doc-body">
+<%- body %>
+</main>
+
+<footer class="doc-foot">
+  Cotele sunt în mm și reprezintă <b>cota de tăiere</b> (fără cant), dacă nu scrie altfel.
+  Verifică cu serviciul de debitare ce cotă cere.
+</footer>
+
+</body>
+</html>

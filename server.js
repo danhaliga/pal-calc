@@ -13,6 +13,8 @@ const { db, migrate } = require('./src/db');
 const auth = require('./src/auth');
 const csrf = require('./src/csrf');
 const corps = require('./src/corps');
+const orders = require('./src/orders');
+const credit = require('./src/credit');
 const payments = require('./src/payments');
 const admin = require('./src/admin');
 
@@ -73,7 +75,8 @@ app.use((req, res, next) => {
     if (cb) return render(view, opts, cb);
     render(view, opts, (err, html) => {
       if (err) return next(err);
-      render('layout', Object.assign({}, opts, { body: html }), (err2, page) => {
+      const layout = opts.print ? 'layout-print' : 'layout';
+      render(layout, Object.assign({}, opts, { body: html }), (err2, page) => {
         if (err2) return next(err2);
         res.send(page);
       });
@@ -92,6 +95,7 @@ app.use((req, res, next) => {
   res.locals.paymentDriver = payments.driver();
   res.locals.priceLei = (payments.priceCents() / 100).toFixed(2);
   res.locals.currentPath = req.path;
+  res.locals.soldLei = req.user ? (credit.sold(req.user.id) / 100).toFixed(2) : null;
   next();
 });
 
@@ -99,11 +103,13 @@ app.use('/static', express.static(path.join(__dirname, 'public'), { maxAge: '1h'
 app.use('/shared', express.static(path.join(__dirname, 'shared'), { maxAge: '1h' }));
 
 app.get('/', (req, res) => {
-  if (req.user) return res.redirect('/corps');
+  if (req.user) return res.redirect('/orders');
   res.render('landing', { title: 'Calculator debitare PAL' });
 });
 
 app.use(auth.router);
+app.use(credit.router);
+app.use(orders.router);
 app.use(corps.router);
 app.use(payments.router);
 app.use(admin.router);

@@ -91,12 +91,12 @@ function requireAdmin(req, res, next) {
 const router = express.Router();
 
 router.get('/register', (req, res) => {
-  if (req.user) return res.redirect('/corps');
+  if (req.user) return res.redirect('/orders');
   res.render('register', { title: 'Cont nou', error: null, values: {} });
 });
 
 router.post('/register', limiter, (req, res, next) => {
-  if (req.user) return res.redirect('/corps');
+  if (req.user) return res.redirect('/orders');
   const parsed = registerSchema.safeParse(req.body);
   const values = { email: req.body.email || '', name: req.body.name || '' };
 
@@ -120,13 +120,13 @@ router.post('/register', limiter, (req, res, next) => {
     req.session.regenerate(err => {
       if (err) return next(err);
       req.session.userId = user.id;
-      res.redirect('/corps');
+      res.redirect('/orders');
     });
   } catch (e) { next(e); }
 });
 
 router.get('/login', (req, res) => {
-  if (req.user) return res.redirect('/corps');
+  if (req.user) return res.redirect('/orders');
   res.render('login', { title: 'Autentificare', error: null, values: {} });
 });
 
@@ -152,7 +152,7 @@ router.post('/login', limiter, (req, res, next) => {
   req.session.regenerate(err => {
     if (err) return next(err);
     req.session.userId = user.id;
-    res.redirect(back && back.startsWith('/') ? back : '/corps');
+    res.redirect(back && back.startsWith('/') ? back : '/orders');
   });
 });
 

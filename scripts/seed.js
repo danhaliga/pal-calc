@@ -20,6 +20,14 @@ if (user) {
   console.log(`cont administrator creat: ${email} / ${password}`);
 }
 
+/* credit de pornire, ca fluxul să poată fi încercat imediat */
+const credit = require('../src/credit');
+const CREDIT_START = Number(process.env.SEED_CREDIT_CENTS || 10000);
+if (credit.sold(user.id) === 0) {
+  credit.adauga(user.id, CREDIT_START, 'ajustare', null, 'credit de pornire (seed)');
+  console.log(`credit adăugat: ${(CREDIT_START / 100).toFixed(2)} lei`);
+}
+
 /* aceleasi corpuri ca exemplele din calculatorul original */
 const def = PalCalc.defaults();
 const examples = [

@@ -1,0 +1,80 @@
+<table class="doc-tbl">
+  <thead><tr>
+    <th class="num">#</th>
+    <th>Denumire corp</th>
+    <th>Dimensiuni (L × H × A)</th>
+    <th>Conține</th>
+    <th class="num">Piese</th>
+    <th>Observații</th>
+  </tr></thead>
+  <tbody>
+    <% raport.corpuri.forEach(function (c) { %>
+      <tr>
+        <td class="num"><%= c.poz %></td>
+        <td><b><%= c.nume %></b></td>
+        <td class="num"><%= c.dimensiuni %></td>
+        <td>
+          <%= [+c.params.nUsi ? c.params.nUsi + ' uși' : null,
+               +c.params.nSer ? c.params.nSer + ' sertare' : null,
+               +c.params.nPol ? c.params.nPol + ' polițe' : null,
+               c.params.spate === 'aplicat' ? 'spate aplicat' : 'spate în nut'].filter(Boolean).join(', ') %>
+        </td>
+        <td class="num"><%= c.bucati %></td>
+        <td class="small"><%= c.avertismente.join(' ') %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td colspan="3"><b>Total</b></td>
+      <td class="num"><b><%= raport.totaluri.bucati %></b></td>
+      <td></td>
+    </tr>
+  </tfoot>
+</table>
+
+<section class="doc-sect">
+  <h2>Necesar de materiale</h2>
+  <table class="doc-tbl">
+    <thead><tr>
+      <th>Material</th><th>Format placă</th><th class="num">Plăci</th>
+      <th class="num">m² piese</th><th class="num">m² plăci</th><th class="num">Deșeu</th>
+    </tr></thead>
+    <tbody>
+      <% raport.materiale.forEach(function (m) { %>
+        <tr>
+          <td><b><%= m.nume %></b></td>
+          <td class="num"><%= m.format %></td>
+          <td class="num"><b><%= m.placi %></b></td>
+          <td class="num"><%= m.m2piese %></td>
+          <td class="num"><%= m.m2placi %></td>
+          <td class="num"><%= m.deseuPct %>%</td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <h2>Cant</h2>
+  <table class="doc-tbl">
+    <thead><tr>
+      <th>Grosime</th><th>Culoare</th><th class="num">Metri calculați</th>
+      <th class="num">Cu adaos <%= raport.cant.adaosPct %>%</th><th class="num">Role de 50 m</th>
+    </tr></thead>
+    <tbody>
+      <% raport.cant.linii.forEach(function (c) { %>
+        <tr>
+          <td><b><%= c.mm %> mm</b></td>
+          <td><%= order.cant_decor || '—' %></td>
+          <td class="num"><%= c.ml %> ml</td>
+          <td class="num"><b><%= c.cuAdaos %> ml</b></td>
+          <td class="num"><%= c.role %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <p class="doc-nota">
+    Adaosul de <%= raport.cant.adaosPct %>% acoperă pierderile la aplicare și capetele de rolă.
+    Plăcile sunt calculate cu croire reală (tăieri de tip ghilotină, disc de 4 mm), nu din suprafață.
+  </p>
+</section>

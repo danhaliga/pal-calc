@@ -10,15 +10,17 @@
 <div class="panel">
   <h2>Utilizatori</h2>
   <div class="tbl"><table>
-    <thead><tr><th class="num">#</th><th>Email</th><th>Nume</th><th class="num">Corpuri</th><th class="num">Plătite</th><th>Creat</th><th>Rol</th></tr></thead>
+    <thead><tr><th class="num">#</th><th>Email</th><th>Nume</th><th class="num">Credit</th>
+      <th class="num">Comenzi</th><th class="num">Corpuri</th><th>Creat</th><th>Rol</th></tr></thead>
     <tbody>
       <% users.forEach(function (u) { %>
         <tr>
           <td class="num"><%= u.id %></td>
           <td><%= u.email %></td>
           <td><%= u.name || '–' %></td>
+          <td class="num"><b><%= (u.credit_cents / 100).toFixed(2) %></b> lei</td>
+          <td class="num"><%= u.comenzi %></td>
           <td class="num"><%= u.corps %></td>
-          <td class="num"><%= u.paid %></td>
           <td class="muted"><%= u.created_at.slice(0, 16) %></td>
           <td><%= u.is_admin ? 'admin' : 'utilizator' %></td>
         </tr>

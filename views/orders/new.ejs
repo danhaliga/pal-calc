@@ -1,0 +1,92 @@
+<div class="top">
+  <h1>Comandă nouă</h1>
+  <a class="btn" href="/orders">← Înapoi</a>
+</div>
+
+<% if (error) { %><div class="warn err"><%= error %></div><% } %>
+
+<div class="panel" style="max-width:720px">
+  <p class="hint">
+    Materialul ales aici se aplică tuturor corpurilor din comandă, ca listele de debitare
+    și de cant să fie coerente. Îl poți schimba oricând.
+  </p>
+
+  <form method="post" action="/orders">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+    <fieldset>
+      <legend>Comanda</legend>
+      <div class="f">
+        <label class="full">Nume comandă
+          <input type="text" name="name" maxlength="80" required autofocus
+                 placeholder="ex: Bucătărie Ionescu" value="<%= values.name || '' %>">
+        </label>
+        <label class="full">Observații (opțional)
+          <input type="text" name="note" maxlength="500" value="<%= values.note || '' %>">
+        </label>
+      </div>
+      <p class="legend">Data comenzii se completează automat, cu ziua de azi.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>PAL</legend>
+      <div class="f3">
+        <label>Producător
+          <select name="brand">
+            <% brands.forEach(function (b) { %>
+              <option value="<%= b.id %>" <%= values.brand === b.id ? 'selected' : '' %>><%= b.nume %></option>
+            <% }); %>
+          </select>
+        </label>
+        <label>Grosime PAL
+          <select name="pal_mm">
+            <% grosimi.forEach(function (g) { %>
+              <option value="<%= g %>" <%= Number(values.pal_mm) === g ? 'selected' : '' %>><%= g %> mm</option>
+            <% }); %>
+          </select>
+        </label>
+        <label>Decor / cod culoare
+          <input type="text" name="decor" maxlength="80" placeholder="ex: W980 ST2 Alb"
+                 value="<%= values.decor || '' %>">
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Cant</legend>
+      <div class="f3">
+        <label>Cant gros (muchii vizibile)
+          <select name="cant_gros">
+            <% canturi.forEach(function (c) { %>
+              <option value="<%= c %>" <%= Number(values.cant_gros) === c ? 'selected' : '' %>><%= c %> mm</option>
+            <% }); %>
+          </select>
+        </label>
+        <label>Cant subțire (muchii ascunse)
+          <select name="cant_subtire">
+            <% canturi.forEach(function (c) { %>
+              <option value="<%= c %>" <%= Number(values.cant_subtire) === c ? 'selected' : '' %>><%= c %> mm</option>
+            <% }); %>
+          </select>
+        </label>
+        <label>Culoare cant
+          <input type="text" name="cant_decor" maxlength="80" placeholder="la culoarea PAL-ului"
+                 value="<%= values.cant_decor || '' %>">
+        </label>
+        <label>Adaos la metrii de cant
+          <select name="adaos_cant">
+            <% [10, 12, 15, 20].forEach(function (a) { %>
+              <option value="<%= a %>" <%= Number(values.adaos_cant) === a ? 'selected' : '' %>><%= a %> %</option>
+            <% }); %>
+          </select>
+        </label>
+      </div>
+      <p class="legend">
+        Cotele de tăiere se calculează scăzând cantul din cota finită, deci grosimea aleasă
+        aici schimbă direct debitarea. Adaosul acoperă pierderile la aplicare.
+      </p>
+    </fieldset>
+
+    <button class="btn primary" type="submit">Deschide comanda</button>
+  </form>
+</div>
