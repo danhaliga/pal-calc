@@ -6,6 +6,7 @@ const { z } = require('zod');
 const { db } = require('./db');
 const { requireAuth } = require('./auth');
 const PalCalc = require('../shared/calc');
+const PalModels = require('../shared/models');
 
 const router = express.Router();
 
@@ -82,8 +83,29 @@ router.get('/corps', requireAuth, (req, res) => {
   });
 });
 
+/* catalogul de modele: pasul dinaintea creării unui corp */
+router.get('/corps/new', requireAuth, (req, res) => {
+  const models = PalModels.MODELS.map(m => {
+    const params = PalModels.paramsFor(m.id);
+    return {
+      id: m.id, cat: m.cat, nume: m.nume, descriere: m.descriere,
+      params,
+      rezumat: PalModels.rezumat(params),
+      sketch: PalModels.sketch(params)
+    };
+  });
+
+  res.render('corps/new', {
+    title: 'Alege un model',
+    categories: PalModels.CATEGORIES,
+    models
+  });
+});
+
 router.post('/corps', requireAuth, (req, res) => {
-  const params = PalCalc.defaults();
+  /* pornim de la un model din catalog, dacă a fost ales */
+  const fromModel = req.body.model ? PalModels.paramsFor(String(req.body.model)) : null;
+  const params = fromModel || PalCalc.defaults();
   const name = (req.body.name || params.nume || 'Corp nou').toString().trim().slice(0, 80);
   params.nume = name;
   const info = db.prepare(

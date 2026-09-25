@@ -50,6 +50,20 @@ fără diferență între majuscule și minuscule). Rulat pe un cont existent, s
 | `npm test` | testele motorului de calcul |
 | `node tests/e2e.manual.js` | verificare end-to-end pe serverul pornit (auth, gating, plată, izolare) |
 
+## Catalogul de modele
+
+„+ Corp nou” deschide `/corps/new`, un catalog cu 18 modele grupate pe categorii (bucătărie jos,
+bucătărie suspendate, living/dormitor, baie), fiecare cu o schiță frontală generată din parametri.
+Alegerea unui model creează corpul cu acele cote; pe urmă se editează liber.
+
+Catalogul stă în [`shared/models.js`](shared/models.js) — doar seturi de parametri, fără logică nouă
+de calcul. `tests/models.test.js` verifică pentru fiecare model că parametrii sunt valizi, că piesele
+ies cu cote pozitive și că **nu apar avertismente**; un model care nu se poate produce corect pică testul.
+
+Ce nu poate genera motorul deocamdată: corpuri de colț, montant central (de aceea polițele peste
+800 mm avertizează), uși glisante sau cu ramă și sticlă, soclu/picioare/blat, decupaje pentru
+chiuvetă sau plită, antresol.
+
 ## Gratuit vs. plătit
 
 | | Corp `draft` | Corp `paid` |

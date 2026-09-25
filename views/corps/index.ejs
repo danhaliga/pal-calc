@@ -1,9 +1,6 @@
 <div class="top">
   <h1>Corpurile mele</h1>
-  <form method="post" action="/corps" class="inline">
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-    <button class="btn primary" type="submit">+ Corp nou</button>
-  </form>
+  <a class="btn primary" href="/corps/new">+ Corp nou</a>
 </div>
 
 <% if (justPaid) { %>
@@ -13,7 +10,9 @@
 <% if (!corps.length) { %>
   <div class="panel empty">
     <p>Nu ai încă niciun corp.</p>
-    <p class="muted">Apasă „+ Corp nou”: pornești de la un corp de bucătărie 800 × 720 × 560 și îl modifici după nevoie.</p>
+    <p class="muted">Apasă „+ Corp nou” și alege un model din catalog: corpuri de bucătărie,
+      dulapuri, comode, corpuri de baie. Pe urmă schimbi cotele cum ai nevoie.</p>
+    <div class="btns center"><a class="btn primary" href="/corps/new">Vezi modelele</a></div>
   </div>
 <% } else { %>
   <div class="corp-list">
@@ -51,4 +50,4 @@
 <% } %>
 
 <script type="application/json" id="page-data"><%- JSON.stringify({ csrf: csrfToken }) %></script>
-<script src="/static/corps-list.js"></script>
+<script src="/static/corps-list.js?v=<%= assetV %>"></script>

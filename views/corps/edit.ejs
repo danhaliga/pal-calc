@@ -49,7 +49,9 @@
       <fieldset>
         <legend>Uși</legend>
         <div class="f3">
-          <label>Număr uși<select id="nUsi"><option>0</option><option>1</option><option>2</option></select></label>
+          <label>Număr uși<select id="nUsi">
+            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
+          </select></label>
           <label>Montaj<select id="montaj">
             <option value="aplicat">Aplicate</option>
             <option value="incastrat">Încastrate</option>
@@ -192,5 +194,5 @@
   priceLei: priceLei
 }) %></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="/shared/calc.js"></script>
-<script src="/static/app.js"></script>
+<script src="/shared/calc.js?v=<%= assetV %>"></script>
+<script src="/static/app.js?v=<%= assetV %>"></script>

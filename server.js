@@ -82,7 +82,12 @@ app.use((req, res, next) => {
   next();
 });
 
+/* Amprenta fisierelor statice: se schimba la fiecare pornire, ca browserul sa nu
+   ramana cu un CSS sau un script vechi din cache dupa o actualizare. */
+const ASSET_V = Date.now().toString(36);
+
 app.use((req, res, next) => {
+  res.locals.assetV = ASSET_V;
   res.locals.appName = 'PAL Calc';
   res.locals.paymentDriver = payments.driver();
   res.locals.priceLei = (payments.priceCents() / 100).toFixed(2);

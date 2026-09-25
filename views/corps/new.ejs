@@ -1,0 +1,73 @@
+<div class="top">
+  <div>
+    <h1>Alege un model</h1>
+    <p class="sub">
+      Pornești de la un model apropiat și apoi modifici cotele. Toate modelele de mai jos sunt
+      configurații pe care calculul le produce complet — dimensiunile sunt uzuale, nu obligatorii.
+    </p>
+  </div>
+  <a class="btn" href="/corps">← Înapoi</a>
+</div>
+
+<div class="filtre" id="filtre">
+  <button class="btn small on" data-cat="toate" type="button">Toate</button>
+  <% categories.forEach(function (c) { %>
+    <button class="btn small" data-cat="<%= c.id %>" type="button"><%= c.nume %></button>
+  <% }); %>
+</div>
+
+<% categories.forEach(function (c) { %>
+  <section class="grup" data-cat="<%= c.id %>">
+    <h2><%= c.nume %></h2>
+    <p class="hint"><%= c.descriere %></p>
+    <div class="model-grid">
+      <% models.filter(function (m) { return m.cat === c.id; }).forEach(function (m) { %>
+        <form method="post" action="/corps" class="model-form">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <input type="hidden" name="model" value="<%= m.id %>">
+          <button class="model-card" type="submit" title="Creează un corp după acest model">
+            <span class="sk-wrap"><%- m.sketch %></span>
+            <span class="model-body">
+              <span class="model-nume"><%= m.nume %></span>
+              <span class="model-dim"><%= m.params.W %> × <%= m.params.H %> × <%= m.params.D %> mm</span>
+              <span class="model-rez"><%= m.rezumat %></span>
+              <span class="model-desc"><%= m.descriere %></span>
+            </span>
+          </button>
+        </form>
+      <% }); %>
+    </div>
+  </section>
+<% }); %>
+
+<section class="grup" data-cat="gol">
+  <h2>Fără model</h2>
+  <div class="model-grid">
+    <form method="post" action="/corps" class="model-form">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <button class="model-card gol" type="submit">
+        <span class="model-body">
+          <span class="model-nume">Corp gol</span>
+          <span class="model-dim">800 × 720 × 560 mm</span>
+          <span class="model-rez">valorile implicite</span>
+          <span class="model-desc">Pornești de la corpul de bucătărie standard și schimbi tot ce vrei.</span>
+        </span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<div class="panel">
+  <h2>Ce nu poate încă genera calculul</h2>
+  <ul class="ticks">
+    <li><b>Corpuri de colț</b> (L, trapez, cu ușă pe diagonală) — geometria nu e dreptunghiulară.</li>
+    <li><b>Montant central</b> pentru corpuri late; de aceea polițele peste 800 mm primesc avertisment.</li>
+    <li><b>Uși glisante</b>, uși cu ramă și sticlă, jaluzele.</li>
+    <li><b>Soclu, picioare, blat de lucru</b> — se calculează separat de corp.</li>
+    <li><b>Decupaje</b> pentru chiuvetă, plită, prize sau nișe de electrocasnice.</li>
+    <li><b>Antresol</b> (corpul de deasupra dulapului) — se face ca un corp separat.</li>
+  </ul>
+  <p class="hint">Dacă îți trebuie ceva de aici, spune-mi care — se pot adăuga în motorul de calcul.</p>
+</div>
+
+<script src="/static/models-pick.js?v=<%= assetV %>"></script>
