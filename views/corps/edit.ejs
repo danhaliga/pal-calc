@@ -1,0 +1,196 @@
+<div class="top">
+  <div class="crumbs"><a href="/corps">← Corpurile mele</a></div>
+  <div class="status-line">
+    <span class="chip <%= corp.paid ? 'paid' : 'draft' %>"><%= corp.paid ? 'Plătit' : 'Draft' %></span>
+    <span id="saveState" class="muted small">salvat</span>
+  </div>
+</div>
+
+<% if (justPaid) { %>
+  <div class="warn ok">Plata a fost înregistrată. Lista de debitare este deblocată pentru acest corp.</div>
+<% } %>
+
+<div class="grid">
+
+  <!-- ---------------- formular ---------------- -->
+  <div class="panel">
+    <h2>Corp</h2>
+    <form id="form" autocomplete="off">
+      <fieldset>
+        <div class="f">
+          <label class="full">Denumire<input id="nume" type="text" maxlength="80"></label>
+          <label>Lățime (L)<input id="W" type="number" min="100" max="3000" step="1"></label>
+          <label>Înălțime (H)<input id="H" type="number" min="100" max="3000" step="1"></label>
+          <label>Adâncime (A)<input id="D" type="number" min="100" max="3000" step="1"></label>
+          <label>Construcție<select id="constr">
+            <option value="intre">Blat/fund între laterale</option>
+            <option value="peste">Laterale între blat și fund</option>
+          </select></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Material și cant</legend>
+        <div class="f3">
+          <label>PAL (mm)<select id="t"><option>16</option><option>18</option><option>25</option></select></label>
+          <label>Cant gros<input id="cg" type="number" step="0.1" min="0" max="5"></label>
+          <label>Cant subțire<input id="cs" type="number" step="0.1" min="0" max="5"></label>
+        </div>
+        <div class="f" style="margin-top:8px">
+          <label>Spate<select id="spate">
+            <option value="aplicat">PFL aplicat (capsat)</option>
+            <option value="nut">PFL în nut</option>
+            <option value="pal">PAL în nut</option>
+          </select></label>
+          <label>Grosime spate<input id="tp" type="number" step="0.5" min="0" max="50"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Uși</legend>
+        <div class="f3">
+          <label>Număr uși<select id="nUsi"><option>0</option><option>1</option><option>2</option></select></label>
+          <label>Montaj<select id="montaj">
+            <option value="aplicat">Aplicate</option>
+            <option value="incastrat">Încastrate</option>
+          </select></label>
+          <label>Balama<select id="balama">
+            <option value="0">Cot 0 (aplicată)</option>
+            <option value="9">Cot 9 (semi)</option>
+            <option value="18">Cot 18 (încastrată)</option>
+          </select></label>
+          <label>Rost margine<input id="rm" type="number" step="0.5" min="0" max="50"></label>
+          <label>Rost între fronturi<input id="ri" type="number" step="0.5" min="0" max="50"></label>
+          <label>Rost încastrat<input id="rinc" type="number" step="0.5" min="0" max="50"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Polițe</legend>
+        <div class="f3">
+          <label>Număr polițe<input id="nPol" type="number" min="0" max="20" step="1"></label>
+          <label>Joc lateral<input id="jp" type="number" step="0.5" min="0" max="50"></label>
+          <label>Retragere față<input id="rp" type="number" step="1" min="0" max="300"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Sertare (glisiere cu bilă)</legend>
+        <div class="f3">
+          <label>Număr sertare<input id="nSer" type="number" min="0" max="12" step="1"></label>
+          <label>Înălțime front<input id="hFront" type="number" step="1" min="20" max="1200"></label>
+          <label>Înălțime cutie<input id="hCutie" type="number" step="1" min="20" max="1200"></label>
+          <label>Joc glisieră / parte<input id="jg" type="number" step="0.5" min="0" max="50"></label>
+          <label>PAL cutie<select id="ts"><option>16</option><option>18</option></select></label>
+          <label>Lungime glisieră<input id="lg" type="number" step="50" min="0" max="1200" placeholder="auto"></label>
+        </div>
+      </fieldset>
+    </form>
+    <p class="legend">Modificările se salvează automat în contul tău.</p>
+  </div>
+
+  <!-- ---------------- 3D + listă ---------------- -->
+  <div>
+    <div class="panel">
+      <div class="top">
+        <h2 style="margin:0" id="titlu3d">Vedere 3D</h2>
+        <div class="btns" style="margin:0">
+          <button class="btn small" data-view="iso">Izometric</button>
+          <button class="btn small" data-view="fata">Față</button>
+          <button class="btn small" data-view="sus">Sus</button>
+          <button class="btn small" data-view="spate">Spate</button>
+        </div>
+      </div>
+      <div class="bar3d">
+        <label>Explodat <input type="range" id="explode" min="0" max="100" value="0"></label>
+        <label><input type="checkbox" id="auto"> Rotire automată</label>
+        <span class="grp">
+          <label><input type="checkbox" class="vis" data-g="corp" checked> Corp</label>
+          <label><input type="checkbox" class="vis" data-g="spate" checked> Spate</label>
+          <label><input type="checkbox" class="vis" data-g="fronturi" checked> Uși/fronturi</label>
+          <label><input type="checkbox" class="vis" data-g="sertare" checked> Sertare</label>
+          <label><input type="checkbox" class="vis" data-g="polite" checked> Polițe</label>
+        </span>
+      </div>
+      <div class="cvwrap" id="cvwrap"><canvas id="cv"></canvas></div>
+      <div class="info" id="info"></div>
+      <p class="legend">
+        <span class="sw" style="background:#d9c7a8"></span>față PAL ·
+        <span class="sw" style="background:#d48a1e"></span>cant gros ·
+        <span class="sw" style="background:#f1cf93"></span>cant subțire ·
+        <span class="sw" style="background:#b09572"></span>muchie brută (fără cant) ·
+        <span class="sw" style="background:#7a6650"></span>PFL.
+        Trage pentru rotire, scroll sau două degete pentru zoom, apasă pe o piesă pentru cote.
+      </p>
+    </div>
+
+    <div class="panel">
+      <div class="top">
+        <h2 style="margin:0" id="titlu">Listă piese</h2>
+        <div class="btns" style="margin:0">
+          <% if (corp.paid) { %>
+            <button class="btn small" id="copyCorp">Copiază CSV</button>
+            <a class="btn small" href="/corps/<%= corp.id %>/export.csv">Descarcă CSV</a>
+          <% } else { %>
+            <button class="btn small" disabled title="Disponibil după deblocare">Copiază CSV</button>
+          <% } %>
+        </div>
+      </div>
+
+      <div id="warns"></div>
+
+      <% if (!corp.paid) { %>
+        <div class="paywall">
+          <div>
+            <b>Lista de debitare este blocată</b>
+            <p class="muted small">
+              Cotele finite și vederea 3D sunt gratuite. Cotele de tăiere (finit minus cant) și cantul
+              pe fiecare muchie se deblochează pentru acest corp.
+            </p>
+          </div>
+          <form method="post" action="/corps/<%= corp.id %>/pay">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button class="btn primary" type="submit">🔓 Deblochează lista de debitare – <%= priceLei %> RON</button>
+          </form>
+        </div>
+      <% } %>
+
+      <div class="tbl"><table>
+        <thead><tr>
+          <th>Piesă</th><th class="num">Buc</th>
+          <th class="num">Finit L</th><th class="num">Finit l</th>
+          <th class="<%= corp.paid ? '' : 'locked-h' %>">Cant L1·L2·l1·l2</th>
+          <th class="num <%= corp.paid ? '' : 'locked-h' %>">Tăiere L</th>
+          <th class="num <%= corp.paid ? '' : 'locked-h' %>">Tăiere l</th>
+          <th>Fibră</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+
+      <p class="legend">
+        <span class="cant"><span class="g">2</span></span> cant gros pe muchia vizibilă ·
+        <span class="cant"><span class="s">0.4</span></span> cant subțire ·
+        <span class="cant"><span>–</span></span> fără cant.
+        L1/L2 = muchiile lungi, l1/l2 = muchiile scurte. Tăiere = finit − cant pe fiecare latură.
+      </p>
+
+      <details>
+        <summary>Formulele folosite</summary>
+        <div class="formule" id="formule"></div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="application/json" id="page-data"><%- JSON.stringify({
+  corpId: corp.id,
+  params: corp.params,
+  paid: corp.paid,
+  csrf: csrfToken,
+  priceLei: priceLei
+}) %></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/shared/calc.js"></script>
+<script src="/static/app.js"></script>

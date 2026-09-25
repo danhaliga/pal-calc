@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title><%= typeof title !== 'undefined' && title ? title + ' · ' + appName : appName %></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128208;</text></svg>">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-inner">
+    <a class="logo" href="<%= user ? '/corps' : '/' %>">
+      <span class="logo-mark">▤</span>
+      <span>
+        <b>PAL Calc</b>
+        <small>corpuri-mobila.ro</small>
+      </span>
+    </a>
+    <nav>
+      <% if (user) { %>
+        <a href="/corps" class="<%= currentPath.startsWith('/corps') ? 'on' : '' %>">Corpurile mele</a>
+        <% if (user.is_admin) { %><a href="/admin" class="<%= currentPath === '/admin' ? 'on' : '' %>">Administrare</a><% } %>
+        <span class="who" title="<%= user.email %>"><%= user.name || user.email %></span>
+        <form method="post" action="/logout" class="inline">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <button class="link">Ieși</button>
+        </form>
+      <% } else { %>
+        <a href="/login">Autentificare</a>
+        <a href="/register" class="btn small primary">Cont nou</a>
+      <% } %>
+    </nav>
+  </div>
+</header>
+
+<% if (paymentDriver === 'fake') { %>
+  <div class="devbar">Plată de test — driverul <code>fake</code> este activ, nu se încasează bani.</div>
+<% } %>
+
+<main class="wrap">
+<%- body %>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    Cotele sunt în mm. Verifică întotdeauna cu serviciul de debitare dacă cere cota finită sau cea brută.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* PAL Calc - stiluri. Paleta si tipografia sunt cele din calculator-debitare.html. */
+
+:root{
+  --bg:#eef1f3; --panel:#ffffff; --ink:#1b232c; --muted:#5d6a76; --line:#d5dbe1;
+  --accent:#0f6e6a; --accent-ink:#ffffff; --cant:#d48a1e; --cant-soft:#fbead0;
+  --row:#f6f8f9; --danger:#b3261e; --warn-bg:#fff4e0; --ok-bg:#e3f3ec; --cv:#e4e9ec;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#151a1f; --panel:#1e252c; --ink:#e8ecef; --muted:#9aa7b2; --line:#334049;
+    --accent:#3fb3ad; --accent-ink:#0b1a19; --cant:#e6a03a; --cant-soft:#3a2d16;
+    --row:#232c34; --danger:#ff7b72; --warn-bg:#3a2d16; --ok-bg:#16302a; --cv:#121619;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#151a1f; --panel:#1e252c; --ink:#e8ecef; --muted:#9aa7b2; --line:#334049;
+  --accent:#3fb3ad; --accent-ink:#0b1a19; --cant:#e6a03a; --cant-soft:#3a2d16;
+  --row:#232c34; --danger:#ff7b72; --warn-bg:#3a2d16; --ok-bg:#16302a; --cv:#121619;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px}
+
+h1{font-size:22px;font-weight:600;margin:0 0 4px;text-wrap:balance}
+h2{font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+a{color:var(--accent)}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:65ch}
+
+/* ---------- antet site ---------- */
+.site{background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.site-inner{display:flex;align-items:center;gap:16px;justify-content:space-between;padding-block:10px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:30px;height:30px;border-radius:6px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:16px}
+.logo b{display:block;font-size:15px;line-height:1.1}
+.logo small{display:block;font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.site nav{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.site nav a{text-decoration:none;color:var(--muted);font-size:14px}
+.site nav a:hover,.site nav a.on{color:var(--ink)}
+.who{font-size:13px;color:var(--muted);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inline{display:inline}
+button.link{background:none;border:0;color:var(--muted);cursor:pointer;font:inherit;font-size:14px;padding:0}
+button.link:hover{color:var(--ink)}
+
+.devbar{background:var(--warn-bg);border-bottom:1px solid var(--line);color:var(--ink);
+  font-size:12.5px;text-align:center;padding:5px 16px}
+.devbar code{font-family:"IBM Plex Mono",monospace}
+
+main.wrap{padding-block:20px 40px}
+.site-foot{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;padding-block:14px 30px}
+
+/* ---------- elemente ---------- */
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+.panel+.panel{margin-top:20px}
+.panel.center{text-align:center}
+.grid{display:grid;grid-template-columns:minmax(280px,380px) 1fr;gap:20px;align-items:start}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.crumbs a{text-decoration:none;font-size:13px}
+.status-line{display:flex;align-items:center;gap:10px}
+
+fieldset{border:0;padding:0;margin:0 0 16px}
+legend{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px}
+.f3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px 10px}
+@media(max-width:520px){.f3{grid-template-columns:1fr 1fr}}
+label{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--muted)}
+input,select,button{font:inherit;color:var(--ink)}
+input,select{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:6px 8px;width:100%;
+  font-family:"IBM Plex Mono",monospace;font-size:14px}
+select{font-family:"IBM Plex Sans",system-ui,sans-serif}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+input[type=checkbox]{width:auto}
+.full{grid-column:1/-1}
+
+.btn,button{border:1px solid var(--line);background:var(--panel);border-radius:5px;padding:7px 12px;
+  cursor:pointer;font-weight:500;text-decoration:none;color:var(--ink);display:inline-block}
+.btn:hover,button:hover{border-color:var(--accent)}
+.btn.primary,button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.small,button.small{padding:3px 8px;font-size:12px}
+.btn.danger,button.danger{color:var(--danger)}
+.btn.full{width:100%;text-align:center;margin-top:6px}
+button:disabled{opacity:.5;cursor:not-allowed}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.btns.center{justify-content:center}
+
+.warn{background:var(--warn-bg);border-left:3px solid var(--cant);padding:8px 10px;border-radius:4px;font-size:13px;margin:10px 0}
+.warn.err{border-left-color:var(--danger)}
+.warn.ok{background:var(--ok-bg);border-left-color:var(--accent)}
+.legend{font-size:12px;color:var(--muted);margin:10px 0 0}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+
+.chip{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid var(--line);
+  text-transform:uppercase;letter-spacing:.04em}
+.chip.paid{background:var(--ok-bg);border-color:var(--accent);color:var(--accent)}
+.chip.draft{background:var(--row);color:var(--muted)}
+
+/* ---------- tabel ---------- */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+tbody tr:nth-child(even){background:var(--row)}
+tbody tr.sel td{background:var(--cant-soft)}
+th.locked-h{color:var(--muted);opacity:.65}
+td.locked{color:var(--muted);text-align:center;font-family:"IBM Plex Mono",monospace;
+  background:repeating-linear-gradient(45deg,transparent,transparent 5px,rgba(127,127,127,.07) 5px,rgba(127,127,127,.07) 10px);
+  filter:blur(.2px);user-select:none}
+
+.cant{display:inline-flex;gap:2px;font-family:"IBM Plex Mono",monospace;font-size:12px}
+.cant span{padding:0 4px;border-radius:3px;background:var(--row);color:var(--muted);min-width:22px;text-align:center}
+.cant span.g{background:var(--cant);color:#fff}
+.cant span.s{background:var(--cant-soft);color:var(--ink)}
+
+/* ---------- paywall ---------- */
+.paywall{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  border:1px dashed var(--accent);background:var(--row);border-radius:8px;padding:12px 14px;margin:10px 0 14px}
+.paywall p{margin:4px 0 0;max-width:52ch}
+
+/* ---------- 3D ---------- */
+.bar3d{display:flex;gap:6px 14px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted);margin-bottom:8px}
+.bar3d .grp{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.bar3d label{flex-direction:row;align-items:center;gap:5px;cursor:pointer;white-space:nowrap}
+.bar3d input[type=checkbox]{width:auto;margin:0}
+.bar3d input[type=range]{width:120px;padding:0;background:none;border:0}
+.cvwrap{position:relative;background:var(--cv);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.cvwrap canvas{display:block;width:100%;touch-action:none;cursor:grab}
+.cvwrap canvas:active{cursor:grabbing}
+.nocv{padding:40px 16px;text-align:center;color:var(--muted);font-size:13px}
+.info{margin-top:8px;min-height:44px;font-size:13px;display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.info b{font-size:14px}
+.info .k{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.sw{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:3px;border:1px solid rgba(0,0,0,.15)}
+.formule{font-size:13px;color:var(--muted);line-height:1.6}
+.formule code{font-family:"IBM Plex Mono",monospace;color:var(--ink);background:var(--row);padding:0 4px;border-radius:3px}
+details{margin-top:12px}
+summary{cursor:pointer;color:var(--muted);font-size:13px}
+
+/* ---------- landing / auth / listă ---------- */
+.hero{padding:26px 0 10px}
+.hero .btns{margin-top:14px}
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:10px}
+.cards3 .panel{margin-top:0}
+.ticks,.steps{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.7}
+.auth{max-width:420px;margin:30px auto}
+.auth label{margin-bottom:10px}
+.empty{text-align:center;color:var(--muted)}
+
+.corp-list{display:grid;gap:10px}
+.corp-card{display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.corp-main{text-decoration:none;color:inherit;flex:1 1 260px}
+.corp-main h2{font-size:16px;text-transform:none;letter-spacing:0;color:var(--ink);margin:0 0 2px}
+.corp-card .dims{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted)}
+.corp-card .meta{font-size:12.5px;color:var(--muted);margin-top:2px}
+.corp-side{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px}
+.kpi .v{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);
+  padding:8px 14px;border-radius:6px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:40}
+.toast.on{opacity:1}
+@media(prefers-reduced-motion:reduce){.toast{transition:none}}

@@ -1,0 +1,54 @@
+<div class="top">
+  <h1>Corpurile mele</h1>
+  <form method="post" action="/corps" class="inline">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button class="btn primary" type="submit">+ Corp nou</button>
+  </form>
+</div>
+
+<% if (justPaid) { %>
+  <div class="warn ok">Plata a fost înregistrată. Lista de debitare este deblocată pentru corpul respectiv.</div>
+<% } %>
+
+<% if (!corps.length) { %>
+  <div class="panel empty">
+    <p>Nu ai încă niciun corp.</p>
+    <p class="muted">Apasă „+ Corp nou”: pornești de la un corp de bucătărie 800 × 720 × 560 și îl modifici după nevoie.</p>
+  </div>
+<% } else { %>
+  <div class="corp-list">
+    <% corps.forEach(function (c) { %>
+      <article class="corp-card">
+        <a class="corp-main" href="/corps/<%= c.id %>">
+          <h2><%= c.name %></h2>
+          <div class="dims"><%= c.params.W %> × <%= c.params.H %> × <%= c.params.D %> mm</div>
+          <div class="meta">
+            PAL <%= c.params.t %> ·
+            <%= c.params.nUsi %> uși ·
+            <%= c.params.nPol %> polițe ·
+            <%= c.params.nSer %> sertare
+          </div>
+        </a>
+        <div class="corp-side">
+          <span class="chip <%= c.paid ? 'paid' : 'draft' %>"><%= c.paid ? 'Plătit' : 'Draft' %></span>
+          <span class="muted small">modificat <%= c.updated_at.replace('T', ' ').slice(0, 16) %></span>
+          <div class="btns">
+            <a class="btn small" href="/corps/<%= c.id %>">Deschide</a>
+            <form method="post" action="/corps/<%= c.id %>/duplicate" class="inline">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <button class="btn small" type="submit">Duplică</button>
+            </form>
+            <button class="btn small danger" data-delete="<%= c.id %>" data-name="<%= c.name %>">Șterge</button>
+          </div>
+        </div>
+      </article>
+    <% }); %>
+  </div>
+  <p class="muted small">
+    Lista de debitare completă costă <%= priceLei %> lei per corp. Un corp duplicat este un corp nou și
+    are nevoie de plată separată.
+  </p>
+<% } %>
+
+<script type="application/json" id="page-data"><%- JSON.stringify({ csrf: csrfToken }) %></script>
+<script src="/static/corps-list.js"></script>
