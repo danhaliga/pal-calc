@@ -58,7 +58,9 @@ main.wrap{padding-block:20px 40px}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
 .panel+.panel{margin-top:20px}
 .panel.center{text-align:center}
-.grid{display:grid;grid-template-columns:minmax(280px,380px) 1fr;gap:20px;align-items:start}
+.grid{display:grid;grid-template-columns:minmax(280px,380px) minmax(0,1fr);gap:20px;align-items:start}
+/* fără asta, canvasul 3D își impune lățimea proprie și împinge pagina în lateral */
+.grid > *{min-width:0}
 @media(max-width:820px){.grid{grid-template-columns:1fr}}
 
 .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
@@ -131,7 +133,7 @@ td.locked{color:var(--muted);text-align:center;font-family:"IBM Plex Mono",monos
 .bar3d input[type=checkbox]{width:auto;margin:0}
 .bar3d input[type=range]{width:120px;padding:0;background:none;border:0}
 .cvwrap{position:relative;background:var(--cv);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.cvwrap canvas{display:block;width:100%;touch-action:none;cursor:grab}
+.cvwrap canvas{display:block;width:100%;max-width:100%;touch-action:none;cursor:grab}
 .cvwrap canvas:active{cursor:grabbing}
 .nocv{padding:40px 16px;text-align:center;color:var(--muted);font-size:13px}
 .info{margin-top:8px;min-height:44px;font-size:13px;display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
@@ -198,12 +200,16 @@ svg.sk .sk-perete{stroke:#5c4a2e;stroke-width:26;stroke-linecap:square;opacity:.
 svg.sk .sk-orb{fill:#8d7a5c;opacity:.8;stroke:none}
 
 /* ---------- editorul de contur (corp atipic) ---------- */
-.contur-lucru{display:grid;grid-template-columns:1fr 200px;gap:14px;align-items:start}
-@media(max-width:900px){.contur-lucru{grid-template-columns:1fr}}
-.contur-tabel{font-size:12.5px}
-.contur-tabel input.dim{width:74px}
+.contur-lucru{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:14px;align-items:start}
+@media(max-width:820px){.contur-lucru{grid-template-columns:1fr}}
+/* atenție: clasa .grid înseamnă layout pe coloane în această aplicație,
+   deci tabelele nu o folosesc — ar deveni ele însele grid și ar sparge rândurile */
+.contur-tabel{font-size:12.5px;min-width:360px}
+.contur-tabel th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.contur-tabel td.c,.contur-tabel th.c{text-align:center}
+.contur-tabel input.dim{width:72px;text-align:right}
 .contur-preview{background:var(--row);border:1px solid var(--line);border-radius:6px;padding:8px;
-  display:flex;align-items:center;justify-content:center;min-height:150px}
+  display:flex;align-items:center;justify-content:center;min-height:150px;overflow:hidden}
 svg.ct-svg{width:100%;height:auto;max-height:230px}
 svg.ct-svg .ct-forma{fill:#c9ab7d;fill-opacity:.45;stroke:none}
 svg.ct-svg .ct-latura{stroke:#5c4a2e;stroke-width:8;stroke-linecap:round}
