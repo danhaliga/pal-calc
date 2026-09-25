@@ -1,0 +1,68 @@
+<h1>Administrare</h1>
+
+<div class="kpis">
+  <div class="kpi"><div class="v"><%= users.length %></div><div class="l">utilizatori</div></div>
+  <div class="kpi"><div class="v"><%= corps.length %></div><div class="l">corpuri (ultimele 100)</div></div>
+  <div class="kpi"><div class="v"><%= totalCount %></div><div class="l">plăți reușite</div></div>
+  <div class="kpi"><div class="v"><%= totalLei %> lei</div><div class="l">total încasat</div></div>
+</div>
+
+<div class="panel">
+  <h2>Utilizatori</h2>
+  <div class="tbl"><table>
+    <thead><tr><th class="num">#</th><th>Email</th><th>Nume</th><th class="num">Corpuri</th><th class="num">Plătite</th><th>Creat</th><th>Rol</th></tr></thead>
+    <tbody>
+      <% users.forEach(function (u) { %>
+        <tr>
+          <td class="num"><%= u.id %></td>
+          <td><%= u.email %></td>
+          <td><%= u.name || '–' %></td>
+          <td class="num"><%= u.corps %></td>
+          <td class="num"><%= u.paid %></td>
+          <td class="muted"><%= u.created_at.slice(0, 16) %></td>
+          <td><%= u.is_admin ? 'admin' : 'utilizator' %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="panel">
+  <h2>Corpuri</h2>
+  <div class="tbl"><table>
+    <thead><tr><th class="num">#</th><th>Denumire</th><th>Utilizator</th><th>Status</th><th>Modificat</th></tr></thead>
+    <tbody>
+      <% corps.forEach(function (c) { %>
+        <tr>
+          <td class="num"><%= c.id %></td>
+          <td><%= c.name %></td>
+          <td><%= c.email %></td>
+          <td><span class="chip <%= c.status === 'paid' ? 'paid' : 'draft' %>"><%= c.status === 'paid' ? 'Plătit' : 'Draft' %></span></td>
+          <td class="muted"><%= c.updated_at.slice(0, 16) %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="panel">
+  <h2>Plăți</h2>
+  <div class="tbl"><table>
+    <thead><tr><th class="num">#</th><th>Utilizator</th><th>Corp</th><th>Driver</th><th class="num">Sumă</th><th>Status</th><th>Referință</th><th>Data</th></tr></thead>
+    <tbody>
+      <% if (!payments.length) { %><tr><td colspan="8" class="muted">Nicio plată încă.</td></tr><% } %>
+      <% payments.forEach(function (p) { %>
+        <tr>
+          <td class="num"><%= p.id %></td>
+          <td><%= p.email %></td>
+          <td><%= p.corp_name || '–' %></td>
+          <td><%= p.provider %></td>
+          <td class="num"><%= (p.amount_cents / 100).toFixed(2) %> <%= p.currency.toUpperCase() %></td>
+          <td><%= p.status %></td>
+          <td class="muted small"><%= p.provider_ref || '–' %></td>
+          <td class="muted"><%= p.created_at.slice(0, 16) %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table></div>
+</div>
