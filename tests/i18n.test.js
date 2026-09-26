@@ -239,6 +239,37 @@ test('fiecare fișier din locales/ este JSON valid și are un cod cunoscut', () 
   });
 });
 
+/* Scrisul fiecărei limbi: la tastat se strecoară ușor un „к” chirilic într-un
+   text latin, și nu se vede cu ochiul liber. */
+const SCRIERI = {
+  chirilic: /[Ѐ-ӿ]/, arab: /[؀-ۿ]/, ebraic: /[֐-׿]/,
+  grec: /[Ͱ-Ͽ]/, chinez: /[一-鿿]/, japonez: /[぀-ヿ]/,
+  coreean: /[가-힯]/, thai: /[฀-๿]/, devanagari: /[ऀ-ॿ]/
+};
+
+const SCRIERE_ASTEPTATA = {
+  ru: 'chirilic', uk: 'chirilic', bg: 'chirilic', sr: 'chirilic',
+  ar: 'arab', fa: 'arab', he: 'ebraic', el: 'grec',
+  zh: 'chinez', ja: 'japonez', ko: 'coreean', th: 'thai', hi: 'devanagari'
+};
+
+test('fiecare limbă folosește doar scrierea ei', () => {
+  fs.readdirSync(LOCALES).filter(f => f.endsWith('.json')).forEach(f => {
+    const cod = f.replace(/\.json$/, '');
+    const text = fs.readFileSync(path.join(LOCALES, f), 'utf8');
+    const a = SCRIERE_ASTEPTATA[cod];
+
+    Object.keys(SCRIERI).forEach(scriere => {
+      if (scriere === a) return;
+      /* japoneza scrie și cu ideograme chinezești, e normal */
+      if (cod === 'ja' && scriere === 'chinez') return;
+      const gasite = [...new Set(text.match(new RegExp(SCRIERI[scriere], 'g')) || [])];
+      assert.deepEqual(gasite, [],
+        `${f} conține semne ${scriere}e: ${gasite.join(' ')}`);
+    });
+  });
+});
+
 test('nicio traducere nu inventează chei care nu există în română', () => {
   const ro = JSON.parse(fs.readFileSync(path.join(LOCALES, 'ro.json'), 'utf8'));
   const cheiRo = new Set(plat(ro));
