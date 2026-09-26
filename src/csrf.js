@@ -29,7 +29,7 @@ function middleware(req, res, next) {
              crypto.timingSafeEqual(Buffer.from(sent), Buffer.from(expected));
 
   if (!ok) {
-    const err = new Error('Token CSRF invalid sau lipsă. Reîncarcă pagina și încearcă din nou.');
+    const err = require('./util').eroare('eroare.csrf', 403);
     err.status = 403;
     return next(err);
   }

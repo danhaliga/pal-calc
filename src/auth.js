@@ -9,21 +9,23 @@ const { db } = require('./db');
 
 const BCRYPT_COST = 12;
 
+/* Mesajele de validare sunt chei: se traduc când se afișează, nu când
+   se definește schema (schema se construiește o dată, la pornire). */
 const registerSchema = z.object({
-  email: z.string().trim().toLowerCase().email('Adresa de email nu este validă.').max(160),
+  email: z.string().trim().toLowerCase().email('valid.emailNevalid').max(160),
   name: z.string().trim().max(80).optional().or(z.literal('')),
-  password: z.string().min(8, 'Parola trebuie să aibă cel puțin 8 caractere.').max(200),
+  password: z.string().min(8, 'valid.parolaScurta').max(200),
   password2: z.string()
 }).refine(d => d.password === d.password2, {
-  message: 'Parolele nu coincid.', path: ['password2']
+  message: 'valid.paroleDiferite', path: ['password2']
 });
 
 /* La login acceptam si un nume de utilizator simplu (conturi create cu
    scripts/create-user.js), nu doar email. Cautarea se face oricum pe egalitate
    exacta, iar inregistrarea publica ramane restrictiva. */
 const loginSchema = z.object({
-  email: z.string().trim().toLowerCase().min(2, 'Introdu emailul sau numele de utilizator.').max(160),
-  password: z.string().min(1, 'Introdu parola.').max(200)
+  email: z.string().trim().toLowerCase().min(2, 'valid.emailLipsa').max(160),
+  password: z.string().min(1, 'valid.parolaLipsa').max(200)
 });
 
 /* limita se poate ridica din .env pentru teste automate */
@@ -34,13 +36,13 @@ const limiter = rateLimit({
   limit: LIMITA,
   standardHeaders: true,
   legacyHeaders: false,
-  message: 'Prea multe încercări. Încearcă din nou peste 15 minute.',
+  message: 'valid.preaMulteIncercari',
   handler: (req, res) => {
     /* răspunde pe pagina de unde a venit cererea, nu mereu pe cea de login */
     const peRegister = req.path === '/register';
     res.status(429).render(peRegister ? 'register' : 'login', {
-      title: peRegister ? 'Cont nou' : 'Autentificare',
-      error: 'Prea multe încercări de pe această adresă. Încearcă din nou peste 15 minute.',
+      title: req.t(peRegister ? 'auth.contNou' : 'auth.autentificare'),
+      error: req.t('valid.preaMulteIncercari'),
       values: { email: req.body && req.body.email ? String(req.body.email) : '' }
     });
   }
@@ -84,7 +86,8 @@ function requireAuth(req, res, next) {
 
 function requireAdmin(req, res, next) {
   if (!req.user || !req.user.is_admin) {
-    const err = new Error('Pagina nu există.');
+    const err = new Error('eroare.paginaLipsa');
+    err.cheie = 'eroare.paginaLipsa';
     err.status = 404;
     return next(err);
   }
@@ -97,7 +100,7 @@ const router = express.Router();
 
 router.get('/register', (req, res) => {
   if (req.user) return res.redirect('/orders');
-  res.render('register', { title: 'Cont nou', error: null, values: {} });
+  res.render('register', { title: req.t('auth.contNou'), error: null, values: {} });
 });
 
 router.post('/register', limiter, (req, res, next) => {
@@ -107,12 +110,12 @@ router.post('/register', limiter, (req, res, next) => {
 
   if (!parsed.success) {
     return res.status(400).render('register', {
-      title: 'Cont nou', error: parsed.error.issues[0].message, values
+      title: req.t('auth.contNou'), error: req.t(parsed.error.issues[0].message), values
     });
   }
   if (findByEmail(parsed.data.email)) {
     return res.status(400).render('register', {
-      title: 'Cont nou', error: 'Există deja un cont cu acest email.', values
+      title: req.t('auth.contNou'), error: req.t('valid.emailFolosit'), values
     });
   }
 
@@ -132,7 +135,7 @@ router.post('/register', limiter, (req, res, next) => {
 
 router.get('/login', (req, res) => {
   if (req.user) return res.redirect('/orders');
-  res.render('login', { title: 'Autentificare', error: null, values: {} });
+  res.render('login', { title: req.t('auth.autentificare'), error: null, values: {} });
 });
 
 router.post('/login', limiter, (req, res, next) => {
@@ -141,7 +144,7 @@ router.post('/login', limiter, (req, res, next) => {
 
   if (!parsed.success) {
     return res.status(400).render('login', {
-      title: 'Autentificare', error: parsed.error.issues[0].message, values
+      title: req.t('auth.autentificare'), error: req.t(parsed.error.issues[0].message), values
     });
   }
 
@@ -149,7 +152,7 @@ router.post('/login', limiter, (req, res, next) => {
   const ok = user && bcrypt.compareSync(parsed.data.password, user.password_hash);
   if (!ok) {
     return res.status(401).render('login', {
-      title: 'Autentificare', error: 'Email sau parolă greșite.', values
+      title: req.t('auth.autentificare'), error: req.t('valid.dateGresite'), values
     });
   }
 

@@ -6,11 +6,11 @@
      data-cant-subtire="<%= p.cantSubtireId || '' %>">
   <input type="hidden" name="decor_cod" value="<%= p.valoare || '' %>">
   <button type="button" class="decor-buton">
-    <span class="decor-sw" style="background:#cfd6dd"></span><span>Alege decorul…</span>
+    <span class="decor-sw" style="background:#cfd6dd"></span><span><%= t('decor.alege') %></span>
   </button>
   <div class="decor-panou hidden">
     <div class="decor-bara">
-      <input type="search" class="decor-cauta" placeholder="caută după nume sau cod (ex: stejar, W1000)">
+      <input type="search" class="decor-cauta" placeholder="<%= t('decor.cautaPlaceholder') %>">
       <select class="decor-grup"></select>
       <span class="decor-contor muted small"></span>
     </div>

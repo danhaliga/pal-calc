@@ -1,12 +1,12 @@
 <table class="doc-tbl">
   <thead><tr>
     <th class="num">#</th>
-    <th>Denumire corp</th>
-    <th>Dimensiuni (L × H × A)</th>
-    <th>Conține</th>
-    <th>Material</th>
-    <th class="num">Piese</th>
-    <th>Observații</th>
+    <th><%= t('print.colDenumireCorp') %></th>
+    <th><%= t('print.colDimensiuniLHA') %></th>
+    <th><%= t('print.colContine') %></th>
+    <th><%= t('print.colMaterial') %></th>
+    <th class="num"><%= t('print.colPiese') %></th>
+    <th><%= t('print.colObservatii') %></th>
   </tr></thead>
   <tbody>
     <% raport.corpuri.forEach(function (c) { %>
@@ -15,15 +15,16 @@
         <td><b><%= c.nume %></b></td>
         <td class="num"><%= c.dimensiuni %></td>
         <td>
-          <%= [+c.params.nUsi ? c.params.nUsi + ' uși' : null,
-               +c.params.nSer ? c.params.nSer + ' sertare' : null,
-               +c.params.nPol ? c.params.nPol + ' polițe' : null,
-               c.params.spate === 'aplicat' ? 'spate aplicat' : 'spate în nut'].filter(Boolean).join(', ') %>
+          <%= [+c.params.nUsi ? t('corpuri.metaUsi', { n: +c.params.nUsi }) : null,
+               +c.params.nSer ? t('corpuri.metaSertare', { n: +c.params.nSer }) : null,
+               +c.params.nPol ? t('corpuri.metaPolite', { n: +c.params.nPol }) : null,
+               c.params.spate === 'aplicat' ? t('print.spateAplicat') : t('print.spateNut')
+              ].filter(Boolean).join(', ') %>
         </td>
         <td class="small">
           <%= c.materialCorp ? c.materialCorp.nume : '—' %>
           <% if (c.materialFront && c.materialCorp && c.materialFront.id !== c.materialCorp.id) { %>
-            <div class="tag">fronturi: <%= c.materialFront.nume %></div>
+            <div class="tag"><%= t('print.fronturiDin', { nume: c.materialFront.nume }) %></div>
           <% } %>
         </td>
         <td class="num"><%= c.bucati %></td>
@@ -33,7 +34,7 @@
   </tbody>
   <tfoot>
     <tr>
-      <td></td><td colspan="4"><b>Total</b></td>
+      <td></td><td colspan="4"><b><%= t('comun.total') %></b></td>
       <td class="num"><b><%= raport.totaluri.bucati %></b></td>
       <td></td>
     </tr>
@@ -41,17 +42,20 @@
 </table>
 
 <section class="doc-sect">
-  <h2>Materialele comenzii</h2>
+  <h2><%= t('print.materialeleComenzii') %></h2>
   <table class="doc-tbl">
     <thead><tr>
-      <th>Nume</th><th>Rol</th><th>Producător</th><th>Decor</th>
-      <th class="num">PAL</th><th class="num">Cant gros</th><th class="num">Cant subțire</th>
+      <th><%= t('print.colNume') %></th><th><%= t('print.colRol') %></th>
+      <th><%= t('print.colProducator') %></th><th><%= t('print.colDecor') %></th>
+      <th class="num"><%= t('print.colPal') %></th>
+      <th class="num"><%= t('print.colCantGros') %></th>
+      <th class="num"><%= t('print.colCantSubtire') %></th>
     </tr></thead>
     <tbody>
       <% materiale.forEach(function (m) { %>
         <tr>
           <td><b><%= m.nume %></b></td>
-          <td class="small"><%= m.rol %></td>
+          <td class="small"><%= t('rol.' + m.rol) %></td>
           <td><%= m.brand %></td>
           <td><%= [m.decor_cod, m.decor_nume].filter(Boolean).join(' ') || '—' %></td>
           <td class="num"><%= m.pal_mm %> mm</td>
@@ -64,11 +68,13 @@
 </section>
 
 <section class="doc-sect">
-  <h2>Necesar de plăci</h2>
+  <h2><%= t('print.necesarPlaci') %></h2>
   <table class="doc-tbl">
     <thead><tr>
-      <th>Material</th><th class="num">Piese</th><th class="num">m² piese</th>
-      <th>Coli folosite</th><th class="num">Echivalent</th><th class="num">De cumpărat</th><th class="num">Deșeu</th>
+      <th><%= t('print.colMaterial') %></th><th class="num"><%= t('print.colPiese') %></th>
+      <th class="num"><%= t('print.colM2') %></th>
+      <th><%= t('print.colColiFolosite') %></th><th class="num"><%= t('print.colEchivalent') %></th>
+      <th class="num"><%= t('print.colDeCumparat') %></th><th class="num"><%= t('print.colDeseu') %></th>
     </tr></thead>
     <tbody>
       <% raport.materiale.forEach(function (m) { %>
@@ -78,42 +84,50 @@
           <td class="num"><%= m.m2piese %></td>
           <td class="small"><%= m.bucatiColi.map(function (b) { return b.n + ' × ' + b.format.nume; }).join(' + ') %></td>
           <td class="num"><%= m.echivalent %></td>
-          <td class="num"><b><%= m.coliIntregi %> coli</b></td>
+          <td class="num"><b><%= t('comanda.nColi', { n: m.coliIntregi }) %></b></td>
           <td class="num"><%= m.deseuPct %>%</td>
         </tr>
       <% }); %>
     </tbody>
   </table>
 
-  <h2>Cant</h2>
+  <h2><%= t('comanda.cant') %></h2>
   <table class="doc-tbl">
     <thead><tr>
-      <th>Grosime</th><th>Decor</th><th class="num">Metri liniari</th>
-      <% if (aratAdaos) { %><th class="num">Cu adaos <%= raport.cant.adaosPct %>%</th><th class="num">Role 50 m</th><% } %>
+      <th><%= t('print.colGrosime') %></th><th><%= t('print.colDecor') %></th>
+      <th class="num"><%= t('print.colMetriLiniari') %></th>
+      <% if (aratAdaos) { %>
+        <th class="num"><%= t('print.colCuAdaos', { pct: raport.cant.adaosPct }) %></th>
+        <th class="num"><%= t('print.colRole') %></th>
+      <% } %>
     </tr></thead>
     <tbody>
       <% raport.cant.linii.forEach(function (c) { %>
         <tr>
           <td><b><%= c.mm %> mm</b></td>
           <td><%= c.decor %></td>
-          <td class="num"><b><%= c.ml %> ml</b></td>
-          <% if (aratAdaos) { %><td class="num"><%= c.cuAdaos %> ml</td><td class="num"><%= c.role %></td><% } %>
+          <td class="num"><b><%= c.ml %> <%= t('comun.ml') %></b></td>
+          <% if (aratAdaos) { %>
+            <td class="num"><%= c.cuAdaos %> <%= t('comun.ml') %></td><td class="num"><%= c.role %></td>
+          <% } %>
         </tr>
       <% }); %>
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="2"><b>Total</b></td>
-        <td class="num"><b><%= raport.cant.total %> ml</b></td>
-        <% if (aratAdaos) { %><td class="num"><%= raport.cant.totalCuAdaos %> ml</td><td></td><% } %>
+        <td colspan="2"><b><%= t('comun.total') %></b></td>
+        <td class="num"><b><%= raport.cant.total %> <%= t('comun.ml') %></b></td>
+        <% if (aratAdaos) { %>
+          <td class="num"><%= raport.cant.totalCuAdaos %> <%= t('comun.ml') %></td><td></td>
+        <% } %>
       </tr>
     </tfoot>
   </table>
 
   <p class="doc-nota">
-    Plăcile sunt calculate cu croire reală (tăieri de tip ghilotină, disc de 4 mm), nu din suprafață.
+    <%= t('print.notaPlaci') %>
     <% if (aratAdaos) { %>
-      Adaosul de <%= raport.cant.adaosPct %>% la cant acoperă pierderile la aplicare și capetele de rolă.
+      <%= t('print.notaAdaos', { pct: raport.cant.adaosPct }) %>
     <% } %>
   </p>
 </section>

@@ -1,22 +1,23 @@
 <div class="top">
   <div>
-    <div class="crumbs"><a href="/orders">← Comenzile mele</a></div>
+    <div class="crumbs"><a href="/orders">← <%= t('comanda.inapoiComenzi') %></a></div>
     <h1><%= order.name %></h1>
     <div class="muted small">
-      Comanda nr. <%= order.id %> · deschisă <%= order.created_at.slice(0, 10) %>
-      · <%= raport.totaluri.corpuri %> corpuri · <%= raport.totaluri.bucati %> piese
+      <%= t('comanda.antet', { id: order.id, data: order.created_at.slice(0, 10) }) %>
+      · <%= t('comenzi.nrCorpuri', { n: raport.totaluri.corpuri }) %>
+      · <%= t('comanda.colPiese') %>: <%= raport.totaluri.bucati %>
       <%= order.note ? ' · ' + order.note : '' %>
     </div>
   </div>
   <div class="btns" style="margin:0">
-    <a class="btn primary" href="/orders/<%= order.id %>/corp-nou">+ Adaugă corp (<%= (pretCorp / 100).toFixed(2) %> lei)</a>
-    <a class="btn" href="/credit">Credit: <b><%= (sold / 100).toFixed(2) %> lei</b></a>
+    <a class="btn primary" href="/orders/<%= order.id %>/corp-nou"><%= t('comanda.adaugaCorp', { pret: (pretCorp / 100).toFixed(2) }) %></a>
+    <a class="btn" href="/credit"><%- t('comenzi.creditButon', { sold: (sold / 100).toFixed(2) }) %></a>
   </div>
 </div>
 
-<% if (adaugat) { %><div class="warn ok">Corpul a fost adăugat în comandă.</div><% } %>
+<% if (adaugat) { %><div class="warn ok"><%= t('comanda.corpAdaugat') %></div><% } %>
 <% if (sold < pretCorp) { %>
-  <div class="warn err">Creditul nu mai ajunge pentru un corp nou. <a href="/credit">Alimentează</a>.</div>
+  <div class="warn err"><%- t('comanda.faraCredit') %></div>
 <% } %>
 <% raport.avertismente.forEach(function (a) { %>
   <div class="warn"><%= a %></div>
@@ -25,16 +26,16 @@
 <!-- ---------------- materialele comenzii ---------------- -->
 <div class="panel" id="materiale">
   <div class="top" style="margin-bottom:8px">
-    <h2 style="margin:0">Materiale (<%= materiale.length %>)</h2>
-    <button class="btn small primary" type="button" data-comuta="matNou">
-      + Material
-    </button>
+    <h2 style="margin:0"><%= t('comanda.materiale', { n: materiale.length }) %></h2>
+    <button class="btn small primary" type="button" data-comuta="matNou"><%= t('comanda.materialNou') %></button>
   </div>
 
   <div class="tbl"><table>
     <thead><tr>
-      <th></th><th>Nume</th><th>Rol</th><th>Decor</th><th class="num">PAL</th>
-      <th class="num">Cant gros</th><th class="num">Cant subțire</th><th></th>
+      <th></th><th><%= t('comanda.colNume') %></th><th><%= t('comanda.colRol') %></th>
+      <th><%= t('comanda.colDecor') %></th><th class="num"><%= t('comanda.colPal') %></th>
+      <th class="num"><%= t('comanda.colCantGros') %></th>
+      <th class="num"><%= t('comanda.colCantSubtire') %></th><th></th>
     </tr></thead>
     <tbody>
       <% materiale.forEach(function (m) { %>
@@ -48,46 +49,46 @@
           <td class="num"><%= m.cant_subtire %> mm</td>
           <td class="num">
             <details class="inline-edit">
-              <summary class="btn small">Modifică</summary>
+              <summary class="btn small"><%= t('comun.modifica') %></summary>
               <form method="post" action="/orders/<%= order.id %>/materials/<%= m.id %>" class="mat-form">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="f3">
-                  <label>Nume<input type="text" name="nume" value="<%= m.nume %>" maxlength="60" required></label>
-                  <label>Rol<select name="rol">
+                  <label><%= t('comanda.colNume') %><input type="text" name="nume" value="<%= m.nume %>" maxlength="60" required></label>
+                  <label><%= t('comanda.colRol') %><select name="rol">
                     <% roluri.forEach(function (r) { %>
                       <option value="<%= r.id %>" <%= m.rol === r.id ? 'selected' : '' %>><%= r.nume %></option>
                     <% }); %>
                   </select></label>
-                  <label>Producător<select name="brand" id="brand-<%= m.id %>">
+                  <label><%= t('comanda.producator') %><select name="brand" id="brand-<%= m.id %>">
                     <% marci.forEach(function (b) { %>
                       <option value="<%= b %>" <%= m.brand === b ? 'selected' : '' %>><%= b %></option>
                     <% }); %>
                   </select></label>
-                  <label>Grosime PAL<select name="pal_mm" id="pal-<%= m.id %>">
+                  <label><%= t('comanda.grosimePal') %><select name="pal_mm" id="pal-<%= m.id %>">
                     <% grosimi.forEach(function (g) { %>
                       <option value="<%= g %>" <%= Number(m.pal_mm) === g ? 'selected' : '' %>><%= g %> mm</option>
                     <% }); %>
                   </select></label>
-                  <label>Cant gros<select name="cant_gros" id="cg-<%= m.id %>">
+                  <label><%= t('comanda.colCantGros') %><select name="cant_gros" id="cg-<%= m.id %>">
                     <% cantStandard.forEach(function (c) { %>
                       <option value="<%= c %>" <%= Number(m.cant_gros) === c ? 'selected' : '' %>><%= c %> mm</option>
                     <% }); %>
                   </select></label>
-                  <label>Cant subțire<select name="cant_subtire" id="cs-<%= m.id %>">
+                  <label><%= t('comanda.colCantSubtire') %><select name="cant_subtire" id="cs-<%= m.id %>">
                     <% cantStandard.forEach(function (c) { %>
                       <option value="<%= c %>" <%= Number(m.cant_subtire) === c ? 'selected' : '' %>><%= c %> mm</option>
                     <% }); %>
                   </select></label>
                 </div>
-                <label style="margin-top:8px">Decor
+                <label style="margin-top:8px"><%= t('comanda.colDecor') %>
                   <%- include('../partials/decor-picker', { p: { brandId: 'brand-' + m.id, palId: 'pal-' + m.id,
                         cantGrosId: 'cg-' + m.id, cantSubtireId: 'cs-' + m.id, valoare: m.decor_cod } }) %>
                 </label>
                 <div class="btns">
-                  <button class="btn small primary" type="submit">Salvează</button>
+                  <button class="btn small primary" type="submit"><%= t('comun.salveaza') %></button>
                   <% if (materiale.length > 1) { %>
                     <button class="btn small danger" type="submit" name="sterge" value="1"
-                            data-confirma="Ștergi materialul?">Șterge</button>
+                            data-confirma="<%= t('comanda.stergeMaterial') %>"><%= t('comun.sterge') %></button>
                   <% } %>
                 </div>
               </form>
@@ -102,48 +103,48 @@
     <form method="post" action="/orders/<%= order.id %>/materials" class="mat-form">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <div class="f3">
-        <label>Nume<input type="text" name="nume" placeholder="ex: Fronturi stejar" maxlength="60" required></label>
-        <label>Rol<select name="rol">
+        <label><%= t('comanda.colNume') %><input type="text" name="nume" placeholder="<%= t('comanda.materialExemplu') %>" maxlength="60" required></label>
+        <label><%= t('comanda.colRol') %><select name="rol">
           <% roluri.forEach(function (r) { %><option value="<%= r.id %>"><%= r.nume %></option><% }); %>
         </select></label>
-        <label>Producător<select name="brand" id="brand-nou">
+        <label><%= t('comanda.producator') %><select name="brand" id="brand-nou">
           <% marci.forEach(function (b) { %><option value="<%= b %>"><%= b %></option><% }); %>
         </select></label>
-        <label>Grosime PAL<select name="pal_mm" id="pal-nou">
+        <label><%= t('comanda.grosimePal') %><select name="pal_mm" id="pal-nou">
           <% grosimi.forEach(function (g) { %>
             <option value="<%= g %>" <%= g === 18 ? 'selected' : '' %>><%= g %> mm</option>
           <% }); %>
         </select></label>
-        <label>Cant gros<select name="cant_gros" id="cg-nou">
+        <label><%= t('comanda.colCantGros') %><select name="cant_gros" id="cg-nou">
           <% cantStandard.forEach(function (c) { %>
             <option value="<%= c %>" <%= c === 2 ? 'selected' : '' %>><%= c %> mm</option>
           <% }); %>
         </select></label>
-        <label>Cant subțire<select name="cant_subtire" id="cs-nou">
+        <label><%= t('comanda.colCantSubtire') %><select name="cant_subtire" id="cs-nou">
           <% cantStandard.forEach(function (c) { %>
             <option value="<%= c %>" <%= c === 0.4 ? 'selected' : '' %>><%= c %> mm</option>
           <% }); %>
         </select></label>
       </div>
-      <label style="margin-top:8px">Decor
+      <label style="margin-top:8px"><%= t('comanda.colDecor') %>
         <%- include('../partials/decor-picker', { p: { brandId: 'brand-nou', palId: 'pal-nou',
               cantGrosId: 'cg-nou', cantSubtireId: 'cs-nou', valoare: '' } }) %>
       </label>
-      <button class="btn primary" type="submit" style="margin-top:10px">Adaugă materialul</button>
+      <button class="btn primary" type="submit" style="margin-top:10px"><%= t('comanda.adaugaMaterialul') %></button>
     </form>
   </div>
 </div>
 
 <!-- ---------------- setările comenzii ---------------- -->
 <details class="panel">
-  <summary><b>Setări comandă:</b> formate de coală —
+  <summary><b><%= t('comanda.setari') %></b> <%= t('comanda.setariFormate') %>
     <%= formateAlese.map(function (f) { return formateToate[f].nume; }).join(', ') %>
   </summary>
   <form method="post" action="/orders/<%= order.id %>" style="margin-top:12px">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
     <div class="f">
-      <label class="full">Nume comandă<input type="text" name="name" value="<%= order.name %>" maxlength="80" required></label>
-      <label class="full">Observații<input type="text" name="note" value="<%= order.note || '' %>" maxlength="500"></label>
+      <label class="full"><%= t('comanda.numeComanda') %><input type="text" name="name" value="<%= order.name %>" maxlength="80" required></label>
+      <label class="full"><%= t('comanda.observatii') %><input type="text" name="note" value="<%= order.note || '' %>" maxlength="500"></label>
     </div>
     <div class="formate" style="margin-top:10px">
       <% formateId.forEach(function (f) { %>
@@ -155,45 +156,43 @@
       <% }); %>
     </div>
     <div class="btns">
-      <button class="btn primary" type="submit">Salvează</button>
+      <button class="btn primary" type="submit"><%= t('comun.salveaza') %></button>
       <button class="btn danger" type="submit" formaction="/orders/<%= order.id %>/delete"
-              data-confirma="Ștergi comanda și toate corpurile ei?">Șterge comanda</button>
+              data-confirma="<%= t('comanda.confirmaStergereComanda') %>"><%= t('comanda.stergeComanda') %></button>
     </div>
   </form>
 </details>
 
 <!-- ---------------- feroneria comenzii ---------------- -->
 <details class="panel" id="feronerie" <%= raport.corpuri.length ? '' : 'open' %>>
-  <summary><b>Feronerie:</b>
+  <summary><b><%= t('fero.rezumat') %></b>
     <%= feroSistem.asamblare.nume %> ·
-    <%= feroSistem.balama ? feroSistem.balama.nume : 'fără balamale' %> ·
-    <%= feroSistem.glisiere ? feroSistem.glisiere.nume : 'fără glisiere' %><%= feroSistem.suspensii ? ' · cu suspensii' : '' %>
+    <%= feroSistem.balama ? feroSistem.balama.nume : t('fero.faraBalamale') %> ·
+    <%= feroSistem.glisiere ? feroSistem.glisiere.nume : t('fero.faraGlisiere') %><%= feroSistem.suspensii ? ' · ' + t('fero.cuSuspensii') : '' %>
   </summary>
   <form method="post" action="/orders/<%= order.id %>/feronerie" style="margin-top:12px">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
     <%- include('../partials/feronerie-form', { f: feroOptiuni, ales: feroAles }) %>
-    <button class="btn primary" type="submit">Salvează feroneria</button>
-    <p class="legend">
-      Schimbarea recalculează cantitățile și cotele de găurire ale tuturor corpurilor din comandă.
-      Fă-o înainte să trimiți piesele la debitat.
-    </p>
+    <button class="btn primary" type="submit"><%= t('fero.salveaza') %></button>
+    <p class="legend"><%= t('fero.notaSchimbare') %></p>
   </form>
 </details>
 
 <!-- ---------------- corpurile ---------------- -->
 <div class="panel">
   <div class="top" style="margin-bottom:8px">
-    <h2 style="margin:0">Corpuri în comandă</h2>
-    <a class="btn small primary" href="/orders/<%= order.id %>/corp-nou">+ Adaugă corp</a>
+    <h2 style="margin:0"><%= t('comanda.corpuriInComanda') %></h2>
+    <a class="btn small primary" href="/orders/<%= order.id %>/corp-nou"><%= t('comanda.adaugaCorpScurt') %></a>
   </div>
 
   <% if (!raport.corpuri.length) { %>
-    <p class="muted">Niciun corp încă. Apasă „Adaugă corp”, alege un model și modifică-i cotele.</p>
+    <p class="muted"><%= t('comanda.niciunCorp') %></p>
   <% } else { %>
     <div class="tbl"><table>
       <thead><tr>
-        <th class="num">#</th><th>Corp</th><th>Dimensiuni</th><th class="num">Piese</th>
-        <th>Material carcasă</th><th>Material fronturi</th><th></th>
+        <th class="num">#</th><th><%= t('comanda.colCorp') %></th><th><%= t('comanda.colDimensiuni') %></th>
+        <th class="num"><%= t('comanda.colPiese') %></th>
+        <th><%= t('comanda.colMaterialCarcasa') %></th><th><%= t('comanda.colMaterialFronturi') %></th><th></th>
       </tr></thead>
       <tbody>
         <% raport.corpuri.forEach(function (c) { %>
@@ -210,15 +209,17 @@
             <td colspan="2">
               <form method="post" action="/corps/<%= c.id %>/material" class="mat-inline">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <select name="mat_corp_id" data-trimite-la-schimbare>
+                <select name="mat_corp_id" data-trimite-la-schimbare
+                        aria-label="<%= t('comanda.colMaterialCarcasa') %>">
                   <% materiale.forEach(function (m) { %>
                     <option value="<%= m.id %>" <%= c.materialCorp && c.materialCorp.id === m.id ? 'selected' : '' %>>
                       <%= m.nume %>
                     </option>
                   <% }); %>
                 </select>
-                <select name="mat_front_id" data-trimite-la-schimbare>
-                  <option value="">— ca la carcasă —</option>
+                <select name="mat_front_id" data-trimite-la-schimbare
+                        aria-label="<%= t('comanda.colMaterialFronturi') %>">
+                  <option value=""><%= t('comanda.caLaCarcasa') %></option>
                   <% materiale.forEach(function (m) { %>
                     <option value="<%= m.id %>" <%= c.materialFront && c.materialFront.id === m.id && c.materialCorp && c.materialCorp.id !== m.id ? 'selected' : '' %>>
                       <%= m.nume %>
@@ -228,13 +229,13 @@
               </form>
             </td>
             <td class="num">
-              <a class="btn small" href="/corps/<%= c.id %>">Editează</a>
+              <a class="btn small" href="/corps/<%= c.id %>"><%= t('comanda.editeaza') %></a>
               <form method="post" action="/corps/<%= c.id %>/duplicate" class="inline">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <button class="btn small" type="submit"
-                        title="Copia se plătește ca orice corp nou">Duplică (<%= (pretCorp / 100).toFixed(2) %> lei)</button>
+                        title="<%= t('corpuri.duplicaTitlu') %>"><%= t('corpuri.duplica', { pret: (pretCorp / 100).toFixed(2) }) %></button>
               </form>
-              <button class="btn small danger" data-delete="<%= c.id %>" data-name="<%= c.nume %>">Șterge</button>
+              <button class="btn small danger" data-delete="<%= c.id %>" data-name="<%= c.nume %>"><%= t('comun.sterge') %></button>
             </td>
           </tr>
         <% }); %>
@@ -247,15 +248,15 @@
 <!-- ---------------- necesar ---------------- -->
 <div class="panel">
   <div class="top" style="margin-bottom:8px">
-    <h2 style="margin:0">Necesar de materiale</h2>
+    <h2 style="margin:0"><%= t('comanda.necesar') %></h2>
     <div class="btns" style="margin:0">
-      <a class="btn small" href="/orders/<%= order.id %>/ansamblu">Ansamblu</a>
-      <a class="btn small" href="/orders/<%= order.id %>/print/corpuri">Listă corpuri</a>
-      <a class="btn small primary" href="/orders/<%= order.id %>/print/debitare">Listă debitare</a>
-      <a class="btn small" href="/orders/<%= order.id %>/print/incadrare">Încadrare în coli</a>
-      <a class="btn small" href="/orders/<%= order.id %>/print/montaj">Fișe montaj</a>
+      <a class="btn small" href="/orders/<%= order.id %>/ansamblu"><%= t('comanda.linkAnsamblu') %></a>
+      <a class="btn small" href="/orders/<%= order.id %>/print/corpuri"><%= t('comanda.linkCorpuri') %></a>
+      <a class="btn small primary" href="/orders/<%= order.id %>/print/debitare"><%= t('comanda.linkDebitare') %></a>
+      <a class="btn small" href="/orders/<%= order.id %>/print/incadrare"><%= t('comanda.linkIncadrare') %></a>
+      <a class="btn small" href="/orders/<%= order.id %>/print/montaj"><%= t('comanda.linkMontaj') %></a>
       <% if (raport.cnc.length) { %>
-        <a class="btn small" href="/orders/<%= order.id %>/print/cnc">CNC (<%= raport.cnc.length %>)</a>
+        <a class="btn small" href="/orders/<%= order.id %>/print/cnc"><%= t('comanda.linkCnc', { n: raport.cnc.length }) %></a>
       <% } %>
       <a class="btn small" href="/orders/<%= order.id %>/export.csv">CSV</a>
     </div>
@@ -263,8 +264,10 @@
 
   <div class="tbl"><table>
     <thead><tr>
-      <th></th><th>Material</th><th class="num">Piese</th><th class="num">m² piese</th>
-      <th>Coli folosite</th><th class="num">Echivalent</th><th class="num">De cumpărat</th><th class="num">Deșeu</th>
+      <th></th><th><%= t('comanda.colMaterial') %></th><th class="num"><%= t('comanda.colPiese') %></th>
+      <th class="num"><%= t('comanda.colM2') %></th>
+      <th><%= t('comanda.colColiFolosite') %></th><th class="num"><%= t('comanda.colEchivalent') %></th>
+      <th class="num"><%= t('comanda.colDeCumparat') %></th><th class="num"><%= t('comanda.colDeseu') %></th>
     </tr></thead>
     <tbody>
       <% raport.materiale.forEach(function (m) { %>
@@ -276,37 +279,41 @@
           <td class="small">
             <%= m.bucatiColi.map(function (b) { return b.n + ' × ' + b.format.nume; }).join(' + ') %>
           </td>
-          <td class="num"><%= m.echivalent %> coli</td>
-          <td class="num"><b><%= m.coliIntregi %></b> coli întregi</td>
+          <td class="num"><%= t('comanda.nColi', { n: m.echivalent }) %></td>
+          <td class="num"><b><%= t('comanda.nColiIntregi', { n: m.coliIntregi }) %></b></td>
           <td class="num"><%= m.deseuPct %>%</td>
         </tr>
       <% }); %>
     </tbody>
   </table></div>
 
-  <h2 style="margin-top:16px">Cant</h2>
+  <h2 style="margin-top:16px"><%= t('comanda.cant') %></h2>
   <div class="tbl"><table>
-    <thead><tr><th>Grosime</th><th>Decor</th><th class="num">Metri liniari</th></tr></thead>
+    <thead><tr><th><%= t('comanda.colGrosime') %></th><th><%= t('comanda.colDecor') %></th>
+      <th class="num"><%= t('comanda.colMetriLiniari') %></th></tr></thead>
     <tbody>
       <% raport.cant.linii.forEach(function (c) { %>
         <tr>
           <td><b><%= c.mm %> mm</b></td>
           <td class="small"><%= c.decor %></td>
-          <td class="num"><b><%= c.ml %></b> ml</td>
+          <td class="num"><b><%= c.ml %></b> <%= t('comun.ml') %></td>
         </tr>
       <% }); %>
     </tbody>
-    <tfoot><tr><td colspan="2"><b>Total</b></td><td class="num"><b><%= raport.cant.total %> ml</b></td></tr></tfoot>
+    <tfoot><tr><td colspan="2"><b><%= t('comun.total') %></b></td>
+      <td class="num"><b><%= raport.cant.total %> <%= t('comun.ml') %></b></td></tr></tfoot>
   </table></div>
 
   <div class="doua-coloane" style="margin-top:16px">
     <div>
-      <h2>Feronerie (estimativ)</h2>
+      <h2><%= t('comanda.feronerieTitlu') %></h2>
       <p class="muted small" style="margin:0 0 6px">
-        Pentru <%= feroSistem.asamblare.nume %>. <a href="#feronerie">Schimbă sistemul</a>
+        <%= t('fero.pentruSistem', { sistem: feroSistem.asamblare.nume }) %>
+        <a href="#feronerie"><%= t('fero.schimbaSistemul') %></a>
       </p>
       <div class="tbl"><table>
-        <thead><tr><th>Articol</th><th class="num">Cant.</th><th>Obs.</th></tr></thead>
+        <thead><tr><th><%= t('comun.articol') %></th><th class="num"><%= t('comun.cant') %></th>
+          <th><%= t('comun.obs') %></th></tr></thead>
         <tbody>
           <% raport.feronerie.forEach(function (f) { %>
             <tr><td><%= f.nume %></td><td class="num"><b><%= f.qty %></b> <%= f.um %></td>
@@ -317,12 +324,13 @@
     </div>
 
     <div>
-      <h2>Prelucrări după debitare</h2>
+      <h2><%= t('comanda.prelucrari') %></h2>
       <% if (!raport.cnc.length) { %>
-        <p class="muted small">Nicio piesă nu are nevoie de CNC: toate se taie drept.</p>
+        <p class="muted small"><%= t('comanda.faraCnc') %></p>
       <% } else { %>
         <div class="tbl"><table>
-          <thead><tr><th>Corp</th><th>Piesă</th><th>Operație</th></tr></thead>
+          <thead><tr><th><%= t('comanda.colCorp') %></th><th><%= t('comanda.colPiesa') %></th>
+            <th><%= t('comanda.colOperatie') %></th></tr></thead>
           <tbody>
             <% raport.cnc.forEach(function (x) { %>
               <tr><td class="small"><%= x.corp %></td><td class="small"><%= x.piesa %></td>
@@ -330,7 +338,7 @@
             <% }); %>
           </tbody>
         </table></div>
-        <p class="hint">Planșele cotate sunt în <a href="/orders/<%= order.id %>/print/cnc">lista CNC</a>.</p>
+        <p class="hint"><%- t('comanda.planseIn', { href: '/orders/' + order.id + '/print/cnc' }) %></p>
       <% } %>
     </div>
   </div>
@@ -339,14 +347,16 @@
 <!-- ---------------- piesele ---------------- -->
 <div class="panel">
   <div class="top" style="margin-bottom:8px">
-    <h2 style="margin:0">Piese de debitat (<%= raport.totaluri.bucati %> bucăți)</h2>
-    <a class="btn small primary" href="/orders/<%= order.id %>/print/debitare">Deschide lista de tipărit</a>
+    <h2 style="margin:0"><%= t('comanda.pieseDeDebitat', { n: raport.totaluri.bucati }) %></h2>
+    <a class="btn small primary" href="/orders/<%= order.id %>/print/debitare"><%= t('comanda.deschideLista') %></a>
   </div>
   <div class="tbl"><table>
     <thead><tr>
-      <th>Cod</th><th>Corp</th><th>Piesă</th><th class="num">Buc</th>
-      <th class="num">Tăiere L</th><th class="num">Tăiere l</th>
-      <th>Cant L1·L2·l1·l2</th><th>Material</th><th>Fibră</th>
+      <th><%= t('comanda.colCod') %></th><th><%= t('comanda.colCorp') %></th>
+      <th><%= t('comanda.colPiesa') %></th><th class="num"><%= t('comanda.colBuc') %></th>
+      <th class="num"><%= t('comanda.colTaiereL') %></th><th class="num"><%= t('comanda.colTaierel') %></th>
+      <th><%= t('comanda.colCantMuchii') %></th><th><%= t('comanda.colMaterial') %></th>
+      <th><%= t('comanda.colFibra') %></th>
     </tr></thead>
     <tbody>
       <% raport.piese.forEach(function (p) { %>
@@ -357,12 +367,12 @@
           <td class="num"><%= p.buc %></td>
           <td class="num"><b><%= p.TL %></b></td>
           <td class="num"><b><%= p.Tl %></b></td>
-          <td class="small"><%= p.cant.special ? 'muchii frontale' : p.cant.muchii.join(' · ') %></td>
+          <td class="small"><%= p.cant.special ? t('comanda.muchiiFrontale') : p.cant.muchii.join(' · ') %></td>
           <td class="small">
             <span class="decor-sw mic" style="background:<%= p.material.hex || '#cfd6dd' %>"></span>
             <%= p.material.tip %> <%= p.material.gros %>
           </td>
-          <td class="small"><%= p.fibra %></td>
+          <td class="small"><%= p.fibraText %></td>
         </tr>
       <% }); %>
     </tbody>
@@ -370,6 +380,12 @@
 </div>
 <% } %>
 
-<script type="application/json" id="page-data"><%- jsonPentruPagina({ csrf: csrfToken }) %></script>
+<script type="application/json" id="page-data"><%- jsonPentruPagina({
+  csrf: csrfToken,
+  texte: {
+    confirmaStergere: t('corpuri.confirmaStergere'),
+    eroareStergere: t('corpuri.eroareStergere')
+  }
+}) %></script>
 <script src="/static/corps-list.js?v=<%= assetV %>"></script>
 <script src="/static/decor.js?v=<%= assetV %>"></script>

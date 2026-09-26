@@ -18,20 +18,12 @@
   'use strict';
 
   var CATEGORIES = [
-    { id: 'bucatarie-jos', nume: 'Bucătărie — corpuri jos',
-      descriere: 'Corpuri sub blat, înălțime uzuală 720 mm, adâncime 560 mm.' },
-    { id: 'bucatarie-sus', nume: 'Bucătărie — corpuri suspendate',
-      descriere: 'Corpuri de perete, adâncime 320 mm.' },
-    { id: 'living', nume: 'Living și dormitor',
-      descriere: 'Dulapuri, biblioteci, comode, corpuri TV.' },
-    { id: 'baie', nume: 'Baie',
-      descriere: 'Corpuri rezistente la umezeală, adâncimi mici.' },
-    { id: 'atipic', nume: 'Corpuri atipice',
-      descriere: 'Desenate din laturi și unghiuri: fiecare latură devine un panou, iar spatele și ' +
-                 'frontul se decupează după contur. Toate piesele merg la CNC după debitare.' },
-    { id: 'colt', nume: 'Corpuri de colț',
-      descriere: 'Pentru colțul dintre doi pereți. Blatul, fundul și polițele se debitează ' +
-                 'ca dreptunghi de gabarit și apoi se decupează — cotele decupajului sunt în lista de piese.' }
+    { id: 'bucatarie-jos' },
+    { id: 'bucatarie-sus' },
+    { id: 'living' },
+    { id: 'baie' },
+    { id: 'atipic' },
+    { id: 'colt' }
   ];
 
   /* inaltimea unui front de sertar cand fronturile umplu toata inaltimea */
@@ -42,181 +34,148 @@
   var MODELS = [
     /* ---------------- bucătărie jos ---------------- */
     {
-      id: 'baza-2usi', cat: 'bucatarie-jos', nume: 'Corp bază cu 2 uși',
-      descriere: 'Corpul standard de sub blat, cu o poliță interioară.',
-      set: { nume: 'Corp bază 2 uși', W: 800, H: 720, D: 560, nUsi: 2, nPol: 1 }
+      id: 'baza-2usi', cat: 'bucatarie-jos',
+      set: { W: 800, H: 720, D: 560, nUsi: 2, nPol: 1 }
     },
     {
-      id: 'baza-1usa', cat: 'bucatarie-jos', nume: 'Corp bază cu 1 ușă',
-      descriere: 'Varianta îngustă, pentru completarea frontului.',
-      set: { nume: 'Corp bază 1 ușă', W: 400, H: 720, D: 560, nUsi: 1, nPol: 1 }
+      id: 'baza-1usa', cat: 'bucatarie-jos',
+      set: { W: 400, H: 720, D: 560, nUsi: 1, nPol: 1 }
     },
     {
-      id: 'baza-3sertare', cat: 'bucatarie-jos', nume: 'Corp bază cu 3 sertare',
-      descriere: 'Fronturi egale pe toată înălțimea, cutii pe glisiere cu bilă.',
-      set: { nume: 'Corp bază 3 sertare', W: 600, H: 720, D: 560, nUsi: 0, nPol: 0,
+      id: 'baza-3sertare', cat: 'bucatarie-jos',
+      set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0,
              nSer: 3, hFront: frontEgal(720, 3, 1.5, 3), hCutie: 180 }
     },
     {
-      id: 'baza-sertar-usa', cat: 'bucatarie-jos', nume: 'Corp bază cu sertar și ușă',
-      descriere: 'Un sertar sus pentru tacâmuri, ușă dedesubt.',
-      set: { nume: 'Corp bază sertar + ușă', W: 600, H: 720, D: 560, nUsi: 1, nPol: 1,
+      id: 'baza-sertar-usa', cat: 'bucatarie-jos',
+      set: { W: 600, H: 720, D: 560, nUsi: 1, nPol: 1,
              nSer: 1, hFront: 150, hCutie: 110 }
     },
     {
-      id: 'baza-chiuveta', cat: 'bucatarie-jos', nume: 'Corp pentru chiuvetă',
-      descriere: 'Fără poliță, ca să rămână loc pentru sifon și racorduri.',
-      set: { nume: 'Corp chiuvetă', W: 800, H: 720, D: 560, nUsi: 2, nPol: 0 }
+      id: 'baza-chiuveta', cat: 'bucatarie-jos',
+      set: { W: 800, H: 720, D: 560, nUsi: 2, nPol: 0 }
     },
     {
-      id: 'baza-nisa', cat: 'bucatarie-jos', nume: 'Corp nișă pentru electrocasnic',
-      descriere: 'Cutie deschisă pentru cuptor sau mașină de spălat vase. Verifică nișa cerută de producător.',
-      set: { nume: 'Corp nișă cuptor', W: 600, H: 720, D: 560, nUsi: 0, nPol: 0 }
+      id: 'baza-nisa', cat: 'bucatarie-jos',
+      set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0 }
     },
 
     /* ---------------- bucătărie suspendate ---------------- */
     {
-      id: 'sus-2usi', cat: 'bucatarie-sus', nume: 'Corp suspendat cu 2 uși',
-      descriere: 'Corp de perete înalt, cu două polițe.',
-      set: { nume: 'Corp suspendat 2 uși', W: 800, H: 720, D: 320, nUsi: 2, nPol: 2 }
+      id: 'sus-2usi', cat: 'bucatarie-sus',
+      set: { W: 800, H: 720, D: 320, nUsi: 2, nPol: 2 }
     },
     {
-      id: 'sus-1usa', cat: 'bucatarie-sus', nume: 'Corp suspendat cu 1 ușă',
-      descriere: 'Varianta îngustă, cu două polițe.',
-      set: { nume: 'Corp suspendat 1 ușă', W: 400, H: 720, D: 320, nUsi: 1, nPol: 2 }
+      id: 'sus-1usa', cat: 'bucatarie-sus',
+      set: { W: 400, H: 720, D: 320, nUsi: 1, nPol: 2 }
     },
     {
-      id: 'sus-hota', cat: 'bucatarie-sus', nume: 'Corp scurt peste hotă',
-      descriere: 'Corp de trecere deasupra hotei sau a frigiderului.',
-      set: { nume: 'Corp peste hotă', W: 600, H: 360, D: 320, nUsi: 1, nPol: 0 }
+      id: 'sus-hota', cat: 'bucatarie-sus',
+      set: { W: 600, H: 360, D: 320, nUsi: 1, nPol: 0 }
     },
     {
-      id: 'sus-raft', cat: 'bucatarie-sus', nume: 'Raft suspendat deschis',
-      descriere: 'Fără uși, cu o poliță. Canturi groase pe muchiile vizibile.',
-      set: { nume: 'Raft suspendat', W: 800, H: 360, D: 320, nUsi: 0, nPol: 1 }
+      id: 'sus-raft', cat: 'bucatarie-sus',
+      set: { W: 800, H: 360, D: 320, nUsi: 0, nPol: 1 }
     },
 
     /* ---------------- living și dormitor ---------------- */
     {
-      id: 'dulap-2usi', cat: 'living', nume: 'Dulap cu 2 uși',
-      descriere: 'Dulap de dormitor cu patru polițe. Peste 2000 mm, ușile au nevoie de a cincea balama, ' +
-                 'așa că înălțimea e oprită aici; pentru mai mult se adaugă un antresol separat.',
-      set: { nume: 'Dulap 2 uși', W: 800, H: 2000, D: 580, nUsi: 2, nPol: 4 }
+      id: 'dulap-2usi', cat: 'living',
+      set: { W: 800, H: 2000, D: 580, nUsi: 2, nPol: 4 }
     },
     {
-      id: 'dulap-3usi', cat: 'living', nume: 'Dulap larg cu 3 uși',
-      descriere: 'Fără polițe: la această lățime au nevoie de montant central, pe care calculul nu îl generează încă.',
-      set: { nume: 'Dulap 3 uși', W: 1350, H: 2000, D: 580, nUsi: 3, nPol: 0 }
+      id: 'dulap-3usi', cat: 'living',
+      set: { W: 1350, H: 2000, D: 580, nUsi: 3, nPol: 0 }
     },
     {
-      id: 'biblioteca', cat: 'living', nume: 'Bibliotecă deschisă',
-      descriere: 'Corp înalt fără uși, cu patru polițe.',
-      set: { nume: 'Bibliotecă', W: 800, H: 1800, D: 300, nUsi: 0, nPol: 4 }
+      id: 'biblioteca', cat: 'living',
+      set: { W: 800, H: 1800, D: 300, nUsi: 0, nPol: 4 }
     },
     {
-      id: 'comoda-4sertare', cat: 'living', nume: 'Comodă cu 4 sertare',
-      descriere: 'Fronturi egale, cutii din PAL de 16 mm.',
-      set: { nume: 'Comodă 4 sertare', W: 800, H: 800, D: 450, nUsi: 0, nPol: 0,
+      id: 'comoda-4sertare', cat: 'living',
+      set: { W: 800, H: 800, D: 450, nUsi: 0, nPol: 0,
              nSer: 4, hFront: frontEgal(800, 4, 1.5, 3), hCutie: 150 }
     },
     {
-      id: 'noptiera', cat: 'living', nume: 'Noptieră cu 2 sertare',
-      descriere: 'Corp mic, cu două sertare egale.',
-      set: { nume: 'Noptieră', W: 450, H: 450, D: 400, nUsi: 0, nPol: 0,
+      id: 'noptiera', cat: 'living',
+      set: { W: 450, H: 450, D: 400, nUsi: 0, nPol: 0,
              nSer: 2, hFront: frontEgal(450, 2, 1.5, 3), hCutie: 160 }
     },
     {
-      id: 'corp-tv', cat: 'living', nume: 'Corp TV',
-      descriere: 'Corp jos și lat, cu două uși. Ușile ajung la limita de 600 mm lățime.',
-      set: { nume: 'Corp TV', W: 1200, H: 400, D: 400, nUsi: 2, nPol: 0 }
+      id: 'corp-tv', cat: 'living',
+      set: { W: 1200, H: 400, D: 400, nUsi: 2, nPol: 0 }
     },
 
     /* ---------------- baie ---------------- */
     {
-      id: 'baie-lavoar', cat: 'baie', nume: 'Corp sub lavoar',
-      descriere: 'Fără poliță, pentru sifon. Spate PFL aplicat.',
-      set: { nume: 'Corp sub lavoar', W: 600, H: 500, D: 450, nUsi: 2, nPol: 0 }
+      id: 'baie-lavoar', cat: 'baie',
+      set: { W: 600, H: 500, D: 450, nUsi: 2, nPol: 0 }
     },
     {
-      id: 'baie-coloana', cat: 'baie', nume: 'Coloană de baie',
-      descriere: 'Corp înalt și îngust, cu patru polițe și o ușă.',
-      set: { nume: 'Coloană baie', W: 400, H: 1800, D: 300, nUsi: 1, nPol: 4 }
+      id: 'baie-coloana', cat: 'baie',
+      set: { W: 400, H: 1800, D: 300, nUsi: 1, nPol: 4 }
     },
 
     /* ---------------- corpuri de colț ---------------- */
     {
-      id: 'colt-jos-L', cat: 'colt', nume: 'Colț bucătărie jos, în L',
-      descriere: 'Corpul clasic de colț sub blat, cu două fronturi cuplate în balama-carte. ' +
-                 'Fără poliță: la această deschidere s-ar lăsa, se folosește carusel.',
-      set: { nume: 'Colț jos în L', tip: 'colt-L', W: 900, W2: 900, H: 720, D: 560,
+      id: 'colt-jos-L', cat: 'colt',
+      set: { tip: 'colt-L', W: 900, W2: 900, H: 720, D: 560,
              nUsi: 2, nPol: 0, nSer: 0 }
     },
     {
-      id: 'colt-jos-diagonal', cat: 'colt', nume: 'Colț bucătărie jos, diagonal',
-      descriere: 'Front unic pe diagonală, de circa 450 mm. Interiorul rămâne accesibil pe toată lățimea.',
-      set: { nume: 'Colț jos diagonal', tip: 'colt-diagonal', W: 900, W2: 900, H: 720, D: 560,
+      id: 'colt-jos-diagonal', cat: 'colt',
+      set: { tip: 'colt-diagonal', W: 900, W2: 900, H: 720, D: 560,
              nUsi: 1, nPol: 0, nSer: 0 }
     },
     {
-      id: 'colt-jos-orb', cat: 'colt', nume: 'Colț bucătărie jos, orb',
-      descriere: 'Corp dreptunghiular la care corpul vecin acoperă 550 mm din front. ' +
-                 'Cel mai simplu de debitat: toate piesele rămân dreptunghiuri.',
-      set: { nume: 'Colț jos orb', tip: 'colt-orb', W: 1000, H: 720, D: 560, orb: 550,
+      id: 'colt-jos-orb', cat: 'colt',
+      set: { tip: 'colt-orb', W: 1000, H: 720, D: 560, orb: 550,
              nUsi: 1, nPol: 0, nSer: 0 }
     },
     {
-      id: 'colt-sus-L', cat: 'colt', nume: 'Colț suspendat, în L',
-      descriere: 'Corp de perete pe colț, cu două fronturi și două polițe.',
-      set: { nume: 'Colț suspendat în L', tip: 'colt-L', W: 600, W2: 600, H: 720, D: 320,
+      id: 'colt-sus-L', cat: 'colt',
+      set: { tip: 'colt-L', W: 600, W2: 600, H: 720, D: 320,
              nUsi: 2, nPol: 2, nSer: 0 }
     },
     {
-      id: 'colt-sus-diagonal', cat: 'colt', nume: 'Colț suspendat, diagonal',
-      descriere: 'Varianta cu un singur front pe diagonală, cu două polițe.',
-      set: { nume: 'Colț suspendat diagonal', tip: 'colt-diagonal', W: 600, W2: 600, H: 720, D: 320,
+      id: 'colt-sus-diagonal', cat: 'colt',
+      set: { tip: 'colt-diagonal', W: 600, W2: 600, H: 720, D: 320,
              nUsi: 1, nPol: 2, nSer: 0 }
     },
     {
-      id: 'colt-living-deschis', cat: 'colt', nume: 'Colțar deschis pentru living',
-      descriere: 'Corp înalt de colț, fără uși, cu patru polițe în L. Bun și ca etajeră de capăt.',
-      set: { nume: 'Colțar living', tip: 'colt-L', W: 800, W2: 800, H: 1800, D: 300,
+      id: 'colt-living-deschis', cat: 'colt',
+      set: { tip: 'colt-L', W: 800, W2: 800, H: 1800, D: 300,
              nUsi: 0, nPol: 4, nSer: 0 }
     },
     {
-      id: 'colt-baie', cat: 'colt', nume: 'Colț de baie, diagonal',
-      descriere: 'Corp mic de colț, cu o poliță și front pe diagonală.',
-      set: { nume: 'Colț baie', tip: 'colt-diagonal', W: 500, W2: 500, H: 500, D: 300,
+      id: 'colt-baie', cat: 'colt',
+      set: { tip: 'colt-diagonal', W: 500, W2: 500, H: 500, D: 300,
              nUsi: 1, nPol: 1, nSer: 0 }
     },
     /* ---------------- corpuri atipice ---------------- */
     {
-      id: 'atipic-sub-scara', cat: 'atipic', nume: 'Corp sub scară',
-      descriere: 'Trapez cu latura din dreapta joasă și panta care urcă spre stânga. ' +
-                 'Schimbă laturile și unghiurile după scara ta.',
-      set: { nume: 'Corp sub scară', tip: 'atipic', D: 560, nUsi: 1, nPol: 0, nSer: 0,
+      id: 'atipic-sub-scara', cat: 'atipic',
+      set: { tip: 'atipic', D: 560, nUsi: 1, nPol: 0, nSer: 0,
              contur: [{ lung: 900, unghi: 90 }, { lung: 400, unghi: 114 },
                       { lung: 985, unghi: 66 }, { lung: 800, unghi: 90 }] }
     },
     {
-      id: 'atipic-mansarda', cat: 'atipic', nume: 'Corp de mansardă',
-      descriere: 'Cinci laturi: partea de sus urmează panta acoperișului, cu o porțiune dreaptă.',
-      set: { nume: 'Corp mansardă', tip: 'atipic', D: 450, nUsi: 1, nPol: 0, nSer: 0,
+      id: 'atipic-mansarda', cat: 'atipic',
+      set: { tip: 'atipic', D: 450, nUsi: 1, nPol: 0, nSer: 0,
              contur: [{ lung: 1200, unghi: 90 }, { lung: 700, unghi: 135 },
                       { lung: 566, unghi: 135 }, { lung: 800, unghi: 90 },
                       { lung: 1100, unghi: 90 }] }
     },
     {
-      id: 'atipic-liber', cat: 'atipic', nume: 'Contur liber',
-      descriere: 'Pornești de la un dreptunghi și adaugi sau muți laturile cum ai nevoie.',
-      set: { nume: 'Corp atipic', tip: 'atipic', D: 560, nUsi: 0, nPol: 0, nSer: 0,
+      id: 'atipic-liber', cat: 'atipic',
+      set: { tip: 'atipic', D: 560, nUsi: 0, nPol: 0, nSer: 0,
              contur: [{ lung: 800, unghi: 90 }, { lung: 720, unghi: 90 },
                       { lung: 800, unghi: 90 }, { lung: 720, unghi: 90 }] }
     },
 
     {
-      id: 'colt-dressing', cat: 'colt', nume: 'Colț de dressing',
-      descriere: 'Corp de colț înalt pentru dressing sau dormitor, cu două fronturi și trei polițe.',
-      set: { nume: 'Colț dressing', tip: 'colt-L', W: 800, W2: 800, H: 2000, D: 560,
+      id: 'colt-dressing', cat: 'colt',
+      set: { tip: 'colt-L', W: 800, W2: 800, H: 2000, D: 560,
              nUsi: 2, nPol: 3, nSer: 0 }
     }
   ];
@@ -227,10 +186,12 @@
   }
 
   /* parametrii compleți ai unui model: valorile implicite + ce schimbă modelul */
-  function paramsFor(id) {
+  function paramsFor(id, tr) {
     var m = byId(id);
     if (!m) return null;
-    return Object.assign(PalCalc.defaults(), m.set);
+    var p = Object.assign(PalCalc.defaults(tr), m.set);
+    p.nume = numeCorp(id, tr);
+    return p;
   }
 
   /* Schita unui corp atipic: chiar conturul lui, vazut din fata. */
@@ -249,8 +210,8 @@
       }).join(' ') + '" class="sk-front"/>');
     }
     return '<svg viewBox="' + (-t) + ' ' + (-t) + ' ' + (W + 2 * t) + ' ' + (H + 2 * t) +
-           '" class="sk" preserveAspectRatio="xMidYMid meet" role="img" ' +
-           'aria-label="Contur corp atipic"><g>' + o.join('') + '</g></svg>';
+           '" class="sk" preserveAspectRatio="xMidYMid meet" ' +
+           'aria-hidden="true" focusable="false"><g>' + o.join('') + '</g></svg>';
   }
 
   /* Schita in plan pentru corpurile de colt: acolo vederea frontala nu spune nimic. */
@@ -266,8 +227,8 @@
       o.push('<line x1="' + rm + '" y1="' + (D - t / 2) + '" x2="' + (A - orb - rm) +
              '" y2="' + (D - t / 2) + '" class="sk-usa"/>');
       return '<svg viewBox="' + (-t) + ' ' + (-t) + ' ' + (A + 2 * t) + ' ' + (D + 2 * t) +
-             '" class="sk" preserveAspectRatio="xMidYMid meet" role="img" ' +
-             'aria-label="Plan corp orb"><g>' + o.join('') + '</g></svg>';
+             '" class="sk" preserveAspectRatio="xMidYMid meet" ' +
+             'aria-hidden="true" focusable="false"><g>' + o.join('') + '</g></svg>';
     }
 
     var pts = dg
@@ -288,8 +249,8 @@
     o.push('<line x1="0" y1="0" x2="0" y2="' + B + '" class="sk-perete"/>');
 
     return '<svg viewBox="' + (-t) + ' ' + (-t) + ' ' + (A + 2 * t) + ' ' + (B + 2 * t) +
-           '" class="sk" preserveAspectRatio="xMidYMid meet" role="img" ' +
-           'aria-label="Plan corp de colț"><g>' + o.join('') + '</g></svg>';
+           '" class="sk" preserveAspectRatio="xMidYMid meet" ' +
+           'aria-hidden="true" focusable="false"><g>' + o.join('') + '</g></svg>';
   }
 
   /* Schita frontala a corpului, in SVG (unitati = mm).
@@ -345,26 +306,54 @@
     }
 
     return '<svg viewBox="0 0 ' + W + ' ' + H + '" class="sk" preserveAspectRatio="xMidYMid meet" ' +
-           'role="img" aria-label="Schiță ' + W + ' pe ' + H + ' mm">' + o.join('') + '</svg>';
+           'aria-hidden="true" focusable="false">' + o.join('') + '</svg>';
   }
 
   /* rezumat scurt pentru cardul din catalog */
-  function rezumat(p) {
+  function rezumat(p, tr) {
+    var t_ = PalCalc.traducator(tr);
     var b = [];
-    if (p.tip === 'atipic') b.push((p.contur || []).length + ' laturi');
-    if (p.tip === 'colt-L') b.push('colț în L');
-    else if (p.tip === 'colt-diagonal') b.push('colț diagonal');
-    else if (p.tip === 'colt-orb') b.push('colț orb');
-    if (+p.nUsi) b.push(+p.nUsi + (+p.nUsi === 1 ? ' ușă' : ' uși'));
-    if (+p.nSer) b.push(+p.nSer + (+p.nSer === 1 ? ' sertar' : ' sertare'));
-    if (+p.nPol) b.push(+p.nPol + (+p.nPol === 1 ? ' poliță' : ' polițe'));
-    if (!b.length) b.push('corp deschis');
+    if (p.tip === 'atipic') b.push(t_('rezumat.laturi', { n: (p.contur || []).length }));
+    if (p.tip === 'colt-L') b.push(t_('rezumat.coltL'));
+    else if (p.tip === 'colt-diagonal') b.push(t_('rezumat.coltDiagonal'));
+    else if (p.tip === 'colt-orb') b.push(t_('rezumat.coltOrb'));
+    if (+p.nUsi) b.push(t_('corpuri.metaUsi', { n: +p.nUsi }));
+    if (+p.nSer) b.push(t_('corpuri.metaSertare', { n: +p.nSer }));
+    if (+p.nPol) b.push(t_('corpuri.metaPolite', { n: +p.nPol }));
+    if (!b.length) b.push(t_('rezumat.corpDeschis'));
     return b.join(' · ');
+  }
+
+  /* Catalogul cu numele scrise în limba cerută. */
+  function categorii(tr) {
+    var t_ = PalCalc.traducator(tr);
+    return CATEGORIES.map(function (c) {
+      return { id: c.id, nume: t_('modele.cat.' + c.id + '.nume'),
+               descriere: t_('modele.cat.' + c.id + '.descriere') };
+    });
+  }
+
+  function modele(tr) {
+    var t_ = PalCalc.traducator(tr);
+    return MODELS.map(function (m) {
+      return Object.assign({}, m, {
+        nume: t_('modele.m.' + m.id + '.nume'),
+        descriere: t_('modele.m.' + m.id + '.descriere')
+      });
+    });
+  }
+
+  /* Numele cu care se salvează un corp creat din acest model. */
+  function numeCorp(id, tr) {
+    return PalCalc.traducator(tr)('modele.m.' + id + '.corpNume');
   }
 
   return {
     CATEGORIES: CATEGORIES,
     MODELS: MODELS,
+    categorii: categorii,
+    modele: modele,
+    numeCorp: numeCorp,
     byId: byId,
     paramsFor: paramsFor,
     sketch: sketch,

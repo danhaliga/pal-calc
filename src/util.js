@@ -38,4 +38,31 @@ function jsonPentruPagina(valoare) {
     });
 }
 
-module.exports = { faraDiacritice, numeFisier, dispozitieAtasament, jsonPentruPagina };
+/* Bucata de catalog de care are nevoie o pagină. Trimitem numai spațiile
+   de nume cerute, nu tot dicționarul: o pagină nu are de ce să care textele
+   celorlalte. Româna merge alături, ca text de rezervă. */
+function catalogPagina(lang, spatii) {
+  const PalI18n = require('../shared/i18n');
+  const ia = (cod) => {
+    const c = PalI18n.catalog(cod) || {};
+    const out = {};
+    for (const n of spatii) if (c[n] !== undefined) out[n] = c[n];
+    return out;
+  };
+  const pachet = { catalog: ia(lang) };
+  if (lang !== PalI18n.IMPLICITA) pachet.ro = ia(PalI18n.IMPLICITA);
+  return pachet;
+}
+
+/* O eroare care se poate citi în orice limbă: poartă cheia, nu textul.
+   Tratarea erorilor o traduce în limba paginii. */
+function eroare(cheie, status) {
+  const e = new Error(cheie);
+  e.cheie = cheie;
+  e.status = status || 400;
+  return e;
+}
+
+module.exports = {
+  catalogPagina,
+  eroare, faraDiacritice, numeFisier, dispozitieAtasament, jsonPentruPagina };

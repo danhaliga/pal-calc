@@ -1,32 +1,28 @@
-<p class="doc-nota">
-  Cotele din coloanele <b>Tăiere</b> sunt cotele de debitare: cota finită minus cantul de pe fiecare
-  latură. Coloanele de cant spun ce grosime se aplică pe fiecare muchie: <b>L1/L2</b> sunt muchiile
-  lungi, <b>l1/l2</b> cele scurte. Coloana <b>Finit</b> este cota după cantuire.
-</p>
+<p class="doc-nota"><%- t('print.notaDebitare') %></p>
 
 <% raport.materiale.forEach(function (m) { %>
   <section class="doc-sect">
-    <h2>
-      <%= m.nume %> —
-      <%= m.bucatiColi.map(function (b) { return b.n + ' × ' + b.format.nume; }).join(' + ') %>
-      (<%= m.coliIntregi %> coli întregi de cumpărat)
-    </h2>
+    <h2><%= t('print.antetMaterial', {
+      nume: m.nume,
+      coli: m.bucatiColi.map(function (b) { return b.n + ' × ' + b.format.nume; }).join(' + '),
+      intregi: t('comanda.nColiIntregi', { n: m.coliIntregi })
+    }) %></h2>
     <table class="doc-tbl">
       <thead><tr>
-        <th class="num">Cod</th>
-        <th>Corp</th>
-        <th>Piesă</th>
-        <th class="num">Buc</th>
-        <th class="num">Tăiere L</th>
-        <th class="num">Tăiere l</th>
-        <th class="num">Finit L</th>
-        <th class="num">Finit l</th>
+        <th class="num"><%= t('print.colCod') %></th>
+        <th><%= t('print.colCorp') %></th>
+        <th><%= t('print.colPiesa') %></th>
+        <th class="num"><%= t('print.colBuc') %></th>
+        <th class="num"><%= t('print.colTaiereL') %></th>
+        <th class="num"><%= t('print.colTaierel') %></th>
+        <th class="num"><%= t('print.colFinitL') %></th>
+        <th class="num"><%= t('print.colFinitl') %></th>
         <th class="num">L1</th>
         <th class="num">L2</th>
         <th class="num">l1</th>
         <th class="num">l2</th>
-        <th>Fibră</th>
-        <th>Observații</th>
+        <th><%= t('print.colFibra') %></th>
+        <th><%= t('print.colObservatii') %></th>
       </tr></thead>
       <tbody>
         <% raport.piese.filter(function (p) { return p.material.key === m.key; }).forEach(function (p) { %>
@@ -40,25 +36,24 @@
             <td class="num"><%= p.L %></td>
             <td class="num"><%= p.l %></td>
             <% if (p.cant.special) { %>
-              <td class="num" colspan="4">cant pe muchiile frontale — vezi planșa CNC</td>
+              <td class="num" colspan="4"><%= t('print.cantFrontale') %></td>
             <% } else { %>
               <td class="num"><%= p.cant.muchii[0] %></td>
               <td class="num"><%= p.cant.muchii[1] %></td>
               <td class="num"><%= p.cant.muchii[2] %></td>
               <td class="num"><%= p.cant.muchii[3] %></td>
             <% } %>
-            <td class="small"><%= p.fibra %></td>
-            <td class="small"><%= p.cnc ? 'CNC după debitare. ' : '' %><%= p.nota %></td>
+            <td class="small"><%= p.fibraText %></td>
+            <td class="small"><%= p.cnc ? t('print.cncDupaDebitare') + ' ' : '' %><%= p.nota %></td>
           </tr>
         <% }); %>
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="3"><b>Total <%= m.nume %></b></td>
+          <td colspan="3"><b><%= t('print.totalMaterial', { nume: m.nume }) %></b></td>
           <td class="num"><b><%= m.bucati %></b></td>
           <td colspan="10">
-            <%= m.m2piese %> m² piese · deșeu <%= m.deseuPct %>% ·
-            încadrarea pe coli e pe fișa separată
+            <%= t('print.rezumatMaterial', { m2: m.m2piese, deseu: m.deseuPct }) %>
           </td>
         </tr>
       </tfoot>
@@ -67,36 +62,40 @@
 <% }); %>
 
 <section class="doc-sect">
-  <h2>Cant de comandat</h2>
+  <h2><%= t('print.cantDeComandat') %></h2>
   <table class="doc-tbl">
     <thead><tr>
-      <th>Grosime</th><th>Decor</th><th class="num">Metri liniari</th>
-      <% if (aratAdaos) { %><th class="num">Cu adaos <%= raport.cant.adaosPct %>%</th><th class="num">Role 50 m</th><% } %>
+      <th><%= t('print.colGrosime') %></th><th><%= t('print.colDecor') %></th>
+      <th class="num"><%= t('print.colMetriLiniari') %></th>
+      <% if (aratAdaos) { %>
+        <th class="num"><%= t('print.colCuAdaos', { pct: raport.cant.adaosPct }) %></th>
+        <th class="num"><%= t('print.colRole') %></th>
+      <% } %>
     </tr></thead>
     <tbody>
       <% raport.cant.linii.forEach(function (c) { %>
         <tr>
           <td><b><%= c.mm %> mm</b></td>
           <td><%= c.decor %></td>
-          <td class="num"><b><%= c.ml %> ml</b></td>
-          <% if (aratAdaos) { %><td class="num"><%= c.cuAdaos %> ml</td><td class="num"><%= c.role %></td><% } %>
+          <td class="num"><b><%= c.ml %> <%= t('comun.ml') %></b></td>
+          <% if (aratAdaos) { %>
+            <td class="num"><%= c.cuAdaos %> <%= t('comun.ml') %></td><td class="num"><%= c.role %></td>
+          <% } %>
         </tr>
       <% }); %>
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="2"><b>Total</b></td>
-        <td class="num"><b><%= raport.cant.total %> ml</b></td>
-        <% if (aratAdaos) { %><td class="num"><%= raport.cant.totalCuAdaos %> ml</td><td></td><% } %>
+        <td colspan="2"><b><%= t('comun.total') %></b></td>
+        <td class="num"><b><%= raport.cant.total %> <%= t('comun.ml') %></b></td>
+        <% if (aratAdaos) { %>
+          <td class="num"><%= raport.cant.totalCuAdaos %> <%= t('comun.ml') %></td><td></td>
+        <% } %>
       </tr>
     </tfoot>
   </table>
 </section>
 
 <% if (raport.cnc.length) { %>
-  <p class="doc-nota">
-    <b>Atenție:</b> <%= raport.cnc.length %> poziții au nevoie de prelucrare după debitare
-    (decupaje de colț, tăieri la 45°, nuturi). Sunt marcate „CNC” în observații, iar planșele
-    cotate sunt pe fișa separată de prelucrări.
-  </p>
+  <p class="doc-nota"><%- t('print.atentieCnc', { n: raport.cnc.length }) %></p>
 <% } %>

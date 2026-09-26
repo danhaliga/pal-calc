@@ -1,7 +1,5 @@
 <p class="doc-nota">
-  Camera <b><%= ansamblu.camera.A %> × <%= ansamblu.camera.B %> × <%= ansamblu.camera.H %> mm</b>.
-  Corpurile sunt alipite cap la cap; distanța fiecăruia se măsoară de la colțul de pornire al
-  peretelui, iar înălțimea de la podea până la fundul corpului.
+  <%- t('print.notaAnsamblu', { A: ansamblu.camera.A, B: ansamblu.camera.B, H: ansamblu.camera.H }) %>
 </p>
 
 <% if (ansamblu.probleme.length) { %>
@@ -11,7 +9,7 @@
 <% } %>
 
 <section class="doc-sect">
-  <h2>Plan — vedere de sus</h2>
+  <h2><%= t('print.planDeSus') %></h2>
   <div class="an-plan-print"><%- ansamblu.plan %></div>
 </section>
 
@@ -19,12 +17,14 @@
      var p = ansamblu.pereti.find(function (x) { return x.id === per.id; });
      if (!p || !p.corpuri.length) return; %>
   <section class="doc-sect">
-    <h2>Peretele <%= per.id %> — <%= per.nume.toLowerCase() %>, <%= p.lungime %> mm</h2>
+    <h2><%= t('print.peretele', { id: per.id, nume: per.nume.toLowerCase(), lungime: p.lungime }) %></h2>
     <div class="an-elev-print"><%- elevatie(ansamblu.asezari, ansamblu.camera, per.id) %></div>
     <table class="doc-tbl mic">
       <thead><tr>
-        <th class="num">#</th><th>Corp</th><th class="num">Lățime</th><th class="num">Înălțime</th>
-        <th class="num">Adâncime</th><th class="num">De la colț</th><th class="num">De la podea</th>
+        <th class="num">#</th><th><%= t('print.colCorp') %></th>
+        <th class="num"><%= t('print.colLatime') %></th><th class="num"><%= t('print.colInaltime') %></th>
+        <th class="num"><%= t('print.colAdancime') %></th>
+        <th class="num"><%= t('print.colDeLaColt') %></th><th class="num"><%= t('print.colDeLaPodea') %></th>
       </tr></thead>
       <tbody>
         <% p.corpuri.slice().sort(function (a, b) { return a.poz.h - b.poz.h || a.poz.d - b.poz.d; })
@@ -42,10 +42,10 @@
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="2"><b>Ocupat</b></td>
-          <td class="num"><b><%= p.ocupatJos %></b> jos</td>
-          <td colspan="2"><b><%= p.ocupatSus %></b> sus</td>
-          <td colspan="2">din <%= p.lungime %> mm</td>
+          <td colspan="2"><b><%= t('print.ocupat') %></b></td>
+          <td class="num"><%- t('print.ocupatJos', { n: p.ocupatJos }) %></td>
+          <td colspan="2"><%- t('print.ocupatSus', { n: p.ocupatSus }) %></td>
+          <td colspan="2"><%= t('print.dinLungime', { n: p.lungime }) %></td>
         </tr>
       </tfoot>
     </table>
@@ -54,14 +54,16 @@
 
 <% if (ansamblu.goluri.length) { %>
   <section class="doc-sect">
-    <h2>Goluri rămase</h2>
+    <h2><%= t('print.goluri') %></h2>
     <table class="doc-tbl mic">
-      <thead><tr><th>Perete</th><th>Nivel</th><th class="num">De la</th><th class="num">Până la</th><th class="num">Lungime</th></tr></thead>
+      <thead><tr><th><%= t('ansamblu.colPerete') %></th><th><%= t('print.colNivel') %></th>
+        <th class="num"><%= t('print.colDeLa') %></th><th class="num"><%= t('print.colPanaLa') %></th>
+        <th class="num"><%= t('print.colLungime') %></th></tr></thead>
       <tbody>
         <% ansamblu.goluri.forEach(function (g) { %>
           <tr>
             <td><%= g.perete %></td>
-            <td><%= g.h > 0 ? 'suspendat (' + g.h + ' mm)' : 'jos' %></td>
+            <td><%= g.h > 0 ? t('print.nivelSus', { mm: g.h }) : t('print.nivelJos') %></td>
             <td class="num"><%= g.de_la %></td>
             <td class="num"><%= g.pana_la %></td>
             <td class="num"><b><%= g.lung %> mm</b></td>
@@ -69,9 +71,6 @@
         <% }); %>
       </tbody>
     </table>
-    <p class="doc-nota">
-      Golurile se închid cu panouri de mascare sau prin ajustarea unui corp. Un gol sub 40 mm
-      se rezolvă de obicei cu o baghetă, nu cu un corp nou.
-    </p>
+    <p class="doc-nota"><%= t('print.notaGoluri') %></p>
   </section>
 <% } %>

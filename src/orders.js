@@ -24,10 +24,10 @@ const FORMATE_ID = ['intreaga', 'jum-lat', 'jum-lung', 'sfert'];
 const adaosCant = () => Number(process.env.CANT_SPARE_PCT || 15);
 
 const schemaComanda = z.object({
-  name: z.string().trim().min(1, 'Dă un nume comenzii.').max(80),
+  name: z.string().trim().min(1, 'valid.numeComanda').max(80),
   brand: z.string().trim().min(1).max(40),
   decor_cod: z.string().trim().max(60).optional().or(z.literal('')),
-  pal_mm: z.coerce.number().refine(v => GROSIMI_PAL.includes(v), 'Grosime de PAL neacceptată.'),
+  pal_mm: z.coerce.number().refine(v => GROSIMI_PAL.includes(v), 'valid.grosimeNeacceptata'),
   cant_gros: z.coerce.number().min(0).max(5),
   cant_subtire: z.coerce.number().min(0).max(5),
   note: z.string().trim().max(500).optional().or(z.literal('')),
@@ -64,9 +64,7 @@ function getOwned(id, userId) {
 }
 
 function notFound(next) {
-  const err = new Error('Comanda nu există.');
-  err.status = 404;
-  next(err);
+  next(util.eroare('eroare.comandaLipsa', 404));
 }
 
 /* corpurile cu poziția lor în cameră, pentru ansamblu */
@@ -176,7 +174,7 @@ router.get('/orders', requireAuth, (req, res) => {
   });
 
   res.render('orders/index', {
-    title: 'Comenzile mele',
+    title: req.t('comenzi.titlu'),
     comenzi: rows,
     sold: credit.sold(req.user.id),
     pretCorp: credit.pretCorp()
@@ -185,7 +183,7 @@ router.get('/orders', requireAuth, (req, res) => {
 
 router.get('/orders/new', requireAuth, (req, res) => {
   res.render('orders/new', {
-    title: 'Comandă nouă',
+    title: req.t('comandaNoua.titlu'),
     marci: Catalog.MARCI,
     grosimi: GROSIMI_PAL,
     cantStandard: materiale.CANT_STANDARD,
@@ -203,14 +201,14 @@ router.post('/orders', requireAuth, (req, res) => {
   const parsed = schemaComanda.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).render('orders/new', {
-      title: 'Comandă nouă',
+      title: req.t('comandaNoua.titlu'),
       marci: Catalog.MARCI, grosimi: GROSIMI_PAL, cantStandard: materiale.CANT_STANDARD,
       formateToate: PalRaport.formate(req.t),
       formateId: FORMATE_ID,
       feroOptiuni: PalFeronerie.optiuni(req.t),
       values: Object.assign({}, req.body, { formate: formateDinBody(req.body) },
                             feronerieDinBody(req.body)),
-      error: parsed.error.issues[0].message
+      error: req.t(parsed.error.issues[0].message)
     });
   }
 
@@ -254,7 +252,7 @@ router.get('/orders/:id', requireAuth, (req, res, next) => {
     title: order.name,
     order, raport,
     materiale: materiale.aleComenzii(order.id),
-    roluri: materiale.ROLURI,
+    roluri: materiale.roluri(req.t),
     marci: Catalog.MARCI,
     grosimi: GROSIMI_PAL,
     cantStandard: materiale.CANT_STANDARD,
@@ -309,17 +307,17 @@ router.get('/orders/:id/corp-nou', requireAuth, (req, res, next) => {
   const order = getOwned(req.params.id, req.user.id);
   if (!order) return notFound(next);
 
-  const models = PalModels.MODELS.map(m => {
-    const params = PalModels.paramsFor(m.id);
+  const models = PalModels.modele(req.t).map(m => {
+    const params = PalModels.paramsFor(m.id, req.t);
     return {
       id: m.id, cat: m.cat, nume: m.nume, descriere: m.descriere,
-      params, rezumat: PalModels.rezumat(params), sketch: PalModels.sketch(params)
+      params, rezumat: PalModels.rezumat(params, req.t), sketch: PalModels.sketch(params)
     };
   });
 
   res.render('corps/new', {
-    title: 'Adaugă un corp',
-    categories: PalModels.CATEGORIES,
+    title: req.t('modele.adaugaCorp'),
+    categories: PalModels.categorii(req.t),
     models, order,
     sold: credit.sold(req.user.id),
     pretCorp: credit.pretCorp()
@@ -327,7 +325,7 @@ router.get('/orders/:id/corp-nou', requireAuth, (req, res, next) => {
 });
 
 const adaugaCorp = db.transaction((userId, order, params, cost, matCorpId) => {
-  const ramas = credit.scade(userId, cost, 'corp', null, 'corp în comanda „' + order.name + '”');
+  const ramas = credit.scade(userId, cost, 'corp', null, 'corp.inComanda|' + order.name);
   if (ramas === null) throw new Error('CREDIT_INSUFICIENT');
 
   const poz = db.prepare('SELECT COALESCE(MAX(poz), 0) AS m FROM corps WHERE order_id = ?')
@@ -346,10 +344,10 @@ router.post('/orders/:id/corps', requireAuth, (req, res, next) => {
   const order = getOwned(req.params.id, req.user.id);
   if (!order) return notFound(next);
 
-  const params = req.body.model ? PalModels.paramsFor(String(req.body.model)) : PalCalc.defaults();
-  if (!params) {
-    return next(Object.assign(new Error('Model necunoscut.'), { status: 400 }));
-  }
+  const params = req.body.model
+    ? PalModels.paramsFor(String(req.body.model), req.t)
+    : PalCalc.defaults(req.t);
+  if (!params) return next(util.eroare('eroare.modelNecunoscut', 400));
 
   const mats = materiale.aleComenzii(order.id);
   const roluri = materiale.peRoluri(mats);
@@ -375,7 +373,7 @@ router.post('/orders/:id/corps', requireAuth, (req, res, next) => {
 router.post('/corps/:id/material', requireAuth, (req, res, next) => {
   const corp = db.prepare('SELECT * FROM corps WHERE id = ?').get(Number(req.params.id));
   if (!corp || corp.user_id !== req.user.id) {
-    return next(Object.assign(new Error('Corpul nu există.'), { status: 404 }));
+    return next(util.eroare('eroare.corpLipsa', 404));
   }
 
   const ale = corp.order_id ? materiale.aleComenzii(corp.order_id) : [];
@@ -405,13 +403,13 @@ router.get('/orders/:id/ansamblu', requireAuth, (req, res, next) => {
 
   const cu = comandaCuCamera(order);
   const corpuri = corpuriPozitionate(order.id);
-  const ans = PalAnsamblu.ansamblu(cu, corpuri);
+  const ans = PalAnsamblu.ansamblu(cu, corpuri, req.t);
 
   res.render('orders/ansamblu', {
     title: 'Ansamblu – ' + order.name,
     order: cu,
     ansamblu: ans,
-    pereti: PalAnsamblu.PERETI,
+    pereti: PalAnsamblu.pereti(req.t),
     elevatie: PalAnsamblu.elevatie,
     corpuri
   });
@@ -456,7 +454,7 @@ router.post('/orders/:id/aseaza', requireAuth, (req, res, next) => {
 router.post('/corps/:id/pozitie', requireAuth, (req, res, next) => {
   const corp = db.prepare('SELECT * FROM corps WHERE id = ?').get(Number(req.params.id));
   if (!corp || corp.user_id !== req.user.id) {
-    return next(Object.assign(new Error('Corpul nu există.'), { status: 404 }));
+    return next(util.eroare('eroare.corpLipsa', 404));
   }
 
   const perete = PalAnsamblu.peretele(String(req.body.perete || 'A')).id;
@@ -476,7 +474,7 @@ router.get('/api/orders/:id/ansamblu', requireAuth, (req, res, next) => {
 
   const cu = comandaCuCamera(order);
   const corpuri = corpuriPozitionate(order.id);
-  const ans = PalAnsamblu.ansamblu(cu, corpuri);
+  const ans = PalAnsamblu.ansamblu(cu, corpuri, req.t);
 
   res.json({
     camera: ans.camera,
@@ -495,12 +493,12 @@ router.get('/api/orders/:id/ansamblu', requireAuth, (req, res, next) => {
 /* ---------- listele de producție ---------- */
 
 const PRINTURI = {
-  ansamblu: { view: 'orders/print-ansamblu', titlu: 'Planșă de ansamblu' },
-  corpuri: { view: 'orders/print-corpuri', titlu: 'Listă corpuri' },
-  debitare: { view: 'orders/print-debitare', titlu: 'Listă piese pentru debitare' },
-  incadrare: { view: 'orders/print-incadrare', titlu: 'Încadrarea în coli' },
-  montaj: { view: 'orders/print-montaj', titlu: 'Fișe de montaj' },
-  cnc: { view: 'orders/print-cnc', titlu: 'Prelucrări CNC' }
+  ansamblu: { view: 'orders/print-ansamblu', titlu: 'print.titluAnsamblu' },
+  corpuri: { view: 'orders/print-corpuri', titlu: 'print.titluCorpuri' },
+  debitare: { view: 'orders/print-debitare', titlu: 'print.titluDebitare' },
+  incadrare: { view: 'orders/print-incadrare', titlu: 'print.titluIncadrare' },
+  montaj: { view: 'orders/print-montaj', titlu: 'print.titluMontaj' },
+  cnc: { view: 'orders/print-cnc', titlu: 'print.titluCnc' }
 };
 
 router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
@@ -512,18 +510,19 @@ router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
 
   const raport = raportComenzii(order);
   const cu = comandaCuCamera(order);
-  const ans = PalAnsamblu.ansamblu(cu, corpuriPozitionate(order.id));
+  const ans = PalAnsamblu.ansamblu(cu, corpuriPozitionate(order.id), req.t);
 
   res.render(cfg.view, {
-    title: cfg.titlu + ' – ' + order.name,
-    titlu: cfg.titlu,
+    title: req.t(cfg.titlu) + ' – ' + order.name,
+    titlu: req.t(cfg.titlu),
     order: cu, raport,
     ansamblu: ans,
-    pereti: PalAnsamblu.PERETI,
+    pereti: PalAnsamblu.pereti(req.t),
     elevatie: PalAnsamblu.elevatie,
     materiale: materiale.aleComenzii(order.id),
     planse: PalRaport.planseCnc,
     planColi: PalRaport.planColi,
+    coala: PalRaport.COALA,
     /* adaosul la cant rămâne intern: clientul vede metrii exacți */
     aratAdaos: !!req.user.is_admin,
     print: true

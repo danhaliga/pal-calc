@@ -4,35 +4,31 @@
 <div class="top">
   <div>
     <div class="crumbs">
-      <a href="<%= inComanda ? '/orders/' + order.id : '/corps' %>">← <%= inComanda ? order.name : 'Corpurile mele' %></a>
+      <a href="<%= inComanda ? '/orders/' + order.id : '/corps' %>">← <%= inComanda ? order.name : t('modele.inapoiCorpuri') %></a>
     </div>
-    <h1>Alege un model</h1>
+    <h1><%= t('modele.titlu') %></h1>
     <p class="sub">
-      Pornești de la un model apropiat și apoi modifici cotele. Toate modelele de mai jos sunt
-      configurații pe care calculul le produce complet — dimensiunile sunt uzuale, nu obligatorii.
+      <%= t('modele.intro') %>
       <% if (inComanda) { %>
-        Materialul vine din comandă: PAL <%= order.pal_mm %> mm, cant
-        <%= order.cant_gros %>/<%= order.cant_subtire %> mm.
+        <%= t('modele.materialDinComanda', { pal: order.pal_mm, gros: order.cant_gros, subtire: order.cant_subtire }) %>
       <% } %>
     </p>
   </div>
   <% if (typeof pretCorp !== 'undefined') { %>
     <div class="cost-card">
-      <div class="l">Un corp costă</div>
-      <div class="v"><%= (pretCorp / 100).toFixed(2) %> lei</div>
-      <div class="muted small">credit: <%= (sold / 100).toFixed(2) %> lei</div>
+      <div class="l"><%= t('modele.unCorpCosta') %></div>
+      <div class="v"><%= (pretCorp / 100).toFixed(2) %> <%= t('comun.lei') %></div>
+      <div class="muted small"><%= t('modele.creditul', { sold: (sold / 100).toFixed(2) }) %></div>
     </div>
   <% } %>
 </div>
 
 <% if (typeof sold !== 'undefined' && sold < pretCorp) { %>
-  <div class="warn err">
-    Nu ai destul credit. <a href="/credit">Alimentează</a> ca să poți adăuga un corp.
-  </div>
+  <div class="warn err"><%- t('modele.faraCredit') %></div>
 <% } %>
 
 <div class="filtre" id="filtre">
-  <button class="btn small on" data-cat="toate" type="button">Toate</button>
+  <button class="btn small on" data-cat="toate" type="button"><%= t('modele.toate') %></button>
   <% categories.forEach(function (c) { %>
     <button class="btn small" data-cat="<%= c.id %>" type="button"><%= c.nume %></button>
   <% }); %>
@@ -47,7 +43,7 @@
         <form method="post" action="<%= actiune %>" class="model-form">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <input type="hidden" name="model" value="<%= m.id %>">
-          <button class="model-card" type="submit" title="Creează un corp după acest model">
+          <button class="model-card" type="submit" title="<%= t('modele.creeazaDupaModel') %>">
             <span class="sk-wrap"><%- m.sketch %></span>
             <span class="model-body">
               <span class="model-nume"><%= m.nume %></span>
@@ -63,16 +59,16 @@
 <% }); %>
 
 <section class="grup" data-cat="gol">
-  <h2>Fără model</h2>
+  <h2><%= t('modele.faraModel') %></h2>
   <div class="model-grid">
     <form method="post" action="<%= actiune %>" class="model-form">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <button class="model-card gol" type="submit">
         <span class="model-body">
-          <span class="model-nume">Corp gol</span>
+          <span class="model-nume"><%= t('modele.corpGol') %></span>
           <span class="model-dim">800 × 720 × 560 mm</span>
-          <span class="model-rez">valorile implicite</span>
-          <span class="model-desc">Pornești de la corpul de bucătărie standard și schimbi tot ce vrei.</span>
+          <span class="model-rez"><%= t('modele.valoriImplicite') %></span>
+          <span class="model-desc"><%= t('modele.corpGolDesc') %></span>
         </span>
       </button>
     </form>
@@ -80,16 +76,16 @@
 </section>
 
 <div class="panel">
-  <h2>Ce nu poate încă genera calculul</h2>
+  <h2><%= t('modele.limiteTitlu') %></h2>
   <ul class="ticks">
-    <li><b>Sertare în corpurile de colț</b> — se folosește un corp drept alăturat.</li>
-    <li><b>Montant central</b> pentru corpuri late; de aceea polițele peste 800 mm primesc avertisment.</li>
-    <li><b>Uși glisante</b>, uși cu ramă și sticlă, jaluzele.</li>
-    <li><b>Soclu, picioare, blat de lucru</b> — se calculează separat de corp.</li>
-    <li><b>Decupaje</b> pentru chiuvetă, plită, prize sau nișe de electrocasnice.</li>
-    <li><b>Antresol</b> (corpul de deasupra dulapului) — se face ca un corp separat.</li>
+    <li><%- t('modele.limita1') %></li>
+    <li><%- t('modele.limita2') %></li>
+    <li><%- t('modele.limita3') %></li>
+    <li><%- t('modele.limita4') %></li>
+    <li><%- t('modele.limita5') %></li>
+    <li><%- t('modele.limita6') %></li>
   </ul>
-  <p class="hint">Dacă îți trebuie ceva de aici, spune-mi care — se pot adăuga în motorul de calcul.</p>
+  <p class="hint"><%= t('modele.limiteNota') %></p>
 </div>
 
 <script src="/static/models-pick.js?v=<%= assetV %>"></script>

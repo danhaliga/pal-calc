@@ -1,10 +1,10 @@
 <div class="auth">
   <div class="panel center">
-    <h1>Plată confirmată</h1>
-    <p>Am primit <b><%= amount %> <%= currency %></b>. Lista de debitare este deblocată pentru acest corp.</p>
+    <h1><%= t('plata.confirmata') %></h1>
+    <p><%- t('plata.amPrimit', { suma: amount, moneda: currency }) %></p>
     <div class="btns center">
-      <a class="btn primary" href="/corps/<%= corpId %>?paid=1">Deschide corpul</a>
-      <a class="btn" href="/corps">Corpurile mele</a>
+      <a class="btn primary" href="/corps/<%= corpId %>?paid=1"><%= t('plata.deschideCorpul') %></a>
+      <a class="btn" href="/corps"><%= t('plata.corpurileMele') %></a>
     </div>
   </div>
 </div>

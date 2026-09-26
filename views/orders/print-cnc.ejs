@@ -1,20 +1,15 @@
 <% if (!raport.cnc.length) { %>
-  <p class="doc-nota">
-    Comanda nu are piese care să ceară prelucrare după debitare: toate se taie drept,
-    pe panglică sau la debitare.
-  </p>
+  <p class="doc-nota"><%= t('print.faraCncText') %></p>
 <% } else { %>
 
-<p class="doc-nota">
-  Piesele de mai jos se debitează la <b>cota de gabarit</b> (dreptunghiul din tabel) și abia apoi
-  se prelucrează. Planșele sunt cotate în mm, văzute de sus, cu colțul dinspre pereți în stânga-jos.
-  Liniile roșii sunt muchiile care se cantuiesc după prelucrare.
-</p>
+<p class="doc-nota"><%- t('print.notaCnc') %></p>
 
 <table class="doc-tbl">
   <thead><tr>
-    <th>Corp</th><th>Piesă</th><th class="num">Buc</th>
-    <th class="num">Gabarit de debitat</th><th>Operație</th><th>Detalii</th>
+    <th><%= t('print.colCorp') %></th><th><%= t('print.colPiesa') %></th>
+    <th class="num"><%= t('print.colBuc') %></th>
+    <th class="num"><%= t('print.colGabarit') %></th>
+    <th><%= t('print.colOperatie') %></th><th><%= t('print.colDetalii') %></th>
   </tr></thead>
   <tbody>
     <% raport.cnc.forEach(function (x) { %>
@@ -31,14 +26,14 @@
 </table>
 
 <section class="doc-sect">
-  <h2>Planșe</h2>
+  <h2><%= t('print.planse') %></h2>
   <div class="cnc-grid">
     <% raport.cnc.filter(function (x) { return x.poly; }).forEach(function (x) { %>
       <figure class="cnc-card">
         <%- planse(x) %>
         <figcaption>
           <b><%= x.piesa %></b> — <%= x.corp %><br>
-          <span class="muted"><%= x.buc %> buc · gabarit <%= x.gabarit.L %> × <%= x.gabarit.l %> mm</span><br>
+          <span class="muted"><%= t('print.planseGabarit', { n: x.buc, L: x.gabarit.L, l: x.gabarit.l }) %></span><br>
           <span class="small"><%= x.detalii %></span>
         </figcaption>
       </figure>
@@ -47,9 +42,10 @@
 
   <% var nuturi = raport.cnc.filter(function (x) { return !x.poly; }); %>
   <% if (nuturi.length) { %>
-    <h2>Nuturi</h2>
+    <h2><%= t('cnc.nutSpate') %></h2>
     <table class="doc-tbl">
-      <thead><tr><th>Corp</th><th>Piesă</th><th class="num">Buc</th><th>Detalii</th></tr></thead>
+      <thead><tr><th><%= t('print.colCorp') %></th><th><%= t('print.colPiesa') %></th>
+        <th class="num"><%= t('print.colBuc') %></th><th><%= t('print.colDetalii') %></th></tr></thead>
       <tbody>
         <% nuturi.forEach(function (x) { %>
           <tr><td><%= x.corp %></td><td><%= x.piesa %></td><td class="num"><%= x.buc %></td>

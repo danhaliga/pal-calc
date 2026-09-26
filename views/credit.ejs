@@ -63,7 +63,13 @@
           </td>
           <td class="num"><%= (m.balance_after / 100).toFixed(2) %></td>
           <td class="muted small">
-            <%= m.note || '' %><%= m.kind === 'corp' && m.ref ? ' ' + t('credit.refCorp', { id: m.ref }) : '' %>
+            <%
+              var nota = m.note || '';
+              if (nota.indexOf('corp.') === 0) {
+                var parti = nota.split('|');
+                nota = t(parti[0], parti[1] ? { nume: parti[1] } : null);
+              }
+            %><%= nota %><%= m.kind === 'corp' && m.ref ? ' ' + t('credit.refCorp', { id: m.ref }) : '' %>
           </td>
         </tr>
       <% }); %>

@@ -4,7 +4,8 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { MODELS, CATEGORIES, paramsFor, sketch, rezumat, byId } = require('../shared/models');
+const { MODELS, CATEGORIES, paramsFor, sketch, rezumat, byId, modele, categorii, numeCorp } =
+  require('../shared/models');
 const { calc, paramsSchema } = require('../shared/calc');
 
 test('identificatorii sunt unici, categoriile există', () => {
@@ -14,9 +15,20 @@ test('identificatorii sunt unici, categoriile există', () => {
     assert.ok(!ids.has(m.id), `id dublat: ${m.id}`);
     ids.add(m.id);
     assert.ok(cats.has(m.cat), `${m.id}: categorie necunoscută „${m.cat}”`);
-    assert.ok(m.nume && m.descriere, `${m.id}: lipsește numele sau descrierea`);
   }
   assert.ok(MODELS.length >= 12, 'catalogul e prea mic');
+});
+
+test('fiecare model și fiecare categorie au nume și descriere în română', () => {
+  categorii().forEach(c => {
+    assert.ok(c.nume && !c.nume.startsWith('modele.'), `categoria ${c.id} nu are nume`);
+    assert.ok(c.descriere && !c.descriere.startsWith('modele.'), `categoria ${c.id} nu are descriere`);
+  });
+  modele().forEach(m => {
+    assert.ok(m.nume && !m.nume.startsWith('modele.'), `${m.id} nu are nume`);
+    assert.ok(m.descriere && !m.descriere.startsWith('modele.'), `${m.id} nu are descriere`);
+    assert.ok(!numeCorp(m.id).startsWith('modele.'), `${m.id} nu are nume de corp`);
+  });
 });
 
 test('fiecare model trece validarea parametrilor', () => {

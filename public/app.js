@@ -31,21 +31,18 @@ function aplicaTip() {
   if (wrapW) wrapW.classList.toggle('hidden', atipic);
   if (wrapH) wrapH.classList.toggle('hidden', atipic);
 
-  $('labelW').textContent = colt ? 'Latura pe peretele 1' : 'Lățime (L)';
-  $('labelD').textContent = (colt || atipic) ? 'Adâncime brațe' : 'Adâncime (A)';
-  if (atipic) $('labelD').textContent = 'Adâncime corp';
+  $('labelW').textContent = T(colt ? 'editor.laturaPerete1' : 'editor.latime');
+  $('labelD').textContent = T((colt || atipic) ? 'editor.adancimeBrate' : 'editor.adancime');
+  if (atipic) $('labelD').textContent = T('editor.adancimeCorp');
 
   var nota = $('notaColt');
   nota.classList.toggle('hidden', tip === 'drept');
   if (tip === 'colt-orb') {
-    nota.textContent = 'Corp dreptunghiular normal: doar frontul este mai îngust, ' +
-      'pentru că restul rămâne acoperit de corpul vecin.';
+    nota.textContent = T('editor.notaColtOrb');
   } else if (colt) {
-    nota.textContent = 'Blatul, fundul și polițele nu sunt dreptunghiuri: se debitează dreptunghiul ' +
-      'de gabarit din listă, apoi se decupează colțul după nota fiecărei piese. Sertarele nu se calculează aici.';
+    nota.textContent = T('editor.notaColtL');
   } else if (atipic) {
-    nota.textContent = 'Fiecare latură a conturului devine un panou de adâncimea corpului, tăiat la ' +
-      'unghi la capete. Spatele și frontul se decupează după contur. Toate piesele merg la CNC.';
+    nota.textContent = T('editor.notaAtipic');
     if (!params.contur || !params.contur.length) {
       params.contur = window.PalCalc.conturImplicit(+params.W || 800, +params.H || 720);
     }
@@ -72,7 +69,8 @@ function randeazaContur() {
         'data-contur="' + i + '" data-camp="lung" value="' + s.lung + '"></td>' +
       '<td class="c"><input class="dim" type="number" min="1" max="359" step="0.5" ' +
         'data-contur="' + i + '" data-camp="unghi" value="' + s.unghi + '"></td>' +
-      '<td class="c"><button type="button" class="mini danger" data-sterge-latura="' + i + '">✕</button></td>' +
+      '<td class="c"><button type="button" class="mini danger" title="' + T('editor.stergeLatura') +
+        '" data-sterge-latura="' + i + '">✕</button></td>' +
       '</tr>';
   }).join('');
 
@@ -87,18 +85,20 @@ function actualizeazaContur() {
   var g = window.PalCalc.conturGeometrie(params.contur || []);
   g.laturi.forEach(function (l, i) {
     var cel = tbody.querySelector('[data-nume="' + i + '"]');
-    if (cel) cel.textContent = l.nume;
+    if (cel) cel.textContent = window.PalCalc.numeDirectie(l.dir, T);
   });
 
   var stare = $('conturStare');
+  var scapa = function (x) {
+    return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  };
   if (g.inchis) {
-    stare.innerHTML = '<span style="color:var(--accent)">✔ Conturul se închide.</span> ' +
-      'Gabarit ' + g.W + ' × ' + g.H + ' mm, ' + g.nrLaturi + ' laturi, ' +
-      'suma unghiurilor ' + g.sumaUnghiuri + '°.';
+    stare.innerHTML = '<span style="color:var(--accent)">' + scapa(T('editor.conturInchis')) + '</span> ' +
+      scapa(T('editor.conturRezumat', { W: g.W, H: g.H, laturi: g.nrLaturi, suma: g.sumaUnghiuri }));
   } else {
-    stare.innerHTML = '<span style="color:var(--danger)">Conturul nu se închide:</span> ' +
-      'mai rămân ' + g.eroare + ' mm. Pentru ' + g.nrLaturi + ' laturi, suma unghiurilor trebuie ' +
-      'să fie ' + g.sumaCeruta + '°, acum este ' + g.sumaUnghiuri + '°.';
+    stare.innerHTML = '<span style="color:var(--danger)">' + scapa(T('editor.conturDeschis')) + '</span> ' +
+      scapa(T('editor.conturRamas', { mm: g.eroare, laturi: g.nrLaturi,
+                                      ceruta: g.sumaCeruta, suma: g.sumaUnghiuri }));
   }
 
   $('conturPreview').innerHTML = desenContur(g);
@@ -165,11 +165,11 @@ function legaContur() {
   /* adaugă latura care lipsește ca să se închidă conturul */
   $('conturInchide').onclick = function () {
     var g = window.PalCalc.conturGeometrie(params.contur);
-    if (g.inchis) { toast('Conturul e deja închis.'); return; }
+    if (g.inchis) { toast(T('editor.conturDejaInchis')); return; }
     if (g.eroare < 1) return;
     params.contur.push({ lung: Math.round(g.eroare), unghi: 90 });
     randeazaContur(); render(); scheduleSave();
-    toast('Am adăugat o latură de ' + Math.round(g.eroare) + ' mm. Reglează unghiurile.');
+    toast(T('editor.conturAdaugat', { mm: Math.round(g.eroare) }));
   };
 
   $('conturReset').onclick = function () {
@@ -199,7 +199,7 @@ function setState(txt, cls) {
 
 function scheduleSave() {
   dirty = true;
-  setState('se salvează…');
+  setState(T('editor.seSalveaza'));
   clearTimeout(saveTimer);
   saveTimer = setTimeout(save, 600);
 }
@@ -214,14 +214,14 @@ function save() {
     headers: { 'Content-Type': 'application/json', 'x-csrf-token': DATA.csrf },
     body: JSON.stringify({ name: params.nume, params: params })
   }).then(function (r) {
-    if (!r.ok) return r.json().then(function (j) { throw new Error(j.error || 'Eroare la salvare'); });
+    if (!r.ok) return r.json().then(function (j) { throw new Error(j.error || T('editor.eroareSalvare')); });
     return r.json();
   }).then(function (j) {
     params = Object.assign(params, j.params);
-    setState('salvat');
+    setState(T('editor.salvat'));
     return loadPieces();
   }).catch(function (e) {
-    setState(e.message || 'nesalvat', 'danger');
+    setState(e.message || T('editor.eroareSalvare'), 'danger');
   }).finally(function () {
     saving = false;
     if (dirty) scheduleSave();
@@ -250,13 +250,15 @@ function cantHTML(c) {
   }).join('') + '</span>';
 }
 
-/* piesa corespunzatoare de la server, doar daca lista este sincronizata */
-function srv(i, nume) {
+/* Piesa corespunzatoare de la server, doar daca lista e sincronizata.
+   Potrivirea se face pe cheia piesei, nu pe numele ei: numele se schimba
+   cu limba, cheia nu. */
+function srv(i, piesa) {
   if (!serverPieces || !serverPieces.paid) return null;
   var list = serverPieces.pieces;
   if (!list || !lastRes || list.length !== lastRes.P.length) return null;
   var p = list[i];
-  return (p && p.nume === nume) ? p : null;
+  return (p && p.cheie === piesa.cheie) ? p : null;
 }
 
 function renderTable() {
@@ -268,17 +270,18 @@ function renderTable() {
                '<td class="num">' + fmt(p.l) + '</td>';
     var locked;
     if (!paid) {
-      locked = '<td class="locked" title="Se deblochează după plată">🔒</td>' +
+      locked = '<td class="locked" title="' + esc(T('editor.dupaPlata')) + '">🔒</td>' +
                '<td class="locked">🔒</td><td class="locked">🔒</td>';
     } else {
-      var s = srv(i, p.nume);
+      var s = srv(i, p);
       locked = s
         ? '<td>' + cantHTML(s.c) + '</td>' +
           '<td class="num"><b>' + fmt(s.TL) + '</b></td>' +
           '<td class="num"><b>' + fmt(s.Tl) + '</b></td>'
         : '<td class="muted">…</td><td class="num muted">…</td><td class="num muted">…</td>';
     }
-    return '<tr data-pi="' + i + '">' + free + locked + '<td>' + p.fibra + '</td></tr>';
+    return '<tr data-pi="' + i + '">' + free + locked +
+           '<td>' + esc(p.fibraText) + '</td></tr>';
   }).join('');
 
   $('rows').innerHTML = rows;
@@ -288,11 +291,12 @@ function render() {
   fields.forEach(function (f) { if ($(f)) $(f).value = params[f]; });
   aplicaTip();
 
-  var res = window.PalCalc.calc(params);
+  var res = window.PalCalc.calc(params, T);
   lastRes = res;
 
-  $('titlu').textContent = 'Listă piese – ' + (params.nume || 'Corp');
-  $('titlu3d').textContent = 'Vedere 3D – ' + (params.nume || 'Corp');
+  var nume = params.nume || T('editor.corp');
+  $('titlu').textContent = T('editor.listaPiese') + ' – ' + nume;
+  $('titlu3d').textContent = T('editor.vedere3d') + ' – ' + nume;
 
   var warns = (serverPieces && serverPieces.warn) ? serverPieces.warn : res.warn;
   $('warns').innerHTML = warns.map(function (w) { return '<div class="warn">' + esc(w) + '</div>'; }).join('');
@@ -304,41 +308,40 @@ function render() {
 
 function formule(c, r) {
   var t = +c.t, l = [];
-  l.push('Interior: <code>L_int = ' + c.W + ' − 2×' + t + ' = ' + fmt(r.Wint) + '</code>, ' +
-         '<code>H_int = ' + c.H + ' − 2×' + t + ' = ' + fmt(r.Hint) + '</code>, ' +
-         '<code>A_int = ' + fmt(r.Dint) + '</code>' +
-         (c.spate === 'aplicat' ? ' (adâncime − spate ' + c.tp + ')'
-                                : ' (adâncime − ' + window.PalCalc.NUT_OFF + ' mm nut − spate ' + c.tp + ')'));
+  var nota = c.spate === 'aplicat'
+    ? T('editor.formulaNotaAplicat', { tp: c.tp })
+    : T('editor.formulaNotaNut', { off: window.PalCalc.NUT_OFF, tp: c.tp });
+
+  l.push(T('editor.formulaInterior', {
+    W: c.W, H: c.H, t: t, Wint: fmt(r.Wint), Hint: fmt(r.Hint), Dint: fmt(r.Dint), nota: nota
+  }));
+
   if (+c.nUsi > 0) {
-    if (c.montaj === 'aplicat') {
-      l.push('Ușă aplicată: <code>L_ușă = (' + c.W + ' − 2×' + c.rm + ' − ' + ((+c.nUsi) - 1) + '×' + c.ri + ') / ' + c.nUsi + '</code>, ' +
-             '<code>H_ușă = ' + c.H + ' − 2×' + c.rm + (+c.nSer > 0 ? ' − fronturi sertar' : '') + '</code>');
-    } else {
-      l.push('Ușă încastrată: <code>L_ușă = (' + fmt(r.Wint) + ' − 2×' + c.rinc + ' − ' + ((+c.nUsi) - 1) + '×' + c.ri + ') / ' + c.nUsi + '</code>, ' +
-             '<code>H_ușă = ' + fmt(r.Hint) + ' − 2×' + c.rinc + (+c.nSer > 0 ? ' − fronturi sertar' : '') + '</code>');
-    }
-    l.push('Balamale după înălțime: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, peste → 5. ' +
-           'Cupă Ø35, la 3–6 mm de muchie, 80–100 mm de capete.');
+    var sertare = +c.nSer > 0 ? T('editor.formulaMinusSertare') : '';
+    l.push(c.montaj === 'aplicat'
+      ? T('editor.formulaUsaAplicata', { W: c.W, H: c.H, rm: c.rm, ri: c.ri,
+                                         n: (+c.nUsi) - 1, nUsi: c.nUsi, sertare: sertare })
+      : T('editor.formulaUsaIncastrata', { Wint: fmt(r.Wint), Hint: fmt(r.Hint), rinc: c.rinc,
+                                           ri: c.ri, n: (+c.nUsi) - 1, nUsi: c.nUsi, sertare: sertare }));
+    l.push(T('editor.formulaBalamale'));
   }
-  if (+c.nPol > 0) l.push('Poliță: <code>L = L_int − ' + c.jp + '</code>, <code>l = A_int − ' + c.rp + '</code>');
-  if (+c.nSer > 0) l.push('Sertar cu glisiere cu bilă: <code>L_cutie = L_int − 2×' + c.jg + '</code>; ' +
-                          'față/spate cutie = L_cutie − 2×' + c.ts + '; lungime glisieră ≤ A_int, pas 50 mm.');
-  l.push('Tăiere: <code>cotă_tăiere = cotă_finită − cant_stânga − cant_dreapta</code> ' +
-         '(cant gros ' + c.cg + ', subțire ' + c.cs + ').');
+  if (+c.nPol > 0) l.push(T('editor.formulaPolita', { jp: c.jp, rp: c.rp }));
+  if (+c.nSer > 0) l.push(T('editor.formulaSertar', { jg: c.jg, ts: c.ts }));
+  l.push(T('editor.formulaTaiere', { cg: c.cg, cs: c.cs }));
+
   return l.map(function (x) { return '<div>' + x + '</div>'; }).join('');
 }
 
 /* ---------------- 3D ---------------- */
 
-var T = null;
+var V3 = null;
 var COL = { f: 0xd9c7a8, g: 0xd48a1e, s: 0xf1cf93, '-': 0xb09572, p: 0x7a6650 };
 var ORDER = ['px', 'nx', 'py', 'ny', 'pz', 'nz'];
-var FACE_RO = { px: 'dreapta', nx: 'stânga', py: 'sus', ny: 'jos', pz: 'față', nz: 'spate' };
+var FETE = ['px', 'nx', 'py', 'ny', 'pz', 'nz'];
 
 function init3D() {
   if (!window.THREE) {
-    $('cvwrap').innerHTML = '<div class="nocv">Vederea 3D nu s-a putut încărca ' +
-      '(biblioteca 3D este blocată). Lista de piese funcționează normal.</div>';
+    $('cvwrap').innerHTML = '<div class="nocv">' + esc(T('editor.fara3d')) + '</div>';
     return;
   }
   var cv = $('cv'), wrap = $('cvwrap');
@@ -353,7 +356,7 @@ function init3D() {
   var mats = {}; Object.keys(COL).forEach(function (k) { mats[k] = new THREE.MeshLambertMaterial({ color: COL[k] }); });
   var lineMat = new THREE.LineBasicMaterial({ color: 0x2a2622, transparent: true, opacity: 0.45 });
 
-  T = { renderer: renderer, scene: scene, camera: camera, group: group, mats: mats, lineMat: lineMat,
+  V3 = { renderer: renderer, scene: scene, camera: camera, group: group, mats: mats, lineMat: lineMat,
         theta: 0.65, phi: 1.15, r: 2000, target: new THREE.Vector3(), meshes: [], sel: null,
         helper: null, ray: new THREE.Raycaster(), E: 0 };
 
@@ -368,7 +371,7 @@ function init3D() {
 
   var ptrs = new Map(), moved = 0, lastD = 0;
   var dist = function () { var a = Array.from(ptrs.values()); return Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y); };
-  var clampR = function () { T.r = Math.max(200, Math.min(30000, T.r)); };
+  var clampR = function () { V3.r = Math.max(200, Math.min(30000, V3.r)); };
 
   cv.addEventListener('pointerdown', function (e) {
     cv.setPointerCapture(e.pointerId);
@@ -380,10 +383,10 @@ function init3D() {
     var dx = e.clientX - p.x, dy = e.clientY - p.y;
     p.x = e.clientX; p.y = e.clientY; moved += Math.abs(dx) + Math.abs(dy);
     if (ptrs.size === 1) {
-      T.theta -= dx * 0.008;
-      T.phi = Math.max(0.08, Math.min(Math.PI - 0.08, T.phi - dy * 0.008));
+      V3.theta -= dx * 0.008;
+      V3.phi = Math.max(0.08, Math.min(Math.PI - 0.08, V3.phi - dy * 0.008));
     } else if (ptrs.size === 2) {
-      var d = dist(); if (d > 0) { T.r *= lastD / d; lastD = d; clampR(); }
+      var d = dist(); if (d > 0) { V3.r *= lastD / d; lastD = d; clampR(); }
     }
   });
   cv.addEventListener('pointerup', function (e) {
@@ -392,40 +395,40 @@ function init3D() {
   });
   cv.addEventListener('pointercancel', function (e) { ptrs.delete(e.pointerId); });
   cv.addEventListener('wheel', function (e) {
-    e.preventDefault(); T.r *= Math.exp(e.deltaY * 0.0012); clampR();
+    e.preventDefault(); V3.r *= Math.exp(e.deltaY * 0.0012); clampR();
   }, { passive: false });
 
   function pick(e) {
     var r = cv.getBoundingClientRect();
     var v = new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1,
                               -((e.clientY - r.top) / r.height) * 2 + 1);
-    T.ray.setFromCamera(v, camera);
-    var hits = T.ray.intersectObjects(T.meshes.filter(function (m) { return m.visible; }), false);
+    V3.ray.setFromCamera(v, camera);
+    var hits = V3.ray.intersectObjects(V3.meshes.filter(function (m) { return m.visible; }), false);
     select(hits.length ? hits[0].object : null);
   }
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   (function loop() {
     requestAnimationFrame(loop);
-    if ($('auto').checked && !reduce) T.theta += 0.004;
-    var t = T.target;
-    camera.position.set(t.x + T.r * Math.sin(T.phi) * Math.sin(T.theta),
-                        t.y + T.r * Math.cos(T.phi),
-                        t.z + T.r * Math.sin(T.phi) * Math.cos(T.theta));
+    if ($('auto').checked && !reduce) V3.theta += 0.004;
+    var t = V3.target;
+    camera.position.set(t.x + V3.r * Math.sin(V3.phi) * Math.sin(V3.theta),
+                        t.y + V3.r * Math.cos(V3.phi),
+                        t.z + V3.r * Math.sin(V3.phi) * Math.cos(V3.theta));
     camera.lookAt(t);
     renderer.render(scene, camera);
   })();
 }
 
 function build3D(c, res) {
-  if (!T) return;
-  var g = T.group;
+  if (!V3) return;
+  var g = V3.group;
   while (g.children.length) {
     var m = g.children[0]; g.remove(m);
     if (m.geometry) m.geometry.dispose();
     m.children.forEach(function (ch) { ch.geometry && ch.geometry.dispose(); });
   }
-  T.meshes = []; select(null);
+  V3.meshes = []; select(null);
 
   res.P.forEach(function (p, pi) {
     p.boxes.forEach(function (b, bi) {
@@ -440,7 +443,7 @@ function build3D(c, res) {
         });
         geo = new THREE.ExtrudeGeometry(shape, { depth: b.sy, bevelEnabled: false });
         geo.rotateX(-Math.PI / 2);
-        mat = T.mats[b.f.py || 'f'];
+        mat = V3.mats[b.f.py || 'f'];
         base = [b.x, b.y, b.z];
       } else if (b.polyFata) {
         /* panou vertical decupat după contur (corp atipic): forma e chiar în planul frontal */
@@ -449,11 +452,11 @@ function build3D(c, res) {
           if (i) shapeF.lineTo(pt[0], pt[1]); else shapeF.moveTo(pt[0], pt[1]);
         });
         geo = new THREE.ExtrudeGeometry(shapeF, { depth: b.sz, bevelEnabled: false });
-        mat = T.mats[b.f.pz || 'f'];
+        mat = V3.mats[b.f.pz || 'f'];
         base = [b.x, b.y, b.z];
       } else {
         geo = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
-        mat = ORDER.map(function (k) { return T.mats[b.f[k] || '-']; });
+        mat = ORDER.map(function (k) { return V3.mats[b.f[k] || '-']; });
         base = [b.x + b.sx / 2, b.y + b.sy / 2, b.z + b.sz / 2];
       }
 
@@ -461,50 +464,49 @@ function build3D(c, res) {
       if (b.ry) mesh.rotation.y = b.ry;
       if (b.rz) mesh.rotation.z = b.rz;
       mesh.userData = { p: p, pi: pi, bi: bi, b: b, base: base };
-      mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), T.lineMat));
-      g.add(mesh); T.meshes.push(mesh);
+      mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), V3.lineMat));
+      g.add(mesh); V3.meshes.push(mesh);
     });
   });
 
-  var prevMax = T.maxDim || 0, maxDim = Math.max(res.W, res.H, res.D);
-  T.target.set(res.W / 2, res.H / 2, res.D / 2);
-  if (Math.abs(prevMax - maxDim) > 1) { T.r = maxDim * 2.9; T.maxDim = maxDim; }
+  var prevMax = V3.maxDim || 0, maxDim = Math.max(res.W, res.H, res.D);
+  V3.target.set(res.W / 2, res.H / 2, res.D / 2);
+  if (Math.abs(prevMax - maxDim) > 1) { V3.r = maxDim * 2.9; V3.maxDim = maxDim; }
   applyExplode(); applyVis();
 }
 
 function applyExplode() {
-  if (!T) return;
-  var E = T.E;
-  T.meshes.forEach(function (m) {
+  if (!V3) return;
+  var E = V3.E;
+  V3.meshes.forEach(function (m) {
     var b = m.userData.b, o = m.userData.base;
     m.position.set(o[0] + b.ex[0] * E, o[1] + b.ex[1] * E, o[2] + b.ex[2] * E);
   });
-  if (T.helper) T.helper.update();
+  if (V3.helper) V3.helper.update();
 }
 
 function applyVis() {
-  if (!T) return;
+  if (!V3) return;
   var on = {};
   document.querySelectorAll('.vis').forEach(function (cb) { on[cb.dataset.g] = cb.checked; });
-  T.meshes.forEach(function (m) { m.visible = !!on[m.userData.b.grp]; });
-  if (T.sel && !T.sel.visible) select(null);
+  V3.meshes.forEach(function (m) { m.visible = !!on[m.userData.b.grp]; });
+  if (V3.sel && !V3.sel.visible) select(null);
 }
 
 function select(mesh) {
-  if (!T) return;
-  if (T.helper) { T.scene.remove(T.helper); T.helper.geometry.dispose(); T.helper = null; }
-  T.sel = mesh;
+  if (!V3) return;
+  if (V3.helper) { V3.scene.remove(V3.helper); V3.helper.geometry.dispose(); V3.helper = null; }
+  V3.sel = mesh;
   document.querySelectorAll('#rows tr').forEach(function (tr) { tr.classList.remove('sel'); });
 
   if (!mesh) {
-    $('info').innerHTML = '<span class="muted">Apasă pe o piesă pentru cotele ei. ' +
-      'Fiecare piesă este desenată la grosimea reală; culorile muchiilor arată cantul.</span>';
+    $('info').innerHTML = '<span class="muted">' + esc(T('editor.apasaPiesa')) + '</span>';
     return;
   }
 
   var helper = new THREE.BoxHelper(mesh, 0x0f6e6a);
   helper.material.linewidth = 2;
-  T.scene.add(helper); T.helper = helper;
+  V3.scene.add(helper); V3.helper = helper;
 
   var p = mesh.userData.p, b = mesh.userData.b, pi = mesh.userData.pi;
   var tr = document.querySelector('#rows tr[data-pi="' + pi + '"]');
@@ -515,27 +517,33 @@ function select(mesh) {
   /* la panourile decupate cantul nu se poate descrie pe cele 4 muchii: e în notă */
   var cants = formaLibera ? [] : ORDER.filter(function (k) { return b.f[k] !== 'f' && b.f[k] !== 'p'; })
     .map(function (k) {
-      return FACE_RO[k] + ' ' + (b.f[k] === 'g' ? params.cg : b.f[k] === 's' ? params.cs : '–');
+      return T('fata.' + k) + ' ' + (b.f[k] === 'g' ? params.cg : b.f[k] === 's' ? params.cs : '–');
     });
 
-  var s = srv(pi, p.nume);
+  var s = srv(pi, p);
   var taiere = paid
-    ? (s ? '<div>tăiere <span class="k"><b>' + fmt(s.TL) + ' × ' + fmt(s.Tl) + '</b></span> mm</div>'
-         : '<div class="muted">tăiere: se actualizează…</div>')
-    : '<div class="muted">tăiere: 🔒 se deblochează după plată</div>';
+    ? (s ? '<div>' + esc(T('editor.taiere')) + ' <span class="k"><b>' +
+           fmt(s.TL) + ' × ' + fmt(s.Tl) + '</b></span> mm</div>'
+         : '<div class="muted">' + esc(T('editor.taiereAstept')) + '</div>')
+    : '<div class="muted">🔒 ' + esc(T('editor.taiereBlocata')) + '</div>';
 
   $('info').innerHTML =
-    '<div><b>' + esc(p.nume) + '</b> <span class="tag">' + (p.buc > 1 ? p.buc + ' buc' : '1 buc') + '</span></div>' +
-    '<div>finit <span class="k">' + fmt(p.L) + ' × ' + fmt(p.l) + ' × ' + fmt(r1(th)) + '</span> mm</div>' +
+    '<div><b>' + esc(p.nume) + '</b> <span class="tag">' +
+      esc(T('editor.nBuc', { n: p.buc })) + '</span></div>' +
+    '<div>' + esc(T('editor.finit')) + ' <span class="k">' +
+      fmt(p.L) + ' × ' + fmt(p.l) + ' × ' + fmt(r1(th)) + '</span> mm</div>' +
     taiere +
-    (paid && !formaLibera ? '<div>cant: ' + (cants.length ? cants.join(', ') : 'fără') + '</div>' : '') +
+    (paid && !formaLibera
+      ? '<div>' + esc(T('editor.cantPeMuchii', {
+          muchii: cants.length ? cants.join(', ') : T('editor.faraCant') })) + '</div>'
+      : '') +
     (p.nota ? '<div class="tag">' + esc(p.nota) + '</div>' : '');
 }
 
 function setView(v) {
-  if (!T) return;
+  if (!V3) return;
   var m = { iso: [0.65, 1.15], fata: [0, Math.PI / 2], sus: [0, 0.12], spate: [Math.PI, Math.PI / 2 - 0.15] }[v];
-  T.theta = m[0]; T.phi = m[1];
+  V3.theta = m[0]; V3.phi = m[1];
 }
 
 /* ---------------- evenimente ---------------- */
@@ -554,14 +562,14 @@ document.querySelectorAll('[data-view]').forEach(function (b) {
   b.onclick = function () { setView(b.dataset.view); };
 });
 $('explode').addEventListener('input', function (e) {
-  if (T) { T.E = (+e.target.value) / 100 * 260; applyExplode(); }
+  if (V3) { V3.E = (+e.target.value) / 100 * 260; applyExplode(); }
 });
 document.querySelectorAll('.vis').forEach(function (cb) { cb.addEventListener('change', applyVis); });
 $('rows').addEventListener('click', function (e) {
   var tr = e.target.closest('tr[data-pi]');
-  if (!tr || !T) return;
+  if (!tr || !V3) return;
   var pi = +tr.dataset.pi;
-  var m = T.meshes.find(function (x) { return x.userData.pi === pi && x.visible; });
+  var m = V3.meshes.find(function (x) { return x.userData.pi === pi && x.visible; });
   select(m || null);
 });
 
@@ -573,15 +581,15 @@ if (copyBtn) {
       .then(function (txt) {
         txt = txt.replace(/^﻿/, '');
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          return navigator.clipboard.writeText(txt).then(function () { toast('CSV copiat.'); });
+          return navigator.clipboard.writeText(txt).then(function () { toast(T('editor.copiat')); });
         }
         var ta = document.createElement('textarea');
         ta.value = txt; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); toast('CSV copiat.'); }
-        catch (e) { toast('Selectează și copiază manual.'); }
+        try { document.execCommand('copy'); toast(T('editor.copiat')); }
+        catch (e) { toast(T('editor.copiazaManual')); }
         document.body.removeChild(ta);
       })
-      .catch(function () { toast('CSV-ul nu a putut fi copiat.'); });
+      .catch(function () { toast(T('editor.nuSaCopiat')); });
   };
 }
 

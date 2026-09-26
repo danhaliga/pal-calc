@@ -1,18 +1,17 @@
 <div class="top">
-  <h1>Corpurile mele</h1>
-  <a class="btn primary" href="/corps/new">+ Corp nou</a>
+  <h1><%= t('corpuri.titlu') %></h1>
+  <a class="btn primary" href="/corps/new"><%= t('corpuri.corpNou') %></a>
 </div>
 
 <% if (justPaid) { %>
-  <div class="warn ok">Plata a fost înregistrată. Lista de debitare este deblocată pentru corpul respectiv.</div>
+  <div class="warn ok"><%= t('corpuri.platit') %></div>
 <% } %>
 
 <% if (!corps.length) { %>
   <div class="panel empty">
-    <p>Nu ai încă niciun corp.</p>
-    <p class="muted">Apasă „+ Corp nou” și alege un model din catalog: corpuri de bucătărie,
-      dulapuri, comode, corpuri de baie. Pe urmă schimbi cotele cum ai nevoie.</p>
-    <div class="btns center"><a class="btn primary" href="/corps/new">Vezi modelele</a></div>
+    <p><%= t('corpuri.goalaTitlu') %></p>
+    <p class="muted"><%= t('corpuri.goalaText') %></p>
+    <div class="btns center"><a class="btn primary" href="/corps/new"><%= t('corpuri.goalaButon') %></a></div>
   </div>
 <% } else { %>
   <div class="corp-list">
@@ -23,32 +22,35 @@
           <div class="dims"><%= c.params.W %> × <%= c.params.H %> × <%= c.params.D %> mm</div>
           <div class="meta">
             PAL <%= c.params.t %> ·
-            <%= c.params.nUsi %> uși ·
-            <%= c.params.nPol %> polițe ·
-            <%= c.params.nSer %> sertare
+            <%= t('corpuri.metaUsi', { n: +c.params.nUsi }) %> ·
+            <%= t('corpuri.metaPolite', { n: +c.params.nPol }) %> ·
+            <%= t('corpuri.metaSertare', { n: +c.params.nSer }) %>
           </div>
         </a>
         <div class="corp-side">
-          <span class="chip <%= c.paid ? 'paid' : 'draft' %>"><%= c.paid ? 'Plătit' : 'Draft' %></span>
-          <span class="muted small">modificat <%= c.updated_at.replace('T', ' ').slice(0, 16) %></span>
+          <span class="chip <%= c.paid ? 'paid' : 'draft' %>"><%= c.paid ? t('corpuri.chipPlatit') : t('corpuri.chipDraft') %></span>
+          <span class="muted small"><%= t('corpuri.modificatLa', { data: c.updated_at.replace('T', ' ').slice(0, 16) }) %></span>
           <div class="btns">
-            <a class="btn small" href="/corps/<%= c.id %>">Deschide</a>
+            <a class="btn small" href="/corps/<%= c.id %>"><%= t('corpuri.deschide') %></a>
             <form method="post" action="/corps/<%= c.id %>/duplicate" class="inline">
               <input type="hidden" name="_csrf" value="<%= csrfToken %>">
               <button class="btn small" type="submit"
-                      title="Copia se plătește ca orice corp nou">Duplică (<%= priceLei %> lei)</button>
+                      title="<%= t('corpuri.duplicaTitlu') %>"><%= t('corpuri.duplica', { pret: priceLei }) %></button>
             </form>
-            <button class="btn small danger" data-delete="<%= c.id %>" data-name="<%= c.name %>">Șterge</button>
+            <button class="btn small danger" data-delete="<%= c.id %>" data-name="<%= c.name %>"><%= t('corpuri.sterge') %></button>
           </div>
         </div>
       </article>
     <% }); %>
   </div>
-  <p class="muted small">
-    Lista de debitare completă costă <%= priceLei %> lei per corp. Un corp duplicat este un corp nou și
-    are nevoie de plată separată.
-  </p>
+  <p class="muted small"><%= t('corpuri.notaPret', { pret: priceLei }) %></p>
 <% } %>
 
-<script type="application/json" id="page-data"><%- jsonPentruPagina({ csrf: csrfToken }) %></script>
+<script type="application/json" id="page-data"><%- jsonPentruPagina({
+  csrf: csrfToken,
+  texte: {
+    confirmaStergere: t('corpuri.confirmaStergere'),
+    eroareStergere: t('corpuri.eroareStergere')
+  }
+}) %></script>
 <script src="/static/corps-list.js?v=<%= assetV %>"></script>

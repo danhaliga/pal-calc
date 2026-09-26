@@ -92,8 +92,8 @@ router.get('/payments/success', requireAuth, async (req, res, next) => {
     /* nimic nu se creditează pe baza URL-ului: doar pe baza răspunsului Stripe */
     if (session.payment_status !== 'paid' || userId !== req.user.id) {
       return res.status(402).render('payments/cancel', {
-        title: 'Plata nu a fost confirmată',
-        message: 'Stripe nu a confirmat această plată.',
+        title: req.t('plata.neconfirmataTitlu'),
+        message: req.t('plata.neconfirmataText'),
         corpId: null
       });
     }
@@ -106,7 +106,7 @@ router.get('/payments/success', requireAuth, async (req, res, next) => {
     confirmaTopup(plataId, userId, Number(meta.cents || session.amount_total));
 
     res.render('payments/success', {
-      title: 'Plată confirmată',
+      title: req.t('plata.confirmata'),
       corpId: null,
       amount: (session.amount_total / 100).toFixed(2),
       currency: (session.currency || currency()).toUpperCase()
@@ -116,8 +116,8 @@ router.get('/payments/success', requireAuth, async (req, res, next) => {
 
 router.get('/payments/cancel', requireAuth, (req, res) => {
   res.render('payments/cancel', {
-    title: 'Plată anulată',
-    message: 'Plata a fost anulată. Creditul a rămas neschimbat.',
+    title: req.t('plata.anulataTitlu'),
+    message: req.t('plata.anulataText'),
     corpId: null
   });
 });

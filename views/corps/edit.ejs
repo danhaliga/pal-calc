@@ -3,42 +3,40 @@
     <% if (typeof order !== 'undefined' && order) { %>
       <a href="/orders/<%= order.id %>">← <%= order.name %></a>
     <% } else { %>
-      <a href="/corps">← Corpurile mele</a>
+      <a href="/corps">← <%= t('editor.inapoiCorpuri') %></a>
     <% } %>
   </div>
   <div class="status-line">
-    <span class="chip <%= corp.paid ? 'paid' : 'draft' %>"><%= corp.paid ? 'Plătit' : 'Draft' %></span>
-    <span id="saveState" class="muted small">salvat</span>
+    <span class="chip <%= corp.paid ? 'paid' : 'draft' %>"><%= corp.paid ? t('corpuri.chipPlatit') : t('corpuri.chipDraft') %></span>
+    <span id="saveState" class="muted small"><%= t('editor.salvat') %></span>
   </div>
 </div>
 
 <% if (justPaid) { %>
-  <div class="warn ok">Plata a fost înregistrată. Lista de debitare este deblocată pentru acest corp.</div>
+  <div class="warn ok"><%= t('editor.platit') %></div>
 <% } %>
 
 <!-- conturul stă pe toată lățimea: tabelul cu laturi nu încape în coloana formularului -->
 <div class="panel hidden" id="conturBox">
-  <h2>Conturul corpului, văzut din față</h2>
-  <p class="hint">
-    Mergi din latură în latură: dai lungimea laturii și unghiul din colțul unde se întâlnește
-    cu următoarea. Conturul e bun când se închide. Prima latură pornește spre dreapta.
-  </p>
+  <h2><%= t('editor.conturTitlu') %></h2>
+  <p class="hint"><%= t('editor.conturHint') %></p>
 
   <div class="contur-lucru">
     <div>
       <div class="tbl">
         <table class="contur-tabel">
           <thead><tr>
-            <th class="c">#</th><th>Latura</th><th class="c">Lungime (mm)</th>
-            <th class="c">Unghi la capăt (°)</th><th></th>
+            <th class="c">#</th><th><%= t('editor.colLatura') %></th>
+            <th class="c"><%= t('editor.colLungimeMm') %></th>
+            <th class="c"><%= t('editor.colUnghi') %></th><th></th>
           </tr></thead>
           <tbody id="conturTabel"></tbody>
         </table>
       </div>
       <div class="btns">
-        <button type="button" class="btn small" id="conturAdauga">+ Latură</button>
-        <button type="button" class="btn small" id="conturInchide">Închide conturul</button>
-        <button type="button" class="btn small" id="conturReset">Pornește de la dreptunghi</button>
+        <button type="button" class="btn small" id="conturAdauga"><%= t('editor.adaugaLatura') %></button>
+        <button type="button" class="btn small" id="conturInchide"><%= t('editor.inchideConturul') %></button>
+        <button type="button" class="btn small" id="conturReset"><%= t('editor.resetConturul') %></button>
       </div>
       <div id="conturStare" class="legend"></div>
     </div>
@@ -50,137 +48,137 @@
 
   <!-- ---------------- formular ---------------- -->
   <div class="panel">
-    <h2>Corp</h2>
+    <h2><%= t('editor.corp') %></h2>
     <form id="form" autocomplete="off">
       <fieldset>
         <div class="f">
-          <label class="full">Denumire<input id="nume" type="text" maxlength="80"></label>
-          <label class="full">Tip corp<select id="tip">
-            <option value="drept">Drept</option>
-            <option value="colt-orb">De colț, orb (ușă îngustă)</option>
-            <option value="colt-L">De colț, în L (două fronturi)</option>
-            <option value="colt-diagonal">De colț, front diagonal</option>
-            <option value="atipic">Atipic (desenat din laturi și unghiuri)</option>
+          <label class="full"><%= t('editor.denumire') %><input id="nume" type="text" maxlength="80"></label>
+          <label class="full"><%= t('editor.tipCorp') %><select id="tip">
+            <option value="drept"><%= t('editor.tipDrept') %></option>
+            <option value="colt-orb"><%= t('editor.tipColtOrb') %></option>
+            <option value="colt-L"><%= t('editor.tipColtL') %></option>
+            <option value="colt-diagonal"><%= t('editor.tipColtDiagonal') %></option>
+            <option value="atipic"><%= t('editor.tipAtipic') %></option>
           </select></label>
-          <label><span id="labelW">Lățime (L)</span><input id="W" type="number" min="100" max="3000" step="1"></label>
-          <label>Înălțime (H)<input id="H" type="number" min="100" max="3000" step="1"></label>
-          <label><span id="labelD">Adâncime (A)</span><input id="D" type="number" min="100" max="3000" step="1"></label>
-          <label id="wrapW2">Latura pe peretele 2<input id="W2" type="number" min="100" max="3000" step="1"></label>
-          <label id="wrapOrb">Lățime zonă oarbă<input id="orb" type="number" min="0" max="2000" step="1"></label>
-          <label id="wrapConstr">Construcție<select id="constr">
-            <option value="intre">Blat/fund între laterale</option>
-            <option value="peste">Laterale între blat și fund</option>
+          <label><span id="labelW"><%= t('editor.latime') %></span><input id="W" type="number" min="100" max="3000" step="1"></label>
+          <label><%= t('editor.inaltime') %><input id="H" type="number" min="100" max="3000" step="1"></label>
+          <label><span id="labelD"><%= t('editor.adancime') %></span><input id="D" type="number" min="100" max="3000" step="1"></label>
+          <label id="wrapW2"><%= t('editor.laturaPerete2') %><input id="W2" type="number" min="100" max="3000" step="1"></label>
+          <label id="wrapOrb"><%= t('editor.latimeOarba') %><input id="orb" type="number" min="0" max="2000" step="1"></label>
+          <label id="wrapConstr"><%= t('editor.constructie') %><select id="constr">
+            <option value="intre"><%= t('editor.constrIntre') %></option>
+            <option value="peste"><%= t('editor.constrPeste') %></option>
           </select></label>
         </div>
         <p class="legend hidden" id="notaColt"></p>
       </fieldset>
 
       <fieldset>
-        <legend>Material și cant</legend>
+        <legend><%= t('editor.legMaterial') %></legend>
         <div class="f3">
-          <label>PAL (mm)<select id="t"><option>16</option><option>18</option><option>25</option></select></label>
-          <label>Cant gros<input id="cg" type="number" step="0.1" min="0" max="5"></label>
-          <label>Cant subțire<input id="cs" type="number" step="0.1" min="0" max="5"></label>
+          <label><%= t('editor.palMm') %><select id="t"><option>16</option><option>18</option><option>25</option></select></label>
+          <label><%= t('editor.cantGros') %><input id="cg" type="number" step="0.1" min="0" max="5"></label>
+          <label><%= t('editor.cantSubtire') %><input id="cs" type="number" step="0.1" min="0" max="5"></label>
         </div>
         <div class="f" style="margin-top:8px">
-          <label>Spate<select id="spate">
-            <option value="aplicat">PFL aplicat (capsat)</option>
-            <option value="nut">PFL în nut</option>
-            <option value="pal">PAL în nut</option>
+          <label><%= t('editor.spate') %><select id="spate">
+            <option value="aplicat"><%= t('editor.spatePflAplicat') %></option>
+            <option value="nut"><%= t('editor.spatePflNut') %></option>
+            <option value="pal"><%= t('editor.spatePalNut') %></option>
           </select></label>
-          <label>Grosime spate<input id="tp" type="number" step="0.5" min="0" max="50"></label>
+          <label><%= t('editor.grosimeSpate') %><input id="tp" type="number" step="0.5" min="0" max="50"></label>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>Uși</legend>
+        <legend><%= t('editor.legUsi') %></legend>
         <div class="f3">
-          <label>Număr uși<select id="nUsi">
+          <label><%= t('editor.numarUsi') %><select id="nUsi">
             <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
           </select></label>
-          <label>Montaj<select id="montaj">
-            <option value="aplicat">Aplicate</option>
-            <option value="incastrat">Încastrate</option>
+          <label><%= t('editor.montaj') %><select id="montaj">
+            <option value="aplicat"><%= t('editor.montajAplicat') %></option>
+            <option value="incastrat"><%= t('editor.montajIncastrat') %></option>
           </select></label>
-          <label>Balama<select id="balama">
-            <option value="0">Cot 0 (aplicată)</option>
-            <option value="9">Cot 9 (semi)</option>
-            <option value="18">Cot 18 (încastrată)</option>
+          <label><%= t('editor.balama') %><select id="balama">
+            <option value="0"><%= t('editor.balamaCot0') %></option>
+            <option value="9"><%= t('editor.balamaCot9') %></option>
+            <option value="18"><%= t('editor.balamaCot18') %></option>
           </select></label>
-          <label>Rost margine<input id="rm" type="number" step="0.5" min="0" max="50"></label>
-          <label>Rost între fronturi<input id="ri" type="number" step="0.5" min="0" max="50"></label>
-          <label>Rost încastrat<input id="rinc" type="number" step="0.5" min="0" max="50"></label>
+          <label><%= t('editor.rostMargine') %><input id="rm" type="number" step="0.5" min="0" max="50"></label>
+          <label><%= t('editor.rostIntreFronturi') %><input id="ri" type="number" step="0.5" min="0" max="50"></label>
+          <label><%= t('editor.rostIncastrat') %><input id="rinc" type="number" step="0.5" min="0" max="50"></label>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>Polițe</legend>
+        <legend><%= t('editor.legPolite') %></legend>
         <div class="f3">
-          <label>Număr polițe<input id="nPol" type="number" min="0" max="20" step="1"></label>
-          <label>Joc lateral<input id="jp" type="number" step="0.5" min="0" max="50"></label>
-          <label>Retragere față<input id="rp" type="number" step="1" min="0" max="300"></label>
+          <label><%= t('editor.numarPolite') %><input id="nPol" type="number" min="0" max="20" step="1"></label>
+          <label><%= t('editor.jocLateral') %><input id="jp" type="number" step="0.5" min="0" max="50"></label>
+          <label><%= t('editor.retragereFata') %><input id="rp" type="number" step="1" min="0" max="300"></label>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>Sertare (glisiere cu bilă)</legend>
+        <legend><%= t('editor.legSertare') %></legend>
         <div class="f3">
-          <label>Număr sertare<input id="nSer" type="number" min="0" max="12" step="1"></label>
-          <label>Înălțime front<input id="hFront" type="number" step="1" min="20" max="1200"></label>
-          <label>Înălțime cutie<input id="hCutie" type="number" step="1" min="20" max="1200"></label>
-          <label>Joc glisieră / parte<input id="jg" type="number" step="0.5" min="0" max="50"></label>
-          <label>PAL cutie<select id="ts"><option>16</option><option>18</option></select></label>
-          <label>Lungime glisieră<input id="lg" type="number" step="50" min="0" max="1200" placeholder="auto"></label>
+          <label><%= t('editor.numarSertare') %><input id="nSer" type="number" min="0" max="12" step="1"></label>
+          <label><%= t('editor.inaltimeFront') %><input id="hFront" type="number" step="1" min="20" max="1200"></label>
+          <label><%= t('editor.inaltimeCutie') %><input id="hCutie" type="number" step="1" min="20" max="1200"></label>
+          <label><%= t('editor.jocGlisiera') %><input id="jg" type="number" step="0.5" min="0" max="50"></label>
+          <label><%= t('editor.palCutie') %><select id="ts"><option>16</option><option>18</option></select></label>
+          <label><%= t('editor.lungimeGlisiera') %><input id="lg" type="number" step="50" min="0" max="1200" placeholder="<%= t('editor.auto') %>"></label>
         </div>
       </fieldset>
     </form>
-    <p class="legend">Modificările se salvează automat în contul tău.</p>
+    <p class="legend"><%= t('editor.salvareAutomata') %></p>
   </div>
 
   <!-- ---------------- 3D + listă ---------------- -->
   <div>
     <div class="panel">
       <div class="top">
-        <h2 style="margin:0" id="titlu3d">Vedere 3D</h2>
+        <h2 style="margin:0" id="titlu3d"><%= t('editor.vedere3d') %></h2>
         <div class="btns" style="margin:0">
-          <button class="btn small" data-view="iso">Izometric</button>
-          <button class="btn small" data-view="fata">Față</button>
-          <button class="btn small" data-view="sus">Sus</button>
-          <button class="btn small" data-view="spate">Spate</button>
+          <button class="btn small" data-view="iso"><%= t('editor.vedereIzo') %></button>
+          <button class="btn small" data-view="fata"><%= t('editor.vedereFata') %></button>
+          <button class="btn small" data-view="sus"><%= t('editor.vedereSus') %></button>
+          <button class="btn small" data-view="spate"><%= t('editor.vedereSpate') %></button>
         </div>
       </div>
       <div class="bar3d">
-        <label>Explodat <input type="range" id="explode" min="0" max="100" value="0"></label>
-        <label><input type="checkbox" id="auto"> Rotire automată</label>
+        <label><%= t('editor.explodat') %> <input type="range" id="explode" min="0" max="100" value="0"></label>
+        <label><input type="checkbox" id="auto"> <%= t('editor.rotireAutomata') %></label>
         <span class="grp">
-          <label><input type="checkbox" class="vis" data-g="corp" checked> Corp</label>
-          <label><input type="checkbox" class="vis" data-g="spate" checked> Spate</label>
-          <label><input type="checkbox" class="vis" data-g="fronturi" checked> Uși/fronturi</label>
-          <label><input type="checkbox" class="vis" data-g="sertare" checked> Sertare</label>
-          <label><input type="checkbox" class="vis" data-g="polite" checked> Polițe</label>
+          <label><input type="checkbox" class="vis" data-g="corp" checked> <%= t('editor.grupCorp') %></label>
+          <label><input type="checkbox" class="vis" data-g="spate" checked> <%= t('editor.grupSpate') %></label>
+          <label><input type="checkbox" class="vis" data-g="fronturi" checked> <%= t('editor.grupFronturi') %></label>
+          <label><input type="checkbox" class="vis" data-g="sertare" checked> <%= t('editor.grupSertare') %></label>
+          <label><input type="checkbox" class="vis" data-g="polite" checked> <%= t('editor.grupPolite') %></label>
         </span>
       </div>
       <div class="cvwrap" id="cvwrap"><canvas id="cv"></canvas></div>
       <div class="info" id="info"></div>
       <p class="legend">
-        <span class="sw" style="background:#d9c7a8"></span>față PAL ·
-        <span class="sw" style="background:#d48a1e"></span>cant gros ·
-        <span class="sw" style="background:#f1cf93"></span>cant subțire ·
-        <span class="sw" style="background:#b09572"></span>muchie brută (fără cant) ·
-        <span class="sw" style="background:#7a6650"></span>PFL.
-        Trage pentru rotire, scroll sau două degete pentru zoom, apasă pe o piesă pentru cote.
+        <span class="sw" style="background:#d9c7a8"></span><%= t('editor.legenda3dFataPal') %> ·
+        <span class="sw" style="background:#d48a1e"></span><%= t('editor.legenda3dCantGros') %> ·
+        <span class="sw" style="background:#f1cf93"></span><%= t('editor.legenda3dCantSubtire') %> ·
+        <span class="sw" style="background:#b09572"></span><%= t('editor.legenda3dMuchieBruta') %> ·
+        <span class="sw" style="background:#7a6650"></span><%= t('editor.legenda3dPfl') %>.
+        <%= t('editor.legenda3dManuire') %>
       </p>
     </div>
 
     <div class="panel">
       <div class="top">
-        <h2 style="margin:0" id="titlu">Listă piese</h2>
+        <h2 style="margin:0" id="titlu"><%= t('editor.listaPiese') %></h2>
         <div class="btns" style="margin:0">
           <% if (corp.paid) { %>
-            <button class="btn small" id="copyCorp">Copiază CSV</button>
-            <a class="btn small" href="/corps/<%= corp.id %>/export.csv">Descarcă CSV</a>
+            <button class="btn small" id="copyCorp"><%= t('editor.copiazaCsv') %></button>
+            <a class="btn small" href="/corps/<%= corp.id %>/export.csv"><%= t('editor.descarcaCsv') %></a>
           <% } else { %>
-            <button class="btn small" disabled title="Disponibil după deblocare">Copiază CSV</button>
+            <button class="btn small" disabled title="<%= t('editor.dupaDeblocare') %>"><%= t('editor.copiazaCsv') %></button>
           <% } %>
         </div>
       </div>
@@ -190,40 +188,37 @@
       <% if (!corp.paid) { %>
         <div class="paywall">
           <div>
-            <b>Lista de debitare este blocată</b>
-            <p class="muted small">
-              Cotele finite și vederea 3D sunt gratuite. Cotele de tăiere (finit minus cant) și cantul
-              pe fiecare muchie se deblochează pentru acest corp.
-            </p>
+            <b><%= t('editor.blocatTitlu') %></b>
+            <p class="muted small"><%= t('editor.blocatText') %></p>
           </div>
           <form method="post" action="/corps/<%= corp.id %>/pay">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <button class="btn primary" type="submit">🔓 Deblochează lista de debitare – <%= priceLei %> RON</button>
+            <button class="btn primary" type="submit"><%= t('editor.deblocheaza', { pret: priceLei }) %></button>
           </form>
         </div>
       <% } %>
 
       <div class="tbl"><table>
         <thead><tr>
-          <th>Piesă</th><th class="num">Buc</th>
-          <th class="num">Finit L</th><th class="num">Finit l</th>
-          <th class="<%= corp.paid ? '' : 'locked-h' %>">Cant L1·L2·l1·l2</th>
-          <th class="num <%= corp.paid ? '' : 'locked-h' %>">Tăiere L</th>
-          <th class="num <%= corp.paid ? '' : 'locked-h' %>">Tăiere l</th>
-          <th>Fibră</th>
+          <th><%= t('editor.colPiesa') %></th><th class="num"><%= t('editor.colBuc') %></th>
+          <th class="num"><%= t('editor.colFinitL') %></th><th class="num"><%= t('editor.colFinitl') %></th>
+          <th class="<%= corp.paid ? '' : 'locked-h' %>"><%= t('editor.colCantMuchii') %></th>
+          <th class="num <%= corp.paid ? '' : 'locked-h' %>"><%= t('editor.colTaiereL') %></th>
+          <th class="num <%= corp.paid ? '' : 'locked-h' %>"><%= t('editor.colTaierel') %></th>
+          <th><%= t('editor.colFibra') %></th>
         </tr></thead>
         <tbody id="rows"></tbody>
       </table></div>
 
       <p class="legend">
-        <span class="cant"><span class="g">2</span></span> cant gros pe muchia vizibilă ·
-        <span class="cant"><span class="s">0.4</span></span> cant subțire ·
-        <span class="cant"><span>–</span></span> fără cant.
-        L1/L2 = muchiile lungi, l1/l2 = muchiile scurte. Tăiere = finit − cant pe fiecare latură.
+        <span class="cant"><span class="g">2</span></span>
+        <span class="cant"><span class="s">0.4</span></span>
+        <span class="cant"><span>–</span></span>
+        <%= t('editor.legendaCant') %>
       </p>
 
       <details>
-        <summary>Formulele folosite</summary>
+        <summary><%= t('editor.formuleTitlu') %></summary>
         <div class="formule" id="formule"></div>
       </details>
     </div>
@@ -232,6 +227,9 @@
 
 <div class="toast" id="toast"></div>
 
+<script type="application/json" id="i18n"><%- jsonPentruPagina(catalogPagina(
+  'editor', 'piesa', 'nota', 'avert', 'fibra', 'directie', 'fata', 'csv', 'comun', 'modele'
+)) %></script>
 <script type="application/json" id="page-data"><%- jsonPentruPagina({
   corpId: corp.id,
   params: corp.params,

@@ -1,35 +1,35 @@
-<p class="doc-nota">
-  Câte o fișă pentru fiecare corp: piesele lui, cotele finite și de tăiere, și feroneria necesară.
-  Cantitățile de feronerie sunt estimative, calculate din construcția corpului.
-</p>
+<p class="doc-nota"><%= t('print.notaMontaj') %></p>
 
 <section class="doc-sect">
-  <h2>Sistemul de feronerie al comenzii</h2>
+  <h2><%= t('fero.sistemComenzii') %></h2>
   <table class="doc-tbl">
     <tbody>
-      <tr><th>Carcasă</th><td><%= raport.sistemFeronerie.asamblare.nume %></td>
+      <tr><th><%= t('fero.randCarcasa') %></th><td><%= raport.sistemFeronerie.asamblare.nume %></td>
           <td class="small"><%= raport.sistemFeronerie.asamblare.descriere %></td></tr>
-      <tr><th>Balamale</th><td><%= raport.sistemFeronerie.balama.nume %></td>
+      <tr><th><%= t('fero.randBalamale') %></th><td><%= raport.sistemFeronerie.balama.nume %></td>
           <td class="small"><%= raport.sistemFeronerie.balama.descriere %></td></tr>
-      <tr><th>Glisiere</th><td><%= raport.sistemFeronerie.glisiere.nume %></td>
+      <tr><th><%= t('fero.randGlisiere') %></th><td><%= raport.sistemFeronerie.glisiere.nume %></td>
           <td class="small"><%= raport.sistemFeronerie.glisiere.descriere %></td></tr>
-      <tr><th>Prindere pe perete</th>
-          <td><%= raport.sistemFeronerie.suspensii ? raport.sistemFeronerie.suspensii.nume : 'Coltare aparente' %></td>
-          <td class="small"><% if (raport.sistemFeronerie.suspensii) { %>Câte <%= raport.sistemFeronerie.suspensii.peCorp %> pe corp, <%= raport.sistemFeronerie.suspensii.portantaPePereche %> kg pe pereche.<% } else { %>Fără suspensii ascunse.<% } %></td></tr>
+      <tr><th><%= t('fero.randPerete') %></th>
+          <td><%= raport.sistemFeronerie.suspensii ? raport.sistemFeronerie.suspensii.nume : t('fero.coltareAparente') %></td>
+          <td class="small"><% if (raport.sistemFeronerie.suspensii) { %><%= t('fero.suspensiiRezumat', {
+                n: raport.sistemFeronerie.suspensii.peCorp,
+                kg: raport.sistemFeronerie.suspensii.portantaPePereche }) %><% } else { %><%= t('fero.faraSuspensii') %><% } %></td></tr>
     </tbody>
   </table>
 </section>
 
-<% raport.corpuri.forEach(function (c, idx) { %>
+<% raport.corpuri.forEach(function (c) { %>
   <section class="doc-corp">
     <h2><span class="poz"><%= c.poz %></span> <%= c.nume %></h2>
     <div class="doc-sub2">
       <%= c.dimensiuni %> mm ·
       PAL <%= c.params.t %> mm ·
-      <%= [+c.params.nUsi ? c.params.nUsi + ' uși' : null,
-           +c.params.nSer ? c.params.nSer + ' sertare' : null,
-           +c.params.nPol ? c.params.nPol + ' polițe' : null].filter(Boolean).join(' · ') || 'corp deschis' %>
-      · <%= c.params.spate === 'aplicat' ? 'spate aplicat' : 'spate în nut' %>
+      <%= [+c.params.nUsi ? t('corpuri.metaUsi', { n: +c.params.nUsi }) : null,
+           +c.params.nSer ? t('corpuri.metaSertare', { n: +c.params.nSer }) : null,
+           +c.params.nPol ? t('corpuri.metaPolite', { n: +c.params.nPol }) : null
+          ].filter(Boolean).join(' · ') || t('print.corpDeschis') %>
+      · <%= c.params.spate === 'aplicat' ? t('print.spateAplicat') : t('print.spateNut') %>
     </div>
 
     <% if (c.avertismente.length) { %>
@@ -38,11 +38,13 @@
 
     <div class="doc-doua">
       <div>
-        <h3>Piese</h3>
+        <h3><%= t('print.piese') %></h3>
         <table class="doc-tbl mic">
           <thead><tr>
-            <th class="num">Cod</th><th>Piesă</th><th class="num">Buc</th>
-            <th class="num">Finit</th><th class="num">Tăiere</th><th>Cant</th>
+            <th class="num"><%= t('print.colCod') %></th><th><%= t('print.colPiesa') %></th>
+            <th class="num"><%= t('print.colBuc') %></th>
+            <th class="num"><%= t('print.colFinit') %></th><th class="num"><%= t('print.colTaiere') %></th>
+            <th><%= t('print.colCant') %></th>
           </tr></thead>
           <tbody>
             <% c.piese.forEach(function (p) { %>
@@ -54,7 +56,7 @@
                 <td class="num"><%= p.buc %></td>
                 <td class="num"><%= p.L %> × <%= p.l %></td>
                 <td class="num"><b><%= p.TL %> × <%= p.Tl %></b></td>
-                <td class="small"><%= p.cant.special ? 'muchii frontale' : p.cant.muchii.join('·') %></td>
+                <td class="small"><%= p.cant.special ? t('comanda.muchiiFrontale') : p.cant.muchii.join('·') %></td>
               </tr>
             <% }); %>
           </tbody>
@@ -62,9 +64,9 @@
       </div>
 
       <div>
-        <h3>Feronerie</h3>
+        <h3><%= t('print.feronerie') %></h3>
         <table class="doc-tbl mic">
-          <thead><tr><th>Articol</th><th class="num">Cant.</th></tr></thead>
+          <thead><tr><th><%= t('comun.articol') %></th><th class="num"><%= t('comun.cant') %></th></tr></thead>
           <tbody>
             <% c.feronerie.forEach(function (f) { %>
               <tr>
@@ -75,15 +77,18 @@
           </tbody>
         </table>
 
-        <h3>Ordinea de montaj</h3>
+        <h3><%= t('print.ordineaMontaj') %></h3>
         <ol class="doc-pasi">
-          <li>Aplică cantul pe muchiile marcate, apoi curăță surplusul.</li>
-          <li>Găurește pentru confirmat: laterale cu fundul și blatul.</li>
-          <% if (+c.params.nPol) { %><li>Dă găurile pentru suporții de poliță, la înălțimile dorite.</li><% } %>
-          <li>Asamblează carcasa și verifică diagonalele înainte de a strânge.</li>
-          <li>Prinde spatele — el ține corpul în echer.</li>
-          <% if (+c.params.nSer) { %><li>Montează glisierele și cutiile de sertar, apoi reglează fronturile.</li><% } %>
-          <% if (+c.params.nUsi) { %><li>Montează cupele de balama și ușile, apoi reglează rosturile.</li><% } %>
+          <li><%= t('print.pasCant') %></li>
+          <li><%= t('print.pasGauri', { sistem: raport.sistemFeronerie.asamblare.nume }) %></li>
+          <% if (+c.params.nPol) { %><li><%= t('print.pasPolite') %></li><% } %>
+          <li><%= t('print.pasCarcasa') %></li>
+          <li><%= t('print.pasSpate') %></li>
+          <% if (+c.params.nSer) { %><li><%= t('print.pasSertare') %></li><% } %>
+          <% if (+c.params.nUsi) { %><li><%= t('print.pasUsi') %></li><% } %>
+          <% if (raport.sistemFeronerie.suspensii && +c.params.D <= 450) { %>
+            <li><%= t('print.pasSuspensii') %></li>
+          <% } %>
         </ol>
       </div>
     </div>
@@ -91,9 +96,10 @@
 <% }); %>
 
 <section class="doc-sect">
-  <h2>Feronerie — total comandă</h2>
+  <h2><%= t('print.feronerieTotal') %></h2>
   <table class="doc-tbl">
-    <thead><tr><th>Articol</th><th class="num">Cantitate</th><th>Observații</th></tr></thead>
+    <thead><tr><th><%= t('comun.articol') %></th><th class="num"><%= t('comun.cantitate') %></th>
+      <th><%= t('print.colObservatii') %></th></tr></thead>
     <tbody>
       <% raport.feronerie.forEach(function (f) { %>
         <tr><td><%= f.nume %></td><td class="num"><b><%= f.qty %></b> <%= f.um %></td>

@@ -10,12 +10,12 @@ const Catalog = require('../shared/catalog');
 
 const router = express.Router();
 
-const ROLURI = [
-  { id: 'corp', nume: 'Carcasă' },
-  { id: 'front', nume: 'Fronturi (uși, sertare)' },
-  { id: 'sertar', nume: 'Cutii de sertar' },
-  { id: 'liber', nume: 'Altceva' }
-];
+const ROLURI_ID = ['corp', 'front', 'sertar', 'liber'];
+
+/* Rolurile cu numele scrise în limba paginii. */
+function roluri(t) {
+  return ROLURI_ID.map(id => ({ id, nume: t ? t('rol.' + id) : id }));
+}
 
 /* grosimile de cant acceptate, când decorul nu are lista lui în catalog */
 const CANT_STANDARD = [0.4, 0.8, 1, 1.3, 1.5, 2];
@@ -101,7 +101,7 @@ router.get('/api/catalog', requireAuth, (req, res) => {
 function comandaProprie(req, res, next) {
   const o = db.prepare('SELECT * FROM orders WHERE id = ?').get(Number(req.params.id));
   if (!o || o.user_id !== req.user.id) {
-    const err = new Error('Comanda nu există.');
+    const err = require('./util').eroare('eroare.comandaLipsa', 404);
     err.status = 404;
     return next(err);
   }
@@ -123,13 +123,13 @@ router.post('/orders/:id/materials', requireAuth, comandaProprie, (req, res, nex
 router.post('/orders/:id/materials/:matId', requireAuth, comandaProprie, (req, res, next) => {
   const mat = db.prepare('SELECT * FROM order_materials WHERE id = ? AND order_id = ?')
                 .get(Number(req.params.matId), req.comanda.id);
-  if (!mat) return next(Object.assign(new Error('Material inexistent.'), { status: 404 }));
+  if (!mat) return next(require('./util').eroare('eroare.materialLipsa', 404));
 
   if (req.body.sterge === '1') {
     const cate = db.prepare('SELECT COUNT(*) AS n FROM order_materials WHERE order_id = ?')
                    .get(req.comanda.id).n;
     if (cate <= 1) {
-      return next(Object.assign(new Error('Comanda trebuie să aibă cel puțin un material.'), { status: 400 }));
+      return next(require('./util').eroare('eroare.ultimulMaterial', 400));
     }
     db.prepare('DELETE FROM order_materials WHERE id = ?').run(mat.id);
     return res.redirect(`/orders/${req.comanda.id}#materiale`);
@@ -153,4 +153,4 @@ router.post('/orders/:id/materials/:matId', requireAuth, comandaProprie, (req, r
   res.redirect(`/orders/${req.comanda.id}#materiale`);
 });
 
-module.exports = { router, aleComenzii, peRoluri, creeaza, implicit, ROLURI, CANT_STANDARD };
+module.exports = { router, aleComenzii, peRoluri, creeaza, implicit, roluri, ROLURI_ID, CANT_STANDARD };

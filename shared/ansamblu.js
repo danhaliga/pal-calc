@@ -22,11 +22,19 @@
   'use strict';
 
   var PERETI = [
-    { id: 'A', nume: 'Peretele din spate', latura: 'A', rot: 0 },
-    { id: 'B', nume: 'Peretele din stânga', latura: 'B', rot: 90 },
-    { id: 'C', nume: 'Peretele din față', latura: 'A', rot: 180 },
-    { id: 'D', nume: 'Peretele din dreapta', latura: 'B', rot: 270 }
+    { id: 'A', latura: 'A', rot: 0 },
+    { id: 'B', latura: 'B', rot: 90 },
+    { id: 'C', latura: 'A', rot: 180 },
+    { id: 'D', latura: 'B', rot: 270 }
   ];
+
+  /* Pereții cu numele scrise în limba cerută. */
+  function pereti(tr) {
+    var t_ = PalCalc.traducator(tr);
+    return PERETI.map(function (p) {
+      return Object.assign({ nume: t_('perete.' + p.id) }, p);
+    });
+  }
 
   var r1 = function (v) { return Math.round(v * 10) / 10; };
 
@@ -137,7 +145,8 @@
 
   /* ---------- verificări ---------- */
 
-  function verifica(asezari, cam) {
+  function verifica(asezari, cam, tr) {
+    var t_ = PalCalc.traducator(tr);
     var probleme = [];
 
     /* depășirea peretelui */
@@ -145,18 +154,18 @@
       var lung = lungimePerete(cam, per.id);
       asezari.filter(function (a) { return a.perete.id === per.id; }).forEach(function (a) {
         if (a.poz.d < -0.5) {
-          probleme.push({ tip: 'inainte', corp: a.nume, text:
-            '„' + a.nume + '” începe înainte de colțul peretelui ' + per.id + '.' });
+          probleme.push({ tip: 'inainte', corp: a.nume,
+            text: t_('ansamblu.probInainte', { corp: a.nume, perete: per.id }) });
         }
         if (a.poz.d + a.W > lung + 0.5) {
-          probleme.push({ tip: 'depasire', corp: a.nume, text:
-            '„' + a.nume + '” depășește peretele ' + per.id + ' cu ' +
-            r1(a.poz.d + a.W - lung) + ' mm.' });
+          probleme.push({ tip: 'depasire', corp: a.nume,
+            text: t_('ansamblu.probDepasire', { corp: a.nume, perete: per.id,
+                                                mm: r1(a.poz.d + a.W - lung) }) });
         }
         if (a.poz.h + a.H > cam.H + 0.5) {
-          probleme.push({ tip: 'inaltime', corp: a.nume, text:
-            '„' + a.nume + '” depășește înălțimea camerei cu ' +
-            r1(a.poz.h + a.H - cam.H) + ' mm.' });
+          probleme.push({ tip: 'inaltime', corp: a.nume,
+            text: t_('ansamblu.probInaltime', { corp: a.nume,
+                                                mm: r1(a.poz.h + a.H - cam.H) }) });
         }
       });
     });
@@ -169,9 +178,9 @@
         var peX = Math.min(a.poz.d + a.W, b.poz.d + b.W) - Math.max(a.poz.d, b.poz.d);
         var peY = Math.min(a.poz.h + a.H, b.poz.h + b.H) - Math.max(a.poz.h, b.poz.h);
         if (peX > 0.5 && peY > 0.5) {
-          probleme.push({ tip: 'suprapunere', corp: a.nume, text:
-            '„' + a.nume + '” și „' + b.nume + '” se suprapun pe peretele ' +
-            a.perete.id + ', pe ' + r1(peX) + ' mm.' });
+          probleme.push({ tip: 'suprapunere', corp: a.nume,
+            text: t_('ansamblu.probSuprapunere', { a: a.nume, b: b.nume,
+                                                   perete: a.perete.id, mm: r1(peX) }) });
         }
       }
     }
@@ -264,8 +273,8 @@
            (fs * 0.85) + '" class="an-perete">D</text>');
 
     return '<svg viewBox="' + (-pad) + ' ' + (-pad) + ' ' + (cam.A + 2 * pad) + ' ' + (cam.B + 2 * pad) +
-           '" class="an-svg" preserveAspectRatio="xMidYMid meet" role="img" ' +
-           'aria-label="Plan cameră">' + o.join('') + '</svg>';
+           '" class="an-svg" preserveAspectRatio="xMidYMid meet" ' +
+           'aria-hidden="true" focusable="false">' + o.join('') + '</svg>';
   }
 
   /* vedere din față pentru un perete: corpurile la înălțimea lor */
@@ -294,19 +303,20 @@
            fs + '" class="an-cota">' + lung + ' mm</text>');
 
     return '<svg viewBox="' + (-pad) + ' ' + (-pad) + ' ' + (lung + 2 * pad) + ' ' + (cam.H + 2 * pad) +
-           '" class="an-svg" preserveAspectRatio="xMidYMid meet" role="img" ' +
-           'aria-label="Elevație perete ' + peretId + '">' + o.join('') + '</svg>';
+           '" class="an-svg" preserveAspectRatio="xMidYMid meet" ' +
+           'aria-hidden="true" focusable="false">' + o.join('') + '</svg>';
   }
 
   /* ---------- totul la un loc ---------- */
 
-  function ansamblu(comanda, corpuri) {
+  function ansamblu(comanda, corpuri, tr) {
+    var t_ = PalCalc.traducator(tr);
     var cam = camera(comanda.camera);
     var asezari = corpuri.map(function (c) {
       return asezare(c, citestePozitie(c), cam);
     });
 
-    var peReti = PERETI.map(function (per) {
+    var peReti = pereti(t_).map(function (per) {
       var lista = asezari.filter(function (a) { return a.perete.id === per.id; });
       var jos = lista.filter(function (a) { return a.poz.h === 0; });
       var sus = lista.filter(function (a) { return a.poz.h > 0; });
@@ -323,7 +333,7 @@
       camera: cam,
       pereti: peReti,
       asezari: asezari,
-      probleme: verifica(asezari, cam),
+      probleme: verifica(asezari, cam, t_),
       goluri: goluri(asezari, cam),
       plan: planCamera(asezari, cam)
     };
@@ -331,6 +341,7 @@
 
   return {
     PERETI: PERETI,
+    pereti: pereti,
     camera: camera,
     peretele: peretele,
     lungimePerete: lungimePerete,

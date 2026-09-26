@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ro">
+<html lang="<%= lang %>" dir="<%= dir %>">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,21 +9,24 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/static/styles.css?v=<%= assetV %>">
 <link rel="stylesheet" href="/static/print.css?v=<%= assetV %>">
+<script src="/shared/i18n.js?v=<%= assetV %>"></script>
+<script src="/static/i18n-pagina.js?v=<%= assetV %>"></script>
 </head>
 <body class="doc">
 
 <div class="doc-bar no-print">
-  <a href="/orders/<%= order.id %>">← Înapoi la comandă</a>
+  <a href="/orders/<%= order.id %>">← <%= t('print.inapoiLaComanda') %></a>
   <span class="doc-links">
-    <a href="/orders/<%= order.id %>/print/ansamblu">Ansamblu</a>
-    <a href="/orders/<%= order.id %>/print/corpuri">Corpuri</a>
-    <a href="/orders/<%= order.id %>/print/debitare">Debitare</a>
-    <a href="/orders/<%= order.id %>/print/incadrare">Încadrare</a>
-    <a href="/orders/<%= order.id %>/print/montaj">Montaj</a>
-    <a href="/orders/<%= order.id %>/print/cnc">CNC</a>
+    <a href="/orders/<%= order.id %>/print/ansamblu"><%= t('print.linkAnsamblu') %></a>
+    <a href="/orders/<%= order.id %>/print/corpuri"><%= t('print.linkCorpuri') %></a>
+    <a href="/orders/<%= order.id %>/print/debitare"><%= t('print.linkDebitare') %></a>
+    <a href="/orders/<%= order.id %>/print/incadrare"><%= t('print.linkIncadrare') %></a>
+    <a href="/orders/<%= order.id %>/print/montaj"><%= t('print.linkMontaj') %></a>
+    <a href="/orders/<%= order.id %>/print/cnc"><%= t('print.linkCnc') %></a>
     <a href="/orders/<%= order.id %>/export.csv">CSV</a>
   </span>
-  <button data-tipareste class="btn small primary">Tipărește</button>
+  <%- include('partials/limba') %>
+  <button data-tipareste class="btn small primary"><%= t('comun.tipareste') %></button>
 </div>
 
 <header class="doc-head">
@@ -31,17 +34,19 @@
     <h1><%= titlu %></h1>
     <div class="doc-sub">
       <b><%= order.name %></b>
-      <% materiale.forEach(function (m, i) { %>
+      <% materiale.forEach(function (m) { %>
         · <%= m.nume %>
-        <span class="muted">(<%= m.brand %> <%= [m.decor_cod, m.decor_nume].filter(Boolean).join(' ') %>,
-        PAL <%= m.pal_mm %>, cant <%= m.cant_gros %>/<%= m.cant_subtire %>)</span>
+        <span class="muted"><%= t('print.materialDetalii', {
+          brand: m.brand,
+          decor: [m.decor_cod, m.decor_nume].filter(Boolean).join(' '),
+          pal: m.pal_mm, gros: m.cant_gros, subtire: m.cant_subtire }) %></span>
       <% }); %>
     </div>
   </div>
   <div class="doc-meta">
-    <div>Comanda nr. <b><%= order.id %></b></div>
+    <div><%= t('print.comandaNr', { id: order.id }) %></div>
     <div><%= order.created_at.slice(0, 10) %></div>
-    <div class="muted">tipărit <%= new Date().toLocaleDateString('ro-RO') %></div>
+    <div class="muted"><%= t('print.tiparitLa', { data: new Date().toLocaleDateString(lang) }) %></div>
   </div>
 </header>
 
@@ -50,8 +55,7 @@
 </main>
 
 <footer class="doc-foot">
-  Cotele sunt în mm și reprezintă <b>cota de tăiere</b> (fără cant), dacă nu scrie altfel.
-  Verifică cu serviciul de debitare ce cotă cere.
+  <%- t('print.subsol') %>
 </footer>
 
 <script src="/static/interactiuni.js?v=<%= assetV %>"></script>

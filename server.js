@@ -96,6 +96,8 @@ const ASSET_V = Date.now().toString(36);
 app.use((req, res, next) => {
   res.locals.assetV = ASSET_V;
   res.locals.jsonPentruPagina = require('./src/util').jsonPentruPagina;
+  res.locals.catalogPagina = (...spatii) =>
+    require('./src/util').catalogPagina(req.lang, spatii);
   res.locals.appName = 'PAL Calc';
   res.locals.paymentDriver = payments.driver();
   res.locals.priceLei = (payments.priceCents() / 100).toFixed(2);
@@ -124,22 +126,26 @@ app.use(admin.router);
 /* ---- erori ---- */
 
 app.use((req, res, next) => {
-  const err = new Error('Pagina nu există.');
-  err.status = 404;
-  next(err);
+  next(require('./src/util').eroare('eroare.paginaLipsa', 404));
 });
 
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   const status = err.status || 500;
   if (status >= 500) console.error(err);
 
+  /* traducem doar erorile noastre; restul nu ajung niciodată la utilizator */
+  const t = req.t || require('./shared/i18n').creeaza(null);
+  const text = status >= 500 ? t('eroare.server')
+             : err.cheie ? t(err.cheie)
+             : t('eroare.cerere');
+
   if (req.path.startsWith('/api/')) {
-    return res.status(status).json({ error: err.message || 'Eroare internă.' });
+    return res.status(status).json({ error: text });
   }
   res.status(status).render('error', {
-    title: status === 404 ? 'Pagina nu există' : 'Eroare',
+    title: status === 404 ? t('eroare.titlu404') : t('eroare.titlu'),
     status,
-    message: status >= 500 ? 'A apărut o eroare pe server.' : err.message
+    message: text
   });
 });
 

@@ -25,9 +25,9 @@
   var r1 = function (v) { return Math.round(v * 10) / 10; };
   var fmt = function (v) { return Number.isInteger(v) ? String(v) : v.toFixed(1); };
 
-  function defaults() {
+  function defaults(tr) {
     return {
-      nume: 'Corp bucătărie jos', W: 800, H: 720, D: 560, constr: 'intre',
+      nume: traducator(tr)('modele.corpImplicit'), W: 800, H: 720, D: 560, constr: 'intre',
       tip: 'drept', W2: 900, orb: 550, contur: [],
       t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 3,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2,

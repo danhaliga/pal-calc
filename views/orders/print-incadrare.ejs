@@ -1,13 +1,14 @@
 <p class="doc-nota">
-  Încadrarea pieselor în coli, cu tăieri de tip ghilotină și disc de 4 mm. Fiecare piesă e scrisă
-  cu codul ei din lista de debitare. Zonele hașurate sunt resturile recuperabile.
-  <b>Coli de cumpărat:</b> <%= raport.totaluri.coli %> — detaliat pe material mai jos.
+  <%= t('print.notaIncadrare') %>
+  <%- t('print.coliDeCumparat', { n: raport.totaluri.coli }) %>
 </p>
 
 <table class="doc-tbl">
   <thead><tr>
-    <th>Material</th><th class="num">Piese</th><th>Coli folosite</th>
-    <th class="num">Echivalent coli</th><th class="num">De cumpărat</th><th class="num">Deșeu</th>
+    <th><%= t('print.colMaterial') %></th><th class="num"><%= t('print.colPiese') %></th>
+    <th><%= t('print.colColiFolosite') %></th>
+    <th class="num"><%= t('print.colEchivalentColi') %></th>
+    <th class="num"><%= t('print.colDeCumparat') %></th><th class="num"><%= t('print.colDeseu') %></th>
   </tr></thead>
   <tbody>
     <% raport.materiale.forEach(function (m) { %>
@@ -25,21 +26,21 @@
 
 <% raport.materiale.forEach(function (m) { %>
   <section class="doc-sect">
-    <h2><%= m.nume %> — <%= m.bins.length %> coli</h2>
+    <h2><%= t('print.antetColi', { nume: m.nume, coli: t('comanda.nColi', { n: m.bins.length }) }) %></h2>
 
     <% if (m.neplasate) { %>
-      <div class="doc-warn"><%= m.neplasate %> piese nu au încăput în formatele alese:
-        sunt mai mari decât coala. Verifică dimensiunile.</div>
+      <div class="doc-warn"><%= t('print.neplasate', { n: m.neplasate }) %></div>
     <% } %>
 
     <div class="coli-grid">
       <% m.bins.forEach(function (bin, i) { %>
         <figure class="coala-card">
           <figcaption class="coala-cap">
-            <b>Coala <%= i + 1 %>/<%= m.bins.length %></b> — <%= bin.format.nume %>
-            <span class="muted">· <%= bin.placements.length %> piese ·
-              utilizare <%= Math.round(bin.fillPct) %>% ·
-              <%= bin.cuts.length %> tăieri</span>
+            <b><%= t('print.coalaNr', { i: i + 1, total: m.bins.length }) %></b> — <%= bin.format.nume %>
+            <span class="muted"><%= t('print.coalaRezumat', {
+              piese: bin.placements.length,
+              procent: Math.round(bin.fillPct),
+              taieri: bin.cuts.length }) %></span>
           </figcaption>
           <%- planColi(bin, m) %>
           <figcaption class="coala-lista">
@@ -59,8 +60,4 @@
   </section>
 <% }); %>
 
-<p class="doc-nota">
-  O coală întreagă înseamnă <%= raport.materiale.length && raport.materiale[0].bins.length ? '2800 × 2070' : '2800 × 2070' %> mm.
-  Jumătățile și sferturile se taie din ea, de aceea „echivalent coli” poate fi cu virgulă, iar
-  „de cumpărat” e rotunjit în sus.
-</p>
+<p class="doc-nota"><%= t('print.notaColi', { w: coala.w, h: coala.h }) %></p>

@@ -54,7 +54,7 @@ function istoric(userId, limit = 50) {
 
 router.get('/credit', requireAuth, (req, res) => {
   res.render('credit', {
-    title: 'Creditul meu',
+    title: req.t('credit.titlu'),
     sold: sold(req.user.id),
     pachete: PACHETE,
     pretCorp: pretCorp(),
@@ -67,7 +67,7 @@ router.get('/credit', requireAuth, (req, res) => {
 router.post('/credit/topup', requireAuth, async (req, res, next) => {
   const cents = Number(req.body.amount_cents);
   if (!PACHETE.includes(cents)) {
-    const err = new Error('Sumă invalidă.');
+    const err = require('./util').eroare('eroare.sumaInvalida', 400);
     err.status = 400;
     return next(err);
   }

@@ -22,9 +22,7 @@ function getOwned(id, userId) {
 }
 
 function notFound(next) {
-  const err = new Error('Corpul nu există.');
-  err.status = 404;
-  next(err);
+  next(util.eroare('eroare.corpLipsa', 404));
 }
 
 function parseParams(raw) {
@@ -47,15 +45,15 @@ function rowToCorp(row) {
 
 /* Piesele trimise catre browser. Pentru un corp draft, campurile platite
    (TL, Tl, c) nu parasesc serverul. */
-function piecesFor(corp) {
+function piecesFor(corp, t) {
   const params = parseParams(corp.params);
-  const res = PalCalc.calc(params);
+  const res = PalCalc.calc(params, t);
   const paid = corp.status === 'paid';
 
   const pieces = res.P.map(p => {
     const base = {
-      nume: p.nume, buc: p.buc, L: p.L, l: p.l,
-      fibra: p.fibra, nota: p.nota, boxes: p.boxes
+      cheie: p.cheie, nume: p.nume, buc: p.buc, L: p.L, l: p.l,
+      fibra: p.fibra, fibraText: p.fibraText, nota: p.nota, boxes: p.boxes
     };
     if (paid) { base.c = p.c; base.TL = p.TL; base.Tl = p.Tl; }
     return base;
@@ -80,7 +78,7 @@ router.get('/corps', requireAuth, (req, res) => {
   `).all(req.user.id);
 
   res.render('corps/index', {
-    title: 'Toate corpurile',
+    title: req.t('corpuri.titlu'),
     corps: rows.map(r => Object.assign(rowToCorp(r), { orderName: r.order_name, orderId: r.order_id })),
     priceLei: (credit.pretCorp() / 100).toFixed(2),
     justPaid: req.query.paid === '1'
@@ -89,19 +87,19 @@ router.get('/corps', requireAuth, (req, res) => {
 
 /* catalogul de modele: pasul dinaintea creării unui corp */
 router.get('/corps/new', requireAuth, (req, res) => {
-  const models = PalModels.MODELS.map(m => {
-    const params = PalModels.paramsFor(m.id);
+  const models = PalModels.modele(req.t).map(m => {
+    const params = PalModels.paramsFor(m.id, req.t);
     return {
       id: m.id, cat: m.cat, nume: m.nume, descriere: m.descriere,
       params,
-      rezumat: PalModels.rezumat(params),
+      rezumat: PalModels.rezumat(params, req.t),
       sketch: PalModels.sketch(params)
     };
   });
 
   res.render('corps/new', {
-    title: 'Alege un model',
-    categories: PalModels.CATEGORIES,
+    title: req.t('modele.titlu'),
+    categories: PalModels.categorii(req.t),
     models
   });
 });
@@ -109,7 +107,7 @@ router.get('/corps/new', requireAuth, (req, res) => {
 /* Corp în afara unei comenzi. Costă la fel ca unul dintr-o comandă:
    creditul se consumă la creare, nu la deblocare. */
 const creeazaCorp = db.transaction((userId, params, cost) => {
-  const ramas = credit.scade(userId, cost, 'corp', null, 'corp fără comandă');
+  const ramas = credit.scade(userId, cost, 'corp', null, 'corp.faraComanda');
   if (ramas === null) throw new Error('CREDIT_INSUFICIENT');
   const info = db.prepare(
     'INSERT INTO corps (user_id, name, params, status) VALUES (?, ?, ?, ?)'
@@ -121,9 +119,10 @@ const creeazaCorp = db.transaction((userId, params, cost) => {
 });
 
 router.post('/corps', requireAuth, (req, res, next) => {
-  const fromModel = req.body.model ? PalModels.paramsFor(String(req.body.model)) : null;
-  const params = fromModel || PalCalc.defaults();
-  params.nume = (req.body.name || params.nume || 'Corp nou').toString().trim().slice(0, 80);
+  const fromModel = req.body.model ? PalModels.paramsFor(String(req.body.model), req.t) : null;
+  const params = fromModel || PalCalc.defaults(req.t);
+  params.nume = (req.body.name || params.nume || req.t('modele.corpImplicit'))
+    .toString().trim().slice(0, 80);
 
   try {
     res.redirect(`/corps/${creeazaCorp(req.user.id, params, credit.pretCorp())}`);
@@ -181,7 +180,7 @@ router.post('/corps/:id/duplicate', requireAuth, (req, res, next) => {
   if (!corp) return notFound(next);
 
   const params = parseParams(corp.params);
-  params.nume = `${corp.name} (copie)`.slice(0, 80);
+  params.nume = req.t('corpuri.numeCopie', { nume: corp.name }).slice(0, 80);
 
   try {
     res.redirect(`/corps/${dupliceazaCorp(req.user.id, corp, params, credit.pretCorp())}`);
@@ -236,7 +235,7 @@ router.delete('/api/corps/:id', requireAuth, (req, res, next) => {
 router.get('/api/corps/:id/pieces', requireAuth, (req, res, next) => {
   const corp = getOwned(req.params.id, req.user.id);
   if (!corp) return notFound(next);
-  res.json(piecesFor(corp));
+  res.json(piecesFor(corp, req.t));
 });
 
 /* ---- export CSV (doar corpuri platite) ---- */
@@ -245,13 +244,13 @@ router.get('/corps/:id/export.csv', requireAuth, (req, res, next) => {
   const corp = getOwned(req.params.id, req.user.id);
   if (!corp) return notFound(next);
   if (corp.status !== 'paid') {
-    const err = new Error('Lista de debitare este disponibilă după plată.');
+    const err = util.eroare('eroare.dupaPlata', 402);
     err.status = 402;
     return next(err);
   }
 
   const params = parseParams(corp.params);
-  const body = PalCalc.csv([params]);
+  const body = PalCalc.csv([params], req.t);
 
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
   res.setHeader('Content-Disposition', util.dispozitieAtasament('debitare-' + corp.name));
@@ -260,7 +259,7 @@ router.get('/corps/:id/export.csv', requireAuth, (req, res, next) => {
 
 /* Deblocarea unui corp mai vechi, rămas în starea draft: se plătește din credit. */
 const deblocheaza = db.transaction((userId, corpId, cost) => {
-  const ramas = credit.scade(userId, cost, 'corp', corpId, 'deblocare corp');
+  const ramas = credit.scade(userId, cost, 'corp', corpId, 'corp.deblocare');
   if (ramas === null) throw new Error('CREDIT_INSUFICIENT');
   db.prepare(
     "UPDATE corps SET status = 'paid', paid_at = COALESCE(paid_at, datetime('now')), " +

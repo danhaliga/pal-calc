@@ -3,8 +3,8 @@
     <h1><%= title %></h1>
     <p><%= message %></p>
     <div class="btns center">
-      <% if (corpId) { %><a class="btn primary" href="/corps/<%= corpId %>">Înapoi la corp</a><% } %>
-      <a class="btn" href="/corps">Corpurile mele</a>
+      <% if (corpId) { %><a class="btn primary" href="/corps/<%= corpId %>"><%= t('plata.inapoiLaCorp') %></a><% } %>
+      <a class="btn" href="/corps"><%= t('plata.corpurileMele') %></a>
     </div>
   </div>
 </div>

@@ -1,60 +1,57 @@
 <div class="top">
   <div>
     <div class="crumbs"><a href="/orders/<%= order.id %>">← <%= order.name %></a></div>
-    <h1>Ansamblu</h1>
+    <h1><%= t('ansamblu.titlu') %></h1>
     <div class="muted small">
-      Cameră <%= ansamblu.camera.A %> × <%= ansamblu.camera.B %> × <%= ansamblu.camera.H %> mm ·
-      <%= ansamblu.asezari.length %> corpuri așezate
+      <%= t('ansamblu.antet', { A: ansamblu.camera.A, B: ansamblu.camera.B, H: ansamblu.camera.H }) %> ·
+      <%= t('ansamblu.nrAsezate', { n: ansamblu.asezari.length }) %>
     </div>
   </div>
   <div class="btns" style="margin:0">
     <form method="post" action="/orders/<%= order.id %>/aseaza" class="inline">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <input type="hidden" name="inaltime_sus" value="1400">
-      <button class="btn primary" type="submit"
-              title="Alipește corpurile cap la cap, jos pe podea și sus la 1400 mm">
-        Așază automat, alipit
+      <button class="btn primary" type="submit" title="<%= t('ansamblu.asazaTitlu') %>">
+        <%= t('ansamblu.asazaAutomat') %>
       </button>
     </form>
-    <a class="btn" href="/orders/<%= order.id %>/print/ansamblu">Planșă de tipărit</a>
+    <a class="btn" href="/orders/<%= order.id %>/print/ansamblu"><%= t('ansamblu.planseDeTiparit') %></a>
   </div>
 </div>
 
 <% if (ansamblu.probleme.length) { %>
   <div class="warn err">
-    <b>De reglat:</b>
+    <b><%= t('ansamblu.deReglat') %></b>
     <% ansamblu.probleme.forEach(function (p) { %><div><%= p.text %></div><% }); %>
   </div>
 <% } %>
 
 <div class="ansamblu-sus">
   <div class="panel">
-    <h2>Camera, văzută de sus</h2>
+    <h2><%= t('ansamblu.camerariDeSus') %></h2>
     <div class="an-plan"><%- ansamblu.plan %></div>
-    <p class="legend">
-      Numerele sunt pozițiile din comandă. Corpurile suspendate sunt desenate cu contur punctat.
-      Colțul de pornire al fiecărui perete este cel din stânga-jos.
-    </p>
+    <p class="legend"><%= t('ansamblu.legendaPlan') %></p>
   </div>
 
   <div class="panel">
-    <h2>Camera</h2>
+    <h2><%= t('ansamblu.camera') %></h2>
     <form method="post" action="/orders/<%= order.id %>/camera">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <div class="f">
-        <label>Latura A (mm)<input type="number" name="A" min="500" max="20000" step="10"
+        <label><%= t('ansamblu.laturaA') %><input type="number" name="A" min="500" max="20000" step="10"
                value="<%= ansamblu.camera.A %>"></label>
-        <label>Latura B (mm)<input type="number" name="B" min="500" max="20000" step="10"
+        <label><%= t('ansamblu.laturaB') %><input type="number" name="B" min="500" max="20000" step="10"
                value="<%= ansamblu.camera.B %>"></label>
-        <label>Înălțime (mm)<input type="number" name="H" min="1500" max="5000" step="10"
+        <label><%= t('ansamblu.inaltime') %><input type="number" name="H" min="1500" max="5000" step="10"
                value="<%= ansamblu.camera.H %>"></label>
       </div>
-      <button class="btn primary" type="submit" style="margin-top:10px">Salvează camera</button>
+      <button class="btn primary" type="submit" style="margin-top:10px"><%= t('ansamblu.salveazaCamera') %></button>
     </form>
 
-    <h2 style="margin-top:18px">Ocupare pereți</h2>
+    <h2 style="margin-top:18px"><%= t('ansamblu.ocuparePereti') %></h2>
     <div class="tbl"><table>
-      <thead><tr><th>Perete</th><th class="num">Lungime</th><th class="num">Jos</th><th class="num">Sus</th></tr></thead>
+      <thead><tr><th><%= t('ansamblu.colPerete') %></th><th class="num"><%= t('ansamblu.colLungime') %></th>
+        <th class="num"><%= t('ansamblu.colJos') %></th><th class="num"><%= t('ansamblu.colSus') %></th></tr></thead>
       <tbody>
         <% ansamblu.pereti.forEach(function (p) { %>
           <tr>
@@ -68,11 +65,11 @@
     </table></div>
 
     <% if (ansamblu.goluri.length) { %>
-      <h2 style="margin-top:16px">Goluri rămase</h2>
+      <h2 style="margin-top:16px"><%= t('ansamblu.goluri') %></h2>
       <ul class="ticks">
         <% ansamblu.goluri.forEach(function (g) { %>
-          <li>Peretele <b><%= g.perete %></b><%= g.h > 0 ? ' (sus)' : '' %>:
-            <%= g.lung %> mm, de la <%= g.de_la %> la <%= g.pana_la %></li>
+          <li><%- t('ansamblu.gol', { perete: g.perete, sus: g.h > 0 ? t('ansamblu.golSus') : '',
+                                      lung: g.lung, de_la: g.de_la, pana_la: g.pana_la }) %></li>
         <% }); %>
       </ul>
     <% } %>
@@ -82,12 +79,12 @@
 <!-- ---------------- vederea 3D a ansamblului ---------------- -->
 <div class="panel">
   <div class="top" style="margin-bottom:8px">
-    <h2 style="margin:0">Ansamblul în 3D</h2>
+    <h2 style="margin:0"><%= t('ansamblu.in3d') %></h2>
     <div class="btns" style="margin:0">
-      <button class="btn small" data-vedere="iso">Izometric</button>
-      <button class="btn small" data-vedere="fata">Din față</button>
-      <button class="btn small" data-vedere="sus">De sus</button>
-      <label class="check" style="margin-left:8px"><input type="checkbox" id="anPereti" checked> Pereți</label>
+      <button class="btn small" data-vedere="iso"><%= t('ansamblu.vedereIzo') %></button>
+      <button class="btn small" data-vedere="fata"><%= t('ansamblu.vedereFata') %></button>
+      <button class="btn small" data-vedere="sus"><%= t('ansamblu.vedereSus') %></button>
+      <label class="check" style="margin-left:8px"><input type="checkbox" id="anPereti" checked> <%= t('ansamblu.aratPereti') %></label>
     </div>
   </div>
   <div class="cvwrap" id="anWrap"><canvas id="anCanvas"></canvas></div>
@@ -99,22 +96,21 @@
      var p = ansamblu.pereti.find(function (x) { return x.id === per.id; });
      if (!p || !p.corpuri.length) return; %>
   <div class="panel">
-    <h2>Peretele <%= per.id %> — <%= per.nume.toLowerCase() %> (<%= p.lungime %> mm)</h2>
+    <h2><%= t('ansamblu.peretele', { id: per.id, nume: per.nume.toLowerCase(), lungime: p.lungime }) %></h2>
     <div class="an-elev"><%- elevatie(ansamblu.asezari, ansamblu.camera, per.id) %></div>
   </div>
 <% }); %>
 
 <!-- ---------------- poziția fiecărui corp ---------------- -->
 <div class="panel">
-  <h2>Poziția corpurilor</h2>
-  <p class="hint">
-    Distanța se măsoară de la colțul de pornire al peretelui, iar înălțimea de la podea,
-    până la fundul corpului. Pentru corpurile de jos, înălțimea este 0 (sau înălțimea soclului).
-  </p>
+  <h2><%= t('ansamblu.pozitiaCorpurilor') %></h2>
+  <p class="hint"><%= t('ansamblu.notaPozitie') %></p>
   <div class="tbl"><table>
     <thead><tr>
-      <th class="num">#</th><th>Corp</th><th class="num">Lățime</th><th class="num">Adâncime</th>
-      <th>Perete</th><th class="num">Distanță (mm)</th><th class="num">Înălțime (mm)</th><th></th>
+      <th class="num">#</th><th><%= t('ansamblu.colCorp') %></th>
+      <th class="num"><%= t('ansamblu.colLatime') %></th><th class="num"><%= t('ansamblu.colAdancime') %></th>
+      <th><%= t('ansamblu.colPerete') %></th><th class="num"><%= t('ansamblu.colDistanta') %></th>
+      <th class="num"><%= t('ansamblu.colInaltime') %></th><th></th>
     </tr></thead>
     <tbody>
       <% ansamblu.asezari.forEach(function (a, i) { %>
@@ -126,16 +122,18 @@
           <td colspan="4">
             <form method="post" action="/corps/<%= a.id %>/pozitie" class="mat-inline">
               <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-              <select name="perete">
+              <select name="perete" aria-label="<%= t('ansamblu.colPerete') %>">
                 <% pereti.forEach(function (per) { %>
                   <option value="<%= per.id %>" <%= a.perete.id === per.id ? 'selected' : '' %>>
                     <%= per.id %> — <%= per.nume.toLowerCase() %>
                   </option>
                 <% }); %>
               </select>
-              <input type="number" name="d" value="<%= a.poz.d %>" step="10" min="0" style="width:96px">
-              <input type="number" name="h" value="<%= a.poz.h %>" step="10" min="0" style="width:96px">
-              <button class="btn small" type="submit">Pune</button>
+              <input type="number" name="d" value="<%= a.poz.d %>" step="10" min="0" style="width:96px"
+                     aria-label="<%= t('ansamblu.colDistanta') %>">
+              <input type="number" name="h" value="<%= a.poz.h %>" step="10" min="0" style="width:96px"
+                     aria-label="<%= t('ansamblu.colInaltime') %>">
+              <button class="btn small" type="submit"><%= t('ansamblu.pune') %></button>
             </form>
           </td>
         </tr>
