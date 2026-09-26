@@ -255,8 +255,10 @@ const SCRIERI = {
   coreean: /[가-힯]/, thai: /[฀-๿]/, devanagari: /[ऀ-ॿ]/
 };
 
+/* Sârba se scrie și cu chirilice, și cu latine; alegem latinele, cum scrie
+   și numele limbii în selectorul de limbă. */
 const SCRIERE_ASTEPTATA = {
-  ru: 'chirilic', uk: 'chirilic', bg: 'chirilic', sr: 'chirilic',
+  ru: 'chirilic', uk: 'chirilic', bg: 'chirilic',
   ar: 'arab', fa: 'arab', he: 'ebraic', el: 'grec',
   zh: 'chinez', ja: 'japonez', ko: 'coreean', th: 'thai', hi: 'devanagari'
 };
