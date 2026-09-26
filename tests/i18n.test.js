@@ -283,17 +283,23 @@ test('fiecare limbă folosește doar scrierea ei', () => {
 /* Cealaltă jumătate a aceleiași greșeli: un „i” sau un „o” latin rămas
    în mijlocul unui cuvânt chirilic sau grecesc. Testul de mai sus nu-l
    prinde, fiindcă latinele sunt normale în „Blum”, „CSV” sau „W1000” —
-   dar lipite de o literă chirilică n-au ce căuta. */
-const NELATINE = /[Ѐ-ӿͰ-Ͽ؀-ۿ֐-׿]/.source.slice(1, -1);
-const AMESTEC = new RegExp(
-  '[A-Za-z][' + NELATINE + ']|[' + NELATINE + '][A-Za-z]', 'g');
+   dar lipite de o literă chirilică n-au ce căuta.
 
-test('nicio literă latină nu s-a strecurat într-un cuvânt nelatin', () => {
+   Doar chirilic și grec: numai ele împart forme cu latinele, deci numai
+   la ele o literă latină lipită e o greșeală de tastat. Ebraica și araba
+   n-au nicio literă care să semene cu una latină, iar acolo lipirea e
+   corectă: „ב־CNC”, „والتجميع وCNC” — un „ו”/„و” se scrie legat. */
+const AMESTEC = new RegExp(
+  '[A-Za-z](?=\\p{L})[\\p{Script=Cyrillic}\\p{Script=Greek}]' +
+  '|(?=\\p{L})[\\p{Script=Cyrillic}\\p{Script=Greek}][A-Za-z]',
+  'gu');
+
+test('nicio literă latină nu s-a strecurat într-un cuvânt chirilic sau grec', () => {
   fs.readdirSync(LOCALES).filter(f => f.endsWith('.json')).forEach(f => {
     const text = fs.readFileSync(path.join(LOCALES, f), 'utf8');
     const gasite = [...new Set(text.match(AMESTEC) || [])];
     assert.deepEqual(gasite, [],
-      `${f} amestecă litere latine cu nelatine în același cuvânt: ${gasite.join(' ')}`);
+      `${f} amestecă litere latine cu chirilice sau grece în același cuvânt: ${gasite.join(' ')}`);
   });
 });
 
