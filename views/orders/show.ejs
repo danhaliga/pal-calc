@@ -26,7 +26,7 @@
 <div class="panel" id="materiale">
   <div class="top" style="margin-bottom:8px">
     <h2 style="margin:0">Materiale (<%= materiale.length %>)</h2>
-    <button class="btn small primary" type="button" onclick="document.getElementById('matNou').classList.toggle('hidden')">
+    <button class="btn small primary" type="button" data-comuta="matNou">
       + Material
     </button>
   </div>
@@ -87,7 +87,7 @@
                   <button class="btn small primary" type="submit">Salvează</button>
                   <% if (materiale.length > 1) { %>
                     <button class="btn small danger" type="submit" name="sterge" value="1"
-                            onclick="return confirm('Ștergi materialul?')">Șterge</button>
+                            data-confirma="Ștergi materialul?">Șterge</button>
                   <% } %>
                 </div>
               </form>
@@ -157,7 +157,7 @@
     <div class="btns">
       <button class="btn primary" type="submit">Salvează</button>
       <button class="btn danger" type="submit" formaction="/orders/<%= order.id %>/delete"
-              onclick="return confirm('Ștergi comanda și toate corpurile ei?')">Șterge comanda</button>
+              data-confirma="Ștergi comanda și toate corpurile ei?">Șterge comanda</button>
     </div>
   </form>
 </details>
@@ -192,14 +192,14 @@
             <td colspan="2">
               <form method="post" action="/corps/<%= c.id %>/material" class="mat-inline">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <select name="mat_corp_id" onchange="this.form.submit()">
+                <select name="mat_corp_id" data-trimite-la-schimbare>
                   <% materiale.forEach(function (m) { %>
                     <option value="<%= m.id %>" <%= c.materialCorp && c.materialCorp.id === m.id ? 'selected' : '' %>>
                       <%= m.nume %>
                     </option>
                   <% }); %>
                 </select>
-                <select name="mat_front_id" onchange="this.form.submit()">
+                <select name="mat_front_id" data-trimite-la-schimbare>
                   <option value="">— ca la carcasă —</option>
                   <% materiale.forEach(function (m) { %>
                     <option value="<%= m.id %>" <%= c.materialFront && c.materialFront.id === m.id && c.materialCorp && c.materialCorp.id !== m.id ? 'selected' : '' %>>

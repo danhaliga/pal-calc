@@ -23,7 +23,7 @@
     <a href="/orders/<%= order.id %>/print/cnc">CNC</a>
     <a href="/orders/<%= order.id %>/export.csv">CSV</a>
   </span>
-  <button onclick="window.print()" class="btn small primary">Tipărește</button>
+  <button data-tipareste class="btn small primary">Tipărește</button>
 </div>
 
 <header class="doc-head">
@@ -54,5 +54,6 @@
   Verifică cu serviciul de debitare ce cotă cere.
 </footer>
 
+<script src="/static/interactiuni.js?v=<%= assetV %>"></script>
 </body>
 </html>

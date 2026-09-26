@@ -379,6 +379,22 @@ async function sold(j) {
   verifica('antete', 'CSP nu permite scripturi inline',
     !/script-src[^;]*unsafe-inline/.test(csp), 'mediu', csp.slice(0, 80));
 
+  /* Dacă CSP interzice scripturile inline, orice atribut onclick din pagini este
+     cod mort: butonul arată bine, dar nu face nimic. Le căutăm în toate paginile. */
+  const paginiDeVerificat = [
+    '/orders', `/orders/${orderId}`, '/orders/new', `/orders/${orderId}/ansamblu`,
+    `/orders/${orderId}/corp-nou`, `/corps/${corpId}`, '/corps', '/credit',
+    `/orders/${orderId}/print/debitare`, `/orders/${orderId}/print/ansamblu`
+  ];
+  let inlineGasit = [];
+  for (const p of paginiDeVerificat) {
+    const txt = await (await req(A, p)).text();
+    const potriviri = txt.match(/\son(click|change|submit|input|load)="/g);
+    if (potriviri) inlineGasit.push(`${p} (${potriviri.length})`);
+  }
+  verifica('antete', 'nicio pagină nu se bazează pe atribute inline pe care CSP le blochează',
+    inlineGasit.length === 0, 'mare', inlineGasit.join(', '));
+
   console.log('\n=== 8. ADMIN ===');
 
   const rAdminA = await req(A, '/admin');
