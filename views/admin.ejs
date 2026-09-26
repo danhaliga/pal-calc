@@ -1,28 +1,33 @@
-<h1>Administrare</h1>
+<div class="top">
+  <h1><%= t('admin.titlu') %></h1>
+  <a class="btn" href="/admin/limbi"><%= t('admin.traduceri') %></a>
+</div>
 
 <div class="kpis">
-  <div class="kpi"><div class="v"><%= users.length %></div><div class="l">utilizatori</div></div>
-  <div class="kpi"><div class="v"><%= corps.length %></div><div class="l">corpuri (ultimele 100)</div></div>
-  <div class="kpi"><div class="v"><%= totalCount %></div><div class="l">plăți reușite</div></div>
-  <div class="kpi"><div class="v"><%= totalLei %> lei</div><div class="l">total încasat</div></div>
+  <div class="kpi"><div class="v"><%= users.length %></div><div class="l"><%= t('admin.kpiUtilizatori') %></div></div>
+  <div class="kpi"><div class="v"><%= corps.length %></div><div class="l"><%= t('admin.kpiCorpuri') %></div></div>
+  <div class="kpi"><div class="v"><%= totalCount %></div><div class="l"><%= t('admin.kpiPlati') %></div></div>
+  <div class="kpi"><div class="v"><%= totalLei %> <%= t('comun.lei') %></div><div class="l"><%= t('admin.kpiIncasat') %></div></div>
 </div>
 
 <div class="panel">
-  <h2>Utilizatori</h2>
+  <h2><%= t('admin.utilizatori') %></h2>
   <div class="tbl"><table>
-    <thead><tr><th class="num">#</th><th>Email</th><th>Nume</th><th class="num">Credit</th>
-      <th class="num">Comenzi</th><th class="num">Corpuri</th><th>Creat</th><th>Rol</th></tr></thead>
+    <thead><tr><th class="num">#</th><th><%= t('admin.email') %></th><th><%= t('admin.nume') %></th>
+      <th class="num"><%= t('admin.creditColoana') %></th>
+      <th class="num"><%= t('admin.comenzi') %></th><th class="num"><%= t('admin.corpuri') %></th>
+      <th><%= t('admin.creat') %></th><th><%= t('admin.rol') %></th></tr></thead>
     <tbody>
       <% users.forEach(function (u) { %>
         <tr>
           <td class="num"><%= u.id %></td>
           <td><%= u.email %></td>
           <td><%= u.name || '–' %></td>
-          <td class="num"><b><%= (u.credit_cents / 100).toFixed(2) %></b> lei</td>
+          <td class="num"><b><%= (u.credit_cents / 100).toFixed(2) %></b> <%= t('comun.lei') %></td>
           <td class="num"><%= u.comenzi %></td>
           <td class="num"><%= u.corps %></td>
           <td class="muted"><%= u.created_at.slice(0, 16) %></td>
-          <td><%= u.is_admin ? 'admin' : 'utilizator' %></td>
+          <td><%= u.is_admin ? t('admin.rolAdmin') : t('admin.rolUtilizator') %></td>
         </tr>
       <% }); %>
     </tbody>
@@ -30,16 +35,17 @@
 </div>
 
 <div class="panel">
-  <h2>Corpuri</h2>
+  <h2><%= t('admin.corpuri') %></h2>
   <div class="tbl"><table>
-    <thead><tr><th class="num">#</th><th>Denumire</th><th>Utilizator</th><th>Status</th><th>Modificat</th></tr></thead>
+    <thead><tr><th class="num">#</th><th><%= t('admin.denumire') %></th><th><%= t('admin.utilizator') %></th>
+      <th><%= t('admin.status') %></th><th><%= t('admin.modificat') %></th></tr></thead>
     <tbody>
       <% corps.forEach(function (c) { %>
         <tr>
           <td class="num"><%= c.id %></td>
           <td><%= c.name %></td>
           <td><%= c.email %></td>
-          <td><span class="chip <%= c.status === 'paid' ? 'paid' : 'draft' %>"><%= c.status === 'paid' ? 'Plătit' : 'Draft' %></span></td>
+          <td><span class="chip <%= c.status === 'paid' ? 'paid' : 'draft' %>"><%= c.status === 'paid' ? t('admin.platit') : t('admin.draft') %></span></td>
           <td class="muted"><%= c.updated_at.slice(0, 16) %></td>
         </tr>
       <% }); %>
@@ -48,11 +54,13 @@
 </div>
 
 <div class="panel">
-  <h2>Plăți</h2>
+  <h2><%= t('admin.plati') %></h2>
   <div class="tbl"><table>
-    <thead><tr><th class="num">#</th><th>Utilizator</th><th>Corp</th><th>Driver</th><th class="num">Sumă</th><th>Status</th><th>Referință</th><th>Data</th></tr></thead>
+    <thead><tr><th class="num">#</th><th><%= t('admin.utilizator') %></th><th><%= t('admin.corp') %></th>
+      <th><%= t('admin.driver') %></th><th class="num"><%= t('admin.suma') %></th>
+      <th><%= t('admin.status') %></th><th><%= t('admin.referinta') %></th><th><%= t('admin.data') %></th></tr></thead>
     <tbody>
-      <% if (!payments.length) { %><tr><td colspan="8" class="muted">Nicio plată încă.</td></tr><% } %>
+      <% if (!payments.length) { %><tr><td colspan="8" class="muted"><%= t('admin.niciPlata') %></td></tr><% } %>
       <% payments.forEach(function (p) { %>
         <tr>
           <td class="num"><%= p.id %></td>

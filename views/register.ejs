@@ -1,23 +1,23 @@
 <div class="auth">
   <div class="panel">
-    <h1>Cont nou</h1>
+    <h1><%= t('auth.contNou') %></h1>
     <% if (error) { %><div class="warn err"><%= error %></div><% } %>
     <form method="post" action="/register" autocomplete="on">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-      <label>Nume (opțional)
+      <label><%= t('auth.numeOptional') %>
         <input type="text" name="name" maxlength="80" autocomplete="name" value="<%= values.name || '' %>">
       </label>
-      <label>Email
+      <label><%= t('auth.email') %>
         <input type="email" name="email" required autocomplete="email" value="<%= values.email || '' %>">
       </label>
-      <label>Parolă <span class="muted">(minim 8 caractere)</span>
+      <label><%= t('auth.parola') %> <span class="muted"><%= t('auth.minimCaractere', { n: 8 }) %></span>
         <input type="password" name="password" required minlength="8" autocomplete="new-password">
       </label>
-      <label>Repetă parola
+      <label><%= t('auth.repetaParola') %>
         <input type="password" name="password2" required minlength="8" autocomplete="new-password">
       </label>
-      <button class="btn primary full" type="submit">Creează contul</button>
+      <button class="btn primary full" type="submit"><%= t('auth.creeazaContul') %></button>
     </form>
-    <p class="muted">Ai deja cont? <a href="/login">Autentifică-te</a>.</p>
+    <p class="muted"><%= t('auth.aiDejaCont') %> <a href="/login"><%= t('auth.autentificaTe') %></a>.</p>
   </div>
 </div>

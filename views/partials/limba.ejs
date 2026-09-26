@@ -1,0 +1,18 @@
+<%
+/* Alegerea limbii. Fiecare limbă își scrie numele în ea însăși, ca să fie
+   găsită de cineva care nu citește româna. Trimite prin POST, ca să rețină
+   alegerea în sesiune și, pentru cei cu cont, pe cont. */
+%>
+<form method="post" action="/limba" class="limba-form">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <input type="hidden" name="inapoi" value="<%= currentPath %>">
+  <label class="limba-eticheta" for="alege-limba"><%= t('comun.limba') %></label>
+  <select id="alege-limba" name="lang" class="limba-select"
+          aria-label="<%= t('comun.alegeLimba') %>" data-trimite-la-schimbare>
+    <% limbi.forEach(function (l) { %>
+      <option value="<%= l.cod %>" <%= l.cod === lang ? 'selected' : '' %>
+              lang="<%= l.cod %>"><%= l.nume %></option>
+    <% }); %>
+  </select>
+  <noscript><button class="btn small" type="submit"><%= t('comun.schimbaLimba') %></button></noscript>
+</form>

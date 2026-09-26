@@ -318,3 +318,18 @@ details.panel[open] summary::before{content:'▾ '}
   padding:8px 14px;border-radius:6px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:40}
 .toast.on{opacity:1}
 @media(prefers-reduced-motion:reduce){.toast{transition:none}}
+
+/* ---------- limba ---------- */
+.limba-form{display:flex;align-items:center;gap:5px;margin:0}
+.limba-eticheta{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.limba-select{width:auto;max-width:150px;font-size:12.5px;padding:3px 6px;background:transparent;
+  border-color:transparent;color:var(--muted);cursor:pointer}
+.limba-select:hover{border-color:var(--line);color:var(--ink)}
+.bara-acoperire{display:inline-block;vertical-align:middle;width:120px;height:8px;border-radius:4px;
+  background:var(--cv);overflow:hidden;margin-inline-end:6px}
+.bara-acoperire i{display:block;height:100%;background:var(--accent)}
+
+/* Textul se scrie de la dreapta la stânga în arabă, ebraică și persană:
+   paginile folosesc margini logice, dar tabelele cu cifre rămân aliniate la fel. */
+[dir=rtl] .num,[dir=rtl] .mono{direction:ltr;text-align:right}
+[dir=rtl] .card-radio input{margin-inline:0}

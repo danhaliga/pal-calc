@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ro">
+<html lang="<%= lang %>" dir="<%= dir %>">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -17,33 +17,35 @@
     <a class="logo" href="<%= user ? '/corps' : '/' %>">
       <span class="logo-mark">▤</span>
       <span>
-        <b>PAL Calc</b>
-        <small>corpuri-mobila.ro</small>
+        <b><%= t('app.nume') %></b>
+        <small><%= t('app.domeniu') %></small>
       </span>
     </a>
     <nav>
       <% if (user) { %>
-        <a href="/orders" class="<%= currentPath.startsWith('/orders') ? 'on' : '' %>">Comenzi</a>
-        <a href="/corps" class="<%= currentPath.startsWith('/corps') ? 'on' : '' %>">Corpuri</a>
+        <a href="/orders" class="<%= currentPath.startsWith('/orders') ? 'on' : '' %>"><%= t('nav.comenzi') %></a>
+        <a href="/corps" class="<%= currentPath.startsWith('/corps') ? 'on' : '' %>"><%= t('nav.corpuri') %></a>
         <a href="/credit" class="credit-link <%= currentPath === '/credit' ? 'on' : '' %>">
-          Credit: <b><%= soldLei %> lei</b>
+          <%= t('nav.credit') %>: <b><%= soldLei %> <%= t('comun.lei') %></b>
         </a>
-        <% if (user.is_admin) { %><a href="/admin" class="<%= currentPath === '/admin' ? 'on' : '' %>">Administrare</a><% } %>
+        <% if (user.is_admin) { %><a href="/admin" class="<%= currentPath === '/admin' ? 'on' : '' %>"><%= t('nav.administrare') %></a><% } %>
         <span class="who" title="<%= user.email %>"><%= user.name || user.email %></span>
+        <%- include('partials/limba') %>
         <form method="post" action="/logout" class="inline">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-          <button class="link">Ieși</button>
+          <button class="link"><%= t('nav.iesi') %></button>
         </form>
       <% } else { %>
-        <a href="/login">Autentificare</a>
-        <a href="/register" class="btn small primary">Cont nou</a>
+        <%- include('partials/limba') %>
+        <a href="/login"><%= t('nav.autentificare') %></a>
+        <a href="/register" class="btn small primary"><%= t('nav.contNou') %></a>
       <% } %>
     </nav>
   </div>
 </header>
 
 <% if (paymentDriver === 'fake') { %>
-  <div class="devbar">Plată de test — driverul <code>fake</code> este activ, nu se încasează bani.</div>
+  <div class="devbar"><%= t('app.platatest', { driver: 'fake' }) %></div>
 <% } %>
 
 <main class="wrap">
@@ -52,7 +54,7 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    Cotele sunt în mm. Verifică întotdeauna cu serviciul de debitare dacă cere cota finită sau cea brută.
+    <%= t('app.subsol') %>
   </div>
 </footer>
 

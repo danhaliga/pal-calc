@@ -1,41 +1,38 @@
 <section class="hero">
-  <h1>Calculator debitare PAL cantuit</h1>
-  <p class="sub">
-    Dai cotele corpului, vezi corpul în 3D cu fiecare piesă la grosimea ei reală și primești lista de
-    debitare cu cota finită (cu cant) și cota de tăiere (fără cant). Toate cotele sunt în mm.
-  </p>
+  <h1><%= t('landing.titlu') %></h1>
+  <p class="sub"><%= t('landing.sub') %></p>
   <div class="btns">
-    <a class="btn primary" href="/register">Fă-ți cont</a>
-    <a class="btn" href="/login">Am deja cont</a>
+    <a class="btn primary" href="/register"><%= t('landing.faCont') %></a>
+    <a class="btn" href="/login"><%= t('landing.amCont') %></a>
   </div>
 </section>
 
 <section class="cards3">
   <div class="panel">
-    <h2>Gratuit</h2>
+    <h2><%= t('landing.gratuit') %></h2>
     <ul class="ticks">
-      <li>Corpuri nelimitate, salvate în cont</li>
-      <li>Vedere 3D completă, cu explodare și selecție pe piesă</li>
-      <li>Cotele finite (L × l) și numărul de bucăți</li>
-      <li>Avertismente: polițe prea lungi, uși prea late, glisiere care nu încap</li>
+      <li><%= t('landing.gratuit1') %></li>
+      <li><%= t('landing.gratuit2') %></li>
+      <li><%= t('landing.gratuit3') %></li>
+      <li><%= t('landing.gratuit4') %></li>
     </ul>
   </div>
   <div class="panel">
-    <h2>După plată — <%= priceLei %> lei / corp</h2>
+    <h2><%= t('landing.platit', { pret: priceLei }) %></h2>
     <ul class="ticks">
-      <li>Cotele de tăiere (finit minus cant, pe fiecare latură)</li>
-      <li>Cantul pe fiecare muchie: L1 · L2 · l1 · l2</li>
-      <li>Export CSV pentru serviciul de debitare</li>
-      <li>Corpul rămâne editabil după plată</li>
+      <li><%= t('landing.platit1') %></li>
+      <li><%= t('landing.platit2') %></li>
+      <li><%= t('landing.platit3') %></li>
+      <li><%= t('landing.platit4') %></li>
     </ul>
   </div>
   <div class="panel">
-    <h2>Cum lucrează</h2>
+    <h2><%= t('landing.cum') %></h2>
     <ol class="steps">
-      <li>Introduci L × H × A, grosimea PAL-ului și cantul.</li>
-      <li>Alegi uși, polițe, sertare și tipul de spate.</li>
-      <li>Verifici corpul în 3D și cotele finite.</li>
-      <li>Deblochezi lista de debitare pentru corpul respectiv.</li>
+      <li><%= t('landing.cum1') %></li>
+      <li><%= t('landing.cum2') %></li>
+      <li><%= t('landing.cum3') %></li>
+      <li><%= t('landing.cum4') %></li>
     </ol>
   </div>
 </section>

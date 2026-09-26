@@ -131,7 +131,7 @@ test('CSV conține antetul și o linie per piesă', () => {
   const c = base();
   const text = csv([c]);
   const lines = text.trim().split('\n');
-  assert.match(lines[0], /^Corp;Piesa;Buc/);
+  assert.match(lines[0], /^Corp;Piesă;Buc/);
   assert.equal(lines.length, calc(c).P.length + 1);
 });
 

@@ -1,19 +1,16 @@
 <div class="top">
-  <h1>Comenzile mele</h1>
+  <h1><%= t('comenzi.titlu') %></h1>
   <div class="btns" style="margin:0">
-    <a class="btn" href="/credit">Credit: <b><%= (sold / 100).toFixed(2) %> lei</b></a>
-    <a class="btn primary" href="/orders/new">+ Comandă nouă</a>
+    <a class="btn" href="/credit"><%- t('comenzi.creditButon', { sold: (sold / 100).toFixed(2) }) %></a>
+    <a class="btn primary" href="/orders/new"><%= t('comenzi.nouaButon') %></a>
   </div>
 </div>
 
 <% if (!comenzi.length) { %>
   <div class="panel empty">
-    <p>Nu ai încă nicio comandă.</p>
-    <p class="muted">
-      O comandă ține materialul (PAL-ul și cantul), corpurile și, la final, listele de dat
-      la fabrică: debitare, montaj și CNC.
-    </p>
-    <div class="btns center"><a class="btn primary" href="/orders/new">Deschide prima comandă</a></div>
+    <p><%= t('comenzi.goalaTitlu') %></p>
+    <p class="muted"><%= t('comenzi.goalaText') %></p>
+    <div class="btns center"><a class="btn primary" href="/orders/new"><%= t('comenzi.goalaButon') %></a></div>
   </div>
 <% } else { %>
   <div class="corp-list">
@@ -26,19 +23,19 @@
               <span class="decor-sw mic" title="<%= m.brand %> <%= m.decor_cod || '' %>"
                     style="background:<%= m.hex || '#cfd6dd' %>"></span>
             <% }); %>
-            <%= (o.materiale || []).map(function (m) { return m.nume; }).join(' · ') || 'fără material' %>
+            <%= (o.materiale || []).map(function (m) { return m.nume; }).join(' · ') || t('comenzi.faraMaterial') %>
             <%= o.nrMateriale > 3 ? ' +' + (o.nrMateriale - 3) : '' %>
           </div>
           <div class="meta">
-            <%= o.nrCorpuri %> corpuri ·
-            <%= o.nrMateriale %> <%= o.nrMateriale === 1 ? 'material' : 'materiale' %> ·
-            deschisă <%= o.created_at.slice(0, 10) %>
+            <%= t('comenzi.nrCorpuri', { n: o.nrCorpuri }) %> ·
+            <%= t('comenzi.nrMateriale', { n: o.nrMateriale }) %> ·
+            <%= t('comenzi.deschisaLa', { data: o.created_at.slice(0, 10) }) %>
           </div>
         </a>
         <div class="corp-side">
           <div class="btns">
-            <a class="btn small" href="/orders/<%= o.id %>">Deschide</a>
-            <a class="btn small" href="/orders/<%= o.id %>/print/debitare">Debitare</a>
+            <a class="btn small" href="/orders/<%= o.id %>"><%= t('comenzi.deschide') %></a>
+            <a class="btn small" href="/orders/<%= o.id %>/print/debitare"><%= t('comenzi.debitare') %></a>
           </div>
         </div>
       </article>

@@ -3,7 +3,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { calc, defaults, conturGeometrie, conturImplicit } = require('../shared/calc');
+const { calc, defaults, conturGeometrie, conturImplicit, numeDirectie } = require('../shared/calc');
 const { raport } = require('../shared/raport');
 
 const atipic = (contur, over) => Object.assign(defaults(), {
@@ -20,7 +20,8 @@ test('un dreptunghi se închide și dă patru laturi', () => {
   assert.equal(g.eroare, 0);
   assert.equal(g.W, 800);
   assert.equal(g.H, 720);
-  assert.deepEqual(g.laturi.map(l => l.nume), ['jos', 'dreapta', 'sus', 'stânga']);
+  assert.deepEqual(g.laturi.map(l => l.directie.cheie), ['jos', 'dreapta', 'sus', 'stanga']);
+  assert.deepEqual(g.laturi.map(l => numeDirectie(l.dir)), ['jos', 'dreapta', 'sus', 'stânga']);
 });
 
 test('suma unghiurilor spune dacă un contur poate exista', () => {
@@ -59,7 +60,8 @@ test('corp sub scară: latură înclinată, contur închis', () => {
   assert.ok(g.eroare < 2, 'conturul trebuie să se închidă aproape exact, e ' + g.eroare);
   assert.equal(g.W, 900);
   assert.ok(Math.abs(g.H - 800) < 2, 'înălțimea maximă ' + g.H);
-  assert.match(g.laturi[2].nume, /înclinată/);
+  assert.equal(g.laturi[2].directie.cheie, 'inclinata');
+  assert.match(numeDirectie(g.laturi[2].dir), /înclinată/);
 });
 
 /* ---------------- piesele ---------------- */

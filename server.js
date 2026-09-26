@@ -18,8 +18,10 @@ const materiale = require('./src/materiale');
 const credit = require('./src/credit');
 const payments = require('./src/payments');
 const admin = require('./src/admin');
+const i18n = require('./src/i18n');
 
 migrate();
+i18n.incarca();
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
@@ -66,6 +68,7 @@ app.use(session({
 }));
 
 app.use(auth.loadUser);
+app.use(i18n.middleware);
 app.use(csrf.middleware);
 
 /* Layout: fiecare view se randeaza in views/layout.ejs, in variabila `body`. */
@@ -109,6 +112,7 @@ app.get('/', (req, res) => {
   res.render('landing', { title: 'Calculator debitare PAL' });
 });
 
+app.use(i18n.router);
 app.use(auth.router);
 app.use(credit.router);
 app.use(materiale.router);

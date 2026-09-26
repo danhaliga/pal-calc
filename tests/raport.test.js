@@ -46,26 +46,30 @@ test('un corp de bază: piese, materiale și bucăți', () => {
   assert.equal(r.materiale.find(m => m.key === 'PFL|3').coliIntregi, 1);
 });
 
-test('rolul piesei se deduce din nume', () => {
-  assert.equal(rolPiesa('Laterală'), 'corp');
-  assert.equal(rolPiesa('Ușă'), 'front');
-  assert.equal(rolPiesa('Ușă braț 1'), 'front');
-  assert.equal(rolPiesa('Front sertar'), 'front');
-  assert.equal(rolPiesa('Spate PFL aplicat'), 'spate');
-  assert.equal(rolPiesa('Sertar – laterală cutie'), 'sertar');
-  assert.equal(rolPiesa('Sertar – fund PFL'), 'pfl');
+test('rolul piesei se ia din cheia ei, nu din text', () => {
+  assert.equal(rolPiesa({ cheie: 'laterala' }), 'corp');
+  assert.equal(rolPiesa({ cheie: 'usa' }), 'front');
+  assert.equal(rolPiesa({ cheie: 'usaBrat1' }), 'front');
+  assert.equal(rolPiesa({ cheie: 'frontSertar' }), 'front');
+  assert.equal(rolPiesa({ cheie: 'spateAplicat' }), 'spate');
+  assert.equal(rolPiesa({ cheie: 'sertarLaterala' }), 'sertar');
+  assert.equal(rolPiesa({ cheie: 'sertarFund' }), 'pfl');
+
+  /* piesele calculate își poartă rolul cu ele */
+  assert.equal(rolPiesa({ rol: 'front', cheie: 'altceva' }), 'front');
+  assert.equal(rolPiesa({}), 'corp');
 });
 
 test('materialul unei piese vine din rolul ei', () => {
   const c = Object.assign(defaults(), { t: 18, tp: 3, ts: 16 });
   const mats = { corp: mat(), front: matFronturi, sertar: mat({ id: 3, decor_cod: 'W980 ST2', decor_nume: 'Alb' }) };
 
-  assert.equal(materialPiesa({ nume: 'Laterală' }, c, mats).key, 'Egger|W1000 ST9|18');
-  assert.equal(materialPiesa({ nume: 'Ușă' }, c, mats).key, 'Egger|H1180 ST37|18');
-  assert.equal(materialPiesa({ nume: 'Spate PFL aplicat' }, c, mats).key, 'PFL|3');
-  assert.equal(materialPiesa({ nume: 'Sertar – laterală cutie' }, c, mats).key, 'Egger|W980 ST2|16');
-  assert.equal(materialPiesa({ nume: 'Sertar – fund PFL' }, c, mats).key, 'PFL|3');
-  assert.equal(materialPiesa({ nume: 'Spate PAL aplicat' }, Object.assign({}, c, { tp: 18 }), mats).key,
+  assert.equal(materialPiesa({ cheie: 'laterala' }, c, mats).key, 'Egger|W1000 ST9|18');
+  assert.equal(materialPiesa({ cheie: 'usa' }, c, mats).key, 'Egger|H1180 ST37|18');
+  assert.equal(materialPiesa({ cheie: 'spateAplicat' }, c, mats).key, 'PFL|3');
+  assert.equal(materialPiesa({ cheie: 'sertarLaterala' }, c, mats).key, 'Egger|W980 ST2|16');
+  assert.equal(materialPiesa({ cheie: 'sertarFund' }, c, mats).key, 'PFL|3');
+  assert.equal(materialPiesa({ cheie: 'spateAplicat' }, Object.assign({}, c, { tp: 18 }), mats).key,
                'Egger|W1000 ST9|18');
 });
 

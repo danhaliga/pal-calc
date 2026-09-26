@@ -1,76 +1,69 @@
 <div class="top">
-  <h1>Creditul meu</h1>
-  <a class="btn" href="/orders">Comenzile mele</a>
+  <h1><%= t('credit.titlu') %></h1>
+  <a class="btn" href="/orders"><%= t('credit.comenzileMele') %></a>
 </div>
 
 <% if (alimentat) { %>
-  <div class="warn ok">Creditul a fost alimentat.</div>
+  <div class="warn ok"><%= t('credit.alimentat') %></div>
 <% } %>
 <% if (insuficient) { %>
-  <div class="warn err">
-    Nu ai destul credit pentru un corp nou (<%= (pretCorp / 100).toFixed(2) %> lei).
-    Alimentează mai jos și reia.
-  </div>
+  <div class="warn err"><%= t('credit.insuficient', { pret: (pretCorp / 100).toFixed(2) }) %></div>
 <% } %>
 
 <div class="credit-grid">
   <div class="panel sold-card">
-    <div class="l">Sold disponibil</div>
-    <div class="v"><%= (sold / 100).toFixed(2) %> <span>lei</span></div>
+    <div class="l"><%= t('credit.soldDisponibil') %></div>
+    <div class="v"><%= (sold / 100).toFixed(2) %> <span><%= t('comun.lei') %></span></div>
     <div class="muted small">
-      Un corp costă <b><%= (pretCorp / 100).toFixed(2) %> lei</b> —
-      îți ajunge pentru <b><%= Math.floor(sold / pretCorp) %></b> corpuri.
+      <%- t('credit.unCorpCosta', { pret: (pretCorp / 100).toFixed(2), n: Math.floor(sold / pretCorp) }) %>
     </div>
   </div>
 
   <div class="panel">
-    <h2>Alimentează</h2>
-    <p class="hint">
-      Plătești o dată, apoi adaugi corpuri din credit. Suma se scade în momentul în care
-      adaugi un corp într-o comandă.
-    </p>
+    <h2><%= t('credit.alimenteaza') %></h2>
+    <p class="hint"><%= t('credit.explicatie') %></p>
     <div class="pachete">
       <% pachete.forEach(function (p) { %>
         <form method="post" action="/credit/topup" class="inline">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <input type="hidden" name="amount_cents" value="<%= p %>">
           <button class="btn pachet" type="submit">
-            <b><%= (p / 100).toFixed(0) %> lei</b>
-            <span><%= Math.floor(p / pretCorp) %> corpuri</span>
+            <b><%= (p / 100).toFixed(0) %> <%= t('comun.lei') %></b>
+            <span><%= t('credit.pachetCorpuri', { n: Math.floor(p / pretCorp) }) %></span>
           </button>
         </form>
       <% }); %>
     </div>
     <p class="hint" style="margin-top:12px">
-      <% if (paymentDriver === 'fake') { %>
-        Driverul de plată este <code>fake</code>: creditul se adaugă imediat, fără card.
-      <% } else { %>
-        Vei fi dus la Stripe Checkout. Creditul se adaugă doar după confirmarea plății.
-      <% } %>
+      <%- paymentDriver === 'fake' ? t('credit.driverFake') : t('credit.driverStripe') %>
     </p>
   </div>
 </div>
 
 <div class="panel">
-  <h2>Mișcările din cont</h2>
+  <h2><%= t('credit.miscari') %></h2>
   <div class="tbl"><table>
     <thead><tr>
-      <th>Data</th><th>Operațiune</th><th class="num">Sumă</th><th class="num">Sold după</th><th>Detalii</th>
+      <th><%= t('credit.data') %></th>
+      <th><%= t('credit.operatiune') %></th>
+      <th class="num"><%= t('credit.suma') %></th>
+      <th class="num"><%= t('credit.soldDupa') %></th>
+      <th><%= t('credit.detalii') %></th>
     </tr></thead>
     <tbody>
       <% if (!istoric.length) { %>
-        <tr><td colspan="5" class="muted">Nicio mișcare încă.</td></tr>
+        <tr><td colspan="5" class="muted"><%= t('credit.niciunaInca') %></td></tr>
       <% } %>
-      <% istoric.forEach(function (t) { %>
+      <% istoric.forEach(function (m) { %>
         <tr>
-          <td class="muted"><%= t.created_at.slice(0, 16) %></td>
-          <td><%= t.kind === 'topup' ? 'Alimentare' : t.kind === 'corp' ? 'Corp nou' : t.kind %></td>
-          <td class="num <%= t.delta_cents > 0 ? 'plus' : 'minus' %>">
-            <%= (t.delta_cents > 0 ? '+' : '') + (t.delta_cents / 100).toFixed(2) %>
+          <td class="muted"><%= m.created_at.slice(0, 16) %></td>
+          <td><%= m.kind === 'topup' ? t('credit.opAlimentare') : m.kind === 'corp' ? t('credit.opCorpNou') : m.kind %></td>
+          <td class="num <%= m.delta_cents > 0 ? 'plus' : 'minus' %>">
+            <%= (m.delta_cents > 0 ? '+' : '') + (m.delta_cents / 100).toFixed(2) %>
           </td>
-          <td class="num"><%= (t.balance_after / 100).toFixed(2) %></td>
+          <td class="num"><%= (m.balance_after / 100).toFixed(2) %></td>
           <td class="muted small">
-            <%= t.note || '' %><%= t.kind === 'corp' && t.ref ? ' (corp #' + t.ref + ')' : '' %>
+            <%= m.note || '' %><%= m.kind === 'corp' && m.ref ? ' ' + t('credit.refCorp', { id: m.ref }) : '' %>
           </td>
         </tr>
       <% }); %>

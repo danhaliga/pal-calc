@@ -1,0 +1,34 @@
+<div class="top">
+  <h1><%= t('admin.limbi.titlu') %></h1>
+  <a class="btn" href="/admin"><%= t('comun.inapoiLa') %></a>
+</div>
+
+<div class="panel">
+  <p class="hint"><%= t('admin.limbi.intro') %></p>
+
+  <% if (lipsa.length) { %>
+    <div class="warn"><%= t('admin.limbi.lipsaFisier', { coduri: lipsa.join(', ') }) %></div>
+  <% } %>
+
+  <div class="tbl"><table>
+    <thead><tr>
+      <th><%= t('admin.limbi.limba') %></th>
+      <th><%= t('admin.limbi.cod') %></th>
+      <th class="num"><%= t('admin.limbi.traduse') %></th>
+      <th><%= t('admin.limbi.acoperire') %></th>
+    </tr></thead>
+    <tbody>
+      <% acoperire.forEach(function (l) { %>
+        <tr>
+          <td lang="<%= l.cod %>"><%= l.nume %></td>
+          <td class="mono"><%= l.cod %></td>
+          <td class="num"><%= l.traduse %> / <%= l.total %></td>
+          <td>
+            <span class="bara-acoperire"><i style="width:<%= l.procent %>%"></i></span>
+            <span class="mono small"><%= l.procent %>%</span>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table></div>
+</div>

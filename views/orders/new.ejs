@@ -1,44 +1,41 @@
 <div class="top">
-  <h1>Comandă nouă</h1>
-  <a class="btn" href="/orders">← Înapoi</a>
+  <h1><%= t('comandaNoua.titlu') %></h1>
+  <a class="btn" href="/orders"><%= t('comun.inapoiLa') %></a>
 </div>
 
 <% if (error) { %><div class="warn err"><%= error %></div><% } %>
 
 <div class="panel" style="max-width:820px">
-  <p class="hint">
-    Alegi materialul principal acum; poți adăuga oricâte altele în comandă (fronturi în alt decor,
-    cutii de sertar din PAL alb și așa mai departe).
-  </p>
+  <p class="hint"><%= t('comandaNoua.intro') %></p>
 
   <form method="post" action="/orders">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
     <fieldset>
-      <legend>Comanda</legend>
+      <legend><%= t('comandaNoua.legComanda') %></legend>
       <div class="f">
-        <label class="full">Nume comandă
+        <label class="full"><%= t('comandaNoua.numeComanda') %>
           <input type="text" name="name" maxlength="80" required autofocus
-                 placeholder="ex: Bucătărie Ionescu" value="<%= values.name || '' %>">
+                 placeholder="<%= t('comandaNoua.numeExemplu') %>" value="<%= values.name || '' %>">
         </label>
-        <label class="full">Observații (opțional)
+        <label class="full"><%= t('comandaNoua.observatiiOptional') %>
           <input type="text" name="note" maxlength="500" value="<%= values.note || '' %>">
         </label>
       </div>
-      <p class="legend">Data comenzii se completează automat, cu ziua de azi.</p>
+      <p class="legend"><%= t('comandaNoua.dataAutomata') %></p>
     </fieldset>
 
     <fieldset>
-      <legend>Material principal</legend>
+      <legend><%= t('comandaNoua.legMaterial') %></legend>
       <div class="f3">
-        <label>Producător
+        <label><%= t('comandaNoua.producator') %>
           <select name="brand" id="brand">
             <% marci.forEach(function (m) { %>
               <option value="<%= m %>" <%= values.brand === m ? 'selected' : '' %>><%= m %></option>
             <% }); %>
           </select>
         </label>
-        <label>Grosime PAL
+        <label><%= t('comandaNoua.grosimePal') %>
           <select name="pal_mm" id="pal_mm">
             <% grosimi.forEach(function (g) { %>
               <option value="<%= g %>" <%= Number(values.pal_mm) === g ? 'selected' : '' %>><%= g %> mm</option>
@@ -46,23 +43,23 @@
           </select>
         </label>
       </div>
-      <label style="margin-top:10px">Decor
+      <label style="margin-top:10px"><%= t('comandaNoua.decor') %>
         <%- include('../partials/decor-picker', { p: { brandId: 'brand', palId: 'pal_mm',
               cantGrosId: 'cant_gros', cantSubtireId: 'cant_subtire', valoare: values.decor_cod } }) %>
       </label>
     </fieldset>
 
     <fieldset>
-      <legend>Cant</legend>
+      <legend><%= t('comandaNoua.legCant') %></legend>
       <div class="f3">
-        <label>Cant gros (muchii vizibile)
+        <label><%= t('comandaNoua.cantGros') %>
           <select name="cant_gros" id="cant_gros">
             <% cantStandard.forEach(function (c) { %>
               <option value="<%= c %>" <%= Number(values.cant_gros) === c ? 'selected' : '' %>><%= c %> mm</option>
             <% }); %>
           </select>
         </label>
-        <label>Cant subțire (muchii ascunse)
+        <label><%= t('comandaNoua.cantSubtire') %>
           <select name="cant_subtire" id="cant_subtire">
             <% cantStandard.forEach(function (c) { %>
               <option value="<%= c %>" <%= Number(values.cant_subtire) === c ? 'selected' : '' %>><%= c %> mm</option>
@@ -70,35 +67,26 @@
           </select>
         </label>
       </div>
-      <p class="legend">
-        Listele arată doar grosimile care se fac în decorul ales. Cantul gros merge pe muchiile care
-        se văd și se freacă, cel subțire în locurile cu uzură mică.
-      </p>
+      <p class="legend"><%= t('comandaNoua.notaCant') %></p>
     </fieldset>
 
     <%- include('../partials/feronerie-form', { f: feroOptiuni, ales: values }) %>
 
     <fieldset>
-      <legend>Formate de coală la debitare</legend>
+      <legend><%= t('comandaNoua.legFormate') %></legend>
       <div class="formate">
-        <% [['intreaga','Coală întreagă 2800 × 2070'],
-            ['jum-lat','Jumătate 1400 × 2070'],
-            ['jum-lung','Jumătate 2800 × 1035'],
-            ['sfert','Sfert 1400 × 1035']].forEach(function (f) { %>
+        <% formateId.forEach(function (id) { var f = formateToate[id]; %>
           <label class="check">
-            <input type="checkbox" name="formate" value="<%= f[0] %>"
-                   <%= (values.formate || []).indexOf(f[0]) !== -1 ? 'checked' : '' %>>
-            <%= f[1] %>
+            <input type="checkbox" name="formate" value="<%= id %>"
+                   <%= (values.formate || []).indexOf(id) !== -1 ? 'checked' : '' %>>
+            <%= f.nume %> <span class="mono small"><%= f.w %> × <%= f.h %></span>
           </label>
         <% }); %>
       </div>
-      <p class="legend">
-        Optimizatorul alege singur combinația cu cel mai puțin deșeu și îți spune la final
-        câte coli întregi trebuie, cu tot cu bucățile tăiate din ele.
-      </p>
+      <p class="legend"><%= t('comandaNoua.notaFormate') %></p>
     </fieldset>
 
-    <button class="btn primary" type="submit">Deschide comanda</button>
+    <button class="btn primary" type="submit"><%= t('comandaNoua.deschideComanda') %></button>
   </form>
 </div>
 

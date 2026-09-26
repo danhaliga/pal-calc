@@ -110,7 +110,7 @@ function check(name, cond, extra = '') {
 
   res = await req(A, `/corps/${corpId}/export.csv`);
   const csvText = await res.text();
-  check('CSV se descarcă', res.status === 200 && csvText.includes('Taiere L'), String(res.status));
+  check('CSV se descarcă', res.status === 200 && csvText.includes('Tăiere L'), String(res.status));
 
   /* --- numele cu diacritice nu strică antetul de descărcare --- */
   await req(A, `/api/corps/${corpId}`, {

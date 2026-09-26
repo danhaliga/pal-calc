@@ -1,67 +1,40 @@
 <%
 /* Întrebările de feronerie. Se pun la deschiderea comenzii, înainte de corpuri:
    de răspunsuri depind și cantitățile din listă, și cotele de găurire.
-   Parametri: f = opțiunile (PalFeronerie.optiuni()), ales = alegerile curente. */
+   Parametri: f = opțiunile (PalFeronerie.optiuni(t)), ales = alegerile curente. */
 %>
 <fieldset>
-  <legend>Feronerie</legend>
-  <p class="hint">
-    Alege acum sistemul, înainte de corpuri: din el ies cantitățile din lista de feronerie
-    și cotele din programul de găurire al fiecărei piese.
-  </p>
+  <legend><%= t('fero.legenda') %></legend>
+  <p class="hint"><%= t('fero.intro') %></p>
+
+  <% [['asamblare', 'fero.intrebareAsamblare'],
+      ['balama',    'fero.intrebareBalama'],
+      ['glisiere',  'fero.intrebareGlisiere']].forEach(function (grup) { %>
+    <div class="alegeri">
+      <p class="alegeri-titlu"><%= t(grup[1]) %></p>
+      <% f[grup[0]].forEach(function (o) { %>
+        <label class="card-radio">
+          <input type="radio" name="<%= grup[0] %>" value="<%= o.id %>"
+                 <%= ales[grup[0]] === o.id ? 'checked' : '' %>>
+          <span>
+            <b><%= o.nume %></b>
+            <small><%= o.descriere %><% if (o.jocPeParte != null) { %>
+              <%= t('fero.jocPeParte', { mm: o.jocPeParte }) %><% } %></small>
+          </span>
+        </label>
+      <% }); %>
+    </div>
+  <% }); %>
 
   <div class="alegeri">
-    <p class="alegeri-titlu">Cum se asamblează carcasa?</p>
-    <% f.asamblare.forEach(function (o) { %>
-      <label class="card-radio">
-        <input type="radio" name="asamblare" value="<%= o.id %>"
-               <%= ales.asamblare === o.id ? 'checked' : '' %>>
-        <span>
-          <b><%= o.nume %></b>
-          <small><%= o.descriere %></small>
-        </span>
-      </label>
-    <% }); %>
-  </div>
-
-  <div class="alegeri">
-    <p class="alegeri-titlu">Ce balamale pui la uși?</p>
-    <% f.balama.forEach(function (o) { %>
-      <label class="card-radio">
-        <input type="radio" name="balama" value="<%= o.id %>"
-               <%= ales.balama === o.id ? 'checked' : '' %>>
-        <span>
-          <b><%= o.nume %></b>
-          <small><%= o.descriere %></small>
-        </span>
-      </label>
-    <% }); %>
-  </div>
-
-  <div class="alegeri">
-    <p class="alegeri-titlu">Ce glisiere pui la sertare?</p>
-    <% f.glisiere.forEach(function (o) { %>
-      <label class="card-radio">
-        <input type="radio" name="glisiere" value="<%= o.id %>"
-               <%= ales.glisiere === o.id ? 'checked' : '' %>>
-        <span>
-          <b><%= o.nume %></b>
-          <small><%= o.descriere %><% if (o.jocPeParte != null) { %> Joc <%= o.jocPeParte %> mm pe parte.<% } %></small>
-        </span>
-      </label>
-    <% }); %>
-  </div>
-
-  <div class="alegeri">
-    <p class="alegeri-titlu">Corpurile suspendate se prind cu suspensii?</p>
+    <p class="alegeri-titlu"><%= t('fero.intrebareSuspensii') %></p>
     <label class="card-radio">
       <input type="checkbox" name="suspensii" value="on" <%= ales.suspensii ? 'checked' : '' %>>
       <span>
         <b><%= f.suspensii.nume %></b>
         <small>
           <%= f.suspensii.descriere %>
-          Câte <%= f.suspensii.peCorp %> pe corp, <%= f.suspensii.portantaPePereche %> kg pe pereche.
-          Fără ele, corpurile se prind cu coltare vizibile.
+          <%= t('fero.suspensiiDetalii', { n: f.suspensii.peCorp, kg: f.suspensii.portantaPePereche }) %>
         </small>
       </span>
     </label>

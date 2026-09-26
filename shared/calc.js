@@ -10,10 +10,12 @@
    pentru ca zod nu se incarca in pagina.
    ============================================================ */
 (function (root, factory) {
-  var api = factory();
+  var api = factory(
+    typeof module === 'object' && module.exports ? require('./i18n') : root.PalI18n
+  );
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.PalCalc = api;
-})(typeof self !== 'undefined' ? self : this, function () {
+})(typeof self !== 'undefined' ? self : this, function (PalI18n) {
   'use strict';
 
   var NUT_OFF = 10;      /* distanta nutului fata de spatele corpului */
@@ -42,13 +44,26 @@
      Se merge din latura in latura: lungimea laturii, apoi unghiul interior
      din varful unde se intalneste cu urmatoarea. Conturul e bun cand se inchide. */
 
-  function numeDirectie(dir) {
+  /* Fără un traducător dat, textele ies în româna implicită. */
+  function traducator(t) {
+    if (typeof t === 'function') return t;
+    return PalI18n.creeaza(PalI18n.IMPLICITA);
+  }
+
+  /* Direcția unei laturi: întoarce cheia și, la laturile înclinate, unghiul.
+     Textul se scrie abia la afișare, în limba paginii. */
+  function directie(dir) {
     var d = ((dir % 360) + 360) % 360;
-    if (Math.abs(d - 0) < 0.5) return 'jos';
-    if (Math.abs(d - 90) < 0.5) return 'dreapta';
-    if (Math.abs(d - 180) < 0.5) return 'sus';
-    if (Math.abs(d - 270) < 0.5) return 'stânga';
-    return 'înclinată ' + r1(d) + '°';
+    if (Math.abs(d - 0) < 0.5) return { cheie: 'jos' };
+    if (Math.abs(d - 90) < 0.5) return { cheie: 'dreapta' };
+    if (Math.abs(d - 180) < 0.5) return { cheie: 'sus' };
+    if (Math.abs(d - 270) < 0.5) return { cheie: 'stanga' };
+    return { cheie: 'inclinata', grade: r1(d) };
+  }
+
+  function numeDirectie(dir, t) {
+    var d = directie(dir);
+    return traducator(t)('directie.' + d.cheie, d.grade != null ? { grade: d.grade } : null);
   }
 
   function conturGeometrie(contur) {
@@ -64,7 +79,7 @@
 
       pts.push([x, y]);
       laturi.push({
-        idx: i, lung: r1(lung), dir: dir, nume: numeDirectie(dir),
+        idx: i, lung: r1(lung), dir: dir, directie: directie(dir),
         de_la: [x, y], la: [x2, y2],
         unghiEnd: unghi,
         unghiStart: +contur[(i - 1 + contur.length) % contur.length].unghi
@@ -109,10 +124,24 @@
 
   function balamale(h) { return h <= 900 ? 2 : h <= 1600 ? 3 : h <= 2000 ? 4 : 5; }
 
-  function calc(c) {
+  /* Rolul unei piese se ia din cheia ei, nu din text: așa rămâne același
+     în toate limbile. */
+  var ROL = {
+    usa: 'front', usaDiagonala: 'front', usaBrat1: 'front', usaBrat2: 'front',
+    frontSertar: 'front', frontAtipic: 'front',
+    spateAtipic: 'spate', spatePerete1: 'spate', spatePerete2: 'spate',
+    spateAplicat: 'spate', spateNut: 'spate',
+    sertarLaterala: 'sertar', sertarFataSpate: 'sertar',
+    sertarFund: 'pfl'
+  };
+
+  function rolPiesa(cheie) { return ROL[cheie] || 'corp'; }
+
+  function calc(c, tr) {
+    var t_ = traducator(tr);
     var W = +c.W, H = +c.H, D = +c.D, t = +c.t, cg = +c.cg, cs = +c.cs, tp = +c.tp;
     var rm = +c.rm, ri = +c.ri, rinc = +c.rinc, nUsi = +c.nUsi, nPol = +c.nPol, nSer = +c.nSer;
-    var P = [], warn = [];
+    var P = [], warn = [], avertismente = [];
     var aplicat = c.spate === 'aplicat';
     var zb = aplicat ? tp : 0;              /* unde incep piesele corpului pe adancime */
     var Dp = D - zb;                        /* adancimea pieselor corpului */
@@ -121,12 +150,26 @@
     var Wint = W - 2 * t, Hint = H - 2 * t;
     var ev = function (v) { return v === 'g' ? cg : v === 's' ? cs : 0; };
 
-    var add = function (nume, buc, L, l, cL1, cL2, cl1, cl2, fibra, nota, boxes) {
+    /* O piesă ține cheia ei (stabilă, pentru potriviri și pentru raport) și
+       numele scris în limba cerută. `nota` și `fibra` sunt tot chei. */
+    var add = function (cheie, args, buc, L, l, cL1, cL2, cl1, cl2, fibra, nota, boxes) {
       P.push({
-        nume: nume, buc: buc, L: r1(L), l: r1(l), c: [cL1, cL2, cl1, cl2],
+        cheie: cheie, args: args || null, rol: rolPiesa(cheie),
+        nume: t_('piesa.' + cheie, args || null),
+        buc: buc, L: r1(L), l: r1(l), c: [cL1, cL2, cl1, cl2],
         TL: r1(L - ev(cL1) - ev(cL2)), Tl: r1(l - ev(cl1) - ev(cl2)),
-        fibra: fibra, nota: nota, boxes: boxes || []
+        fibra: fibra, fibraText: t_('fibra.' + fibra),
+        notaCheie: nota ? nota[0] : '', notaArgs: nota ? (nota[1] || null) : null,
+        nota: nota ? t_('nota.' + nota[0], nota[1] || null) : '',
+        boxes: boxes || []
       });
+    };
+
+    /* Avertismentele merg tot pe chei: textul se compune la afișare. */
+    var avert = function (cheie, args) {
+      var text = t_('avert.' + cheie, args || null);
+      avertismente.push({ cheie: cheie, args: args || null, text: text });
+      warn.push(text);
     };
     var bx = function (x, y, z, sx, sy, sz, f, ex, grp) {
       return { x: x, y: y, z: z, sx: sx, sy: sy, sz: sz, f: f, ex: ex, grp: grp };
@@ -150,23 +193,21 @@
       var usiA = [];
 
       if (!g.inchis) {
-        warn.push('Conturul nu se închide: mai rămâne o distanță de ' + fmt(g.eroare) +
-                  ' mm. Suma unghiurilor este ' + fmt(g.sumaUnghiuri) + '°, iar pentru ' +
-                  g.nrLaturi + ' laturi trebuie ' + fmt(g.sumaCeruta) + '°.');
+        avert('conturDeschis', { eroare: fmt(g.eroare), suma: fmt(g.sumaUnghiuri),
+                                 laturi: g.nrLaturi, ceruta: fmt(g.sumaCeruta) });
       }
       if (g.nrLaturi < 3) {
-        warn.push('Un contur are nevoie de cel puțin trei laturi.');
+        avert('conturPreaPutineLaturi');
       }
 
       /* panourile de pe laturi */
       g.laturi.forEach(function (lat, i) {
-        var taiere = 'tăiere ' + fmt(r1(lat.unghiStart / 2)) + '° la un capăt și ' +
-                     fmt(r1(lat.unghiEnd / 2)) + '° la celălalt (îmbinare la 45° pe unghi drept); ' +
-                     'cota este pe muchia exterioară';
+        var taiere = ['taiereLaUnghi', { a: fmt(r1(lat.unghiStart / 2)), b: fmt(r1(lat.unghiEnd / 2)) }];
         var mx = (lat.de_la[0] + lat.la[0]) / 2;
         var my = (lat.de_la[1] + lat.la[1]) / 2;
 
-        add('Panou ' + (i + 1) + ' (' + lat.nume + ')', 1, lat.lung, Da, 'g', '-', '-', '-',
+        add('panouLatura', { n: i + 1, latura: numeDirectie(lat.dir, t_) },
+            1, lat.lung, Da, 'g', '-', '-', '-',
             'L', taiere,
             [{ x: mx - lat.lung / 2, y: my - t / 2, z: 0,
                sx: lat.lung, sy: t, sz: Da, f: F({ py: 'f', ny: 'f', pz: 'g' }),
@@ -176,27 +217,27 @@
 
       /* spatele și frontul, decupate după contur */
       if (c.spate !== 'fara') {
-        add('Spate ' + (tp >= 8 ? 'PAL' : 'PFL'), 1, g.W, g.H, '-', '-', '-', '-', '–',
-            'se decupează după conturul corpului',
+        add('spateAtipic', { mat: tp >= 8 ? 'PAL' : 'PFL' }, 1, g.W, g.H, '-', '-', '-', '-', '-',
+            ['dupaContur'],
             [{ x: 0, y: 0, z: -tp, sx: g.W, sy: g.H, sz: tp,
                polyFata: g.puncte, f: F({ pz: 'p', nz: 'p' }), ex: [0, 0, -1], grp: 'spate' }]);
       }
 
       if (nUsi > 0) {
         var rmA = rm;
-        add('Front', 1, r1(g.W - 2 * rmA), r1(g.H - 2 * rmA), 'g', 'g', 'g', 'g', 'L (vertical)',
-            'se decupează după conturul corpului, micșorat cu rostul de ' + fmt(rmA) + ' mm',
+        add('frontAtipic', null, 1, r1(g.W - 2 * rmA), r1(g.H - 2 * rmA), 'g', 'g', 'g', 'g', 'LV',
+            ['dupaConturCuRost', { rost: fmt(rmA) }],
             [{ x: 0, y: 0, z: Da, sx: g.W, sy: g.H, sz: t,
                polyFata: g.puncte, f: FDa, ex: [0, 0, 1.6], grp: 'fronturi' }]);
         usiA.push({ L: r1(g.H - 2 * rmA), H: r1(g.H - 2 * rmA) });
       }
 
       if (nPol > 0) {
-        warn.push('Polițele nu se calculează automat la corpurile atipice: adaugă-le ca piese separate.');
+        avert('politeAtipic');
       }
 
       return {
-        P: P, warn: warn, usi: usiA,
+        P: P, warn: warn, avertismente: avertismente, usi: usiA,
         Wint: r1(g.W - 2 * t), Hint: r1(g.H - 2 * t), Dint: r1(Da - tp),
         W: g.W, H: g.H, D: Da,
         contur: g
@@ -220,16 +261,15 @@
       var usiK = [];
 
       if (brA <= 0 || brB <= 0) {
-        warn.push('Adâncimea de ' + fmt(D) + ' mm este prea mare pentru laturile de ' +
-                  fmt(A) + ' și ' + fmt(B) + ' mm: nu mai rămâne colț de debitat.');
+        avert('adancimePreaMare', { d: fmt(D), a: fmt(A), b: fmt(B) });
       }
       if (nSer > 0) {
-        warn.push('Sertarele nu se calculează la corpurile de colț; folosește un corp drept alături.');
+        avert('sertareColt');
       }
 
       /* laterale: câte una la capătul fiecărui braț */
-      add('Laterală', 2, H, D, 'g', '-', 's', 's', 'L (vertical)',
-          'câte una la capătul fiecărui braț', [
+      add('laterala', null, 2, H, D, 'g', '-', 's', 's', 'LV',
+          ['unaPeBrat'], [
         bx(A - t, 0, 0, t, H, D, F({ px: 'f', nx: 'f', pz: 'g', py: 's', ny: 's' }), [1, 0, 0], 'corp'),
         bx(0, 0, B - t, D, H, t, F({ pz: 'f', nz: 'f', px: 'g', py: 's', ny: 's' }), [0, 0, 1], 'corp')
       ]);
@@ -239,43 +279,41 @@
         ? [[0, 0], [bA, 0], [bA, D], [D, bB], [0, bB]]
         : [[0, 0], [bA, 0], [bA, D], [D, D], [D, bB], [0, bB]];
       var notaPanou = dg
-        ? 'pentagon: din dreptunghiul ' + fmt(bA) + '×' + fmt(bB) + ' se taie colțul la 45° ' +
-          '(catete ' + fmt(brA) + ' și ' + fmt(brB) + '); muchia diagonală ' + fmt(diagL) + ' mm, cu cant'
-        : 'formă de L: din dreptunghiul ' + fmt(bA) + '×' + fmt(bB) + ' se decupează colțul ' +
-          fmt(brA) + '×' + fmt(brB) + '; cant pe cele două muchii frontale';
+        ? ['panouPentagon', { a: fmt(bA), b: fmt(bB), ca: fmt(brA), cb: fmt(brB), diag: fmt(diagL) }]
+        : ['panouL', { a: fmt(bA), b: fmt(bB), ca: fmt(brA), cb: fmt(brB) }];
 
-      add('Blat', 1, bA, bB, '-', '-', '-', '-', 'L', notaPanou,
+      add('blat', null, 1, bA, bB, '-', '-', '-', '-', 'L', notaPanou,
         [bp(0, H - t, 0, polyOr, t, [0, 1, 0], 'corp')]);
-      add('Fund', 1, bA, bB, '-', '-', '-', '-', 'L', notaPanou,
+      add('fund', null, 1, bA, bB, '-', '-', '-', '-', 'L', notaPanou,
         [bp(0, 0, 0, polyOr, t, [0, -1, 0], 'corp')]);
 
       /* spate: câte un panou pe fiecare perete */
-      var numeSp = 'Spate ' + (tp >= 8 ? 'PAL' : 'PFL');
+      var matSp = { mat: tp >= 8 ? 'PAL' : 'PFL' };
       var FSK = F({ pz: 'p', nz: 'p', px: 'p', nx: 'p', py: 'p', ny: 'p' });
-      add(numeSp + ' – peretele 1', 1, H - 3, A - 3, '-', '-', '-', '-', '–', 'capsat pe latura dinspre perete',
+      add('spatePerete1', matSp, 1, H - 3, A - 3, '-', '-', '-', '-', '-', ['capsatSprePerete'],
         [bx(1.5, 1.5, -tp, A - 3, H - 3, tp, FSK, [0, 0, -1], 'spate')]);
-      add(numeSp + ' – peretele 2', 1, H - 3, B - tp - 3, '-', '-', '-', '-', '–', 'capsat pe cealaltă latură',
+      add('spatePerete2', matSp, 1, H - 3, B - tp - 3, '-', '-', '-', '-', '-', ['capsatCealalta'],
         [bx(-tp, 1.5, 1.5, tp, H - 3, B - tp - 3, FSK, [-1, 0, 0], 'spate')]);
 
       /* fronturi (nUsi = 0 înseamnă colț deschis) */
       if (nUsi > 0 && dg) {
         var uLK = r1(diagL - 2 * rm);
         var mx = (bA + D) / 2, mz = (D + bB) / 2;     /* mijlocul diagonalei */
-        add('Ușă diagonală', 1, uHK, uLK, 'g', 'g', 'g', 'g', 'L (vertical)',
-            balamale(uHK) + ' balamale, cot ' + c.balama + '; front pe diagonală',
+        add('usaDiagonala', null, 1, uHK, uLK, 'g', 'g', 'g', 'g', 'LV',
+            ['balamaleDiagonala', { n: balamale(uHK), cot: c.balama }],
             [{ x: mx - uLK / 2, y: aplK ? rm : t + rinc, z: mz - t / 2,
                sx: uLK, sy: uHK, sz: t, f: FDK, ex: [1.1, 0, 1.1], grp: 'fronturi',
                ry: Math.atan2(-(bB - D), D - bA), rotCenter: true }]);
         usiK.push({ L: uLK, H: uHK });
-        if (uLK > 600) warn.push('Ușă diagonală mai lată de 600 mm: pune două fronturi sau micșorează laturile.');
+        if (uLK > 600) avert('usaDiagonalaLata');
       } else if (nUsi > 0) {
         var uL1 = r1(brA - rm - ri / 2), uL2 = r1(brB - rm - ri / 2);
         var yF = aplK ? rm : t + rinc;
-        add('Ușă braț 1', 1, uHK, uL1, 'g', 'g', 'g', 'g', 'L (vertical)',
-            balamale(uHK) + ' balamale, cot ' + c.balama + '; se poate cupla în balama-carte cu ușa 2',
+        add('usaBrat1', null, 1, uHK, uL1, 'g', 'g', 'g', 'g', 'LV',
+            ['balamaleBrat1', { n: balamale(uHK), cot: c.balama }],
             [bx(D + rm, yF, D, uL1, uHK, t, FDK, [0, 0, 1.6], 'fronturi')]);
-        add('Ușă braț 2', 1, uHK, uL2, 'g', 'g', 'g', 'g', 'L (vertical)',
-            balamale(uHK) + ' balamale, cot ' + c.balama,
+        add('usaBrat2', null, 1, uHK, uL2, 'g', 'g', 'g', 'g', 'LV',
+            ['balamaleCot', { n: balamale(uHK), cot: c.balama }],
             [bx(D, yF, D + rm, t, uHK, uL2, FDK, [1.6, 0, 0], 'fronturi')]);
         usiK.push({ L: uL1, H: uHK });
         usiK.push({ L: uL2, H: uHK });
@@ -294,34 +332,32 @@
           var ycK = t + (Hint) * ip / (nPol + 1);
           boxesPol.push(bp(jpK / 2, ycK - t / 2, jpK / 2, polyPol, t, [0, 0, 0.6], 'polite'));
         }
-        add('Poliță', nPol, pA, pB, '-', '-', '-', '-', 'L',
-            (dg ? 'pentagon' : 'formă de L') + ': din dreptunghiul ' + fmt(pA) + '×' + fmt(pB) +
-            ' se decupează colțul ' + fmt(pbrA) + '×' + fmt(pbrB) + '; cant pe muchiile frontale',
+        add('polita', null, nPol, pA, pB, '-', '-', '-', '-', 'L',
+            [dg ? 'politaPentagon' : 'politaL',
+             { a: fmt(pA), b: fmt(pB), ca: fmt(pbrA), cb: fmt(pbrB) }],
             boxesPol);
-        if (pA > 800 || pB > 800) {
-          warn.push('Poliță de colț cu laturi peste 800 mm: folosește PAL 25 sau un suport suplimentar.');
-        }
+        if (pA > 800 || pB > 800) avert('politaColtLata');
       }
 
-      return { P: P, warn: warn, usi: usiK, Wint: bA, Hint: Hint, Dint: D,
+      return { P: P, warn: warn, avertismente: avertismente, usi: usiK, Wint: bA, Hint: Hint, Dint: D,
                W: A, H: H, D: B, colt: { A: A, B: B, brA: brA, brB: brB, diag: diagL, dg: dg } };
     }
 
     /* ---- corp ---- */
     if (c.constr === 'intre') {
-      add('Laterală', 2, H, Dp, 'g', '-', 's', 's', 'L (vertical)', '', [
+      add('laterala', null, 2, H, Dp, 'g', '-', 's', 's', 'LV', null, [
         bx(0, 0, zb, t, H, Dp, F({ px: 'f', nx: 'f', pz: 'g', py: 's', ny: 's' }), [-1, 0, 0], 'corp'),
         bx(W - t, 0, zb, t, H, Dp, F({ px: 'f', nx: 'f', pz: 'g', py: 's', ny: 's' }), [1, 0, 0], 'corp')]);
-      add('Blat', 1, Wint, Dp, 'g', '-', '-', '-', 'L', '',
+      add('blat', null, 1, Wint, Dp, 'g', '-', '-', '-', 'L', null,
         [bx(t, H - t, zb, Wint, t, Dp, F({ py: 'f', ny: 'f', pz: 'g' }), [0, 1, 0], 'corp')]);
-      add('Fund', 1, Wint, Dp, 'g', '-', '-', '-', 'L', '',
+      add('fund', null, 1, Wint, Dp, 'g', '-', '-', '-', 'L', null,
         [bx(t, 0, zb, Wint, t, Dp, F({ py: 'f', ny: 'f', pz: 'g' }), [0, -1, 0], 'corp')]);
     } else {
-      add('Blat', 1, W, Dp, 'g', '-', 's', 's', 'L', '',
+      add('blat', null, 1, W, Dp, 'g', '-', 's', 's', 'L', null,
         [bx(0, H - t, zb, W, t, Dp, F({ py: 'f', ny: 'f', pz: 'g', px: 's', nx: 's' }), [0, 1, 0], 'corp')]);
-      add('Fund', 1, W, Dp, 'g', '-', 's', 's', 'L', '',
+      add('fund', null, 1, W, Dp, 'g', '-', 's', 's', 'L', null,
         [bx(0, 0, zb, W, t, Dp, F({ py: 'f', ny: 'f', pz: 'g', px: 's', nx: 's' }), [0, -1, 0], 'corp')]);
-      add('Laterală', 2, Hint, Dp, 'g', '-', '-', '-', 'L (vertical)', '', [
+      add('laterala', null, 2, Hint, Dp, 'g', '-', '-', '-', 'LV', null, [
         bx(0, t, zb, t, Hint, Dp, F({ px: 'f', nx: 'f', pz: 'g' }), [-1, 0, 0], 'corp'),
         bx(W - t, t, zb, t, Hint, Dp, F({ px: 'f', nx: 'f', pz: 'g' }), [1, 0, 0], 'corp')]);
     }
@@ -333,11 +369,11 @@
       py: fs === 'p' ? 'p' : '-', ny: fs === 'p' ? 'p' : '-', pz: fs, nz: fs
     });
     if (aplicat) {
-      add('Spate ' + (tp >= 8 ? 'PAL' : 'PFL') + ' aplicat', 1, H - 3, W - 3, '-', '-', '-', '-', '–',
-        'capsat pe spate', [bx(1.5, 1.5, 0, W - 3, H - 3, tp, FS, [0, 0, -1], 'spate')]);
+      add('spateAplicat', { mat: tp >= 8 ? 'PAL' : 'PFL' }, 1, H - 3, W - 3, '-', '-', '-', '-', '-',
+        ['capsatPeSpate'], [bx(1.5, 1.5, 0, W - 3, H - 3, tp, FS, [0, 0, -1], 'spate')]);
     } else {
-      add('Spate în nut', 1, Hint + 2 * (NUT_AD - 1), Wint + 2 * (NUT_AD - 1), '-', '-', '-', '-', '–',
-        'nut la ' + NUT_OFF + ' mm de spate, adâncime ' + NUT_AD + ' mm',
+      add('spateNut', null, 1, Hint + 2 * (NUT_AD - 1), Wint + 2 * (NUT_AD - 1), '-', '-', '-', '-', '-',
+        ['nutSpate', { off: NUT_OFF, ad: NUT_AD }],
         [bx(t - (NUT_AD - 1), t - (NUT_AD - 1), NUT_OFF,
             Wint + 2 * (NUT_AD - 1), Hint + 2 * (NUT_AD - 1), tp, FS, [0, 0, -1], 'spate')]);
     }
@@ -352,7 +388,7 @@
     var orb = c.tip === 'colt-orb' ? Math.max(0, +c.orb) : 0;
     var fL = (apl ? W - 2 * rm : Wint - 2 * rinc) - orb;
     if (orb > 0 && fL <= 0) {
-      warn.push('Zona oarbă de ' + fmt(orb) + ' mm acoperă tot frontul: micșoreaz-o sau lărgește corpul.');
+      avert('zonaOarbaPreaMare', { orb: fmt(orb) });
     }
     var FD = F({ pz: 'f', nz: 'f', px: 'g', nx: 'g', py: 'g', ny: 'g' });
     var usedTop = nSer > 0 ? nSer * (+c.hFront) + nSer * ri : 0;
@@ -363,20 +399,21 @@
       var uH = (apl ? H - 2 * rm : Hint - 2 * rinc) - usedTop;
       var uL = (fL - (nUsi - 1) * ri) / nUsi;
       if (uH <= 0) {
-        warn.push('Fronturile de sertar depășesc înălțimea corpului.');
+        avert('fronturiSertarPreaInalte');
       } else {
         var boxesU = [];
         for (var i = 0; i < nUsi; i++) {
           boxesU.push(bx(xoff + i * (uL + ri), yBot, zF, uL, uH, t, FD, [0, 0, 1.6], 'fronturi'));
         }
-        add('Ușă', nUsi, uH, uL, 'g', 'g', 'g', 'g', 'L (vertical)',
-          balamale(uH) + ' balamale/ușă, cot ' + c.balama +
-          (orb > 0 ? '; zonă oarbă de ' + fmt(orb) + ' mm, acoperită de corpul vecin' : ''), boxesU);
+        add('usa', null, nUsi, uH, uL, 'g', 'g', 'g', 'g', 'LV',
+          orb > 0
+            ? ['balamaleUsaOrb', { n: balamale(uH), cot: c.balama, orb: fmt(orb) }]
+            : ['balamaleUsa', { n: balamale(uH), cot: c.balama }], boxesU);
         usi.push({ L: uL, H: uH });
-        if (uL > 600) warn.push('Ușă mai lată de 600 mm: risc de deformare și solicitare mare pe balamale.');
-        if (uH > 2000) warn.push('Ușă peste 2000 mm: folosește 5 balamale sau împarte frontul.');
-        if (apl && c.balama !== '0' && nUsi === 1) warn.push('Ușă aplicată pe un singur corp: de regulă balama cot 0.');
-        if (!apl && c.balama !== '18') warn.push('Ușă încastrată: de regulă balama cot 18.');
+        if (uL > 600) avert('usaLata');
+        if (uH > 2000) avert('usaInalta');
+        if (apl && c.balama !== '0' && nUsi === 1) avert('balamaCot0');
+        if (!apl && c.balama !== '18') avert('balamaCot18');
       }
     }
 
@@ -385,8 +422,8 @@
       var jg = +c.jg, ts = +c.ts, hF = +c.hFront, hc = +c.hCutie;
       var lg = +c.lg;
       if (!lg) { lg = Math.floor((Dint - 10) / 50) * 50; }
-      if (lg > Dint) warn.push('Glisiera de ' + lg + ' mm nu încape în adâncimea interioară de ' + fmt(Dint) + ' mm.');
-      if (hc > hF) warn.push('Cutia sertarului este mai înaltă decât frontul.');
+      if (lg > Dint) avert('glisieraNuIncape', { lg: lg, dint: fmt(Dint) });
+      if (hc > hF) avert('cutiePreaInalta');
       var cut = Wint - 2 * jg;
       var zf = zF - 2, dz = [0, 0, 1.1];
       var fr = [], lat = [], fsp = [], fnd = [];
@@ -405,12 +442,12 @@
         fnd.push(bx(t + jg, yb - PFL_SERTAR, zf - lg, cut, PFL_SERTAR, lg,
           F({ px: 'p', nx: 'p', py: 'p', ny: 'p', pz: 'p', nz: 'p' }), dz, 'sertare'));
       }
-      add('Front sertar', nSer, hF, fL, 'g', 'g', 'g', 'g', 'L (orizontal)',
-        'rost ' + ri + ' mm între fronturi', fr);
-      add('Sertar – laterală cutie', 2 * nSer, lg, hc, 's', 's', 's', 's', 'L',
-        'glisieră ' + lg + ' mm', lat);
-      add('Sertar – față/spate cutie', 2 * nSer, cut - 2 * ts, hc, 's', 's', '-', '-', 'L', '', fsp);
-      add('Sertar – fund PFL', nSer, lg, cut, '-', '-', '-', '-', '–', 'aplicat sub cutie', fnd);
+      add('frontSertar', null, nSer, hF, fL, 'g', 'g', 'g', 'g', 'LO',
+        ['rostFronturi', { rost: ri }], fr);
+      add('sertarLaterala', null, 2 * nSer, lg, hc, 's', 's', 's', 's', 'L',
+        ['glisieraDe', { lg: lg }], lat);
+      add('sertarFataSpate', null, 2 * nSer, cut - 2 * ts, hc, 's', 's', '-', '-', 'L', null, fsp);
+      add('sertarFund', null, nSer, lg, cut, '-', '-', '-', '-', '-', ['subCutie'], fnd);
     }
 
     /* ---- polite ---- */
@@ -422,27 +459,27 @@
         boxesP.push(bx(t + jp / 2, yc - t / 2, zin, pL, t, pl,
           F({ py: 'f', ny: 'f', pz: 'g' }), [0, 0, 0.6], 'polite'));
       }
-      add('Poliță', nPol, pL, pl, 'g', '-', '-', '-', 'L', '', boxesP);
-      if (pL > 800) {
-        warn.push('Poliță de ' + fmt(pL) + ' mm: peste 800 mm PAL-ul de 18 se îndoaie; ' +
-                  'folosește PAL 25 sau un montant central.');
-      }
+      add('polita', null, nPol, pL, pl, 'g', '-', '-', '-', 'L', null, boxesP);
+      if (pL > 800) avert('politaLunga', { lung: fmt(pL) });
     }
 
-    return { P: P, warn: warn, usi: usi, Wint: Wint, Hint: Hint, Dint: Dint, W: W, H: H, D: D };
+    return { P: P, warn: warn, avertismente: avertismente, usi: usi, Wint: Wint, Hint: Hint, Dint: Dint, W: W, H: H, D: D };
   }
 
-  /* ---- CSV (acelasi format ca in calculatorul original) ---- */
-  function csv(list) {
-    var head = ['Corp', 'Piesa', 'Buc', 'Finit L', 'Finit l', 'Cant L1', 'Cant L2', 'Cant l1', 'Cant l2',
-                'Taiere L', 'Taiere l', 'Fibra', 'Nota'];
+  /* ---- CSV (acelasi format ca in calculatorul original, in limba paginii) ---- */
+  var COLOANE_CSV = ['corp', 'piesa', 'buc', 'finitL', 'finitl', 'cantL1', 'cantL2', 'cantl1', 'cantl2',
+                     'taiereL', 'taierel', 'fibra', 'nota'];
+
+  function csv(list, tr) {
+    var t_ = traducator(tr);
+    var head = COLOANE_CSV.map(function (k) { return t_('csv.' + k); });
     var ev = function (c, v) { return v === 'g' ? c.cg : v === 's' ? c.cs : 0; };
     var rows = [head.join(';')];
     list.forEach(function (c) {
-      calc(c).P.forEach(function (p) {
+      calc(c, t_).P.forEach(function (p) {
         rows.push([c.nume, p.nume, p.buc, p.L, p.l,
                    ev(c, p.c[0]), ev(c, p.c[1]), ev(c, p.c[2]), ev(c, p.c[3]),
-                   p.TL, p.Tl, p.fibra, p.nota || '']
+                   p.TL, p.Tl, p.fibraText, p.nota || '']
           .map(function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(';'));
       });
     });
@@ -486,6 +523,10 @@
 
   return {
     calc: calc,
+    rolPiesa: rolPiesa,
+    directie: directie,
+    numeDirectie: numeDirectie,
+    traducator: traducator,
     defaults: defaults,
     balamale: balamale,
     csv: csv,
