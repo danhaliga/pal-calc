@@ -260,6 +260,27 @@ svg.ct-svg .ct-cota{fill:#43372a;font-family:"IBM Plex Mono",monospace}
 details.inline-edit summary{display:inline-block;list-style:none;cursor:pointer}
 details.inline-edit summary::-webkit-details-marker{display:none}
 .formate{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}
+label.check{flex-direction:row;align-items:center;gap:7px;cursor:pointer}
+label.check input{width:auto;flex:none;accent-color:var(--accent)}
+
+/* ---------- întrebările de feronerie ---------- */
+.alegeri{margin:0 0 14px}
+.alegeri:last-child{margin-bottom:0}
+.alegeri-titlu{font-size:13px;font-weight:600;margin:0 0 6px}
+.card-radio{display:flex;flex-direction:row;align-items:flex-start;gap:9px;padding:9px 11px;margin-bottom:6px;
+  border:1px solid var(--line);border-radius:8px;cursor:pointer;background:var(--panel)}
+.card-radio:hover{border-color:var(--accent)}
+.card-radio:last-child{margin-bottom:0}
+.card-radio input[type=radio],.card-radio input[type=checkbox]{
+  width:auto;min-width:0;flex:0 0 auto;margin:3px 0 0;padding:0;accent-color:var(--accent)}
+.card-radio > span{display:block;flex:1 1 auto;min-width:0}
+.card-radio b{display:block;font-weight:600;font-size:13.5px;color:var(--ink)}
+.card-radio small{display:block;color:var(--muted);font-size:12px;line-height:1.35;margin-top:1px}
+.card-radio:has(input:checked){border-color:var(--accent);background:var(--ok-bg)}
+.fero-rezumat{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:0}
+.fero-rezumat div{min-width:0}
+.fero-rezumat dt{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.fero-rezumat dd{margin:1px 0 0;font-size:13.5px}
 
 /* ---------- credit și comenzi ---------- */
 .credit-link{white-space:nowrap}

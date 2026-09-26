@@ -155,7 +155,12 @@ function check(name, cond, extra = '') {
         'lipsește necesarul');
   check('clientul NU vede adaosul la cant', !html.includes('Cu adaos'), 'adaosul nu trebuie arătat aici');
   check('apare cantul în metri liniari', html.includes('Metri liniari'), 'lipsește cantul');
-  check('apare feroneria', html.includes('Balama cupă'), 'lipsește feroneria');
+  check('apare feroneria', html.includes('Blum CLIP top'), 'lipsește feroneria');
+  check('feroneria se poate alege pe comandă',
+        html.includes('name="asamblare"') && html.includes('Cum se asamblează carcasa?'),
+        'lipsesc întrebările de feronerie');
+  check('sistemul ales apare în lista de feronerie',
+        html.includes('Excentric Minifix 15'), 'lipsesc articolele sistemului ales');
   check('apare lista de piese', html.includes('Piese de debitat'));
   check('piesele de colț sunt marcate CNC', html.includes('chip cnc') || html.includes('>CNC<'));
 

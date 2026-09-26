@@ -3,6 +3,23 @@
   Cantitățile de feronerie sunt estimative, calculate din construcția corpului.
 </p>
 
+<section class="doc-sect">
+  <h2>Sistemul de feronerie al comenzii</h2>
+  <table class="doc-tbl">
+    <tbody>
+      <tr><th>Carcasă</th><td><%= raport.sistemFeronerie.asamblare.nume %></td>
+          <td class="small"><%= raport.sistemFeronerie.asamblare.descriere %></td></tr>
+      <tr><th>Balamale</th><td><%= raport.sistemFeronerie.balama.nume %></td>
+          <td class="small"><%= raport.sistemFeronerie.balama.descriere %></td></tr>
+      <tr><th>Glisiere</th><td><%= raport.sistemFeronerie.glisiere.nume %></td>
+          <td class="small"><%= raport.sistemFeronerie.glisiere.descriere %></td></tr>
+      <tr><th>Prindere pe perete</th>
+          <td><%= raport.sistemFeronerie.suspensii ? raport.sistemFeronerie.suspensii.nume : 'Coltare aparente' %></td>
+          <td class="small"><% if (raport.sistemFeronerie.suspensii) { %>Câte <%= raport.sistemFeronerie.suspensii.peCorp %> pe corp, <%= raport.sistemFeronerie.suspensii.portantaPePereche %> kg pe pereche.<% } else { %>Fără suspensii ascunse.<% } %></td></tr>
+    </tbody>
+  </table>
+</section>
+
 <% raport.corpuri.forEach(function (c, idx) { %>
   <section class="doc-corp">
     <h2><span class="poz"><%= c.poz %></span> <%= c.nume %></h2>

@@ -162,6 +162,24 @@
   </form>
 </details>
 
+<!-- ---------------- feroneria comenzii ---------------- -->
+<details class="panel" id="feronerie" <%= raport.corpuri.length ? '' : 'open' %>>
+  <summary><b>Feronerie:</b>
+    <%= feroSistem.asamblare.nume %> ·
+    <%= feroSistem.balama ? feroSistem.balama.nume : 'fără balamale' %> ·
+    <%= feroSistem.glisiere ? feroSistem.glisiere.nume : 'fără glisiere' %><%= feroSistem.suspensii ? ' · cu suspensii' : '' %>
+  </summary>
+  <form method="post" action="/orders/<%= order.id %>/feronerie" style="margin-top:12px">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <%- include('../partials/feronerie-form', { f: feroOptiuni, ales: feroAles }) %>
+    <button class="btn primary" type="submit">Salvează feroneria</button>
+    <p class="legend">
+      Schimbarea recalculează cantitățile și cotele de găurire ale tuturor corpurilor din comandă.
+      Fă-o înainte să trimiți piesele la debitat.
+    </p>
+  </form>
+</details>
+
 <!-- ---------------- corpurile ---------------- -->
 <div class="panel">
   <div class="top" style="margin-bottom:8px">
@@ -284,6 +302,9 @@
   <div class="doua-coloane" style="margin-top:16px">
     <div>
       <h2>Feronerie (estimativ)</h2>
+      <p class="muted small" style="margin:0 0 6px">
+        Pentru <%= feroSistem.asamblare.nume %>. <a href="#feronerie">Schimbă sistemul</a>
+      </p>
       <div class="tbl"><table>
         <thead><tr><th>Articol</th><th class="num">Cant.</th><th>Obs.</th></tr></thead>
         <tbody>

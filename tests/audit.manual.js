@@ -475,6 +475,60 @@ async function sold(j) {
   const rDupa = await req(A, `/orders/${orderId}`);
   verifica('robustete', 'comanda rămâne funcțională după un decor necunoscut', rDupa.status === 200, 'mediu');
 
+  /* ---------- 11. feronerie ---------- */
+
+  console.log('\n=== 11. FERONERIE ===');
+
+  t = await csrf(A, '/orders/new');
+  r = await req(A, '/orders', {
+    method: 'POST', headers: FORM,
+    body: form({ _csrf: t, name: 'Audit feronerie', brand: 'Egger', decor_cod: '', pal_mm: 18,
+                 cant_gros: 2, cant_subtire: 0.4, formate: ['intreaga'],
+                 asamblare: 'confirmat', balama: 'universal', glisiere: 'tandem' })
+  });
+  const orderFero = Number((r.headers.get('location') || '').split('/').pop());
+  let hFero = await (await req(A, `/orders/${orderFero}`)).text();
+  verifica('feronerie', 'alegerea de la deschiderea comenzii se pastreaza',
+           /value="confirmat"\s+checked/.test(hFero) && /value="universal"\s+checked/.test(hFero) &&
+           /value="tandem"\s+checked/.test(hFero), 'mediu');
+  verifica('feronerie', 'suspensiile nebifate raman nebifate',
+           !/name="suspensii"[^>]*checked/.test(hFero), 'mediu');
+
+  /* o valoare inventata nu trebuie sa treaca in baza de date */
+  t = await csrf(A, `/orders/${orderFero}`);
+  await req(A, `/orders/${orderFero}/feronerie`, {
+    method: 'POST', headers: FORM,
+    body: form({ _csrf: t, asamblare: '../../etc/passwd', balama: '<script>', glisiere: 'inexistent' })
+  });
+  hFero = await (await req(A, `/orders/${orderFero}`)).text();
+  verifica('feronerie', 'un sistem inventat cade pe cel implicit, nu strica pagina',
+           /value="minifix"\s+checked/.test(hFero) && !hFero.includes('etc/passwd'), 'mare');
+
+  /* editarea numelui comenzii nu trebuie sa stearga feroneria */
+  t = await csrf(A, `/orders/${orderFero}`);
+  await req(A, `/orders/${orderFero}/feronerie`, {
+    method: 'POST', headers: FORM,
+    body: form({ _csrf: t, asamblare: 'cepuri-suruburi', balama: 'fara', glisiere: 'fara' })
+  });
+  t = await csrf(A, `/orders/${orderFero}`);
+  await req(A, `/orders/${orderFero}`, {
+    method: 'POST', headers: FORM,
+    body: form({ _csrf: t, name: 'Audit feronerie 2', formate: ['intreaga'] })
+  });
+  hFero = await (await req(A, `/orders/${orderFero}`)).text();
+  verifica('feronerie', 'salvarea setarilor comenzii nu reseteaza feroneria',
+           /value="cepuri-suruburi"\s+checked/.test(hFero), 'mediu');
+
+  const rFeroStrain = await req(B, `/orders/${orderFero}/feronerie`, {
+    method: 'POST', headers: FORM, body: form({ _csrf: await csrf(B, '/orders') })
+  });
+  verifica('feronerie', 'alt utilizator nu poate schimba feroneria comenzii mele',
+           rFeroStrain.status === 404 || rFeroStrain.status === 403, 'mare', `status ${rFeroStrain.status}`);
+
+  const rMontaj = await (await req(A, `/orders/${orderFero}/print/montaj`)).text();
+  verifica('feronerie', 'fisa de montaj scrie sistemul ales',
+           rMontaj.includes('Cepuri + șuruburi prin lateral'), 'mic');
+
   /* ---------- raport ---------- */
 
   console.log('\n\n================ REZULTAT ================');

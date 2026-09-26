@@ -13,6 +13,7 @@ const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
 const PalRaport = require('../shared/raport');
 const PalAnsamblu = require('../shared/ansamblu');
+const PalFeronerie = require('../shared/feronerie');
 
 const router = express.Router();
 
@@ -29,8 +30,23 @@ const schemaComanda = z.object({
   pal_mm: z.coerce.number().refine(v => GROSIMI_PAL.includes(v), 'Grosime de PAL neacceptată.'),
   cant_gros: z.coerce.number().min(0).max(5),
   cant_subtire: z.coerce.number().min(0).max(5),
-  note: z.string().trim().max(500).optional().or(z.literal(''))
+  note: z.string().trim().max(500).optional().or(z.literal('')),
+  asamblare: z.string().trim().max(30).optional(),
+  balama: z.string().trim().max(30).optional(),
+  glisiere: z.string().trim().max(30).optional(),
+  suspensii: z.any().optional()
 });
+
+/* Sistemul de feronerie se alege la deschiderea comenzii: de el depind
+   cantitățile din listă și cotele din programul de găurire. */
+function feronerieDinBody(body) {
+  return PalFeronerie.citeste({
+    asamblare: body.asamblare,
+    balama: body.balama,
+    glisiere: body.glisiere,
+    suspensii: body.suspensii === undefined ? false : body.suspensii === 'on' || body.suspensii === '1' || body.suspensii === 'true'
+  });
+}
 
 function formateDinBody(body) {
   let alese = body.formate;
@@ -137,7 +153,8 @@ function raportComenzii(order, optiuni) {
   const corpuri = corpuriComenzii(order.id, mats);
   const comanda = Object.assign({}, order, {
     materiale: mats,
-    formate: JSON.parse(order.formate || '["intreaga"]')
+    formate: JSON.parse(order.formate || '["intreaga"]'),
+    feronerie: PalFeronerie.citeste(order.feronerie)
   });
   return PalRaport.raport(comanda, corpuri,
     Object.assign({ effortMs: 250, adaosCant: adaosCant() }, optiuni || {}));
@@ -172,8 +189,10 @@ router.get('/orders/new', requireAuth, (req, res) => {
     marci: Catalog.MARCI,
     grosimi: GROSIMI_PAL,
     cantStandard: materiale.CANT_STANDARD,
-    values: { name: '', brand: 'Egger', decor_cod: '', pal_mm: 18,
+    feroOptiuni: PalFeronerie.optiuni(),
+    values: Object.assign({ name: '', brand: 'Egger', decor_cod: '', pal_mm: 18,
               cant_gros: 2, cant_subtire: 0.4, note: '', formate: ['intreaga', 'jum-lat', 'jum-lung', 'sfert'] },
+              PalFeronerie.implicit()),
     error: null
   });
 });
@@ -184,7 +203,9 @@ router.post('/orders', requireAuth, (req, res) => {
     return res.status(400).render('orders/new', {
       title: 'Comandă nouă',
       marci: Catalog.MARCI, grosimi: GROSIMI_PAL, cantStandard: materiale.CANT_STANDARD,
-      values: Object.assign({}, req.body, { formate: formateDinBody(req.body) }),
+      feroOptiuni: PalFeronerie.optiuni(),
+      values: Object.assign({}, req.body, { formate: formateDinBody(req.body) },
+                            feronerieDinBody(req.body)),
       error: parsed.error.issues[0].message
     });
   }
@@ -196,11 +217,12 @@ router.post('/orders', requireAuth, (req, res) => {
   const creeaza = db.transaction(() => {
     const info = db.prepare(`
       INSERT INTO orders (user_id, name, brand, decor, cant_decor, pal_mm, cant_gros, cant_subtire,
-                          adaos_cant, note, formate)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                          adaos_cant, note, formate, feronerie)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `).run(req.user.id, d.name, brand, decor ? decor.cod : null, null,
            d.pal_mm, d.cant_gros, d.cant_subtire, adaosCant(), d.note || null,
-           JSON.stringify(formateDinBody(req.body)));
+           JSON.stringify(formateDinBody(req.body)),
+           JSON.stringify(feronerieDinBody(req.body)));
 
     const orderId = Number(info.lastInsertRowid);
     materiale.creeaza(orderId, {
@@ -235,6 +257,9 @@ router.get('/orders/:id', requireAuth, (req, res, next) => {
     formateId: FORMATE_ID,
     formateAlese: JSON.parse(order.formate || '["intreaga"]'),
     formateToate: PalRaport.FORMATE,
+    feroOptiuni: PalFeronerie.optiuni(),
+    feroAles: PalFeronerie.citeste(order.feronerie),
+    feroSistem: PalFeronerie.sistem(order.feronerie),
     sold: credit.sold(req.user.id),
     pretCorp: credit.pretCorp(),
     adaugat: req.query.adaugat === '1'
@@ -253,6 +278,18 @@ router.post('/orders/:id', requireAuth, (req, res, next) => {
     .run(name, note || null, JSON.stringify(formateDinBody(req.body)), order.id);
 
   res.redirect(`/orders/${order.id}`);
+});
+
+/* Feroneria se poate schimba și după deschiderea comenzii, atâta timp cât
+   piesele n-au plecat la debitat: recalculează cantitățile și găurile. */
+router.post('/orders/:id/feronerie', requireAuth, (req, res, next) => {
+  const order = getOwned(req.params.id, req.user.id);
+  if (!order) return notFound(next);
+
+  db.prepare(`UPDATE orders SET feronerie = ?, updated_at = datetime('now') WHERE id = ?`)
+    .run(JSON.stringify(feronerieDinBody(req.body)), order.id);
+
+  res.redirect(`/orders/${order.id}#feronerie`);
 });
 
 router.post('/orders/:id/delete', requireAuth, (req, res, next) => {

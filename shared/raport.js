@@ -9,11 +9,12 @@
 (function (root, factory) {
   var api = factory(
     typeof module === 'object' && module.exports ? require('./calc') : root.PalCalc,
-    typeof module === 'object' && module.exports ? require('./nesting') : root.Croire
+    typeof module === 'object' && module.exports ? require('./nesting') : root.Croire,
+    typeof module === 'object' && module.exports ? require('./feronerie') : root.PalFeronerie
   );
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.PalRaport = api;
-})(typeof self !== 'undefined' ? self : this, function (PalCalc, Nesting) {
+})(typeof self !== 'undefined' ? self : this, function (PalCalc, Nesting, PalFeronerie) {
   'use strict';
 
   var COALA = { w: 2800, h: 2070 };
@@ -228,9 +229,11 @@
 
   /* ---------- feronerie ---------- */
 
-  function feronerie(params, res) {
+  /* Feroneria unui corp, după sistemul ales pe comandă. */
+  function feronerie(params, res, sistem) {
     var c = params;
     var nUsi = +c.nUsi, nSer = +c.nSer, nPol = +c.nPol;
+    var s = sistem || PalFeronerie.sistem(null);
     var items = [];
     var pune = function (nume, qty, um, obs) {
       if (qty <= 0) return;
@@ -238,7 +241,12 @@
       if (gasit) { gasit.qty += qty; return; }
       items.push({ nume: nume, qty: qty, um: um || 'buc', obs: obs || '' });
     };
+    var rotunjeste = function () {
+      items.forEach(function (x) { x.qty = Math.ceil(x.qty); });
+      return items;
+    };
 
+    /* ---- balamale ---- */
     var usiPiese = res.P.filter(function (p) { return /^Ușă/.test(p.nume); });
     var totalBalamale = 0, perUsa = 0;
     usiPiese.forEach(function (p) {
@@ -246,36 +254,52 @@
       totalBalamale += n * p.buc;
       perUsa = Math.max(perUsa, n);
     });
-    if (totalBalamale) {
-      pune('Balama cupă Ø35, cot ' + c.balama, totalBalamale, 'buc', 'câte ' + perUsa + ' pe ușă');
-      pune('Euroșurub 6.3×13 (balamale)', totalBalamale * 4);
+    if (totalBalamale && s.balama && s.balama.id !== 'fara') {
+      pune(s.balama.nume + ', cot ' + c.balama, totalBalamale, 'buc', 'câte ' + perUsa + ' pe ușă');
+      (s.balama.consumabile || []).forEach(function (x) {
+        pune(x.nume, totalBalamale * x.peBalama);
+      });
     }
     if (c.tip === 'colt-L' && nUsi >= 2) {
       pune('Balama-carte pentru colț', 1, 'buc', 'cuplează cele două fronturi');
     }
 
-    if (nSer > 0) {
+    /* ---- sertare ---- */
+    if (nSer > 0 && s.glisiere && s.glisiere.id !== 'fara') {
       var lg = +c.lg;
       if (!lg) lg = Math.floor((res.Dint - 10) / 50) * 50;
-      pune('Set glisiere cu bilă ' + lg + ' mm', nSer, 'set', 'câte 2 bucăți pe set');
-      pune('Șurub 3.5×16 (glisiere)', nSer * 8);
+      pune(s.glisiere.nume + ' ' + lg + ' mm', nSer, 'set', 'câte 2 bucăți pe set');
+      pune('Șurub 3.5×16 (glisiere)', nSer * (s.glisiere.suruburiPeSet || 8));
     }
 
     if (nPol > 0) pune('Suport poliță', nPol * 4);
 
-    pune('Confirmat 6.3×50', 12, 'buc', 'câte 3 pe îmbinare');
-    pune('Diblu lemn 8×30', 8);
+    /* ---- asamblarea carcasei: patru îmbinări între orizontale și laterale ---- */
+    var imbinari = 4;
+    (s.asamblare.pePiesa || []).forEach(function (x) {
+      pune(x.nume, imbinari * x.buc, 'buc',
+           x.buc > 1 ? 'câte ' + x.buc + ' pe îmbinare' : 'câte una pe îmbinare');
+    });
 
+    /* ---- spate ---- */
     if (c.spate === 'aplicat') {
       var perim = 2 * ((+c.W) + (+c.H)) / 1000;
       pune('Holșurub 3.5×16 (spate)', Math.ceil(perim * 1000 / 150), 'buc', 'la fiecare 150 mm');
     }
 
+    /* ---- suspensii, doar la corpurile subțiri, care se prind pe perete ---- */
+    if (s.suspensii && +c.D <= 450 && c.tip !== 'atipic') {
+      pune(s.suspensii.nume, s.suspensii.peCorp, 'buc', 'câte două pe corp');
+      (s.suspensii.consumabile || []).forEach(function (x) {
+        if (x.peSuspensie) pune(x.nume, s.suspensii.peCorp * x.peSuspensie);
+      });
+    }
+
+    /* ---- fronturi ---- */
     pune('Mâner', nUsi + nSer);
     pune('Șurub mâner M4', (nUsi + nSer) * 2);
-    pune('Amortizor / tampon', (nUsi + nSer) * 2);
 
-    return items;
+    return rotunjeste();
   }
 
   /* ---------- croirea în coli ---------- */
@@ -361,6 +385,8 @@
     var adaos = Math.max(ADAOS_CANT_MIN, +(optiuni.adaosCant != null ? optiuni.adaosCant : 15));
     var formate = comanda.formate || ['intreaga'];
 
+    var sist = PalFeronerie.sistem(comanda.feronerie);
+
     var toateP = [], cnc = [], feroTotal = [], corpuriOut = [], avertismenteComanda = [];
     var cantPe = {};
 
@@ -426,8 +452,16 @@
         };
       });
 
-      var fero = feronerie(params, resCorp);
+      var fero = feronerie(params, resCorp, sist);
       fero.forEach(function (f) { pune(feroTotal, f.nume, f.qty, f.um, f.obs); });
+
+      /* jocul cutiei de sertar trebuie să fie cel al glisierei alese */
+      if (+params.nSer > 0 && sist.glisiere && sist.glisiere.jocPeParte != null &&
+          Math.abs(+params.jg - sist.glisiere.jocPeParte) > 0.1) {
+        avertismenteComanda.push('„' + corp.name + '”: cutiile de sertar sunt calculate cu joc ' +
+          params.jg + ' mm pe parte, dar ' + sist.glisiere.nume + ' cere ' +
+          sist.glisiere.jocPeParte + ' mm. Schimbă jocul în corp sau glisiera pe comandă.');
+      }
 
       resCorp.P.forEach(function (p) {
         cncPiesa(p, params, { id: corp.id, nume: corp.name }).forEach(function (x) { cnc.push(x); });
@@ -470,6 +504,7 @@
         totalCuAdaos: r2(cant.reduce(function (s, x) { return s + x.cuAdaos; }, 0))
       },
       feronerie: feroTotal.sort(function (a, b) { return a.nume.localeCompare(b.nume, 'ro'); }),
+      sistemFeronerie: sist,
       cnc: cnc,
       avertismente: avertismenteComanda,
       totaluri: {
