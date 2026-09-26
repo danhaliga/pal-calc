@@ -280,6 +280,23 @@ test('fiecare limbă folosește doar scrierea ei', () => {
   });
 });
 
+/* Cealaltă jumătate a aceleiași greșeli: un „i” sau un „o” latin rămas
+   în mijlocul unui cuvânt chirilic sau grecesc. Testul de mai sus nu-l
+   prinde, fiindcă latinele sunt normale în „Blum”, „CSV” sau „W1000” —
+   dar lipite de o literă chirilică n-au ce căuta. */
+const NELATINE = /[Ѐ-ӿͰ-Ͽ؀-ۿ֐-׿]/.source.slice(1, -1);
+const AMESTEC = new RegExp(
+  '[A-Za-z][' + NELATINE + ']|[' + NELATINE + '][A-Za-z]', 'g');
+
+test('nicio literă latină nu s-a strecurat într-un cuvânt nelatin', () => {
+  fs.readdirSync(LOCALES).filter(f => f.endsWith('.json')).forEach(f => {
+    const text = fs.readFileSync(path.join(LOCALES, f), 'utf8');
+    const gasite = [...new Set(text.match(AMESTEC) || [])];
+    assert.deepEqual(gasite, [],
+      `${f} amestecă litere latine cu nelatine în același cuvânt: ${gasite.join(' ')}`);
+  });
+});
+
 test('nicio traducere nu inventează chei care nu există în română', () => {
   const ro = JSON.parse(fs.readFileSync(path.join(LOCALES, 'ro.json'), 'utf8'));
   const cheiRo = new Set(plat(ro));
