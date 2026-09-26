@@ -92,10 +92,18 @@ test('„{n} corpuri” iese cu forma potrivită în română', () => {
 
 /* ---------------- traducerea ---------------- */
 
-test('o limbă fără traducere cade pe română, nu pe cheia brută', () => {
-  const sv = I18n.creeaza('sv');
-  assert.equal(sv.lang, 'sv');
-  assert.equal(sv('piesa.laterala'), I18n.creeaza('ro')('piesa.laterala'));
+test('o cheie netradusă cade pe română, nu pe cheia brută', () => {
+  /* o limbă în care traducerea abia a început */
+  I18n.inregistreaza('nl', { piesa: { blat: 'Bovenblad' } });
+  const nl = I18n.creeaza('nl');
+
+  assert.equal(nl.lang, 'nl');
+  assert.equal(nl('piesa.blat'), 'Bovenblad');
+  assert.equal(nl('piesa.laterala'), I18n.creeaza('ro')('piesa.laterala'));
+
+  /* catalogul adevărat se reîncarcă pentru testele următoare */
+  I18n.inregistreaza('nl', JSON.parse(fs.readFileSync(path.join(LOCALES, 'nl.json'), 'utf8')));
+  assert.equal(I18n.creeaza('nl')('piesa.laterala'), 'Zijwand');
 });
 
 test('cheia care nu există nicăieri se vede, ca să fie reparată', () => {
