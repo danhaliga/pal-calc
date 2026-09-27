@@ -966,6 +966,8 @@
     "conturRezumat": "Kích thước bao {W} × {H} mm, {laturi} cạnh, tổng các góc {suma}°.",
     "conturDeschis": "Đường bao chưa khép kín:",
     "conturRamas": "còn thừa {mm} mm. Với {laturi} cạnh thì tổng các góc phải là {ceruta}°, hiện đang là {suma}°.",
+    "conturLungimeRea": "Cạnh {n}: chiều dài phải nằm trong khoảng 10 đến 4000 mm. Chưa lưu được đường bao.",
+    "conturUnghiRau": "Cạnh {n}: góc phải nằm trong khoảng 1 đến 359°. Chưa lưu được đường bao.",
     "conturDejaInchis": "Đường bao đã khép kín rồi.",
     "conturAdaugat": "Tôi đã thêm một cạnh {mm} mm. Hãy chỉnh lại các góc.",
     "stergeLatura": "Xóa cạnh này",

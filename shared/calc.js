@@ -499,10 +499,17 @@
         tip: z.enum(TIPURI).catch('drept'),
         W2: mm(100, 3000).catch(900),
         orb: mm(0, 2000).catch(0),
+        /* Fără `.catch` aici, înadins. Un `.catch([])` pe vector înseamnă că o
+           singură latură greșită — sau un câmp lăsat gol în formular — golește
+           tot conturul, salvarea reușește, iar corpul atipic devine în tăcere
+           un dreptunghi W×H. Se pierde și avertismentul „conturul nu se
+           închide", fiindcă nu mai e nimic de închis, deci nimic nu-l prinde.
+           Un corp drept nu trece pe aici cu conturul lipsă: defaults() dă
+           `contur: []`, iar vectorul gol e valid. */
         contur: z.array(z.object({
           lung: z.coerce.number().min(10).max(4000),
           unghi: z.coerce.number().min(1).max(359)
-        })).max(32).catch([]),
+        })).max(32),
         constr: z.enum(['intre', 'peste']),
         t: mm(6, 50), cg: mm(0, 5), cs: mm(0, 5),
         spate: z.enum(['aplicat', 'nut', 'pal']),

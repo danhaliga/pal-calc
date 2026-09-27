@@ -966,6 +966,8 @@
     "conturRezumat": "外框 {W} × {H} 毫米，{laturi}，角度之和 {suma}°。",
     "conturDeschis": "轮廓还没闭合：",
     "conturRamas": "还差 {mm} 毫米。{laturi} 条边的角度之和应该是 {ceruta}°，现在是 {suma}°。",
+    "conturLungimeRea": "第 {n} 条边：边长必须在 10 到 4000 毫米之间。轮廓没保存上。",
+    "conturUnghiRau": "第 {n} 条边：角度必须在 1 到 359° 之间。轮廓没保存上。",
     "conturDejaInchis": "轮廓已经闭合了。",
     "conturAdaugat": "加了一条 {mm} 毫米的边。把角度调一下。",
     "stergeLatura": "删掉这条边",

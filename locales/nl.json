@@ -966,6 +966,8 @@
     "conturRezumat": "Buitenmaat {W} × {H} mm, {laturi} zijden, som van de hoeken {suma}°.",
     "conturDeschis": "De contour sluit niet:",
     "conturRamas": "er blijft {mm} mm over. Voor {laturi} zijden moet de som van de hoeken {ceruta}° zijn, nu is die {suma}°.",
+    "conturLungimeRea": "Zijde {n}: de lengte moet tussen 10 en 4000 mm liggen. De contour is niet opgeslagen.",
+    "conturUnghiRau": "Zijde {n}: de hoek moet tussen 1 en 359° liggen. De contour is niet opgeslagen.",
     "conturDejaInchis": "De contour is al gesloten.",
     "conturAdaugat": "Ik heb een zijde van {mm} mm toegevoegd. Pas de hoeken aan.",
     "stergeLatura": "Deze zijde verwijderen",

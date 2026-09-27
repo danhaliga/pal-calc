@@ -966,6 +966,8 @@
     "conturRezumat": "외곽 {W} × {H} mm, {laturi}, 각도 합 {suma}°.",
     "conturDeschis": "외곽선이 닫히지 않았습니다:",
     "conturRamas": "{mm} mm 남았습니다. 변 {laturi}개라면 각도 합이 {ceruta}°여야 하는데, 지금은 {suma}°입니다.",
+    "conturLungimeRea": "{n}번 변: 길이는 10에서 4000 mm 사이여야 합니다. 외곽선이 저장되지 않았습니다.",
+    "conturUnghiRau": "{n}번 변: 각도는 1에서 359° 사이여야 합니다. 외곽선이 저장되지 않았습니다.",
     "conturDejaInchis": "외곽선은 이미 닫혀 있습니다.",
     "conturAdaugat": "{mm} mm 변을 더했습니다. 각도를 맞춰 주세요.",
     "stergeLatura": "이 변 삭제",

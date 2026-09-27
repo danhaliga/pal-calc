@@ -966,6 +966,8 @@
     "conturRezumat": "Ingombro {W} × {H} mm, {laturi} lati, somma degli angoli {suma}°.",
     "conturDeschis": "Il profilo non si chiude:",
     "conturRamas": "restano {mm} mm. Per {laturi} lati la somma degli angoli deve essere {ceruta}°, adesso è {suma}°.",
+    "conturLungimeRea": "Lato {n}: la lunghezza deve stare tra 10 e 4000 mm. Il contorno non è stato salvato.",
+    "conturUnghiRau": "Lato {n}: l’angolo deve stare tra 1 e 359°. Il contorno non è stato salvato.",
     "conturDejaInchis": "Il profilo è già chiuso.",
     "conturAdaugat": "Ho aggiunto un lato di {mm} mm. Regola gli angoli.",
     "stergeLatura": "Elimina questo lato",

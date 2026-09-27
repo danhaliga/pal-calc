@@ -976,6 +976,8 @@
     "conturRezumat": "Obalový rozměr {W} × {H} mm, stran: {laturi}, součet úhlů {suma}°.",
     "conturDeschis": "Obrys se neuzavírá:",
     "conturRamas": "zbývá {mm} mm. Pro {laturi} stran má být součet úhlů {ceruta}°, teď je {suma}°.",
+    "conturLungimeRea": "Strana {n}: délka musí být mezi 10 a 4000 mm. Obrys se neuložil.",
+    "conturUnghiRau": "Strana {n}: úhel musí být mezi 1 a 359°. Obrys se neuložil.",
     "conturDejaInchis": "Obrys je už uzavřený.",
     "conturAdaugat": "Přidal jsem stranu {mm} mm. Uprav úhly.",
     "stergeLatura": "Smazat tuhle stranu",

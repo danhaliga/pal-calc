@@ -192,6 +192,19 @@ router.post('/corps/:id/duplicate', requireAuth, (req, res, next) => {
 
 /* ---- API ---- */
 
+/* O latură de contur greșită trebuie să spună CARE latură. Altfel utilizatorul
+   vede „parametri invalizi" pe un tabel cu 7 rânduri și le caută pe toate.
+   Restul câmpurilor rămân cu mesajul general: la ele câmpul din formular se
+   colorează oricum, fiindcă e unul singur. */
+function mesajEroareParams(issues, t) {
+  const laturaRea = issues.find(i => i.path[0] === 'contur' && typeof i.path[1] === 'number');
+  if (laturaRea) {
+    const cheie = laturaRea.path[2] === 'unghi' ? 'editor.conturUnghiRau' : 'editor.conturLungimeRea';
+    return t(cheie, { n: laturaRea.path[1] + 1 });
+  }
+  return t('eroare.cerere');
+}
+
 const putSchema = z.object({
   name: z.string().trim().min(1).max(80).optional(),
   params: z.record(z.any())
@@ -203,14 +216,14 @@ router.put('/api/corps/:id', requireAuth, (req, res, next) => {
 
   const body = putSchema.safeParse(req.body);
   if (!body.success) {
-    return res.status(400).json({ error: 'Date invalide.', issues: body.error.issues });
+    return res.status(400).json({ error: req.t('eroare.cerere'), issues: body.error.issues });
   }
 
   const merged = Object.assign(PalCalc.defaults(), parseParams(corp.params), body.data.params);
   const parsed = PalCalc.paramsSchema.safeParse(merged);
   if (!parsed.success) {
     return res.status(400).json({
-      error: 'Parametri invalizi.',
+      error: mesajEroareParams(parsed.error.issues, req.t),
       issues: parsed.error.issues.map(i => ({ camp: i.path.join('.'), mesaj: i.message }))
     });
   }

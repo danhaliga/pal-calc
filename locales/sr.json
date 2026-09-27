@@ -976,6 +976,8 @@
     "conturRezumat": "Gabarit {W} × {H} mm, strana: {laturi}, zbir uglova {suma}°.",
     "conturDeschis": "Kontura se ne zatvara:",
     "conturRamas": "ostaje {mm} mm. Za {laturi} strana zbir uglova treba da bude {ceruta}°, a sada je {suma}°.",
+    "conturLungimeRea": "Strana {n}: dužina mora biti između 10 i 4000 mm. Kontura nije sačuvana.",
+    "conturUnghiRau": "Strana {n}: ugao mora biti između 1 i 359°. Kontura nije sačuvana.",
     "conturDejaInchis": "Kontura je već zatvorena.",
     "conturAdaugat": "Dodao sam stranu od {mm} mm. Podesi uglove.",
     "stergeLatura": "Obriši ovu stranu",

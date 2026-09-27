@@ -976,6 +976,8 @@
     "conturRezumat": "Gabarit {W} × {H} mm, stranica: {laturi}, zbroj kutova {suma}°.",
     "conturDeschis": "Kontura se ne zatvara:",
     "conturRamas": "ostaje {mm} mm. Za {laturi} stranica zbroj kutova treba biti {ceruta}°, a sada je {suma}°.",
+    "conturLungimeRea": "Stranica {n}: duljina mora biti između 10 i 4000 mm. Kontura nije spremljena.",
+    "conturUnghiRau": "Stranica {n}: kut mora biti između 1 i 359°. Kontura nije spremljena.",
     "conturDejaInchis": "Kontura je već zatvorena.",
     "conturAdaugat": "Dodao sam stranicu od {mm} mm. Podesi kutove.",
     "stergeLatura": "Obriši ovu stranicu",

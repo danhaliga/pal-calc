@@ -966,6 +966,8 @@
     "conturRezumat": "Selubung {W} × {H} mm, {laturi} sisi, jumlah sudut {suma}°.",
     "conturDeschis": "Konturnya belum menutup:",
     "conturRamas": "sisa {mm} mm. Untuk {laturi} sisi jumlah sudutnya harus {ceruta}°, sekarang {suma}°.",
+    "conturLungimeRea": "Sisi {n}: panjangnya harus antara 10 dan 4000 mm. Konturnya belum tersimpan.",
+    "conturUnghiRau": "Sisi {n}: sudutnya harus antara 1 dan 359°. Konturnya belum tersimpan.",
     "conturDejaInchis": "Konturnya sudah menutup.",
     "conturAdaugat": "Saya menambahkan sisi {mm} mm. Sesuaikan sudut-sudutnya.",
     "stergeLatura": "Hapus sisi ini",

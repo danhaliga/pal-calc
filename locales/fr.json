@@ -966,6 +966,8 @@
     "conturRezumat": "Gabarit {W} × {H} mm, {laturi} côtés, somme des angles {suma}°.",
     "conturDeschis": "Le contour ne se referme pas :",
     "conturRamas": "il reste {mm} mm. Pour {laturi} côtés, la somme des angles doit être de {ceruta}° ; elle est de {suma}°.",
+    "conturLungimeRea": "Côté {n} : la longueur doit être entre 10 et 4000 mm. Le contour n’a pas été enregistré.",
+    "conturUnghiRau": "Côté {n} : l’angle doit être entre 1 et 359°. Le contour n’a pas été enregistré.",
     "conturDejaInchis": "Le contour est déjà fermé.",
     "conturAdaugat": "J'ai ajouté un côté de {mm} mm. Ajustez les angles.",
     "stergeLatura": "Supprimer ce côté",

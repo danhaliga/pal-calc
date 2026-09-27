@@ -219,8 +219,16 @@ function check(name, cond, extra = '') {
 
   const rcsv = await req(A, `/orders/${orderId}/export.csv`);
   const csv = await rcsv.text();
-  check('CSV-ul are antet și linii', csv.includes('Taiere L') && csv.split('\n').length > 10,
+  check('CSV-ul are antet și linii', csv.includes('Tăiere L') && csv.split('\n').length > 10,
         `status ${rcsv.status}, ${csv.split('\n').length} linii, început: ${csv.slice(0, 60)}`);
+
+  /* Antetul vine din catalog, deci se schimbă cu limba. Înainte era scris de
+     mână în română și rămânea românesc în toate cele 30 de limbi. */
+  const rcsvDe = await req(A, `/orders/${orderId}/export.csv?lang=de`);
+  const csvDe = await rcsvDe.text();
+  check('antetul CSV se traduce cu limba',
+        csvDe.includes('Zuschnitt L') && !csvDe.includes('Tăiere L'),
+        `început: ${csvDe.slice(0, 70)}`);
 
   /* --- duplicarea costă la fel ca un corp nou și rămâne în comandă --- */
   const soldInainteDeCopie = await (await req(A, '/credit')).text();

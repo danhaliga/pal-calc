@@ -966,6 +966,8 @@
     "conturRezumat": "Yttermått {W} × {H} mm, {laturi} sidor, vinkelsumma {suma}°.",
     "conturDeschis": "Konturen sluter sig inte:",
     "conturRamas": "{mm} mm blir över. För {laturi} sidor ska vinkelsumman vara {ceruta}°, nu är den {suma}°.",
+    "conturLungimeRea": "Sida {n}: längden måste ligga mellan 10 och 4000 mm. Konturen sparades inte.",
+    "conturUnghiRau": "Sida {n}: vinkeln måste ligga mellan 1 och 359°. Konturen sparades inte.",
     "conturDejaInchis": "Konturen är redan sluten.",
     "conturAdaugat": "Jag lade till en sida på {mm} mm. Justera vinklarna.",
     "stergeLatura": "Ta bort den här sidan",

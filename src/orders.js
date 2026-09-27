@@ -146,7 +146,12 @@ function corpuriComenzii(orderId, mats) {
     }));
 }
 
-function raportComenzii(order, optiuni) {
+/* `t` e al doilea argument, pozițional și obligatoriu, înadins: raport()
+   traduce numele pieselor, notele de tăiere, formatele de coală, feroneria și
+   operațiile CNC. Fără el, PalCalc.traducator(undefined) cade pe română fără
+   să crâcnească — exact așa a ajuns toată lista de debitare în română în
+   celelalte 29 de limbi. Dacă adaugi un apel nou, dă-i `req.t`. */
+function raportComenzii(order, t, optiuni) {
   const mats = materiale.aleComenzii(order.id);
   const corpuri = corpuriComenzii(order.id, mats);
   const comanda = Object.assign({}, order, {
@@ -155,7 +160,7 @@ function raportComenzii(order, optiuni) {
     feronerie: PalFeronerie.citeste(order.feronerie)
   });
   return PalRaport.raport(comanda, corpuri,
-    Object.assign({ effortMs: 250, adaosCant: adaosCant() }, optiuni || {}));
+    Object.assign({ t: t, effortMs: 250, adaosCant: adaosCant() }, optiuni || {}));
 }
 
 /* ---------- lista de comenzi ---------- */
@@ -246,7 +251,7 @@ router.get('/orders/:id', requireAuth, (req, res, next) => {
   const order = getOwned(req.params.id, req.user.id);
   if (!order) return notFound(next);
 
-  const raport = raportComenzii(order);
+  const raport = raportComenzii(order, req.t);
 
   res.render('orders/show', {
     title: order.name,
@@ -480,7 +485,7 @@ router.get('/api/orders/:id/ansamblu', requireAuth, (req, res, next) => {
     camera: ans.camera,
     corpuri: ans.asezari.map(a => {
       const c = corpuri.filter(x => x.id === a.id)[0];
-      const rez = PalCalc.calc(c.params);
+      const rez = PalCalc.calc(c.params, req.t);
       return {
         id: a.id, nume: a.nume,
         origine: a.origine, rotatie: a.rotatie,
@@ -508,7 +513,7 @@ router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
   const cfg = PRINTURI[req.params.tip];
   if (!cfg) return notFound(next);
 
-  const raport = raportComenzii(order);
+  const raport = raportComenzii(order, req.t);
   const cu = comandaCuCamera(order);
   const ans = PalAnsamblu.ansamblu(cu, corpuriPozitionate(order.id), req.t);
 
@@ -535,9 +540,11 @@ router.get('/orders/:id/export.csv', requireAuth, (req, res, next) => {
   const order = getOwned(req.params.id, req.user.id);
   if (!order) return notFound(next);
 
-  const raport = raportComenzii(order);
-  const head = ['Corp', 'Cod', 'Piesa', 'Buc', 'Taiere L', 'Taiere l', 'Material', 'Decor',
-                'Cant L1', 'Cant L2', 'Cant l1', 'Cant l2', 'Fibra', 'CNC', 'Nota'];
+  const raport = raportComenzii(order, req.t);
+  const head = ['csv.corp', 'comanda.colCod', 'csv.piesa', 'csv.buc', 'csv.taiereL', 'csv.taierel',
+                'comanda.colMaterial', 'comanda.colDecor',
+                'csv.cantL1', 'csv.cantL2', 'csv.cantl1', 'csv.cantl2',
+                'csv.fibra', 'print.linkCnc', 'csv.nota'].map(k => req.t(k));
   const linii = [head.join(';')];
 
   raport.piese.forEach(p => {
@@ -546,7 +553,7 @@ router.get('/orders/:id/export.csv', requireAuth, (req, res, next) => {
       p.material.tip + ' ' + p.material.gros,
       p.material.decorNume || p.material.decor || '',
       p.cant.muchii[0], p.cant.muchii[1], p.cant.muchii[2], p.cant.muchii[3],
-      p.fibra, p.cnc ? 'DA' : '', p.nota
+      p.fibra, p.cnc ? req.t('comun.da') : '', p.nota
     ].map(v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"').join(';'));
   });
 

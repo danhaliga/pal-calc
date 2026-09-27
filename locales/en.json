@@ -966,6 +966,8 @@
     "conturRezumat": "Bounding size {W} × {H} mm, {laturi} sides, angles add up to {suma}°.",
     "conturDeschis": "The outline does not close:",
     "conturRamas": "{mm} mm are left over. For {laturi} sides the angles must add up to {ceruta}°, and they now add up to {suma}°.",
+    "conturLungimeRea": "Side {n}: the length must be between 10 and 4000 mm. The contour was not saved.",
+    "conturUnghiRau": "Side {n}: the angle must be between 1 and 359°. The contour was not saved.",
     "conturDejaInchis": "The outline is already closed.",
     "conturAdaugat": "Added a {mm} mm side. Adjust the angles.",
     "stergeLatura": "Delete this side",

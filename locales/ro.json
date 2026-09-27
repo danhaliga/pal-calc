@@ -976,6 +976,8 @@
     "conturRezumat": "Gabarit {W} × {H} mm, {laturi} laturi, suma unghiurilor {suma}°.",
     "conturDeschis": "Conturul nu se închide:",
     "conturRamas": "mai rămân {mm} mm. Pentru {laturi} laturi, suma unghiurilor trebuie să fie {ceruta}°, acum este {suma}°.",
+    "conturLungimeRea": "Latura {n}: lungimea trebuie să fie între 10 și 4000 mm. Conturul nu s-a salvat.",
+    "conturUnghiRau": "Latura {n}: unghiul trebuie să fie între 1 și 359°. Conturul nu s-a salvat.",
     "conturDejaInchis": "Conturul e deja închis.",
     "conturAdaugat": "Am adăugat o latură de {mm} mm. Reglează unghiurile.",
     "stergeLatura": "Șterge latura",

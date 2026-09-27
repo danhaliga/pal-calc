@@ -976,6 +976,8 @@
     "conturRezumat": "Gabaryt {W} × {H} mm, boków: {laturi}, suma kątów {suma}°.",
     "conturDeschis": "Kontur się nie domyka:",
     "conturRamas": "zostaje {mm} mm. Dla {laturi} boków suma kątów powinna wynosić {ceruta}°, a teraz wynosi {suma}°.",
+    "conturLungimeRea": "Bok {n}: długość musi być między 10 a 4000 mm. Kontur nie został zapisany.",
+    "conturUnghiRau": "Bok {n}: kąt musi być między 1 a 359°. Kontur nie został zapisany.",
     "conturDejaInchis": "Kontur jest już domknięty.",
     "conturAdaugat": "Dodałem bok {mm} mm. Popraw kąty.",
     "stergeLatura": "Usuń ten bok",

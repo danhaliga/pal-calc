@@ -966,6 +966,8 @@
     "conturRezumat": "Gabari {W} × {H} mm, {laturi} kenar, açılar toplamı {suma}°.",
     "conturDeschis": "Kontur kapanmıyor:",
     "conturRamas": "{mm} mm artıyor. {laturi} kenar için açılar toplamı {ceruta}° olmalı, şimdi {suma}°.",
+    "conturLungimeRea": "{n}. kenar: uzunluk 10 ile 4000 mm arasında olmalı. Kontur kaydedilmedi.",
+    "conturUnghiRau": "{n}. kenar: açı 1 ile 359° arasında olmalı. Kontur kaydedilmedi.",
     "conturDejaInchis": "Kontur zaten kapalı.",
     "conturAdaugat": "{mm} mm'lik bir kenar ekledim. Açıları ayarla.",
     "stergeLatura": "Bu kenarı sil",

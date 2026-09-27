@@ -966,6 +966,8 @@
     "conturRezumat": "Rohmaß {W} × {H} mm, {laturi} Seiten, Winkelsumme {suma}°.",
     "conturDeschis": "Die Kontur schließt nicht:",
     "conturRamas": "es bleiben {mm} mm übrig. Für {laturi} Seiten muss die Winkelsumme {ceruta}° betragen, sie beträgt jetzt {suma}°.",
+    "conturLungimeRea": "Seite {n}: die Länge muss zwischen 10 und 4000 mm liegen. Die Kontur wurde nicht gespeichert.",
+    "conturUnghiRau": "Seite {n}: der Winkel muss zwischen 1 und 359° liegen. Die Kontur wurde nicht gespeichert.",
     "conturDejaInchis": "Die Kontur ist bereits geschlossen.",
     "conturAdaugat": "Eine Seite von {mm} mm hinzugefügt. Stelle die Winkel ein.",
     "stergeLatura": "Diese Seite löschen",

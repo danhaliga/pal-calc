@@ -966,6 +966,8 @@
     "conturRezumat": "Befoglaló méret {W} × {H} mm, {laturi} oldal, a szögek összege {suma}°.",
     "conturDeschis": "A kontúr nem zárul:",
     "conturRamas": "{mm} mm marad. {laturi} oldalnál a szögek összegének {ceruta}°-nak kellene lennie, most {suma}°.",
+    "conturLungimeRea": "{n}. oldal: a hossznak 10 és 4000 mm között kell lennie. A kontúr nem lett elmentve.",
+    "conturUnghiRau": "{n}. oldal: a szögnek 1 és 359° között kell lennie. A kontúr nem lett elmentve.",
     "conturDejaInchis": "A kontúr már zárt.",
     "conturAdaugat": "Hozzáadtam egy {mm} mm-es oldalt. Állítsd be a szögeket.",
     "stergeLatura": "Oldal törlése",

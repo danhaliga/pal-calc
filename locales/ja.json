@@ -966,6 +966,8 @@
     "conturRezumat": "外形 {W} × {H} mm、{laturi}、角度の合計 {suma}°。",
     "conturDeschis": "輪郭が閉じていません：",
     "conturRamas": "残り {mm} mm。{laturi}辺なら角度の合計は {ceruta}° のはずですが、いまは {suma}° です。",
+    "conturLungimeRea": "{n} 番目の辺：長さは 10〜4000 mm の範囲で入れてください。輪郭は保存されていません。",
+    "conturUnghiRau": "{n} 番目の辺：角度は 1〜359° の範囲で入れてください。輪郭は保存されていません。",
     "conturDejaInchis": "輪郭はもう閉じています。",
     "conturAdaugat": "{mm} mm の辺を足しました。角度を整えてください。",
     "stergeLatura": "この辺を削除",

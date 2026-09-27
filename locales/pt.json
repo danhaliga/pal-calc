@@ -966,6 +966,8 @@
     "conturRezumat": "Medida em bruto {W} × {H} mm, {laturi} lados, soma dos ângulos {suma}°.",
     "conturDeschis": "O contorno não fecha:",
     "conturRamas": "sobram {mm} mm. Para {laturi} lados a soma dos ângulos tem de ser {ceruta}°, e agora é {suma}°.",
+    "conturLungimeRea": "Lado {n}: o comprimento tem de estar entre 10 e 4000 mm. O contorno não foi guardado.",
+    "conturUnghiRau": "Lado {n}: o ângulo tem de estar entre 1 e 359°. O contorno não foi guardado.",
     "conturDejaInchis": "O contorno já está fechado.",
     "conturAdaugat": "Acrescentei um lado de {mm} mm. Ajusta os ângulos.",
     "stergeLatura": "Eliminar este lado",
