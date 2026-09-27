@@ -28,9 +28,9 @@
       </tr></thead>
       <tbody>
         <% p.corpuri.slice().sort(function (a, b) { return a.poz.h - b.poz.h || a.poz.d - b.poz.d; })
-             .forEach(function (a, i) { %>
+             .forEach(function (a) { %>
           <tr>
-            <td class="num"><%= i + 1 %></td>
+            <td class="num"><%= a.nr %></td>
             <td><%= a.nume %></td>
             <td class="num"><%= a.W %></td>
             <td class="num"><%= a.H %></td>

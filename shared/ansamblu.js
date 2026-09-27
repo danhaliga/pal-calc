@@ -133,6 +133,13 @@
 
     return {
       id: corp.id, nume: corp.nume || corp.name, poz: poz,
+      /* `poz` de mai sus e POZIȚIA în cameră ({perete, d, h}); `nr` e numărul
+         corpului în comandă (coloana corps.poz), acela după care se codează
+         piesele în lista de debitare — 4.1, 4.2 — și acela scris pe fișa de
+         montaj. Fără el, planșa de ansamblu numerota cu indexul din vector și
+         trimitea omul la alt corp. Rămâne null dacă apelantul nu-l dă;
+         ansamblu() îl completează. */
+      nr: corp.poz != null ? corp.poz : null,
       W: W, D: D, H: H,
       /* pentru 3D: originea grupului și rotația în jurul verticalei */
       origine: { x: x, y: poz.h, z: z },
@@ -251,8 +258,11 @@
       o.push('<rect x="' + p.x0 + '" y="' + p.z0 + '" width="' + (p.x1 - p.x0) +
              '" height="' + (p.z1 - p.z0) + '" class="an-corp' + (a.poz.h > 0 ? ' sus' : '') + '"/>');
       var cx = (p.x0 + p.x1) / 2, cy = (p.z0 + p.z1) / 2;
+      /* numărul corpului din comandă, nu indexul din vector: după o ștergere
+         de corp numerele au goluri, iar legenda promite „pozițiile din comandă" */
       o.push('<text x="' + cx + '" y="' + cy + '" class="an-eticheta" text-anchor="middle" ' +
-             'dominant-baseline="central" font-size="' + fs + '">' + (i + 1) + '</text>');
+             'dominant-baseline="central" font-size="' + fs + '">' +
+             (a.nr != null ? a.nr : i + 1) + '</text>');
     });
 
     /* cotele camerei */
@@ -288,14 +298,28 @@
     o.push('<rect x="0" y="0" width="' + lung + '" height="' + cam.H + '" class="an-zid"/>');
     o.push('<line x1="0" y1="' + cam.H + '" x2="' + lung + '" y2="' + cam.H + '" class="an-podea"/>');
 
-    peP.forEach(function (a) {
+    peP.forEach(function (a, i) {
       var y = cam.H - a.poz.h - a.H;      /* SVG are originea sus */
       o.push('<rect x="' + a.poz.d + '" y="' + y + '" width="' + a.W + '" height="' + a.H +
              '" class="an-fata' + (a.poz.h > 0 ? ' sus' : '') + '"/>');
-      if (a.W > lung * 0.06 && a.H > cam.H * 0.06) {
-        o.push('<text x="' + (a.poz.d + a.W / 2) + '" y="' + (y + a.H / 2) +
-               '" class="an-eticheta" text-anchor="middle" dominant-baseline="central" font-size="' +
-               fs + '">' + a.W + '</text>');
+      /* Numărul corpului deasupra, lățimea dedesubt. Înainte era scrisă doar
+         lățimea, deci un desen cu trei corpuri de 600 nu spunea care e care,
+         iar tabelul de lângă numerota altfel.
+         Numărul are una-două cifre, deci încape și într-un corp îngust, unde
+         lățimea de trei cifre nu încăpea — și tocmai corpul îngust de umplutură
+         e cel pe care vrei să-l poți identifica. */
+      var incapeNumar = a.W > fs * 0.9 && a.H > fs * 1.2;
+      var incapeLatime = incapeNumar && a.W > lung * 0.06 && a.H > fs * 2.4;
+      if (incapeNumar) {
+        var cx = a.poz.d + a.W / 2, cy = y + a.H / 2;
+        o.push('<text x="' + cx + '" y="' + (incapeLatime ? cy - fs * 0.45 : cy) +
+               '" class="an-eticheta" text-anchor="middle" dominant-baseline="central" ' +
+               'font-size="' + fs + '">' + (a.nr != null ? a.nr : i + 1) + '</text>');
+        if (incapeLatime) {
+          o.push('<text x="' + cx + '" y="' + (cy + fs * 0.6) + '" class="an-cota" ' +
+                 'text-anchor="middle" dominant-baseline="central" font-size="' + (fs * 0.7) + '">' +
+                 a.W + '</text>');
+        }
       }
     });
 
@@ -312,8 +336,12 @@
   function ansamblu(comanda, corpuri, tr) {
     var t_ = PalCalc.traducator(tr);
     var cam = camera(comanda.camera);
-    var asezari = corpuri.map(function (c) {
-      return asezare(c, citestePozitie(c), cam);
+    var asezari = corpuri.map(function (c, i) {
+      var a = asezare(c, citestePozitie(c), cam);
+      /* dacă apelantul n-a dat numărul din comandă, cădem pe ordinal — dar
+         atunci ordinea de intrare trebuie să fie chiar cea din comandă */
+      if (a.nr == null) a.nr = i + 1;
+      return a;
     });
 
     var peReti = pereti(t_).map(function (per) {

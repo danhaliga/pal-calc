@@ -93,7 +93,8 @@ function alege(e) {
   var hits = ray.intersectObjects(T.meshes, false);
   if (!hits.length) { info.innerHTML = indiciu(); return; }
   var d = hits[0].object.userData;
-  info.innerHTML = '<div><b>' + d.corp + '</b> — ' + d.piesa + '</div>' +
+  info.innerHTML = '<div><b>' + (d.nr != null ? d.nr + '. ' : '') + d.corp +
+    '</b> — ' + d.piesa + '</div>' +
     '<div class="muted small">peretele ' + d.perete + ', la ' + d.d + ' mm de colț, ' +
     'înălțime ' + d.h + ' mm · <a href="/corps/' + d.id + '">deschide corpul</a></div>';
 }
@@ -176,7 +177,7 @@ function construieste(date) {
         if (b.rz) mesh.rotation.z = b.rz;
         mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), lineMat));
         mesh.userData = {
-          id: corp.id, corp: corp.nume, piesa: piesa.nume,
+          id: corp.id, nr: corp.nr, corp: corp.nume, piesa: piesa.nume,
           perete: corp.perete || '—', d: Math.round(corp.d || 0), h: Math.round(corp.origine.y)
         };
         grup.add(mesh);
@@ -205,7 +206,11 @@ function construieste(date) {
 
 info.innerHTML = '<span class="muted">Se încarcă ansamblul…</span>';
 
-fetch('/api/orders/' + DATE.orderId + '/ansamblu')
+/* Limba paginii merge mai departe la API. Altfel, o pagină cerută cu ?lang=ro
+   primea numele pieselor în limba sesiunii, deci vederea 3D scria altceva
+   decât tabelul de dedesubt. */
+fetch('/api/orders/' + DATE.orderId + '/ansamblu?lang=' +
+      encodeURIComponent(document.documentElement.lang || ''))
   .then(function (r) { return r.json(); })
   .then(function (date) {
     /* peretele și distanța, pentru eticheta de la selecție */

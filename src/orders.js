@@ -488,6 +488,11 @@ router.get('/api/orders/:id/ansamblu', requireAuth, (req, res, next) => {
       const rez = PalCalc.calc(c.params, req.t);
       return {
         id: a.id, nume: a.nume,
+        /* `nr` e numărul corpului din comandă, același de pe planșe și din
+           codurile de piese. `perete` și `d` le citea deja panoul din vederea
+           3D (public/ansamblu.js), dar nu i le trimitea nimeni, așa că scria
+           mereu „peretele —, la 0 mm de colț". */
+        nr: a.nr, perete: a.perete.id, d: a.poz.d,
         origine: a.origine, rotatie: a.rotatie,
         piese: rez.P.map(p => ({ nume: p.nume, boxes: p.boxes }))
       };

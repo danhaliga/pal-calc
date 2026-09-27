@@ -113,9 +113,9 @@
       <th class="num"><%= t('ansamblu.colInaltime') %></th><th></th>
     </tr></thead>
     <tbody>
-      <% ansamblu.asezari.forEach(function (a, i) { %>
+      <% ansamblu.asezari.forEach(function (a) { %>
         <tr>
-          <td class="num"><%= i + 1 %></td>
+          <td class="num"><%= a.nr %></td>
           <td><a href="/corps/<%= a.id %>"><%= a.nume %></a></td>
           <td class="num"><%= a.W %></td>
           <td class="num"><%= a.D %></td>

@@ -238,3 +238,124 @@ test('nicio traducere nu strecoară cifre non-latine în cataloage', () => {
     assert.deepEqual(gasite, [], `${f} conține cifre non-latine: ${gasite.join(' ')}`);
   });
 });
+
+/* =====================================================================
+   4. Numerotarea corpurilor: o planșă nu are voie să numere altfel decât alta
+
+   Planșa de ansamblu numerota cu `i + 1` — în tabel repornind de la 1 pe
+   fiecare perete, în planul de sus indexul din vector. Restul hârtiilor și
+   codurile de piese din lista de debitare folosesc corps.poz. Într-o cameră
+   cu două ziduri existau doi „corp 1". Cine citea „corpul 2 de pe peretele B"
+   lua panourile marcate 2.1 și 2.2 — ale altui corp.
+   ===================================================================== */
+
+const Ansamblu = require('../shared/ansamblu');
+
+const corpPozitionat = (id, nr, nume, over, pozitie) => ({
+  id: id, nume: nume, poz: nr, pozitie: pozitie ? JSON.stringify(pozitie) : null,
+  params: Object.assign(defaults(), { nume: nume }, over)
+});
+
+const CAMERA = { id: 1, name: 'x', camera: JSON.stringify({ A: 3000, B: 3000, H: 2500 }) };
+
+test('numărul din ansamblu e numărul din comandă, nu indexul din vector', () => {
+  /* corpul cu poz = 3 a fost șters, deci numerele au un gol */
+  const corpuri = [
+    corpPozitionat(11, 1, 'Jos A1', { W: 800 }, { perete: 'A', d: 0, h: 0 }),
+    corpPozitionat(12, 2, 'Jos A2', { W: 600 }, { perete: 'A', d: 800, h: 0 }),
+    corpPozitionat(14, 4, 'Sus B1', { W: 800 }, { perete: 'B', d: 0, h: 1400 })
+  ];
+  const r = Ansamblu.ansamblu(CAMERA, corpuri, I18n.creeaza('ro'));
+
+  assert.deepEqual(r.asezari.map(a => a.nr), [1, 2, 4],
+    'al treilea corp are poz 4; dacă apare 3, s-a folosit indexul din vector');
+
+  /* și planul de sus trebuie să deseneze aceleași numere */
+  const desenate = (r.plan.match(/>(\d+)<\/text>/g) || [])
+    .map(s => Number(s.replace(/\D/g, '')));
+  assert.ok(desenate.includes(4), 'planul nu desenează numărul 4');
+  assert.ok(!desenate.includes(3), 'planul desenează 3, adică indexul, nu numărul din comandă');
+});
+
+test('două corpuri pe pereți diferiți nu primesc același număr', () => {
+  const corpuri = [
+    corpPozitionat(21, 1, 'A1', { W: 800 }, { perete: 'A', d: 0, h: 0 }),
+    corpPozitionat(22, 2, 'A2', { W: 600 }, { perete: 'A', d: 800, h: 0 }),
+    corpPozitionat(23, 3, 'B1', { W: 900 }, { perete: 'B', d: 0, h: 0 }),
+    corpPozitionat(24, 4, 'B2', { W: 400 }, { perete: 'B', d: 900, h: 0 })
+  ];
+  const r = Ansamblu.ansamblu(CAMERA, corpuri, I18n.creeaza('ro'));
+
+  const numere = r.asezari.map(a => a.nr);
+  assert.equal(new Set(numere).size, numere.length,
+    'numerele se repetă: ' + numere.join(', '));
+
+  /* pe fiecare perete, numerele rămân cele din comandă — nu 1,2 / 1,2 */
+  const pePerete = {};
+  r.pereti.forEach(p => { if (p.corpuri.length) pePerete[p.id] = p.corpuri.map(a => a.nr); });
+  assert.deepEqual(pePerete.A, [1, 2]);
+  assert.deepEqual(pePerete.B, [3, 4], 'peretele B trebuie să arate 3 și 4, nu 1 și 2');
+});
+
+test('elevația scrie numărul corpului, nu doar lățimea', () => {
+  const corpuri = [
+    corpPozitionat(31, 7, 'Unu', { W: 600, H: 720 }, { perete: 'A', d: 0, h: 0 }),
+    corpPozitionat(32, 8, 'Doi', { W: 600, H: 720 }, { perete: 'A', d: 600, h: 0 })
+  ];
+  const r = Ansamblu.ansamblu(CAMERA, corpuri, I18n.creeaza('ro'));
+  const el = Ansamblu.elevatie(r.asezari, r.camera, 'A');
+
+  /* două corpuri de aceeași lățime: fără numere, desenul nu spune care e care */
+  assert.match(el, />7</, 'lipsește numărul 7 din elevație');
+  assert.match(el, />8</, 'lipsește numărul 8 din elevație');
+  assert.match(el, />600</, 'lățimea rămâne utilă, trebuie să apară și ea');
+});
+
+test('numărul din ansamblu se potrivește cu codul piesei din debitare', () => {
+  const t = I18n.creeaza('ro');
+  const corpuri = [
+    corpPozitionat(41, 2, 'Jos', { W: 800 }, { perete: 'A', d: 0, h: 0 }),
+    corpPozitionat(42, 5, 'Sus', { W: 600 }, { perete: 'B', d: 0, h: 1400 })
+  ];
+  const ans = Ansamblu.ansamblu(CAMERA, corpuri, t);
+
+  const comanda = { id: 1, name: 'x', formate: ['intreaga'], materiale: [MATERIAL], feronerie: null };
+  const pentruRaport = corpuri.map(c => ({
+    id: c.id, name: c.nume, poz: c.poz, params: c.params,
+    material_id: 1, material_front_id: null, paid: 1
+  }));
+  const rap = Raport.raport(comanda, pentruRaport, { t: t, effortMs: 30, adaosCant: 10 });
+
+  ans.asezari.forEach(a => {
+    const piese = rap.piese.filter(p => p.cod.split('.')[0] === String(a.nr));
+    assert.ok(piese.length > 0,
+      `corpul ${a.nr} din ansamblu nu are nicio piesă codată ${a.nr}.x în debitare`);
+  });
+});
+
+test('fără numărul din comandă se cade pe ordinal, nu pe undefined', () => {
+  /* fixturi vechi, fără coloana poz — desenul nu are voie să scrie „undefined" */
+  const fara = [
+    { id: 51, nume: 'Unu', pozitie: null, params: Object.assign(defaults(), { W: 800 }) },
+    { id: 52, nume: 'Doi', pozitie: null, params: Object.assign(defaults(), { W: 600 }) }
+  ];
+  const r = Ansamblu.ansamblu(CAMERA, fara, I18n.creeaza('ro'));
+  assert.deepEqual(r.asezari.map(a => a.nr), [1, 2]);
+  assert.doesNotMatch(r.plan, /undefined/);
+});
+
+test('corpul îngust de umplutură primește totuși numărul pe elevație', () => {
+  /* lățimea are trei cifre și nu încape într-un corp de 150 mm, dar numărul
+     are una — și tocmai corpul de umplutură e cel greu de identificat */
+  const corpuri = [
+    corpPozitionat(61, 1, 'Lat', { W: 800, H: 720 }, { perete: 'A', d: 0, h: 0 }),
+    corpPozitionat(62, 2, 'Umplutură', { W: 150, H: 720 }, { perete: 'A', d: 800, h: 0 })
+  ];
+  const r = Ansamblu.ansamblu(CAMERA, corpuri, I18n.creeaza('ro'));
+  const el = Ansamblu.elevatie(r.asezari, r.camera, 'A');
+
+  assert.match(el, />1</, 'corpul lat trebuie să aibă număr');
+  assert.match(el, />2</, 'corpul îngust trebuie să aibă număr');
+  assert.match(el, />800</, 'corpul lat are loc și pentru lățime');
+  assert.doesNotMatch(el, />150</, 'lățimea nu încape în corpul îngust, și e în tabel');
+});
