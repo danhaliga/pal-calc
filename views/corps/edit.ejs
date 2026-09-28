@@ -196,8 +196,10 @@
     </details>
   </div>
 
-  <!-- ---------------- 3D + listă ---------------- -->
-  <div>
+  <!-- ---------------- 3D + listă ----------------
+       Amandoua sunt copii DIRECTI ai grilei, nu invelite intr-un div: asa
+       se pot aseza altfel pe ecran ingust (corpul primul, formularul dupa)
+       fara `display:contents`, care se bate cu flexbox pe latime. -->
     <div class="panel">
       <div class="top">
         <h2 style="margin:0" id="titlu3d"><%= t('editor.vedere3d') %></h2>
@@ -283,7 +285,6 @@
         <div class="formule" id="formule"></div>
       </details>
     </div>
-  </div>
 </div>
 
 <div class="toast" id="toast"></div>
