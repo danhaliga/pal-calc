@@ -6,6 +6,8 @@ const { db } = require('./db');
 const { requireAuth, requireAdmin } = require('./auth');
 const mesaje = require('./mesaje');
 const jurnal = require('./jurnal');
+const cont = require('./cont');
+const PalTari = require('../shared/tari');
 
 const router = express.Router();
 
@@ -41,6 +43,12 @@ router.get('/admin', requireAuth, requireAdmin, (req, res) => {
   res.render('admin', {
     title: 'Administrare',
     users, corps, payments,
+    /* Cine folosește aplicația și de unde. Numele țării se face în limba
+       celui care se uită, nu în engleză. */
+    tari: cont.dupaTara(30),
+    profile: cont.dupaProfil(),
+    numeTara: (cod) => PalTari.numeTara(cod, req.lang),
+    unitatePentru: PalTari.unitatePentru,
     mesaje: mesaje.ultimele(100),
     mesajeNoi: mesaje.cateNoi(),
     totalLei: (totals.cents / 100).toFixed(2),

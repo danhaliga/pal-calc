@@ -44,7 +44,8 @@
     "administrare": "Administrare",
     "iesi": "Ieși",
     "autentificare": "Autentificare",
-    "contNou": "Cont nou"
+    "contNou": "Cont nou",
+    "cont": "Contul"
   },
   "auth": {
     "autentificare": "Autentificare",
@@ -60,7 +61,9 @@
     "numeOptional": "Nume (opțional)",
     "creeazaContul": "Creează contul",
     "aiDejaCont": "Ai deja cont?",
-    "autentificaTe": "Autentifică-te"
+    "autentificaTe": "Autentifică-te",
+    "tara": "Țara",
+    "taraNota": "(de ea atârnă unitatea de măsură)"
   },
   "landing": {
     "titlu": "Calculator debitare PAL cantuit",
@@ -148,7 +151,10 @@
     "cand": "Când",
     "dePeUnde": "De pe unde",
     "mesajText": "Mesaj",
-    "jurnalLegatura": "Jurnal"
+    "jurnalLegatura": "Jurnal",
+    "dupaTara": "După țară",
+    "dupaProfil": "După meserie",
+    "nimeniNuAZis": "Încă n-a spus nimeni."
   },
   "credit": {
     "titlu": "Creditul meu",
@@ -1260,5 +1266,50 @@
     "goalaTitlu": "Jurnalul e gol.",
     "goalaText": "Bine. Înseamnă că nu s-a rupt nimic.",
     "nota": "Se păstrează {zile} de zile sau {maxim} de rânduri, care vine prima. Adresele sunt trunchiate, iar parolele și cheile nu se scriu niciodată."
+  },
+  "cont": {
+    "titlu": "Contul meu",
+    "intro": "Ce știe aplicația despre tine. Nimic de aici nu e obligatoriu, în afară de e-mail.",
+    "salvat": "Salvat.",
+    "salveaza": "Salvează contul",
+    "preaLung": "Un câmp e prea lung.",
+    "siteGresit": "Adresa site-ului nu pare o adresă de web.",
+    "legLocul": "Locul și unitatea",
+    "legCine": "Cine ești, pentru foaia de debitare",
+    "legIntrare": "Intrarea în cont",
+    "tara": "Țara",
+    "taraNealeasa": "— nealeasă —",
+    "unitate": "Unitatea de măsură",
+    "unitateDupaTara": "După țară ({unitate})",
+    "limba": "Limba",
+    "limbaDinBrowser": "Cea din browser",
+    "profil": "Ce faci",
+    "profilNealeasa": "— nealeasă —",
+    "notaUnitate": "Cotele se calculează și se păstrează în milimetri. Unitatea schimbă doar ce se scrie pe ecran și în ce introduci cotele.",
+    "propunere": "Browserul spune că ești în {tara}. Acolo se lucrează în {unitate} — alege țara ca să se potrivească.",
+    "nume": "Numele tău",
+    "firma": "Atelierul sau firma",
+    "firmaExemplu": "Atelier Mobilă SRL",
+    "cui": "Cod fiscal / TVA",
+    "telefon": "Telefon",
+    "oras": "Orașul",
+    "adresa": "Adresa",
+    "site": "Site",
+    "siteExemplu": "atelierulmeu.ro",
+    "notaFoaie": "Ce completezi aici ajunge pe capul foilor care pleacă la debitare. Cel care taie palul are pe ce număr să sune dacă o cotă nu se potrivește.",
+    "email": "E-mail",
+    "dinCand": "Cont din",
+    "notaEmail": "E-mailul nu se schimbă de aici. Scrie-ne din căsuța de mesaje dacă trebuie schimbat."
+  },
+  "unitate": {
+    "mm": "milimetri",
+    "inch": "țoli"
+  },
+  "profil": {
+    "atelier": "Atelier de mobilă",
+    "tamplar": "Tâmplar",
+    "designer": "Designer / proiectant",
+    "magazin": "Magazin",
+    "amator": "Pentru mine, acasă"
   }
 }

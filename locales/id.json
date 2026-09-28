@@ -44,7 +44,8 @@
     "administrare": "Administrasi",
     "iesi": "Keluar",
     "autentificare": "Masuk",
-    "contNou": "Akun baru"
+    "contNou": "Akun baru",
+    "cont": "Akun"
   },
   "auth": {
     "autentificare": "Masuk",
@@ -60,7 +61,9 @@
     "numeOptional": "Nama (opsional)",
     "creeazaContul": "Buat akun",
     "aiDejaCont": "Sudah punya akun?",
-    "autentificaTe": "Masuk"
+    "autentificaTe": "Masuk",
+    "tara": "Negara",
+    "taraNota": "(menentukan satuan ukuran)"
   },
   "landing": {
     "titlu": "Kalkulator potong papan partikel bertepi",
@@ -148,7 +151,10 @@
     "cand": "Kapan",
     "dePeUnde": "Dari mana",
     "mesajText": "Pesan",
-    "jurnalLegatura": "Catatan"
+    "jurnalLegatura": "Catatan",
+    "dupaTara": "Menurut negara",
+    "dupaProfil": "Menurut pekerjaan",
+    "nimeniNuAZis": "Belum ada yang mengisi."
   },
   "credit": {
     "titlu": "Saldo saya",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "Catatan kosong.",
     "goalaText": "Bagus. Artinya tidak ada yang rusak.",
     "nota": "Disimpan {zile} hari atau {maxim} baris, mana yang lebih dulu. Alamat dipotong, dan kata sandi serta kunci tidak pernah ditulis."
+  },
+  "unitate": {
+    "mm": "milimeter",
+    "inch": "inci"
+  },
+  "profil": {
+    "atelier": "Bengkel mebel",
+    "tamplar": "Tukang kayu",
+    "designer": "Perancang",
+    "magazin": "Toko",
+    "amator": "Untuk diri sendiri, di rumah"
+  },
+  "cont": {
+    "titlu": "Akun saya",
+    "intro": "Apa yang aplikasi ketahui tentang Anda. Tidak ada yang wajib di sini selain e-mail.",
+    "salvat": "Tersimpan.",
+    "salveaza": "Simpan akun",
+    "preaLung": "Salah satu kolom terlalu panjang.",
+    "siteGresit": "Itu tidak tampak seperti alamat web.",
+    "legLocul": "Tempat dan satuan",
+    "legCine": "Siapa Anda — untuk lembar potong",
+    "legIntrare": "Masuk ke akun",
+    "tara": "Negara",
+    "taraNealeasa": "— belum dipilih —",
+    "unitate": "Satuan ukuran",
+    "unitateDupaTara": "Menurut negara ({unitate})",
+    "limba": "Bahasa",
+    "limbaDinBrowser": "Bahasa peramban",
+    "profil": "Apa pekerjaan Anda",
+    "profilNealeasa": "— belum dipilih —",
+    "notaUnitate": "Ukuran dihitung dan disimpan dalam milimeter. Satuan hanya mengubah apa yang tampil di layar dan satuan saat Anda mengisi ukuran.",
+    "propunere": "Peramban menyebut Anda di {tara}. Di sana orang bekerja dengan {unitate} — pilih negara agar sesuai.",
+    "nume": "Nama Anda",
+    "firma": "Bengkel atau perusahaan",
+    "firmaExemplu": "Mebel Jaya",
+    "cui": "NPWP / PPN",
+    "telefon": "Telepon",
+    "oras": "Kota",
+    "adresa": "Alamat",
+    "site": "Situs web",
+    "siteExemplu": "bengkelsaya.id",
+    "notaFoaie": "Yang Anda isi di sini muncul di bagian atas lembar yang dikirim untuk dipotong. Pemotong papan punya nomor yang bisa dihubungi bila ada ukuran yang tidak pas.",
+    "email": "E-mail",
+    "dinCand": "Akun sejak",
+    "notaEmail": "E-mail tidak diubah dari sini. Kirim pesan kepada kami dari kotak pesan bila perlu diubah."
   }
 }

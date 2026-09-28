@@ -44,7 +44,8 @@
     "administrare": "Administracija",
     "iesi": "Odjava",
     "autentificare": "Prijava",
-    "contNou": "Novi nalog"
+    "contNou": "Novi nalog",
+    "cont": "Račun"
   },
   "auth": {
     "autentificare": "Prijava",
@@ -60,7 +61,9 @@
     "numeOptional": "Ime (neobavezno)",
     "creeazaContul": "Napravi nalog",
     "aiDejaCont": "Već imaš nalog?",
-    "autentificaTe": "Prijavi se"
+    "autentificaTe": "Prijavi se",
+    "tara": "Zemlja",
+    "taraNota": "(od nje zavisi jedinica mere)"
   },
   "landing": {
     "titlu": "Kalkulator krojenja kantovane iverice",
@@ -148,7 +151,10 @@
     "cand": "Kada",
     "dePeUnde": "Odakle",
     "mesajText": "Poruka",
-    "jurnalLegatura": "Dnevnik"
+    "jurnalLegatura": "Dnevnik",
+    "dupaTara": "Po zemlji",
+    "dupaProfil": "Po zanatu",
+    "nimeniNuAZis": "Još niko nije naveo."
   },
   "credit": {
     "titlu": "Moj kredit",
@@ -1260,5 +1266,50 @@
     "goalaTitlu": "Dnevnik je prazan.",
     "goalaText": "Dobro. Znači da se ništa nije pokvarilo.",
     "nota": "Čuva se {zile} dana ili {maxim} redova, šta pre dođe. Adrese se skraćuju, a lozinke i ključevi se nikad ne upisuju."
+  },
+  "unitate": {
+    "mm": "milimetri",
+    "inch": "inči"
+  },
+  "profil": {
+    "atelier": "Stolarska radionica",
+    "tamplar": "Stolar",
+    "designer": "Projektant",
+    "magazin": "Prodavnica",
+    "amator": "Za sebe, kod kuće"
+  },
+  "cont": {
+    "titlu": "Moj račun",
+    "intro": "Šta aplikacija zna o tebi. Ništa ovde nije obavezno osim e-pošte.",
+    "salvat": "Sačuvano.",
+    "salveaza": "Sačuvaj račun",
+    "preaLung": "Jedno od polja je predugo.",
+    "siteGresit": "To ne izgleda kao veb adresa.",
+    "legLocul": "Mesto i jedinica",
+    "legCine": "Ko si — za list krojenja",
+    "legIntrare": "Prijava na račun",
+    "tara": "Zemlja",
+    "taraNealeasa": "— nije izabrana —",
+    "unitate": "Jedinica mere",
+    "unitateDupaTara": "Po zemlji ({unitate})",
+    "limba": "Jezik",
+    "limbaDinBrowser": "Jezik pregledača",
+    "profil": "Čime se baviš",
+    "profilNealeasa": "— nije izabrano —",
+    "notaUnitate": "Mere se računaju i čuvaju u milimetrima. Jedinica menja samo ono što se piše na ekranu i ono u čemu unosiš mere.",
+    "propunere": "Pregledač kaže da si u {tara}. Tamo se radi u {unitate} — izaberi zemlju da se poklopi.",
+    "nume": "Tvoje ime",
+    "firma": "Radionica ili firma",
+    "firmaExemplu": "Stolarija Jović d.o.o.",
+    "cui": "PIB",
+    "telefon": "Telefon",
+    "oras": "Grad",
+    "adresa": "Adresa",
+    "site": "Sajt",
+    "siteExemplu": "mojaradionica.rs",
+    "notaFoaie": "Ono što upišeš ovde izlazi na vrhu listova koji idu na krojenje. Onaj koji reže plotu ima broj da pozove ako se mera ne poklapa.",
+    "email": "E-pošta",
+    "dinCand": "Račun od",
+    "notaEmail": "E-pošta se odavde ne menja. Piši nam iz polja za poruke ako treba da se promeni."
   }
 }

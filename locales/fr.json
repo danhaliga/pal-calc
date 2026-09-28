@@ -44,7 +44,8 @@
     "administrare": "Administration",
     "iesi": "Se déconnecter",
     "autentificare": "Se connecter",
-    "contNou": "Nouveau compte"
+    "contNou": "Nouveau compte",
+    "cont": "Compte"
   },
   "auth": {
     "autentificare": "Connexion",
@@ -60,7 +61,9 @@
     "numeOptional": "Nom (facultatif)",
     "creeazaContul": "Créer le compte",
     "aiDejaCont": "Vous avez déjà un compte ?",
-    "autentificaTe": "Connectez-vous"
+    "autentificaTe": "Connectez-vous",
+    "tara": "Pays",
+    "taraNota": "(il détermine l'unité de mesure)"
   },
   "landing": {
     "titlu": "Calculateur de débit pour panneaux chantés",
@@ -148,7 +151,10 @@
     "cand": "Quand",
     "dePeUnde": "D’où",
     "mesajText": "Message",
-    "jurnalLegatura": "Journal"
+    "jurnalLegatura": "Journal",
+    "dupaTara": "Par pays",
+    "dupaProfil": "Par métier",
+    "nimeniNuAZis": "Personne ne l'a encore dit."
   },
   "credit": {
     "titlu": "Mon crédit",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "Le journal est vide.",
     "goalaText": "Tant mieux. Rien n’a cassé.",
     "nota": "Gardé {zile} jours ou {maxim} lignes, au premier des deux. Les adresses sont tronquées, et les mots de passe et clés ne sont jamais écrits."
+  },
+  "unitate": {
+    "mm": "millimètres",
+    "inch": "pouces"
+  },
+  "profil": {
+    "atelier": "Atelier de meubles",
+    "tamplar": "Menuisier",
+    "designer": "Concepteur",
+    "magazin": "Magasin",
+    "amator": "Pour moi, à la maison"
+  },
+  "cont": {
+    "titlu": "Mon compte",
+    "intro": "Ce que l'application sait de vous. Rien ici n'est obligatoire, sauf le courriel.",
+    "salvat": "Enregistré.",
+    "salveaza": "Enregistrer le compte",
+    "preaLung": "L'un des champs est trop long.",
+    "siteGresit": "Cela ne ressemble pas à une adresse web.",
+    "legLocul": "Le lieu et l'unité",
+    "legCine": "Qui vous êtes, pour la feuille de découpe",
+    "legIntrare": "Accès au compte",
+    "tara": "Pays",
+    "taraNealeasa": "— non choisi —",
+    "unitate": "Unité de mesure",
+    "unitateDupaTara": "Selon le pays ({unitate})",
+    "limba": "Langue",
+    "limbaDinBrowser": "Celle du navigateur",
+    "profil": "Ce que vous faites",
+    "profilNealeasa": "— non choisi —",
+    "notaUnitate": "Les cotes sont calculées et conservées en millimètres. L'unité ne change que ce qui s'affiche à l'écran et ce dans quoi vous saisissez les cotes.",
+    "propunere": "Le navigateur indique que vous êtes en {tara}. Là-bas on travaille en {unitate} — choisissez le pays pour que cela corresponde.",
+    "nume": "Votre nom",
+    "firma": "L'atelier ou l'entreprise",
+    "firmaExemplu": "Meubles Durand SARL",
+    "cui": "N° fiscal / TVA",
+    "telefon": "Téléphone",
+    "oras": "Ville",
+    "adresa": "Adresse",
+    "site": "Site web",
+    "siteExemplu": "monatelier.fr",
+    "notaFoaie": "Ce que vous remplissez ici figure en tête des feuilles qui partent à la découpe. Celui qui coupe le panneau a un numéro à appeler si une cote ne tombe pas juste.",
+    "email": "Courriel",
+    "dinCand": "Compte depuis",
+    "notaEmail": "Le courriel ne se change pas ici. Écrivez-nous depuis la boîte à messages s'il doit être changé."
   }
 }

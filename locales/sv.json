@@ -44,7 +44,8 @@
     "administrare": "Administration",
     "iesi": "Logga ut",
     "autentificare": "Logga in",
-    "contNou": "Nytt konto"
+    "contNou": "Nytt konto",
+    "cont": "Konto"
   },
   "auth": {
     "autentificare": "Inloggning",
@@ -60,7 +61,9 @@
     "numeOptional": "Namn (valfritt)",
     "creeazaContul": "Skapa kontot",
     "aiDejaCont": "Har du redan ett konto?",
-    "autentificaTe": "Logga in"
+    "autentificaTe": "Logga in",
+    "tara": "Land",
+    "taraNota": "(bestämmer måttenheten)"
   },
   "landing": {
     "titlu": "Kapkalkylator för kantlistad spånskiva",
@@ -148,7 +151,10 @@
     "cand": "När",
     "dePeUnde": "Varifrån",
     "mesajText": "Meddelande",
-    "jurnalLegatura": "Logg"
+    "jurnalLegatura": "Logg",
+    "dupaTara": "Per land",
+    "dupaProfil": "Per yrke",
+    "nimeniNuAZis": "Ingen har uppgett det ännu."
   },
   "credit": {
     "titlu": "Mitt saldo",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "Loggen är tom.",
     "goalaText": "Bra. Det betyder att inget gick sönder.",
     "nota": "Sparas {zile} dagar eller {maxim} rader, vilket som kommer först. Adresser kortas av, och lösenord och nycklar skrivs aldrig."
+  },
+  "unitate": {
+    "mm": "millimeter",
+    "inch": "tum"
+  },
+  "profil": {
+    "atelier": "Möbelverkstad",
+    "tamplar": "Snickare",
+    "designer": "Formgivare",
+    "magazin": "Butik",
+    "amator": "För mig själv, hemma"
+  },
+  "cont": {
+    "titlu": "Mitt konto",
+    "intro": "Vad appen vet om dig. Inget här är obligatoriskt utom e-postadressen.",
+    "salvat": "Sparat.",
+    "salveaza": "Spara kontot",
+    "preaLung": "Ett av fälten är för långt.",
+    "siteGresit": "Det ser inte ut som en webbadress.",
+    "legLocul": "Plats och enhet",
+    "legCine": "Vem du är — för kaplistan",
+    "legIntrare": "Inloggning",
+    "tara": "Land",
+    "taraNealeasa": "— inte valt —",
+    "unitate": "Måttenhet",
+    "unitateDupaTara": "Efter landet ({unitate})",
+    "limba": "Språk",
+    "limbaDinBrowser": "Webbläsarens",
+    "profil": "Vad du gör",
+    "profilNealeasa": "— inte valt —",
+    "notaUnitate": "Måtten räknas och sparas i millimeter. Enheten ändrar bara vad som står på skärmen och vad du skriver måtten i.",
+    "propunere": "Webbläsaren säger att du är i {tara}. Där arbetar man i {unitate} — välj land så att det stämmer.",
+    "nume": "Ditt namn",
+    "firma": "Verkstaden eller företaget",
+    "firmaExemplu": "Möbelsnickeri Andersson AB",
+    "cui": "Organisationsnummer / moms",
+    "telefon": "Telefon",
+    "oras": "Ort",
+    "adresa": "Adress",
+    "site": "Webbplats",
+    "siteExemplu": "minverkstad.se",
+    "notaFoaie": "Det du fyller i här hamnar högst upp på de lappar som går till kapning. Den som sågar skivan har ett nummer att ringa när ett mått inte stämmer.",
+    "email": "E-post",
+    "dinCand": "Konto sedan",
+    "notaEmail": "E-postadressen ändras inte härifrån. Skriv till oss via meddelanderutan om den behöver ändras."
   }
 }

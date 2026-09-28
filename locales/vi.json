@@ -44,7 +44,8 @@
     "administrare": "Quản trị",
     "iesi": "Đăng xuất",
     "autentificare": "Đăng nhập",
-    "contNou": "Tài khoản mới"
+    "contNou": "Tài khoản mới",
+    "cont": "Tài khoản"
   },
   "auth": {
     "autentificare": "Đăng nhập",
@@ -60,7 +61,9 @@
     "numeOptional": "Tên (không bắt buộc)",
     "creeazaContul": "Tạo tài khoản",
     "aiDejaCont": "Đã có tài khoản?",
-    "autentificaTe": "Đăng nhập"
+    "autentificaTe": "Đăng nhập",
+    "tara": "Quốc gia",
+    "taraNota": "(đơn vị đo phụ thuộc vào đây)"
   },
   "landing": {
     "titlu": "Máy tính cắt ván dăm đã dán chỉ cạnh",
@@ -148,7 +151,10 @@
     "cand": "Khi nào",
     "dePeUnde": "Từ đâu",
     "mesajText": "Tin nhắn",
-    "jurnalLegatura": "Nhật ký"
+    "jurnalLegatura": "Nhật ký",
+    "dupaTara": "Theo quốc gia",
+    "dupaProfil": "Theo nghề",
+    "nimeniNuAZis": "Chưa ai cho biết."
   },
   "credit": {
     "titlu": "Số dư của tôi",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "Nhật ký trống.",
     "goalaText": "Tốt. Nghĩa là không có gì hỏng.",
     "nota": "Giữ {zile} ngày hoặc {maxim} dòng, cái nào đến trước. Địa chỉ bị cắt bớt, còn mật khẩu và khóa thì không bao giờ được ghi."
+  },
+  "unitate": {
+    "mm": "milimét",
+    "inch": "inch"
+  },
+  "profil": {
+    "atelier": "Xưởng nội thất",
+    "tamplar": "Thợ mộc",
+    "designer": "Người thiết kế",
+    "magazin": "Cửa hàng",
+    "amator": "Cho tôi, ở nhà"
+  },
+  "cont": {
+    "titlu": "Tài khoản của tôi",
+    "intro": "Những gì ứng dụng biết về bạn. Không có gì ở đây là bắt buộc, ngoài e-mail.",
+    "salvat": "Đã lưu.",
+    "salveaza": "Lưu tài khoản",
+    "preaLung": "Một ô nhập quá dài.",
+    "siteGresit": "Đây không giống một địa chỉ web.",
+    "legLocul": "Nơi ở và đơn vị đo",
+    "legCine": "Bạn là ai — cho phiếu cắt",
+    "legIntrare": "Đăng nhập",
+    "tara": "Quốc gia",
+    "taraNealeasa": "— chưa chọn —",
+    "unitate": "Đơn vị đo",
+    "unitateDupaTara": "Theo quốc gia ({unitate})",
+    "limba": "Ngôn ngữ",
+    "limbaDinBrowser": "Của trình duyệt",
+    "profil": "Bạn làm gì",
+    "profilNealeasa": "— chưa chọn —",
+    "notaUnitate": "Kích thước được tính và lưu bằng milimét. Đơn vị chỉ thay đổi những gì hiện trên màn hình và đơn vị bạn nhập kích thước.",
+    "propunere": "Trình duyệt nói bạn đang ở {tara}. Ở đó người ta làm việc bằng {unitate} — hãy chọn quốc gia cho khớp.",
+    "nume": "Tên của bạn",
+    "firma": "Xưởng hoặc công ty",
+    "firmaExemplu": "Nội thất Minh Anh",
+    "cui": "Mã số thuế",
+    "telefon": "Điện thoại",
+    "oras": "Thành phố",
+    "adresa": "Địa chỉ",
+    "site": "Trang web",
+    "siteExemplu": "xuongcuatoi.vn",
+    "notaFoaie": "Những gì bạn ghi ở đây sẽ nằm trên đầu các phiếu đưa đi cắt. Người cắt tấm ván có số điện thoại để gọi khi một kích thước không khớp.",
+    "email": "E-mail",
+    "dinCand": "Tài khoản từ",
+    "notaEmail": "E-mail không đổi được ở đây. Hãy viết cho chúng tôi qua hộp tin nhắn nếu cần đổi."
   }
 }

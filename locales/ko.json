@@ -44,7 +44,8 @@
     "administrare": "관리",
     "iesi": "로그아웃",
     "autentificare": "로그인",
-    "contNou": "회원가입"
+    "contNou": "회원가입",
+    "cont": "계정"
   },
   "auth": {
     "autentificare": "로그인",
@@ -60,7 +61,9 @@
     "numeOptional": "이름 (선택)",
     "creeazaContul": "계정 만들기",
     "aiDejaCont": "이미 계정이 있으세요?",
-    "autentificaTe": "로그인하세요"
+    "autentificaTe": "로그인하세요",
+    "tara": "국가",
+    "taraNota": "(측정 단위가 여기서 정해집니다)"
   },
   "landing": {
     "titlu": "엣지 붙인 파티클보드 재단 계산기",
@@ -148,7 +151,10 @@
     "cand": "언제",
     "dePeUnde": "어디서",
     "mesajText": "메시지",
-    "jurnalLegatura": "기록"
+    "jurnalLegatura": "기록",
+    "dupaTara": "국가별",
+    "dupaProfil": "직종별",
+    "nimeniNuAZis": "아직 아무도 적지 않았습니다."
   },
   "credit": {
     "titlu": "내 잔액",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "기록이 비어 있습니다.",
     "goalaText": "좋습니다. 아무것도 깨지지 않았다는 뜻입니다.",
     "nota": "{zile}일 또는 {maxim}줄 중 먼저 오는 쪽까지 보관합니다. 주소는 잘라내고, 비밀번호와 키는 절대 적지 않습니다."
+  },
+  "unitate": {
+    "mm": "밀리미터",
+    "inch": "인치"
+  },
+  "profil": {
+    "atelier": "가구 공방",
+    "tamplar": "목공",
+    "designer": "설계자",
+    "magazin": "판매점",
+    "amator": "집에서, 개인용"
+  },
+  "cont": {
+    "titlu": "내 계정",
+    "intro": "앱이 알고 있는 내 정보입니다. 이메일 외에는 필수 항목이 없습니다.",
+    "salvat": "저장했습니다.",
+    "salveaza": "계정 저장",
+    "preaLung": "한 항목이 너무 깁니다.",
+    "siteGresit": "웹 주소처럼 보이지 않습니다.",
+    "legLocul": "위치와 단위",
+    "legCine": "내 정보 — 재단 목록용",
+    "legIntrare": "로그인 정보",
+    "tara": "국가",
+    "taraNealeasa": "— 선택 안 함 —",
+    "unitate": "측정 단위",
+    "unitateDupaTara": "국가에 따름 ({unitate})",
+    "limba": "언어",
+    "limbaDinBrowser": "브라우저 언어",
+    "profil": "하시는 일",
+    "profilNealeasa": "— 선택 안 함 —",
+    "notaUnitate": "치수는 밀리미터로 계산하고 밀리미터로 저장합니다. 단위는 화면에 표시되는 방식과 입력하는 방식만 바꿉니다.",
+    "propunere": "브라우저에 따르면 {tara}에 계십니다. 그곳에서는 {unitate}로 작업합니다 — 맞도록 국가를 선택하세요.",
+    "nume": "이름",
+    "firma": "공방 또는 회사",
+    "firmaExemplu": "김씨 가구",
+    "cui": "사업자 번호",
+    "telefon": "전화",
+    "oras": "도시",
+    "adresa": "주소",
+    "site": "웹사이트",
+    "siteExemplu": "nagongbang.kr",
+    "notaFoaie": "여기에 적은 내용은 재단하러 나가는 용지 맨 위에 나옵니다. 판을 자르는 사람은 치수가 맞지 않을 때 연락할 번호를 알게 됩니다.",
+    "email": "이메일",
+    "dinCand": "가입일",
+    "notaEmail": "이메일은 여기서 바꿀 수 없습니다. 변경이 필요하면 메시지 상자로 알려 주세요."
   }
 }

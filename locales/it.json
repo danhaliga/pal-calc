@@ -44,7 +44,8 @@
     "administrare": "Amministrazione",
     "iesi": "Esci",
     "autentificare": "Accedi",
-    "contNou": "Nuovo account"
+    "contNou": "Nuovo account",
+    "cont": "Account"
   },
   "auth": {
     "autentificare": "Accesso",
@@ -60,7 +61,9 @@
     "numeOptional": "Nome (facoltativo)",
     "creeazaContul": "Crea l'account",
     "aiDejaCont": "Hai già un account?",
-    "autentificaTe": "Accedi"
+    "autentificaTe": "Accedi",
+    "tara": "Paese",
+    "taraNota": "(da esso dipende l’unità di misura)"
   },
   "landing": {
     "titlu": "Calcolatore di taglio per pannelli bordati",
@@ -148,7 +151,10 @@
     "cand": "Quando",
     "dePeUnde": "Da dove",
     "mesajText": "Messaggio",
-    "jurnalLegatura": "Registro"
+    "jurnalLegatura": "Registro",
+    "dupaTara": "Per paese",
+    "dupaProfil": "Per mestiere",
+    "nimeniNuAZis": "Nessuno lo ha ancora indicato."
   },
   "credit": {
     "titlu": "Il mio credito",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "Il registro è vuoto.",
     "goalaText": "Meglio così. Vuol dire che non si è rotto niente.",
     "nota": "Si tiene {zile} giorni o {maxim} righe, quello che viene prima. Gli indirizzi sono troncati, e password e chiavi non si scrivono mai."
+  },
+  "unitate": {
+    "mm": "millimetri",
+    "inch": "pollici"
+  },
+  "profil": {
+    "atelier": "Falegnameria",
+    "tamplar": "Falegname",
+    "designer": "Progettista",
+    "magazin": "Negozio",
+    "amator": "Per me, a casa"
+  },
+  "cont": {
+    "titlu": "Il mio account",
+    "intro": "Ciò che l'applicazione sa di te. Niente qui è obbligatorio, tranne l'e-mail.",
+    "salvat": "Salvato.",
+    "salveaza": "Salva l'account",
+    "preaLung": "Uno dei campi è troppo lungo.",
+    "siteGresit": "Non sembra un indirizzo web.",
+    "legLocul": "Il luogo e l’unità",
+    "legCine": "Chi sei, per il foglio di taglio",
+    "legIntrare": "Accesso all'account",
+    "tara": "Paese",
+    "taraNealeasa": "— non scelto —",
+    "unitate": "Unità di misura",
+    "unitateDupaTara": "Secondo il paese ({unitate})",
+    "limba": "Lingua",
+    "limbaDinBrowser": "Quella del browser",
+    "profil": "Che cosa fai",
+    "profilNealeasa": "— non scelto —",
+    "notaUnitate": "Le quote si calcolano e si conservano in millimetri. L'unità cambia solo ciò che compare sullo schermo e ciò in cui inserisci le quote.",
+    "propunere": "Il browser dice che sei in {tara}. Là si lavora in {unitate} — scegli il paese perché corrisponda.",
+    "nume": "Il tuo nome",
+    "firma": "La falegnameria o la ditta",
+    "firmaExemplu": "Mobili Rossi S.r.l.",
+    "cui": "Partita IVA",
+    "telefon": "Telefono",
+    "oras": "Città",
+    "adresa": "Indirizzo",
+    "site": "Sito web",
+    "siteExemplu": "miafalegnameria.it",
+    "notaFoaie": "Quello che compili qui finisce in testa ai fogli che vanno al taglio. Chi taglia il pannello ha un numero da chiamare se una quota non torna.",
+    "email": "E-mail",
+    "dinCand": "Account dal",
+    "notaEmail": "L'e-mail non si cambia da qui. Scrivici dalla casella dei messaggi se va cambiata."
   }
 }

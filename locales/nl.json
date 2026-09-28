@@ -44,7 +44,8 @@
     "administrare": "Beheer",
     "iesi": "Uitloggen",
     "autentificare": "Inloggen",
-    "contNou": "Nieuw account"
+    "contNou": "Nieuw account",
+    "cont": "Account"
   },
   "auth": {
     "autentificare": "Inloggen",
@@ -60,7 +61,9 @@
     "numeOptional": "Naam (optioneel)",
     "creeazaContul": "Account aanmaken",
     "aiDejaCont": "Heb je al een account?",
-    "autentificaTe": "Log in"
+    "autentificaTe": "Log in",
+    "tara": "Land",
+    "taraNota": "(bepaalt de maateenheid)"
   },
   "landing": {
     "titlu": "Zaagrekenmachine voor spaanplaat met kantenband",
@@ -148,7 +151,10 @@
     "cand": "Wanneer",
     "dePeUnde": "Vanwaar",
     "mesajText": "Bericht",
-    "jurnalLegatura": "Logboek"
+    "jurnalLegatura": "Logboek",
+    "dupaTara": "Per land",
+    "dupaProfil": "Per vak",
+    "nimeniNuAZis": "Nog niemand heeft het opgegeven."
   },
   "credit": {
     "titlu": "Mijn tegoed",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "Het logboek is leeg.",
     "goalaText": "Mooi. Er is niets stukgegaan.",
     "nota": "Blijft {zile} dagen of {maxim} regels, wat het eerst komt. Adressen worden ingekort, en wachtwoorden en sleutels komen er nooit in."
+  },
+  "unitate": {
+    "mm": "millimeter",
+    "inch": "inch"
+  },
+  "profil": {
+    "atelier": "Meubelwerkplaats",
+    "tamplar": "Schrijnwerker",
+    "designer": "Ontwerper",
+    "magazin": "Winkel",
+    "amator": "Voor mezelf, thuis"
+  },
+  "cont": {
+    "titlu": "Mijn account",
+    "intro": "Wat de app over je weet. Niets hiervan is verplicht, behalve het e-mailadres.",
+    "salvat": "Opgeslagen.",
+    "salveaza": "Account opslaan",
+    "preaLung": "Een van de velden is te lang.",
+    "siteGresit": "Dat lijkt geen webadres.",
+    "legLocul": "Plaats en maateenheid",
+    "legCine": "Wie je bent — voor het zaagbriefje",
+    "legIntrare": "Aanmelden",
+    "tara": "Land",
+    "taraNealeasa": "— niet gekozen —",
+    "unitate": "Maateenheid",
+    "unitateDupaTara": "Volgens het land ({unitate})",
+    "limba": "Taal",
+    "limbaDinBrowser": "Die van de browser",
+    "profil": "Wat je doet",
+    "profilNealeasa": "— niet gekozen —",
+    "notaUnitate": "Maten worden in millimeters gerekend en in millimeters bewaard. De eenheid verandert alleen wat op het scherm staat en waarin je de maten invoert.",
+    "propunere": "De browser zegt dat je in {tara} bent. Daar wordt in {unitate} gewerkt — kies het land zodat het klopt.",
+    "nume": "Je naam",
+    "firma": "Werkplaats of bedrijf",
+    "firmaExemplu": "Meubelmakerij De Jong BV",
+    "cui": "Btw-nummer",
+    "telefon": "Telefoon",
+    "oras": "Plaats",
+    "adresa": "Adres",
+    "site": "Website",
+    "siteExemplu": "mijnwerkplaats.nl",
+    "notaFoaie": "Wat je hier invult, komt boven op de briefjes die naar het zagen gaan. Wie de plaat zaagt, heeft een nummer om te bellen als een maat niet uitkomt.",
+    "email": "E-mail",
+    "dinCand": "Account sinds",
+    "notaEmail": "Het e-mailadres verandert hier niet. Schrijf ons via het berichtenvak als het gewijzigd moet worden."
   }
 }

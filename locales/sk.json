@@ -44,7 +44,8 @@
     "administrare": "Správa",
     "iesi": "Odhlásiť",
     "autentificare": "Prihlásiť sa",
-    "contNou": "Nový účet"
+    "contNou": "Nový účet",
+    "cont": "Konto"
   },
   "auth": {
     "autentificare": "Prihlásenie",
@@ -60,7 +61,9 @@
     "numeOptional": "Meno (nepovinné)",
     "creeazaContul": "Založiť účet",
     "aiDejaCont": "Už máš účet?",
-    "autentificaTe": "Prihlás sa"
+    "autentificaTe": "Prihlás sa",
+    "tara": "Krajina",
+    "taraNota": "(určuje jednotku miery)"
   },
   "landing": {
     "titlu": "Kalkulačka rezania olepenej drevotriesky",
@@ -148,7 +151,10 @@
     "cand": "Kedy",
     "dePeUnde": "Odkiaľ",
     "mesajText": "Správa",
-    "jurnalLegatura": "Denník"
+    "jurnalLegatura": "Denník",
+    "dupaTara": "Podľa krajiny",
+    "dupaProfil": "Podľa remesla",
+    "nimeniNuAZis": "Nikto to ešte neuviedol."
   },
   "credit": {
     "titlu": "Môj kredit",
@@ -1260,5 +1266,50 @@
     "goalaTitlu": "Denník je prázdny.",
     "goalaText": "Dobre. Znamená to, že sa nič nepokazilo.",
     "nota": "Drží sa {zile} dní alebo {maxim} riadkov, čo príde skôr. Adresy sa skracujú, heslá a kľúče sa nezapisujú nikdy."
+  },
+  "unitate": {
+    "mm": "milimetre",
+    "inch": "palce"
+  },
+  "profil": {
+    "atelier": "Nábytkárska dielňa",
+    "tamplar": "Stolár",
+    "designer": "Projektant",
+    "magazin": "Predajňa",
+    "amator": "Pre seba, doma"
+  },
+  "cont": {
+    "titlu": "Moje konto",
+    "intro": "Čo o tebe aplikácia vie. Nič tu nie je povinné okrem e-mailu.",
+    "salvat": "Uložené.",
+    "salveaza": "Uložiť konto",
+    "preaLung": "Jedno z polí je príliš dlhé.",
+    "siteGresit": "To nevypadá ako webová adresa.",
+    "legLocul": "Miesto a jednotka",
+    "legCine": "Kto si — pre nárezový plán",
+    "legIntrare": "Prihlásenie",
+    "tara": "Krajina",
+    "taraNealeasa": "— nevybrané —",
+    "unitate": "Jednotka miery",
+    "unitateDupaTara": "Podľa krajiny ({unitate})",
+    "limba": "Jazyk",
+    "limbaDinBrowser": "Jazyk prehliadača",
+    "profil": "Čím sa zaoberáš",
+    "profilNealeasa": "— nevybrané —",
+    "notaUnitate": "Rozmery sa počítajú a ukladajú v milimetroch. Jednotka mení len to, čo je napísané na obrazovke, a to, v čom rozmery zadávaš.",
+    "propunere": "Prehliadač hovorí, že si v {tara}. Tam sa pracuje v {unitate} — vyber krajinu, aby to sedelo.",
+    "nume": "Tvoje meno",
+    "firma": "Dielňa alebo firma",
+    "firmaExemplu": "Nábytok Horváth s.r.o.",
+    "cui": "DIČ",
+    "telefon": "Telefón",
+    "oras": "Mesto",
+    "adresa": "Adresa",
+    "site": "Web",
+    "siteExemplu": "mojadielna.sk",
+    "notaFoaie": "Čo tu vyplníš, sa objaví v hlavičke listov, ktoré idú na nárez. Ten, kto reže plát, má číslo, kam zavolať, keď rozmer nesedí.",
+    "email": "E-mail",
+    "dinCand": "Konto od",
+    "notaEmail": "E-mail sa odtiaľto nemení. Napíš nám cez okno správ, ak sa má zmeniť."
   }
 }

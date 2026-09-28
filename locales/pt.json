@@ -44,7 +44,8 @@
     "administrare": "Administração",
     "iesi": "Sair",
     "autentificare": "Entrar",
-    "contNou": "Conta nova"
+    "contNou": "Conta nova",
+    "cont": "Conta"
   },
   "auth": {
     "autentificare": "Entrar",
@@ -60,7 +61,9 @@
     "numeOptional": "Nome (opcional)",
     "creeazaContul": "Criar a conta",
     "aiDejaCont": "Já tens conta?",
-    "autentificaTe": "Entra"
+    "autentificaTe": "Entra",
+    "tara": "País",
+    "taraNota": "(dele depende a unidade de medida)"
   },
   "landing": {
     "titlu": "Calculadora de corte para aglomerado com orla",
@@ -148,7 +151,10 @@
     "cand": "Quando",
     "dePeUnde": "De onde",
     "mesajText": "Mensagem",
-    "jurnalLegatura": "Registo"
+    "jurnalLegatura": "Registo",
+    "dupaTara": "Por país",
+    "dupaProfil": "Por ofício",
+    "nimeniNuAZis": "Ainda ninguém disse."
   },
   "credit": {
     "titlu": "O meu crédito",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "O registo está vazio.",
     "goalaText": "Ainda bem. Quer dizer que nada se partiu.",
     "nota": "Guarda-se {zile} dias ou {maxim} linhas, o que vier primeiro. Os endereços são truncados, e as palavras-passe e chaves nunca são escritas."
+  },
+  "unitate": {
+    "mm": "milímetros",
+    "inch": "polegadas"
+  },
+  "profil": {
+    "atelier": "Oficina de móveis",
+    "tamplar": "Carpinteiro",
+    "designer": "Projetista",
+    "magazin": "Loja",
+    "amator": "Para mim, em casa"
+  },
+  "cont": {
+    "titlu": "Minha conta",
+    "intro": "O que a aplicação sabe sobre você. Nada aqui é obrigatório, além do e-mail.",
+    "salvat": "Guardado.",
+    "salveaza": "Guardar a conta",
+    "preaLung": "Um dos campos é demasiado longo.",
+    "siteGresit": "Isso não parece um endereço de web.",
+    "legLocul": "O lugar e a unidade",
+    "legCine": "Quem você é, para a folha de corte",
+    "legIntrare": "Entrada na conta",
+    "tara": "País",
+    "taraNealeasa": "— não escolhido —",
+    "unitate": "Unidade de medida",
+    "unitateDupaTara": "Conforme o país ({unitate})",
+    "limba": "Idioma",
+    "limbaDinBrowser": "O do navegador",
+    "profil": "O que você faz",
+    "profilNealeasa": "— não escolhido —",
+    "notaUnitate": "As medidas são calculadas e guardadas em milímetros. A unidade muda apenas o que aparece no ecrã e aquilo em que você escreve as medidas.",
+    "propunere": "O navegador diz que você está em {tara}. Ali trabalha-se em {unitate} — escolha o país para que corresponda.",
+    "nume": "O seu nome",
+    "firma": "A oficina ou a empresa",
+    "firmaExemplu": "Móveis Silva Lda.",
+    "cui": "NIF / IVA",
+    "telefon": "Telefone",
+    "oras": "Cidade",
+    "adresa": "Endereço",
+    "site": "Site",
+    "siteExemplu": "minhaoficina.pt",
+    "notaFoaie": "O que você preencher aqui sai no topo das folhas que vão para o corte. Quem corta a placa tem um número para ligar se uma medida não encaixar.",
+    "email": "E-mail",
+    "dinCand": "Conta desde",
+    "notaEmail": "O e-mail não se muda daqui. Escreva-nos pela caixa de mensagens se for preciso mudá-lo."
   }
 }

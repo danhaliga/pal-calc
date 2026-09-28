@@ -44,6 +44,17 @@
     </div>
   </div>
   <div class="doc-meta">
+    <%# Atelierul, sus pe foaie. Foaia asta pleaca la cel care taie palul:
+        acolo trebuie sa scrie al cui e corpul si pe ce numar se suna daca o
+        cota nu se potriveste. Pana acum nu scria nimic. %>
+    <% if (capFoaie) { %>
+      <div class="doc-atelier">
+        <b><%= capFoaie.nume %></b>
+        <% if (capFoaie.oras) { %> · <%= capFoaie.oras %><% } %>
+        <% if (capFoaie.telefon) { %> · <%= capFoaie.telefon %><% } %>
+        <% if (capFoaie.cui) { %><br><span class="muted"><%= capFoaie.cui %></span><% } %>
+      </div>
+    <% } %>
     <div><%= t('print.comandaNr', { id: order.id }) %></div>
     <div><%= order.created_at.slice(0, 10) %></div>
     <%# Livrarea si telefonul intra pe fiecare foaie care pleaca in atelier:

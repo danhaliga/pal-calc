@@ -25,6 +25,10 @@ body.doc {
 .doc-sub b { color: var(--ink); }
 .doc-meta { text-align: right; font-size: 12.5px; }
 .doc-meta b { font-family: "IBM Plex Mono", monospace; }
+/* Atelierul, sus pe foaie. Se desprinde de restul capului cu o linie
+   subtire: e alt fel de informatie decat numarul comenzii si data. */
+.doc-atelier { padding-bottom: 5px; margin-bottom: 5px; border-bottom: 1px solid var(--line); }
+.doc-atelier b { font-family: inherit; }
 
 .doc-foot {
   margin-top: 24px; padding-top: 10px; border-top: 1px solid var(--line);

@@ -10,6 +10,18 @@
       <label><%= t('auth.email') %>
         <input type="email" name="email" required autocomplete="email" value="<%= values.email || '' %>">
       </label>
+      <%# Tara vine deja completata din antetul browserului. E aici, si nu pe
+          pagina contului, fiindca de ea atarna unitatea de masura: un atelier
+          american care deseneaza primul corp in milimetri se uita la
+          aplicatie ca la una strina. %>
+      <label><%= t('auth.tara') %> <span class="muted"><%= t('auth.taraNota') %></span>
+        <select name="tara" autocomplete="country">
+          <option value=""><%= t('cont.taraNealeasa') %></option>
+          <% tari.forEach(function (x) { %>
+            <option value="<%= x.cod %>" <%= taraAleasa === x.cod ? 'selected' : '' %>><%= x.nume %></option>
+          <% }); %>
+        </select>
+      </label>
       <label><%= t('auth.parola') %> <span class="muted"><%= t('auth.minimCaractere', { n: 8 }) %></span>
         <input type="password" name="password" required minlength="8" autocomplete="new-password">
       </label>

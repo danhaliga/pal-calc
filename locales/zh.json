@@ -44,7 +44,8 @@
     "administrare": "后台管理",
     "iesi": "退出",
     "autentificare": "登录",
-    "contNou": "注册账号"
+    "contNou": "注册账号",
+    "cont": "账户"
   },
   "auth": {
     "autentificare": "登录",
@@ -60,7 +61,9 @@
     "numeOptional": "姓名（可不填）",
     "creeazaContul": "创建账号",
     "aiDejaCont": "已经有账号了？",
-    "autentificaTe": "去登录"
+    "autentificaTe": "去登录",
+    "tara": "国家或地区",
+    "taraNota": "（决定计量单位）"
   },
   "landing": {
     "titlu": "封边刨花板开料计算器",
@@ -148,7 +151,10 @@
     "cand": "什么时候",
     "dePeUnde": "从哪页",
     "mesajText": "消息",
-    "jurnalLegatura": "日志"
+    "jurnalLegatura": "日志",
+    "dupaTara": "按国家或地区",
+    "dupaProfil": "按行业",
+    "nimeniNuAZis": "还没有人填写。"
   },
   "credit": {
     "titlu": "我的余额",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "日志是空的。",
     "goalaText": "挺好，说明什么都没坏。",
     "nota": "保留 {zile} 天或 {maxim} 条，以先到者为准。地址会被截断，密码和密钥从不写入。"
+  },
+  "unitate": {
+    "mm": "毫米",
+    "inch": "英寸"
+  },
+  "profil": {
+    "atelier": "家具工厂",
+    "tamplar": "木工",
+    "designer": "设计师",
+    "magazin": "零售商",
+    "amator": "自用，家庭"
+  },
+  "cont": {
+    "titlu": "我的账户",
+    "intro": "应用了解你的信息。除电子邮件外，这里没有必填项。",
+    "salvat": "已保存。",
+    "salveaza": "保存账户",
+    "preaLung": "有一个字段太长。",
+    "siteGresit": "这看起来不像网址。",
+    "legLocul": "所在地与单位",
+    "legCine": "你的信息，用于开料单",
+    "legIntrare": "登录信息",
+    "tara": "国家或地区",
+    "taraNealeasa": "— 未选择 —",
+    "unitate": "计量单位",
+    "unitateDupaTara": "按国家或地区（{unitate}）",
+    "limba": "语言",
+    "limbaDinBrowser": "跟随浏览器",
+    "profil": "你从事什么",
+    "profilNealeasa": "— 未选择 —",
+    "notaUnitate": "所有尺寸都以毫米计算并以毫米保存。单位只改变屏幕上的显示方式以及你输入尺寸时使用的单位。",
+    "propunere": "浏览器显示你在{tara}。当地行业使用{unitate} — 请选择国家或地区以便匹配。",
+    "nume": "你的姓名",
+    "firma": "工厂或公司",
+    "firmaExemplu": "示例家具有限公司",
+    "cui": "税号 / 增值税号",
+    "telefon": "电话",
+    "oras": "城市",
+    "adresa": "地址",
+    "site": "网站",
+    "siteExemplu": "mygongchang.com",
+    "notaFoaie": "你在这里填写的内容会出现在送去开料的单子顶部。切板的人遇到尺寸不合时就有电话可打。",
+    "email": "电子邮件",
+    "dinCand": "注册时间",
+    "notaEmail": "电子邮件不能在这里更改。如需更改，请通过留言框联系我们。"
   }
 }

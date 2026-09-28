@@ -44,7 +44,8 @@
     "administrare": "管理",
     "iesi": "ログアウト",
     "autentificare": "ログイン",
-    "contNou": "新規登録"
+    "contNou": "新規登録",
+    "cont": "アカウント"
   },
   "auth": {
     "autentificare": "ログイン",
@@ -60,7 +61,9 @@
     "numeOptional": "名前（任意）",
     "creeazaContul": "アカウントを作る",
     "aiDejaCont": "もうアカウントがある？",
-    "autentificaTe": "ログインする"
+    "autentificaTe": "ログインする",
+    "tara": "国",
+    "taraNota": "（測定単位はここで決まります）"
   },
   "landing": {
     "titlu": "木口テープ付きパーティクルボードのカット計算",
@@ -148,7 +151,10 @@
     "cand": "いつ",
     "dePeUnde": "どこから",
     "mesajText": "メッセージ",
-    "jurnalLegatura": "記録"
+    "jurnalLegatura": "記録",
+    "dupaTara": "国ごと",
+    "dupaProfil": "職種ごと",
+    "nimeniNuAZis": "まだ誰も記入していません。"
   },
   "credit": {
     "titlu": "残高",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "記録は空です。",
     "goalaText": "けっこうです。何も壊れていないということです。",
     "nota": "{zile} 日または {maxim} 行のうち、先に来たほうまで残します。アドレスは切り詰め、パスワードや鍵は決して書きません。"
+  },
+  "unitate": {
+    "mm": "ミリメートル",
+    "inch": "インチ"
+  },
+  "profil": {
+    "atelier": "家具工房",
+    "tamplar": "木工職人",
+    "designer": "設計者",
+    "magazin": "販売店",
+    "amator": "自分用、自宅で"
+  },
+  "cont": {
+    "titlu": "マイアカウント",
+    "intro": "アプリが知っているあなたの情報です。メールアドレス以外は必須ではありません。",
+    "salvat": "保存しました。",
+    "salveaza": "アカウントを保存",
+    "preaLung": "入力が長すぎる項目があります。",
+    "siteGresit": "ウェブアドレスのようには見えません。",
+    "legLocul": "場所と単位",
+    "legCine": "あなたの情報（木取り表用）",
+    "legIntrare": "ログイン情報",
+    "tara": "国",
+    "taraNealeasa": "— 未選択 —",
+    "unitate": "測定単位",
+    "unitateDupaTara": "国に合わせる（{unitate}）",
+    "limba": "言語",
+    "limbaDinBrowser": "ブラウザの言語",
+    "profil": "お仕事",
+    "profilNealeasa": "— 未選択 —",
+    "notaUnitate": "寸法はミリメートルで計算し、ミリメートルで保存します。単位は画面の表示と入力のしかただけを変えます。",
+    "propunere": "ブラウザによると{tara}にいるようです。そこでは{unitate}で作業します — 合うように国を選んでください。",
+    "nume": "お名前",
+    "firma": "工房または会社",
+    "firmaExemplu": "山田家具製作所",
+    "cui": "事業者番号",
+    "telefon": "電話",
+    "oras": "市区町村",
+    "adresa": "住所",
+    "site": "ウェブサイト",
+    "siteExemplu": "watashinokoubou.jp",
+    "notaFoaie": "ここに書いた内容は、木取りに出す用紙の上部に出ます。板を切る人は、寸法が合わないときにかける番号が分かります。",
+    "email": "メールアドレス",
+    "dinCand": "登録日",
+    "notaEmail": "メールアドレスはここでは変更できません。変更が必要なときはメッセージ欄からご連絡ください。"
   }
 }

@@ -44,7 +44,8 @@
     "administrare": "Verwaltung",
     "iesi": "Abmelden",
     "autentificare": "Anmelden",
-    "contNou": "Neues Konto"
+    "contNou": "Neues Konto",
+    "cont": "Konto"
   },
   "auth": {
     "autentificare": "Anmelden",
@@ -60,7 +61,9 @@
     "numeOptional": "Name (optional)",
     "creeazaContul": "Konto anlegen",
     "aiDejaCont": "Schon ein Konto?",
-    "autentificaTe": "Anmelden"
+    "autentificaTe": "Anmelden",
+    "tara": "Land",
+    "taraNota": "(davon hängt die Maßeinheit ab)"
   },
   "landing": {
     "titlu": "Zuschnittrechner für bekantete Spanplatten",
@@ -148,7 +151,10 @@
     "cand": "Wann",
     "dePeUnde": "Von wo",
     "mesajText": "Nachricht",
-    "jurnalLegatura": "Protokoll"
+    "jurnalLegatura": "Protokoll",
+    "dupaTara": "Nach Land",
+    "dupaProfil": "Nach Gewerk",
+    "nimeniNuAZis": "Noch hat niemand etwas angegeben."
   },
   "credit": {
     "titlu": "Mein Guthaben",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "Das Protokoll ist leer.",
     "goalaText": "Gut so. Es ist nichts kaputtgegangen.",
     "nota": "Bleibt {zile} Tage oder {maxim} Zeilen, was zuerst kommt. Adressen werden gekürzt, Passwörter und Schlüssel nie geschrieben."
+  },
+  "unitate": {
+    "mm": "Millimeter",
+    "inch": "Zoll"
+  },
+  "profil": {
+    "atelier": "Möbelwerkstatt",
+    "tamplar": "Tischler",
+    "designer": "Planer",
+    "magazin": "Handel",
+    "amator": "Für mich, zu Hause"
+  },
+  "cont": {
+    "titlu": "Mein Konto",
+    "intro": "Was die Anwendung über dich weiß. Nichts davon ist Pflicht, außer der E-Mail.",
+    "salvat": "Gespeichert.",
+    "salveaza": "Konto speichern",
+    "preaLung": "Ein Feld ist zu lang.",
+    "siteGresit": "Das sieht nicht wie eine Web-Adresse aus.",
+    "legLocul": "Ort und Maßeinheit",
+    "legCine": "Wer du bist — für den Zuschnittzettel",
+    "legIntrare": "Anmeldung",
+    "tara": "Land",
+    "taraNealeasa": "— nicht gewählt —",
+    "unitate": "Maßeinheit",
+    "unitateDupaTara": "Nach Land ({unitate})",
+    "limba": "Sprache",
+    "limbaDinBrowser": "Die des Browsers",
+    "profil": "Was du machst",
+    "profilNealeasa": "— nicht gewählt —",
+    "notaUnitate": "Die Maße werden in Millimetern gerechnet und in Millimetern gespeichert. Die Einheit ändert nur, was auf dem Bildschirm steht und worin du die Maße eingibst.",
+    "propunere": "Der Browser sagt, du bist in {tara}. Dort wird in {unitate} gearbeitet — wähle das Land, damit es passt.",
+    "nume": "Dein Name",
+    "firma": "Werkstatt oder Firma",
+    "firmaExemplu": "Möbelwerkstatt Müller GmbH",
+    "cui": "Steuer-/USt-Nummer",
+    "telefon": "Telefon",
+    "oras": "Stadt",
+    "adresa": "Adresse",
+    "site": "Website",
+    "siteExemplu": "meine-werkstatt.de",
+    "notaFoaie": "Was du hier einträgst, steht oben auf den Zetteln, die zum Zuschnitt gehen. Wer die Platte sägt, hat eine Nummer zum Anrufen, wenn ein Maß nicht passt.",
+    "email": "E-Mail",
+    "dinCand": "Konto seit",
+    "notaEmail": "Die E-Mail wird hier nicht geändert. Schreib uns über das Nachrichtenfeld, wenn sie geändert werden muss."
   }
 }

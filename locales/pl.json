@@ -44,7 +44,8 @@
     "administrare": "Administracja",
     "iesi": "Wyloguj",
     "autentificare": "Zaloguj się",
-    "contNou": "Nowe konto"
+    "contNou": "Nowe konto",
+    "cont": "Konto"
   },
   "auth": {
     "autentificare": "Logowanie",
@@ -60,7 +61,9 @@
     "numeOptional": "Imię i nazwisko (opcjonalnie)",
     "creeazaContul": "Załóż konto",
     "aiDejaCont": "Masz już konto?",
-    "autentificaTe": "Zaloguj się"
+    "autentificaTe": "Zaloguj się",
+    "tara": "Kraj",
+    "taraNota": "(od niego zależy jednostka miary)"
   },
   "landing": {
     "titlu": "Kalkulator rozkroju płyty z obrzeżem",
@@ -148,7 +151,10 @@
     "cand": "Kiedy",
     "dePeUnde": "Skąd",
     "mesajText": "Wiadomość",
-    "jurnalLegatura": "Dziennik"
+    "jurnalLegatura": "Dziennik",
+    "dupaTara": "Według kraju",
+    "dupaProfil": "Według zawodu",
+    "nimeniNuAZis": "Nikt jeszcze nie podał."
   },
   "credit": {
     "titlu": "Moje środki",
@@ -1260,5 +1266,50 @@
     "goalaTitlu": "Dziennik jest pusty.",
     "goalaText": "Dobrze. To znaczy, że nic się nie zepsuło.",
     "nota": "Trzymane {zile} dni albo {maxim} wierszy, co przyjdzie pierwsze. Adresy są skracane, a hasła i klucze nigdy nie są zapisywane."
+  },
+  "unitate": {
+    "mm": "milimetry",
+    "inch": "cale"
+  },
+  "profil": {
+    "atelier": "Warsztat meblowy",
+    "tamplar": "Stolarz",
+    "designer": "Projektant",
+    "magazin": "Sklep",
+    "amator": "Dla siebie, w domu"
+  },
+  "cont": {
+    "titlu": "Moje konto",
+    "intro": "Co aplikacja o tobie wie. Nic tutaj nie jest obowiązkowe poza adresem e-mail.",
+    "salvat": "Zapisano.",
+    "salveaza": "Zapisz konto",
+    "preaLung": "Jedno z pól jest za długie.",
+    "siteGresit": "To nie wygląda na adres internetowy.",
+    "legLocul": "Miejsce i jednostka",
+    "legCine": "Kim jesteś — na arkusz rozkroju",
+    "legIntrare": "Logowanie",
+    "tara": "Kraj",
+    "taraNealeasa": "— nie wybrano —",
+    "unitate": "Jednostka miary",
+    "unitateDupaTara": "Według kraju ({unitate})",
+    "limba": "Język",
+    "limbaDinBrowser": "Język przeglądarki",
+    "profil": "Czym się zajmujesz",
+    "profilNealeasa": "— nie wybrano —",
+    "notaUnitate": "Wymiary są liczone i przechowywane w milimetrach. Jednostka zmienia tylko to, co widać na ekranie i w czym wpisujesz wymiary.",
+    "propunere": "Przeglądarka mówi, że jesteś w {tara}. Tam pracuje się w {unitate} — wybierz kraj, żeby się zgadzało.",
+    "nume": "Twoje imię",
+    "firma": "Warsztat lub firma",
+    "firmaExemplu": "Meble Kowalski Sp. z o.o.",
+    "cui": "NIP / VAT",
+    "telefon": "Telefon",
+    "oras": "Miasto",
+    "adresa": "Adres",
+    "site": "Strona internetowa",
+    "siteExemplu": "mojwarsztat.pl",
+    "notaFoaie": "To, co tu wpiszesz, trafia na górę arkuszy idących do rozkroju. Ten, kto ciął płytę, ma numer, pod który zadzwoni, gdy wymiar się nie zgadza.",
+    "email": "E-mail",
+    "dinCand": "Konto od",
+    "notaEmail": "Adresu e-mail nie zmienia się tutaj. Napisz do nas przez okno wiadomości, jeśli trzeba go zmienić."
   }
 }

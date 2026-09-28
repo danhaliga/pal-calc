@@ -19,6 +19,7 @@ const credit = require('./src/credit');
 const payments = require('./src/payments');
 const admin = require('./src/admin');
 const mesaje = require('./src/mesaje');
+const cont = require('./src/cont');
 const jurnal = require('./src/jurnal');
 const articole = require('./src/articole');
 const i18n = require('./src/i18n');
@@ -115,6 +116,10 @@ app.use((req, res, next) => {
   res.locals.priceLei = (payments.priceCents() / 100).toFixed(2);
   res.locals.currentPath = req.path;
   res.locals.soldLei = req.user ? (credit.sold(req.user.id) / 100).toFixed(2) : null;
+  /* Cine e atelierul, pentru capul foilor de tipar. Null cât timp omul nu a
+     completat nimic în cont — atunci foaia rămâne cum era, fără un cap gol
+     care mănâncă hârtie. */
+  res.locals.capFoaie = req.user ? cont.capDeFoaie(req.user) : null;
   next();
 });
 
@@ -162,6 +167,7 @@ app.use(corps.router);
 app.use(payments.router);
 app.use(admin.router);
 app.use(mesaje.router);
+app.use(cont.router);
 app.use(articole.router);
 
 /* ---- erori ---- */

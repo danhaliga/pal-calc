@@ -7,6 +7,7 @@ const rateLimit = require('express-rate-limit');
 const { z } = require('zod');
 const { db } = require('./db');
 const jurnal = require('./jurnal');
+const PalTari = require('../shared/tari');
 
 const BCRYPT_COST = 12;
 
@@ -16,7 +17,11 @@ const registerSchema = z.object({
   email: z.string().trim().toLowerCase().email('valid.emailNevalid').max(160),
   name: z.string().trim().max(80).optional().or(z.literal('')),
   password: z.string().min(8, 'valid.parolaScurta').max(200),
-  password2: z.string()
+  password2: z.string(),
+  /* Țara nu e obligatorie și nu dă eroare: ce nu e pe listă se curăță la
+     gol. Un cont fără țară merge mai departe în milimetri și își alege
+     unitatea mai târziu, din pagina contului. */
+  tara: z.string().trim().toUpperCase().catch('')
 }).refine(d => d.password === d.password2, {
   message: 'valid.paroleDiferite', path: ['password2']
 });
@@ -41,21 +46,32 @@ const limiter = rateLimit({
   handler: (req, res) => {
     /* răspunde pe pagina de unde a venit cererea, nu mereu pe cea de login */
     const peRegister = req.path === '/register';
-    res.status(429).render(peRegister ? 'register' : 'login', {
-      title: req.t(peRegister ? 'auth.contNou' : 'auth.autentificare'),
+    const values = { email: req.body && req.body.email ? String(req.body.email) : '',
+                     name: '', tara: req.body ? req.body.tara : '' };
+    /* Pagina de inregistrare are nevoie de lista de tari ca sa se randeze, si
+       aici ajunge cineva care a incercat de prea multe ori. Se trece prin
+       acelasi loc ca randarile normale: altfel limita de incercari s-ar
+       intoarce cu o eroare de vedere in loc de mesajul ei. */
+    if (peRegister) {
+      return res.status(429).render('register',
+        vedereaInregistrarii(req, values, req.t('valid.preaMulteIncercari')));
+    }
+    res.status(429).render('login', {
+      title: req.t('auth.autentificare'),
       error: req.t('valid.preaMulteIncercari'),
-      values: { email: req.body && req.body.email ? String(req.body.email) : '' }
+      values: values
     });
   }
 });
 
 /* ---- ajutoare folosite si de scripturi ---- */
 
-function createUser({ email, password, name = null, isAdmin = 0 }) {
+function createUser({ email, password, name = null, isAdmin = 0, tara = '' }) {
   const hash = bcrypt.hashSync(password, BCRYPT_COST);
   const info = db.prepare(
-    'INSERT INTO users (email, password_hash, name, is_admin) VALUES (?, ?, ?, ?)'
-  ).run(String(email).trim().toLowerCase(), hash, name || null, isAdmin ? 1 : 0);
+    'INSERT INTO users (email, password_hash, name, is_admin, tara) VALUES (?, ?, ?, ?, ?)'
+  ).run(String(email).trim().toLowerCase(), hash, name || null, isAdmin ? 1 : 0,
+        PalTari.normalizeaza(tara) || '');
   return db.prepare('SELECT * FROM users WHERE id = ?').get(info.lastInsertRowid);
 }
 
@@ -65,10 +81,20 @@ function findByEmail(email) {
 
 /* ---- middleware ---- */
 
+/* Ce se citeste despre om la fiecare cerere. Lista e scrisa pe bucati, nu
+   `SELECT *`, dintr-un singur motiv: `password_hash` e in acelasi tabel, iar
+   un `*` l-ar plimba prin `res.locals.user` pe fiecare pagina. Coloana
+   adaugata din greseala la sfarsitul tabelului nu ajunge in vedere; parola,
+   niciodata. */
+const COLOANE_UTILIZATOR = [
+  'id', 'email', 'name', 'is_admin', 'created_at', 'lang',
+  'tara', 'unitate', 'firma', 'cui', 'telefon', 'oras', 'adresa', 'site', 'profil'
+].join(', ');
+
 function loadUser(req, res, next) {
   req.user = null;
   if (req.session && req.session.userId) {
-    req.user = db.prepare('SELECT id, email, name, is_admin FROM users WHERE id = ?')
+    req.user = db.prepare(`SELECT ${COLOANE_UTILIZATOR} FROM users WHERE id = ?`)
                  .get(req.session.userId) || null;
     if (!req.user) req.session.userId = null;
   }
@@ -99,35 +125,52 @@ function requireAdmin(req, res, next) {
 
 const router = express.Router();
 
+/* Ce are nevoie formularul de înregistrare, o dată pentru amândouă locurile
+   care-l randează: prima deschidere și întoarcerea cu o greșeală. */
+function vedereaInregistrarii(req, values, error) {
+  const ghicita = PalTari.dinAntet(req.headers['accept-language']);
+  return {
+    title: req.t('auth.contNou'),
+    error: error || null,
+    values: values,
+    tari: PalTari.lista(req.lang),
+    /* Ce e ales în selector: ce a trimis omul, altfel ce ghicim din browser.
+       Ghicitul e o propunere pe care o vede și o poate schimba, nu o
+       hotărâre luată în spatele lui. */
+    taraAleasa: PalTari.normalizeaza(values.tara) || ghicita || ''
+  };
+}
+
 router.get('/register', (req, res) => {
   if (req.user) return res.redirect('/orders');
-  res.render('register', { title: req.t('auth.contNou'), error: null, values: {} });
+  res.render('register', vedereaInregistrarii(req, {}));
 });
 
 router.post('/register', limiter, (req, res, next) => {
   if (req.user) return res.redirect('/orders');
   const parsed = registerSchema.safeParse(req.body);
-  const values = { email: req.body.email || '', name: req.body.name || '' };
+  const values = { email: req.body.email || '', name: req.body.name || '',
+                   tara: req.body.tara || '' };
 
   if (!parsed.success) {
-    return res.status(400).render('register', {
-      title: req.t('auth.contNou'), error: req.t(parsed.error.issues[0].message), values
-    });
+    return res.status(400).render('register',
+      vedereaInregistrarii(req, values, req.t(parsed.error.issues[0].message)));
   }
   if (findByEmail(parsed.data.email)) {
-    return res.status(400).render('register', {
-      title: req.t('auth.contNou'), error: req.t('valid.emailFolosit'), values
-    });
+    return res.status(400).render('register',
+      vedereaInregistrarii(req, values, req.t('valid.emailFolosit')));
   }
 
   try {
     const user = createUser({
       email: parsed.data.email,
       password: parsed.data.password,
-      name: parsed.data.name || null
+      name: parsed.data.name || null,
+      tara: parsed.data.tara
     });
     jurnal.fapta('cont', 'cont nou', { req, userId: user.id,
-      detalii: { email: parsed.data.email } });
+      detalii: { email: parsed.data.email, tara: user.tara || '(gol)',
+                 unitate: PalTari.unitateaLui(user) } });
     req.session.regenerate(err => {
       if (err) return next(err);
       req.session.userId = user.id;
@@ -178,4 +221,5 @@ router.post('/logout', (req, res) => {
   req.session.destroy(() => res.redirect('/'));
 });
 
-module.exports = { router, loadUser, requireAuth, requireAdmin, createUser, findByEmail, BCRYPT_COST };
+module.exports = { router, loadUser, requireAuth, requireAdmin, createUser, findByEmail,
+                   BCRYPT_COST, COLOANE_UTILIZATOR };

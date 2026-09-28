@@ -14,6 +14,49 @@
   <div class="kpi"><div class="v"><%= totalLei %> <%= t('comun.lei') %></div><div class="l"><%= t('admin.kpiIncasat') %></div></div>
 </div>
 
+<%# Cine foloseste aplicatia si de unde. E singura prospectie de piata pe
+    care n-o citesti pe internet: se strange singura, din conturi. %>
+<% if (tari.length || profile.length) { %>
+  <div class="doua-coloane">
+    <div class="panel">
+      <h2><%= t('admin.dupaTara') %></h2>
+      <% if (!tari.length) { %>
+        <p class="muted"><%= t('admin.nimeniNuAZis') %></p>
+      <% } else { %>
+        <div class="tbl"><table>
+          <thead><tr><th><%= t('cont.tara') %></th><th><%= t('cont.unitate') %></th>
+            <th class="num"><%= t('admin.kpiUtilizatori') %></th></tr></thead>
+          <tbody>
+            <% tari.forEach(function (r) { %>
+              <tr>
+                <td><%= numeTara(r.tara) %></td>
+                <td class="muted small"><%= t('unitate.' + unitatePentru(r.tara)) %></td>
+                <td class="num"><%= r.n %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table></div>
+      <% } %>
+    </div>
+    <div class="panel">
+      <h2><%= t('admin.dupaProfil') %></h2>
+      <% if (!profile.length) { %>
+        <p class="muted"><%= t('admin.nimeniNuAZis') %></p>
+      <% } else { %>
+        <div class="tbl"><table>
+          <thead><tr><th><%= t('cont.profil') %></th>
+            <th class="num"><%= t('admin.kpiUtilizatori') %></th></tr></thead>
+          <tbody>
+            <% profile.forEach(function (r) { %>
+              <tr><td><%= t('profil.' + r.profil) %></td><td class="num"><%= r.n %></td></tr>
+            <% }); %>
+          </tbody>
+        </table></div>
+      <% } %>
+    </div>
+  </div>
+<% } %>
+
 <%# Mesajele de la oameni stau primele: alea cer un răspuns, restul sunt cifre. %>
 <div class="panel">
   <h2><%= t('admin.mesaje', { n: mesajeNoi }) %></h2>

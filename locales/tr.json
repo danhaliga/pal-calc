@@ -44,7 +44,8 @@
     "administrare": "Yönetim",
     "iesi": "Çıkış",
     "autentificare": "Giriş yap",
-    "contNou": "Yeni hesap"
+    "contNou": "Yeni hesap",
+    "cont": "Hesap"
   },
   "auth": {
     "autentificare": "Giriş",
@@ -60,7 +61,9 @@
     "numeOptional": "Ad (isteğe bağlı)",
     "creeazaContul": "Hesabı oluştur",
     "aiDejaCont": "Zaten hesabın var mı?",
-    "autentificaTe": "Giriş yap"
+    "autentificaTe": "Giriş yap",
+    "tara": "Ülke",
+    "taraNota": "(ölçü birimi buna bağlıdır)"
   },
   "landing": {
     "titlu": "Bantlanmış suntalam için kesim hesaplayıcı",
@@ -148,7 +151,10 @@
     "cand": "Ne zaman",
     "dePeUnde": "Nereden",
     "mesajText": "Mesaj",
-    "jurnalLegatura": "Günlük"
+    "jurnalLegatura": "Günlük",
+    "dupaTara": "Ülkeye göre",
+    "dupaProfil": "Mesleğe göre",
+    "nimeniNuAZis": "Henüz kimse belirtmedi."
   },
   "credit": {
     "titlu": "Bakiyem",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "Günlük boş.",
     "goalaText": "İyi. Demek ki hiçbir şey bozulmadı.",
     "nota": "{zile} gün ya da {maxim} satır, hangisi önce gelirse. Adresler kısaltılır, parolalar ve anahtarlar asla yazılmaz."
+  },
+  "unitate": {
+    "mm": "milimetre",
+    "inch": "inç"
+  },
+  "profil": {
+    "atelier": "Mobilya atölyesi",
+    "tamplar": "Marangoz",
+    "designer": "Tasarımcı",
+    "magazin": "Mağaza",
+    "amator": "Kendim için, evde"
+  },
+  "cont": {
+    "titlu": "Hesabım",
+    "intro": "Uygulamanın senin hakkında bildikleri. E-posta dışında burada hiçbir şey zorunlu değil.",
+    "salvat": "Kaydedildi.",
+    "salveaza": "Hesabı kaydet",
+    "preaLung": "Alanlardan biri fazla uzun.",
+    "siteGresit": "Bu bir web adresine benzemiyor.",
+    "legLocul": "Yer ve ölçü birimi",
+    "legCine": "Kim olduğun — kesim listesi için",
+    "legIntrare": "Hesaba giriş",
+    "tara": "Ülke",
+    "taraNealeasa": "— seçilmedi —",
+    "unitate": "Ölçü birimi",
+    "unitateDupaTara": "Ülkeye göre ({unitate})",
+    "limba": "Dil",
+    "limbaDinBrowser": "Tarayıcının dili",
+    "profil": "Ne yapıyorsun",
+    "profilNealeasa": "— seçilmedi —",
+    "notaUnitate": "Ölçüler milimetre ile hesaplanır ve milimetre olarak saklanır. Birim yalnızca ekranda yazılanı ve ölçüleri hangi birimde girdiğini değiştirir.",
+    "propunere": "Tarayıcı {tara} ülkesinde olduğunu söylüyor. Orada {unitate} ile çalışılır — uyması için ülkeyi seç.",
+    "nume": "Adın",
+    "firma": "Atölye veya firma",
+    "firmaExemplu": "Yılmaz Mobilya Ltd.",
+    "cui": "Vergi numarası",
+    "telefon": "Telefon",
+    "oras": "Şehir",
+    "adresa": "Adres",
+    "site": "Web sitesi",
+    "siteExemplu": "atolyem.com.tr",
+    "notaFoaie": "Burada yazdıkların, kesime giden listelerin başına çıkar. Levhayı keseni bir ölçü oturmazsa arayacağı numara bulur.",
+    "email": "E-posta",
+    "dinCand": "Hesap tarihi",
+    "notaEmail": "E-posta buradan değişmez. Değişmesi gerekiyorsa mesaj kutusundan bize yaz."
   }
 }

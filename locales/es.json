@@ -44,7 +44,8 @@
     "administrare": "Administración",
     "iesi": "Salir",
     "autentificare": "Iniciar sesión",
-    "contNou": "Cuenta nueva"
+    "contNou": "Cuenta nueva",
+    "cont": "Cuenta"
   },
   "auth": {
     "autentificare": "Iniciar sesión",
@@ -60,7 +61,9 @@
     "numeOptional": "Nombre (opcional)",
     "creeazaContul": "Crear la cuenta",
     "aiDejaCont": "¿Ya tienes cuenta?",
-    "autentificaTe": "Inicia sesión"
+    "autentificaTe": "Inicia sesión",
+    "tara": "País",
+    "taraNota": "(de él depende la unidad de medida)"
   },
   "landing": {
     "titlu": "Calculadora de despiece para aglomerado cantado",
@@ -148,7 +151,10 @@
     "cand": "Cuándo",
     "dePeUnde": "Desde dónde",
     "mesajText": "Mensaje",
-    "jurnalLegatura": "Registro"
+    "jurnalLegatura": "Registro",
+    "dupaTara": "Por país",
+    "dupaProfil": "Por oficio",
+    "nimeniNuAZis": "Todavía nadie lo ha dicho."
   },
   "credit": {
     "titlu": "Mi crédito",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "El registro está vacío.",
     "goalaText": "Bien. Significa que no se rompió nada.",
     "nota": "Se guarda {zile} días o {maxim} filas, lo que ocurra antes. Las direcciones se truncan, y las contraseñas y claves nunca se escriben."
+  },
+  "unitate": {
+    "mm": "milímetros",
+    "inch": "pulgadas"
+  },
+  "profil": {
+    "atelier": "Taller de muebles",
+    "tamplar": "Carpintero",
+    "designer": "Diseñador",
+    "magazin": "Tienda",
+    "amator": "Para mí, en casa"
+  },
+  "cont": {
+    "titlu": "Mi cuenta",
+    "intro": "Lo que la aplicación sabe de ti. Nada de aquí es obligatorio, salvo el correo.",
+    "salvat": "Guardado.",
+    "salveaza": "Guardar la cuenta",
+    "preaLung": "Uno de los campos es demasiado largo.",
+    "siteGresit": "Eso no parece una dirección web.",
+    "legLocul": "El lugar y la unidad",
+    "legCine": "Quién eres, para la hoja de corte",
+    "legIntrare": "Acceso a la cuenta",
+    "tara": "País",
+    "taraNealeasa": "— sin elegir —",
+    "unitate": "Unidad de medida",
+    "unitateDupaTara": "Según el país ({unitate})",
+    "limba": "Idioma",
+    "limbaDinBrowser": "El del navegador",
+    "profil": "A qué te dedicas",
+    "profilNealeasa": "— sin elegir —",
+    "notaUnitate": "Las medidas se calculan y se guardan en milímetros. La unidad solo cambia lo que se escribe en pantalla y aquello en lo que tú escribes las medidas.",
+    "propunere": "El navegador dice que estás en {tara}. Allí se trabaja en {unitate} — elige el país para que coincida.",
+    "nume": "Tu nombre",
+    "firma": "El taller o la empresa",
+    "firmaExemplu": "Muebles Pérez S.L.",
+    "cui": "NIF / IVA",
+    "telefon": "Teléfono",
+    "oras": "Ciudad",
+    "adresa": "Dirección",
+    "site": "Sitio web",
+    "siteExemplu": "mitaller.es",
+    "notaFoaie": "Lo que rellenes aquí sale en la cabecera de las hojas que van al corte. Quien corta el tablero tiene un número al que llamar si una medida no encaja.",
+    "email": "Correo electrónico",
+    "dinCand": "Cuenta desde",
+    "notaEmail": "El correo no se cambia desde aquí. Escríbenos por el buzón de mensajes si hay que cambiarlo."
   }
 }

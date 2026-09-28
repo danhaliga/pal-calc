@@ -205,8 +205,12 @@ router.get('/orders/new', requireAuth, (req, res) => {
     formateToate: PalRaport.formate(req.t),
     formateId: FORMATE_ID,
     feroOptiuni: PalFeronerie.optiuni(req.t),
+    /* Telefonul vine din cont: e același la fiecare comandă, iar cine îl are
+       pus o dată nu-l mai scrie de zece ori. Rămâne un câmp de formular, deci
+       se poate schimba pentru o comandă anume fără să atingă contul. */
     values: Object.assign({ name: '', brand: 'Egger', decor_cod: '', pal_mm: 18,
-              cant_gros: 2, cant_subtire: 0.8, note: '', livrare_la: '', telefon: '',
+              cant_gros: 2, cant_subtire: 0.8, note: '', livrare_la: '',
+              telefon: req.user.telefon || '',
               formate: ['intreaga', 'jum-lat', 'jum-lung', 'sfert'] },
               PalFeronerie.implicit()),
     error: null

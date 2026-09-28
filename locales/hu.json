@@ -44,7 +44,8 @@
     "administrare": "Adminisztráció",
     "iesi": "Kijelentkezés",
     "autentificare": "Bejelentkezés",
-    "contNou": "Új fiók"
+    "contNou": "Új fiók",
+    "cont": "Fiók"
   },
   "auth": {
     "autentificare": "Bejelentkezés",
@@ -60,7 +61,9 @@
     "numeOptional": "Név (nem kötelező)",
     "creeazaContul": "Fiók létrehozása",
     "aiDejaCont": "Van már fiókod?",
-    "autentificaTe": "Jelentkezz be"
+    "autentificaTe": "Jelentkezz be",
+    "tara": "Ország",
+    "taraNota": "(ettől függ a mértékegység)"
   },
   "landing": {
     "titlu": "Szabáskalkulátor élzárt forgácslaphoz",
@@ -148,7 +151,10 @@
     "cand": "Mikor",
     "dePeUnde": "Honnan",
     "mesajText": "Üzenet",
-    "jurnalLegatura": "Napló"
+    "jurnalLegatura": "Napló",
+    "dupaTara": "Ország szerint",
+    "dupaProfil": "Szakma szerint",
+    "nimeniNuAZis": "Még senki nem adta meg."
   },
   "credit": {
     "titlu": "Az egyenlegem",
@@ -1249,5 +1255,50 @@
     "goalaTitlu": "A napló üres.",
     "goalaText": "Jó. Azt jelenti, hogy semmi nem romlott el.",
     "nota": "{zile} napig vagy {maxim} sorig marad meg, amelyik előbb jön. A címek csonkítva vannak, jelszavak és kulcsok soha nem kerülnek bele."
+  },
+  "unitate": {
+    "mm": "milliméter",
+    "inch": "hüvelyk"
+  },
+  "profil": {
+    "atelier": "Bútorműhely",
+    "tamplar": "Asztalos",
+    "designer": "Tervező",
+    "magazin": "Üzlet",
+    "amator": "Magamnak, otthon"
+  },
+  "cont": {
+    "titlu": "A fiókom",
+    "intro": "Amit az alkalmazás tud rólad. Az e-mailen kívül semmi nem kötelező itt.",
+    "salvat": "Elmentve.",
+    "salveaza": "Fiók mentése",
+    "preaLung": "Az egyik mező túl hosszú.",
+    "siteGresit": "Ez nem tűnik webcímnek.",
+    "legLocul": "A hely és a mértékegység",
+    "legCine": "Ki vagy — a szabásjegyhez",
+    "legIntrare": "Belépés",
+    "tara": "Ország",
+    "taraNealeasa": "— nincs kiválasztva —",
+    "unitate": "Mértékegység",
+    "unitateDupaTara": "Az ország szerint ({unitate})",
+    "limba": "Nyelv",
+    "limbaDinBrowser": "A böngészőé",
+    "profil": "Mivel foglalkozol",
+    "profilNealeasa": "— nincs kiválasztva —",
+    "notaUnitate": "A méretek milliméterben számolódnak és milliméterben tárolódnak. A mértékegység csak azt változtatja meg, ami a képernyőn látszik, és amiben a méreteket beírod.",
+    "propunere": "A böngésző szerint {tara} területén vagy. Ott {unitate} szerint dolgoznak — válaszd ki az országot, hogy egyezzen.",
+    "nume": "A neved",
+    "firma": "A műhely vagy a cég",
+    "firmaExemplu": "Bútorműhely Kovács Kft.",
+    "cui": "Adószám",
+    "telefon": "Telefon",
+    "oras": "Város",
+    "adresa": "Cím",
+    "site": "Weboldal",
+    "siteExemplu": "muhelyem.hu",
+    "notaFoaie": "Amit itt megadsz, a szabásra menő lapok fejébe kerül. Aki a lemezt vágja, talál egy számot, amit felhívhat, ha egy méret nem jön ki.",
+    "email": "E-mail",
+    "dinCand": "Fiók ettől",
+    "notaEmail": "Az e-mail innen nem módosítható. Írj nekünk az üzenetmezőből, ha meg kell változtatni."
   }
 }
