@@ -923,7 +923,8 @@
     "pasUsi": "打铰链杯孔、挂门板，再把缝调匀。",
     "pasSuspensii": "在柜体后面装吊码、在墙上装挂条，再调高低。",
     "feronerieTotal": "五金 —— 全单合计",
-    "corpDeschis": "开放柜体"
+    "corpDeschis": "开放柜体",
+    "subsolToli": "所有尺寸均为英寸，而且是<b>开料尺寸</b>（不含封边），除另有注明。开料前问清楚他们要哪一种尺寸。"
   },
   "plata": {
     "reusitTitlu": "付款已记录",

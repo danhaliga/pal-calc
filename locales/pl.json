@@ -932,7 +932,8 @@
     "pasUsi": "Zamontuj puszki zawiasów i fronty, potem wyreguluj szczeliny.",
     "pasSuspensii": "Przykręć zawieszki z tyłu korpusu i listwę do ściany, potem wyreguluj na wysokość.",
     "feronerieTotal": "Okucia — razem dla zlecenia",
-    "corpDeschis": "korpus otwarty"
+    "corpDeschis": "korpus otwarty",
+    "subsolToli": "Wymiary są w calach i są <b>wymiarami do cięcia</b> (bez obrzeża), o ile nie zapisano inaczej. Sprawdź w rozkroju, jakiego wymiaru oczekują."
   },
   "plata": {
     "reusitTitlu": "Płatność została zapisana",

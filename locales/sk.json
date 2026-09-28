@@ -932,7 +932,8 @@
     "pasUsi": "Namontuj misky pántov a dvierka a potom nastav škáry.",
     "pasSuspensii": "Pripevni závesníky vzadu na korpus a lištu na stenu, potom nastav výšku.",
     "feronerieTotal": "Kovanie — spolu za zákazku",
-    "corpDeschis": "otvorený korpus"
+    "corpDeschis": "otvorený korpus",
+    "subsolToli": "Rozmery sú v palcoch a sú to <b>rozmery na nárez</b> (bez hrany), ak nie je uvedené inak. Over si v nárezovom centre, aký rozmer požadujú."
   },
   "plata": {
     "reusitTitlu": "Platba bola zaznamenaná",

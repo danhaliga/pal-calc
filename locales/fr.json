@@ -923,7 +923,8 @@
     "pasUsi": "Montez les boîtiers de charnière et les portes, puis réglez les jeux.",
     "pasSuspensii": "Fixez les suspensions à l'arrière du caisson et le rail au mur, puis réglez en hauteur.",
     "feronerieTotal": "Quincaillerie — total de la commande",
-    "corpDeschis": "caisson ouvert"
+    "corpDeschis": "caisson ouvert",
+    "subsolToli": "Les cotes sont en pouces et correspondent à la <b>cote de coupe</b> (sans chant), sauf mention contraire. Vérifiez auprès du service de découpe quelle cote ils demandent."
   },
   "plata": {
     "reusitTitlu": "Votre paiement a été enregistré",

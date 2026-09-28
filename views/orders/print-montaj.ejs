@@ -54,8 +54,8 @@
                   <% if (p.nota) { %><div class="tag"><%= p.nota %></div><% } %>
                 </td>
                 <td class="num"><%= p.buc %></td>
-                <td class="num"><%= p.L %> × <%= p.l %></td>
-                <td class="num"><b><%= p.TL %> × <%= p.Tl %></b></td>
+                <td class="num"><%= cota(p.L, p.unitate) %> × <%= cota(p.l, p.unitate) %></td>
+                <td class="num"><b><%= cota(p.TL, p.unitate) %> × <%= cota(p.Tl, p.unitate) %></b></td>
                 <td class="small"><%= p.cant.special ? t('comanda.muchiiFrontale') : p.cant.muchii.join('·') %></td>
               </tr>
             <% }); %>

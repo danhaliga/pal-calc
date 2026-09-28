@@ -932,7 +932,8 @@
     "pasUsi": "Namontuj misky pantů a dvířka a pak seřiď spáry.",
     "pasSuspensii": "Připevni závěsy vzadu na korpus a lištu na stěnu, pak seřiď výšku.",
     "feronerieTotal": "Kování — celkem za zakázku",
-    "corpDeschis": "otevřený korpus"
+    "corpDeschis": "otevřený korpus",
+    "subsolToli": "Rozměry jsou v palcích a jsou to <b>rozměry pro nářez</b> (bez hrany), pokud není uvedeno jinak. Ověř u nářezového centra, jaký rozměr požadují."
   },
   "plata": {
     "reusitTitlu": "Platba byla zaznamenána",

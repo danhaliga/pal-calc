@@ -31,10 +31,10 @@
             <td class="small"><%= p.corpNume %></td>
             <td><%= p.nume %></td>
             <td class="num"><b><%= p.buc %></b></td>
-            <td class="num"><b><%= p.TL %></b></td>
-            <td class="num"><b><%= p.Tl %></b></td>
-            <td class="num"><%= p.L %></td>
-            <td class="num"><%= p.l %></td>
+            <td class="num"><b><%= cota(p.TL, p.unitate) %></b></td>
+            <td class="num"><b><%= cota(p.Tl, p.unitate) %></b></td>
+            <td class="num"><%= cota(p.L, p.unitate) %></td>
+            <td class="num"><%= cota(p.l, p.unitate) %></td>
             <% if (p.cant.special) { %>
               <td class="num" colspan="4"><%= t('print.cantFrontale') %></td>
             <% } else { %>

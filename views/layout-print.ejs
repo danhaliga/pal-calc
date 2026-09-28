@@ -74,7 +74,11 @@
 </main>
 
 <footer class="doc-foot">
-  <%- t('print.subsol') %>
+  <%# Subsolul spune in ce unitate sunt cotele de pe foaie. O foaie tiparita
+      care scrie unitatea gresita e exact felul de greseala care strica o
+      lucrare, si nimeni n-o prinde pana nu e taiata placa. %>
+  <%- t(typeof unitateFoaie !== 'undefined' && unitateFoaie === 'inch'
+        ? 'print.subsolToli' : 'print.subsol') %>
 </footer>
 
 <script src="/static/interactiuni.js?v=<%= assetV %>"></script>

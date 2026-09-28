@@ -923,7 +923,8 @@
     "pasUsi": "Monta os copos das dobradiças e as portas e depois ajusta as folgas.",
     "pasSuspensii": "Fixa os suspensores atrás do módulo e a calha na parede, e depois ajusta em altura.",
     "feronerieTotal": "Ferragens — total da encomenda",
-    "corpDeschis": "módulo aberto"
+    "corpDeschis": "módulo aberto",
+    "subsolToli": "As medidas estão em polegadas e são <b>medidas de corte</b> (sem orla), salvo indicação em contrário. Confirme com o serviço de corte que medida pedem."
   },
   "plata": {
     "reusitTitlu": "O pagamento foi registado",

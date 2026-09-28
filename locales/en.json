@@ -923,7 +923,8 @@
     "pasUsi": "Fit the hinge cups and the doors, then adjust the gaps.",
     "pasSuspensii": "Fit the hangers behind the cabinet and the rail on the wall, then adjust vertically.",
     "feronerieTotal": "Hardware — order total",
-    "corpDeschis": "open cabinet"
+    "corpDeschis": "open cabinet",
+    "subsolToli": "All dimensions are in inches and are <b>cut sizes</b> (without edging), unless stated otherwise. Check with the cutting service which size they want."
   },
   "plata": {
     "reusitTitlu": "Your payment has been recorded",

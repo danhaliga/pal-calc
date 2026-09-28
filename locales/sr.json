@@ -932,7 +932,8 @@
     "pasUsi": "Montiraj lončiće šarki i vrata, pa podesi zazore.",
     "pasSuspensii": "Pričvrsti kačaljke pozadi na korpus i lajsnu na zid, pa podesi po visini.",
     "feronerieTotal": "Okov — ukupno za porudžbinu",
-    "corpDeschis": "otvoren korpus"
+    "corpDeschis": "otvoren korpus",
+    "subsolToli": "Mere su u inčima i predstavljaju <b>meru za krojenje</b> (bez kanta), osim ako nije drugačije navedeno. Proverite u krojenju koju meru traže."
   },
   "plata": {
     "reusitTitlu": "Uplata je zabeležena",

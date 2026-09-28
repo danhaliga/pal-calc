@@ -477,6 +477,10 @@
           cod: pozCorp + '.' + (i + 1),
           cheie: p.cheie, nume: p.nume, buc: p.buc,
           L: sursa.L, l: sursa.l, TL: sursa.TL, Tl: sursa.Tl,
+          /* Unitatea corpului din care a ieșit piesa. Merge cu ea până pe
+             hârtie: o comandă poate aduna corpuri făcute în unități
+             deosebite, și fiecare rând trebuie scris cum a fost tăiat. */
+          unitate: params.unitate || 'mm',
           fibra: p.fibra, fibraText: p.fibraText, nota: p.nota || '',
           material: mat, cant: cant, rol: rol,
           cnc: !!polyPiesa(p)
