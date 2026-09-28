@@ -1107,5 +1107,26 @@
     "ny": "unten",
     "pz": "vorn",
     "nz": "hinten"
+  },
+  "setari": {
+    "titlu": "Vorgaben für neue Korpusse",
+    "explica": "Neue Korpusse starten mit den hier angehakten Gruppen. Die Einstellungen liegen in diesem Browser, nicht auf dem Server — an einem anderen Rechner setzt du sie neu.",
+    "iaDinCorp": "Werte aus diesem Korpus merken",
+    "sterge": "Einstellungen löschen",
+    "sters": "Einstellungen gelöscht.",
+    "tinutMinte": "Gemerkt.",
+    "nimic": "Noch nichts gemerkt.",
+    "stareSalvat": "Gemerkt aus dem Korpus „{nume}“.",
+    "aplicat": "Der neue Korpus ist mit deinen Einstellungen gestartet.",
+    "faraStocare": "Der Browser lässt die Einstellungen nicht schreiben.",
+    "notaModel": "Maße und Teilezahlen kommen aus dem gewählten Modell; hak sie nur an, wenn du immer vom leeren Korpus ausgehst.",
+    "matComanda": "kommt vom Material des Auftrags",
+    "grupMaterial": "Platte und Kante",
+    "grupSpate": "Rückwand",
+    "grupUsi": "Fugen, Aufschlag und Bänder",
+    "grupPolite": "Böden: seitliches Spiel und Rücksprung",
+    "grupSertare": "Schubkästen: Höhen, Spiel, Platte",
+    "grupDimensiuni": "Breite, Höhe, Tiefe, Bauart",
+    "grupCantitati": "Wie viele Türen, Böden, Mittelseiten, Schubkästen"
   }
 }

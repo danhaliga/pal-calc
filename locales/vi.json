@@ -1107,5 +1107,26 @@
     "ny": "dưới",
     "pz": "trước",
     "nz": "sau"
+  },
+  "setari": {
+    "titlu": "Giá trị mặc định cho tủ mới",
+    "explica": "Tủ mới khởi đầu từ các nhóm được tích ở đây. Thiết lập nằm trong trình duyệt này, không nằm trên máy chủ — sang máy khác phải đặt lại.",
+    "iaDinCorp": "Nhớ các giá trị của tủ này",
+    "sterge": "Xóa thiết lập",
+    "sters": "Đã xóa thiết lập.",
+    "tinutMinte": "Đã nhớ.",
+    "nimic": "Chưa nhớ gì cả.",
+    "stareSalvat": "Đã nhớ từ tủ “{nume}”.",
+    "aplicat": "Tủ mới đã khởi đầu từ thiết lập của bạn.",
+    "faraStocare": "Trình duyệt không cho ghi thiết lập.",
+    "notaModel": "Kích thước và số chi tiết đến từ mẫu bạn chọn; chỉ tích khi bạn luôn bắt đầu từ tủ trống.",
+    "matComanda": "đến từ vật liệu của đơn hàng",
+    "grupMaterial": "Ván và chỉ cạnh",
+    "grupSpate": "Hậu",
+    "grupUsi": "Khe hở, cách lắp và bản lề",
+    "grupPolite": "Kệ: khe hai bên và độ lùi",
+    "grupSertare": "Ngăn kéo: chiều cao, khe hở, ván",
+    "grupDimensiuni": "Rộng, cao, sâu, cách dựng",
+    "grupCantitati": "Bao nhiêu cánh, kệ, vách giữa, ngăn kéo"
   }
 }

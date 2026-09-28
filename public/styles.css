@@ -334,3 +334,14 @@ details.panel[open] summary::before{content:'▾ '}
    paginile folosesc margini logice, dar tabelele cu cifre rămân aliniate la fel. */
 [dir=rtl] .num,[dir=rtl] .mono{direction:ltr;text-align:right}
 [dir=rtl] .card-radio input{margin-inline:0}
+
+/* Setările implicite ale editorului: o zonă strânsă sub formular, deschisă
+   doar când omul are treabă cu ea. */
+details.setari{border-top:1px solid var(--line);margin-top:14px;padding-top:10px}
+details.setari summary{list-style:none;font-size:13px;color:var(--muted)}
+details.setari summary::-webkit-details-marker{display:none}
+details.setari summary::before{content:'▸ ';color:var(--accent)}
+details.setari[open] summary::before{content:'▾ '}
+.setari-grupe{display:grid;gap:6px;margin-top:8px}
+.setari-grupe label.check{align-items:flex-start}
+.setari-grupe label.check input{margin-top:3px}

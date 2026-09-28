@@ -1107,5 +1107,26 @@
     "ny": "bas",
     "pz": "avant",
     "nz": "arrière"
+  },
+  "setari": {
+    "titlu": "Valeurs par défaut des nouveaux caissons",
+    "explica": "Les caissons neufs partent des groupes cochés ici. Les réglages restent dans ce navigateur, pas sur le serveur — sur un autre poste il faut les remettre.",
+    "iaDinCorp": "Retenir les valeurs de ce caisson",
+    "sterge": "Effacer les réglages",
+    "sters": "Réglages effacés.",
+    "tinutMinte": "Retenu.",
+    "nimic": "Rien de retenu pour l’instant.",
+    "stareSalvat": "Retenu du caisson « {nume} ».",
+    "aplicat": "Le nouveau caisson est parti de vos réglages.",
+    "faraStocare": "Le navigateur refuse d’écrire les réglages.",
+    "notaModel": "Les cotes et le nombre de pièces viennent du modèle choisi ; ne les cochez que si vous partez toujours du caisson vide.",
+    "matComanda": "vient du matériau de la commande",
+    "grupMaterial": "Panneau et chant",
+    "grupSpate": "Fond",
+    "grupUsi": "Jeux, pose et charnières",
+    "grupPolite": "Tablettes : jeu latéral et retrait",
+    "grupSertare": "Tiroirs : hauteurs, jeu, panneau",
+    "grupDimensiuni": "Largeur, hauteur, profondeur, construction",
+    "grupCantitati": "Combien de portes, tablettes, montants, tiroirs"
   }
 }

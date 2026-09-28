@@ -1118,5 +1118,26 @@
     "ny": "dole",
     "pz": "vpředu",
     "nz": "vzadu"
+  },
+  "setari": {
+    "titlu": "Výchozí hodnoty pro nové korpusy",
+    "explica": "Nové korpusy vycházejí ze skupin zaškrtnutých tady. Nastavení leží v tomhle prohlížeči, ne na serveru — na jiném počítači si je nastavíš znovu.",
+    "iaDinCorp": "Zapamatovat hodnoty z tohoto korpusu",
+    "sterge": "Smazat nastavení",
+    "sters": "Nastavení smazáno.",
+    "tinutMinte": "Zapamatováno.",
+    "nimic": "Zatím není nic zapamatované.",
+    "stareSalvat": "Zapamatováno z korpusu „{nume}“.",
+    "aplicat": "Nový korpus vyšel z tvého nastavení.",
+    "faraStocare": "Prohlížeč nedovolí nastavení zapsat.",
+    "notaModel": "Rozměry a počty dílů přicházejí z vybraného modelu; zaškrtni je jen tehdy, když vždycky začínáš od prázdného korpusu.",
+    "matComanda": "přichází z materiálu zakázky",
+    "grupMaterial": "Deska a hrana",
+    "grupSpate": "Záda",
+    "grupUsi": "Spáry, montáž a panty",
+    "grupPolite": "Police: boční vůle a zapuštění",
+    "grupSertare": "Zásuvky: výšky, vůle, deska",
+    "grupDimensiuni": "Šířka, výška, hloubka, konstrukce",
+    "grupCantitati": "Kolik dvířek, polic, středových stojin, zásuvek"
   }
 }

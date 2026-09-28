@@ -125,7 +125,10 @@ router.post('/corps', requireAuth, (req, res, next) => {
     .toString().trim().slice(0, 80);
 
   try {
-    res.redirect(`/corps/${creeazaCorp(req.user.id, params, credit.pretCorp())}`);
+    /* `nou=1` e semnalul pentru editor să pună setările implicite ale
+       utilizatorului peste corpul proaspăt. Copia unui corp nu-l primește:
+       acolo valorile vin din corpul copiat. */
+    res.redirect(`/corps/${creeazaCorp(req.user.id, params, credit.pretCorp())}?nou=1`);
   } catch (e) {
     if (e.message === 'CREDIT_INSUFICIENT') return res.redirect('/credit?insuficient=1');
     next(e);
@@ -147,7 +150,11 @@ router.get('/corps/:id', requireAuth, (req, res, next) => {
     priceLei: (credit.pretCorp() / 100).toFixed(2),
     sold: credit.sold(req.user.id),
     paymentDriver: process.env.PAYMENT_DRIVER || 'fake',
-    justPaid: req.query.paid === '1'
+    justPaid: req.query.paid === '1',
+    nou: req.query.nou === '1',
+    /* Când corpul stă într-o comandă, placa și cantul vin din materialul
+       comenzii, nu din browser. Editorul sare atunci peste grupa „material". */
+    matFixat: !!corp.mat_corp_id
   });
 });
 

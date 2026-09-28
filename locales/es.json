@@ -1107,5 +1107,26 @@
     "ny": "abajo",
     "pz": "frente",
     "nz": "trasera"
+  },
+  "setari": {
+    "titlu": "Valores por defecto para los muebles nuevos",
+    "explica": "Los muebles nuevos parten de los grupos marcados aquí. Los ajustes se guardan en este navegador, no en el servidor — en otro ordenador hay que ponerlos de nuevo.",
+    "iaDinCorp": "Recordar los valores de este mueble",
+    "sterge": "Borrar los ajustes",
+    "sters": "Ajustes borrados.",
+    "tinutMinte": "Guardado.",
+    "nimic": "Todavía no hay nada guardado.",
+    "stareSalvat": "Guardado del mueble «{nume}».",
+    "aplicat": "El mueble nuevo ha partido de tus ajustes.",
+    "faraStocare": "El navegador no deja escribir los ajustes.",
+    "notaModel": "Las medidas y el número de piezas vienen del modelo que elijas; márcalas solo si siempre partes del mueble vacío.",
+    "matComanda": "viene del material del pedido",
+    "grupMaterial": "Tablero y canto",
+    "grupSpate": "Trasera",
+    "grupUsi": "Holguras, montaje y bisagras",
+    "grupPolite": "Baldas: holgura lateral y retranqueo",
+    "grupSertare": "Cajones: alturas, holgura, tablero",
+    "grupDimensiuni": "Ancho, alto, fondo, construcción",
+    "grupCantitati": "Cuántas puertas, baldas, divisiones, cajones"
   }
 }

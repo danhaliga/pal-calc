@@ -1118,5 +1118,26 @@
     "ny": "jos",
     "pz": "față",
     "nz": "spate"
+  },
+  "setari": {
+    "titlu": "Setări implicite pentru corpurile noi",
+    "explica": "Corpurile noi pornesc de la grupele bifate aici. Setările se țin în browserul ăsta, nu pe server — pe alt calculator le pui din nou.",
+    "iaDinCorp": "Ține minte valorile din corpul ăsta",
+    "sterge": "Șterge setările",
+    "sters": "Setările au fost șterse.",
+    "tinutMinte": "Ținut minte.",
+    "nimic": "Nu e nimic ținut minte încă.",
+    "stareSalvat": "Ținut minte din corpul „{nume}\".",
+    "aplicat": "Corpul nou a pornit din setările tale.",
+    "faraStocare": "Browserul nu lasă să se scrie setări.",
+    "notaModel": "Dimensiunile și numărul de piese vin din modelul ales; bifează-le doar dacă pornești mereu de la corpul gol.",
+    "matComanda": "vine din materialul comenzii",
+    "grupMaterial": "Placă și cant",
+    "grupSpate": "Spate",
+    "grupUsi": "Rosturi, montaj și balamale",
+    "grupPolite": "Polițe: joc și retragere",
+    "grupSertare": "Sertare: înălțimi, joc, placă",
+    "grupDimensiuni": "Lățime, înălțime, adâncime, construcție",
+    "grupCantitati": "Câte uși, polițe, montanți, sertare"
   }
 }

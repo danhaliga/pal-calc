@@ -1107,5 +1107,26 @@
     "ny": "bawah",
     "pz": "depan",
     "nz": "belakang"
+  },
+  "setari": {
+    "titlu": "Nilai bawaan untuk kabinet baru",
+    "explica": "Kabinet baru berangkat dari grup yang dicentang di sini. Pengaturan tersimpan di peramban ini, bukan di server — di komputer lain harus diatur lagi.",
+    "iaDinCorp": "Ingat nilai dari kabinet ini",
+    "sterge": "Hapus pengaturan",
+    "sters": "Pengaturan dihapus.",
+    "tinutMinte": "Diingat.",
+    "nimic": "Belum ada yang diingat.",
+    "stareSalvat": "Diingat dari kabinet “{nume}”.",
+    "aplicat": "Kabinet baru berangkat dari pengaturanmu.",
+    "faraStocare": "Peramban tidak mengizinkan pengaturan ditulis.",
+    "notaModel": "Ukuran dan jumlah bagian datang dari model yang kamu pilih; centang hanya kalau kamu selalu mulai dari kabinet kosong.",
+    "matComanda": "datang dari material pesanan",
+    "grupMaterial": "Papan dan edging",
+    "grupSpate": "Punggung",
+    "grupUsi": "Celah, pemasangan dan engsel",
+    "grupPolite": "Rak: celah samping dan mundur",
+    "grupSertare": "Laci: tinggi, celah, papan",
+    "grupDimensiuni": "Lebar, tinggi, dalam, cara rakit",
+    "grupCantitati": "Berapa pintu, rak, sekat tengah, laci"
   }
 }

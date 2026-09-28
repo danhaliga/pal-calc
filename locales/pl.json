@@ -1118,5 +1118,26 @@
     "ny": "dół",
     "pz": "przód",
     "nz": "tył"
+  },
+  "setari": {
+    "titlu": "Wartości domyślne dla nowych korpusów",
+    "explica": "Nowe korpusy startują od grup zaznaczonych tutaj. Ustawienia siedzą w tej przeglądarce, nie na serwerze — na innym komputerze trzeba je ustawić od nowa.",
+    "iaDinCorp": "Zapamiętaj wartości z tego korpusu",
+    "sterge": "Wyczyść ustawienia",
+    "sters": "Ustawienia wyczyszczone.",
+    "tinutMinte": "Zapamiętane.",
+    "nimic": "Nic jeszcze nie zapamiętano.",
+    "stareSalvat": "Zapamiętane z korpusu „{nume}”.",
+    "aplicat": "Nowy korpus wystartował z twoich ustawień.",
+    "faraStocare": "Przeglądarka nie pozwala zapisać ustawień.",
+    "notaModel": "Wymiary i liczba elementów biorą się z wybranego modelu; zaznacz je tylko, jeśli zawsze zaczynasz od pustego korpusu.",
+    "matComanda": "bierze się z materiału zlecenia",
+    "grupMaterial": "Płyta i obrzeże",
+    "grupSpate": "Plecy",
+    "grupUsi": "Szczeliny, montaż i zawiasy",
+    "grupPolite": "Półki: luz boczny i cofnięcie",
+    "grupSertare": "Szuflady: wysokości, luz, płyta",
+    "grupDimensiuni": "Szerokość, wysokość, głębokość, konstrukcja",
+    "grupCantitati": "Ile drzwi, półek, przegród, szuflad"
   }
 }

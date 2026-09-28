@@ -539,3 +539,138 @@ test('fiecare montant aduce două îmbinări și patru suporți pe poliță', ()
   assert.equal(cu.cep, 16, 'câte două dibluri pe îmbinare');
   assert.equal(cu.suport, 24, '2 polițe × 3 compartimente × 4 suporți');
 });
+
+/* =====================================================================
+   7. Setările implicite ale editorului
+
+   Stau în browserul omului (localStorage), deci niciun test de aici nu le
+   poate rula. Ce se poate ține în frâu e contractul dintre ele și restul
+   aplicației: numele câmpurilor, câmpurile pe care N-au voie să le atingă,
+   și semnalul `?nou=1` fără de care nu se aplică niciodată.
+   ===================================================================== */
+
+const SURSA_APP = fs.readFileSync(path.join(__dirname, '..', 'public', 'app.js'), 'utf8');
+const SURSA_CORPS = fs.readFileSync(path.join(__dirname, '..', 'src', 'corps.js'), 'utf8');
+const SURSA_ORD = fs.readFileSync(path.join(__dirname, '..', 'src', 'orders.js'), 'utf8');
+const EDIT_EJS = fs.readFileSync(path.join(__dirname, '..', 'views', 'corps', 'edit.ejs'), 'utf8');
+
+/* Scoate lista GRUPE din app.js. Fișierul e pentru browser, nu se poate
+   cere cu require(), așa că îi citim sursa. */
+function grupeleDinApp() {
+  const bloc = SURSA_APP.match(/var GRUPE = \[([\s\S]*?)\n\];/);
+  assert.ok(bloc, 'nu mai există lista GRUPE în public/app.js');
+  const grupe = [];
+  bloc[1].split('\n').forEach(linie => {
+    const id = linie.match(/id:\s*'([^']+)'/);
+    if (!id) return;
+    const camp = linie.match(/camp:\s*\[([^\]]*)\]/);
+    assert.ok(camp, `grupa ${id[1]} n-are lista de câmpuri`);
+    grupe.push({
+      id: id[1],
+      camp: (camp[1].match(/'[^']+'/g) || []).map(s => s.slice(1, -1))
+    });
+  });
+  assert.ok(grupe.length >= 5, 'prea puține grupe de setări');
+  return grupe;
+}
+
+test('fiecare câmp din setări există chiar în parametrii unui corp', () => {
+  const p = defaults();
+  grupeleDinApp().forEach(g => {
+    g.camp.forEach(f => {
+      assert.ok(Object.prototype.hasOwnProperty.call(p, f),
+        `grupa „${g.id}" trimite spre câmpul «${f}», care nu există în defaults(); ` +
+        'setarea s-ar scrie în gol, fără nicio eroare');
+    });
+  });
+});
+
+test('setările nu ating forma corpului, doar felul de-a lucra', () => {
+  /* Un corp în L salvat ca „implicit" ar face orice corp nou să iasă în L.
+     Forma vine din model sau din mâna omului, niciodată din setări. */
+  const interzise = ['tip', 'contur', 'W2', 'orb', 'nume'];
+  grupeleDinApp().forEach(g => {
+    g.camp.forEach(f => {
+      assert.ok(interzise.indexOf(f) === -1,
+        `grupa „${g.id}" ar ține minte «${f}», care e forma corpului, nu o setare`);
+    });
+  });
+});
+
+test('fiecare grupă de setări are text în toate cele 30 de limbi', () => {
+  const grupe = grupeleDinApp();
+  fs.readdirSync(LOCALES).filter(f => f.endsWith('.json')).forEach(f => {
+    const dict = JSON.parse(fs.readFileSync(path.join(LOCALES, f), 'utf8'));
+    grupe.forEach(g => {
+      const cheie = 'grup' + g.id.charAt(0).toUpperCase() + g.id.slice(1);
+      assert.ok(dict.setari && dict.setari[cheie],
+        `${f} n-are setari.${cheie}; în editor s-ar vedea cheia brută`);
+    });
+  });
+});
+
+test('corpurile proaspete primesc `nou=1`, copiile nu', () => {
+  /* Fără semnalul ăsta setările nu se aplică niciodată, iar zona din editor
+     rămâne o bifă fără efect. */
+  assert.match(SURSA_CORPS, /res\.redirect\(`\/corps\/\$\{creeazaCorp\([\s\S]*?\}\?nou=1`\)/,
+    'corpul creat în afara unei comenzi nu mai spune că e nou');
+  assert.match(SURSA_ORD, /res\.redirect\(`\/corps\/\$\{corpId\}\?nou=1`\)/,
+    'corpul adăugat într-o comandă nu mai spune că e nou');
+
+  /* Copia pornește din corpul copiat; dacă ar primi `nou=1`, setările ar
+     călca peste exact ce voia omul să copieze. */
+  const copie = SURSA_CORPS.match(/dupliceazaCorp[\s\S]*?res\.redirect\([^)]*\)/);
+  assert.ok(copie, 'nu mai găsesc ruta de duplicare');
+  assert.ok(!/nou=1/.test(copie[0]), 'copia unui corp nu are voie să pornească din setări');
+});
+
+test('editorul primește `nou` și `matFixat`, altfel setările nu se pot aplica', () => {
+  assert.match(EDIT_EJS, /nou:\s*nou/, 'page-data nu mai trimite `nou`');
+  assert.match(EDIT_EJS, /matFixat:\s*matFixat/, 'page-data nu mai trimite `matFixat`');
+  assert.match(SURSA_CORPS, /nou:\s*req\.query\.nou === '1'/, 'ruta nu mai calculează `nou`');
+  assert.match(SURSA_CORPS, /matFixat:\s*!!corp\.mat_corp_id/, 'ruta nu mai calculează `matFixat`');
+  assert.match(EDIT_EJS, /'editor',\s*'setari'/, 'pagina nu mai cere catalogul `setari`');
+});
+
+test('materialul comenzii bate setarea din browser', () => {
+  /* Placa și cantul unui corp dintr-o comandă sunt ale comenzii. Dacă
+     browserul ar călca peste ele, piesele ar ieși din altă placă decât
+     cea cumpărată — și nimeni n-ar vedea de ce. */
+  assert.match(SURSA_APP, /if \(g\.id === 'material' && DATA\.matFixat\) return;/,
+    'aplicaSetari() nu mai ferește materialul comenzii');
+});
+
+test('spatele de PFL pornește de la 2.5, cum se lucrează în atelier', () => {
+  assert.equal(defaults().tp, 2.5);
+});
+
+/* =====================================================================
+   8. Cataloagele: româna e plasa de siguranță, nu locul unde se stă
+
+   Testul vecin oprește cheile inventate. Ăsta oprește cheile lipsă: o
+   cheie fără traducere cade pe română, deci nimic nu se strică — se vede
+   doar românește într-o pagină turcească, și nimeni nu observă.
+   ===================================================================== */
+
+test('fiecare cheie din română are traducere în toate limbile', () => {
+  const plat = (o, pre = '') => Object.keys(o).reduce((acc, k) => {
+    const v = o[k], cale = pre ? pre + '.' + k : k;
+    /* formele de plural sunt un obiect cu categorii, nu un subspațiu */
+    if (v && typeof v === 'object' && !Array.isArray(v) &&
+        !['zero', 'one', 'two', 'few', 'many', 'other'].some(c => c in v)) {
+      return acc.concat(plat(v, cale));
+    }
+    return acc.concat([cale]);
+  }, []);
+
+  const adanc = (o, cale) => cale.split('.').reduce((x, k) => (x == null ? x : x[k]), o);
+  const ro = JSON.parse(fs.readFileSync(path.join(LOCALES, 'ro.json'), 'utf8'));
+  const chei = plat(ro);
+
+  fs.readdirSync(LOCALES).filter(f => f.endsWith('.json') && f !== 'ro.json').forEach(f => {
+    const dict = JSON.parse(fs.readFileSync(path.join(LOCALES, f), 'utf8'));
+    const lipsa = chei.filter(k => adanc(dict, k) === undefined);
+    assert.deepEqual(lipsa, [], `${f} n-are: ${lipsa.slice(0, 8).join(', ')}` +
+      (lipsa.length > 8 ? ` (+${lipsa.length - 8})` : ''));
+  });
+});

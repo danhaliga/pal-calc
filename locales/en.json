@@ -1107,5 +1107,26 @@
     "ny": "bottom",
     "pz": "front",
     "nz": "back"
+  },
+  "setari": {
+    "titlu": "Defaults for new cabinets",
+    "explica": "New cabinets start from the groups ticked here. The settings live in this browser, not on the server — on another machine you set them again.",
+    "iaDinCorp": "Remember the values from this cabinet",
+    "sterge": "Clear the settings",
+    "sters": "Settings cleared.",
+    "tinutMinte": "Remembered.",
+    "nimic": "Nothing remembered yet.",
+    "stareSalvat": "Remembered from the cabinet “{nume}”.",
+    "aplicat": "The new cabinet started from your settings.",
+    "faraStocare": "The browser will not let settings be written.",
+    "notaModel": "Sizes and part counts come from the model you pick; tick them only if you always start from the blank cabinet.",
+    "matComanda": "comes from the order material",
+    "grupMaterial": "Board and banding",
+    "grupSpate": "Back panel",
+    "grupUsi": "Gaps, mounting and hinges",
+    "grupPolite": "Shelves: side play and setback",
+    "grupSertare": "Drawers: heights, play, board",
+    "grupDimensiuni": "Width, height, depth, construction",
+    "grupCantitati": "How many doors, shelves, partitions, drawers"
   }
 }

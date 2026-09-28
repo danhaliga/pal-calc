@@ -546,6 +546,138 @@ function setView(v) {
   V3.theta = m[0]; V3.phi = m[1];
 }
 
+/* ---------------- setări implicite pentru corpuri noi ----------------
+
+   Stau în browserul omului, nu în bază: fiecare din atelier lucrează altfel
+   și nimeni nu vrea ca setarea lui să sară pe corpurile colegului. De-asta
+   nu pleacă nimic spre server; pe alt calculator se pun din nou.
+
+   Se ating DOAR corpurile proaspete (`?nou=1` la redirect). Un corp vechi
+   deschis a doua oară rămâne cum a fost lăsat, altfel ar sări cotele sub
+   mâna omului. */
+
+var CHEIE_SETARI = 'pal-calc.setari-corp';
+
+/* `tip`, `W2`, `orb` și conturul lipsesc înadins: alea sunt forma corpului,
+   nu felul de-a lucra al atelierului. La fel `nume`. */
+var GRUPE = [
+  { id: 'material',   camp: ['t', 'cg', 'cs'],                        bifatLaInceput: true },
+  { id: 'spate',      camp: ['spate', 'tp'],                          bifatLaInceput: true },
+  { id: 'usi',        camp: ['montaj', 'balama', 'rm', 'ri', 'rinc'], bifatLaInceput: true },
+  { id: 'polite',     camp: ['jp', 'rp'],                             bifatLaInceput: true },
+  { id: 'sertare',    camp: ['hFront', 'hCutie', 'jg', 'ts'],         bifatLaInceput: true },
+  { id: 'dimensiuni', camp: ['W', 'H', 'D', 'constr'],                bifatLaInceput: false },
+  { id: 'cantitati',  camp: ['nUsi', 'nPol', 'nDsp', 'nSer'],         bifatLaInceput: false }
+];
+
+function cheieGrup(id) { return 'setari.grup' + id.charAt(0).toUpperCase() + id.slice(1); }
+
+/* localStorage poate lipsi cu totul (fereastră privată, stocare oprită din
+   browser) și atunci aruncă la simpla citire. Fără setări e o pagubă mică;
+   să cadă editorul din cauza asta ar fi una mare. */
+function citesteSetari() {
+  try {
+    var brut = window.localStorage.getItem(CHEIE_SETARI);
+    if (!brut) return null;
+    var s = JSON.parse(brut);
+    if (!s || typeof s !== 'object' || !s.val || !s.grupe) return null;
+    return s;
+  } catch (e) { return null; }
+}
+
+function scrieSetari(s) {
+  try { window.localStorage.setItem(CHEIE_SETARI, JSON.stringify(s)); return true; }
+  catch (e) { return false; }
+}
+
+function stergeSetari() {
+  try { window.localStorage.removeItem(CHEIE_SETARI); } catch (e) { /* n-avem ce face */ }
+}
+
+function grupeBifate() {
+  var g = {};
+  document.querySelectorAll('#setariGrupe input[data-grup]').forEach(function (cb) {
+    g[cb.dataset.grup] = cb.checked;
+  });
+  return g;
+}
+
+/* Pune setările peste ce-a trimis serverul. Materialul comenzii bate
+   browserul: placa și cantul unui corp dintr-o comandă sunt ale comenzii,
+   altfel piesele ar ieși din altă placă decât cea cumpărată. */
+function aplicaSetari() {
+  var s = citesteSetari();
+  if (!DATA.nou || !s) return false;
+  var atins = false;
+  GRUPE.forEach(function (g) {
+    if (!s.grupe[g.id]) return;
+    if (g.id === 'material' && DATA.matFixat) return;
+    g.camp.forEach(function (f) {
+      if (s.val[f] === undefined) return;
+      params[f] = s.val[f];
+      atins = true;
+    });
+  });
+  return atins;
+}
+
+function randeazaSetari() {
+  var cutie = $('setariGrupe');
+  if (!cutie) return;
+  var s = citesteSetari();
+
+  cutie.innerHTML = GRUPE.map(function (g) {
+    var bifat = s ? !!s.grupe[g.id] : g.bifatLaInceput;
+    var val = s ? g.camp.map(function (f) {
+      return (s.val[f] === undefined || s.val[f] === '') ? null : s.val[f];
+    }).filter(function (v) { return v !== null; }).join(' · ') : '';
+    var blocat = g.id === 'material' && DATA.matFixat;
+    return '<label class="check' + (blocat ? ' muted' : '') + '">' +
+      '<input type="checkbox" data-grup="' + g.id + '"' + (bifat ? ' checked' : '') + '> ' +
+      '<span>' + esc(T(cheieGrup(g.id))) +
+      (val ? ' <span class="mono small muted">' + esc(val) + '</span>' : '') +
+      (blocat ? ' <span class="small muted">— ' + esc(T('setari.matComanda')) + '</span>' : '') +
+      '</span></label>';
+  }).join('');
+
+  var stare = $('setariStare');
+  if (stare) stare.textContent = s ? T('setari.stareSalvat', { nume: s.nume || T('editor.corp') })
+                                   : T('setari.nimic');
+}
+
+function salveazaSetari() {
+  var val = {};
+  GRUPE.forEach(function (g) { g.camp.forEach(function (f) { val[f] = params[f]; }); });
+  if (!scrieSetari({ nume: params.nume || '', grupe: grupeBifate(), val: val })) {
+    toast(T('setari.faraStocare'));
+    return false;
+  }
+  randeazaSetari();
+  return true;
+}
+
+function legaSetari() {
+  var cutie = $('setariGrupe');
+  if (!cutie) return;
+  randeazaSetari();
+
+  /* O bifă singură trebuie să și țină minte ceva, altfel omul bifează,
+     pleacă, și la următorul corp nu se întâmplă nimic. */
+  cutie.addEventListener('change', function (e) {
+    if (!e.target.dataset.grup) return;
+    salveazaSetari();
+  });
+
+  $('setariIa').onclick = function () {
+    if (salveazaSetari()) toast(T('setari.tinutMinte'));
+  };
+  $('setariSterge').onclick = function () {
+    stergeSetari();
+    randeazaSetari();
+    toast(T('setari.sters'));
+  };
+}
+
 /* ---------------- evenimente ---------------- */
 
 $('form').addEventListener('input', function (e) {
@@ -603,10 +735,22 @@ function toast(m) {
 
 /* ---------------- pornire ---------------- */
 
+/* Setările intră ÎNAINTE de primul render, ca omul să vadă direct corpul
+   lui, nu pe cel implicit schimbându-se sub ochi. */
+var setariPuse = aplicaSetari();
+
 init3D();
 legaContur();
+legaSetari();
 render();
 loadPieces();
-setState('salvat');
+
+if (setariPuse) {
+  setState(T('editor.seSalveaza'));
+  scheduleSave();
+  toast(T('setari.aplicat'));
+} else {
+  setState(T('editor.salvat'));
+}
 
 })();

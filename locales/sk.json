@@ -1118,5 +1118,26 @@
     "ny": "dole",
     "pz": "vpredu",
     "nz": "vzadu"
+  },
+  "setari": {
+    "titlu": "Predvolené hodnoty pre nové korpusy",
+    "explica": "Nové korpusy vychádzajú zo skupín zaškrtnutých tu. Nastavenia sedia v tomto prehliadači, nie na serveri — na inom počítači si ich nastavíš znova.",
+    "iaDinCorp": "Zapamätať hodnoty z tohto korpusu",
+    "sterge": "Zmazať nastavenia",
+    "sters": "Nastavenia zmazané.",
+    "tinutMinte": "Zapamätané.",
+    "nimic": "Zatiaľ nie je nič zapamätané.",
+    "stareSalvat": "Zapamätané z korpusu „{nume}“.",
+    "aplicat": "Nový korpus vyšiel z tvojho nastavenia.",
+    "faraStocare": "Prehliadač nedovolí nastavenia zapísať.",
+    "notaModel": "Rozmery a počty dielov prichádzajú z vybraného modelu; zaškrtni ich len vtedy, keď vždy začínaš od prázdneho korpusu.",
+    "matComanda": "prichádza z materiálu zákazky",
+    "grupMaterial": "Doska a hrana",
+    "grupSpate": "Chrbát",
+    "grupUsi": "Škáry, montáž a pánty",
+    "grupPolite": "Police: bočná vôľa a zapustenie",
+    "grupSertare": "Zásuvky: výšky, vôľa, doska",
+    "grupDimensiuni": "Šírka, výška, hĺbka, konštrukcia",
+    "grupCantitati": "Koľko dvierok, políc, stredových stojok, zásuviek"
   }
 }

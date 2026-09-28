@@ -1107,5 +1107,26 @@
     "ny": "nedtill",
     "pz": "framsida",
     "nz": "baksida"
+  },
+  "setari": {
+    "titlu": "Standardvärden för nya stommar",
+    "explica": "Nya stommar utgår från grupperna som är ikryssade här. Inställningarna ligger i den här webbläsaren, inte på servern — på en annan dator sätter du dem igen.",
+    "iaDinCorp": "Kom ihåg värdena från den här stommen",
+    "sterge": "Rensa inställningarna",
+    "sters": "Inställningarna är rensade.",
+    "tinutMinte": "Ihågkommet.",
+    "nimic": "Inget ihågkommet än.",
+    "stareSalvat": "Ihågkommet från stommen ”{nume}”.",
+    "aplicat": "Den nya stommen utgick från dina inställningar.",
+    "faraStocare": "Webbläsaren låter inte inställningarna skrivas.",
+    "notaModel": "Mått och antal delar kommer från modellen du väljer; kryssa i dem bara om du alltid utgår från den tomma stommen.",
+    "matComanda": "kommer från orderns material",
+    "grupMaterial": "Skiva och kantlist",
+    "grupSpate": "Baksida",
+    "grupUsi": "Spalter, montering och gångjärn",
+    "grupPolite": "Hyllplan: sidospel och indrag",
+    "grupSertare": "Lådor: höjder, spel, skiva",
+    "grupDimensiuni": "Bredd, höjd, djup, byggsätt",
+    "grupCantitati": "Hur många dörrar, hyllplan, mellanstycken, lådor"
   }
 }

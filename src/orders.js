@@ -367,7 +367,7 @@ router.post('/orders/:id/corps', requireAuth, (req, res, next) => {
 
   try {
     const corpId = adaugaCorp(req.user.id, order, params, credit.pretCorp(), matCorp ? matCorp.id : null);
-    res.redirect(`/corps/${corpId}`);
+    res.redirect(`/corps/${corpId}?nou=1`);
   } catch (e) {
     if (e.message === 'CREDIT_INSUFICIENT') return res.redirect('/credit?insuficient=1');
     next(e);

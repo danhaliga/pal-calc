@@ -1107,5 +1107,26 @@
     "ny": "baixo",
     "pz": "frente",
     "nz": "trás"
+  },
+  "setari": {
+    "titlu": "Valores por omissão para os móveis novos",
+    "explica": "Os móveis novos partem dos grupos marcados aqui. As definições ficam neste navegador, não no servidor — noutro computador põem-se de novo.",
+    "iaDinCorp": "Guardar os valores deste móvel",
+    "sterge": "Apagar as definições",
+    "sters": "Definições apagadas.",
+    "tinutMinte": "Guardado.",
+    "nimic": "Ainda não há nada guardado.",
+    "stareSalvat": "Guardado do móvel «{nume}».",
+    "aplicat": "O móvel novo partiu das suas definições.",
+    "faraStocare": "O navegador não deixa escrever as definições.",
+    "notaModel": "As medidas e o número de peças vêm do modelo escolhido; marque-as só se partir sempre do móvel vazio.",
+    "matComanda": "vem do material da encomenda",
+    "grupMaterial": "Placa e orla",
+    "grupSpate": "Costas",
+    "grupUsi": "Folgas, montagem e dobradiças",
+    "grupPolite": "Prateleiras: folga lateral e recuo",
+    "grupSertare": "Gavetas: alturas, folga, placa",
+    "grupDimensiuni": "Largura, altura, profundidade, construção",
+    "grupCantitati": "Quantas portas, prateleiras, divisórias, gavetas"
   }
 }

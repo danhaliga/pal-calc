@@ -1118,5 +1118,26 @@
     "ny": "dole",
     "pz": "spreda",
     "nz": "pozadi"
+  },
+  "setari": {
+    "titlu": "Podrazumevane vrednosti za nove korpuse",
+    "explica": "Novi korpusi kreću od grupa koje su ovde čekirane. Podešavanja stoje u ovom pregledaču, ne na serveru — na drugom računaru ih postavljaš ponovo.",
+    "iaDinCorp": "Zapamti vrednosti iz ovog korpusa",
+    "sterge": "Obriši podešavanja",
+    "sters": "Podešavanja obrisana.",
+    "tinutMinte": "Zapamćeno.",
+    "nimic": "Još ništa nije zapamćeno.",
+    "stareSalvat": "Zapamćeno iz korpusa „{nume}”.",
+    "aplicat": "Novi korpus je krenuo iz tvojih podešavanja.",
+    "faraStocare": "Pregledač ne dozvoljava upis podešavanja.",
+    "notaModel": "Mere i broj delova dolaze iz izabranog modela; čekiraj ih samo ako uvek kreneš od praznog korpusa.",
+    "matComanda": "dolazi iz materijala porudžbine",
+    "grupMaterial": "Ploča i kant",
+    "grupSpate": "Leđa",
+    "grupUsi": "Zazori, montaža i šarke",
+    "grupPolite": "Police: bočni zazor i uvlačenje",
+    "grupSertare": "Fioke: visine, zazor, ploča",
+    "grupDimensiuni": "Širina, visina, dubina, konstrukcija",
+    "grupCantitati": "Koliko vrata, polica, srednjih stranica, fioka"
   }
 }

@@ -1107,5 +1107,26 @@
     "ny": "alt",
     "pz": "ön",
     "nz": "arka"
+  },
+  "setari": {
+    "titlu": "Yeni gövdeler için varsayılanlar",
+    "explica": "Yeni gövdeler burada işaretli gruplardan başlar. Ayarlar bu tarayıcıda durur, sunucuda değil — başka bir bilgisayarda yeniden verirsin.",
+    "iaDinCorp": "Bu gövdedeki değerleri hatırla",
+    "sterge": "Ayarları temizle",
+    "sters": "Ayarlar temizlendi.",
+    "tinutMinte": "Hatırlandı.",
+    "nimic": "Henüz hatırlanan bir şey yok.",
+    "stareSalvat": "“{nume}” gövdesinden hatırlandı.",
+    "aplicat": "Yeni gövde senin ayarlarından başladı.",
+    "faraStocare": "Tarayıcı ayarların yazılmasına izin vermiyor.",
+    "notaModel": "Ölçüler ve parça sayıları seçtiğin modelden gelir; sadece hep boş gövdeden başlıyorsan işaretle.",
+    "matComanda": "siparişin malzemesinden gelir",
+    "grupMaterial": "Levha ve bant",
+    "grupSpate": "Arkalık",
+    "grupUsi": "Boşluklar, montaj ve menteşeler",
+    "grupPolite": "Raflar: yan boşluk ve geri çekme",
+    "grupSertare": "Çekmeceler: yükseklikler, boşluk, levha",
+    "grupDimensiuni": "Genişlik, yükseklik, derinlik, yapım",
+    "grupCantitati": "Kaç kapak, raf, ara dikme, çekmece"
   }
 }

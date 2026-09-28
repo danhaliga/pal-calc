@@ -1107,5 +1107,26 @@
     "ny": "alul",
     "pz": "elöl",
     "nz": "hátul"
+  },
+  "setari": {
+    "titlu": "Alapértékek az új korpuszokhoz",
+    "explica": "Az új korpuszok az itt kipipált csoportokból indulnak. A beállítások ebben a böngészőben ülnek, nem a szerveren — másik gépen újra be kell állítani őket.",
+    "iaDinCorp": "Jegyezd meg ennek a korpusznak az értékeit",
+    "sterge": "Beállítások törlése",
+    "sters": "A beállítások törölve.",
+    "tinutMinte": "Megjegyezve.",
+    "nimic": "Még nincs megjegyezve semmi.",
+    "stareSalvat": "Megjegyezve a(z) „{nume}” korpuszból.",
+    "aplicat": "Az új korpusz a te beállításaidból indult.",
+    "faraStocare": "A böngésző nem engedi a beállításokat kiírni.",
+    "notaModel": "A méretek és a darabszámok a választott modellből jönnek; csak akkor pipáld ki őket, ha mindig az üres korpuszból indulsz.",
+    "matComanda": "a rendelés anyagából jön",
+    "grupMaterial": "Lap és élzáró",
+    "grupSpate": "Hátlap",
+    "grupUsi": "Fugák, felfekvés és pántok",
+    "grupPolite": "Polcok: oldalhézag és visszahúzás",
+    "grupSertare": "Fiókok: magasságok, hézag, lap",
+    "grupDimensiuni": "Szélesség, magasság, mélység, felépítés",
+    "grupCantitati": "Hány ajtó, polc, közfal, fiók"
   }
 }

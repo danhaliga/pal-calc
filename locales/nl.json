@@ -1107,5 +1107,26 @@
     "ny": "onder",
     "pz": "voor",
     "nz": "achter"
+  },
+  "setari": {
+    "titlu": "Standaardwaarden voor nieuwe kasten",
+    "explica": "Nieuwe kasten starten met de hier aangevinkte groepen. De instellingen staan in deze browser, niet op de server — op een andere computer zet je ze opnieuw.",
+    "iaDinCorp": "Onthoud de waarden van deze kast",
+    "sterge": "Instellingen wissen",
+    "sters": "Instellingen gewist.",
+    "tinutMinte": "Onthouden.",
+    "nimic": "Nog niets onthouden.",
+    "stareSalvat": "Onthouden van de kast “{nume}”.",
+    "aplicat": "De nieuwe kast is met jouw instellingen begonnen.",
+    "faraStocare": "De browser laat de instellingen niet wegschrijven.",
+    "notaModel": "Maten en aantallen komen uit het gekozen model; vink ze alleen aan als je altijd met de lege kast begint.",
+    "matComanda": "komt van het materiaal van de order",
+    "grupMaterial": "Plaat en kantenband",
+    "grupSpate": "Achterwand",
+    "grupUsi": "Naden, montage en scharnieren",
+    "grupPolite": "Legplanken: speling en terugzetting",
+    "grupSertare": "Laden: hoogtes, speling, plaat",
+    "grupDimensiuni": "Breedte, hoogte, diepte, opbouw",
+    "grupCantitati": "Hoeveel deuren, legplanken, tussenschotten, laden"
   }
 }

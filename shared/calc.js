@@ -63,10 +63,10 @@
     return {
       nume: traducator(tr)('modele.corpImplicit'), W: 800, H: 720, D: 560, constr: 'intre',
       tip: 'drept', W2: 900, orb: 550, contur: [],
-      t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 3,
+      t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 2.5,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2,
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
-      nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 16, lg: '',
+      nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
       pragCant: PRAG_CANT, rezervaCant: REZERVA_CANT
     };
   }

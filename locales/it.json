@@ -1107,5 +1107,26 @@
     "ny": "basso",
     "pz": "fronte",
     "nz": "retro"
+  },
+  "setari": {
+    "titlu": "Valori di partenza per i mobili nuovi",
+    "explica": "I mobili nuovi partono dai gruppi spuntati qui. Le impostazioni restano in questo browser, non sul server — su un altro computer vanno rimesse.",
+    "iaDinCorp": "Ricorda i valori di questo mobile",
+    "sterge": "Cancella le impostazioni",
+    "sters": "Impostazioni cancellate.",
+    "tinutMinte": "Ricordato.",
+    "nimic": "Ancora niente in memoria.",
+    "stareSalvat": "Ricordato dal mobile «{nume}».",
+    "aplicat": "Il mobile nuovo è partito dalle tue impostazioni.",
+    "faraStocare": "Il browser non lascia scrivere le impostazioni.",
+    "notaModel": "Le misure e il numero dei pezzi vengono dal modello scelto; spuntali solo se parti sempre dal mobile vuoto.",
+    "matComanda": "viene dal materiale della commessa",
+    "grupMaterial": "Pannello e bordo",
+    "grupSpate": "Schienale",
+    "grupUsi": "Fughe, montaggio e cerniere",
+    "grupPolite": "Ripiani: gioco laterale e arretramento",
+    "grupSertare": "Cassetti: altezze, gioco, pannello",
+    "grupDimensiuni": "Larghezza, altezza, profondità, costruzione",
+    "grupCantitati": "Quante ante, ripiani, montanti, cassetti"
   }
 }

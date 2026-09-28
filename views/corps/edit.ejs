@@ -140,6 +140,19 @@
       </fieldset>
     </form>
     <p class="legend"><%= t('editor.salvareAutomata') %></p>
+
+    <%# Setările stau în browser, nu în bază — vezi comentariul din app.js. %>
+    <details class="setari" id="setariBox">
+      <summary><%= t('setari.titlu') %></summary>
+      <p class="hint"><%= t('setari.explica') %></p>
+      <div class="setari-grupe" id="setariGrupe"></div>
+      <p class="legend"><%= t('setari.notaModel') %></p>
+      <div class="btns">
+        <button type="button" class="btn small primary" id="setariIa"><%= t('setari.iaDinCorp') %></button>
+        <button type="button" class="btn small" id="setariSterge"><%= t('setari.sterge') %></button>
+      </div>
+      <p class="legend" id="setariStare"></p>
+    </details>
   </div>
 
   <!-- ---------------- 3D + listă ---------------- -->
@@ -235,14 +248,16 @@
 <div class="toast" id="toast"></div>
 
 <script type="application/json" id="i18n"><%- jsonPentruPagina(catalogPagina(
-  'editor', 'piesa', 'nota', 'avert', 'fibra', 'directie', 'fata', 'csv', 'comun', 'modele'
+  'editor', 'setari', 'piesa', 'nota', 'avert', 'fibra', 'directie', 'fata', 'csv', 'comun', 'modele'
 )) %></script>
 <script type="application/json" id="page-data"><%- jsonPentruPagina({
   corpId: corp.id,
   params: corp.params,
   paid: corp.paid,
   csrf: csrfToken,
-  priceLei: priceLei
+  priceLei: priceLei,
+  nou: nou,
+  matFixat: matFixat
 }) %></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="/shared/calc.js?v=<%= assetV %>"></script>

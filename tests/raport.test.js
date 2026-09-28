@@ -40,10 +40,13 @@ test('un corp de bază: piese, materiale și bucăți', () => {
   assert.equal(r.totaluri.randuri, 6);
   assert.equal(r.totaluri.bucati, 8);
 
+  /* Grosimea PFL-ului vine din defaults(); testul o citeşte de acolo ca să nu
+     mai cadă când atelierul schimbă placa de spate. */
+  const cheiePfl = 'PFL|' + defaults().tp;
   const chei = r.materiale.map(m => m.key).sort();
-  assert.deepEqual(chei, ['Egger|W1000 ST9|18', 'PFL|3']);
+  assert.deepEqual(chei, ['Egger|W1000 ST9|18', cheiePfl]);
   assert.equal(r.materiale.find(m => m.key === 'Egger|W1000 ST9|18').coliIntregi, 1);
-  assert.equal(r.materiale.find(m => m.key === 'PFL|3').coliIntregi, 1);
+  assert.equal(r.materiale.find(m => m.key === cheiePfl).coliIntregi, 1);
 });
 
 test('rolul piesei se ia din cheia ei, nu din text', () => {
@@ -341,7 +344,10 @@ test('comandă cu trei corpuri: totaluri și coduri de piesă', () => {
   const r = raport(comanda(), [
     corp('Corp bază', { W: 800, nUsi: 2, nPol: 1 }, 1),
     corp('Corp suspendat', { W: 600, H: 720, D: 320, nUsi: 1, nPol: 2 }, 2),
-    corp('Comodă', { W: 800, H: 800, D: 450, nUsi: 0, nPol: 0, nSer: 4, hFront: 197, hCutie: 150 }, 3)
+    /* cutiile din 16, deşi carcasa e din 18: testul ţine minte că raportul
+       desparte materialele pe grosimi, nu doar pe decor */
+    corp('Comodă', { W: 800, H: 800, D: 450, nUsi: 0, nPol: 0, nSer: 4,
+                     hFront: 197, hCutie: 150, ts: 16 }, 3)
   ], OPT);
 
   assert.equal(r.totaluri.corpuri, 3);

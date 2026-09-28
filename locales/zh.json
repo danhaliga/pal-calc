@@ -1107,5 +1107,26 @@
     "ny": "下",
     "pz": "前",
     "nz": "后"
+  },
+  "setari": {
+    "titlu": "新柜体的默认值",
+    "explica": "新柜体从这里勾选的分组开始。设置存在这台浏览器里，不在服务器上——换一台电脑要重新设。",
+    "iaDinCorp": "记住这个柜体的数值",
+    "sterge": "清空设置",
+    "sters": "设置已清空。",
+    "tinutMinte": "记住了。",
+    "nimic": "还没记住任何东西。",
+    "stareSalvat": "记自柜体“{nume}”。",
+    "aplicat": "新柜体从你的设置开始。",
+    "faraStocare": "浏览器不让写入设置。",
+    "notaModel": "尺寸和件数来自你选的款式；只有当你总是从空柜体开始时才勾选。",
+    "matComanda": "来自订单的板材",
+    "grupMaterial": "板材和封边",
+    "grupSpate": "背板",
+    "grupUsi": "缝隙、安装方式和铰链",
+    "grupPolite": "层板：两侧间隙和后退",
+    "grupSertare": "抽屉：高度、间隙、板材",
+    "grupDimensiuni": "宽、高、深、做法",
+    "grupCantitati": "几扇门、几块层板、几块中隔、几个抽屉"
   }
 }
