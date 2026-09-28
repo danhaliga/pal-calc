@@ -1,0 +1,37 @@
+<div class="top">
+  <div>
+    <h1><%= t('articole.titlu') %></h1>
+    <p class="muted"><%= t('articole.intro') %></p>
+  </div>
+</div>
+
+<div class="filtre">
+  <a class="btn small <%= grupAles ? '' : 'primary' %>" href="/ghid"><%= t('articole.toate') %></a>
+  <% grupuri.forEach(function (g) { %>
+    <a class="btn small <%= grupAles === g.id ? 'primary' : '' %>" href="/ghid?grup=<%= g.id %>"><%= g.nume %></a>
+  <% }); %>
+</div>
+
+<% if (!articole.length) { %>
+  <div class="panel empty">
+    <p><%= t('articole.goalaTitlu') %></p>
+    <p class="muted"><%= t('articole.goalaText') %></p>
+  </div>
+<% } else { %>
+  <div class="articole">
+    <% articole.forEach(function (a) { %>
+      <article class="panel articol-card">
+        <div class="articol-meta">
+          <span class="chip"><%= a.numeGrup %></span>
+          <% if (a.lang !== lang) { %>
+            <span class="chip limba" title="<%= t('articole.scrisIn', { limba: a.numeLimba }) %>"><%= a.numeLimba %></span>
+          <% } %>
+          <span class="muted small"><%= a.updated_at.slice(0, 10) %></span>
+        </div>
+        <h2><a href="/ghid/<%= a.slug %>"><%= a.titlu %></a></h2>
+        <p class="muted"><%= a.rezumatText %></p>
+        <a class="btn small" href="/ghid/<%= a.slug %>"><%= t('articole.citeste') %></a>
+      </article>
+    <% }); %>
+  </div>
+<% } %>

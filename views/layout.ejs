@@ -27,6 +27,7 @@
       <% if (user) { %>
         <a href="/orders" class="<%= currentPath.startsWith('/orders') ? 'on' : '' %>"><%= t('nav.comenzi') %></a>
         <a href="/corps" class="<%= currentPath.startsWith('/corps') ? 'on' : '' %>"><%= t('nav.corpuri') %></a>
+        <a href="/ghid" class="<%= currentPath.startsWith('/ghid') ? 'on' : '' %>"><%= t('articole.titlu') %></a>
         <a href="/credit" class="credit-link <%= currentPath === '/credit' ? 'on' : '' %>">
           <%= t('nav.credit') %>: <b><%= soldLei %> <%= t('comun.lei') %></b>
         </a>
@@ -38,6 +39,7 @@
           <button class="link"><%= t('nav.iesi') %></button>
         </form>
       <% } else { %>
+        <a href="/ghid" class="<%= currentPath.startsWith('/ghid') ? 'on' : '' %>"><%= t('articole.titlu') %></a>
         <%- include('partials/limba') %>
         <a href="/login"><%= t('nav.autentificare') %></a>
         <a href="/register" class="btn small primary"><%= t('nav.contNou') %></a>

@@ -1,0 +1,45 @@
+<div class="top">
+  <div>
+    <div class="crumbs"><a href="/admin">← <%= t('nav.administrare') %></a></div>
+    <h1><%= t('articole.administrare') %></h1>
+  </div>
+  <div class="btns" style="margin:0">
+    <a class="btn" href="/ghid"><%= t('articole.vezuSite') %></a>
+    <a class="btn primary" href="/admin/articole/nou"><%= t('articole.nou') %></a>
+  </div>
+</div>
+
+<% if (!articole.length) { %>
+  <div class="panel empty">
+    <p><%= t('articole.goalaTitlu') %></p>
+    <div class="btns center"><a class="btn primary" href="/admin/articole/nou"><%= t('articole.nou') %></a></div>
+  </div>
+<% } else { %>
+  <div class="panel">
+    <div class="tbl"><table>
+      <thead><tr>
+        <th><%= t('articole.colTitlu') %></th><th><%= t('articole.colGrup') %></th>
+        <th><%= t('comun.limba') %></th><th><%= t('articole.colStare') %></th>
+        <th><%= t('articole.colAdresa') %></th><th><%= t('admin.cand') %></th><th></th>
+      </tr></thead>
+      <tbody>
+        <% articole.forEach(function (a) { %>
+          <tr>
+            <td><a href="/admin/articole/<%= a.id %>"><%= a.titlu %></a></td>
+            <td class="small"><%= a.numeGrup %></td>
+            <td class="small"><%= a.numeLimba %></td>
+            <td><span class="chip <%= a.publicat ? 'paid' : 'draft' %>">
+              <%= a.publicat ? t('articole.publicat') : t('articole.ciorna') %></span></td>
+            <td class="mono small">/ghid/<%= a.slug %></td>
+            <td class="muted small"><%= a.updated_at.slice(0, 16) %></td>
+            <td class="num">
+              <% if (a.publicat) { %>
+                <a class="btn small" href="/ghid/<%= a.slug %>"><%= t('articole.vezi') %></a>
+              <% } %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table></div>
+  </div>
+<% } %>

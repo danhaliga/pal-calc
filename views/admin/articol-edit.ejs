@@ -1,0 +1,69 @@
+<div class="top">
+  <div>
+    <div class="crumbs"><a href="/admin/articole">← <%= t('articole.administrare') %></a></div>
+    <h1><%= articol.id ? articol.titlu : t('articole.nou') %></h1>
+  </div>
+  <% if (articol.id && articol.publicat) { %>
+    <div class="btns" style="margin:0">
+      <a class="btn" href="/ghid/<%= articol.slug %>"><%= t('articole.vezi') %></a>
+    </div>
+  <% } %>
+</div>
+
+<% if (salvat) { %>
+  <div class="warn ok"><%= t('articole.salvat') %></div>
+<% } %>
+
+<div class="panel">
+  <form method="post" action="<%= articol.id ? '/admin/articole/' + articol.id : '/admin/articole' %>">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+    <div class="f">
+      <label class="full"><%= t('articole.colTitlu') %>
+        <input type="text" name="titlu" value="<%= articol.titlu %>" maxlength="160" required autofocus>
+      </label>
+    </div>
+
+    <div class="f3" style="margin-top:8px">
+      <label><%= t('articole.colGrup') %><select name="grup">
+        <% grupuri.forEach(function (g) { %>
+          <option value="<%= g %>" <%= articol.grup === g ? 'selected' : '' %>>
+            <%= t('articole.grup' + g.charAt(0).toUpperCase() + g.slice(1)) %></option>
+        <% }); %>
+      </select></label>
+      <label><%= t('articole.limbaArticol') %><select name="lang">
+        <% limbi.forEach(function (l) { %>
+          <option value="<%= l.cod %>" <%= articol.lang === l.cod ? 'selected' : '' %>
+                  lang="<%= l.cod %>"><%= l.nume %></option>
+        <% }); %>
+      </select></label>
+      <label><%= t('articole.colAdresa') %>
+        <input type="text" name="slug" value="<%= articol.slug %>" maxlength="80"
+               placeholder="<%= t('articole.adresaDinTitlu') %>">
+      </label>
+    </div>
+
+    <label style="margin-top:8px" class="full"><%= t('articole.rezumat') %>
+      <textarea name="rezumat" rows="2" maxlength="400"
+                placeholder="<%= t('articole.rezumatDinText') %>"><%= articol.rezumat %></textarea>
+    </label>
+
+    <label style="margin-top:8px" class="full"><%= t('articole.corp') %>
+      <textarea name="corp" rows="22" maxlength="60000" class="mono"><%= articol.corp %></textarea>
+    </label>
+    <p class="legend"><%- t('articole.ajutorText') %></p>
+
+    <label class="check" style="margin-top:10px">
+      <input type="checkbox" name="publicat" value="true" <%= articol.publicat ? 'checked' : '' %>>
+      <%= t('articole.publicaPeSite') %>
+    </label>
+
+    <div class="btns" style="margin-top:12px">
+      <button class="btn primary" type="submit"><%= t('comun.salveaza') %></button>
+      <% if (articol.id) { %>
+        <button class="btn danger" type="submit" name="sterge" value="1"
+                data-confirma="<%= t('articole.confirmaStergerea', { titlu: articol.titlu }) %>"><%= t('comun.sterge') %></button>
+      <% } %>
+    </div>
+  </form>
+</div>

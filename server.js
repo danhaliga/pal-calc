@@ -19,6 +19,7 @@ const credit = require('./src/credit');
 const payments = require('./src/payments');
 const admin = require('./src/admin');
 const mesaje = require('./src/mesaje');
+const articole = require('./src/articole');
 const i18n = require('./src/i18n');
 
 migrate();
@@ -132,6 +133,7 @@ app.use(corps.router);
 app.use(payments.router);
 app.use(admin.router);
 app.use(mesaje.router);
+app.use(articole.router);
 
 /* ---- erori ---- */
 

@@ -1,0 +1,40 @@
+<div class="crumbs"><a href="/ghid">← <%= t('articole.titlu') %></a></div>
+
+<article class="panel articol" lang="<%= articol.lang %>" dir="<%= articol.lang === 'ar' || articol.lang === 'he' || articol.lang === 'fa' ? 'rtl' : 'ltr' %>">
+  <div class="articol-meta">
+    <span class="chip"><%= articol.numeGrup %></span>
+    <% if (articol.lang !== lang) { %>
+      <span class="chip limba"><%= t('articole.scrisIn', { limba: articol.numeLimba }) %></span>
+    <% } %>
+    <span class="muted small"><%= articol.updated_at.slice(0, 10) %></span>
+  </div>
+
+  <h1><%= articol.titlu %></h1>
+  <% if (articol.rezumat) { %><p class="sub"><%= articol.rezumat %></p><% } %>
+
+  <%# `html` vine din shared/markdown.js, care scapă ÎNTÂI tot textul și abia
+      apoi pune înapoi etichetele pe care le scrie el. Nimic din ce a scris
+      autorul nu poate ieși ca HTML — vezi comentariul de acolo. %>
+  <div class="articol-corp"><%- articol.html %></div>
+
+  <% if (alteLimbi.length) { %>
+    <p class="legend"><%= t('articole.siIn') %>
+      <% alteLimbi.forEach(function (l, i) { %><%= i ? ' · ' : ' ' %><a href="/ghid/<%= articol.slug %>?lang=<%= l.cod %>"><%= l.nume %></a><% }); %>
+    </p>
+  <% } %>
+</article>
+
+<div class="panel zona-chemare">
+  <div>
+    <b><%= t('articole.chemareTitlu') %></b>
+    <p class="muted small"><%= t('articole.chemareText') %></p>
+  </div>
+  <div class="btns">
+    <% if (user) { %>
+      <a class="btn primary" href="/corps"><%= t('articole.chemareIntra') %></a>
+    <% } else { %>
+      <a class="btn primary" href="/register"><%= t('landing.faCont') %></a>
+      <a class="btn" href="/login"><%= t('landing.amCont') %></a>
+    <% } %>
+  </div>
+</div>
