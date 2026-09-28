@@ -559,7 +559,8 @@
     "spatePerete2": "Plecy {mat} – ściana 2",
     "sertarLaterala": "Szuflada – bok skrzynki",
     "sertarFataSpate": "Szuflada – przód/tył skrzynki",
-    "sertarFund": "Szuflada – dno z HDF"
+    "sertarFund": "Szuflada – dno z HDF",
+    "montant": "Przegroda"
   },
   "directie": {
     "jos": "dół",
@@ -616,7 +617,10 @@
     "conturPreaPutineLaturi": "Kontur potrzebuje co najmniej trzech boków.",
     "adancimePreaMare": "Głębokość {d} mm jest za duża dla boków {a} i {b} mm: nie zostaje narożnik do wycięcia.",
     "frontAltPal": "„{corp}”: fronty są z płyty {front} mm, ale geometria jest liczona z grubością korpusu ({corpMm} mm).",
-    "jocGlisiera": "„{corp}”: skrzynki szuflad są liczone z luzem {jg} mm na stronę, a {glisiera} wymaga {cerut} mm. Zmień luz na korpusie albo prowadnicę na zleceniu."
+    "jocGlisiera": "„{corp}”: skrzynki szuflad są liczone z luzem {jg} mm na stronę, a {glisiera} wymaga {cerut} mm. Zmień luz na korpusie albo prowadnicę na zleceniu.",
+    "compartimentIngust": "Komora wychodzi {lat} mm: za wąska na półkę. Usuń przegrodę albo poszerz korpus.",
+    "usiPesteMontant": "{usi} drzwi na {comp} komory: jedne drzwi wypadłyby na przegrodę. Weź wielokrotność {comp}.",
+    "sertareCuMontant": "Szuflady nie dzielą się na komory: nadal liczy się je na całą szerokość korpusu."
   },
   "csv": {
     "corp": "Korpus",
@@ -1100,7 +1104,9 @@
       "few": "{n} szt",
       "many": "{n} szt"
     },
-    "copiazaManual": "Zaznacz i skopiuj ręcznie."
+    "copiazaManual": "Zaznacz i skopiuj ręcznie.",
+    "numarMontanti": "Liczba przegród",
+    "legMontanti": "Podział"
   },
   "fata": {
     "px": "prawo",

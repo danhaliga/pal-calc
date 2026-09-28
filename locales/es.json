@@ -553,7 +553,8 @@
     "spatePerete2": "Trasera {mat} – pared 2",
     "sertarLaterala": "Cajón – costado de la caja",
     "sertarFataSpate": "Cajón – frente/trasera de la caja",
-    "sertarFund": "Cajón – fondo de tablero duro"
+    "sertarFund": "Cajón – fondo de tablero duro",
+    "montant": "Montante"
   },
   "directie": {
     "jos": "abajo",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Un contorno necesita al menos tres lados.",
     "adancimePreaMare": "Un fondo de {d} mm es excesivo para lados de {a} y {b} mm: no queda esquina que cortar.",
     "frontAltPal": "«{corp}»: los frentes son de tablero de {front} mm, pero la geometría se calcula con el grosor de la carcasa ({corpMm} mm).",
-    "jocGlisiera": "«{corp}»: las cajas de cajón se calculan con {jg} mm de holgura por lado, pero {glisiera} pide {cerut} mm. Cambia la holgura en el módulo o la guía en el pedido."
+    "jocGlisiera": "«{corp}»: las cajas de cajón se calculan con {jg} mm de holgura por lado, pero {glisiera} pide {cerut} mm. Cambia la holgura en el módulo o la guía en el pedido.",
+    "compartimentIngust": "El compartimento queda en {lat} mm: demasiado estrecho para una balda. Quita un montante o ensancha el módulo.",
+    "usiPesteMontant": "{usi} puertas en {comp} compartimentos: una puerta caería sobre un montante. Usa un múltiplo de {comp}.",
+    "sertareCuMontant": "Los cajones no se reparten por compartimentos: se siguen calculando sobre todo el ancho del módulo."
   },
   "csv": {
     "corp": "Módulo",
@@ -1089,7 +1093,9 @@
       "one": "{n} ud",
       "other": "{n} uds"
     },
-    "copiazaManual": "Selecciónalo y cópialo a mano."
+    "copiazaManual": "Selecciónalo y cópialo a mano.",
+    "numarMontanti": "Número de montantes",
+    "legMontanti": "Compartimentación"
   },
   "fata": {
     "px": "derecha",

@@ -553,7 +553,8 @@
     "spatePerete2": "Achterwand {mat} – wand 2",
     "sertarLaterala": "Lade – zijkant",
     "sertarFataSpate": "Lade – voor/achter",
-    "sertarFund": "Lade – bodem van hardboard"
+    "sertarFund": "Lade – bodem van hardboard",
+    "montant": "Middenwand"
   },
   "directie": {
     "jos": "onder",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Een contour heeft minstens drie zijden nodig.",
     "adancimePreaMare": "Een diepte van {d} mm is te veel voor zijden van {a} en {b} mm: er blijft geen hoek over om te zagen.",
     "frontAltPal": "„{corp}”: de fronten zijn van {front} mm plaat, maar de geometrie is berekend met de dikte van het korpus ({corpMm} mm).",
-    "jocGlisiera": "„{corp}”: de lades zijn berekend met {jg} mm speling per zijde, maar {glisiera} vraagt {cerut} mm. Wijzig de speling op de kast of de geleider op de opdracht."
+    "jocGlisiera": "„{corp}”: de lades zijn berekend met {jg} mm speling per zijde, maar {glisiera} vraagt {cerut} mm. Wijzig de speling op de kast of de geleider op de opdracht.",
+    "compartimentIngust": "Het vak wordt {lat} mm: te smal voor een legplank. Haal een middenwand weg of maak de kast breder.",
+    "usiPesteMontant": "{usi} deuren op {comp} vakken: een deur zou op een middenwand vallen. Neem een veelvoud van {comp}.",
+    "sertareCuMontant": "Laden worden niet over de vakken verdeeld: ze worden nog over de volle kastbreedte gerekend."
   },
   "csv": {
     "corp": "Kast",
@@ -1089,7 +1093,9 @@
       "one": "{n} st",
       "other": "{n} st"
     },
-    "copiazaManual": "Selecteer en kopieer het handmatig."
+    "copiazaManual": "Selecteer en kopieer het handmatig.",
+    "numarMontanti": "Aantal middenwanden",
+    "legMontanti": "Indeling"
   },
   "fata": {
     "px": "rechts",

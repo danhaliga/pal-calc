@@ -559,7 +559,8 @@
     "spatePerete2": "גב {mat} — קיר 2",
     "sertarLaterala": "מגירה — דופן ארגז",
     "sertarFataSpate": "מגירה — חזית/גב ארגז",
-    "sertarFund": "מגירה — תחתית HDF"
+    "sertarFund": "מגירה — תחתית HDF",
+    "montant": "חוצץ"
   },
   "directie": {
     "jos": "למטה",
@@ -616,7 +617,10 @@
     "conturPreaPutineLaturi": "קו חוצה דורש שלוש צלעות לפחות.",
     "adancimePreaMare": "העומק {d} מ״מ גדול מדי לצלעות {a} ו־{b} מ״מ: לא נשארת זווית לחיתוך.",
     "frontAltPal": "״{corp}״: החזיתות מלוח {front} מ״מ, אבל הגאומטריה חושבה לפי עובי הגוף ({corpMm} מ״מ).",
-    "jocGlisiera": "״{corp}״: הארגז חושב עם מרווח {jg} מ״מ בכל צד, ואילו {glisiera} דורשת {cerut} מ״מ. שנו את המרווח בגוף או את המסילה בהזמנה."
+    "jocGlisiera": "״{corp}״: הארגז חושב עם מרווח {jg} מ״מ בכל צד, ואילו {glisiera} דורשת {cerut} מ״מ. שנו את המרווח בגוף או את המסילה בהזמנה.",
+    "compartimentIngust": "התא יוצא {lat} מ״מ: צר מדי למדף. הורד חוצץ או הרחב את הגוף.",
+    "usiPesteMontant": "{usi} דלתות על {comp} תאים: דלת אחת תיפול על חוצץ. קח כפולה של {comp}.",
+    "sertareCuMontant": "המגירות לא מתחלקות לפי תאים: הן עדיין מחושבות על כל רוחב הגוף."
   },
   "csv": {
     "corp": "גוף",
@@ -1100,7 +1104,9 @@
       "two": "שתי יחידות",
       "other": "{n} יח׳"
     },
-    "copiazaManual": "סמנו והעתיקו ידנית."
+    "copiazaManual": "סמנו והעתיקו ידנית.",
+    "numarMontanti": "מספר חוצצים",
+    "legMontanti": "חלוקה"
   },
   "fata": {
     "px": "ימין",

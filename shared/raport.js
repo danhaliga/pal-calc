@@ -289,10 +289,16 @@
       pune(art('surubGlisiere'), nSer * (s.glisiere.suruburiPeSet || 8));
     }
 
-    if (nPol > 0) pune(art('suportPolita'), nPol * 4);
+    /* Polițele se fac pe compartiment, deci numărul lor se înmulțește cu
+       numărul de compartimente — la fel și suporții, câte patru pe poliță. */
+    var compartimente = (+c.nDsp || 0) + 1;
+    if (nPol > 0) pune(art('suportPolita'), nPol * compartimente * 4);
 
-    /* ---- asamblarea carcasei: patru îmbinări între orizontale și laterale ---- */
-    var imbinari = 4;
+    /* ---- asamblarea carcasei ----
+       Patru îmbinări între orizontale și laterale, plus câte două pentru
+       fiecare montant: se prinde de blat și de fund exact ca o laterală
+       (aceleași dibluri în cant și aceleași excentrice la capete). */
+    var imbinari = 4 + 2 * (+c.nDsp || 0);
     (s.asamblare.pePiesa || []).forEach(function (x) {
       pune(art(x.art), imbinari * x.buc, 'buc',
            x.buc > 1 ? t_('fero.art.obsPeImbinare', { n: x.buc }) : t_('fero.art.obsUnaPeImbinare'));

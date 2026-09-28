@@ -553,7 +553,8 @@
     "spatePerete2": "Punggung {mat} – dinding 2",
     "sertarLaterala": "Laci – sisi kotak",
     "sertarFataSpate": "Laci – muka/belakang kotak",
-    "sertarFund": "Laci – dasar HDF"
+    "sertarFund": "Laci – dasar HDF",
+    "montant": "Sekat"
   },
   "directie": {
     "jos": "bawah",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Sebuah kontur butuh sedikitnya tiga sisi.",
     "adancimePreaMare": "Kedalaman {d} mm terlalu besar untuk sisi {a} dan {b} mm: tidak tersisa sudut untuk dipotong.",
     "frontAltPal": "„{corp}”: mukanya dari papan {front} mm, tetapi geometrinya dihitung dengan ketebalan boks ({corpMm} mm).",
-    "jocGlisiera": "„{corp}”: kotak laci dihitung dengan kelonggaran {jg} mm per sisi, padahal {glisiera} minta {cerut} mm. Ubah kelonggaran di boks atau relnya di pesanan."
+    "jocGlisiera": "„{corp}”: kotak laci dihitung dengan kelonggaran {jg} mm per sisi, padahal {glisiera} minta {cerut} mm. Ubah kelonggaran di boks atau relnya di pesanan.",
+    "compartimentIngust": "Ruangnya jadi {lat} mm: terlalu sempit untuk rak. Kurangi satu sekat atau lebarkan boks.",
+    "usiPesteMontant": "{usi} pintu pada {comp} ruang: satu pintu akan jatuh di atas sekat. Pakai kelipatan {comp}.",
+    "sertareCuMontant": "Laci tidak dibagi per ruang: tetap dihitung pada lebar penuh boks."
   },
   "csv": {
     "corp": "Boks",
@@ -1089,7 +1093,9 @@
       "one": "{n} pcs",
       "other": "{n} pcs"
     },
-    "copiazaManual": "Sorot dan salin secara manual."
+    "copiazaManual": "Sorot dan salin secara manual.",
+    "numarMontanti": "Jumlah sekat",
+    "legMontanti": "Pembagian"
   },
   "fata": {
     "px": "kanan",

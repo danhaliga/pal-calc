@@ -553,7 +553,8 @@
     "spatePerete2": "Arkalık {mat} – duvar 2",
     "sertarLaterala": "Çekmece – kutu yanı",
     "sertarFataSpate": "Çekmece – kutu ön/arka",
-    "sertarFund": "Çekmece – HDF taban"
+    "sertarFund": "Çekmece – HDF taban",
+    "montant": "Orta bölme"
   },
   "directie": {
     "jos": "alt",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Bir kontur için en az üç kenar gerekir.",
     "adancimePreaMare": "{d} mm derinlik, {a} ve {b} mm'lik kenarlar için fazla: kesilecek köşe kalmıyor.",
     "frontAltPal": "„{corp}”: kapaklar {front} mm levhadan, ama geometri gövde kalınlığıyla ({corpMm} mm) hesaplanıyor.",
-    "jocGlisiera": "„{corp}”: çekmece kutuları kenar başına {jg} mm boşlukla hesaplanmış, ama {glisiera} {cerut} mm istiyor. Gövdedeki boşluğu ya da siparişteki rayı değiştir."
+    "jocGlisiera": "„{corp}”: çekmece kutuları kenar başına {jg} mm boşlukla hesaplanmış, ama {glisiera} {cerut} mm istiyor. Gövdedeki boşluğu ya da siparişteki rayı değiştir.",
+    "compartimentIngust": "Göz {lat} mm çıkıyor: raf için fazla dar. Bir bölme çıkar ya da gövdeyi genişlet.",
+    "usiPesteMontant": "{comp} göze {usi} kapak: bir kapak bölmenin üstüne gelir. {comp} katı bir sayı seç.",
+    "sertareCuMontant": "Çekmeceler bölmelere ayrılmaz: hâlâ gövdenin tüm genişliğine göre hesaplanır."
   },
   "csv": {
     "corp": "Gövde",
@@ -1089,7 +1093,9 @@
       "one": "{n} adet",
       "other": "{n} adet"
     },
-    "copiazaManual": "Seç ve elle kopyala."
+    "copiazaManual": "Seç ve elle kopyala.",
+    "numarMontanti": "Orta bölme sayısı",
+    "legMontanti": "Bölmeler"
   },
   "fata": {
     "px": "sağ",

@@ -553,7 +553,8 @@
     "spatePerete2": "{mat} 背板 —— 墙 2",
     "sertarLaterala": "抽屉 —— 盒侧板",
     "sertarFataSpate": "抽屉 —— 盒前后板",
-    "sertarFund": "抽屉 —— 高密度板底"
+    "sertarFund": "抽屉 —— 高密度板底",
+    "montant": "中隔板"
   },
   "directie": {
     "jos": "下",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "一个轮廓至少要三条边。",
     "adancimePreaMare": "对 {a} 和 {b} 毫米的边来说，{d} 毫米进深太大了：没有角可以切了。",
     "frontAltPal": "“{corp}”：门板用的是 {front} 毫米板，但几何尺寸是按柜体厚度（{corpMm} 毫米）算的。",
-    "jocGlisiera": "“{corp}”：抽屉盒是按每边 {jg} 毫米间隙算的，而 {glisiera} 要求 {cerut} 毫米。要么改柜体里的间隙，要么改订单里的滑轨。"
+    "jocGlisiera": "“{corp}”：抽屉盒是按每边 {jg} 毫米间隙算的，而 {glisiera} 要求 {cerut} 毫米。要么改柜体里的间隙，要么改订单里的滑轨。",
+    "compartimentIngust": "隔间只剩 {lat} 毫米：放层板太窄了。少加一块中隔板，或者把柜体加宽。",
+    "usiPesteMontant": "{comp} 个隔间配 {usi} 扇门：有一扇门会压在中隔板上。取 {comp} 的倍数。",
+    "sertareCuMontant": "抽屉不按隔间分：仍然按柜体的整个宽度算。"
   },
   "csv": {
     "corp": "柜体",
@@ -1089,7 +1093,9 @@
       "one": "{n} 件",
       "other": "{n} 件"
     },
-    "copiazaManual": "手动选中再复制。"
+    "copiazaManual": "手动选中再复制。",
+    "numarMontanti": "中隔板数量",
+    "legMontanti": "分隔"
   },
   "fata": {
     "px": "右",

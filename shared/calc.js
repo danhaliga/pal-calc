@@ -41,8 +41,9 @@
      finită − grosimea cantului" dă piese mai mici decât trebuie.
 
      Pragul e 0.8 și nu 1 fiindcă banda de 0.8 nu scade nimic, iar cea de 1 mm
-     scade: limita trece exact între ele. Pentru grosimi peste 2 (bandă de 3)
-     formula e extrapolare — de întrebat atelierul înainte.
+     scade: limita trece exact între ele. Atelierul folosește doar 0.4, 0.8, 1
+     și 2 — de 3 mm nu se folosește, deci acolo formula n-a fost verificată
+     niciodată pe ceva real.
 
      PRAG    banda până în el, inclusiv, nu schimbă cota de tăiere
      REZERVA cât absoarbe frezarea și cleiul, peste prag */
@@ -64,7 +65,7 @@
       tip: 'drept', W2: 900, orb: 550, contur: [],
       t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 3,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2,
-      nPol: 1, jp: 1, rp: 20,
+      nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 16, lg: '',
       pragCant: PRAG_CANT, rezervaCant: REZERVA_CANT
     };
@@ -175,6 +176,7 @@
     var t_ = traducator(tr);
     var W = +c.W, H = +c.H, D = +c.D, t = +c.t, cg = +c.cg, cs = +c.cs, tp = +c.tp;
     var rm = +c.rm, ri = +c.ri, rinc = +c.rinc, nUsi = +c.nUsi, nPol = +c.nPol, nSer = +c.nSer;
+    var nDsp = +c.nDsp || 0;                /* montanți (despărțitori) în interior */
     var P = [], warn = [], avertismente = [];
     var aplicat = c.spate === 'aplicat';
     var zb = aplicat ? tp : 0;              /* unde incep piesele corpului pe adancime */
@@ -487,16 +489,43 @@
       add('sertarFund', null, nSer, lg, cut, '-', '-', '-', '-', '-', ['subCutie'], fnd);
     }
 
+    /* ---- montanți (despărțitori) ----
+
+       Se prind de blat și de fund exact ca lateralele: aceleași dibluri în
+       cant la capete și aceleași excentrice. Împart interiorul în nDsp + 1
+       compartimente egale, iar polițele se fac pe compartiment. */
+    var compartimente = nDsp + 1;
+    var Wcomp = (Wint - nDsp * t) / compartimente;             /* lățimea unui compartiment */
+    var xComp = function (i) { return t + i * (Wcomp + t); };  /* unde începe compartimentul i */
+
+    if (nDsp > 0) {
+      var boxesD = [];
+      for (var d = 1; d <= nDsp; d++) {
+        boxesD.push(bx(xComp(d) - t, t, zb, t, Hint, Dp,
+          F({ px: 'f', nx: 'f', pz: 'g' }), [0, 0, 0], 'corp'));
+      }
+      /* muchia din față se cantuiește ca la laterale, restul stau ascunse */
+      add('montant', null, nDsp, Hint, Dp, 'g', '-', '-', '-', 'LV', null, boxesD);
+
+      if (Wcomp < 100) avert('compartimentIngust', { lat: fmt(Wcomp) });
+      if (nUsi > 0 && nUsi % compartimente !== 0) {
+        avert('usiPesteMontant', { usi: nUsi, comp: compartimente });
+      }
+      if (nSer > 0) avert('sertareCuMontant');
+    }
+
     /* ---- polite ---- */
     if (nPol > 0) {
-      var jp = +c.jp, pL = Wint - jp, pl = Dint - (+c.rp);
+      var jp = +c.jp, pL = Wcomp - jp, pl = Dint - (+c.rp);
       var boxesP = [];
-      for (var j = 1; j <= nPol; j++) {
-        var yc = t + (Hint - usedTop) * j / (nPol + 1);
-        boxesP.push(bx(t + jp / 2, yc - t / 2, zin, pL, t, pl,
-          F({ py: 'f', ny: 'f', pz: 'g' }), [0, 0, 0.6], 'polite'));
+      for (var ic = 0; ic < compartimente; ic++) {
+        for (var j = 1; j <= nPol; j++) {
+          var yc = t + (Hint - usedTop) * j / (nPol + 1);
+          boxesP.push(bx(xComp(ic) + jp / 2, yc - t / 2, zin, pL, t, pl,
+            F({ py: 'f', ny: 'f', pz: 'g' }), [0, 0, 0.6], 'polite'));
+        }
       }
-      add('polita', null, nPol, pL, pl, 'g', '-', '-', '-', 'L', null, boxesP);
+      add('polita', null, nPol * compartimente, pL, pl, 'g', '-', '-', '-', 'L', null, boxesP);
       if (pL > 800) avert('politaLunga', { lung: fmt(pL) });
     }
 
@@ -556,6 +585,8 @@
         balama: z.preprocess(function (v) { return String(v); }, z.enum(['0', '9', '18'])),
         rm: mm(0, 50), ri: mm(0, 50), rinc: mm(0, 50),
         nPol: int(0, 20), jp: mm(0, 50), rp: mm(0, 300),
+        /* montanți (despărțitori) — 0 înseamnă corp fără compartimentare */
+        nDsp: int(0, 6).catch(0),
         nSer: int(0, 12), hFront: mm(20, 1200), hCutie: mm(20, 1200),
         jg: mm(0, 50), ts: mm(10, 30),
         /* reglajul de debitare al atelierului; implicit cel măsurat pe

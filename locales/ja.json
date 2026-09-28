@@ -553,7 +553,8 @@
     "spatePerete2": "背板 {mat} —— 壁2",
     "sertarLaterala": "引き出し —— 箱の側板",
     "sertarFataSpate": "引き出し —— 箱の前後板",
-    "sertarFund": "引き出し —— HDFの底板"
+    "sertarFund": "引き出し —— HDFの底板",
+    "montant": "中仕切り"
   },
   "directie": {
     "jos": "下",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "輪郭には少なくとも3辺が必要です。",
     "adancimePreaMare": "辺 {a} と {b} mm に対して奥行 {d} mm は大きすぎます。落とす角が残りません。",
     "frontAltPal": "「{corp}」：扉は {front} mm の板ですが、寸法は本体の厚み（{corpMm} mm）で計算されています。",
-    "jocGlisiera": "「{corp}」：引き出し箱は片側 {jg} mm のクリアランスで計算していますが、{glisiera} は {cerut} mm を要求します。キャビネット側のクリアランスか、注文側のレールを変えてください。"
+    "jocGlisiera": "「{corp}」：引き出し箱は片側 {jg} mm のクリアランスで計算していますが、{glisiera} は {cerut} mm を要求します。キャビネット側のクリアランスか、注文側のレールを変えてください。",
+    "compartimentIngust": "仕切り内が {lat} mm になります。棚板には狭すぎます。中仕切りを減らすか、本体を広げてください。",
+    "usiPesteMontant": "{comp} 区画に扉 {usi} 枚：扉が中仕切りの上に乗ります。{comp} の倍数にしてください。",
+    "sertareCuMontant": "引き出しは区画で分かれません。今までどおり本体の全幅で計算されます。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -1089,7 +1093,9 @@
       "one": "{n}枚",
       "other": "{n}枚"
     },
-    "copiazaManual": "手で選んでコピーしてください。"
+    "copiazaManual": "手で選んでコピーしてください。",
+    "numarMontanti": "中仕切りの枚数",
+    "legMontanti": "仕切り"
   },
   "fata": {
     "px": "右",

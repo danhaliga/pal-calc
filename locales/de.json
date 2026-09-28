@@ -553,7 +553,8 @@
     "spatePerete2": "Rückwand {mat} – Wand 2",
     "sertarLaterala": "Schublade – Kastenseite",
     "sertarFataSpate": "Schublade – Kasten vorn/hinten",
-    "sertarFund": "Schublade – Boden aus Hartfaser"
+    "sertarFund": "Schublade – Boden aus Hartfaser",
+    "montant": "Mittelseite"
   },
   "directie": {
     "jos": "unten",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Eine Kontur braucht mindestens drei Seiten.",
     "adancimePreaMare": "Eine Tiefe von {d} mm ist zu viel für Seiten von {a} und {b} mm: es bleibt keine Ecke zum Zuschneiden.",
     "frontAltPal": "„{corp}“: die Fronten sind aus {front}-mm-Platte, die Geometrie wird aber mit der Korpusstärke ({corpMm} mm) gerechnet.",
-    "jocGlisiera": "„{corp}“: die Schubkästen sind mit {jg} mm Luft pro Seite gerechnet, {glisiera} braucht aber {cerut} mm. Ändere die Luft am Korpus oder den Auszug am Auftrag."
+    "jocGlisiera": "„{corp}“: die Schubkästen sind mit {jg} mm Luft pro Seite gerechnet, {glisiera} braucht aber {cerut} mm. Ändere die Luft am Korpus oder den Auszug am Auftrag.",
+    "compartimentIngust": "Das Fach wird {lat} mm breit: zu schmal für einen Boden. Nimm eine Mittelseite raus oder mach den Korpus breiter.",
+    "usiPesteMontant": "{usi} Türen auf {comp} Fächer: eine Tür läge auf einer Mittelseite. Nimm ein Vielfaches von {comp}.",
+    "sertareCuMontant": "Schubkästen werden nicht auf die Fächer aufgeteilt: sie werden weiter über die volle Korpusbreite gerechnet."
   },
   "csv": {
     "corp": "Korpus",
@@ -1089,7 +1093,9 @@
       "one": "{n} Stk",
       "other": "{n} Stk"
     },
-    "copiazaManual": "Markiere und kopiere es von Hand."
+    "copiazaManual": "Markiere und kopiere es von Hand.",
+    "numarMontanti": "Anzahl Mittelseiten",
+    "legMontanti": "Unterteilung"
   },
   "fata": {
     "px": "rechts",

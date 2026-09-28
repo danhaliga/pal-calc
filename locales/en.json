@@ -553,7 +553,8 @@
     "spatePerete2": "{mat} back – wall 2",
     "sertarLaterala": "Drawer – box side",
     "sertarFataSpate": "Drawer – box front/back",
-    "sertarFund": "Drawer – hardboard bottom"
+    "sertarFund": "Drawer – hardboard bottom",
+    "montant": "Partition"
   },
   "directie": {
     "jos": "bottom",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "An outline needs at least three sides.",
     "adancimePreaMare": "A depth of {d} mm is too much for sides of {a} and {b} mm: no corner is left to cut.",
     "frontAltPal": "“{corp}”: the fronts are {front} mm board, but the geometry is calculated with the carcass thickness ({corpMm} mm).",
-    "jocGlisiera": "“{corp}”: the drawer boxes are calculated with {jg} mm clearance per side, but {glisiera} needs {cerut} mm. Change the clearance on the cabinet or the runner on the order."
+    "jocGlisiera": "“{corp}”: the drawer boxes are calculated with {jg} mm clearance per side, but {glisiera} needs {cerut} mm. Change the clearance on the cabinet or the runner on the order.",
+    "compartimentIngust": "The compartment comes out {lat} mm: too narrow for a shelf. Remove a partition or widen the cabinet.",
+    "usiPesteMontant": "{usi} doors across {comp} compartments: one door would land on a partition. Use a multiple of {comp}.",
+    "sertareCuMontant": "Drawers are not split by partitions: they are still calculated across the full cabinet width."
   },
   "csv": {
     "corp": "Cabinet",
@@ -1089,7 +1093,9 @@
       "one": "{n} pc",
       "other": "{n} pcs"
     },
-    "copiazaManual": "Select and copy it manually."
+    "copiazaManual": "Select and copy it manually.",
+    "numarMontanti": "Number of partitions",
+    "legMontanti": "Partitions"
   },
   "fata": {
     "px": "right",

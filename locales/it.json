@@ -553,7 +553,8 @@
     "spatePerete2": "Schienale {mat} – parete 2",
     "sertarLaterala": "Cassetto – fianco",
     "sertarFataSpate": "Cassetto – fronte/retro",
-    "sertarFund": "Cassetto – fondo in fibra"
+    "sertarFund": "Cassetto – fondo in fibra",
+    "montant": "Montante"
   },
   "directie": {
     "jos": "basso",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Un profilo ha bisogno di almeno tre lati.",
     "adancimePreaMare": "Una profondità di {d} mm è troppa per lati di {a} e {b} mm: non resta angolo da tagliare.",
     "frontAltPal": "«{corp}»: i frontali sono in pannello da {front} mm, ma la geometria è calcolata con lo spessore della struttura ({corpMm} mm).",
-    "jocGlisiera": "«{corp}»: i cassetti sono calcolati con {jg} mm di gioco per lato, ma {glisiera} richiede {cerut} mm. Cambia il gioco sul mobile oppure la guida sull'ordine."
+    "jocGlisiera": "«{corp}»: i cassetti sono calcolati con {jg} mm di gioco per lato, ma {glisiera} richiede {cerut} mm. Cambia il gioco sul mobile oppure la guida sull'ordine.",
+    "compartimentIngust": "Lo scomparto viene {lat} mm: troppo stretto per un ripiano. Togli un montante o allarga il mobile.",
+    "usiPesteMontant": "{usi} ante su {comp} scomparti: un’anta cadrebbe su un montante. Metti un multiplo di {comp}.",
+    "sertareCuMontant": "I cassetti non si dividono per scomparto: restano calcolati su tutta la larghezza del mobile."
   },
   "csv": {
     "corp": "Mobile",
@@ -1089,7 +1093,9 @@
       "one": "{n} pz",
       "other": "{n} pz"
     },
-    "copiazaManual": "Selezionalo e copialo a mano."
+    "copiazaManual": "Selezionalo e copialo a mano.",
+    "numarMontanti": "Numero di montanti",
+    "legMontanti": "Scomparti"
   },
   "fata": {
     "px": "destra",

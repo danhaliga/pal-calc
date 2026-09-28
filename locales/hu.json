@@ -553,7 +553,8 @@
     "spatePerete2": "Hátlap {mat} – 2. fal",
     "sertarLaterala": "Fiók – oldal",
     "sertarFataSpate": "Fiók – elő/hátlap",
-    "sertarFund": "Fiók – farostlemez fenék"
+    "sertarFund": "Fiók – farostlemez fenék",
+    "montant": "Közfal"
   },
   "directie": {
     "jos": "alul",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Egy kontúrhoz legalább három oldal kell.",
     "adancimePreaMare": "A {d} mm-es mélység túl sok a {a} és {b} mm-es oldalakhoz: nem marad kivágandó sarok.",
     "frontAltPal": "„{corp}”: a frontok {front} mm-es lapból vannak, a geometriát viszont a korpusz vastagságával ({corpMm} mm) számoljuk.",
-    "jocGlisiera": "„{corp}”: a fiókok oldalanként {jg} mm hézaggal vannak számolva, de a(z) {glisiera} {cerut} mm-t kíván. Változtasd meg a hézagot a korpuszon vagy a sínt a megrendelésen."
+    "jocGlisiera": "„{corp}”: a fiókok oldalanként {jg} mm hézaggal vannak számolva, de a(z) {glisiera} {cerut} mm-t kíván. Változtasd meg a hézagot a korpuszon vagy a sínt a megrendelésen.",
+    "compartimentIngust": "A rekesz {lat} mm lesz: túl keskeny egy polcnak. Végy el egy közfalat, vagy szélesítsd a korpuszt.",
+    "usiPesteMontant": "{usi} ajtó {comp} rekeszre: az egyik ajtó egy közfalra esne. Végy {comp} többszörösét.",
+    "sertareCuMontant": "A fiókok nem oszlanak rekeszekre: továbbra is a teljes korpuszszélességre számolódnak."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1089,7 +1093,9 @@
       "one": "{n} db",
       "other": "{n} db"
     },
-    "copiazaManual": "Jelöld ki, és másold ki kézzel."
+    "copiazaManual": "Jelöld ki, és másold ki kézzel.",
+    "numarMontanti": "Közfalak száma",
+    "legMontanti": "Osztás"
   },
   "fata": {
     "px": "jobb",

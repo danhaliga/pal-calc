@@ -553,7 +553,8 @@
     "spatePerete2": "뒷판 {mat} —— 벽 2",
     "sertarLaterala": "서랍 —— 통 측판",
     "sertarFataSpate": "서랍 —— 통 앞뒤판",
-    "sertarFund": "서랍 —— HDF 바닥"
+    "sertarFund": "서랍 —— HDF 바닥",
+    "montant": "중간 칸막이"
   },
   "directie": {
     "jos": "아래",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "외곽선에는 변이 최소 3개 필요합니다.",
     "adancimePreaMare": "변 {a}와 {b} mm에 비해 깊이 {d} mm는 너무 큽니다. 잘라 낼 코너가 남지 않습니다.",
     "frontAltPal": "“{corp}”: 문짝은 {front} mm 판인데, 치수는 몸통 두께({corpMm} mm)로 계산됐습니다.",
-    "jocGlisiera": "“{corp}”: 서랍통을 한쪽 {jg} mm 여유로 계산했는데, {glisiera}은 {cerut} mm를 요구합니다. 캐비닛의 여유를 바꾸거나 주문의 레일을 바꾸세요."
+    "jocGlisiera": "“{corp}”: 서랍통을 한쪽 {jg} mm 여유로 계산했는데, {glisiera}은 {cerut} mm를 요구합니다. 캐비닛의 여유를 바꾸거나 주문의 레일을 바꾸세요.",
+    "compartimentIngust": "칸이 {lat} mm로 나옵니다. 선반을 넣기엔 너무 좁습니다. 칸막이를 하나 빼거나 몸통을 넓히세요.",
+    "usiPesteMontant": "{comp}칸에 문짝 {usi}장: 문짝 하나가 칸막이 위에 걸칩니다. {comp}의 배수로 맞추세요.",
+    "sertareCuMontant": "서랍은 칸으로 나뉘지 않습니다. 여전히 몸통 전체 폭으로 계산됩니다."
   },
   "csv": {
     "corp": "캐비닛",
@@ -1089,7 +1093,9 @@
       "one": "{n}장",
       "other": "{n}장"
     },
-    "copiazaManual": "직접 선택해서 복사하세요."
+    "copiazaManual": "직접 선택해서 복사하세요.",
+    "numarMontanti": "중간 칸막이 수",
+    "legMontanti": "칸 나누기"
   },
   "fata": {
     "px": "오른쪽",

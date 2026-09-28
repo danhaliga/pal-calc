@@ -559,7 +559,8 @@
     "spatePerete2": "Leđa {mat} – zid 2",
     "sertarLaterala": "Ladica – bok kutije",
     "sertarFataSpate": "Ladica – prednja/stražnja strana kutije",
-    "sertarFund": "Ladica – dno od HDF-a"
+    "sertarFund": "Ladica – dno od HDF-a",
+    "montant": "Pregrada"
   },
   "directie": {
     "jos": "dolje",
@@ -616,7 +617,10 @@
     "conturPreaPutineLaturi": "Kontura treba barem tri stranice.",
     "adancimePreaMare": "Dubina od {d} mm previše je za stranice od {a} i {b} mm: ne ostaje kut za izrezivanje.",
     "frontAltPal": "„{corp}“: fronte su od ploče {front} mm, ali geometrija se računa s debljinom korpusa ({corpMm} mm).",
-    "jocGlisiera": "„{corp}“: kutije ladica računaju se sa zazorom {jg} mm po strani, a {glisiera} traži {cerut} mm. Promijeni zazor na korpusu ili vodilicu na nalogu."
+    "jocGlisiera": "„{corp}“: kutije ladica računaju se sa zazorom {jg} mm po strani, a {glisiera} traži {cerut} mm. Promijeni zazor na korpusu ili vodilicu na nalogu.",
+    "compartimentIngust": "Pretinac ispada {lat} mm: preuzak za policu. Makni jednu pregradu ili proširi korpus.",
+    "usiPesteMontant": "{usi} vrata na {comp} pretinca: jedna vrata bi pala na pregradu. Uzmi višekratnik broja {comp}.",
+    "sertareCuMontant": "Ladice se ne dijele po pretincima: i dalje se računaju na cijelu širinu korpusa."
   },
   "csv": {
     "corp": "Korpus",
@@ -1100,7 +1104,9 @@
       "few": "{n} kom",
       "many": "{n} kom"
     },
-    "copiazaManual": "Označi i kopiraj ručno."
+    "copiazaManual": "Označi i kopiraj ručno.",
+    "numarMontanti": "Broj pregrada",
+    "legMontanti": "Podjela"
   },
   "fata": {
     "px": "desno",

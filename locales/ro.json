@@ -559,7 +559,8 @@
     "spatePerete2": "Spate {mat} – peretele 2",
     "sertarLaterala": "Sertar – laterală cutie",
     "sertarFataSpate": "Sertar – față/spate cutie",
-    "sertarFund": "Sertar – fund PFL"
+    "sertarFund": "Sertar – fund PFL",
+    "montant": "Montant"
   },
   "directie": {
     "jos": "jos",
@@ -616,7 +617,10 @@
     "conturPreaPutineLaturi": "Un contur are nevoie de cel puțin trei laturi.",
     "adancimePreaMare": "Adâncimea de {d} mm este prea mare pentru laturile de {a} și {b} mm: nu mai rămâne colț de debitat.",
     "frontAltPal": "„{corp}”: fronturile sunt din PAL de {front} mm, dar geometria e calculată cu grosimea carcasei ({corpMm} mm).",
-    "jocGlisiera": "„{corp}”: cutiile de sertar sunt calculate cu joc {jg} mm pe parte, dar {glisiera} cere {cerut} mm. Schimbă jocul în corp sau glisiera pe comandă."
+    "jocGlisiera": "„{corp}”: cutiile de sertar sunt calculate cu joc {jg} mm pe parte, dar {glisiera} cere {cerut} mm. Schimbă jocul în corp sau glisiera pe comandă.",
+    "compartimentIngust": "Compartimentul iese de {lat} mm: prea îngust pentru o poliță. Scoate un montant sau lărgește corpul.",
+    "usiPesteMontant": "{usi} uși pe {comp} compartimente: o ușă ar cădea peste un montant. Pune un multiplu de {comp}.",
+    "sertareCuMontant": "Sertarele nu se împart pe compartimente: se calculează în continuare pe toată lățimea corpului."
   },
   "csv": {
     "corp": "Corp",
@@ -1100,7 +1104,9 @@
       "few": "{n} buc",
       "other": "{n} buc"
     },
-    "copiazaManual": "Selectează și copiază manual."
+    "copiazaManual": "Selectează și copiază manual.",
+    "numarMontanti": "Număr de montanți",
+    "legMontanti": "Compartimentare"
   },
   "fata": {
     "px": "dreapta",

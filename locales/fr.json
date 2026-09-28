@@ -553,7 +553,8 @@
     "spatePerete2": "Fond arrière {mat} – mur 2",
     "sertarLaterala": "Tiroir – côté de caisse",
     "sertarFataSpate": "Tiroir – avant/arrière de caisse",
-    "sertarFund": "Tiroir – fond en panneau dur"
+    "sertarFund": "Tiroir – fond en panneau dur",
+    "montant": "Montant"
   },
   "directie": {
     "jos": "bas",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Un contour a besoin d'au moins trois côtés.",
     "adancimePreaMare": "Une profondeur de {d} mm est trop grande pour des côtés de {a} et {b} mm : il ne reste plus d'angle à débiter.",
     "frontAltPal": "« {corp} » : les façades sont en panneau de {front} mm, mais la géométrie est calculée avec l'épaisseur du caisson ({corpMm} mm).",
-    "jocGlisiera": "« {corp} » : les caisses de tiroir sont calculées avec un jeu de {jg} mm par côté, mais {glisiera} en demande {cerut}. Changez le jeu sur le caisson ou la coulisse sur la commande."
+    "jocGlisiera": "« {corp} » : les caisses de tiroir sont calculées avec un jeu de {jg} mm par côté, mais {glisiera} en demande {cerut}. Changez le jeu sur le caisson ou la coulisse sur la commande.",
+    "compartimentIngust": "Le compartiment fait {lat} mm : trop étroit pour une tablette. Retirez un montant ou élargissez le caisson.",
+    "usiPesteMontant": "{usi} portes pour {comp} compartiments : une porte tomberait sur un montant. Prenez un multiple de {comp}.",
+    "sertareCuMontant": "Les tiroirs ne sont pas répartis par compartiment : ils restent calculés sur toute la largeur du caisson."
   },
   "csv": {
     "corp": "Caisson",
@@ -1089,7 +1093,9 @@
       "one": "{n} pce",
       "other": "{n} pces"
     },
-    "copiazaManual": "Sélectionnez et copiez à la main."
+    "copiazaManual": "Sélectionnez et copiez à la main.",
+    "numarMontanti": "Nombre de montants",
+    "legMontanti": "Compartimentage"
   },
   "fata": {
     "px": "droite",

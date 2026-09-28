@@ -442,3 +442,100 @@ test('formatele de coală sunt cele din fișierele Holzma ale atelierului', () =
   assert.deepEqual([F['sfert'].w, F['sfert'].h], [1390, 1030]);
   assert.notEqual(F['jum-lung'].h, 1035, 'jumătatea aritmetică nu se poate tăia');
 });
+
+/* =====================================================================
+   6. Montantul (despărțitorul)
+
+   În lucrările atelierului codul e DSP și apare în trei din patru lucrări,
+   într-una cu 36 de bucăți. Se prinde de blat și de fund exact ca o laterală:
+   aceleași dibluri Ø8 în cant la capete și aceleași excentrice Ø15 la 25 mm.
+   Găurile de poliță îl străpung (Ø5 × 18 pe placă de 18), deci o gaură
+   slujește ambele compartimente.
+   ===================================================================== */
+
+const { paramsSchema: schemaM } = require('../shared/calc');
+
+const cuMontanti = over => schemaM.parse(Object.assign(
+  defaults(), { W: 1800, H: 720, D: 560, t: 18 }, over));
+
+test('montantul are înălțimea interioară și adâncimea lateralei', () => {
+  const { P } = calc(cuMontanti({ nDsp: 2 }));
+  const m = P.find(p => p.cheie === 'montant');
+  const lat = P.find(p => p.cheie === 'laterala');
+  assert.ok(m, 'trebuie să existe piesa montant');
+  assert.equal(m.buc, 2);
+  assert.equal(m.L, 684, 'înălțimea = H − 2t');
+  assert.equal(m.l, lat.l, 'aceeași adâncime ca laterala');
+});
+
+test('montanții împart interiorul în compartimente egale', () => {
+  /* Wint = 1800 − 36 = 1764 */
+  const cazuri = [[0, 1763], [1, 872], [2, 575], [3, 426.5]];
+  cazuri.forEach(([nDsp, latPolita]) => {
+    const { P } = calc(cuMontanti({ nDsp: nDsp, nPol: 1 }));
+    const pol = P.find(p => p.cheie === 'polita');
+    assert.equal(pol.L, latPolita, nDsp + ' montanți: lățimea poliței');
+    assert.equal(pol.buc, nDsp + 1, nDsp + ' montanți: câte o poliță pe compartiment');
+  });
+});
+
+test('polițele se numără pe compartiment, nu pe corp', () => {
+  const { P } = calc(cuMontanti({ nDsp: 2, nPol: 3 }));
+  const pol = P.find(p => p.cheie === 'polita');
+  assert.equal(pol.buc, 9, '3 polițe × 3 compartimente');
+});
+
+test('montantul scoate avertismentul de poliță lungă, fiindcă asta rezolvă', () => {
+  const fara = calc(cuMontanti({ nDsp: 0, nPol: 1 }));
+  const cu = calc(cuMontanti({ nDsp: 2, nPol: 1 }));
+  assert.ok(fara.avertismente.some(a => a.cheie === 'politaLunga'),
+    'fără montant, polița de 1763 mm trebuie să dea avertisment');
+  assert.ok(!cu.avertismente.some(a => a.cheie === 'politaLunga'),
+    'cu doi montanți, polița scade sub 800 și avertismentul trebuie să dispară');
+});
+
+test('ușile care nu se împart la compartimente dau avertisment', () => {
+  const rau = calc(cuMontanti({ nDsp: 3, nUsi: 2 }));
+  assert.ok(rau.avertismente.some(a => a.cheie === 'usiPesteMontant'),
+    '2 uși pe 4 compartimente: una ar cădea peste un montant');
+
+  const bun = calc(cuMontanti({ nDsp: 2, nUsi: 3 }));
+  assert.ok(!bun.avertismente.some(a => a.cheie === 'usiPesteMontant'));
+
+  const multiplu = calc(cuMontanti({ nDsp: 1, nUsi: 4 }));
+  assert.ok(!multiplu.avertismente.some(a => a.cheie === 'usiPesteMontant'),
+    '4 uși pe 2 compartimente e în regulă: două pe compartiment');
+});
+
+test('corpul fără montanți iese exact ca înainte', () => {
+  /* nDsp = 0 e implicit, deci corpurile existente nu au voie să se schimbe */
+  const a = calc(cuMontanti({ nPol: 2, nUsi: 2 }));
+  const b = calc(cuMontanti({ nDsp: 0, nPol: 2, nUsi: 2 }));
+  assert.deepEqual(a.P.map(p => [p.cheie, p.buc, p.L, p.l, p.TL, p.Tl]),
+                   b.P.map(p => [p.cheie, p.buc, p.L, p.l, p.TL, p.Tl]));
+  assert.ok(!a.P.some(p => p.cheie === 'montant'));
+});
+
+test('fiecare montant aduce două îmbinări și patru suporți pe poliță', () => {
+  const material = { id: 1, nume: 'PAL 18', rol: 'corp', hex: '#e9dcc0', pal_mm: 18,
+                     cant_gros: 2, cant_subtire: 0.8, brand: 'K', decor_cod: 'K1', decor_nume: 'Alb' };
+  const t = I18n.creeaza('ro');
+  const cere = (nDsp, nPol) => {
+    const p = schemaM.parse(Object.assign(defaults(t),
+      { W: 1800, H: 720, D: 560, nDsp: nDsp, nPol: nPol, nUsi: nDsp + 1 }));
+    const r = Raport.raport({ id: 1, name: 'x', formate: ['intreaga'], materiale: [material], feronerie: null },
+      [{ id: 1, name: 'Corp', poz: 1, params: p, material_id: 1, material_front_id: null, paid: 1 }],
+      { t: t, effortMs: 30, adaosCant: 10 });
+    const ia = re => (r.feronerie.find(x => re.test(x.nume)) || {}).qty;
+    return { excentric: ia(/Excentric/), cep: ia(/Cep lemn/), suport: ia(/Suport poliță/) };
+  };
+
+  const fara = cere(0, 2);
+  assert.equal(fara.excentric, 4, 'fără montant: patru îmbinări');
+  assert.equal(fara.suport, 8, '2 polițe × 4 suporți');
+
+  const cu = cere(2, 2);
+  assert.equal(cu.excentric, 8, 'doi montanți: 4 + 2×2 îmbinări');
+  assert.equal(cu.cep, 16, 'câte două dibluri pe îmbinare');
+  assert.equal(cu.suport, 24, '2 polițe × 3 compartimente × 4 suporți');
+});

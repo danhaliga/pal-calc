@@ -559,7 +559,8 @@
     "spatePerete2": "Leđa {mat} – zid 2",
     "sertarLaterala": "Fioka – bok kutije",
     "sertarFataSpate": "Fioka – prednja/zadnja strana kutije",
-    "sertarFund": "Fioka – dno od HDF-a"
+    "sertarFund": "Fioka – dno od HDF-a",
+    "montant": "Pregrada"
   },
   "directie": {
     "jos": "dole",
@@ -616,7 +617,10 @@
     "conturPreaPutineLaturi": "Konturi trebaju bar tri strane.",
     "adancimePreaMare": "Dubina od {d} mm previše je za strane od {a} i {b} mm: ne ostaje ugao za izrezivanje.",
     "frontAltPal": "„{corp}“: frontovi su od ploče {front} mm, ali se geometrija računa sa debljinom korpusa ({corpMm} mm).",
-    "jocGlisiera": "„{corp}“: kutije fioka računaju se sa zazorom {jg} mm po strani, a {glisiera} traži {cerut} mm. Promeni zazor na korpusu ili vođicu na porudžbini."
+    "jocGlisiera": "„{corp}“: kutije fioka računaju se sa zazorom {jg} mm po strani, a {glisiera} traži {cerut} mm. Promeni zazor na korpusu ili vođicu na porudžbini.",
+    "compartimentIngust": "Pregradak ispada {lat} mm: preuzak za policu. Skloni jednu pregradu ili proširi korpus.",
+    "usiPesteMontant": "{usi} vrata na {comp} pregratka: jedna vrata bi pala na pregradu. Uzmi umnožak broja {comp}.",
+    "sertareCuMontant": "Fioke se ne dele po pregratcima: i dalje se računaju na celu širinu korpusa."
   },
   "csv": {
     "corp": "Korpus",
@@ -1100,7 +1104,9 @@
       "few": "{n} kom",
       "many": "{n} kom"
     },
-    "copiazaManual": "Označi i kopiraj ručno."
+    "copiazaManual": "Označi i kopiraj ručno.",
+    "numarMontanti": "Broj pregrada",
+    "legMontanti": "Podela"
   },
   "fata": {
     "px": "desno",

@@ -13,7 +13,7 @@ var params = DATA.params;
 var paid = !!DATA.paid;
 
 var fields = ['nume','tip','W','H','D','W2','orb','constr','t','cg','cs','spate','tp','nUsi','montaj','balama',
-              'rm','ri','rinc','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg'];
+              'rm','ri','rinc','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg'];
 
 /* ce câmpuri are sens să vadă utilizatorul, în funcție de tipul corpului */
 function aplicaTip() {

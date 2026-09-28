@@ -553,7 +553,8 @@
     "spatePerete2": "Bakstycke {mat} – vägg 2",
     "sertarLaterala": "Låda – sida",
     "sertarFataSpate": "Låda – fram/bak",
-    "sertarFund": "Låda – botten av board"
+    "sertarFund": "Låda – botten av board",
+    "montant": "Mellanvägg"
   },
   "directie": {
     "jos": "ner",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "En kontur behöver minst tre sidor.",
     "adancimePreaMare": "Ett djup på {d} mm är för mycket för sidor på {a} och {b} mm: det blir inget hörn kvar att kapa.",
     "frontAltPal": "”{corp}”: fronterna är av {front} mm skiva, men geometrin räknas med stommens tjocklek ({corpMm} mm).",
-    "jocGlisiera": "”{corp}”: lådorna är räknade med {jg} mm spel per sida, men {glisiera} kräver {cerut} mm. Ändra spelet på stommen eller skenan på ordern."
+    "jocGlisiera": "”{corp}”: lådorna är räknade med {jg} mm spel per sida, men {glisiera} kräver {cerut} mm. Ändra spelet på stommen eller skenan på ordern.",
+    "compartimentIngust": "Facket blir {lat} mm: för smalt för en hylla. Ta bort en mellanvägg eller gör stommen bredare.",
+    "usiPesteMontant": "{usi} dörrar på {comp} fack: en dörr skulle hamna på en mellanvägg. Ta en multipel av {comp}.",
+    "sertareCuMontant": "Lådor delas inte per fack: de räknas fortfarande över hela stommens bredd."
   },
   "csv": {
     "corp": "Stomme",
@@ -1089,7 +1093,9 @@
       "one": "{n} st",
       "other": "{n} st"
     },
-    "copiazaManual": "Markera och kopiera för hand."
+    "copiazaManual": "Markera och kopiera för hand.",
+    "numarMontanti": "Antal mellanväggar",
+    "legMontanti": "Indelning"
   },
   "fata": {
     "px": "höger",

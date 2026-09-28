@@ -553,7 +553,8 @@
     "spatePerete2": "Costas {mat} – parede 2",
     "sertarLaterala": "Gaveta – lateral da caixa",
     "sertarFataSpate": "Gaveta – frente/traseira da caixa",
-    "sertarFund": "Gaveta – fundo em placa de fibras"
+    "sertarFund": "Gaveta – fundo em placa de fibras",
+    "montant": "Montante"
   },
   "directie": {
     "jos": "baixo",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Um contorno precisa de pelo menos três lados.",
     "adancimePreaMare": "Uma profundidade de {d} mm é demasiada para lados de {a} e {b} mm: não sobra canto para cortar.",
     "frontAltPal": "«{corp}»: as frentes são em placa de {front} mm, mas a geometria é calculada com a espessura da estrutura ({corpMm} mm).",
-    "jocGlisiera": "«{corp}»: as caixas de gaveta estão calculadas com {jg} mm de folga por lado, mas {glisiera} pede {cerut} mm. Muda a folga no módulo ou a corrediça na encomenda."
+    "jocGlisiera": "«{corp}»: as caixas de gaveta estão calculadas com {jg} mm de folga por lado, mas {glisiera} pede {cerut} mm. Muda a folga no módulo ou a corrediça na encomenda.",
+    "compartimentIngust": "O compartimento fica com {lat} mm: demasiado estreito para uma prateleira. Tire um montante ou alargue o módulo.",
+    "usiPesteMontant": "{usi} portas em {comp} compartimentos: uma porta ficaria sobre um montante. Use um múltiplo de {comp}.",
+    "sertareCuMontant": "As gavetas não são divididas por compartimentos: continuam calculadas em toda a largura do módulo."
   },
   "csv": {
     "corp": "Módulo",
@@ -1089,7 +1093,9 @@
       "one": "{n} un",
       "other": "{n} un"
     },
-    "copiazaManual": "Seleciona e copia à mão."
+    "copiazaManual": "Seleciona e copia à mão.",
+    "numarMontanti": "Número de montantes",
+    "legMontanti": "Compartimentação"
   },
   "fata": {
     "px": "direita",

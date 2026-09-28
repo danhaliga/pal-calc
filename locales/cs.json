@@ -559,7 +559,8 @@
     "spatePerete2": "Záda {mat} – stěna 2",
     "sertarLaterala": "Zásuvka – bok koše",
     "sertarFataSpate": "Zásuvka – předek/zadek koše",
-    "sertarFund": "Zásuvka – dno z HDF"
+    "sertarFund": "Zásuvka – dno z HDF",
+    "montant": "Přepážka"
   },
   "directie": {
     "jos": "dole",
@@ -616,7 +617,10 @@
     "conturPreaPutineLaturi": "Obrys potřebuje aspoň tři strany.",
     "adancimePreaMare": "Hloubka {d} mm je na strany {a} a {b} mm příliš: nezbývá žádný roh k vyříznutí.",
     "frontAltPal": "„{corp}“: čela jsou z desky {front} mm, ale geometrie se počítá s tloušťkou korpusu ({corpMm} mm).",
-    "jocGlisiera": "„{corp}“: koše zásuvek jsou počítané s vůlí {jg} mm na stranu, ale {glisiera} vyžaduje {cerut} mm. Změň vůli na korpusu nebo výsuv na zakázce."
+    "jocGlisiera": "„{corp}“: koše zásuvek jsou počítané s vůlí {jg} mm na stranu, ale {glisiera} vyžaduje {cerut} mm. Změň vůli na korpusu nebo výsuv na zakázce.",
+    "compartimentIngust": "Přihrádka vyjde {lat} mm: příliš úzká na polici. Uber přepážku nebo korpus rozšiř.",
+    "usiPesteMontant": "{usi} dvířka na {comp} přihrádky: jedna dvířka by padla na přepážku. Vezmi násobek {comp}.",
+    "sertareCuMontant": "Zásuvky se na přihrádky nedělí: počítají se dál na celou šířku korpusu."
   },
   "csv": {
     "corp": "Korpus",
@@ -1100,7 +1104,9 @@
       "few": "{n} ks",
       "many": "{n} ks"
     },
-    "copiazaManual": "Označ a zkopíruj ručně."
+    "copiazaManual": "Označ a zkopíruj ručně.",
+    "numarMontanti": "Počet přepážek",
+    "legMontanti": "Rozdělení"
   },
   "fata": {
     "px": "vpravo",

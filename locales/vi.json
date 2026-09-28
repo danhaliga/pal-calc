@@ -553,7 +553,8 @@
     "spatePerete2": "Tấm hậu {mat} – tường 2",
     "sertarLaterala": "Ngăn kéo – hông hộc",
     "sertarFataSpate": "Ngăn kéo – mặt trước/sau hộc",
-    "sertarFund": "Ngăn kéo – đáy HDF"
+    "sertarFund": "Ngăn kéo – đáy HDF",
+    "montant": "Vách ngăn"
   },
   "directie": {
     "jos": "dưới",
@@ -610,7 +611,10 @@
     "conturPreaPutineLaturi": "Một đường bao cần ít nhất ba cạnh.",
     "adancimePreaMare": "Chiều sâu {d} mm là quá lớn so với các cạnh {a} và {b} mm: không còn góc nào để cắt.",
     "frontAltPal": "„{corp}”: cánh làm bằng ván {front} mm, nhưng hình học lại tính theo độ dày thùng tủ ({corpMm} mm).",
-    "jocGlisiera": "„{corp}”: hộc ngăn kéo được tính với khe hở {jg} mm mỗi bên, nhưng {glisiera} cần {cerut} mm. Hãy đổi khe hở ở thùng tủ hoặc đổi ray ở đơn hàng."
+    "jocGlisiera": "„{corp}”: hộc ngăn kéo được tính với khe hở {jg} mm mỗi bên, nhưng {glisiera} cần {cerut} mm. Hãy đổi khe hở ở thùng tủ hoặc đổi ray ở đơn hàng.",
+    "compartimentIngust": "Khoang ra {lat} mm: quá hẹp cho một kệ. Bỏ bớt một vách hoặc nới rộng thùng tủ.",
+    "usiPesteMontant": "{usi} cánh trên {comp} khoang: một cánh sẽ rơi vào vách ngăn. Lấy bội số của {comp}.",
+    "sertareCuMontant": "Ngăn kéo không chia theo khoang: vẫn tính trên toàn bộ chiều rộng thùng tủ."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -1089,7 +1093,9 @@
       "one": "{n} cái",
       "other": "{n} cái"
     },
-    "copiazaManual": "Hãy bôi đen và sao chép thủ công."
+    "copiazaManual": "Hãy bôi đen và sao chép thủ công.",
+    "numarMontanti": "Số vách ngăn",
+    "legMontanti": "Chia khoang"
   },
   "fata": {
     "px": "phải",
