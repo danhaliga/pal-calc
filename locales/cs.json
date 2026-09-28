@@ -81,7 +81,13 @@
     "cum1": "Zadáš Š × V × H, tloušťku desky a hranu.",
     "cum2": "Vybereš dvířka, police, zásuvky a typ zad.",
     "cum3": "Zkontroluješ korpus ve 3D a hotové rozměry.",
-    "cum4": "Odemkneš nářezový plán pro ten korpus."
+    "cum4": "Odemkneš nářezový plán pro ten korpus.",
+    "exempluTitlu": "Co z toho vyleze, na skutečném korpusu",
+    "exempluSub": "Spodní skříňka {W} × {H} × {D} mm, deska {pal} mm, hrana {gros} / {subtire} mm. Rozměry níže se počítají právě teď, tímtéž motorem, který vydává i zakázky dílny.",
+    "hartiiTitlu": "Papíry, co jdou do dílny",
+    "hartiiSub": "Každá zakázka se vytiskne hotová k práci, ne jako tabulka, kterou musíš ještě rozstříhat rukou.",
+    "limbiTitlu": "Mluví jazykem dílny",
+    "limbiSub": "Třicet jazyků, se slovy dílny, ne přeložených z angličtiny se slovníkem."
   },
   "eroare": {
     "paginaLipsa": "Tahle stránka neexistuje.",

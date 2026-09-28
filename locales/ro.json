@@ -81,7 +81,13 @@
     "cum1": "Introduci L × H × A, grosimea PAL-ului și cantul.",
     "cum2": "Alegi uși, polițe, sertare și tipul de spate.",
     "cum3": "Verifici corpul în 3D și cotele finite.",
-    "cum4": "Deblochezi lista de debitare pentru corpul respectiv."
+    "cum4": "Deblochezi lista de debitare pentru corpul respectiv.",
+    "exempluTitlu": "Ce iese, pe un corp adevărat",
+    "exempluSub": "Corp de bucătărie {W} × {H} × {D} mm, PAL {pal} mm, cant {gros} / {subtire} mm. Cotele de mai jos se calculează chiar acum, cu motorul care scoate și lucrările din atelier.",
+    "hartiiTitlu": "Hârtiile care pleacă în atelier",
+    "hartiiSub": "Fiecare comandă se tipărește gata de lucru, nu ca un tabel pe care să-l mai tai cu mâna.",
+    "limbiTitlu": "Aplicația vorbește limba atelierului",
+    "limbiSub": "Treizeci de limbi, cu cuvintele din atelier, nu traduse din engleză cu dicționarul."
   },
   "eroare": {
     "paginaLipsa": "Pagina nu există.",

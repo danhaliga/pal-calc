@@ -81,7 +81,13 @@
     "cum1": "Introduces L × H × P, el grosor del tablero y el canto.",
     "cum2": "Eliges puertas, baldas, cajones y el tipo de trasera.",
     "cum3": "Compruebas el módulo en 3D y las medidas acabadas.",
-    "cum4": "Desbloqueas la lista de despiece de ese módulo."
+    "cum4": "Desbloqueas la lista de despiece de ese módulo.",
+    "exempluTitlu": "Lo que sale, en un mueble de verdad",
+    "exempluSub": "Mueble bajo de {W} × {H} × {D} mm, tablero de {pal} mm, canto {gros} / {subtire} mm. Las medidas de abajo se calculan ahora mismo, con el motor que saca los trabajos del taller.",
+    "hartiiTitlu": "Las hojas que van al taller",
+    "hartiiSub": "Cada pedido se imprime listo para trabajar, no como una tabla que aún hay que recortar a mano.",
+    "limbiTitlu": "Habla el idioma del taller",
+    "limbiSub": "Treinta idiomas, con las palabras del taller, no traducidas del inglés con el diccionario."
   },
   "eroare": {
     "paginaLipsa": "Esta página no existe.",

@@ -21,6 +21,7 @@ const admin = require('./src/admin');
 const mesaje = require('./src/mesaje');
 const articole = require('./src/articole');
 const i18n = require('./src/i18n');
+const PalI18n = require('./shared/i18n');
 
 migrate();
 i18n.incarca();
@@ -121,7 +122,22 @@ app.use('/shared', express.static(path.join(__dirname, 'shared'), { maxAge: '1h'
 
 app.get('/', (req, res) => {
   if (req.user) return res.redirect('/orders');
-  res.render('landing', { title: 'Calculator debitare PAL' });
+
+  /* Exemplul de pe pagina de prezentare se calculeaza ACUM, cu acelasi motor
+     care scoate lucrarile din atelier. Nu e un tabel scris de mana: daca se
+     schimba regula de debitare, se schimba si cifrele de aici. Si vine gata
+     tradus, fiindca numele pieselor sunt chei din catalog. */
+  const PalModels = require('./shared/models');
+  const PalCalc = require('./shared/calc');
+  const exemplu = PalModels.paramsFor('baza-2usi', req.t);
+  const calculat = PalCalc.calc(exemplu, req.t);
+
+  res.render('landing', {
+    title: req.t('landing.titlu'),
+    exemplu: exemplu,
+    piese: calculat.P,
+    limbi: PalI18n.LIMBI
+  });
 });
 
 app.use(i18n.router);

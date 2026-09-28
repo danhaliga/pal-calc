@@ -81,7 +81,13 @@
     "cum1": "Megadod a Sz × M × Mé méretet, a lapvastagságot és az élzárót.",
     "cum2": "Kiválasztod az ajtókat, polcokat, fiókokat és a hátlap típusát.",
     "cum3": "Ellenőrzöd a korpuszt 3D-ben és a készméreteket.",
-    "cum4": "Feloldod az adott korpusz szabásjegyzékét."
+    "cum4": "Feloldod az adott korpusz szabásjegyzékét.",
+    "exempluTitlu": "Mi jön ki belőle, egy igazi korpuszon",
+    "exempluSub": "Alsó szekrény {W} × {H} × {D} mm, {pal} mm-es lap, {gros} / {subtire} mm élzáró. Az alábbi méretek most számolódnak ki, ugyanazzal a motorral, amely a műhely munkáit is kiadja.",
+    "hartiiTitlu": "A lapok, amik a műhelybe mennek",
+    "hartiiSub": "Minden rendelés munkára készen nyomtatódik, nem táblázatként, amit még kézzel kell szétvágni.",
+    "limbiTitlu": "A műhely nyelvén beszél",
+    "limbiSub": "Harminc nyelv, a műhely szavaival, nem szótárral angolból fordítva."
   },
   "eroare": {
     "paginaLipsa": "Ez az oldal nem létezik.",

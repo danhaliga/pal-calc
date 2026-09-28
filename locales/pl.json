@@ -81,7 +81,13 @@
     "cum1": "Podajesz szer. × wys. × gł., grubość płyty i obrzeże.",
     "cum2": "Wybierasz fronty, półki, szuflady i rodzaj pleców.",
     "cum3": "Sprawdzasz korpus w 3D i wymiary gotowe.",
-    "cum4": "Odblokowujesz listę rozkroju dla tego korpusu."
+    "cum4": "Odblokowujesz listę rozkroju dla tego korpusu.",
+    "exempluTitlu": "Co z niego wychodzi, na prawdziwym korpusie",
+    "exempluSub": "Korpus dolny {W} × {H} × {D} mm, płyta {pal} mm, obrzeże {gros} / {subtire} mm. Wymiary poniżej liczą się właśnie teraz, tym samym silnikiem, który wypuszcza roboty z warsztatu.",
+    "hartiiTitlu": "Kartki, które idą do warsztatu",
+    "hartiiSub": "Każde zlecenie drukuje się gotowe do pracy, nie jako tabela, którą trzeba jeszcze ciąć ręcznie.",
+    "limbiTitlu": "Mówi językiem warsztatu",
+    "limbiSub": "Trzydzieści języków, słowami warsztatu, nie przełożonymi z angielskiego słownikiem."
   },
   "eroare": {
     "paginaLipsa": "Taka strona nie istnieje.",

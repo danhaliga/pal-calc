@@ -81,7 +81,13 @@
     "cum1": "Du gibst L × H × T, die Plattenstärke und die Kante ein.",
     "cum2": "Du wählst Türen, Böden, Schubladen und die Art der Rückwand.",
     "cum3": "Du prüfst den Korpus in 3D und die Fertigmaße.",
-    "cum4": "Du schaltest die Zuschnittliste für diesen Korpus frei."
+    "cum4": "Du schaltest die Zuschnittliste für diesen Korpus frei.",
+    "exempluTitlu": "Was herauskommt, an einem echten Korpus",
+    "exempluSub": "Unterschrank {W} × {H} × {D} mm, Platte {pal} mm, Kante {gros} / {subtire} mm. Die Maße unten werden gerade jetzt gerechnet, von derselben Maschine, die auch die Aufträge der Werkstatt ausgibt.",
+    "hartiiTitlu": "Die Blätter, die in die Werkstatt gehen",
+    "hartiiSub": "Jeder Auftrag druckt arbeitsfertig, nicht als Tabelle, die man noch von Hand zerschneidet.",
+    "limbiTitlu": "Sie spricht die Sprache der Werkstatt",
+    "limbiSub": "Dreißig Sprachen, mit den Wörtern der Werkstatt, nicht mit dem Wörterbuch aus dem Englischen übersetzt."
   },
   "eroare": {
     "paginaLipsa": "Diese Seite gibt es nicht.",

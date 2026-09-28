@@ -81,7 +81,13 @@
     "cum1": "Bạn nhập R × C × S, độ dày ván và chỉ cạnh.",
     "cum2": "Bạn chọn cánh, kệ, ngăn kéo và kiểu tấm hậu.",
     "cum3": "Bạn kiểm tra thùng tủ ở dạng 3D và các kích thước hoàn thiện.",
-    "cum4": "Bạn mở khóa bảng cắt cho thùng tủ đó."
+    "cum4": "Bạn mở khóa bảng cắt cho thùng tủ đó.",
+    "exempluTitlu": "Ra được gì, trên một cái tủ thật",
+    "exempluSub": "Tủ dưới {W} × {H} × {D} mm, ván {pal} mm, chỉ cạnh {gros} / {subtire} mm. Các kích thước dưới đây được tính ngay lúc này, bằng chính bộ máy làm ra các đơn hàng của xưởng.",
+    "hartiiTitlu": "Những tờ giấy đi xuống xưởng",
+    "hartiiSub": "Mỗi đơn in ra là làm được ngay, không phải một bảng còn phải cắt bằng tay.",
+    "limbiTitlu": "Nó nói tiếng của xưởng",
+    "limbiSub": "Ba mươi thứ tiếng, bằng từ ngữ của xưởng, không dịch từ tiếng Anh bằng từ điển."
   },
   "eroare": {
     "paginaLipsa": "Trang này không tồn tại.",

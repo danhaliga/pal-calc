@@ -7,6 +7,62 @@
   </div>
 </section>
 
+<%# Exemplul nu e scris de mână: se calculează la fiecare deschidere a
+    paginii, cu motorul care scoate și lucrările din atelier. Dacă se schimbă
+    regula de debitare, se schimbă și cifrele de-aici — n-are cum să rămână
+    în urmă. Și vine gata tradus: numele pieselor sunt chei din catalog. %>
+<section class="panel">
+  <h2><%= t('landing.exempluTitlu') %></h2>
+  <p class="muted"><%= t('landing.exempluSub', {
+    W: exemplu.W, H: exemplu.H, D: exemplu.D,
+    pal: exemplu.t, gros: exemplu.cg, subtire: exemplu.cs
+  }) %></p>
+
+  <div class="tbl"><table>
+    <thead><tr>
+      <th><%= t('editor.colPiesa') %></th>
+      <th class="num"><%= t('editor.colBuc') %></th>
+      <th class="num"><%= t('editor.colFinitL') %></th>
+      <th class="num"><%= t('editor.colFinitl') %></th>
+      <th><%= t('editor.colCantMuchii') %></th>
+      <th class="num"><%= t('editor.colTaiereL') %></th>
+      <th class="num"><%= t('editor.colTaierel') %></th>
+    </tr></thead>
+    <tbody>
+      <% piese.forEach(function (p) { %>
+        <tr>
+          <td><%= p.nume %></td>
+          <td class="num"><%= p.buc %></td>
+          <td class="num"><%= p.L %></td>
+          <td class="num"><%= p.l %></td>
+          <td><span class="cant">
+            <% p.c.forEach(function (m) { %>
+              <span class="<%= m === 'g' ? 'g' : m === 's' ? 's' : '' %>"><%=
+                m === 'g' ? exemplu.cg : m === 's' ? exemplu.cs : '–' %></span>
+            <% }); %>
+          </span></td>
+          <td class="num"><b><%= p.TL %></b></td>
+          <td class="num"><b><%= p.Tl %></b></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table></div>
+  <p class="legend"><%= t('editor.legendaCant') %></p>
+</section>
+
+<section class="panel">
+  <h2><%= t('landing.hartiiTitlu') %></h2>
+  <p class="muted"><%= t('landing.hartiiSub') %></p>
+  <ul class="ticks cols2">
+    <li><b><%= t('print.linkDebitare') %></b></li>
+    <li><b><%= t('print.linkIncadrare') %></b></li>
+    <li><b><%= t('print.linkCorpuri') %></b></li>
+    <li><b><%= t('print.linkAnsamblu') %></b></li>
+    <li><b><%= t('print.linkMontaj') %></b></li>
+    <li><b><%= t('print.linkCnc') %></b></li>
+  </ul>
+</section>
+
 <section class="cards3">
   <div class="panel">
     <h2><%= t('landing.gratuit') %></h2>
@@ -34,5 +90,26 @@
       <li><%= t('landing.cum3') %></li>
       <li><%= t('landing.cum4') %></li>
     </ol>
+  </div>
+</section>
+
+<%# Numele limbilor se scriu în ele însele, nu traduse: un om care nu citește
+    româna trebuie să-și găsească limba pe listă. %>
+<section class="panel">
+  <h2><%= t('landing.limbiTitlu') %></h2>
+  <p class="muted"><%= t('landing.limbiSub') %></p>
+  <p class="limbi-lista">
+    <% limbi.forEach(function (l, i) { %><%= i ? ' · ' : '' %><span lang="<%= l.cod %>"><%= l.nume %></span><% }); %>
+  </p>
+</section>
+
+<section class="panel zona-chemare">
+  <div>
+    <b><%= t('articole.titlu') %></b>
+    <p class="muted small"><%= t('articole.intro') %></p>
+  </div>
+  <div class="btns">
+    <a class="btn" href="/ghid"><%= t('articole.citeste') %></a>
+    <a class="btn primary" href="/register"><%= t('landing.faCont') %></a>
   </div>
 </section>

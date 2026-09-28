@@ -81,7 +81,13 @@
     "cum1": "Inserisci L × H × P, lo spessore del pannello e il bordo.",
     "cum2": "Scegli ante, ripiani, cassetti e il tipo di schienale.",
     "cum3": "Controlli il mobile in 3D e le misure finite.",
-    "cum4": "Sblocchi la distinta di taglio per quel mobile."
+    "cum4": "Sblocchi la distinta di taglio per quel mobile.",
+    "exempluTitlu": "Cosa ne esce, su un mobile vero",
+    "exempluSub": "Base da cucina {W} × {H} × {D} mm, pannello {pal} mm, bordo {gros} / {subtire} mm. Le misure qui sotto si calcolano adesso, con il motore che tira fuori anche i lavori della bottega.",
+    "hartiiTitlu": "I fogli che vanno in bottega",
+    "hartiiSub": "Ogni commessa si stampa pronta da lavorare, non come una tabella da ritagliare ancora a mano.",
+    "limbiTitlu": "Parla la lingua della bottega",
+    "limbiSub": "Trenta lingue, con le parole della bottega, non tradotte dall’inglese col dizionario."
   },
   "eroare": {
     "paginaLipsa": "Questa pagina non esiste.",

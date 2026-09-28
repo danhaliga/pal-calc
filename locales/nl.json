@@ -81,7 +81,13 @@
     "cum1": "Je voert B × H × D in, de plaatdikte en het kantenband.",
     "cum2": "Je kiest deuren, legplanken, lades en het type achterwand.",
     "cum3": "Je controleert de kast in 3D en de eindmaten.",
-    "cum4": "Je ontgrendelt de zaaglijst voor die kast."
+    "cum4": "Je ontgrendelt de zaaglijst voor die kast.",
+    "exempluTitlu": "Wat eruit komt, op een echte kast",
+    "exempluSub": "Onderkast {W} × {H} × {D} mm, plaat {pal} mm, band {gros} / {subtire} mm. De maten hieronder worden nu meteen gerekend, door dezelfde motor die ook het werk van de werkplaats uitdraait.",
+    "hartiiTitlu": "De bladen die naar de werkplaats gaan",
+    "hartiiSub": "Elke order drukt werkklaar af, niet als een tabel die je nog met de hand moet uitknippen.",
+    "limbiTitlu": "Ze spreekt de taal van de werkplaats",
+    "limbiSub": "Dertig talen, met de woorden van de werkplaats, niet met het woordenboek uit het Engels vertaald."
   },
   "eroare": {
     "paginaLipsa": "Deze pagina bestaat niet.",

@@ -400,3 +400,9 @@ details.setari[open] summary::before{content:'▾ '}
 /* Data livrării și telefonul, în antetul comenzii. */
 .livrare{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .livrare a{text-decoration:none}
+
+/* Pagina de prezentare: lista limbilor și listele pe două coloane. */
+.limbi-lista{color:var(--muted);line-height:2;margin:6px 0 0}
+.limbi-lista span{color:var(--ink)}
+.ticks.cols2{columns:2;column-gap:28px}
+@media(max-width:560px){.ticks.cols2{columns:1}}

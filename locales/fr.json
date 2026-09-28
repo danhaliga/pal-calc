@@ -81,7 +81,13 @@
     "cum1": "Vous saisissez L × H × P, l'épaisseur du panneau et le chant.",
     "cum2": "Vous choisissez portes, étagères, tiroirs et le type de fond.",
     "cum3": "Vous vérifiez le caisson en 3D et les cotes finies.",
-    "cum4": "Vous débloquez la liste de débit pour ce caisson."
+    "cum4": "Vous débloquez la liste de débit pour ce caisson.",
+    "exempluTitlu": "Ce qui en sort, sur un vrai caisson",
+    "exempluSub": "Caisson bas {W} × {H} × {D} mm, panneau de {pal} mm, chant {gros} / {subtire} mm. Les cotes ci-dessous sont calculées à l’instant, par le moteur qui sort aussi les travaux de l’atelier.",
+    "hartiiTitlu": "Les feuilles qui partent à l’atelier",
+    "hartiiSub": "Chaque commande s’imprime prête à travailler, pas sous forme de tableau à redécouper à la main.",
+    "limbiTitlu": "Elle parle la langue de l’atelier",
+    "limbiSub": "Trente langues, avec les mots de l’atelier, pas traduites de l’anglais au dictionnaire."
   },
   "eroare": {
     "paginaLipsa": "Cette page n'existe pas.",

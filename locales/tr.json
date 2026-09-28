@@ -81,7 +81,13 @@
     "cum1": "G × Y × D, levha kalınlığını ve bandı girersin.",
     "cum2": "Kapak, raf, çekmece ve arkalık tipini seçersin.",
     "cum3": "Gövdeyi 3B olarak ve bitmiş ölçüleri kontrol edersin.",
-    "cum4": "O gövdenin kesim listesinin kilidini açarsın."
+    "cum4": "O gövdenin kesim listesinin kilidini açarsın.",
+    "exempluTitlu": "Ne çıkıyor, gerçek bir gövdede",
+    "exempluSub": "Alt gövde {W} × {H} × {D} mm, {pal} mm levha, {gros} / {subtire} mm bant. Aşağıdaki ölçüler tam şu anda hesaplanıyor; atölyenin işlerini çıkaran motorla aynısı.",
+    "hartiiTitlu": "Atölyeye giden kâğıtlar",
+    "hartiiSub": "Her sipariş çalışmaya hazır basılır, elle kesilecek bir tablo olarak değil.",
+    "limbiTitlu": "Atölyenin dilini konuşur",
+    "limbiSub": "Otuz dil, atölyenin kelimeleriyle; sözlükle İngilizceden çevrilmiş değil."
   },
   "eroare": {
     "paginaLipsa": "Bu sayfa yok.",

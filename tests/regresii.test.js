@@ -1163,3 +1163,46 @@ test('formularul de comandă nouă le are sub linia cu data automată', () => {
   assert.ok(pozData !== -1 && pozLivrare !== -1);
   assert.ok(pozLivrare > pozData, 'au urcat deasupra liniei cu data automată');
 });
+
+/* =====================================================================
+   18. Pagina de prezentare arată un calcul viu, nu un tabel scris de mână
+
+   Un tabel de exemplu scris în pagină rămâne în urmă la prima schimbare de
+   regulă — și tocmai regula de debitare s-a schimbat o dată azi. Exemplul
+   se calculează la fiecare deschidere, cu motorul adevărat.
+   ===================================================================== */
+
+const LANDING = fs.readFileSync(path.join(__dirname, '..', 'views', 'landing.ejs'), 'utf8');
+const SERVER = fs.readFileSync(path.join(__dirname, '..', 'server.js'), 'utf8');
+
+test('exemplul de pe prima pagină vine din motorul de calcul', () => {
+  assert.match(SERVER, /PalCalc\.calc\(exemplu, req\.t\)/,
+    'prima pagină nu mai calculează exemplul');
+  assert.match(SERVER, /PalModels\.paramsFor\('baza-2usi', req\.t\)/);
+  assert.match(LANDING, /piese\.forEach/, 'tabelul nu mai vine din piese calculate');
+});
+
+test('nicio cotă scrisă de mână în pagina de prezentare', () => {
+  /* Dacă cineva pune cifre direct în vedere, ele nu se mai schimbă când se
+     schimbă calculul, iar pagina începe să mintă. */
+  const inTabel = LANDING.slice(LANDING.indexOf('<tbody>'), LANDING.indexOf('</tbody>'));
+  assert.ok(!/>\s*\d{3,}\s*</.test(inTabel), 'au apărut cote scrise de mână în tabel');
+  assert.match(LANDING, /exemplu\.W/, 'nici măcar cotele corpului nu mai vin din model');
+});
+
+test('exemplul chiar iese, și iese tradus', () => {
+  const t = I18n.creeaza('en');
+  const p = Models.paramsFor('baza-2usi', t);
+  const { P, warn } = calc(p, t);
+  assert.ok(P.length >= 5, 'exemplul de pe prima pagină a rămas fără piese');
+  assert.deepEqual(warn, [], `exemplul se plânge chiar pe prima pagină: ${warn.join(' | ')}`);
+  assert.ok(P.every(x => !/^piesa\./.test(x.nume)),
+    'numele pieselor ies ca niște chei brute');
+});
+
+test('lista de limbi se scrie în ele însele, nu traduse', () => {
+  /* Un om care nu citește româna trebuie să-și găsească limba pe listă. */
+  assert.match(LANDING, /limbi\.forEach/);
+  assert.match(LANDING, /lang="<%= l\.cod %>"/, 'limbile n-au marcajul lor de limbă');
+  assert.match(LANDING, /l\.nume/);
+});

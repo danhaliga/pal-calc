@@ -81,7 +81,13 @@
     "cum1": "Introduzes C × A × P, a espessura da placa e a orla.",
     "cum2": "Escolhes portas, prateleiras, gavetas e o tipo de costas.",
     "cum3": "Verificas o módulo em 3D e as medidas acabadas.",
-    "cum4": "Desbloqueias a lista de corte desse módulo."
+    "cum4": "Desbloqueias a lista de corte desse módulo.",
+    "exempluTitlu": "O que sai, num móvel a sério",
+    "exempluSub": "Móvel baixo {W} × {H} × {D} mm, placa de {pal} mm, orla {gros} / {subtire} mm. As medidas abaixo são calculadas agora mesmo, pelo motor que tira também os trabalhos da oficina.",
+    "hartiiTitlu": "As folhas que vão para a oficina",
+    "hartiiSub": "Cada encomenda imprime-se pronta a trabalhar, não como uma tabela que ainda é preciso recortar à mão.",
+    "limbiTitlu": "Fala a língua da oficina",
+    "limbiSub": "Trinta línguas, com as palavras da oficina, não traduzidas do inglês com o dicionário."
   },
   "eroare": {
     "paginaLipsa": "Esta página não existe.",

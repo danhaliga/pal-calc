@@ -81,7 +81,13 @@
     "cum1": "Anda memasukkan L × T × D, ketebalan papan, dan tepi.",
     "cum2": "Anda memilih pintu, rak, laci, dan jenis punggung.",
     "cum3": "Anda memeriksa boks dalam 3D dan ukuran jadinya.",
-    "cum4": "Anda membuka daftar potong untuk boks itu."
+    "cum4": "Anda membuka daftar potong untuk boks itu.",
+    "exempluTitlu": "Apa yang keluar, pada kabinet sungguhan",
+    "exempluSub": "Kabinet bawah {W} × {H} × {D} mm, papan {pal} mm, edging {gros} / {subtire} mm. Ukuran di bawah dihitung sekarang juga, oleh mesin yang sama yang mengeluarkan pekerjaan bengkel.",
+    "hartiiTitlu": "Lembar yang turun ke bengkel",
+    "hartiiSub": "Setiap pesanan tercetak siap dikerjakan, bukan sebagai tabel yang masih harus dipotong dengan tangan.",
+    "limbiTitlu": "Ia berbicara bahasa bengkel",
+    "limbiSub": "Tiga puluh bahasa, dengan kata-kata bengkel, bukan terjemahan dari bahasa Inggris pakai kamus."
   },
   "eroare": {
     "paginaLipsa": "Halaman ini tidak ada.",

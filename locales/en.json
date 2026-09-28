@@ -81,7 +81,13 @@
     "cum1": "Enter L × H × D, the board thickness and the edging.",
     "cum2": "Choose doors, shelves, drawers and the back type.",
     "cum3": "Check the cabinet in 3D and review the finished sizes.",
-    "cum4": "Unlock the cutting list for that cabinet."
+    "cum4": "Unlock the cutting list for that cabinet.",
+    "exempluTitlu": "What comes out, on a real cabinet",
+    "exempluSub": "Base cabinet {W} × {H} × {D} mm, {pal} mm board, {gros} / {subtire} mm banding. The sizes below are worked out right now, by the same engine that produces the shop’s jobs.",
+    "hartiiTitlu": "The sheets that go to the shop",
+    "hartiiSub": "Every order prints ready to work from, not as a table you still have to cut up by hand.",
+    "limbiTitlu": "It speaks the language of the workshop",
+    "limbiSub": "Thirty languages, in workshop words, not translated out of English with a dictionary."
   },
   "eroare": {
     "paginaLipsa": "This page does not exist.",

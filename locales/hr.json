@@ -81,7 +81,13 @@
     "cum1": "Upišeš Š × V × D, debljinu ploče i kantu.",
     "cum2": "Odabereš vrata, police, ladice i vrstu leđa.",
     "cum3": "Provjeriš korpus u 3D-u i gotove mjere.",
-    "cum4": "Otključaš popis krojenja za taj korpus."
+    "cum4": "Otključaš popis krojenja za taj korpus.",
+    "exempluTitlu": "Što izlazi, na stvarnom korpusu",
+    "exempluSub": "Donji korpus {W} × {H} × {D} mm, ploča {pal} mm, kant {gros} / {subtire} mm. Mjere ispod računaju se baš sada, istim motorom koji izbacuje i poslove radionice.",
+    "hartiiTitlu": "Papiri koji idu u radionicu",
+    "hartiiSub": "Svaka narudžba se ispisuje spremna za rad, ne kao tablica koju još treba rezati rukom.",
+    "limbiTitlu": "Govori jezikom radionice",
+    "limbiSub": "Trideset jezika, riječima radionice, a ne prevedenih s engleskog rječnikom."
   },
   "eroare": {
     "paginaLipsa": "Ova stranica ne postoji.",

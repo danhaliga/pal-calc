@@ -81,7 +81,13 @@
     "cum1": "Du anger B × H × D, skivtjockleken och kantlisten.",
     "cum2": "Du väljer luckor, hyllplan, lådor och typ av bakstycke.",
     "cum3": "Du kollar stommen i 3D och färdigmåtten.",
-    "cum4": "Du låser upp kaplistan för just den stommen."
+    "cum4": "Du låser upp kaplistan för just den stommen.",
+    "exempluTitlu": "Vad som kommer ut, på en riktig stomme",
+    "exempluSub": "Underskåp {W} × {H} × {D} mm, skiva {pal} mm, kantlist {gros} / {subtire} mm. Måtten nedan räknas ut just nu, av samma motor som tar fram verkstadens jobb.",
+    "hartiiTitlu": "Bladen som går till verkstaden",
+    "hartiiSub": "Varje order skrivs ut färdig att jobba efter, inte som en tabell man ännu måste klippa isär för hand.",
+    "limbiTitlu": "Den talar verkstadens språk",
+    "limbiSub": "Trettio språk, med verkstadens ord, inte översatta från engelska med ordbok."
   },
   "eroare": {
     "paginaLipsa": "Den här sidan finns inte.",
