@@ -428,10 +428,11 @@
     "legCant": "Kante",
     "cantGros": "Dicke Kante (sichtbare Schmalseiten)",
     "cantSubtire": "Dünne Kante (verdeckte Schmalseiten)",
-    "notaCant": "Die Listen zeigen nur die Stärken, die es im gewählten Dekor gibt. Die dicke Kante kommt auf die Schmalseiten, die man sieht und anfasst, die dünne dorthin, wo kaum Verschleiß ist.",
+    "notaCant": "Stärken, die es für das gewählte Dekor nicht ab Lager gibt, bleiben wählbar und sind nur mit „auf Bestellung“ markiert. Die dicke Kante kommt auf die sichtbaren, viel angefassten Schmalflächen, die dünne dorthin, wo wenig Verschleiß ist.",
     "legFormate": "Plattenformate für den Zuschnitt",
     "notaFormate": "Der Optimierer wählt selbst die Kombination mit dem geringsten Verschnitt und sagt dir am Ende, wie viele ganze Platten du brauchst, samt der daraus geschnittenen Stücke.",
-    "deschideComanda": "Auftrag anlegen"
+    "deschideComanda": "Auftrag anlegen",
+    "cantPeComanda": "auf Bestellung"
   },
   "fero": {
     "legenda": "Beschläge",
@@ -899,7 +900,9 @@
     "cauta": "Nach Code oder Name suchen",
     "faraDecor": "Ohne Dekor",
     "niciunRezultat": "Kein Dekor passt.",
-    "cautaPlaceholder": "nach Name oder Code suchen (z. B. Eiche, W1000)"
+    "cautaPlaceholder": "nach Name oder Code suchen (z. B. Eiche, W1000)",
+    "contor": "{n} von {total} Dekoren",
+    "incaN": "Noch {n} Dekore — such nach Name oder Code."
   },
   "perete": {
     "A": "Rückwand des Raums",

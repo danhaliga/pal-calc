@@ -428,10 +428,11 @@
     "legCant": "Chant",
     "cantGros": "Chant épais (rives visibles)",
     "cantSubtire": "Chant fin (rives cachées)",
-    "notaCant": "Les listes n'affichent que les épaisseurs disponibles dans le décor choisi. Le chant épais va sur les rives que l'on voit et que l'on touche, le chant fin là où l'usure est faible.",
+    "notaCant": "Les épaisseurs non tenues en stock pour le décor choisi restent sélectionnables, simplement marquées « sur commande ». Le chant épais va sur les rives visibles et touchées, le fin là où il y a peu d’usure.",
     "legFormate": "Formats de panneau au débit",
     "notaFormate": "L'optimiseur choisit seul la combinaison avec le moins de chutes et vous indique à la fin combien de panneaux entiers il faut, y compris les morceaux qui en sont tirés.",
-    "deschideComanda": "Ouvrir la commande"
+    "deschideComanda": "Ouvrir la commande",
+    "cantPeComanda": "sur commande"
   },
   "fero": {
     "legenda": "Quincaillerie",
@@ -899,7 +900,9 @@
     "cauta": "Rechercher par code ou par nom",
     "faraDecor": "Sans décor",
     "niciunRezultat": "Aucun décor ne correspond.",
-    "cautaPlaceholder": "rechercher par nom ou code (ex. : chêne, W1000)"
+    "cautaPlaceholder": "rechercher par nom ou code (ex. : chêne, W1000)",
+    "contor": "{n} sur {total} décors",
+    "incaN": "{n} décors de plus — cherchez par nom ou code."
   },
   "perete": {
     "A": "Mur du fond",

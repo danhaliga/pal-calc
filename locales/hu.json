@@ -428,10 +428,11 @@
     "legCant": "Élzáró",
     "cantGros": "Vastag élzáró (látszó élek)",
     "cantSubtire": "Vékony élzáró (takart élek)",
-    "notaCant": "A listák csak azokat a vastagságokat mutatják, amelyek a választott dekorban léteznek. A vastag élzáró a látszó és kopásnak kitett élekre kerül, a vékony oda, ahol kicsi a kopás.",
+    "notaCant": "Azok a vastagságok, amelyek a választott dekorhoz nincsenek raktáron, továbbra is választhatók, csak „rendelésre” jelöléssel. A vastag élzáró a látszó, sokat fogdosott élekre megy, a vékony oda, ahol nincs kopás.",
     "legFormate": "Táblaméretek a szabásnál",
     "notaFormate": "Az optimalizáló magától választja ki a legkevesebb hulladékkal járó kiosztást, és a végén megmondja, hány egész tábla kell, a belőlük kivágott darabokkal együtt.",
-    "deschideComanda": "Megrendelés megnyitása"
+    "deschideComanda": "Megrendelés megnyitása",
+    "cantPeComanda": "rendelésre"
   },
   "fero": {
     "legenda": "Vasalatok",
@@ -899,7 +900,9 @@
     "cauta": "Keresés kód vagy név szerint",
     "faraDecor": "Dekor nélkül",
     "niciunRezultat": "Egy dekor sem illik.",
-    "cautaPlaceholder": "keresés név vagy kód szerint (pl. tölgy, W1000)"
+    "cautaPlaceholder": "keresés név vagy kód szerint (pl. tölgy, W1000)",
+    "contor": "{total} dekorból {n}",
+    "incaN": "Még {n} dekor — keress név vagy kód szerint."
   },
   "perete": {
     "A": "Hátsó fal",

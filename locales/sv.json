@@ -428,10 +428,11 @@
     "legCant": "Kantlist",
     "cantGros": "Tjock kantlist (synliga kanter)",
     "cantSubtire": "Tunn kantlist (dolda kanter)",
-    "notaCant": "Listorna visar bara de tjocklekar som finns i den valda dekoren. Tjock kantlist sitter på kanter som syns och nöts, tunn där slitaget är litet.",
+    "notaCant": "Tjocklekar som inte finns i lager för den valda dekoren går fortfarande att välja, de är bara märkta ”på beställning”. Tjock list sitter på de synliga kanter man tar i, tunn list där slitaget är litet.",
     "legFormate": "Skivformat vid kapning",
     "notaFormate": "Optimeraren väljer själv den kombination som ger minst spill och talar till slut om hur många hela skivor som behövs, inklusive bitarna som kapas ur dem.",
-    "deschideComanda": "Öppna ordern"
+    "deschideComanda": "Öppna ordern",
+    "cantPeComanda": "på beställning"
   },
   "fero": {
     "legenda": "Beslag",
@@ -899,7 +900,9 @@
     "cauta": "Sök på kod eller namn",
     "faraDecor": "Utan dekor",
     "niciunRezultat": "Ingen dekor matchar.",
-    "cautaPlaceholder": "sök på namn eller kod (t.ex. ek, W1000)"
+    "cautaPlaceholder": "sök på namn eller kod (t.ex. ek, W1000)",
+    "contor": "{n} av {total} dekorer",
+    "incaN": "{n} dekorer till — sök på namn eller kod."
   },
   "perete": {
     "A": "Bakre väggen",

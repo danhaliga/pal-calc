@@ -428,10 +428,11 @@
     "legCant": "Bant",
     "cantGros": "Kalın bant (görünen kenarlar)",
     "cantSubtire": "İnce bant (gizli kenarlar)",
-    "notaCant": "Listeler yalnızca seçilen dekorda bulunan kalınlıkları gösterir. Kalın bant görünen ve sürtünen kenarlara, ince bant aşınmanın az olduğu yerlere gider.",
+    "notaCant": "Seçilen dekorda stokta olmayan kalınlıklar yine seçilebilir, sadece “siparişle” diye işaretlenir. Kalın bant görünen ve sık elle tutulan kenarlara, ince bant aşınmanın az olduğu yerlere gider.",
     "legFormate": "Kesimde levha formatları",
     "notaFormate": "Eniyileyici en az firenin çıktığı bileşimi kendisi seçer ve sonunda, içinden kesilen parçalarla birlikte kaç tam levha gerektiğini söyler.",
-    "deschideComanda": "Siparişi aç"
+    "deschideComanda": "Siparişi aç",
+    "cantPeComanda": "siparişle"
   },
   "fero": {
     "legenda": "Aksesuarlar",
@@ -899,7 +900,9 @@
     "cauta": "Koda veya ada göre ara",
     "faraDecor": "Dekorsuz",
     "niciunRezultat": "Hiçbir dekor eşleşmiyor.",
-    "cautaPlaceholder": "ada veya koda göre ara (örn. meşe, W1000)"
+    "cautaPlaceholder": "ada veya koda göre ara (örn. meşe, W1000)",
+    "contor": "{total} dekordan {n} tanesi",
+    "incaN": "{n} dekor daha — ada ya da koda göre ara."
   },
   "perete": {
     "A": "Arka duvar",

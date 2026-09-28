@@ -434,10 +434,11 @@
     "legCant": "Obrzeże",
     "cantGros": "Obrzeże grube (widoczne boki)",
     "cantSubtire": "Obrzeże cienkie (ukryte boki)",
-    "notaCant": "Listy pokazują tylko grubości, które są dostępne w wybranym dekorze. Grube obrzeże idzie na boki, które widać i których się dotyka, cienkie tam, gdzie zużycie jest małe.",
+    "notaCant": "Grubości, których nie ma na stanie dla wybranego dekoru, nadal można wybrać — są tylko oznaczone „na zamówienie”. Grube obrzeże idzie na krawędzie widoczne i często dotykane, cienkie tam, gdzie zużycie jest małe.",
     "legFormate": "Formaty płyty przy rozkroju",
     "notaFormate": "Optymalizator sam wybiera układ z najmniejszym odpadem i na końcu mówi, ile całych płyt trzeba kupić, razem z kawałkami z nich wyciętymi.",
-    "deschideComanda": "Otwórz zlecenie"
+    "deschideComanda": "Otwórz zlecenie",
+    "cantPeComanda": "na zamówienie"
   },
   "fero": {
     "legenda": "Okucia",
@@ -908,7 +909,9 @@
     "cauta": "Szukaj po kodzie albo nazwie",
     "faraDecor": "Bez dekoru",
     "niciunRezultat": "Żaden dekor nie pasuje.",
-    "cautaPlaceholder": "szukaj po nazwie albo kodzie (np. dąb, W1000)"
+    "cautaPlaceholder": "szukaj po nazwie albo kodzie (np. dąb, W1000)",
+    "contor": "{n} z {total} dekorów",
+    "incaN": "Jeszcze {n} dekorów — szukaj po nazwie albo kodzie."
   },
   "perete": {
     "A": "Ściana tylna",

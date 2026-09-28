@@ -434,10 +434,11 @@
     "legCant": "Hrana",
     "cantGros": "Hrubá hrana (viditeľné hrany)",
     "cantSubtire": "Tenká hrana (skryté hrany)",
-    "notaCant": "Zoznamy ukazujú len hrúbky, ktoré vo zvolenom dekore existujú. Hrubá hrana ide na hrany, ktoré vidieť a o ktoré sa človek obtiera, tenká tam, kde je opotrebenie malé.",
+    "notaCant": "Hrúbky, ktoré nie sú skladom pre zvolený dekor, sa dajú ďalej vybrať, len sú označené „na objednávku“. Hrubá hrana patrí na viditeľné a často ohmatané plochy, tenká tam, kde sa nič neodiera.",
     "legFormate": "Formáty dosiek pri rezaní",
     "notaFormate": "Optimalizátor si sám vyberie kombináciu s najmenším odpadom a na konci ti povie, koľko celých dosiek treba, vrátane kusov z nich vyrezaných.",
-    "deschideComanda": "Otvoriť zákazku"
+    "deschideComanda": "Otvoriť zákazku",
+    "cantPeComanda": "na objednávku"
   },
   "fero": {
     "legenda": "Kovanie",
@@ -908,7 +909,9 @@
     "cauta": "Hľadať podľa kódu alebo názvu",
     "faraDecor": "Bez dekoru",
     "niciunRezultat": "Žiadny dekor nezodpovedá.",
-    "cautaPlaceholder": "hľadať podľa názvu alebo kódu (napr. dub, W1000)"
+    "cautaPlaceholder": "hľadať podľa názvu alebo kódu (napr. dub, W1000)",
+    "contor": "{n} z {total} dekorov",
+    "incaN": "Ešte {n} dekorov — hľadaj podľa názvu alebo kódu."
   },
   "perete": {
     "A": "Zadná stena",

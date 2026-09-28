@@ -428,10 +428,11 @@
     "legCant": "Tepi",
     "cantGros": "Tepi tebal (sisi yang terlihat)",
     "cantSubtire": "Tepi tipis (sisi tersembunyi)",
-    "notaCant": "Daftar hanya menampilkan ketebalan yang ada pada dekor yang dipilih. Tepi tebal dipasang pada sisi yang terlihat dan sering tersentuh, tepi tipis di tempat yang jarang aus.",
+    "notaCant": "Ketebalan yang tidak ada stoknya untuk dekor yang dipilih tetap bisa dipilih, hanya ditandai “pesanan”. Tepi tebal dipasang pada sisi yang terlihat dan sering tersentuh, tepi tipis di tempat yang jarang aus.",
     "legFormate": "Format papan saat memotong",
     "notaFormate": "Pengoptimal memilih sendiri kombinasi dengan sisa paling sedikit dan pada akhirnya memberi tahu berapa lembar utuh yang dibutuhkan, termasuk potongan yang diambil darinya.",
-    "deschideComanda": "Buka pesanan"
+    "deschideComanda": "Buka pesanan",
+    "cantPeComanda": "pesanan"
   },
   "fero": {
     "legenda": "Aksesori",
@@ -899,7 +900,9 @@
     "cauta": "Cari berdasarkan kode atau nama",
     "faraDecor": "Tanpa dekor",
     "niciunRezultat": "Tidak ada dekor yang cocok.",
-    "cautaPlaceholder": "cari berdasarkan nama atau kode (mis. jati, W1000)"
+    "cautaPlaceholder": "cari berdasarkan nama atau kode (mis. jati, W1000)",
+    "contor": "{n} dari {total} dekor",
+    "incaN": "{n} dekor lagi — cari berdasarkan nama atau kode."
   },
   "perete": {
     "A": "Dinding belakang",

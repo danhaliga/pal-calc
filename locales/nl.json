@@ -428,10 +428,11 @@
     "legCant": "Kantenband",
     "cantGros": "Dik kantenband (zichtbare kanten)",
     "cantSubtire": "Dun kantenband (verborgen kanten)",
-    "notaCant": "De lijsten tonen alleen de diktes die in het gekozen decor bestaan. Dik kantenband gaat op de kanten die je ziet en aanraakt, dun kantenband waar de slijtage klein is.",
+    "notaCant": "Diktes die niet op voorraad zijn voor het gekozen decor blijven kiesbaar, alleen gemarkeerd als “op bestelling”. Dikke band gaat op de zichtbare, veel aangeraakte zijden, dunne band waar weinig slijtage is.",
     "legFormate": "Plaatformaten bij het zagen",
     "notaFormate": "De optimalisatie kiest zelf de combinatie met het minste afval en zegt je aan het eind hoeveel hele platen je nodig hebt, inclusief de stukken die eruit gezaagd worden.",
-    "deschideComanda": "Opdracht openen"
+    "deschideComanda": "Opdracht openen",
+    "cantPeComanda": "op bestelling"
   },
   "fero": {
     "legenda": "Beslag",
@@ -899,7 +900,9 @@
     "cauta": "Zoeken op code of naam",
     "faraDecor": "Zonder decor",
     "niciunRezultat": "Geen enkel decor past.",
-    "cautaPlaceholder": "zoeken op naam of code (bijv. eiken, W1000)"
+    "cautaPlaceholder": "zoeken op naam of code (bijv. eiken, W1000)",
+    "contor": "{n} van {total} decors",
+    "incaN": "Nog {n} decors — zoek op naam of code."
   },
   "perete": {
     "A": "Achterwand van de ruimte",

@@ -90,4 +90,8 @@
   </form>
 </div>
 
+<%# selectorul de decor scria românește direct în cod; acum își ia textele de aici %>
+<script type="application/json" id="i18n"><%- jsonPentruPagina(catalogPagina(
+  'comandaNoua', 'decor', 'comun'
+)) %></script>
 <script src="/static/decor.js?v=<%= assetV %>"></script>

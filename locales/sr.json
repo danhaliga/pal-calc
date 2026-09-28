@@ -434,10 +434,11 @@
     "legCant": "Kant",
     "cantGros": "Debeli kant (vidljive ivice)",
     "cantSubtire": "Tanki kant (skrivene ivice)",
-    "notaCant": "Spiskovi prikazuju samo debljine koje postoje u izabranom dekoru. Debeli kant ide na ivice koje se vide i troše, tanki tamo gde je trošenje malo.",
+    "notaCant": "Debljine kojih nema na stanju za izabrani dekor i dalje se mogu izabrati, samo su označene „po porudžbini“. Debeo kant ide na ivice koje se vide i često se diraju, tanak tamo gde nema trošenja.",
     "legFormate": "Formati ploča pri krojenju",
     "notaFormate": "Optimizator sam bira kombinaciju sa najmanje otpada i na kraju ti kaže koliko je celih ploča potrebno, zajedno sa komadima isečenim iz njih.",
-    "deschideComanda": "Otvori porudžbinu"
+    "deschideComanda": "Otvori porudžbinu",
+    "cantPeComanda": "po porudžbini"
   },
   "fero": {
     "legenda": "Okov",
@@ -908,7 +909,9 @@
     "cauta": "Traži po šifri ili nazivu",
     "faraDecor": "Bez dekora",
     "niciunRezultat": "Nijedan dekor ne odgovara.",
-    "cautaPlaceholder": "traži po nazivu ili šifri (npr. hrast, W1000)"
+    "cautaPlaceholder": "traži po nazivu ili šifri (npr. hrast, W1000)",
+    "contor": "{n} od {total} dekora",
+    "incaN": "Još {n} dekora — traži po imenu ili šifri."
   },
   "perete": {
     "A": "Zadnji zid",

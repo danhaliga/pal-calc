@@ -428,10 +428,11 @@
     "legCant": "Bordo",
     "cantGros": "Bordo spesso (coste a vista)",
     "cantSubtire": "Bordo sottile (coste nascoste)",
-    "notaCant": "Gli elenchi mostrano solo gli spessori che esistono nel decoro scelto. Il bordo spesso va sulle coste che si vedono e si toccano, quello sottile dove l'usura è minima.",
+    "notaCant": "Gli spessori non a magazzino per il decoro scelto restano selezionabili, solo contrassegnati «su ordinazione». Il bordo spesso va sui fili a vista e molto toccati, quello sottile dove c’è poca usura.",
     "legFormate": "Formati di pannello al taglio",
     "notaFormate": "L'ottimizzatore sceglie da solo la combinazione con meno sfrido e alla fine ti dice quanti pannelli interi servono, compresi i pezzi ricavati da essi.",
-    "deschideComanda": "Apri l'ordine"
+    "deschideComanda": "Apri l'ordine",
+    "cantPeComanda": "su ordinazione"
   },
   "fero": {
     "legenda": "Ferramenta",
@@ -899,7 +900,9 @@
     "cauta": "Cerca per codice o nome",
     "faraDecor": "Senza decoro",
     "niciunRezultat": "Nessun decoro corrisponde.",
-    "cautaPlaceholder": "cerca per nome o codice (es.: rovere, W1000)"
+    "cautaPlaceholder": "cerca per nome o codice (es.: rovere, W1000)",
+    "contor": "{n} di {total} decori",
+    "incaN": "Altri {n} decori — cerca per nome o codice."
   },
   "perete": {
     "A": "Parete di fondo",

@@ -428,10 +428,11 @@
     "legCant": "Canto",
     "cantGros": "Canto grueso (bordes visibles)",
     "cantSubtire": "Canto fino (bordes ocultos)",
-    "notaCant": "Las listas solo muestran los grosores que existen en el decorativo elegido. El canto grueso va en los bordes que se ven y se rozan, el fino donde el desgaste es pequeño.",
+    "notaCant": "Los espesores que no hay en stock para el decorado elegido siguen disponibles, solo marcados «bajo pedido». El canto grueso va en los bordes que se ven y se tocan, el fino donde hay poco desgaste.",
     "legFormate": "Formatos de tablero en el corte",
     "notaFormate": "El optimizador elige por sí solo la combinación con menos desperdicio y te dice al final cuántos tableros enteros hacen falta, incluidas las piezas que salen de ellos.",
-    "deschideComanda": "Abrir el pedido"
+    "deschideComanda": "Abrir el pedido",
+    "cantPeComanda": "bajo pedido"
   },
   "fero": {
     "legenda": "Herrajes",
@@ -899,7 +900,9 @@
     "cauta": "Buscar por código o nombre",
     "faraDecor": "Sin decorativo",
     "niciunRezultat": "Ningún decorativo coincide.",
-    "cautaPlaceholder": "buscar por nombre o código (p. ej.: roble, W1000)"
+    "cautaPlaceholder": "buscar por nombre o código (p. ej.: roble, W1000)",
+    "contor": "{n} de {total} decorados",
+    "incaN": "{n} decorados más — busca por nombre o código."
   },
   "perete": {
     "A": "Pared del fondo",

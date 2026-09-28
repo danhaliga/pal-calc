@@ -428,10 +428,11 @@
     "legCant": "Edging",
     "cantGros": "Thick edging (visible edges)",
     "cantSubtire": "Thin edging (hidden edges)",
-    "notaCant": "The lists only show the thicknesses that exist in the chosen decor. Thick edging goes on edges that are seen and touched, thin edging where wear is low.",
+    "notaCant": "Thicknesses not stocked for the chosen decor stay selectable, just marked “to order”. Thick banding goes on the edges that show and get handled, thin banding where there is little wear.",
     "legFormate": "Sheet formats for cutting",
     "notaFormate": "The optimiser picks the combination with the least waste on its own and tells you at the end how many whole sheets you need, including the pieces cut out of them.",
-    "deschideComanda": "Open the order"
+    "deschideComanda": "Open the order",
+    "cantPeComanda": "to order"
   },
   "fero": {
     "legenda": "Hardware",
@@ -899,7 +900,9 @@
     "cauta": "Search by code or name",
     "faraDecor": "No decor",
     "niciunRezultat": "No decor matches.",
-    "cautaPlaceholder": "search by name or code (e.g. oak, W1000)"
+    "cautaPlaceholder": "search by name or code (e.g. oak, W1000)",
+    "contor": "{n} of {total} decors",
+    "incaN": "{n} more decors — search by name or code."
   },
   "perete": {
     "A": "Back wall",

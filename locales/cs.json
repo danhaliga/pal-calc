@@ -434,10 +434,11 @@
     "legCant": "Hrana",
     "cantGros": "Silná hrana (viditelné hrany)",
     "cantSubtire": "Tenká hrana (skryté hrany)",
-    "notaCant": "Seznamy ukazují jen tloušťky, které v zvoleném dekoru existují. Silná hrana jde na hrany, které jsou vidět a o které se člověk otírá, tenká tam, kde je opotřebení malé.",
+    "notaCant": "Tloušťky, které nejsou skladem pro zvolený dekor, jdou dál vybrat, jen jsou označené „na objednávku“. Silná hrana patří na viditelné a často ohmatané plochy, tenká tam, kde se nic neodírá.",
     "legFormate": "Formáty desek při nářezu",
     "notaFormate": "Optimalizátor si sám vybere kombinaci s nejmenším odpadem a na konci ti řekne, kolik celých desek je potřeba, včetně kusů z nich vyřezaných.",
-    "deschideComanda": "Otevřít zakázku"
+    "deschideComanda": "Otevřít zakázku",
+    "cantPeComanda": "na objednávku"
   },
   "fero": {
     "legenda": "Kování",
@@ -908,7 +909,9 @@
     "cauta": "Hledat podle kódu nebo názvu",
     "faraDecor": "Bez dekoru",
     "niciunRezultat": "Žádný dekor neodpovídá.",
-    "cautaPlaceholder": "hledat podle názvu nebo kódu (např. dub, W1000)"
+    "cautaPlaceholder": "hledat podle názvu nebo kódu (např. dub, W1000)",
+    "contor": "{n} z {total} dekorů",
+    "incaN": "Ještě {n} dekorů — hledej podle názvu nebo kódu."
   },
   "perete": {
     "A": "Zadní stěna",

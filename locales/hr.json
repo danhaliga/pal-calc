@@ -434,10 +434,11 @@
     "legCant": "Kanta",
     "cantGros": "Debela kanta (vidljivi rubovi)",
     "cantSubtire": "Tanka kanta (skriveni rubovi)",
-    "notaCant": "Popisi prikazuju samo debljine koje postoje u odabranom dekoru. Debela kanta ide na rubove koji se vide i troše, tanka tamo gdje je trošenje malo.",
+    "notaCant": "Debljine kojih nema na zalihi za odabrani dekor i dalje se mogu odabrati, samo su označene „po narudžbi“. Debeli kant ide na rubove koji se vide i često diraju, tanki ondje gdje nema trošenja.",
     "legFormate": "Formati ploča pri krojenju",
     "notaFormate": "Optimizator sam bira kombinaciju s najmanje otpada i na kraju ti kaže koliko je cijelih ploča potrebno, zajedno s komadima izrezanima iz njih.",
-    "deschideComanda": "Otvori nalog"
+    "deschideComanda": "Otvori nalog",
+    "cantPeComanda": "po narudžbi"
   },
   "fero": {
     "legenda": "Okov",
@@ -908,7 +909,9 @@
     "cauta": "Traži po šifri ili nazivu",
     "faraDecor": "Bez dekora",
     "niciunRezultat": "Nijedan dekor ne odgovara.",
-    "cautaPlaceholder": "traži po nazivu ili šifri (npr. hrast, W1000)"
+    "cautaPlaceholder": "traži po nazivu ili šifri (npr. hrast, W1000)",
+    "contor": "{n} od {total} dekora",
+    "incaN": "Još {n} dekora — traži po imenu ili šifri."
   },
   "perete": {
     "A": "Stražnji zid",

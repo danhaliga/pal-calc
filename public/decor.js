@@ -43,6 +43,20 @@ function init(root) {
   }
 
   /* păstrează doar grosimile care există în decorul ales, fără să piardă alegerea curentă */
+  /* Ca `potriveste`, dar nu aruncă nicio grosime: cele care nu sunt pe stoc la
+     decorul ales rămân alegibile, doar însemnate. */
+  function potrivesteCant(sel, toate, peStoc) {
+    if (!sel || !toate || !toate.length) return;
+    var curent = sel.value;
+    var peComanda = T('comandaNoua.cantPeComanda');
+    sel.innerHTML = toate.map(function (v) {
+      var afara = peStoc.length && peStoc.indexOf(v) === -1;
+      return '<option value="' + v + '">' + v + ' mm' +
+             (afara ? ' · ' + esc(peComanda) : '') + '</option>';
+    }).join('');
+    if (toate.indexOf(Number(curent)) !== -1) sel.value = curent;
+  }
+
   function potriveste(sel, valori, eticheta) {
     if (!sel || !valori || !valori.length) return;
     var curent = sel.value;
@@ -56,16 +70,23 @@ function init(root) {
     var d = decorAles();
     if (!d) return;
     potriveste(palSel, d.gros, ' mm');
-    var canturi = (d.cant && d.cant.length) ? d.cant : (date.cantStandard || [0.4, 0.8, 1, 2]);
-    potriveste(cantGrosSel, canturi, ' mm');
-    potriveste(cantSubtireSel, canturi, ' mm');
+    /* Grosimile de cant NU se filtrează după catalog. Catalogul știe doar ce
+       ține furnizorul pe stoc la decorul ăla; atelierul folosește și 0.4 și 1,
+       iar dacă le ascundem nu se mai pot alege deloc. Le arătăm pe toate și
+       marcăm care sunt pe stoc. */
+    var peStoc = (d.cant && d.cant.length) ? d.cant : [];
+    var toate = (date.cantStandard || [0.4, 0.8, 1, 1.3, 1.5, 2]).slice();
+    peStoc.forEach(function (c) { if (toate.indexOf(c) === -1) toate.push(c); });
+    toate.sort(function (a, b) { return a - b; });
+    potrivesteCant(cantGrosSel, toate, peStoc);
+    potrivesteCant(cantSubtireSel, toate, peStoc);
   }
 
   function aratButon() {
     var d = decorAles();
     if (!d) {
       buton.innerHTML = '<span class="decor-sw" style="background:#cfd6dd"></span>' +
-                        '<span>Alege decorul…</span>';
+                        '<span>' + esc(T('decor.alege')) + '</span>';
       return;
     }
     buton.innerHTML = '<span class="decor-sw" style="background:' + esc(d.hex) + '"></span>' +
@@ -83,7 +104,7 @@ function init(root) {
              d.nume.toLowerCase().indexOf(q) !== -1;
     });
 
-    contor.textContent = lista.length + ' din ' + date.decoruri.length + ' decoruri';
+    contor.textContent = T('decor.contor', { n: lista.length, total: date.decoruri.length });
     grila.innerHTML = lista.slice(0, 240).map(function (d) {
       return '<button type="button" class="decor-optiune' + (d.cod === ales ? ' ales' : '') +
         '" data-cod="' + esc(d.cod) + '" title="' + esc(d.nume + ' — ' + d.cod) + '">' +
@@ -92,8 +113,8 @@ function init(root) {
         '<span class="decor-cod">' + esc(d.cod) + '</span></button>';
     }).join('');
     if (lista.length > 240) {
-      grila.innerHTML += '<p class="hint" style="grid-column:1/-1">Încă ' + (lista.length - 240) +
-        ' decoruri — caută după nume sau cod.</p>';
+      grila.innerHTML += '<p class="hint" style="grid-column:1/-1">' +
+        esc(T('decor.incaN', { n: lista.length - 240 })) + '</p>';
     }
   }
 

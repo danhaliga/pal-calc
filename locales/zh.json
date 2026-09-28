@@ -428,10 +428,11 @@
     "legCant": "封边",
     "cantGros": "厚封边（看得见的边）",
     "cantSubtire": "薄封边（看不见的边）",
-    "notaCant": "列表里只有这个花色确实有的厚度。看得见、常摸到的边用厚封边，磨不着的地方用薄封边。",
+    "notaCant": "所选花色没有现货的厚度依然可以选，只是标了“订货”。厚封边贴在看得见、经常摸到的边上，薄封边贴在磨不着的地方。",
     "legFormate": "开料时的板材规格",
     "notaFormate": "优化器自己挑损耗最小的组合，最后告诉你要几张整板，以及从整板上裁下来的那些块。",
-    "deschideComanda": "打开订单"
+    "deschideComanda": "打开订单",
+    "cantPeComanda": "订货"
   },
   "fero": {
     "legenda": "五金",
@@ -899,7 +900,9 @@
     "cauta": "按编号或名称搜",
     "faraDecor": "未定花色",
     "niciunRezultat": "没有匹配的花色。",
-    "cautaPlaceholder": "按名称或编号搜（例如：橡木、W1000）"
+    "cautaPlaceholder": "按名称或编号搜（例如：橡木、W1000）",
+    "contor": "{total} 个花色中的 {n} 个",
+    "incaN": "还有 {n} 个花色 —— 按名称或编号搜。"
   },
   "perete": {
     "A": "后墙",

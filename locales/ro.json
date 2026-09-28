@@ -434,10 +434,11 @@
     "legCant": "Cant",
     "cantGros": "Cant gros (muchii vizibile)",
     "cantSubtire": "Cant subțire (muchii ascunse)",
-    "notaCant": "Listele arată doar grosimile care se fac în decorul ales. Cantul gros merge pe muchiile care se văd și se freacă, cel subțire în locurile cu uzură mică.",
+    "notaCant": "Grosimile care nu sunt pe stoc la decorul ales rămân alegibile, doar însemnate „pe comandă\". Cantul gros merge pe muchiile care se văd și se freacă, cel subțire în locurile cu uzură mică.",
     "legFormate": "Formate de coală la debitare",
     "notaFormate": "Optimizatorul alege singur combinația cu cel mai puțin deșeu și îți spune la final câte coli întregi trebuie, cu tot cu bucățile tăiate din ele.",
-    "deschideComanda": "Deschide comanda"
+    "deschideComanda": "Deschide comanda",
+    "cantPeComanda": "pe comandă"
   },
   "fero": {
     "legenda": "Feronerie",
@@ -908,7 +909,9 @@
     "cauta": "Caută după cod sau nume",
     "faraDecor": "Fără decor",
     "niciunRezultat": "Niciun decor nu se potrivește.",
-    "cautaPlaceholder": "caută după nume sau cod (ex: stejar, W1000)"
+    "cautaPlaceholder": "caută după nume sau cod (ex: stejar, W1000)",
+    "contor": "{n} din {total} decoruri",
+    "incaN": "Încă {n} decoruri — caută după nume sau cod."
   },
   "perete": {
     "A": "Peretele din spate",

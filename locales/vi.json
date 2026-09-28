@@ -428,10 +428,11 @@
     "legCant": "Chỉ cạnh",
     "cantGros": "Chỉ dày (cạnh lộ ra)",
     "cantSubtire": "Chỉ mỏng (cạnh khuất)",
-    "notaCant": "Danh sách chỉ hiện những độ dày có trong mẫu decor đã chọn. Chỉ dày dán ở cạnh nhìn thấy và hay va chạm, chỉ mỏng ở chỗ ít hao mòn.",
+    "notaCant": "Những độ dày không có sẵn cho decor đã chọn vẫn chọn được, chỉ ghi chú “đặt hàng”. Chỉ dày dán ở các cạnh nhìn thấy và hay chạm vào, chỉ mỏng ở nơi ít mài mòn.",
     "legFormate": "Khổ ván khi cắt",
     "notaFormate": "Bộ tối ưu tự chọn phương án ít hao hụt nhất và cuối cùng cho bạn biết cần bao nhiêu tấm nguyên, kể cả các mảnh cắt ra từ đó.",
-    "deschideComanda": "Mở đơn hàng"
+    "deschideComanda": "Mở đơn hàng",
+    "cantPeComanda": "đặt hàng"
   },
   "fero": {
     "legenda": "Phụ kiện",
@@ -899,7 +900,9 @@
     "cauta": "Tìm theo mã hoặc tên",
     "faraDecor": "Không có decor",
     "niciunRezultat": "Không có mẫu decor nào khớp.",
-    "cautaPlaceholder": "tìm theo tên hoặc mã (vd. sồi, W1000)"
+    "cautaPlaceholder": "tìm theo tên hoặc mã (vd. sồi, W1000)",
+    "contor": "{n} trong {total} decor",
+    "incaN": "Còn {n} decor nữa — tìm theo tên hoặc mã."
   },
   "perete": {
     "A": "Tường sau",

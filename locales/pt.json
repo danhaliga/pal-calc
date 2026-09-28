@@ -428,10 +428,11 @@
     "legCant": "Orla",
     "cantGros": "Orla grossa (topos à vista)",
     "cantSubtire": "Orla fina (topos escondidos)",
-    "notaCant": "As listas só mostram as espessuras que existem no decor escolhido. A orla grossa vai nos topos que se veem e se tocam, a fina onde o desgaste é pequeno.",
+    "notaCant": "As espessuras que não há em stock para o decor escolhido continuam selecionáveis, apenas marcadas «por encomenda». A orla grossa vai nas arestas que se veem e se tocam, a fina onde há pouco desgaste.",
     "legFormate": "Formatos de placa no corte",
     "notaFormate": "O otimizador escolhe sozinho a combinação com menos desperdício e diz-te no fim quantas placas inteiras são precisas, já com os bocados tirados delas.",
-    "deschideComanda": "Abrir a encomenda"
+    "deschideComanda": "Abrir a encomenda",
+    "cantPeComanda": "por encomenda"
   },
   "fero": {
     "legenda": "Ferragens",
@@ -899,7 +900,9 @@
     "cauta": "Procurar por código ou nome",
     "faraDecor": "Sem decor",
     "niciunRezultat": "Nenhum decor corresponde.",
-    "cautaPlaceholder": "procurar por nome ou código (ex.: carvalho, W1000)"
+    "cautaPlaceholder": "procurar por nome ou código (ex.: carvalho, W1000)",
+    "contor": "{n} de {total} decores",
+    "incaN": "Mais {n} decores — procure por nome ou código."
   },
   "perete": {
     "A": "Parede do fundo",
