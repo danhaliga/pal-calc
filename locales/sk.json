@@ -705,7 +705,6 @@
     "colCantSubtire": "Tenká hrana",
     "producator": "Výrobca",
     "grosimePal": "Hrúbka dosky",
-    "materialExemplu": "napr. Dubové čelá",
     "adaugaMaterialul": "Pridať materiál",
     "stergeMaterial": "Vymazať tento materiál?",
     "setari": "Nastavenia zákazky:",
@@ -713,7 +712,7 @@
     "numeComanda": "Názov zákazky",
     "observatii": "Poznámky",
     "stergeComanda": "Vymazať zákazku",
-    "confirmaStergereComanda": "Vymazať zákazku aj všetky jej korpusy?",
+    "confirmaStergereComanda": "Zmazať zákazku „{nume}“ aj s jej {corpuri}? Kredit za ne zaplatený sa nevracia.",
     "corpuriInComanda": "Korpusy v zákazke",
     "niciunCorp": "Zatiaľ žiadne korpusy. Stlač „Pridať korpus“, vyber model a uprav rozmery.",
     "colCorp": "Korpus",
@@ -763,7 +762,10 @@
     "colTaierel": "Rez Š",
     "colCantMuchii": "Hrana L1·L2·l1·l2",
     "colFibra": "Kresba",
-    "muchiiFrontale": "čelné hrany"
+    "muchiiFrontale": "čelné hrany",
+    "zonaStergere": "Zmazanie zákazky",
+    "stergeExplica": "Zákazka zmizne a s ňou jej korpusy. Kredit zaplatený za korpusy sa nevracia.",
+    "numeDinDecor": "prevezme sa zo zvoleného dekoru"
   },
   "rol": {
     "corp": "Korpus",

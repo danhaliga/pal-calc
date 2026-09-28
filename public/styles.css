@@ -345,3 +345,9 @@ details.setari[open] summary::before{content:'▾ '}
 .setari-grupe{display:grid;gap:6px;margin-top:8px}
 .setari-grupe label.check{align-items:flex-start}
 .setari-grupe label.check input{margin-top:3px}
+
+/* Ștergerea comenzii: la vedere, dar singură jos, departe de butoanele
+   de zi cu zi. */
+.panel.zona-stergere{display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap}
+.panel.zona-stergere p{margin:4px 0 0}

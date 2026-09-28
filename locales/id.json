@@ -698,7 +698,6 @@
     "colCantSubtire": "Tepi tipis",
     "producator": "Produsen",
     "grosimePal": "Ketebalan papan",
-    "materialExemplu": "mis. Muka motif jati",
     "adaugaMaterialul": "Tambahkan material",
     "stergeMaterial": "Hapus material ini?",
     "setari": "Pengaturan pesanan:",
@@ -706,7 +705,7 @@
     "numeComanda": "Nama pesanan",
     "observatii": "Catatan",
     "stergeComanda": "Hapus pesanan",
-    "confirmaStergereComanda": "Hapus pesanan beserta semua boksnya?",
+    "confirmaStergereComanda": "Hapus pesanan “{nume}” beserta seluruh {corpuri}-nya? Kredit yang dibayar untuknya tidak kembali.",
     "corpuriInComanda": "Boks dalam pesanan",
     "niciunCorp": "Belum ada boks. Tekan „Tambah boks”, pilih sebuah model, lalu ubah ukurannya.",
     "colCorp": "Boks",
@@ -754,7 +753,10 @@
     "colTaierel": "Potong L",
     "colCantMuchii": "Tepi L1·L2·l1·l2",
     "colFibra": "Serat",
-    "muchiiFrontale": "sisi-sisi depan"
+    "muchiiFrontale": "sisi-sisi depan",
+    "zonaStergere": "Menghapus pesanan",
+    "stergeExplica": "Pesanan hilang, kabinetnya ikut hilang. Kredit yang dibayar untuk kabinet tidak kembali.",
+    "numeDinDecor": "diambil dari dekor yang dipilih"
   },
   "rol": {
     "corp": "Boks",

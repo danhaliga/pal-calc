@@ -698,7 +698,6 @@
     "colCantSubtire": "Dünne Kante",
     "producator": "Hersteller",
     "grosimePal": "Plattenstärke",
-    "materialExemplu": "z. B. Fronten Eiche",
     "adaugaMaterialul": "Material hinzufügen",
     "stergeMaterial": "Dieses Material löschen?",
     "setari": "Auftragseinstellungen:",
@@ -706,7 +705,7 @@
     "numeComanda": "Auftragsname",
     "observatii": "Anmerkungen",
     "stergeComanda": "Auftrag löschen",
-    "confirmaStergereComanda": "Den Auftrag und alle seine Korpusse löschen?",
+    "confirmaStergereComanda": "Den Auftrag „{nume}“ mitsamt seinen {corpuri} löschen? Das dafür bezahlte Guthaben kommt nicht zurück.",
     "corpuriInComanda": "Korpusse in diesem Auftrag",
     "niciunCorp": "Noch kein Korpus. Drücke auf „Korpus hinzufügen“, wähle ein Modell und ändere die Maße.",
     "colCorp": "Korpus",
@@ -754,7 +753,10 @@
     "colTaierel": "Zuschnitt B",
     "colCantMuchii": "Kante L1·L2·l1·l2",
     "colFibra": "Maserung",
-    "muchiiFrontale": "vordere Schmalseiten"
+    "muchiiFrontale": "vordere Schmalseiten",
+    "zonaStergere": "Auftrag löschen",
+    "stergeExplica": "Der Auftrag geht, und seine Korpusse mit ihm. Das für die Korpusse bezahlte Guthaben kommt nicht zurück.",
+    "numeDinDecor": "wird aus dem gewählten Dekor übernommen"
   },
   "rol": {
     "corp": "Korpus",

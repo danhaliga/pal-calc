@@ -726,7 +726,6 @@
     "colCantSubtire": "شريط رقيق",
     "producator": "المصنّع",
     "grosimePal": "سُمك اللوح",
-    "materialExemplu": "مثال: واجهات بلون البلوط",
     "adaugaMaterialul": "أضف المادة",
     "stergeMaterial": "أتريد حذف هذه المادة؟",
     "setari": "إعدادات الطلب:",
@@ -734,7 +733,7 @@
     "numeComanda": "اسم الطلب",
     "observatii": "ملاحظات",
     "stergeComanda": "حذف الطلب",
-    "confirmaStergereComanda": "أتريد حذف الطلب مع كل هياكله؟",
+    "confirmaStergereComanda": "حذف الطلبية «{nume}» مع {corpuri} كلها؟ الرصيد المدفوع عليها لا يعود.",
     "corpuriInComanda": "الهياكل في الطلب",
     "niciunCorp": "لا توجد هياكل بعد. اضغط «إضافة هيكل»، اختر طرازًا وعدّل المقاسات.",
     "colCorp": "الهيكل",
@@ -790,7 +789,10 @@
     "colTaierel": "قص ع",
     "colCantMuchii": "شريط ط1·ط2·ع1·ع2",
     "colFibra": "الألياف",
-    "muchiiFrontale": "الأضلاع الأمامية"
+    "muchiiFrontale": "الأضلاع الأمامية",
+    "zonaStergere": "حذف الطلبية",
+    "stergeExplica": "تذهب الطلبية ومعها وحداتها. الرصيد المدفوع على الوحدات لا يعود.",
+    "numeDinDecor": "يؤخذ من الديكور المختار"
   },
   "rol": {
     "corp": "الهيكل",

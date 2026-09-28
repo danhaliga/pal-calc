@@ -698,7 +698,6 @@
     "colCantSubtire": "Tunn kantlist",
     "producator": "Tillverkare",
     "grosimePal": "Skivtjocklek",
-    "materialExemplu": "t.ex. Ekfronter",
     "adaugaMaterialul": "Lägg till materialet",
     "stergeMaterial": "Ta bort det här materialet?",
     "setari": "Orderinställningar:",
@@ -706,7 +705,7 @@
     "numeComanda": "Orderns namn",
     "observatii": "Anteckningar",
     "stergeComanda": "Ta bort ordern",
-    "confirmaStergereComanda": "Ta bort ordern och alla dess stommar?",
+    "confirmaStergereComanda": "Radera ordern ”{nume}” med alla dess {corpuri}? Krediten som betalats för dem kommer inte tillbaka.",
     "corpuriInComanda": "Stommar i ordern",
     "niciunCorp": "Inga stommar än. Tryck på ”Lägg till stomme”, välj en modell och ändra måtten.",
     "colCorp": "Stomme",
@@ -754,7 +753,10 @@
     "colTaierel": "Kap B",
     "colCantMuchii": "Kantlist L1·L2·l1·l2",
     "colFibra": "Fiberriktning",
-    "muchiiFrontale": "framkanter"
+    "muchiiFrontale": "framkanter",
+    "zonaStergere": "Radera ordern",
+    "stergeExplica": "Ordern försvinner, och dess stommar med den. Krediten som betalats för stommarna kommer inte tillbaka.",
+    "numeDinDecor": "hämtas från den valda dekoren"
   },
   "rol": {
     "corp": "Stomme",

@@ -53,7 +53,9 @@
               <form method="post" action="/orders/<%= order.id %>/materials/<%= m.id %>" class="mat-form">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="f3">
-                  <label><%= t('comanda.colNume') %><input type="text" name="nume" value="<%= m.nume %>" maxlength="60" required></label>
+                  <label><%= t('comanda.colNume') %><input type="text" name="nume" id="nume-<%= m.id %>"
+                         value="<%= m.nume %>" maxlength="60"
+                         placeholder="<%= t('comanda.numeDinDecor') %>"></label>
                   <label><%= t('comanda.colRol') %><select name="rol">
                     <% roluri.forEach(function (r) { %>
                       <option value="<%= r.id %>" <%= m.rol === r.id ? 'selected' : '' %>><%= r.nume %></option>
@@ -82,7 +84,8 @@
                 </div>
                 <label style="margin-top:8px"><%= t('comanda.colDecor') %>
                   <%- include('../partials/decor-picker', { p: { brandId: 'brand-' + m.id, palId: 'pal-' + m.id,
-                        cantGrosId: 'cg-' + m.id, cantSubtireId: 'cs-' + m.id, valoare: m.decor_cod } }) %>
+                        cantGrosId: 'cg-' + m.id, cantSubtireId: 'cs-' + m.id,
+                        numeId: 'nume-' + m.id, valoare: m.decor_cod } }) %>
                 </label>
                 <div class="btns">
                   <button class="btn small primary" type="submit"><%= t('comun.salveaza') %></button>
@@ -103,7 +106,6 @@
     <form method="post" action="/orders/<%= order.id %>/materials" class="mat-form">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <div class="f3">
-        <label><%= t('comanda.colNume') %><input type="text" name="nume" placeholder="<%= t('comanda.materialExemplu') %>" maxlength="60" required></label>
         <label><%= t('comanda.colRol') %><select name="rol">
           <% roluri.forEach(function (r) { %><option value="<%= r.id %>"><%= r.nume %></option><% }); %>
         </select></label>
@@ -128,7 +130,14 @@
       </div>
       <label style="margin-top:8px"><%= t('comanda.colDecor') %>
         <%- include('../partials/decor-picker', { p: { brandId: 'brand-nou', palId: 'pal-nou',
-              cantGrosId: 'cg-nou', cantSubtireId: 'cs-nou', valoare: '' } }) %>
+              cantGrosId: 'cg-nou', cantSubtireId: 'cs-nou', numeId: 'nume-nou', valoare: '' } }) %>
+      </label>
+      <%# Numele stă DUPĂ decor și se umple din el: nimeni nu știe cum se
+          cheamă placa înainte s-o aleagă. Se poate rescrie, dacă omul are
+          alt fel de-a le striga în atelier. %>
+      <label style="margin-top:8px"><%= t('comanda.colNume') %>
+        <input type="text" name="nume" id="nume-nou" maxlength="60"
+               placeholder="<%= t('comanda.numeDinDecor') %>">
       </label>
       <button class="btn primary" type="submit" style="margin-top:10px"><%= t('comanda.adaugaMaterialul') %></button>
     </form>
@@ -157,8 +166,6 @@
     </div>
     <div class="btns">
       <button class="btn primary" type="submit"><%= t('comun.salveaza') %></button>
-      <button class="btn danger" type="submit" formaction="/orders/<%= order.id %>/delete"
-              data-confirma="<%= t('comanda.confirmaStergereComanda') %>"><%= t('comanda.stergeComanda') %></button>
     </div>
   </form>
 </details>
@@ -379,6 +386,24 @@
   </table></div>
 </div>
 <% } %>
+
+<%# Ștergerea stătea pliată în „Setări comandă" și nimeni n-o găsea. Stă la
+    vedere, dar singură jos și cu socoteala corpurilor în întrebare — nu lângă
+    butoanele de zi cu zi. %>
+<div class="panel zona-stergere">
+  <div>
+    <b><%= t('comanda.zonaStergere') %></b>
+    <p class="muted small"><%= t('comanda.stergeExplica') %></p>
+  </div>
+  <form method="post" action="/orders/<%= order.id %>/delete">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button class="btn danger" type="submit"
+            data-confirma="<%= t('comanda.confirmaStergereComanda', {
+              nume: order.name,
+              corpuri: t('comenzi.nrCorpuri', { n: raport.totaluri.corpuri })
+            }) %>"><%= t('comanda.stergeComanda') %></button>
+  </form>
+</div>
 
 <script type="application/json" id="page-data"><%- jsonPentruPagina({
   csrf: csrfToken,

@@ -705,7 +705,6 @@
     "colCantSubtire": "Cant subțire",
     "producator": "Producător",
     "grosimePal": "Grosime PAL",
-    "materialExemplu": "ex: Fronturi stejar",
     "adaugaMaterialul": "Adaugă materialul",
     "stergeMaterial": "Ștergi materialul?",
     "setari": "Setări comandă:",
@@ -713,7 +712,7 @@
     "numeComanda": "Nume comandă",
     "observatii": "Observații",
     "stergeComanda": "Șterge comanda",
-    "confirmaStergereComanda": "Ștergi comanda și toate corpurile ei?",
+    "confirmaStergereComanda": "Ștergi comanda „{nume}\" cu tot cu {corpuri}? Creditul plătit pe ele nu se întoarce.",
     "corpuriInComanda": "Corpuri în comandă",
     "niciunCorp": "Niciun corp încă. Apasă „Adaugă corp”, alege un model și modifică-i cotele.",
     "colCorp": "Corp",
@@ -763,7 +762,10 @@
     "colTaierel": "Tăiere l",
     "colCantMuchii": "Cant L1·L2·l1·l2",
     "colFibra": "Fibră",
-    "muchiiFrontale": "muchii frontale"
+    "muchiiFrontale": "muchii frontale",
+    "zonaStergere": "Ștergerea comenzii",
+    "stergeExplica": "Se duce comanda cu tot cu corpurile ei. Creditul plătit pe corpuri nu se întoarce.",
+    "numeDinDecor": "se ia din decorul ales"
   },
   "rol": {
     "corp": "Carcasă",

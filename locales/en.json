@@ -698,7 +698,6 @@
     "colCantSubtire": "Thin edging",
     "producator": "Manufacturer",
     "grosimePal": "Board thickness",
-    "materialExemplu": "e.g. Oak fronts",
     "adaugaMaterialul": "Add the material",
     "stergeMaterial": "Delete this material?",
     "setari": "Order settings:",
@@ -706,7 +705,7 @@
     "numeComanda": "Order name",
     "observatii": "Notes",
     "stergeComanda": "Delete the order",
-    "confirmaStergereComanda": "Delete the order and all its cabinets?",
+    "confirmaStergereComanda": "Delete the order “{nume}” with all {corpuri}? The credit paid on them does not come back.",
     "corpuriInComanda": "Cabinets in this order",
     "niciunCorp": "No cabinets yet. Press “Add cabinet”, pick a model and change its sizes.",
     "colCorp": "Cabinet",
@@ -754,7 +753,10 @@
     "colTaierel": "Cut W",
     "colCantMuchii": "Edging L1·L2·l1·l2",
     "colFibra": "Grain",
-    "muchiiFrontale": "front edges"
+    "muchiiFrontale": "front edges",
+    "zonaStergere": "Deleting the order",
+    "stergeExplica": "The order goes, and its cabinets with it. The credit paid on the cabinets does not come back.",
+    "numeDinDecor": "taken from the chosen decor"
   },
   "rol": {
     "corp": "Carcass",

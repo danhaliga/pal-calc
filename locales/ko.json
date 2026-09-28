@@ -698,7 +698,6 @@
     "colCantSubtire": "얇은 엣지",
     "producator": "제조사",
     "grosimePal": "판 두께",
-    "materialExemplu": "예: 오크 무늬 문짝",
     "adaugaMaterialul": "자재 추가",
     "stergeMaterial": "이 자재를 삭제할까요?",
     "setari": "주문 설정:",
@@ -706,7 +705,7 @@
     "numeComanda": "주문 이름",
     "observatii": "비고",
     "stergeComanda": "주문 삭제",
-    "confirmaStergereComanda": "주문과 안의 캐비닛을 모두 삭제할까요?",
+    "confirmaStergereComanda": "주문 “{nume}”을(를) {corpuri} 전부와 함께 삭제할까요? 거기에 쓴 잔액은 돌아오지 않습니다.",
     "corpuriInComanda": "주문의 캐비닛",
     "niciunCorp": "아직 캐비닛이 없습니다. “캐비닛 추가”를 누르고 모델을 고른 뒤 치수를 맞추세요.",
     "colCorp": "캐비닛",
@@ -754,7 +753,10 @@
     "colTaierel": "재단 폭",
     "colCantMuchii": "엣지 길1·길2·폭1·폭2",
     "colFibra": "결",
-    "muchiiFrontale": "앞쪽 변"
+    "muchiiFrontale": "앞쪽 변",
+    "zonaStergere": "주문 삭제",
+    "stergeExplica": "주문이 사라지고 그 몸통들도 함께 사라집니다. 몸통에 쓴 잔액은 돌아오지 않습니다.",
+    "numeDinDecor": "고른 무늬에서 가져옵니다"
   },
   "rol": {
     "corp": "몸통",

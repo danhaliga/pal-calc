@@ -698,7 +698,6 @@
     "colCantSubtire": "पतला एज",
     "producator": "बनाने वाला",
     "grosimePal": "बोर्ड की मोटाई",
-    "materialExemplu": "जैसे: ओक के शटर",
     "adaugaMaterialul": "मटीरियल जोड़ें",
     "stergeMaterial": "यह मटीरियल मिटाएँ?",
     "setari": "ऑर्डर की सेटिंग:",
@@ -706,7 +705,7 @@
     "numeComanda": "ऑर्डर का नाम",
     "observatii": "टिप्पणी",
     "stergeComanda": "ऑर्डर मिटाएँ",
-    "confirmaStergereComanda": "ऑर्डर और उसके सारे कैबिनेट मिटाएँ?",
+    "confirmaStergereComanda": "ऑर्डर “{nume}” को उसके सारे {corpuri} समेत मिटाएँ? उन पर चुकाया क्रेडिट वापस नहीं आता।",
     "corpuriInComanda": "ऑर्डर के कैबिनेट",
     "niciunCorp": "अभी कोई कैबिनेट नहीं। “कैबिनेट जोड़ें” दबाएँ, मॉडल चुनें और माप ठीक करें।",
     "colCorp": "कैबिनेट",
@@ -754,7 +753,10 @@
     "colTaierel": "कटिंग चौ",
     "colCantMuchii": "एज ल1·ल2·चौ1·चौ2",
     "colFibra": "ग्रेन",
-    "muchiiFrontale": "आगे के किनारे"
+    "muchiiFrontale": "आगे के किनारे",
+    "zonaStergere": "ऑर्डर मिटाना",
+    "stergeExplica": "ऑर्डर चला जाता है, उसके कैबिनेट भी साथ। कैबिनेट पर चुकाया क्रेडिट वापस नहीं आता।",
+    "numeDinDecor": "चुने हुए डेकोर से लिया जाता है"
   },
   "rol": {
     "corp": "बॉडी",

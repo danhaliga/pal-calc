@@ -698,7 +698,6 @@
     "colCantSubtire": "薄封边",
     "producator": "厂家",
     "grosimePal": "板材厚度",
-    "materialExemplu": "例如：橡木色门板",
     "adaugaMaterialul": "添加材料",
     "stergeMaterial": "要删掉这种材料吗？",
     "setari": "订单设置：",
@@ -706,7 +705,7 @@
     "numeComanda": "订单名称",
     "observatii": "备注",
     "stergeComanda": "删除订单",
-    "confirmaStergereComanda": "订单连同里面所有柜体一起删掉？",
+    "confirmaStergereComanda": "删除订单“{nume}”连同它的{corpuri}？花在上面的余额不退。",
     "corpuriInComanda": "订单里的柜体",
     "niciunCorp": "还没有柜体。点“添加柜体”，挑一个款式，再把尺寸调好。",
     "colCorp": "柜体",
@@ -754,7 +753,10 @@
     "colTaierel": "开料宽",
     "colCantMuchii": "封边 长1·长2·宽1·宽2",
     "colFibra": "纹理",
-    "muchiiFrontale": "前面各边"
+    "muchiiFrontale": "前面各边",
+    "zonaStergere": "删除订单",
+    "stergeExplica": "订单没了，柜体也跟着没。柜体上花掉的余额不退。",
+    "numeDinDecor": "取自所选花色"
   },
   "rol": {
     "corp": "柜体",

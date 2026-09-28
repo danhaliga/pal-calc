@@ -674,3 +674,89 @@ test('fiecare cheie din română are traducere în toate limbile', () => {
       (lipsa.length > 8 ? ` (+${lipsa.length - 8})` : ''));
   });
 });
+
+/* =====================================================================
+   9. Ștergerea comenzii trebuie să se vadă
+
+   Butonul stătea într-un <details> pliat, lângă formatele de coală. Exista,
+   mergea, avea confirmare — și nimeni nu-l găsea.
+   ===================================================================== */
+
+test('butonul de ștergere a comenzii nu stă într-o secțiune pliată', () => {
+  const show = fs.readFileSync(path.join(__dirname, '..', 'views', 'orders', 'show.ejs'), 'utf8');
+  const poz = show.indexOf('/delete');
+  assert.ok(poz !== -1, 'nu mai există ruta de ștergere în pagina comenzii');
+
+  /* Numără <details> deschise și închise înainte de buton: dacă rămâne
+     vreuna deschisă, butonul e înăuntru. */
+  const pana = show.slice(0, poz);
+  const deschise = (pana.match(/<details\b/g) || []).length;
+  const inchise = (pana.match(/<\/details>/g) || []).length;
+  assert.equal(deschise, inchise,
+    'butonul de ștergere a ajuns iar într-un <details>, unde nu-l vede nimeni');
+});
+
+test('întrebarea de ștergere spune câte corpuri se duc odată cu comanda', () => {
+  const show = fs.readFileSync(path.join(__dirname, '..', 'views', 'orders', 'show.ejs'), 'utf8');
+  const lista = fs.readFileSync(path.join(__dirname, '..', 'views', 'orders', 'index.ejs'), 'utf8');
+  [show, lista].forEach(v => {
+    assert.match(v, /confirmaStergereComanda[\s\S]{0,200}nrCorpuri/,
+      'confirmarea nu mai numără corpurile; comanda se șterge cu tot cu ele');
+  });
+
+  const ro = JSON.parse(fs.readFileSync(path.join(LOCALES, 'ro.json'), 'utf8'));
+  assert.match(ro.comanda.confirmaStergereComanda, /\{nume\}/);
+  assert.match(ro.comanda.confirmaStergereComanda, /\{corpuri\}/);
+});
+
+/* =====================================================================
+   10. Numele materialului nu mai e ceva ce trebuie ghicit
+
+   Câmpul era `required` și stătea primul în formular, înaintea decorului.
+   Omul îl vedea gol și nu avea de unde să știe ce să scrie: numele plăcii
+   îl află abia după ce alege decorul. Pe deasupra, mesajul de eroare al
+   schemei era scris românește direct în cod.
+   ===================================================================== */
+
+const SURSA_MAT = fs.readFileSync(path.join(__dirname, '..', 'src', 'materiale.js'), 'utf8');
+const SHOW_EJS = fs.readFileSync(path.join(__dirname, '..', 'views', 'orders', 'show.ejs'), 'utf8');
+
+test('numele materialului se poate lăsa gol', () => {
+  assert.ok(!/nume:\s*z\.string\(\)[^\n]*\.min\(1/.test(SURSA_MAT),
+    'numele materialului a redevenit obligatoriu');
+  assert.ok(!/name="nume"[^>]*required/.test(SHOW_EJS),
+    'un câmp de nume a redevenit `required` în pagina comenzii');
+});
+
+test('numele gol se completează din decor, nu rămâne gol în comandă', () => {
+  assert.match(SURSA_MAT, /function numeMaterial\(/,
+    'nu mai există regula care umple numele din decor');
+  /* Ambele drumuri — material nou și material modificat — trec prin ea,
+     altfel unul din ele ar scrie un nume gol în tabel. */
+  const apeluri = (SURSA_MAT.match(/numeMaterial\(/g) || []).length;
+  assert.ok(apeluri >= 3, `numeMaterial() e chemat doar de ${apeluri - 1} ori din rute`);
+});
+
+test('câmpul de nume stă după decor, nu înaintea lui', () => {
+  const pozDecor = SHOW_EJS.indexOf("numeId: 'nume-nou'");
+  const pozNume = SHOW_EJS.indexOf('id="nume-nou"');
+  assert.ok(pozDecor !== -1 && pozNume !== -1, 'formularul de material nou s-a schimbat');
+  assert.ok(pozDecor < pozNume,
+    'numele a urcat iar înaintea decorului, unde omul n-are ce scrie în el');
+});
+
+/* =====================================================================
+   11. `upgrade-insecure-requests` numai când chiar suntem pe https
+
+   Pe un server local de http, directiva urcă redirecţiile pe https, ele cad
+   cu ERR_SSL_PROTOCOL_ERROR, iar butonul pare că „nu face nimic" — deși
+   POST-ul a trecut și lucrarea s-a făcut.
+   ===================================================================== */
+
+test('CSP nu urcă cererile pe https decât dacă aplicația chiar stă pe https', () => {
+  const server = fs.readFileSync(path.join(__dirname, '..', 'server.js'), 'utf8');
+  assert.match(server, /upgradeInsecureRequests:\s*PE_HTTPS \? \[\] : null/,
+    'directiva a redevenit necondiționată');
+  assert.match(server, /const PE_HTTPS = \(process\.env\.APP_URL \|\| ''\)\.startsWith\('https:\/\/'\)/,
+    'condiția nu mai e legată de APP_URL');
+});

@@ -698,7 +698,6 @@
     "colCantSubtire": "Bordo sottile",
     "producator": "Produttore",
     "grosimePal": "Spessore del pannello",
-    "materialExemplu": "es.: Frontali rovere",
     "adaugaMaterialul": "Aggiungi il materiale",
     "stergeMaterial": "Eliminare questo materiale?",
     "setari": "Impostazioni dell'ordine:",
@@ -706,7 +705,7 @@
     "numeComanda": "Nome dell'ordine",
     "observatii": "Note",
     "stergeComanda": "Elimina l'ordine",
-    "confirmaStergereComanda": "Eliminare l'ordine e tutti i suoi mobili?",
+    "confirmaStergereComanda": "Cancellare la commessa «{nume}» con tutti i suoi {corpuri}? Il credito pagato su di essi non torna.",
     "corpuriInComanda": "Mobili nell'ordine",
     "niciunCorp": "Ancora nessun mobile. Premi «Aggiungi mobile», scegli un modello e cambia le misure.",
     "colCorp": "Mobile",
@@ -754,7 +753,10 @@
     "colTaierel": "Taglio P",
     "colCantMuchii": "Bordo L1·L2·l1·l2",
     "colFibra": "Venatura",
-    "muchiiFrontale": "coste frontali"
+    "muchiiFrontale": "coste frontali",
+    "zonaStergere": "Cancellare la commessa",
+    "stergeExplica": "Se ne va la commessa, e con lei i suoi mobili. Il credito pagato sui mobili non torna.",
+    "numeDinDecor": "preso dal decoro scelto"
   },
   "rol": {
     "corp": "Struttura",

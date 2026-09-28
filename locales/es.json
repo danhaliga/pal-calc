@@ -698,7 +698,6 @@
     "colCantSubtire": "Canto fino",
     "producator": "Fabricante",
     "grosimePal": "Grosor del tablero",
-    "materialExemplu": "p. ej.: Frentes de roble",
     "adaugaMaterialul": "Añadir el material",
     "stergeMaterial": "¿Eliminar este material?",
     "setari": "Ajustes del pedido:",
@@ -706,7 +705,7 @@
     "numeComanda": "Nombre del pedido",
     "observatii": "Observaciones",
     "stergeComanda": "Eliminar el pedido",
-    "confirmaStergereComanda": "¿Eliminar el pedido y todos sus módulos?",
+    "confirmaStergereComanda": "¿Borrar el pedido «{nume}» con todos sus {corpuri}? El crédito pagado por ellos no vuelve.",
     "corpuriInComanda": "Módulos del pedido",
     "niciunCorp": "Todavía no hay módulos. Pulsa «Añadir módulo», elige un modelo y ajusta sus medidas.",
     "colCorp": "Módulo",
@@ -754,7 +753,10 @@
     "colTaierel": "Corte A",
     "colCantMuchii": "Canto L1·L2·l1·l2",
     "colFibra": "Veta",
-    "muchiiFrontale": "bordes frontales"
+    "muchiiFrontale": "bordes frontales",
+    "zonaStergere": "Borrar el pedido",
+    "stergeExplica": "Se va el pedido y con él sus muebles. El crédito pagado por los muebles no vuelve.",
+    "numeDinDecor": "se toma del decorado elegido"
   },
   "rol": {
     "corp": "Carcasa",

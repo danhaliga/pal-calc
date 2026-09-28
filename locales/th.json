@@ -698,7 +698,6 @@
     "colCantSubtire": "ขอบบาง",
     "producator": "ผู้ผลิต",
     "grosimePal": "ความหนาแผ่น",
-    "materialExemplu": "เช่น หน้าบานลายโอ๊ก",
     "adaugaMaterialul": "เพิ่มวัสดุ",
     "stergeMaterial": "ลบวัสดุนี้ไหม?",
     "setari": "การตั้งค่าออเดอร์:",
@@ -706,7 +705,7 @@
     "numeComanda": "ชื่อออเดอร์",
     "observatii": "หมายเหตุ",
     "stergeComanda": "ลบออเดอร์",
-    "confirmaStergereComanda": "ลบออเดอร์พร้อมตัวตู้ทั้งหมดไหม?",
+    "confirmaStergereComanda": "ลบงาน “{nume}” พร้อม{corpuri}ทั้งหมดหรือไม่ เครดิตที่จ่ายไปไม่ได้คืน",
     "corpuriInComanda": "ตัวตู้ในออเดอร์",
     "niciunCorp": "ยังไม่มีตัวตู้ กด “เพิ่มตัวตู้” เลือกแบบ แล้วปรับขนาด",
     "colCorp": "ตัวตู้",
@@ -754,7 +753,10 @@
     "colTaierel": "ตัด ก",
     "colCantMuchii": "ขอบ ย1·ย2·ก1·ก2",
     "colFibra": "ลายไม้",
-    "muchiiFrontale": "ด้านหน้า"
+    "muchiiFrontale": "ด้านหน้า",
+    "zonaStergere": "ลบงาน",
+    "stergeExplica": "งานจะหายไปพร้อมกับตู้ของงานนั้น เครดิตที่จ่ายไปกับตู้ไม่ได้คืน",
+    "numeDinDecor": "ดึงมาจากลายผิวที่เลือก"
   },
   "rol": {
     "corp": "ตัวตู้",

@@ -21,7 +21,11 @@ function roluri(t) {
 const CANT_STANDARD = [0.4, 0.8, 1, 1.3, 1.5, 2];
 
 const schema = z.object({
-  nume: z.string().trim().min(1, 'Dă un nume materialului.').max(60),
+  /* Numele nu mai e cerut. Nimeni nu știe cum se cheamă placa înainte s-o
+     aleagă din catalog, iar mesajul de eroare de-aici era scris românește
+     în cod, deci ieșea în română pe toate limbile. Gol înseamnă „ia-l din
+     decor" — vezi numeMaterial(). */
+  nume: z.string().trim().max(60).optional().or(z.literal('')),
   rol: z.enum(['corp', 'front', 'sertar', 'liber']),
   brand: z.string().trim().min(1).max(40),
   decor_cod: z.string().trim().max(60).optional().or(z.literal('')),
@@ -58,6 +62,15 @@ function detaliiDecor(brand, cod) {
   };
 }
 
+/* Eticheta materialului în comandă: ce-a scris omul, altfel numele
+   decorului ales, altfel marca și grosimea — ceva care se citește
+   în orice limbă, fiindcă aici n-avem traducător. */
+function numeMaterial(date, decor) {
+  return (date.nume || '').trim() ||
+         (decor && decor.decor_nume) ||
+         (Catalog.numeMarca(date.brand) + ' ' + date.pal_mm + ' mm');
+}
+
 function creeaza(orderId, date) {
   const poz = db.prepare('SELECT COALESCE(MAX(poz), 0) AS m FROM order_materials WHERE order_id = ?')
                 .get(orderId).m + 1;
@@ -68,7 +81,7 @@ function creeaza(orderId, date) {
     INSERT INTO order_materials (order_id, poz, nume, rol, brand, decor_cod, decor_nume, hex,
                                  pal_mm, cant_gros, cant_subtire, cant_decor_cod, cant_decor_nume)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `).run(orderId, poz, date.nume, date.rol, Catalog.numeMarca(date.brand),
+  `).run(orderId, poz, numeMaterial(date, d), date.rol, Catalog.numeMarca(date.brand),
          d.decor_cod, d.decor_nume, d.hex,
          date.pal_mm, date.cant_gros, date.cant_subtire,
          cantD.decor_cod, cantD.decor_nume);
@@ -147,7 +160,7 @@ router.post('/orders/:id/materials/:matId', requireAuth, comandaProprie, (req, r
     UPDATE order_materials SET nume = ?, rol = ?, brand = ?, decor_cod = ?, decor_nume = ?, hex = ?,
            pal_mm = ?, cant_gros = ?, cant_subtire = ?, cant_decor_cod = ?, cant_decor_nume = ?
      WHERE id = ?
-  `).run(d.nume, d.rol, Catalog.numeMarca(d.brand), dec.decor_cod, dec.decor_nume, dec.hex,
+  `).run(numeMaterial(d, dec), d.rol, Catalog.numeMarca(d.brand), dec.decor_cod, dec.decor_nume, dec.hex,
          d.pal_mm, d.cant_gros, d.cant_subtire, cantD.decor_cod, cantD.decor_nume, mat.id);
 
   res.redirect(`/orders/${req.comanda.id}#materiale`);

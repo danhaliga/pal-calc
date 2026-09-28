@@ -30,9 +30,17 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.set('trust proxy', 1);
 
+/* `upgrade-insecure-requests` urcă orice cerere pe https. În producție e
+   exact ce vrem; pe un server local de http rupe redirecţiile — POST-ul
+   trece, iar redirecţia de după el cade cu ERR_SSL_PROTOCOL_ERROR și pare
+   că butonul „nu face nimic". Îl legăm de aceeași condiție ca la cookie. */
+const PE_HTTPS = (process.env.APP_URL || '').startsWith('https://');
+
 app.use(helmet({
   contentSecurityPolicy: {
+    useDefaults: true,
     directives: {
+      upgradeInsecureRequests: PE_HTTPS ? [] : null,
       defaultSrc: ["'self'"],
       scriptSrc: ["'self'", 'https://cdnjs.cloudflare.com'],
       styleSrc: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],

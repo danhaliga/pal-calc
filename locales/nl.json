@@ -698,7 +698,6 @@
     "colCantSubtire": "Dun kantenband",
     "producator": "Fabrikant",
     "grosimePal": "Plaatdikte",
-    "materialExemplu": "bijv. Fronten eiken",
     "adaugaMaterialul": "Materiaal toevoegen",
     "stergeMaterial": "Dit materiaal verwijderen?",
     "setari": "Instellingen van de opdracht:",
@@ -706,7 +705,7 @@
     "numeComanda": "Naam van de opdracht",
     "observatii": "Opmerkingen",
     "stergeComanda": "Opdracht verwijderen",
-    "confirmaStergereComanda": "De opdracht en al haar kasten verwijderen?",
+    "confirmaStergereComanda": "De order “{nume}” met al haar {corpuri} verwijderen? Het krediet dat ervoor betaald is komt niet terug.",
     "corpuriInComanda": "Kasten in deze opdracht",
     "niciunCorp": "Nog geen kasten. Druk op „Kast toevoegen”, kies een model en pas de maten aan.",
     "colCorp": "Kast",
@@ -754,7 +753,10 @@
     "colTaierel": "Zaagmaat B",
     "colCantMuchii": "Kant L1·L2·l1·l2",
     "colFibra": "Nerf",
-    "muchiiFrontale": "voorkanten"
+    "muchiiFrontale": "voorkanten",
+    "zonaStergere": "De order verwijderen",
+    "stergeExplica": "De order gaat weg, en haar kasten met haar mee. Het krediet dat voor de kasten is betaald komt niet terug.",
+    "numeDinDecor": "wordt overgenomen uit het gekozen decor"
   },
   "rol": {
     "corp": "Korpus",

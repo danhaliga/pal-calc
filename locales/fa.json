@@ -698,7 +698,6 @@
     "colCantSubtire": "نوار نازک",
     "producator": "سازنده",
     "grosimePal": "ضخامت ورق",
-    "materialExemplu": "مثلاً: رویه‌های بلوط",
     "adaugaMaterialul": "افزودن متریال",
     "stergeMaterial": "این متریال حذف شود؟",
     "setari": "تنظیمات سفارش:",
@@ -706,7 +705,7 @@
     "numeComanda": "نام سفارش",
     "observatii": "یادداشت",
     "stergeComanda": "حذف سفارش",
-    "confirmaStergereComanda": "سفارش با همهٔ بدنه‌هایش حذف شود؟",
+    "confirmaStergereComanda": "سفارش «{nume}» را با همهٔ {corpuri} آن پاک کنم؟ اعتبار پرداخت‌شده برای آن‌ها برنمی‌گردد.",
     "corpuriInComanda": "بدنه‌های سفارش",
     "niciunCorp": "هنوز بدنه‌ای نیست. «افزودن بدنه» را بزنید، مدلی برگزینید و اندازه‌ها را درست کنید.",
     "colCorp": "بدنه",
@@ -754,7 +753,10 @@
     "colTaierel": "برش ع",
     "colCantMuchii": "نوار ط1·ط2·ع1·ع2",
     "colFibra": "رگه",
-    "muchiiFrontale": "لبه‌های جلو"
+    "muchiiFrontale": "لبه‌های جلو",
+    "zonaStergere": "پاک کردن سفارش",
+    "stergeExplica": "سفارش می‌رود و بدنه‌هایش هم با آن. اعتباری که برای بدنه‌ها پرداخت شده برنمی‌گردد.",
+    "numeDinDecor": "از طرح انتخاب‌شده گرفته می‌شود"
   },
   "rol": {
     "corp": "بدنه",

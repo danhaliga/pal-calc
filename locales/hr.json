@@ -705,7 +705,6 @@
     "colCantSubtire": "Tanka kanta",
     "producator": "Proizvođač",
     "grosimePal": "Debljina ploče",
-    "materialExemplu": "npr. Hrastove fronte",
     "adaugaMaterialul": "Dodaj materijal",
     "stergeMaterial": "Obrisati ovaj materijal?",
     "setari": "Postavke naloga:",
@@ -713,7 +712,7 @@
     "numeComanda": "Naziv naloga",
     "observatii": "Napomene",
     "stergeComanda": "Obriši nalog",
-    "confirmaStergereComanda": "Obrisati nalog i sve njegove korpuse?",
+    "confirmaStergereComanda": "Obrisati narudžbu „{nume}” zajedno s njezinih {corpuri}? Kredit plaćen za njih se ne vraća.",
     "corpuriInComanda": "Korpusi u nalogu",
     "niciunCorp": "Još nema korpusa. Pritisni „Dodaj korpus“, odaberi model i promijeni mjere.",
     "colCorp": "Korpus",
@@ -763,7 +762,10 @@
     "colTaierel": "Rez Š",
     "colCantMuchii": "Kanta L1·L2·l1·l2",
     "colFibra": "Tekstura",
-    "muchiiFrontale": "prednji rubovi"
+    "muchiiFrontale": "prednji rubovi",
+    "zonaStergere": "Brisanje narudžbe",
+    "stergeExplica": "Narudžba odlazi, a s njom i njezini korpusi. Kredit plaćen za korpuse se ne vraća.",
+    "numeDinDecor": "uzima se iz odabranog dekora"
   },
   "rol": {
     "corp": "Korpus",

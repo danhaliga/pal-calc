@@ -698,7 +698,6 @@
     "colCantSubtire": "Vékony élzáró",
     "producator": "Gyártó",
     "grosimePal": "Lapvastagság",
-    "materialExemplu": "pl. Tölgy frontok",
     "adaugaMaterialul": "Anyag hozzáadása",
     "stergeMaterial": "Törlöd ezt az anyagot?",
     "setari": "A megrendelés beállításai:",
@@ -706,7 +705,7 @@
     "numeComanda": "A megrendelés neve",
     "observatii": "Megjegyzések",
     "stergeComanda": "Megrendelés törlése",
-    "confirmaStergereComanda": "Törlöd a megrendelést és az összes korpuszát?",
+    "confirmaStergereComanda": "Törlöd a(z) „{nume}” rendelést az összes, {corpuri} együtt? A rájuk fizetett kredit nem jön vissza.",
     "corpuriInComanda": "Korpuszok a megrendelésben",
     "niciunCorp": "Még nincs korpusz. Nyomd meg a „Korpusz hozzáadása” gombot, válassz modellt, és állítsd be a méreteket.",
     "colCorp": "Korpusz",
@@ -754,7 +753,10 @@
     "colTaierel": "Szabás Sz",
     "colCantMuchii": "Élzáró L1·L2·l1·l2",
     "colFibra": "Erezet",
-    "muchiiFrontale": "elülső élek"
+    "muchiiFrontale": "elülső élek",
+    "zonaStergere": "A rendelés törlése",
+    "stergeExplica": "A rendelés elmegy, és vele a korpuszai is. A korpuszokra fizetett kredit nem jön vissza.",
+    "numeDinDecor": "a választott dekorból jön"
   },
   "rol": {
     "corp": "Korpusz",

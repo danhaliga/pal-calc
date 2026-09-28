@@ -698,7 +698,6 @@
     "colCantSubtire": "Chant fin",
     "producator": "Fabricant",
     "grosimePal": "Épaisseur du panneau",
-    "materialExemplu": "ex. : Façades chêne",
     "adaugaMaterialul": "Ajouter le matériau",
     "stergeMaterial": "Supprimer ce matériau ?",
     "setari": "Réglages de la commande :",
@@ -706,7 +705,7 @@
     "numeComanda": "Nom de la commande",
     "observatii": "Remarques",
     "stergeComanda": "Supprimer la commande",
-    "confirmaStergereComanda": "Supprimer la commande et tous ses caissons ?",
+    "confirmaStergereComanda": "Supprimer la commande « {nume} » avec ses {corpuri} ? Le crédit payé dessus ne revient pas.",
     "corpuriInComanda": "Caissons de la commande",
     "niciunCorp": "Aucun caisson pour l'instant. Appuyez sur « Ajouter un caisson », choisissez un modèle et ajustez ses cotes.",
     "colCorp": "Caisson",
@@ -754,7 +753,10 @@
     "colTaierel": "Coupe l",
     "colCantMuchii": "Chant L1·L2·l1·l2",
     "colFibra": "Fil",
-    "muchiiFrontale": "rives avant"
+    "muchiiFrontale": "rives avant",
+    "zonaStergere": "Suppression de la commande",
+    "stergeExplica": "La commande part, et ses caissons avec elle. Le crédit payé sur les caissons ne revient pas.",
+    "numeDinDecor": "repris du décor choisi"
   },
   "rol": {
     "corp": "Caisson",

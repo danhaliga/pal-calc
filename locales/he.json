@@ -705,7 +705,6 @@
     "colCantSubtire": "קנט דק",
     "producator": "יצרן",
     "grosimePal": "עובי הלוח",
-    "materialExemplu": "לדוגמה: חזיתות אלון",
     "adaugaMaterialul": "הוספת החומר",
     "stergeMaterial": "למחוק את החומר הזה?",
     "setari": "הגדרות ההזמנה:",
@@ -713,7 +712,7 @@
     "numeComanda": "שם ההזמנה",
     "observatii": "הערות",
     "stergeComanda": "מחיקת ההזמנה",
-    "confirmaStergereComanda": "למחוק את ההזמנה עם כל הגופים שלה?",
+    "confirmaStergereComanda": "למחוק את ההזמנה „{nume}” יחד עם כל {corpuri} שלה? הקרדיט ששולם עליהם לא חוזר.",
     "corpuriInComanda": "גופים בהזמנה",
     "niciunCorp": "עדיין אין גופים. לחצו על ״הוספת גוף״, בחרו דגם ותקנו את המידות.",
     "colCorp": "גוף",
@@ -763,7 +762,10 @@
     "colTaierel": "חיתוך ר",
     "colCantMuchii": "קנט א1·א2·ר1·ר2",
     "colFibra": "סיבים",
-    "muchiiFrontale": "הצלעות הקדמיות"
+    "muchiiFrontale": "הצלעות הקדמיות",
+    "zonaStergere": "מחיקת ההזמנה",
+    "stergeExplica": "ההזמנה הולכת, והגופים שלה איתה. הקרדיט ששולם על הגופים לא חוזר.",
+    "numeDinDecor": "נלקח מהדקור שנבחר"
   },
   "rol": {
     "corp": "גוף",

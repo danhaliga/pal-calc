@@ -698,7 +698,6 @@
     "colCantSubtire": "İnce bant",
     "producator": "Üretici",
     "grosimePal": "Levha kalınlığı",
-    "materialExemplu": "örn. Meşe kapaklar",
     "adaugaMaterialul": "Malzemeyi ekle",
     "stergeMaterial": "Bu malzeme silinsin mi?",
     "setari": "Sipariş ayarları:",
@@ -706,7 +705,7 @@
     "numeComanda": "Sipariş adı",
     "observatii": "Notlar",
     "stergeComanda": "Siparişi sil",
-    "confirmaStergereComanda": "Sipariş ve içindeki tüm gövdeler silinsin mi?",
+    "confirmaStergereComanda": "“{nume}” siparişi, {corpuri} ile birlikte silinsin mi? Onlar için ödenen kredi geri gelmez.",
     "corpuriInComanda": "Siparişteki gövdeler",
     "niciunCorp": "Henüz gövde yok. „Gövde ekle” düğmesine bas, bir model seç ve ölçülerini değiştir.",
     "colCorp": "Gövde",
@@ -754,7 +753,10 @@
     "colTaierel": "Kesim G",
     "colCantMuchii": "Bant L1·L2·l1·l2",
     "colFibra": "Damar",
-    "muchiiFrontale": "ön kenarlar"
+    "muchiiFrontale": "ön kenarlar",
+    "zonaStergere": "Siparişi silme",
+    "stergeExplica": "Sipariş gider, gövdeleri de onunla. Gövdeler için ödenen kredi geri gelmez.",
+    "numeDinDecor": "seçilen dekordan alınır"
   },
   "rol": {
     "corp": "Gövde",

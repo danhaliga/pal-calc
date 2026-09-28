@@ -698,7 +698,6 @@
     "colCantSubtire": "Orla fina",
     "producator": "Fabricante",
     "grosimePal": "Espessura da placa",
-    "materialExemplu": "ex.: Frentes em carvalho",
     "adaugaMaterialul": "Adicionar o material",
     "stergeMaterial": "Eliminar este material?",
     "setari": "Definições da encomenda:",
@@ -706,7 +705,7 @@
     "numeComanda": "Nome da encomenda",
     "observatii": "Observações",
     "stergeComanda": "Eliminar a encomenda",
-    "confirmaStergereComanda": "Eliminar a encomenda e todos os seus módulos?",
+    "confirmaStergereComanda": "Apagar a encomenda «{nume}» com todos os seus {corpuri}? O crédito pago neles não volta.",
     "corpuriInComanda": "Módulos da encomenda",
     "niciunCorp": "Ainda não há módulos. Carrega em «Adicionar módulo», escolhe um modelo e ajusta as medidas.",
     "colCorp": "Módulo",
@@ -754,7 +753,10 @@
     "colTaierel": "Corte L",
     "colCantMuchii": "Orla L1·L2·l1·l2",
     "colFibra": "Veio",
-    "muchiiFrontale": "topos da frente"
+    "muchiiFrontale": "topos da frente",
+    "zonaStergere": "Apagar a encomenda",
+    "stergeExplica": "A encomenda vai-se, e os móveis dela com ela. O crédito pago nos móveis não volta.",
+    "numeDinDecor": "vem do decor escolhido"
   },
   "rol": {
     "corp": "Estrutura",

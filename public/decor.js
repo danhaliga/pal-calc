@@ -31,9 +31,14 @@ function init(root) {
   var palSel = document.getElementById(root.dataset.pal || '');
   var cantGrosSel = document.getElementById(root.dataset.cantGros || '');
   var cantSubtireSel = document.getElementById(root.dataset.cantSubtire || '');
+  var numeInput = document.getElementById(root.dataset.nume || '');
 
   var date = null;
   var ales = codInput.value || '';
+  /* Ce-am scris NOI ultima dată în câmpul de nume. Atât timp cât omul n-a
+     pus mâna pe el, îl rescriem la fiecare decor ales; de cum scrie ceva
+     al lui, ne dăm la o parte. */
+  var numePus = numeInput ? numeInput.value : '';
 
   function brand() { return brandSel ? brandSel.value : (root.dataset.brandFix || 'Egger'); }
 
@@ -80,6 +85,15 @@ function init(root) {
     toate.sort(function (a, b) { return a - b; });
     potrivesteCant(cantGrosSel, toate, peStoc);
     potrivesteCant(cantSubtireSel, toate, peStoc);
+  }
+
+  /* Numele materialului e o etichetă, nu o dată de care omul dispune:
+     nimeni nu știe cum se cheamă placa înainte s-o aleagă din catalog. */
+  function punNume(d) {
+    if (!numeInput || !d) return;
+    if (numeInput.value && numeInput.value !== numePus) return;
+    numePus = d.nume;
+    numeInput.value = numePus;
   }
 
   function aratButon() {
@@ -148,6 +162,7 @@ function init(root) {
     codInput.value = ales;
     aratButon();
     aplicaDisponibil();
+    punNume(decorAles());
     panou.classList.add('hidden');
   });
 

@@ -698,7 +698,6 @@
     "colCantSubtire": "Chỉ mỏng",
     "producator": "Nhà sản xuất",
     "grosimePal": "Độ dày ván",
-    "materialExemplu": "vd. Cánh vân sồi",
     "adaugaMaterialul": "Thêm vật liệu",
     "stergeMaterial": "Xóa vật liệu này?",
     "setari": "Thiết lập đơn hàng:",
@@ -706,7 +705,7 @@
     "numeComanda": "Tên đơn hàng",
     "observatii": "Ghi chú",
     "stergeComanda": "Xóa đơn hàng",
-    "confirmaStergereComanda": "Xóa đơn hàng cùng toàn bộ thùng tủ trong đó?",
+    "confirmaStergereComanda": "Xóa đơn hàng “{nume}” cùng toàn bộ {corpuri} của nó? Tín dụng đã trả cho chúng không quay lại.",
     "corpuriInComanda": "Thùng tủ trong đơn hàng",
     "niciunCorp": "Chưa có thùng tủ nào. Bấm „Thêm thùng tủ”, chọn một mẫu rồi chỉnh kích thước.",
     "colCorp": "Thùng tủ",
@@ -754,7 +753,10 @@
     "colTaierel": "Cắt R",
     "colCantMuchii": "Chỉ L1·L2·l1·l2",
     "colFibra": "Vân gỗ",
-    "muchiiFrontale": "các cạnh phía trước"
+    "muchiiFrontale": "các cạnh phía trước",
+    "zonaStergere": "Xóa đơn hàng",
+    "stergeExplica": "Đơn hàng đi mất, các tủ của nó cũng đi theo. Tín dụng đã trả cho các tủ không quay lại.",
+    "numeDinDecor": "lấy từ decor đã chọn"
   },
   "rol": {
     "corp": "Thùng tủ",

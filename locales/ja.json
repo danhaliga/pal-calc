@@ -698,7 +698,6 @@
     "colCantSubtire": "薄い木口",
     "producator": "メーカー",
     "grosimePal": "板厚",
-    "materialExemplu": "例：オーク柄の扉",
     "adaugaMaterialul": "材料を追加",
     "stergeMaterial": "この材料を削除しますか？",
     "setari": "注文の設定：",
@@ -706,7 +705,7 @@
     "numeComanda": "注文名",
     "observatii": "備考",
     "stergeComanda": "注文を削除",
-    "confirmaStergereComanda": "注文と中のキャビネットをすべて削除しますか？",
+    "confirmaStergereComanda": "注文「{nume}」を{corpuri}ごと削除しますか。払った残高は戻りません。",
     "corpuriInComanda": "注文のキャビネット",
     "niciunCorp": "キャビネットはまだありません。「キャビネットを追加」を押し、モデルを選んで寸法を整えてください。",
     "colCorp": "キャビネット",
@@ -754,7 +753,10 @@
     "colTaierel": "カット幅",
     "colCantMuchii": "木口 長1・長2・幅1・幅2",
     "colFibra": "木目",
-    "muchiiFrontale": "前面の辺"
+    "muchiiFrontale": "前面の辺",
+    "zonaStergere": "注文の削除",
+    "stergeExplica": "注文が消え、その箱も一緒に消えます。箱に払った残高は戻りません。",
+    "numeDinDecor": "選んだ柄から入ります"
   },
   "rol": {
     "corp": "本体",

@@ -705,7 +705,6 @@
     "colCantSubtire": "Obrzeże cienkie",
     "producator": "Producent",
     "grosimePal": "Grubość płyty",
-    "materialExemplu": "np. Fronty dębowe",
     "adaugaMaterialul": "Dodaj materiał",
     "stergeMaterial": "Usunąć ten materiał?",
     "setari": "Ustawienia zlecenia:",
@@ -713,7 +712,7 @@
     "numeComanda": "Nazwa zlecenia",
     "observatii": "Uwagi",
     "stergeComanda": "Usuń zlecenie",
-    "confirmaStergereComanda": "Usunąć zlecenie i wszystkie jego korpusy?",
+    "confirmaStergereComanda": "Usunąć zlecenie „{nume}” razem z jego {corpuri}? Kredyt za nie zapłacony nie wraca.",
     "corpuriInComanda": "Korpusy w zleceniu",
     "niciunCorp": "Jeszcze nie ma korpusów. Naciśnij „Dodaj korpus”, wybierz model i zmień wymiary.",
     "colCorp": "Korpus",
@@ -763,7 +762,10 @@
     "colTaierel": "Cięcie szer.",
     "colCantMuchii": "Obrzeże L1·L2·l1·l2",
     "colFibra": "Usłojenie",
-    "muchiiFrontale": "krawędzie czołowe"
+    "muchiiFrontale": "krawędzie czołowe",
+    "zonaStergere": "Usunięcie zlecenia",
+    "stergeExplica": "Zlecenie znika, a z nim jego korpusy. Kredyt zapłacony za korpusy nie wraca.",
+    "numeDinDecor": "brany z wybranego dekoru"
   },
   "rol": {
     "corp": "Korpus",
