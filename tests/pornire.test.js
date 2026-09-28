@@ -157,3 +157,51 @@ test('.env.example spune limpede că valorile lui sunt publice', () => {
   assert.match(ex, /REFUZA sa porneasca/);
   assert.match(ex, /src\/pornire\.js/);
 });
+
+/* =====================================================================
+   Curățarea conturilor de test
+
+   Testele care trec prin HTTP își fac cont ca să aibă sesiune și nu și-l
+   strâng după ele. Se adunaseră 435 — printre ele, omul adevărat nu se mai
+   găsea în panoul de administrare.
+   ===================================================================== */
+
+const CURATA = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'curata-teste.js'), 'utf8');
+
+test('curățarea merge pe domeniu, nu pe prefix', () => {
+  /* Testele folosesc vreo șaizeci de prefixe și fiecare test nou mai
+     inventează unul. `local.test` e rezervat prin RFC 6761: nimeni adevărat
+     n-are adresă acolo. */
+  assert.match(CURATA, /const DOMENIU = '@local\.test'/);
+  assert.match(CURATA, /u\.email LIKE \?/);
+  assert.ok(!/email LIKE 'test%'|email LIKE 'verif%'/.test(CURATA),
+    'a apărut un tipar pe prefix, care rămâne în urmă la primul test nou');
+});
+
+test('nu se șterge niciun administrator, și nici contul de seed', () => {
+  assert.match(CURATA, /u\.is_admin = 0/, 'administratorii nu mai sunt feriți');
+  assert.match(CURATA, /u\.email <> \?/, 'contul de seed nu mai e ferit');
+  assert.match(CURATA, /process\.env\.ADMIN_EMAIL/);
+});
+
+test('fără --sterge nu se atinge nimic', () => {
+  /* Rulată din greșeală, comanda trebuie să fie inofensivă. */
+  const poz = CURATA.indexOf("if (!chiar)");
+  const pozSterge = CURATA.indexOf('DELETE FROM users');
+  assert.ok(poz !== -1 && pozSterge !== -1);
+  assert.ok(poz < pozSterge, 'ștergerea se poate întâmpla fără --sterge');
+  assert.match(CURATA, /process\.exit\(0\)/);
+});
+
+test('ștergerea e o singură tranzacție', () => {
+  /* Ori pleacă toate, ori niciunul: o curățare oprită la jumătate lasă
+     comenzi fără stăpân. */
+  assert.match(CURATA, /db\.transaction\(/);
+});
+
+test('curățarea se face singură după teste', () => {
+  const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'package.json'), 'utf8'));
+  assert.match(pkg.scripts.posttest || '', /curata-teste\.js --sterge/,
+    'nimeni n-o să-și amintească s-o ruleze de mână — de-aia s-au adunat 435');
+  assert.ok(pkg.scripts['curata-teste'], 'lipsește varianta care doar arată ce ar șterge');
+});
