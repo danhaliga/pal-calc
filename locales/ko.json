@@ -413,6 +413,11 @@
         "nume": "드레스룸 코너",
         "descriere": "드레스룸이나 침실용 높은 코너 캐비닛. 문짝 2장, 선반 3장.",
         "corpNume": "드레스룸 코너"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "아래 문이 있는 책장",
+        "descriere": "위는 열린 선반, 아래는 문 두 짝.",
+        "corpNume": "책장"
       }
     },
     "adaugaCorp": "캐비닛 추가",
@@ -620,7 +625,9 @@
     "jocGlisiera": "“{corp}”: 서랍통을 한쪽 {jg} mm 여유로 계산했는데, {glisiera}은 {cerut} mm를 요구합니다. 캐비닛의 여유를 바꾸거나 주문의 레일을 바꾸세요.",
     "compartimentIngust": "칸이 {lat} mm로 나옵니다. 선반을 넣기엔 너무 좁습니다. 칸막이를 하나 빼거나 몸통을 넓히세요.",
     "usiPesteMontant": "{comp}칸에 문짝 {usi}장: 문짝 하나가 칸막이 위에 걸칩니다. {comp}의 배수로 맞추세요.",
-    "sertareCuMontant": "서랍은 칸으로 나뉘지 않습니다. 여전히 몸통 전체 폭으로 계산됩니다."
+    "sertareCuMontant": "서랍은 칸으로 나뉘지 않습니다. 여전히 몸통 전체 폭으로 계산됩니다.",
+    "usiPesteInaltime": "{cerut} mm 문을 요청했지만 {incape} mm만 들어갑니다. 전체 높이로 만들었습니다.",
+    "usiJosFaraPolita": "아래쪽에만 문이 있고 선반이 하나도 없습니다. 최소 하나는 넣으세요. 그러지 않으면 문이 위에서 닿을 곳이 없습니다."
   },
   "csv": {
     "corp": "캐비닛",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "직접 선택해서 복사하세요.",
     "numarMontanti": "중간 칸막이 수",
-    "legMontanti": "칸 나누기"
+    "legMontanti": "칸 나누기",
+    "inaltimeUsi": "문 높이",
+    "notaInaltimeUsi": "비우면 전체 높이의 문, 값을 넣으면 아래쪽에만 문 (책장처럼)"
   },
   "fata": {
     "px": "오른쪽",

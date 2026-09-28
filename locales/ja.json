@@ -413,6 +413,11 @@
         "nume": "ウォークインのコーナー",
         "descriere": "ウォークインクローゼットや寝室用の背の高いコーナーキャビネット。扉2枚、棚板3枚。",
         "corpNume": "ウォークインのコーナー"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "下扉付きの本棚",
+        "descriere": "上は開いた棚板、下は扉二枚。",
+        "corpNume": "本棚"
       }
     },
     "adaugaCorp": "キャビネットを追加",
@@ -620,7 +625,9 @@
     "jocGlisiera": "「{corp}」：引き出し箱は片側 {jg} mm のクリアランスで計算していますが、{glisiera} は {cerut} mm を要求します。キャビネット側のクリアランスか、注文側のレールを変えてください。",
     "compartimentIngust": "仕切り内が {lat} mm になります。棚板には狭すぎます。中仕切りを減らすか、本体を広げてください。",
     "usiPesteMontant": "{comp} 区画に扉 {usi} 枚：扉が中仕切りの上に乗ります。{comp} の倍数にしてください。",
-    "sertareCuMontant": "引き出しは区画で分かれません。今までどおり本体の全幅で計算されます。"
+    "sertareCuMontant": "引き出しは区画で分かれません。今までどおり本体の全幅で計算されます。",
+    "usiPesteInaltime": "{cerut} mm の扉を指定しましたが、入るのは {incape} mm までです。全高で作りました。",
+    "usiJosFaraPolita": "下側だけの扉で棚板が一枚もありません。最低一枚入れてください。上で扉が当たるところがなくなります。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "手で選んでコピーしてください。",
     "numarMontanti": "中仕切りの枚数",
-    "legMontanti": "仕切り"
+    "legMontanti": "仕切り",
+    "inaltimeUsi": "扉の高さ",
+    "notaInaltimeUsi": "空欄＝全高の扉。数値を入れると下側だけの扉になります（本棚のように）"
   },
   "fata": {
     "px": "右",

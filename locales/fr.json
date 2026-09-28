@@ -413,6 +413,11 @@
         "nume": "Angle de dressing",
         "descriere": "Caisson d'angle haut pour dressing ou chambre, avec deux façades et trois étagères.",
         "corpNume": "Angle dressing"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Bibliothèque à portes basses",
+        "descriere": "Tablettes ouvertes en haut, deux portes en bas.",
+        "corpNume": "Bibliothèque"
       }
     },
     "adaugaCorp": "Ajouter un caisson",
@@ -620,7 +625,9 @@
     "jocGlisiera": "« {corp} » : les caisses de tiroir sont calculées avec un jeu de {jg} mm par côté, mais {glisiera} en demande {cerut}. Changez le jeu sur le caisson ou la coulisse sur la commande.",
     "compartimentIngust": "Le compartiment fait {lat} mm : trop étroit pour une tablette. Retirez un montant ou élargissez le caisson.",
     "usiPesteMontant": "{usi} portes pour {comp} compartiments : une porte tomberait sur un montant. Prenez un multiple de {comp}.",
-    "sertareCuMontant": "Les tiroirs ne sont pas répartis par compartiment : ils restent calculés sur toute la largeur du caisson."
+    "sertareCuMontant": "Les tiroirs ne sont pas répartis par compartiment : ils restent calculés sur toute la largeur du caisson.",
+    "usiPesteInaltime": "Portes de {cerut} mm demandées, mais seuls {incape} mm tiennent : elles ont été faites pleine hauteur.",
+    "usiJosFaraPolita": "Portes en bas seulement, sans aucune tablette : mettez-en au moins une, sinon la porte n’a rien contre quoi fermer en haut."
   },
   "csv": {
     "corp": "Caisson",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Sélectionnez et copiez à la main.",
     "numarMontanti": "Nombre de montants",
-    "legMontanti": "Compartimentage"
+    "legMontanti": "Compartimentage",
+    "inaltimeUsi": "Hauteur des portes",
+    "notaInaltimeUsi": "vide = portes sur toute la hauteur ; une valeur = portes en bas seulement, comme une bibliothèque"
   },
   "fata": {
     "px": "droite",

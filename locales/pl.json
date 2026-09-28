@@ -419,6 +419,11 @@
         "nume": "Narożnik garderoby",
         "descriere": "Wysoki korpus narożny do garderoby albo sypialni, z dwoma frontami i trzema półkami.",
         "corpNume": "Narożnik garderoby"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Regał z drzwiami na dole",
+        "descriere": "Otwarte półki u góry, dwoje drzwi na dole.",
+        "corpNume": "Regał"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -626,7 +631,9 @@
     "jocGlisiera": "„{corp}”: skrzynki szuflad są liczone z luzem {jg} mm na stronę, a {glisiera} wymaga {cerut} mm. Zmień luz na korpusie albo prowadnicę na zleceniu.",
     "compartimentIngust": "Komora wychodzi {lat} mm: za wąska na półkę. Usuń przegrodę albo poszerz korpus.",
     "usiPesteMontant": "{usi} drzwi na {comp} komory: jedne drzwi wypadłyby na przegrodę. Weź wielokrotność {comp}.",
-    "sertareCuMontant": "Szuflady nie dzielą się na komory: nadal liczy się je na całą szerokość korpusu."
+    "sertareCuMontant": "Szuflady nie dzielą się na komory: nadal liczy się je na całą szerokość korpusu.",
+    "usiPesteInaltime": "Zamówiono drzwi {cerut} mm, a mieści się tylko {incape} mm: zrobiono je na całą wysokość.",
+    "usiJosFaraPolita": "Drzwi tylko na dole, bez żadnej półki: wstaw co najmniej jedną, inaczej drzwi nie mają o co się domknąć u góry."
   },
   "csv": {
     "corp": "Korpus",
@@ -1116,7 +1123,9 @@
     },
     "copiazaManual": "Zaznacz i skopiuj ręcznie.",
     "numarMontanti": "Liczba przegród",
-    "legMontanti": "Podział"
+    "legMontanti": "Podział",
+    "inaltimeUsi": "Wysokość drzwi",
+    "notaInaltimeUsi": "puste = drzwi na całą wysokość; wartość = drzwi tylko na dole, jak w regale"
   },
   "fata": {
     "px": "prawo",

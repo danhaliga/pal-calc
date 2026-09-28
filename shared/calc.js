@@ -64,7 +64,7 @@
       nume: traducator(tr)('modele.corpImplicit'), W: 800, H: 720, D: 560, constr: 'intre',
       tip: 'drept', W2: 900, orb: 550, contur: [],
       t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 2.5,
-      nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2,
+      nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: 0,
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
       pragCant: PRAG_CANT, rezervaCant: REZERVA_CANT
@@ -176,6 +176,7 @@
     var t_ = traducator(tr);
     var W = +c.W, H = +c.H, D = +c.D, t = +c.t, cg = +c.cg, cs = +c.cs, tp = +c.tp;
     var rm = +c.rm, ri = +c.ri, rinc = +c.rinc, nUsi = +c.nUsi, nPol = +c.nPol, nSer = +c.nSer;
+    var hUsiCerut = +c.hUsi || 0;
     var nDsp = +c.nDsp || 0;                /* montanți (despărțitori) în interior */
     var P = [], warn = [], avertismente = [];
     var aplicat = c.spate === 'aplicat';
@@ -434,9 +435,22 @@
 
     /* ---- usi ---- */
     var usi = [];
+    /* Zona cu uși, măsurată de la fund în sus. Goală înseamnă uși pe toată
+       înălțimea — biblioteca cu uși doar jos cere o valoare aici. */
+    var uHplin = (apl ? H - 2 * rm : Hint - 2 * rinc) - usedTop;
+    var usiPartiale = nUsi > 0 && hUsiCerut > 0 && hUsiCerut < uHplin;
+    /* linia de sus a ușilor, în coordonatele corpului; polița fixă stă acolo */
+    var yLinieUsi = null;
+
     if (nUsi > 0) {
-      var uH = (apl ? H - 2 * rm : Hint - 2 * rinc) - usedTop;
+      var uH = usiPartiale ? hUsiCerut : uHplin;
       var uL = (fL - (nUsi - 1) * ri) / nUsi;
+      if (hUsiCerut > uHplin) avert('usiPesteInaltime', { cerut: fmt(hUsiCerut), incape: fmt(uHplin) });
+      if (usiPartiale) {
+        /* La ușă aplicată, canatul acoperă muchia poliței de sus; la una
+           încastrată se oprește sub ea. */
+        yLinieUsi = apl ? yBot + uH - t / 2 : yBot + uH + t / 2;
+      }
       if (uH <= 0) {
         avert('fronturiSertarPreaInalte');
       } else {
@@ -518,15 +532,35 @@
     if (nPol > 0) {
       var jp = +c.jp, pL = Wcomp - jp, pl = Dint - (+c.rp);
       var boxesP = [];
+
+      /* Unde stau polițele pe înălțime. Fără uși parțiale se împart egal pe
+         tot golul, ca până acum. Cu uși doar jos, una se fixează pe linia
+         ușilor — fără ea canatul n-are de ce se închide sus și corpul
+         rămâne fără legătură la mijloc — iar restul se împart între cele
+         două goluri, după cât de înalt e fiecare. */
+      var inaltimi = [];
+      if (yLinieUsi == null) {
+        for (var j = 1; j <= nPol; j++) inaltimi.push(t + (Hint - usedTop) * j / (nPol + 1));
+      } else {
+        inaltimi.push(yLinieUsi);
+        var golJos = yLinieUsi - t, golSus = (t + Hint - usedTop) - yLinieUsi;
+        var ramase = nPol - 1;
+        var jos = Math.round(ramase * golJos / Math.max(1, golJos + golSus));
+        var sus = ramase - jos;
+        for (var jj = 1; jj <= jos; jj++) inaltimi.push(t + golJos * jj / (jos + 1));
+        for (var js = 1; js <= sus; js++) inaltimi.push(yLinieUsi + golSus * js / (sus + 1));
+      }
+
       for (var ic = 0; ic < compartimente; ic++) {
-        for (var j = 1; j <= nPol; j++) {
-          var yc = t + (Hint - usedTop) * j / (nPol + 1);
+        inaltimi.forEach(function (yc) {
           boxesP.push(bx(xComp(ic) + jp / 2, yc - t / 2, zin, pL, t, pl,
             F({ py: 'f', ny: 'f', pz: 'g' }), [0, 0, 0.6], 'polite'));
-        }
+        });
       }
       add('polita', null, nPol * compartimente, pL, pl, 'g', '-', '-', '-', 'L', null, boxesP);
       if (pL > 800) avert('politaLunga', { lung: fmt(pL) });
+    } else if (yLinieUsi != null) {
+      avert('usiJosFaraPolita');
     }
 
     return { P: P, warn: warn, avertismente: avertismente, usi: usi, Wint: Wint, Hint: Hint, Dint: Dint, W: W, H: H, D: D };
@@ -581,6 +615,9 @@
         spate: z.enum(['aplicat', 'nut', 'pal']),
         tp: mm(0, 50),
         nUsi: int(0, 6),
+        /* înălțimea zonei cu uși, de la fund în sus. 0 = uși pe toată
+           înălțimea, adică felul de până acum. */
+        hUsi: mm(0, 3000).catch(0),
         montaj: z.enum(['aplicat', 'incastrat']),
         balama: z.preprocess(function (v) { return String(v); }, z.enum(['0', '9', '18'])),
         rm: mm(0, 50), ri: mm(0, 50), rinc: mm(0, 50),

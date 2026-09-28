@@ -92,6 +92,12 @@
       set: { W: 800, H: 1800, D: 300, nUsi: 0, nPol: 4 }
     },
     {
+      /* Usile prind doar partea de jos; una din politele lui cade fix pe
+         linia lor, ca sa aiba canatul de ce se inchide sus. */
+      id: 'biblioteca-usi-jos', cat: 'living',
+      set: { W: 800, H: 1800, D: 300, nUsi: 2, nPol: 4, hUsi: 800 }
+    },
+    {
       id: 'comoda-4sertare', cat: 'living',
       set: { W: 800, H: 800, D: 450, nUsi: 0, nPol: 0,
              nSer: 4, hFront: frontEgal(800, 4, 1.5, 3), hCutie: 150 }

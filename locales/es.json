@@ -413,6 +413,11 @@
         "nume": "Esquina de vestidor",
         "descriere": "Módulo de esquina alto para vestidor o dormitorio, con dos frentes y tres baldas.",
         "corpNume": "Esquina de vestidor"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Librería con puertas abajo",
+        "descriere": "Baldas abiertas arriba, dos puertas en la parte baja.",
+        "corpNume": "Librería"
       }
     },
     "adaugaCorp": "Añadir un módulo",
@@ -620,7 +625,9 @@
     "jocGlisiera": "«{corp}»: las cajas de cajón se calculan con {jg} mm de holgura por lado, pero {glisiera} pide {cerut} mm. Cambia la holgura en el módulo o la guía en el pedido.",
     "compartimentIngust": "El compartimento queda en {lat} mm: demasiado estrecho para una balda. Quita un montante o ensancha el módulo.",
     "usiPesteMontant": "{usi} puertas en {comp} compartimentos: una puerta caería sobre un montante. Usa un múltiplo de {comp}.",
-    "sertareCuMontant": "Los cajones no se reparten por compartimentos: se siguen calculando sobre todo el ancho del módulo."
+    "sertareCuMontant": "Los cajones no se reparten por compartimentos: se siguen calculando sobre todo el ancho del módulo.",
+    "usiPesteInaltime": "Se pidieron puertas de {cerut} mm, pero solo caben {incape} mm: se hicieron de altura completa.",
+    "usiJosFaraPolita": "Puertas solo abajo y sin ninguna balda: pon al menos una, si no la puerta no tiene contra qué cerrar arriba."
   },
   "csv": {
     "corp": "Módulo",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Selecciónalo y cópialo a mano.",
     "numarMontanti": "Número de montantes",
-    "legMontanti": "Compartimentación"
+    "legMontanti": "Compartimentación",
+    "inaltimeUsi": "Altura de puertas",
+    "notaInaltimeUsi": "vacío = puertas en toda la altura; un valor = puertas solo abajo, como en una librería"
   },
   "fata": {
     "px": "derecha",

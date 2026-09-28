@@ -419,6 +419,11 @@
         "nume": "Colț de dressing",
         "descriere": "Corp de colț înalt pentru dressing sau dormitor, cu două fronturi și trei polițe.",
         "corpNume": "Colț dressing"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Bibliotecă cu uși jos",
+        "descriere": "Polițe deschise sus, două uși pe partea de jos.",
+        "corpNume": "Bibliotecă"
       }
     },
     "adaugaCorp": "Adaugă un corp",
@@ -626,7 +631,9 @@
     "jocGlisiera": "„{corp}”: cutiile de sertar sunt calculate cu joc {jg} mm pe parte, dar {glisiera} cere {cerut} mm. Schimbă jocul în corp sau glisiera pe comandă.",
     "compartimentIngust": "Compartimentul iese de {lat} mm: prea îngust pentru o poliță. Scoate un montant sau lărgește corpul.",
     "usiPesteMontant": "{usi} uși pe {comp} compartimente: o ușă ar cădea peste un montant. Pune un multiplu de {comp}.",
-    "sertareCuMontant": "Sertarele nu se împart pe compartimente: se calculează în continuare pe toată lățimea corpului."
+    "sertareCuMontant": "Sertarele nu se împart pe compartimente: se calculează în continuare pe toată lățimea corpului.",
+    "usiPesteInaltime": "Uși de {cerut} mm cerute, dar în corp încap {incape} mm: s-au făcut pe toată înălțimea.",
+    "usiJosFaraPolita": "Uși doar jos, fără nicio poliță: pune cel puțin una, altfel canatul n-are de ce se închide sus."
   },
   "csv": {
     "corp": "Corp",
@@ -1116,7 +1123,9 @@
     },
     "copiazaManual": "Selectează și copiază manual.",
     "numarMontanti": "Număr de montanți",
-    "legMontanti": "Compartimentare"
+    "legMontanti": "Compartimentare",
+    "inaltimeUsi": "Înălțime uși",
+    "notaInaltimeUsi": "gol = uși pe toată înălțimea; o valoare = uși doar jos, ca la bibliotecă"
   },
   "fata": {
     "px": "dreapta",

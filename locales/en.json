@@ -413,6 +413,11 @@
         "nume": "Walk-in wardrobe corner",
         "descriere": "A tall corner unit for a dressing room or bedroom, with two fronts and three shelves.",
         "corpNume": "Dressing corner"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Bookcase with lower doors",
+        "descriere": "Open shelves above, two doors across the bottom.",
+        "corpNume": "Bookcase"
       }
     },
     "adaugaCorp": "Add a cabinet",
@@ -620,7 +625,9 @@
     "jocGlisiera": "“{corp}”: the drawer boxes are calculated with {jg} mm clearance per side, but {glisiera} needs {cerut} mm. Change the clearance on the cabinet or the runner on the order.",
     "compartimentIngust": "The compartment comes out {lat} mm: too narrow for a shelf. Remove a partition or widen the cabinet.",
     "usiPesteMontant": "{usi} doors across {comp} compartments: one door would land on a partition. Use a multiple of {comp}.",
-    "sertareCuMontant": "Drawers are not split by partitions: they are still calculated across the full cabinet width."
+    "sertareCuMontant": "Drawers are not split by partitions: they are still calculated across the full cabinet width.",
+    "usiPesteInaltime": "Doors of {cerut} mm asked for, but only {incape} mm fit: they were made full height.",
+    "usiJosFaraPolita": "Doors only at the bottom, with no shelf: add at least one, otherwise the door has nothing to close against at the top."
   },
   "csv": {
     "corp": "Cabinet",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Select and copy it manually.",
     "numarMontanti": "Number of partitions",
-    "legMontanti": "Partitions"
+    "legMontanti": "Partitions",
+    "inaltimeUsi": "Door height",
+    "notaInaltimeUsi": "empty = doors over the full height; a value = doors only at the bottom, like a bookcase"
   },
   "fata": {
     "px": "right",

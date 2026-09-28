@@ -413,6 +413,11 @@
         "nume": "Gardróbsarok",
         "descriere": "Magas sarokkorpusz gardróbba vagy hálószobába, két fronttal és három polccal.",
         "corpNume": "Gardróbsarok"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Könyvespolc alsó ajtókkal",
+        "descriere": "Nyitott polcok fent, két ajtó alul.",
+        "corpNume": "Könyvespolc"
       }
     },
     "adaugaCorp": "Korpusz hozzáadása",
@@ -620,7 +625,9 @@
     "jocGlisiera": "„{corp}”: a fiókok oldalanként {jg} mm hézaggal vannak számolva, de a(z) {glisiera} {cerut} mm-t kíván. Változtasd meg a hézagot a korpuszon vagy a sínt a megrendelésen.",
     "compartimentIngust": "A rekesz {lat} mm lesz: túl keskeny egy polcnak. Végy el egy közfalat, vagy szélesítsd a korpuszt.",
     "usiPesteMontant": "{usi} ajtó {comp} rekeszre: az egyik ajtó egy közfalra esne. Végy {comp} többszörösét.",
-    "sertareCuMontant": "A fiókok nem oszlanak rekeszekre: továbbra is a teljes korpuszszélességre számolódnak."
+    "sertareCuMontant": "A fiókok nem oszlanak rekeszekre: továbbra is a teljes korpuszszélességre számolódnak.",
+    "usiPesteInaltime": "{cerut} mm-es ajtót kértél, de csak {incape} mm fér el: teljes magasságban készült.",
+    "usiJosFaraPolita": "Ajtó csak alul, polc nélkül: tegyél be legalább egyet, különben az ajtónak nincs mihez zárnia felül."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Jelöld ki, és másold ki kézzel.",
     "numarMontanti": "Közfalak száma",
-    "legMontanti": "Osztás"
+    "legMontanti": "Osztás",
+    "inaltimeUsi": "Ajtómagasság",
+    "notaInaltimeUsi": "üres = ajtók a teljes magasságban; érték = ajtók csak alul, mint a könyvespolcnál"
   },
   "fata": {
     "px": "jobb",

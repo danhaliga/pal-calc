@@ -413,6 +413,11 @@
         "nume": "衣帽间转角",
         "descriere": "衣帽间或卧室用的高转角柜体，两扇门、三块层板。",
         "corpNume": "衣帽间转角"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "下部带门书柜",
+        "descriere": "上部开放层板，下部两扇门。",
+        "corpNume": "书柜"
       }
     },
     "adaugaCorp": "添加柜体",
@@ -620,7 +625,9 @@
     "jocGlisiera": "“{corp}”：抽屉盒是按每边 {jg} 毫米间隙算的，而 {glisiera} 要求 {cerut} 毫米。要么改柜体里的间隙，要么改订单里的滑轨。",
     "compartimentIngust": "隔间只剩 {lat} 毫米：放层板太窄了。少加一块中隔板，或者把柜体加宽。",
     "usiPesteMontant": "{comp} 个隔间配 {usi} 扇门：有一扇门会压在中隔板上。取 {comp} 的倍数。",
-    "sertareCuMontant": "抽屉不按隔间分：仍然按柜体的整个宽度算。"
+    "sertareCuMontant": "抽屉不按隔间分：仍然按柜体的整个宽度算。",
+    "usiPesteInaltime": "要的门板 {cerut} mm，但只放得下 {incape} mm，已按通高做。",
+    "usiJosFaraPolita": "只在下面装门却一块层板也没有：至少放一块，否则门板上沿没有可合的地方。"
   },
   "csv": {
     "corp": "柜体",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "手动选中再复制。",
     "numarMontanti": "中隔板数量",
-    "legMontanti": "分隔"
+    "legMontanti": "分隔",
+    "inaltimeUsi": "门板高度",
+    "notaInaltimeUsi": "留空＝通高门板；填数值＝只在下部装门，像书柜那样"
   },
   "fata": {
     "px": "右",

@@ -413,6 +413,11 @@
         "nume": "Hoekkast voor de inloopkast",
         "descriere": "Hoge hoekkast voor de inloopkast of slaapkamer, met twee fronten en drie legplanken.",
         "corpNume": "Hoekkast inloopkast"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Boekenkast met deuren onderin",
+        "descriere": "Open legplanken boven, twee deuren onderin.",
+        "corpNume": "Boekenkast"
       }
     },
     "adaugaCorp": "Een kast toevoegen",
@@ -620,7 +625,9 @@
     "jocGlisiera": "„{corp}”: de lades zijn berekend met {jg} mm speling per zijde, maar {glisiera} vraagt {cerut} mm. Wijzig de speling op de kast of de geleider op de opdracht.",
     "compartimentIngust": "Het vak wordt {lat} mm: te smal voor een legplank. Haal een middenwand weg of maak de kast breder.",
     "usiPesteMontant": "{usi} deuren op {comp} vakken: een deur zou op een middenwand vallen. Neem een veelvoud van {comp}.",
-    "sertareCuMontant": "Laden worden niet over de vakken verdeeld: ze worden nog over de volle kastbreedte gerekend."
+    "sertareCuMontant": "Laden worden niet over de vakken verdeeld: ze worden nog over de volle kastbreedte gerekend.",
+    "usiPesteInaltime": "Deuren van {cerut} mm gevraagd, maar er passen maar {incape} mm: ze zijn op volle hoogte gemaakt.",
+    "usiJosFaraPolita": "Deuren alleen onderin, zonder enige legplank: zet er minstens één in, anders heeft de deur bovenaan niets om tegenaan te sluiten."
   },
   "csv": {
     "corp": "Kast",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Selecteer en kopieer het handmatig.",
     "numarMontanti": "Aantal middenwanden",
-    "legMontanti": "Indeling"
+    "legMontanti": "Indeling",
+    "inaltimeUsi": "Deurhoogte",
+    "notaInaltimeUsi": "leeg = deuren over de volle hoogte; een waarde = deuren alleen onderin, zoals bij een boekenkast"
   },
   "fata": {
     "px": "rechts",

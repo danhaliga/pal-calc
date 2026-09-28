@@ -419,6 +419,11 @@
         "nume": "Rohový korpus do šatníka",
         "descriere": "Vysoký rohový korpus do šatníka alebo spálne, s dvoma čelami a tromi policami.",
         "corpNume": "Rohový korpus šatník"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Knižnica s dvierkami dole",
+        "descriere": "Otvorené police hore, dve dvierka dole.",
+        "corpNume": "Knižnica"
       }
     },
     "adaugaCorp": "Pridať korpus",
@@ -626,7 +631,9 @@
     "jocGlisiera": "„{corp}“: koše zásuviek sú počítané s vôľou {jg} mm na stranu, ale {glisiera} vyžaduje {cerut} mm. Zmeň vôľu na korpuse alebo výsuv na zákazke.",
     "compartimentIngust": "Priehradka vyjde {lat} mm: príliš úzka na policu. Uber priečku alebo korpus rozšír.",
     "usiPesteMontant": "{usi} dvierka na {comp} priehradky: jedny dvierka by padli na priečku. Zober násobok {comp}.",
-    "sertareCuMontant": "Zásuvky sa na priehradky nedelia: počítajú sa ďalej na celú šírku korpusu."
+    "sertareCuMontant": "Zásuvky sa na priehradky nedelia: počítajú sa ďalej na celú šírku korpusu.",
+    "usiPesteInaltime": "Žiadané dvierka {cerut} mm, ale zmestí sa len {incape} mm: urobili sa cez celú výšku.",
+    "usiJosFaraPolita": "Dvierka len dole a ani jedna polica: daj tam aspoň jednu, inak nemajú dvierka hore o čo dosadnúť."
   },
   "csv": {
     "corp": "Korpus",
@@ -1116,7 +1123,9 @@
     },
     "copiazaManual": "Označ a skopíruj ručne.",
     "numarMontanti": "Počet priečok",
-    "legMontanti": "Rozdelenie"
+    "legMontanti": "Rozdelenie",
+    "inaltimeUsi": "Výška dvierok",
+    "notaInaltimeUsi": "prázdne = dvierka cez celú výšku; hodnota = dvierka len dole, ako pri knižnici"
   },
   "fata": {
     "px": "vpravo",

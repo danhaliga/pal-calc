@@ -413,6 +413,11 @@
         "nume": "Angolo per cabina armadio",
         "descriere": "Mobile angolare alto per cabina armadio o camera, con due frontali e tre ripiani.",
         "corpNume": "Angolo cabina armadio"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Libreria con ante in basso",
+        "descriere": "Ripiani a vista in alto, due ante in basso.",
+        "corpNume": "Libreria"
       }
     },
     "adaugaCorp": "Aggiungi un mobile",
@@ -620,7 +625,9 @@
     "jocGlisiera": "«{corp}»: i cassetti sono calcolati con {jg} mm di gioco per lato, ma {glisiera} richiede {cerut} mm. Cambia il gioco sul mobile oppure la guida sull'ordine.",
     "compartimentIngust": "Lo scomparto viene {lat} mm: troppo stretto per un ripiano. Togli un montante o allarga il mobile.",
     "usiPesteMontant": "{usi} ante su {comp} scomparti: un’anta cadrebbe su un montante. Metti un multiplo di {comp}.",
-    "sertareCuMontant": "I cassetti non si dividono per scomparto: restano calcolati su tutta la larghezza del mobile."
+    "sertareCuMontant": "I cassetti non si dividono per scomparto: restano calcolati su tutta la larghezza del mobile.",
+    "usiPesteInaltime": "Chieste ante da {cerut} mm, ma ci stanno solo {incape} mm: sono state fatte a tutta altezza.",
+    "usiJosFaraPolita": "Ante solo in basso e nessun ripiano: mettine almeno uno, altrimenti l’anta non ha su cosa chiudere in alto."
   },
   "csv": {
     "corp": "Mobile",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Selezionalo e copialo a mano.",
     "numarMontanti": "Numero di montanti",
-    "legMontanti": "Scomparti"
+    "legMontanti": "Scomparti",
+    "inaltimeUsi": "Altezza ante",
+    "notaInaltimeUsi": "vuoto = ante su tutta l’altezza; un valore = ante solo in basso, come in una libreria"
   },
   "fata": {
     "px": "destra",

@@ -811,3 +811,80 @@ test('montantul central nu mai stă pe lista lucrurilor care nu se pot face', ()
   assert.ok(!/Montant central/.test(ro.modele.limita2),
     'limita 2 spune iar că montantul central nu se poate face');
 });
+
+/* =====================================================================
+   13. Biblioteca cu uși doar jos
+
+   Ușile prindeau întotdeauna toată înălțimea corpului. O bibliotecă cu uși
+   jos și polițe deschise deasupra nu se putea calcula deloc.
+   ===================================================================== */
+
+const biblio = over => Object.assign(defaults(),
+  { W: 800, H: 1800, D: 300, nUsi: 2, nPol: 4 }, over);
+
+const piesa = (r, re) => r.P.find(p => re.test(p.nume)) || null;
+
+test('fără înălțime dată, ușile rămân pe tot corpul, ca înainte', () => {
+  const r = calc(biblio({ hUsi: 0 }));
+  const u = piesa(r, /Ușă/);
+  assert.ok(u, 'nu mai iese nicio ușă');
+  assert.equal(u.L, 1797, '1800 − 2×1.5 rost de margine');
+});
+
+test('cu înălțime dată, ușile prind doar partea de jos', () => {
+  const u = piesa(calc(biblio({ hUsi: 800 })), /Ușă/);
+  assert.equal(u.L, 800);
+  assert.equal(u.buc, 2);
+});
+
+test('o poliță cade fix pe linia ușilor', () => {
+  /* Fără ea canatul n-are de ce se închide sus, iar corpul rămâne fără
+     legătură la mijloc. */
+  const r = calc(biblio({ hUsi: 800 }));
+  const pol = piesa(r, /Poliț/);
+  const y = pol.boxes.map(b => b.y + 18 / 2);          /* centrul poliței */
+  const linie = 1.5 + 800 - 18 / 2;                    /* ușă aplicată: canatul acoperă muchia */
+  assert.ok(y.some(v => Math.abs(v - linie) < 0.51),
+    `nicio poliță pe linia ușilor (${linie}); sunt la ${y.map(v => v.toFixed(1)).join(', ')}`);
+});
+
+test('polițele se împart între golul de sub uși și cel de deasupra', () => {
+  const r = calc(biblio({ hUsi: 800, nPol: 4 }));
+  const pol = piesa(r, /Poliț/);
+  assert.equal(pol.buc, 4, 'numărul de polițe nu se schimbă');
+  const y = pol.boxes.map(b => b.y + 9).sort((a, b) => a - b);
+  const linie = 1.5 + 800 - 9;
+  assert.equal(y.filter(v => v < linie - 1).length, 1, 'una sub uși');
+  assert.equal(y.filter(v => v > linie + 1).length, 2, 'două deasupra');
+});
+
+test('o înălțime mai mare decât corpul se taie, cu avertisment', () => {
+  const r = calc(biblio({ hUsi: 5000 }));
+  assert.equal(piesa(r, /Ușă/).L, 1797, 'ușa a ieșit mai înaltă decât corpul');
+  assert.ok(r.warn.some(w => /5000/.test(w)), `lipsește avertismentul: ${r.warn.join(' | ')}`);
+});
+
+test('uși doar jos fără nicio poliță: se spune', () => {
+  const r = calc(biblio({ hUsi: 800, nPol: 0 }));
+  assert.ok(r.warn.length, 'niciun avertisment pentru corpul fără poliță');
+  const fara = calc(biblio({ hUsi: 0, nPol: 0 }));
+  assert.equal(fara.warn.length, 0, 'corpul cu uși pe tot nu are de ce să se plângă');
+});
+
+test('înălțimea ușilor nu se ține minte între corpuri', () => {
+  /* E o hotărâre despre forma corpului ăstuia, ca lățimea sau adâncimea,
+     nu felul de-a lucra al atelierului. */
+  grupeleDinApp().forEach(g => {
+    assert.ok(g.camp.indexOf('hUsi') === -1,
+      `grupa „${g.id}" ar ține minte înălțimea ușilor de la alt corp`);
+  });
+});
+
+test('modelul de bibliotecă cu uși jos există și iese întreg', () => {
+  const p = Models.paramsFor('biblioteca-usi-jos', I18n.creeaza('ro'));
+  assert.ok(p, 'modelul a dispărut din catalog');
+  assert.ok(p.hUsi > 0 && p.hUsi < p.H, 'modelul nu mai are uși parțiale');
+  const r = calc(p);
+  assert.ok(piesa(r, /Ușă/), 'modelul nu produce uși');
+  assert.ok(piesa(r, /Poliț/), 'modelul nu produce polițe');
+});

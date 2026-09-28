@@ -413,6 +413,11 @@
         "nume": "Góc phòng thay đồ",
         "descriere": "Thùng tủ góc cao cho phòng thay đồ hoặc phòng ngủ, hai cánh và ba kệ.",
         "corpNume": "Góc phòng thay đồ"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Tủ sách có cánh phía dưới",
+        "descriere": "Kệ mở ở trên, hai cánh ở dưới.",
+        "corpNume": "Tủ sách"
       }
     },
     "adaugaCorp": "Thêm một thùng tủ",
@@ -620,7 +625,9 @@
     "jocGlisiera": "„{corp}”: hộc ngăn kéo được tính với khe hở {jg} mm mỗi bên, nhưng {glisiera} cần {cerut} mm. Hãy đổi khe hở ở thùng tủ hoặc đổi ray ở đơn hàng.",
     "compartimentIngust": "Khoang ra {lat} mm: quá hẹp cho một kệ. Bỏ bớt một vách hoặc nới rộng thùng tủ.",
     "usiPesteMontant": "{usi} cánh trên {comp} khoang: một cánh sẽ rơi vào vách ngăn. Lấy bội số của {comp}.",
-    "sertareCuMontant": "Ngăn kéo không chia theo khoang: vẫn tính trên toàn bộ chiều rộng thùng tủ."
+    "sertareCuMontant": "Ngăn kéo không chia theo khoang: vẫn tính trên toàn bộ chiều rộng thùng tủ.",
+    "usiPesteInaltime": "Yêu cầu cánh {cerut} mm nhưng chỉ vừa {incape} mm: đã làm suốt chiều cao.",
+    "usiJosFaraPolita": "Chỉ có cánh ở dưới mà không có kệ nào: thêm ít nhất một cái, nếu không cánh không có chỗ tì khi đóng ở phía trên."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Hãy bôi đen và sao chép thủ công.",
     "numarMontanti": "Số vách ngăn",
-    "legMontanti": "Chia khoang"
+    "legMontanti": "Chia khoang",
+    "inaltimeUsi": "Chiều cao cánh",
+    "notaInaltimeUsi": "trống = cánh suốt chiều cao; có giá trị = cánh chỉ ở dưới, như tủ sách"
   },
   "fata": {
     "px": "phải",

@@ -413,6 +413,11 @@
         "nume": "Canto de closet",
         "descriere": "Módulo de canto alto para closet ou quarto, com duas frentes e três prateleiras.",
         "corpNume": "Canto de closet"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Estante com portas em baixo",
+        "descriere": "Prateleiras abertas em cima, duas portas em baixo.",
+        "corpNume": "Estante"
       }
     },
     "adaugaCorp": "Adicionar um módulo",
@@ -620,7 +625,9 @@
     "jocGlisiera": "«{corp}»: as caixas de gaveta estão calculadas com {jg} mm de folga por lado, mas {glisiera} pede {cerut} mm. Muda a folga no módulo ou a corrediça na encomenda.",
     "compartimentIngust": "O compartimento fica com {lat} mm: demasiado estreito para uma prateleira. Tire um montante ou alargue o módulo.",
     "usiPesteMontant": "{usi} portas em {comp} compartimentos: uma porta ficaria sobre um montante. Use um múltiplo de {comp}.",
-    "sertareCuMontant": "As gavetas não são divididas por compartimentos: continuam calculadas em toda a largura do módulo."
+    "sertareCuMontant": "As gavetas não são divididas por compartimentos: continuam calculadas em toda a largura do módulo.",
+    "usiPesteInaltime": "Pediram-se portas de {cerut} mm, mas só cabem {incape} mm: fizeram-se de altura total.",
+    "usiJosFaraPolita": "Portas só em baixo e sem nenhuma prateleira: ponha pelo menos uma, senão a porta não tem contra o que fechar em cima."
   },
   "csv": {
     "corp": "Módulo",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Seleciona e copia à mão.",
     "numarMontanti": "Número de montantes",
-    "legMontanti": "Compartimentação"
+    "legMontanti": "Compartimentação",
+    "inaltimeUsi": "Altura das portas",
+    "notaInaltimeUsi": "vazio = portas em toda a altura; um valor = portas só em baixo, como numa estante"
   },
   "fata": {
     "px": "direita",

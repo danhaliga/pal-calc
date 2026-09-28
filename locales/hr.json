@@ -419,6 +419,11 @@
         "nume": "Kutni korpus za garderobu",
         "descriere": "Visoki kutni korpus za garderobu ili spavaću sobu, s dvije fronte i tri police.",
         "corpNume": "Kutni korpus garderoba"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Polica za knjige s vratima dolje",
+        "descriere": "Otvorene police gore, dvoja vrata dolje.",
+        "corpNume": "Polica za knjige"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -626,7 +631,9 @@
     "jocGlisiera": "„{corp}“: kutije ladica računaju se sa zazorom {jg} mm po strani, a {glisiera} traži {cerut} mm. Promijeni zazor na korpusu ili vodilicu na nalogu.",
     "compartimentIngust": "Pretinac ispada {lat} mm: preuzak za policu. Makni jednu pregradu ili proširi korpus.",
     "usiPesteMontant": "{usi} vrata na {comp} pretinca: jedna vrata bi pala na pregradu. Uzmi višekratnik broja {comp}.",
-    "sertareCuMontant": "Ladice se ne dijele po pretincima: i dalje se računaju na cijelu širinu korpusa."
+    "sertareCuMontant": "Ladice se ne dijele po pretincima: i dalje se računaju na cijelu širinu korpusa.",
+    "usiPesteInaltime": "Tražena su vrata od {cerut} mm, a stane samo {incape} mm: napravljena su cijelom visinom.",
+    "usiJosFaraPolita": "Vrata samo dolje, bez ijedne police: stavi barem jednu, inače vrata gore nemaju na što nasloniti."
   },
   "csv": {
     "corp": "Korpus",
@@ -1116,7 +1123,9 @@
     },
     "copiazaManual": "Označi i kopiraj ručno.",
     "numarMontanti": "Broj pregrada",
-    "legMontanti": "Podjela"
+    "legMontanti": "Podjela",
+    "inaltimeUsi": "Visina vrata",
+    "notaInaltimeUsi": "prazno = vrata cijelom visinom; vrijednost = vrata samo dolje, kao kod police za knjige"
   },
   "fata": {
     "px": "desno",

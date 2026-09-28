@@ -413,6 +413,11 @@
         "nume": "Giyinme odası köşesi",
         "descriere": "Giyinme odası veya yatak odası için yüksek köşe gövdesi, iki kapak ve üç rafla.",
         "corpNume": "Giyinme odası köşesi"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Altı kapaklı kitaplık",
+        "descriere": "Üstte açık raflar, altta iki kapak.",
+        "corpNume": "Kitaplık"
       }
     },
     "adaugaCorp": "Bir gövde ekle",
@@ -620,7 +625,9 @@
     "jocGlisiera": "„{corp}”: çekmece kutuları kenar başına {jg} mm boşlukla hesaplanmış, ama {glisiera} {cerut} mm istiyor. Gövdedeki boşluğu ya da siparişteki rayı değiştir.",
     "compartimentIngust": "Göz {lat} mm çıkıyor: raf için fazla dar. Bir bölme çıkar ya da gövdeyi genişlet.",
     "usiPesteMontant": "{comp} göze {usi} kapak: bir kapak bölmenin üstüne gelir. {comp} katı bir sayı seç.",
-    "sertareCuMontant": "Çekmeceler bölmelere ayrılmaz: hâlâ gövdenin tüm genişliğine göre hesaplanır."
+    "sertareCuMontant": "Çekmeceler bölmelere ayrılmaz: hâlâ gövdenin tüm genişliğine göre hesaplanır.",
+    "usiPesteInaltime": "{cerut} mm kapak istendi ama yalnızca {incape} mm sığıyor: tam boy yapıldı.",
+    "usiJosFaraPolita": "Sadece altta kapak, hiç raf yok: en az bir tane koy, yoksa kapak üstte hiçbir şeye dayanmaz."
   },
   "csv": {
     "corp": "Gövde",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Seç ve elle kopyala.",
     "numarMontanti": "Orta bölme sayısı",
-    "legMontanti": "Bölmeler"
+    "legMontanti": "Bölmeler",
+    "inaltimeUsi": "Kapak yüksekliği",
+    "notaInaltimeUsi": "boş = tam boy kapak; bir değer = sadece altta kapak, kitaplıktaki gibi"
   },
   "fata": {
     "px": "sağ",

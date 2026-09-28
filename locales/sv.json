@@ -413,6 +413,11 @@
         "nume": "Hörnstomme för klädkammare",
         "descriere": "Hög hörnstomme för klädkammare eller sovrum, med två fronter och tre hyllplan.",
         "corpNume": "Hörnstomme klädkammare"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Bokhylla med dörrar nedtill",
+        "descriere": "Öppna hyllplan upptill, två dörrar nedtill.",
+        "corpNume": "Bokhylla"
       }
     },
     "adaugaCorp": "Lägg till en stomme",
@@ -620,7 +625,9 @@
     "jocGlisiera": "”{corp}”: lådorna är räknade med {jg} mm spel per sida, men {glisiera} kräver {cerut} mm. Ändra spelet på stommen eller skenan på ordern.",
     "compartimentIngust": "Facket blir {lat} mm: för smalt för en hylla. Ta bort en mellanvägg eller gör stommen bredare.",
     "usiPesteMontant": "{usi} dörrar på {comp} fack: en dörr skulle hamna på en mellanvägg. Ta en multipel av {comp}.",
-    "sertareCuMontant": "Lådor delas inte per fack: de räknas fortfarande över hela stommens bredd."
+    "sertareCuMontant": "Lådor delas inte per fack: de räknas fortfarande över hela stommens bredd.",
+    "usiPesteInaltime": "Dörrar på {cerut} mm begärda, men bara {incape} mm får plats: de gjordes i full höjd.",
+    "usiJosFaraPolita": "Dörrar bara nedtill, utan ett enda hyllplan: sätt in minst ett, annars har dörren inget att slå emot upptill."
   },
   "csv": {
     "corp": "Stomme",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Markera och kopiera för hand.",
     "numarMontanti": "Antal mellanväggar",
-    "legMontanti": "Indelning"
+    "legMontanti": "Indelning",
+    "inaltimeUsi": "Dörrhöjd",
+    "notaInaltimeUsi": "tom = dörrar över hela höjden; ett värde = dörrar bara nedtill, som i en bokhylla"
   },
   "fata": {
     "px": "höger",

@@ -413,6 +413,11 @@
         "nume": "Eckkorpus für den Ankleideraum",
         "descriere": "Hoher Eckkorpus für Ankleide oder Schlafzimmer, mit zwei Fronten und drei Böden.",
         "corpNume": "Eckkorpus Ankleide"
+      },
+      "biblioteca-usi-jos": {
+        "nume": "Bücherregal mit Türen unten",
+        "descriere": "Offene Böden oben, zwei Türen unten.",
+        "corpNume": "Bücherregal"
       }
     },
     "adaugaCorp": "Einen Korpus hinzufügen",
@@ -620,7 +625,9 @@
     "jocGlisiera": "„{corp}“: die Schubkästen sind mit {jg} mm Luft pro Seite gerechnet, {glisiera} braucht aber {cerut} mm. Ändere die Luft am Korpus oder den Auszug am Auftrag.",
     "compartimentIngust": "Das Fach wird {lat} mm breit: zu schmal für einen Boden. Nimm eine Mittelseite raus oder mach den Korpus breiter.",
     "usiPesteMontant": "{usi} Türen auf {comp} Fächer: eine Tür läge auf einer Mittelseite. Nimm ein Vielfaches von {comp}.",
-    "sertareCuMontant": "Schubkästen werden nicht auf die Fächer aufgeteilt: sie werden weiter über die volle Korpusbreite gerechnet."
+    "sertareCuMontant": "Schubkästen werden nicht auf die Fächer aufgeteilt: sie werden weiter über die volle Korpusbreite gerechnet.",
+    "usiPesteInaltime": "Türen mit {cerut} mm verlangt, es passen aber nur {incape} mm: sie wurden über die volle Höhe gemacht.",
+    "usiJosFaraPolita": "Türen nur unten, ohne einen einzigen Boden: setz mindestens einen ein, sonst hat die Tür oben nichts zum Anschlagen."
   },
   "csv": {
     "corp": "Korpus",
@@ -1105,7 +1112,9 @@
     },
     "copiazaManual": "Markiere und kopiere es von Hand.",
     "numarMontanti": "Anzahl Mittelseiten",
-    "legMontanti": "Unterteilung"
+    "legMontanti": "Unterteilung",
+    "inaltimeUsi": "Türhöhe",
+    "notaInaltimeUsi": "leer = Türen über die volle Höhe; ein Wert = Türen nur unten, wie beim Bücherregal"
   },
   "fata": {
     "px": "rechts",
