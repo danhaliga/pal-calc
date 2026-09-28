@@ -1206,3 +1206,63 @@ test('lista de limbi se scrie în ele însele, nu traduse', () => {
   assert.match(LANDING, /lang="<%= l\.cod %>"/, 'limbile n-au marcajul lor de limbă');
   assert.match(LANDING, /l\.nume/);
 });
+
+/* =====================================================================
+   19. Să vezi ce e în comandă, nu doar cum se cheamă
+
+   Lista de corpuri a comenzii era numai text. Un rând care zice „Corp bază
+   2 uși · 800 × 720 × 560" nu-ți spune care din cele trei corpuri cu
+   același nume e cel cu sertare. Și la corpul explodat se vedea forma, dar
+   nu se știa care piesă din desen e care rând din listă.
+   ===================================================================== */
+
+const SHOW_COMANDA = fs.readFileSync(
+  path.join(__dirname, '..', 'views', 'orders', 'show.ejs'), 'utf8');
+
+test('fiecare corp din comandă are desenul lui', () => {
+  assert.match(SURSA_ORD, /c\.desen = PalModels\.sketch\(c\.params\)/,
+    'ruta nu mai face desenele');
+  assert.match(SHOW_COMANDA, /<%- c\.desen %>/, 'pagina nu le mai arată');
+});
+
+test('desenul vine din același loc ca în catalogul de modele', () => {
+  /* Altfel ar exista două feluri de a desena același corp, care s-ar
+     despărți la prima schimbare. */
+  assert.match(SURSA_ORD, /PalModels\.sketch\(/);
+  assert.match(SURSA_CORPS, /PalModels\.sketch\(/);
+});
+
+test('numărul piesei e și pe desen, și în listă', () => {
+  /* Un număr care apare doar într-un loc nu leagă nimic de nimic. */
+  assert.match(SURSA_APP, /class="c nr-piesa">' \+ \(i \+ 1\)/,
+    'lista nu mai numerotează piesele');
+  assert.match(SURSA_APP, /e\.textContent = m\.userData\.pi \+ 1;/,
+    'desenul nu mai poartă numărul piesei');
+  assert.match(EDIT_UI, /<th class="c">#<\/th>/, 'lipsește coloana din antet');
+});
+
+test('etichetele apar doar la corpul explodat', () => {
+  /* Pe unul închis piesele stau una peste alta și numerele s-ar îngrămădi
+     în același loc: mai mult zgomot decât ajutor. */
+  assert.match(SURSA_APP, /var arata = V3\.E > 1;/);
+});
+
+test('o piesă ajunsă în spatele camerei nu-și aruncă eticheta pe ecran', () => {
+  /* Acolo proiecția se întoarce pe dos și eticheta ar sări în partea
+     greșită a desenului. */
+  assert.match(SURSA_APP, /if \(v\.z > 1\) \{ e\.style\.display = 'none'; return; \}/);
+});
+
+test('etichetele nu fură clicul de pe piesa de dedesubt', () => {
+  /* Pe piesă se apasă ca să-i vezi cotele; o eticheta care prinde clicul ar
+     strica exact lucrul pentru care există desenul. */
+  const css = fs.readFileSync(path.join(__dirname, '..', 'public', 'styles.css'), 'utf8');
+  assert.match(css, /\.etichete3d\{[^}]*pointer-events:none/);
+});
+
+test('bulinele se refolosesc între cadre', () => {
+  /* Altfel ar însemna câteva zeci de elemente noi de șaizeci de ori pe
+     secundă, pe un desen care oricum se învârte. */
+  assert.match(SURSA_APP, /while \(_etichete\.length < vizibile\.length\)/);
+  assert.match(SURSA_APP, /while \(_etichete\.length > vizibile\.length\)/);
+});

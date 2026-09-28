@@ -218,7 +218,7 @@
   <% } else { %>
     <div class="tbl"><table>
       <thead><tr>
-        <th class="num">#</th><th><%= t('comanda.colCorp') %></th><th><%= t('comanda.colDimensiuni') %></th>
+        <th class="num">#</th><th class="c"></th><th><%= t('comanda.colCorp') %></th><th><%= t('comanda.colDimensiuni') %></th>
         <th class="num"><%= t('comanda.colPiese') %></th>
         <th><%= t('comanda.colMaterialCarcasa') %></th><th><%= t('comanda.colMaterialFronturi') %></th><th></th>
       </tr></thead>
@@ -226,6 +226,10 @@
         <% raport.corpuri.forEach(function (c) { %>
           <tr>
             <td class="num"><%= c.poz %></td>
+            <%# Desenul vine din acelasi loc ca in catalogul de modele, deci
+                arata la fel peste tot si se schimba odata cu corpul. %>
+            <td class="c"><a class="sk-mic" href="/corps/<%= c.id %>"
+               aria-hidden="true" tabindex="-1"><%- c.desen %></a></td>
             <td>
               <a href="/corps/<%= c.id %>"><b><%= c.nume %></b></a>
               <% if (c.avertismente.length) { %>

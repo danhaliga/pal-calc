@@ -446,3 +446,7 @@ tr.jurnal-eroare td{background:color-mix(in srgb,var(--danger) 8%,transparent)}
   box-shadow:0 1px 3px rgba(0,0,0,.4)}
 .eticheta3d.ales{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 td.nr-piesa{color:var(--muted);font-size:12px}
+
+/* Desenul corpului în lista comenzii: mic, doar cât să recunoști forma. */
+.sk-mic{display:block;width:44px;line-height:0}
+.sk-mic svg.sk{max-height:52px}

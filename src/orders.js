@@ -264,6 +264,11 @@ router.get('/orders/:id', requireAuth, (req, res, next) => {
 
   const raport = raportComenzii(order, req.t);
 
+  /* Desenul fiecarui corp, ca sa se vada ce e in comanda, nu doar cum se
+     cheama. Un rand care zice „Corp bază 2 uși · 800 × 720 × 560" nu-ti
+     spune daca e cel cu sertare sau cel cu polite. */
+  raport.corpuri.forEach(c => { c.desen = PalModels.sketch(c.params); });
+
   res.render('orders/show', {
     title: order.name,
     order, raport,
