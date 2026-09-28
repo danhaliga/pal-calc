@@ -627,7 +627,9 @@
     "usiPesteMontant": "{usi} Türen auf {comp} Fächer: eine Tür läge auf einer Mittelseite. Nimm ein Vielfaches von {comp}.",
     "sertareCuMontant": "Schubkästen werden nicht auf die Fächer aufgeteilt: sie werden weiter über die volle Korpusbreite gerechnet.",
     "usiPesteInaltime": "Türen mit {cerut} mm verlangt, es passen aber nur {incape} mm: sie wurden über die volle Höhe gemacht.",
-    "usiJosFaraPolita": "Türen nur unten, ohne einen einzigen Boden: setz mindestens einen ein, sonst hat die Tür oben nichts zum Anschlagen."
+    "usiJosFaraPolita": "Türen nur unten, ohne einen einzigen Boden: setz mindestens einen ein, sonst hat die Tür oben nichts zum Anschlagen.",
+    "usiPeCompartimenteFaraMontant": "Du hast Fächer für die Türen gewählt, aber der Korpus hat keine Mittelseite: die Türen wurden über die volle Breite gemacht.",
+    "usaPreaIngusta": "Im Fach {comp} ist für so viele Türen kein Platz: dort ist keine entstanden."
   },
   "csv": {
     "corp": "Korpus",
@@ -1115,7 +1117,8 @@
     "legMontanti": "Unterteilung",
     "inaltimeUsi": "Türhöhe",
     "notaInaltimeUsi": "leer = Türen über die volle Höhe; ein Wert = Türen nur unten, wie beim Bücherregal",
-    "hUsiToata": "die volle Höhe"
+    "hUsiToata": "die volle Höhe",
+    "usiPeCompartimente": "Türen auf den Fächern"
   },
   "fata": {
     "px": "rechts",

@@ -633,7 +633,9 @@
     "usiPesteMontant": "{usi} vrata na {comp} pregratka: jedna vrata bi pala na pregradu. Uzmi umnožak broja {comp}.",
     "sertareCuMontant": "Fioke se ne dele po pregratcima: i dalje se računaju na celu širinu korpusa.",
     "usiPesteInaltime": "Tražena su vrata od {cerut} mm, a staje samo {incape} mm: napravljena su celom visinom.",
-    "usiJosFaraPolita": "Vrata samo dole, bez ijedne police: stavi bar jednu, inače vrata gore nemaju na šta da naslone."
+    "usiJosFaraPolita": "Vrata samo dole, bez ijedne police: stavi bar jednu, inače vrata gore nemaju na šta da naslone.",
+    "usiPeCompartimenteFaraMontant": "Izabrao si pregrade za vrata, ali korpus nema nijednu srednju stranicu: vrata su napravljena celom širinom.",
+    "usaPreaIngusta": "U pregradi {comp} nema mesta za toliko vrata: tamo nije izašlo nijedno."
   },
   "csv": {
     "corp": "Korpus",
@@ -1126,7 +1128,8 @@
     "legMontanti": "Podela",
     "inaltimeUsi": "Visina vrata",
     "notaInaltimeUsi": "prazno = vrata celom visinom; vrednost = vrata samo dole, kao kod police za knjige",
-    "hUsiToata": "cela visina"
+    "hUsiToata": "cela visina",
+    "usiPeCompartimente": "Vrata na pregradama"
   },
   "fata": {
     "px": "desno",

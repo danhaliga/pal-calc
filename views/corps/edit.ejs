@@ -113,6 +113,12 @@
           <label><%= t('editor.rostIntreFronturi') %><input id="ri" type="number" step="0.5" min="0" max="50"></label>
           <label><%= t('editor.rostIncastrat') %><input id="rinc" type="number" step="0.5" min="0" max="50"></label>
         </div>
+        <%# Bifele apar doar când există montant: fără el corpul are un singur
+            compartiment și n-ai ce alege. Le desenează app.js. %>
+        <div id="compUsiBox" class="hidden" style="margin-top:10px">
+          <span class="camp-eticheta"><%= t('editor.usiPeCompartimente') %></span>
+          <div class="setari-grupe orizontal" id="compUsiLista"></div>
+        </div>
         <p class="legend"><%= t('editor.notaInaltimeUsi') %></p>
       </fieldset>
 

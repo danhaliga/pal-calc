@@ -627,7 +627,9 @@
     "usiPesteMontant": "{usi} dörrar på {comp} fack: en dörr skulle hamna på en mellanvägg. Ta en multipel av {comp}.",
     "sertareCuMontant": "Lådor delas inte per fack: de räknas fortfarande över hela stommens bredd.",
     "usiPesteInaltime": "Dörrar på {cerut} mm begärda, men bara {incape} mm får plats: de gjordes i full höjd.",
-    "usiJosFaraPolita": "Dörrar bara nedtill, utan ett enda hyllplan: sätt in minst ett, annars har dörren inget att slå emot upptill."
+    "usiJosFaraPolita": "Dörrar bara nedtill, utan ett enda hyllplan: sätt in minst ett, annars har dörren inget att slå emot upptill.",
+    "usiPeCompartimenteFaraMontant": "Du valde fack för dörrarna, men stommen har inget mellanstycke: dörrarna gjordes över hela bredden.",
+    "usaPreaIngusta": "Fack {comp} har inte plats för så många dörrar: där blev det ingen."
   },
   "csv": {
     "corp": "Stomme",
@@ -1115,7 +1117,8 @@
     "legMontanti": "Indelning",
     "inaltimeUsi": "Dörrhöjd",
     "notaInaltimeUsi": "tom = dörrar över hela höjden; ett värde = dörrar bara nedtill, som i en bokhylla",
-    "hUsiToata": "hela höjden"
+    "hUsiToata": "hela höjden",
+    "usiPeCompartimente": "Dörrar på facken"
   },
   "fata": {
     "px": "höger",

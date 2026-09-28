@@ -627,7 +627,9 @@
     "usiPesteMontant": "{usi} cánh trên {comp} khoang: một cánh sẽ rơi vào vách ngăn. Lấy bội số của {comp}.",
     "sertareCuMontant": "Ngăn kéo không chia theo khoang: vẫn tính trên toàn bộ chiều rộng thùng tủ.",
     "usiPesteInaltime": "Yêu cầu cánh {cerut} mm nhưng chỉ vừa {incape} mm: đã làm suốt chiều cao.",
-    "usiJosFaraPolita": "Chỉ có cánh ở dưới mà không có kệ nào: thêm ít nhất một cái, nếu không cánh không có chỗ tì khi đóng ở phía trên."
+    "usiJosFaraPolita": "Chỉ có cánh ở dưới mà không có kệ nào: thêm ít nhất một cái, nếu không cánh không có chỗ tì khi đóng ở phía trên.",
+    "usiPeCompartimenteFaraMontant": "Bạn đã chọn ngăn cho cánh, nhưng tủ không có vách giữa nào: cánh được làm suốt chiều rộng.",
+    "usaPreaIngusta": "Ngăn {comp} không đủ chỗ cho ngần ấy cánh: ở đó không ra cánh nào."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -1115,7 +1117,8 @@
     "legMontanti": "Chia khoang",
     "inaltimeUsi": "Chiều cao cánh",
     "notaInaltimeUsi": "trống = cánh suốt chiều cao; có giá trị = cánh chỉ ở dưới, như tủ sách",
-    "hUsiToata": "suốt chiều cao"
+    "hUsiToata": "suốt chiều cao",
+    "usiPeCompartimente": "Cánh theo ngăn"
   },
   "fata": {
     "px": "phải",

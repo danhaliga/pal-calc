@@ -15,6 +15,40 @@ var paid = !!DATA.paid;
 var fields = ['nume','tip','W','H','D','W2','orb','constr','t','cg','cs','spate','tp','nUsi','montaj','balama',
               'rm','ri','rinc','hUsi','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg'];
 
+/* Compartimentele care primesc uși. Bife, nu un câmp de scris: numerele se
+   schimbă cu fiecare montant adăugat, iar o listă scrisă de mână rămâne în
+   urmă fără ca nimeni să observe. Se văd doar când e cel puțin un montant —
+   fără el corpul are un singur compartiment și n-ai ce alege. */
+function randeazaCompUsi() {
+  var box = $('compUsiBox'), lista = $('compUsiLista');
+  if (!box || !lista) return;
+
+  var comp = (+params.nDsp || 0) + 1;
+  var areRost = comp > 1 && (+params.nUsi || 0) > 0;
+  box.classList.toggle('hidden', !areRost);
+  if (!areRost) return;
+
+  var alese = window.PalCalc.compartimenteAlese(params.compUsi, comp);
+  var html = '';
+  for (var i = 0; i < comp; i++) {
+    html += '<label class="check"><input type="checkbox" data-comp="' + i + '"' +
+            (alese.indexOf(i) !== -1 ? ' checked' : '') + '> ' + (i + 1) + '</label>';
+  }
+  lista.innerHTML = html;
+}
+
+function citesteCompUsi() {
+  var comp = (+params.nDsp || 0) + 1;
+  var bifate = [];
+  document.querySelectorAll('#compUsiLista input[data-comp]').forEach(function (cb) {
+    if (cb.checked) bifate.push(+cb.dataset.comp + 1);
+  });
+  /* Toate bifate, sau niciuna, înseamnă același lucru: „nu alege nimic".
+     Fără asta, debifarea ultimului compartiment ar lăsa corpul fără uși
+     dintr-o bifă, în loc să scrie 0 la numărul lor. */
+  params.compUsi = (!bifate.length || bifate.length === comp) ? '' : bifate.join(',');
+}
+
 /* ce câmpuri are sens să vadă utilizatorul, în funcție de tipul corpului */
 function aplicaTip() {
   var tip = params.tip || 'drept';
@@ -300,6 +334,8 @@ function render() {
     $(f).value = (ZERO_E_GOL.indexOf(f) !== -1 && (v === 0 || v === '0')) ? '' : v;
   });
   aplicaTip();
+
+  randeazaCompUsi();
 
   var res = window.PalCalc.calc(params, T);
   lastRes = res;
@@ -696,6 +732,13 @@ $('form').addEventListener('input', function (e) {
   params[f] = e.target.type === 'number'
     ? (e.target.value === '' ? '' : +e.target.value)
     : e.target.value;
+  render();
+  scheduleSave();
+});
+
+$('compUsiLista').addEventListener('change', function (e) {
+  if (!e.target.dataset.comp) return;
+  citesteCompUsi();
   render();
   scheduleSave();
 });

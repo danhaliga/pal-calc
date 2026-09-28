@@ -627,7 +627,9 @@
     "usiPesteMontant": "{usi} portas em {comp} compartimentos: uma porta ficaria sobre um montante. Use um múltiplo de {comp}.",
     "sertareCuMontant": "As gavetas não são divididas por compartimentos: continuam calculadas em toda a largura do módulo.",
     "usiPesteInaltime": "Pediram-se portas de {cerut} mm, mas só cabem {incape} mm: fizeram-se de altura total.",
-    "usiJosFaraPolita": "Portas só em baixo e sem nenhuma prateleira: ponha pelo menos uma, senão a porta não tem contra o que fechar em cima."
+    "usiJosFaraPolita": "Portas só em baixo e sem nenhuma prateleira: ponha pelo menos uma, senão a porta não tem contra o que fechar em cima.",
+    "usiPeCompartimenteFaraMontant": "Escolheu compartimentos para as portas, mas o móvel não tem nenhuma divisória: as portas foram feitas a toda a largura.",
+    "usaPreaIngusta": "O compartimento {comp} não tem espaço para tantas portas: ali não saiu nenhuma."
   },
   "csv": {
     "corp": "Módulo",
@@ -1115,7 +1117,8 @@
     "legMontanti": "Compartimentação",
     "inaltimeUsi": "Altura das portas",
     "notaInaltimeUsi": "vazio = portas em toda a altura; um valor = portas só em baixo, como numa estante",
-    "hUsiToata": "toda a altura"
+    "hUsiToata": "toda a altura",
+    "usiPeCompartimente": "Portas nos compartimentos"
   },
   "fata": {
     "px": "direita",

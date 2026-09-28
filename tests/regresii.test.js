@@ -939,3 +939,101 @@ test('înălțimea ușilor stă lângă numărul lor, nu la coada rosturilor', (
   assert.ok(poz('hUsi') < poz('rm'),
     'înălțimea ușilor a fost împinsă iar după rosturi, unde n-o găsește nimeni');
 });
+
+/* =====================================================================
+   15. Uși doar pe compartimentele alese (stânga / dreapta)
+
+   Ușile se întindeau mereu pe toată lățimea. Un corp cu montant și ușă doar
+   pe stânga — dreapta deschisă — nu se putea calcula.
+   ===================================================================== */
+
+const { compartimenteAlese } = require('../shared/calc');
+
+const cuMontant = over => Object.assign(defaults(),
+  { W: 1600, H: 800, D: 560, nDsp: 1, nUsi: 2, nPol: 1 }, over);
+
+const usileDin = r => r.P.filter(p => /Ușă/.test(p.nume));
+const xUsi = r => usileDin(r).flatMap(u => u.boxes.map(b => Math.round(b.x))).sort((a, b) => a - b);
+
+test('lista de compartimente se citește cum o scrie omul', () => {
+  assert.deepEqual(compartimenteAlese('', 3), [0, 1, 2], 'gol înseamnă toate');
+  assert.deepEqual(compartimenteAlese('1', 2), [0], 'omul numără de la 1');
+  assert.deepEqual(compartimenteAlese('1,3', 3), [0, 2]);
+  assert.deepEqual(compartimenteAlese('3,1', 3), [0, 2], 'ordinea se așază singură');
+  assert.deepEqual(compartimenteAlese('1,1,2', 3), [0, 1], 'fără duplicate');
+});
+
+test('ce nu se poate citi înseamnă tot „toate", nu „niciunul"', () => {
+  /* Un corp fără nicio ușă din cauza unei liste stricate ar fi o pagubă
+     tăcută: omul vede lista de piese și nu înțelege de ce lipsesc ușile. */
+  /* „-1" lipsește înadins din listă: din el se citește cifra 1, deci
+     înseamnă compartimentul întâi. Citirea e îngăduitoare cu ce nu-i cifră. */
+  ['', '   ', 'stanga', '0', '9', null, undefined].forEach(spec => {
+    assert.deepEqual(compartimenteAlese(spec, 2), [0, 1], `„${spec}" a golit lista`);
+  });
+});
+
+/* Pozițiile se compară cu cele ale corpului cu ușă pe amândouă, nu cu
+   numere scrise de mână: geometria se mai mișcă, iar întrebarea e „a rămas
+   ușa unde era", nu „e la milimetrul ăsta". */
+const CORP_REPER = calc(cuMontant({ compUsi: '' }));
+const X_STANGA = xUsi(CORP_REPER)[0];
+const X_DREAPTA = xUsi(CORP_REPER)[1];
+
+test('fără alegere, ușile rămân pe toată lățimea, ca înainte', () => {
+  assert.equal(usileDin(CORP_REPER).reduce((n, u) => n + u.buc, 0), 2);
+  assert.ok(X_DREAPTA > X_STANGA, 'a doua ușă n-a ajuns la dreapta');
+});
+
+test('ușa se pune doar pe compartimentul ales', () => {
+  const st = calc(cuMontant({ compUsi: '1', nUsi: 1 }));
+  assert.deepEqual(xUsi(st), [X_STANGA], 'ușa n-a rămas pe stânga');
+
+  const dr = calc(cuMontant({ compUsi: '2', nUsi: 1 }));
+  assert.deepEqual(xUsi(dr), [X_DREAPTA], 'ușa n-a trecut pe dreapta');
+});
+
+test('ușa unui compartiment acoperă jumătate de montant, nu tot', () => {
+  /* Altfel două uși vecine s-ar bate cap în cap pe montant. */
+  const r = calc(cuMontant({ compUsi: '', nUsi: 2 }));
+  const u = usileDin(r)[0];
+  const b = u.boxes;
+  const rost = b[1].x - (b[0].x + u.l);
+  assert.ok(Math.abs(rost - 3) < 0.51, `rostul dintre uși a ieșit ${rost}, nu 3`);
+});
+
+test('compartimentele de la capete dau uși ceva mai late decât cele din mijloc', () => {
+  /* La capăt canatul acoperă toată latura; la mijloc doar jumătate de
+     montant. Lista de piese trebuie să arate două rânduri, nu unul greșit. */
+  const r = calc(cuMontant({ W: 2000, nDsp: 2, nUsi: 3, compUsi: '' }));
+  const latimi = usileDin(r).map(u => u.l);
+  assert.equal(latimi.length, 2, `am așteptat două lățimi, am primit ${latimi.length}`);
+  assert.ok(Math.max(...latimi) > Math.min(...latimi));
+  assert.equal(usileDin(r).reduce((n, u) => n + u.buc, 0), 3, 's-a pierdut o ușă');
+});
+
+test('ușile se împart între compartimentele alese, fără să se piardă vreuna', () => {
+  const r = calc(cuMontant({ W: 2000, nDsp: 2, nUsi: 4, compUsi: '1,3' }));
+  assert.equal(usileDin(r).reduce((n, u) => n + u.buc, 0), 4);
+});
+
+test('alegerea fără montant se spune, și nu strică nimic', () => {
+  const r = calc(cuMontant({ nDsp: 0, compUsi: '1', nUsi: 2 }));
+  assert.equal(usileDin(r).reduce((n, u) => n + u.buc, 0), 2, 'ușile au dispărut');
+  assert.ok(r.warn.length, 'nu se spune că alegerea n-a avut efect');
+});
+
+test('editorul arată bife, nu un câmp în care se scrie lista', () => {
+  /* Numerele compartimentelor se schimbă la fiecare montant adăugat; o
+     listă scrisă de mână rămâne în urmă fără ca nimeni să observe. */
+  assert.match(EDIT_UI, /id="compUsiLista"/, 'nu mai există locul bifelor');
+  assert.ok(!/name="compUsi"|id="compUsi"[^L]/.test(EDIT_UI),
+    'a apărut un câmp de scris pentru lista de compartimente');
+  assert.match(SURSA_APP, /function randeazaCompUsi\(/);
+  assert.match(SURSA_APP, /function citesteCompUsi\(/);
+});
+
+test('toate bifate înseamnă același lucru cu niciuna: „nu alege nimic"', () => {
+  assert.match(SURSA_APP, /\(!bifate\.length \|\| bifate\.length === comp\) \? '' :/,
+    'debifarea ultimului compartiment ar lăsa corpul fără uși dintr-o bifă');
+});

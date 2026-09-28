@@ -627,7 +627,9 @@
     "usiPesteMontant": "{usi} pintu pada {comp} ruang: satu pintu akan jatuh di atas sekat. Pakai kelipatan {comp}.",
     "sertareCuMontant": "Laci tidak dibagi per ruang: tetap dihitung pada lebar penuh boks.",
     "usiPesteInaltime": "Diminta pintu {cerut} mm, tapi hanya muat {incape} mm: dibuat setinggi kabinet.",
-    "usiJosFaraPolita": "Pintu hanya di bawah, tanpa satu rak pun: pasang setidaknya satu, kalau tidak pintu tak punya tumpuan di atas."
+    "usiJosFaraPolita": "Pintu hanya di bawah, tanpa satu rak pun: pasang setidaknya satu, kalau tidak pintu tak punya tumpuan di atas.",
+    "usiPeCompartimenteFaraMontant": "Kamu memilih sekat untuk pintunya, tapi kabinet tidak punya sekat sama sekali: pintu dibuat selebar kabinet.",
+    "usaPreaIngusta": "Ruang {comp} tidak muat sebanyak itu pintu: di sana tidak ada satu pun yang jadi."
   },
   "csv": {
     "corp": "Boks",
@@ -1115,7 +1117,8 @@
     "legMontanti": "Pembagian",
     "inaltimeUsi": "Tinggi pintu",
     "notaInaltimeUsi": "kosong = pintu setinggi kabinet; ada nilai = pintu hanya di bawah, seperti rak buku",
-    "hUsiToata": "setinggi kabinet"
+    "hUsiToata": "setinggi kabinet",
+    "usiPeCompartimente": "Pintu pada sekat"
   },
   "fata": {
     "px": "kanan",

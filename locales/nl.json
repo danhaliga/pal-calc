@@ -627,7 +627,9 @@
     "usiPesteMontant": "{usi} deuren op {comp} vakken: een deur zou op een middenwand vallen. Neem een veelvoud van {comp}.",
     "sertareCuMontant": "Laden worden niet over de vakken verdeeld: ze worden nog over de volle kastbreedte gerekend.",
     "usiPesteInaltime": "Deuren van {cerut} mm gevraagd, maar er passen maar {incape} mm: ze zijn op volle hoogte gemaakt.",
-    "usiJosFaraPolita": "Deuren alleen onderin, zonder enige legplank: zet er minstens één in, anders heeft de deur bovenaan niets om tegenaan te sluiten."
+    "usiJosFaraPolita": "Deuren alleen onderin, zonder enige legplank: zet er minstens één in, anders heeft de deur bovenaan niets om tegenaan te sluiten.",
+    "usiPeCompartimenteFaraMontant": "Je koos vakken voor de deuren, maar de kast heeft geen tussenschot: de deuren zijn over de volle breedte gemaakt.",
+    "usaPreaIngusta": "In vak {comp} is geen plaats voor zoveel deuren: daar is er geen enkele uitgekomen."
   },
   "csv": {
     "corp": "Kast",
@@ -1115,7 +1117,8 @@
     "legMontanti": "Indeling",
     "inaltimeUsi": "Deurhoogte",
     "notaInaltimeUsi": "leeg = deuren over de volle hoogte; een waarde = deuren alleen onderin, zoals bij een boekenkast",
-    "hUsiToata": "de volle hoogte"
+    "hUsiToata": "de volle hoogte",
+    "usiPeCompartimente": "Deuren op de vakken"
   },
   "fata": {
     "px": "rechts",

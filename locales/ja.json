@@ -627,7 +627,9 @@
     "usiPesteMontant": "{comp} 区画に扉 {usi} 枚：扉が中仕切りの上に乗ります。{comp} の倍数にしてください。",
     "sertareCuMontant": "引き出しは区画で分かれません。今までどおり本体の全幅で計算されます。",
     "usiPesteInaltime": "{cerut} mm の扉を指定しましたが、入るのは {incape} mm までです。全高で作りました。",
-    "usiJosFaraPolita": "下側だけの扉で棚板が一枚もありません。最低一枚入れてください。上で扉が当たるところがなくなります。"
+    "usiJosFaraPolita": "下側だけの扉で棚板が一枚もありません。最低一枚入れてください。上で扉が当たるところがなくなります。",
+    "usiPeCompartimenteFaraMontant": "扉を付ける区画を選びましたが、箱に仕切りがありません。扉は全幅で作りました。",
+    "usaPreaIngusta": "区画 {comp} にはその数の扉が入りません。そこには一枚もできませんでした。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -1115,7 +1117,8 @@
     "legMontanti": "仕切り",
     "inaltimeUsi": "扉の高さ",
     "notaInaltimeUsi": "空欄＝全高の扉。数値を入れると下側だけの扉になります（本棚のように）",
-    "hUsiToata": "全高"
+    "hUsiToata": "全高",
+    "usiPeCompartimente": "扉を付ける区画"
   },
   "fata": {
     "px": "右",

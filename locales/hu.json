@@ -627,7 +627,9 @@
     "usiPesteMontant": "{usi} ajtó {comp} rekeszre: az egyik ajtó egy közfalra esne. Végy {comp} többszörösét.",
     "sertareCuMontant": "A fiókok nem oszlanak rekeszekre: továbbra is a teljes korpuszszélességre számolódnak.",
     "usiPesteInaltime": "{cerut} mm-es ajtót kértél, de csak {incape} mm fér el: teljes magasságban készült.",
-    "usiJosFaraPolita": "Ajtó csak alul, polc nélkül: tegyél be legalább egyet, különben az ajtónak nincs mihez zárnia felül."
+    "usiJosFaraPolita": "Ajtó csak alul, polc nélkül: tegyél be legalább egyet, különben az ajtónak nincs mihez zárnia felül.",
+    "usiPeCompartimenteFaraMontant": "Rekeszeket választottál az ajtóknak, de a korpuszban nincs közfal: az ajtók a teljes szélességre készültek.",
+    "usaPreaIngusta": "A(z) {comp}. rekeszbe nem fér ennyi ajtó: ott egy sem lett."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1115,7 +1117,8 @@
     "legMontanti": "Osztás",
     "inaltimeUsi": "Ajtómagasság",
     "notaInaltimeUsi": "üres = ajtók a teljes magasságban; érték = ajtók csak alul, mint a könyvespolcnál",
-    "hUsiToata": "a teljes magasság"
+    "hUsiToata": "a teljes magasság",
+    "usiPeCompartimente": "Ajtók a rekeszeken"
   },
   "fata": {
     "px": "jobb",

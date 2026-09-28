@@ -633,7 +633,9 @@
     "usiPesteMontant": "{usi} drzwi na {comp} komory: jedne drzwi wypadłyby na przegrodę. Weź wielokrotność {comp}.",
     "sertareCuMontant": "Szuflady nie dzielą się na komory: nadal liczy się je na całą szerokość korpusu.",
     "usiPesteInaltime": "Zamówiono drzwi {cerut} mm, a mieści się tylko {incape} mm: zrobiono je na całą wysokość.",
-    "usiJosFaraPolita": "Drzwi tylko na dole, bez żadnej półki: wstaw co najmniej jedną, inaczej drzwi nie mają o co się domknąć u góry."
+    "usiJosFaraPolita": "Drzwi tylko na dole, bez żadnej półki: wstaw co najmniej jedną, inaczej drzwi nie mają o co się domknąć u góry.",
+    "usiPeCompartimenteFaraMontant": "Wybrałeś przegrody dla drzwi, ale korpus nie ma żadnej przegrody: drzwi zrobiono na całą szerokość.",
+    "usaPreaIngusta": "W komorze {comp} nie ma miejsca na tyle drzwi: żadne tam nie wyszły."
   },
   "csv": {
     "corp": "Korpus",
@@ -1126,7 +1128,8 @@
     "legMontanti": "Podział",
     "inaltimeUsi": "Wysokość drzwi",
     "notaInaltimeUsi": "puste = drzwi na całą wysokość; wartość = drzwi tylko na dole, jak w regale",
-    "hUsiToata": "cała wysokość"
+    "hUsiToata": "cała wysokość",
+    "usiPeCompartimente": "Drzwi na przegrodach"
   },
   "fata": {
     "px": "prawo",

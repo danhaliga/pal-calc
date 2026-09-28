@@ -64,11 +64,30 @@
       nume: traducator(tr)('modele.corpImplicit'), W: 800, H: 720, D: 560, constr: 'intre',
       tip: 'drept', W2: 900, orb: 550, contur: [],
       t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 2.5,
-      nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: '',
+      nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: '', compUsi: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
       pragCant: PRAG_CANT, rezervaCant: REZERVA_CANT
     };
+  }
+
+  /* Care compartimente primesc usi. Omul numara de la 1; gol sau nimic
+     valid inseamna toate, adica felul de pana acum. */
+  function compartimenteAlese(spec, total) {
+    var toate = [];
+    for (var i = 0; i < total; i++) toate.push(i);
+
+    var s = String(spec == null ? '' : spec).trim();
+    if (!s) return toate;
+
+    var alese = s.split(/[^0-9]+/)
+      .filter(function (x) { return x !== ''; })
+      .map(function (x) { return parseInt(x, 10) - 1; })
+      .filter(function (i) { return i >= 0 && i < total; });
+
+    alese = alese.filter(function (v, i, a) { return a.indexOf(v) === i; })
+                 .sort(function (a, b) { return a - b; });
+    return alese.length ? alese : toate;
   }
 
   /* tipurile de corp pe care le stie calculul */
@@ -430,6 +449,13 @@
     if (orb > 0 && fL <= 0) {
       avert('zonaOarbaPreaMare', { orb: fmt(orb) });
     }
+    /* Geometria compartimentelor stă aici, înaintea ușilor, fiindcă și ușile
+       au nevoie de ea: se pot pune pe compartimente alese, nu doar pe toată
+       lățimea. Montanții și polițele o folosesc mai jos. */
+    var compartimente = nDsp + 1;
+    var Wcomp = (Wint - nDsp * t) / compartimente;             /* lățimea unui compartiment */
+    var xComp = function (i) { return t + i * (Wcomp + t); };  /* unde începe compartimentul i */
+
     var FD = F({ pz: 'f', nz: 'f', px: 'g', nx: 'g', py: 'g', ny: 'g' });
     var usedTop = nSer > 0 ? nSer * (+c.hFront) + nSer * ri : 0;
 
@@ -444,7 +470,6 @@
 
     if (nUsi > 0) {
       var uH = usiPartiale ? hUsiCerut : uHplin;
-      var uL = (fL - (nUsi - 1) * ri) / nUsi;
       if (hUsiCerut > uHplin) avert('usiPesteInaltime', { cerut: fmt(hUsiCerut), incape: fmt(uHplin) });
       if (usiPartiale) {
         /* La ușă aplicată, canatul acoperă muchia poliței de sus; la una
@@ -454,19 +479,76 @@
       if (uH <= 0) {
         avert('fronturiSertarPreaInalte');
       } else {
-        var boxesU = [];
-        for (var i = 0; i < nUsi; i++) {
-          boxesU.push(bx(xoff + i * (uL + ri), yBot, zF, uL, uH, t, FD, [0, 0, 1.6], 'fronturi'));
+        /* Pe ce compartimente stau usile. Gol inseamna toate, adica felul de
+           pana acum. Cu montant, se pot alege: stanga cu usa, dreapta
+           deschisa. */
+        var compCuUsi = compartimenteAlese(c.compUsi, compartimente);
+        var alese = compCuUsi.length;
+        if (String(c.compUsi || '').trim() && compartimente === 1) {
+          avert('usiPeCompartimenteFaraMontant');
         }
-        add('usa', null, nUsi, uH, uL, 'g', 'g', 'g', 'g', 'LV',
-          orb > 0
-            ? ['balamaleUsaOrb', { n: balamale(uH), cot: c.balama, orb: fmt(orb) }]
-            : ['balamaleUsa', { n: balamale(uH), cot: c.balama }], boxesU);
-        usi.push({ L: uL, H: uH });
-        if (uL > 600) avert('usaLata');
-        if (uH > 2000) avert('usaInalta');
-        if (apl && c.balama !== '0' && nUsi === 1) avert('balamaCot0');
-        if (!apl && c.balama !== '18') avert('balamaCot18');
+        if (nUsi % alese !== 0) avert('usiPesteMontant', { usi: nUsi, comp: alese });
+
+        /* Zona pe care o prinde usa unui compartiment, in cotele corpului.
+           La usa aplicata canatul acopera jumatate de montant, ca doua usi
+           vecine sa-l imparta, si toata latura la capete. La cea incastrata
+           sta in gol, cu rostul lui. */
+        var zonaUsa = function (idx) {
+          var st, dr;
+          if (apl) {
+            /* Pe montant, canatul se opreste la jumatatea lui, ca vecinul
+               sa-l imparta — minus jumatate de rost de fiecare parte, altfel
+               cele doua usi se ating si nu se mai pot deschide. */
+            st = idx === 0 ? rm : xComp(idx) - t / 2 + ri / 2;
+            dr = idx === compartimente - 1 ? W - rm : xComp(idx) + Wcomp + t / 2 - ri / 2;
+          } else {
+            st = xComp(idx) + rinc;
+            dr = xComp(idx) + Wcomp - rinc;
+          }
+          /* la coltul orb, ultimul compartiment ramane acoperit de vecin */
+          if (idx === compartimente - 1) dr -= orb;
+          return { st: st, lat: dr - st };
+        };
+
+        /* Usile se impart intre compartimentele alese; ce ramane se pune in
+           primele, nu se pierde. */
+        var perComp = [], baza = Math.floor(nUsi / alese), rest = nUsi % alese;
+        for (var q = 0; q < alese; q++) perComp.push(baza + (q < rest ? 1 : 0));
+
+        /* Compartimentele de la capete ies putin mai late decat cele din
+           mijloc, fiindca acolo canatul acopera toata latura, nu jumatate de
+           montant. Usile se grupeaza dupa latime, ca in lista de piese sa nu
+           apara doua randuri identice. */
+        var grupe = {}, ordine = [];
+        compCuUsi.forEach(function (idx, k) {
+          var n = perComp[k];
+          if (!n) return;
+          var z = zonaUsa(idx);
+          var lat = (z.lat - (n - 1) * ri) / n;
+          if (lat <= 0) { avert('usaPreaIngusta', { comp: idx + 1 }); return; }
+          var cheie = String(r1(lat));
+          if (!grupe[cheie]) { grupe[cheie] = { lat: lat, boxes: [] }; ordine.push(cheie); }
+          for (var d = 0; d < n; d++) {
+            grupe[cheie].boxes.push(bx(z.st + d * (lat + ri), yBot, zF, lat, uH, t,
+              FD, [0, 0, 1.6], 'fronturi'));
+          }
+        });
+
+        ordine.forEach(function (cheie) {
+          var g = grupe[cheie];
+          add('usa', null, g.boxes.length, uH, g.lat, 'g', 'g', 'g', 'g', 'LV',
+            orb > 0
+              ? ['balamaleUsaOrb', { n: balamale(uH), cot: c.balama, orb: fmt(orb) }]
+              : ['balamaleUsa', { n: balamale(uH), cot: c.balama }], g.boxes);
+          usi.push({ L: g.lat, H: uH });
+          if (g.lat > 600) avert('usaLata');
+        });
+
+        if (usi.length) {
+          if (uH > 2000) avert('usaInalta');
+          if (apl && c.balama !== '0' && nUsi === 1) avert('balamaCot0');
+          if (!apl && c.balama !== '18') avert('balamaCot18');
+        }
       }
     }
 
@@ -508,10 +590,6 @@
        Se prind de blat și de fund exact ca lateralele: aceleași dibluri în
        cant la capete și aceleași excentrice. Împart interiorul în nDsp + 1
        compartimente egale, iar polițele se fac pe compartiment. */
-    var compartimente = nDsp + 1;
-    var Wcomp = (Wint - nDsp * t) / compartimente;             /* lățimea unui compartiment */
-    var xComp = function (i) { return t + i * (Wcomp + t); };  /* unde începe compartimentul i */
-
     if (nDsp > 0) {
       var boxesD = [];
       for (var d = 1; d <= nDsp; d++) {
@@ -522,9 +600,6 @@
       add('montant', null, nDsp, Hint, Dp, 'g', '-', '-', '-', 'LV', null, boxesD);
 
       if (Wcomp < 100) avert('compartimentIngust', { lat: fmt(Wcomp) });
-      if (nUsi > 0 && nUsi % compartimente !== 0) {
-        avert('usiPesteMontant', { usi: nUsi, comp: compartimente });
-      }
       if (nSer > 0) avert('sertareCuMontant');
     }
 
@@ -620,6 +695,9 @@
            trebuie să arate indiciul „toată înălțimea", iar un „0" scris
            acolo nu spune asta nimănui. Ca la lungimea glisierei. */
         hUsi: z.union([z.literal(''), z.coerce.number().min(0).max(3000)]).catch(''),
+        /* Compartimentele cu usi, numerotate de la stanga: „1", „1,3". Gol
+           inseamna toate. Text, nu numar: e o lista, nu o cota. */
+        compUsi: z.string().trim().max(40).catch(''),
         montaj: z.enum(['aplicat', 'incastrat']),
         balama: z.preprocess(function (v) { return String(v); }, z.enum(['0', '9', '18'])),
         rm: mm(0, 50), ri: mm(0, 50), rinc: mm(0, 50),
@@ -651,6 +729,7 @@
     conturGeometrie: conturGeometrie,
     conturImplicit: conturImplicit,
     reducereCant: reducereCant,
+    compartimenteAlese: compartimenteAlese,
     TIPURI: TIPURI,
     paramsSchema: paramsSchema,
     NUT_OFF: NUT_OFF,

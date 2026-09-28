@@ -627,7 +627,9 @@
     "usiPesteMontant": "{comp} 个隔间配 {usi} 扇门：有一扇门会压在中隔板上。取 {comp} 的倍数。",
     "sertareCuMontant": "抽屉不按隔间分：仍然按柜体的整个宽度算。",
     "usiPesteInaltime": "要的门板 {cerut} mm，但只放得下 {incape} mm，已按通高做。",
-    "usiJosFaraPolita": "只在下面装门却一块层板也没有：至少放一块，否则门板上沿没有可合的地方。"
+    "usiJosFaraPolita": "只在下面装门却一块层板也没有：至少放一块，否则门板上沿没有可合的地方。",
+    "usiPeCompartimenteFaraMontant": "你选了装门的格，但柜体没有中隔：门按整宽做了。",
+    "usaPreaIngusta": "第 {comp} 格放不下这么多门：那里一扇也没做出来。"
   },
   "csv": {
     "corp": "柜体",
@@ -1115,7 +1117,8 @@
     "legMontanti": "分隔",
     "inaltimeUsi": "门板高度",
     "notaInaltimeUsi": "留空＝通高门板；填数值＝只在下部装门，像书柜那样",
-    "hUsiToata": "通高"
+    "hUsiToata": "通高",
+    "usiPeCompartimente": "装门的格"
   },
   "fata": {
     "px": "右",

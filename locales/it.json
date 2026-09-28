@@ -627,7 +627,9 @@
     "usiPesteMontant": "{usi} ante su {comp} scomparti: un’anta cadrebbe su un montante. Metti un multiplo di {comp}.",
     "sertareCuMontant": "I cassetti non si dividono per scomparto: restano calcolati su tutta la larghezza del mobile.",
     "usiPesteInaltime": "Chieste ante da {cerut} mm, ma ci stanno solo {incape} mm: sono state fatte a tutta altezza.",
-    "usiJosFaraPolita": "Ante solo in basso e nessun ripiano: mettine almeno uno, altrimenti l’anta non ha su cosa chiudere in alto."
+    "usiJosFaraPolita": "Ante solo in basso e nessun ripiano: mettine almeno uno, altrimenti l’anta non ha su cosa chiudere in alto.",
+    "usiPeCompartimenteFaraMontant": "Hai scelto dei vani per le ante, ma il mobile non ha nessun montante: le ante sono state fatte su tutta la larghezza.",
+    "usaPreaIngusta": "Il vano {comp} non ha spazio per tante ante: lì non ne è uscita nessuna."
   },
   "csv": {
     "corp": "Mobile",
@@ -1115,7 +1117,8 @@
     "legMontanti": "Scomparti",
     "inaltimeUsi": "Altezza ante",
     "notaInaltimeUsi": "vuoto = ante su tutta l’altezza; un valore = ante solo in basso, come in una libreria",
-    "hUsiToata": "tutta l’altezza"
+    "hUsiToata": "tutta l’altezza",
+    "usiPeCompartimente": "Ante sui vani"
   },
   "fata": {
     "px": "destra",
