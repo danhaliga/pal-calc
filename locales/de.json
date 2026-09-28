@@ -1300,5 +1300,31 @@
     "email": "E-Mail",
     "dinCand": "Konto seit",
     "notaEmail": "Die E-Mail wird hier nicht geändert. Schreib uns über das Nachrichtenfeld, wenn sie geändert werden muss."
+  },
+  "stat": {
+    "titlu": "Was gebaut wird, nach Ländern",
+    "intro": "Die Konstanten in dieser Anwendung sind in einer echten Werkstatt gemessen, nicht aus Büchern genommen. Für andere Länder haben wir keine Messungen — hier wird gezählt, was die Leute tatsächlich bauen, aus den Korpussen, die sie gespeichert haben.",
+    "faraTara": "Nicht angegeben",
+    "goalaTitlu": "Es wurde noch kein Korpus gespeichert.",
+    "goalaText": "Die Messung beginnt beim ersten. Niemand wird etwas gefragt — die Konstanten kommen mit dem Korpus.",
+    "grilaTitlu": "Auf welchem Raster zugeschnitten wird",
+    "peGrilaMm": "rund in Millimetern",
+    "peGrilaToli": "rund in Zoll",
+    "coteMasurate": "gezählte Maße",
+    "verdict": "Hier wird in {unitate} gearbeitet. Gemessen, nicht angenommen.",
+    "preaPutine": "Zu wenige Maße, um etwas zu sagen. Sie sammeln sich von selbst, während Korpusse gespeichert werden.",
+    "neclar": "Die Zahlen sagen weder das eine noch das andere klar. Lieber nichts als eine erfundene Antwort.",
+    "coteTitlu": "Korpusmaße",
+    "coteNota": "Diese tippt der Mensch jedes Mal selbst, sie sind also echter Beleg. Gezählt werden Werkstätten, nicht Korpusse: eine Werkstatt mit vierzig Korpussen à 800 ist ein Mensch, keine Landesgewohnheit.",
+    "colValoare": "Wert",
+    "colAteliere": "Werkstätten",
+    "constanteTitlu": "Werkstatt-Konstanten",
+    "constanteAvertisment": "Ein Wert, der so gelassen wurde, wie er kam, ist keine Messung — das ist unser eigener Vorgabewert, zurückgelesen. Nur die Spalte „anders\" sagt etwas.",
+    "colConstanta": "Konstante",
+    "colImplicit": "Vorgabe",
+    "colCelMaiDes": "Am häufigsten",
+    "colAltfel": "Anders",
+    "unitatiTitlu": "Welche Einheit sie gewählt haben",
+    "unitatiNota": "Etwas anderes als das Raster: das Raster sagt, worin zugeschnitten wird, dies sagt, was im Konto gewählt wurde."
   }
 }

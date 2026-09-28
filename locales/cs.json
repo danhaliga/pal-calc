@@ -1311,5 +1311,31 @@
     "email": "E-mail",
     "dinCand": "Účet od",
     "notaEmail": "E-mail se odsud nemění. Napiš nám přes okno zpráv, pokud se má změnit."
+  },
+  "stat": {
+    "titlu": "Co se dělá, podle zemí",
+    "intro": "Konstanty v aplikaci jsou změřené ve skutečné dílně, ne vzaté z knih. Pro jiné země žádná měření nemáme — tady se počítá, co lidé opravdu dělají, z korpusů, které si uložili.",
+    "faraTara": "Neuvedli",
+    "goalaTitlu": "Zatím nebyl uložen žádný korpus.",
+    "goalaText": "Měření začíná prvním. Nikdo se na nic neptá — konstanty přijdou spolu s korpusem.",
+    "grilaTitlu": "Na jaké mřížce řežou",
+    "peGrilaMm": "kulaté v milimetrech",
+    "peGrilaToli": "kulaté v palcích",
+    "coteMasurate": "spočítaných rozměrů",
+    "verdict": "Tady se pracuje v {unitate}. Je to změřené, ne předpokládané.",
+    "preaPutine": "Příliš málo rozměrů, aby se dalo něco říct. Nasčítají se samy, jak se ukládají korpusy.",
+    "neclar": "Čísla neříkají jasně ani jedno, ani druhé. Lepší nic než vymyšlená odpověď.",
+    "coteTitlu": "Rozměry korpusů",
+    "coteNota": "Ty píše člověk pokaždé sám, jsou to tedy skutečné doklady. Počítají se dílny, ne korpusy: dílna se čtyřiceti korpusy po 800 je jeden člověk, ne zvyk země.",
+    "colValoare": "Hodnota",
+    "colAteliere": "Dílny",
+    "constanteTitlu": "Konstanty dílny",
+    "constanteAvertisment": "Hodnota ponechaná tak, jak přišla, není měření — je to naše vlastní výchozí hodnota přečtená zpátky. Něco říká jen sloupec „jinak\".",
+    "colConstanta": "Konstanta",
+    "colImplicit": "Výchozí",
+    "colCelMaiDes": "Nejčastěji",
+    "colAltfel": "Jinak",
+    "unitatiTitlu": "Jakou jednotku si zvolili",
+    "unitatiNota": "Něco jiného než mřížka: mřížka říká, v čem řežou, tohle, co si zvolili v účtu."
   }
 }

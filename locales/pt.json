@@ -1300,5 +1300,31 @@
     "email": "E-mail",
     "dinCand": "Conta desde",
     "notaEmail": "O e-mail não se muda daqui. Escreva-nos pela caixa de mensagens se for preciso mudá-lo."
+  },
+  "stat": {
+    "titlu": "O que se fabrica, por país",
+    "intro": "As constantes da aplicação são medidas numa oficina real, não tiradas de livros. Para outros países não temos medições — aqui conta-se o que as pessoas fabricam de facto, a partir dos móveis que já guardaram.",
+    "faraTara": "Não disseram",
+    "goalaTitlu": "Ainda não foi guardado nenhum móvel.",
+    "goalaText": "A medição começa no primeiro. Não se pergunta nada a ninguém — as constantes vêm com o móvel.",
+    "grilaTitlu": "Em que grelha cortam",
+    "peGrilaMm": "redondas em milímetros",
+    "peGrilaToli": "redondas em polegadas",
+    "coteMasurate": "medidas contadas",
+    "verdict": "Aqui trabalha-se em {unitate}. É medido, não suposto.",
+    "preaPutine": "Medidas a menos para dizer o que quer que seja. Vão-se juntando à medida que se guardam móveis.",
+    "neclar": "Os números não dizem claramente nem uma coisa nem outra. Antes nada do que uma resposta inventada.",
+    "coteTitlu": "Medidas dos móveis",
+    "coteNota": "Estas são escritas à mão de cada vez, por isso são prova verdadeira. Contam-se oficinas, não móveis: uma oficina com quarenta móveis de 800 é uma pessoa, não um hábito de país.",
+    "colValoare": "Valor",
+    "colAteliere": "Oficinas",
+    "constanteTitlu": "Constantes da oficina",
+    "constanteAvertisment": "Um valor deixado como veio não é uma medição — é o nosso próprio valor por omissão lido de volta. Só a coluna «outro» diz alguma coisa.",
+    "colConstanta": "Constante",
+    "colImplicit": "Por omissão",
+    "colCelMaiDes": "Mais usado",
+    "colAltfel": "Outro",
+    "unitatiTitlu": "Que unidade escolheram",
+    "unitatiNota": "Diferente da grelha: a grelha diz o que cortam, isto diz o que escolheram na conta."
   }
 }

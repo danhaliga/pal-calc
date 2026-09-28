@@ -1300,5 +1300,31 @@
     "email": "E-mail",
     "dinCand": "Fiók ettől",
     "notaEmail": "Az e-mail innen nem módosítható. Írj nekünk az üzenetmezőből, ha meg kell változtatni."
+  },
+  "stat": {
+    "titlu": "Mit készítenek, országonként",
+    "intro": "Az alkalmazás állandói egy valódi műhelyben mértek, nem könyvekből származnak. Más országokról nincsenek méréseink — itt az számít, amit az emberek valóban készítenek, az általuk elmentett korpuszokból.",
+    "faraTara": "Nem mondták meg",
+    "goalaTitlu": "Még egyetlen korpuszt sem mentettek el.",
+    "goalaText": "A mérés az elsővel kezdődik. Senkit nem kérdezünk semmiről — az állandók a korpusszal együtt érkeznek.",
+    "grilaTitlu": "Milyen rácson szabnak",
+    "peGrilaMm": "kerek milliméterben",
+    "peGrilaToli": "kerek hüvelykben",
+    "coteMasurate": "megszámolt méret",
+    "verdict": "Itt {unitate} szerint dolgoznak. Ez mért adat, nem feltételezés.",
+    "preaPutine": "Túl kevés méret ahhoz, hogy bármit mondjunk. Maguktól gyűlnek, ahogy korpuszokat mentenek.",
+    "neclar": "A számok egyiket sem mondják egyértelműen. Jobb a semmi, mint egy kitalált válasz.",
+    "coteTitlu": "Korpuszméretek",
+    "coteNota": "Ezeket az ember minden alkalommal maga írja be, tehát valódi bizonyíték. Műhelyeket számolunk, nem korpuszokat: egy műhely negyven darab 800-as korpusszal egy ember, nem országos szokás.",
+    "colValoare": "Érték",
+    "colAteliere": "Műhelyek",
+    "constanteTitlu": "A műhely állandói",
+    "constanteAvertisment": "Az érintetlenül hagyott érték nem mérés — a saját alapértelmezésünk visszaolvasva. Csak az „eltérő\" oszlop mond valamit.",
+    "colConstanta": "Állandó",
+    "colImplicit": "Alapérték",
+    "colCelMaiDes": "Leggyakrabban",
+    "colAltfel": "Eltérő",
+    "unitatiTitlu": "Melyik mértékegységet választották",
+    "unitatiNota": "Más, mint a rács: a rács azt mondja meg, miben szabnak, ez azt, mit választottak a fiókjukban."
   }
 }

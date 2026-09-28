@@ -7,6 +7,7 @@ const { requireAuth, requireAdmin } = require('./auth');
 const mesaje = require('./mesaje');
 const jurnal = require('./jurnal');
 const cont = require('./cont');
+const statistici = require('./statistici');
 const PalTari = require('../shared/tari');
 
 const router = express.Router();
@@ -53,6 +54,37 @@ router.get('/admin', requireAuth, requireAdmin, (req, res) => {
     mesajeNoi: mesaje.cateNoi(),
     totalLei: (totals.cents / 100).toFixed(2),
     totalCount: totals.n
+  });
+});
+
+/* Ce se lucrează, pe țări. Constantele românești din aplicație sunt măsurate
+   în atelierul care a cerut-o; pentru orice altă țară n-avem nicio
+   măsurătoare, și nici nu se poate lua din cărți. Aici se numără ce lucrează
+   oamenii, din corpurile pe care le-au salvat deja. */
+router.get('/admin/statistici', requireAuth, requireAdmin, (req, res) => {
+  /* Fără parametru: toate țările la un loc. Cu el: o țară anume, iar șirul
+     gol e o alegere adevărată — conturile care n-au spus de unde sunt. */
+  const tara = req.query.tara === undefined ? null : String(req.query.tara);
+
+  res.render('admin/statistici', {
+    title: req.t('stat.titlu'),
+    r: statistici.raport(tara),
+    tari: statistici.tari(),
+    taraAleasa: tara,
+    numeTara: (cod) => PalTari.numeTara(cod, req.lang),
+    /* Cotele și constantele au DEJA nume traduse în editor, în toate cele
+       treizeci de limbi. Se folosesc alea, nu se scriu altele: un vocabular
+       paralel ar însemna trei sute de termeni de tâmplărie inventați de noi
+       în limbi pe care nu le citește nimeni din atelier — și, mai rău, alt
+       cuvânt aici decât cel pe care-l vede omul în editor. */
+    numeCota: { W: 'editor.latime', H: 'editor.inaltime', D: 'editor.adancime' },
+    numeConstanta: {
+      t: 'editor.palMm', ts: 'editor.palCutie', tp: 'editor.grosimeSpate',
+      cg: 'editor.cantGros', cs: 'editor.cantSubtire',
+      rm: 'editor.rostMargine', ri: 'editor.rostIntreFronturi',
+      rinc: 'editor.rostIncastrat', rp: 'editor.retragereFata',
+      jp: 'editor.jocLateral', jg: 'editor.jocGlisiera'
+    }
   });
 });
 

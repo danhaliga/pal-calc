@@ -1300,5 +1300,31 @@
     "email": "E-mail",
     "dinCand": "Account sinds",
     "notaEmail": "Het e-mailadres verandert hier niet. Schrijf ons via het berichtenvak als het gewijzigd moet worden."
+  },
+  "stat": {
+    "titlu": "Wat er gemaakt wordt, per land",
+    "intro": "De constanten in deze app zijn in een echte werkplaats gemeten, niet uit boeken gehaald. Voor andere landen hebben we geen metingen — hier wordt geteld wat mensen werkelijk maken, uit de kasten die ze hebben opgeslagen.",
+    "faraTara": "Niet opgegeven",
+    "goalaTitlu": "Er is nog geen kast opgeslagen.",
+    "goalaText": "Het meten begint bij de eerste. Niemand wordt iets gevraagd — de constanten komen met de kast mee.",
+    "grilaTitlu": "Op welk raster ze zagen",
+    "peGrilaMm": "rond in millimeters",
+    "peGrilaToli": "rond in inches",
+    "coteMasurate": "getelde maten",
+    "verdict": "Hier wordt in {unitate} gewerkt. Gemeten, niet aangenomen.",
+    "preaPutine": "Te weinig maten om iets te zeggen. Ze stapelen zich vanzelf op naarmate er kasten worden opgeslagen.",
+    "neclar": "De cijfers zeggen geen van beide duidelijk. Liever niets dan een verzonnen antwoord.",
+    "coteTitlu": "Kastmaten",
+    "coteNota": "Deze typt de mens elke keer zelf, dus zijn ze echt bewijs. Er worden werkplaatsen geteld, geen kasten: één werkplaats met veertig kasten van 800 is één mens, geen landsgewoonte.",
+    "colValoare": "Waarde",
+    "colAteliere": "Werkplaatsen",
+    "constanteTitlu": "Constanten van de werkplaats",
+    "constanteAvertisment": "Een waarde die is gelaten zoals hij kwam, is geen meting — dat is onze eigen standaardwaarde, teruggelezen. Alleen de kolom \"anders\" zegt iets.",
+    "colConstanta": "Constante",
+    "colImplicit": "Standaard",
+    "colCelMaiDes": "Meest gebruikt",
+    "colAltfel": "Anders",
+    "unitatiTitlu": "Welke eenheid ze kozen",
+    "unitatiNota": "Iets anders dan het raster: het raster zegt waarin ze zagen, dit zegt wat ze in hun account hebben gekozen."
   }
 }

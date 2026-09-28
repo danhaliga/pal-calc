@@ -1300,5 +1300,31 @@
     "email": "电子邮件",
     "dinCand": "注册时间",
     "notaEmail": "电子邮件不能在这里更改。如需更改，请通过留言框联系我们。"
+  },
+  "stat": {
+    "titlu": "各国的实际做法",
+    "intro": "本应用中的常量来自真实工厂的实测，而非书本。其他国家我们没有实测数据——这里统计的是人们实际做什么，取自他们已保存的柜体。",
+    "faraTara": "未填写",
+    "goalaTitlu": "还没有保存过任何柜体。",
+    "goalaText": "统计从第一个开始。不需要问任何人——常量随柜体一起来。",
+    "grilaTitlu": "按哪种尺寸网格下料",
+    "peGrilaMm": "毫米整数",
+    "peGrilaToli": "英寸整数",
+    "coteMasurate": "已统计尺寸",
+    "verdict": "这里的人使用{unitate}。这是实测结果，不是猜测。",
+    "preaPutine": "尺寸太少，还说明不了什么。随着柜体保存会自然积累。",
+    "neclar": "数据两边都不明确。与其编造答案，不如什么都不说。",
+    "coteTitlu": "柜体尺寸",
+    "coteNota": "这些是每次手动输入的，因此是真实证据。统计的是工厂数，不是柜体数：一家做了四十个800宽柜体的工厂只是一个人，不是一国习惯。",
+    "colValoare": "数值",
+    "colAteliere": "工厂",
+    "constanteTitlu": "工厂常量",
+    "constanteAvertisment": "保持原样的数值不是实测——那是把我们的默认值读了回来。只有“其他”一列有意义。",
+    "colConstanta": "常量",
+    "colImplicit": "默认",
+    "colCelMaiDes": "最常用",
+    "colAltfel": "其他",
+    "unitatiTitlu": "他们选择的单位",
+    "unitatiNota": "与网格不同：网格说明他们怎么下料，这里说明他们在账户中选了什么。"
   }
 }

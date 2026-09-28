@@ -1311,5 +1311,31 @@
     "email": "E-pošta",
     "dinCand": "Račun od",
     "notaEmail": "E-pošta se odavde ne menja. Piši nam iz polja za poruke ako treba da se promeni."
+  },
+  "stat": {
+    "titlu": "Šta se pravi, po zemljama",
+    "intro": "Konstante u aplikaciji izmerene su u pravoj radionici, a ne uzete iz knjiga. Za druge zemlje nemamo nikakva merenja — ovde se broji šta ljudi zaista prave, iz korpusa koje su sačuvali.",
+    "faraTara": "Nisu naveli",
+    "goalaTitlu": "Još nije sačuvan nijedan korpus.",
+    "goalaText": "Merenje počinje od prvog. Niko se ništa ne pita — konstante dolaze zajedno sa korpusom.",
+    "grilaTitlu": "Po kojoj mreži seku",
+    "peGrilaMm": "okrugle u milimetrima",
+    "peGrilaToli": "okrugle u inčima",
+    "coteMasurate": "prebrojanih mera",
+    "verdict": "Ovde se radi u {unitate}. To je izmereno, a ne pretpostavljeno.",
+    "preaPutine": "Premalo mera da bi se nešto reklo. Same će se nakupiti kako se korpusi budu čuvali.",
+    "neclar": "Brojevi ne govore jasno ni jedno ni drugo. Bolje ništa nego izmišljen odgovor.",
+    "coteTitlu": "Mere korpusa",
+    "coteNota": "Njih čovek upisuje svaki put sam, pa su pravi dokaz. Broje se radionice, ne korpusi: radionica sa četrdeset korpusa od 800 je jedan čovek, a ne navika zemlje.",
+    "colValoare": "Vrednost",
+    "colAteliere": "Radionice",
+    "constanteTitlu": "Konstante radionice",
+    "constanteAvertisment": "Vrednost ostavljena onakva kakva je došla nije merenje — to je naša sopstvena podrazumevana vrednost pročitana nazad. Samo kolona „drugačije\" nešto govori.",
+    "colConstanta": "Konstanta",
+    "colImplicit": "Podrazumevano",
+    "colCelMaiDes": "Najčešće",
+    "colAltfel": "Drugačije",
+    "unitatiTitlu": "Koju jedinicu su izabrali",
+    "unitatiNota": "Nešto drugo od mreže: mreža kaže u čemu seku, ovo šta su izabrali na nalogu."
   }
 }

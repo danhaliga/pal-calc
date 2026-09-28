@@ -1311,5 +1311,31 @@
     "email": "E-mail",
     "dinCand": "Konto od",
     "notaEmail": "Adresu e-mail nie zmienia się tutaj. Napisz do nas przez okno wiadomości, jeśli trzeba go zmienić."
+  },
+  "stat": {
+    "titlu": "Co się robi, według krajów",
+    "intro": "Stałe w tej aplikacji zostały zmierzone w prawdziwym warsztacie, a nie wzięte z książek. Dla innych krajów nie mamy żadnych pomiarów — tutaj liczy się to, co ludzie naprawdę robią, na podstawie zapisanych korpusów.",
+    "faraTara": "Nie podali",
+    "goalaTitlu": "Nie zapisano jeszcze żadnego korpusu.",
+    "goalaText": "Pomiar zaczyna się od pierwszego. Nikogo się o nic nie pyta — stałe przychodzą razem z korpusem.",
+    "grilaTitlu": "Na jakiej siatce tną",
+    "peGrilaMm": "okrągłe w milimetrach",
+    "peGrilaToli": "okrągłe w calach",
+    "coteMasurate": "policzonych wymiarów",
+    "verdict": "Tutaj pracuje się w {unitate}. To zmierzone, nie założone.",
+    "preaPutine": "Za mało wymiarów, żeby cokolwiek powiedzieć. Zbiorą się same, w miarę zapisywania korpusów.",
+    "neclar": "Liczby nie mówią wyraźnie ani jednego, ani drugiego. Lepiej nic niż wymyślona odpowiedź.",
+    "coteTitlu": "Wymiary korpusów",
+    "coteNota": "Te człowiek wpisuje za każdym razem, więc są prawdziwym dowodem. Liczy się warsztaty, nie korpusy: warsztat z czterdziestoma korpusami po 800 to jeden człowiek, a nie zwyczaj kraju.",
+    "colValoare": "Wartość",
+    "colAteliere": "Warsztaty",
+    "constanteTitlu": "Stałe warsztatu",
+    "constanteAvertisment": "Wartość zostawiona taka, jaka przyszła, nie jest pomiarem — to nasza własna wartość domyślna odczytana z powrotem. Tylko kolumna „inaczej\" coś mówi.",
+    "colConstanta": "Stała",
+    "colImplicit": "Domyślnie",
+    "colCelMaiDes": "Najczęściej",
+    "colAltfel": "Inaczej",
+    "unitatiTitlu": "Jaką jednostkę wybrali",
+    "unitatiNota": "Co innego niż siatka: siatka mówi, w czym tną, a to — co wybrali na koncie."
   }
 }

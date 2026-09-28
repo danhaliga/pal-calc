@@ -1300,5 +1300,31 @@
     "designer": "Designer",
     "magazin": "Retailer",
     "amator": "For myself, at home"
+  },
+  "stat": {
+    "titlu": "What people build, by country",
+    "intro": "The constants in this app were measured in a real workshop, not taken from books. For other countries we have no measurements — here we count what people actually build, from the cabinets they have saved.",
+    "faraTara": "Not said",
+    "goalaTitlu": "No cabinet has been saved yet.",
+    "goalaText": "The measuring starts with the first one. Nobody is asked anything — the constants come with the cabinet.",
+    "grilaTitlu": "Which grid they cut on",
+    "peGrilaMm": "round in millimetres",
+    "peGrilaToli": "round in inches",
+    "coteMasurate": "dimensions measured",
+    "verdict": "People here work in {unitate}. That is measured, not assumed.",
+    "preaPutine": "Too few dimensions to say anything. They add up on their own as cabinets get saved.",
+    "neclar": "The numbers say neither one clearly. Better nothing than an invented answer.",
+    "coteTitlu": "Cabinet dimensions",
+    "coteNota": "These are typed by hand every time, so they are real evidence. Workshops are counted, not cabinets: one workshop with forty cabinets of 800 is one person, not a country habit.",
+    "colValoare": "Value",
+    "colAteliere": "Workshops",
+    "constanteTitlu": "Workshop constants",
+    "constanteAvertisment": "A value left as it came is not a measurement — it is our own default read back. Only the \"other\" column says anything.",
+    "colConstanta": "Constant",
+    "colImplicit": "Default",
+    "colCelMaiDes": "Most used",
+    "colAltfel": "Other",
+    "unitatiTitlu": "Which unit they chose",
+    "unitatiNota": "Different from the grid: the grid says what they cut, this says what they picked in their account."
   }
 }

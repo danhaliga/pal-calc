@@ -1300,5 +1300,31 @@
     "email": "Correo electrónico",
     "dinCand": "Cuenta desde",
     "notaEmail": "El correo no se cambia desde aquí. Escríbenos por el buzón de mensajes si hay que cambiarlo."
+  },
+  "stat": {
+    "titlu": "Qué se fabrica, por país",
+    "intro": "Las constantes de la aplicación están medidas en un taller real, no sacadas de libros. Para otros países no tenemos mediciones — aquí se cuenta lo que la gente fabrica de verdad, a partir de los muebles que ya ha guardado.",
+    "faraTara": "No lo dijeron",
+    "goalaTitlu": "Todavía no se ha guardado ningún mueble.",
+    "goalaText": "La medición empieza con el primero. No se pregunta nada a nadie — las constantes vienen con el mueble.",
+    "grilaTitlu": "En qué retícula cortan",
+    "peGrilaMm": "redondas en milímetros",
+    "peGrilaToli": "redondas en pulgadas",
+    "coteMasurate": "medidas contadas",
+    "verdict": "Aquí la gente trabaja en {unitate}. Está medido, no supuesto.",
+    "preaPutine": "Demasiadas pocas medidas para decir nada. Se acumulan solas según se guardan muebles.",
+    "neclar": "Los números no dicen con claridad ni una cosa ni la otra. Mejor nada que una respuesta inventada.",
+    "coteTitlu": "Medidas de los muebles",
+    "coteNota": "Estas las escribe la persona cada vez, así que son prueba de verdad. Se cuentan talleres, no muebles: un taller con cuarenta muebles de 800 es una persona, no una costumbre de país.",
+    "colValoare": "Valor",
+    "colAteliere": "Talleres",
+    "constanteTitlu": "Constantes del taller",
+    "constanteAvertisment": "Un valor que se deja tal como vino no es una medición — es nuestro propio valor por defecto leído de vuelta. Solo la columna «otro» dice algo.",
+    "colConstanta": "Constante",
+    "colImplicit": "Por defecto",
+    "colCelMaiDes": "Más usado",
+    "colAltfel": "Otro",
+    "unitatiTitlu": "Qué unidad eligieron",
+    "unitatiNota": "Distinto de la retícula: la retícula dice qué cortan, esto dice qué eligieron en su cuenta."
   }
 }

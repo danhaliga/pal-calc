@@ -1311,5 +1311,31 @@
     "designer": "Designer / proiectant",
     "magazin": "Magazin",
     "amator": "Pentru mine, acasă"
+  },
+  "stat": {
+    "titlu": "Ce se lucrează, pe țări",
+    "intro": "Constantele din aplicație sunt măsurate într-un atelier adevărat, nu luate din cărți. Pentru alte țări n-avem măsurători — aici se numără ce lucrează oamenii, din corpurile pe care le-au salvat deja.",
+    "faraTara": "N-au spus",
+    "goalaTitlu": "Încă nu s-a salvat niciun corp.",
+    "goalaText": "Măsurătoarea începe de la primul. Nimeni nu e întrebat nimic — constantele vin odată cu corpul.",
+    "grilaTitlu": "Pe ce grilă se taie",
+    "peGrilaMm": "cote rotunde în milimetri",
+    "peGrilaToli": "cote rotunde în țoli",
+    "coteMasurate": "cote măsurate",
+    "verdict": "Oamenii de aici lucrează în {unitate}. E măsurat, nu presupus.",
+    "preaPutine": "Prea puține cote ca să iasă ceva. Se adună de la sine, pe măsură ce se salvează corpuri.",
+    "neclar": "Cifrele nu spun limpede nici una, nici alta. Mai bine nimic decât un răspuns inventat.",
+    "coteTitlu": "Cotele corpurilor",
+    "coteNota": "Astea le scrie omul de fiecare dată, deci sunt vorbă adevărată. Se numără ateliere, nu corpuri: un atelier cu patruzeci de corpuri de 800 e un om, nu o obișnuință de țară.",
+    "colValoare": "Valoare",
+    "colAteliere": "Ateliere",
+    "constanteTitlu": "Constantele atelierului",
+    "constanteAvertisment": "O valoare lăsată cum a venit nu e o măsurătoare — e valoarea noastră implicită, citită înapoi. Numai coloana „altfel\" spune ceva.",
+    "colConstanta": "Constanta",
+    "colImplicit": "Implicit",
+    "colCelMaiDes": "Cel mai des",
+    "colAltfel": "Altfel",
+    "unitatiTitlu": "Ce unitate și-au ales",
+    "unitatiNota": "Altceva decât grila: grila spune în ce cote taie, asta ce au ales din cont."
   }
 }

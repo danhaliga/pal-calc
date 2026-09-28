@@ -1300,5 +1300,31 @@
     "email": "E-mail",
     "dinCand": "Account dal",
     "notaEmail": "L'e-mail non si cambia da qui. Scrivici dalla casella dei messaggi se va cambiata."
+  },
+  "stat": {
+    "titlu": "Che cosa si costruisce, per paese",
+    "intro": "Le costanti dell'applicazione sono misurate in una falegnameria vera, non prese dai libri. Per gli altri paesi non abbiamo misure — qui si conta quello che la gente costruisce davvero, dai mobili che ha già salvato.",
+    "faraTara": "Non indicato",
+    "goalaTitlu": "Non è stato ancora salvato nessun mobile.",
+    "goalaText": "La misura comincia dal primo. Non si chiede niente a nessuno — le costanti arrivano insieme al mobile.",
+    "grilaTitlu": "Su quale reticolo tagliano",
+    "peGrilaMm": "tonde in millimetri",
+    "peGrilaToli": "tonde in pollici",
+    "coteMasurate": "quote contate",
+    "verdict": "Qui si lavora in {unitate}. È misurato, non supposto.",
+    "preaPutine": "Troppe poche quote per dire qualcosa. Si accumulano da sole man mano che si salvano mobili.",
+    "neclar": "I numeri non dicono chiaramente né l'una né l'altra cosa. Meglio niente che una risposta inventata.",
+    "coteTitlu": "Quote dei mobili",
+    "coteNota": "Queste le scrive la persona ogni volta, quindi sono prova vera. Si contano le falegnamerie, non i mobili: una falegnameria con quaranta mobili da 800 è una persona, non un'abitudine di paese.",
+    "colValoare": "Valore",
+    "colAteliere": "Falegnamerie",
+    "constanteTitlu": "Costanti della falegnameria",
+    "constanteAvertisment": "Un valore lasciato com’era non è una misura — è il nostro stesso valore predefinito riletto. Solo la colonna «altro» dice qualcosa.",
+    "colConstanta": "Costante",
+    "colImplicit": "Predefinito",
+    "colCelMaiDes": "Più usato",
+    "colAltfel": "Altro",
+    "unitatiTitlu": "Quale unità hanno scelto",
+    "unitatiNota": "Cosa diversa dal reticolo: il reticolo dice in che cosa tagliano, questo dice che cosa hanno scelto nel loro account."
   }
 }

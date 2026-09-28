@@ -1300,5 +1300,31 @@
     "email": "E-mail",
     "dinCand": "Akun sejak",
     "notaEmail": "E-mail tidak diubah dari sini. Kirim pesan kepada kami dari kotak pesan bila perlu diubah."
+  },
+  "stat": {
+    "titlu": "Apa yang dibuat, menurut negara",
+    "intro": "Konstanta dalam aplikasi ini diukur di bengkel sungguhan, bukan diambil dari buku. Untuk negara lain kami tidak punya pengukuran — di sini dihitung apa yang benar-benar dibuat orang, dari boks yang sudah mereka simpan.",
+    "faraTara": "Tidak disebutkan",
+    "goalaTitlu": "Belum ada boks yang disimpan.",
+    "goalaText": "Pengukuran dimulai dari yang pertama. Tidak ada yang ditanya apa pun — konstanta datang bersama boksnya.",
+    "grilaTitlu": "Pada kisi mana mereka memotong",
+    "peGrilaMm": "bulat dalam milimeter",
+    "peGrilaToli": "bulat dalam inci",
+    "coteMasurate": "ukuran terhitung",
+    "verdict": "Orang di sini bekerja dengan {unitate}. Ini terukur, bukan dikira-kira.",
+    "preaPutine": "Ukurannya terlalu sedikit untuk menyimpulkan apa pun. Akan terkumpul sendiri seiring boks disimpan.",
+    "neclar": "Angkanya tidak menyatakan dengan jelas yang mana pun. Lebih baik diam daripada jawaban karangan.",
+    "coteTitlu": "Ukuran boks",
+    "coteNota": "Ini diketik orang setiap kali, jadi bukti yang sungguhan. Yang dihitung bengkel, bukan boks: satu bengkel dengan empat puluh boks 800 adalah satu orang, bukan kebiasaan satu negara.",
+    "colValoare": "Nilai",
+    "colAteliere": "Bengkel",
+    "constanteTitlu": "Konstanta bengkel",
+    "constanteAvertisment": "Nilai yang dibiarkan apa adanya bukanlah pengukuran — itu nilai bawaan kami sendiri yang terbaca kembali. Hanya kolom \"lain\" yang berarti.",
+    "colConstanta": "Konstanta",
+    "colImplicit": "Bawaan",
+    "colCelMaiDes": "Paling sering",
+    "colAltfel": "Lain",
+    "unitatiTitlu": "Satuan apa yang mereka pilih",
+    "unitatiNota": "Berbeda dari kisi: kisi menyatakan mereka memotong dengan apa, ini menyatakan apa yang mereka pilih di akun."
   }
 }

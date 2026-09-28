@@ -1300,5 +1300,31 @@
     "email": "E-posta",
     "dinCand": "Hesap tarihi",
     "notaEmail": "E-posta buradan değişmez. Değişmesi gerekiyorsa mesaj kutusundan bize yaz."
+  },
+  "stat": {
+    "titlu": "Ülkelere göre ne yapılıyor",
+    "intro": "Uygulamadaki sabitler gerçek bir atölyede ölçülmüştür, kitaplardan alınmamıştır. Başka ülkeler için hiç ölçümümüz yok — burada insanların gerçekte ne yaptığı sayılır, kaydettikleri gövdelerden.",
+    "faraTara": "Belirtmediler",
+    "goalaTitlu": "Henüz hiç gövde kaydedilmedi.",
+    "goalaText": "Ölçüm ilkinden başlar. Kimseye bir şey sorulmaz — sabitler gövdeyle birlikte gelir.",
+    "grilaTitlu": "Hangi kademede kesiyorlar",
+    "peGrilaMm": "milimetrede tam",
+    "peGrilaToli": "inçte tam",
+    "coteMasurate": "sayılan ölçü",
+    "verdict": "Buradakiler {unitate} ile çalışıyor. Bu ölçülmüştür, varsayılmamıştır.",
+    "preaPutine": "Bir şey söylemek için ölçü çok az. Gövdeler kaydedildikçe kendiliğinden birikir.",
+    "neclar": "Sayılar ikisini de açıkça söylemiyor. Uydurma bir cevaptan iyidir hiçbir şey.",
+    "coteTitlu": "Gövde ölçüleri",
+    "coteNota": "Bunları insan her seferinde kendi yazar, yani gerçek kanıttır. Gövdeler değil atölyeler sayılır: kırk tane 800 gövde yapan bir atölye bir kişidir, ülke alışkanlığı değil.",
+    "colValoare": "Değer",
+    "colAteliere": "Atölyeler",
+    "constanteTitlu": "Atölye sabitleri",
+    "constanteAvertisment": "Geldiği gibi bırakılan bir değer ölçüm değildir — kendi varsayılanımızın geri okunmasıdır. Yalnızca \"başka\" sütunu bir şey söyler.",
+    "colConstanta": "Sabit",
+    "colImplicit": "Varsayılan",
+    "colCelMaiDes": "En çok",
+    "colAltfel": "Başka",
+    "unitatiTitlu": "Hangi birimi seçtiler",
+    "unitatiNota": "Kademeden farklı: kademe neyle kestiklerini söyler, bu ise hesaplarında ne seçtiklerini."
   }
 }

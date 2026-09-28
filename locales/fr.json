@@ -1300,5 +1300,31 @@
     "email": "Courriel",
     "dinCand": "Compte depuis",
     "notaEmail": "Le courriel ne se change pas ici. Écrivez-nous depuis la boîte à messages s'il doit être changé."
+  },
+  "stat": {
+    "titlu": "Ce qui se fabrique, par pays",
+    "intro": "Les constantes de l'application sont mesurées dans un atelier réel, pas tirées des livres. Pour les autres pays nous n'avons aucune mesure — ici on compte ce que les gens fabriquent vraiment, à partir des meubles qu'ils ont déjà enregistrés.",
+    "faraTara": "Non renseigné",
+    "goalaTitlu": "Aucun meuble n'a encore été enregistré.",
+    "goalaText": "La mesure commence au premier. On ne demande rien à personne — les constantes arrivent avec le meuble.",
+    "grilaTitlu": "Sur quelle trame ils coupent",
+    "peGrilaMm": "rondes en millimètres",
+    "peGrilaToli": "rondes en pouces",
+    "coteMasurate": "cotes comptées",
+    "verdict": "Ici on travaille en {unitate}. C’est mesuré, pas supposé.",
+    "preaPutine": "Trop peu de cotes pour dire quoi que ce soit. Elles s'accumulent d'elles-mêmes à mesure que des meubles sont enregistrés.",
+    "neclar": "Les chiffres ne disent clairement ni l'un ni l'autre. Mieux vaut rien qu'une réponse inventée.",
+    "coteTitlu": "Cotes des meubles",
+    "coteNota": "Celles-ci sont saisies à la main chaque fois, ce sont donc de vraies preuves. On compte les ateliers, pas les meubles : un atelier avec quarante meubles de 800, c'est une personne, pas une habitude de pays.",
+    "colValoare": "Valeur",
+    "colAteliere": "Ateliers",
+    "constanteTitlu": "Constantes de l'atelier",
+    "constanteAvertisment": "Une valeur laissée telle quelle n'est pas une mesure — c'est notre propre valeur par défaut relue. Seule la colonne « autre » dit quelque chose.",
+    "colConstanta": "Constante",
+    "colImplicit": "Par défaut",
+    "colCelMaiDes": "Le plus utilisé",
+    "colAltfel": "Autre",
+    "unitatiTitlu": "Quelle unité ils ont choisie",
+    "unitatiNota": "Différent de la trame : la trame dit ce qu'ils coupent, ceci dit ce qu'ils ont choisi dans leur compte."
   }
 }

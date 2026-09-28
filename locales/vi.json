@@ -1300,5 +1300,31 @@
     "email": "E-mail",
     "dinCand": "Tài khoản từ",
     "notaEmail": "E-mail không đổi được ở đây. Hãy viết cho chúng tôi qua hộp tin nhắn nếu cần đổi."
+  },
+  "stat": {
+    "titlu": "Người ta làm gì, theo từng nước",
+    "intro": "Các hằng số trong ứng dụng được đo tại một xưởng thật, không lấy từ sách. Với các nước khác chúng tôi không có số đo — ở đây đếm xem người ta thực sự làm gì, từ những thùng đã lưu.",
+    "faraTara": "Chưa cho biết",
+    "goalaTitlu": "Chưa có thùng nào được lưu.",
+    "goalaText": "Việc đo bắt đầu từ cái đầu tiên. Không hỏi ai điều gì — các hằng số đi kèm với thùng.",
+    "grilaTitlu": "Cắt theo lưới nào",
+    "peGrilaMm": "chẵn theo milimét",
+    "peGrilaToli": "chẵn theo inch",
+    "coteMasurate": "kích thước đã đếm",
+    "verdict": "Người ở đây làm việc bằng {unitate}. Đây là số đo, không phải phỏng đoán.",
+    "preaPutine": "Quá ít kích thước để nói được điều gì. Chúng sẽ tự dồn lại khi có thêm thùng được lưu.",
+    "neclar": "Các con số không nói rõ bên nào. Thà không nói gì còn hơn một câu trả lời bịa ra.",
+    "coteTitlu": "Kích thước thùng",
+    "coteNota": "Những số này người ta gõ tay mỗi lần, nên là bằng chứng thật. Đếm xưởng chứ không đếm thùng: một xưởng làm bốn mươi thùng rộng 800 là một người, không phải thói quen của cả nước.",
+    "colValoare": "Giá trị",
+    "colAteliere": "Xưởng",
+    "constanteTitlu": "Hằng số của xưởng",
+    "constanteAvertisment": "Một giá trị để nguyên như khi nhận không phải là số đo — đó là giá trị mặc định của chúng tôi đọc ngược lại. Chỉ cột \"khác\" mới nói lên điều gì.",
+    "colConstanta": "Hằng số",
+    "colImplicit": "Mặc định",
+    "colCelMaiDes": "Dùng nhiều nhất",
+    "colAltfel": "Khác",
+    "unitatiTitlu": "Họ đã chọn đơn vị nào",
+    "unitatiNota": "Khác với lưới: lưới cho biết họ cắt theo gì, còn đây cho biết họ chọn gì trong tài khoản."
   }
 }

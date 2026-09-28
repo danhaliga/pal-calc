@@ -1311,5 +1311,31 @@
     "email": "E-pošta",
     "dinCand": "Račun od",
     "notaEmail": "E-pošta se odavde ne mijenja. Piši nam iz polja za poruke ako je treba promijeniti."
+  },
+  "stat": {
+    "titlu": "Što se radi, po zemljama",
+    "intro": "Konstante u aplikaciji izmjerene su u pravoj radionici, a ne uzete iz knjiga. Za druge zemlje nemamo nikakva mjerenja — ovdje se broji što ljudi uistinu rade, iz korpusa koje su spremili.",
+    "faraTara": "Nisu naveli",
+    "goalaTitlu": "Još nije spremljen nijedan korpus.",
+    "goalaText": "Mjerenje počinje od prvoga. Nikoga se ništa ne pita — konstante dolaze zajedno s korpusom.",
+    "grilaTitlu": "Po kojoj mreži režu",
+    "peGrilaMm": "okrugle u milimetrima",
+    "peGrilaToli": "okrugle u inčima",
+    "coteMasurate": "prebrojanih mjera",
+    "verdict": "Ovdje se radi u {unitate}. To je izmjereno, a ne pretpostavljeno.",
+    "preaPutine": "Premalo mjera da bi se nešto reklo. Same će se nakupiti kako se korpusi budu spremali.",
+    "neclar": "Brojevi ne govore jasno ni jedno ni drugo. Bolje ništa nego izmišljen odgovor.",
+    "coteTitlu": "Mjere korpusa",
+    "coteNota": "Njih čovjek upisuje svaki put sam, pa su pravi dokaz. Broje se radionice, ne korpusi: radionica s četrdeset korpusa od 800 jedan je čovjek, a ne navika zemlje.",
+    "colValoare": "Vrijednost",
+    "colAteliere": "Radionice",
+    "constanteTitlu": "Konstante radionice",
+    "constanteAvertisment": "Vrijednost ostavljena onakva kakva je došla nije mjerenje — to je naša vlastita zadana vrijednost pročitana natrag. Samo stupac „drukčije\" nešto govori.",
+    "colConstanta": "Konstanta",
+    "colImplicit": "Zadano",
+    "colCelMaiDes": "Najčešće",
+    "colAltfel": "Drukčije",
+    "unitatiTitlu": "Koju su jedinicu odabrali",
+    "unitatiNota": "Nešto drugo od mreže: mreža kaže u čemu režu, ovo što su odabrali na računu."
   }
 }

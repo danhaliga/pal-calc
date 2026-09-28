@@ -1311,5 +1311,31 @@
     "email": "E-mail",
     "dinCand": "Konto od",
     "notaEmail": "E-mail sa odtiaľto nemení. Napíš nám cez okno správ, ak sa má zmeniť."
+  },
+  "stat": {
+    "titlu": "Čo sa robí, podľa krajín",
+    "intro": "Konštanty v aplikácii sú zmerané v skutočnej dielni, nie prevzaté z kníh. Pre iné krajiny nemáme žiadne merania — tu sa počíta, čo ľudia naozaj robia, z korpusov, ktoré si uložili.",
+    "faraTara": "Neuviedli",
+    "goalaTitlu": "Zatiaľ nebol uložený žiadny korpus.",
+    "goalaText": "Meranie sa začína prvým. Nikoho sa na nič nepýtame — konštanty prídu spolu s korpusom.",
+    "grilaTitlu": "Na akej mriežke režú",
+    "peGrilaMm": "okrúhle v milimetroch",
+    "peGrilaToli": "okrúhle v palcoch",
+    "coteMasurate": "spočítaných rozmerov",
+    "verdict": "Tu sa pracuje v {unitate}. Je to zmerané, nie predpokladané.",
+    "preaPutine": "Priveľmi málo rozmerov, aby sa dalo niečo povedať. Nazbierajú sa samy, ako sa ukladajú korpusy.",
+    "neclar": "Čísla nehovoria jasne ani jedno, ani druhé. Lepšie nič ako vymyslená odpoveď.",
+    "coteTitlu": "Rozmery korpusov",
+    "coteNota": "Tie píše človek zakaždým sám, sú to teda skutočné doklady. Počítajú sa dielne, nie korpusy: dielňa so štyridsiatimi korpusmi po 800 je jeden človek, nie zvyk krajiny.",
+    "colValoare": "Hodnota",
+    "colAteliere": "Dielne",
+    "constanteTitlu": "Konštanty dielne",
+    "constanteAvertisment": "Hodnota ponechaná tak, ako prišla, nie je meranie — je to naša vlastná predvolená hodnota prečítaná späť. Niečo hovorí len stĺpec „inak\".",
+    "colConstanta": "Konštanta",
+    "colImplicit": "Predvolené",
+    "colCelMaiDes": "Najčastejšie",
+    "colAltfel": "Inak",
+    "unitatiTitlu": "Akú jednotku si zvolili",
+    "unitatiNota": "Niečo iné ako mriežka: mriežka hovorí, v čom režú, toto, čo si zvolili v konte."
   }
 }

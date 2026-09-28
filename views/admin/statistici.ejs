@@ -1,0 +1,138 @@
+<div class="top">
+  <div>
+    <div class="crumbs"><a href="/admin">← <%= t('nav.administrare') %></a></div>
+    <h1><%= t('stat.titlu') %></h1>
+    <p class="muted"><%= t('stat.intro') %></p>
+  </div>
+</div>
+
+<%# Filtrul de tara. Fara el pagina amesteca toate atelierele la un loc, si
+    atunci nu mai masoara o tara, ci media lumii. %>
+<div class="filtre">
+  <a class="btn small <%= taraAleasa === null ? 'primary' : '' %>" href="/admin/statistici"><%= t('articole.toate') %></a>
+  <% tari.forEach(function (x) { %>
+    <a class="btn small <%= taraAleasa === x.tara ? 'primary' : '' %>"
+       href="/admin/statistici?tara=<%= encodeURIComponent(x.tara) %>">
+      <%= x.tara ? numeTara(x.tara) : t('stat.faraTara') %>
+      <span class="muted"><%= x.ateliere %></span>
+    </a>
+  <% }); %>
+</div>
+
+<% if (!r.grila.total) { %>
+  <div class="panel empty">
+    <p><%= t('stat.goalaTitlu') %></p>
+    <p class="muted"><%= t('stat.goalaText') %></p>
+  </div>
+<% } else { %>
+
+  <%# Grila: intrebarea „in ce lucreaza oamenii de-aici" are raspuns din
+      cifre. Un milimetru rotund e multiplu de 10, un tol rotund e multiplu
+      de-un sfert de tol; cele doua grile aproape nu se ating. %>
+  <div class="panel">
+    <h2><%= t('stat.grilaTitlu') %></h2>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="v"><%= r.grila.procentMm %>%</div>
+        <div class="l"><%= t('stat.peGrilaMm') %></div>
+      </div>
+      <div class="kpi">
+        <div class="v"><%= r.grila.procentToli %>%</div>
+        <div class="l"><%= t('stat.peGrilaToli') %></div>
+      </div>
+      <div class="kpi">
+        <div class="v"><%= r.grila.total %></div>
+        <div class="l"><%= t('stat.coteMasurate') %></div>
+      </div>
+    </div>
+    <p class="<%= r.grila.verdict ? 'warn ok' : 'legend' %>">
+      <% if (r.grila.verdict) { %>
+        <b><%= t('stat.verdict', { unitate: t('unitate.' + r.grila.verdict) }) %></b>
+      <% } else if (!r.grila.destule) { %>
+        <%= t('stat.preaPutine') %>
+      <% } else { %>
+        <%= t('stat.neclar') %>
+      <% } %>
+    </p>
+  </div>
+
+  <div class="doua-coloane">
+    <%# Cotele: astea le scrie omul de fiecare data, deci sunt vorba
+        adevarata. Se numara ATELIERE, nu corpuri — un atelier cu patruzeci
+        de corpuri de 800 e un om, nu o obisnuinta de tara. %>
+    <div class="panel">
+      <h2><%= t('stat.coteTitlu') %></h2>
+      <p class="legend"><%= t('stat.coteNota') %></p>
+      <% r.cote.forEach(function (c) { %>
+        <h3 class="mic"><%= t(numeCota[c.cheie]) %> <span class="muted mono"><%= c.cheie %></span></h3>
+        <div class="tbl"><table>
+          <thead><tr>
+            <th class="num"><%= t('stat.colValoare') %></th>
+            <th class="num"><%= t('stat.colAteliere') %></th>
+            <th class="num"><%= t('admin.kpiCorpuri') %></th>
+          </tr></thead>
+          <tbody>
+            <% c.valori.forEach(function (v) { %>
+              <tr>
+                <td class="num mono"><%= v.valoare %></td>
+                <td class="num"><%= v.ateliere %></td>
+                <td class="num muted"><%= v.corpuri %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table></div>
+      <% }); %>
+    </div>
+
+    <%# Constantele: aici e capcana. O valoare lasata cum a venit nu e o
+        masuratoare, e implicitul nostru citit inapoi. Coloana „altfel" e
+        singura care spune ceva. %>
+    <div class="panel">
+      <h2><%= t('stat.constanteTitlu') %></h2>
+      <div class="warn"><%= t('stat.constanteAvertisment') %></div>
+      <div class="tbl"><table>
+        <thead><tr>
+          <th><%= t('stat.colConstanta') %></th>
+          <th class="num"><%= t('stat.colImplicit') %></th>
+          <th class="num"><%= t('stat.colCelMaiDes') %></th>
+          <th class="num"><%= t('stat.colAltfel') %></th>
+        </tr></thead>
+        <tbody>
+          <% r.constante.forEach(function (c) { %>
+            <tr class="<%= c.atelierAltfel ? '' : 'muted' %>">
+              <td><%= t(numeConstanta[c.cheie]) %> <span class="muted mono"><%= c.cheie %></span></td>
+              <td class="num mono muted"><%= c.implicita %></td>
+              <td class="num mono">
+                <% if (c.ceaMaiFolosita) { %>
+                  <%= c.ceaMaiFolosita.valoare %>
+                  <span class="muted">· <%= c.ceaMaiFolosita.ateliere %></span>
+                <% } else { %>–<% } %>
+              </td>
+              <td class="num">
+                <% if (c.atelierAltfel) { %>
+                  <b><%= c.atelierAltfel %></b>
+                  <div class="tag"><%= c.valoriAltfel.map(function (v) { return v.valoare; }).join(', ') %></div>
+                <% } else { %><span class="muted">–</span><% } %>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2><%= t('stat.unitatiTitlu') %></h2>
+    <div class="tbl"><table>
+      <thead><tr><th><%= t('cont.unitate') %></th><th class="num"><%= t('stat.colAteliere') %></th></tr></thead>
+      <tbody>
+        <% r.unitatiAlese.forEach(function (u) { %>
+          <tr><td><%= u.unitate === 'mm' || u.unitate === 'inch' ? t('unitate.' + u.unitate) : u.unitate %></td>
+              <td class="num"><%= u.ateliere %></td></tr>
+        <% }); %>
+      </tbody>
+    </table></div>
+    <p class="legend"><%= t('stat.unitatiNota') %></p>
+  </div>
+
+<% } %>

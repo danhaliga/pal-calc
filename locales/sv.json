@@ -1300,5 +1300,31 @@
     "email": "E-post",
     "dinCand": "Konto sedan",
     "notaEmail": "E-postadressen ändras inte härifrån. Skriv till oss via meddelanderutan om den behöver ändras."
+  },
+  "stat": {
+    "titlu": "Vad som byggs, per land",
+    "intro": "Konstanterna i appen är uppmätta i en riktig verkstad, inte hämtade ur böcker. För andra länder har vi inga mätningar — här räknas vad folk verkligen bygger, utifrån de stommar de har sparat.",
+    "faraTara": "Inte angivet",
+    "goalaTitlu": "Ingen stomme har sparats ännu.",
+    "goalaText": "Mätningen börjar med den första. Ingen tillfrågas om något — konstanterna följer med stommen.",
+    "grilaTitlu": "Vilket raster de kapar på",
+    "peGrilaMm": "jämna i millimeter",
+    "peGrilaToli": "jämna i tum",
+    "coteMasurate": "räknade mått",
+    "verdict": "Här arbetar man i {unitate}. Det är uppmätt, inte antaget.",
+    "preaPutine": "För få mått för att säga något. De samlas av sig själva allteftersom stommar sparas.",
+    "neclar": "Siffrorna säger varken det ena eller det andra tydligt. Hellre inget än ett påhittat svar.",
+    "coteTitlu": "Stommarnas mått",
+    "coteNota": "Dessa skriver människan in varje gång, så de är riktiga belägg. Verkstäder räknas, inte stommar: en verkstad med fyrtio stommar på 800 är en människa, inte en landsvana.",
+    "colValoare": "Värde",
+    "colAteliere": "Verkstäder",
+    "constanteTitlu": "Verkstadens konstanter",
+    "constanteAvertisment": "Ett värde som lämnats som det kom är ingen mätning — det är vårt eget standardvärde återläst. Bara kolumnen ”annat” säger något.",
+    "colConstanta": "Konstant",
+    "colImplicit": "Standard",
+    "colCelMaiDes": "Vanligast",
+    "colAltfel": "Annat",
+    "unitatiTitlu": "Vilken enhet de valde",
+    "unitatiNota": "Något annat än rastret: rastret säger vad de kapar i, detta vad de valt på kontot."
   }
 }
