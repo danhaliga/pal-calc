@@ -12,36 +12,39 @@ const base = () => Object.assign(defaults(), {
 
 const find = (P, nume) => P.find(p => p.nume === nume);
 
-test('ușă aplicată: finit 717 × 397, tăiere 713 × 393', () => {
+test('ușă aplicată: finit 717 × 397, tăiere 714 × 394', () => {
   const { P } = calc(base());
   const usa = find(P, 'Ușă');
   assert.ok(usa, 'piesa "Ușă" trebuie să existe');
   assert.equal(usa.buc, 2);
   assert.equal(usa.L, 717);
   assert.equal(usa.l, 397);
-  assert.equal(usa.TL, 713);
-  assert.equal(usa.Tl, 393);
+  /* cant 2 mm pe toate patru: scade 1.5 pe fiecare muchie, nu 2 */
+  assert.equal(usa.TL, 714);
+  assert.equal(usa.Tl, 394);
   assert.deepEqual(usa.c, ['g', 'g', 'g', 'g']);
 });
 
-test('laterală cu spate PFL 3 aplicat: finit 720 × 557, tăiere 718 × 556.2', () => {
+test('laterală cu spate PFL 3 aplicat: finit 720 × 557, tăiere 720 × 555.5', () => {
   const { P } = calc(base());
   const lat = find(P, 'Laterală');
   assert.equal(lat.buc, 2);
   assert.equal(lat.L, 720);
   assert.equal(lat.l, 557);
-  assert.equal(lat.TL, 718);
-  assert.equal(lat.Tl, 556.2);
+  /* cantul gros stă pe muchia din față, care merge pe L — deci scade din l.
+     Cele două canturi subțiri (0.4) nu schimbă cota deloc. */
+  assert.equal(lat.TL, 720);
+  assert.equal(lat.Tl, 555.5);
 });
 
-test('blat și fund: finit 764 × 557, tăiere 762 × 557', () => {
+test('blat și fund: finit 764 × 557, tăiere 764 × 555.5', () => {
   const { P } = calc(base());
   for (const nume of ['Blat', 'Fund']) {
     const p = find(P, nume);
     assert.equal(p.L, 764, `${nume}: finit L`);
     assert.equal(p.l, 557, `${nume}: finit l`);
-    assert.equal(p.TL, 762, `${nume}: tăiere L`);
-    assert.equal(p.Tl, 557, `${nume}: tăiere l`);
+    assert.equal(p.TL, 764, `${nume}: tăiere L`);
+    assert.equal(p.Tl, 555.5, `${nume}: tăiere l`);
   }
 });
 

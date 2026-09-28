@@ -359,3 +359,86 @@ test('corpul îngust de umplutură primește totuși numărul pe elevație', () 
   assert.match(el, />800</, 'corpul lat are loc și pentru lățime');
   assert.doesNotMatch(el, />150</, 'lățimea nu încape în corpul îngust, și e în tabel');
 });
+
+/* =====================================================================
+   5. Reperul de atelier: piese din lucrări chiar executate
+
+   50 de piese din patru lucrări FALCESCU, fiecare cu cota finită din
+   programul CNC (WoodWOP .mpr) și cota de debitare din fișierul de panel saw
+   (Holzma .saw). Lucrările au trecut prin atelier și s-au asamblat, deci
+   cotele sunt corecte prin construcție.
+
+   Testul ăsta a prins două greșeli pe care nimic altceva nu le vedea:
+   cantul se scădea de pe axa greșită, și se scădea grosimea întreagă în loc
+   de cât ia de fapt banda.
+   ===================================================================== */
+
+const REPER = require('./reper-atelier.json');
+const { reducereCant } = require('../shared/calc');
+
+/* aceeași aritmetică pe care o face calc(): muchiile paralele cu L (L1/L2)
+   scad din l, cele paralele cu l (W1/W2) scad din L */
+function debiteaza(finitL, finitl, cant) {
+  const [L1, L2, W1, W2] = cant.map(g => reducereCant(g));
+  return {
+    L: Math.round((finitL - W1 - W2) * 10) / 10,
+    l: Math.round((finitl - L1 - L2) * 10) / 10
+  };
+}
+
+test('reperul de atelier are piese din toate cele patru lucrări', () => {
+  assert.ok(REPER.piese.length >= 40, 'prea puține piese în reper');
+  const lucrari = new Set(REPER.piese.map(p => p.lucrare));
+  assert.ok(lucrari.size >= 3, 'reperul trebuie să acopere mai multe lucrări');
+});
+
+test('cotele de debitare ies exact ca la atelier, pe toate cele 50 de piese', () => {
+  const gresite = [];
+  REPER.piese.forEach(p => {
+    const d = debiteaza(p.finitL, p.finitl, p.cant);
+    if (Math.abs(d.L - p.taiereL) > 0.051 || Math.abs(d.l - p.taierel) > 0.051) {
+      gresite.push(`${p.lucrare} ${p.cod}: finit ${p.finitL}×${p.finitl} cant [${p.cant}] ` +
+                   `— atelier ${p.taiereL}×${p.taierel}, noi ${d.L}×${d.l}`);
+    }
+  });
+  assert.deepEqual(gresite, [],
+    gresite.length + ' piese ies altfel decât la atelier:\n  ' + gresite.slice(0, 8).join('\n  '));
+});
+
+test('regula veche — scade grosimea întreagă, de pe axa L — chiar cădea pe reper', () => {
+  /* dovada că testul are dinți: modelul de dinainte nu reproduce reperul */
+  let gresite = 0;
+  REPER.piese.forEach(p => {
+    const [L1, L2, W1, W2] = p.cant;
+    const L = Math.round((p.finitL - L1 - L2) * 10) / 10;
+    const l = Math.round((p.finitl - W1 - W2) * 10) / 10;
+    if (Math.abs(L - p.taiereL) > 0.051 || Math.abs(l - p.taierel) > 0.051) gresite++;
+  });
+  assert.ok(gresite > 20,
+    'modelul vechi ar trebui să cadă pe multe piese; a căzut pe ' + gresite);
+});
+
+test('grosimile de cant dau reducerile din atelier', () => {
+  assert.equal(reducereCant(2), 1.5, 'banda de 2 mm ia 1.5 — măsurat pe lucrări');
+  assert.equal(reducereCant(1), 0.5, 'banda de 1 mm ia 0.5 — confirmat de atelier');
+  assert.equal(reducereCant(0.8), 0, 'banda de 0.8 nu schimbă cota — măsurat');
+  assert.equal(reducereCant(0.4), 0, 'banda de 0.4 nu schimbă cota — măsurat');
+  assert.equal(reducereCant(0), 0);
+});
+
+test('pragul stă la 0.8, nu la 1', () => {
+  /* Perechea asta fixează pragul: 0.8 nu scade nimic, 1 scade 0.5. Dacă pragul
+     ar fi 1, banda de 1 mm — pe care atelierul chiar o folosește — n-ar scădea
+     nimic, iar piesele ar ieși cu 1 mm mai mari pe o axă. */
+  assert.equal(reducereCant(0.8), 0, 'la prag, inclusiv, nu se scade nimic');
+  assert.ok(reducereCant(0.81) > 0, 'imediat peste prag se scade');
+  assert.equal(reducereCant(1), 0.5);
+});
+
+test('formatele de coală sunt cele din fișierele Holzma ale atelierului', () => {
+  const F = Raport.FORMATE || require('../shared/raport').FORMATE;
+  assert.deepEqual([F['intreaga'].w, F['intreaga'].h], [2800, 2070]);
+  assert.deepEqual([F['jum-lung'].w, F['jum-lung'].h], [2800, 1030]);
+  assert.deepEqual([F['sfert'].w, F['sfert'].h], [1390, 1030]);
+  assert.notEqual(F['jum-lung'].h, 1035, 'jumătatea aritmetică nu se poate tăia');
+});

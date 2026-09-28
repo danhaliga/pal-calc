@@ -92,9 +92,12 @@ test('cantul fronturilor se ia din materialul fronturilor', () => {
 
   const usa = r.piese.find(p => p.nume === 'Ușă');
   assert.equal(usa.L, 717);
-  assert.equal(usa.TL, 715);                // 717 − 2×1 (cant de 1 mm)
+  /* Cantul de 1 mm al fronturilor ia 0.5 pe fiecare muchie scurtă. Dacă ar lua
+     cantul carcasei (2 mm, adică 1.5 pe muchie), ar ieși 714 — de asta asertul
+     ăsta încă dovedește că s-a aplicat materialul fronturilor. */
+  assert.equal(usa.TL, 716);
   const lat = r.piese.find(p => p.nume === 'Laterală');
-  assert.equal(lat.TL, 718);                // carcasa rămâne pe cant de 2 mm
+  assert.equal(lat.TL, 720);                // carcasa rămâne pe cant de 2 mm
 });
 
 /* ---------------- cant ---------------- */
@@ -155,8 +158,26 @@ test('formatele de coală au fracțiile corecte', () => {
   assert.equal(FORMATE['jum-lat'].frac, 0.5);
   assert.equal(FORMATE['jum-lung'].frac, 0.5);
   assert.equal(FORMATE['sfert'].frac, 0.25);
-  assert.equal(FORMATE['jum-lat'].w * FORMATE['jum-lat'].h * 2, FORMATE['intreaga'].w * FORMATE['intreaga'].h);
-  assert.equal(FORMATE['sfert'].w * FORMATE['sfert'].h * 4, FORMATE['intreaga'].w * FORMATE['intreaga'].h);
+  /* Jumătatea NU e jumătatea aritmetică: din 2070 nu scoți două bucăți de
+     1035, fiindcă pânza mănâncă diferența. Deci aria a două jumătăți este mai
+     MICĂ decât aria colii întregi, iar `frac` rămâne cât plătești, nu raportul
+     de arii. Valorile sunt cele din fișierele Holzma ale atelierului. */
+  const A = FORMATE['intreaga'];
+  assert.equal(A.w, 2800);
+  assert.equal(A.h, 2070);
+  assert.deepEqual([FORMATE['jum-lat'].w, FORMATE['jum-lat'].h], [1390, 2070]);
+  assert.deepEqual([FORMATE['jum-lung'].w, FORMATE['jum-lung'].h], [2800, 1030]);
+  assert.deepEqual([FORMATE['sfert'].w, FORMATE['sfert'].h], [1390, 1030]);
+
+  for (const id of ['jum-lat', 'jum-lung', 'sfert']) {
+    const f = FORMATE[id];
+    assert.ok(f.w <= A.w && f.h <= A.h, id + ': trebuie să încapă în coala întreagă');
+    assert.ok(f.w * f.h <= A.w * A.h * f.frac,
+      id + ': nu poate avea mai multă suprafață decât fracțiunea plătită');
+  }
+  /* două jumătăți pe lat plus pânza încap pe lățimea colii */
+  assert.ok(FORMATE['jum-lat'].w * 2 < A.w, 'două jumătăți pe lat trebuie să lase loc de tăiere');
+  assert.ok(FORMATE['jum-lung'].h * 2 < A.h, 'două jumătăți pe lung trebuie să lase loc de tăiere');
 });
 
 test('încadrarea desenează fiecare piesă din coală', () => {

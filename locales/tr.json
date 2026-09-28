@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "tam levha",
-    "jum-lat": "yarım 1400×2070",
-    "jum-lung": "yarım 2800×1035",
-    "sfert": "çeyrek 1400×1035"
+    "jum-lat": "yarım 1390×2070",
+    "jum-lung": "yarım 2800×1030",
+    "sfert": "çeyrek 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Gönye kesim",
@@ -794,7 +794,7 @@
     "colDeseu": "Fire",
     "notaPlaci": "Levhalar yüzeyden değil, gerçek yerleşimle hesaplanır (giyotin kesim, 4 mm testere).",
     "notaAdaos": "Banttaki %{pct} pay, yapıştırma kayıplarını ve rulo uçlarını karşılar.",
-    "notaDebitare": "<b>Kesim</b> sütunlarındaki ölçüler kesim ölçüleridir: bitmiş ölçü eksi her kenardaki bant. Bant sütunları hangi kenara hangi kalınlığın geldiğini söyler: <b>L1/L2</b> uzun kenarlar, <b>l1/l2</b> kısa kenarlardır. <b>Bitmiş</b> sütunu bantlamadan sonraki ölçüdür.",
+    "notaDebitare": "<b>Kesim</b> sütunlarındaki ölçüler kesim ölçüleridir. Bant bir kenara yapışır ve parçayı ona dik yönde kalınlaştırır: uzun kenarlardaki (<b>U1/U2</b>) genişlikten, kısa kenarlardaki (<b>G1/G2</b>) uzunluktan düşer. İnce bant kesim ölçüsünü değiştirmez. <b>Bitmiş</b> sütunu bantlandıktan sonraki ölçüdür.",
     "antetMaterial": "{nume} — {coli} (alınacak: {intregi})",
     "colCod": "Kod",
     "colCorp": "Gövde",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Kesim U",
     "colTaierel": "Kesim G",
     "colFibra": "Damar",
-    "legendaCant": "görünen kenarda kalın bant · ince bant · bantsız. L1/L2 = uzun kenarlar, l1/l2 = kısa kenarlar. Kesim = bitmiş − her kenardaki bant.",
+    "legendaCant": "görünen kenarda kalın bant · ince bant · bantsız. U1/U2 = uzun kenarlar, G1/G2 = kısa kenarlar. Uzun kenarlardaki bant genişlikten, kısa kenarlardaki uzunluktan düşer.",
     "formuleTitlu": "Kullanılan formüller",
     "formulaInterior": "İç: <code>G_iç = {W} − 2×{t} = {Wint}</code>, <code>Y_iç = {H} − 2×{t} = {Hint}</code>, <code>D_iç = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (derinlik − arkalık {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Yüksekliğe göre menteşe: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, üstü → 5. Yuva Ø35, kenardan 3–6 mm, uçlardan 80–100 mm.",
     "formulaPolita": "Raf: <code>U = G_iç − {jp}</code>, <code>G = D_iç − {rp}</code>",
     "formulaSertar": "Çekmece: <code>G_kutu = G_iç − 2×{jg}</code>; kutu ön/arka = G_kutu − 2×{ts}; ray uzunluğu ≤ D_iç, 50 mm adımlarla.",
-    "formulaTaiere": "Kesim: <code>kesim_ölçüsü = bitmiş_ölçü − bant_sol − bant_sağ</code> (kalın bant {cg}, ince {cs}).",
+    "formulaTaiere": "Kesim: uzunluk kısa kenarların bandını, genişlik uzun kenarlarınkini kaybeder. {cg} mm bant {rg} mm, {cs} mm bant {rs} mm alır.",
     "fara3d": "3B görünüm yüklenemedi (3B kitaplığı engelli). Parça listesi normal çalışıyor.",
     "apasaPiesa": "Ölçülerini görmek için bir parçaya dokun. Her parça gerçek kalınlığıyla çizilmiştir; kenar renkleri bandı gösterir.",
     "taiere": "kesim",

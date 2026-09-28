@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "ganze Platte",
-    "jum-lat": "halbe 1400×2070",
-    "jum-lung": "halbe 2800×1035",
-    "sfert": "viertel 1400×1035"
+    "jum-lat": "halbe 1390×2070",
+    "jum-lung": "halbe 2800×1030",
+    "sfert": "viertel 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Gehrungsschnitt",
@@ -794,7 +794,7 @@
     "colDeseu": "Verschnitt",
     "notaPlaci": "Die Platten sind mit einer echten Aufteilung gerechnet (Guillotineschnitte, 4-mm-Sägeblatt), nicht aus der Fläche.",
     "notaAdaos": "Der Zuschlag von {pct}% auf die Kante deckt Verluste beim Aufbringen und die Rollenenden ab.",
-    "notaDebitare": "Die Maße in den Spalten <b>Zuschnitt</b> sind die Zuschnittmaße: Fertigmaß minus Kante auf jeder Seite. Die Kantenspalten sagen, welche Stärke auf welche Schmalseite kommt: <b>L1/L2</b> sind die langen, <b>l1/l2</b> die kurzen Seiten. Die Spalte <b>Fertig</b> ist das Maß nach dem Bekanten.",
+    "notaDebitare": "Die Maße in den Spalten <b>Zuschnitt</b> sind Zuschnittmaße. Die Kante wird auf eine Schmalfläche geklebt und macht das Teil quer dazu dicker: die Kante auf den langen Schmalflächen (<b>L1/L2</b>) geht von der Breite ab, die auf den kurzen (<b>B1/B2</b>) von der Länge. Dünne Kante ändert das Zuschnittmaß nicht. Die Spalte <b>Fertig</b> ist das Maß nach dem Bekanten.",
     "antetMaterial": "{nume} — {coli} ({intregi} zu kaufen)",
     "colCod": "Code",
     "colCorp": "Korpus",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Zuschnitt L",
     "colTaierel": "Zuschnitt B",
     "colFibra": "Maserung",
-    "legendaCant": "dicke Kante auf der sichtbaren Schmalseite · dünne Kante · ohne Kante. L1/L2 = die langen Schmalseiten, l1/l2 = die kurzen. Zuschnitt = Fertigmaß − Kante auf jeder Seite.",
+    "legendaCant": "dicke Kante auf der sichtbaren Schmalfläche · dünne Kante · ohne Kante. L1/L2 = lange Schmalflächen, B1/B2 = kurze. Die Kante auf den langen geht von der Breite ab, die auf den kurzen von der Länge.",
     "formuleTitlu": "Verwendete Formeln",
     "formulaInterior": "Innen: <code>B_innen = {W} − 2×{t} = {Wint}</code>, <code>H_innen = {H} − 2×{t} = {Hint}</code>, <code>T_innen = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (Tiefe − Rückwand {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Bänder nach Höhe: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, darüber → 5. Topf Ø35, 3–6 mm von der Kante, 80–100 mm von den Enden.",
     "formulaPolita": "Boden: <code>L = B_innen − {jp}</code>, <code>B = T_innen − {rp}</code>",
     "formulaSertar": "Schublade: <code>B_Kasten = B_innen − 2×{jg}</code>; Kasten vorn/hinten = B_Kasten − 2×{ts}; Auszugslänge ≤ T_innen, in 50-mm-Schritten.",
-    "formulaTaiere": "Zuschnitt: <code>Zuschnittmaß = Fertigmaß − Kante_links − Kante_rechts</code> (dicke Kante {cg}, dünne {cs}).",
+    "formulaTaiere": "Zuschnitt: von der Länge geht die Kante der kurzen Schmalflächen ab, von der Breite die der langen. Eine Kante von {cg} mm nimmt {rg} mm, eine von {cs} mm nimmt {rs} mm.",
     "fara3d": "Die 3D-Ansicht konnte nicht geladen werden (die 3D-Bibliothek ist blockiert). Die Teileliste funktioniert normal.",
     "apasaPiesa": "Tippe auf ein Teil, um seine Maße zu sehen. Jedes Teil ist in seiner echten Stärke gezeichnet; die Farben der Schmalseiten zeigen die Kante.",
     "taiere": "Zuschnitt",

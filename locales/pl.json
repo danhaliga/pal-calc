@@ -640,9 +640,9 @@
   },
   "format": {
     "intreaga": "cała płyta",
-    "jum-lat": "połowa 1400×2070",
-    "jum-lung": "połowa 2800×1035",
-    "sfert": "ćwiartka 1400×1035"
+    "jum-lat": "połowa 1390×2070",
+    "jum-lung": "połowa 2800×1030",
+    "sfert": "ćwiartka 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Cięcie pod kątem",
@@ -803,7 +803,7 @@
     "colDeseu": "Odpad",
     "notaPlaci": "Płyty są liczone realnym rozkrojem (cięcia gilotynowe, piła 4 mm), a nie z powierzchni.",
     "notaAdaos": "Naddatek {pct}% na obrzeżu pokrywa straty przy naklejaniu i końcówki rolek.",
-    "notaDebitare": "Wymiary w kolumnach <b>Cięcie</b> to wymiary rozkroju: wymiar gotowy minus obrzeże z każdej strony. Kolumny obrzeża mówią, jaka grubość idzie na którą krawędź: <b>L1/L2</b> to krawędzie długie, <b>l1/l2</b> krótkie. Kolumna <b>Gotowy</b> to wymiar po okleinowaniu.",
+    "notaDebitare": "Wymiary w kolumnach <b>Rozkrój</b> to wymiary rozkroju. Obrzeże nakleja się na jedną krawędź i pogrubia element w poprzek: obrzeże na krawędziach długich (<b>D1/D2</b>) odejmuje od szerokości, na krótkich (<b>S1/S2</b>) od długości. Cienkie obrzeże nie zmienia wymiaru rozkroju. Kolumna <b>Gotowy</b> to wymiar po okleinowaniu.",
     "antetMaterial": "{nume} — {coli} (do kupienia: {intregi})",
     "colCod": "Kod",
     "colCorp": "Korpus",
@@ -1075,7 +1075,7 @@
     "colTaiereL": "Cięcie dł.",
     "colTaierel": "Cięcie szer.",
     "colFibra": "Usłojenie",
-    "legendaCant": "obrzeże grube na widocznej krawędzi · obrzeże cienkie · bez obrzeża. L1/L2 = krawędzie długie, l1/l2 = krótkie. Cięcie = gotowy − obrzeże z każdej strony.",
+    "legendaCant": "grube obrzeże na krawędzi widocznej · cienkie obrzeże · bez obrzeża. D1/D2 = krawędzie długie, S1/S2 = krótkie. Obrzeże na długich odejmuje od szerokości, na krótkich od długości.",
     "formuleTitlu": "Użyte wzory",
     "formulaInterior": "Wnętrze: <code>S_wewn = {W} − 2×{t} = {Wint}</code>, <code>W_wewn = {H} − 2×{t} = {Hint}</code>, <code>G_wewn = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (głębokość − plecy {tp})",
@@ -1086,7 +1086,7 @@
     "formulaBalamale": "Zawiasy według wysokości: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, powyżej → 5. Puszka Ø35, 3–6 mm od krawędzi, 80–100 mm od końców.",
     "formulaPolita": "Półka: <code>dł = S_wewn − {jp}</code>, <code>szer = G_wewn − {rp}</code>",
     "formulaSertar": "Szuflada: <code>S_skrzynki = S_wewn − 2×{jg}</code>; przód/tył skrzynki = S_skrzynki − 2×{ts}; długość prowadnicy ≤ G_wewn, co 50 mm.",
-    "formulaTaiere": "Cięcie: <code>wymiar_cięcia = wymiar_gotowy − obrzeże_lewe − obrzeże_prawe</code> (obrzeże grube {cg}, cienkie {cs}).",
+    "formulaTaiere": "Rozkrój: długość traci obrzeże z krawędzi krótkich, szerokość z długich. Obrzeże {cg} mm zabiera {rg} mm, obrzeże {cs} mm zabiera {rs} mm.",
     "fara3d": "Widok 3D się nie wczytał (biblioteka 3D jest zablokowana). Lista elementów działa normalnie.",
     "apasaPiesa": "Dotknij elementu, żeby zobaczyć jego wymiary. Każdy element jest narysowany w swojej rzeczywistej grubości; kolory krawędzi pokazują obrzeże.",
     "taiere": "cięcie",

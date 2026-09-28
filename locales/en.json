@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "full sheet",
-    "jum-lat": "half 1400×2070",
-    "jum-lung": "half 2800×1035",
-    "sfert": "quarter 1400×1035"
+    "jum-lat": "half 1390×2070",
+    "jum-lung": "half 2800×1030",
+    "sfert": "quarter 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Mitre cut",
@@ -794,7 +794,7 @@
     "colDeseu": "Waste",
     "notaPlaci": "The boards are calculated with a real nesting run (guillotine cuts, 4 mm blade), not from surface area.",
     "notaAdaos": "The {pct}% allowance on the edging covers losses during application and the ends of the roll.",
-    "notaDebitare": "The sizes in the <b>Cut</b> columns are the cutting sizes: the finished size minus the edging on each side. The edging columns say which thickness goes on each edge: <b>L1/L2</b> are the long edges, <b>l1/l2</b> the short ones. The <b>Finished</b> column is the size after edge banding.",
+    "notaDebitare": "The figures in the <b>Cut</b> columns are cutting sizes. Edge banding is glued to one edge and thickens the piece across it: banding on the long edges (<b>L1/L2</b>) reduces the width, banding on the short edges (<b>l1/l2</b>) reduces the length. Thin banding does not change the cutting size. The <b>Finished</b> column is the size after banding.",
     "antetMaterial": "{nume} — {coli} ({intregi} to buy)",
     "colCod": "Code",
     "colCorp": "Cabinet",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Cut L",
     "colTaierel": "Cut W",
     "colFibra": "Grain",
-    "legendaCant": "thick edging on the visible edge · thin edging · no edging. L1/L2 = the long edges, l1/l2 = the short edges. Cut = finished − edging on each side.",
+    "legendaCant": "thick banding on the visible edge · thin banding · no banding. L1/L2 = long edges, l1/l2 = short edges. Banding on the long edges reduces the width, banding on the short edges reduces the length.",
     "formuleTitlu": "Formulas used",
     "formulaInterior": "Inside: <code>W_int = {W} − 2×{t} = {Wint}</code>, <code>H_int = {H} − 2×{t} = {Hint}</code>, <code>D_int = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (depth − back {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Hinges by height: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, above → 5. Ø35 cup, 3–6 mm from the edge, 80–100 mm from the ends.",
     "formulaPolita": "Shelf: <code>L = W_int − {jp}</code>, <code>W = D_int − {rp}</code>",
     "formulaSertar": "Drawer: <code>W_box = W_int − 2×{jg}</code>; box front/back = W_box − 2×{ts}; runner length ≤ D_int, in 50 mm steps.",
-    "formulaTaiere": "Cut: <code>cut_size = finished_size − edging_left − edging_right</code> (thick edging {cg}, thin {cs}).",
+    "formulaTaiere": "Cut: the length loses the banding on the short edges, the width the banding on the long edges. {cg} mm banding takes {rg} mm, {cs} mm banding takes {rs} mm.",
     "fara3d": "The 3D view could not load (the 3D library is blocked). The parts list works normally.",
     "apasaPiesa": "Tap a part to see its sizes. Every part is drawn at its real thickness; the edge colours show the edging.",
     "taiere": "cut",

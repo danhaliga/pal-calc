@@ -22,11 +22,16 @@
   var ADAOS_CANT_MIN = 10;
 
   /* formatele în care se poate tăia o coală */
+  /* Jumătățile și sferturile NU sunt jumătățile aritmetice ale colii. Din 2070
+     nu scoți două bucăți de 1035: pânza și spălarea muchiei mănâncă diferența.
+     Valorile de mai jos sunt cele declarate de atelier în fișierele Holzma
+     (.saw) ale lucrărilor reale — 2800×1030 și 1390×1030 — nu 1035 și 1400.
+     `frac` rămâne fracțiunea de coală întreagă plătită, nu raportul de arii. */
   var FORMATE = {
     'intreaga': { id: 'intreaga', w: 2800, h: 2070, frac: 1 },
-    'jum-lat':  { id: 'jum-lat',  w: 1400, h: 2070, frac: 0.5 },
-    'jum-lung': { id: 'jum-lung', w: 2800, h: 1035, frac: 0.5 },
-    'sfert':    { id: 'sfert',    w: 1400, h: 1035, frac: 0.25 }
+    'jum-lat':  { id: 'jum-lat',  w: 1390, h: 2070, frac: 0.5 },
+    'jum-lung': { id: 'jum-lung', w: 2800, h: 1030, frac: 0.5 },
+    'sfert':    { id: 'sfert',    w: 1390, h: 1030, frac: 0.25 }
   };
 
   var r1 = function (v) { return Math.round(v * 10) / 10; };

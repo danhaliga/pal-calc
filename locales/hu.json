@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "egész tábla",
-    "jum-lat": "fél 1400×2070",
-    "jum-lung": "fél 2800×1035",
-    "sfert": "negyed 1400×1035"
+    "jum-lat": "fél 1390×2070",
+    "jum-lung": "fél 2800×1030",
+    "sfert": "negyed 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Gérvágás",
@@ -794,7 +794,7 @@
     "colDeseu": "Hulladék",
     "notaPlaci": "A táblákat valódi kiosztással számoljuk (giljotinvágás, 4 mm-es lap), nem felületből.",
     "notaAdaos": "Az élzáróra számolt {pct}% ráhagyás fedezi a felhordási veszteséget és a tekercsvégeket.",
-    "notaDebitare": "A <b>Szabás</b> oszlopok méretei a szabásméretek: a készméret mínusz az élzáró mindkét oldalon. Az élzáró oszlopok mondják meg, melyik élre milyen vastagság kerül: <b>L1/L2</b> a hosszú élek, <b>l1/l2</b> a rövidek. A <b>Kész</b> oszlop az élzárás utáni méret.",
+    "notaDebitare": "A <b>Szabás</b> oszlopok méretei szabásméretek. Az élzáró egy élre kerül, és arra merőlegesen vastagítja a darabot: a hosszú éleken lévő (<b>H1/H2</b>) a szélességből megy le, a rövid éleken lévő (<b>Sz1/Sz2</b>) a hosszból. A vékony élzáró nem változtat a szabásméreten. A <b>Kész</b> oszlop az élzárás utáni méret.",
     "antetMaterial": "{nume} — {coli} (megvásárolandó: {intregi})",
     "colCod": "Kód",
     "colCorp": "Korpusz",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Szabás H",
     "colTaierel": "Szabás Sz",
     "colFibra": "Erezet",
-    "legendaCant": "vastag élzáró a látszó élen · vékony élzáró · élzáró nélkül. L1/L2 = a hosszú élek, l1/l2 = a rövidek. Szabás = készméret − élzáró mindkét oldalon.",
+    "legendaCant": "vastag élzáró a látszó élen · vékony élzáró · élzáró nélkül. H1/H2 = hosszú élek, Sz1/Sz2 = rövidek. A hosszú éleken lévő élzáró a szélességből megy le, a rövideken lévő a hosszból.",
     "formuleTitlu": "Használt képletek",
     "formulaInterior": "Belső: <code>Sz_belső = {W} − 2×{t} = {Wint}</code>, <code>M_belső = {H} − 2×{t} = {Hint}</code>, <code>Mé_belső = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (mélység − hátlap {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Pántok magasság szerint: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, fölötte → 5. Serleg Ø35, az éltől 3–6 mm-re, a végektől 80–100 mm-re.",
     "formulaPolita": "Polc: <code>H = Sz_belső − {jp}</code>, <code>Sz = Mé_belső − {rp}</code>",
     "formulaSertar": "Fiók: <code>Sz_fiók = Sz_belső − 2×{jg}</code>; fiók elő/hátlap = Sz_fiók − 2×{ts}; sínhossz ≤ Mé_belső, 50 mm-es lépésekben.",
-    "formulaTaiere": "Szabás: <code>szabásméret = készméret − élzáró_bal − élzáró_jobb</code> (vastag élzáró {cg}, vékony {cs}).",
+    "formulaTaiere": "Szabás: a hossz a rövid élek élzáróját veszíti, a szélesség a hosszúakét. A {cg} mm-es élzáró {rg} mm-t visz, a {cs} mm-es {rs} mm-t.",
     "fara3d": "A 3D nézet nem töltődött be (a 3D könyvtár blokkolva van). Az elemjegyzék rendesen működik.",
     "apasaPiesa": "Koppints egy elemre a méreteiért. Minden elem a valódi vastagságával van rajzolva; az élek színe mutatja az élzárót.",
     "taiere": "szabás",

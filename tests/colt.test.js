@@ -24,7 +24,7 @@ test('colț orb: corp dreptunghiular, ușă îngustată de zona oarbă', () => {
   assert.equal(usa.buc, 1);
   assert.equal(usa.l, 447);            // 1000 − 550 − 2×1.5
   assert.equal(usa.L, 717);            // 720 − 2×1.5
-  assert.equal(usa.Tl, 443);           // 447 − 2×2
+  assert.equal(usa.Tl, 444);           // 447 − 2×1.5 (cantul de 2 mm ia 1.5)
   assert.match(usa.nota, /zonă oarbă de 550 mm/);
 
   /* restul corpului rămâne un corp drept, pe toată lățimea */
@@ -57,8 +57,10 @@ test('colț în L: laterale, panouri decupate, două fronturi', () => {
   assert.equal(lat.buc, 2);
   assert.equal(lat.L, 720);
   assert.equal(lat.l, 560);
-  assert.equal(lat.TL, 718);           // cant gros pe muchia frontală
-  assert.equal(lat.Tl, 559.2);         // cant subțire sus și jos
+  /* cantul gros stă pe muchia frontală, care merge pe L: scade din l, nu din L.
+     Canturile subțiri (0.4) de sus și de jos nu schimbă cota deloc. */
+  assert.equal(lat.TL, 720);
+  assert.equal(lat.Tl, 558.5);
 
   for (const nume of ['Blat', 'Fund']) {
     const p = find(P, nume);
@@ -72,7 +74,7 @@ test('colț în L: laterale, panouri decupate, două fronturi', () => {
   assert.equal(u1.L, 717);
   assert.equal(u1.l, 319);             // (882 − 560) − 1.5 − 1.5
   assert.equal(u2.l, 319);
-  assert.equal(u1.Tl, 315);            // 319 − 2×2
+  assert.equal(u1.Tl, 316);            // 319 − 2×1.5
   assert.match(u1.nota, /balama-carte/);
 
   const pol = find(P, 'Poliță');
@@ -102,7 +104,7 @@ test('colț diagonal: un singur front, pe diagonala de 455 mm', () => {
   assert.equal(usa.buc, 1);
   assert.equal(usa.L, 717);
   assert.equal(usa.l, 452.4);          // diagonala 455.4 − 2×1.5
-  assert.equal(usa.Tl, 448.4);
+  assert.equal(usa.Tl, 449.4);         // 452.4 − 2×1.5
   assert.equal(balamale(usa.L), 2);
 
   const blat = find(P, 'Blat');

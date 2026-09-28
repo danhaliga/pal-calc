@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "tablero entero",
-    "jum-lat": "media 1400×2070",
-    "jum-lung": "media 2800×1035",
-    "sfert": "cuarto 1400×1035"
+    "jum-lat": "media 1390×2070",
+    "jum-lung": "media 2800×1030",
+    "sfert": "cuarto 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Corte a inglete",
@@ -794,7 +794,7 @@
     "colDeseu": "Desperdicio",
     "notaPlaci": "Los tableros se calculan con una optimización real (cortes tipo guillotina, disco de 4 mm), no a partir de la superficie.",
     "notaAdaos": "El margen del {pct}% en el canto cubre las pérdidas al aplicarlo y los finales de rollo.",
-    "notaDebitare": "Las medidas de las columnas <b>Corte</b> son las medidas de despiece: la medida acabada menos el canto de cada lado. Las columnas de canto indican qué grosor lleva cada borde: <b>L1/L2</b> son los bordes largos, <b>l1/l2</b> los cortos. La columna <b>Acabado</b> es la medida después de cantear.",
+    "notaDebitare": "Las medidas de las columnas <b>Corte</b> son medidas de corte. El canto se pega en un borde y engrosa la pieza en sentido perpendicular: el de los bordes largos (<b>L1/L2</b>) resta al ancho, el de los bordes cortos (<b>l1/l2</b>) resta al largo. El canto fino no cambia la medida de corte. La columna <b>Acabado</b> es la medida ya cantada.",
     "antetMaterial": "{nume} — {coli} ({intregi} a comprar)",
     "colCod": "Código",
     "colCorp": "Módulo",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Corte L",
     "colTaierel": "Corte A",
     "colFibra": "Veta",
-    "legendaCant": "canto grueso en el borde visible · canto fino · sin canto. L1/L2 = los bordes largos, l1/l2 = los cortos. Corte = acabado − canto de cada lado.",
+    "legendaCant": "canto grueso en el borde visible · canto fino · sin canto. L1/L2 = bordes largos, l1/l2 = bordes cortos. El canto de los bordes largos resta al ancho, el de los cortos resta al largo.",
     "formuleTitlu": "Fórmulas empleadas",
     "formulaInterior": "Interior: <code>A_int = {W} − 2×{t} = {Wint}</code>, <code>H_int = {H} − 2×{t} = {Hint}</code>, <code>P_int = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (fondo − trasera {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Bisagras según la altura: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, por encima → 5. Cazoleta Ø35, a 3–6 mm del borde, 80–100 mm de los extremos.",
     "formulaPolita": "Balda: <code>L = A_int − {jp}</code>, <code>A = P_int − {rp}</code>",
     "formulaSertar": "Cajón: <code>A_caja = A_int − 2×{jg}</code>; frente/trasera de la caja = A_caja − 2×{ts}; longitud de guía ≤ P_int, en pasos de 50 mm.",
-    "formulaTaiere": "Corte: <code>medida_corte = medida_acabada − canto_izq − canto_der</code> (canto grueso {cg}, fino {cs}).",
+    "formulaTaiere": "Corte: el largo pierde el canto de los bordes cortos, el ancho el de los bordes largos. El canto de {cg} mm quita {rg} mm, el de {cs} mm quita {rs} mm.",
     "fara3d": "No se ha podido cargar la vista 3D (la biblioteca 3D está bloqueada). La lista de piezas funciona con normalidad.",
     "apasaPiesa": "Toca una pieza para ver sus medidas. Cada pieza está dibujada a su grosor real; el color de los bordes indica el canto.",
     "taiere": "corte",

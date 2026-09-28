@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "hele plaat",
-    "jum-lat": "helft 1400×2070",
-    "jum-lung": "helft 2800×1035",
-    "sfert": "kwart 1400×1035"
+    "jum-lat": "helft 1390×2070",
+    "jum-lung": "helft 2800×1030",
+    "sfert": "kwart 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Verstekzaagsnede",
@@ -794,7 +794,7 @@
     "colDeseu": "Afval",
     "notaPlaci": "De platen zijn berekend met een echte indeling (guillotinesneden, zaagblad 4 mm), niet vanuit de oppervlakte.",
     "notaAdaos": "De toeslag van {pct}% op het kantenband dekt het verlies bij het aanbrengen en de rolresten.",
-    "notaDebitare": "De maten in de kolommen <b>Zaagmaat</b> zijn de zaagmaten: de eindmaat min het kantenband aan elke zijde. De kantkolommen zeggen welke dikte op welke kant komt: <b>L1/L2</b> zijn de lange kanten, <b>l1/l2</b> de korte. De kolom <b>Eindmaat</b> is de maat na het kanten.",
+    "notaDebitare": "De maten in de kolommen <b>Zaagmaat</b> zijn zaagmaten. De kantenband wordt op een zijde gelijmd en maakt het stuk daar haaks op dikker: band op de lange zijden (<b>L1/L2</b>) gaat van de breedte af, band op de korte (<b>b1/b2</b>) van de lengte. Dunne band verandert de zaagmaat niet. De kolom <b>Afgewerkt</b> is de maat na het kanten.",
     "antetMaterial": "{nume} — {coli} ({intregi} te kopen)",
     "colCod": "Code",
     "colCorp": "Kast",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Zaagmaat L",
     "colTaierel": "Zaagmaat B",
     "colFibra": "Nerf",
-    "legendaCant": "dik kantenband op de zichtbare kant · dun kantenband · zonder kantenband. L1/L2 = de lange kanten, l1/l2 = de korte. Zaagmaat = eindmaat − kantenband aan elke zijde.",
+    "legendaCant": "dikke band op de zichtbare zijde · dunne band · geen band. L1/L2 = lange zijden, b1/b2 = korte zijden. Band op de lange zijden gaat van de breedte af, band op de korte van de lengte.",
     "formuleTitlu": "Gebruikte formules",
     "formulaInterior": "Binnenwerks: <code>B_bin = {W} − 2×{t} = {Wint}</code>, <code>H_bin = {H} − 2×{t} = {Hint}</code>, <code>D_bin = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (diepte − achterwand {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Scharnieren naar hoogte: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, daarboven → 5. Pot Ø35, 3–6 mm van de kant, 80–100 mm van de uiteinden.",
     "formulaPolita": "Legplank: <code>L = B_bin − {jp}</code>, <code>B = D_bin − {rp}</code>",
     "formulaSertar": "Lade: <code>B_lade = B_bin − 2×{jg}</code>; voor/achter = B_lade − 2×{ts}; geleiderlengte ≤ D_bin, in stappen van 50 mm.",
-    "formulaTaiere": "Zagen: <code>zaagmaat = eindmaat − kant_links − kant_rechts</code> (dik kantenband {cg}, dun {cs}).",
+    "formulaTaiere": "Zaagmaat: van de lengte gaat de band van de korte zijden af, van de breedte die van de lange. Band van {cg} mm neemt {rg} mm, band van {cs} mm neemt {rs} mm.",
     "fara3d": "De 3D-weergave kon niet laden (de 3D-bibliotheek is geblokkeerd). De onderdelenlijst werkt gewoon.",
     "apasaPiesa": "Tik op een onderdeel om de maten te zien. Elk onderdeel is op zijn echte dikte getekend; de kleuren van de kanten tonen het kantenband.",
     "taiere": "zaagmaat",

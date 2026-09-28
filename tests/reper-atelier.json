@@ -1,0 +1,756 @@
+{
+ "sursa": "lucrări FALCESCU 26030 / 26032 / 26069 / 26070 — .saw (Holzma) față de .mpr (WoodWOP)",
+ "explicatie": "cant = [L1, L2, W1, W2] în mm. L1/L2 sunt muchiile paralele cu lungimea.",
+ "piese": [
+  {
+   "lucrare": "26030",
+   "cod": "CAP`XXX`2LATIMI",
+   "buc": 18,
+   "finitL": 810.6,
+   "finitl": 350,
+   "cant": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "taiereL": 807.6,
+   "taierel": 347
+  },
+  {
+   "lucrare": "26030",
+   "cod": "DSP",
+   "buc": 36,
+   "finitL": 964,
+   "finitl": 337.5,
+   "cant": [
+    2,
+    0.8,
+    0.8,
+    0.8
+   ],
+   "taiereL": 964,
+   "taierel": 336
+  },
+  {
+   "lucrare": "26030",
+   "cod": "USA",
+   "buc": 18,
+   "finitL": 958.000001,
+   "finitl": 240,
+   "cant": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "taiereL": 955,
+   "taierel": 237
+  },
+  {
+   "lucrare": "26030",
+   "cod": "CAP`XXX`2LATIMI",
+   "buc": 2,
+   "finitL": 999.6,
+   "finitl": 400,
+   "cant": [
+    0,
+    2,
+    2,
+    2
+   ],
+   "taiereL": 996.6,
+   "taierel": 398.5
+  },
+  {
+   "lucrare": "26030",
+   "cod": "PLT",
+   "buc": 4,
+   "finitL": 963,
+   "finitl": 99.999988,
+   "cant": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 963,
+   "taierel": 100
+  },
+  {
+   "lucrare": "26030",
+   "cod": "FD",
+   "buc": 2,
+   "finitL": 963,
+   "finitl": 397,
+   "cant": [
+    0,
+    2,
+    0,
+    0
+   ],
+   "taiereL": 963,
+   "taierel": 395.5
+  },
+  {
+   "lucrare": "26030",
+   "cod": "LAT",
+   "buc": 2,
+   "finitL": 982,
+   "finitl": 400,
+   "cant": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 982,
+   "taierel": 398.5
+  },
+  {
+   "lucrare": "26030",
+   "cod": "FD`XXX`2LATIMI",
+   "buc": 18,
+   "finitL": 810.6,
+   "finitl": 350,
+   "cant": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "taiereL": 807.6,
+   "taierel": 347
+  },
+  {
+   "lucrare": "26030",
+   "cod": "USA",
+   "buc": 6,
+   "finitL": 858,
+   "finitl": 303,
+   "cant": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "taiereL": 855,
+   "taierel": 300
+  },
+  {
+   "lucrare": "26030",
+   "cod": "POL`R",
+   "buc": 6,
+   "finitL": 309,
+   "finitl": 377,
+   "cant": [
+    0,
+    2,
+    0,
+    0
+   ],
+   "taiereL": 309,
+   "taierel": 375.5
+  },
+  {
+   "lucrare": "26030",
+   "cod": "DSP",
+   "buc": 4,
+   "finitL": 864,
+   "finitl": 397,
+   "cant": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 864,
+   "taierel": 395.5
+  },
+  {
+   "lucrare": "26030",
+   "cod": "LAT",
+   "buc": 18,
+   "finitL": 964,
+   "finitl": 350,
+   "cant": [
+    2,
+    2,
+    0.8,
+    0.8
+   ],
+   "taiereL": 964,
+   "taierel": 347
+  },
+  {
+   "lucrare": "26030",
+   "cod": "POL`R",
+   "buc": 54,
+   "finitL": 246,
+   "finitl": 317.5,
+   "cant": [
+    0.8,
+    2,
+    0.8,
+    0.8
+   ],
+   "taiereL": 246,
+   "taierel": 316
+  },
+  {
+   "lucrare": "26069",
+   "cod": "CAP`XXX`2LATIMI",
+   "buc": 5,
+   "finitL": 1150.6,
+   "finitl": 420,
+   "cant": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "taiereL": 1147.6,
+   "taierel": 417
+  },
+  {
+   "lucrare": "26069",
+   "cod": "USA",
+   "buc": 10,
+   "finitL": 320.000001,
+   "finitl": 353.333333,
+   "cant": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "taiereL": 317,
+   "taierel": 350.3
+  },
+  {
+   "lucrare": "26069",
+   "cod": "FD`XXX`2LATIMI",
+   "buc": 5,
+   "finitL": 1150.6,
+   "finitl": 420,
+   "cant": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "taiereL": 1147.6,
+   "taierel": 417
+  },
+  {
+   "lucrare": "26069",
+   "cod": "LAT",
+   "buc": 5,
+   "finitL": 1014,
+   "finitl": 420,
+   "cant": [
+    2,
+    2,
+    0.4,
+    0.4
+   ],
+   "taiereL": 1014,
+   "taierel": 417
+  },
+  {
+   "lucrare": "26069",
+   "cod": "DSP`NUT`FV",
+   "buc": 10,
+   "finitL": 1014,
+   "finitl": 420,
+   "cant": [
+    2,
+    0.4,
+    0,
+    0
+   ],
+   "taiereL": 1014,
+   "taierel": 418.5
+  },
+  {
+   "lucrare": "26069",
+   "cod": "POL`R",
+   "buc": 30,
+   "finitL": 359.333333,
+   "finitl": 400,
+   "cant": [
+    0.4,
+    2,
+    0.4,
+    0.4
+   ],
+   "taiereL": 359.3,
+   "taierel": 398.5
+  },
+  {
+   "lucrare": "26070",
+   "cod": "CAP",
+   "buc": 1,
+   "finitL": 674,
+   "finitl": 580,
+   "cant": [
+    0,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 674,
+   "taierel": 580
+  },
+  {
+   "lucrare": "26070",
+   "cod": "LAT",
+   "buc": 1,
+   "finitL": 2062,
+   "finitl": 580,
+   "cant": [
+    0.8,
+    0,
+    0.8,
+    0
+   ],
+   "taiereL": 2062,
+   "taierel": 580
+  },
+  {
+   "lucrare": "26070",
+   "cod": "INT",
+   "buc": 1,
+   "finitL": 614,
+   "finitl": 150,
+   "cant": [
+    0.8,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 614,
+   "taierel": 150
+  },
+  {
+   "lucrare": "26070",
+   "cod": "POL",
+   "buc": 1,
+   "finitL": 614,
+   "finitl": 577,
+   "cant": [
+    0,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 614,
+   "taierel": 577
+  },
+  {
+   "lucrare": "26070",
+   "cod": "FD`SRT",
+   "buc": 3,
+   "finitL": 564.999992,
+   "finitl": 481.4,
+   "cant": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 565,
+   "taierel": 481.4
+  },
+  {
+   "lucrare": "26070",
+   "cod": "LAT`SRT=",
+   "buc": 6,
+   "finitL": 500,
+   "finitl": 151,
+   "cant": [
+    0.8,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 500,
+   "taierel": 151
+  },
+  {
+   "lucrare": "26070",
+   "cod": "INT`SRT`S=",
+   "buc": 3,
+   "finitL": 564.999992,
+   "finitl": 141,
+   "cant": [
+    0.8,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 565,
+   "taierel": 141
+  },
+  {
+   "lucrare": "26070",
+   "cod": "INT`SRT`F=",
+   "buc": 3,
+   "finitL": 564.999992,
+   "finitl": 123,
+   "cant": [
+    0.8,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 565,
+   "taierel": 123
+  },
+  {
+   "lucrare": "26070",
+   "cod": "FD",
+   "buc": 1,
+   "finitL": 710,
+   "finitl": 580,
+   "cant": [
+    0,
+    0.8,
+    0.8,
+    0.8
+   ],
+   "taiereL": 710,
+   "taierel": 580
+  },
+  {
+   "lucrare": "26070",
+   "cod": "FRONT`ABS",
+   "buc": 3,
+   "finitL": 608,
+   "finitl": 200.333333,
+   "cant": [
+    0.8,
+    0.8,
+    0.8,
+    0.8
+   ],
+   "taiereL": 608,
+   "taierel": 200.3
+  },
+  {
+   "lucrare": "26070",
+   "cod": "LAT",
+   "buc": 1,
+   "finitL": 400,
+   "finitl": 580,
+   "cant": [
+    0.8,
+    0,
+    0.8,
+    0.8
+   ],
+   "taiereL": 400,
+   "taierel": 580
+  },
+  {
+   "lucrare": "26070",
+   "cod": "CAP",
+   "buc": 1,
+   "finitL": 614,
+   "finitl": 580,
+   "cant": [
+    0,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 614,
+   "taierel": 580
+  },
+  {
+   "lucrare": "26070",
+   "cod": "FD",
+   "buc": 1,
+   "finitL": 614,
+   "finitl": 580,
+   "cant": [
+    0,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 614,
+   "taierel": 580
+  },
+  {
+   "lucrare": "26070",
+   "cod": "FD",
+   "buc": 1,
+   "finitL": 674,
+   "finitl": 580,
+   "cant": [
+    0,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 674,
+   "taierel": 580
+  },
+  {
+   "lucrare": "26070",
+   "cod": "FD",
+   "buc": 1,
+   "finitL": 650,
+   "finitl": 580,
+   "cant": [
+    0,
+    0.8,
+    0.8,
+    0.8
+   ],
+   "taiereL": 650,
+   "taierel": 580
+  },
+  {
+   "lucrare": "26070",
+   "cod": "CAP",
+   "buc": 1,
+   "finitL": 514,
+   "finitl": 350,
+   "cant": [
+    0.8,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 514,
+   "taierel": 350
+  },
+  {
+   "lucrare": "26070",
+   "cod": "FD",
+   "buc": 1,
+   "finitL": 550,
+   "finitl": 350,
+   "cant": [
+    0.8,
+    0,
+    0.8,
+    0.8
+   ],
+   "taiereL": 550,
+   "taierel": 350
+  },
+  {
+   "lucrare": "26070",
+   "cod": "LAT",
+   "buc": 1,
+   "finitL": 2062,
+   "finitl": 350,
+   "cant": [
+    0.8,
+    0,
+    0.8,
+    0
+   ],
+   "taiereL": 2062,
+   "taierel": 350
+  },
+  {
+   "lucrare": "26070",
+   "cod": "POL",
+   "buc": 5,
+   "finitL": 514,
+   "finitl": 337,
+   "cant": [
+    0.8,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 514,
+   "taierel": 337
+  },
+  {
+   "lucrare": "26070",
+   "cod": "LAT",
+   "buc": 1,
+   "finitL": 400,
+   "finitl": 350,
+   "cant": [
+    0.8,
+    0,
+    0.8,
+    0.8
+   ],
+   "taiereL": 400,
+   "taierel": 350
+  },
+  {
+   "lucrare": "26070",
+   "cod": "FD",
+   "buc": 1,
+   "finitL": 514,
+   "finitl": 350,
+   "cant": [
+    0.8,
+    0,
+    0,
+    0
+   ],
+   "taiereL": 514,
+   "taierel": 350
+  },
+  {
+   "lucrare": "26070",
+   "cod": "LAT",
+   "buc": 1,
+   "finitL": 2044,
+   "finitl": 272,
+   "cant": [
+    0.8,
+    0,
+    0.8,
+    0
+   ],
+   "taiereL": 2044,
+   "taierel": 272
+  },
+  {
+   "lucrare": "26070",
+   "cod": "PLT_Jos",
+   "buc": 1,
+   "finitL": 1732.999999,
+   "finitl": 95,
+   "cant": [
+    0.8,
+    0,
+    0.8,
+    0.8
+   ],
+   "taiereL": 1733,
+   "taierel": 95
+  },
+  {
+   "lucrare": "26070",
+   "cod": "PLT_Jos",
+   "buc": 1,
+   "finitL": 564.999999,
+   "finitl": 95,
+   "cant": [
+    0.8,
+    0,
+    0.8,
+    0.8
+   ],
+   "taiereL": 565,
+   "taierel": 95
+  },
+  {
+   "lucrare": "26070",
+   "cod": "LAT",
+   "buc": 1,
+   "finitL": 2103.999999,
+   "finitl": 510,
+   "cant": [
+    0.8,
+    0.8,
+    0.8,
+    0.8
+   ],
+   "taiereL": 2104,
+   "taierel": 510
+  },
+  {
+   "lucrare": "26070",
+   "cod": "POL",
+   "buc": 5,
+   "finitL": 674,
+   "finitl": 557,
+   "cant": [
+    0,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 674,
+   "taierel": 557
+  },
+  {
+   "lucrare": "26070",
+   "cod": "CAP",
+   "buc": 1,
+   "finitL": 949,
+   "finitl": 510,
+   "cant": [
+    0.8,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 949,
+   "taierel": 510
+  },
+  {
+   "lucrare": "26070",
+   "cod": "POL",
+   "buc": 2,
+   "finitL": 949,
+   "finitl": 500,
+   "cant": [
+    0.8,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 949,
+   "taierel": 500
+  },
+  {
+   "lucrare": "26070",
+   "cod": "INT",
+   "buc": 2,
+   "finitL": 949,
+   "finitl": 150,
+   "cant": [
+    0.8,
+    0.8,
+    0,
+    0
+   ],
+   "taiereL": 949,
+   "taierel": 150
+  },
+  {
+   "lucrare": "26070",
+   "cod": "CAP",
+   "buc": 3,
+   "finitL": 565,
+   "finitl": 500,
+   "cant": [
+    0.8,
+    0.8,
+    0.8,
+    0.8
+   ],
+   "taiereL": 565,
+   "taierel": 500
+  },
+  {
+   "lucrare": "26070",
+   "cod": "CAP",
+   "buc": 2,
+   "finitL": 565,
+   "finitl": 275,
+   "cant": [
+    0.8,
+    0.8,
+    0.8,
+    0.8
+   ],
+   "taiereL": 565,
+   "taierel": 275
+  }
+ ]
+}

@@ -108,7 +108,9 @@ function check(name, cond, extra = '') {
         html.includes('Kronospan') && html.includes('K023 SU') && html.includes('Venato'),
         'lipsește decorul');
   check('comanda arată data', /\d{4}-\d{2}-\d{2}/.test(html));
-  check('formatele de coală sunt salvate', html.includes('jumătate 1400×2070'), 'lipsesc formatele');
+  /* 1390, nu 1400: jumătatea reală a colii, cea din fișierele Holzma ale
+     atelierului — din 2800 nu scoți două bucăți de 1400 odată cu pânza pusă */
+  check('formatele de coală sunt salvate', html.includes('jumătate 1390×2070'), 'lipsesc formatele');
 
   /* --- al doilea material, în alt decor, pentru fronturi --- */
   t = await csrf(A, `/orders/${orderId}`);

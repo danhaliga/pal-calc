@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "pannello intero",
-    "jum-lat": "metà 1400×2070",
-    "jum-lung": "metà 2800×1035",
-    "sfert": "quarto 1400×1035"
+    "jum-lat": "metà 1390×2070",
+    "jum-lung": "metà 2800×1030",
+    "sfert": "quarto 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Taglio a giunzione",
@@ -794,7 +794,7 @@
     "colDeseu": "Sfrido",
     "notaPlaci": "I pannelli sono calcolati con una vera ottimizzazione (tagli a ghigliottina, lama da 4 mm), non dalla superficie.",
     "notaAdaos": "La maggiorazione del {pct}% sul bordo copre le perdite in applicazione e le code di bobina.",
-    "notaDebitare": "Le misure nelle colonne <b>Taglio</b> sono le misure di sezionatura: la misura finita meno il bordo su ogni lato. Le colonne del bordo dicono quale spessore va su ogni costa: <b>L1/L2</b> sono le coste lunghe, <b>l1/l2</b> quelle corte. La colonna <b>Finito</b> è la misura dopo la bordatura.",
+    "notaDebitare": "Le quote nelle colonne <b>Taglio</b> sono quote di taglio. Il bordo si incolla su un filo e ispessisce il pezzo in senso perpendicolare: quello sui fili lunghi (<b>L1/L2</b>) toglie alla larghezza, quello sui fili corti (<b>l1/l2</b>) toglie alla lunghezza. Il bordo sottile non cambia la quota di taglio. La colonna <b>Finito</b> è la quota dopo la bordatura.",
     "antetMaterial": "{nume} — {coli} ({intregi} da comprare)",
     "colCod": "Codice",
     "colCorp": "Mobile",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Taglio L",
     "colTaierel": "Taglio P",
     "colFibra": "Venatura",
-    "legendaCant": "bordo spesso sulla costa a vista · bordo sottile · senza bordo. L1/L2 = le coste lunghe, l1/l2 = quelle corte. Taglio = finito − bordo su ogni lato.",
+    "legendaCant": "bordo spesso sul filo a vista · bordo sottile · senza bordo. L1/L2 = fili lunghi, l1/l2 = fili corti. Il bordo sui fili lunghi toglie alla larghezza, quello sui corti alla lunghezza.",
     "formuleTitlu": "Formule usate",
     "formulaInterior": "Interno: <code>L_int = {W} − 2×{t} = {Wint}</code>, <code>H_int = {H} − 2×{t} = {Hint}</code>, <code>P_int = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (profondità − schienale {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Cerniere in base all'altezza: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, oltre → 5. Tazza Ø35, a 3–6 mm dalla costa, 80–100 mm dalle estremità.",
     "formulaPolita": "Ripiano: <code>L = L_int − {jp}</code>, <code>P = P_int − {rp}</code>",
     "formulaSertar": "Cassetto: <code>L_cassetto = L_int − 2×{jg}</code>; fronte/retro = L_cassetto − 2×{ts}; lunghezza guida ≤ P_int, a passi di 50 mm.",
-    "formulaTaiere": "Taglio: <code>misura_taglio = misura_finita − bordo_sx − bordo_dx</code> (bordo spesso {cg}, sottile {cs}).",
+    "formulaTaiere": "Taglio: la lunghezza perde il bordo dei fili corti, la larghezza quello dei fili lunghi. Il bordo da {cg} mm prende {rg} mm, quello da {cs} mm prende {rs} mm.",
     "fara3d": "La vista 3D non si è caricata (la libreria 3D è bloccata). La distinta dei pezzi funziona normalmente.",
     "apasaPiesa": "Tocca un pezzo per vederne le misure. Ogni pezzo è disegnato al suo spessore reale; il colore delle coste indica il bordo.",
     "taiere": "taglio",

@@ -75,7 +75,11 @@ test('fiecare latură devine un panou de adâncimea corpului', () => {
   panouri.forEach(p => {
     assert.equal(p.l, 560, 'lățimea panoului este adâncimea corpului');
     assert.equal(p.buc, 1);
-    assert.equal(p.TL, p.L - 2, 'cant gros pe muchia din față');
+    /* Cantul gros stă pe muchia din față, care merge pe lungimea panoului.
+       Banda de pe ea îngroașă panoul pe lățime, deci lungimea rămâne întreagă
+       iar lățimea scade cu 1.5 (cant de 2 mm). */
+    assert.equal(p.TL, p.L, 'lungimea nu se atinge: cantul e pe muchia paralelă cu ea');
+    assert.equal(p.Tl, 558.5, 'lățimea scade cu 1.5, cât ia cantul de 2 mm');
     assert.match(p.nota, /tăiere 45° la un capăt/);
   });
   assert.deepEqual(warn, []);

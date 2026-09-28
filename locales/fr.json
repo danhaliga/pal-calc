@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "panneau entier",
-    "jum-lat": "demi 1400×2070",
-    "jum-lung": "demi 2800×1035",
-    "sfert": "quart 1400×1035"
+    "jum-lat": "demi 1390×2070",
+    "jum-lung": "demi 2800×1030",
+    "sfert": "quart 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Coupe d'onglet",
@@ -794,7 +794,7 @@
     "colDeseu": "Chute",
     "notaPlaci": "Les panneaux sont calculés avec un vrai calepinage (coupes de type guillotine, lame de 4 mm), pas à partir de la surface.",
     "notaAdaos": "La marge de {pct}% sur le chant couvre les pertes à la pose et les fins de rouleau.",
-    "notaDebitare": "Les cotes des colonnes <b>Coupe</b> sont les cotes de débit : la cote finie moins le chant de chaque côté. Les colonnes de chant indiquent l'épaisseur posée sur chaque rive : <b>L1/L2</b> sont les rives longues, <b>l1/l2</b> les courtes. La colonne <b>Fini</b> est la cote après chantage.",
+    "notaDebitare": "Les cotes des colonnes <b>Débit</b> sont les cotes de débit. Le chant se colle sur une rive et épaissit la pièce perpendiculairement : celui des rives longues (<b>L1/L2</b>) retire de la largeur, celui des rives courtes (<b>l1/l2</b>) retire de la longueur. Le chant fin ne change pas la cote de débit. La colonne <b>Fini</b> est la cote après chantage.",
     "antetMaterial": "{nume} — {coli} ({intregi} à acheter)",
     "colCod": "Code",
     "colCorp": "Caisson",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Coupe L",
     "colTaierel": "Coupe l",
     "colFibra": "Fil",
-    "legendaCant": "chant épais sur la rive visible · chant fin · sans chant. L1/L2 = les rives longues, l1/l2 = les rives courtes. Coupe = fini − chant de chaque côté.",
+    "legendaCant": "chant épais sur la rive visible · chant fin · sans chant. L1/L2 = rives longues, l1/l2 = rives courtes. Le chant des rives longues retire de la largeur, celui des rives courtes de la longueur.",
     "formuleTitlu": "Formules utilisées",
     "formulaInterior": "Intérieur : <code>l_int = {W} − 2×{t} = {Wint}</code>, <code>H_int = {H} − 2×{t} = {Hint}</code>, <code>P_int = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (profondeur − fond {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Charnières selon la hauteur : ≤900 → 2, ≤1600 → 3, ≤2000 → 4, au-delà → 5. Boîtier Ø35, à 3–6 mm de la rive, 80–100 mm des bouts.",
     "formulaPolita": "Étagère : <code>L = l_int − {jp}</code>, <code>l = P_int − {rp}</code>",
     "formulaSertar": "Tiroir : <code>l_caisse = l_int − 2×{jg}</code> ; avant/arrière de caisse = l_caisse − 2×{ts} ; longueur de coulisse ≤ P_int, par pas de 50 mm.",
-    "formulaTaiere": "Coupe : <code>cote_coupe = cote_finie − chant_gauche − chant_droit</code> (chant épais {cg}, fin {cs}).",
+    "formulaTaiere": "Débit : la longueur perd le chant des rives courtes, la largeur celui des rives longues. Le chant de {cg} mm prend {rg} mm, celui de {cs} mm prend {rs} mm.",
     "fara3d": "La vue 3D n'a pas pu se charger (la bibliothèque 3D est bloquée). La liste des pièces fonctionne normalement.",
     "apasaPiesa": "Touchez une pièce pour voir ses cotes. Chaque pièce est dessinée à son épaisseur réelle ; la couleur des rives indique le chant.",
     "taiere": "coupe",

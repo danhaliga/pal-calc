@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "tấm nguyên",
-    "jum-lat": "nửa tấm 1400×2070",
-    "jum-lung": "nửa tấm 2800×1035",
-    "sfert": "một phần tư 1400×1035"
+    "jum-lat": "nửa tấm 1390×2070",
+    "jum-lung": "nửa tấm 2800×1030",
+    "sfert": "một phần tư 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Cắt vát góc",
@@ -794,7 +794,7 @@
     "colDeseu": "Hao hụt",
     "notaPlaci": "Số ván được tính bằng sơ đồ cắt thật (đường cắt kiểu máy xẻ, lưỡi 4 mm), không tính theo diện tích.",
     "notaAdaos": "Phần dư {pct}% của chỉ cạnh bù cho hao khi dán và phần cuối cuộn.",
-    "notaDebitare": "Kích thước ở các cột <b>Cắt</b> là kích thước cắt: kích thước hoàn thiện trừ chỉ cạnh ở mỗi bên. Các cột chỉ cạnh cho biết cạnh nào dán chỉ dày bao nhiêu: <b>L1/L2</b> là cạnh dài, <b>l1/l2</b> là cạnh ngắn. Cột <b>Hoàn thiện</b> là kích thước sau khi dán chỉ.",
+    "notaDebitare": "Các số ở cột <b>Cắt</b> là kích thước cắt. Chỉ cạnh dán lên một cạnh và làm dày chi tiết theo phương vuông góc: chỉ trên các cạnh dài (<b>D1/D2</b>) trừ vào chiều rộng, chỉ trên các cạnh ngắn (<b>R1/R2</b>) trừ vào chiều dài. Chỉ mỏng không đổi kích thước cắt. Cột <b>Hoàn thiện</b> là kích thước sau khi dán chỉ.",
     "antetMaterial": "{nume} — {coli} (cần mua: {intregi})",
     "colCod": "Mã",
     "colCorp": "Thùng tủ",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Cắt D",
     "colTaierel": "Cắt R",
     "colFibra": "Vân gỗ",
-    "legendaCant": "chỉ dày ở cạnh nhìn thấy · chỉ mỏng · không dán chỉ. L1/L2 = các cạnh dài, l1/l2 = các cạnh ngắn. Cắt = hoàn thiện − chỉ cạnh ở mỗi bên.",
+    "legendaCant": "chỉ dày ở cạnh nhìn thấy · chỉ mỏng · không dán chỉ. D1/D2 = cạnh dài, R1/R2 = cạnh ngắn. Chỉ ở cạnh dài trừ vào chiều rộng, chỉ ở cạnh ngắn trừ vào chiều dài.",
     "formuleTitlu": "Công thức đã dùng",
     "formulaInterior": "Lòng tủ: <code>R_trong = {W} − 2×{t} = {Wint}</code>, <code>C_trong = {H} − 2×{t} = {Hint}</code>, <code>S_trong = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (chiều sâu − tấm hậu {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Số bản lề theo chiều cao: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, cao hơn → 5. Cốc Ø35, cách cạnh 3–6 mm, cách hai đầu 80–100 mm.",
     "formulaPolita": "Kệ: <code>D = R_trong − {jp}</code>, <code>R = S_trong − {rp}</code>",
     "formulaSertar": "Ngăn kéo: <code>R_hộc = R_trong − 2×{jg}</code>; mặt trước/sau hộc = R_hộc − 2×{ts}; chiều dài ray ≤ S_trong, bước 50 mm.",
-    "formulaTaiere": "Cắt: <code>kích_thước_cắt = kích_thước_hoàn_thiện − chỉ_trái − chỉ_phải</code> (chỉ dày {cg}, chỉ mỏng {cs}).",
+    "formulaTaiere": "Cắt: chiều dài mất chỉ của các cạnh ngắn, chiều rộng mất chỉ của các cạnh dài. Chỉ {cg} mm lấy {rg} mm, chỉ {cs} mm lấy {rs} mm.",
     "fara3d": "Không tải được chế độ xem 3D (thư viện 3D bị chặn). Bảng chi tiết vẫn hoạt động bình thường.",
     "apasaPiesa": "Chạm vào một chi tiết để xem kích thước. Mỗi chi tiết được vẽ đúng độ dày thật; màu các cạnh cho biết chỉ cạnh.",
     "taiere": "cắt",

@@ -640,9 +640,9 @@
   },
   "format": {
     "intreaga": "celá deska",
-    "jum-lat": "polovina 1400×2070",
-    "jum-lung": "polovina 2800×1035",
-    "sfert": "čtvrtina 1400×1035"
+    "jum-lat": "polovina 1390×2070",
+    "jum-lung": "polovina 2800×1030",
+    "sfert": "čtvrtina 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Pokosový řez",
@@ -803,7 +803,7 @@
     "colDeseu": "Odpad",
     "notaPlaci": "Desky jsou spočítané skutečným rozmístěním (gilotinové řezy, kotouč 4 mm), ne z plochy.",
     "notaAdaos": "Přídavek {pct}% na hranu pokrývá ztráty při lepení a konce rolí.",
-    "notaDebitare": "Rozměry ve sloupcích <b>Řez</b> jsou nářezové rozměry: hotový rozměr mínus hrana na každé straně. Sloupce hran říkají, jaká tloušťka jde na kterou hranu: <b>L1/L2</b> jsou dlouhé hrany, <b>l1/l2</b> krátké. Sloupec <b>Hotový</b> je rozměr po olepení.",
+    "notaDebitare": "Rozměry ve sloupcích <b>Nářez</b> jsou rozměry nářezu. Hrana se lepí na jednu boční plochu a ztlušťuje díl napříč: hrana na dlouhých plochách (<b>D1/D2</b>) ubírá ze šířky, na krátkých (<b>Š1/Š2</b>) z délky. Tenká hrana rozměr nářezu nemění. Sloupec <b>Hotový</b> je rozměr po olepení.",
     "antetMaterial": "{nume} — {coli} (k nákupu: {intregi})",
     "colCod": "Kód",
     "colCorp": "Korpus",
@@ -1075,7 +1075,7 @@
     "colTaiereL": "Řez D",
     "colTaierel": "Řez Š",
     "colFibra": "Kresba",
-    "legendaCant": "silná hrana na viditelné hraně · tenká hrana · bez hrany. L1/L2 = dlouhé hrany, l1/l2 = krátké. Řez = hotový − hrana na každé straně.",
+    "legendaCant": "silná hrana na viditelné ploše · tenká hrana · bez hrany. D1/D2 = dlouhé plochy, Š1/Š2 = krátké. Hrana na dlouhých ubírá ze šířky, na krátkých z délky.",
     "formuleTitlu": "Použité vzorce",
     "formulaInterior": "Vnitřek: <code>Š_vnitř = {W} − 2×{t} = {Wint}</code>, <code>V_vnitř = {H} − 2×{t} = {Hint}</code>, <code>H_vnitř = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (hloubka − záda {tp})",
@@ -1086,7 +1086,7 @@
     "formulaBalamale": "Panty podle výšky: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, nad → 5. Miska Ø35, 3–6 mm od hrany, 80–100 mm od konců.",
     "formulaPolita": "Police: <code>D = Š_vnitř − {jp}</code>, <code>Š = H_vnitř − {rp}</code>",
     "formulaSertar": "Zásuvka: <code>Š_koše = Š_vnitř − 2×{jg}</code>; předek/zadek koše = Š_koše − 2×{ts}; délka výsuvu ≤ H_vnitř, po 50 mm.",
-    "formulaTaiere": "Řez: <code>rozměr_řezu = hotový_rozměr − hrana_vlevo − hrana_vpravo</code> (silná hrana {cg}, tenká {cs}).",
+    "formulaTaiere": "Nářez: délka ztrácí hranu z krátkých ploch, šířka z dlouhých. Hrana {cg} mm bere {rg} mm, hrana {cs} mm bere {rs} mm.",
     "fara3d": "3D pohled se nenačetl (3D knihovna je blokovaná). Seznam dílů funguje normálně.",
     "apasaPiesa": "Klepni na díl, abys viděl jeho rozměry. Každý díl je nakreslený ve skutečné tloušťce; barvy hran ukazují hranu.",
     "taiere": "řez",

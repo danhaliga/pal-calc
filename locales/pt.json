@@ -634,9 +634,9 @@
   },
   "format": {
     "intreaga": "placa inteira",
-    "jum-lat": "metade 1400×2070",
-    "jum-lung": "metade 2800×1035",
-    "sfert": "quarto 1400×1035"
+    "jum-lat": "metade 1390×2070",
+    "jum-lung": "metade 2800×1030",
+    "sfert": "quarto 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Corte em esquadria",
@@ -794,7 +794,7 @@
     "colDeseu": "Desperdício",
     "notaPlaci": "As placas são calculadas com uma otimização real (cortes tipo guilhotina, disco de 4 mm), não a partir da área.",
     "notaAdaos": "A margem de {pct}% na orla cobre as perdas na aplicação e as pontas de rolo.",
-    "notaDebitare": "As medidas das colunas <b>Corte</b> são as medidas de corte: a medida acabada menos a orla de cada lado. As colunas de orla dizem que espessura leva cada topo: <b>L1/L2</b> são os topos longos, <b>l1/l2</b> os curtos. A coluna <b>Acabado</b> é a medida depois de orlar.",
+    "notaDebitare": "As medidas das colunas <b>Corte</b> são medidas de corte. A orla cola-se numa aresta e engrossa a peça no sentido perpendicular: a das arestas longas (<b>L1/L2</b>) tira à largura, a das arestas curtas (<b>l1/l2</b>) tira ao comprimento. A orla fina não altera a medida de corte. A coluna <b>Acabado</b> é a medida depois de orlada.",
     "antetMaterial": "{nume} — {coli} ({intregi} a comprar)",
     "colCod": "Código",
     "colCorp": "Módulo",
@@ -1065,7 +1065,7 @@
     "colTaiereL": "Corte C",
     "colTaierel": "Corte L",
     "colFibra": "Veio",
-    "legendaCant": "orla grossa no topo à vista · orla fina · sem orla. L1/L2 = os topos longos, l1/l2 = os curtos. Corte = acabado − orla de cada lado.",
+    "legendaCant": "orla grossa na aresta visível · orla fina · sem orla. L1/L2 = arestas longas, l1/l2 = arestas curtas. A orla das arestas longas tira à largura, a das curtas tira ao comprimento.",
     "formuleTitlu": "Fórmulas usadas",
     "formulaInterior": "Interior: <code>L_int = {W} − 2×{t} = {Wint}</code>, <code>A_int = {H} − 2×{t} = {Hint}</code>, <code>P_int = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (profundidade − costas {tp})",
@@ -1076,7 +1076,7 @@
     "formulaBalamale": "Dobradiças conforme a altura: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, acima → 5. Copo Ø35, a 3–6 mm do topo, 80–100 mm das pontas.",
     "formulaPolita": "Prateleira: <code>C = L_int − {jp}</code>, <code>L = P_int − {rp}</code>",
     "formulaSertar": "Gaveta: <code>L_caixa = L_int − 2×{jg}</code>; frente/traseira da caixa = L_caixa − 2×{ts}; comprimento da corrediça ≤ P_int, em passos de 50 mm.",
-    "formulaTaiere": "Corte: <code>medida_corte = medida_acabada − orla_esq − orla_dir</code> (orla grossa {cg}, fina {cs}).",
+    "formulaTaiere": "Corte: o comprimento perde a orla das arestas curtas, a largura a das arestas longas. A orla de {cg} mm leva {rg} mm, a de {cs} mm leva {rs} mm.",
     "fara3d": "A vista 3D não conseguiu carregar (a biblioteca 3D está bloqueada). A lista de peças funciona normalmente.",
     "apasaPiesa": "Toca numa peça para veres as medidas. Cada peça está desenhada na sua espessura real; a cor dos topos mostra a orla.",
     "taiere": "corte",

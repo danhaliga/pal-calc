@@ -23,6 +23,39 @@
   var PFL_SERTAR = 3;    /* grosimea fundului de sertar */
 
   var r1 = function (v) { return Math.round(v * 10) / 10; };
+
+  /* Cât se scade din cotă pentru o bandă de cant, la debitare.
+
+     NU e grosimea benzii. Măsurat pe 96 de piese din patru lucrări reale
+     (fișier Holzma .saw față de program WoodWOP .mpr, aceeași piesă), plus
+     banda de 1 mm, confirmată de atelier:
+
+         bandă 2 mm    ->  scade 1.5 mm     măsurat
+         bandă 1 mm    ->  scade 0.5 mm     spus de atelier
+         bandă 0.8 mm  ->  scade 0          măsurat
+         bandă 0.4 mm  ->  scade 0          măsurat
+
+     Banda subțire intră în toleranța ferăstrăului și nimeni n-o scade; de la
+     1 mm în sus se scade grosimea minus o jumătate de milimetru, cât se duce
+     pe frezarea muchiei și pe linia de clei. De asta „cotă de tăiere = cotă
+     finită − grosimea cantului" dă piese mai mici decât trebuie.
+
+     Pragul e 0.8 și nu 1 fiindcă banda de 0.8 nu scade nimic, iar cea de 1 mm
+     scade: limita trece exact între ele. Pentru grosimi peste 2 (bandă de 3)
+     formula e extrapolare — de întrebat atelierul înainte.
+
+     PRAG    banda până în el, inclusiv, nu schimbă cota de tăiere
+     REZERVA cât absoarbe frezarea și cleiul, peste prag */
+  var PRAG_CANT = 0.8;
+  var REZERVA_CANT = 0.5;
+
+  function reducereCant(grosime, prag, rezerva) {
+    var g = +grosime || 0;
+    var p = (prag == null) ? PRAG_CANT : +prag;
+    var rz = (rezerva == null) ? REZERVA_CANT : +rezerva;
+    if (g <= p) return 0;
+    return Math.max(0, g - rz);
+  }
   var fmt = function (v) { return Number.isInteger(v) ? String(v) : v.toFixed(1); };
 
   function defaults(tr) {
@@ -32,7 +65,8 @@
       t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 3,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2,
       nPol: 1, jp: 1, rp: 20,
-      nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 16, lg: ''
+      nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 16, lg: '',
+      pragCant: PRAG_CANT, rezervaCant: REZERVA_CANT
     };
   }
 
@@ -149,6 +183,7 @@
     var Dint = D - zin;                     /* adancime interioara utila */
     var Wint = W - 2 * t, Hint = H - 2 * t;
     var ev = function (v) { return v === 'g' ? cg : v === 's' ? cs : 0; };
+    var red = function (v) { return reducereCant(ev(v), c.pragCant, c.rezervaCant); };
 
     /* O piesă ține cheia ei (stabilă, pentru potriviri și pentru raport) și
        numele scris în limba cerută. `nota` și `fibra` sunt tot chei. */
@@ -157,7 +192,9 @@
         cheie: cheie, args: args || null, rol: rolPiesa(cheie),
         nume: t_('piesa.' + cheie, args || null),
         buc: buc, L: r1(L), l: r1(l), c: [cL1, cL2, cl1, cl2],
-        TL: r1(L - ev(cL1) - ev(cL2)), Tl: r1(l - ev(cl1) - ev(cl2)),
+        /* cL1/cL2 sunt muchiile paralele cu L, deci banda de pe ele îngroașă
+           piesa pe l — și invers. Vezi comentariul de la reducereCant(). */
+        TL: r1(L - red(cl1) - red(cl2)), Tl: r1(l - red(cL1) - red(cL2)),
         fibra: fibra, fibraText: t_('fibra.' + fibra),
         notaCheie: nota ? nota[0] : '', notaArgs: nota ? (nota[1] || null) : null,
         nota: nota ? t_('nota.' + nota[0], nota[1] || null) : '',
@@ -521,6 +558,10 @@
         nPol: int(0, 20), jp: mm(0, 50), rp: mm(0, 300),
         nSer: int(0, 12), hFront: mm(20, 1200), hCutie: mm(20, 1200),
         jg: mm(0, 50), ts: mm(10, 30),
+        /* reglajul de debitare al atelierului; implicit cel măsurat pe
+           lucrările reale — vezi reducereCant() */
+        pragCant: mm(0, 10).catch(PRAG_CANT),
+        rezervaCant: mm(0, 10).catch(REZERVA_CANT),
         lg: z.union([z.literal(''), z.coerce.number().min(0).max(1200)]).catch('')
       }).strict();
     } catch (e) {
@@ -539,6 +580,7 @@
     csv: csv,
     conturGeometrie: conturGeometrie,
     conturImplicit: conturImplicit,
+    reducereCant: reducereCant,
     TIPURI: TIPURI,
     paramsSchema: paramsSchema,
     NUT_OFF: NUT_OFF,

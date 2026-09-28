@@ -640,9 +640,9 @@
   },
   "format": {
     "intreaga": "coală întreagă",
-    "jum-lat": "jumătate 1400×2070",
-    "jum-lung": "jumătate 2800×1035",
-    "sfert": "sfert 1400×1035"
+    "jum-lat": "jumătate 1390×2070",
+    "jum-lung": "jumătate 2800×1030",
+    "sfert": "sfert 1390×1030"
   },
   "cnc": {
     "taiereUnghi": "Tăiere la unghi",
@@ -803,7 +803,7 @@
     "colDeseu": "Deșeu",
     "notaPlaci": "Plăcile sunt calculate cu croire reală (tăieri de tip ghilotină, disc de 4 mm), nu din suprafață.",
     "notaAdaos": "Adaosul de {pct}% la cant acoperă pierderile la aplicare și capetele de rolă.",
-    "notaDebitare": "Cotele din coloanele <b>Tăiere</b> sunt cotele de debitare: cota finită minus cantul de pe fiecare latură. Coloanele de cant spun ce grosime se aplică pe fiecare muchie: <b>L1/L2</b> sunt muchiile lungi, <b>l1/l2</b> cele scurte. Coloana <b>Finit</b> este cota după cantuire.",
+    "notaDebitare": "Cotele din coloanele <b>Tăiere</b> sunt cotele de debitare. Cantul se lipește pe o muchie și îngroașă piesa pe direcția perpendiculară: cel de pe muchiile lungi (<b>L1/L2</b>) scade lățimea, cel de pe muchiile scurte (<b>l1/l2</b>) scade lungimea. Cantul subțire nu schimbă cota de debitare. Coloana <b>Finit</b> este cota după cantuire.",
     "antetMaterial": "{nume} — {coli} ({intregi} de cumpărat)",
     "colCod": "Cod",
     "colCorp": "Corp",
@@ -1075,7 +1075,7 @@
     "colTaiereL": "Tăiere L",
     "colTaierel": "Tăiere l",
     "colFibra": "Fibră",
-    "legendaCant": "cant gros pe muchia vizibilă · cant subțire · fără cant. L1/L2 = muchiile lungi, l1/l2 = muchiile scurte. Tăiere = finit − cant pe fiecare latură.",
+    "legendaCant": "cant gros pe muchia vizibilă · cant subțire · fără cant. L1/L2 = muchiile lungi, l1/l2 = muchiile scurte. Cantul de pe muchiile lungi scade lățimea, cel de pe muchiile scurte scade lungimea.",
     "formuleTitlu": "Formulele folosite",
     "formulaInterior": "Interior: <code>L_int = {W} − 2×{t} = {Wint}</code>, <code>H_int = {H} − 2×{t} = {Hint}</code>, <code>A_int = {Dint}</code>{nota}",
     "formulaNotaAplicat": " (adâncime − spate {tp})",
@@ -1086,7 +1086,7 @@
     "formulaBalamale": "Balamale după înălțime: ≤900 → 2, ≤1600 → 3, ≤2000 → 4, peste → 5. Cupă Ø35, la 3–6 mm de muchie, 80–100 mm de capete.",
     "formulaPolita": "Poliță: <code>L = L_int − {jp}</code>, <code>l = A_int − {rp}</code>",
     "formulaSertar": "Sertar: <code>L_cutie = L_int − 2×{jg}</code>; față/spate cutie = L_cutie − 2×{ts}; lungime glisieră ≤ A_int, pas 50 mm.",
-    "formulaTaiere": "Tăiere: <code>cotă_tăiere = cotă_finită − cant_stânga − cant_dreapta</code> (cant gros {cg}, subțire {cs}).",
+    "formulaTaiere": "Tăiere: lungimea scade cu cantul de pe muchiile scurte, lățimea cu cel de pe muchiile lungi. Cantul de {cg} mm ia {rg} mm, cel de {cs} mm ia {rs} mm.",
     "fara3d": "Vederea 3D nu s-a putut încărca (biblioteca 3D este blocată). Lista de piese funcționează normal.",
     "apasaPiesa": "Apasă pe o piesă pentru cotele ei. Fiecare piesă este desenată la grosimea reală; culorile muchiilor arată cantul.",
     "taiere": "tăiere",
