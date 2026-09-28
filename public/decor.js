@@ -80,8 +80,12 @@ function init(root) {
        iar dacă le ascundem nu se mai pot alege deloc. Le arătăm pe toate și
        marcăm care sunt pe stoc. */
     var peStoc = (d.cant && d.cant.length) ? d.cant : [];
-    var toate = (date.cantStandard || [0.4, 0.8, 1, 1.3, 1.5, 2]).slice();
+    /* Grosimea deja aleasa ramane pe lista chiar daca nu mai e in fabricatie:
+       altfel un corp vechi si-ar pierde cantul la prima atingere. */
+    var acum = [cantGrosSel, cantSubtireSel].map(function (s) { return s ? +s.value : 0; });
+    var toate = (date.cantStandard || [0.8, 1, 1.3, 1.5, 2]).slice();
     peStoc.forEach(function (c) { if (toate.indexOf(c) === -1) toate.push(c); });
+    acum.forEach(function (c) { if (c && toate.indexOf(c) === -1) toate.push(c); });
     toate.sort(function (a, b) { return a - b; });
     potrivesteCant(cantGrosSel, toate, peStoc);
     potrivesteCant(cantSubtireSel, toate, peStoc);

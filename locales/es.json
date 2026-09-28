@@ -793,7 +793,8 @@
     "livrareLa": "Fecha de entrega",
     "telefon": "Teléfono",
     "telefonExemplu": "+34 6xx xxx xxx",
-    "livrareNota": "Ambos se pueden dejar vacíos y rellenar más tarde. Salen en cada hoja impresa."
+    "livrareNota": "Ambos se pueden dejar vacíos y rellenar más tarde. Salen en cada hoja impresa.",
+    "cantScos": "ya no se fabrica"
   },
   "rol": {
     "corp": "Carcasa",

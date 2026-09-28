@@ -793,7 +793,8 @@
     "livrareLa": "Szállítás dátuma",
     "telefon": "Telefon",
     "telefonExemplu": "+36 xx xxx xxxx",
-    "livrareNota": "Mindkettő üresen hagyható és később kitölthető. Minden kinyomtatott lapon rajta van."
+    "livrareNota": "Mindkettő üresen hagyható és később kitölthető. Minden kinyomtatott lapon rajta van.",
+    "cantScos": "már nem gyártják"
   },
   "rol": {
     "corp": "Korpusz",

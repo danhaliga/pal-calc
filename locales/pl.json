@@ -802,7 +802,8 @@
     "livrareLa": "Data dostawy",
     "telefon": "Telefon",
     "telefonExemplu": "+48 xxx xxx xxx",
-    "livrareNota": "Oba można zostawić puste i uzupełnić później. Wychodzą na każdej drukowanej kartce."
+    "livrareNota": "Oba można zostawić puste i uzupełnić później. Wychodzą na każdej drukowanej kartce.",
+    "cantScos": "już nie produkowane"
   },
   "rol": {
     "corp": "Korpus",

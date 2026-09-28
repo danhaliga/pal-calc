@@ -18,7 +18,21 @@ function roluri(t) {
 }
 
 /* grosimile de cant acceptate, când decorul nu are lista lui în catalog */
-const CANT_STANDARD = [0.4, 0.8, 1, 1.3, 1.5, 2];
+/* 0,4 a iesit din lista: nu se mai fabrica. NU dispare insa din aplicatie —
+   comenzile si corpurile salvate cu el raman valide, iar selectoarele il
+   arata mai departe acolo unde e deja pus, insemnat ca scos din fabricatie.
+   Altfel, deschiderea unei comenzi vechi i-ar schimba cantul in tacere. */
+const CANT_STANDARD = [0.8, 1, 1.3, 1.5, 2];
+const CANT_SCOS = [0.4];
+
+/* Lista de ales pentru un rand care are deja o grosime: daca grosimea lui
+   nu mai e in fabricatie, ramane pe lista, ca sa n-o piarda la prima
+   salvare. */
+function cantPentru(valoare) {
+  const v = Number(valoare);
+  if (!v || CANT_STANDARD.indexOf(v) !== -1) return CANT_STANDARD;
+  return CANT_STANDARD.concat([v]).sort((a, b) => a - b);
+}
 
 const schema = z.object({
   /* Numele nu mai e cerut. Nimeni nu știe cum se cheamă placa înainte s-o
@@ -166,4 +180,5 @@ router.post('/orders/:id/materials/:matId', requireAuth, comandaProprie, (req, r
   res.redirect(`/orders/${req.comanda.id}#materiale`);
 });
 
-module.exports = { router, aleComenzii, peRoluri, creeaza, implicit, roluri, ROLURI_ID, CANT_STANDARD };
+module.exports = { router, aleComenzii, peRoluri, creeaza, implicit, roluri, ROLURI_ID,
+                   CANT_STANDARD, CANT_SCOS, cantPentru };

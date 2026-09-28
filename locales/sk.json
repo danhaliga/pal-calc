@@ -802,7 +802,8 @@
     "livrareLa": "Dátum dodania",
     "telefon": "Telefón",
     "telefonExemplu": "+421 9xx xxx xxx",
-    "livrareNota": "Oboje sa dá nechať prázdne a doplniť neskôr. Objaví sa na každom vytlačenom liste."
+    "livrareNota": "Oboje sa dá nechať prázdne a doplniť neskôr. Objaví sa na každom vytlačenom liste.",
+    "cantScos": "už sa nevyrába"
   },
   "rol": {
     "corp": "Korpus",

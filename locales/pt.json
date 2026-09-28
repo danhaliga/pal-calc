@@ -793,7 +793,8 @@
     "livrareLa": "Data de entrega",
     "telefon": "Telefone",
     "telefonExemplu": "+351 9xx xxx xxx",
-    "livrareNota": "Ambos podem ficar vazios e ser preenchidos mais tarde. Saem em cada folha impressa."
+    "livrareNota": "Ambos podem ficar vazios e ser preenchidos mais tarde. Saem em cada folha impressa.",
+    "cantScos": "já não se fabrica"
   },
   "rol": {
     "corp": "Estrutura",

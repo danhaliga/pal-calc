@@ -793,7 +793,8 @@
     "livrareLa": "Ngày giao",
     "telefon": "Điện thoại",
     "telefonExemplu": "+84 9xx xxx xxx",
-    "livrareNota": "Cả hai có thể để trống và điền sau. Chúng hiện trên mọi tờ in."
+    "livrareNota": "Cả hai có thể để trống và điền sau. Chúng hiện trên mọi tờ in.",
+    "cantScos": "không còn sản xuất"
   },
   "rol": {
     "corp": "Thùng tủ",

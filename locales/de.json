@@ -793,7 +793,8 @@
     "livrareLa": "Liefertermin",
     "telefon": "Telefon",
     "telefonExemplu": "+49 1xx xxxxxxx",
-    "livrareNota": "Beides kann leer bleiben und später ausgefüllt werden. Es steht auf jedem gedruckten Blatt."
+    "livrareNota": "Beides kann leer bleiben und später ausgefüllt werden. Es steht auf jedem gedruckten Blatt.",
+    "cantScos": "wird nicht mehr hergestellt"
   },
   "rol": {
     "corp": "Korpus",

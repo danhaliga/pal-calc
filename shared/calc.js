@@ -33,7 +33,7 @@
          bandă 2 mm    ->  scade 1.5 mm     măsurat
          bandă 1 mm    ->  scade 0.5 mm     spus de atelier
          bandă 0.8 mm  ->  scade 0          măsurat
-         bandă 0.4 mm  ->  scade 0          măsurat
+         bandă 0.4 mm  ->  scade 0          măsurat (nu se mai fabrică)
 
      Banda subțire intră în toleranța ferăstrăului și nimeni n-o scade; de la
      1 mm în sus se scade grosimea minus o jumătate de milimetru, cât se duce
@@ -41,9 +41,10 @@
      finită − grosimea cantului" dă piese mai mici decât trebuie.
 
      Pragul e 0.8 și nu 1 fiindcă banda de 0.8 nu scade nimic, iar cea de 1 mm
-     scade: limita trece exact între ele. Atelierul folosește doar 0.4, 0.8, 1
-     și 2 — de 3 mm nu se folosește, deci acolo formula n-a fost verificată
-     niciodată pe ceva real.
+     scade: limita trece exact între ele. Măsurătoarea de 0.4 rămâne scrisă
+     aici fiindcă ea a așezat pragul, deși banda aia nu se mai fabrică;
+     atelierul lucrează acum cu 0.8, 1 și 2. De 3 mm nu se folosește, deci
+     acolo formula n-a fost verificată niciodată pe ceva real.
 
      PRAG    banda până în el, inclusiv, nu schimbă cota de tăiere
      REZERVA cât absoarbe frezarea și cleiul, peste prag */
@@ -65,7 +66,7 @@
       tip: 'drept', W2: 900, orb: 550, contur: [],
       /* piesă simplă: bucăți, cantul pe fiecare muchie, fibra */
       pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
-      t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 2.5,
+      t: 18, cg: 2, cs: 0.8, spate: 'aplicat', tp: 2.5,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: '', compUsi: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',

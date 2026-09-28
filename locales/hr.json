@@ -802,7 +802,8 @@
     "livrareLa": "Datum isporuke",
     "telefon": "Telefon",
     "telefonExemplu": "+385 9x xxx xxxx",
-    "livrareNota": "Oba se mogu ostaviti prazna i popuniti kasnije. Izlaze na svakom otisnutom listu."
+    "livrareNota": "Oba se mogu ostaviti prazna i popuniti kasnije. Izlaze na svakom otisnutom listu.",
+    "cantScos": "više se ne proizvodi"
   },
   "rol": {
     "corp": "Korpus",

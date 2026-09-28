@@ -793,7 +793,8 @@
     "livrareLa": "納品日",
     "telefon": "電話",
     "telefonExemplu": "+81 90-xxxx-xxxx",
-    "livrareNota": "どちらも空のままにして、あとで入れられます。印刷するすべての用紙に出ます。"
+    "livrareNota": "どちらも空のままにして、あとで入れられます。印刷するすべての用紙に出ます。",
+    "cantScos": "生産終了"
   },
   "rol": {
     "corp": "本体",

@@ -793,7 +793,8 @@
     "livrareLa": "납품일",
     "telefon": "전화",
     "telefonExemplu": "+82 10-xxxx-xxxx",
-    "livrareNota": "둘 다 비워 두었다가 나중에 채워도 됩니다. 인쇄하는 모든 장에 나옵니다."
+    "livrareNota": "둘 다 비워 두었다가 나중에 채워도 됩니다. 인쇄하는 모든 장에 나옵니다.",
+    "cantScos": "단종"
   },
   "rol": {
     "corp": "몸통",

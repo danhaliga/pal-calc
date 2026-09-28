@@ -802,7 +802,8 @@
     "livrareLa": "Data livrării",
     "telefon": "Telefon",
     "telefonExemplu": "07xx xxx xxx",
-    "livrareNota": "Amândouă se pot lăsa goale și completa mai târziu. Apar pe fiecare foaie tipărită."
+    "livrareNota": "Amândouă se pot lăsa goale și completa mai târziu. Apar pe fiecare foaie tipărită.",
+    "cantScos": "nu se mai fabrică"
   },
   "rol": {
     "corp": "Carcasă",

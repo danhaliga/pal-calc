@@ -793,7 +793,8 @@
     "livrareLa": "Data di consegna",
     "telefon": "Telefono",
     "telefonExemplu": "+39 3xx xxx xxxx",
-    "livrareNota": "Si possono lasciare vuoti entrambi e compilarli dopo. Escono su ogni foglio stampato."
+    "livrareNota": "Si possono lasciare vuoti entrambi e compilarli dopo. Escono su ogni foglio stampato.",
+    "cantScos": "non si produce più"
   },
   "rol": {
     "corp": "Struttura",

@@ -793,7 +793,8 @@
     "livrareLa": "Leverdatum",
     "telefon": "Telefoon",
     "telefonExemplu": "+31 6 xxxxxxxx",
-    "livrareNota": "Beide mogen leeg blijven en later worden ingevuld. Ze staan op elk afgedrukt blad."
+    "livrareNota": "Beide mogen leeg blijven en later worden ingevuld. Ze staan op elk afgedrukt blad.",
+    "cantScos": "wordt niet meer gemaakt"
   },
   "rol": {
     "corp": "Korpus",

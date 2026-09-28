@@ -793,7 +793,8 @@
     "livrareLa": "Leveransdatum",
     "telefon": "Telefon",
     "telefonExemplu": "+46 7x xxx xx xx",
-    "livrareNota": "Båda kan lämnas tomma och fyllas i senare. De står på varje utskrivet blad."
+    "livrareNota": "Båda kan lämnas tomma och fyllas i senare. De står på varje utskrivet blad.",
+    "cantScos": "tillverkas inte längre"
   },
   "rol": {
     "corp": "Stomme",

@@ -793,7 +793,8 @@
     "livrareLa": "Delivery date",
     "telefon": "Phone",
     "telefonExemplu": "+40 7xx xxx xxx",
-    "livrareNota": "Both can be left empty and filled in later. They appear on every printed sheet."
+    "livrareNota": "Both can be left empty and filled in later. They appear on every printed sheet.",
+    "cantScos": "no longer made"
   },
   "rol": {
     "corp": "Carcass",

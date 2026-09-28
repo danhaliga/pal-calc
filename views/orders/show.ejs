@@ -83,14 +83,19 @@
                       <option value="<%= g %>" <%= Number(m.pal_mm) === g ? 'selected' : '' %>><%= g %> mm</option>
                     <% }); %>
                   </select></label>
+                  <%# `cantPentru` adauga grosimea deja salvata daca nu mai e
+                      in fabricatie. Fara ea, deschiderea unei comenzi vechi
+                      i-ar schimba cantul in tacere la prima salvare. %>
                   <label><%= t('comanda.colCantGros') %><select name="cant_gros" id="cg-<%= m.id %>">
-                    <% cantStandard.forEach(function (c) { %>
-                      <option value="<%= c %>" <%= Number(m.cant_gros) === c ? 'selected' : '' %>><%= c %> mm</option>
+                    <% cantPentru(m.cant_gros).forEach(function (c) { %>
+                      <option value="<%= c %>" <%= Number(m.cant_gros) === c ? 'selected' : '' %>><%= c %> mm<%=
+                        cantScos.indexOf(c) !== -1 ? ' · ' + t('comanda.cantScos') : '' %></option>
                     <% }); %>
                   </select></label>
                   <label><%= t('comanda.colCantSubtire') %><select name="cant_subtire" id="cs-<%= m.id %>">
-                    <% cantStandard.forEach(function (c) { %>
-                      <option value="<%= c %>" <%= Number(m.cant_subtire) === c ? 'selected' : '' %>><%= c %> mm</option>
+                    <% cantPentru(m.cant_subtire).forEach(function (c) { %>
+                      <option value="<%= c %>" <%= Number(m.cant_subtire) === c ? 'selected' : '' %>><%= c %> mm<%=
+                        cantScos.indexOf(c) !== -1 ? ' · ' + t('comanda.cantScos') : '' %></option>
                     <% }); %>
                   </select></label>
                 </div>

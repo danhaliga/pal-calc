@@ -793,7 +793,8 @@
     "livrareLa": "交货日期",
     "telefon": "电话",
     "telefonExemplu": "+86 1xx xxxx xxxx",
-    "livrareNota": "两项都可以先留空，以后再填。它们会出现在每张打印的单子上。"
+    "livrareNota": "两项都可以先留空，以后再填。它们会出现在每张打印的单子上。",
+    "cantScos": "已停产"
   },
   "rol": {
     "corp": "柜体",

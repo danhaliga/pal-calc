@@ -802,7 +802,8 @@
     "livrareLa": "Datum dodání",
     "telefon": "Telefon",
     "telefonExemplu": "+420 xxx xxx xxx",
-    "livrareNota": "Obojí se dá nechat prázdné a doplnit později. Objeví se na každém vytištěném listu."
+    "livrareNota": "Obojí se dá nechat prázdné a doplnit později. Objeví se na každém vytištěném listu.",
+    "cantScos": "už se nevyrábí"
   },
   "rol": {
     "corp": "Korpus",

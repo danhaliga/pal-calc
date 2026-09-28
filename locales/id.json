@@ -793,7 +793,8 @@
     "livrareLa": "Tanggal kirim",
     "telefon": "Telepon",
     "telefonExemplu": "+62 8xx xxxx xxxx",
-    "livrareNota": "Keduanya boleh dikosongkan dan diisi nanti. Keduanya muncul di setiap lembar cetak."
+    "livrareNota": "Keduanya boleh dikosongkan dan diisi nanti. Keduanya muncul di setiap lembar cetak.",
+    "cantScos": "tidak diproduksi lagi"
   },
   "rol": {
     "corp": "Boks",

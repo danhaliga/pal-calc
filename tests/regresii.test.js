@@ -1266,3 +1266,59 @@ test('bulinele se refolosesc între cadre', () => {
   assert.match(SURSA_APP, /while \(_etichete\.length < vizibile\.length\)/);
   assert.match(SURSA_APP, /while \(_etichete\.length > vizibile\.length\)/);
 });
+
+/* =====================================================================
+   20. Cantul de 0,4 nu se mai fabrică
+
+   Scos din alegeri — dar NU șters din aplicație. În bază erau 36 de corpuri
+   și 8 materiale cu el. Dacă l-aș fi scos de tot, deschiderea unei comenzi
+   vechi i-ar fi schimbat cantul în tăcere la prima salvare: selectorul n-ar
+   fi avut valoarea ei, ar fi căzut pe prima din listă, și nimeni n-ar fi
+   văzut nimic până la debitare.
+   ===================================================================== */
+
+const { CANT_STANDARD, CANT_SCOS, cantPentru } = require('../src/materiale');
+
+test('0,4 nu mai e de ales', () => {
+  assert.ok(CANT_STANDARD.indexOf(0.4) === -1, 'a rămas în lista de alegeri');
+  assert.deepEqual(CANT_STANDARD, [0.8, 1, 1.3, 1.5, 2]);
+});
+
+test('o grosime scoasă din fabricație rămâne pe listă dacă e deja aleasă', () => {
+  assert.ok(cantPentru(0.4).indexOf(0.4) !== -1, 'un material vechi și-ar pierde cantul');
+  assert.deepEqual(cantPentru(0.4), [0.4, 0.8, 1, 1.3, 1.5, 2], 'și rămâne la locul ei, în ordine');
+});
+
+test('pentru o grosime obișnuită lista rămâne curată', () => {
+  assert.deepEqual(cantPentru(2), CANT_STANDARD);
+  assert.deepEqual(cantPentru(null), CANT_STANDARD);
+  assert.deepEqual(cantPentru(0), CANT_STANDARD);
+});
+
+test('calculul acceptă mai departe 0,4, ca să nu strice comenzile vechi', () => {
+  /* Scos din alegeri nu înseamnă scos din matematică. */
+  const p = paramsSchema.safeParse(Object.assign(defaults(), { cs: 0.4 }));
+  assert.ok(p.success, 'schema respinge o valoare deja salvată în bază');
+  assert.equal(reducereCant(0.4), 0, 'regula de debitare s-a schimbat pentru 0,4');
+});
+
+test('cantul subțire implicit nu mai e 0,4', () => {
+  assert.equal(defaults().cs, 0.8);
+  assert.ok(CANT_STANDARD.indexOf(defaults().cs) !== -1,
+    'valoarea implicită nu e în lista de alegeri');
+});
+
+test('rândul de modificare arată grosimea salvată, însemnată', () => {
+  const show = fs.readFileSync(path.join(__dirname, '..', 'views', 'orders', 'show.ejs'), 'utf8');
+  assert.match(show, /cantPentru\(m\.cant_gros\)/);
+  assert.match(show, /cantPentru\(m\.cant_subtire\)/);
+  assert.match(show, /cantScos\.indexOf\(c\) !== -1/, 'nu se vede care e scoasă din fabricație');
+});
+
+test('măsurătoarea de 0,4 rămâne scrisă în motorul de calcul', () => {
+  /* Ea a așezat pragul de 0,8. Ștearsă, nimeni n-ar mai ști de unde vine
+     numărul ăla, iar peste un an cineva l-ar „corecta". */
+  const calc = fs.readFileSync(path.join(__dirname, '..', 'shared', 'calc.js'), 'utf8');
+  assert.match(calc, /bandă 0\.4 mm\s+->\s+scade 0/);
+  assert.match(calc, /nu se mai fabrică/);
+});

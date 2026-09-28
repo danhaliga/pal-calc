@@ -793,7 +793,8 @@
     "livrareLa": "Date de livraison",
     "telefon": "Téléphone",
     "telefonExemplu": "+33 6 xx xx xx xx",
-    "livrareNota": "Les deux peuvent rester vides et être remplis plus tard. Ils figurent sur chaque feuille imprimée."
+    "livrareNota": "Les deux peuvent rester vides et être remplis plus tard. Ils figurent sur chaque feuille imprimée.",
+    "cantScos": "ne se fabrique plus"
   },
   "rol": {
     "corp": "Caisson",

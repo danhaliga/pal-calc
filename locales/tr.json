@@ -793,7 +793,8 @@
     "livrareLa": "Teslim tarihi",
     "telefon": "Telefon",
     "telefonExemplu": "+90 5xx xxx xx xx",
-    "livrareNota": "İkisi de boş bırakılabilir, sonra doldurulur. Basılan her sayfada çıkar."
+    "livrareNota": "İkisi de boş bırakılabilir, sonra doldurulur. Basılan her sayfada çıkar.",
+    "cantScos": "artık üretilmiyor"
   },
   "rol": {
     "corp": "Gövde",
