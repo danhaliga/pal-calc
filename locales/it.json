@@ -688,7 +688,8 @@
     "dateGresite": "E-mail o password errate.",
     "preaMulteIncercari": "Troppi tentativi da questo indirizzo. Riprova fra 15 minuti.",
     "numeComanda": "Dai un nome all'ordine.",
-    "grosimeNeacceptata": "Spessore di pannello non supportato."
+    "grosimeNeacceptata": "Spessore di pannello non supportato.",
+    "dataLivrarii": "La data di consegna non è scritta bene."
   },
   "corp": {
     "faraComanda": "mobile senza ordine",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "coste frontali",
     "zonaStergere": "Cancellare la commessa",
     "stergeExplica": "Se ne va la commessa, e con lei i suoi mobili. Il credito pagato sui mobili non torna.",
-    "numeDinDecor": "preso dal decoro scelto"
+    "numeDinDecor": "preso dal decoro scelto",
+    "livrareLa": "Data di consegna",
+    "telefon": "Telefono",
+    "telefonExemplu": "+39 3xx xxx xxxx",
+    "livrareNota": "Si possono lasciare vuoti entrambi e compilarli dopo. Escono su ogni foglio stampato."
   },
   "rol": {
     "corp": "Struttura",

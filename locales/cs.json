@@ -694,7 +694,8 @@
     "dateGresite": "Špatný e-mail nebo heslo.",
     "preaMulteIncercari": "Příliš mnoho pokusů z téhle adresy. Zkus to znovu za 15 minut.",
     "numeComanda": "Pojmenuj zakázku.",
-    "grosimeNeacceptata": "Nepodporovaná tloušťka desky."
+    "grosimeNeacceptata": "Nepodporovaná tloušťka desky.",
+    "dataLivrarii": "Datum dodání není napsané správně."
   },
   "corp": {
     "faraComanda": "korpus bez zakázky",
@@ -790,7 +791,11 @@
     "muchiiFrontale": "čelní hrany",
     "zonaStergere": "Smazání zakázky",
     "stergeExplica": "Zakázka zmizí a s ní její korpusy. Kredit zaplacený za korpusy se nevrací.",
-    "numeDinDecor": "převezme se ze zvoleného dekoru"
+    "numeDinDecor": "převezme se ze zvoleného dekoru",
+    "livrareLa": "Datum dodání",
+    "telefon": "Telefon",
+    "telefonExemplu": "+420 xxx xxx xxx",
+    "livrareNota": "Obojí se dá nechat prázdné a doplnit později. Objeví se na každém vytištěném listu."
   },
   "rol": {
     "corp": "Korpus",

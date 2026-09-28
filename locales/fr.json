@@ -688,7 +688,8 @@
     "dateGresite": "E-mail ou mot de passe incorrect.",
     "preaMulteIncercari": "Trop de tentatives depuis cette adresse. Réessayez dans 15 minutes.",
     "numeComanda": "Donnez un nom à la commande.",
-    "grosimeNeacceptata": "Épaisseur de panneau non prise en charge."
+    "grosimeNeacceptata": "Épaisseur de panneau non prise en charge.",
+    "dataLivrarii": "La date de livraison n’est pas écrite correctement."
   },
   "corp": {
     "faraComanda": "caisson sans commande",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "rives avant",
     "zonaStergere": "Suppression de la commande",
     "stergeExplica": "La commande part, et ses caissons avec elle. Le crédit payé sur les caissons ne revient pas.",
-    "numeDinDecor": "repris du décor choisi"
+    "numeDinDecor": "repris du décor choisi",
+    "livrareLa": "Date de livraison",
+    "telefon": "Téléphone",
+    "telefonExemplu": "+33 6 xx xx xx xx",
+    "livrareNota": "Les deux peuvent rester vides et être remplis plus tard. Ils figurent sur chaque feuille imprimée."
   },
   "rol": {
     "corp": "Caisson",

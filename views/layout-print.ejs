@@ -46,6 +46,14 @@
   <div class="doc-meta">
     <div><%= t('print.comandaNr', { id: order.id }) %></div>
     <div><%= order.created_at.slice(0, 10) %></div>
+    <%# Livrarea si telefonul intra pe fiecare foaie care pleaca in atelier:
+        acolo se uita omul dupa ele, nu in aplicatie. %>
+    <% if (order.livrare_la) { %>
+      <div><b><%= t('comanda.livrareLa') %>: <%= order.livrare_la %></b></div>
+    <% } %>
+    <% if (order.telefon) { %>
+      <div><%= t('comanda.telefon') %>: <%= order.telefon %></div>
+    <% } %>
     <div class="muted"><%= t('print.tiparitLa', { data: new Date().toLocaleDateString(lang) }) %></div>
   </div>
 </header>

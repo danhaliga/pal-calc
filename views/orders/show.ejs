@@ -8,6 +8,18 @@
       · <%= t('comanda.colPiese') %>: <%= raport.totaluri.bucati %>
       <%= order.note ? ' · ' + order.note : '' %>
     </div>
+    <%# Livrarea si telefonul stau in antet, nu pliate in setari: de ele se
+        loveste omul cel mai des cand deschide comanda. %>
+    <% if (order.livrare_la || order.telefon) { %>
+      <div class="livrare">
+        <% if (order.livrare_la) { %>
+          <span class="chip"><%= t('comanda.livrareLa') %>: <b><%= order.livrare_la %></b></span>
+        <% } %>
+        <% if (order.telefon) { %>
+          <span class="chip"><a href="tel:<%= order.telefon.replace(/[^+0-9]/g, '') %>"><%= order.telefon %></a></span>
+        <% } %>
+      </div>
+    <% } %>
   </div>
   <div class="btns" style="margin:0">
     <a class="btn primary" href="/orders/<%= order.id %>/corp-nou"><%= t('comanda.adaugaCorp', { pret: (pretCorp / 100).toFixed(2) }) %></a>
@@ -154,6 +166,15 @@
     <div class="f">
       <label class="full"><%= t('comanda.numeComanda') %><input type="text" name="name" value="<%= order.name %>" maxlength="80" required></label>
       <label class="full"><%= t('comanda.observatii') %><input type="text" name="note" value="<%= order.note || '' %>" maxlength="500"></label>
+    </div>
+    <div class="f3" style="margin-top:8px">
+      <label><%= t('comanda.livrareLa') %>
+        <input type="date" name="livrare_la" value="<%= order.livrare_la || '' %>">
+      </label>
+      <label><%= t('comanda.telefon') %>
+        <input type="tel" name="telefon" maxlength="40" autocomplete="tel"
+               placeholder="<%= t('comanda.telefonExemplu') %>" value="<%= order.telefon || '' %>">
+      </label>
     </div>
     <div class="formate" style="margin-top:10px">
       <% formateId.forEach(function (f) { %>

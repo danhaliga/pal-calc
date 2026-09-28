@@ -694,7 +694,8 @@
     "dateGresite": "Błędny e-mail albo hasło.",
     "preaMulteIncercari": "Za dużo prób z tego adresu. Spróbuj ponownie za 15 minut.",
     "numeComanda": "Nadaj zleceniu nazwę.",
-    "grosimeNeacceptata": "Nieobsługiwana grubość płyty."
+    "grosimeNeacceptata": "Nieobsługiwana grubość płyty.",
+    "dataLivrarii": "Data dostawy jest zapisana niepoprawnie."
   },
   "corp": {
     "faraComanda": "korpus bez zlecenia",
@@ -790,7 +791,11 @@
     "muchiiFrontale": "krawędzie czołowe",
     "zonaStergere": "Usunięcie zlecenia",
     "stergeExplica": "Zlecenie znika, a z nim jego korpusy. Kredyt zapłacony za korpusy nie wraca.",
-    "numeDinDecor": "brany z wybranego dekoru"
+    "numeDinDecor": "brany z wybranego dekoru",
+    "livrareLa": "Data dostawy",
+    "telefon": "Telefon",
+    "telefonExemplu": "+48 xxx xxx xxx",
+    "livrareNota": "Oba można zostawić puste i uzupełnić później. Wychodzą na każdej drukowanej kartce."
   },
   "rol": {
     "corp": "Korpus",

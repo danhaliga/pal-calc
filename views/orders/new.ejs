@@ -23,6 +23,16 @@
         </label>
       </div>
       <p class="legend"><%= t('comandaNoua.dataAutomata') %></p>
+      <div class="f3">
+        <label><%= t('comanda.livrareLa') %>
+          <input type="date" name="livrare_la" value="<%= values.livrare_la || '' %>">
+        </label>
+        <label><%= t('comanda.telefon') %>
+          <input type="tel" name="telefon" maxlength="40" autocomplete="tel"
+                 placeholder="<%= t('comanda.telefonExemplu') %>" value="<%= values.telefon || '' %>">
+        </label>
+      </div>
+      <p class="legend"><%= t('comanda.livrareNota') %></p>
     </fieldset>
 
     <fieldset>

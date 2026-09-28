@@ -688,7 +688,8 @@
     "dateGresite": "邮箱或密码不对。",
     "preaMulteIncercari": "这个地址试得太多次了。15 分钟后再试。",
     "numeComanda": "给订单起个名字。",
-    "grosimeNeacceptata": "不支持这个板材厚度。"
+    "grosimeNeacceptata": "不支持这个板材厚度。",
+    "dataLivrarii": "交货日期写得不对。"
   },
   "corp": {
     "faraComanda": "不属于订单的柜体",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "前面各边",
     "zonaStergere": "删除订单",
     "stergeExplica": "订单没了，柜体也跟着没。柜体上花掉的余额不退。",
-    "numeDinDecor": "取自所选花色"
+    "numeDinDecor": "取自所选花色",
+    "livrareLa": "交货日期",
+    "telefon": "电话",
+    "telefonExemplu": "+86 1xx xxxx xxxx",
+    "livrareNota": "两项都可以先留空，以后再填。它们会出现在每张打印的单子上。"
   },
   "rol": {
     "corp": "柜体",

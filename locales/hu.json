@@ -688,7 +688,8 @@
     "dateGresite": "Hibás e-mail vagy jelszó.",
     "preaMulteIncercari": "Túl sok próbálkozás erről a címről. Próbáld újra 15 perc múlva.",
     "numeComanda": "Adj nevet a megrendelésnek.",
-    "grosimeNeacceptata": "Nem támogatott lapvastagság."
+    "grosimeNeacceptata": "Nem támogatott lapvastagság.",
+    "dataLivrarii": "A szállítás dátuma nincs jól beírva."
   },
   "corp": {
     "faraComanda": "korpusz megrendelés nélkül",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "elülső élek",
     "zonaStergere": "A rendelés törlése",
     "stergeExplica": "A rendelés elmegy, és vele a korpuszai is. A korpuszokra fizetett kredit nem jön vissza.",
-    "numeDinDecor": "a választott dekorból jön"
+    "numeDinDecor": "a választott dekorból jön",
+    "livrareLa": "Szállítás dátuma",
+    "telefon": "Telefon",
+    "telefonExemplu": "+36 xx xxx xxxx",
+    "livrareNota": "Mindkettő üresen hagyható és később kitölthető. Minden kinyomtatott lapon rajta van."
   },
   "rol": {
     "corp": "Korpusz",

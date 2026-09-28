@@ -688,7 +688,8 @@
     "dateGresite": "Fel e-post eller lösenord.",
     "preaMulteIncercari": "För många försök från den här adressen. Försök igen om 15 minuter.",
     "numeComanda": "Ge ordern ett namn.",
-    "grosimeNeacceptata": "Skivtjockleken stöds inte."
+    "grosimeNeacceptata": "Skivtjockleken stöds inte.",
+    "dataLivrarii": "Leveransdatumet är inte rätt skrivet."
   },
   "corp": {
     "faraComanda": "stomme utan order",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "framkanter",
     "zonaStergere": "Radera ordern",
     "stergeExplica": "Ordern försvinner, och dess stommar med den. Krediten som betalats för stommarna kommer inte tillbaka.",
-    "numeDinDecor": "hämtas från den valda dekoren"
+    "numeDinDecor": "hämtas från den valda dekoren",
+    "livrareLa": "Leveransdatum",
+    "telefon": "Telefon",
+    "telefonExemplu": "+46 7x xxx xx xx",
+    "livrareNota": "Båda kan lämnas tomma och fyllas i senare. De står på varje utskrivet blad."
   },
   "rol": {
     "corp": "Stomme",

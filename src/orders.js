@@ -31,6 +31,14 @@ const schemaComanda = z.object({
   cant_gros: z.coerce.number().min(0).max(5),
   cant_subtire: z.coerce.number().min(0).max(5),
   note: z.string().trim().max(500).optional().or(z.literal('')),
+  /* Data livrarii ca text ISO, cum vine din <input type="date">. Goala e in
+     regula: la deschiderea comenzii de multe ori inca nu se stie. */
+  livrare_la: z.string().trim().regex(/^\d{4}-\d{2}-\d{2}$/, 'valid.dataLivrarii')
+               .optional().or(z.literal('')),
+  /* Telefonul nu se verifica pe forma: prefixe, spatii, paranteze si
+     interioare arata altfel in fiecare tara, iar o regula stramta ar
+     respinge numere bune. Ii punem doar o lungime. */
+  telefon: z.string().trim().max(40).optional().or(z.literal('')),
   asamblare: z.string().trim().max(30).optional(),
   balama: z.string().trim().max(30).optional(),
   glisiere: z.string().trim().max(30).optional(),
@@ -196,7 +204,8 @@ router.get('/orders/new', requireAuth, (req, res) => {
     formateId: FORMATE_ID,
     feroOptiuni: PalFeronerie.optiuni(req.t),
     values: Object.assign({ name: '', brand: 'Egger', decor_cod: '', pal_mm: 18,
-              cant_gros: 2, cant_subtire: 0.4, note: '', formate: ['intreaga', 'jum-lat', 'jum-lung', 'sfert'] },
+              cant_gros: 2, cant_subtire: 0.4, note: '', livrare_la: '', telefon: '',
+              formate: ['intreaga', 'jum-lat', 'jum-lung', 'sfert'] },
               PalFeronerie.implicit()),
     error: null
   });
@@ -224,12 +233,13 @@ router.post('/orders', requireAuth, (req, res) => {
   const creeaza = db.transaction(() => {
     const info = db.prepare(`
       INSERT INTO orders (user_id, name, brand, decor, cant_decor, pal_mm, cant_gros, cant_subtire,
-                          adaos_cant, note, formate, feronerie)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                          adaos_cant, note, formate, feronerie, livrare_la, telefon)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `).run(req.user.id, d.name, brand, decor ? decor.cod : null, null,
            d.pal_mm, d.cant_gros, d.cant_subtire, adaosCant(), d.note || null,
            JSON.stringify(formateDinBody(req.body)),
-           JSON.stringify(feronerieDinBody(req.body)));
+           JSON.stringify(feronerieDinBody(req.body)),
+           d.livrare_la || null, d.telefon || null);
 
     const orderId = Number(info.lastInsertRowid);
     materiale.creeaza(orderId, {
@@ -279,10 +289,18 @@ router.post('/orders/:id', requireAuth, (req, res, next) => {
 
   const name = String(req.body.name || order.name).trim().slice(0, 80) || order.name;
   const note = String(req.body.note || '').trim().slice(0, 500);
+  /* O data scrisa stramb nu se salveaza, dar nici nu rupe restul
+     formularului: ramane cea de dinainte. Goala inseamna „sterge-o". */
+  const livrareBruta = String(req.body.livrare_la || '').trim();
+  const livrare = /^\d{4}-\d{2}-\d{2}$/.test(livrareBruta) ? livrareBruta
+                : (livrareBruta === '' ? null : order.livrare_la);
+  const telefon = String(req.body.telefon || '').trim().slice(0, 40);
 
-  db.prepare(`UPDATE orders SET name = ?, note = ?, formate = ?, updated_at = datetime('now')
+  db.prepare(`UPDATE orders SET name = ?, note = ?, formate = ?, livrare_la = ?, telefon = ?,
+                     updated_at = datetime('now')
               WHERE id = ?`)
-    .run(name, note || null, JSON.stringify(formateDinBody(req.body)), order.id);
+    .run(name, note || null, JSON.stringify(formateDinBody(req.body)),
+         livrare, telefon || null, order.id);
 
   res.redirect(`/orders/${order.id}`);
 });

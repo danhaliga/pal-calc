@@ -688,7 +688,8 @@
     "dateGresite": "E-mail ou palavra-passe errados.",
     "preaMulteIncercari": "Demasiadas tentativas deste endereço. Tenta de novo daqui a 15 minutos.",
     "numeComanda": "Dá um nome à encomenda.",
-    "grosimeNeacceptata": "Espessura de placa não suportada."
+    "grosimeNeacceptata": "Espessura de placa não suportada.",
+    "dataLivrarii": "A data de entrega não está bem escrita."
   },
   "corp": {
     "faraComanda": "módulo sem encomenda",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "topos da frente",
     "zonaStergere": "Apagar a encomenda",
     "stergeExplica": "A encomenda vai-se, e os móveis dela com ela. O crédito pago nos móveis não volta.",
-    "numeDinDecor": "vem do decor escolhido"
+    "numeDinDecor": "vem do decor escolhido",
+    "livrareLa": "Data de entrega",
+    "telefon": "Telefone",
+    "telefonExemplu": "+351 9xx xxx xxx",
+    "livrareNota": "Ambos podem ficar vazios e ser preenchidos mais tarde. Saem em cada folha impressa."
   },
   "rol": {
     "corp": "Estrutura",

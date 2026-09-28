@@ -694,7 +694,8 @@
     "dateGresite": "Email sau parolă greșite.",
     "preaMulteIncercari": "Prea multe încercări de pe această adresă. Încearcă din nou peste 15 minute.",
     "numeComanda": "Dă un nume comenzii.",
-    "grosimeNeacceptata": "Grosime de PAL neacceptată."
+    "grosimeNeacceptata": "Grosime de PAL neacceptată.",
+    "dataLivrarii": "Data livrării nu e scrisă bine."
   },
   "corp": {
     "faraComanda": "corp fără comandă",
@@ -790,7 +791,11 @@
     "muchiiFrontale": "muchii frontale",
     "zonaStergere": "Ștergerea comenzii",
     "stergeExplica": "Se duce comanda cu tot cu corpurile ei. Creditul plătit pe corpuri nu se întoarce.",
-    "numeDinDecor": "se ia din decorul ales"
+    "numeDinDecor": "se ia din decorul ales",
+    "livrareLa": "Data livrării",
+    "telefon": "Telefon",
+    "telefonExemplu": "07xx xxx xxx",
+    "livrareNota": "Amândouă se pot lăsa goale și completa mai târziu. Apar pe fiecare foaie tipărită."
   },
   "rol": {
     "corp": "Carcasă",

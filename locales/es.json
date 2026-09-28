@@ -688,7 +688,8 @@
     "dateGresite": "Correo o contraseña incorrectos.",
     "preaMulteIncercari": "Demasiados intentos desde esta dirección. Vuelve a intentarlo dentro de 15 minutos.",
     "numeComanda": "Pon un nombre al pedido.",
-    "grosimeNeacceptata": "Grosor de tablero no admitido."
+    "grosimeNeacceptata": "Grosor de tablero no admitido.",
+    "dataLivrarii": "La fecha de entrega no está bien escrita."
   },
   "corp": {
     "faraComanda": "módulo sin pedido",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "bordes frontales",
     "zonaStergere": "Borrar el pedido",
     "stergeExplica": "Se va el pedido y con él sus muebles. El crédito pagado por los muebles no vuelve.",
-    "numeDinDecor": "se toma del decorado elegido"
+    "numeDinDecor": "se toma del decorado elegido",
+    "livrareLa": "Fecha de entrega",
+    "telefon": "Teléfono",
+    "telefonExemplu": "+34 6xx xxx xxx",
+    "livrareNota": "Ambos se pueden dejar vacíos y rellenar más tarde. Salen en cada hoja impresa."
   },
   "rol": {
     "corp": "Carcasa",

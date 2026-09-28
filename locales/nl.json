@@ -688,7 +688,8 @@
     "dateGresite": "Verkeerd e-mailadres of wachtwoord.",
     "preaMulteIncercari": "Te veel pogingen vanaf dit adres. Probeer het over 15 minuten opnieuw.",
     "numeComanda": "Geef de opdracht een naam.",
-    "grosimeNeacceptata": "Deze plaatdikte wordt niet ondersteund."
+    "grosimeNeacceptata": "Deze plaatdikte wordt niet ondersteund.",
+    "dataLivrarii": "De leverdatum is niet goed geschreven."
   },
   "corp": {
     "faraComanda": "kast zonder opdracht",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "voorkanten",
     "zonaStergere": "De order verwijderen",
     "stergeExplica": "De order gaat weg, en haar kasten met haar mee. Het krediet dat voor de kasten is betaald komt niet terug.",
-    "numeDinDecor": "wordt overgenomen uit het gekozen decor"
+    "numeDinDecor": "wordt overgenomen uit het gekozen decor",
+    "livrareLa": "Leverdatum",
+    "telefon": "Telefoon",
+    "telefonExemplu": "+31 6 xxxxxxxx",
+    "livrareNota": "Beide mogen leeg blijven en later worden ingevuld. Ze staan op elk afgedrukt blad."
   },
   "rol": {
     "corp": "Korpus",

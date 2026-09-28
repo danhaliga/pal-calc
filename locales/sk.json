@@ -694,7 +694,8 @@
     "dateGresite": "Nesprávny e-mail alebo heslo.",
     "preaMulteIncercari": "Priveľa pokusov z tejto adresy. Skús to znova o 15 minút.",
     "numeComanda": "Pomenuj zákazku.",
-    "grosimeNeacceptata": "Nepodporovaná hrúbka dosky."
+    "grosimeNeacceptata": "Nepodporovaná hrúbka dosky.",
+    "dataLivrarii": "Dátum dodania nie je napísaný správne."
   },
   "corp": {
     "faraComanda": "korpus bez zákazky",
@@ -790,7 +791,11 @@
     "muchiiFrontale": "čelné hrany",
     "zonaStergere": "Zmazanie zákazky",
     "stergeExplica": "Zákazka zmizne a s ňou jej korpusy. Kredit zaplatený za korpusy sa nevracia.",
-    "numeDinDecor": "prevezme sa zo zvoleného dekoru"
+    "numeDinDecor": "prevezme sa zo zvoleného dekoru",
+    "livrareLa": "Dátum dodania",
+    "telefon": "Telefón",
+    "telefonExemplu": "+421 9xx xxx xxx",
+    "livrareNota": "Oboje sa dá nechať prázdne a doplniť neskôr. Objaví sa na každom vytlačenom liste."
   },
   "rol": {
     "corp": "Korpus",

@@ -688,7 +688,8 @@
     "dateGresite": "Wrong email or password.",
     "preaMulteIncercari": "Too many attempts from this address. Try again in 15 minutes.",
     "numeComanda": "Give the order a name.",
-    "grosimeNeacceptata": "Unsupported board thickness."
+    "grosimeNeacceptata": "Unsupported board thickness.",
+    "dataLivrarii": "The delivery date is not written correctly."
   },
   "corp": {
     "faraComanda": "cabinet without an order",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "front edges",
     "zonaStergere": "Deleting the order",
     "stergeExplica": "The order goes, and its cabinets with it. The credit paid on the cabinets does not come back.",
-    "numeDinDecor": "taken from the chosen decor"
+    "numeDinDecor": "taken from the chosen decor",
+    "livrareLa": "Delivery date",
+    "telefon": "Phone",
+    "telefonExemplu": "+40 7xx xxx xxx",
+    "livrareNota": "Both can be left empty and filled in later. They appear on every printed sheet."
   },
   "rol": {
     "corp": "Carcass",

@@ -688,7 +688,8 @@
     "dateGresite": "이메일이나 비밀번호가 틀렸습니다.",
     "preaMulteIncercari": "이 주소에서 시도가 너무 많았습니다. 15분 뒤에 다시 해 보세요.",
     "numeComanda": "주문에 이름을 붙여 주세요.",
-    "grosimeNeacceptata": "이 판 두께는 지원하지 않습니다."
+    "grosimeNeacceptata": "이 판 두께는 지원하지 않습니다.",
+    "dataLivrarii": "납품일이 올바르게 적히지 않았습니다."
   },
   "corp": {
     "faraComanda": "주문에 속하지 않은 캐비닛",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "앞쪽 변",
     "zonaStergere": "주문 삭제",
     "stergeExplica": "주문이 사라지고 그 몸통들도 함께 사라집니다. 몸통에 쓴 잔액은 돌아오지 않습니다.",
-    "numeDinDecor": "고른 무늬에서 가져옵니다"
+    "numeDinDecor": "고른 무늬에서 가져옵니다",
+    "livrareLa": "납품일",
+    "telefon": "전화",
+    "telefonExemplu": "+82 10-xxxx-xxxx",
+    "livrareNota": "둘 다 비워 두었다가 나중에 채워도 됩니다. 인쇄하는 모든 장에 나옵니다."
   },
   "rol": {
     "corp": "몸통",

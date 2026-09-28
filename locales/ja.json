@@ -688,7 +688,8 @@
     "dateGresite": "メールアドレスかパスワードが違います。",
     "preaMulteIncercari": "このアドレスからの試行が多すぎます。15分後にお試しください。",
     "numeComanda": "注文に名前を付けてください。",
-    "grosimeNeacceptata": "この板厚には対応していません。"
+    "grosimeNeacceptata": "この板厚には対応していません。",
+    "dataLivrarii": "納品日の書き方が正しくありません。"
   },
   "corp": {
     "faraComanda": "注文に属さないキャビネット",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "前面の辺",
     "zonaStergere": "注文の削除",
     "stergeExplica": "注文が消え、その箱も一緒に消えます。箱に払った残高は戻りません。",
-    "numeDinDecor": "選んだ柄から入ります"
+    "numeDinDecor": "選んだ柄から入ります",
+    "livrareLa": "納品日",
+    "telefon": "電話",
+    "telefonExemplu": "+81 90-xxxx-xxxx",
+    "livrareNota": "どちらも空のままにして、あとで入れられます。印刷するすべての用紙に出ます。"
   },
   "rol": {
     "corp": "本体",

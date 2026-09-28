@@ -688,7 +688,8 @@
     "dateGresite": "E-Mail oder Passwort falsch.",
     "preaMulteIncercari": "Zu viele Versuche von dieser Adresse. Versuche es in 15 Minuten noch einmal.",
     "numeComanda": "Gib dem Auftrag einen Namen.",
-    "grosimeNeacceptata": "Diese Plattenstärke wird nicht unterstützt."
+    "grosimeNeacceptata": "Diese Plattenstärke wird nicht unterstützt.",
+    "dataLivrarii": "Der Liefertermin ist nicht richtig geschrieben."
   },
   "corp": {
     "faraComanda": "Korpus ohne Auftrag",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "vordere Schmalseiten",
     "zonaStergere": "Auftrag löschen",
     "stergeExplica": "Der Auftrag geht, und seine Korpusse mit ihm. Das für die Korpusse bezahlte Guthaben kommt nicht zurück.",
-    "numeDinDecor": "wird aus dem gewählten Dekor übernommen"
+    "numeDinDecor": "wird aus dem gewählten Dekor übernommen",
+    "livrareLa": "Liefertermin",
+    "telefon": "Telefon",
+    "telefonExemplu": "+49 1xx xxxxxxx",
+    "livrareNota": "Beides kann leer bleiben und später ausgefüllt werden. Es steht auf jedem gedruckten Blatt."
   },
   "rol": {
     "corp": "Korpus",

@@ -688,7 +688,8 @@
     "dateGresite": "E-mail atau kata sandi salah.",
     "preaMulteIncercari": "Terlalu banyak percobaan dari alamat ini. Coba lagi 15 menit lagi.",
     "numeComanda": "Beri nama pesanannya.",
-    "grosimeNeacceptata": "Ketebalan papan tidak didukung."
+    "grosimeNeacceptata": "Ketebalan papan tidak didukung.",
+    "dataLivrarii": "Tanggal kirim tidak ditulis dengan benar."
   },
   "corp": {
     "faraComanda": "boks tanpa pesanan",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "sisi-sisi depan",
     "zonaStergere": "Menghapus pesanan",
     "stergeExplica": "Pesanan hilang, kabinetnya ikut hilang. Kredit yang dibayar untuk kabinet tidak kembali.",
-    "numeDinDecor": "diambil dari dekor yang dipilih"
+    "numeDinDecor": "diambil dari dekor yang dipilih",
+    "livrareLa": "Tanggal kirim",
+    "telefon": "Telepon",
+    "telefonExemplu": "+62 8xx xxxx xxxx",
+    "livrareNota": "Keduanya boleh dikosongkan dan diisi nanti. Keduanya muncul di setiap lembar cetak."
   },
   "rol": {
     "corp": "Boks",

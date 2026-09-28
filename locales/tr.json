@@ -688,7 +688,8 @@
     "dateGresite": "E-posta veya parola yanlış.",
     "preaMulteIncercari": "Bu adresten çok fazla deneme yapıldı. 15 dakika sonra tekrar dene.",
     "numeComanda": "Siparişe bir ad ver.",
-    "grosimeNeacceptata": "Desteklenmeyen levha kalınlığı."
+    "grosimeNeacceptata": "Desteklenmeyen levha kalınlığı.",
+    "dataLivrarii": "Teslim tarihi doğru yazılmamış."
   },
   "corp": {
     "faraComanda": "siparişsiz gövde",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "ön kenarlar",
     "zonaStergere": "Siparişi silme",
     "stergeExplica": "Sipariş gider, gövdeleri de onunla. Gövdeler için ödenen kredi geri gelmez.",
-    "numeDinDecor": "seçilen dekordan alınır"
+    "numeDinDecor": "seçilen dekordan alınır",
+    "livrareLa": "Teslim tarihi",
+    "telefon": "Telefon",
+    "telefonExemplu": "+90 5xx xxx xx xx",
+    "livrareNota": "İkisi de boş bırakılabilir, sonra doldurulur. Basılan her sayfada çıkar."
   },
   "rol": {
     "corp": "Gövde",

@@ -694,7 +694,8 @@
     "dateGresite": "דוא״ל או סיסמה שגויים.",
     "preaMulteIncercari": "יותר מדי ניסיונות מהכתובת הזאת. נסו בעוד 15 דקות.",
     "numeComanda": "תנו שם להזמנה.",
-    "grosimeNeacceptata": "עובי הלוח הזה לא נתמך."
+    "grosimeNeacceptata": "עובי הלוח הזה לא נתמך.",
+    "dataLivrarii": "תאריך האספקה לא כתוב נכון."
   },
   "corp": {
     "faraComanda": "גוף בלי הזמנה",
@@ -790,7 +791,11 @@
     "muchiiFrontale": "הצלעות הקדמיות",
     "zonaStergere": "מחיקת ההזמנה",
     "stergeExplica": "ההזמנה הולכת, והגופים שלה איתה. הקרדיט ששולם על הגופים לא חוזר.",
-    "numeDinDecor": "נלקח מהדקור שנבחר"
+    "numeDinDecor": "נלקח מהדקור שנבחר",
+    "livrareLa": "תאריך אספקה",
+    "telefon": "טלפון",
+    "telefonExemplu": "+972 5x-xxx-xxxx",
+    "livrareNota": "אפשר להשאיר את שניהם ריקים ולמלא מאוחר יותר. הם מופיעים בכל דף מודפס."
   },
   "rol": {
     "corp": "גוף",

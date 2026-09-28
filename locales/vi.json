@@ -688,7 +688,8 @@
     "dateGresite": "Sai e-mail hoặc mật khẩu.",
     "preaMulteIncercari": "Quá nhiều lần thử từ địa chỉ này. Hãy thử lại sau 15 phút.",
     "numeComanda": "Hãy đặt tên cho đơn hàng.",
-    "grosimeNeacceptata": "Độ dày ván không được hỗ trợ."
+    "grosimeNeacceptata": "Độ dày ván không được hỗ trợ.",
+    "dataLivrarii": "Ngày giao viết chưa đúng."
   },
   "corp": {
     "faraComanda": "thùng tủ không thuộc đơn hàng",
@@ -781,7 +782,11 @@
     "muchiiFrontale": "các cạnh phía trước",
     "zonaStergere": "Xóa đơn hàng",
     "stergeExplica": "Đơn hàng đi mất, các tủ của nó cũng đi theo. Tín dụng đã trả cho các tủ không quay lại.",
-    "numeDinDecor": "lấy từ decor đã chọn"
+    "numeDinDecor": "lấy từ decor đã chọn",
+    "livrareLa": "Ngày giao",
+    "telefon": "Điện thoại",
+    "telefonExemplu": "+84 9xx xxx xxx",
+    "livrareNota": "Cả hai có thể để trống và điền sau. Chúng hiện trên mọi tờ in."
   },
   "rol": {
     "corp": "Thùng tủ",

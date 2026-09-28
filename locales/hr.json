@@ -694,7 +694,8 @@
     "dateGresite": "Pogrešan e-mail ili lozinka.",
     "preaMulteIncercari": "Previše pokušaja s ove adrese. Pokušaj ponovno za 15 minuta.",
     "numeComanda": "Daj nalogu naziv.",
-    "grosimeNeacceptata": "Nepodržana debljina ploče."
+    "grosimeNeacceptata": "Nepodržana debljina ploče.",
+    "dataLivrarii": "Datum isporuke nije dobro napisan."
   },
   "corp": {
     "faraComanda": "korpus bez naloga",
@@ -790,7 +791,11 @@
     "muchiiFrontale": "prednji rubovi",
     "zonaStergere": "Brisanje narudžbe",
     "stergeExplica": "Narudžba odlazi, a s njom i njezini korpusi. Kredit plaćen za korpuse se ne vraća.",
-    "numeDinDecor": "uzima se iz odabranog dekora"
+    "numeDinDecor": "uzima se iz odabranog dekora",
+    "livrareLa": "Datum isporuke",
+    "telefon": "Telefon",
+    "telefonExemplu": "+385 9x xxx xxxx",
+    "livrareNota": "Oba se mogu ostaviti prazna i popuniti kasnije. Izlaze na svakom otisnutom listu."
   },
   "rol": {
     "corp": "Korpus",

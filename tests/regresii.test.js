@@ -1106,3 +1106,60 @@ test('sertarele deasupra unei uși nu sunt un gol', () => {
     { W: 600, H: 900, D: 560, nUsi: 1, nPol: 0, nSer: 2, hFront: 150, hCutie: 100 });
   assert.ok(!calc(cuUsa).warn.some(w => /nu ajung la fund/.test(w)));
 });
+
+/* =====================================================================
+   17. Data livrării și telefonul comenzii
+   ===================================================================== */
+
+test('data livrării se ține ca text ISO, ca restul datelor din bază', () => {
+  const sql = fs.readFileSync(
+    path.join(__dirname, '..', 'db', 'migrations', '009_livrare.sql'), 'utf8');
+  assert.match(sql, /livrare_la TEXT/);
+  assert.match(sql, /telefon TEXT/);
+  /* Fără NOT NULL și fără DEFAULT: gol înseamnă „nu s-a stabilit încă",
+     nu „azi" și nici „fără". */
+  assert.ok(!/livrare_la[^;]*NOT NULL/.test(sql), 'data livrării a devenit obligatorie');
+  assert.ok(!/livrare_la[^;]*DEFAULT/.test(sql), 'data livrării a căpătat o valoare implicită');
+});
+
+test('o dată strâmbă nu trece, una goală trece', () => {
+  const re = SURSA_ORD.match(/livrare_la: z\.string\(\)\.trim\(\)\.regex\((\/[^/]+\/)/);
+  assert.ok(re, 'nu se mai verifică forma datei');
+  const rx = new RegExp(re[1].slice(1, -1));
+  assert.ok(rx.test('2026-10-15'));
+  ['15.10.2026', '2026-13-01x', 'maine', '2026/10/15'].forEach(rau => {
+    assert.ok(!rx.test(rau), `„${rau}" a trecut ca dată`);
+  });
+});
+
+test('telefonul nu se verifică pe formă', () => {
+  /* Prefixe, spații, paranteze și interioare arată altfel în fiecare țară;
+     o regulă strâmtă ar respinge numere bune. */
+  assert.match(SURSA_ORD, /telefon: z\.string\(\)\.trim\(\)\.max\(40\)/);
+  assert.ok(!/telefon: z\.string\(\)[^,]*regex/.test(SURSA_ORD),
+    'a apărut o regulă de formă pentru telefon');
+});
+
+test('amândouă ajung pe hârtia care pleacă în atelier', () => {
+  const layout = fs.readFileSync(
+    path.join(__dirname, '..', 'views', 'layout-print.ejs'), 'utf8');
+  assert.match(layout, /order\.livrare_la/, 'data livrării nu se tipărește');
+  assert.match(layout, /order\.telefon/, 'telefonul nu se tipărește');
+});
+
+test('se pot și schimba după deschiderea comenzii, nu doar la creare', () => {
+  assert.match(SURSA_ORD, /UPDATE orders SET name = \?, note = \?, formate = \?, livrare_la = \?, telefon = \?/);
+  const show = fs.readFileSync(
+    path.join(__dirname, '..', 'views', 'orders', 'show.ejs'), 'utf8');
+  assert.match(show, /name="livrare_la"/);
+  assert.match(show, /name="telefon"/);
+});
+
+test('formularul de comandă nouă le are sub linia cu data automată', () => {
+  const nou = fs.readFileSync(
+    path.join(__dirname, '..', 'views', 'orders', 'new.ejs'), 'utf8');
+  const pozData = nou.indexOf("comandaNoua.dataAutomata");
+  const pozLivrare = nou.indexOf('name="livrare_la"');
+  assert.ok(pozData !== -1 && pozLivrare !== -1);
+  assert.ok(pozLivrare > pozData, 'au urcat deasupra liniei cu data automată');
+});
