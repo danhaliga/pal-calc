@@ -18,7 +18,14 @@ services:
     name: palcalc
     runtime: node
     region: frankfurt          # cel mai aproape de România dintre ale lor
-    plan: starter              # cel gratuit adoarme si pierde discul
+    # Render si-a schimbat numele planurilor: „starter" nu mai exista, iar un
+    # nume necunoscut face blueprint-ul sa nu poata fi citit („A Blueprint
+    # file was found, but there was an issue"). Acum se cheama dupa resurse.
+    #
+    # 0.5c-512mb = 7 $/luna, cel mai mic platit. Cel gratuit nu merge aici:
+    # adoarme cand nu-l foloseste nimeni SI nu poate avea disc, adica ar
+    # pierde baza de date la fiecare repornire.
+    plan: 0.5c-512mb
 
     buildCommand: npm ci --omit=dev
     startCommand: node server.js
@@ -34,7 +41,7 @@ services:
     disk:
       name: date
       mountPath: /var/date
-      sizeGB: 1                # toată baza e un fișier; 1 GB ajunge ani buni
+      sizeGB: 1                # 0,25 $/luna; toata baza e un fisier, 1 GB ajunge ani buni
 
     envVars:
       - key: NODE_ENV
