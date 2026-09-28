@@ -629,7 +629,8 @@
     "usiPesteInaltime": "{cerut} mm 문을 요청했지만 {incape} mm만 들어갑니다. 전체 높이로 만들었습니다.",
     "usiJosFaraPolita": "아래쪽에만 문이 있고 선반이 하나도 없습니다. 최소 하나는 넣으세요. 그러지 않으면 문이 위에서 닿을 곳이 없습니다.",
     "usiPeCompartimenteFaraMontant": "문을 달 칸을 골랐지만 몸통에 칸막이가 없습니다. 문은 전체 폭으로 만들었습니다.",
-    "usaPreaIngusta": "{comp}번 칸에는 그만큼의 문이 들어가지 않습니다. 거기에는 한 짝도 나오지 않았습니다."
+    "usaPreaIngusta": "{comp}번 칸에는 그만큼의 문이 들어가지 않습니다. 거기에는 한 짝도 나오지 않았습니다.",
+    "sertareNuUmplu": "서랍 앞판이 아래까지 닿지 않습니다. 아래에 {gol} mm가 비어 있습니다. 앞판 높이를 {front} mm로 하면 몸통이 채워집니다."
   },
   "csv": {
     "corp": "캐비닛",

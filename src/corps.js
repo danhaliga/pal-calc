@@ -128,8 +128,14 @@ router.post('/corps', requireAuth, (req, res, next) => {
   try {
     /* `nou=1` e semnalul pentru editor să pună setările implicite ale
        utilizatorului peste corpul proaspăt. Copia unui corp nu-l primește:
-       acolo valorile vin din corpul copiat. */
-    res.redirect(`/corps/${creeazaCorp(req.user.id, params, credit.pretCorp())}?nou=1`);
+       acolo valorile vin din corpul copiat.
+
+       `model` merge cu el ca editorul să știe CE a hotărât modelul. Fără
+       asta, setările din browser calcă peste el: un „înălțime front 150"
+       ținut minte de la un corp cu uși strica orice corp cu sertare, și
+       rămânea un gol jos pe care nimeni nu-l punea pe seama setărilor. */
+    const idModel = req.body.model ? '&model=' + encodeURIComponent(String(req.body.model)) : '';
+    res.redirect(`/corps/${creeazaCorp(req.user.id, params, credit.pretCorp())}?nou=1${idModel}`);
   } catch (e) {
     if (e.message === 'CREDIT_INSUFICIENT') return res.redirect('/credit?insuficient=1');
     next(e);
@@ -153,6 +159,9 @@ router.get('/corps/:id', requireAuth, (req, res, next) => {
     paymentDriver: process.env.PAYMENT_DRIVER || 'fake',
     justPaid: req.query.paid === '1',
     nou: req.query.nou === '1',
+    /* Cheile pe care le-a hotărât modelul ales. Setările din browser nu au
+       voie să calce peste ele. */
+    cheiModel: cheileModelului(req.query.model),
     /* Când corpul stă într-o comandă, placa și cantul vin din materialul
        comenzii, nu din browser. Editorul sare atunci peste grupa „material". */
     matFixat: !!corp.mat_corp_id
@@ -204,6 +213,13 @@ router.post('/corps/:id/duplicate', requireAuth, (req, res, next) => {
    vede „parametri invalizi" pe un tabel cu 7 rânduri și le caută pe toate.
    Restul câmpurilor rămân cu mesajul general: la ele câmpul din formular se
    colorează oricum, fiindcă e unul singur. */
+/* Ce anume a pus modelul în parametri. Gol dacă nu s-a pornit de la unul. */
+function cheileModelului(id) {
+  if (!id) return [];
+  const m = PalModels.byId(String(id));
+  return m && m.set ? Object.keys(m.set) : [];
+}
+
 function mesajEroareParams(issues, t) {
   const laturaRea = issues.find(i => i.path[0] === 'contur' && typeof i.path[1] === 'number');
   if (laturaRea) {

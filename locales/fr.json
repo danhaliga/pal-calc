@@ -629,7 +629,8 @@
     "usiPesteInaltime": "Portes de {cerut} mm demandées, mais seuls {incape} mm tiennent : elles ont été faites pleine hauteur.",
     "usiJosFaraPolita": "Portes en bas seulement, sans aucune tablette : mettez-en au moins une, sinon la porte n’a rien contre quoi fermer en haut.",
     "usiPeCompartimenteFaraMontant": "Vous avez choisi des compartiments pour les portes, mais le caisson n’a aucun montant : les portes ont été faites sur toute la largeur.",
-    "usaPreaIngusta": "Le compartiment {comp} n’a pas la place pour autant de portes : aucune n’en est sortie."
+    "usaPreaIngusta": "Le compartiment {comp} n’a pas la place pour autant de portes : aucune n’en est sortie.",
+    "sertareNuUmplu": "Les faces de tiroir n’atteignent pas le fond : il reste {gol} mm de vide en bas. Mettez {front} mm de hauteur de face pour remplir le caisson."
   },
   "csv": {
     "corp": "Caisson",

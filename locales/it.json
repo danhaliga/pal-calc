@@ -629,7 +629,8 @@
     "usiPesteInaltime": "Chieste ante da {cerut} mm, ma ci stanno solo {incape} mm: sono state fatte a tutta altezza.",
     "usiJosFaraPolita": "Ante solo in basso e nessun ripiano: mettine almeno uno, altrimenti l’anta non ha su cosa chiudere in alto.",
     "usiPeCompartimenteFaraMontant": "Hai scelto dei vani per le ante, ma il mobile non ha nessun montante: le ante sono state fatte su tutta la larghezza.",
-    "usaPreaIngusta": "Il vano {comp} non ha spazio per tante ante: lì non ne è uscita nessuna."
+    "usaPreaIngusta": "Il vano {comp} non ha spazio per tante ante: lì non ne è uscita nessuna.",
+    "sertareNuUmplu": "I frontali dei cassetti non arrivano in basso: restano {gol} mm liberi. Metti {front} mm di altezza frontale per riempire il mobile."
   },
   "csv": {
     "corp": "Mobile",

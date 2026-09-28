@@ -629,7 +629,8 @@
     "usiPesteInaltime": "Dörrar på {cerut} mm begärda, men bara {incape} mm får plats: de gjordes i full höjd.",
     "usiJosFaraPolita": "Dörrar bara nedtill, utan ett enda hyllplan: sätt in minst ett, annars har dörren inget att slå emot upptill.",
     "usiPeCompartimenteFaraMontant": "Du valde fack för dörrarna, men stommen har inget mellanstycke: dörrarna gjordes över hela bredden.",
-    "usaPreaIngusta": "Fack {comp} har inte plats för så många dörrar: där blev det ingen."
+    "usaPreaIngusta": "Fack {comp} har inte plats för så många dörrar: där blev det ingen.",
+    "sertareNuUmplu": "Lådfronterna når inte ner: {gol} mm står öppet nedtill. Sätt fronthöjden till {front} mm för att fylla stommen."
   },
   "csv": {
     "corp": "Stomme",

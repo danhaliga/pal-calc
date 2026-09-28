@@ -629,7 +629,8 @@
     "usiPesteInaltime": "{cerut} mm-es ajtót kértél, de csak {incape} mm fér el: teljes magasságban készült.",
     "usiJosFaraPolita": "Ajtó csak alul, polc nélkül: tegyél be legalább egyet, különben az ajtónak nincs mihez zárnia felül.",
     "usiPeCompartimenteFaraMontant": "Rekeszeket választottál az ajtóknak, de a korpuszban nincs közfal: az ajtók a teljes szélességre készültek.",
-    "usaPreaIngusta": "A(z) {comp}. rekeszbe nem fér ennyi ajtó: ott egy sem lett."
+    "usaPreaIngusta": "A(z) {comp}. rekeszbe nem fér ennyi ajtó: ott egy sem lett.",
+    "sertareNuUmplu": "A fiókelőlapok nem érnek le: {gol} mm marad szabadon alul. Állítsd az előlapmagasságot {front} mm-re, hogy kitöltse a korpuszt."
   },
   "csv": {
     "corp": "Korpusz",

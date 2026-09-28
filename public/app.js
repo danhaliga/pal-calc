@@ -654,12 +654,19 @@ function grupeBifate() {
 function aplicaSetari() {
   var s = citesteSetari();
   if (!DATA.nou || !s) return false;
+  /* Ce a hotărât modelul rămâne al modelului. Altfel un „înălțime front
+     150" ținut minte de la un corp cu uși calcă peste cele 237 ale corpului
+     cu trei sertare, iar omul vede un gol de 261 mm jos și n-are de unde
+     ști că vine din setări. */
+  var dinModel = DATA.cheiModel || [];
+
   var atins = false;
   GRUPE.forEach(function (g) {
     if (!s.grupe[g.id]) return;
     if (g.id === 'material' && DATA.matFixat) return;
     g.camp.forEach(function (f) {
       if (s.val[f] === undefined) return;
+      if (dinModel.indexOf(f) !== -1) return;
       params[f] = s.val[f];
       atins = true;
     });

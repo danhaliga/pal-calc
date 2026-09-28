@@ -629,7 +629,8 @@
     "usiPesteInaltime": "{cerut} mm の扉を指定しましたが、入るのは {incape} mm までです。全高で作りました。",
     "usiJosFaraPolita": "下側だけの扉で棚板が一枚もありません。最低一枚入れてください。上で扉が当たるところがなくなります。",
     "usiPeCompartimenteFaraMontant": "扉を付ける区画を選びましたが、箱に仕切りがありません。扉は全幅で作りました。",
-    "usaPreaIngusta": "区画 {comp} にはその数の扉が入りません。そこには一枚もできませんでした。"
+    "usaPreaIngusta": "区画 {comp} にはその数の扉が入りません。そこには一枚もできませんでした。",
+    "sertareNuUmplu": "引き出しの前板が下まで届いていません。下に {gol} mm の空きが残ります。前板の高さを {front} mm にすると箱が埋まります。"
   },
   "csv": {
     "corp": "キャビネット",

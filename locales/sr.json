@@ -635,7 +635,8 @@
     "usiPesteInaltime": "Tražena su vrata od {cerut} mm, a staje samo {incape} mm: napravljena su celom visinom.",
     "usiJosFaraPolita": "Vrata samo dole, bez ijedne police: stavi bar jednu, inače vrata gore nemaju na šta da naslone.",
     "usiPeCompartimenteFaraMontant": "Izabrao si pregrade za vrata, ali korpus nema nijednu srednju stranicu: vrata su napravljena celom širinom.",
-    "usaPreaIngusta": "U pregradi {comp} nema mesta za toliko vrata: tamo nije izašlo nijedno."
+    "usaPreaIngusta": "U pregradi {comp} nema mesta za toliko vrata: tamo nije izašlo nijedno.",
+    "sertareNuUmplu": "Frontovi fioka ne dosežu do dna: ostaje {gol} mm praznog prostora dole. Stavi {front} mm za visinu fronta da ispuni korpus."
   },
   "csv": {
     "corp": "Korpus",

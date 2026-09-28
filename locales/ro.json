@@ -635,7 +635,8 @@
     "usiPesteInaltime": "Uși de {cerut} mm cerute, dar în corp încap {incape} mm: s-au făcut pe toată înălțimea.",
     "usiJosFaraPolita": "Uși doar jos, fără nicio poliță: pune cel puțin una, altfel canatul n-are de ce se închide sus.",
     "usiPeCompartimenteFaraMontant": "Ai ales compartimente pentru uși, dar corpul n-are niciun montant: ușile s-au pus pe toată lățimea.",
-    "usaPreaIngusta": "Compartimentul {comp} nu are loc pentru atâtea uși: acolo n-a ieșit niciuna."
+    "usaPreaIngusta": "Compartimentul {comp} nu are loc pentru atâtea uși: acolo n-a ieșit niciuna.",
+    "sertareNuUmplu": "Fronturile de sertar nu ajung la fund: rămâne un gol de {gol} mm jos. Pune {front} mm la înălțimea frontului ca să umple corpul."
   },
   "csv": {
     "corp": "Corp",

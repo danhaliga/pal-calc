@@ -94,7 +94,10 @@ test('spate în nut: cotele includ adâncimea nutului', () => {
 });
 
 test('sertare: cutie, fund PFL și avertisment la glisieră prea lungă', () => {
-  const c = Object.assign(base(), { nUsi: 0, nPol: 0, nSer: 2, hFront: 150, hCutie: 100, jg: 12.5, ts: 16 });
+  /* Fronturile umplu corpul: 2 x 357 + 3 rost = 717, cat fata lui. Cu 150
+     ar ramane 414 mm gol jos, iar calculul se plange pe buna dreptate —
+     si atunci `warn.length === 0` de mai jos n-ar mai insemna nimic. */
+  const c = Object.assign(base(), { nUsi: 0, nPol: 0, nSer: 2, hFront: 357, hCutie: 100, jg: 12.5, ts: 16 });
   const { P, warn } = calc(c);
   assert.equal(find(P, 'Front sertar').buc, 2);
   assert.equal(find(P, 'Sertar – laterală cutie').buc, 4);

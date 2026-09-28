@@ -629,7 +629,8 @@
     "usiPesteInaltime": "Deuren van {cerut} mm gevraagd, maar er passen maar {incape} mm: ze zijn op volle hoogte gemaakt.",
     "usiJosFaraPolita": "Deuren alleen onderin, zonder enige legplank: zet er minstens één in, anders heeft de deur bovenaan niets om tegenaan te sluiten.",
     "usiPeCompartimenteFaraMontant": "Je koos vakken voor de deuren, maar de kast heeft geen tussenschot: de deuren zijn over de volle breedte gemaakt.",
-    "usaPreaIngusta": "In vak {comp} is geen plaats voor zoveel deuren: daar is er geen enkele uitgekomen."
+    "usaPreaIngusta": "In vak {comp} is geen plaats voor zoveel deuren: daar is er geen enkele uitgekomen.",
+    "sertareNuUmplu": "De ladefronten reiken niet tot onderin: er blijft {gol} mm open. Zet de fronthoogte op {front} mm om de kast te vullen."
   },
   "csv": {
     "corp": "Kast",

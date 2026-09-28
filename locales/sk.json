@@ -635,7 +635,8 @@
     "usiPesteInaltime": "Žiadané dvierka {cerut} mm, ale zmestí sa len {incape} mm: urobili sa cez celú výšku.",
     "usiJosFaraPolita": "Dvierka len dole a ani jedna polica: daj tam aspoň jednu, inak nemajú dvierka hore o čo dosadnúť.",
     "usiPeCompartimenteFaraMontant": "Vybral si oddiely pre dvierka, ale korpus nemá žiadnu stojku: dvierka sa urobili cez celú šírku.",
-    "usaPreaIngusta": "V oddiele {comp} nie je miesto pre toľko dvierok: žiadne tam nevzniklo."
+    "usaPreaIngusta": "V oddiele {comp} nie je miesto pre toľko dvierok: žiadne tam nevzniklo.",
+    "sertareNuUmplu": "Čelá zásuviek nedosahujú dole: zostáva {gol} mm voľného miesta. Nastav výšku čela na {front} mm, aby sa korpus zaplnil."
   },
   "csv": {
     "corp": "Korpus",

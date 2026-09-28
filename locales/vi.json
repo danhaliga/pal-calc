@@ -629,7 +629,8 @@
     "usiPesteInaltime": "Yêu cầu cánh {cerut} mm nhưng chỉ vừa {incape} mm: đã làm suốt chiều cao.",
     "usiJosFaraPolita": "Chỉ có cánh ở dưới mà không có kệ nào: thêm ít nhất một cái, nếu không cánh không có chỗ tì khi đóng ở phía trên.",
     "usiPeCompartimenteFaraMontant": "Bạn đã chọn ngăn cho cánh, nhưng tủ không có vách giữa nào: cánh được làm suốt chiều rộng.",
-    "usaPreaIngusta": "Ngăn {comp} không đủ chỗ cho ngần ấy cánh: ở đó không ra cánh nào."
+    "usaPreaIngusta": "Ngăn {comp} không đủ chỗ cho ngần ấy cánh: ở đó không ra cánh nào.",
+    "sertareNuUmplu": "Mặt ngăn kéo không xuống tới đáy: còn trống {gol} mm ở dưới. Đặt chiều cao mặt là {front} mm để lấp đầy tủ."
   },
   "csv": {
     "corp": "Thùng tủ",

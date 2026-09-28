@@ -629,7 +629,8 @@
     "usiPesteInaltime": "Türen mit {cerut} mm verlangt, es passen aber nur {incape} mm: sie wurden über die volle Höhe gemacht.",
     "usiJosFaraPolita": "Türen nur unten, ohne einen einzigen Boden: setz mindestens einen ein, sonst hat die Tür oben nichts zum Anschlagen.",
     "usiPeCompartimenteFaraMontant": "Du hast Fächer für die Türen gewählt, aber der Korpus hat keine Mittelseite: die Türen wurden über die volle Breite gemacht.",
-    "usaPreaIngusta": "Im Fach {comp} ist für so viele Türen kein Platz: dort ist keine entstanden."
+    "usaPreaIngusta": "Im Fach {comp} ist für so viele Türen kein Platz: dort ist keine entstanden.",
+    "sertareNuUmplu": "Die Schubkastenfronten reichen nicht bis unten: {gol} mm bleiben offen. Setz die Fronthöhe auf {front} mm, damit der Korpus voll wird."
   },
   "csv": {
     "corp": "Korpus",

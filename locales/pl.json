@@ -635,7 +635,8 @@
     "usiPesteInaltime": "Zamówiono drzwi {cerut} mm, a mieści się tylko {incape} mm: zrobiono je na całą wysokość.",
     "usiJosFaraPolita": "Drzwi tylko na dole, bez żadnej półki: wstaw co najmniej jedną, inaczej drzwi nie mają o co się domknąć u góry.",
     "usiPeCompartimenteFaraMontant": "Wybrałeś przegrody dla drzwi, ale korpus nie ma żadnej przegrody: drzwi zrobiono na całą szerokość.",
-    "usaPreaIngusta": "W komorze {comp} nie ma miejsca na tyle drzwi: żadne tam nie wyszły."
+    "usaPreaIngusta": "W komorze {comp} nie ma miejsca na tyle drzwi: żadne tam nie wyszły.",
+    "sertareNuUmplu": "Fronty szuflad nie sięgają dołu: zostaje {gol} mm wolnego. Ustaw wysokość frontu na {front} mm, żeby wypełnić korpus."
   },
   "csv": {
     "corp": "Korpus",

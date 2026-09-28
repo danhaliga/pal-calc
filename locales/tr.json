@@ -629,7 +629,8 @@
     "usiPesteInaltime": "{cerut} mm kapak istendi ama yalnızca {incape} mm sığıyor: tam boy yapıldı.",
     "usiJosFaraPolita": "Sadece altta kapak, hiç raf yok: en az bir tane koy, yoksa kapak üstte hiçbir şeye dayanmaz.",
     "usiPeCompartimenteFaraMontant": "Kapaklar için bölme seçtin ama gövdede ara dikme yok: kapaklar tüm genişliğe yapıldı.",
-    "usaPreaIngusta": "{comp}. bölmede bu kadar kapağa yer yok: orada hiç kapak çıkmadı."
+    "usaPreaIngusta": "{comp}. bölmede bu kadar kapağa yer yok: orada hiç kapak çıkmadı.",
+    "sertareNuUmplu": "Çekmece kapakları alta kadar inmiyor: altta {gol} mm boş kalıyor. Gövdeyi doldurmak için kapak yüksekliğini {front} mm yap."
   },
   "csv": {
     "corp": "Gövde",

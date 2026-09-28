@@ -635,7 +635,8 @@
     "usiPesteInaltime": "Žádána dvířka {cerut} mm, ale vejde se jen {incape} mm: udělala se přes celou výšku.",
     "usiJosFaraPolita": "Dvířka jen dole a ani jedna police: dej tam aspoň jednu, jinak nemají dvířka nahoře o co dosednout.",
     "usiPeCompartimenteFaraMontant": "Vybral jsi oddíly pro dvířka, ale korpus nemá žádnou stojinu: dvířka se udělala přes celou šířku.",
-    "usaPreaIngusta": "V oddílu {comp} není místo pro tolik dvířek: žádné tam nevzniklo."
+    "usaPreaIngusta": "V oddílu {comp} není místo pro tolik dvířek: žádné tam nevzniklo.",
+    "sertareNuUmplu": "Čela zásuvek nedosahují dolů: zůstává {gol} mm volného místa. Nastav výšku čela na {front} mm, aby se korpus zaplnil."
   },
   "csv": {
     "corp": "Korpus",

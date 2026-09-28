@@ -559,6 +559,19 @@
       if (!lg) { lg = Math.floor((Dint - 10) / 50) * 50; }
       if (lg > Dint) avert('glisieraNuIncape', { lg: lg, dint: fmt(Dint) });
       if (hc > hF) avert('cutiePreaInalta');
+
+      /* Sertarele se așază de sus în jos. Dacă fronturile nu ajung până la
+         fund și nici nu urmează o ușă dedesubt, rămâne un gol pe care omul
+         îl vede în desen și nu-și explică de unde vine. Spunem și cât ar
+         trebui să aibă fronturile ca să umple corpul. */
+      var fataLibera = (apl ? H - 2 * rm : Hint - 2 * rinc);
+      var golSertare = fataLibera - (nSer * hF + (nSer - 1) * ri);
+      if (nUsi === 0 && golSertare > 20) {
+        avert('sertareNuUmplu', {
+          gol: fmt(golSertare),
+          front: Math.round((fataLibera - (nSer - 1) * ri) / nSer)
+        });
+      }
       var cut = Wint - 2 * jg;
       var zf = zF - 2, dz = [0, 0, 1.1];
       var fr = [], lat = [], fsp = [], fnd = [];

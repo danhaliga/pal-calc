@@ -629,7 +629,8 @@
     "usiPesteInaltime": "要的门板 {cerut} mm，但只放得下 {incape} mm，已按通高做。",
     "usiJosFaraPolita": "只在下面装门却一块层板也没有：至少放一块，否则门板上沿没有可合的地方。",
     "usiPeCompartimenteFaraMontant": "你选了装门的格，但柜体没有中隔：门按整宽做了。",
-    "usaPreaIngusta": "第 {comp} 格放不下这么多门：那里一扇也没做出来。"
+    "usaPreaIngusta": "第 {comp} 格放不下这么多门：那里一扇也没做出来。",
+    "sertareNuUmplu": "抽屉面板没有做到底，下面空了 {gol} mm。把面板高度改成 {front} mm 就能填满柜体。"
   },
   "csv": {
     "corp": "柜体",

@@ -629,7 +629,8 @@
     "usiPesteInaltime": "Doors of {cerut} mm asked for, but only {incape} mm fit: they were made full height.",
     "usiJosFaraPolita": "Doors only at the bottom, with no shelf: add at least one, otherwise the door has nothing to close against at the top.",
     "usiPeCompartimenteFaraMontant": "You picked compartments for the doors, but the cabinet has no partition: the doors were made across the full width.",
-    "usaPreaIngusta": "Compartment {comp} has no room for that many doors: none came out there."
+    "usaPreaIngusta": "Compartment {comp} has no room for that many doors: none came out there.",
+    "sertareNuUmplu": "The drawer fronts do not reach the bottom: {gol} mm is left open below. Set the front height to {front} mm to fill the cabinet."
   },
   "csv": {
     "corp": "Cabinet",

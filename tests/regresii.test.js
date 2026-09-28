@@ -612,9 +612,9 @@ test('fiecare grupă de setări are text în toate cele 30 de limbi', () => {
 test('corpurile proaspete primesc `nou=1`, copiile nu', () => {
   /* Fără semnalul ăsta setările nu se aplică niciodată, iar zona din editor
      rămâne o bifă fără efect. */
-  assert.match(SURSA_CORPS, /res\.redirect\(`\/corps\/\$\{creeazaCorp\([\s\S]*?\}\?nou=1`\)/,
+  assert.match(SURSA_CORPS, /res\.redirect\(`\/corps\/\$\{creeazaCorp\([\s\S]*?\}\?nou=1\$\{idModel\}`\)/,
     'corpul creat în afara unei comenzi nu mai spune că e nou');
-  assert.match(SURSA_ORD, /res\.redirect\(`\/corps\/\$\{corpId\}\?nou=1`\)/,
+  assert.match(SURSA_ORD, /res\.redirect\(`\/corps\/\$\{corpId\}\?nou=1\$\{idModel\}`\)/,
     'corpul adăugat într-o comandă nu mai spune că e nou');
 
   /* Copia pornește din corpul copiat; dacă ar primi `nou=1`, setările ar
@@ -1036,4 +1036,73 @@ test('editorul arată bife, nu un câmp în care se scrie lista', () => {
 test('toate bifate înseamnă același lucru cu niciuna: „nu alege nimic"', () => {
   assert.match(SURSA_APP, /\(!bifate\.length \|\| bifate\.length === comp\) \? '' :/,
     'debifarea ultimului compartiment ar lăsa corpul fără uși dintr-o bifă');
+});
+
+/* =====================================================================
+   16. Setările din browser călcau peste modelul ales
+
+   Grupa „Sertare" ținea minte `hFront`. Un „150" reținut de la un corp cu
+   uși se punea peste cele 237 pe care le hotărâse modelul „corp bază 3
+   sertare", și rămânea un gol de 261 mm jos. Nimic nu se plângea, iar omul
+   n-avea de unde ști că vine din setări.
+
+   Leacul nu e să scoatem `hFront` din grupă — mâine un model atinge alt
+   câmp și povestea se repetă. Ce a hotărât modelul rămâne al modelului.
+   ===================================================================== */
+
+test('setările nu pot călca peste niciun câmp hotărât de vreun model', () => {
+  /* Nu verificăm doar sertarele: luăm TOATE câmpurile pe care le ating
+     modelele și cerem ca regula să le ferească pe toate. */
+  const atinseDeModele = new Set();
+  Models.MODELS.forEach(m => Object.keys(m.set || {}).forEach(k => atinseDeModele.add(k)));
+  assert.ok(atinseDeModele.has('hFront'), 'modelele nu mai ating hFront; testul s-a demodat');
+
+  assert.match(SURSA_APP, /var dinModel = DATA\.cheiModel \|\| \[\];/,
+    'editorul nu mai știe ce a hotărât modelul');
+  assert.match(SURSA_APP, /if \(dinModel\.indexOf\(f\) !== -1\) return;/,
+    'setările au voie iar să calce peste model');
+});
+
+test('editorul primește cheile modelului de la server', () => {
+  assert.match(SURSA_CORPS, /cheiModel: cheileModelului\(req\.query\.model\)/);
+  assert.match(SURSA_CORPS, /function cheileModelului\(/);
+  assert.match(EDIT_UI, /cheiModel: cheiModel/, 'page-data nu mai trimite cheile modelului');
+});
+
+test('modelul călătorește prin redirect, altfel editorul nu-l poate afla', () => {
+  [['src/corps.js', SURSA_CORPS], ['src/orders.js', SURSA_ORD]].forEach(([nume, sursa]) => {
+    assert.match(sursa, /const idModel = req\.body\.model \? '&model=' \+ encodeURIComponent/,
+      `${nume} nu mai duce modelul mai departe`);
+  });
+});
+
+test('fiecare model iese din calcul exact cum l-a gândit, oricare ar fi setările', () => {
+  /* Proba adevărată: pentru fiecare model, valorile pe care le-a pus el
+     trebuie să se regăsească întregi în parametrii corpului. */
+  const t = I18n.creeaza('ro');
+  Models.MODELS.forEach(m => {
+    const p = Models.paramsFor(m.id, t);
+    Object.keys(m.set).forEach(k => {
+      assert.deepEqual(p[k], m.set[k], `modelul ${m.id} și-a pierdut ${k}`);
+    });
+  });
+});
+
+test('un corp cu sertare care nu umplu corpul se plânge, și spune cu cât', () => {
+  const gol = Object.assign(defaults(),
+    { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0, nSer: 3, hFront: 150, hCutie: 100 });
+  const w = calc(gol).warn.join(' | ');
+  assert.match(w, /261/, `nu spune cât e golul: ${w}`);
+  assert.match(w, /237/, `nu spune ce front ar umple corpul: ${w}`);
+
+  const plin = Object.assign({}, gol, { hFront: 237 });
+  assert.ok(!/261/.test(calc(plin).warn.join(' | ')),
+    'se plânge degeaba la un corp plin');
+});
+
+test('sertarele deasupra unei uși nu sunt un gol', () => {
+  /* Acolo golul de jos e chiar ușa; avertismentul ar fi zgomot. */
+  const cuUsa = Object.assign(defaults(),
+    { W: 600, H: 900, D: 560, nUsi: 1, nPol: 0, nSer: 2, hFront: 150, hCutie: 100 });
+  assert.ok(!calc(cuUsa).warn.some(w => /nu ajung la fund/.test(w)));
 });

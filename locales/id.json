@@ -629,7 +629,8 @@
     "usiPesteInaltime": "Diminta pintu {cerut} mm, tapi hanya muat {incape} mm: dibuat setinggi kabinet.",
     "usiJosFaraPolita": "Pintu hanya di bawah, tanpa satu rak pun: pasang setidaknya satu, kalau tidak pintu tak punya tumpuan di atas.",
     "usiPeCompartimenteFaraMontant": "Kamu memilih sekat untuk pintunya, tapi kabinet tidak punya sekat sama sekali: pintu dibuat selebar kabinet.",
-    "usaPreaIngusta": "Ruang {comp} tidak muat sebanyak itu pintu: di sana tidak ada satu pun yang jadi."
+    "usaPreaIngusta": "Ruang {comp} tidak muat sebanyak itu pintu: di sana tidak ada satu pun yang jadi.",
+    "sertareNuUmplu": "Muka laci tidak sampai ke bawah: tersisa {gol} mm kosong. Setel tinggi muka ke {front} mm agar kabinet terisi penuh."
   },
   "csv": {
     "corp": "Boks",

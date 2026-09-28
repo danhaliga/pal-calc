@@ -629,7 +629,8 @@
     "usiPesteInaltime": "Pediram-se portas de {cerut} mm, mas só cabem {incape} mm: fizeram-se de altura total.",
     "usiJosFaraPolita": "Portas só em baixo e sem nenhuma prateleira: ponha pelo menos uma, senão a porta não tem contra o que fechar em cima.",
     "usiPeCompartimenteFaraMontant": "Escolheu compartimentos para as portas, mas o móvel não tem nenhuma divisória: as portas foram feitas a toda a largura.",
-    "usaPreaIngusta": "O compartimento {comp} não tem espaço para tantas portas: ali não saiu nenhuma."
+    "usaPreaIngusta": "O compartimento {comp} não tem espaço para tantas portas: ali não saiu nenhuma.",
+    "sertareNuUmplu": "As frentes de gaveta não chegam ao fundo: ficam {gol} mm livres em baixo. Ponha {front} mm de altura de frente para encher o móvel."
   },
   "csv": {
     "corp": "Módulo",
