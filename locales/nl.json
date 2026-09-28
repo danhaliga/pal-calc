@@ -1114,7 +1114,8 @@
     "numarMontanti": "Aantal middenwanden",
     "legMontanti": "Indeling",
     "inaltimeUsi": "Deurhoogte",
-    "notaInaltimeUsi": "leeg = deuren over de volle hoogte; een waarde = deuren alleen onderin, zoals bij een boekenkast"
+    "notaInaltimeUsi": "leeg = deuren over de volle hoogte; een waarde = deuren alleen onderin, zoals bij een boekenkast",
+    "hUsiToata": "de volle hoogte"
   },
   "fata": {
     "px": "rechts",

@@ -1114,7 +1114,8 @@
     "numarMontanti": "Số vách ngăn",
     "legMontanti": "Chia khoang",
     "inaltimeUsi": "Chiều cao cánh",
-    "notaInaltimeUsi": "trống = cánh suốt chiều cao; có giá trị = cánh chỉ ở dưới, như tủ sách"
+    "notaInaltimeUsi": "trống = cánh suốt chiều cao; có giá trị = cánh chỉ ở dưới, như tủ sách",
+    "hUsiToata": "suốt chiều cao"
   },
   "fata": {
     "px": "phải",

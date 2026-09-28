@@ -1114,7 +1114,8 @@
     "numarMontanti": "中仕切りの枚数",
     "legMontanti": "仕切り",
     "inaltimeUsi": "扉の高さ",
-    "notaInaltimeUsi": "空欄＝全高の扉。数値を入れると下側だけの扉になります（本棚のように）"
+    "notaInaltimeUsi": "空欄＝全高の扉。数値を入れると下側だけの扉になります（本棚のように）",
+    "hUsiToata": "全高"
   },
   "fata": {
     "px": "右",

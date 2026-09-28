@@ -1125,7 +1125,8 @@
     "numarMontanti": "Liczba przegród",
     "legMontanti": "Podział",
     "inaltimeUsi": "Wysokość drzwi",
-    "notaInaltimeUsi": "puste = drzwi na całą wysokość; wartość = drzwi tylko na dole, jak w regale"
+    "notaInaltimeUsi": "puste = drzwi na całą wysokość; wartość = drzwi tylko na dole, jak w regale",
+    "hUsiToata": "cała wysokość"
   },
   "fata": {
     "px": "prawo",

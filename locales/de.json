@@ -1114,7 +1114,8 @@
     "numarMontanti": "Anzahl Mittelseiten",
     "legMontanti": "Unterteilung",
     "inaltimeUsi": "Türhöhe",
-    "notaInaltimeUsi": "leer = Türen über die volle Höhe; ein Wert = Türen nur unten, wie beim Bücherregal"
+    "notaInaltimeUsi": "leer = Türen über die volle Höhe; ein Wert = Türen nur unten, wie beim Bücherregal",
+    "hUsiToata": "die volle Höhe"
   },
   "fata": {
     "px": "rechts",

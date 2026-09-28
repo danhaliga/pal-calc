@@ -1114,7 +1114,8 @@
     "numarMontanti": "중간 칸막이 수",
     "legMontanti": "칸 나누기",
     "inaltimeUsi": "문 높이",
-    "notaInaltimeUsi": "비우면 전체 높이의 문, 값을 넣으면 아래쪽에만 문 (책장처럼)"
+    "notaInaltimeUsi": "비우면 전체 높이의 문, 값을 넣으면 아래쪽에만 문 (책장처럼)",
+    "hUsiToata": "전체 높이"
   },
   "fata": {
     "px": "오른쪽",

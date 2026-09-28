@@ -1114,7 +1114,8 @@
     "numarMontanti": "Nombre de montants",
     "legMontanti": "Compartimentage",
     "inaltimeUsi": "Hauteur des portes",
-    "notaInaltimeUsi": "vide = portes sur toute la hauteur ; une valeur = portes en bas seulement, comme une bibliothèque"
+    "notaInaltimeUsi": "vide = portes sur toute la hauteur ; une valeur = portes en bas seulement, comme une bibliothèque",
+    "hUsiToata": "toute la hauteur"
   },
   "fata": {
     "px": "droite",

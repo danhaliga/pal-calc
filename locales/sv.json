@@ -1114,7 +1114,8 @@
     "numarMontanti": "Antal mellanväggar",
     "legMontanti": "Indelning",
     "inaltimeUsi": "Dörrhöjd",
-    "notaInaltimeUsi": "tom = dörrar över hela höjden; ett värde = dörrar bara nedtill, som i en bokhylla"
+    "notaInaltimeUsi": "tom = dörrar över hela höjden; ett värde = dörrar bara nedtill, som i en bokhylla",
+    "hUsiToata": "hela höjden"
   },
   "fata": {
     "px": "höger",

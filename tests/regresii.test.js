@@ -888,3 +888,54 @@ test('modelul de bibliotecă cu uși jos există și iese întreg', () => {
   assert.ok(piesa(r, /Ușă/), 'modelul nu produce uși');
   assert.ok(piesa(r, /Poliț/), 'modelul nu produce polițe');
 });
+
+/* =====================================================================
+   14. Caseta care spunea „0" și zero-ul care nu se vedea
+
+   Câmpul de înălțime a ușilor exista, dar arăta `0`, iar indiciul de sub el
+   zicea „gol = uși pe toată înălțimea". Scria una și arăta alta, indiciul
+   din casetă nu se vedea niciodată, și nimeni n-a găsit cum se pune ușa
+   doar pe jumătate de corp.
+   ===================================================================== */
+
+const EDIT_UI = fs.readFileSync(path.join(__dirname, '..', 'views', 'corps', 'edit.ejs'), 'utf8');
+
+test('înălțimea ușilor pornește goală, nu de la zero', () => {
+  assert.equal(defaults().hUsi, '',
+    'un `0` în casetă acoperă indiciul și nu spune nimănui ce face câmpul');
+});
+
+test('zero rămâne totuși înțeles ca „toată înălțimea"', () => {
+  /* Corpurile făcute înainte au 0 salvat în parametri; nu au voie să-și
+     schimbe cotele doar fiindcă am schimbat valoarea implicită. */
+  const cu0 = calc(biblio({ hUsi: 0 }));
+  const cuGol = calc(biblio({ hUsi: '' }));
+  assert.equal(piesa(cu0, /Ușă/).L, piesa(cuGol, /Ușă/).L);
+  assert.equal(piesa(cu0, /Poliț/).buc, piesa(cuGol, /Poliț/).buc);
+});
+
+test('editorul arată gol ce înseamnă „hotărăște tu"', () => {
+  assert.match(SURSA_APP, /var ZERO_E_GOL = \[([^\]]*)\]/,
+    'nu mai există regula care arată zero-ul ca pe o casetă goală');
+  const lista = SURSA_APP.match(/var ZERO_E_GOL = \[([^\]]*)\]/)[1];
+  ['hUsi', 'lg'].forEach(f => assert.match(lista, new RegExp("'" + f + "'"),
+    `${f} a ieșit din lista câmpurilor arătate goale`));
+});
+
+test('caseta spune ce se întâmplă dacă o lași goală', () => {
+  assert.match(EDIT_UI, /id="hUsi"[\s\S]{0,160}placeholder="<%= t\('editor\.hUsiToata'\) %>"/,
+    'indiciul din casetă a redevenit „auto", care nu spune nimic');
+  fs.readdirSync(LOCALES).filter(f => f.endsWith('.json')).forEach(f => {
+    const dict = JSON.parse(fs.readFileSync(path.join(LOCALES, f), 'utf8'));
+    assert.ok(dict.editor && dict.editor.hUsiToata, `${f} n-are editor.hUsiToata`);
+  });
+});
+
+test('înălțimea ușilor stă lângă numărul lor, nu la coada rosturilor', () => {
+  /* Cine caută „ușă doar pe jumătate de corp" se uită întâi la „Număr uși".
+     Îngropată după al treilea rost, n-a găsit-o nimeni. */
+  const poz = id => EDIT_UI.indexOf('id="' + id + '"');
+  assert.ok(poz('hUsi') > poz('nUsi'), 'ordinea s-a stricat');
+  assert.ok(poz('hUsi') < poz('rm'),
+    'înălțimea ușilor a fost împinsă iar după rosturi, unde n-o găsește nimeni');
+});

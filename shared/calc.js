@@ -64,7 +64,7 @@
       nume: traducator(tr)('modele.corpImplicit'), W: 800, H: 720, D: 560, constr: 'intre',
       tip: 'drept', W2: 900, orb: 550, contur: [],
       t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 2.5,
-      nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: 0,
+      nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
       pragCant: PRAG_CANT, rezervaCant: REZERVA_CANT
@@ -615,9 +615,11 @@
         spate: z.enum(['aplicat', 'nut', 'pal']),
         tp: mm(0, 50),
         nUsi: int(0, 6),
-        /* înălțimea zonei cu uși, de la fund în sus. 0 = uși pe toată
-           înălțimea, adică felul de până acum. */
-        hUsi: mm(0, 3000).catch(0),
+        /* Înălțimea zonei cu uși, de la fund în sus. Gol sau 0 înseamnă uși
+           pe toată înălțimea, adică felul de până acum. Gol, nu 0: caseta
+           trebuie să arate indiciul „toată înălțimea", iar un „0" scris
+           acolo nu spune asta nimănui. Ca la lungimea glisierei. */
+        hUsi: z.union([z.literal(''), z.coerce.number().min(0).max(3000)]).catch(''),
         montaj: z.enum(['aplicat', 'incastrat']),
         balama: z.preprocess(function (v) { return String(v); }, z.enum(['0', '9', '18'])),
         rm: mm(0, 50), ri: mm(0, 50), rinc: mm(0, 50),

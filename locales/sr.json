@@ -1125,7 +1125,8 @@
     "numarMontanti": "Broj pregrada",
     "legMontanti": "Podela",
     "inaltimeUsi": "Visina vrata",
-    "notaInaltimeUsi": "prazno = vrata celom visinom; vrednost = vrata samo dole, kao kod police za knjige"
+    "notaInaltimeUsi": "prazno = vrata celom visinom; vrednost = vrata samo dole, kao kod police za knjige",
+    "hUsiToata": "cela visina"
   },
   "fata": {
     "px": "desno",

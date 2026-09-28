@@ -287,8 +287,18 @@ function renderTable() {
   $('rows').innerHTML = rows;
 }
 
+/* Câmpuri unde zero înseamnă „lasă calculul să hotărască". Un „0" scris în
+   casetă nu spune asta nimănui, și acoperă și indiciul din spate. Corpurile
+   făcute înainte au 0 salvat, deci nu ajunge să schimbăm doar valoarea
+   implicită: îl arătăm gol oricând îl găsim. */
+var ZERO_E_GOL = ['hUsi', 'lg'];
+
 function render() {
-  fields.forEach(function (f) { if ($(f)) $(f).value = params[f]; });
+  fields.forEach(function (f) {
+    if (!$(f)) return;
+    var v = params[f];
+    $(f).value = (ZERO_E_GOL.indexOf(f) !== -1 && (v === 0 || v === '0')) ? '' : v;
+  });
   aplicaTip();
 
   var res = window.PalCalc.calc(params, T);

@@ -1125,7 +1125,8 @@
     "numarMontanti": "Număr de montanți",
     "legMontanti": "Compartimentare",
     "inaltimeUsi": "Înălțime uși",
-    "notaInaltimeUsi": "gol = uși pe toată înălțimea; o valoare = uși doar jos, ca la bibliotecă"
+    "notaInaltimeUsi": "gol = uși pe toată înălțimea; o valoare = uși doar jos, ca la bibliotecă",
+    "hUsiToata": "toată înălțimea"
   },
   "fata": {
     "px": "dreapta",

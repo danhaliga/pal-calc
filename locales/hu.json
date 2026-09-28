@@ -1114,7 +1114,8 @@
     "numarMontanti": "Közfalak száma",
     "legMontanti": "Osztás",
     "inaltimeUsi": "Ajtómagasság",
-    "notaInaltimeUsi": "üres = ajtók a teljes magasságban; érték = ajtók csak alul, mint a könyvespolcnál"
+    "notaInaltimeUsi": "üres = ajtók a teljes magasságban; érték = ajtók csak alul, mint a könyvespolcnál",
+    "hUsiToata": "a teljes magasság"
   },
   "fata": {
     "px": "jobb",

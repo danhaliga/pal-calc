@@ -1114,7 +1114,8 @@
     "numarMontanti": "Number of partitions",
     "legMontanti": "Partitions",
     "inaltimeUsi": "Door height",
-    "notaInaltimeUsi": "empty = doors over the full height; a value = doors only at the bottom, like a bookcase"
+    "notaInaltimeUsi": "empty = doors over the full height; a value = doors only at the bottom, like a bookcase",
+    "hUsiToata": "the full height"
   },
   "fata": {
     "px": "right",

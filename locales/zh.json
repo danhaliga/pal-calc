@@ -1114,7 +1114,8 @@
     "numarMontanti": "中隔板数量",
     "legMontanti": "分隔",
     "inaltimeUsi": "门板高度",
-    "notaInaltimeUsi": "留空＝通高门板；填数值＝只在下部装门，像书柜那样"
+    "notaInaltimeUsi": "留空＝通高门板；填数值＝只在下部装门，像书柜那样",
+    "hUsiToata": "通高"
   },
   "fata": {
     "px": "右",

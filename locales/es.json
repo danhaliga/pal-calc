@@ -1114,7 +1114,8 @@
     "numarMontanti": "Número de montantes",
     "legMontanti": "Compartimentación",
     "inaltimeUsi": "Altura de puertas",
-    "notaInaltimeUsi": "vacío = puertas en toda la altura; un valor = puertas solo abajo, como en una librería"
+    "notaInaltimeUsi": "vacío = puertas en toda la altura; un valor = puertas solo abajo, como en una librería",
+    "hUsiToata": "toda la altura"
   },
   "fata": {
     "px": "derecha",

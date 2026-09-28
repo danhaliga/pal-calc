@@ -1114,7 +1114,8 @@
     "numarMontanti": "Jumlah sekat",
     "legMontanti": "Pembagian",
     "inaltimeUsi": "Tinggi pintu",
-    "notaInaltimeUsi": "kosong = pintu setinggi kabinet; ada nilai = pintu hanya di bawah, seperti rak buku"
+    "notaInaltimeUsi": "kosong = pintu setinggi kabinet; ada nilai = pintu hanya di bawah, seperti rak buku",
+    "hUsiToata": "setinggi kabinet"
   },
   "fata": {
     "px": "kanan",

@@ -1125,7 +1125,8 @@
     "numarMontanti": "Počet přepážek",
     "legMontanti": "Rozdělení",
     "inaltimeUsi": "Výška dvířek",
-    "notaInaltimeUsi": "prázdné = dvířka přes celou výšku; hodnota = dvířka jen dole, jako u knihovny"
+    "notaInaltimeUsi": "prázdné = dvířka přes celou výšku; hodnota = dvířka jen dole, jako u knihovny",
+    "hUsiToata": "celá výška"
   },
   "fata": {
     "px": "vpravo",

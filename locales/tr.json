@@ -1114,7 +1114,8 @@
     "numarMontanti": "Orta bölme sayısı",
     "legMontanti": "Bölmeler",
     "inaltimeUsi": "Kapak yüksekliği",
-    "notaInaltimeUsi": "boş = tam boy kapak; bir değer = sadece altta kapak, kitaplıktaki gibi"
+    "notaInaltimeUsi": "boş = tam boy kapak; bir değer = sadece altta kapak, kitaplıktaki gibi",
+    "hUsiToata": "tam boy"
   },
   "fata": {
     "px": "sağ",

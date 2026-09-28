@@ -1114,7 +1114,8 @@
     "numarMontanti": "Numero di montanti",
     "legMontanti": "Scomparti",
     "inaltimeUsi": "Altezza ante",
-    "notaInaltimeUsi": "vuoto = ante su tutta l’altezza; un valore = ante solo in basso, come in una libreria"
+    "notaInaltimeUsi": "vuoto = ante su tutta l’altezza; un valore = ante solo in basso, come in una libreria",
+    "hUsiToata": "tutta l’altezza"
   },
   "fata": {
     "px": "destra",
