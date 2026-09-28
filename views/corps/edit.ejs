@@ -221,7 +221,13 @@
           <label><input type="checkbox" class="vis" data-g="polite" checked> <%= t('editor.grupPolite') %></label>
         </span>
       </div>
-      <div class="cvwrap" id="cvwrap"><canvas id="cv"></canvas></div>
+      <%# Etichetele cu numere stau peste canvas, nu in el: text HTML
+          adevarat, care ramane citet la orice marime, spre deosebire de
+          text desenat in textura. %>
+      <div class="cvwrap" id="cvwrap">
+        <canvas id="cv"></canvas>
+        <div class="etichete3d" id="etichete3d" aria-hidden="true"></div>
+      </div>
       <div class="info" id="info"></div>
       <p class="legend">
         <span class="sw" style="background:#d9c7a8"></span><%= t('editor.legenda3dFataPal') %> ·
@@ -263,6 +269,7 @@
 
       <div class="tbl"><table>
         <thead><tr>
+          <th class="c">#</th>
           <th><%= t('editor.colPiesa') %></th><th class="num"><%= t('editor.colBuc') %></th>
           <th class="num"><%= t('editor.colFinitL') %></th><th class="num"><%= t('editor.colFinitl') %></th>
           <th class="<%= corp.paid ? '' : 'locked-h' %>"><%= t('editor.colCantMuchii') %></th>

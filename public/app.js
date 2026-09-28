@@ -315,7 +315,10 @@ function srv(i, piesa) {
 function renderTable() {
   if (!lastRes) return;
   var rows = lastRes.P.map(function (p, i) {
-    var free = '<td>' + esc(p.nume) + (p.nota ? '<div class="tag">' + esc(p.nota) + '</div>' : '') + '</td>' +
+    /* Numarul e acelasi cu cel de pe desen, cand corpul e explodat. Fara
+       el, „a treia polita" din desen nu se leaga de niciun rand din lista. */
+    var free = '<td class="c nr-piesa">' + (i + 1) + '</td>' +
+               '<td>' + esc(p.nume) + (p.nota ? '<div class="tag">' + esc(p.nota) + '</div>' : '') + '</td>' +
                '<td class="num">' + p.buc + '</td>' +
                '<td class="num">' + fmt(p.L) + '</td>' +
                '<td class="num">' + fmt(p.l) + '</td>';
@@ -480,6 +483,7 @@ function init3D() {
                         t.z + V3.r * Math.sin(V3.phi) * Math.cos(V3.theta));
     camera.lookAt(t);
     renderer.render(scene, camera);
+    deseneazaEtichete();
   })();
 }
 
@@ -536,6 +540,59 @@ function build3D(c, res) {
   V3.target.set(res.W / 2, res.H / 2, res.D / 2);
   if (Math.abs(prevMax - maxDim) > 1) { V3.r = maxDim * 2.9; V3.maxDim = maxDim; }
   applyExplode(); applyVis();
+}
+
+/* Numerele pieselor, scrise PESTE desen.
+
+   Se arata doar cand corpul e explodat. Pe un corp inchis piesele stau una
+   peste alta si etichetele s-ar ingramadi toate in acelasi loc — ar fi mai
+   mult zgomot decat ajutor.
+
+   Proiectam centrul fiecarei piese din spatiu in pixeli si punem acolo o
+   bulina HTML. Text adevarat, nu desenat in textura: ramane citet la orice
+   marime si se poate selecta. */
+var _etichete = [];
+
+function deseneazaEtichete() {
+  var cutie = $('etichete3d');
+  if (!cutie || !V3) return;
+
+  var arata = V3.E > 1;
+  if (!arata) {
+    if (_etichete.length) { cutie.innerHTML = ''; _etichete = []; }
+    return;
+  }
+
+  var vizibile = V3.meshes.filter(function (m) { return m.visible; });
+
+  /* Refolosim bulinele in loc sa le facem la fiecare cadru: altfel ar
+     insemna cateva zeci de elemente noi de saizeci de ori pe secunda. */
+  while (_etichete.length < vizibile.length) {
+    var e = document.createElement('span');
+    e.className = 'eticheta3d';
+    cutie.appendChild(e);
+    _etichete.push(e);
+  }
+  while (_etichete.length > vizibile.length) cutie.removeChild(_etichete.pop());
+
+  var lat = cutie.clientWidth, inalt = cutie.clientHeight;
+  var v = new THREE.Vector3();
+
+  vizibile.forEach(function (m, i) {
+    var e = _etichete[i];
+    m.getWorldPosition(v);
+    v.project(V3.camera);
+
+    /* z peste 1 inseamna in spatele camerei: acolo proiectia se intoarce
+       pe dos si eticheta ar sari in partea gresita a ecranului. */
+    if (v.z > 1) { e.style.display = 'none'; return; }
+
+    e.style.display = '';
+    e.style.left = ((v.x + 1) / 2 * lat) + 'px';
+    e.style.top = ((1 - v.y) / 2 * inalt) + 'px';
+    e.textContent = m.userData.pi + 1;
+    e.classList.toggle('ales', V3.sel === m);
+  });
 }
 
 function applyExplode() {
