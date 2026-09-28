@@ -147,7 +147,8 @@
     "faraMesaje": "Personne n’a encore écrit.",
     "cand": "Quand",
     "dePeUnde": "D’où",
-    "mesajText": "Message"
+    "mesajText": "Message",
+    "jurnalLegatura": "Journal"
   },
   "credit": {
     "titlu": "Mon crédit",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Publier sur le site",
     "confirmaStergerea": "Supprimer l’article « {titlu} » ? Il ne reviendra pas.",
     "dateRele": "L’article n’a pas pu être enregistré : vérifiez le titre et la langue."
+  },
+  "jurnal": {
+    "titlu": "Journal",
+    "intro": "Ce qui a cassé et ce qui s’est passé, dans l’ordre. Gardé {zile} jours.",
+    "eroriAzi": "erreurs le dernier jour",
+    "nivelEroare": "Erreurs",
+    "nivelAtentie": "Alertes",
+    "nivelFapta": "Faits",
+    "colNivel": "Type",
+    "colSursa": "D’où",
+    "colMesaj": "Quoi",
+    "colUnde": "Où",
+    "colCine": "Qui",
+    "vezuDetalii": "détails",
+    "goalaTitlu": "Le journal est vide.",
+    "goalaText": "Tant mieux. Rien n’a cassé.",
+    "nota": "Gardé {zile} jours ou {maxim} lignes, au premier des deux. Les adresses sont tronquées, et les mots de passe et clés ne sont jamais écrits."
   }
 }

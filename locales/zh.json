@@ -147,7 +147,8 @@
     "faraMesaje": "还没有人写过。",
     "cand": "什么时候",
     "dePeUnde": "从哪页",
-    "mesajText": "消息"
+    "mesajText": "消息",
+    "jurnalLegatura": "日志"
   },
   "credit": {
     "titlu": "我的余额",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "发布到站点",
     "confirmaStergerea": "删除文章“{titlu}”？删了拿不回来。",
     "dateRele": "文章没能保存：检查标题和语言。"
+  },
+  "jurnal": {
+    "titlu": "日志",
+    "intro": "什么坏了、发生了什么，按先后顺序。保留 {zile} 天。",
+    "eroriAzi": "最近一天的错误",
+    "nivelEroare": "错误",
+    "nivelAtentie": "提醒",
+    "nivelFapta": "事件",
+    "colNivel": "类别",
+    "colSursa": "来自",
+    "colMesaj": "内容",
+    "colUnde": "位置",
+    "colCine": "谁",
+    "vezuDetalii": "详情",
+    "goalaTitlu": "日志是空的。",
+    "goalaText": "挺好，说明什么都没坏。",
+    "nota": "保留 {zile} 天或 {maxim} 条，以先到者为准。地址会被截断，密码和密钥从不写入。"
   }
 }

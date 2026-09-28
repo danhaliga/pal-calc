@@ -147,7 +147,8 @@
     "faraMesaje": "Ainda ninguém escreveu.",
     "cand": "Quando",
     "dePeUnde": "De onde",
-    "mesajText": "Mensagem"
+    "mesajText": "Mensagem",
+    "jurnalLegatura": "Registo"
   },
   "credit": {
     "titlu": "O meu crédito",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Publicar no site",
     "confirmaStergerea": "Apagar o artigo «{titlu}»? Não volta atrás.",
     "dateRele": "Não foi possível guardar o artigo: verifique o título e o idioma."
+  },
+  "jurnal": {
+    "titlu": "Registo",
+    "intro": "O que se partiu e o que aconteceu, por ordem. Guarda-se {zile} dias.",
+    "eroriAzi": "erros no último dia",
+    "nivelEroare": "Erros",
+    "nivelAtentie": "Avisos",
+    "nivelFapta": "Factos",
+    "colNivel": "Tipo",
+    "colSursa": "De onde",
+    "colMesaj": "O quê",
+    "colUnde": "Onde",
+    "colCine": "Quem",
+    "vezuDetalii": "detalhes",
+    "goalaTitlu": "O registo está vazio.",
+    "goalaText": "Ainda bem. Quer dizer que nada se partiu.",
+    "nota": "Guarda-se {zile} dias ou {maxim} linhas, o que vier primeiro. Os endereços são truncados, e as palavras-passe e chaves nunca são escritas."
   }
 }

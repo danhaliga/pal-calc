@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 const rateLimit = require('express-rate-limit');
 const { z } = require('zod');
 const { db } = require('./db');
+const jurnal = require('./jurnal');
 
 const BCRYPT_COST = 12;
 
@@ -125,6 +126,8 @@ router.post('/register', limiter, (req, res, next) => {
       password: parsed.data.password,
       name: parsed.data.name || null
     });
+    jurnal.fapta('cont', 'cont nou', { req, userId: user.id,
+      detalii: { email: parsed.data.email } });
     req.session.regenerate(err => {
       if (err) return next(err);
       req.session.userId = user.id;
@@ -151,10 +154,17 @@ router.post('/login', limiter, (req, res, next) => {
   const user = findByEmail(parsed.data.email);
   const ok = user && bcrypt.compareSync(parsed.data.password, user.password_hash);
   if (!ok) {
+    /* Se scrie CE adresa s-a incercat, nu si parola. O adresa incercata de
+       zece ori la rand, din acelasi loc, se vede imediat in jurnal; parola
+       n-ar spune nimic in plus si ar fi o pagubă daca jurnalul ajunge unde
+       nu trebuie. */
+    jurnal.atentie('cont', 'autentificare respinsa',
+      { req, status: 401, detalii: { email: parsed.data.email, contExista: !!user } });
     return res.status(401).render('login', {
       title: req.t('auth.autentificare'), error: req.t('valid.dateGresite'), values
     });
   }
+  jurnal.fapta('cont', 'a intrat in cont', { req, userId: user.id });
 
   const back = req.session.returnTo;
   req.session.regenerate(err => {

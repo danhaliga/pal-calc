@@ -19,6 +19,7 @@ const credit = require('./src/credit');
 const payments = require('./src/payments');
 const admin = require('./src/admin');
 const mesaje = require('./src/mesaje');
+const jurnal = require('./src/jurnal');
 const articole = require('./src/articole');
 const i18n = require('./src/i18n');
 const PalI18n = require('./shared/i18n');
@@ -172,6 +173,14 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   const status = err.status || 500;
   if (status >= 500) console.error(err);
+
+  /* Erorile intra si in jurnal, nu doar in consola: consola de pe server se
+     deruleaza si se pierde, iar cand te uiti tu randul cu pricina a plecat
+     de mult. Cele sub 500 sunt cereri gresite, nu defectiuni ale noastre —
+     le tinem ca „atentie", ca sa se vada un tipar daca cineva bajbaie. */
+  jurnal.scrie(status >= 500 ? 'eroare' : 'atentie', 'http',
+    status >= 500 ? (err.message || 'eroare de server') : (err.cheie || 'cerere respinsa'),
+    { req, status, detalii: status >= 500 ? err : { cheie: err.cheie } });
 
   /* traducem doar erorile noastre; restul nu ajung niciodată la utilizator */
   const t = req.t || require('./shared/i18n').creeaza(null);

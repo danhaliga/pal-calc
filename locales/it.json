@@ -147,7 +147,8 @@
     "faraMesaje": "Non ha ancora scritto nessuno.",
     "cand": "Quando",
     "dePeUnde": "Da dove",
-    "mesajText": "Messaggio"
+    "mesajText": "Messaggio",
+    "jurnalLegatura": "Registro"
   },
   "credit": {
     "titlu": "Il mio credito",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Pubblica sul sito",
     "confirmaStergerea": "Cancellare l’articolo «{titlu}»? Non torna indietro.",
     "dateRele": "Non è stato possibile salvare l’articolo: controlla titolo e lingua."
+  },
+  "jurnal": {
+    "titlu": "Registro",
+    "intro": "Cosa si è rotto e cosa è successo, in ordine. Si tiene {zile} giorni.",
+    "eroriAzi": "errori nell’ultimo giorno",
+    "nivelEroare": "Errori",
+    "nivelAtentie": "Avvisi",
+    "nivelFapta": "Fatti",
+    "colNivel": "Tipo",
+    "colSursa": "Da dove",
+    "colMesaj": "Cosa",
+    "colUnde": "Dove",
+    "colCine": "Chi",
+    "vezuDetalii": "dettagli",
+    "goalaTitlu": "Il registro è vuoto.",
+    "goalaText": "Meglio così. Vuol dire che non si è rotto niente.",
+    "nota": "Si tiene {zile} giorni o {maxim} righe, quello che viene prima. Gli indirizzi sono troncati, e password e chiavi non si scrivono mai."
   }
 }

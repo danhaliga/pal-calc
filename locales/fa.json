@@ -147,7 +147,8 @@
     "faraMesaje": "هنوز کسی چیزی ننوشته.",
     "cand": "کی",
     "dePeUnde": "از کجا",
-    "mesajText": "پیام"
+    "mesajText": "پیام",
+    "jurnalLegatura": "گزارش"
   },
   "credit": {
     "titlu": "موجودی من",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "در سایت منتشر کن",
     "confirmaStergerea": "مقالهٔ «{titlu}» پاک شود؟ برنمی‌گردد.",
     "dateRele": "مقاله ذخیره نشد: عنوان و زبان را بررسی کن."
+  },
+  "jurnal": {
+    "titlu": "گزارش",
+    "intro": "چه چیزی خراب شد و چه گذشت، به ترتیب. {zile} روز نگه داشته می‌شود.",
+    "eroriAzi": "خطا در یک روز گذشته",
+    "nivelEroare": "خطاها",
+    "nivelAtentie": "هشدارها",
+    "nivelFapta": "رویدادها",
+    "colNivel": "نوع",
+    "colSursa": "از کجا",
+    "colMesaj": "چه",
+    "colUnde": "کجا",
+    "colCine": "که",
+    "vezuDetalii": "جزئیات",
+    "goalaTitlu": "گزارش خالی است.",
+    "goalaText": "خوب است. یعنی چیزی خراب نشده.",
+    "nota": "{zile} روز یا {maxim} سطر نگه داشته می‌شود، هرکدام زودتر برسد. نشانی‌ها کوتاه می‌شوند و گذرواژه‌ها و کلیدها هرگز نوشته نمی‌شوند."
   }
 }

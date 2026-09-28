@@ -147,7 +147,8 @@
     "faraMesaje": "لم يكتب أحد بعد.",
     "cand": "متى",
     "dePeUnde": "من أين",
-    "mesajText": "الرسالة"
+    "mesajText": "الرسالة",
+    "jurnalLegatura": "السجل"
   },
   "credit": {
     "titlu": "رصيدي",
@@ -1274,5 +1275,22 @@
     "publicaPeSite": "انشر في الموقع",
     "confirmaStergerea": "حذف المقال «{titlu}»؟ لا يعود.",
     "dateRele": "تعذّر حفظ المقال: تحقّق من العنوان واللغة."
+  },
+  "jurnal": {
+    "titlu": "السجل",
+    "intro": "ما الذي تعطّل وما الذي جرى، بالترتيب. يُحفظ {zile} يومًا.",
+    "eroriAzi": "أخطاء في آخر يوم",
+    "nivelEroare": "الأخطاء",
+    "nivelAtentie": "التنبيهات",
+    "nivelFapta": "الأحداث",
+    "colNivel": "النوع",
+    "colSursa": "من أين",
+    "colMesaj": "ماذا",
+    "colUnde": "أين",
+    "colCine": "من",
+    "vezuDetalii": "التفاصيل",
+    "goalaTitlu": "السجل فارغ.",
+    "goalaText": "جيد. معناه أن شيئًا لم يتعطّل.",
+    "nota": "يُحفظ {zile} يومًا أو {maxim} سطرًا، أيّهما أسبق. العناوين تُقصّ، وكلمات المرور والمفاتيح لا تُكتب أبدًا."
   }
 }

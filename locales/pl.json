@@ -147,7 +147,8 @@
     "faraMesaje": "Nikt jeszcze nie napisał.",
     "cand": "Kiedy",
     "dePeUnde": "Skąd",
-    "mesajText": "Wiadomość"
+    "mesajText": "Wiadomość",
+    "jurnalLegatura": "Dziennik"
   },
   "credit": {
     "titlu": "Moje środki",
@@ -1241,5 +1242,22 @@
     "publicaPeSite": "Opublikuj na stronie",
     "confirmaStergerea": "Usunąć artykuł „{titlu}”? Nie wróci.",
     "dateRele": "Nie udało się zapisać artykułu: sprawdź tytuł i język."
+  },
+  "jurnal": {
+    "titlu": "Dziennik",
+    "intro": "Co się zepsuło i co się działo, po kolei. Trzymane {zile} dni.",
+    "eroriAzi": "błędów w ostatniej dobie",
+    "nivelEroare": "Błędy",
+    "nivelAtentie": "Ostrzeżenia",
+    "nivelFapta": "Zdarzenia",
+    "colNivel": "Rodzaj",
+    "colSursa": "Skąd",
+    "colMesaj": "Co",
+    "colUnde": "Gdzie",
+    "colCine": "Kto",
+    "vezuDetalii": "szczegóły",
+    "goalaTitlu": "Dziennik jest pusty.",
+    "goalaText": "Dobrze. To znaczy, że nic się nie zepsuło.",
+    "nota": "Trzymane {zile} dni albo {maxim} wierszy, co przyjdzie pierwsze. Adresy są skracane, a hasła i klucze nigdy nie są zapisywane."
   }
 }

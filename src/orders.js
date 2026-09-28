@@ -7,6 +7,7 @@ const { db } = require('./db');
 const { requireAuth } = require('./auth');
 const credit = require('./credit');
 const util = require('./util');
+const jurnal = require('./jurnal');
 const materiale = require('./materiale');
 const Catalog = require('../shared/catalog');
 const PalCalc = require('../shared/calc');
@@ -320,6 +321,12 @@ router.post('/orders/:id/feronerie', requireAuth, (req, res, next) => {
 router.post('/orders/:id/delete', requireAuth, (req, res, next) => {
   const order = getOwned(req.params.id, req.user.id);
   if (!order) return notFound(next);
+  /* O comanda pleaca cu tot cu corpurile ei. Numaram inainte, ca dupa nu
+     mai avem de unde. */
+  const cateCorpuri = db.prepare('SELECT COUNT(*) n FROM corps WHERE order_id = ?').get(order.id).n;
+  jurnal.fapta('comanda', 'comanda stearsa', { req, detalii: {
+    id: order.id, nume: order.name, corpuri: cateCorpuri
+  } });
   db.prepare('DELETE FROM orders WHERE id = ?').run(order.id);
   res.redirect('/orders');
 });

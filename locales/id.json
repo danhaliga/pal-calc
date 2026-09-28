@@ -147,7 +147,8 @@
     "faraMesaje": "Belum ada yang menulis.",
     "cand": "Kapan",
     "dePeUnde": "Dari mana",
-    "mesajText": "Pesan"
+    "mesajText": "Pesan",
+    "jurnalLegatura": "Catatan"
   },
   "credit": {
     "titlu": "Saldo saya",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Terbitkan di situs",
     "confirmaStergerea": "Hapus artikel “{titlu}”? Tidak bisa dikembalikan.",
     "dateRele": "Artikel tidak bisa disimpan: periksa judul dan bahasanya."
+  },
+  "jurnal": {
+    "titlu": "Catatan",
+    "intro": "Apa yang rusak dan apa yang terjadi, berurutan. Disimpan {zile} hari.",
+    "eroriAzi": "galat dalam sehari terakhir",
+    "nivelEroare": "Galat",
+    "nivelAtentie": "Peringatan",
+    "nivelFapta": "Peristiwa",
+    "colNivel": "Jenis",
+    "colSursa": "Dari mana",
+    "colMesaj": "Apa",
+    "colUnde": "Di mana",
+    "colCine": "Siapa",
+    "vezuDetalii": "rincian",
+    "goalaTitlu": "Catatan kosong.",
+    "goalaText": "Bagus. Artinya tidak ada yang rusak.",
+    "nota": "Disimpan {zile} hari atau {maxim} baris, mana yang lebih dulu. Alamat dipotong, dan kata sandi serta kunci tidak pernah ditulis."
   }
 }

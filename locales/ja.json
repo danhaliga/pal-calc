@@ -147,7 +147,8 @@
     "faraMesaje": "まだ誰も書いていません。",
     "cand": "いつ",
     "dePeUnde": "どこから",
-    "mesajText": "メッセージ"
+    "mesajText": "メッセージ",
+    "jurnalLegatura": "記録"
   },
   "credit": {
     "titlu": "残高",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "サイトに公開する",
     "confirmaStergerea": "記事「{titlu}」を削除しますか。戻せません。",
     "dateRele": "記事を保存できませんでした。見出しと言語を確かめてください。"
+  },
+  "jurnal": {
+    "titlu": "記録",
+    "intro": "何が壊れ、何が起きたか。順番どおりに。{zile} 日ぶん残ります。",
+    "eroriAzi": "直近1日のエラー",
+    "nivelEroare": "エラー",
+    "nivelAtentie": "注意",
+    "nivelFapta": "できごと",
+    "colNivel": "種類",
+    "colSursa": "どこから",
+    "colMesaj": "内容",
+    "colUnde": "場所",
+    "colCine": "誰",
+    "vezuDetalii": "詳細",
+    "goalaTitlu": "記録は空です。",
+    "goalaText": "けっこうです。何も壊れていないということです。",
+    "nota": "{zile} 日または {maxim} 行のうち、先に来たほうまで残します。アドレスは切り詰め、パスワードや鍵は決して書きません。"
   }
 }

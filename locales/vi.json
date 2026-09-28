@@ -147,7 +147,8 @@
     "faraMesaje": "Chưa ai viết gì.",
     "cand": "Khi nào",
     "dePeUnde": "Từ đâu",
-    "mesajText": "Tin nhắn"
+    "mesajText": "Tin nhắn",
+    "jurnalLegatura": "Nhật ký"
   },
   "credit": {
     "titlu": "Số dư của tôi",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Đăng lên trang",
     "confirmaStergerea": "Xóa bài “{titlu}”? Không lấy lại được.",
     "dateRele": "Không lưu được bài viết: kiểm tra tiêu đề và ngôn ngữ."
+  },
+  "jurnal": {
+    "titlu": "Nhật ký",
+    "intro": "Cái gì hỏng và chuyện gì đã xảy ra, theo thứ tự. Giữ {zile} ngày.",
+    "eroriAzi": "lỗi trong ngày qua",
+    "nivelEroare": "Lỗi",
+    "nivelAtentie": "Cảnh báo",
+    "nivelFapta": "Sự việc",
+    "colNivel": "Loại",
+    "colSursa": "Từ đâu",
+    "colMesaj": "Gì",
+    "colUnde": "Ở đâu",
+    "colCine": "Ai",
+    "vezuDetalii": "chi tiết",
+    "goalaTitlu": "Nhật ký trống.",
+    "goalaText": "Tốt. Nghĩa là không có gì hỏng.",
+    "nota": "Giữ {zile} ngày hoặc {maxim} dòng, cái nào đến trước. Địa chỉ bị cắt bớt, còn mật khẩu và khóa thì không bao giờ được ghi."
   }
 }

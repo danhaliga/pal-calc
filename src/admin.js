@@ -5,6 +5,7 @@ const express = require('express');
 const { db } = require('./db');
 const { requireAuth, requireAdmin } = require('./auth');
 const mesaje = require('./mesaje');
+const jurnal = require('./jurnal');
 
 const router = express.Router();
 
@@ -44,6 +45,25 @@ router.get('/admin', requireAuth, requireAdmin, (req, res) => {
     mesajeNoi: mesaje.cateNoi(),
     totalLei: (totals.cents / 100).toFixed(2),
     totalCount: totals.n
+  });
+});
+
+/* Jurnalul: ce s-a rupt si ce s-a intamplat, in ordine. Filtrele sunt
+   putine inadins — un panou cu cincisprezece casute nu se foloseste. */
+router.get('/admin/jurnal', requireAuth, requireAdmin, (req, res) => {
+  const nivel = jurnal.NIVELE.indexOf(req.query.nivel) !== -1 ? req.query.nivel : null;
+  const sursa = req.query.sursa || null;
+
+  res.render('admin/jurnal', {
+    title: req.t('jurnal.titlu'),
+    randuri: jurnal.ultimele({ nivel, sursa, limita: 300 }),
+    numere: jurnal.numaratoare(),
+    surse: jurnal.surse(),
+    nivele: jurnal.NIVELE,
+    nivelAles: nivel,
+    sursaAleasa: sursa,
+    zile: jurnal.ZILE,
+    maxim: jurnal.MAXIM
   });
 });
 

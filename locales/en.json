@@ -147,7 +147,8 @@
     "faraMesaje": "Nobody has written yet.",
     "cand": "When",
     "dePeUnde": "From where",
-    "mesajText": "Message"
+    "mesajText": "Message",
+    "jurnalLegatura": "Log"
   },
   "credit": {
     "titlu": "My credit",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Publish on the site",
     "confirmaStergerea": "Delete the article “{titlu}”? It cannot be brought back.",
     "dateRele": "The article could not be saved: check the title and the language."
+  },
+  "jurnal": {
+    "titlu": "Log",
+    "intro": "What broke and what happened, in order. Kept for {zile} days.",
+    "eroriAzi": "errors in the last day",
+    "nivelEroare": "Errors",
+    "nivelAtentie": "Warnings",
+    "nivelFapta": "Events",
+    "colNivel": "Kind",
+    "colSursa": "From",
+    "colMesaj": "What",
+    "colUnde": "Where",
+    "colCine": "Who",
+    "vezuDetalii": "details",
+    "goalaTitlu": "The log is empty.",
+    "goalaText": "Good. It means nothing broke.",
+    "nota": "Kept for {zile} days or {maxim} rows, whichever comes first. Addresses are truncated, and passwords and keys are never written."
   }
 }

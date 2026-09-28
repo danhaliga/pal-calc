@@ -147,7 +147,8 @@
     "faraMesaje": "Zatiaľ nikto nenapísal.",
     "cand": "Kedy",
     "dePeUnde": "Odkiaľ",
-    "mesajText": "Správa"
+    "mesajText": "Správa",
+    "jurnalLegatura": "Denník"
   },
   "credit": {
     "titlu": "Môj kredit",
@@ -1241,5 +1242,22 @@
     "publicaPeSite": "Zverejniť na webe",
     "confirmaStergerea": "Zmazať článok „{titlu}“? Späť sa nevráti.",
     "dateRele": "Článok sa nepodarilo uložiť: skontroluj názov a jazyk."
+  },
+  "jurnal": {
+    "titlu": "Denník",
+    "intro": "Čo sa pokazilo a čo sa dialo, po poriadku. Drží sa {zile} dní.",
+    "eroriAzi": "chýb za posledný deň",
+    "nivelEroare": "Chyby",
+    "nivelAtentie": "Upozornenia",
+    "nivelFapta": "Udalosti",
+    "colNivel": "Druh",
+    "colSursa": "Odkiaľ",
+    "colMesaj": "Čo",
+    "colUnde": "Kde",
+    "colCine": "Kto",
+    "vezuDetalii": "podrobnosti",
+    "goalaTitlu": "Denník je prázdny.",
+    "goalaText": "Dobre. Znamená to, že sa nič nepokazilo.",
+    "nota": "Drží sa {zile} dní alebo {maxim} riadkov, čo príde skôr. Adresy sa skracujú, heslá a kľúče sa nezapisujú nikdy."
   }
 }

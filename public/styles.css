@@ -422,3 +422,14 @@ details.setari[open] summary::before{content:'▾ '}
 .limbi-lista span{color:var(--ink)}
 .ticks.cols2{columns:2;column-gap:28px}
 @media(max-width:560px){.ticks.cols2{columns:1}}
+
+/* Jurnalul: rândurile cu erori se văd din prima, restul stau liniștite. */
+.kpi .v.rau{color:var(--danger)}
+.chip.nivel-eroare{background:var(--warn-bg);border-color:var(--danger);color:var(--danger)}
+.chip.nivel-atentie{background:var(--warn-bg);border-color:var(--cant);color:var(--cant)}
+.chip.nivel-fapta{background:var(--row);color:var(--muted)}
+tr.jurnal-eroare td{background:color-mix(in srgb,var(--danger) 8%,transparent)}
+.jurnal-detalii summary{font-size:12px}
+.jurnal-detalii pre{margin:6px 0 0;padding:8px;background:var(--bg);border:1px solid var(--line);
+  border-radius:5px;font-size:11.5px;line-height:1.5;overflow-x:auto;max-height:300px}
+.filtre .separator{width:1px;background:var(--line);margin:0 4px}

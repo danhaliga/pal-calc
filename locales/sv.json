@@ -147,7 +147,8 @@
     "faraMesaje": "Ingen har skrivit än.",
     "cand": "När",
     "dePeUnde": "Varifrån",
-    "mesajText": "Meddelande"
+    "mesajText": "Meddelande",
+    "jurnalLegatura": "Logg"
   },
   "credit": {
     "titlu": "Mitt saldo",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Publicera på sajten",
     "confirmaStergerea": "Radera artikeln ”{titlu}”? Den kommer inte tillbaka.",
     "dateRele": "Artikeln kunde inte sparas: kontrollera rubrik och språk."
+  },
+  "jurnal": {
+    "titlu": "Logg",
+    "intro": "Vad som gick sönder och vad som hände, i ordning. Sparas {zile} dagar.",
+    "eroriAzi": "fel senaste dygnet",
+    "nivelEroare": "Fel",
+    "nivelAtentie": "Varningar",
+    "nivelFapta": "Händelser",
+    "colNivel": "Slag",
+    "colSursa": "Varifrån",
+    "colMesaj": "Vad",
+    "colUnde": "Var",
+    "colCine": "Vem",
+    "vezuDetalii": "detaljer",
+    "goalaTitlu": "Loggen är tom.",
+    "goalaText": "Bra. Det betyder att inget gick sönder.",
+    "nota": "Sparas {zile} dagar eller {maxim} rader, vilket som kommer först. Adresser kortas av, och lösenord och nycklar skrivs aldrig."
   }
 }

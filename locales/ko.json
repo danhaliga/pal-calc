@@ -147,7 +147,8 @@
     "faraMesaje": "아직 아무도 쓰지 않았습니다.",
     "cand": "언제",
     "dePeUnde": "어디서",
-    "mesajText": "메시지"
+    "mesajText": "메시지",
+    "jurnalLegatura": "기록"
   },
   "credit": {
     "titlu": "내 잔액",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "사이트에 공개",
     "confirmaStergerea": "글 “{titlu}”을(를) 지울까요? 되돌릴 수 없습니다.",
     "dateRele": "글을 저장하지 못했습니다. 제목과 언어를 확인하세요."
+  },
+  "jurnal": {
+    "titlu": "기록",
+    "intro": "무엇이 깨졌고 무슨 일이 있었는지, 순서대로. {zile}일 동안 보관합니다.",
+    "eroriAzi": "최근 하루 오류",
+    "nivelEroare": "오류",
+    "nivelAtentie": "주의",
+    "nivelFapta": "사건",
+    "colNivel": "종류",
+    "colSursa": "어디서",
+    "colMesaj": "무엇",
+    "colUnde": "어디",
+    "colCine": "누가",
+    "vezuDetalii": "자세히",
+    "goalaTitlu": "기록이 비어 있습니다.",
+    "goalaText": "좋습니다. 아무것도 깨지지 않았다는 뜻입니다.",
+    "nota": "{zile}일 또는 {maxim}줄 중 먼저 오는 쪽까지 보관합니다. 주소는 잘라내고, 비밀번호와 키는 절대 적지 않습니다."
   }
 }

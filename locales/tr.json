@@ -147,7 +147,8 @@
     "faraMesaje": "Henüz kimse yazmadı.",
     "cand": "Ne zaman",
     "dePeUnde": "Nereden",
-    "mesajText": "Mesaj"
+    "mesajText": "Mesaj",
+    "jurnalLegatura": "Günlük"
   },
   "credit": {
     "titlu": "Bakiyem",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Sitede yayımla",
     "confirmaStergerea": "“{titlu}” yazısı silinsin mi? Geri gelmez.",
     "dateRele": "Yazı kaydedilemedi: başlığı ve dili kontrol et."
+  },
+  "jurnal": {
+    "titlu": "Günlük",
+    "intro": "Ne bozuldu ve ne oldu, sırayla. {zile} gün tutulur.",
+    "eroriAzi": "son gündeki hata",
+    "nivelEroare": "Hatalar",
+    "nivelAtentie": "Uyarılar",
+    "nivelFapta": "Olaylar",
+    "colNivel": "Tür",
+    "colSursa": "Nereden",
+    "colMesaj": "Ne",
+    "colUnde": "Nerede",
+    "colCine": "Kim",
+    "vezuDetalii": "ayrıntılar",
+    "goalaTitlu": "Günlük boş.",
+    "goalaText": "İyi. Demek ki hiçbir şey bozulmadı.",
+    "nota": "{zile} gün ya da {maxim} satır, hangisi önce gelirse. Adresler kısaltılır, parolalar ve anahtarlar asla yazılmaz."
   }
 }

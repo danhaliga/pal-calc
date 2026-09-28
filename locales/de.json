@@ -147,7 +147,8 @@
     "faraMesaje": "Noch hat niemand geschrieben.",
     "cand": "Wann",
     "dePeUnde": "Von wo",
-    "mesajText": "Nachricht"
+    "mesajText": "Nachricht",
+    "jurnalLegatura": "Protokoll"
   },
   "credit": {
     "titlu": "Mein Guthaben",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Auf der Seite veröffentlichen",
     "confirmaStergerea": "Den Artikel „{titlu}“ löschen? Er kommt nicht zurück.",
     "dateRele": "Der Artikel konnte nicht gespeichert werden: prüfe Titel und Sprache."
+  },
+  "jurnal": {
+    "titlu": "Protokoll",
+    "intro": "Was kaputtging und was passierte, der Reihe nach. Bleibt {zile} Tage.",
+    "eroriAzi": "Fehler am letzten Tag",
+    "nivelEroare": "Fehler",
+    "nivelAtentie": "Hinweise",
+    "nivelFapta": "Ereignisse",
+    "colNivel": "Art",
+    "colSursa": "Woher",
+    "colMesaj": "Was",
+    "colUnde": "Wo",
+    "colCine": "Wer",
+    "vezuDetalii": "Einzelheiten",
+    "goalaTitlu": "Das Protokoll ist leer.",
+    "goalaText": "Gut so. Es ist nichts kaputtgegangen.",
+    "nota": "Bleibt {zile} Tage oder {maxim} Zeilen, was zuerst kommt. Adressen werden gekürzt, Passwörter und Schlüssel nie geschrieben."
   }
 }

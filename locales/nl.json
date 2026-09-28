@@ -147,7 +147,8 @@
     "faraMesaje": "Nog niemand heeft geschreven.",
     "cand": "Wanneer",
     "dePeUnde": "Vanwaar",
-    "mesajText": "Bericht"
+    "mesajText": "Bericht",
+    "jurnalLegatura": "Logboek"
   },
   "credit": {
     "titlu": "Mijn tegoed",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Op de site publiceren",
     "confirmaStergerea": "Artikel “{titlu}” verwijderen? Het komt niet terug.",
     "dateRele": "Het artikel kon niet worden opgeslagen: controleer titel en taal."
+  },
+  "jurnal": {
+    "titlu": "Logboek",
+    "intro": "Wat stukging en wat er gebeurde, op volgorde. Blijft {zile} dagen.",
+    "eroriAzi": "fouten in de laatste dag",
+    "nivelEroare": "Fouten",
+    "nivelAtentie": "Waarschuwingen",
+    "nivelFapta": "Gebeurtenissen",
+    "colNivel": "Soort",
+    "colSursa": "Vanwaar",
+    "colMesaj": "Wat",
+    "colUnde": "Waar",
+    "colCine": "Wie",
+    "vezuDetalii": "details",
+    "goalaTitlu": "Het logboek is leeg.",
+    "goalaText": "Mooi. Er is niets stukgegaan.",
+    "nota": "Blijft {zile} dagen of {maxim} regels, wat het eerst komt. Adressen worden ingekort, en wachtwoorden en sleutels komen er nooit in."
   }
 }

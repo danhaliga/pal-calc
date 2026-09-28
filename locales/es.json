@@ -147,7 +147,8 @@
     "faraMesaje": "Todavía no ha escrito nadie.",
     "cand": "Cuándo",
     "dePeUnde": "Desde dónde",
-    "mesajText": "Mensaje"
+    "mesajText": "Mensaje",
+    "jurnalLegatura": "Registro"
   },
   "credit": {
     "titlu": "Mi crédito",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Publicar en el sitio",
     "confirmaStergerea": "¿Borrar el artículo «{titlu}»? No se puede recuperar.",
     "dateRele": "No se pudo guardar el artículo: revisa el título y el idioma."
+  },
+  "jurnal": {
+    "titlu": "Registro",
+    "intro": "Qué se rompió y qué pasó, en orden. Se guarda {zile} días.",
+    "eroriAzi": "errores en el último día",
+    "nivelEroare": "Errores",
+    "nivelAtentie": "Avisos",
+    "nivelFapta": "Hechos",
+    "colNivel": "Tipo",
+    "colSursa": "De dónde",
+    "colMesaj": "Qué",
+    "colUnde": "Dónde",
+    "colCine": "Quién",
+    "vezuDetalii": "detalles",
+    "goalaTitlu": "El registro está vacío.",
+    "goalaText": "Bien. Significa que no se rompió nada.",
+    "nota": "Se guarda {zile} días o {maxim} filas, lo que ocurra antes. Las direcciones se truncan, y las contraseñas y claves nunca se escriben."
   }
 }

@@ -1,0 +1,82 @@
+<div class="top">
+  <div>
+    <div class="crumbs"><a href="/admin">← <%= t('nav.administrare') %></a></div>
+    <h1><%= t('jurnal.titlu') %></h1>
+    <p class="muted"><%= t('jurnal.intro', { zile: zile }) %></p>
+  </div>
+</div>
+
+<div class="kpis">
+  <div class="kpi">
+    <div class="v <%= numere.ultimele24h ? 'rau' : '' %>"><%= numere.ultimele24h %></div>
+    <div class="l"><%= t('jurnal.eroriAzi') %></div>
+  </div>
+  <div class="kpi"><div class="v"><%= numere.eroare %></div><div class="l"><%= t('jurnal.nivelEroare') %></div></div>
+  <div class="kpi"><div class="v"><%= numere.atentie %></div><div class="l"><%= t('jurnal.nivelAtentie') %></div></div>
+  <div class="kpi"><div class="v"><%= numere.fapta %></div><div class="l"><%= t('jurnal.nivelFapta') %></div></div>
+</div>
+
+<div class="filtre">
+  <a class="btn small <%= nivelAles ? '' : 'primary' %>" href="/admin/jurnal"><%= t('articole.toate') %></a>
+  <% nivele.forEach(function (n) { %>
+    <a class="btn small <%= nivelAles === n ? 'primary' : '' %>"
+       href="/admin/jurnal?nivel=<%= n %>"><%= t('jurnal.nivel' + n.charAt(0).toUpperCase() + n.slice(1)) %></a>
+  <% }); %>
+  <% if (surse.length > 1) { %>
+    <span class="separator"></span>
+    <% surse.forEach(function (s) { %>
+      <a class="btn small <%= sursaAleasa === s ? 'primary' : '' %>"
+         href="/admin/jurnal?sursa=<%= encodeURIComponent(s) %><%= nivelAles ? '&nivel=' + nivelAles : '' %>"><%= s %></a>
+    <% }); %>
+  <% } %>
+</div>
+
+<% if (!randuri.length) { %>
+  <div class="panel empty">
+    <p><%= t('jurnal.goalaTitlu') %></p>
+    <p class="muted"><%= t('jurnal.goalaText') %></p>
+  </div>
+<% } else { %>
+  <div class="panel">
+    <div class="tbl"><table>
+      <thead><tr>
+        <th><%= t('admin.cand') %></th>
+        <th><%= t('jurnal.colNivel') %></th>
+        <th><%= t('jurnal.colSursa') %></th>
+        <th><%= t('jurnal.colMesaj') %></th>
+        <th><%= t('jurnal.colUnde') %></th>
+        <th><%= t('jurnal.colCine') %></th>
+      </tr></thead>
+      <tbody>
+        <% randuri.forEach(function (r) { %>
+          <tr class="jurnal-<%= r.nivel %>">
+            <td class="muted small mono"><%= r.created_at.slice(5, 16) %></td>
+            <td><span class="chip nivel-<%= r.nivel %>">
+              <%= t('jurnal.nivel' + r.nivel.charAt(0).toUpperCase() + r.nivel.slice(1)) %></span></td>
+            <td class="small"><%= r.sursa %></td>
+            <td>
+              <%= r.mesaj %>
+              <%# Detaliile stau pliate: altfel un singur rand cu o urma de
+                  eroare lunga imprastie tot tabelul si nu se mai vede nimic. %>
+              <% if (r.detalii) { %>
+                <details class="jurnal-detalii">
+                  <summary><%= t('jurnal.vezuDetalii') %></summary>
+                  <pre><%= JSON.stringify(JSON.parse(r.detalii), null, 2) %></pre>
+                </details>
+              <% } %>
+            </td>
+            <td class="small mono">
+              <% if (r.ruta) { %><%= r.metoda || '' %> <%= r.ruta %><% } %>
+              <% if (r.status) { %> <span class="muted"><%= r.status %></span><% } %>
+            </td>
+            <td class="small muted mono">
+              <%= r.user_id ? '#' + r.user_id : '–' %>
+              <% if (r.ip) { %><br><%= r.ip %><% } %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table></div>
+    <p class="legend"><%= t('jurnal.nota', { zile: zile, maxim: maxim }) %></p>
+  </div>
+<% } %>

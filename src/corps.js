@@ -9,6 +9,7 @@ const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
 const credit = require('./credit');
 const util = require('./util');
+const jurnal = require('./jurnal');
 
 const router = express.Router();
 
@@ -265,6 +266,11 @@ router.put('/api/corps/:id', requireAuth, (req, res, next) => {
 router.delete('/api/corps/:id', requireAuth, (req, res, next) => {
   const corp = getOwned(req.params.id, req.user.id);
   if (!corp) return notFound(next);
+  /* Se tine minte CE s-a sters, nu doar ca s-a sters: un numar de corp
+     disparut nu spune nimic peste o saptamana. */
+  jurnal.fapta('corp', 'corp sters', { req, detalii: {
+    id: corp.id, nume: corp.name, comanda: corp.order_id
+  } });
   db.prepare('DELETE FROM corps WHERE id = ?').run(corp.id);
   res.json({ ok: true });
 });

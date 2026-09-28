@@ -147,7 +147,8 @@
     "faraMesaje": "Încă n-a scris nimeni.",
     "cand": "Când",
     "dePeUnde": "De pe unde",
-    "mesajText": "Mesaj"
+    "mesajText": "Mesaj",
+    "jurnalLegatura": "Jurnal"
   },
   "credit": {
     "titlu": "Creditul meu",
@@ -1241,5 +1242,22 @@
     "publicaPeSite": "Publică pe site",
     "confirmaStergerea": "Ștergi articolul „{titlu}\"? Nu se mai poate întoarce.",
     "dateRele": "Articolul n-a putut fi salvat: verifică titlul și limba."
+  },
+  "jurnal": {
+    "titlu": "Jurnal",
+    "intro": "Ce s-a rupt și ce s-a întâmplat, în ordine. Se țin {zile} de zile.",
+    "eroriAzi": "erori în ultima zi",
+    "nivelEroare": "Erori",
+    "nivelAtentie": "Atenție",
+    "nivelFapta": "Fapte",
+    "colNivel": "Fel",
+    "colSursa": "De unde",
+    "colMesaj": "Ce",
+    "colUnde": "Unde",
+    "colCine": "Cine",
+    "vezuDetalii": "detalii",
+    "goalaTitlu": "Jurnalul e gol.",
+    "goalaText": "Bine. Înseamnă că nu s-a rupt nimic.",
+    "nota": "Se păstrează {zile} de zile sau {maxim} de rânduri, care vine prima. Adresele sunt trunchiate, iar parolele și cheile nu se scriu niciodată."
   }
 }

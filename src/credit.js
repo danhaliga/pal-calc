@@ -35,7 +35,14 @@ const aplica = db.transaction((userId, delta, kind, ref, note) => {
 
 function adauga(userId, cents, kind, ref, note) {
   if (!(cents > 0)) return null;
-  return aplica(userId, cents, kind || 'topup', ref, note);
+  const sold = aplica(userId, cents, kind || 'topup', ref, note);
+  /* Creditul sunt bani. Fiecare adaugare se vede in jurnal, cu cat si de
+     unde — daca se alimenteaza singur cineva, se vede. */
+  require('./jurnal').fapta('credit', 'credit adaugat', {
+    userId: userId,
+    detalii: { suma: (cents / 100).toFixed(2), fel: kind || 'topup', ref: ref, nota: note, soldNou: sold }
+  });
+  return sold;
 }
 
 /* Scade costul unui corp. Întoarce null dacă nu ajunge creditul. */

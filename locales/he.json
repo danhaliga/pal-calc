@@ -147,7 +147,8 @@
     "faraMesaje": "עוד אף אחד לא כתב.",
     "cand": "מתי",
     "dePeUnde": "מאיפה",
-    "mesajText": "הודעה"
+    "mesajText": "הודעה",
+    "jurnalLegatura": "יומן"
   },
   "credit": {
     "titlu": "היתרה שלי",
@@ -1241,5 +1242,22 @@
     "publicaPeSite": "פרסם באתר",
     "confirmaStergerea": "למחוק את המאמר „{titlu}”? אי אפשר להחזיר.",
     "dateRele": "לא הצלחנו לשמור את המאמר: בדוק את הכותרת ואת השפה."
+  },
+  "jurnal": {
+    "titlu": "יומן",
+    "intro": "מה נשבר ומה קרה, לפי הסדר. נשמר {zile} ימים.",
+    "eroriAzi": "שגיאות ביממה האחרונה",
+    "nivelEroare": "שגיאות",
+    "nivelAtentie": "אזהרות",
+    "nivelFapta": "אירועים",
+    "colNivel": "סוג",
+    "colSursa": "מאיפה",
+    "colMesaj": "מה",
+    "colUnde": "איפה",
+    "colCine": "מי",
+    "vezuDetalii": "פרטים",
+    "goalaTitlu": "היומן ריק.",
+    "goalaText": "יופי. זה אומר ששום דבר לא נשבר.",
+    "nota": "נשמר {zile} ימים או {maxim} שורות, המוקדם מביניהם. הכתובות נחתכות, וסיסמאות ומפתחות לא נכתבים לעולם."
   }
 }

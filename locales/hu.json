@@ -147,7 +147,8 @@
     "faraMesaje": "Még senki nem írt.",
     "cand": "Mikor",
     "dePeUnde": "Honnan",
-    "mesajText": "Üzenet"
+    "mesajText": "Üzenet",
+    "jurnalLegatura": "Napló"
   },
   "credit": {
     "titlu": "Az egyenlegem",
@@ -1230,5 +1231,22 @@
     "publicaPeSite": "Közzététel az oldalon",
     "confirmaStergerea": "Törlöd a(z) „{titlu}” cikket? Nem jön vissza.",
     "dateRele": "A cikket nem sikerült elmenteni: ellenőrizd a címet és a nyelvet."
+  },
+  "jurnal": {
+    "titlu": "Napló",
+    "intro": "Mi romlott el és mi történt, sorban. {zile} napig marad meg.",
+    "eroriAzi": "hiba az utolsó napon",
+    "nivelEroare": "Hibák",
+    "nivelAtentie": "Figyelmeztetések",
+    "nivelFapta": "Események",
+    "colNivel": "Fajta",
+    "colSursa": "Honnan",
+    "colMesaj": "Mi",
+    "colUnde": "Hol",
+    "colCine": "Ki",
+    "vezuDetalii": "részletek",
+    "goalaTitlu": "A napló üres.",
+    "goalaText": "Jó. Azt jelenti, hogy semmi nem romlott el.",
+    "nota": "{zile} napig vagy {maxim} sorig marad meg, amelyik előbb jön. A címek csonkítva vannak, jelszavak és kulcsok soha nem kerülnek bele."
   }
 }

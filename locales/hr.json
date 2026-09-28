@@ -147,7 +147,8 @@
     "faraMesaje": "Još nitko nije pisao.",
     "cand": "Kada",
     "dePeUnde": "Odakle",
-    "mesajText": "Poruka"
+    "mesajText": "Poruka",
+    "jurnalLegatura": "Dnevnik"
   },
   "credit": {
     "titlu": "Moj kredit",
@@ -1241,5 +1242,22 @@
     "publicaPeSite": "Objavi na stranici",
     "confirmaStergerea": "Obrisati članak „{titlu}”? Ne vraća se.",
     "dateRele": "Članak se nije mogao spremiti: provjeri naslov i jezik."
+  },
+  "jurnal": {
+    "titlu": "Dnevnik",
+    "intro": "Što se pokvarilo i što se događalo, po redu. Čuva se {zile} dana.",
+    "eroriAzi": "grešaka u posljednjem danu",
+    "nivelEroare": "Greške",
+    "nivelAtentie": "Upozorenja",
+    "nivelFapta": "Događaji",
+    "colNivel": "Vrsta",
+    "colSursa": "Odakle",
+    "colMesaj": "Što",
+    "colUnde": "Gdje",
+    "colCine": "Tko",
+    "vezuDetalii": "detalji",
+    "goalaTitlu": "Dnevnik je prazan.",
+    "goalaText": "Dobro. Znači da se ništa nije pokvarilo.",
+    "nota": "Čuva se {zile} dana ili {maxim} redaka, što prije dođe. Adrese se skraćuju, a lozinke i ključevi se nikad ne upisuju."
   }
 }
