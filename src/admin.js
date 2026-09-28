@@ -4,6 +4,7 @@
 const express = require('express');
 const { db } = require('./db');
 const { requireAuth, requireAdmin } = require('./auth');
+const mesaje = require('./mesaje');
 
 const router = express.Router();
 
@@ -39,6 +40,8 @@ router.get('/admin', requireAuth, requireAdmin, (req, res) => {
   res.render('admin', {
     title: 'Administrare',
     users, corps, payments,
+    mesaje: mesaje.ultimele(100),
+    mesajeNoi: mesaje.cateNoi(),
     totalLei: (totals.cents / 100).toFixed(2),
     totalCount: totals.n
   });

@@ -136,7 +136,12 @@
     "referinta": "Reference",
     "data": "Date",
     "niciPlata": "No payments yet.",
-    "traduceri": "Translations"
+    "traduceri": "Translations",
+    "mesaje": "Messages · {n} unread",
+    "faraMesaje": "Nobody has written yet.",
+    "cand": "When",
+    "dePeUnde": "From where",
+    "mesajText": "Message"
   },
   "credit": {
     "titlu": "My credit",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Start from the standard kitchen base unit and change whatever you like.",
     "limiteTitlu": "What the calculator cannot generate yet",
     "limita1": "<b>Drawers in corner cabinets</b> — use a straight cabinet next to it instead.",
-    "limita2": "<b>Centre post</b> for wide cabinets; that is why shelves over 800 mm get a warning.",
+    "limita2": "<b>Drawers in a cabinet with a partition</b> — they are figured across the full cabinet width; put the drawers in a cabinet without a partition.",
     "limita3": "<b>Sliding doors</b>, framed glass doors, tambour shutters.",
     "limita4": "<b>Plinth, legs, worktop</b> — these are calculated separately from the cabinet.",
     "limita5": "<b>Cut-outs</b> for sinks, hobs, sockets or appliance recesses.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Drawers: heights, play, board",
     "grupDimensiuni": "Width, height, depth, construction",
     "grupCantitati": "How many doors, shelves, partitions, drawers"
+  },
+  "mesaj": {
+    "intrebare": "What is the calculation missing?",
+    "exemplu": "e.g. I need sliding doors for a bedroom wardrobe",
+    "trimite": "Send",
+    "multumim": "The message arrived. Thank you — I read them.",
+    "preaScurt": "Write a few words before sending."
   }
 }

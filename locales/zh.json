@@ -136,7 +136,12 @@
     "referinta": "流水号",
     "data": "日期",
     "niciPlata": "还没有付款记录。",
-    "traduceri": "翻译"
+    "traduceri": "翻译",
+    "mesaje": "消息 · {n} 条未读",
+    "faraMesaje": "还没有人写过。",
+    "cand": "什么时候",
+    "dePeUnde": "从哪页",
+    "mesajText": "消息"
   },
   "credit": {
     "titlu": "我的余额",
@@ -231,7 +236,7 @@
     "corpGolDesc": "从一个普通的橱柜地柜开始，想改什么改什么。",
     "limiteTitlu": "计算目前还做不了的",
     "limita1": "<b>转角柜里的抽屉</b> —— 在旁边放一个直柜。",
-    "limita2": "宽柜体的<b>中竖板</b>；所以超过 800 毫米的层板会给提醒。",
+    "limita2": "<b>带中隔柜体里的抽屉</b>——按柜体整宽算；把抽屉放到没有中隔的柜体里。",
     "limita3": "<b>推拉门</b>、玻璃框门、卷帘门。",
     "limita4": "<b>柜脚、踢脚板、台面</b> —— 跟柜体分开算。",
     "limita5": "水槽、灶台、插座或电器位的<b>开孔</b>。",
@@ -1130,5 +1135,12 @@
     "grupSertare": "抽屉：高度、间隙、板材",
     "grupDimensiuni": "宽、高、深、做法",
     "grupCantitati": "几扇门、几块层板、几块中隔、几个抽屉"
+  },
+  "mesaj": {
+    "intrebare": "计算还缺什么？",
+    "exemplu": "例如：卧室衣柜要推拉门",
+    "trimite": "发送",
+    "multumim": "消息收到了。谢谢——我会看。",
+    "preaScurt": "发之前写几句话。"
   }
 }

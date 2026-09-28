@@ -325,7 +325,8 @@ router.get('/orders/:id/corp-nou', requireAuth, (req, res, next) => {
     categories: PalModels.categorii(req.t),
     models, order,
     sold: credit.sold(req.user.id),
-    pretCorp: credit.pretCorp()
+    pretCorp: credit.pretCorp(),
+    mesajTrimis: req.query.mesaj === '1'
   });
 });
 

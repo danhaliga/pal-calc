@@ -136,7 +136,12 @@
     "referinta": "Referencia",
     "data": "Dátum",
     "niciPlata": "Zatiaľ žiadne platby.",
-    "traduceri": "Preklady"
+    "traduceri": "Preklady",
+    "mesaje": "Správy · {n} neprečítaných",
+    "faraMesaje": "Zatiaľ nikto nenapísal.",
+    "cand": "Kedy",
+    "dePeUnde": "Odkiaľ",
+    "mesajText": "Správa"
   },
   "credit": {
     "titlu": "Môj kredit",
@@ -237,7 +242,7 @@
     "corpGolDesc": "Začneš od štandardnej kuchynskej spodnej skrinky a zmeníš, čo budeš chcieť.",
     "limiteTitlu": "Čo výpočet zatiaľ nevie",
     "limita1": "<b>Zásuvky v rohových korpusoch</b> — použi vedľa rovný korpus.",
-    "limita2": "<b>Stredná priečka</b> pri širokých korpusoch; preto police nad 800 mm dostávajú upozornenie.",
+    "limita2": "<b>Zásuvky v korpuse so stredovou stojkou</b> — počítajú sa cez celú šírku korpusu; daj zásuvky do korpusu bez stojky.",
     "limita3": "<b>Posuvné dvierka</b>, rámové dvierka so sklom, rolety.",
     "limita4": "<b>Sokel, nožičky, pracovná doska</b> — počítajú sa zvlášť od korpusu.",
     "limita5": "<b>Výrezy</b> pre drez, varnú dosku, zásuvky alebo výklenky pre spotrebiče.",
@@ -1141,5 +1146,12 @@
     "grupSertare": "Zásuvky: výšky, vôľa, doska",
     "grupDimensiuni": "Šírka, výška, hĺbka, konštrukcia",
     "grupCantitati": "Koľko dvierok, políc, stredových stojok, zásuviek"
+  },
+  "mesaj": {
+    "intrebare": "Čo výpočtu chýba?",
+    "exemplu": "napr. potrebujem posuvné dvere na spálňovú skriňu",
+    "trimite": "Odoslať",
+    "multumim": "Správa dorazila. Vďaka — čítam ich.",
+    "preaScurt": "Napíš pár slov, než odošleš."
   }
 }

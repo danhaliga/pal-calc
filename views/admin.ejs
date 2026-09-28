@@ -10,6 +10,29 @@
   <div class="kpi"><div class="v"><%= totalLei %> <%= t('comun.lei') %></div><div class="l"><%= t('admin.kpiIncasat') %></div></div>
 </div>
 
+<%# Mesajele de la oameni stau primele: alea cer un răspuns, restul sunt cifre. %>
+<div class="panel">
+  <h2><%= t('admin.mesaje', { n: mesajeNoi }) %></h2>
+  <% if (!mesaje.length) { %>
+    <p class="muted"><%= t('admin.faraMesaje') %></p>
+  <% } else { %>
+    <div class="tbl"><table>
+      <thead><tr><th><%= t('admin.cand') %></th><th><%= t('admin.email') %></th>
+        <th><%= t('admin.dePeUnde') %></th><th><%= t('admin.mesajText') %></th></tr></thead>
+      <tbody>
+        <% mesaje.forEach(function (m) { %>
+          <tr>
+            <td class="muted small"><%= m.created_at.slice(0, 16) %></td>
+            <td class="small"><%= m.email %></td>
+            <td class="muted small"><%= m.pagina || '–' %></td>
+            <td><%= m.text %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table></div>
+  <% } %>
+</div>
+
 <div class="panel">
   <h2><%= t('admin.utilizatori') %></h2>
   <div class="tbl"><table>

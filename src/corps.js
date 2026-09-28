@@ -100,7 +100,8 @@ router.get('/corps/new', requireAuth, (req, res) => {
   res.render('corps/new', {
     title: req.t('modele.titlu'),
     categories: PalModels.categorii(req.t),
-    models
+    models,
+    mesajTrimis: req.query.mesaj === '1'
   });
 });
 

@@ -136,7 +136,12 @@
     "referinta": "Referans",
     "data": "Tarih",
     "niciPlata": "Henüz ödeme yok.",
-    "traduceri": "Çeviriler"
+    "traduceri": "Çeviriler",
+    "mesaje": "Mesajlar · {n} okunmamış",
+    "faraMesaje": "Henüz kimse yazmadı.",
+    "cand": "Ne zaman",
+    "dePeUnde": "Nereden",
+    "mesajText": "Mesaj"
   },
   "credit": {
     "titlu": "Bakiyem",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Standart mutfak alt dolabından başlar, istediğin her şeyi değiştirirsin.",
     "limiteTitlu": "Hesabın henüz üretemedikleri",
     "limita1": "<b>Köşe gövdelerde çekmece</b> — yanına düz bir gövde koy.",
-    "limita2": "<b>Orta dikme</b> geniş gövdeler için; bu yüzden 800 mm üstü raflar uyarı alır.",
+    "limita2": "<b>Ara dikmeli gövdede çekmece</b> — gövdenin tüm genişliğine göre hesaplanır; çekmeceleri ara dikmesiz bir gövdeye koy.",
     "limita3": "<b>Sürgülü kapaklar</b>, camlı çerçeveli kapaklar, panjurlar.",
     "limita4": "<b>Süpürgelik, ayaklar, tezgâh</b> — gövdeden ayrı hesaplanır.",
     "limita5": "<b>Kesikler</b>: evye, ocak, priz veya ankastre nişleri için.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Çekmeceler: yükseklikler, boşluk, levha",
     "grupDimensiuni": "Genişlik, yükseklik, derinlik, yapım",
     "grupCantitati": "Kaç kapak, raf, ara dikme, çekmece"
+  },
+  "mesaj": {
+    "intrebare": "Hesapta ne eksik?",
+    "exemplu": "ör. yatak odası dolabı için sürme kapak lazım",
+    "trimite": "Gönder",
+    "multumim": "Mesaj ulaştı. Teşekkürler — okuyorum.",
+    "preaScurt": "Göndermeden önce birkaç kelime yaz."
   }
 }

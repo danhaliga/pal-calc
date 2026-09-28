@@ -760,3 +760,54 @@ test('CSP nu urcă cererile pe https decât dacă aplicația chiar stă pe https
   assert.match(server, /const PE_HTTPS = \(process\.env\.APP_URL \|\| ''\)\.startsWith\('https:\/\/'\)/,
     'condiția nu mai e legată de APP_URL');
 });
+
+/* =====================================================================
+   12. Panoul care cerea un răspuns fără să aibă unde
+
+   „Dacă îți trebuie ceva de aici, spune-mi care" — și nicio căsuță pe toată
+   pagina. Textul promitea un drum care nu exista.
+   ===================================================================== */
+
+const NEW_EJS = fs.readFileSync(path.join(__dirname, '..', 'views', 'corps', 'new.ejs'), 'utf8');
+const SURSA_MESAJE = fs.readFileSync(path.join(__dirname, '..', 'src', 'mesaje.js'), 'utf8');
+
+test('pagina care cere un mesaj are și unde să-l scrii', () => {
+  assert.match(NEW_EJS, /t\('modele\.limiteNota'\)/, 'nota care cere mesajul a dispărut');
+  assert.match(NEW_EJS, /action="\/mesaje"/, 'nota cere un mesaj, dar n-are unde să-l scrii');
+  assert.match(NEW_EJS, /<textarea name="text"/, 'formularul de mesaj n-are câmp de scris');
+  assert.match(NEW_EJS, /name="_csrf"/, 'formularul de mesaj a rămas fără jeton CSRF');
+});
+
+test('redirectul de după mesaj nu poate trimite omul afară din aplicație', () => {
+  /* `inapoi` vine din formular. Fără verificare, un „//alt-site.ro" ar face
+     din redirectul nostru o trambulină spre altcineva. */
+  assert.match(SURSA_MESAJE, /function inapoiSigur\(/, 'nu se mai verifică unde trimitem omul');
+
+  const regula = SURSA_MESAJE.match(/return (\/.*\/)\.test\(s\) \? s : '\/corps\/new';/);
+  assert.ok(regula, 'regula de verificare s-a schimbat de formă');
+  const rx = new RegExp(regula[1].slice(1, -1));
+  const bun = s => rx.test(s);
+
+  assert.ok(bun('/corps/new'));
+  assert.ok(bun('/orders/7/corp-nou'));
+  assert.ok(!bun('//example.com'), 'un drum cu două bare ar duce pe alt site');
+  /* Bara inversă e scrisă cu codul ei: heredoc-urile din Git Bash au mâncat-o
+     de două ori în proiectul ăsta, și testul trecea degeaba. */
+  const bs = String.fromCharCode(92);
+  assert.ok(!bun('/' + bs + 'example.com'), 'bara inversă e tot început de gazdă în browsere');
+  assert.ok(!bun('https://example.com'), 'adresă întreagă spre alt site');
+  assert.ok(!bun('corps/new'), 'drum relativ, fără bară');
+});
+
+test('montantul central nu mai stă pe lista lucrurilor care nu se pot face', () => {
+  /* S-a făcut. O limită care nu mai e adevărată e mai rea decât una lipsă:
+     omul renunță la ceva ce aplicația știe deja. */
+  fs.readdirSync(LOCALES).filter(f => f.endsWith('.json')).forEach(f => {
+    const dict = JSON.parse(fs.readFileSync(path.join(LOCALES, f), 'utf8'));
+    const limite = Object.keys(dict.modele).filter(k => /^limita\d+$/.test(k));
+    assert.ok(limite.length >= 6, `${f} a pierdut limitele`);
+  });
+  const ro = JSON.parse(fs.readFileSync(path.join(LOCALES, 'ro.json'), 'utf8'));
+  assert.ok(!/Montant central/.test(ro.modele.limita2),
+    'limita 2 spune iar că montantul central nu se poate face');
+});

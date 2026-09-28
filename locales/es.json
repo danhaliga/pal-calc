@@ -136,7 +136,12 @@
     "referinta": "Referencia",
     "data": "Fecha",
     "niciPlata": "Todavía no hay pagos.",
-    "traduceri": "Traducciones"
+    "traduceri": "Traducciones",
+    "mesaje": "Mensajes · {n} sin leer",
+    "faraMesaje": "Todavía no ha escrito nadie.",
+    "cand": "Cuándo",
+    "dePeUnde": "Desde dónde",
+    "mesajText": "Mensaje"
   },
   "credit": {
     "titlu": "Mi crédito",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Partes del mueble bajo de cocina estándar y cambias todo lo que quieras.",
     "limiteTitlu": "Lo que el cálculo todavía no genera",
     "limita1": "<b>Cajones en módulos de esquina</b> — usa un módulo recto al lado.",
-    "limita2": "<b>Montante central</b> para módulos anchos; por eso las baldas de más de 800 mm reciben un aviso.",
+    "limita2": "<b>Cajones en un mueble con división</b> — se calculan a lo ancho de todo el mueble; pon los cajones en un mueble sin división.",
     "limita3": "<b>Puertas correderas</b>, puertas de marco con cristal, persianas.",
     "limita4": "<b>Zócalo, patas, encimera</b> — se calculan aparte del módulo.",
     "limita5": "<b>Recortes</b> para fregadero, placa, enchufes o huecos de electrodomésticos.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Cajones: alturas, holgura, tablero",
     "grupDimensiuni": "Ancho, alto, fondo, construcción",
     "grupCantitati": "Cuántas puertas, baldas, divisiones, cajones"
+  },
+  "mesaj": {
+    "intrebare": "¿Qué le falta al cálculo?",
+    "exemplu": "p. ej. necesito puertas correderas para un armario de dormitorio",
+    "trimite": "Enviar",
+    "multumim": "El mensaje ha llegado. Gracias — los leo.",
+    "preaScurt": "Escribe unas palabras antes de enviar."
   }
 }

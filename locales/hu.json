@@ -136,7 +136,12 @@
     "referinta": "Hivatkozás",
     "data": "Dátum",
     "niciPlata": "Még nincs fizetés.",
-    "traduceri": "Fordítások"
+    "traduceri": "Fordítások",
+    "mesaje": "Üzenetek · {n} olvasatlan",
+    "faraMesaje": "Még senki nem írt.",
+    "cand": "Mikor",
+    "dePeUnde": "Honnan",
+    "mesajText": "Üzenet"
   },
   "credit": {
     "titlu": "Az egyenlegem",
@@ -231,7 +236,7 @@
     "corpGolDesc": "A szabványos konyhai alsószekrényből indulsz, és mindent megváltoztathatsz.",
     "limiteTitlu": "Amit a számítás még nem tud legyártani",
     "limita1": "<b>Fiók a sarokkorpuszban</b> — használj mellé egy egyenes korpuszt.",
-    "limita2": "<b>Középoldal</b> széles korpuszokhoz; ezért kap figyelmeztetést a 800 mm feletti polc.",
+    "limita2": "<b>Fiókok közfalas korpuszban</b> — a teljes korpuszszélességre számolódnak; tedd a fiókokat közfal nélküli korpuszba.",
     "limita3": "<b>Tolóajtó</b>, keretes üvegajtó, redőny.",
     "limita4": "<b>Lábazat, láb, munkalap</b> — a korpusztól külön számoljuk.",
     "limita5": "<b>Kivágások</b> mosogatóhoz, főzőlaphoz, konnektorhoz vagy gépfülkéhez.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Fiókok: magasságok, hézag, lap",
     "grupDimensiuni": "Szélesség, magasság, mélység, felépítés",
     "grupCantitati": "Hány ajtó, polc, közfal, fiók"
+  },
+  "mesaj": {
+    "intrebare": "Mi hiányzik a számításból?",
+    "exemplu": "pl. tolóajtók kellenek egy hálószobai szekrényhez",
+    "trimite": "Küldés",
+    "multumim": "A üzenet megérkezett. Köszönöm — elolvasom.",
+    "preaScurt": "Írj pár szót, mielőtt elküldöd."
   }
 }

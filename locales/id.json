@@ -136,7 +136,12 @@
     "referinta": "Referensi",
     "data": "Tanggal",
     "niciPlata": "Belum ada pembayaran.",
-    "traduceri": "Terjemahan"
+    "traduceri": "Terjemahan",
+    "mesaje": "Pesan · {n} belum dibaca",
+    "faraMesaje": "Belum ada yang menulis.",
+    "cand": "Kapan",
+    "dePeUnde": "Dari mana",
+    "mesajText": "Pesan"
   },
   "credit": {
     "titlu": "Saldo saya",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Anda mulai dari kabinet bawah dapur standar lalu mengubah apa pun yang Anda mau.",
     "limiteTitlu": "Yang belum bisa dihasilkan perhitungan",
     "limita1": "<b>Laci pada boks sudut</b> — pakai boks lurus di sebelahnya.",
-    "limita2": "<b>Sekat tengah</b> untuk boks lebar; karena itu rak di atas 800 mm mendapat peringatan.",
+    "limita2": "<b>Laci di kabinet bersekat</b> — dihitung selebar seluruh kabinet; taruh laci di kabinet tanpa sekat.",
     "limita3": "<b>Pintu geser</b>, pintu berbingkai kaca, rolling door.",
     "limita4": "<b>Kaki, plint, meja kerja</b> — dihitung terpisah dari boks.",
     "limita5": "<b>Lubang</b> untuk bak cuci, kompor tanam, stopkontak, atau ceruk perangkat.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Laci: tinggi, celah, papan",
     "grupDimensiuni": "Lebar, tinggi, dalam, cara rakit",
     "grupCantitati": "Berapa pintu, rak, sekat tengah, laci"
+  },
+  "mesaj": {
+    "intrebare": "Apa yang kurang dari perhitungan?",
+    "exemplu": "mis. saya butuh pintu geser untuk lemari kamar tidur",
+    "trimite": "Kirim",
+    "multumim": "Pesan sudah sampai. Terima kasih — saya baca.",
+    "preaScurt": "Tulis beberapa kata sebelum mengirim."
   }
 }

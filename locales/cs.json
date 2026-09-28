@@ -136,7 +136,12 @@
     "referinta": "Reference",
     "data": "Datum",
     "niciPlata": "Zatím žádné platby.",
-    "traduceri": "Překlady"
+    "traduceri": "Překlady",
+    "mesaje": "Zprávy · {n} nepřečtených",
+    "faraMesaje": "Zatím nikdo nenapsal.",
+    "cand": "Kdy",
+    "dePeUnde": "Odkud",
+    "mesajText": "Zpráva"
   },
   "credit": {
     "titlu": "Můj kredit",
@@ -237,7 +242,7 @@
     "corpGolDesc": "Začneš od standardní kuchyňské spodní skříňky a změníš, co budeš chtít.",
     "limiteTitlu": "Co výpočet zatím neumí",
     "limita1": "<b>Zásuvky v rohových korpusech</b> — použij vedle rovný korpus.",
-    "limita2": "<b>Střední přepážka</b> u širokých korpusů; proto police nad 800 mm dostávají upozornění.",
+    "limita2": "<b>Zásuvky v korpusu se středovou stojinou</b> — počítají se přes celou šířku korpusu; dej zásuvky do korpusu bez stojiny.",
     "limita3": "<b>Posuvná dvířka</b>, rámová dvířka se sklem, rolety.",
     "limita4": "<b>Sokl, nožky, pracovní deska</b> — počítají se zvlášť od korpusu.",
     "limita5": "<b>Výřezy</b> pro dřez, varnou desku, zásuvky nebo výklenky pro spotřebiče.",
@@ -1141,5 +1146,12 @@
     "grupSertare": "Zásuvky: výšky, vůle, deska",
     "grupDimensiuni": "Šířka, výška, hloubka, konstrukce",
     "grupCantitati": "Kolik dvířek, polic, středových stojin, zásuvek"
+  },
+  "mesaj": {
+    "intrebare": "Co výpočtu chybí?",
+    "exemplu": "např. potřebuji posuvné dveře na ložnicovou skříň",
+    "trimite": "Odeslat",
+    "multumim": "Zpráva dorazila. Díky — čtu je.",
+    "preaScurt": "Napiš pár slov, než odešleš."
   }
 }

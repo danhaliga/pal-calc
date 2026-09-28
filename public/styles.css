@@ -74,11 +74,11 @@ legend{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercas
 .f3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px 10px}
 @media(max-width:520px){.f3{grid-template-columns:1fr 1fr}}
 label{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--muted)}
-input,select,button{font:inherit;color:var(--ink)}
-input,select{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:6px 8px;width:100%;
+input,select,textarea,button{font:inherit;color:var(--ink)}
+input,select,textarea{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:6px 8px;width:100%;
   font-family:"IBM Plex Mono",monospace;font-size:14px}
 select{font-family:"IBM Plex Sans",system-ui,sans-serif}
-input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 input[type=checkbox]{width:auto}
 .full{grid-column:1/-1}
 
@@ -351,3 +351,9 @@ details.setari[open] summary::before{content:'▾ '}
 .panel.zona-stergere{display:flex;align-items:center;justify-content:space-between;
   gap:16px;flex-wrap:wrap}
 .panel.zona-stergere p{margin:4px 0 0}
+
+/* Căsuța de mesaje din panoul „ce nu poate încă genera calculul". */
+.mesaj-form{margin-top:12px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.mesaj-form label{display:block;width:100%;font-size:13px;color:var(--muted)}
+.mesaj-form textarea{margin-top:4px;resize:vertical;min-height:64px;
+  font-family:"IBM Plex Sans",system-ui,sans-serif}

@@ -86,6 +86,21 @@
     <li><%- t('modele.limita6') %></li>
   </ul>
   <p class="hint"><%= t('modele.limiteNota') %></p>
+
+  <%# „Spune-mi care" cerea un loc unde să spui. Ăsta e. %>
+  <% if (typeof mesajTrimis !== 'undefined' && mesajTrimis) { %>
+    <div class="warn ok"><%= t('mesaj.multumim') %></div>
+  <% } %>
+  <form method="post" action="/mesaje" class="mesaj-form">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="hidden" name="pagina" value="modele">
+    <input type="hidden" name="inapoi" value="<%= typeof order !== 'undefined' && order ? '/orders/' + order.id + '/corp-nou' : '/corps/new' %>">
+    <label><%= t('mesaj.intrebare') %>
+      <textarea name="text" rows="3" maxlength="2000" required
+                placeholder="<%= t('mesaj.exemplu') %>"></textarea>
+    </label>
+    <button class="btn primary" type="submit"><%= t('mesaj.trimite') %></button>
+  </form>
 </div>
 
 <script src="/static/models-pick.js?v=<%= assetV %>"></script>

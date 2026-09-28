@@ -136,7 +136,12 @@
     "referinta": "Mã tham chiếu",
     "data": "Ngày",
     "niciPlata": "Chưa có thanh toán nào.",
-    "traduceri": "Bản dịch"
+    "traduceri": "Bản dịch",
+    "mesaje": "Tin nhắn · {n} chưa đọc",
+    "faraMesaje": "Chưa ai viết gì.",
+    "cand": "Khi nào",
+    "dePeUnde": "Từ đâu",
+    "mesajText": "Tin nhắn"
   },
   "credit": {
     "titlu": "Số dư của tôi",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Bạn bắt đầu từ tủ bếp dưới tiêu chuẩn rồi đổi mọi thứ bạn muốn.",
     "limiteTitlu": "Những gì phép tính chưa dựng được",
     "limita1": "<b>Ngăn kéo trong thùng tủ góc</b> — hãy đặt một thùng tủ thẳng bên cạnh.",
-    "limita2": "<b>Vách ngăn giữa</b> cho thùng tủ rộng; vì vậy kệ dài hơn 800 mm sẽ có cảnh báo.",
+    "limita2": "<b>Ngăn kéo trong tủ có vách giữa</b> — được tính trên toàn bộ chiều rộng tủ; hãy đặt ngăn kéo vào tủ không có vách giữa.",
     "limita3": "<b>Cánh lùa</b>, cánh khung kính, cửa cuốn.",
     "limita4": "<b>Chân đế, chân tủ, mặt bàn bếp</b> — tính riêng, không thuộc thùng tủ.",
     "limita5": "<b>Lỗ khoét</b> cho chậu rửa, bếp từ, ổ điện hoặc hốc đặt thiết bị.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Ngăn kéo: chiều cao, khe hở, ván",
     "grupDimensiuni": "Rộng, cao, sâu, cách dựng",
     "grupCantitati": "Bao nhiêu cánh, kệ, vách giữa, ngăn kéo"
+  },
+  "mesaj": {
+    "intrebare": "Phép tính còn thiếu gì?",
+    "exemplu": "vd. tôi cần cánh trượt cho tủ áo phòng ngủ",
+    "trimite": "Gửi",
+    "multumim": "Tin nhắn đã tới. Cảm ơn — tôi có đọc.",
+    "preaScurt": "Viết vài chữ trước khi gửi."
   }
 }

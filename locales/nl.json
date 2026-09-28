@@ -136,7 +136,12 @@
     "referinta": "Referentie",
     "data": "Datum",
     "niciPlata": "Nog geen betalingen.",
-    "traduceri": "Vertalingen"
+    "traduceri": "Vertalingen",
+    "mesaje": "Berichten · {n} ongelezen",
+    "faraMesaje": "Nog niemand heeft geschreven.",
+    "cand": "Wanneer",
+    "dePeUnde": "Vanwaar",
+    "mesajText": "Bericht"
   },
   "credit": {
     "titlu": "Mijn tegoed",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Je begint bij de standaard keukenonderkast en verandert alles wat je wilt.",
     "limiteTitlu": "Wat de berekening nog niet kan maken",
     "limita1": "<b>Lades in hoekkasten</b> — gebruik er een rechte kast naast.",
-    "limita2": "<b>Middenwand</b> voor brede kasten; daarom krijgen legplanken boven 800 mm een waarschuwing.",
+    "limita2": "<b>Laden in een kast met tussenschot</b> — ze worden over de volle kastbreedte gerekend; zet de laden in een kast zonder tussenschot.",
     "limita3": "<b>Schuifdeuren</b>, kaderdeuren met glas, rolluiken.",
     "limita4": "<b>Plint, poten, werkblad</b> — worden los van de kast berekend.",
     "limita5": "<b>Uitsparingen</b> voor spoelbak, kookplaat, stopcontacten of nissen voor apparatuur.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Laden: hoogtes, speling, plaat",
     "grupDimensiuni": "Breedte, hoogte, diepte, opbouw",
     "grupCantitati": "Hoeveel deuren, legplanken, tussenschotten, laden"
+  },
+  "mesaj": {
+    "intrebare": "Wat mist de berekening?",
+    "exemplu": "bv. ik heb schuifdeuren nodig voor een slaapkamerkast",
+    "trimite": "Versturen",
+    "multumim": "Het bericht is aangekomen. Dank je — ik lees ze.",
+    "preaScurt": "Schrijf een paar woorden voor je verstuurt."
   }
 }

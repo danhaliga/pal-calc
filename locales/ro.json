@@ -136,7 +136,12 @@
     "referinta": "Referință",
     "data": "Data",
     "niciPlata": "Nicio plată încă.",
-    "traduceri": "Traduceri"
+    "traduceri": "Traduceri",
+    "mesaje": "Mesaje · {n} necitite",
+    "faraMesaje": "Încă n-a scris nimeni.",
+    "cand": "Când",
+    "dePeUnde": "De pe unde",
+    "mesajText": "Mesaj"
   },
   "credit": {
     "titlu": "Creditul meu",
@@ -237,7 +242,7 @@
     "corpGolDesc": "Pornești de la corpul de bucătărie standard și schimbi tot ce vrei.",
     "limiteTitlu": "Ce nu poate încă genera calculul",
     "limita1": "<b>Sertare în corpurile de colț</b> — se folosește un corp drept alăturat.",
-    "limita2": "<b>Montant central</b> pentru corpuri late; de aceea polițele peste 800 mm primesc avertisment.",
+    "limita2": "<b>Sertare într-un corp cu montant</b> — se calculează pe toată lățimea corpului; pune sertarele într-un corp fără montant.",
     "limita3": "<b>Uși glisante</b>, uși cu ramă și sticlă, jaluzele.",
     "limita4": "<b>Soclu, picioare, blat de lucru</b> — se calculează separat de corp.",
     "limita5": "<b>Decupaje</b> pentru chiuvetă, plită, prize sau nișe de electrocasnice.",
@@ -1141,5 +1146,12 @@
     "grupSertare": "Sertare: înălțimi, joc, placă",
     "grupDimensiuni": "Lățime, înălțime, adâncime, construcție",
     "grupCantitati": "Câte uși, polițe, montanți, sertare"
+  },
+  "mesaj": {
+    "intrebare": "Ce-ți lipsește din calcul?",
+    "exemplu": "ex: îmi trebuie uși glisante pentru un dulap de dormitor",
+    "trimite": "Trimite",
+    "multumim": "Mesajul a ajuns. Mulțumesc — îl citesc.",
+    "preaScurt": "Scrie câteva cuvinte înainte să trimiți."
   }
 }

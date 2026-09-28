@@ -136,7 +136,12 @@
     "referinta": "Référence",
     "data": "Date",
     "niciPlata": "Aucun paiement pour l'instant.",
-    "traduceri": "Traductions"
+    "traduceri": "Traductions",
+    "mesaje": "Messages · {n} non lus",
+    "faraMesaje": "Personne n’a encore écrit.",
+    "cand": "Quand",
+    "dePeUnde": "D’où",
+    "mesajText": "Message"
   },
   "credit": {
     "titlu": "Mon crédit",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Vous partez du meuble bas de cuisine standard et vous changez tout ce que vous voulez.",
     "limiteTitlu": "Ce que le calcul ne sait pas encore produire",
     "limita1": "<b>Tiroirs dans les caissons d'angle</b> — utilisez plutôt un caisson droit à côté.",
-    "limita2": "<b>Montant central</b> pour les caissons larges ; c'est pourquoi les étagères de plus de 800 mm reçoivent un avertissement.",
+    "limita2": "<b>Tiroirs dans un caisson avec montant</b> — ils sont calculés sur toute la largeur du caisson ; mettez les tiroirs dans un caisson sans montant.",
     "limita3": "<b>Portes coulissantes</b>, portes à cadre et verre, rideaux.",
     "limita4": "<b>Socle, pieds, plan de travail</b> — se calculent à part du caisson.",
     "limita5": "<b>Découpes</b> pour évier, plaque, prises ou niches d'électroménager.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Tiroirs : hauteurs, jeu, panneau",
     "grupDimensiuni": "Largeur, hauteur, profondeur, construction",
     "grupCantitati": "Combien de portes, tablettes, montants, tiroirs"
+  },
+  "mesaj": {
+    "intrebare": "Qu’est-ce qui manque au calcul ?",
+    "exemplu": "ex. il me faut des portes coulissantes pour une armoire de chambre",
+    "trimite": "Envoyer",
+    "multumim": "Le message est arrivé. Merci — je les lis.",
+    "preaScurt": "Écrivez quelques mots avant d’envoyer."
   }
 }

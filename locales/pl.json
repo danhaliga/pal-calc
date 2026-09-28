@@ -136,7 +136,12 @@
     "referinta": "Referencja",
     "data": "Data",
     "niciPlata": "Jeszcze nie ma płatności.",
-    "traduceri": "Tłumaczenia"
+    "traduceri": "Tłumaczenia",
+    "mesaje": "Wiadomości · {n} nieprzeczytanych",
+    "faraMesaje": "Nikt jeszcze nie napisał.",
+    "cand": "Kiedy",
+    "dePeUnde": "Skąd",
+    "mesajText": "Wiadomość"
   },
   "credit": {
     "titlu": "Moje środki",
@@ -237,7 +242,7 @@
     "corpGolDesc": "Zaczynasz od standardowej szafki dolnej kuchennej i zmieniasz wszystko, co chcesz.",
     "limiteTitlu": "Czego obliczenie jeszcze nie generuje",
     "limita1": "<b>Szuflady w korpusach narożnych</b> — użyj obok prostego korpusu.",
-    "limita2": "<b>Przegroda pionowa</b> w szerokich korpusach; dlatego półki powyżej 800 mm dostają ostrzeżenie.",
+    "limita2": "<b>Szuflady w korpusie z przegrodą</b> — liczone są na całą szerokość korpusu; wstaw szuflady do korpusu bez przegrody.",
     "limita3": "<b>Fronty przesuwne</b>, fronty ramiakowe ze szkłem, żaluzje.",
     "limita4": "<b>Cokół, nóżki, blat roboczy</b> — liczy się osobno od korpusu.",
     "limita5": "<b>Wycięcia</b> na zlew, płytę, gniazdka albo wnęki na sprzęt AGD.",
@@ -1141,5 +1146,12 @@
     "grupSertare": "Szuflady: wysokości, luz, płyta",
     "grupDimensiuni": "Szerokość, wysokość, głębokość, konstrukcja",
     "grupCantitati": "Ile drzwi, półek, przegród, szuflad"
+  },
+  "mesaj": {
+    "intrebare": "Czego brakuje w obliczeniach?",
+    "exemplu": "np. potrzebuję drzwi przesuwnych do szafy w sypialni",
+    "trimite": "Wyślij",
+    "multumim": "Wiadomość dotarła. Dziękuję — czytam je.",
+    "preaScurt": "Napisz kilka słów, zanim wyślesz."
   }
 }

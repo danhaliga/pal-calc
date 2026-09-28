@@ -136,7 +136,12 @@
     "referinta": "Referens",
     "data": "Datum",
     "niciPlata": "Inga betalningar ännu.",
-    "traduceri": "Översättningar"
+    "traduceri": "Översättningar",
+    "mesaje": "Meddelanden · {n} olästa",
+    "faraMesaje": "Ingen har skrivit än.",
+    "cand": "När",
+    "dePeUnde": "Varifrån",
+    "mesajText": "Meddelande"
   },
   "credit": {
     "titlu": "Mitt saldo",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Du utgår från standardunderskåpet för kök och ändrar allt du vill.",
     "limiteTitlu": "Vad beräkningen ännu inte klarar",
     "limita1": "<b>Lådor i hörnstommar</b> — använd en rak stomme bredvid i stället.",
-    "limita2": "<b>Mittgavel</b> för breda stommar; därför får hyllplan över 800 mm en varning.",
+    "limita2": "<b>Lådor i en stomme med mellanstycke</b> — de räknas över hela stommens bredd; sätt lådorna i en stomme utan mellanstycke.",
     "limita3": "<b>Skjutluckor</b>, ramluckor med glas, jalusier.",
     "limita4": "<b>Sockel, ben, bänkskiva</b> — räknas separat från stommen.",
     "limita5": "<b>Urtag</b> för diskho, häll, uttag eller nischer för vitvaror.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Lådor: höjder, spel, skiva",
     "grupDimensiuni": "Bredd, höjd, djup, byggsätt",
     "grupCantitati": "Hur många dörrar, hyllplan, mellanstycken, lådor"
+  },
+  "mesaj": {
+    "intrebare": "Vad saknas i beräkningen?",
+    "exemplu": "t.ex. jag behöver skjutdörrar till en sovrumsgarderob",
+    "trimite": "Skicka",
+    "multumim": "Meddelandet kom fram. Tack — jag läser dem.",
+    "preaScurt": "Skriv några ord innan du skickar."
   }
 }

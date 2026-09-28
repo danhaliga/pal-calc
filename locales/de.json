@@ -136,7 +136,12 @@
     "referinta": "Referenz",
     "data": "Datum",
     "niciPlata": "Noch keine Zahlung.",
-    "traduceri": "Übersetzungen"
+    "traduceri": "Übersetzungen",
+    "mesaje": "Nachrichten · {n} ungelesen",
+    "faraMesaje": "Noch hat niemand geschrieben.",
+    "cand": "Wann",
+    "dePeUnde": "Von wo",
+    "mesajText": "Nachricht"
   },
   "credit": {
     "titlu": "Mein Guthaben",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Du beginnst mit dem Standard-Küchenunterschrank und änderst alles, was du willst.",
     "limiteTitlu": "Was die Berechnung noch nicht erzeugt",
     "limita1": "<b>Schubladen in Eckschränken</b> — nimm dafür einen geraden Korpus daneben.",
-    "limita2": "<b>Mittelseite</b> für breite Korpusse; deshalb bekommen Böden über 800 mm eine Warnung.",
+    "limita2": "<b>Schubkästen in einem Korpus mit Mittelseite</b> — sie werden über die volle Korpusbreite gerechnet; setz die Schubkästen in einen Korpus ohne Mittelseite.",
     "limita3": "<b>Schiebetüren</b>, Rahmentüren mit Glas, Rollladen.",
     "limita4": "<b>Sockel, Füße, Arbeitsplatte</b> — werden getrennt vom Korpus gerechnet.",
     "limita5": "<b>Ausschnitte</b> für Spüle, Kochfeld, Steckdosen oder Gerätenischen.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Schubkästen: Höhen, Spiel, Platte",
     "grupDimensiuni": "Breite, Höhe, Tiefe, Bauart",
     "grupCantitati": "Wie viele Türen, Böden, Mittelseiten, Schubkästen"
+  },
+  "mesaj": {
+    "intrebare": "Was fehlt der Berechnung?",
+    "exemplu": "z. B. ich brauche Schiebetüren für einen Schlafzimmerschrank",
+    "trimite": "Senden",
+    "multumim": "Die Nachricht ist da. Danke — ich lese sie.",
+    "preaScurt": "Schreib ein paar Worte, bevor du sendest."
   }
 }

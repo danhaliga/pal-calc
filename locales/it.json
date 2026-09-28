@@ -136,7 +136,12 @@
     "referinta": "Riferimento",
     "data": "Data",
     "niciPlata": "Ancora nessun pagamento.",
-    "traduceri": "Traduzioni"
+    "traduceri": "Traduzioni",
+    "mesaje": "Messaggi · {n} non letti",
+    "faraMesaje": "Non ha ancora scritto nessuno.",
+    "cand": "Quando",
+    "dePeUnde": "Da dove",
+    "mesajText": "Messaggio"
   },
   "credit": {
     "titlu": "Il mio credito",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Parti dalla base standard da cucina e cambi tutto quello che vuoi.",
     "limiteTitlu": "Cosa il calcolo non sa ancora produrre",
     "limita1": "<b>Cassetti nei mobili angolari</b> — usa un mobile dritto a fianco.",
-    "limita2": "<b>Montante centrale</b> per mobili larghi; per questo i ripiani oltre 800 mm ricevono un avviso.",
+    "limita2": "<b>Cassetti in un mobile con montante</b> — vengono calcolati su tutta la larghezza del mobile; metti i cassetti in un mobile senza montante.",
     "limita3": "<b>Ante scorrevoli</b>, ante a telaio con vetro, serrandine.",
     "limita4": "<b>Zoccolo, piedini, piano di lavoro</b> — si calcolano a parte rispetto al mobile.",
     "limita5": "<b>Fori e intagli</b> per lavello, piano cottura, prese o vani per elettrodomestici.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Cassetti: altezze, gioco, pannello",
     "grupDimensiuni": "Larghezza, altezza, profondità, costruzione",
     "grupCantitati": "Quante ante, ripiani, montanti, cassetti"
+  },
+  "mesaj": {
+    "intrebare": "Che cosa manca al calcolo?",
+    "exemplu": "es. mi servono ante scorrevoli per un armadio da camera",
+    "trimite": "Invia",
+    "multumim": "Il messaggio è arrivato. Grazie — li leggo.",
+    "preaScurt": "Scrivi due parole prima di inviare."
   }
 }

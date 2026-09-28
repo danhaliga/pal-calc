@@ -136,7 +136,12 @@
     "referinta": "Referência",
     "data": "Data",
     "niciPlata": "Ainda não há pagamentos.",
-    "traduceri": "Traduções"
+    "traduceri": "Traduções",
+    "mesaje": "Mensagens · {n} por ler",
+    "faraMesaje": "Ainda ninguém escreveu.",
+    "cand": "Quando",
+    "dePeUnde": "De onde",
+    "mesajText": "Mensagem"
   },
   "credit": {
     "titlu": "O meu crédito",
@@ -231,7 +236,7 @@
     "corpGolDesc": "Partes do móvel baixo de cozinha padrão e mudas tudo o que quiseres.",
     "limiteTitlu": "O que o cálculo ainda não consegue gerar",
     "limita1": "<b>Gavetas em módulos de canto</b> — usa um módulo direito ao lado.",
-    "limita2": "<b>Montante central</b> para módulos largos; por isso as prateleiras acima de 800 mm recebem um aviso.",
+    "limita2": "<b>Gavetas num móvel com divisória</b> — são calculadas a toda a largura do móvel; ponha as gavetas num móvel sem divisória.",
     "limita3": "<b>Portas de correr</b>, portas de aro com vidro, estores.",
     "limita4": "<b>Rodapé, pés, bancada</b> — calculam-se à parte do módulo.",
     "limita5": "<b>Recortes</b> para lava-loiça, placa, tomadas ou nichos de eletrodomésticos.",
@@ -1130,5 +1135,12 @@
     "grupSertare": "Gavetas: alturas, folga, placa",
     "grupDimensiuni": "Largura, altura, profundidade, construção",
     "grupCantitati": "Quantas portas, prateleiras, divisórias, gavetas"
+  },
+  "mesaj": {
+    "intrebare": "O que falta ao cálculo?",
+    "exemplu": "ex.: preciso de portas de correr para um roupeiro de quarto",
+    "trimite": "Enviar",
+    "multumim": "A mensagem chegou. Obrigado — leio-as.",
+    "preaScurt": "Escreva umas palavras antes de enviar."
   }
 }

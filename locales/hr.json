@@ -136,7 +136,12 @@
     "referinta": "Referenca",
     "data": "Datum",
     "niciPlata": "Još nema uplata.",
-    "traduceri": "Prijevodi"
+    "traduceri": "Prijevodi",
+    "mesaje": "Poruke · {n} nepročitanih",
+    "faraMesaje": "Još nitko nije pisao.",
+    "cand": "Kada",
+    "dePeUnde": "Odakle",
+    "mesajText": "Poruka"
   },
   "credit": {
     "titlu": "Moj kredit",
@@ -237,7 +242,7 @@
     "corpGolDesc": "Kreneš od standardnog kuhinjskog donjeg elementa i promijeniš sve što želiš.",
     "limiteTitlu": "Što izračun još ne zna napraviti",
     "limita1": "<b>Ladice u kutnim korpusima</b> — uz njih koristi ravan korpus.",
-    "limita2": "<b>Srednja pregrada</b> za široke korpuse; zato police preko 800 mm dobivaju upozorenje.",
+    "limita2": "<b>Ladice u korpusu sa srednjom stranicom</b> — računaju se preko cijele širine korpusa; stavi ladice u korpus bez srednje stranice.",
     "limita3": "<b>Klizna vrata</b>, vrata s okvirom i staklom, rolete.",
     "limita4": "<b>Sokl, nogice, radna ploča</b> — računaju se odvojeno od korpusa.",
     "limita5": "<b>Izrezi</b> za sudoper, ploču za kuhanje, utičnice ili niše za uređaje.",
@@ -1141,5 +1146,12 @@
     "grupSertare": "Ladice: visine, zazor, ploča",
     "grupDimensiuni": "Širina, visina, dubina, konstrukcija",
     "grupCantitati": "Koliko vrata, polica, srednjih stranica, ladica"
+  },
+  "mesaj": {
+    "intrebare": "Što nedostaje proračunu?",
+    "exemplu": "npr. trebaju mi klizna vrata za spavaću sobu",
+    "trimite": "Pošalji",
+    "multumim": "Poruka je stigla. Hvala — čitam ih.",
+    "preaScurt": "Napiši par riječi prije slanja."
   }
 }

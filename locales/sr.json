@@ -136,7 +136,12 @@
     "referinta": "Referenca",
     "data": "Datum",
     "niciPlata": "Još nema uplata.",
-    "traduceri": "Prevodi"
+    "traduceri": "Prevodi",
+    "mesaje": "Poruke · {n} nepročitanih",
+    "faraMesaje": "Još niko nije pisao.",
+    "cand": "Kada",
+    "dePeUnde": "Odakle",
+    "mesajText": "Poruka"
   },
   "credit": {
     "titlu": "Moj kredit",
@@ -237,7 +242,7 @@
     "corpGolDesc": "Kreneš od standardnog kuhinjskog donjeg elementa i promeniš sve što želiš.",
     "limiteTitlu": "Šta proračun još ne ume da napravi",
     "limita1": "<b>Fioke u ugaonim korpusima</b> — koristi pored njih ravan korpus.",
-    "limita2": "<b>Srednja pregrada</b> za široke korpuse; zato police preko 800 mm dobijaju upozorenje.",
+    "limita2": "<b>Fioke u korpusu sa srednjom stranicom</b> — računaju se preko cele širine korpusa; stavi fioke u korpus bez srednje stranice.",
     "limita3": "<b>Klizna vrata</b>, vrata sa ramom i staklom, roletne.",
     "limita4": "<b>Sokla, nogice, radna ploča</b> — računaju se odvojeno od korpusa.",
     "limita5": "<b>Izrezi</b> za sudoperu, ploču za kuvanje, utičnice ili niše za uređaje.",
@@ -1141,5 +1146,12 @@
     "grupSertare": "Fioke: visine, zazor, ploča",
     "grupDimensiuni": "Širina, visina, dubina, konstrukcija",
     "grupCantitati": "Koliko vrata, polica, srednjih stranica, fioka"
+  },
+  "mesaj": {
+    "intrebare": "Šta nedostaje proračunu?",
+    "exemplu": "npr. trebaju mi klizna vrata za spavaću sobu",
+    "trimite": "Pošalji",
+    "multumim": "Poruka je stigla. Hvala — čitam ih.",
+    "preaScurt": "Napiši par reči pre slanja."
   }
 }
