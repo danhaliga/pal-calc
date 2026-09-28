@@ -178,6 +178,13 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
 });
 
 if (require.main === module) {
+  /* Verificările de configurare se fac ÎNAINTE de a deschide portul. Pe o
+     adresă publică, o pornire liniștită cu secretul de dezvoltare e mai rea
+     decât o eroare: nu se vede nicăieri. Vezi src/pornire.js. */
+  const pornire = require('./src/pornire');
+  const admini = db.prepare('SELECT email, password_hash FROM users WHERE is_admin = 1').all();
+  if (!pornire.aplica(pornire.verifica(process.env, admini))) process.exit(1);
+
   app.listen(PORT, () => {
     console.log(`PAL Calc pornit pe http://localhost:${PORT}  (plată: ${payments.driver()})`);
   });
