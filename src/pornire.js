@@ -34,6 +34,16 @@ function eLocal(url) {
   return /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)(:|\/|$)/i.test(u);
 }
 
+/* Un dosar e „în afara" aplicației dacă nu se află sub rădăcina ei. Se
+   compară pe bucăți de drum, nu pe text: „/app-date" NU e sub „/app", deși
+   textul unuia începe cu al celuilalt. */
+function eInAfara(dir, radacina) {
+  const buc = d => String(d || '').replace(/\\/g, '/').replace(/\/+$/, '').split('/');
+  const a = buc(radacina), b = buc(dir);
+  if (b.length < a.length) return true;
+  return !a.every((parte, i) => parte === b[i]);
+}
+
 function estePublic(env) {
   return env.NODE_ENV === 'production' || !eLocal(env.APP_URL);
 }
@@ -85,6 +95,28 @@ function verifica(env, admini) {
     }
   }
 
+  /* ---- unde stă baza de date ----
+
+     Pe un server adevărat, dosarul aplicației se înlocuiește la fiecare
+     urcare de versiune. O bază de date lăsată înăuntru pleacă odată cu el,
+     în tăcere: aplicația pornește frumos, doar că e goală. Nimeni nu leagă
+     paguba de urcare, fiindcă între ele au trecut zile.
+
+     De-aia în producție cerem un dosar dat pe față și aflat ÎN AFARA
+     aplicației. */
+  if (public_) {
+    const dir = String(env.DATA_DIR || '').trim();
+    if (!dir) {
+      opriri.push('DATA_DIR nu e pus. Baza de date ar rămâne în dosarul ' +
+                  'aplicației, iar acela se înlocuiește la fiecare urcare de ' +
+                  'versiune: ai pierde comenzile, corpurile și conturile, fără ' +
+                  'ca nimic să se plângă. Pune-l pe un disc care rămâne.');
+    } else if (!eInAfara(dir, env.APP_ROOT || process.cwd())) {
+      opriri.push('DATA_DIR („' + dir + '") e înăuntrul dosarului aplicației. ' +
+                  'Acolo baza de date se pierde la următoarea urcare de versiune.');
+    }
+  }
+
   /* ---- conturi de administrator cu parola din exemplu ---- */
   (admini || []).forEach(function (u) {
     const potrivire = DIN_EXEMPLU.ADMIN_PASSWORD.some(function (p) {
@@ -115,4 +147,4 @@ function aplica(rezultat, log) {
   return false;
 }
 
-module.exports = { verifica, aplica, estePublic, eLocal, LUNGIME_MINIMA_SECRET };
+module.exports = { verifica, aplica, estePublic, eLocal, eInAfara, LUNGIME_MINIMA_SECRET };

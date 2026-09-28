@@ -18,7 +18,11 @@ const BUN = {
   SESSION_SECRET: 'x'.repeat(LUNGIME_MINIMA_SECRET + 16),
   PAYMENT_DRIVER: 'stripe',
   STRIPE_SECRET_KEY: 'sk_live_xxx',
-  STRIPE_WEBHOOK_SECRET: 'whsec_xxx'
+  STRIPE_WEBHOOK_SECRET: 'whsec_xxx',
+  /* Pe un disc care rămâne între urcările de versiune, în afara dosarului
+     aplicației. Fără el, verificarea oprește pornirea — și bine face. */
+  DATA_DIR: '/var/date',
+  APP_ROOT: '/app'
 };
 const cu = over => verifica(Object.assign({}, BUN, over), []);
 
@@ -204,4 +208,84 @@ test('curățarea se face singură după teste', () => {
   assert.match(pkg.scripts.posttest || '', /curata-teste\.js --sterge/,
     'nimeni n-o să-și amintească s-o ruleze de mână — de-aia s-au adunat 435');
   assert.ok(pkg.scripts['curata-teste'], 'lipsește varianta care doar arată ce ar șterge');
+});
+
+/* =====================================================================
+   Unde stă baza de date
+
+   Pe un server adevărat, dosarul aplicației se înlocuiește la fiecare
+   urcare de versiune. O bază lăsată înăuntru pleacă odată cu el, în tăcere:
+   aplicația pornește frumos, doar că e goală, iar nimeni nu leagă paguba de
+   urcare fiindcă între ele au trecut zile.
+   ===================================================================== */
+
+const { eInAfara } = require('../src/pornire');
+
+test('un dosar care doar SEAMĂNĂ la text nu e înăuntru', () => {
+  /* Capcana: „/app-date" începe cu „/app" ca text, dar e alt dosar. O
+     comparație pe șiruri l-ar respinge pe nedrept. */
+  assert.equal(eInAfara('/app-date', '/app'), true);
+  assert.equal(eInAfara('/app/data', '/app'), false);
+  assert.equal(eInAfara('/app/a/b/date', '/app'), false);
+  assert.equal(eInAfara('/var/date', '/app'), true);
+  assert.equal(eInAfara('/app', '/app'), false, 'chiar rădăcina e tot înăuntru');
+  assert.equal(eInAfara('/app/', '/app'), false, 'bara din coadă nu schimbă nimic');
+});
+
+test('barele inverse se socotesc la fel cu cele drepte', () => {
+  /* Bara inversă e scrisă cu codul ei: heredoc-urile din Git Bash au
+     mâncat-o de trei ori în proiectul ăsta. Vezi și nota din regresii. */
+  const bs = String.fromCharCode(92);
+  assert.equal(eInAfara('C:' + bs + 'x' + bs + 'date', 'C:' + bs + 'x'), false);
+  assert.equal(eInAfara('C:' + bs + 'y' + bs + 'date', 'C:' + bs + 'x'), true);
+});
+
+test('în producție, baza de date nu are voie să stea în dosarul aplicației', () => {
+  const env = Object.assign({}, BUN, { APP_ROOT: '/app' });
+
+  /* `BUN` îl are pus, deci ca să probăm lipsa lui trebuie scos anume. */
+  const faraDir = Object.assign({}, env);
+  delete faraDir.DATA_DIR;
+  const fara = verifica(faraDir, []);
+  assert.ok(fara.opriri.some(o => /DATA_DIR/.test(o)), 'lipsa lui DATA_DIR trece nebăgată în seamă');
+
+  const inauntru = verifica(Object.assign({}, env, { DATA_DIR: '/app/data' }), []);
+  assert.ok(inauntru.opriri.some(o => /DATA_DIR/.test(o)), 'o bază în dosarul aplicației trece');
+
+  const bine = verifica(Object.assign({}, env, { DATA_DIR: '/var/date' }), []);
+  assert.deepEqual(bine.opriri, [], `se plânge degeaba: ${bine.opriri.join(' | ')}`);
+});
+
+test('local nu se cere nimic: baza stă lângă cod și e în regulă', () => {
+  const r = verifica({ APP_URL: 'http://localhost:3000', PAYMENT_DRIVER: 'fake' }, []);
+  assert.ok(!r.opriri.length);
+  assert.ok(!r.semne.some(s => /DATA_DIR/.test(s)), 'bate la cap degeaba pe calculatorul omului');
+});
+
+test('baza chiar ascultă de DATA_DIR', () => {
+  /* Fără asta, verificarea de mai sus ar păzi o setare pe care n-o citește
+     nimeni. */
+  const sursa = fs.readFileSync(path.join(__dirname, '..', 'src', 'db.js'), 'utf8');
+  assert.match(sursa, /process\.env\.DATA_DIR/);
+  assert.match(sursa, /path\.resolve\(process\.env\.DATA_DIR\)/);
+});
+
+test('fișierul pentru Render leagă discul de DATA_DIR', () => {
+  /* Dacă cele două nu arată spre același loc, discul rămâne gol și baza tot
+     în dosarul care se șterge. */
+  const y = fs.readFileSync(path.join(__dirname, '..', 'render.yaml'), 'utf8');
+  const mount = (y.match(/mountPath:\s*(\S+)/) || [])[1];
+  const dataDir = (y.match(/key:\s*DATA_DIR[\s\S]{0,60}?value:\s*(\S+)/) || [])[1];
+  assert.ok(mount, 'nu mai e declarat niciun disc');
+  assert.equal(dataDir, mount, `DATA_DIR (${dataDir}) nu arată spre discul montat (${mount})`);
+  assert.match(y, /healthCheckPath:\s*\/sanatate/);
+  assert.match(y, /generateValue:\s*true/, 'secretul de sesiune nu se mai generează singur');
+});
+
+test('ruta de sănătate atinge baza, nu spune doar „sunt viu"', () => {
+  const s = fs.readFileSync(path.join(__dirname, '..', 'server.js'), 'utf8');
+  const ruta = s.match(/app\.get\('\/sanatate'[\s\S]*?\n\}\);/);
+  assert.ok(ruta, 'nu mai există ruta de sănătate');
+  assert.match(ruta[0], /db\.prepare/, 'răspunde fără să verifice baza');
+  assert.match(ruta[0], /503/, 'nu spune nimănui când baza e căzută');
 });

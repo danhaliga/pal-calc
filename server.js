@@ -117,6 +117,18 @@ app.use((req, res, next) => {
   next();
 });
 
+/* Serviciul pe care stă aplicația întreabă din când în când dacă mai e vie.
+   Nu întoarce doar „da": atinge și baza de date, fiindcă o aplicație care
+   răspunde dar nu-și găsește baza e la fel de nefolositoare ca una căzută. */
+app.get('/sanatate', (req, res) => {
+  try {
+    db.prepare('SELECT 1').get();
+    res.json({ ok: true, baza: 'raspunde' });
+  } catch (e) {
+    res.status(503).json({ ok: false, baza: 'nu raspunde' });
+  }
+});
+
 app.use('/static', express.static(path.join(__dirname, 'public'), { maxAge: '1h' }));
 app.use('/shared', express.static(path.join(__dirname, 'shared'), { maxAge: '1h' }));
 

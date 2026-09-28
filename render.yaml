@@ -1,0 +1,65 @@
+# Cum se pune aplicația pe Render, scris o dată aici ca să nu fie de
+# completat prin formulare de fiecare dată.
+#
+# Render citește fișierul ăsta din depozit și face totul singur: instalează,
+# pornește, îi dă un disc bazei de date și generează secretul de sesiune.
+#
+# Ce rămâne de pus de mână, în panoul lor, după prima urcare:
+#   APP_URL                 adresa adevărata, https://cutmodul.com
+#   STRIPE_SECRET_KEY       din contul Stripe
+#   STRIPE_WEBHOOK_SECRET   din contul Stripe
+#   ADMIN_EMAIL / ADMIN_PASSWORD   doar dacă rulezi `npm run seed`
+#
+# Aplicația refuză înadins să pornească dacă vreuna lipsește — vezi
+# src/pornire.js. Nu e o defecțiune, e plasa de siguranță.
+
+services:
+  - type: web
+    name: palcalc
+    runtime: node
+    region: frankfurt          # cel mai aproape de România dintre ale lor
+    plan: starter              # cel gratuit adoarme si pierde discul
+
+    buildCommand: npm ci --omit=dev
+    startCommand: node server.js
+
+    # Aplicația răspunde aici și atinge și baza de date, nu spune doar „sunt
+    # viu". Una care răspunde dar nu-și găsește baza e la fel de nefolositoare
+    # ca una căzută.
+    healthCheckPath: /sanatate
+
+    # Discul care RĂMÂNE între urcările de versiune. Fără el, dosarul
+    # aplicației se înlocuiește la fiecare urcare și baza de date pleacă
+    # odată cu el: comenzi, corpuri, conturi, tot. În tăcere.
+    disk:
+      name: date
+      mountPath: /var/date
+      sizeGB: 1                # toată baza e un fișier; 1 GB ajunge ani buni
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      - key: DATA_DIR
+        value: /var/date       # exact unde e montat discul de mai sus
+
+      # Render îl face singur, lung și aleatoriu, și nu-l vede nimeni.
+      - key: SESSION_SECRET
+        generateValue: true
+
+      # `sync: false` = „îl pun eu de mână în panou". Render nu te lasă să
+      # urci aplicația până nu le completezi, ceea ce e bine: fără ele
+      # aplicația oricum n-ar porni.
+      - key: APP_URL
+        sync: false
+      - key: PAYMENT_DRIVER
+        value: stripe
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+
+      - key: PRICE_PER_CORP_CENTS
+        value: "500"
+      - key: CURRENCY
+        value: ron

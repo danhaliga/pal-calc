@@ -6,7 +6,16 @@ const path = require('path');
 const Database = require('better-sqlite3');
 
 const ROOT = path.join(__dirname, '..');
-const DATA_DIR = path.join(ROOT, 'data');
+/* Unde stă baza de date.
+   Pe calculatorul cuiva, lângă cod — e comod și nu strică nimic.
+   Pe un server adevărat, dosarul aplicației se ÎNLOCUIEȘTE la fiecare
+   urcare de versiune. Dacă baza stă acolo, pleacă odată cu el: comenzi,
+   corpuri, conturi, tot. De-aia `DATA_DIR` o poate duce pe un disc care
+   rămâne între urcări. Verificarea din src/pornire.js nu lasă aplicația să
+   pornească în producție fără el. */
+const DATA_DIR = process.env.DATA_DIR
+  ? path.resolve(process.env.DATA_DIR)
+  : path.join(ROOT, 'data');
 const MIGRATIONS_DIR = path.join(ROOT, 'db', 'migrations');
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
