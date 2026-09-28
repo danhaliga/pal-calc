@@ -424,6 +424,12 @@
         "nume": "Regał z drzwiami na dole",
         "descriere": "Otwarte półki u góry, dwoje drzwi na dole.",
         "corpNume": "Regał"
+      },
+      "piesa-simpla": {
+        "nume": "Pojedynczy element",
+        "rezumat": "Element",
+        "descriere": "L1 i L2 to krawędzie długie, l1 i l2 krótkie. Obrzeże na długich zabiera szerokość, na krótkich zabiera długość.",
+        "corpNume": "Element"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -571,7 +577,8 @@
     "sertarLaterala": "Szuflada – bok skrzynki",
     "sertarFataSpate": "Szuflada – przód/tył skrzynki",
     "sertarFund": "Szuflada – dno z HDF",
-    "montant": "Przegroda"
+    "montant": "Przegroda",
+    "piesaSimpla": "Element"
   },
   "directie": {
     "jos": "dół",
@@ -636,7 +643,9 @@
     "usiJosFaraPolita": "Drzwi tylko na dole, bez żadnej półki: wstaw co najmniej jedną, inaczej drzwi nie mają o co się domknąć u góry.",
     "usiPeCompartimenteFaraMontant": "Wybrałeś przegrody dla drzwi, ale korpus nie ma żadnej przegrody: drzwi zrobiono na całą szerokość.",
     "usaPreaIngusta": "W komorze {comp} nie ma miejsca na tyle drzwi: żadne tam nie wyszły.",
-    "sertareNuUmplu": "Fronty szuflad nie sięgają dołu: zostaje {gol} mm wolnego. Ustaw wysokość frontu na {front} mm, żeby wypełnić korpus."
+    "sertareNuUmplu": "Fronty szuflad nie sięgają dołu: zostaje {gol} mm wolnego. Ustaw wysokość frontu na {front} mm, żeby wypełnić korpus.",
+    "piesaPreaMica": "Bok poniżej 20 mm: sprawdź wymiary.",
+    "piesaLatimeMaiMare": "Szerokość ({lat}) jest większa niż długość ({lung}): przy rozkroju długość to bok dłuższy. Zamień je, jeśli słój ma iść inaczej."
   },
   "csv": {
     "corp": "Korpus",
@@ -701,7 +710,8 @@
     "coltL": "narożnik w L",
     "coltDiagonal": "narożnik skośny",
     "coltOrb": "narożnik ślepy",
-    "corpDeschis": "korpus otwarty"
+    "corpDeschis": "korpus otwarty",
+    "piesa": "pojedyncza płyta"
   },
   "comanda": {
     "inapoiComenzi": "Moje zlecenia",
@@ -1118,7 +1128,7 @@
     "taiereBlocata": "cięcie: odblokuje się po opłacie",
     "finit": "gotowy",
     "cantPeMuchii": "obrzeże: {muchii}",
-    "faraCant": "brak",
+    "faraCant": "bez obrzeża",
     "nBuc": {
       "one": "{n} szt",
       "few": "{n} szt",
@@ -1130,7 +1140,23 @@
     "inaltimeUsi": "Wysokość drzwi",
     "notaInaltimeUsi": "puste = drzwi na całą wysokość; wartość = drzwi tylko na dole, jak w regale",
     "hUsiToata": "cała wysokość",
-    "usiPeCompartimente": "Drzwi na przegrodach"
+    "usiPeCompartimente": "Drzwi na przegrodach",
+    "tipPiesa": "Pojedynczy element",
+    "legPiesa": "Element",
+    "bucati": "Sztuk",
+    "fibraPiesa": "Słój",
+    "fibraPeLungime": "wzdłuż",
+    "fibraPeLatime": "w poprzek",
+    "fibraOricum": "obojętnie",
+    "notaMuchiiPiesa": "L1 i L2 to krawędzie długie, l1 i l2 krótkie. Obrzeże na długich zabiera szerokość, na krótkich zabiera długość.",
+    "muchieLunga1": "Obrzeże L1 (długa)",
+    "muchieLunga2": "Obrzeże L2 (długa)",
+    "muchieScurta1": "Obrzeże l1 (krótka)",
+    "muchieScurta2": "Obrzeże l2 (krótka)",
+    "cantGrosOpt": "grube obrzeże",
+    "cantSubtireOpt": "cienkie obrzeże",
+    "lungimePiesa": "Długość (L)",
+    "latimePiesa": "Szerokość (l)"
   },
   "fata": {
     "px": "prawo",

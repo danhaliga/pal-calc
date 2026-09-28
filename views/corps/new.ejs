@@ -72,6 +72,21 @@
         </span>
       </button>
     </form>
+
+    <%# Piesa simplă stă lângă corpul gol, nu între modele: nu e un corp de
+        bucătărie, e un singur panou cu cotele și cantul lui. %>
+    <form method="post" action="<%= actiune %>" class="model-form">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <input type="hidden" name="model" value="piesa-simpla">
+      <button class="model-card gol" type="submit">
+        <span class="model-body">
+          <span class="model-nume"><%= t('modele.m.piesa-simpla.nume') %></span>
+          <span class="model-dim">1200 × 600 mm</span>
+          <span class="model-rez"><%= t('modele.m.piesa-simpla.rezumat') %></span>
+          <span class="model-desc"><%= t('modele.m.piesa-simpla.descriere') %></span>
+        </span>
+      </button>
+    </form>
   </div>
 </section>
 

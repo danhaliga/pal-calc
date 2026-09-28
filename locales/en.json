@@ -418,6 +418,12 @@
         "nume": "Bookcase with lower doors",
         "descriere": "Open shelves above, two doors across the bottom.",
         "corpNume": "Bookcase"
+      },
+      "piesa-simpla": {
+        "nume": "Single panel",
+        "rezumat": "Panel",
+        "descriere": "L1 and L2 are the long edges, l1 and l2 the short ones. Banding on the long edges takes off width, banding on the short ones takes off length.",
+        "corpNume": "Panel"
       }
     },
     "adaugaCorp": "Add a cabinet",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Drawer – box side",
     "sertarFataSpate": "Drawer – box front/back",
     "sertarFund": "Drawer – hardboard bottom",
-    "montant": "Partition"
+    "montant": "Partition",
+    "piesaSimpla": "Panel"
   },
   "directie": {
     "jos": "bottom",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Doors only at the bottom, with no shelf: add at least one, otherwise the door has nothing to close against at the top.",
     "usiPeCompartimenteFaraMontant": "You picked compartments for the doors, but the cabinet has no partition: the doors were made across the full width.",
     "usaPreaIngusta": "Compartment {comp} has no room for that many doors: none came out there.",
-    "sertareNuUmplu": "The drawer fronts do not reach the bottom: {gol} mm is left open below. Set the front height to {front} mm to fill the cabinet."
+    "sertareNuUmplu": "The drawer fronts do not reach the bottom: {gol} mm is left open below. Set the front height to {front} mm to fill the cabinet.",
+    "piesaPreaMica": "A side under 20 mm: check the sizes.",
+    "piesaLatimeMaiMare": "The width ({lat}) is larger than the length ({lung}): when cutting, the length is the long side. Swap them if the grain has to run the other way."
   },
   "csv": {
     "corp": "Cabinet",
@@ -694,7 +703,8 @@
     "coltL": "L-shaped corner",
     "coltDiagonal": "diagonal corner",
     "coltOrb": "blind corner",
-    "corpDeschis": "open cabinet"
+    "corpDeschis": "open cabinet",
+    "piesa": "a single panel"
   },
   "comanda": {
     "inapoiComenzi": "My orders",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "cut size: unlocked after payment",
     "finit": "finished",
     "cantPeMuchii": "edging: {muchii}",
-    "faraCant": "none",
+    "faraCant": "no banding",
     "nBuc": {
       "one": "{n} pc",
       "other": "{n} pcs"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Door height",
     "notaInaltimeUsi": "empty = doors over the full height; a value = doors only at the bottom, like a bookcase",
     "hUsiToata": "the full height",
-    "usiPeCompartimente": "Doors on compartments"
+    "usiPeCompartimente": "Doors on compartments",
+    "tipPiesa": "Single panel",
+    "legPiesa": "Panel",
+    "bucati": "Pieces",
+    "fibraPiesa": "Grain",
+    "fibraPeLungime": "along the length",
+    "fibraPeLatime": "across the width",
+    "fibraOricum": "either way",
+    "notaMuchiiPiesa": "L1 and L2 are the long edges, l1 and l2 the short ones. Banding on the long edges takes off width, banding on the short ones takes off length.",
+    "muchieLunga1": "Edge L1 (long)",
+    "muchieLunga2": "Edge L2 (long)",
+    "muchieScurta1": "Edge l1 (short)",
+    "muchieScurta2": "Edge l2 (short)",
+    "cantGrosOpt": "thick banding",
+    "cantSubtireOpt": "thin banding",
+    "lungimePiesa": "Length (L)",
+    "latimePiesa": "Width (l)"
   },
   "fata": {
     "px": "right",

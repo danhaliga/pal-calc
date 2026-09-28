@@ -424,6 +424,12 @@
         "nume": "Knižnica s dvierkami dole",
         "descriere": "Otvorené police hore, dve dvierka dole.",
         "corpNume": "Knižnica"
+      },
+      "piesa-simpla": {
+        "nume": "Samostatný diel (jediná doska)",
+        "rezumat": "Diel",
+        "descriere": "L1 a L2 sú dlhé hrany, l1 a l2 krátke. Hrana na dlhých uberie šírku, na krátkych uberie dĺžku.",
+        "corpNume": "Diel"
       }
     },
     "adaugaCorp": "Pridať korpus",
@@ -571,7 +577,8 @@
     "sertarLaterala": "Zásuvka – bok koša",
     "sertarFataSpate": "Zásuvka – predok/zadok koša",
     "sertarFund": "Zásuvka – dno z HDF",
-    "montant": "Priečka"
+    "montant": "Priečka",
+    "piesaSimpla": "Diel"
   },
   "directie": {
     "jos": "dole",
@@ -636,7 +643,9 @@
     "usiJosFaraPolita": "Dvierka len dole a ani jedna polica: daj tam aspoň jednu, inak nemajú dvierka hore o čo dosadnúť.",
     "usiPeCompartimenteFaraMontant": "Vybral si oddiely pre dvierka, ale korpus nemá žiadnu stojku: dvierka sa urobili cez celú šírku.",
     "usaPreaIngusta": "V oddiele {comp} nie je miesto pre toľko dvierok: žiadne tam nevzniklo.",
-    "sertareNuUmplu": "Čelá zásuviek nedosahujú dole: zostáva {gol} mm voľného miesta. Nastav výšku čela na {front} mm, aby sa korpus zaplnil."
+    "sertareNuUmplu": "Čelá zásuviek nedosahujú dole: zostáva {gol} mm voľného miesta. Nastav výšku čela na {front} mm, aby sa korpus zaplnil.",
+    "piesaPreaMica": "Strana pod 20 mm: skontroluj rozmery.",
+    "piesaLatimeMaiMare": "Šírka ({lat}) je väčšia než dĺžka ({lung}): pri náreze je dĺžka dlhšia strana. Prehoď ich, ak má kresba ísť inak."
   },
   "csv": {
     "corp": "Korpus",
@@ -701,7 +710,8 @@
     "coltL": "roh do L",
     "coltDiagonal": "šikmý roh",
     "coltOrb": "slepý roh",
-    "corpDeschis": "otvorený korpus"
+    "corpDeschis": "otvorený korpus",
+    "piesa": "jediná doska"
   },
   "comanda": {
     "inapoiComenzi": "Moje zákazky",
@@ -1118,7 +1128,7 @@
     "taiereBlocata": "rez: odomkne sa po zaplatení",
     "finit": "hotový",
     "cantPeMuchii": "hrana: {muchii}",
-    "faraCant": "žiadna",
+    "faraCant": "bez hrany",
     "nBuc": {
       "one": "{n} ks",
       "few": "{n} ks",
@@ -1130,7 +1140,23 @@
     "inaltimeUsi": "Výška dvierok",
     "notaInaltimeUsi": "prázdne = dvierka cez celú výšku; hodnota = dvierka len dole, ako pri knižnici",
     "hUsiToata": "celá výška",
-    "usiPeCompartimente": "Dvierka na oddieloch"
+    "usiPeCompartimente": "Dvierka na oddieloch",
+    "tipPiesa": "Samostatný diel (jediná doska)",
+    "legPiesa": "Diel",
+    "bucati": "Kusov",
+    "fibraPiesa": "Kresba",
+    "fibraPeLungime": "po dĺžke",
+    "fibraPeLatime": "po šírke",
+    "fibraOricum": "je jedno",
+    "notaMuchiiPiesa": "L1 a L2 sú dlhé hrany, l1 a l2 krátke. Hrana na dlhých uberie šírku, na krátkych uberie dĺžku.",
+    "muchieLunga1": "Hrana L1 (dlhá)",
+    "muchieLunga2": "Hrana L2 (dlhá)",
+    "muchieScurta1": "Hrana l1 (krátka)",
+    "muchieScurta2": "Hrana l2 (krátka)",
+    "cantGrosOpt": "hrubá hrana",
+    "cantSubtireOpt": "tenká hrana",
+    "lungimePiesa": "Dĺžka (L)",
+    "latimePiesa": "Šírka (l)"
   },
   "fata": {
     "px": "vpravo",

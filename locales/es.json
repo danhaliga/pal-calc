@@ -418,6 +418,12 @@
         "nume": "Librería con puertas abajo",
         "descriere": "Baldas abiertas arriba, dos puertas en la parte baja.",
         "corpNume": "Librería"
+      },
+      "piesa-simpla": {
+        "nume": "Pieza suelta (un solo tablero)",
+        "rezumat": "Pieza",
+        "descriere": "L1 y L2 son los cantos largos, l1 y l2 los cortos. El canto de los largos resta ancho, el de los cortos resta largo.",
+        "corpNume": "Pieza"
       }
     },
     "adaugaCorp": "Añadir un módulo",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Cajón – costado de la caja",
     "sertarFataSpate": "Cajón – frente/trasera de la caja",
     "sertarFund": "Cajón – fondo de tablero duro",
-    "montant": "Montante"
+    "montant": "Montante",
+    "piesaSimpla": "Pieza"
   },
   "directie": {
     "jos": "abajo",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Puertas solo abajo y sin ninguna balda: pon al menos una, si no la puerta no tiene contra qué cerrar arriba.",
     "usiPeCompartimenteFaraMontant": "Elegiste compartimentos para las puertas, pero el mueble no tiene ninguna división: las puertas se hicieron a todo el ancho.",
     "usaPreaIngusta": "El compartimento {comp} no tiene sitio para tantas puertas: allí no salió ninguna.",
-    "sertareNuUmplu": "Los frentes de cajón no llegan abajo: quedan {gol} mm libres. Pon {front} mm de altura de frente para llenar el mueble."
+    "sertareNuUmplu": "Los frentes de cajón no llegan abajo: quedan {gol} mm libres. Pon {front} mm de altura de frente para llenar el mueble.",
+    "piesaPreaMica": "Un lado por debajo de 20 mm: revisa las medidas.",
+    "piesaLatimeMaiMare": "El ancho ({lat}) es mayor que el largo ({lung}): al despiezar, el largo es el lado mayor. Cámbialos si la veta debe ir al revés."
   },
   "csv": {
     "corp": "Módulo",
@@ -694,7 +703,8 @@
     "coltL": "esquina en L",
     "coltDiagonal": "esquina diagonal",
     "coltOrb": "esquina ciega",
-    "corpDeschis": "módulo abierto"
+    "corpDeschis": "módulo abierto",
+    "piesa": "un solo tablero"
   },
   "comanda": {
     "inapoiComenzi": "Mis pedidos",
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Altura de puertas",
     "notaInaltimeUsi": "vacío = puertas en toda la altura; un valor = puertas solo abajo, como en una librería",
     "hUsiToata": "toda la altura",
-    "usiPeCompartimente": "Puertas en los compartimentos"
+    "usiPeCompartimente": "Puertas en los compartimentos",
+    "tipPiesa": "Pieza suelta (un solo tablero)",
+    "legPiesa": "Pieza",
+    "bucati": "Unidades",
+    "fibraPiesa": "Veta",
+    "fibraPeLungime": "a lo largo",
+    "fibraPeLatime": "a lo ancho",
+    "fibraOricum": "indiferente",
+    "notaMuchiiPiesa": "L1 y L2 son los cantos largos, l1 y l2 los cortos. El canto de los largos resta ancho, el de los cortos resta largo.",
+    "muchieLunga1": "Canto L1 (largo)",
+    "muchieLunga2": "Canto L2 (largo)",
+    "muchieScurta1": "Canto l1 (corto)",
+    "muchieScurta2": "Canto l2 (corto)",
+    "cantGrosOpt": "canto grueso",
+    "cantSubtireOpt": "canto fino",
+    "lungimePiesa": "Largo (L)",
+    "latimePiesa": "Ancho (l)"
   },
   "fata": {
     "px": "derecha",

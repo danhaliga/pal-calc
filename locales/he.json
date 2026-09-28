@@ -424,6 +424,12 @@
         "nume": "כוננית עם דלתות למטה",
         "descriere": "מדפים פתוחים למעלה, שתי דלתות למטה.",
         "corpNume": "כוננית"
+      },
+      "piesa-simpla": {
+        "nume": "חלק בודד (לוח אחד)",
+        "rezumat": "החלק",
+        "descriere": "L1 ו-L2 הן הצלעות הארוכות, l1 ו-l2 הקצרות. קנט על הארוכות מוריד מהרוחב, על הקצרות מוריד מהאורך.",
+        "corpNume": "חלק"
       }
     },
     "adaugaCorp": "הוספת גוף",
@@ -571,7 +577,8 @@
     "sertarLaterala": "מגירה — דופן ארגז",
     "sertarFataSpate": "מגירה — חזית/גב ארגז",
     "sertarFund": "מגירה — תחתית HDF",
-    "montant": "חוצץ"
+    "montant": "חוצץ",
+    "piesaSimpla": "חלק"
   },
   "directie": {
     "jos": "למטה",
@@ -636,7 +643,9 @@
     "usiJosFaraPolita": "דלתות רק למטה, בלי אף מדף: הוסף לפחות אחד, אחרת אין לדלת על מה להיסגר למעלה.",
     "usiPeCompartimenteFaraMontant": "בחרת תאים לדלתות, אבל בגוף אין שום חוצץ: הדלתות נעשו על כל הרוחב.",
     "usaPreaIngusta": "בתא {comp} אין מקום לכל כך הרבה דלתות: שם לא יצאה אף אחת.",
-    "sertareNuUmplu": "חזיתות המגירות לא מגיעות למטה: נשארים {gol} מ\"מ ריקים. קבע גובה חזית {front} מ\"מ כדי למלא את הגוף."
+    "sertareNuUmplu": "חזיתות המגירות לא מגיעות למטה: נשארים {gol} מ\"מ ריקים. קבע גובה חזית {front} מ\"מ כדי למלא את הגוף.",
+    "piesaPreaMica": "צלע מתחת ל-20 מ\"מ: בדוק את המידות.",
+    "piesaLatimeMaiMare": "הרוחב ({lat}) גדול מהאורך ({lung}): בניסור האורך הוא הצלע הארוכה. החלף ביניהם אם הסיב צריך ללכת אחרת."
   },
   "csv": {
     "corp": "גוף",
@@ -701,7 +710,8 @@
     "coltL": "פינה בצורת ר",
     "coltDiagonal": "פינה אלכסונית",
     "coltOrb": "פינה סמויה",
-    "corpDeschis": "גוף פתוח"
+    "corpDeschis": "גוף פתוח",
+    "piesa": "לוח אחד"
   },
   "comanda": {
     "inapoiComenzi": "ההזמנות שלי",
@@ -1118,7 +1128,7 @@
     "taiereBlocata": "מידות חיתוך: נפתחות לאחר התשלום",
     "finit": "סופי",
     "cantPeMuchii": "קנט: {muchii}",
-    "faraCant": "אין",
+    "faraCant": "בלי קנט",
     "nBuc": {
       "one": "יחידה אחת",
       "two": "שתי יחידות",
@@ -1130,7 +1140,23 @@
     "inaltimeUsi": "גובה הדלתות",
     "notaInaltimeUsi": "ריק = דלתות לכל הגובה; ערך = דלתות רק למטה, כמו בכוננית",
     "hUsiToata": "כל הגובה",
-    "usiPeCompartimente": "דלתות על התאים"
+    "usiPeCompartimente": "דלתות על התאים",
+    "tipPiesa": "חלק בודד (לוח אחד)",
+    "legPiesa": "החלק",
+    "bucati": "יחידות",
+    "fibraPiesa": "סיב",
+    "fibraPeLungime": "לאורך",
+    "fibraPeLatime": "לרוחב",
+    "fibraOricum": "לא משנה",
+    "notaMuchiiPiesa": "L1 ו-L2 הן הצלעות הארוכות, l1 ו-l2 הקצרות. קנט על הארוכות מוריד מהרוחב, על הקצרות מוריד מהאורך.",
+    "muchieLunga1": "קנט L1 (ארוכה)",
+    "muchieLunga2": "קנט L2 (ארוכה)",
+    "muchieScurta1": "קנט l1 (קצרה)",
+    "muchieScurta2": "קנט l2 (קצרה)",
+    "cantGrosOpt": "קנט עבה",
+    "cantSubtireOpt": "קנט דק",
+    "lungimePiesa": "אורך (L)",
+    "latimePiesa": "רוחב (l)"
   },
   "fata": {
     "px": "ימין",

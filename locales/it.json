@@ -418,6 +418,12 @@
         "nume": "Libreria con ante in basso",
         "descriere": "Ripiani a vista in alto, due ante in basso.",
         "corpNume": "Libreria"
+      },
+      "piesa-simpla": {
+        "nume": "Pezzo singolo (un solo pannello)",
+        "rezumat": "Il pezzo",
+        "descriere": "L1 e L2 sono i fili lunghi, l1 e l2 quelli corti. Il bordo dei lunghi toglie larghezza, quello dei corti toglie lunghezza.",
+        "corpNume": "Pezzo"
       }
     },
     "adaugaCorp": "Aggiungi un mobile",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Cassetto – fianco",
     "sertarFataSpate": "Cassetto – fronte/retro",
     "sertarFund": "Cassetto – fondo in fibra",
-    "montant": "Montante"
+    "montant": "Montante",
+    "piesaSimpla": "Pezzo"
   },
   "directie": {
     "jos": "basso",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Ante solo in basso e nessun ripiano: mettine almeno uno, altrimenti l’anta non ha su cosa chiudere in alto.",
     "usiPeCompartimenteFaraMontant": "Hai scelto dei vani per le ante, ma il mobile non ha nessun montante: le ante sono state fatte su tutta la larghezza.",
     "usaPreaIngusta": "Il vano {comp} non ha spazio per tante ante: lì non ne è uscita nessuna.",
-    "sertareNuUmplu": "I frontali dei cassetti non arrivano in basso: restano {gol} mm liberi. Metti {front} mm di altezza frontale per riempire il mobile."
+    "sertareNuUmplu": "I frontali dei cassetti non arrivano in basso: restano {gol} mm liberi. Metti {front} mm di altezza frontale per riempire il mobile.",
+    "piesaPreaMica": "Un lato sotto i 20 mm: controlla le misure.",
+    "piesaLatimeMaiMare": "La larghezza ({lat}) supera la lunghezza ({lung}): al taglio la lunghezza è il lato lungo. Invertile se la venatura deve andare diversamente."
   },
   "csv": {
     "corp": "Mobile",
@@ -694,7 +703,8 @@
     "coltL": "angolo a L",
     "coltDiagonal": "angolo diagonale",
     "coltOrb": "angolo cieco",
-    "corpDeschis": "mobile aperto"
+    "corpDeschis": "mobile aperto",
+    "piesa": "un solo pannello"
   },
   "comanda": {
     "inapoiComenzi": "I miei ordini",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "taglio: si sblocca dopo il pagamento",
     "finit": "finito",
     "cantPeMuchii": "bordo: {muchii}",
-    "faraCant": "nessuno",
+    "faraCant": "senza bordo",
     "nBuc": {
       "one": "{n} pz",
       "other": "{n} pz"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Altezza ante",
     "notaInaltimeUsi": "vuoto = ante su tutta l’altezza; un valore = ante solo in basso, come in una libreria",
     "hUsiToata": "tutta l’altezza",
-    "usiPeCompartimente": "Ante sui vani"
+    "usiPeCompartimente": "Ante sui vani",
+    "tipPiesa": "Pezzo singolo (un solo pannello)",
+    "legPiesa": "Il pezzo",
+    "bucati": "Pezzi",
+    "fibraPiesa": "Venatura",
+    "fibraPeLungime": "in lunghezza",
+    "fibraPeLatime": "in larghezza",
+    "fibraOricum": "indifferente",
+    "notaMuchiiPiesa": "L1 e L2 sono i fili lunghi, l1 e l2 quelli corti. Il bordo dei lunghi toglie larghezza, quello dei corti toglie lunghezza.",
+    "muchieLunga1": "Bordo L1 (lungo)",
+    "muchieLunga2": "Bordo L2 (lungo)",
+    "muchieScurta1": "Bordo l1 (corto)",
+    "muchieScurta2": "Bordo l2 (corto)",
+    "cantGrosOpt": "bordo spesso",
+    "cantSubtireOpt": "bordo sottile",
+    "lungimePiesa": "Lunghezza (L)",
+    "latimePiesa": "Larghezza (l)"
   },
   "fata": {
     "px": "destra",

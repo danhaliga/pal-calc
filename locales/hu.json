@@ -418,6 +418,12 @@
         "nume": "Könyvespolc alsó ajtókkal",
         "descriere": "Nyitott polcok fent, két ajtó alul.",
         "corpNume": "Könyvespolc"
+      },
+      "piesa-simpla": {
+        "nume": "Önálló elem (egyetlen lap)",
+        "rezumat": "Az elem",
+        "descriere": "L1 és L2 a hosszú élek, l1 és l2 a rövidek. A hosszú éleken az élzáró a szélességből vesz el, a rövideken a hosszból.",
+        "corpNume": "Elem"
       }
     },
     "adaugaCorp": "Korpusz hozzáadása",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Fiók – oldal",
     "sertarFataSpate": "Fiók – elő/hátlap",
     "sertarFund": "Fiók – farostlemez fenék",
-    "montant": "Közfal"
+    "montant": "Közfal",
+    "piesaSimpla": "Elem"
   },
   "directie": {
     "jos": "alul",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Ajtó csak alul, polc nélkül: tegyél be legalább egyet, különben az ajtónak nincs mihez zárnia felül.",
     "usiPeCompartimenteFaraMontant": "Rekeszeket választottál az ajtóknak, de a korpuszban nincs közfal: az ajtók a teljes szélességre készültek.",
     "usaPreaIngusta": "A(z) {comp}. rekeszbe nem fér ennyi ajtó: ott egy sem lett.",
-    "sertareNuUmplu": "A fiókelőlapok nem érnek le: {gol} mm marad szabadon alul. Állítsd az előlapmagasságot {front} mm-re, hogy kitöltse a korpuszt."
+    "sertareNuUmplu": "A fiókelőlapok nem érnek le: {gol} mm marad szabadon alul. Állítsd az előlapmagasságot {front} mm-re, hogy kitöltse a korpuszt.",
+    "piesaPreaMica": "Egyik oldal 20 mm alatt: nézd meg a méreteket.",
+    "piesaLatimeMaiMare": "A szélesség ({lat}) nagyobb a hossznál ({lung}): szabáskor a hossz a hosszabbik oldal. Cseréld meg őket, ha az erezetnek máshogy kell futnia."
   },
   "csv": {
     "corp": "Korpusz",
@@ -694,7 +703,8 @@
     "coltL": "L alakú sarok",
     "coltDiagonal": "átlós sarok",
     "coltOrb": "vak sarok",
-    "corpDeschis": "nyitott korpusz"
+    "corpDeschis": "nyitott korpusz",
+    "piesa": "egyetlen lap"
   },
   "comanda": {
     "inapoiComenzi": "A megrendeléseim",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "szabás: fizetés után oldódik fel",
     "finit": "kész",
     "cantPeMuchii": "élzáró: {muchii}",
-    "faraCant": "nincs",
+    "faraCant": "nincs élzáró",
     "nBuc": {
       "one": "{n} db",
       "other": "{n} db"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Ajtómagasság",
     "notaInaltimeUsi": "üres = ajtók a teljes magasságban; érték = ajtók csak alul, mint a könyvespolcnál",
     "hUsiToata": "a teljes magasság",
-    "usiPeCompartimente": "Ajtók a rekeszeken"
+    "usiPeCompartimente": "Ajtók a rekeszeken",
+    "tipPiesa": "Önálló elem (egyetlen lap)",
+    "legPiesa": "Az elem",
+    "bucati": "Darab",
+    "fibraPiesa": "Erezet",
+    "fibraPeLungime": "hosszában",
+    "fibraPeLatime": "széltében",
+    "fibraOricum": "mindegy",
+    "notaMuchiiPiesa": "L1 és L2 a hosszú élek, l1 és l2 a rövidek. A hosszú éleken az élzáró a szélességből vesz el, a rövideken a hosszból.",
+    "muchieLunga1": "Élzáró L1 (hosszú)",
+    "muchieLunga2": "Élzáró L2 (hosszú)",
+    "muchieScurta1": "Élzáró l1 (rövid)",
+    "muchieScurta2": "Élzáró l2 (rövid)",
+    "cantGrosOpt": "vastag élzáró",
+    "cantSubtireOpt": "vékony élzáró",
+    "lungimePiesa": "Hossz (L)",
+    "latimePiesa": "Szélesség (l)"
   },
   "fata": {
     "px": "jobb",

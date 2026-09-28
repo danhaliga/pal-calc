@@ -418,6 +418,12 @@
         "nume": "Bücherregal mit Türen unten",
         "descriere": "Offene Böden oben, zwei Türen unten.",
         "corpNume": "Bücherregal"
+      },
+      "piesa-simpla": {
+        "nume": "Einzelteil (nur eine Platte)",
+        "rezumat": "Das Teil",
+        "descriere": "L1 und L2 sind die langen Schmalflächen, l1 und l2 die kurzen. Die Kante der langen nimmt Breite weg, die der kurzen nimmt Länge weg.",
+        "corpNume": "Teil"
       }
     },
     "adaugaCorp": "Einen Korpus hinzufügen",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Schublade – Kastenseite",
     "sertarFataSpate": "Schublade – Kasten vorn/hinten",
     "sertarFund": "Schublade – Boden aus Hartfaser",
-    "montant": "Mittelseite"
+    "montant": "Mittelseite",
+    "piesaSimpla": "Teil"
   },
   "directie": {
     "jos": "unten",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Türen nur unten, ohne einen einzigen Boden: setz mindestens einen ein, sonst hat die Tür oben nichts zum Anschlagen.",
     "usiPeCompartimenteFaraMontant": "Du hast Fächer für die Türen gewählt, aber der Korpus hat keine Mittelseite: die Türen wurden über die volle Breite gemacht.",
     "usaPreaIngusta": "Im Fach {comp} ist für so viele Türen kein Platz: dort ist keine entstanden.",
-    "sertareNuUmplu": "Die Schubkastenfronten reichen nicht bis unten: {gol} mm bleiben offen. Setz die Fronthöhe auf {front} mm, damit der Korpus voll wird."
+    "sertareNuUmplu": "Die Schubkastenfronten reichen nicht bis unten: {gol} mm bleiben offen. Setz die Fronthöhe auf {front} mm, damit der Korpus voll wird.",
+    "piesaPreaMica": "Eine Seite unter 20 mm: prüf die Maße.",
+    "piesaLatimeMaiMare": "Die Breite ({lat}) ist größer als die Länge ({lung}): beim Zuschnitt ist die Länge die lange Seite. Tausch sie, wenn die Faser anders laufen soll."
   },
   "csv": {
     "corp": "Korpus",
@@ -694,7 +703,8 @@
     "coltL": "L-Ecke",
     "coltDiagonal": "Diagonalecke",
     "coltOrb": "blinde Ecke",
-    "corpDeschis": "offener Korpus"
+    "corpDeschis": "offener Korpus",
+    "piesa": "eine einzelne Platte"
   },
   "comanda": {
     "inapoiComenzi": "Meine Aufträge",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "Zuschnitt: wird nach der Zahlung freigeschaltet",
     "finit": "fertig",
     "cantPeMuchii": "Kante: {muchii}",
-    "faraCant": "keine",
+    "faraCant": "ohne Kante",
     "nBuc": {
       "one": "{n} Stk",
       "other": "{n} Stk"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Türhöhe",
     "notaInaltimeUsi": "leer = Türen über die volle Höhe; ein Wert = Türen nur unten, wie beim Bücherregal",
     "hUsiToata": "die volle Höhe",
-    "usiPeCompartimente": "Türen auf den Fächern"
+    "usiPeCompartimente": "Türen auf den Fächern",
+    "tipPiesa": "Einzelteil (nur eine Platte)",
+    "legPiesa": "Das Teil",
+    "bucati": "Stück",
+    "fibraPiesa": "Faser",
+    "fibraPeLungime": "in der Länge",
+    "fibraPeLatime": "in der Breite",
+    "fibraOricum": "egal",
+    "notaMuchiiPiesa": "L1 und L2 sind die langen Schmalflächen, l1 und l2 die kurzen. Die Kante der langen nimmt Breite weg, die der kurzen nimmt Länge weg.",
+    "muchieLunga1": "Kante L1 (lang)",
+    "muchieLunga2": "Kante L2 (lang)",
+    "muchieScurta1": "Kante l1 (kurz)",
+    "muchieScurta2": "Kante l2 (kurz)",
+    "cantGrosOpt": "dicke Kante",
+    "cantSubtireOpt": "dünne Kante",
+    "lungimePiesa": "Länge (L)",
+    "latimePiesa": "Breite (l)"
   },
   "fata": {
     "px": "rechts",

@@ -418,6 +418,12 @@
         "nume": "Tủ sách có cánh phía dưới",
         "descriere": "Kệ mở ở trên, hai cánh ở dưới.",
         "corpNume": "Tủ sách"
+      },
+      "piesa-simpla": {
+        "nume": "Chi tiết rời (một tấm)",
+        "rezumat": "Chi tiết",
+        "descriere": "L1 và L2 là cạnh dài, l1 và l2 là cạnh ngắn. Chỉ dán cạnh dài trừ vào chiều rộng, cạnh ngắn trừ vào chiều dài.",
+        "corpNume": "Chi tiết"
       }
     },
     "adaugaCorp": "Thêm một thùng tủ",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Ngăn kéo – hông hộc",
     "sertarFataSpate": "Ngăn kéo – mặt trước/sau hộc",
     "sertarFund": "Ngăn kéo – đáy HDF",
-    "montant": "Vách ngăn"
+    "montant": "Vách ngăn",
+    "piesaSimpla": "Chi tiết"
   },
   "directie": {
     "jos": "dưới",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Chỉ có cánh ở dưới mà không có kệ nào: thêm ít nhất một cái, nếu không cánh không có chỗ tì khi đóng ở phía trên.",
     "usiPeCompartimenteFaraMontant": "Bạn đã chọn ngăn cho cánh, nhưng tủ không có vách giữa nào: cánh được làm suốt chiều rộng.",
     "usaPreaIngusta": "Ngăn {comp} không đủ chỗ cho ngần ấy cánh: ở đó không ra cánh nào.",
-    "sertareNuUmplu": "Mặt ngăn kéo không xuống tới đáy: còn trống {gol} mm ở dưới. Đặt chiều cao mặt là {front} mm để lấp đầy tủ."
+    "sertareNuUmplu": "Mặt ngăn kéo không xuống tới đáy: còn trống {gol} mm ở dưới. Đặt chiều cao mặt là {front} mm để lấp đầy tủ.",
+    "piesaPreaMica": "Một cạnh dưới 20 mm: kiểm tra lại kích thước.",
+    "piesaLatimeMaiMare": "Chiều rộng ({lat}) lớn hơn chiều dài ({lung}): khi cắt, chiều dài là cạnh dài. Đổi chỗ chúng nếu vân phải chạy theo hướng khác."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -694,7 +703,8 @@
     "coltL": "góc chữ L",
     "coltDiagonal": "góc chéo",
     "coltOrb": "góc khuất",
-    "corpDeschis": "thùng tủ để mở"
+    "corpDeschis": "thùng tủ để mở",
+    "piesa": "một tấm duy nhất"
   },
   "comanda": {
     "inapoiComenzi": "Đơn hàng của tôi",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "kích thước cắt: mở khóa sau khi thanh toán",
     "finit": "hoàn thiện",
     "cantPeMuchii": "chỉ cạnh: {muchii}",
-    "faraCant": "không có",
+    "faraCant": "không dán chỉ",
     "nBuc": {
       "one": "{n} cái",
       "other": "{n} cái"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Chiều cao cánh",
     "notaInaltimeUsi": "trống = cánh suốt chiều cao; có giá trị = cánh chỉ ở dưới, như tủ sách",
     "hUsiToata": "suốt chiều cao",
-    "usiPeCompartimente": "Cánh theo ngăn"
+    "usiPeCompartimente": "Cánh theo ngăn",
+    "tipPiesa": "Chi tiết rời (một tấm)",
+    "legPiesa": "Chi tiết",
+    "bucati": "Số lượng",
+    "fibraPiesa": "Vân",
+    "fibraPeLungime": "theo chiều dài",
+    "fibraPeLatime": "theo chiều rộng",
+    "fibraOricum": "sao cũng được",
+    "notaMuchiiPiesa": "L1 và L2 là cạnh dài, l1 và l2 là cạnh ngắn. Chỉ dán cạnh dài trừ vào chiều rộng, cạnh ngắn trừ vào chiều dài.",
+    "muchieLunga1": "Chỉ L1 (dài)",
+    "muchieLunga2": "Chỉ L2 (dài)",
+    "muchieScurta1": "Chỉ l1 (ngắn)",
+    "muchieScurta2": "Chỉ l2 (ngắn)",
+    "cantGrosOpt": "chỉ dày",
+    "cantSubtireOpt": "chỉ mỏng",
+    "lungimePiesa": "Chiều dài (L)",
+    "latimePiesa": "Chiều rộng (l)"
   },
   "fata": {
     "px": "phải",

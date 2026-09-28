@@ -418,6 +418,12 @@
         "nume": "Altı kapaklı kitaplık",
         "descriere": "Üstte açık raflar, altta iki kapak.",
         "corpNume": "Kitaplık"
+      },
+      "piesa-simpla": {
+        "nume": "Tek parça (yalnız bir levha)",
+        "rezumat": "Parça",
+        "descriere": "L1 ve L2 uzun kenarlar, l1 ve l2 kısa olanlar. Uzun kenarlardaki bant genişlikten, kısa olanlardaki uzunluktan götürür.",
+        "corpNume": "Parça"
       }
     },
     "adaugaCorp": "Bir gövde ekle",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Çekmece – kutu yanı",
     "sertarFataSpate": "Çekmece – kutu ön/arka",
     "sertarFund": "Çekmece – HDF taban",
-    "montant": "Orta bölme"
+    "montant": "Orta bölme",
+    "piesaSimpla": "Parça"
   },
   "directie": {
     "jos": "alt",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Sadece altta kapak, hiç raf yok: en az bir tane koy, yoksa kapak üstte hiçbir şeye dayanmaz.",
     "usiPeCompartimenteFaraMontant": "Kapaklar için bölme seçtin ama gövdede ara dikme yok: kapaklar tüm genişliğe yapıldı.",
     "usaPreaIngusta": "{comp}. bölmede bu kadar kapağa yer yok: orada hiç kapak çıkmadı.",
-    "sertareNuUmplu": "Çekmece kapakları alta kadar inmiyor: altta {gol} mm boş kalıyor. Gövdeyi doldurmak için kapak yüksekliğini {front} mm yap."
+    "sertareNuUmplu": "Çekmece kapakları alta kadar inmiyor: altta {gol} mm boş kalıyor. Gövdeyi doldurmak için kapak yüksekliğini {front} mm yap.",
+    "piesaPreaMica": "Bir kenar 20 mm altında: ölçüleri gözden geçir.",
+    "piesaLatimeMaiMare": "Genişlik ({lat}) uzunluktan ({lung}) büyük: kesimde uzunluk uzun kenardır. Damar başka yöne gidecekse ikisini değiştir."
   },
   "csv": {
     "corp": "Gövde",
@@ -694,7 +703,8 @@
     "coltL": "L köşe",
     "coltDiagonal": "diyagonal köşe",
     "coltOrb": "kör köşe",
-    "corpDeschis": "açık gövde"
+    "corpDeschis": "açık gövde",
+    "piesa": "tek levha"
   },
   "comanda": {
     "inapoiComenzi": "Siparişlerim",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "kesim: ödemeden sonra açılır",
     "finit": "bitmiş",
     "cantPeMuchii": "bant: {muchii}",
-    "faraCant": "yok",
+    "faraCant": "bantsız",
     "nBuc": {
       "one": "{n} adet",
       "other": "{n} adet"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Kapak yüksekliği",
     "notaInaltimeUsi": "boş = tam boy kapak; bir değer = sadece altta kapak, kitaplıktaki gibi",
     "hUsiToata": "tam boy",
-    "usiPeCompartimente": "Kapaklı bölmeler"
+    "usiPeCompartimente": "Kapaklı bölmeler",
+    "tipPiesa": "Tek parça (yalnız bir levha)",
+    "legPiesa": "Parça",
+    "bucati": "Adet",
+    "fibraPiesa": "Damar",
+    "fibraPeLungime": "uzunluğuna",
+    "fibraPeLatime": "enine",
+    "fibraOricum": "fark etmez",
+    "notaMuchiiPiesa": "L1 ve L2 uzun kenarlar, l1 ve l2 kısa olanlar. Uzun kenarlardaki bant genişlikten, kısa olanlardaki uzunluktan götürür.",
+    "muchieLunga1": "Bant L1 (uzun)",
+    "muchieLunga2": "Bant L2 (uzun)",
+    "muchieScurta1": "Bant l1 (kısa)",
+    "muchieScurta2": "Bant l2 (kısa)",
+    "cantGrosOpt": "kalın bant",
+    "cantSubtireOpt": "ince bant",
+    "lungimePiesa": "Uzunluk (L)",
+    "latimePiesa": "Genişlik (l)"
   },
   "fata": {
     "px": "sağ",

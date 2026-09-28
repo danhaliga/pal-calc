@@ -424,6 +424,12 @@
         "nume": "Bibliotecă cu uși jos",
         "descriere": "Polițe deschise sus, două uși pe partea de jos.",
         "corpNume": "Bibliotecă"
+      },
+      "piesa-simpla": {
+        "nume": "Piesă simplă (un singur panou)",
+        "rezumat": "Piesa",
+        "descriere": "L1 și L2 sunt muchiile lungi, l1 și l2 cele scurte. Cantul de pe muchiile lungi scade lățimea, cel de pe cele scurte scade lungimea.",
+        "corpNume": "Piesă"
       }
     },
     "adaugaCorp": "Adaugă un corp",
@@ -571,7 +577,8 @@
     "sertarLaterala": "Sertar – laterală cutie",
     "sertarFataSpate": "Sertar – față/spate cutie",
     "sertarFund": "Sertar – fund PFL",
-    "montant": "Montant"
+    "montant": "Montant",
+    "piesaSimpla": "Piesă"
   },
   "directie": {
     "jos": "jos",
@@ -636,7 +643,9 @@
     "usiJosFaraPolita": "Uși doar jos, fără nicio poliță: pune cel puțin una, altfel canatul n-are de ce se închide sus.",
     "usiPeCompartimenteFaraMontant": "Ai ales compartimente pentru uși, dar corpul n-are niciun montant: ușile s-au pus pe toată lățimea.",
     "usaPreaIngusta": "Compartimentul {comp} nu are loc pentru atâtea uși: acolo n-a ieșit niciuna.",
-    "sertareNuUmplu": "Fronturile de sertar nu ajung la fund: rămâne un gol de {gol} mm jos. Pune {front} mm la înălțimea frontului ca să umple corpul."
+    "sertareNuUmplu": "Fronturile de sertar nu ajung la fund: rămâne un gol de {gol} mm jos. Pune {front} mm la înălțimea frontului ca să umple corpul.",
+    "piesaPreaMica": "Piesă sub 20 mm pe o latură: verifică cotele.",
+    "piesaLatimeMaiMare": "Lățimea ({lat}) e mai mare decât lungimea ({lung}): la croire lungimea e latura mare. Schimbă-le între ele dacă fibra trebuie să meargă altfel."
   },
   "csv": {
     "corp": "Corp",
@@ -701,7 +710,8 @@
     "coltL": "colț în L",
     "coltDiagonal": "colț diagonal",
     "coltOrb": "colț orb",
-    "corpDeschis": "corp deschis"
+    "corpDeschis": "corp deschis",
+    "piesa": "un singur panou"
   },
   "comanda": {
     "inapoiComenzi": "Comenzile mele",
@@ -1118,7 +1128,7 @@
     "taiereBlocata": "tăiere: se deblochează după plată",
     "finit": "finit",
     "cantPeMuchii": "cant: {muchii}",
-    "faraCant": "fără",
+    "faraCant": "fără cant",
     "nBuc": {
       "one": "{n} buc",
       "few": "{n} buc",
@@ -1130,7 +1140,23 @@
     "inaltimeUsi": "Înălțime uși",
     "notaInaltimeUsi": "gol = uși pe toată înălțimea; o valoare = uși doar jos, ca la bibliotecă",
     "hUsiToata": "toată înălțimea",
-    "usiPeCompartimente": "Uși pe compartimentele"
+    "usiPeCompartimente": "Uși pe compartimentele",
+    "tipPiesa": "Piesă simplă (un singur panou)",
+    "legPiesa": "Piesa",
+    "bucati": "Bucăți",
+    "fibraPiesa": "Fibra",
+    "fibraPeLungime": "pe lungime",
+    "fibraPeLatime": "pe lățime",
+    "fibraOricum": "oricum",
+    "notaMuchiiPiesa": "L1 și L2 sunt muchiile lungi, l1 și l2 cele scurte. Cantul de pe muchiile lungi scade lățimea, cel de pe cele scurte scade lungimea.",
+    "muchieLunga1": "Cant L1 (lungă)",
+    "muchieLunga2": "Cant L2 (lungă)",
+    "muchieScurta1": "Cant l1 (scurtă)",
+    "muchieScurta2": "Cant l2 (scurtă)",
+    "cantGrosOpt": "cant gros",
+    "cantSubtireOpt": "cant subțire",
+    "lungimePiesa": "Lungime (L)",
+    "latimePiesa": "Lățime (l)"
   },
   "fata": {
     "px": "dreapta",

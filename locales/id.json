@@ -418,6 +418,12 @@
         "nume": "Rak buku dengan pintu bawah",
         "descriere": "Rak terbuka di atas, dua pintu di bawah.",
         "corpNume": "Rak buku"
+      },
+      "piesa-simpla": {
+        "nume": "Bagian tunggal (satu papan)",
+        "rezumat": "Bagian",
+        "descriere": "L1 dan L2 adalah sisi panjang, l1 dan l2 sisi pendek. Edging di sisi panjang mengurangi lebar, di sisi pendek mengurangi panjang.",
+        "corpNume": "Bagian"
       }
     },
     "adaugaCorp": "Tambahkan sebuah boks",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Laci – sisi kotak",
     "sertarFataSpate": "Laci – muka/belakang kotak",
     "sertarFund": "Laci – dasar HDF",
-    "montant": "Sekat"
+    "montant": "Sekat",
+    "piesaSimpla": "Bagian"
   },
   "directie": {
     "jos": "bawah",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Pintu hanya di bawah, tanpa satu rak pun: pasang setidaknya satu, kalau tidak pintu tak punya tumpuan di atas.",
     "usiPeCompartimenteFaraMontant": "Kamu memilih sekat untuk pintunya, tapi kabinet tidak punya sekat sama sekali: pintu dibuat selebar kabinet.",
     "usaPreaIngusta": "Ruang {comp} tidak muat sebanyak itu pintu: di sana tidak ada satu pun yang jadi.",
-    "sertareNuUmplu": "Muka laci tidak sampai ke bawah: tersisa {gol} mm kosong. Setel tinggi muka ke {front} mm agar kabinet terisi penuh."
+    "sertareNuUmplu": "Muka laci tidak sampai ke bawah: tersisa {gol} mm kosong. Setel tinggi muka ke {front} mm agar kabinet terisi penuh.",
+    "piesaPreaMica": "Ada sisi di bawah 20 mm: periksa ukurannya.",
+    "piesaLatimeMaiMare": "Lebar ({lat}) lebih besar dari panjang ({lung}): saat memotong, panjang adalah sisi terpanjang. Tukar keduanya kalau serat harus berjalan lain."
   },
   "csv": {
     "corp": "Boks",
@@ -694,7 +703,8 @@
     "coltL": "sudut L",
     "coltDiagonal": "sudut diagonal",
     "coltOrb": "sudut buntu",
-    "corpDeschis": "boks terbuka"
+    "corpDeschis": "boks terbuka",
+    "piesa": "satu papan saja"
   },
   "comanda": {
     "inapoiComenzi": "Pesanan saya",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "ukuran potong: terbuka setelah pembayaran",
     "finit": "jadi",
     "cantPeMuchii": "tepi: {muchii}",
-    "faraCant": "tidak ada",
+    "faraCant": "tanpa edging",
     "nBuc": {
       "one": "{n} pcs",
       "other": "{n} pcs"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Tinggi pintu",
     "notaInaltimeUsi": "kosong = pintu setinggi kabinet; ada nilai = pintu hanya di bawah, seperti rak buku",
     "hUsiToata": "setinggi kabinet",
-    "usiPeCompartimente": "Pintu pada sekat"
+    "usiPeCompartimente": "Pintu pada sekat",
+    "tipPiesa": "Bagian tunggal (satu papan)",
+    "legPiesa": "Bagian",
+    "bucati": "Jumlah",
+    "fibraPiesa": "Serat",
+    "fibraPeLungime": "searah panjang",
+    "fibraPeLatime": "searah lebar",
+    "fibraOricum": "bebas",
+    "notaMuchiiPiesa": "L1 dan L2 adalah sisi panjang, l1 dan l2 sisi pendek. Edging di sisi panjang mengurangi lebar, di sisi pendek mengurangi panjang.",
+    "muchieLunga1": "Edging L1 (panjang)",
+    "muchieLunga2": "Edging L2 (panjang)",
+    "muchieScurta1": "Edging l1 (pendek)",
+    "muchieScurta2": "Edging l2 (pendek)",
+    "cantGrosOpt": "edging tebal",
+    "cantSubtireOpt": "edging tipis",
+    "lungimePiesa": "Panjang (L)",
+    "latimePiesa": "Lebar (l)"
   },
   "fata": {
     "px": "kanan",

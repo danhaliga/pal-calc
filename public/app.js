@@ -13,7 +13,8 @@ var params = DATA.params;
 var paid = !!DATA.paid;
 
 var fields = ['nume','tip','W','H','D','W2','orb','constr','t','cg','cs','spate','tp','nUsi','montaj','balama',
-              'rm','ri','rinc','hUsi','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg'];
+              'rm','ri','rinc','hUsi','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg',
+              'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 
 /* Compartimentele care primesc uși. Bife, nu un câmp de scris: numerele se
    schimbă cu fiecare montant adăugat, iar o listă scrisă de mână rămâne în
@@ -54,18 +55,34 @@ function aplicaTip() {
   var tip = params.tip || 'drept';
   var colt = tip === 'colt-L' || tip === 'colt-diagonal';
   var atipic = tip === 'atipic';
+  var piesa = tip === 'piesa';
   var arata = function (id, da) { var el = $(id); if (el) el.classList.toggle('hidden', !da); };
+
+  /* O piesă răzleață n-are uși, polițe, sertare, montanți sau spate. Ce nu
+     are ce căuta acolo se ascunde, nu se lasă gri: un formular plin de
+     câmpuri fără rost e mai rău decât unul scurt. */
+  arata('fsPiesa', piesa);
+  arata('fsUsi', !piesa);
+  arata('fsMontanti', !piesa);
+  arata('fsPolite', !piesa);
+  arata('fsSertare', !piesa);
+  arata('randSpate', !piesa);
 
   arata('wrapW2', colt);
   arata('wrapOrb', tip === 'colt-orb');
-  arata('wrapConstr', !colt && !atipic);
+  arata('wrapConstr', !colt && !atipic && !piesa);
   arata('conturBox', atipic);
   var wrapW = $('W') ? $('W').closest('label') : null;
   var wrapH = $('H') ? $('H').closest('label') : null;
   if (wrapW) wrapW.classList.toggle('hidden', atipic);
   if (wrapH) wrapH.classList.toggle('hidden', atipic);
+  /* La o piesă, adâncimea e grosimea plăcii: vine din PAL, nu se scrie. */
+  var wrapD = $('D') ? $('D').closest('label') : null;
+  if (wrapD) wrapD.classList.toggle('hidden', piesa);
 
-  $('labelW').textContent = T(colt ? 'editor.laturaPerete1' : 'editor.latime');
+  $('labelW').textContent = T(piesa ? 'editor.lungimePiesa'
+    : colt ? 'editor.laturaPerete1' : 'editor.latime');
+  $('labelH').textContent = T(piesa ? 'editor.latimePiesa' : 'editor.inaltime');
   $('labelD').textContent = T((colt || atipic) ? 'editor.adancimeBrate' : 'editor.adancime');
   if (atipic) $('labelD').textContent = T('editor.adancimeCorp');
 

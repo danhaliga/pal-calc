@@ -418,6 +418,12 @@
         "nume": "Bokhylla med dörrar nedtill",
         "descriere": "Öppna hyllplan upptill, två dörrar nedtill.",
         "corpNume": "Bokhylla"
+      },
+      "piesa-simpla": {
+        "nume": "Lös detalj (en enda skiva)",
+        "rezumat": "Detaljen",
+        "descriere": "L1 och L2 är de långa kanterna, l1 och l2 de korta. List på de långa tar bort bredd, list på de korta tar bort längd.",
+        "corpNume": "Detalj"
       }
     },
     "adaugaCorp": "Lägg till en stomme",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Låda – sida",
     "sertarFataSpate": "Låda – fram/bak",
     "sertarFund": "Låda – botten av board",
-    "montant": "Mellanvägg"
+    "montant": "Mellanvägg",
+    "piesaSimpla": "Detalj"
   },
   "directie": {
     "jos": "ner",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Dörrar bara nedtill, utan ett enda hyllplan: sätt in minst ett, annars har dörren inget att slå emot upptill.",
     "usiPeCompartimenteFaraMontant": "Du valde fack för dörrarna, men stommen har inget mellanstycke: dörrarna gjordes över hela bredden.",
     "usaPreaIngusta": "Fack {comp} har inte plats för så många dörrar: där blev det ingen.",
-    "sertareNuUmplu": "Lådfronterna når inte ner: {gol} mm står öppet nedtill. Sätt fronthöjden till {front} mm för att fylla stommen."
+    "sertareNuUmplu": "Lådfronterna når inte ner: {gol} mm står öppet nedtill. Sätt fronthöjden till {front} mm för att fylla stommen.",
+    "piesaPreaMica": "En sida under 20 mm: kontrollera måtten.",
+    "piesaLatimeMaiMare": "Bredden ({lat}) är större än längden ({lung}): vid kapning är längden den långa sidan. Byt dem om fibern ska gå åt andra hållet."
   },
   "csv": {
     "corp": "Stomme",
@@ -694,7 +703,8 @@
     "coltL": "L-hörn",
     "coltDiagonal": "diagonalt hörn",
     "coltOrb": "blint hörn",
-    "corpDeschis": "öppen stomme"
+    "corpDeschis": "öppen stomme",
+    "piesa": "en enda skiva"
   },
   "comanda": {
     "inapoiComenzi": "Mina ordrar",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "kapmått: låses upp efter betalning",
     "finit": "färdig",
     "cantPeMuchii": "kantlist: {muchii}",
-    "faraCant": "ingen",
+    "faraCant": "ingen kantlist",
     "nBuc": {
       "one": "{n} st",
       "other": "{n} st"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Dörrhöjd",
     "notaInaltimeUsi": "tom = dörrar över hela höjden; ett värde = dörrar bara nedtill, som i en bokhylla",
     "hUsiToata": "hela höjden",
-    "usiPeCompartimente": "Dörrar på facken"
+    "usiPeCompartimente": "Dörrar på facken",
+    "tipPiesa": "Lös detalj (en enda skiva)",
+    "legPiesa": "Detaljen",
+    "bucati": "Antal",
+    "fibraPiesa": "Fiber",
+    "fibraPeLungime": "på längden",
+    "fibraPeLatime": "på bredden",
+    "fibraOricum": "spelar ingen roll",
+    "notaMuchiiPiesa": "L1 och L2 är de långa kanterna, l1 och l2 de korta. List på de långa tar bort bredd, list på de korta tar bort längd.",
+    "muchieLunga1": "Kant L1 (lång)",
+    "muchieLunga2": "Kant L2 (lång)",
+    "muchieScurta1": "Kant l1 (kort)",
+    "muchieScurta2": "Kant l2 (kort)",
+    "cantGrosOpt": "tjock list",
+    "cantSubtireOpt": "tunn list",
+    "lungimePiesa": "Längd (L)",
+    "latimePiesa": "Bredd (l)"
   },
   "fata": {
     "px": "höger",

@@ -59,9 +59,10 @@
             <option value="colt-L"><%= t('editor.tipColtL') %></option>
             <option value="colt-diagonal"><%= t('editor.tipColtDiagonal') %></option>
             <option value="atipic"><%= t('editor.tipAtipic') %></option>
+            <option value="piesa"><%= t('editor.tipPiesa') %></option>
           </select></label>
-          <label><span id="labelW"><%= t('editor.latime') %></span><input id="W" type="number" min="100" max="3000" step="1"></label>
-          <label><%= t('editor.inaltime') %><input id="H" type="number" min="100" max="3000" step="1"></label>
+          <label><span id="labelW"><%= t('editor.latime') %></span><input id="W" type="number" min="20" max="3000" step="1"></label>
+          <label><span id="labelH"><%= t('editor.inaltime') %></span><input id="H" type="number" min="20" max="3000" step="1"></label>
           <label><span id="labelD"><%= t('editor.adancime') %></span><input id="D" type="number" min="100" max="3000" step="1"></label>
           <label id="wrapW2"><%= t('editor.laturaPerete2') %><input id="W2" type="number" min="100" max="3000" step="1"></label>
           <label id="wrapOrb"><%= t('editor.latimeOarba') %><input id="orb" type="number" min="0" max="2000" step="1"></label>
@@ -73,14 +74,43 @@
         <p class="legend hidden" id="notaColt"></p>
       </fieldset>
 
-      <fieldset>
+      <%# Piesa simplă: un singur panou, cu cantul lui pe fiecare muchie.
+          Se vede doar la tipul „piesă"; restul fieldset-urilor se ascund. %>
+      <fieldset id="fsPiesa" class="hidden">
+        <legend><%= t('editor.legPiesa') %></legend>
+        <div class="f3">
+          <label><%= t('editor.bucati') %><input id="pBuc" type="number" min="1" max="999" step="1"></label>
+          <label><%= t('editor.fibraPiesa') %><select id="pFibra">
+            <option value="L"><%= t('editor.fibraPeLungime') %></option>
+            <option value="l"><%= t('editor.fibraPeLatime') %></option>
+            <option value="-"><%= t('editor.fibraOricum') %></option>
+          </select></label>
+        </div>
+        <p class="legend"><%= t('editor.notaMuchiiPiesa') %></p>
+        <div class="f3">
+          <%# Cheile sunt scrise pe litere, nu „L1"/„l1": două chei care
+              se deosebesc doar prin literă mare/mică sunt o capcană. %>
+          <% [['pcL1','muchieLunga1'], ['pcL2','muchieLunga2'],
+              ['pcl1','muchieScurta1'], ['pcl2','muchieScurta2']].forEach(function (par) {
+               var id = par[0]; %>
+            <label><%= t('editor.' + par[1]) %><select id="<%= id %>">
+              <option value="-"><%= t('editor.faraCant') %></option>
+              <option value="g"><%= t('editor.cantGrosOpt') %></option>
+              <option value="s"><%= t('editor.cantSubtireOpt') %></option>
+            </select></label>
+          <% }); %>
+        </div>
+      </fieldset>
+
+      <fieldset id="fsMaterial">
         <legend><%= t('editor.legMaterial') %></legend>
         <div class="f3">
           <label><%= t('editor.palMm') %><select id="t"><option>16</option><option>18</option><option>25</option></select></label>
           <label><%= t('editor.cantGros') %><input id="cg" type="number" step="0.1" min="0" max="5"></label>
           <label><%= t('editor.cantSubtire') %><input id="cs" type="number" step="0.1" min="0" max="5"></label>
         </div>
-        <div class="f" style="margin-top:8px">
+        <%# Spatele e al corpului, nu al unei piese răzlețe. %>
+        <div class="f" style="margin-top:8px" id="randSpate">
           <label><%= t('editor.spate') %><select id="spate">
             <option value="aplicat"><%= t('editor.spatePflAplicat') %></option>
             <option value="nut"><%= t('editor.spatePflNut') %></option>
@@ -90,7 +120,7 @@
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset id="fsUsi">
         <legend><%= t('editor.legUsi') %></legend>
         <div class="f3">
           <label><%= t('editor.numarUsi') %><select id="nUsi">
@@ -122,14 +152,14 @@
         <p class="legend"><%= t('editor.notaInaltimeUsi') %></p>
       </fieldset>
 
-      <fieldset>
+      <fieldset id="fsMontanti">
         <legend><%= t('editor.legMontanti') %></legend>
         <div class="f3">
           <label><%= t('editor.numarMontanti') %><input id="nDsp" type="number" min="0" max="6" step="1"></label>
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset id="fsPolite">
         <legend><%= t('editor.legPolite') %></legend>
         <div class="f3">
           <label><%= t('editor.numarPolite') %><input id="nPol" type="number" min="0" max="20" step="1"></label>
@@ -138,7 +168,7 @@
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset id="fsSertare">
         <legend><%= t('editor.legSertare') %></legend>
         <div class="f3">
           <label><%= t('editor.numarSertare') %><input id="nSer" type="number" min="0" max="12" step="1"></label>

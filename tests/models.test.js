@@ -8,6 +8,11 @@ const { MODELS, CATEGORIES, paramsFor, sketch, rezumat, byId, modele, categorii,
   require('../shared/models');
 const { calc, paramsSchema } = require('../shared/calc');
 
+/* Modelele ascunse nu sunt corpuri: „piesa simplă" e un singur panou, cu
+   cardul ei în pagină. Testele care cer laterale, fronturi și schiță de corp
+   se uită doar la corpuri; piesa își are proba ei, mai jos. */
+const CORPURI = MODELS.filter(m => !m.ascuns);
+
 test('identificatorii sunt unici, categoriile există', () => {
   const ids = new Set();
   const cats = new Set(CATEGORIES.map(c => c.id));
@@ -39,7 +44,7 @@ test('fiecare model trece validarea parametrilor', () => {
 });
 
 test('fiecare model produce piese cu cote pozitive', () => {
-  for (const m of MODELS) {
+  for (const m of CORPURI) {
     const { P } = calc(paramsFor(m.id));
     assert.ok(P.length >= 3, `${m.id}: prea puține piese`);
     for (const p of P) {
@@ -97,7 +102,7 @@ test('corpurile atipice au schița conturului lor', () => {
 
 test('corpurile de colț au schiță în plan, cu forma reală', () => {
   const forme = { 'colt-L': 6, 'colt-diagonal': 5 };
-  for (const m of MODELS) {
+  for (const m of CORPURI) {
     const p = paramsFor(m.id);
     if (p.tip === 'drept' || p.tip === 'atipic') continue;
     const svg = sketch(p);
@@ -136,4 +141,31 @@ test('rezumatul descrie conținutul corpului', () => {
 test('un id inexistent nu dă parametri', () => {
   assert.equal(byId('nu-exista'), null);
   assert.equal(paramsFor('nu-exista'), null);
+});
+
+/* ---------------- piesa simplă ---------------- */
+
+test('piesa simplă e un singur panou, nu un corp', () => {
+  const p = paramsFor('piesa-simpla');
+  assert.equal(p.tip, 'piesa');
+
+  const { P, warn } = calc(p);
+  assert.equal(P.length, 1, 'o piesă simplă n-are decât o piesă');
+  assert.ok(P[0].L > 0 && P[0].l > 0 && P[0].TL > 0 && P[0].Tl > 0);
+  assert.deepEqual(warn, [], `se plânge degeaba: ${warn.join(' | ')}`);
+});
+
+test('piesa simplă nu apare în grila pe categorii', () => {
+  /* Are cardul ei lângă corpul gol; între corpurile de bucătărie ar deruta. */
+  assert.ok(!modele().some(m => m.id === 'piesa-simpla'));
+  assert.ok(byId('piesa-simpla'), 'dar trebuie să existe, ca să se poată crea');
+});
+
+test('schița piesei arată muchiile cantuite, nu un corp cu gol', () => {
+  const svg = sketch(Object.assign(paramsFor('piesa-simpla'),
+    { pcL1: 'g', pcL2: '-', pcl1: 's', pcl2: '-' }));
+  assert.match(svg, /^<svg /);
+  assert.ok(!/sk-gol|sk-front/.test(svg), 'desenează gol interior sau fronturi');
+  assert.equal((svg.match(/sk-cant gros/g) || []).length, 1);
+  assert.equal((svg.match(/sk-cant subtire/g) || []).length, 1);
 });

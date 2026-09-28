@@ -424,6 +424,12 @@
         "nume": "Polica za knjige s vratima dolje",
         "descriere": "Otvorene police gore, dvoja vrata dolje.",
         "corpNume": "Polica za knjige"
+      },
+      "piesa-simpla": {
+        "nume": "Pojedinačni element",
+        "rezumat": "Element",
+        "descriere": "L1 i L2 su dugi rubovi, l1 i l2 kratki. Kant na dugima oduzima širinu, na kratkima oduzima duljinu.",
+        "corpNume": "Element"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -571,7 +577,8 @@
     "sertarLaterala": "Ladica – bok kutije",
     "sertarFataSpate": "Ladica – prednja/stražnja strana kutije",
     "sertarFund": "Ladica – dno od HDF-a",
-    "montant": "Pregrada"
+    "montant": "Pregrada",
+    "piesaSimpla": "Element"
   },
   "directie": {
     "jos": "dolje",
@@ -636,7 +643,9 @@
     "usiJosFaraPolita": "Vrata samo dolje, bez ijedne police: stavi barem jednu, inače vrata gore nemaju na što nasloniti.",
     "usiPeCompartimenteFaraMontant": "Odabrao si pregrade za vrata, ali korpus nema nijednu srednju stranicu: vrata su napravljena cijelom širinom.",
     "usaPreaIngusta": "U pregradi {comp} nema mjesta za toliko vrata: ondje nije izašlo nijedno.",
-    "sertareNuUmplu": "Prednjice ladica ne dosežu do dna: ostaje {gol} mm praznog prostora dolje. Stavi {front} mm za visinu prednjice da ispuni korpus."
+    "sertareNuUmplu": "Prednjice ladica ne dosežu do dna: ostaje {gol} mm praznog prostora dolje. Stavi {front} mm za visinu prednjice da ispuni korpus.",
+    "piesaPreaMica": "Strana ispod 20 mm: provjeri mjere.",
+    "piesaLatimeMaiMare": "Širina ({lat}) je veća od duljine ({lung}): pri krojenju je duljina dulja strana. Zamijeni ih ako tekstura treba ići drugačije."
   },
   "csv": {
     "corp": "Korpus",
@@ -701,7 +710,8 @@
     "coltL": "kut u L",
     "coltDiagonal": "dijagonalni kut",
     "coltOrb": "slijepi kut",
-    "corpDeschis": "otvoren korpus"
+    "corpDeschis": "otvoren korpus",
+    "piesa": "jedna ploča"
   },
   "comanda": {
     "inapoiComenzi": "Moji nalozi",
@@ -1118,7 +1128,7 @@
     "taiereBlocata": "rez: otključava se nakon plaćanja",
     "finit": "gotovo",
     "cantPeMuchii": "kanta: {muchii}",
-    "faraCant": "nema",
+    "faraCant": "bez kanta",
     "nBuc": {
       "one": "{n} kom",
       "few": "{n} kom",
@@ -1130,7 +1140,23 @@
     "inaltimeUsi": "Visina vrata",
     "notaInaltimeUsi": "prazno = vrata cijelom visinom; vrijednost = vrata samo dolje, kao kod police za knjige",
     "hUsiToata": "cijela visina",
-    "usiPeCompartimente": "Vrata na pregradama"
+    "usiPeCompartimente": "Vrata na pregradama",
+    "tipPiesa": "Pojedinačni element",
+    "legPiesa": "Element",
+    "bucati": "Komada",
+    "fibraPiesa": "Tekstura",
+    "fibraPeLungime": "po duljini",
+    "fibraPeLatime": "po širini",
+    "fibraOricum": "svejedno",
+    "notaMuchiiPiesa": "L1 i L2 su dugi rubovi, l1 i l2 kratki. Kant na dugima oduzima širinu, na kratkima oduzima duljinu.",
+    "muchieLunga1": "Kant L1 (dugi)",
+    "muchieLunga2": "Kant L2 (dugi)",
+    "muchieScurta1": "Kant l1 (kratki)",
+    "muchieScurta2": "Kant l2 (kratki)",
+    "cantGrosOpt": "debeli kant",
+    "cantSubtireOpt": "tanki kant",
+    "lungimePiesa": "Duljina (L)",
+    "latimePiesa": "Širina (l)"
   },
   "fata": {
     "px": "desno",

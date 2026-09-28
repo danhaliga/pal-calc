@@ -418,6 +418,12 @@
         "nume": "Boekenkast met deuren onderin",
         "descriere": "Open legplanken boven, twee deuren onderin.",
         "corpNume": "Boekenkast"
+      },
+      "piesa-simpla": {
+        "nume": "Los paneel",
+        "rezumat": "Het paneel",
+        "descriere": "L1 en L2 zijn de lange zijden, l1 en l2 de korte. Band op de lange zijden neemt breedte weg, band op de korte neemt lengte weg.",
+        "corpNume": "Paneel"
       }
     },
     "adaugaCorp": "Een kast toevoegen",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Lade – zijkant",
     "sertarFataSpate": "Lade – voor/achter",
     "sertarFund": "Lade – bodem van hardboard",
-    "montant": "Middenwand"
+    "montant": "Middenwand",
+    "piesaSimpla": "Paneel"
   },
   "directie": {
     "jos": "onder",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Deuren alleen onderin, zonder enige legplank: zet er minstens één in, anders heeft de deur bovenaan niets om tegenaan te sluiten.",
     "usiPeCompartimenteFaraMontant": "Je koos vakken voor de deuren, maar de kast heeft geen tussenschot: de deuren zijn over de volle breedte gemaakt.",
     "usaPreaIngusta": "In vak {comp} is geen plaats voor zoveel deuren: daar is er geen enkele uitgekomen.",
-    "sertareNuUmplu": "De ladefronten reiken niet tot onderin: er blijft {gol} mm open. Zet de fronthoogte op {front} mm om de kast te vullen."
+    "sertareNuUmplu": "De ladefronten reiken niet tot onderin: er blijft {gol} mm open. Zet de fronthoogte op {front} mm om de kast te vullen.",
+    "piesaPreaMica": "Een zijde onder 20 mm: controleer de maten.",
+    "piesaLatimeMaiMare": "De breedte ({lat}) is groter dan de lengte ({lung}): bij het zagen is de lengte de lange zijde. Wissel ze om als de nerf anders moet lopen."
   },
   "csv": {
     "corp": "Kast",
@@ -694,7 +703,8 @@
     "coltL": "L-hoek",
     "coltDiagonal": "diagonale hoek",
     "coltOrb": "blinde hoek",
-    "corpDeschis": "open kast"
+    "corpDeschis": "open kast",
+    "piesa": "één enkel paneel"
   },
   "comanda": {
     "inapoiComenzi": "Mijn opdrachten",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "zaagmaat: wordt na betaling ontgrendeld",
     "finit": "eindmaat",
     "cantPeMuchii": "kantenband: {muchii}",
-    "faraCant": "geen",
+    "faraCant": "geen band",
     "nBuc": {
       "one": "{n} st",
       "other": "{n} st"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Deurhoogte",
     "notaInaltimeUsi": "leeg = deuren over de volle hoogte; een waarde = deuren alleen onderin, zoals bij een boekenkast",
     "hUsiToata": "de volle hoogte",
-    "usiPeCompartimente": "Deuren op de vakken"
+    "usiPeCompartimente": "Deuren op de vakken",
+    "tipPiesa": "Los paneel",
+    "legPiesa": "Het paneel",
+    "bucati": "Stuks",
+    "fibraPiesa": "Nerf",
+    "fibraPeLungime": "in de lengte",
+    "fibraPeLatime": "in de breedte",
+    "fibraOricum": "maakt niet uit",
+    "notaMuchiiPiesa": "L1 en L2 zijn de lange zijden, l1 en l2 de korte. Band op de lange zijden neemt breedte weg, band op de korte neemt lengte weg.",
+    "muchieLunga1": "Band L1 (lang)",
+    "muchieLunga2": "Band L2 (lang)",
+    "muchieScurta1": "Band l1 (kort)",
+    "muchieScurta2": "Band l2 (kort)",
+    "cantGrosOpt": "dikke band",
+    "cantSubtireOpt": "dunne band",
+    "lungimePiesa": "Lengte (L)",
+    "latimePiesa": "Breedte (l)"
   },
   "fata": {
     "px": "rechts",

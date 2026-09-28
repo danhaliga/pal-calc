@@ -194,6 +194,9 @@ svg.sk .sk-corp{fill:#c9ab7d;stroke:#5c4a2e;stroke-width:14}
 svg.sk .sk-gol{fill:#a98f68;stroke:none}
 svg.sk .sk-polita{stroke:#8d7a5c;stroke-width:10;stroke-dasharray:26 18}
 svg.sk .sk-front{fill:#e0c799;stroke:#5c4a2e;stroke-width:10}
+/* muchiile cantuite ale unei piese simple: aceleași culori ca în 3D */
+svg.sk .sk-cant.gros{stroke:#d48a1e}
+svg.sk .sk-cant.subtire{stroke:#f1cf93}
 svg.sk .sk-maner{stroke:#43372a;stroke-width:14;stroke-linecap:round}
 /* schița în plan, pentru corpurile de colț */
 svg.sk .sk-usa{stroke:#b3261e;stroke-width:26;stroke-linecap:round}

@@ -418,6 +418,12 @@
         "nume": "Bibliothèque à portes basses",
         "descriere": "Tablettes ouvertes en haut, deux portes en bas.",
         "corpNume": "Bibliothèque"
+      },
+      "piesa-simpla": {
+        "nume": "Pièce seule (un seul panneau)",
+        "rezumat": "La pièce",
+        "descriere": "L1 et L2 sont les rives longues, l1 et l2 les courtes. Le chant des longues enlève de la largeur, celui des courtes enlève de la longueur.",
+        "corpNume": "Pièce"
       }
     },
     "adaugaCorp": "Ajouter un caisson",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Tiroir – côté de caisse",
     "sertarFataSpate": "Tiroir – avant/arrière de caisse",
     "sertarFund": "Tiroir – fond en panneau dur",
-    "montant": "Montant"
+    "montant": "Montant",
+    "piesaSimpla": "Pièce"
   },
   "directie": {
     "jos": "bas",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Portes en bas seulement, sans aucune tablette : mettez-en au moins une, sinon la porte n’a rien contre quoi fermer en haut.",
     "usiPeCompartimenteFaraMontant": "Vous avez choisi des compartiments pour les portes, mais le caisson n’a aucun montant : les portes ont été faites sur toute la largeur.",
     "usaPreaIngusta": "Le compartiment {comp} n’a pas la place pour autant de portes : aucune n’en est sortie.",
-    "sertareNuUmplu": "Les faces de tiroir n’atteignent pas le fond : il reste {gol} mm de vide en bas. Mettez {front} mm de hauteur de face pour remplir le caisson."
+    "sertareNuUmplu": "Les faces de tiroir n’atteignent pas le fond : il reste {gol} mm de vide en bas. Mettez {front} mm de hauteur de face pour remplir le caisson.",
+    "piesaPreaMica": "Un côté sous 20 mm : vérifiez les cotes.",
+    "piesaLatimeMaiMare": "La largeur ({lat}) dépasse la longueur ({lung}) : au débit, la longueur est le grand côté. Inversez-les si le fil doit aller autrement."
   },
   "csv": {
     "corp": "Caisson",
@@ -694,7 +703,8 @@
     "coltL": "angle en L",
     "coltDiagonal": "angle en diagonale",
     "coltOrb": "angle borgne",
-    "corpDeschis": "caisson ouvert"
+    "corpDeschis": "caisson ouvert",
+    "piesa": "un seul panneau"
   },
   "comanda": {
     "inapoiComenzi": "Mes commandes",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "coupe : se débloque après le paiement",
     "finit": "fini",
     "cantPeMuchii": "chant : {muchii}",
-    "faraCant": "aucun",
+    "faraCant": "sans chant",
     "nBuc": {
       "one": "{n} pce",
       "other": "{n} pces"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Hauteur des portes",
     "notaInaltimeUsi": "vide = portes sur toute la hauteur ; une valeur = portes en bas seulement, comme une bibliothèque",
     "hUsiToata": "toute la hauteur",
-    "usiPeCompartimente": "Portes sur les compartiments"
+    "usiPeCompartimente": "Portes sur les compartiments",
+    "tipPiesa": "Pièce seule (un seul panneau)",
+    "legPiesa": "La pièce",
+    "bucati": "Quantité",
+    "fibraPiesa": "Fil",
+    "fibraPeLungime": "dans la longueur",
+    "fibraPeLatime": "dans la largeur",
+    "fibraOricum": "peu importe",
+    "notaMuchiiPiesa": "L1 et L2 sont les rives longues, l1 et l2 les courtes. Le chant des longues enlève de la largeur, celui des courtes enlève de la longueur.",
+    "muchieLunga1": "Chant L1 (longue)",
+    "muchieLunga2": "Chant L2 (longue)",
+    "muchieScurta1": "Chant l1 (courte)",
+    "muchieScurta2": "Chant l2 (courte)",
+    "cantGrosOpt": "chant épais",
+    "cantSubtireOpt": "chant fin",
+    "lungimePiesa": "Longueur (L)",
+    "latimePiesa": "Largeur (l)"
   },
   "fata": {
     "px": "droite",

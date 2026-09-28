@@ -31,7 +31,14 @@
     return Math.round((H - 2 * rm - (nSer - 1) * ri) / nSer);
   }
 
+  /* Piesa simplă e un model doar cât să treacă prin aceeași conductă de
+     creare; în grila pe categorii n-are ce căuta, are cardul ei lângă
+     corpul gol. De-aia `ascuns`. */
   var MODELS = [
+    {
+      id: 'piesa-simpla', cat: 'living', ascuns: true,
+      set: { tip: 'piesa', W: 1200, H: 600, nUsi: 0, nPol: 0, nSer: 0 }
+    },
     /* ---------------- bucătărie jos ---------------- */
     {
       id: 'baza-2usi', cat: 'bucatarie-jos',
@@ -261,7 +268,33 @@
 
   /* Schita frontala a corpului, in SVG (unitati = mm).
      Deseneaza carcasa, sertarele de sus in jos, usile sub ele si politele. */
+  /* Un singur panou, văzut din față, cu muchiile cantuite îngroșate. Nu
+     trece prin desenul de corp: acolo se desenează un gol interior și
+     fronturi, iar o piesă n-are nici una, nici alta. */
+  function sketchPiesa(p) {
+    var W = Math.max(+p.W || 0, 1), H = Math.max(+p.H || 0, 1), t = +p.t || 18;
+    var gros = Math.max(W, H) * 0.02;
+    var o = ['<rect x="0" y="0" width="' + W + '" height="' + H + '" class="sk-corp"/>'];
+
+    /* L1/L2 sunt muchiile lungi (sus/jos), l1/l2 cele scurte (stânga/dreapta) */
+    var linie = function (x1, y1, x2, y2, cant) {
+      if (cant !== 'g' && cant !== 's') return;
+      o.push('<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 +
+             '" class="sk-cant ' + (cant === 'g' ? 'gros' : 'subtire') +
+             '" stroke-width="' + (cant === 'g' ? gros : gros * 0.55) + '"/>');
+    };
+    linie(0, gros / 2, W, gros / 2, p.pcL1);
+    linie(0, H - gros / 2, W, H - gros / 2, p.pcL2);
+    linie(gros / 2, 0, gros / 2, H, p.pcl1);
+    linie(W - gros / 2, 0, W - gros / 2, H, p.pcl2);
+
+    return '<svg viewBox="' + (-t) + ' ' + (-t) + ' ' + (W + 2 * t) + ' ' + (H + 2 * t) +
+           '" class="sk" preserveAspectRatio="xMidYMid meet" ' +
+           'aria-hidden="true" focusable="false"><g>' + o.join('') + '</g></svg>';
+  }
+
   function sketch(p) {
+    if (p.tip === 'piesa') return sketchPiesa(p);
     if (p.tip === 'atipic') return sketchContur(p);
     if (p.tip && p.tip !== 'drept') return sketchColt(p);
     var W = +p.W, H = +p.H, t = +p.t;
@@ -319,6 +352,11 @@
   function rezumat(p, tr) {
     var t_ = PalCalc.traducator(tr);
     var b = [];
+    if (p.tip === 'piesa') {
+      /* Fără număr de bucăți: ar cere forme de plural în treizeci de limbi
+         pentru o informație care se vede oricum în lista de piese. */
+      return t_('rezumat.piesa');
+    }
     if (p.tip === 'atipic') b.push(t_('rezumat.laturi', { n: (p.contur || []).length }));
     if (p.tip === 'colt-L') b.push(t_('rezumat.coltL'));
     else if (p.tip === 'colt-diagonal') b.push(t_('rezumat.coltDiagonal'));
@@ -339,9 +377,11 @@
     });
   }
 
+  /* Catalogul pentru grila de modele. Cele ascunse au cardul lor în pagină
+     și n-au ce căuta printre corpurile pe categorii. */
   function modele(tr) {
     var t_ = PalCalc.traducator(tr);
-    return MODELS.map(function (m) {
+    return MODELS.filter(function (m) { return !m.ascuns; }).map(function (m) {
       return Object.assign({}, m, {
         nume: t_('modele.m.' + m.id + '.nume'),
         descriere: t_('modele.m.' + m.id + '.descriere')

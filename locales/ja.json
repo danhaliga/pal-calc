@@ -418,6 +418,12 @@
         "nume": "下扉付きの本棚",
         "descriere": "上は開いた棚板、下は扉二枚。",
         "corpNume": "本棚"
+      },
+      "piesa-simpla": {
+        "nume": "単品の部材（板一枚）",
+        "rezumat": "部材",
+        "descriere": "L1・L2 が長い木口、l1・l2 が短い木口です。長い木口のテープは幅から、短い木口のテープは長さから引かれます。",
+        "corpNume": "部材"
       }
     },
     "adaugaCorp": "キャビネットを追加",
@@ -565,7 +571,8 @@
     "sertarLaterala": "引き出し —— 箱の側板",
     "sertarFataSpate": "引き出し —— 箱の前後板",
     "sertarFund": "引き出し —— HDFの底板",
-    "montant": "中仕切り"
+    "montant": "中仕切り",
+    "piesaSimpla": "部材"
   },
   "directie": {
     "jos": "下",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "下側だけの扉で棚板が一枚もありません。最低一枚入れてください。上で扉が当たるところがなくなります。",
     "usiPeCompartimenteFaraMontant": "扉を付ける区画を選びましたが、箱に仕切りがありません。扉は全幅で作りました。",
     "usaPreaIngusta": "区画 {comp} にはその数の扉が入りません。そこには一枚もできませんでした。",
-    "sertareNuUmplu": "引き出しの前板が下まで届いていません。下に {gol} mm の空きが残ります。前板の高さを {front} mm にすると箱が埋まります。"
+    "sertareNuUmplu": "引き出しの前板が下まで届いていません。下に {gol} mm の空きが残ります。前板の高さを {front} mm にすると箱が埋まります。",
+    "piesaPreaMica": "20 mm を切る辺があります。寸法を確かめてください。",
+    "piesaLatimeMaiMare": "幅 ({lat}) が長さ ({lung}) より大きいです。木取りでは長さが長辺です。木目を逆に通すなら入れ替えてください。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -694,7 +703,8 @@
     "coltL": "L形コーナー",
     "coltDiagonal": "斜めコーナー",
     "coltOrb": "死角コーナー",
-    "corpDeschis": "オープンキャビネット"
+    "corpDeschis": "オープンキャビネット",
+    "piesa": "板一枚"
   },
   "comanda": {
     "inapoiComenzi": "自分の注文",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "カット寸法：決済後に解除されます",
     "finit": "仕上",
     "cantPeMuchii": "木口：{muchii}",
-    "faraCant": "なし",
+    "faraCant": "テープなし",
     "nBuc": {
       "one": "{n}枚",
       "other": "{n}枚"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "扉の高さ",
     "notaInaltimeUsi": "空欄＝全高の扉。数値を入れると下側だけの扉になります（本棚のように）",
     "hUsiToata": "全高",
-    "usiPeCompartimente": "扉を付ける区画"
+    "usiPeCompartimente": "扉を付ける区画",
+    "tipPiesa": "単品の部材（板一枚）",
+    "legPiesa": "部材",
+    "bucati": "枚数",
+    "fibraPiesa": "木目",
+    "fibraPeLungime": "長さ方向",
+    "fibraPeLatime": "幅方向",
+    "fibraOricum": "どちらでも",
+    "notaMuchiiPiesa": "L1・L2 が長い木口、l1・l2 が短い木口です。長い木口のテープは幅から、短い木口のテープは長さから引かれます。",
+    "muchieLunga1": "テープ L1（長）",
+    "muchieLunga2": "テープ L2（長）",
+    "muchieScurta1": "テープ l1（短）",
+    "muchieScurta2": "テープ l2（短）",
+    "cantGrosOpt": "厚いテープ",
+    "cantSubtireOpt": "薄いテープ",
+    "lungimePiesa": "長さ (L)",
+    "latimePiesa": "幅 (l)"
   },
   "fata": {
     "px": "右",

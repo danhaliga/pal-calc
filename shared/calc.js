@@ -63,6 +63,8 @@
     return {
       nume: traducator(tr)('modele.corpImplicit'), W: 800, H: 720, D: 560, constr: 'intre',
       tip: 'drept', W2: 900, orb: 550, contur: [],
+      /* piesă simplă: bucăți, cantul pe fiecare muchie, fibra */
+      pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
       t: 18, cg: 2, cs: 0.4, spate: 'aplicat', tp: 2.5,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: '', compUsi: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
@@ -91,7 +93,7 @@
   }
 
   /* tipurile de corp pe care le stie calculul */
-  var TIPURI = ['drept', 'colt-orb', 'colt-L', 'colt-diagonal', 'atipic'];
+  var TIPURI = ['drept', 'colt-orb', 'colt-L', 'colt-diagonal', 'atipic', 'piesa'];
   function esteColt(tip) { return tip === 'colt-L' || tip === 'colt-diagonal'; }
 
   /* ---------- conturul unui corp atipic ----------
@@ -241,6 +243,36 @@
       return { x: x, y: y, z: z, sx: 0, sy: gros, sz: 0, poly: poly,
                f: F({ py: 'f', ny: 'f' }), ex: ex, grp: grp };
     };
+
+    /* ============ piesă simplă ============
+
+       Un singur panou, cu cotele și cantul lui. Nu e corp: n-are laterale,
+       n-are spate, n-are ce se îmbina. Trece totuși prin tot restul —
+       comandă, croire pe coală, CSV, planșe — fiindcă atelierului îi trebuie
+       la fel de des un blat, o mască sau o poliță răzleață ca un corp
+       întreg. `W` e lungimea, `H` e lățimea; adâncimea n-are ce căuta aici. */
+    if (c.tip === 'piesa') {
+      var pBuc = Math.max(1, Math.round(+c.pBuc || 1));
+      var cant = function (v) { return (v === 'g' || v === 's') ? v : '-'; };
+      var muchii = [cant(c.pcL1), cant(c.pcL2), cant(c.pcl1), cant(c.pcl2)];
+
+      if (W < 20 || H < 20) avert('piesaPreaMica');
+      if (W < H) avert('piesaLatimeMaiMare', { lung: fmt(W), lat: fmt(H) });
+
+      var fetePiesa = F({
+        pz: 'f', nz: 'f',
+        px: muchii[2], nx: muchii[3],   /* muchiile scurte, la capetele lungimii */
+        py: muchii[0], ny: muchii[1]    /* muchiile lungi */
+      });
+
+      add('piesaSimpla', null, pBuc, W, H,
+          muchii[0], muchii[1], muchii[2], muchii[3],
+          c.pFibra === 'L' || c.pFibra === 'l' ? c.pFibra : '-', null,
+          [bx(0, 0, 0, W, H, t, fetePiesa, [0, 0, 0], 'corp')]);
+
+      return { P: P, warn: warn, avertismente: avertismente, usi: [],
+               Wint: W, Hint: H, Dint: t, W: W, H: H, D: t };
+    }
 
     /* ============ corp atipic: definit prin conturul văzut din față ============
        Fiecare latură a conturului devine un panou de adâncimea corpului, tăiat
@@ -681,9 +713,15 @@
       var z = require('zod').z;
       var mm = function (min, max) { return z.coerce.number().finite().min(min).max(max); };
       var int = function (min, max) { return z.coerce.number().int().min(min).max(max); };
+      /* cantul unei muchii: gros, subțire, sau deloc */
+      var cantMuchie = z.enum(['g', 's', '-']).catch('-');
       paramsSchema = z.object({
         nume: z.string().trim().min(1).max(80).catch('Corp'),
-        W: mm(100, 3000), H: mm(100, 3000), D: mm(100, 3000),
+        /* 20 mm ca prag, ca sa incapa si o piesa ingusta — o masca, un
+           distantier. Corpurile au pragul lor, mai jos: sub 100 mm un
+           corp iese cu interior negativ, adica piese cu cote negative
+           in lista de debitare. */
+        W: mm(20, 3000), H: mm(20, 3000), D: mm(20, 3000),
         tip: z.enum(TIPURI).catch('drept'),
         W2: mm(100, 3000).catch(900),
         orb: mm(0, 2000).catch(0),
@@ -699,6 +737,9 @@
           unghi: z.coerce.number().min(1).max(359)
         })).max(32),
         constr: z.enum(['intre', 'peste']),
+        pBuc: int(1, 999).catch(1),
+        pcL1: cantMuchie, pcL2: cantMuchie, pcl1: cantMuchie, pcl2: cantMuchie,
+        pFibra: z.enum(['L', 'l', '-']).catch('L'),
         t: mm(6, 50), cg: mm(0, 5), cs: mm(0, 5),
         spate: z.enum(['aplicat', 'nut', 'pal']),
         tp: mm(0, 50),
@@ -724,7 +765,18 @@
         pragCant: mm(0, 10).catch(PRAG_CANT),
         rezervaCant: mm(0, 10).catch(REZERVA_CANT),
         lg: z.union([z.literal(''), z.coerce.number().min(0).max(1200)]).catch('')
-      }).strict();
+      }).strict().superRefine(function (v, ctx) {
+        /* Pragul de corp. O piesa razleata poate fi ingusta; un corp nu:
+           din W = 20 si PAL de 18 ies laterale cu latime negativa. */
+        if (v.tip === 'piesa') return;
+        ['W', 'H', 'D'].forEach(function (k) {
+          if (v[k] < 100) {
+            ctx.addIssue({ code: 'too_small', minimum: 100, type: 'number',
+                           inclusive: true, path: [k],
+                           message: 'un corp nu poate avea ' + k + ' sub 100 mm' });
+          }
+        });
+      });
     } catch (e) {
       /* zod nu e instalat inca (ex. inainte de npm install) */
     }

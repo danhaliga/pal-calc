@@ -418,6 +418,12 @@
         "nume": "下部带门书柜",
         "descriere": "上部开放层板，下部两扇门。",
         "corpNume": "书柜"
+      },
+      "piesa-simpla": {
+        "nume": "单块板件",
+        "rezumat": "板件",
+        "descriere": "L1、L2 是长边，l1、l2 是短边。长边封边减宽度，短边封边减长度。",
+        "corpNume": "板件"
       }
     },
     "adaugaCorp": "添加柜体",
@@ -565,7 +571,8 @@
     "sertarLaterala": "抽屉 —— 盒侧板",
     "sertarFataSpate": "抽屉 —— 盒前后板",
     "sertarFund": "抽屉 —— 高密度板底",
-    "montant": "中隔板"
+    "montant": "中隔板",
+    "piesaSimpla": "板件"
   },
   "directie": {
     "jos": "下",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "只在下面装门却一块层板也没有：至少放一块，否则门板上沿没有可合的地方。",
     "usiPeCompartimenteFaraMontant": "你选了装门的格，但柜体没有中隔：门按整宽做了。",
     "usaPreaIngusta": "第 {comp} 格放不下这么多门：那里一扇也没做出来。",
-    "sertareNuUmplu": "抽屉面板没有做到底，下面空了 {gol} mm。把面板高度改成 {front} mm 就能填满柜体。"
+    "sertareNuUmplu": "抽屉面板没有做到底，下面空了 {gol} mm。把面板高度改成 {front} mm 就能填满柜体。",
+    "piesaPreaMica": "有一边小于 20 mm，请核对尺寸。",
+    "piesaLatimeMaiMare": "宽 ({lat}) 大于长 ({lung})：开料时长是长边。如果纹理要走另一个方向，把两个数对调。"
   },
   "csv": {
     "corp": "柜体",
@@ -694,7 +703,8 @@
     "coltL": "L 形转角",
     "coltDiagonal": "斜面转角",
     "coltOrb": "盲角",
-    "corpDeschis": "开放柜体"
+    "corpDeschis": "开放柜体",
+    "piesa": "单独一块板"
   },
   "comanda": {
     "inapoiComenzi": "我的订单",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "开料尺寸：付款后解锁",
     "finit": "成品",
     "cantPeMuchii": "封边：{muchii}",
-    "faraCant": "无",
+    "faraCant": "不封边",
     "nBuc": {
       "one": "{n} 件",
       "other": "{n} 件"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "门板高度",
     "notaInaltimeUsi": "留空＝通高门板；填数值＝只在下部装门，像书柜那样",
     "hUsiToata": "通高",
-    "usiPeCompartimente": "装门的格"
+    "usiPeCompartimente": "装门的格",
+    "tipPiesa": "单块板件",
+    "legPiesa": "板件",
+    "bucati": "数量",
+    "fibraPiesa": "纹理",
+    "fibraPeLungime": "顺长度",
+    "fibraPeLatime": "顺宽度",
+    "fibraOricum": "都可以",
+    "notaMuchiiPiesa": "L1、L2 是长边，l1、l2 是短边。长边封边减宽度，短边封边减长度。",
+    "muchieLunga1": "封边 L1（长边）",
+    "muchieLunga2": "封边 L2（长边）",
+    "muchieScurta1": "封边 l1（短边）",
+    "muchieScurta2": "封边 l2（短边）",
+    "cantGrosOpt": "厚封边",
+    "cantSubtireOpt": "薄封边",
+    "lungimePiesa": "长 (L)",
+    "latimePiesa": "宽 (l)"
   },
   "fata": {
     "px": "右",

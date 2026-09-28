@@ -418,6 +418,12 @@
         "nume": "아래 문이 있는 책장",
         "descriere": "위는 열린 선반, 아래는 문 두 짝.",
         "corpNume": "책장"
+      },
+      "piesa-simpla": {
+        "nume": "낱개 부재 (판 한 장)",
+        "rezumat": "부재",
+        "descriere": "L1과 L2는 긴 변, l1과 l2는 짧은 변입니다. 긴 변의 엣지는 폭에서, 짧은 변의 엣지는 길이에서 빠집니다.",
+        "corpNume": "부재"
       }
     },
     "adaugaCorp": "캐비닛 추가",
@@ -565,7 +571,8 @@
     "sertarLaterala": "서랍 —— 통 측판",
     "sertarFataSpate": "서랍 —— 통 앞뒤판",
     "sertarFund": "서랍 —— HDF 바닥",
-    "montant": "중간 칸막이"
+    "montant": "중간 칸막이",
+    "piesaSimpla": "부재"
   },
   "directie": {
     "jos": "아래",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "아래쪽에만 문이 있고 선반이 하나도 없습니다. 최소 하나는 넣으세요. 그러지 않으면 문이 위에서 닿을 곳이 없습니다.",
     "usiPeCompartimenteFaraMontant": "문을 달 칸을 골랐지만 몸통에 칸막이가 없습니다. 문은 전체 폭으로 만들었습니다.",
     "usaPreaIngusta": "{comp}번 칸에는 그만큼의 문이 들어가지 않습니다. 거기에는 한 짝도 나오지 않았습니다.",
-    "sertareNuUmplu": "서랍 앞판이 아래까지 닿지 않습니다. 아래에 {gol} mm가 비어 있습니다. 앞판 높이를 {front} mm로 하면 몸통이 채워집니다."
+    "sertareNuUmplu": "서랍 앞판이 아래까지 닿지 않습니다. 아래에 {gol} mm가 비어 있습니다. 앞판 높이를 {front} mm로 하면 몸통이 채워집니다.",
+    "piesaPreaMica": "20 mm 미만인 변이 있습니다. 치수를 확인하세요.",
+    "piesaLatimeMaiMare": "폭 ({lat})이 길이 ({lung})보다 큽니다. 재단에서는 길이가 긴 변입니다. 결을 다르게 두려면 둘을 바꾸세요."
   },
   "csv": {
     "corp": "캐비닛",
@@ -694,7 +703,8 @@
     "coltL": "L자 코너",
     "coltDiagonal": "사선 코너",
     "coltOrb": "막힌 코너",
-    "corpDeschis": "오픈 캐비닛"
+    "corpDeschis": "오픈 캐비닛",
+    "piesa": "판 한 장"
   },
   "comanda": {
     "inapoiComenzi": "내 주문",
@@ -1108,7 +1118,7 @@
     "taiereBlocata": "재단 치수: 결제 뒤에 열립니다",
     "finit": "완성",
     "cantPeMuchii": "엣지: {muchii}",
-    "faraCant": "없음",
+    "faraCant": "엣지 없음",
     "nBuc": {
       "one": "{n}장",
       "other": "{n}장"
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "문 높이",
     "notaInaltimeUsi": "비우면 전체 높이의 문, 값을 넣으면 아래쪽에만 문 (책장처럼)",
     "hUsiToata": "전체 높이",
-    "usiPeCompartimente": "문을 다는 칸"
+    "usiPeCompartimente": "문을 다는 칸",
+    "tipPiesa": "낱개 부재 (판 한 장)",
+    "legPiesa": "부재",
+    "bucati": "수량",
+    "fibraPiesa": "결",
+    "fibraPeLungime": "길이 방향",
+    "fibraPeLatime": "폭 방향",
+    "fibraOricum": "상관없음",
+    "notaMuchiiPiesa": "L1과 L2는 긴 변, l1과 l2는 짧은 변입니다. 긴 변의 엣지는 폭에서, 짧은 변의 엣지는 길이에서 빠집니다.",
+    "muchieLunga1": "엣지 L1 (긴 변)",
+    "muchieLunga2": "엣지 L2 (긴 변)",
+    "muchieScurta1": "엣지 l1 (짧은 변)",
+    "muchieScurta2": "엣지 l2 (짧은 변)",
+    "cantGrosOpt": "두꺼운 엣지",
+    "cantSubtireOpt": "얇은 엣지",
+    "lungimePiesa": "길이 (L)",
+    "latimePiesa": "폭 (l)"
   },
   "fata": {
     "px": "오른쪽",

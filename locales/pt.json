@@ -418,6 +418,12 @@
         "nume": "Estante com portas em baixo",
         "descriere": "Prateleiras abertas em cima, duas portas em baixo.",
         "corpNume": "Estante"
+      },
+      "piesa-simpla": {
+        "nume": "Peça solta (uma só placa)",
+        "rezumat": "A peça",
+        "descriere": "L1 e L2 são as arestas longas, l1 e l2 as curtas. A orla das longas tira largura, a das curtas tira comprimento.",
+        "corpNume": "Peça"
       }
     },
     "adaugaCorp": "Adicionar um módulo",
@@ -565,7 +571,8 @@
     "sertarLaterala": "Gaveta – lateral da caixa",
     "sertarFataSpate": "Gaveta – frente/traseira da caixa",
     "sertarFund": "Gaveta – fundo em placa de fibras",
-    "montant": "Montante"
+    "montant": "Montante",
+    "piesaSimpla": "Peça"
   },
   "directie": {
     "jos": "baixo",
@@ -630,7 +637,9 @@
     "usiJosFaraPolita": "Portas só em baixo e sem nenhuma prateleira: ponha pelo menos uma, senão a porta não tem contra o que fechar em cima.",
     "usiPeCompartimenteFaraMontant": "Escolheu compartimentos para as portas, mas o móvel não tem nenhuma divisória: as portas foram feitas a toda a largura.",
     "usaPreaIngusta": "O compartimento {comp} não tem espaço para tantas portas: ali não saiu nenhuma.",
-    "sertareNuUmplu": "As frentes de gaveta não chegam ao fundo: ficam {gol} mm livres em baixo. Ponha {front} mm de altura de frente para encher o móvel."
+    "sertareNuUmplu": "As frentes de gaveta não chegam ao fundo: ficam {gol} mm livres em baixo. Ponha {front} mm de altura de frente para encher o móvel.",
+    "piesaPreaMica": "Um lado abaixo de 20 mm: confira as medidas.",
+    "piesaLatimeMaiMare": "A largura ({lat}) é maior que o comprimento ({lung}): ao cortar, o comprimento é o lado maior. Troque-os se o veio tiver de ir ao contrário."
   },
   "csv": {
     "corp": "Módulo",
@@ -694,7 +703,8 @@
     "coltL": "canto em L",
     "coltDiagonal": "canto diagonal",
     "coltOrb": "canto cego",
-    "corpDeschis": "módulo aberto"
+    "corpDeschis": "módulo aberto",
+    "piesa": "uma só placa"
   },
   "comanda": {
     "inapoiComenzi": "As minhas encomendas",
@@ -1119,7 +1129,23 @@
     "inaltimeUsi": "Altura das portas",
     "notaInaltimeUsi": "vazio = portas em toda a altura; um valor = portas só em baixo, como numa estante",
     "hUsiToata": "toda a altura",
-    "usiPeCompartimente": "Portas nos compartimentos"
+    "usiPeCompartimente": "Portas nos compartimentos",
+    "tipPiesa": "Peça solta (uma só placa)",
+    "legPiesa": "A peça",
+    "bucati": "Unidades",
+    "fibraPiesa": "Veio",
+    "fibraPeLungime": "ao comprido",
+    "fibraPeLatime": "à largura",
+    "fibraOricum": "tanto faz",
+    "notaMuchiiPiesa": "L1 e L2 são as arestas longas, l1 e l2 as curtas. A orla das longas tira largura, a das curtas tira comprimento.",
+    "muchieLunga1": "Orla L1 (longa)",
+    "muchieLunga2": "Orla L2 (longa)",
+    "muchieScurta1": "Orla l1 (curta)",
+    "muchieScurta2": "Orla l2 (curta)",
+    "cantGrosOpt": "orla grossa",
+    "cantSubtireOpt": "orla fina",
+    "lungimePiesa": "Comprimento (L)",
+    "latimePiesa": "Largura (l)"
   },
   "fata": {
     "px": "direita",
