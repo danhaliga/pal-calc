@@ -522,6 +522,11 @@
         "nume": "Šatník s posuvnými dverami",
         "descriere": "Troje posuvné dvere a štyri priehradky, na celú stenu.",
         "corpNume": "Posuvný šatník"
+      },
+      "baza-jolly": {
+        "nume": "Úzka skrinka s výsuvom",
+        "descriere": "Pre výsuvný kôš na fľaše a korenie. Bez police: vyplní ju výsuv.",
+        "corpNume": "Skrinka s výsuvom"
       }
     },
     "adaugaCorp": "Pridať korpus",
@@ -671,7 +676,8 @@
     "sertarFund": "Zásuvka – dno z HDF",
     "montant": "Priečka",
     "piesaSimpla": "Diel",
-    "soclu": "Sokel"
+    "soclu": "Sokel",
+    "traversa": "Výstuha"
   },
   "directie": {
     "jos": "dole",
@@ -710,7 +716,8 @@
     "glisieraDe": "výsuv {lg} mm",
     "subCutie": "montované pod košom",
     "socluInFata": "vpredu, medzi bočnicami — dno na ňom stojí",
-    "usiGlisante": "{n} posuvné dvierka, prekrytie {supr}, koľajnice {sine}"
+    "usiGlisante": "{n} posuvné dvierka, prekrytie {supr}, koľajnice {sine}",
+    "traverseSusInLocDeBlat": "namiesto hornej dosky: jedna vpredu, druhá vzadu, široké {lat}"
   },
   "avert": {
     "politeAtipic": "Pri atypických korpusoch sa police nepočítajú samy: pridaj ich ako samostatné diely.",
@@ -751,7 +758,10 @@
     "glisantaLata": "Posuvné dvierka {lat} mm sú široké: časom sa prehnú a vyskočia z koľajnice. Urob ich z dvoch alebo daj hliníkový rám.",
     "glisantaInalta": "Posuvné dvierka {inalt} mm sú vysoké: potrebujú rám, nie holú dosku.",
     "glisantaFaraZone": "Posuvné dvierka idú cez celú výšku: výška spodných dvierok a výklenok sa nepočítajú.",
-    "glisantaFaraCompartimente": "Posuvné dvierka chodia pred stojinami, takže sa nedajú dať na vybrané priehradky."
+    "glisantaFaraCompartimente": "Posuvné dvierka chodia pred stojinami, takže sa nedajú dať na vybrané priehradky.",
+    "traverseNuMerg": "Výstuhy idú len na rovnú skrinku stavanú „medzi“. Tu ostala celá doska.",
+    "traversePreaLate": "Výstuhy {lat} mm sa nezmestia: dve také široké sa dotýkajú. Nad {incape} mm by to bola zle narezaná doska.",
+    "traverseInAfara": "Výstuha sa robí od {min} do {max} mm. {lat} bolo upravené na {pus}."
   },
   "csv": {
     "corp": "Korpus",
@@ -819,7 +829,8 @@
     "coltOrb": "slepý roh",
     "corpDeschis": "otvorený korpus",
     "piesa": "jediná doska",
-    "peSoclu": "sokel {h} mm"
+    "peSoclu": "sokel {h} mm",
+    "cuTraverse": "výstuhy {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Moje zákazky",
@@ -1275,7 +1286,9 @@
     "nisaFara": "žiadny",
     "montajGlisant": "Posuvné",
     "suprapunere": "Prekrytie dvierok",
-    "hSine": "Koľajnice (hore + dole)"
+    "hSine": "Koľajnice (hore + dole)",
+    "traverse": "Výstuhy hore (0 = celá doska)",
+    "traverseFara": "celá doska"
   },
   "fata": {
     "px": "vpravo",
@@ -1305,7 +1318,8 @@
     "grupSertare": "Zásuvky: výšky, vôľa, doska",
     "grupDimensiuni": "Šírka, výška, hĺbka, konštrukcia",
     "grupCantitati": "Koľko dvierok, políc, stredových stojok, zásuviek",
-    "grupSoclu": "Sokel: skrinka stojí na podlahe, bez nožičiek"
+    "grupSoclu": "Sokel: skrinka stojí na podlahe, bez nožičiek",
+    "grupTraverse": "Výstuhy: spodná skrinka nemá celú hornú dosku"
   },
   "mesaj": {
     "intrebare": "Čo výpočtu chýba?",

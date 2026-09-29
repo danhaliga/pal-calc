@@ -84,6 +84,13 @@
       set: { W: 200, H: 720, D: 560, nUsi: 1, nPol: 2 }
     },
     {
+      /* Cargoul glisant umple corpul pe toată înălțimea, deci n-are poliță.
+         Frontul se prinde de cadrul cargoului, nu de balamale — dar în
+         lista de debitare tot o ușă e, cu aceleași cote. */
+      id: 'baza-jolly', cat: 'bucatarie-jos',
+      set: { W: 300, H: 720, D: 560, nUsi: 1, nPol: 0 }
+    },
+    {
       id: 'baza-3sertare', cat: 'bucatarie-jos',
       set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0,
              nSer: 3, hFront: frontEgal(720, 3, 1.5, 3), hCutie: 180 }
@@ -474,6 +481,7 @@
     /* Pe ce stă corpul. Numai cand are soclu: „pe picioare" e felul
        obisnuit, si scris pe fiecare card ar fi zgomot. */
     if (+p.soclu > 0) b.push(t_('rezumat.peSoclu', { h: +p.soclu }));
+    if (+p.traverse > 0) b.push(t_('rezumat.cuTraverse', { lat: +p.traverse }));
     if (!b.length) b.push(t_('rezumat.corpDeschis'));
     return b.join(' · ');
   }

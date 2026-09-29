@@ -74,6 +74,12 @@
               picioare — alea sunt feronerie, nu se taie din PAL. %>
           <label><%= t('editor.soclu') %>
             <input id="soclu" type="number" step="5" min="0" max="300"></label>
+          <%# Traversele: in locul blatului intreg, doua fasii, una in fata
+              si una in spate. Sub blatul de bucatarie un panou pe toata
+              adancimea e PAL aruncat — il acopera blatul oricum. %>
+          <label><%= t('editor.traverse') %>
+            <input id="traverse" type="number" step="5" min="0" max="100"
+                   placeholder="<%= t('editor.traverseFara') %>"></label>
         </div>
         <p class="legend hidden" id="notaColt"></p>
       </fieldset>

@@ -522,6 +522,11 @@
         "nume": "Dressing cu uși glisante",
         "descriere": "Trei uși glisante și patru compartimente, pentru un perete întreg.",
         "corpNume": "Dressing glisant"
+      },
+      "baza-jolly": {
+        "nume": "Corp îngust pentru cargo",
+        "descriere": "Pentru sistemul glisant de sticle și condimente. Fără poliță: îl umple cargoul.",
+        "corpNume": "Corp cargo"
       }
     },
     "adaugaCorp": "Adaugă un corp",
@@ -671,7 +676,8 @@
     "sertarFund": "Sertar – fund PFL",
     "montant": "Montant",
     "piesaSimpla": "Piesă",
-    "soclu": "Soclu"
+    "soclu": "Soclu",
+    "traversa": "Traversă"
   },
   "directie": {
     "jos": "jos",
@@ -710,7 +716,8 @@
     "glisieraDe": "glisieră {lg} mm",
     "subCutie": "aplicat sub cutie",
     "socluInFata": "în față, între laterale — fundul stă pe el",
-    "usiGlisante": "{n} uși glisante, suprapunere {supr}, șine {sine}"
+    "usiGlisante": "{n} uși glisante, suprapunere {supr}, șine {sine}",
+    "traverseSusInLocDeBlat": "în locul blatului: una în față, una în spate, late de {lat}"
   },
   "avert": {
     "politeAtipic": "Polițele nu se calculează automat la corpurile atipice: adaugă-le ca piese separate.",
@@ -751,7 +758,10 @@
     "glisantaLata": "Ușa glisantă de {lat} mm e lată: se lasă în timp și sare de pe șină. Fă-o din două sau pune ramă de aluminiu.",
     "glisantaInalta": "Ușa glisantă de {inalt} mm e înaltă: cere ramă, nu panou simplu de PAL.",
     "glisantaFaraZone": "Ușile glisante merg pe toată înălțimea: înălțimea ușilor de jos și nișa nu se iau în seamă.",
-    "glisantaFaraCompartimente": "Ușile glisante trec peste montanți, deci nu se pot pune pe compartimente alese."
+    "glisantaFaraCompartimente": "Ușile glisante trec peste montanți, deci nu se pot pune pe compartimente alese.",
+    "traverseNuMerg": "Traversele se pun numai la corpul drept, construit „între\". Aici a rămas blatul întreg.",
+    "traversePreaLate": "Traverse de {lat} mm nu încap: două atât de late se ating. Peste {incape} mm ar fi un blat prost tăiat.",
+    "traverseInAfara": "Traversa se face între {min} și {max} mm. {lat} a fost adus la {pus}."
   },
   "csv": {
     "corp": "Corp",
@@ -819,7 +829,8 @@
     "coltOrb": "colț orb",
     "corpDeschis": "corp deschis",
     "piesa": "un singur panou",
-    "peSoclu": "soclu {h} mm"
+    "peSoclu": "soclu {h} mm",
+    "cuTraverse": "traverse {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Comenzile mele",
@@ -1275,7 +1286,9 @@
     "nisaFara": "fără",
     "montajGlisant": "Glisante",
     "suprapunere": "Suprapunere uși",
-    "hSine": "Șine (sus + jos)"
+    "hSine": "Șine (sus + jos)",
+    "traverse": "Traverse sus (0 = blat întreg)",
+    "traverseFara": "blat întreg"
   },
   "fata": {
     "px": "dreapta",
@@ -1305,7 +1318,8 @@
     "grupSertare": "Sertare: înălțimi, joc, placă",
     "grupDimensiuni": "Lățime, înălțime, adâncime, construcție",
     "grupCantitati": "Câte uși, polițe, montanți, sertare",
-    "grupSoclu": "Soclu: corpul stă pe podea, fără picioare"
+    "grupSoclu": "Soclu: corpul stă pe podea, fără picioare",
+    "grupTraverse": "Traverse: corpul de bază n-are blat întreg"
   },
   "mesaj": {
     "intrebare": "Ce-ți lipsește din calcul?",

@@ -522,6 +522,11 @@
         "nume": "Garderoba z drzwiami przesuwnymi",
         "descriere": "Trzy drzwi przesuwne i cztery pola, na całą ścianę.",
         "corpNume": "Garderoba przesuwna"
+      },
+      "baza-jolly": {
+        "nume": "Wąska szafka cargo",
+        "descriere": "Pod wysuwane cargo na butelki i przyprawy. Bez półki: wypełnia je cargo.",
+        "corpNume": "Szafka cargo"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -671,7 +676,8 @@
     "sertarFund": "Szuflada – dno z HDF",
     "montant": "Przegroda",
     "piesaSimpla": "Element",
-    "soclu": "Cokół"
+    "soclu": "Cokół",
+    "traversa": "Trawersa"
   },
   "directie": {
     "jos": "dół",
@@ -710,7 +716,8 @@
     "glisieraDe": "prowadnica {lg} mm",
     "subCutie": "montowane pod skrzynką",
     "socluInFata": "z przodu, między bokami — na nim stoi dno",
-    "usiGlisante": "{n} fronty przesuwne, zachodzenie {supr}, szyny {sine}"
+    "usiGlisante": "{n} fronty przesuwne, zachodzenie {supr}, szyny {sine}",
+    "traverseSusInLocDeBlat": "zamiast wieńca: jedna z przodu, druga z tyłu, szerokie na {lat}"
   },
   "avert": {
     "politeAtipic": "W korpusach nietypowych półki nie liczą się same: dodaj je jako osobne elementy.",
@@ -751,7 +758,10 @@
     "glisantaLata": "Front przesuwny {lat} mm jest szeroki: z czasem się wygnie i wyskoczy z szyny. Zrób z dwóch albo daj ramę aluminiową.",
     "glisantaInalta": "Front przesuwny {inalt} mm jest wysoki: potrzebuje ramy, nie samej płyty.",
     "glisantaFaraZone": "Fronty przesuwne idą na całą wysokość: wysokość dolnych frontów i wnęka nie są brane pod uwagę.",
-    "glisantaFaraCompartimente": "Fronty przesuwne przechodzą przed pionami, więc nie da się ich dać na wybrane pola."
+    "glisantaFaraCompartimente": "Fronty przesuwne przechodzą przed pionami, więc nie da się ich dać na wybrane pola.",
+    "traverseNuMerg": "Trawersy pasują tylko do prostej skrzyni budowanej „między”. Tutaj został pełny wieniec.",
+    "traversePreaLate": "Trawersy {lat} mm się nie mieszczą: dwie takie szerokie stykają się. Powyżej {incape} mm to już źle pocięty wieniec.",
+    "traverseInAfara": "Trawersę robi się od {min} do {max} mm. {lat} sprowadzono do {pus}."
   },
   "csv": {
     "corp": "Korpus",
@@ -819,7 +829,8 @@
     "coltOrb": "narożnik ślepy",
     "corpDeschis": "korpus otwarty",
     "piesa": "pojedyncza płyta",
-    "peSoclu": "cokół {h} mm"
+    "peSoclu": "cokół {h} mm",
+    "cuTraverse": "trawersy {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Moje zlecenia",
@@ -1275,7 +1286,9 @@
     "nisaFara": "brak",
     "montajGlisant": "Przesuwne",
     "suprapunere": "Zachodzenie frontów",
-    "hSine": "Szyny (góra + dół)"
+    "hSine": "Szyny (góra + dół)",
+    "traverse": "Trawersy u góry (0 = pełny wieniec)",
+    "traverseFara": "pełny wieniec"
   },
   "fata": {
     "px": "prawo",
@@ -1305,7 +1318,8 @@
     "grupSertare": "Szuflady: wysokości, luz, płyta",
     "grupDimensiuni": "Szerokość, wysokość, głębokość, konstrukcja",
     "grupCantitati": "Ile drzwi, półek, przegród, szuflad",
-    "grupSoclu": "Cokół: skrzynia stoi na podłodze, bez nóżek"
+    "grupSoclu": "Cokół: skrzynia stoi na podłodze, bez nóżek",
+    "grupTraverse": "Trawersy: szafka dolna nie ma pełnego wieńca"
   },
   "mesaj": {
     "intrebare": "Czego brakuje w obliczeniach?",

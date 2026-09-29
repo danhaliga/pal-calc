@@ -18,6 +18,11 @@
 })(typeof self !== 'undefined' ? self : this, function (PalI18n) {
   'use strict';
 
+  /* Traversa se face intre 40 si 100 mm, iar 60 e cat se pune de obicei.
+     Sub 40 nu mai tine coltul in echer si se indoaie cand strangi blatul;
+     peste 100 incepi sa tai PAL degeaba, ca doar blatul sta pe ea. */
+  var TRAVERSA_MIN = 40, TRAVERSA_MAX = 100, TRAVERSA_STANDARD = 60;
+
   var NUT_OFF = 10;      /* distanta nutului fata de spatele corpului */
   var NUT_AD = 8;        /* adancimea nutului */
   var PFL_SERTAR = 3;    /* grosimea fundului de sertar */
@@ -68,6 +73,11 @@
          nu apar în listă. Peste 0, lateralele merg până la podea, fundul
          se ridică, iar în față intră o bucată de PAL. */
       soclu: 0,
+      /* Lățimea traverselor de sus. 0 înseamnă blat întreg, adică felul de
+         până acum. Peste 0, în locul blatului se pun două traverse — una
+         în față, una în spate — fiindcă sub blatul de bucătărie un panou
+         pe toată adâncimea e PAL aruncat: îl acoperă blatul oricum. */
+      traverse: 0,
       tip: 'drept', W2: 900, orb: 550, contur: [],
       /* piesă simplă: bucăți, cantul pe fiecare muchie, fibra */
       pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
@@ -230,6 +240,19 @@
     var socluCerut = Math.max(0, +c.soclu || 0);
     var soclu = (socluCerut && c.tip === 'drept' && c.constr === 'intre') ? socluCerut : 0;
 
+    /* Traversele se pot pune în aceleași condiții ca soclul: la corpul drept
+       construit „între". Acolo lateralele merg pe toată înălțimea, deci
+       traversele se prind între ele exact cum s-ar fi prins blatul. */
+    var traverseCerut = Math.max(0, +c.traverse || 0);
+    var traverse = (traverseCerut && c.tip === 'drept' && c.constr === 'intre') ? traverseCerut : 0;
+    /* Adusa in limite. Se SPUNE, nu se face pe tacute: omul a scris un
+       numar si are dreptul sa afle ca s-a taiat altul. */
+    var traverseInAfara = 0;
+    if (traverse > 0 && (traverse < TRAVERSA_MIN || traverse > TRAVERSA_MAX)) {
+      traverseInAfara = traverse;
+      traverse = Math.min(TRAVERSA_MAX, Math.max(TRAVERSA_MIN, traverse));
+    }
+
     var Wint = W - 2 * t, Hint = H - 2 * t - soclu;
     /* Podeaua interiorului: fața de sus a fundului. Fără soclu e exact `t`,
        ca până acum. Tot ce se așază înăuntru — polițe, montanți, uși — se
@@ -267,6 +290,17 @@
     /* Soclul cerut, dar nepus. Se spune, nu se trece cu vederea: altfel omul
        scrie 80 în casetă, nu vede nicio bucată în listă și nu știe de ce. */
     if (socluCerut && !soclu) avert('socluNuMerge');
+    if (traverseCerut && !traverse) avert('traverseNuMerg');
+    if (traverseInAfara) {
+      avert('traverseInAfara', { lat: fmt(traverseInAfara), min: TRAVERSA_MIN,
+                                 max: TRAVERSA_MAX, pus: fmt(traverse) });
+    }
+    if (traverse && traverse * 2 >= Dp) {
+      /* Două traverse care se ating nu mai sunt traverse, sunt un blat
+         prost tăiat. */
+      avert('traversePreaLate', { lat: fmt(traverse), incape: fmt(Math.floor(Dp / 2) - 1) });
+      traverse = 0;
+    }
     if (soclu && Hint < 100) {
       avert('socluPreaInalt', { soclu: fmt(soclu), ramane: fmt(Math.max(0, Hint)) });
     }
@@ -477,8 +511,24 @@
       add('laterala', null, 2, H, Dp, 'g', '-', 's', 's', 'LV', null, [
         bx(0, 0, zb, t, H, Dp, F({ px: 'f', nx: 'f', pz: 'g', py: 's', ny: 's' }), [-1, 0, 0], 'corp'),
         bx(W - t, 0, zb, t, H, Dp, F({ px: 'f', nx: 'f', pz: 'g', py: 's', ny: 's' }), [1, 0, 0], 'corp')]);
-      add('blat', null, 1, Wint, Dp, 'g', '-', '-', '-', 'L', null,
-        [bx(t, H - t, zb, Wint, t, Dp, F({ py: 'f', ny: 'f', pz: 'g' }), [0, 1, 0], 'corp')]);
+      if (traverse > 0) {
+        /* Două traverse în locul blatului: una în față, una în spate.
+
+           Se cantuiesc amândouă pe muchia din față, deși a celei din spate
+           stă ascunsă. Motivul e de atelier, nu de socoteală: așa ies două
+           piese la fel, pe care omul le ia din teanc fără să se uite care e
+           care. Banda de pe cea ascunsă costă câțiva bani; o traversă pusă
+           invers costă o desfacere. */
+        add('traversa', null, 2, Wint, traverse, 'g', '-', '-', '-', 'L',
+          ['traverseSusInLocDeBlat', { lat: fmt(traverse) }], [
+            bx(t, H - t, D - traverse, Wint, t, traverse,
+               F({ py: 'f', ny: 'f', pz: 'g' }), [0, 1, 0], 'corp'),
+            bx(t, H - t, zb, Wint, t, traverse,
+               F({ py: 'f', ny: 'f', pz: 'g' }), [0, 1, 0], 'corp')]);
+      } else {
+        add('blat', null, 1, Wint, Dp, 'g', '-', '-', '-', 'L', null,
+          [bx(t, H - t, zb, Wint, t, Dp, F({ py: 'f', ny: 'f', pz: 'g' }), [0, 1, 0], 'corp')]);
+      }
       add('fund', null, 1, Wint, Dp, 'g', '-', '-', '-', 'L', null,
         [bx(t, soclu, zb, Wint, t, Dp, F({ py: 'f', ny: 'f', pz: 'g' }), [0, -1, 0], 'corp')]);
 
@@ -916,6 +966,7 @@
         })).max(32),
         constr: z.enum(['intre', 'peste']),
         soclu: mm(0, 300).catch(0),
+        traverse: mm(0, TRAVERSA_MAX).catch(0),
         pBuc: int(1, 999).catch(1),
         pcL1: cantMuchie, pcL2: cantMuchie, pcl1: cantMuchie, pcl2: cantMuchie,
         pFibra: z.enum(['L', 'l', '-']).catch('L'),
@@ -965,6 +1016,9 @@
   }
 
   return {
+    TRAVERSA_MIN: TRAVERSA_MIN,
+    TRAVERSA_MAX: TRAVERSA_MAX,
+    TRAVERSA_STANDARD: TRAVERSA_STANDARD,
     calc: calc,
     rolPiesa: rolPiesa,
     directie: directie,

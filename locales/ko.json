@@ -516,6 +516,11 @@
         "nume": "미닫이 드레스룸",
         "descriere": "미닫이 세 짝과 네 칸, 벽 하나를 채웁니다.",
         "corpNume": "미닫이 드레스룸"
+      },
+      "baza-jolly": {
+        "nume": "좁은 슬라이드장",
+        "descriere": "병과 양념 슬라이드 바구니용. 선반 없음: 바구니가 채웁니다.",
+        "corpNume": "슬라이드장"
       }
     },
     "adaugaCorp": "캐비닛 추가",
@@ -665,7 +670,8 @@
     "sertarFund": "서랍 —— HDF 바닥",
     "montant": "중간 칸막이",
     "piesaSimpla": "부재",
-    "soclu": "걸레받이"
+    "soclu": "걸레받이",
+    "traversa": "가로대"
   },
   "directie": {
     "jos": "아래",
@@ -704,7 +710,8 @@
     "glisieraDe": "레일 {lg} mm",
     "subCutie": "서랍통 아래에 붙습니다",
     "socluInFata": "앞쪽, 옆판 사이 — 밑판이 그 위에 놓입니다",
-    "usiGlisante": "미닫이 {n}짝, 겹침 {supr}, 레일 {sine}"
+    "usiGlisante": "미닫이 {n}짝, 겹침 {supr}, 레일 {sine}",
+    "traverseSusInLocDeBlat": "상판 대신: 앞뒤로 하나씩, 폭 {lat}"
   },
   "avert": {
     "politeAtipic": "비정형 캐비닛에서는 선반이 자동으로 계산되지 않습니다. 따로 부재로 더하세요.",
@@ -745,7 +752,10 @@
     "glisantaLata": "{lat} mm 미닫이문은 넓습니다. 시간이 지나면 처져서 레일을 벗어납니다. 두 짝으로 나누거나 알루미늄 프레임을 쓰세요.",
     "glisantaInalta": "{inalt} mm 미닫이문은 높습니다. 프레임이 필요하며 민판으로는 부족합니다.",
     "glisantaFaraZone": "미닫이문은 전체 높이입니다. 아래 문 높이와 개구부는 계산에 넣지 않습니다.",
-    "glisantaFaraCompartimente": "미닫이문은 세로판 앞을 지나가므로 선택한 칸에만 달 수 없습니다."
+    "glisantaFaraCompartimente": "미닫이문은 세로판 앞을 지나가므로 선택한 칸에만 달 수 없습니다.",
+    "traverseNuMerg": "가로대는 “사이” 방식으로 짠 직선 몸통에만 씁니다. 여기서는 상판 전체가 남았습니다.",
+    "traversePreaLate": "{lat} mm 가로대는 들어가지 않습니다. 그 폭이면 둘이 맞닿습니다. {incape} mm를 넘으면 잘못 자른 상판과 같습니다.",
+    "traverseInAfara": "가로대는 {min}~{max} mm 사이로 만듭니다. {lat}은(는) {pus}으로 맞췄습니다."
   },
   "csv": {
     "corp": "캐비닛",
@@ -812,7 +822,8 @@
     "coltOrb": "막힌 코너",
     "corpDeschis": "오픈 캐비닛",
     "piesa": "판 한 장",
-    "peSoclu": "걸레받이 {h} mm"
+    "peSoclu": "걸레받이 {h} mm",
+    "cuTraverse": "가로대 {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "내 주문",
@@ -1264,7 +1275,9 @@
     "nisaFara": "없음",
     "montajGlisant": "미닫이",
     "suprapunere": "문 겹침",
-    "hSine": "레일 (위 + 아래)"
+    "hSine": "레일 (위 + 아래)",
+    "traverse": "윗 가로대 (0 = 상판 전체)",
+    "traverseFara": "상판 전체"
   },
   "fata": {
     "px": "오른쪽",
@@ -1294,7 +1307,8 @@
     "grupSertare": "서랍: 높이, 여유, 판",
     "grupDimensiuni": "폭, 높이, 깊이, 짜는 방식",
     "grupCantitati": "문, 선반, 중간칸막이, 서랍 개수",
-    "grupSoclu": "걸레받이: 다리 없이 바닥에 서는 몸통"
+    "grupSoclu": "걸레받이: 다리 없이 바닥에 서는 몸통",
+    "grupTraverse": "가로대: 하부장에는 상판 전체가 필요 없습니다"
   },
   "mesaj": {
     "intrebare": "계산에 무엇이 빠져 있나요?",

@@ -522,6 +522,11 @@
         "nume": "Garderober sa kliznim vratima",
         "descriere": "Troja klizna vrata i četiri pregrade, za ceo zid.",
         "corpNume": "Garderober klizni"
+      },
+      "baza-jolly": {
+        "nume": "Uzak element sa korpom",
+        "descriere": "Za izvlačnu korpu za flaše i začine. Bez police: popunjava je korpa.",
+        "corpNume": "Element sa korpom"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -671,7 +676,8 @@
     "sertarFund": "Fioka – dno od HDF-a",
     "montant": "Pregrada",
     "piesaSimpla": "Element",
-    "soclu": "Sokla"
+    "soclu": "Sokla",
+    "traversa": "Traverza"
   },
   "directie": {
     "jos": "dole",
@@ -710,7 +716,8 @@
     "glisieraDe": "vođica {lg} mm",
     "subCutie": "montirano ispod kutije",
     "socluInFata": "spreda, između stranica — dno stoji na njoj",
-    "usiGlisante": "{n} klizna vrata, preklop {supr}, šine {sine}"
+    "usiGlisante": "{n} klizna vrata, preklop {supr}, šine {sine}",
+    "traverseSusInLocDeBlat": "umesto gornje ploče: jedna spreda, druga pozadi, široke {lat}"
   },
   "avert": {
     "politeAtipic": "Kod netipičnih korpusa police se ne računaju same: dodaj ih kao zasebne delove.",
@@ -751,7 +758,10 @@
     "glisantaLata": "Klizna vrata od {lat} mm su široka: vremenom se ugnu i iskoče iz šine. Napravi ih od dvoja ili stavi aluminijumski ram.",
     "glisantaInalta": "Klizna vrata od {inalt} mm su visoka: traže ram, ne golu ploču.",
     "glisantaFaraZone": "Klizna vrata idu celom visinom: visina donjih vrata i otvor se ne računaju.",
-    "glisantaFaraCompartimente": "Klizna vrata prolaze ispred vertikala, pa se ne mogu staviti na izabrane pregrade."
+    "glisantaFaraCompartimente": "Klizna vrata prolaze ispred vertikala, pa se ne mogu staviti na izabrane pregrade.",
+    "traverseNuMerg": "Traverze idu samo na pravo telo građeno „između“. Ovde je ostala cela ploča.",
+    "traversePreaLate": "Traverze od {lat} mm ne staju: dve tako široke se dodiruju. Iznad {incape} mm to je loše iskrojena ploča.",
+    "traverseInAfara": "Traverza se pravi između {min} i {max} mm. {lat} je sveden na {pus}."
   },
   "csv": {
     "corp": "Korpus",
@@ -819,7 +829,8 @@
     "coltOrb": "slepi ugao",
     "corpDeschis": "otvoren korpus",
     "piesa": "jedna ploča",
-    "peSoclu": "sokla {h} mm"
+    "peSoclu": "sokla {h} mm",
+    "cuTraverse": "traverze {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Moje porudžbine",
@@ -1275,7 +1286,9 @@
     "nisaFara": "nema",
     "montajGlisant": "Klizna",
     "suprapunere": "Preklop vrata",
-    "hSine": "Šine (gore + dole)"
+    "hSine": "Šine (gore + dole)",
+    "traverse": "Traverze gore (0 = cela ploča)",
+    "traverseFara": "cela ploča"
   },
   "fata": {
     "px": "desno",
@@ -1305,7 +1318,8 @@
     "grupSertare": "Fioke: visine, zazor, ploča",
     "grupDimensiuni": "Širina, visina, dubina, konstrukcija",
     "grupCantitati": "Koliko vrata, polica, srednjih stranica, fioka",
-    "grupSoclu": "Sokla: telo stoji na podu, bez nogica"
+    "grupSoclu": "Sokla: telo stoji na podu, bez nogica",
+    "grupTraverse": "Traverze: donji element nema celu gornju ploču"
   },
   "mesaj": {
     "intrebare": "Šta nedostaje proračunu?",

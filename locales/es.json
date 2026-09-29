@@ -516,6 +516,11 @@
         "nume": "Vestidor con puertas correderas",
         "descriere": "Tres correderas y cuatro huecos, para una pared entera.",
         "corpNume": "Vestidor corredera"
+      },
+      "baza-jolly": {
+        "nume": "Mueble estrecho extraíble",
+        "descriere": "Para el botellero o especiero extraíble. Sin balda: lo llena el extraíble.",
+        "corpNume": "Mueble extraíble"
       }
     },
     "adaugaCorp": "Añadir un módulo",
@@ -665,7 +670,8 @@
     "sertarFund": "Cajón – fondo de tablero duro",
     "montant": "Montante",
     "piesaSimpla": "Pieza",
-    "soclu": "Zócalo"
+    "soclu": "Zócalo",
+    "traversa": "Travesaño"
   },
   "directie": {
     "jos": "abajo",
@@ -704,7 +710,8 @@
     "glisieraDe": "guía de {lg} mm",
     "subCutie": "montado bajo la caja",
     "socluInFata": "delante, entre los laterales — el fondo se apoya en él",
-    "usiGlisante": "{n} puertas correderas, solape {supr}, guías {sine}"
+    "usiGlisante": "{n} puertas correderas, solape {supr}, guías {sine}",
+    "traverseSusInLocDeBlat": "en lugar del tablero superior: uno delante, otro detrás, de {lat} de ancho"
   },
   "avert": {
     "politeAtipic": "En los módulos atípicos las baldas no se calculan solas: añádelas como piezas aparte.",
@@ -745,7 +752,10 @@
     "glisantaLata": "Una corredera de {lat} mm es ancha: con el tiempo se pandea y se sale de la guía. Hazla de dos o pon marco de aluminio.",
     "glisantaInalta": "Una corredera de {inalt} mm es alta: necesita marco, no un tablero simple.",
     "glisantaFaraZone": "Las correderas van de arriba abajo: la altura de las puertas bajas y el hueco no se tienen en cuenta.",
-    "glisantaFaraCompartimente": "Las correderas pasan por delante de los montantes, así que no se pueden poner en huecos elegidos."
+    "glisantaFaraCompartimente": "Las correderas pasan por delante de los montantes, así que no se pueden poner en huecos elegidos.",
+    "traverseNuMerg": "Los travesaños solo van en un mueble recto construido «entre». Aquí se ha quedado el tablero entero.",
+    "traversePreaLate": "Travesaños de {lat} mm no caben: dos tan anchos se tocan. Por encima de {incape} mm sería un tablero mal cortado.",
+    "traverseInAfara": "El travesaño se hace entre {min} y {max} mm. {lat} se ha ajustado a {pus}."
   },
   "csv": {
     "corp": "Módulo",
@@ -812,7 +822,8 @@
     "coltOrb": "esquina ciega",
     "corpDeschis": "módulo abierto",
     "piesa": "un solo tablero",
-    "peSoclu": "zócalo {h} mm"
+    "peSoclu": "zócalo {h} mm",
+    "cuTraverse": "travesaños {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Mis pedidos",
@@ -1264,7 +1275,9 @@
     "nisaFara": "sin hueco",
     "montajGlisant": "Correderas",
     "suprapunere": "Solape de puertas",
-    "hSine": "Guías (arriba + abajo)"
+    "hSine": "Guías (arriba + abajo)",
+    "traverse": "Travesaños arriba (0 = tablero entero)",
+    "traverseFara": "tablero entero"
   },
   "fata": {
     "px": "derecha",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Cajones: alturas, holgura, tablero",
     "grupDimensiuni": "Ancho, alto, fondo, construcción",
     "grupCantitati": "Cuántas puertas, baldas, divisiones, cajones",
-    "grupSoclu": "Zócalo: el mueble apoya en el suelo, sin patas"
+    "grupSoclu": "Zócalo: el mueble apoya en el suelo, sin patas",
+    "grupTraverse": "Travesaños: el mueble bajo no lleva tablero entero arriba"
   },
   "mesaj": {
     "intrebare": "¿Qué le falta al cálculo?",

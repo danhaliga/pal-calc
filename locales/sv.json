@@ -516,6 +516,11 @@
         "nume": "Walk-in med skjutdörrar",
         "descriere": "Tre skjutdörrar och fyra fack, för en hel vägg.",
         "corpNume": "Skjut-walk-in"
+      },
+      "baza-jolly": {
+        "nume": "Smalt utdragsskåp",
+        "descriere": "För utdragbar flask- och kryddkorg. Utan hyllplan: utdraget fyller det.",
+        "corpNume": "Utdragsskåp"
       }
     },
     "adaugaCorp": "Lägg till en stomme",
@@ -665,7 +670,8 @@
     "sertarFund": "Låda – botten av board",
     "montant": "Mellanvägg",
     "piesaSimpla": "Detalj",
-    "soclu": "Sockel"
+    "soclu": "Sockel",
+    "traversa": "Regel"
   },
   "directie": {
     "jos": "ner",
@@ -704,7 +710,8 @@
     "glisieraDe": "skena {lg} mm",
     "subCutie": "monterad under lådan",
     "socluInFata": "framtill, mellan sidorna — bottnen vilar på den",
-    "usiGlisante": "{n} skjutdörrar, överlapp {supr}, skenor {sine}"
+    "usiGlisante": "{n} skjutdörrar, överlapp {supr}, skenor {sine}",
+    "traverseSusInLocDeBlat": "i stället för topplattan: en fram, en bak, {lat} breda"
   },
   "avert": {
     "politeAtipic": "I specialstommar räknas hyllplanen inte automatiskt: lägg till dem som egna delar.",
@@ -745,7 +752,10 @@
     "glisantaLata": "En skjutdörr på {lat} mm är bred: den svackar med tiden och hoppar ur skenan. Gör två av den, eller sätt aluminiumram.",
     "glisantaInalta": "En skjutdörr på {inalt} mm är hög: den behöver ram, inte bara en skiva.",
     "glisantaFaraZone": "Skjutdörrar går hela höjden: höjden på de nedre dörrarna och öppningen räknas inte.",
-    "glisantaFaraCompartimente": "Skjutdörrar löper förbi mittsidorna och kan därför inte sättas på valda fack."
+    "glisantaFaraCompartimente": "Skjutdörrar löper förbi mittsidorna och kan därför inte sättas på valda fack.",
+    "traverseNuMerg": "Reglar går bara på en rak stomme byggd ”emellan”. Här blev hela topplattan kvar.",
+    "traversePreaLate": "Reglar på {lat} mm får inte plats: två så breda tar i varandra. Över {incape} mm blir det en illa sågad topplatta.",
+    "traverseInAfara": "En regel görs mellan {min} och {max} mm. {lat} ändrades till {pus}."
   },
   "csv": {
     "corp": "Stomme",
@@ -812,7 +822,8 @@
     "coltOrb": "blint hörn",
     "corpDeschis": "öppen stomme",
     "piesa": "en enda skiva",
-    "peSoclu": "sockel {h} mm"
+    "peSoclu": "sockel {h} mm",
+    "cuTraverse": "reglar {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Mina ordrar",
@@ -1264,7 +1275,9 @@
     "nisaFara": "ingen",
     "montajGlisant": "Skjutdörrar",
     "suprapunere": "Dörrarnas överlapp",
-    "hSine": "Skenor (upptill + nedtill)"
+    "hSine": "Skenor (upptill + nedtill)",
+    "traverse": "Reglar upptill (0 = hel topplatta)",
+    "traverseFara": "hel topplatta"
   },
   "fata": {
     "px": "höger",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Lådor: höjder, spel, skiva",
     "grupDimensiuni": "Bredd, höjd, djup, byggsätt",
     "grupCantitati": "Hur många dörrar, hyllplan, mellanstycken, lådor",
-    "grupSoclu": "Sockel: stommen står på golvet, utan ben"
+    "grupSoclu": "Sockel: stommen står på golvet, utan ben",
+    "grupTraverse": "Reglar: underskåpet behöver ingen hel topplatta"
   },
   "mesaj": {
     "intrebare": "Vad saknas i beräkningen?",

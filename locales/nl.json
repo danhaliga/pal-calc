@@ -516,6 +516,11 @@
         "nume": "Inloopkast met schuifdeuren",
         "descriere": "Drie schuifdeuren en vier vakken, voor een hele wand.",
         "corpNume": "Inloop schuif"
+      },
+      "baza-jolly": {
+        "nume": "Smalle apothekerskast",
+        "descriere": "Voor de uittrekbare flessen- en kruidenmand. Zonder legplank: de mand vult hem.",
+        "corpNume": "Apothekerskast"
       }
     },
     "adaugaCorp": "Een kast toevoegen",
@@ -665,7 +670,8 @@
     "sertarFund": "Lade – bodem van hardboard",
     "montant": "Middenwand",
     "piesaSimpla": "Paneel",
-    "soclu": "Plint"
+    "soclu": "Plint",
+    "traversa": "Regel"
   },
   "directie": {
     "jos": "onder",
@@ -704,7 +710,8 @@
     "glisieraDe": "geleider {lg} mm",
     "subCutie": "onder de lade gemonteerd",
     "socluInFata": "vooraan, tussen de zijden — de bodem rust erop",
-    "usiGlisante": "{n} schuifdeuren, overlap {supr}, rails {sine}"
+    "usiGlisante": "{n} schuifdeuren, overlap {supr}, rails {sine}",
+    "traverseSusInLocDeBlat": "in plaats van het bovenblad: één voor, één achter, {lat} breed"
   },
   "avert": {
     "politeAtipic": "Bij niet-standaard kasten worden legplanken niet automatisch berekend: voeg ze als losse onderdelen toe.",
@@ -745,7 +752,10 @@
     "glisantaLata": "Een schuifdeur van {lat} mm is breed: hij gaat doorhangen en springt uit de rail. Maak er twee van of neem een aluminium kader.",
     "glisantaInalta": "Een schuifdeur van {inalt} mm is hoog: die heeft een kader nodig, geen kale plaat.",
     "glisantaFaraZone": "Schuifdeuren lopen over de volle hoogte: de hoogte van de onderste deuren en de nis tellen niet mee.",
-    "glisantaFaraCompartimente": "Schuifdeuren lopen langs de staanders, dus ze kunnen niet op gekozen vakken."
+    "glisantaFaraCompartimente": "Schuifdeuren lopen langs de staanders, dus ze kunnen niet op gekozen vakken.",
+    "traverseNuMerg": "Regels gaan alleen op een rechte kast gebouwd „ertussen”. Hier bleef het hele bovenblad.",
+    "traversePreaLate": "Regels van {lat} mm passen niet: twee zo brede raken elkaar. Boven {incape} mm is het een slecht gezaagd bovenblad.",
+    "traverseInAfara": "Een regel maak je tussen {min} en {max} mm. {lat} is teruggebracht naar {pus}."
   },
   "csv": {
     "corp": "Kast",
@@ -812,7 +822,8 @@
     "coltOrb": "blinde hoek",
     "corpDeschis": "open kast",
     "piesa": "één enkel paneel",
-    "peSoclu": "plint {h} mm"
+    "peSoclu": "plint {h} mm",
+    "cuTraverse": "regels {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Mijn opdrachten",
@@ -1264,7 +1275,9 @@
     "nisaFara": "geen",
     "montajGlisant": "Schuifdeuren",
     "suprapunere": "Overlap van de deuren",
-    "hSine": "Rails (boven + onder)"
+    "hSine": "Rails (boven + onder)",
+    "traverse": "Regels bovenin (0 = heel bovenblad)",
+    "traverseFara": "heel bovenblad"
   },
   "fata": {
     "px": "rechts",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Laden: hoogtes, speling, plaat",
     "grupDimensiuni": "Breedte, hoogte, diepte, opbouw",
     "grupCantitati": "Hoeveel deuren, legplanken, tussenschotten, laden",
-    "grupSoclu": "Plint: de kast staat op de vloer, zonder pootjes"
+    "grupSoclu": "Plint: de kast staat op de vloer, zonder pootjes",
+    "grupTraverse": "Regels: de onderkast heeft geen heel bovenblad"
   },
   "mesaj": {
     "intrebare": "Wat mist de berekening?",

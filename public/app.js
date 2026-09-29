@@ -12,7 +12,7 @@ var CORP_ID = DATA.corpId;
 var params = DATA.params;
 var paid = !!DATA.paid;
 
-var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','t','cg','cs','spate','tp','nUsi','montaj','balama','supr','hSine',
+var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','traverse','t','cg','cs','spate','tp','nUsi','montaj','balama','supr','hSine',
               'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg',
               'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 
@@ -352,7 +352,7 @@ function renderTable() {
    casetă nu spune asta nimănui, și acoperă și indiciul din spate. Corpurile
    făcute înainte au 0 salvat, deci nu ajunge să schimbăm doar valoarea
    implicită: îl arătăm gol oricând îl găsim. */
-var ZERO_E_GOL = ['hUsi', 'hNisa', 'lg'];
+var ZERO_E_GOL = ['hUsi', 'hNisa', 'traverse', 'lg'];
 
 function render() {
   fields.forEach(function (f) {
@@ -698,7 +698,10 @@ var GRUPE = [
   /* Soclul sta singur, nu cu dimensiunile: latimea si inaltimea sunt ale
      corpului, soclul e felul de-a lucra al atelierului. Cine face fara
      picioare face fara picioare la toate corpurile de pe podea. */
-  { id: 'soclu',      camp: ['soclu'],                                bifatLaInceput: false }
+  { id: 'soclu',      camp: ['soclu'],                                bifatLaInceput: false },
+  /* Traversele stau in grupa lor, nu cu soclul: se poate foarte bine un
+     corp pe picioare cu traverse, sau unul pe soclu cu blat intreg. */
+  { id: 'traverse',   camp: ['traverse'],                             bifatLaInceput: false }
 ];
 
 function cheieGrup(id) { return 'setari.grup' + id.charAt(0).toUpperCase() + id.slice(1); }

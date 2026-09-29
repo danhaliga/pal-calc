@@ -516,6 +516,11 @@
         "nume": "Ankleide mit Schiebetüren",
         "descriere": "Drei Schiebetüren und vier Fächer, für eine ganze Wand.",
         "corpNume": "Ankleide-Schiebe"
+      },
+      "baza-jolly": {
+        "nume": "Schmaler Apothekerschrank",
+        "descriere": "Für den Flaschen- und Gewürzauszug. Ohne Boden: der Auszug füllt ihn.",
+        "corpNume": "Apothekerschrank"
       }
     },
     "adaugaCorp": "Einen Korpus hinzufügen",
@@ -665,7 +670,8 @@
     "sertarFund": "Schublade – Boden aus Hartfaser",
     "montant": "Mittelseite",
     "piesaSimpla": "Teil",
-    "soclu": "Sockel"
+    "soclu": "Sockel",
+    "traversa": "Traverse"
   },
   "directie": {
     "jos": "unten",
@@ -704,7 +710,8 @@
     "glisieraDe": "Auszug {lg} mm",
     "subCutie": "unter dem Kasten montiert",
     "socluInFata": "vorn, zwischen den Seiten — der Boden steht darauf",
-    "usiGlisante": "{n} Schiebetüren, Überlappung {supr}, Schienen {sine}"
+    "usiGlisante": "{n} Schiebetüren, Überlappung {supr}, Schienen {sine}",
+    "traverseSusInLocDeBlat": "statt des Deckels: eine vorn, eine hinten, {lat} breit"
   },
   "avert": {
     "politeAtipic": "Bei Sonderkorpussen werden Böden nicht automatisch berechnet: füge sie als eigene Teile hinzu.",
@@ -745,7 +752,10 @@
     "glisantaLata": "Eine Schiebetür von {lat} mm ist breit: sie hängt mit der Zeit durch und springt aus der Schiene. Mach zwei daraus oder nimm einen Alurahmen.",
     "glisantaInalta": "Eine Schiebetür von {inalt} mm ist hoch: sie braucht einen Rahmen, keine reine Spanplatte.",
     "glisantaFaraZone": "Schiebetüren gehen über die ganze Höhe: die Höhe der unteren Türen und die Nische zählen nicht.",
-    "glisantaFaraCompartimente": "Schiebetüren laufen an den Mittelseiten vorbei, sie lassen sich also nicht auf ausgewählte Fächer setzen."
+    "glisantaFaraCompartimente": "Schiebetüren laufen an den Mittelseiten vorbei, sie lassen sich also nicht auf ausgewählte Fächer setzen.",
+    "traverseNuMerg": "Traversen gehen nur bei einem geraden Korpus in „Zwischen“-Bauweise. Hier bleibt der ganze Deckel.",
+    "traversePreaLate": "Traversen von {lat} mm passen nicht: zwei so breite berühren sich. Über {incape} mm wäre es ein schlecht zugeschnittener Deckel.",
+    "traverseInAfara": "Eine Traverse wird zwischen {min} und {max} mm gemacht. {lat} wurde auf {pus} gebracht."
   },
   "csv": {
     "corp": "Korpus",
@@ -812,7 +822,8 @@
     "coltOrb": "blinde Ecke",
     "corpDeschis": "offener Korpus",
     "piesa": "eine einzelne Platte",
-    "peSoclu": "{h} mm Sockel"
+    "peSoclu": "{h} mm Sockel",
+    "cuTraverse": "Traversen {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Meine Aufträge",
@@ -1264,7 +1275,9 @@
     "nisaFara": "keine",
     "montajGlisant": "Schiebetüren",
     "suprapunere": "Überlappung der Türen",
-    "hSine": "Laufschienen (oben + unten)"
+    "hSine": "Laufschienen (oben + unten)",
+    "traverse": "Traversen oben (0 = ganzer Deckel)",
+    "traverseFara": "ganzer Deckel"
   },
   "fata": {
     "px": "rechts",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Schubkästen: Höhen, Spiel, Platte",
     "grupDimensiuni": "Breite, Höhe, Tiefe, Bauart",
     "grupCantitati": "Wie viele Türen, Böden, Mittelseiten, Schubkästen",
-    "grupSoclu": "Sockel: der Korpus steht auf dem Boden, ohne Füße"
+    "grupSoclu": "Sockel: der Korpus steht auf dem Boden, ohne Füße",
+    "grupTraverse": "Traversen: der Unterschrank hat keinen ganzen Deckel"
   },
   "mesaj": {
     "intrebare": "Was fehlt der Berechnung?",

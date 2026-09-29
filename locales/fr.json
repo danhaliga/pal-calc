@@ -516,6 +516,11 @@
         "nume": "Dressing à portes coulissantes",
         "descriere": "Trois coulissantes et quatre compartiments, pour tout un mur.",
         "corpNume": "Dressing coulissant"
+      },
+      "baza-jolly": {
+        "nume": "Caisson étroit coulissant",
+        "descriere": "Pour le range-bouteilles ou épicier coulissant. Sans étagère : le coulissant l'occupe.",
+        "corpNume": "Caisson coulissant"
       }
     },
     "adaugaCorp": "Ajouter un caisson",
@@ -665,7 +670,8 @@
     "sertarFund": "Tiroir – fond en panneau dur",
     "montant": "Montant",
     "piesaSimpla": "Pièce",
-    "soclu": "Plinthe"
+    "soclu": "Plinthe",
+    "traversa": "Traverse"
   },
   "directie": {
     "jos": "bas",
@@ -704,7 +710,8 @@
     "glisieraDe": "coulisse {lg} mm",
     "subCutie": "posé sous la caisse",
     "socluInFata": "à l’avant, entre les côtés — le fond repose dessus",
-    "usiGlisante": "{n} portes coulissantes, recouvrement {supr}, rails {sine}"
+    "usiGlisante": "{n} portes coulissantes, recouvrement {supr}, rails {sine}",
+    "traverseSusInLocDeBlat": "à la place du panneau haut : une devant, une derrière, larges de {lat}"
   },
   "avert": {
     "politeAtipic": "Les étagères ne sont pas calculées automatiquement pour les caissons hors standard : ajoutez-les comme pièces séparées.",
@@ -745,7 +752,10 @@
     "glisantaLata": "Une coulissante de {lat} mm est large : elle finit par gauchir et sortir du rail. Fais-en deux, ou pose un cadre alu.",
     "glisantaInalta": "Une coulissante de {inalt} mm est haute : il lui faut un cadre, pas un simple panneau.",
     "glisantaFaraZone": "Les coulissantes font toute la hauteur : la hauteur des portes du bas et la niche ne comptent pas.",
-    "glisantaFaraCompartimente": "Les coulissantes passent devant les montants, elles ne peuvent donc pas être posées sur des compartiments choisis."
+    "glisantaFaraCompartimente": "Les coulissantes passent devant les montants, elles ne peuvent donc pas être posées sur des compartiments choisis.",
+    "traverseNuMerg": "Les traverses ne vont que sur un caisson droit monté « entre ». Ici le panneau entier est resté.",
+    "traversePreaLate": "Des traverses de {lat} mm ne rentrent pas : deux aussi larges se touchent. Au-delà de {incape} mm ce serait un panneau mal coupé.",
+    "traverseInAfara": "Une traverse se fait entre {min} et {max} mm. {lat} a été ramené à {pus}."
   },
   "csv": {
     "corp": "Caisson",
@@ -812,7 +822,8 @@
     "coltOrb": "angle borgne",
     "corpDeschis": "caisson ouvert",
     "piesa": "un seul panneau",
-    "peSoclu": "plinthe {h} mm"
+    "peSoclu": "plinthe {h} mm",
+    "cuTraverse": "traverses {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Mes commandes",
@@ -1264,7 +1275,9 @@
     "nisaFara": "aucune",
     "montajGlisant": "Coulissantes",
     "suprapunere": "Recouvrement des portes",
-    "hSine": "Rails (haut + bas)"
+    "hSine": "Rails (haut + bas)",
+    "traverse": "Traverses en haut (0 = panneau entier)",
+    "traverseFara": "panneau entier"
   },
   "fata": {
     "px": "droite",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Tiroirs : hauteurs, jeu, panneau",
     "grupDimensiuni": "Largeur, hauteur, profondeur, construction",
     "grupCantitati": "Combien de portes, tablettes, montants, tiroirs",
-    "grupSoclu": "Plinthe : le caisson pose au sol, sans pieds"
+    "grupSoclu": "Plinthe : le caisson pose au sol, sans pieds",
+    "grupTraverse": "Traverses : le caisson bas n’a pas de panneau entier en haut"
   },
   "mesaj": {
     "intrebare": "Qu’est-ce qui manque au calcul ?",

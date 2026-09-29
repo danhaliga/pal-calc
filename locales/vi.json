@@ -516,6 +516,11 @@
         "nume": "Phòng thay đồ cánh lùa",
         "descriere": "Ba cánh lùa và bốn ngăn, cho trọn một bức tường.",
         "corpNume": "Phòng thay đồ lùa"
+      },
+      "baza-jolly": {
+        "nume": "Thùng hẹp lắp giá kéo",
+        "descriere": "Cho giá kéo đựng chai lọ và gia vị. Không kệ: giá kéo chiếm hết.",
+        "corpNume": "Thùng giá kéo"
       }
     },
     "adaugaCorp": "Thêm một thùng tủ",
@@ -665,7 +670,8 @@
     "sertarFund": "Ngăn kéo – đáy HDF",
     "montant": "Vách ngăn",
     "piesaSimpla": "Chi tiết",
-    "soclu": "Chân đế"
+    "soclu": "Chân đế",
+    "traversa": "Thanh giằng"
   },
   "directie": {
     "jos": "dưới",
@@ -704,7 +710,8 @@
     "glisieraDe": "ray {lg} mm",
     "subCutie": "lắp dưới hộc",
     "socluInFata": "phía trước, giữa hai hông — đáy tựa lên nó",
-    "usiGlisante": "{n} cánh lùa, chồng mép {supr}, ray {sine}"
+    "usiGlisante": "{n} cánh lùa, chồng mép {supr}, ray {sine}",
+    "traverseSusInLocDeBlat": "thay cho tấm nóc: một phía trước, một phía sau, rộng {lat}"
   },
   "avert": {
     "politeAtipic": "Ở thùng tủ phi tiêu chuẩn, kệ không được tính tự động: hãy thêm chúng như chi tiết riêng.",
@@ -745,7 +752,10 @@
     "glisantaLata": "Cánh lùa {lat} mm khá rộng: lâu ngày sẽ võng và trật ray. Hãy chia làm hai hoặc dùng khung nhôm.",
     "glisantaInalta": "Cánh lùa {inalt} mm khá cao: cần khung, không dùng tấm ván trơn được.",
     "glisantaFaraZone": "Cánh lùa chạy suốt chiều cao: chiều cao cánh dưới và khoảng hở không được tính.",
-    "glisantaFaraCompartimente": "Cánh lùa đi qua trước vách đứng nên không lắp riêng cho từng ngăn được."
+    "glisantaFaraCompartimente": "Cánh lùa đi qua trước vách đứng nên không lắp riêng cho từng ngăn được.",
+    "traverseNuMerg": "Thanh giằng chỉ dùng cho thùng thẳng dựng kiểu „giữa\". Ở đây vẫn là tấm nóc liền.",
+    "traversePreaLate": "Thanh giằng {lat} mm không vừa: hai thanh rộng vậy chạm nhau. Trên {incape} mm thì chẳng khác gì tấm nóc cắt hỏng.",
+    "traverseInAfara": "Thanh giằng làm từ {min} đến {max} mm. {lat} đã được đưa về {pus}."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -812,7 +822,8 @@
     "coltOrb": "góc khuất",
     "corpDeschis": "thùng tủ để mở",
     "piesa": "một tấm duy nhất",
-    "peSoclu": "chân đế {h} mm"
+    "peSoclu": "chân đế {h} mm",
+    "cuTraverse": "thanh giằng {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Đơn hàng của tôi",
@@ -1264,7 +1275,9 @@
     "nisaFara": "không có",
     "montajGlisant": "Lùa",
     "suprapunere": "Độ chồng mép cánh",
-    "hSine": "Ray (trên + dưới)"
+    "hSine": "Ray (trên + dưới)",
+    "traverse": "Thanh giằng trên (0 = tấm nóc liền)",
+    "traverseFara": "tấm nóc liền"
   },
   "fata": {
     "px": "phải",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Ngăn kéo: chiều cao, khe hở, ván",
     "grupDimensiuni": "Rộng, cao, sâu, cách dựng",
     "grupCantitati": "Bao nhiêu cánh, kệ, vách giữa, ngăn kéo",
-    "grupSoclu": "Chân đế: thùng đứng trên sàn, không chân rời"
+    "grupSoclu": "Chân đế: thùng đứng trên sàn, không chân rời",
+    "grupTraverse": "Thanh giằng: thùng dưới không cần tấm nóc liền"
   },
   "mesaj": {
     "intrebare": "Phép tính còn thiếu gì?",

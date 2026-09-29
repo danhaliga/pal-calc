@@ -516,6 +516,11 @@
         "nume": "引き戸のウォークイン",
         "descriere": "引き戸3枚と区画4つ、壁一面ぶん。",
         "corpNume": "引き戸ウォークイン"
+      },
+      "baza-jolly": {
+        "nume": "細い引き出し式の箱",
+        "descriere": "瓶や調味料のスライドラック用。棚板なし：ラックが中を占めます。",
+        "corpNume": "スライドラック箱"
       }
     },
     "adaugaCorp": "キャビネットを追加",
@@ -665,7 +670,8 @@
     "sertarFund": "引き出し —— HDFの底板",
     "montant": "中仕切り",
     "piesaSimpla": "部材",
-    "soclu": "台輪"
+    "soclu": "台輪",
+    "traversa": "幕板"
   },
   "directie": {
     "jos": "下",
@@ -704,7 +710,8 @@
     "glisieraDe": "レール {lg} mm",
     "subCutie": "箱の下に付きます",
     "socluInFata": "前面、側板のあいだ — 底板がこの上に載ります",
-    "usiGlisante": "引き戸 {n} 枚、重なり {supr}、レール {sine}"
+    "usiGlisante": "引き戸 {n} 枚、重なり {supr}、レール {sine}",
+    "traverseSusInLocDeBlat": "天板の代わりに、前と後ろに1枚ずつ、幅 {lat}"
   },
   "avert": {
     "politeAtipic": "変形キャビネットの棚板は自動では数えません。別の部材として足してください。",
@@ -745,7 +752,10 @@
     "glisantaLata": "{lat} mm の引き戸は幅が広く、時間とともに垂れてレールから外れます。2枚に分けるか、アルミ枠を使ってください。",
     "glisantaInalta": "{inalt} mm の引き戸は高く、枠が必要です。パーティクルボード1枚では持ちません。",
     "glisantaFaraZone": "引き戸は全高です。下の扉の高さと開口は考慮されません。",
-    "glisantaFaraCompartimente": "引き戸は中仕切りの前を通るため、特定の区画だけに付けることはできません。"
+    "glisantaFaraCompartimente": "引き戸は中仕切りの前を通るため、特定の区画だけに付けることはできません。",
+    "traverseNuMerg": "幕板は「はさみ込み」で組んだ直方体の箱にだけ付きます。ここでは天板が全面のままです。",
+    "traversePreaLate": "幅 {lat} mm の幕板は入りません。2枚が触れてしまいます。{incape} mm を超えると、切り損じた天板と同じです。",
+    "traverseInAfara": "幕板の幅は {min}〜{max} mm です。{lat} は {pus} に直しました。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -812,7 +822,8 @@
     "coltOrb": "死角コーナー",
     "corpDeschis": "オープンキャビネット",
     "piesa": "板一枚",
-    "peSoclu": "台輪 {h} mm"
+    "peSoclu": "台輪 {h} mm",
+    "cuTraverse": "幕板 {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "自分の注文",
@@ -1264,7 +1275,9 @@
     "nisaFara": "なし",
     "montajGlisant": "引き戸",
     "suprapunere": "戸の重なり",
-    "hSine": "レール（上＋下）"
+    "hSine": "レール（上＋下）",
+    "traverse": "上の幕板（0 = 天板を全面）",
+    "traverseFara": "天板を全面"
   },
   "fata": {
     "px": "右",
@@ -1294,7 +1307,8 @@
     "grupSertare": "引き出し: 高さ・逃げ・板",
     "grupDimensiuni": "幅・高さ・奥行・組み方",
     "grupCantitati": "扉・棚板・仕切り・引き出しの数",
-    "grupSoclu": "台輪：脚を使わず床に据える"
+    "grupSoclu": "台輪：脚を使わず床に据える",
+    "grupTraverse": "幕板：床置き箱に全面の天板は要りません"
   },
   "mesaj": {
     "intrebare": "計算に足りないものは何ですか。",

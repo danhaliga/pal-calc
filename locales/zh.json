@@ -516,6 +516,11 @@
         "nume": "推拉门衣帽间",
         "descriere": "三扇推拉门、四个分格，占满整面墙。",
         "corpNume": "推拉衣帽间"
+      },
+      "baza-jolly": {
+        "nume": "窄型拉篮柜",
+        "descriere": "用于瓶罐调料拉篮。不设隔板：拉篮占满内部。",
+        "corpNume": "拉篮柜"
       }
     },
     "adaugaCorp": "添加柜体",
@@ -665,7 +670,8 @@
     "sertarFund": "抽屉 —— 高密度板底",
     "montant": "中隔板",
     "piesaSimpla": "板件",
-    "soclu": "踢脚板"
+    "soclu": "踢脚板",
+    "traversa": "横档"
   },
   "directie": {
     "jos": "下",
@@ -704,7 +710,8 @@
     "glisieraDe": "{lg} 毫米滑轨",
     "subCutie": "装在抽屉盒下面",
     "socluInFata": "位于前方、两块侧板之间——底板搁在上面",
-    "usiGlisante": "{n} 扇推拉门，搭接 {supr}，轨道 {sine}"
+    "usiGlisante": "{n} 扇推拉门，搭接 {supr}，轨道 {sine}",
+    "traverseSusInLocDeBlat": "代替顶板：前后各一条，宽 {lat}"
   },
   "avert": {
     "politeAtipic": "异形柜体的层板不会自动算：单独当板件加进去。",
@@ -745,7 +752,10 @@
     "glisantaLata": "{lat} 毫米的推拉门偏宽：时间久了会下垂并脱轨。做成两扇，或加铝框。",
     "glisantaInalta": "{inalt} 毫米的推拉门偏高：需要加框，不能用整块刨花板。",
     "glisantaFaraZone": "推拉门通高：下层门高度和中间开口不予考虑。",
-    "glisantaFaraCompartimente": "推拉门横跨立板，因此无法只装在选定的格内。"
+    "glisantaFaraCompartimente": "推拉门横跨立板，因此无法只装在选定的格内。",
+    "traverseNuMerg": "横档只适用于“嵌入式”结构的直柜。这里保留了整块顶板。",
+    "traversePreaLate": "{lat} 毫米的横档放不下：两条这么宽会碰到一起。超过 {incape} 毫米就等于一块切坏的顶板。",
+    "traverseInAfara": "横档的宽度在 {min} 到 {max} 毫米之间。{lat} 已调整为 {pus}。"
   },
   "csv": {
     "corp": "柜体",
@@ -812,7 +822,8 @@
     "coltOrb": "盲角",
     "corpDeschis": "开放柜体",
     "piesa": "单独一块板",
-    "peSoclu": "{h} 毫米踢脚板"
+    "peSoclu": "{h} 毫米踢脚板",
+    "cuTraverse": "{lat} 毫米横档"
   },
   "comanda": {
     "inapoiComenzi": "我的订单",
@@ -1264,7 +1275,9 @@
     "nisaFara": "无",
     "montajGlisant": "推拉",
     "suprapunere": "门扇搭接",
-    "hSine": "轨道（上+下）"
+    "hSine": "轨道（上+下）",
+    "traverse": "顶部横档（0 = 整块顶板）",
+    "traverseFara": "整块顶板"
   },
   "fata": {
     "px": "右",
@@ -1294,7 +1307,8 @@
     "grupSertare": "抽屉：高度、间隙、板材",
     "grupDimensiuni": "宽、高、深、做法",
     "grupCantitati": "几扇门、几块层板、几块中隔、几个抽屉",
-    "grupSoclu": "踢脚板：柜体直接落地，不用柜脚"
+    "grupSoclu": "踢脚板：柜体直接落地，不用柜脚",
+    "grupTraverse": "横档：地柜不用整块顶板"
   },
   "mesaj": {
     "intrebare": "计算还缺什么？",

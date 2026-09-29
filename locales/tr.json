@@ -516,6 +516,11 @@
         "nume": "Sürme kapaklı giyinme odası",
         "descriere": "Üç sürme kapak ve dört bölme, bütün bir duvar için.",
         "corpNume": "Sürme giyinme"
+      },
+      "baza-jolly": {
+        "nume": "Dar çekmeli gövde",
+        "descriere": "Şişelik ve baharatlık çekmesi için. Rafsız: içini çekme doldurur.",
+        "corpNume": "Çekmeli gövde"
       }
     },
     "adaugaCorp": "Bir gövde ekle",
@@ -665,7 +670,8 @@
     "sertarFund": "Çekmece – HDF taban",
     "montant": "Orta bölme",
     "piesaSimpla": "Parça",
-    "soclu": "Süpürgelik"
+    "soclu": "Süpürgelik",
+    "traversa": "Kuşak"
   },
   "directie": {
     "jos": "alt",
@@ -704,7 +710,8 @@
     "glisieraDe": "{lg} mm ray",
     "subCutie": "kutunun altına takılır",
     "socluInFata": "önde, yanların arasında — taban onun üzerinde durur",
-    "usiGlisante": "{n} sürme kapak, bindirme {supr}, raylar {sine}"
+    "usiGlisante": "{n} sürme kapak, bindirme {supr}, raylar {sine}",
+    "traverseSusInLocDeBlat": "üst tabla yerine: biri önde biri arkada, {lat} genişliğinde"
   },
   "avert": {
     "politeAtipic": "Standart dışı gövdelerde raflar kendiliğinden hesaplanmaz: onları ayrı parça olarak ekle.",
@@ -745,7 +752,10 @@
     "glisantaLata": "{lat} mm sürme kapak geniş: zamanla sarkar ve raydan çıkar. İkiye böl ya da alüminyum çerçeve kullan.",
     "glisantaInalta": "{inalt} mm sürme kapak yüksek: çerçeve ister, düz sunta olmaz.",
     "glisantaFaraZone": "Sürme kapaklar tüm boyu kaplar: alt kapak yüksekliği ve boşluk hesaba katılmaz.",
-    "glisantaFaraCompartimente": "Sürme kapaklar dikmelerin önünden geçer, bu yüzden seçilmiş bölmelere konamaz."
+    "glisantaFaraCompartimente": "Sürme kapaklar dikmelerin önünden geçer, bu yüzden seçilmiş bölmelere konamaz.",
+    "traverseNuMerg": "Kuşaklar yalnızca „aradan\" yapılmış düz gövdeye takılır. Burada tam tabla kaldı.",
+    "traversePreaLate": "{lat} mm kuşaklar sığmıyor: bu genişlikte ikisi birbirine değer. {incape} mm üstü, kötü kesilmiş bir tabla olur.",
+    "traverseInAfara": "Kuşak {min} ile {max} mm arasında yapılır. {lat} değeri {pus} yapıldı."
   },
   "csv": {
     "corp": "Gövde",
@@ -812,7 +822,8 @@
     "coltOrb": "kör köşe",
     "corpDeschis": "açık gövde",
     "piesa": "tek levha",
-    "peSoclu": "{h} mm süpürgelik"
+    "peSoclu": "{h} mm süpürgelik",
+    "cuTraverse": "kuşak {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Siparişlerim",
@@ -1264,7 +1275,9 @@
     "nisaFara": "yok",
     "montajGlisant": "Sürme",
     "suprapunere": "Kapak bindirmesi",
-    "hSine": "Raylar (üst + alt)"
+    "hSine": "Raylar (üst + alt)",
+    "traverse": "Üstte kuşak (0 = tam tabla)",
+    "traverseFara": "tam tabla"
   },
   "fata": {
     "px": "sağ",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Çekmeceler: yükseklikler, boşluk, levha",
     "grupDimensiuni": "Genişlik, yükseklik, derinlik, yapım",
     "grupCantitati": "Kaç kapak, raf, ara dikme, çekmece",
-    "grupSoclu": "Süpürgelik: gövde ayaksız, yere oturur"
+    "grupSoclu": "Süpürgelik: gövde ayaksız, yere oturur",
+    "grupTraverse": "Kuşak: alt gövdede tam tabla yok"
   },
   "mesaj": {
     "intrebare": "Hesapta ne eksik?",

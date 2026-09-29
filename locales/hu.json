@@ -516,6 +516,11 @@
         "nume": "Tolóajtós gardrób",
         "descriere": "Három tolóajtó és négy rekesz, egy egész falra.",
         "corpNume": "Tolóajtós gardrób"
+      },
+      "baza-jolly": {
+        "nume": "Keskeny kihúzós elem",
+        "descriere": "Kihúzható üveg- és fűszertartóhoz. Polc nélkül: a kihúzó tölti ki.",
+        "corpNume": "Kihúzós elem"
       }
     },
     "adaugaCorp": "Korpusz hozzáadása",
@@ -665,7 +670,8 @@
     "sertarFund": "Fiók – farostlemez fenék",
     "montant": "Közfal",
     "piesaSimpla": "Elem",
-    "soclu": "Lábazat"
+    "soclu": "Lábazat",
+    "traversa": "Merevítő"
   },
   "directie": {
     "jos": "alul",
@@ -704,7 +710,8 @@
     "glisieraDe": "{lg} mm-es sín",
     "subCutie": "a fiók alá szerelve",
     "socluInFata": "elöl, az oldalak között — az alj rajta áll",
-    "usiGlisante": "{n} tolóajtó, átfedés {supr}, sínek {sine}"
+    "usiGlisante": "{n} tolóajtó, átfedés {supr}, sínek {sine}",
+    "traverseSusInLocDeBlat": "a fedlap helyett: egy elöl, egy hátul, {lat} szélesek"
   },
   "avert": {
     "politeAtipic": "Egyedi korpuszoknál a polcok nem számolódnak magától: add hozzá őket külön elemként.",
@@ -745,7 +752,10 @@
     "glisantaLata": "A {lat} mm-es tolóajtó széles: idővel megereszkedik és kiugrik a sínből. Csináld kettőből, vagy tegyél alumíniumkeretet.",
     "glisantaInalta": "A {inalt} mm-es tolóajtó magas: keret kell hozzá, nem puszta lap.",
     "glisantaFaraZone": "A tolóajtók teljes magasságúak: az alsó ajtók magassága és a nyílás nem számít.",
-    "glisantaFaraCompartimente": "A tolóajtók az osztók előtt futnak, ezért nem tehetők kiválasztott rekeszekre."
+    "glisantaFaraCompartimente": "A tolóajtók az osztók előtt futnak, ezért nem tehetők kiválasztott rekeszekre.",
+    "traverseNuMerg": "A merevítők csak „közé” épített egyenes korpuszra mennek. Itt maradt a teljes fedlap.",
+    "traversePreaLate": "A {lat} mm-es merevítők nem férnek el: két ilyen széles összeér. {incape} mm fölött ez már rosszul szabott fedlap.",
+    "traverseInAfara": "A merevítő {min} és {max} mm között készül. A {lat} {pus} lett."
   },
   "csv": {
     "corp": "Korpusz",
@@ -812,7 +822,8 @@
     "coltOrb": "vak sarok",
     "corpDeschis": "nyitott korpusz",
     "piesa": "egyetlen lap",
-    "peSoclu": "{h} mm lábazat"
+    "peSoclu": "{h} mm lábazat",
+    "cuTraverse": "merevítők {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "A megrendeléseim",
@@ -1264,7 +1275,9 @@
     "nisaFara": "nincs",
     "montajGlisant": "Tolóajtós",
     "suprapunere": "Ajtók átfedése",
-    "hSine": "Sínek (fent + lent)"
+    "hSine": "Sínek (fent + lent)",
+    "traverse": "Merevítők felül (0 = teljes fedlap)",
+    "traverseFara": "teljes fedlap"
   },
   "fata": {
     "px": "jobb",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Fiókok: magasságok, hézag, lap",
     "grupDimensiuni": "Szélesség, magasság, mélység, felépítés",
     "grupCantitati": "Hány ajtó, polc, közfal, fiók",
-    "grupSoclu": "Lábazat: a korpusz a padlón áll, láb nélkül"
+    "grupSoclu": "Lábazat: a korpusz a padlón áll, láb nélkül",
+    "grupTraverse": "Merevítők: az alsó elemnek nincs teljes fedlapja"
   },
   "mesaj": {
     "intrebare": "Mi hiányzik a számításból?",

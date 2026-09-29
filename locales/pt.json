@@ -516,6 +516,11 @@
         "nume": "Closet com portas de correr",
         "descriere": "Três portas de correr e quatro vãos, para uma parede inteira.",
         "corpNume": "Closet de correr"
+      },
+      "baza-jolly": {
+        "nume": "Móvel estreito extraível",
+        "descriere": "Para o porta-garrafas ou especieiro extraível. Sem prateleira: o extraível ocupa-o.",
+        "corpNume": "Móvel extraível"
       }
     },
     "adaugaCorp": "Adicionar um módulo",
@@ -665,7 +670,8 @@
     "sertarFund": "Gaveta – fundo em placa de fibras",
     "montant": "Montante",
     "piesaSimpla": "Peça",
-    "soclu": "Rodapé"
+    "soclu": "Rodapé",
+    "traversa": "Travessa"
   },
   "directie": {
     "jos": "baixo",
@@ -704,7 +710,8 @@
     "glisieraDe": "corrediça {lg} mm",
     "subCutie": "montado sob a caixa",
     "socluInFata": "à frente, entre as laterais — o fundo assenta nele",
-    "usiGlisante": "{n} portas de correr, sobreposição {supr}, calhas {sine}"
+    "usiGlisante": "{n} portas de correr, sobreposição {supr}, calhas {sine}",
+    "traverseSusInLocDeBlat": "em vez do tampo: uma à frente, outra atrás, com {lat} de largura"
   },
   "avert": {
     "politeAtipic": "Nos módulos fora de padrão as prateleiras não são calculadas sozinhas: acrescenta-as como peças à parte.",
@@ -745,7 +752,10 @@
     "glisantaLata": "Uma porta de correr de {lat} mm é larga: com o tempo empena e sai da calha. Faz de duas ou põe aro de alumínio.",
     "glisantaInalta": "Uma porta de correr de {inalt} mm é alta: precisa de aro, não de um painel simples.",
     "glisantaFaraZone": "As portas de correr vão de alto a baixo: a altura das portas de baixo e o vão não contam.",
-    "glisantaFaraCompartimente": "As portas de correr passam à frente dos montantes, por isso não se podem pôr em vãos escolhidos."
+    "glisantaFaraCompartimente": "As portas de correr passam à frente dos montantes, por isso não se podem pôr em vãos escolhidos.",
+    "traverseNuMerg": "As travessas só vão num móvel direito construído «entre». Aqui ficou o tampo inteiro.",
+    "traversePreaLate": "Travessas de {lat} mm não cabem: duas tão largas tocam-se. Acima de {incape} mm seria um tampo mal cortado.",
+    "traverseInAfara": "A travessa faz-se entre {min} e {max} mm. {lat} foi ajustado para {pus}."
   },
   "csv": {
     "corp": "Módulo",
@@ -812,7 +822,8 @@
     "coltOrb": "canto cego",
     "corpDeschis": "módulo aberto",
     "piesa": "uma só placa",
-    "peSoclu": "rodapé {h} mm"
+    "peSoclu": "rodapé {h} mm",
+    "cuTraverse": "travessas {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "As minhas encomendas",
@@ -1264,7 +1275,9 @@
     "nisaFara": "sem vão",
     "montajGlisant": "De correr",
     "suprapunere": "Sobreposição das portas",
-    "hSine": "Calhas (cima + baixo)"
+    "hSine": "Calhas (cima + baixo)",
+    "traverse": "Travessas em cima (0 = tampo inteiro)",
+    "traverseFara": "tampo inteiro"
   },
   "fata": {
     "px": "direita",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Gavetas: alturas, folga, placa",
     "grupDimensiuni": "Largura, altura, profundidade, construção",
     "grupCantitati": "Quantas portas, prateleiras, divisórias, gavetas",
-    "grupSoclu": "Rodapé: o móvel assenta no chão, sem pés"
+    "grupSoclu": "Rodapé: o móvel assenta no chão, sem pés",
+    "grupTraverse": "Travessas: o móvel inferior não leva tampo inteiro"
   },
   "mesaj": {
     "intrebare": "O que falta ao cálculo?",

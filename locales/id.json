@@ -516,6 +516,11 @@
         "nume": "Ruang pakaian pintu geser",
         "descriere": "Tiga pintu geser dan empat kotak, untuk satu dinding penuh.",
         "corpNume": "Ruang pakaian geser"
+      },
+      "baza-jolly": {
+        "nume": "Boks sempit rak tarik",
+        "descriere": "Untuk rak tarik botol dan bumbu. Tanpa rak: diisi penuh oleh rak tarik.",
+        "corpNume": "Boks rak tarik"
       }
     },
     "adaugaCorp": "Tambahkan sebuah boks",
@@ -665,7 +670,8 @@
     "sertarFund": "Laci – dasar HDF",
     "montant": "Sekat",
     "piesaSimpla": "Bagian",
-    "soclu": "Papan alas"
+    "soclu": "Papan alas",
+    "traversa": "Palang"
   },
   "directie": {
     "jos": "bawah",
@@ -704,7 +710,8 @@
     "glisieraDe": "rel {lg} mm",
     "subCutie": "dipasang di bawah kotak",
     "socluInFata": "di depan, di antara sisi — alas bertumpu di atasnya",
-    "usiGlisante": "{n} pintu geser, tumpang {supr}, rel {sine}"
+    "usiGlisante": "{n} pintu geser, tumpang {supr}, rel {sine}",
+    "traverseSusInLocDeBlat": "menggantikan papan atas: satu di depan, satu di belakang, lebar {lat}"
   },
   "avert": {
     "politeAtipic": "Pada boks nonstandar, rak tidak dihitung otomatis: tambahkan sebagai bagian tersendiri.",
@@ -745,7 +752,10 @@
     "glisantaLata": "Pintu geser {lat} mm tergolong lebar: lama-lama melendut dan lepas dari rel. Bagi jadi dua atau pakai rangka aluminium.",
     "glisantaInalta": "Pintu geser {inalt} mm tergolong tinggi: perlu rangka, bukan papan polos.",
     "glisantaFaraZone": "Pintu geser setinggi penuh: tinggi pintu bawah dan bukaan tidak diperhitungkan.",
-    "glisantaFaraCompartimente": "Pintu geser melewati sekat tegak, jadi tidak bisa dipasang pada kotak tertentu."
+    "glisantaFaraCompartimente": "Pintu geser melewati sekat tegak, jadi tidak bisa dipasang pada kotak tertentu.",
+    "traverseNuMerg": "Palang hanya untuk boks lurus yang dibangun „di antara\". Di sini papan atas penuh tetap dipakai.",
+    "traversePreaLate": "Palang {lat} mm tidak muat: dua selebar itu saling bersentuhan. Di atas {incape} mm jadinya papan atas yang salah potong.",
+    "traverseInAfara": "Palang dibuat antara {min} dan {max} mm. {lat} disesuaikan menjadi {pus}."
   },
   "csv": {
     "corp": "Boks",
@@ -812,7 +822,8 @@
     "coltOrb": "sudut buntu",
     "corpDeschis": "boks terbuka",
     "piesa": "satu papan saja",
-    "peSoclu": "papan alas {h} mm"
+    "peSoclu": "papan alas {h} mm",
+    "cuTraverse": "palang {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "Pesanan saya",
@@ -1264,7 +1275,9 @@
     "nisaFara": "tidak ada",
     "montajGlisant": "Geser",
     "suprapunere": "Tumpang pintu",
-    "hSine": "Rel (atas + bawah)"
+    "hSine": "Rel (atas + bawah)",
+    "traverse": "Palang atas (0 = papan atas penuh)",
+    "traverseFara": "papan atas penuh"
   },
   "fata": {
     "px": "kanan",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Laci: tinggi, celah, papan",
     "grupDimensiuni": "Lebar, tinggi, dalam, cara rakit",
     "grupCantitati": "Berapa pintu, rak, sekat tengah, laci",
-    "grupSoclu": "Papan alas: boks berdiri di lantai, tanpa kaki"
+    "grupSoclu": "Papan alas: boks berdiri di lantai, tanpa kaki",
+    "grupTraverse": "Palang: boks bawah tidak perlu papan atas penuh"
   },
   "mesaj": {
     "intrebare": "Apa yang kurang dari perhitungan?",

@@ -516,6 +516,11 @@
         "nume": "Walk-in with sliding doors",
         "descriere": "Three sliding doors and four compartments, for a whole wall.",
         "corpNume": "Sliding walk-in"
+      },
+      "baza-jolly": {
+        "nume": "Narrow pull-out cabinet",
+        "descriere": "For the pull-out bottle and spice unit. No shelf: the pull-out fills it.",
+        "corpNume": "Pull-out cabinet"
       }
     },
     "adaugaCorp": "Add a cabinet",
@@ -665,7 +670,8 @@
     "sertarFund": "Drawer – hardboard bottom",
     "montant": "Partition",
     "piesaSimpla": "Panel",
-    "soclu": "Plinth"
+    "soclu": "Plinth",
+    "traversa": "Rail"
   },
   "directie": {
     "jos": "bottom",
@@ -704,7 +710,8 @@
     "glisieraDe": "{lg} mm runner",
     "subCutie": "fitted under the box",
     "socluInFata": "at the front, between the sides — the bottom rests on it",
-    "usiGlisante": "{n} sliding doors, overlap {supr}, tracks {sine}"
+    "usiGlisante": "{n} sliding doors, overlap {supr}, tracks {sine}",
+    "traverseSusInLocDeBlat": "instead of the top panel: one at the front, one at the back, {lat} wide"
   },
   "avert": {
     "politeAtipic": "Shelves are not calculated automatically for non-standard cabinets: add them as separate parts.",
@@ -745,7 +752,10 @@
     "glisantaLata": "A {lat} mm sliding door is wide: it sags in time and jumps the track. Make it from two, or use an aluminium frame.",
     "glisantaInalta": "A {inalt} mm sliding door is tall: it needs a frame, not a plain chipboard panel.",
     "glisantaFaraZone": "Sliding doors run the full height: the lower-door height and the opening are ignored.",
-    "glisantaFaraCompartimente": "Sliding doors run past the uprights, so they cannot be put on chosen compartments."
+    "glisantaFaraCompartimente": "Sliding doors run past the uprights, so they cannot be put on chosen compartments.",
+    "traverseNuMerg": "Rails only work on a straight cabinet built “between”. Here the full top panel stayed.",
+    "traversePreaLate": "Rails of {lat} mm do not fit: two that wide touch each other. Above {incape} mm it would be a badly cut top panel.",
+    "traverseInAfara": "A rail is made between {min} and {max} mm. {lat} was brought to {pus}."
   },
   "csv": {
     "corp": "Cabinet",
@@ -812,7 +822,8 @@
     "coltOrb": "blind corner",
     "corpDeschis": "open cabinet",
     "piesa": "a single panel",
-    "peSoclu": "{h} mm plinth"
+    "peSoclu": "{h} mm plinth",
+    "cuTraverse": "{lat} mm rails"
   },
   "comanda": {
     "inapoiComenzi": "My orders",
@@ -1264,7 +1275,9 @@
     "nisaFara": "none",
     "montajGlisant": "Sliding",
     "suprapunere": "Door overlap",
-    "hSine": "Tracks (top + bottom)"
+    "hSine": "Tracks (top + bottom)",
+    "traverse": "Top rails (0 = full top panel)",
+    "traverseFara": "full top panel"
   },
   "fata": {
     "px": "right",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Drawers: heights, play, board",
     "grupDimensiuni": "Width, height, depth, construction",
     "grupCantitati": "How many doors, shelves, partitions, drawers",
-    "grupSoclu": "Plinth: the cabinet stands on the floor, no legs"
+    "grupSoclu": "Plinth: the cabinet stands on the floor, no legs",
+    "grupTraverse": "Rails: the base cabinet has no full top panel"
   },
   "mesaj": {
     "intrebare": "What is the calculation missing?",

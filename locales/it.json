@@ -516,6 +516,11 @@
         "nume": "Cabina con ante scorrevoli",
         "descriere": "Tre ante scorrevoli e quattro vani, per una parete intera.",
         "corpNume": "Cabina scorrevole"
+      },
+      "baza-jolly": {
+        "nume": "Mobile stretto estraibile",
+        "descriere": "Per il portabottiglie o portaspezie estraibile. Senza ripiano: lo riempie l’estraibile.",
+        "corpNume": "Mobile estraibile"
       }
     },
     "adaugaCorp": "Aggiungi un mobile",
@@ -665,7 +670,8 @@
     "sertarFund": "Cassetto – fondo in fibra",
     "montant": "Montante",
     "piesaSimpla": "Pezzo",
-    "soclu": "Zoccolo"
+    "soclu": "Zoccolo",
+    "traversa": "Traversa"
   },
   "directie": {
     "jos": "basso",
@@ -704,7 +710,8 @@
     "glisieraDe": "guida {lg} mm",
     "subCutie": "montato sotto il cassetto",
     "socluInFata": "davanti, tra i fianchi — il fondo ci appoggia sopra",
-    "usiGlisante": "{n} ante scorrevoli, sovrapposizione {supr}, binari {sine}"
+    "usiGlisante": "{n} ante scorrevoli, sovrapposizione {supr}, binari {sine}",
+    "traverseSusInLocDeBlat": "al posto del top: una davanti, una dietro, larghe {lat}"
   },
   "avert": {
     "politeAtipic": "Nei mobili fuori misura i ripiani non si calcolano da soli: aggiungili come pezzi separati.",
@@ -745,7 +752,10 @@
     "glisantaLata": "Un'anta scorrevole da {lat} mm è larga: col tempo si imbarca ed esce dal binario. Falla in due o metti telaio in alluminio.",
     "glisantaInalta": "Un'anta scorrevole da {inalt} mm è alta: le serve un telaio, non un pannello semplice.",
     "glisantaFaraZone": "Le scorrevoli vanno per tutta l’altezza: l’altezza delle ante basse e il vano non contano.",
-    "glisantaFaraCompartimente": "Le scorrevoli passano davanti ai montanti, quindi non si possono mettere su vani scelti."
+    "glisantaFaraCompartimente": "Le scorrevoli passano davanti ai montanti, quindi non si possono mettere su vani scelti.",
+    "traverseNuMerg": "Le traverse vanno solo su un mobile diritto costruito «tra». Qui è rimasto il top intero.",
+    "traversePreaLate": "Traverse da {lat} mm non ci stanno: due così larghe si toccano. Oltre {incape} mm sarebbe un top tagliato male.",
+    "traverseInAfara": "La traversa si fa tra {min} e {max} mm. {lat} è stato portato a {pus}."
   },
   "csv": {
     "corp": "Mobile",
@@ -812,7 +822,8 @@
     "coltOrb": "angolo cieco",
     "corpDeschis": "mobile aperto",
     "piesa": "un solo pannello",
-    "peSoclu": "zoccolo {h} mm"
+    "peSoclu": "zoccolo {h} mm",
+    "cuTraverse": "traverse {lat} mm"
   },
   "comanda": {
     "inapoiComenzi": "I miei ordini",
@@ -1264,7 +1275,9 @@
     "nisaFara": "nessuno",
     "montajGlisant": "Scorrevoli",
     "suprapunere": "Sovrapposizione ante",
-    "hSine": "Binari (alto + basso)"
+    "hSine": "Binari (alto + basso)",
+    "traverse": "Traverse in alto (0 = top intero)",
+    "traverseFara": "top intero"
   },
   "fata": {
     "px": "destra",
@@ -1294,7 +1307,8 @@
     "grupSertare": "Cassetti: altezze, gioco, pannello",
     "grupDimensiuni": "Larghezza, altezza, profondità, costruzione",
     "grupCantitati": "Quante ante, ripiani, montanti, cassetti",
-    "grupSoclu": "Zoccolo: il mobile appoggia a terra, senza piedini"
+    "grupSoclu": "Zoccolo: il mobile appoggia a terra, senza piedini",
+    "grupTraverse": "Traverse: la base non ha il top intero"
   },
   "mesaj": {
     "intrebare": "Che cosa manca al calcolo?",
