@@ -363,6 +363,11 @@
         "descriere": "Otvorená skriňa na rúru alebo umývačku. Over si výklenok, ktorý predpisuje výrobca.",
         "corpNume": "Korpus pre rúru"
       },
+      "baza-cuptor": {
+        "nume": "Spodná skrinka na rúru",
+        "descriere": "Rúra pod pracovnou doskou, pod ňou zásuvka. Over niku, ktorú žiada výrobca.",
+        "corpNume": "Skrinka rúra"
+      },
       "sus-2usi": {
         "nume": "Horná skrinka s 2 dvierkami",
         "descriere": "Vysoká nástenná skrinka s dvoma policami.",
@@ -798,6 +803,8 @@
     "socluNuMerge": "Sokel ide len na rovnú skrinku stavanú „medzi“. Tu ostal bez účinku.",
     "socluPreaInalt": "Sokel {soclu} mm pri takej nízkej skrinke: vnútri ostáva len {ramane} mm.",
     "nisaPreaMare": "Výklenok {nisa} mm sa nezmestí: nad {incape} mm nezostáva miesto pre dvierka hore.",
+    "nisaLangaSertare": "Nika {nisa} mm sa vedľa zásuviek nezmestí: zostáva len {incape} mm. Zmenši čelá zásuviek alebo zväčši skrinku.",
+    "cutieSubPolitaNisa": "Korpus zásuvky, {cutie} mm, naráža do police, na ktorej stojí spotrebič. Daj výšku korpusu najviac {max} mm.",
     "politeFixeInPlus": "Chcel si {cerut} políc, ale skrinka potrebuje {fac}: tie ohraničujú výklenok a držia dvierka.",
     "politeNuIncap": "Pre {cate} políc nie je miesto: výklenok zabral celý priestor.",
     "glisantaSingura": "Jedny posuvné dvierka nemajú okolo čoho chodiť. Daj aspoň dvoje.",

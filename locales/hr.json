@@ -363,6 +363,11 @@
         "descriere": "Otvorena kutija za pećnicu ili perilicu posuđa. Provjeri nišu koju traži proizvođač.",
         "corpNume": "Korpus za pećnicu"
       },
+      "baza-cuptor": {
+        "nume": "Donji element za pećnicu",
+        "descriere": "Pećnica ispod radne ploče, s ladicom ispod. Provjeri nišu koju traži proizvođač.",
+        "corpNume": "Element pećnica"
+      },
       "sus-2usi": {
         "nume": "Viseći element s 2 vrata",
         "descriere": "Visoki zidni element s dvije police.",
@@ -798,6 +803,8 @@
     "socluNuMerge": "Sokl ide samo na ravno tijelo građeno „između“. Ovdje je izostavljen.",
     "socluPreaInalt": "Sokl od {soclu} mm na ovako niskom tijelu: unutra ostaje samo {ramane} mm.",
     "nisaPreaMare": "Otvor od {nisa} mm ne stane: iznad {incape} mm ne ostaje mjesta za vrata iznad.",
+    "nisaLangaSertare": "Niša od {nisa} mm ne stane pokraj ladica: ostaje samo {incape} mm. Smanji frontove ladica ili povećaj element.",
+    "cutieSubPolitaNisa": "Kutija ladice, {cutie} mm, udara u policu na kojoj stoji uređaj. Stavi najviše {max} mm visine kutije.",
     "politeFixeInPlus": "Tražio si {cerut} polica, ali tijelu treba {fac}: one omeđuju otvor i drže vrata.",
     "politeNuIncap": "{cate} polica nema gdje stati: otvor je uzeo sav prostor.",
     "glisantaSingura": "Jedna klizna vrata nemaju pokraj čega kliziti. Stavi barem dvoja.",

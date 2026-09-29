@@ -357,6 +357,11 @@
         "descriere": "Fırın veya bulaşık makinesi için açık kasa. Üreticinin istediği niş ölçüsünü kontrol et.",
         "corpNume": "Fırın modülü"
       },
+      "baza-cuptor": {
+        "nume": "Fırın alt dolabı",
+        "descriere": "Tezgâh altı fırın, altında bir çekmece. Üreticinin istediği nişi kontrol et.",
+        "corpNume": "Fırın dolabı"
+      },
       "sus-2usi": {
         "nume": "2 kapaklı üst dolap",
         "descriere": "Yüksek duvar dolabı, iki rafla.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "Süpürgelik yalnızca „aradan\" yapılmış düz gövdeye takılır. Burada eklenmedi.",
     "socluPreaInalt": "Bu kadar alçak bir gövdede {soclu} mm süpürgelik: içeride yalnızca {ramane} mm kalıyor.",
     "nisaPreaMare": "{nisa} mm boşluk sığmıyor: {incape} mm üstünde üstteki kapağa yer kalmıyor.",
+    "nisaLangaSertare": "{nisa} mm'lik niş çekmecelerin yanına sığmıyor: yalnızca {incape} mm kalıyor. Çekmece kapaklarını küçült ya da dolabı büyüt.",
+    "cutieSubPolitaNisa": "{cutie} mm'lik çekmece kutusu, cihazın durduğu rafa çarpıyor. Kutu yüksekliğine en fazla {max} mm koy.",
     "politeFixeInPlus": "{cerut} raf istedin ama gövdeye {fac} gerekiyor: onlar boşluğu sınırlar ve kapakları tutar.",
     "politeNuIncap": "{cate} rafa yer yok: boşluk tüm alanı aldı.",
     "glisantaSingura": "Tek sürme kapağın yanından kayacağı bir şey yok. En az iki tane koy.",

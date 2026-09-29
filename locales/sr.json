@@ -363,6 +363,11 @@
         "descriere": "Otvorena kutija za rernu ili mašinu za sudove. Proveri nišu koju traži proizvođač.",
         "corpNume": "Korpus za rernu"
       },
+      "baza-cuptor": {
+        "nume": "Donji element za rernu",
+        "descriere": "Rerna ispod radne ploče, sa fiokom ispod. Proveri nišu koju traži proizvođač.",
+        "corpNume": "Element rerna"
+      },
       "sus-2usi": {
         "nume": "Viseći element sa 2 vrata",
         "descriere": "Visoki zidni element sa dve police.",
@@ -798,6 +803,8 @@
     "socluNuMerge": "Sokla ide samo na pravo telo građeno „između“. Ovde je izostavljena.",
     "socluPreaInalt": "Sokla od {soclu} mm na ovako niskom telu: unutra ostaje samo {ramane} mm.",
     "nisaPreaMare": "Otvor od {nisa} mm ne staje: iznad {incape} mm ne ostaje mesta za vrata iznad.",
+    "nisaLangaSertare": "Niša od {nisa} mm ne staje pored fioka: ostaje samo {incape} mm. Smanji frontove fioka ili povećaj element.",
+    "cutieSubPolitaNisa": "Kutija fioke, {cutie} mm, udara u policu na kojoj stoji uređaj. Stavi najviše {max} mm visine kutije.",
     "politeFixeInPlus": "Tražio si {cerut} polica, ali telu treba {fac}: one omeđuju otvor i drže vrata.",
     "politeNuIncap": "{cate} polica nema gde da stane: otvor je uzeo sav prostor.",
     "glisantaSingura": "Jedna klizna vrata nemaju pored čega da klize. Stavi bar dvoja.",

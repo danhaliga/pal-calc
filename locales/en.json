@@ -357,6 +357,11 @@
         "descriere": "An open box for an oven or a dishwasher. Check the recess the manufacturer asks for.",
         "corpNume": "Oven housing unit"
       },
+      "baza-cuptor": {
+        "nume": "Oven base unit",
+        "descriere": "Oven under the worktop, with a drawer below. Check the niche the manufacturer requires.",
+        "corpNume": "Oven base"
+      },
       "sus-2usi": {
         "nume": "Wall unit with 2 doors",
         "descriere": "A tall wall unit with two shelves.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "A plinth only works on a straight cabinet built “between”. Here it was left out.",
     "socluPreaInalt": "A {soclu} mm plinth on a cabinet this short: only {ramane} mm left inside.",
     "nisaPreaMare": "A {nisa} mm opening does not fit: above {incape} mm there is no room left for the door on top.",
+    "nisaLangaSertare": "The {nisa} mm niche doesn't fit next to the drawers: only {incape} mm remain. Make the drawer fronts smaller or the cabinet taller.",
+    "cutieSubPolitaNisa": "The {cutie} mm drawer box hits the shelf the appliance stands on. Use at most {max} mm for the box height.",
     "politeFixeInPlus": "You asked for {cerut} shelves, but the cabinet needs {fac}: those edge the opening and hold the doors.",
     "politeNuIncap": "{cate} shelves have nowhere to go: the opening took the whole space.",
     "glisantaSingura": "One sliding door has nothing to slide past. Put at least two.",

@@ -357,6 +357,11 @@
         "descriere": "Caja abierta para horno o lavavajillas. Comprueba el hueco que pide el fabricante.",
         "corpNume": "Módulo horno"
       },
+      "baza-cuptor": {
+        "nume": "Mueble bajo para horno",
+        "descriere": "Horno bajo encimera, con un cajón debajo. Comprueba el hueco que pide el fabricante.",
+        "corpNume": "Mueble horno"
+      },
       "sus-2usi": {
         "nume": "Mueble alto de 2 puertas",
         "descriere": "Módulo de pared alto, con dos baldas.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "El zócalo solo cabe en un mueble recto construido «entre». Aquí se ha dejado fuera.",
     "socluPreaInalt": "Zócalo de {soclu} mm en un mueble tan bajo: solo quedan {ramane} mm dentro.",
     "nisaPreaMare": "Un hueco de {nisa} mm no cabe: por encima de {incape} mm no queda sitio para la puerta de arriba.",
+    "nisaLangaSertare": "El hueco de {nisa} mm no cabe junto a los cajones: solo quedan {incape} mm. Reduce los frentes de cajón o aumenta el mueble.",
+    "cutieSubPolitaNisa": "La caja del cajón, de {cutie} mm, choca con el estante donde se apoya el aparato. Pon como máximo {max} mm de altura de caja.",
     "politeFixeInPlus": "Has pedido {cerut} baldas, pero el mueble necesita {fac}: esas bordean el hueco y sujetan las puertas.",
     "politeNuIncap": "{cate} baldas no tienen dónde ir: el hueco se ha llevado todo el espacio.",
     "glisantaSingura": "Una sola puerta corredera no tiene junto a qué deslizarse. Pon al menos dos.",

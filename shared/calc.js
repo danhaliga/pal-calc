@@ -97,7 +97,9 @@
       /* Nișa: golul dintre zonele cu uși, pentru cuptor sau frigider.
          Cu `hUsi` pus: ușă jos, gol, ușă sus — coloana de cuptor.
          Cu `hUsi` gol: gol de la fund, ușă deasupra — coloana de frigider,
-         unde aparatul stă direct pe fundul corpului. */
+         unde aparatul stă direct pe fundul corpului.
+         Fără uși, cu sertare: golul e tot ce rămâne lângă sertare, iar
+         `hNisa` e cât cere aparatul — corpul bază de cuptor. */
       hNisa: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
@@ -932,6 +934,35 @@
       }
     }
 
+    /* ---- nișă fără uși ----
+
+       Corpul bază de cuptor: sertar jos, cuptor deasupra, fără nicio ușă.
+       Nișa e tot ce rămâne lângă sertare; `hNisa` spune cât cere aparatul,
+       ca să se vadă de pe acum dacă intră, nu la montaj.
+
+       Între sertare și nișă stă o poliță fixă — pe ea se sprijină cuptorul.
+       Se pune pe muchia fronturilor de sertar, ca la ușile parțiale: la front
+       aplicat frontul îi acoperă cantul, la unul încastrat se oprește sub ea.
+       Cu sertarele sus merge la fel, pe dos: nișa dedesubt. */
+    var yPolitaNisa = null;
+    if (nUsi === 0 && nSer > 0 && hNisaCerut > 0 && c.montaj !== 'glisant') {
+      var muchieFront = sertareJos ? yUsiBot - ri : yUsiTop + ri;
+      var spreNisa = sertareJos ? 1 : -1;
+      yPolitaNisa = apl ? muchieFront - spreNisa * t / 2 : muchieFront + spreNisa * t / 2;
+      var golNisa = sertareJos
+        ? (y0 + Hint) - (yPolitaNisa + t / 2)
+        : (yPolitaNisa - t / 2) - y0;
+      if (golNisa + 0.5 < hNisaCerut) {
+        avert('nisaLangaSertare', { nisa: fmt(hNisaCerut), incape: fmt(Math.max(0, golNisa)) });
+        yPolitaNisa = null;
+      } else {
+        politeFixe.push(yPolitaNisa);
+        zonaNisa = sertareJos
+          ? { jos: yPolitaNisa + t / 2, sus: y0 + Hint }
+          : { jos: y0, sus: yPolitaNisa - t / 2 };
+      }
+    }
+
     /* ---- sertare ---- */
     if (nSer > 0) {
       var jg = +c.jg, ts = +c.ts, hF = +c.hFront, hc = +c.hCutie;
@@ -950,7 +981,9 @@
          trebui să aibă fronturile ca să umple corpul. */
       var fataLibera = (apl ? Hutil - 2 * rm : Hint - 2 * rinc);
       var golSertare = fataLibera - (nSer * hF + (nSer - 1) * ri);
-      if (nUsi === 0 && golSertare > 20) {
+      /* Cu nișă cerută golul e voit — nu se spune de două ori, o dată ca
+         nișă care nu încape și o dată ca gol. */
+      if (nUsi === 0 && golSertare > 20 && !(hNisaCerut > 0)) {
         avert('sertareNuUmplu', {
           gol: fmt(golSertare),
           front: Math.round((fataLibera - (nSer - 1) * ri) / nSer)
@@ -974,6 +1007,19 @@
           F({ pz: 'f', nz: 'f', py: 's', ny: 's' }), dz, 'sertare'));
         fnd.push(bx(t + jg, yb - PFL_SERTAR, zf - lg, cut, PFL_SERTAR, lg,
           F({ px: 'p', nx: 'p', py: 'p', ny: 'p', pz: 'p', nz: 'p' }), dz, 'sertare'));
+      }
+      /* Lângă nișă, cutia sertarului stă sub polița aparatului. Dacă e mai
+         înaltă decât golul, sertarul nu intră — se spune cât poate avea. */
+      if (yPolitaNisa !== null) {
+        /* Cutia stă pe mijlocul frontului ei, iar fundul de PFL sub ea. */
+        var kLangaNisa = sertareJos ? 0 : nSer - 1;
+        var frontJos = ySertare - kLangaNisa * (hF + ri) - hF;
+        var hcMax = sertareJos
+          ? 2 * ((yPolitaNisa - t / 2) - frontJos) - hF
+          : hF - 2 * ((yPolitaNisa + t / 2) + PFL_SERTAR - frontJos);
+        if (hc > hcMax + 0.01) {
+          avert('cutieSubPolitaNisa', { cutie: fmt(hc), max: fmt(Math.max(0, Math.floor(hcMax))) });
+        }
       }
       add('frontSertar', null, nSer, hF, fL, 'g', 'g', 'g', 'g', 'LO',
         ['rostFronturi', { rost: ri }], fr);

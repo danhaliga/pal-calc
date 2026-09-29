@@ -357,6 +357,11 @@
         "descriere": "Caisse ouverte pour un four ou un lave-vaisselle. Vérifiez la niche exigée par le fabricant.",
         "corpNume": "Meuble niche four"
       },
+      "baza-cuptor": {
+        "nume": "Meuble bas pour four",
+        "descriere": "Four sous plan de travail, avec un tiroir dessous. Vérifiez la niche exigée par le fabricant.",
+        "corpNume": "Meuble four"
+      },
       "sus-2usi": {
         "nume": "Meuble haut 2 portes",
         "descriere": "Caisson mural haut, avec deux étagères.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "La plinthe ne va que sur un caisson droit monté « entre ». Ici elle a été laissée de côté.",
     "socluPreaInalt": "Plinthe de {soclu} mm sur un caisson aussi bas : il ne reste que {ramane} mm à l’intérieur.",
     "nisaPreaMare": "Une niche de {nisa} mm ne rentre pas : au-delà de {incape} mm il ne reste plus de place pour la porte du dessus.",
+    "nisaLangaSertare": "La niche de {nisa} mm ne tient pas à côté des tiroirs : il ne reste que {incape} mm. Réduisez les façades de tiroir ou agrandissez le meuble.",
+    "cutieSubPolitaNisa": "Le caisson du tiroir, de {cutie} mm, touche la tablette sur laquelle repose l'appareil. Mettez au plus {max} mm de hauteur de caisson.",
     "politeFixeInPlus": "Tu as demandé {cerut} étagères, mais le caisson en a besoin de {fac} : elles bordent la niche et tiennent les portes.",
     "politeNuIncap": "{cate} étagères n’ont nulle part où aller : la niche a pris tout le vide.",
     "glisantaSingura": "Une seule porte coulissante n'a rien devant quoi glisser. Mets-en au moins deux.",

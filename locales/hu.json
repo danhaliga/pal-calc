@@ -357,6 +357,11 @@
         "descriere": "Nyitott doboz sütőnek vagy mosogatógépnek. Ellenőrizd a gyártó által előírt fülkeméretet.",
         "corpNume": "Sütőfülke"
       },
+      "baza-cuptor": {
+        "nume": "Alsó szekrény sütőhöz",
+        "descriere": "Sütő a munkalap alatt, alatta egy fiók. Ellenőrizd a gyártó által kért fülkét.",
+        "corpNume": "Sütőszekrény"
+      },
       "sus-2usi": {
         "nume": "Felsőszekrény 2 ajtóval",
         "descriere": "Magas fali korpusz, két polccal.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "A lábazat csak „közé” épített egyenes korpuszra megy. Itt kimaradt.",
     "socluPreaInalt": "{soclu} mm-es lábazat ilyen alacsony korpuszon: belül csak {ramane} mm marad.",
     "nisaPreaMare": "{nisa} mm-es nyílás nem fér el: {incape} mm fölött nem marad hely a fenti ajtónak.",
+    "nisaLangaSertare": "A {nisa} mm-es fülke nem fér el a fiókok mellett: csak {incape} mm marad. Csökkentsd a fiókelőlapokat, vagy növeld a szekrényt.",
+    "cutieSubPolitaNisa": "A {cutie} mm-es fiókdoboz beleütközik a polcba, amelyen a készülék áll. A doboz magassága legfeljebb {max} mm legyen.",
     "politeFixeInPlus": "{cerut} polcot kértél, de a korpusznak {fac} kell: azok szegélyezik a nyílást és tartják az ajtókat.",
     "politeNuIncap": "{cate} polcnak nincs helye: a nyílás elvitte az egész teret.",
     "glisantaSingura": "Egyetlen tolóajtónak nincs mi mellett elcsúsznia. Tegyél legalább kettőt.",

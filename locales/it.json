@@ -357,6 +357,11 @@
         "descriere": "Cassa aperta per forno o lavastoviglie. Controlla il vano richiesto dal costruttore.",
         "corpNume": "Mobile vano forno"
       },
+      "baza-cuptor": {
+        "nume": "Base per forno",
+        "descriere": "Forno sotto il piano, con un cassetto sotto. Verifica la nicchia richiesta dal produttore.",
+        "corpNume": "Base forno"
+      },
       "sus-2usi": {
         "nume": "Pensile con 2 ante",
         "descriere": "Pensile alto, con due ripiani.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "Lo zoccolo va solo su un mobile diritto costruito «tra». Qui è stato lasciato fuori.",
     "socluPreaInalt": "Zoccolo da {soclu} mm su un mobile così basso: dentro restano solo {ramane} mm.",
     "nisaPreaMare": "Un vano da {nisa} mm non ci sta: oltre {incape} mm non resta posto per l’anta di sopra.",
+    "nisaLangaSertare": "La nicchia di {nisa} mm non entra accanto ai cassetti: restano solo {incape} mm. Riduci i frontali dei cassetti o alza il mobile.",
+    "cutieSubPolitaNisa": "La scatola del cassetto, di {cutie} mm, tocca il ripiano su cui poggia l'apparecchio. Metti al massimo {max} mm di altezza scatola.",
     "politeFixeInPlus": "Hai chiesto {cerut} ripiani, ma il mobile ne ha bisogno di {fac}: quelli delimitano il vano e reggono le ante.",
     "politeNuIncap": "{cate} ripiani non hanno dove stare: il vano ha preso tutto lo spazio.",
     "glisantaSingura": "Un'anta scorrevole sola non ha accanto a cosa scorrere. Mettine almeno due.",

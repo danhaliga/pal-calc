@@ -357,6 +357,11 @@
         "descriere": "Open kast voor een oven of een vaatwasser. Controleer de nis die de fabrikant voorschrijft.",
         "corpNume": "Ovenkast"
       },
+      "baza-cuptor": {
+        "nume": "Onderkast voor oven",
+        "descriere": "Oven onder het werkblad, met een lade eronder. Controleer de nis die de fabrikant vraagt.",
+        "corpNume": "Ovenkast"
+      },
       "sus-2usi": {
         "nume": "Bovenkast met 2 deuren",
         "descriere": "Hoge wandkast met twee legplanken.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "Een plint past alleen op een rechte kast gebouwd „ertussen”. Hier is hij weggelaten.",
     "socluPreaInalt": "Plint van {soclu} mm bij zo’n lage kast: binnen blijft maar {ramane} mm over.",
     "nisaPreaMare": "Een nis van {nisa} mm past niet: boven {incape} mm blijft er geen plek voor de deur erboven.",
+    "nisaLangaSertare": "De nis van {nisa} mm past niet naast de laden: er blijft maar {incape} mm over. Maak de ladefronten kleiner of de kast hoger.",
+    "cutieSubPolitaNisa": "De ladebak van {cutie} mm raakt de plank waarop het apparaat staat. Neem hoogstens {max} mm bakhoogte.",
     "politeFixeInPlus": "Je vroeg om {cerut} legplanken, maar de kast heeft er {fac} nodig: die begrenzen de nis en dragen de deuren.",
     "politeNuIncap": "Voor {cate} legplanken is geen plek: de nis heeft de hele ruimte genomen.",
     "glisantaSingura": "Eén schuifdeur heeft niets om langs te schuiven. Neem er minstens twee.",

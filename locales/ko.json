@@ -357,6 +357,11 @@
         "descriere": "오븐이나 식기세척기를 넣는 열린 통. 제조사가 요구하는 자리 치수를 확인하세요.",
         "corpNume": "오븐장"
       },
+      "baza-cuptor": {
+        "nume": "오븐용 하부장",
+        "descriere": "상판 아래 오븐, 그 아래 서랍 하나. 제조사가 요구하는 설치 공간을 확인하세요.",
+        "corpNume": "오븐장"
+      },
       "sus-2usi": {
         "nume": "상부장, 문짝 2장",
         "descriere": "높은 벽걸이 캐비닛. 선반 2장.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "걸레받이는 “사이” 방식으로 짠 직선 몸통에만 붙습니다. 여기서는 빠졌습니다.",
     "socluPreaInalt": "이렇게 낮은 몸통에 {soclu} mm 걸레받이: 안쪽에 {ramane} mm만 남습니다.",
     "nisaPreaMare": "{nisa} mm 개구부는 들어가지 않습니다. {incape} mm를 넘으면 위쪽 문 자리가 남지 않습니다.",
+    "nisaLangaSertare": "{nisa} mm 공간이 서랍 옆에 들어가지 않습니다: {incape} mm만 남습니다. 서랍 앞판을 줄이거나 장을 키우세요.",
+    "cutieSubPolitaNisa": "{cutie} mm 서랍 박스가 기기를 올리는 선반에 닿습니다. 박스 높이는 최대 {max} mm로 하세요.",
     "politeFixeInPlus": "선반을 {cerut}개 요청했지만 몸통에는 {fac}개가 필요합니다. 개구부를 막고 문을 지탱합니다.",
     "politeNuIncap": "선반 {cate}개를 놓을 자리가 없습니다. 개구부가 공간을 모두 차지했습니다.",
     "glisantaSingura": "미닫이 한 짝은 옆으로 비켜 갈 상대가 없습니다. 최소 두 짝을 넣으세요.",

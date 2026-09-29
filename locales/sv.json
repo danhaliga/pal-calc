@@ -357,6 +357,11 @@
         "descriere": "Öppen låda för ugn eller diskmaskin. Kontrollera nischen som tillverkaren kräver.",
         "corpNume": "Ugnsstomme"
       },
+      "baza-cuptor": {
+        "nume": "Bänkskåp för ugn",
+        "descriere": "Ugn under bänkskivan, med en låda under. Kontrollera nischen som tillverkaren kräver.",
+        "corpNume": "Ugnsskåp"
+      },
       "sus-2usi": {
         "nume": "Överskåp med 2 luckor",
         "descriere": "Högt väggskåp med två hyllplan.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "En sockel går bara på en rak stomme byggd ”emellan”. Här utelämnades den.",
     "socluPreaInalt": "Sockel på {soclu} mm i en så låg stomme: bara {ramane} mm blir kvar inuti.",
     "nisaPreaMare": "En öppning på {nisa} mm får inte plats: över {incape} mm finns ingen plats kvar för luckan ovanför.",
+    "nisaLangaSertare": "Nischen på {nisa} mm får inte plats bredvid lådorna: bara {incape} mm återstår. Gör lådfronterna mindre eller skåpet större.",
+    "cutieSubPolitaNisa": "Lådlådan på {cutie} mm tar i hyllan som apparaten står på. Använd högst {max} mm lådhöjd.",
     "politeFixeInPlus": "Du bad om {cerut} hyllplan, men stommen behöver {fac}: de kantar öppningen och håller luckorna.",
     "politeNuIncap": "{cate} hyllplan har ingenstans att ta vägen: öppningen tog hela utrymmet.",
     "glisantaSingura": "En ensam skjutdörr har inget att glida förbi. Ta minst två.",

@@ -363,6 +363,11 @@
         "descriere": "Otevřená skříň na troubu nebo myčku. Ověř si výklenek, který výrobce předepisuje.",
         "corpNume": "Korpus pro troubu"
       },
+      "baza-cuptor": {
+        "nume": "Spodní skříňka na troubu",
+        "descriere": "Trouba pod pracovní deskou, pod ní zásuvka. Ověř niku, kterou žádá výrobce.",
+        "corpNume": "Skříňka trouba"
+      },
       "sus-2usi": {
         "nume": "Horní skříňka se 2 dvířky",
         "descriere": "Vysoká nástěnná skříňka se dvěma policemi.",
@@ -798,6 +803,8 @@
     "socluNuMerge": "Sokl jde jen na rovnou skříňku stavěnou „mezi“. Tady zůstal bez užitku.",
     "socluPreaInalt": "Sokl {soclu} mm u tak nízké skříňky: uvnitř zbývá jen {ramane} mm.",
     "nisaPreaMare": "Výklenek {nisa} mm se nevejde: nad {incape} mm nezbývá místo pro dvířka nahoře.",
+    "nisaLangaSertare": "Nika {nisa} mm se vedle zásuvek nevejde: zbývá jen {incape} mm. Zmenši čela zásuvek nebo zvětši skříňku.",
+    "cutieSubPolitaNisa": "Korpus zásuvky, {cutie} mm, naráží do police, na které stojí spotřebič. Dej výšku korpusu nejvýš {max} mm.",
     "politeFixeInPlus": "Chtěl jsi {cerut} polic, ale skříňka potřebuje {fac}: ty ohraničují výklenek a drží dvířka.",
     "politeNuIncap": "Pro {cate} polic není místo: výklenek zabral celý prostor.",
     "glisantaSingura": "Jedna posuvná dvířka nemají kolem čeho jezdit. Dej aspoň dvoje.",

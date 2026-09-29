@@ -363,6 +363,11 @@
         "descriere": "Otwarta skrzynia na piekarnik albo zmywarkę. Sprawdź wnękę wymaganą przez producenta.",
         "corpNume": "Korpus pod piekarnik"
       },
+      "baza-cuptor": {
+        "nume": "Szafka dolna pod piekarnik",
+        "descriere": "Piekarnik pod blatem, pod nim szuflada. Sprawdź wnękę wymaganą przez producenta.",
+        "corpNume": "Szafka piekarnik"
+      },
       "sus-2usi": {
         "nume": "Szafka wisząca z 2 frontami",
         "descriere": "Wysoka szafka ścienna z dwiema półkami.",
@@ -798,6 +803,8 @@
     "socluNuMerge": "Cokół pasuje tylko do prostej skrzyni budowanej „między”. Tutaj został pominięty.",
     "socluPreaInalt": "Cokół {soclu} mm przy tak niskiej skrzyni: w środku zostaje tylko {ramane} mm.",
     "nisaPreaMare": "Wnęka {nisa} mm się nie mieści: powyżej {incape} mm nie zostaje miejsca na front u góry.",
+    "nisaLangaSertare": "Wnęka {nisa} mm nie mieści się obok szuflad: zostaje tylko {incape} mm. Zmniejsz fronty szuflad albo powiększ szafkę.",
+    "cutieSubPolitaNisa": "Skrzynka szuflady, {cutie} mm, uderza w półkę, na której stoi urządzenie. Daj najwyżej {max} mm wysokości skrzynki.",
     "politeFixeInPlus": "Poprosiłeś o {cerut} półek, ale skrzynia potrzebuje {fac}: te ograniczają wnękę i trzymają fronty.",
     "politeNuIncap": "{cate} półek nie ma gdzie postawić: wnęka zabrała cały prześwit.",
     "glisantaSingura": "Jeden przesuwny front nie ma obok czego się przesuwać. Daj co najmniej dwa.",

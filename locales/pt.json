@@ -357,6 +357,11 @@
         "descriere": "Caixa aberta para forno ou máquina de lavar loiça. Confirma o nicho exigido pelo fabricante.",
         "corpNume": "Módulo forno"
       },
+      "baza-cuptor": {
+        "nume": "Móvel base para forno",
+        "descriere": "Forno sob a bancada, com uma gaveta por baixo. Verifique o nicho exigido pelo fabricante.",
+        "corpNume": "Móvel forno"
+      },
       "sus-2usi": {
         "nume": "Móvel suspenso de 2 portas",
         "descriere": "Módulo de parede alto, com duas prateleiras.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "O rodapé só assenta num móvel direito construído «entre». Aqui ficou de fora.",
     "socluPreaInalt": "Rodapé de {soclu} mm num móvel tão baixo: sobram apenas {ramane} mm por dentro.",
     "nisaPreaMare": "Um vão de {nisa} mm não cabe: acima de {incape} mm não sobra lugar para a porta de cima.",
+    "nisaLangaSertare": "O nicho de {nisa} mm não cabe junto às gavetas: restam apenas {incape} mm. Reduza as frentes de gaveta ou aumente o móvel.",
+    "cutieSubPolitaNisa": "A caixa da gaveta, de {cutie} mm, bate na prateleira onde assenta o aparelho. Use no máximo {max} mm de altura da caixa.",
     "politeFixeInPlus": "Pediste {cerut} prateleiras, mas o móvel precisa de {fac}: essas limitam o vão e seguram as portas.",
     "politeNuIncap": "{cate} prateleiras não têm onde ficar: o vão levou todo o espaço.",
     "glisantaSingura": "Uma só porta de correr não tem ao lado de quê deslizar. Põe pelo menos duas.",

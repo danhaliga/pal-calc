@@ -357,6 +357,11 @@
         "descriere": "Hộp mở dành cho lò nướng hoặc máy rửa bát. Hãy kiểm tra hốc mà nhà sản xuất yêu cầu.",
         "corpNume": "Thùng tủ lò nướng"
       },
+      "baza-cuptor": {
+        "nume": "Tủ dưới đặt lò nướng",
+        "descriere": "Lò nướng dưới mặt bàn, có một ngăn kéo bên dưới. Hãy kiểm tra hốc mà nhà sản xuất yêu cầu.",
+        "corpNume": "Tủ lò nướng"
+      },
       "sus-2usi": {
         "nume": "Tủ treo 2 cánh",
         "descriere": "Tủ tường cao, có hai kệ.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "Chân đế chỉ lắp được cho thùng thẳng dựng kiểu „giữa\". Ở đây đã bỏ qua.",
     "socluPreaInalt": "Chân đế {soclu} mm trên thùng thấp như vậy: bên trong chỉ còn {ramane} mm.",
     "nisaPreaMare": "Khoảng hở {nisa} mm không vừa: quá {incape} mm thì không còn chỗ cho cánh phía trên.",
+    "nisaLangaSertare": "Hốc {nisa} mm không vừa bên cạnh các ngăn kéo: chỉ còn {incape} mm. Hãy giảm mặt ngăn kéo hoặc tăng kích thước tủ.",
+    "cutieSubPolitaNisa": "Hộp ngăn kéo cao {cutie} mm chạm vào đợt kệ đặt thiết bị. Chiều cao hộp tối đa {max} mm.",
     "politeFixeInPlus": "Bạn yêu cầu {cerut} kệ, nhưng thùng cần {fac}: chúng chặn khoảng hở và đỡ cánh.",
     "politeNuIncap": "{cate} kệ không có chỗ đặt: khoảng hở đã chiếm hết.",
     "glisantaSingura": "Một cánh lùa thì không có gì để lùa qua. Hãy đặt ít nhất hai cánh.",

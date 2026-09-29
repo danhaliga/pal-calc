@@ -357,6 +357,11 @@
         "descriere": "给烤箱或洗碗机留的开口箱体。按厂家要求的开孔尺寸核一遍。",
         "corpNume": "烤箱柜"
       },
+      "baza-cuptor": {
+        "nume": "烤箱地柜",
+        "descriere": "台面下的烤箱，下方一个抽屉。请核对厂家要求的嵌入空间。",
+        "corpNume": "烤箱柜"
+      },
       "sus-2usi": {
         "nume": "吊柜，双门",
         "descriere": "高身上墙柜，两块层板。",
@@ -792,6 +797,8 @@
     "socluNuMerge": "踢脚板只适用于“嵌入式”结构的直柜。这里未使用。",
     "socluPreaInalt": "柜体太矮却用 {soclu} 毫米踢脚板：内部只剩 {ramane} 毫米。",
     "nisaPreaMare": "{nisa} 毫米的开口放不下：超过 {incape} 毫米就没有地方装上方的门了。",
+    "nisaLangaSertare": "{nisa} 毫米的嵌入空间在抽屉旁放不下：只剩 {incape} 毫米。请减小抽屉面板或加大柜体。",
+    "cutieSubPolitaNisa": "{cutie} 毫米的抽屉盒会碰到放置电器的层板。盒子高度最多 {max} 毫米。",
     "politeFixeInPlus": "你要了 {cerut} 层隔板，但柜体需要 {fac} 层：它们夹住开口并支撑门。",
     "politeNuIncap": "{cate} 层隔板无处安放：开口占满了全部空间。",
     "glisantaSingura": "只有一扇推拉门就没有可以错开的对象。至少放两扇。",

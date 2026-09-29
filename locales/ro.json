@@ -363,6 +363,11 @@
         "descriere": "Cutie deschisă pentru cuptor sau mașină de spălat vase. Verifică nișa cerută de producător.",
         "corpNume": "Corp nișă cuptor"
       },
+      "baza-cuptor": {
+        "nume": "Corp bază de cuptor",
+        "descriere": "Cuptor sub blat, cu un sertar dedesubt. Verifică nișa cerută de producător.",
+        "corpNume": "Corp cuptor"
+      },
       "sus-2usi": {
         "nume": "Corp suspendat cu 2 uși",
         "descriere": "Corp de perete înalt, cu două polițe.",
@@ -798,6 +803,8 @@
     "socluNuMerge": "Soclul se pune numai la corpul drept, construit „între\". Aici a rămas fără efect.",
     "socluPreaInalt": "Soclu de {soclu} mm pe un corp prea scund: rămân doar {ramane} mm înăuntru.",
     "nisaPreaMare": "Nișa de {nisa} mm nu încape: peste {incape} mm nu mai rămâne loc pentru ușa de deasupra.",
+    "nisaLangaSertare": "Nișa de {nisa} mm nu încape lângă sertare: rămân doar {incape} mm. Micșorează fronturile de sertar sau mărește corpul.",
+    "cutieSubPolitaNisa": "Cutia sertarului, de {cutie} mm, se lovește de polița pe care stă aparatul. Pune cel mult {max} mm la înălțimea cutiei.",
     "politeFixeInPlus": "Ai cerut {cerut} polițe, dar corpul are nevoie de {fac}: alea mărginesc nișa și țin ușile.",
     "politeNuIncap": "{cate} polițe n-au unde sta: nișa a luat tot golul.",
     "glisantaSingura": "O singură ușă glisantă n-are pe lângă ce aluneca. Pune cel puțin două.",

@@ -108,6 +108,16 @@
       id: 'baza-nisa', cat: 'bucatarie-jos',
       set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0 }
     },
+    {
+      /* Cuptor sub blat, sertar dedesubt. Fără uși: fața de sus e a
+         cuptorului. Polița (singura) e cea pe care stă aparatul, deasupra
+         sertarului. Nișa de 600 încape cuptoarele obișnuite de 60; verifică
+         totuși ce cere producătorul. Cu front de 100, cutia sertarului
+         poate avea cel mult 64 — se pune 60, ca să rămână un joc. */
+      id: 'baza-cuptor', cat: 'bucatarie-jos',
+      set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 1,
+             nSer: 1, sertareJos: 1, hFront: 100, hCutie: 60, hNisa: 600 }
+    },
 
     /* ---------------- bucătărie suspendate ---------------- */
     {
@@ -458,8 +468,19 @@
              '" height="' + soclu + '" class="sk-soclu"/>');
     }
 
+    /* Nișa fără uși (bază de cuptor): singura poliță e cea pe care stă
+       aparatul, pe muchia fronturilor de sertar — nu la mijlocul corpului. */
+    var nisaFaraUsi = nU === 0 && nS > 0 && +p.hNisa > 0;
+    if (nisaFaraUsi) {
+      var sirSer = nS * hF + (nS - 1) * ri;
+      var margF = aplicat ? rm : t + rinc;
+      var jumP = (aplicat ? 1 : -1) * t / 2;
+      var yN = +p.sertareJos ? H - margF - sirSer + jumP : margF + sirSer - jumP;
+      o.push('<line x1="' + t + '" y1="' + yN + '" x2="' + (W - t) + '" y2="' + yN + '" class="sk-polita"/>');
+    }
+
     /* polițe: calc le pune de jos în sus, SVG are y în jos */
-    for (var j = 1; j <= nP; j++) {
+    for (var j = 1; j <= (nisaFaraUsi ? 0 : nP); j++) {
       var yc = soclu + t + (Hint - usedTop) * j / (nP + 1);
       var y = H - yc;
       o.push('<line x1="' + t + '" y1="' + y + '" x2="' + (W - t) + '" y2="' + y + '" class="sk-polita"/>');

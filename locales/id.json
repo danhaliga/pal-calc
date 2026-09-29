@@ -357,6 +357,11 @@
         "descriere": "Kotak terbuka untuk oven atau mesin cuci piring. Periksa ceruk yang diminta pabrikan.",
         "corpNume": "Boks oven"
       },
+      "baza-cuptor": {
+        "nume": "Kabinet bawah untuk oven",
+        "descriere": "Oven di bawah meja, dengan satu laci di bawahnya. Periksa ceruk yang diminta pabrikan.",
+        "corpNume": "Kabinet oven"
+      },
       "sus-2usi": {
         "nume": "Kabinet gantung 2 pintu",
         "descriere": "Kabinet dinding tinggi dengan dua rak.",
@@ -792,6 +797,8 @@
     "socluNuMerge": "Papan alas hanya untuk boks lurus yang dibangun „di antara\". Di sini dilewati.",
     "socluPreaInalt": "Papan alas {soclu} mm pada boks serendah ini: di dalam hanya tersisa {ramane} mm.",
     "nisaPreaMare": "Bukaan {nisa} mm tidak muat: di atas {incape} mm tidak tersisa tempat untuk pintu di atasnya.",
+    "nisaLangaSertare": "Ceruk {nisa} mm tidak muat di samping laci: hanya tersisa {incape} mm. Perkecil muka laci atau perbesar kabinet.",
+    "cutieSubPolitaNisa": "Kotak laci setinggi {cutie} mm menabrak rak tempat alat berdiri. Buat tinggi kotak paling banyak {max} mm.",
     "politeFixeInPlus": "Anda minta {cerut} rak, tetapi boks perlu {fac}: rak itu membatasi bukaan dan menahan pintu.",
     "politeNuIncap": "{cate} rak tidak punya tempat: bukaan mengambil seluruh ruang.",
     "glisantaSingura": "Satu pintu geser tidak punya apa pun untuk dilewati. Pasang paling sedikit dua.",
