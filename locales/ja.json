@@ -279,6 +279,10 @@
       "colt": {
         "nume": "コーナーキャビネット",
         "descriere": "壁2面の間の角に。天板・地板・棚板はまず外形の長方形で切り、あとで欠き取ります。欠き取り寸法は部材リストにあります。"
+      },
+      "bucatarie-inalt": {
+        "nume": "キッチン — 背の高い箱",
+        "descriere": "床に据えて上まで届く、台輪付きの箱。"
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "部材",
         "descriere": "L1・L2 が長い木口、l1・l2 が短い木口です。長い木口のテープは幅から、短い木口のテープは長さから引かれます。",
         "corpNume": "部材"
+      },
+      "baza-2usi-soclu": {
+        "nume": "台輪付きの床置き箱",
+        "descriere": "脚を使わず床に直に据えます。側板は下まで伸び、前面に台輪が入ります。",
+        "corpNume": "台輪付き床置き箱"
+      },
+      "baza-2sertare": {
+        "nume": "床置き箱、引出し2杯",
+        "descriere": "深い引出しが2杯、鍋用。",
+        "corpNume": "床置き 引出し2"
+      },
+      "baza-4sertare": {
+        "nume": "床置き箱、引出し4杯",
+        "descriere": "浅い引出しが4杯、カトラリーや小物用。",
+        "corpNume": "床置き 引出し4"
+      },
+      "baza-ingusta": {
+        "nume": "細い床置き箱",
+        "descriere": "幅200 mm、並びの端に残る隙間用。",
+        "corpNume": "細い床置き箱"
+      },
+      "sus-2usi-600": {
+        "nume": "吊り箱、高さ600",
+        "descriere": "中くらいの高さ、棚板1枚。",
+        "corpNume": "吊り箱 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "吊り箱、高さ1000",
+        "descriere": "天井近くまでの高さ、棚板3枚。",
+        "corpNume": "吊り箱 1000"
+      },
+      "coloana-camara": {
+        "nume": "食品庫の縦箱",
+        "descriere": "床から上まで、棚板5枚と全高の扉。",
+        "corpNume": "食品庫の縦箱"
+      },
+      "coloana-matura": {
+        "nume": "ほうき用の縦箱",
+        "descriere": "細くて高く、上に棚板が1枚。",
+        "corpNume": "ほうき用縦箱"
+      },
+      "etajera-cuburi": {
+        "nume": "マス目の棚",
+        "descriere": "4×4のマス目。中仕切りと棚板で組みます。",
+        "corpNume": "マス目の棚"
+      },
+      "bufet": {
+        "nume": "サイドボード",
+        "descriere": "低くて幅広、中央に仕切り、扉4枚。",
+        "corpNume": "サイドボード"
+      },
+      "dulap-pantofi": {
+        "nume": "靴の収納箱",
+        "descriere": "靴を横に置ける奥行き、棚板3枚。",
+        "corpNume": "靴の収納箱"
       }
     },
     "adaugaCorp": "キャビネットを追加",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "引き出し —— 箱の前後板",
     "sertarFund": "引き出し —— HDFの底板",
     "montant": "中仕切り",
-    "piesaSimpla": "部材"
+    "piesaSimpla": "部材",
+    "soclu": "台輪"
   },
   "directie": {
     "jos": "下",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "扉1枚につき丁番{n}個、かぶせ {cot}。死角 {orb} mm は隣のキャビネットに隠れます",
     "rostFronturi": "扉の間に目地 {rost} mm",
     "glisieraDe": "レール {lg} mm",
-    "subCutie": "箱の下に付きます"
+    "subCutie": "箱の下に付きます",
+    "socluInFata": "前面、側板のあいだ — 底板がこの上に載ります"
   },
   "avert": {
     "politeAtipic": "変形キャビネットの棚板は自動では数えません。別の部材として足してください。",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "区画 {comp} にはその数の扉が入りません。そこには一枚もできませんでした。",
     "sertareNuUmplu": "引き出しの前板が下まで届いていません。下に {gol} mm の空きが残ります。前板の高さを {front} mm にすると箱が埋まります。",
     "piesaPreaMica": "20 mm を切る辺があります。寸法を確かめてください。",
-    "piesaLatimeMaiMare": "幅 ({lat}) が長さ ({lung}) より大きいです。木取りでは長さが長辺です。木目を逆に通すなら入れ替えてください。"
+    "piesaLatimeMaiMare": "幅 ({lat}) が長さ ({lung}) より大きいです。木取りでは長さが長辺です。木目を逆に通すなら入れ替えてください。",
+    "socluNuMerge": "台輪は「はさみ込み」で組んだ直方体の箱にだけ付きます。ここでは付けていません。",
+    "socluPreaInalt": "これだけ低い箱に {soclu} mm の台輪：内部は {ramane} mm しか残りません。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "厚いテープ",
     "cantSubtireOpt": "薄いテープ",
     "lungimePiesa": "長さ (L)",
-    "latimePiesa": "幅 (l)"
+    "latimePiesa": "幅 (l)",
+    "soclu": "台輪（0 = 脚）"
   },
   "fata": {
     "px": "右",

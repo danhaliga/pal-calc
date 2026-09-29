@@ -63,6 +63,11 @@
   function defaults(tr) {
     return {
       nume: traducator(tr)('modele.corpImplicit'), W: 800, H: 720, D: 560, constr: 'intre',
+      /* Înălțimea soclului. 0 înseamnă corp pe picioare, cum a fost
+         dintotdeauna: picioarele sunt feronerie, nu se taie din PAL, deci
+         nu apar în listă. Peste 0, lateralele merg până la podea, fundul
+         se ridică, iar în față intră o bucată de PAL. */
+      soclu: 0,
       tip: 'drept', W2: 900, orb: 550, contur: [],
       /* piesă simplă: bucăți, cantul pe fiecare muchie, fibra */
       pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
@@ -206,7 +211,21 @@
     var Dp = D - zb;                        /* adancimea pieselor corpului */
     var zin = aplicat ? tp : NUT_OFF + tp;  /* fata interioara a spatelui */
     var Dint = D - zin;                     /* adancime interioara utila */
-    var Wint = W - 2 * t, Hint = H - 2 * t;
+    /* Soclul mănâncă din înălțimea folositoare, fiindcă H rămâne cota de la
+       podea. Se poate numai la corpul drept construit „între": acolo
+       lateralele merg oricum pe toată înălțimea, deci ajung singure la
+       podea și au pe ce sta. La celelalte construcții lateralele stau PE
+       fund, iar un soclu dedesubt n-ar avea de ce se prinde. */
+    var socluCerut = Math.max(0, +c.soclu || 0);
+    var soclu = (socluCerut && c.tip === 'drept' && c.constr === 'intre') ? socluCerut : 0;
+
+    var Wint = W - 2 * t, Hint = H - 2 * t - soclu;
+    /* Podeaua interiorului: fața de sus a fundului. Fără soclu e exact `t`,
+       ca până acum. Tot ce se așază înăuntru — polițe, montanți, uși — se
+       măsoară de aici, nu de la 0. */
+    var y0 = soclu + t;
+    /* Corpul propriu-zis, fără zona soclului. */
+    var Hutil = H - soclu;
     var ev = function (v) { return v === 'g' ? cg : v === 's' ? cs : 0; };
     var red = function (v) { return reducereCant(ev(v), c.pragCant, c.rezervaCant); };
 
@@ -233,6 +252,13 @@
       avertismente.push({ cheie: cheie, args: args || null, text: text });
       warn.push(text);
     };
+
+    /* Soclul cerut, dar nepus. Se spune, nu se trece cu vederea: altfel omul
+       scrie 80 în casetă, nu vede nicio bucată în listă și nu știe de ce. */
+    if (socluCerut && !soclu) avert('socluNuMerge');
+    if (soclu && Hint < 100) {
+      avert('socluPreaInalt', { soclu: fmt(soclu), ramane: fmt(Math.max(0, Hint)) });
+    }
     var bx = function (x, y, z, sx, sy, sz, f, ex, grp) {
       return { x: x, y: y, z: z, sx: sx, sy: sy, sz: sz, f: f, ex: ex, grp: grp };
     };
@@ -443,7 +469,16 @@
       add('blat', null, 1, Wint, Dp, 'g', '-', '-', '-', 'L', null,
         [bx(t, H - t, zb, Wint, t, Dp, F({ py: 'f', ny: 'f', pz: 'g' }), [0, 1, 0], 'corp')]);
       add('fund', null, 1, Wint, Dp, 'g', '-', '-', '-', 'L', null,
-        [bx(t, 0, zb, Wint, t, Dp, F({ py: 'f', ny: 'f', pz: 'g' }), [0, -1, 0], 'corp')]);
+        [bx(t, soclu, zb, Wint, t, Dp, F({ py: 'f', ny: 'f', pz: 'g' }), [0, -1, 0], 'corp')]);
+
+      /* Soclul: o bucată de PAL în față, între laterale, pe care stă fundul.
+         Se cantuiește pe muchia de jos, nu pe cea de sus: muchia de sus stă
+         ascunsă sub fund, iar cea de jos stă pe pardoseală și trage apă. */
+      if (soclu > 0) {
+        add('soclu', null, 1, Wint, soclu, 's', '-', '-', '-', 'L', ['socluInFata'],
+          [bx(t, 0, D - t, Wint, soclu, t,
+              F({ pz: 'f', nz: 'f', py: 's', ny: 's' }), [0, -1, 0], 'corp')]);
+      }
     } else {
       add('blat', null, 1, W, Dp, 'g', '-', 's', 's', 'L', null,
         [bx(0, H - t, zb, W, t, Dp, F({ py: 'f', ny: 'f', pz: 'g', px: 's', nx: 's' }), [0, 1, 0], 'corp')]);
@@ -461,12 +496,12 @@
       py: fs === 'p' ? 'p' : '-', ny: fs === 'p' ? 'p' : '-', pz: fs, nz: fs
     });
     if (aplicat) {
-      add('spateAplicat', { mat: tp >= 8 ? 'PAL' : 'PFL' }, 1, H - 3, W - 3, '-', '-', '-', '-', '-',
-        ['capsatPeSpate'], [bx(1.5, 1.5, 0, W - 3, H - 3, tp, FS, [0, 0, -1], 'spate')]);
+      add('spateAplicat', { mat: tp >= 8 ? 'PAL' : 'PFL' }, 1, Hutil - 3, W - 3, '-', '-', '-', '-', '-',
+        ['capsatPeSpate'], [bx(1.5, soclu + 1.5, 0, W - 3, Hutil - 3, tp, FS, [0, 0, -1], 'spate')]);
     } else {
       add('spateNut', null, 1, Hint + 2 * (NUT_AD - 1), Wint + 2 * (NUT_AD - 1), '-', '-', '-', '-', '-',
         ['nutSpate', { off: NUT_OFF, ad: NUT_AD }],
-        [bx(t - (NUT_AD - 1), t - (NUT_AD - 1), NUT_OFF,
+        [bx(t - (NUT_AD - 1), y0 - (NUT_AD - 1), NUT_OFF,
             Wint + 2 * (NUT_AD - 1), Hint + 2 * (NUT_AD - 1), tp, FS, [0, 0, -1], 'spate')]);
     }
 
@@ -474,7 +509,7 @@
     var apl = c.montaj === 'aplicat';
     var xoff = apl ? rm : t + rinc;
     var yTop = apl ? H - rm : H - t - rinc;
-    var yBot = apl ? rm : t + rinc;
+    var yBot = apl ? soclu + rm : y0 + rinc;
     var zF = apl ? D : D - t;
     /* la corpul de colț orb, o parte din front rămâne acoperită de corpul vecin */
     var orb = c.tip === 'colt-orb' ? Math.max(0, +c.orb) : 0;
@@ -496,7 +531,7 @@
     var usi = [];
     /* Zona cu uși, măsurată de la fund în sus. Goală înseamnă uși pe toată
        înălțimea — biblioteca cu uși doar jos cere o valoare aici. */
-    var uHplin = (apl ? H - 2 * rm : Hint - 2 * rinc) - usedTop;
+    var uHplin = (apl ? Hutil - 2 * rm : Hint - 2 * rinc) - usedTop;
     var usiPartiale = nUsi > 0 && hUsiCerut > 0 && hUsiCerut < uHplin;
     /* linia de sus a ușilor, în coordonatele corpului; polița fixă stă acolo */
     var yLinieUsi = null;
@@ -597,7 +632,7 @@
          fund și nici nu urmează o ușă dedesubt, rămâne un gol pe care omul
          îl vede în desen și nu-și explică de unde vine. Spunem și cât ar
          trebui să aibă fronturile ca să umple corpul. */
-      var fataLibera = (apl ? H - 2 * rm : Hint - 2 * rinc);
+      var fataLibera = (apl ? Hutil - 2 * rm : Hint - 2 * rinc);
       var golSertare = fataLibera - (nSer * hF + (nSer - 1) * ri);
       if (nUsi === 0 && golSertare > 20) {
         avert('sertareNuUmplu', {
@@ -639,7 +674,7 @@
     if (nDsp > 0) {
       var boxesD = [];
       for (var d = 1; d <= nDsp; d++) {
-        boxesD.push(bx(xComp(d) - t, t, zb, t, Hint, Dp,
+        boxesD.push(bx(xComp(d) - t, y0, zb, t, Hint, Dp,
           F({ px: 'f', nx: 'f', pz: 'g' }), [0, 0, 0], 'corp'));
       }
       /* muchia din față se cantuiește ca la laterale, restul stau ascunse */
@@ -661,14 +696,14 @@
          două goluri, după cât de înalt e fiecare. */
       var inaltimi = [];
       if (yLinieUsi == null) {
-        for (var j = 1; j <= nPol; j++) inaltimi.push(t + (Hint - usedTop) * j / (nPol + 1));
+        for (var j = 1; j <= nPol; j++) inaltimi.push(y0 + (Hint - usedTop) * j / (nPol + 1));
       } else {
         inaltimi.push(yLinieUsi);
-        var golJos = yLinieUsi - t, golSus = (t + Hint - usedTop) - yLinieUsi;
+        var golJos = yLinieUsi - y0, golSus = (y0 + Hint - usedTop) - yLinieUsi;
         var ramase = nPol - 1;
         var jos = Math.round(ramase * golJos / Math.max(1, golJos + golSus));
         var sus = ramase - jos;
-        for (var jj = 1; jj <= jos; jj++) inaltimi.push(t + golJos * jj / (jos + 1));
+        for (var jj = 1; jj <= jos; jj++) inaltimi.push(y0 + golJos * jj / (jos + 1));
         for (var js = 1; js <= sus; js++) inaltimi.push(yLinieUsi + golSus * js / (sus + 1));
       }
 
@@ -684,7 +719,8 @@
       avert('usiJosFaraPolita');
     }
 
-    return { P: P, warn: warn, avertismente: avertismente, usi: usi, Wint: Wint, Hint: Hint, Dint: Dint, W: W, H: H, D: D };
+    return { P: P, warn: warn, avertismente: avertismente, usi: usi, Wint: Wint, Hint: Hint, Dint: Dint,
+             W: W, H: H, D: D, soclu: soclu };
   }
 
   /* ---- CSV (acelasi format ca in calculatorul original, in limba paginii) ---- */
@@ -738,6 +774,7 @@
           unghi: z.coerce.number().min(1).max(359)
         })).max(32),
         constr: z.enum(['intre', 'peste']),
+        soclu: mm(0, 300).catch(0),
         pBuc: int(1, 999).catch(1),
         pcL1: cantMuchie, pcL2: cantMuchie, pcl1: cantMuchie, pcl2: cantMuchie,
         pFibra: z.enum(['L', 'l', '-']).catch('L'),

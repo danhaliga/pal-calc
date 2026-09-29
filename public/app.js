@@ -12,7 +12,7 @@ var CORP_ID = DATA.corpId;
 var params = DATA.params;
 var paid = !!DATA.paid;
 
-var fields = ['nume','tip','W','H','D','W2','orb','constr','t','cg','cs','spate','tp','nUsi','montaj','balama',
+var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','t','cg','cs','spate','tp','nUsi','montaj','balama',
               'rm','ri','rinc','hUsi','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg',
               'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 

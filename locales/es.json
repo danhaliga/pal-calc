@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Módulos de esquina",
         "descriere": "Para la esquina entre dos paredes. El techo, el suelo y las baldas se cortan como rectángulo bruto y luego se recortan — las medidas del recorte están en la lista de piezas."
+      },
+      "bucatarie-inalt": {
+        "nume": "Cocina — columnas",
+        "descriere": "Muebles altos que van del suelo arriba, sobre zócalo."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Pieza",
         "descriere": "L1 y L2 son los cantos largos, l1 y l2 los cortos. El canto de los largos resta ancho, el de los cortos resta largo.",
         "corpNume": "Pieza"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Mueble bajo con zócalo",
+        "descriere": "Apoya directo en el suelo, sin patas: los laterales bajan hasta abajo y delante va el zócalo.",
+        "corpNume": "Bajo con zócalo"
+      },
+      "baza-2sertare": {
+        "nume": "Mueble bajo, 2 cajones",
+        "descriere": "Dos cajones hondos, para ollas.",
+        "corpNume": "Bajo 2 cajones"
+      },
+      "baza-4sertare": {
+        "nume": "Mueble bajo, 4 cajones",
+        "descriere": "Cuatro cajones bajos, para cubiertos y cosas pequeñas.",
+        "corpNume": "Bajo 4 cajones"
+      },
+      "baza-ingusta": {
+        "nume": "Mueble bajo estrecho",
+        "descriere": "De 200 mm, para el hueco del extremo.",
+        "corpNume": "Bajo estrecho"
+      },
+      "sus-2usi-600": {
+        "nume": "Mueble alto de 600",
+        "descriere": "Altura media, con una balda.",
+        "corpNume": "Alto 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Mueble alto de 1000",
+        "descriere": "Alto, casi hasta el techo, con tres baldas.",
+        "corpNume": "Alto 1000"
+      },
+      "coloana-camara": {
+        "nume": "Columna despensa",
+        "descriere": "Del suelo arriba, cinco baldas y puertas de altura completa.",
+        "corpNume": "Columna despensa"
+      },
+      "coloana-matura": {
+        "nume": "Columna escobero",
+        "descriere": "Estrecha y alta, con una sola balda arriba.",
+        "corpNume": "Columna escobero"
+      },
+      "etajera-cuburi": {
+        "nume": "Estantería de cubos",
+        "descriere": "Rejilla de 4×4 cubos, con montantes y baldas.",
+        "corpNume": "Estantería cubos"
+      },
+      "bufet": {
+        "nume": "Aparador",
+        "descriere": "Bajo y ancho, con montante central y cuatro puertas.",
+        "corpNume": "Aparador"
+      },
+      "dulap-pantofi": {
+        "nume": "Zapatero",
+        "descriere": "Tan hondo como un zapato de lado, con tres baldas.",
+        "corpNume": "Zapatero"
       }
     },
     "adaugaCorp": "Añadir un módulo",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Cajón – frente/trasera de la caja",
     "sertarFund": "Cajón – fondo de tablero duro",
     "montant": "Montante",
-    "piesaSimpla": "Pieza"
+    "piesaSimpla": "Pieza",
+    "soclu": "Zócalo"
   },
   "directie": {
     "jos": "abajo",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} bisagras por puerta, codo {cot}; zona ciega de {orb} mm, tapada por el módulo vecino",
     "rostFronturi": "holgura de {rost} mm entre frentes",
     "glisieraDe": "guía de {lg} mm",
-    "subCutie": "montado bajo la caja"
+    "subCutie": "montado bajo la caja",
+    "socluInFata": "delante, entre los laterales — el fondo se apoya en él"
   },
   "avert": {
     "politeAtipic": "En los módulos atípicos las baldas no se calculan solas: añádelas como piezas aparte.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "El compartimento {comp} no tiene sitio para tantas puertas: allí no salió ninguna.",
     "sertareNuUmplu": "Los frentes de cajón no llegan abajo: quedan {gol} mm libres. Pon {front} mm de altura de frente para llenar el mueble.",
     "piesaPreaMica": "Un lado por debajo de 20 mm: revisa las medidas.",
-    "piesaLatimeMaiMare": "El ancho ({lat}) es mayor que el largo ({lung}): al despiezar, el largo es el lado mayor. Cámbialos si la veta debe ir al revés."
+    "piesaLatimeMaiMare": "El ancho ({lat}) es mayor que el largo ({lung}): al despiezar, el largo es el lado mayor. Cámbialos si la veta debe ir al revés.",
+    "socluNuMerge": "El zócalo solo cabe en un mueble recto construido «entre». Aquí se ha dejado fuera.",
+    "socluPreaInalt": "Zócalo de {soclu} mm en un mueble tan bajo: solo quedan {ramane} mm dentro."
   },
   "csv": {
     "corp": "Módulo",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "canto grueso",
     "cantSubtireOpt": "canto fino",
     "lungimePiesa": "Largo (L)",
-    "latimePiesa": "Ancho (l)"
+    "latimePiesa": "Ancho (l)",
+    "soclu": "Zócalo (0 = patas)"
   },
   "fata": {
     "px": "derecha",

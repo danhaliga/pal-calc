@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Caissons d'angle",
         "descriere": "Pour l'angle entre deux murs. Le dessus, le fond et les étagères sont débités en rectangle de gabarit puis découpés — les cotes de la découpe figurent dans la liste des pièces."
+      },
+      "bucatarie-inalt": {
+        "nume": "Cuisine — colonnes",
+        "descriere": "Caissons hauts posés au sol, sur plinthe."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "La pièce",
         "descriere": "L1 et L2 sont les rives longues, l1 et l2 les courtes. Le chant des longues enlève de la largeur, celui des courtes enlève de la longueur.",
         "corpNume": "Pièce"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Caisson bas sur plinthe",
+        "descriere": "Posé à même le sol, sans pieds : les côtés descendent jusqu'en bas et la plinthe vient devant.",
+        "corpNume": "Bas sur plinthe"
+      },
+      "baza-2sertare": {
+        "nume": "Caisson bas, 2 tiroirs",
+        "descriere": "Deux tiroirs profonds, pour les casseroles.",
+        "corpNume": "Bas 2 tiroirs"
+      },
+      "baza-4sertare": {
+        "nume": "Caisson bas, 4 tiroirs",
+        "descriere": "Quatre tiroirs bas, pour les couverts et les petites choses.",
+        "corpNume": "Bas 4 tiroirs"
+      },
+      "baza-ingusta": {
+        "nume": "Caisson bas étroit",
+        "descriere": "De 200 mm, pour le vide en bout de rangée.",
+        "corpNume": "Bas étroit"
+      },
+      "sus-2usi-600": {
+        "nume": "Caisson haut de 600",
+        "descriere": "Hauteur moyenne, avec une étagère.",
+        "corpNume": "Haut 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Caisson haut de 1000",
+        "descriere": "Haut, presque au plafond, avec trois étagères.",
+        "corpNume": "Haut 1000"
+      },
+      "coloana-camara": {
+        "nume": "Colonne garde-manger",
+        "descriere": "Du sol au plafond, cinq étagères et portes pleine hauteur.",
+        "corpNume": "Colonne garde-manger"
+      },
+      "coloana-matura": {
+        "nume": "Colonne à balais",
+        "descriere": "Étroite et haute, avec une seule étagère en haut.",
+        "corpNume": "Colonne à balais"
+      },
+      "etajera-cuburi": {
+        "nume": "Étagère à cases",
+        "descriere": "Grille de 4×4 cases, faite de montants et d’étagères.",
+        "corpNume": "Étagère à cases"
+      },
+      "bufet": {
+        "nume": "Buffet",
+        "descriere": "Bas et large, avec un montant au milieu et quatre portes.",
+        "corpNume": "Buffet"
+      },
+      "dulap-pantofi": {
+        "nume": "Meuble à chaussures",
+        "descriere": "Aussi profond qu’une chaussure posée en travers, trois étagères.",
+        "corpNume": "Meuble à chaussures"
       }
     },
     "adaugaCorp": "Ajouter un caisson",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Tiroir – avant/arrière de caisse",
     "sertarFund": "Tiroir – fond en panneau dur",
     "montant": "Montant",
-    "piesaSimpla": "Pièce"
+    "piesaSimpla": "Pièce",
+    "soclu": "Plinthe"
   },
   "directie": {
     "jos": "bas",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} charnières par porte, bras {cot} ; zone borgne de {orb} mm, couverte par le caisson voisin",
     "rostFronturi": "jeu de {rost} mm entre les façades",
     "glisieraDe": "coulisse {lg} mm",
-    "subCutie": "posé sous la caisse"
+    "subCutie": "posé sous la caisse",
+    "socluInFata": "à l’avant, entre les côtés — le fond repose dessus"
   },
   "avert": {
     "politeAtipic": "Les étagères ne sont pas calculées automatiquement pour les caissons hors standard : ajoutez-les comme pièces séparées.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "Le compartiment {comp} n’a pas la place pour autant de portes : aucune n’en est sortie.",
     "sertareNuUmplu": "Les faces de tiroir n’atteignent pas le fond : il reste {gol} mm de vide en bas. Mettez {front} mm de hauteur de face pour remplir le caisson.",
     "piesaPreaMica": "Un côté sous 20 mm : vérifiez les cotes.",
-    "piesaLatimeMaiMare": "La largeur ({lat}) dépasse la longueur ({lung}) : au débit, la longueur est le grand côté. Inversez-les si le fil doit aller autrement."
+    "piesaLatimeMaiMare": "La largeur ({lat}) dépasse la longueur ({lung}) : au débit, la longueur est le grand côté. Inversez-les si le fil doit aller autrement.",
+    "socluNuMerge": "La plinthe ne va que sur un caisson droit monté « entre ». Ici elle a été laissée de côté.",
+    "socluPreaInalt": "Plinthe de {soclu} mm sur un caisson aussi bas : il ne reste que {ramane} mm à l’intérieur."
   },
   "csv": {
     "corp": "Caisson",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "chant épais",
     "cantSubtireOpt": "chant fin",
     "lungimePiesa": "Longueur (L)",
-    "latimePiesa": "Largeur (l)"
+    "latimePiesa": "Largeur (l)",
+    "soclu": "Plinthe (0 = pieds)"
   },
   "fata": {
     "px": "droite",

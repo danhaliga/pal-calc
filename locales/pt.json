@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Módulos de canto",
         "descriere": "Para o canto entre duas paredes. O tampo, a base e as prateleiras são cortados como retângulo em bruto e depois recortados — as medidas do recorte estão na lista de peças."
+      },
+      "bucatarie-inalt": {
+        "nume": "Cozinha — colunas",
+        "descriere": "Móveis altos assentes no chão, sobre rodapé."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "A peça",
         "descriere": "L1 e L2 são as arestas longas, l1 e l2 as curtas. A orla das longas tira largura, a das curtas tira comprimento.",
         "corpNume": "Peça"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Móvel inferior com rodapé",
+        "descriere": "Assenta direto no chão, sem pés: as laterais descem até baixo e à frente entra o rodapé.",
+        "corpNume": "Inferior com rodapé"
+      },
+      "baza-2sertare": {
+        "nume": "Móvel inferior, 2 gavetas",
+        "descriere": "Duas gavetas fundas, para tachos.",
+        "corpNume": "Inferior 2 gavetas"
+      },
+      "baza-4sertare": {
+        "nume": "Móvel inferior, 4 gavetas",
+        "descriere": "Quatro gavetas baixas, para talheres e miudezas.",
+        "corpNume": "Inferior 4 gavetas"
+      },
+      "baza-ingusta": {
+        "nume": "Móvel inferior estreito",
+        "descriere": "De 200 mm, para o vão que sobra na ponta.",
+        "corpNume": "Inferior estreito"
+      },
+      "sus-2usi-600": {
+        "nume": "Móvel suspenso de 600",
+        "descriere": "Altura média, com uma prateleira.",
+        "corpNume": "Suspenso 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Móvel suspenso de 1000",
+        "descriere": "Alto, quase até ao teto, com três prateleiras.",
+        "corpNume": "Suspenso 1000"
+      },
+      "coloana-camara": {
+        "nume": "Coluna despensa",
+        "descriere": "Do chão ao topo, cinco prateleiras e portas de altura total.",
+        "corpNume": "Coluna despensa"
+      },
+      "coloana-matura": {
+        "nume": "Coluna para vassouras",
+        "descriere": "Estreita e alta, com uma só prateleira em cima.",
+        "corpNume": "Coluna vassouras"
+      },
+      "etajera-cuburi": {
+        "nume": "Estante de cubos",
+        "descriere": "Grelha de 4×4 cubos, de montantes e prateleiras.",
+        "corpNume": "Estante cubos"
+      },
+      "bufet": {
+        "nume": "Aparador",
+        "descriere": "Baixo e largo, com montante ao meio e quatro portas.",
+        "corpNume": "Aparador"
+      },
+      "dulap-pantofi": {
+        "nume": "Sapateira",
+        "descriere": "Fundo o bastante para um sapato deitado, três prateleiras.",
+        "corpNume": "Sapateira"
       }
     },
     "adaugaCorp": "Adicionar um módulo",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Gaveta – frente/traseira da caixa",
     "sertarFund": "Gaveta – fundo em placa de fibras",
     "montant": "Montante",
-    "piesaSimpla": "Peça"
+    "piesaSimpla": "Peça",
+    "soclu": "Rodapé"
   },
   "directie": {
     "jos": "baixo",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} dobradiças por porta, braço {cot}; zona cega de {orb} mm, tapada pelo módulo vizinho",
     "rostFronturi": "folga de {rost} mm entre as frentes",
     "glisieraDe": "corrediça {lg} mm",
-    "subCutie": "montado sob a caixa"
+    "subCutie": "montado sob a caixa",
+    "socluInFata": "à frente, entre as laterais — o fundo assenta nele"
   },
   "avert": {
     "politeAtipic": "Nos módulos fora de padrão as prateleiras não são calculadas sozinhas: acrescenta-as como peças à parte.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "O compartimento {comp} não tem espaço para tantas portas: ali não saiu nenhuma.",
     "sertareNuUmplu": "As frentes de gaveta não chegam ao fundo: ficam {gol} mm livres em baixo. Ponha {front} mm de altura de frente para encher o móvel.",
     "piesaPreaMica": "Um lado abaixo de 20 mm: confira as medidas.",
-    "piesaLatimeMaiMare": "A largura ({lat}) é maior que o comprimento ({lung}): ao cortar, o comprimento é o lado maior. Troque-os se o veio tiver de ir ao contrário."
+    "piesaLatimeMaiMare": "A largura ({lat}) é maior que o comprimento ({lung}): ao cortar, o comprimento é o lado maior. Troque-os se o veio tiver de ir ao contrário.",
+    "socluNuMerge": "O rodapé só assenta num móvel direito construído «entre». Aqui ficou de fora.",
+    "socluPreaInalt": "Rodapé de {soclu} mm num móvel tão baixo: sobram apenas {ramane} mm por dentro."
   },
   "csv": {
     "corp": "Módulo",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "orla grossa",
     "cantSubtireOpt": "orla fina",
     "lungimePiesa": "Comprimento (L)",
-    "latimePiesa": "Largura (l)"
+    "latimePiesa": "Largura (l)",
+    "soclu": "Rodapé (0 = pés)"
   },
   "fata": {
     "px": "direita",

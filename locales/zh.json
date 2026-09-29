@@ -279,6 +279,10 @@
       "colt": {
         "nume": "转角柜体",
         "descriere": "用在两面墙之间的角上。顶板、底板和层板先按外框矩形开出来，再切角 —— 切角尺寸在板件清单里。"
+      },
+      "bucatarie-inalt": {
+        "nume": "厨房 — 高柜",
+        "descriere": "从地面立起、带踢脚板的高柜。"
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "板件",
         "descriere": "L1、L2 是长边，l1、l2 是短边。长边封边减宽度，短边封边减长度。",
         "corpNume": "板件"
+      },
+      "baza-2usi-soclu": {
+        "nume": "带踢脚板的地柜",
+        "descriere": "直接落地，不用柜脚：侧板到底，前面装踢脚板。",
+        "corpNume": "踢脚板地柜"
+      },
+      "baza-2sertare": {
+        "nume": "地柜，2 抽屉",
+        "descriere": "两个深抽屉，放锅具。",
+        "corpNume": "地柜 2 抽屉"
+      },
+      "baza-4sertare": {
+        "nume": "地柜，4 抽屉",
+        "descriere": "四个浅抽屉，放餐具和零碎物品。",
+        "corpNume": "地柜 4 抽屉"
+      },
+      "baza-ingusta": {
+        "nume": "窄地柜",
+        "descriere": "宽 200 毫米，填补一排柜子末端的空隙。",
+        "corpNume": "窄地柜"
+      },
+      "sus-2usi-600": {
+        "nume": "吊柜，高 600",
+        "descriere": "中等高度，一层隔板。",
+        "corpNume": "吊柜 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "吊柜，高 1000",
+        "descriere": "较高，接近天花板，三层隔板。",
+        "corpNume": "吊柜 1000"
+      },
+      "coloana-camara": {
+        "nume": "食品储藏高柜",
+        "descriere": "从地面到顶部，五层隔板，通高门。",
+        "corpNume": "储藏高柜"
+      },
+      "coloana-matura": {
+        "nume": "扫帚高柜",
+        "descriere": "窄而高，顶部一层隔板。",
+        "corpNume": "扫帚高柜"
+      },
+      "etajera-cuburi": {
+        "nume": "方格书架",
+        "descriere": "4×4 方格，由立板和隔板组成。",
+        "corpNume": "方格书架"
+      },
+      "bufet": {
+        "nume": "餐边柜",
+        "descriere": "低而宽，中间一块立板，四扇门。",
+        "corpNume": "餐边柜"
+      },
+      "dulap-pantofi": {
+        "nume": "鞋柜",
+        "descriere": "进深仅够横放一只鞋，三层隔板。",
+        "corpNume": "鞋柜"
       }
     },
     "adaugaCorp": "添加柜体",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "抽屉 —— 盒前后板",
     "sertarFund": "抽屉 —— 高密度板底",
     "montant": "中隔板",
-    "piesaSimpla": "板件"
+    "piesaSimpla": "板件",
+    "soclu": "踢脚板"
   },
   "directie": {
     "jos": "下",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "每扇门 {n} 个铰链，{cot} 弯；盲区 {orb} 毫米，被旁边的柜体挡住",
     "rostFronturi": "门板之间留 {rost} 毫米缝",
     "glisieraDe": "{lg} 毫米滑轨",
-    "subCutie": "装在抽屉盒下面"
+    "subCutie": "装在抽屉盒下面",
+    "socluInFata": "位于前方、两块侧板之间——底板搁在上面"
   },
   "avert": {
     "politeAtipic": "异形柜体的层板不会自动算：单独当板件加进去。",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "第 {comp} 格放不下这么多门：那里一扇也没做出来。",
     "sertareNuUmplu": "抽屉面板没有做到底，下面空了 {gol} mm。把面板高度改成 {front} mm 就能填满柜体。",
     "piesaPreaMica": "有一边小于 20 mm，请核对尺寸。",
-    "piesaLatimeMaiMare": "宽 ({lat}) 大于长 ({lung})：开料时长是长边。如果纹理要走另一个方向，把两个数对调。"
+    "piesaLatimeMaiMare": "宽 ({lat}) 大于长 ({lung})：开料时长是长边。如果纹理要走另一个方向，把两个数对调。",
+    "socluNuMerge": "踢脚板只适用于“嵌入式”结构的直柜。这里未使用。",
+    "socluPreaInalt": "柜体太矮却用 {soclu} 毫米踢脚板：内部只剩 {ramane} 毫米。"
   },
   "csv": {
     "corp": "柜体",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "厚封边",
     "cantSubtireOpt": "薄封边",
     "lungimePiesa": "长 (L)",
-    "latimePiesa": "宽 (l)"
+    "latimePiesa": "宽 (l)",
+    "soclu": "踢脚板（0 = 使用脚）"
   },
   "fata": {
     "px": "右",

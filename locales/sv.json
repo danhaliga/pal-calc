@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Hörnstommar",
         "descriere": "För hörnet mellan två väggar. Topp, botten och hyllplan kapas som yttermåttsrektangel och fräses sedan ur — urtagets mått står i dellistan."
+      },
+      "bucatarie-inalt": {
+        "nume": "Kök — högskåp",
+        "descriere": "Höga stommar som står på golvet, på sockel."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Detaljen",
         "descriere": "L1 och L2 är de långa kanterna, l1 och l2 de korta. List på de långa tar bort bredd, list på de korta tar bort längd.",
         "corpNume": "Detalj"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Underskåp på sockel",
+        "descriere": "Står rakt på golvet, utan ben: sidorna går hela vägen ner och framtill sitter sockeln.",
+        "corpNume": "Underskåp på sockel"
+      },
+      "baza-2sertare": {
+        "nume": "Underskåp, 2 lådor",
+        "descriere": "Två djupa lådor, för grytor.",
+        "corpNume": "Underskåp 2 lådor"
+      },
+      "baza-4sertare": {
+        "nume": "Underskåp, 4 lådor",
+        "descriere": "Fyra låga lådor, för bestick och småsaker.",
+        "corpNume": "Underskåp 4 lådor"
+      },
+      "baza-ingusta": {
+        "nume": "Smalt underskåp",
+        "descriere": "200 mm brett, för springan i änden av raden.",
+        "corpNume": "Smalt underskåp"
+      },
+      "sus-2usi-600": {
+        "nume": "Väggskåp 600 högt",
+        "descriere": "Mellanhöjd, med en hylla.",
+        "corpNume": "Väggskåp 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Väggskåp 1000 högt",
+        "descriere": "Högt, nästan upp till taket, med tre hyllor.",
+        "corpNume": "Väggskåp 1000"
+      },
+      "coloana-camara": {
+        "nume": "Skafferihögskåp",
+        "descriere": "Från golv till tak, fem hyllor och dörrar i full höjd.",
+        "corpNume": "Skafferiskåp"
+      },
+      "coloana-matura": {
+        "nume": "Städskåp",
+        "descriere": "Smalt och högt, med en enda hylla högst upp.",
+        "corpNume": "Städskåp"
+      },
+      "etajera-cuburi": {
+        "nume": "Hylla med fack",
+        "descriere": "Rutnät på 4×4 fack, av mittsidor och hyllplan.",
+        "corpNume": "Fackhylla"
+      },
+      "bufet": {
+        "nume": "Skänk",
+        "descriere": "Låg och bred, med mittsida och fyra dörrar.",
+        "corpNume": "Skänk"
+      },
+      "dulap-pantofi": {
+        "nume": "Skoskåp",
+        "descriere": "Så djupt som en sko lagd på tvären, tre hyllor.",
+        "corpNume": "Skoskåp"
       }
     },
     "adaugaCorp": "Lägg till en stomme",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Låda – fram/bak",
     "sertarFund": "Låda – botten av board",
     "montant": "Mellanvägg",
-    "piesaSimpla": "Detalj"
+    "piesaSimpla": "Detalj",
+    "soclu": "Sockel"
   },
   "directie": {
     "jos": "ner",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} gångjärn per lucka, arm {cot}; blind zon på {orb} mm, täckt av grannstommen",
     "rostFronturi": "springa {rost} mm mellan fronterna",
     "glisieraDe": "skena {lg} mm",
-    "subCutie": "monterad under lådan"
+    "subCutie": "monterad under lådan",
+    "socluInFata": "framtill, mellan sidorna — bottnen vilar på den"
   },
   "avert": {
     "politeAtipic": "I specialstommar räknas hyllplanen inte automatiskt: lägg till dem som egna delar.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "Fack {comp} har inte plats för så många dörrar: där blev det ingen.",
     "sertareNuUmplu": "Lådfronterna når inte ner: {gol} mm står öppet nedtill. Sätt fronthöjden till {front} mm för att fylla stommen.",
     "piesaPreaMica": "En sida under 20 mm: kontrollera måtten.",
-    "piesaLatimeMaiMare": "Bredden ({lat}) är större än längden ({lung}): vid kapning är längden den långa sidan. Byt dem om fibern ska gå åt andra hållet."
+    "piesaLatimeMaiMare": "Bredden ({lat}) är större än längden ({lung}): vid kapning är längden den långa sidan. Byt dem om fibern ska gå åt andra hållet.",
+    "socluNuMerge": "En sockel går bara på en rak stomme byggd ”emellan”. Här utelämnades den.",
+    "socluPreaInalt": "Sockel på {soclu} mm i en så låg stomme: bara {ramane} mm blir kvar inuti."
   },
   "csv": {
     "corp": "Stomme",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "tjock list",
     "cantSubtireOpt": "tunn list",
     "lungimePiesa": "Längd (L)",
-    "latimePiesa": "Bredd (l)"
+    "latimePiesa": "Bredd (l)",
+    "soclu": "Sockel (0 = ben)"
   },
   "fata": {
     "px": "höger",

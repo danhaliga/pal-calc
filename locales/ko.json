@@ -279,6 +279,10 @@
       "colt": {
         "nume": "코너 캐비닛",
         "descriere": "벽 두 면이 만나는 코너용. 상판, 하판, 선반은 먼저 외곽 직사각형으로 재단하고 나중에 파냅니다 —— 파내는 치수는 부재 목록에 있습니다."
+      },
+      "bucatarie-inalt": {
+        "nume": "주방 — 키큰장",
+        "descriere": "바닥에 서서 위까지 올라가는, 걸레받이가 있는 몸통."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "부재",
         "descriere": "L1과 L2는 긴 변, l1과 l2는 짧은 변입니다. 긴 변의 엣지는 폭에서, 짧은 변의 엣지는 길이에서 빠집니다.",
         "corpNume": "부재"
+      },
+      "baza-2usi-soclu": {
+        "nume": "걸레받이 하부장",
+        "descriere": "다리 없이 바닥에 바로 섭니다. 옆판이 아래까지 내려오고 앞에 걸레받이가 들어갑니다.",
+        "corpNume": "걸레받이 하부장"
+      },
+      "baza-2sertare": {
+        "nume": "하부장, 서랍 2개",
+        "descriere": "깊은 서랍 두 개, 냄비용.",
+        "corpNume": "하부장 서랍2"
+      },
+      "baza-4sertare": {
+        "nume": "하부장, 서랍 4개",
+        "descriere": "얕은 서랍 네 개, 수저와 잡동사니용.",
+        "corpNume": "하부장 서랍4"
+      },
+      "baza-ingusta": {
+        "nume": "좁은 하부장",
+        "descriere": "폭 200 mm, 줄 끝에 남는 틈용.",
+        "corpNume": "좁은 하부장"
+      },
+      "sus-2usi-600": {
+        "nume": "상부장, 높이 600",
+        "descriere": "중간 높이, 선반 하나.",
+        "corpNume": "상부장 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "상부장, 높이 1000",
+        "descriere": "천장 가까이까지, 선반 셋.",
+        "corpNume": "상부장 1000"
+      },
+      "coloana-camara": {
+        "nume": "팬트리 키큰장",
+        "descriere": "바닥부터 위까지, 선반 다섯과 전체 높이 문.",
+        "corpNume": "팬트리 키큰장"
+      },
+      "coloana-matura": {
+        "nume": "빗자루 키큰장",
+        "descriere": "좁고 높으며, 위에 선반 하나.",
+        "corpNume": "빗자루 키큰장"
+      },
+      "etajera-cuburi": {
+        "nume": "큐브 선반",
+        "descriere": "4×4 칸 격자, 세로판과 선반으로.",
+        "corpNume": "큐브 선반"
+      },
+      "bufet": {
+        "nume": "사이드보드",
+        "descriere": "낮고 넓으며, 가운데 세로판과 문 넷.",
+        "corpNume": "사이드보드"
+      },
+      "dulap-pantofi": {
+        "nume": "신발장",
+        "descriere": "신발을 옆으로 놓을 깊이, 선반 셋.",
+        "corpNume": "신발장"
       }
     },
     "adaugaCorp": "캐비닛 추가",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "서랍 —— 통 앞뒤판",
     "sertarFund": "서랍 —— HDF 바닥",
     "montant": "중간 칸막이",
-    "piesaSimpla": "부재"
+    "piesaSimpla": "부재",
+    "soclu": "걸레받이"
   },
   "directie": {
     "jos": "아래",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "문짝 1장당 경첩 {n}개, 오버레이 {cot}. 막힌 구간 {orb} mm는 옆 캐비닛에 가려집니다",
     "rostFronturi": "문짝 사이 간격 {rost} mm",
     "glisieraDe": "레일 {lg} mm",
-    "subCutie": "서랍통 아래에 붙습니다"
+    "subCutie": "서랍통 아래에 붙습니다",
+    "socluInFata": "앞쪽, 옆판 사이 — 밑판이 그 위에 놓입니다"
   },
   "avert": {
     "politeAtipic": "비정형 캐비닛에서는 선반이 자동으로 계산되지 않습니다. 따로 부재로 더하세요.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "{comp}번 칸에는 그만큼의 문이 들어가지 않습니다. 거기에는 한 짝도 나오지 않았습니다.",
     "sertareNuUmplu": "서랍 앞판이 아래까지 닿지 않습니다. 아래에 {gol} mm가 비어 있습니다. 앞판 높이를 {front} mm로 하면 몸통이 채워집니다.",
     "piesaPreaMica": "20 mm 미만인 변이 있습니다. 치수를 확인하세요.",
-    "piesaLatimeMaiMare": "폭 ({lat})이 길이 ({lung})보다 큽니다. 재단에서는 길이가 긴 변입니다. 결을 다르게 두려면 둘을 바꾸세요."
+    "piesaLatimeMaiMare": "폭 ({lat})이 길이 ({lung})보다 큽니다. 재단에서는 길이가 긴 변입니다. 결을 다르게 두려면 둘을 바꾸세요.",
+    "socluNuMerge": "걸레받이는 “사이” 방식으로 짠 직선 몸통에만 붙습니다. 여기서는 빠졌습니다.",
+    "socluPreaInalt": "이렇게 낮은 몸통에 {soclu} mm 걸레받이: 안쪽에 {ramane} mm만 남습니다."
   },
   "csv": {
     "corp": "캐비닛",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "두꺼운 엣지",
     "cantSubtireOpt": "얇은 엣지",
     "lungimePiesa": "길이 (L)",
-    "latimePiesa": "폭 (l)"
+    "latimePiesa": "폭 (l)",
+    "soclu": "걸레받이 (0 = 다리)"
   },
   "fata": {
     "px": "오른쪽",

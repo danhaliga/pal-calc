@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Mobili angolari",
         "descriere": "Per l'angolo fra due pareti. Cappello, fondo e ripiani si tagliano come rettangolo di ingombro e poi si sagomano — le misure dell'intaglio sono nella distinta dei pezzi."
+      },
+      "bucatarie-inalt": {
+        "nume": "Cucina — colonne",
+        "descriere": "Mobili alti appoggiati a terra, su zoccolo."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Il pezzo",
         "descriere": "L1 e L2 sono i fili lunghi, l1 e l2 quelli corti. Il bordo dei lunghi toglie larghezza, quello dei corti toglie lunghezza.",
         "corpNume": "Pezzo"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Base su zoccolo",
+        "descriere": "Appoggia dritta a terra, senza piedini: i fianchi scendono fino in fondo e davanti va lo zoccolo.",
+        "corpNume": "Base su zoccolo"
+      },
+      "baza-2sertare": {
+        "nume": "Base, 2 cassetti",
+        "descriere": "Due cassetti profondi, per le pentole.",
+        "corpNume": "Base 2 cassetti"
+      },
+      "baza-4sertare": {
+        "nume": "Base, 4 cassetti",
+        "descriere": "Quattro cassetti bassi, per posate e minuterie.",
+        "corpNume": "Base 4 cassetti"
+      },
+      "baza-ingusta": {
+        "nume": "Base stretta",
+        "descriere": "Da 200 mm, per il vuoto a fine fila.",
+        "corpNume": "Base stretta"
+      },
+      "sus-2usi-600": {
+        "nume": "Pensile da 600",
+        "descriere": "Altezza media, con un ripiano.",
+        "corpNume": "Pensile 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Pensile da 1000",
+        "descriere": "Alto, quasi a soffitto, con tre ripiani.",
+        "corpNume": "Pensile 1000"
+      },
+      "coloana-camara": {
+        "nume": "Colonna dispensa",
+        "descriere": "Da terra fino in alto, cinque ripiani e ante a tutta altezza.",
+        "corpNume": "Colonna dispensa"
+      },
+      "coloana-matura": {
+        "nume": "Colonna portascope",
+        "descriere": "Stretta e alta, con un solo ripiano in cima.",
+        "corpNume": "Colonna portascope"
+      },
+      "etajera-cuburi": {
+        "nume": "Libreria a cubi",
+        "descriere": "Griglia di 4×4 cubi, fatta di montanti e ripiani.",
+        "corpNume": "Libreria a cubi"
+      },
+      "bufet": {
+        "nume": "Credenza",
+        "descriere": "Bassa e larga, con montante al centro e quattro ante.",
+        "corpNume": "Credenza"
+      },
+      "dulap-pantofi": {
+        "nume": "Scarpiera",
+        "descriere": "Profonda quanto una scarpa messa di traverso, tre ripiani.",
+        "corpNume": "Scarpiera"
       }
     },
     "adaugaCorp": "Aggiungi un mobile",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Cassetto – fronte/retro",
     "sertarFund": "Cassetto – fondo in fibra",
     "montant": "Montante",
-    "piesaSimpla": "Pezzo"
+    "piesaSimpla": "Pezzo",
+    "soclu": "Zoccolo"
   },
   "directie": {
     "jos": "basso",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} cerniere per anta, braccio {cot}; zona cieca di {orb} mm, coperta dal mobile vicino",
     "rostFronturi": "gioco di {rost} mm fra i frontali",
     "glisieraDe": "guida {lg} mm",
-    "subCutie": "montato sotto il cassetto"
+    "subCutie": "montato sotto il cassetto",
+    "socluInFata": "davanti, tra i fianchi — il fondo ci appoggia sopra"
   },
   "avert": {
     "politeAtipic": "Nei mobili fuori misura i ripiani non si calcolano da soli: aggiungili come pezzi separati.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "Il vano {comp} non ha spazio per tante ante: lì non ne è uscita nessuna.",
     "sertareNuUmplu": "I frontali dei cassetti non arrivano in basso: restano {gol} mm liberi. Metti {front} mm di altezza frontale per riempire il mobile.",
     "piesaPreaMica": "Un lato sotto i 20 mm: controlla le misure.",
-    "piesaLatimeMaiMare": "La larghezza ({lat}) supera la lunghezza ({lung}): al taglio la lunghezza è il lato lungo. Invertile se la venatura deve andare diversamente."
+    "piesaLatimeMaiMare": "La larghezza ({lat}) supera la lunghezza ({lung}): al taglio la lunghezza è il lato lungo. Invertile se la venatura deve andare diversamente.",
+    "socluNuMerge": "Lo zoccolo va solo su un mobile diritto costruito «tra». Qui è stato lasciato fuori.",
+    "socluPreaInalt": "Zoccolo da {soclu} mm su un mobile così basso: dentro restano solo {ramane} mm."
   },
   "csv": {
     "corp": "Mobile",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "bordo spesso",
     "cantSubtireOpt": "bordo sottile",
     "lungimePiesa": "Lunghezza (L)",
-    "latimePiesa": "Larghezza (l)"
+    "latimePiesa": "Larghezza (l)",
+    "soclu": "Zoccolo (0 = piedini)"
   },
   "fata": {
     "px": "destra",

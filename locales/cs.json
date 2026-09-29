@@ -285,6 +285,10 @@
       "colt": {
         "nume": "Rohové korpusy",
         "descriere": "Do rohu mezi dvěma stěnami. Horní deska, dno a police se řežou jako obalový obdélník a pak se vyřežou — rozměry výřezu jsou v seznamu dílů."
+      },
+      "bucatarie-inalt": {
+        "nume": "Kuchyně — potravinové skříně",
+        "descriere": "Vysoké korpusy stojící na podlaze, na soklu."
       }
     },
     "m": {
@@ -443,6 +447,61 @@
         "rezumat": "Díl",
         "descriere": "L1 a L2 jsou dlouhé hrany, l1 a l2 krátké. Hrana na dlouhých ubere šířku, na krátkých ubere délku.",
         "corpNume": "Díl"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Spodní skříňka na soklu",
+        "descriere": "Stojí přímo na podlaze, bez nožek: bočnice jdou až dolů a vpředu je sokl.",
+        "corpNume": "Spodní na soklu"
+      },
+      "baza-2sertare": {
+        "nume": "Spodní skříňka, 2 zásuvky",
+        "descriere": "Dvě hluboké zásuvky, na hrnce.",
+        "corpNume": "Spodní 2 zásuvky"
+      },
+      "baza-4sertare": {
+        "nume": "Spodní skříňka, 4 zásuvky",
+        "descriere": "Čtyři nízké zásuvky, na příbory a drobnosti.",
+        "corpNume": "Spodní 4 zásuvky"
+      },
+      "baza-ingusta": {
+        "nume": "Úzká spodní skříňka",
+        "descriere": "Šířka 200 mm, na mezeru na konci řady.",
+        "corpNume": "Úzká spodní"
+      },
+      "sus-2usi-600": {
+        "nume": "Horní skříňka 600",
+        "descriere": "Střední výška, jedna police.",
+        "corpNume": "Horní 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Horní skříňka 1000",
+        "descriere": "Vysoká, skoro ke stropu, tři police.",
+        "corpNume": "Horní 1000"
+      },
+      "coloana-camara": {
+        "nume": "Potravinová skříň",
+        "descriere": "Od podlahy nahoru, pět polic a dvířka přes celou výšku.",
+        "corpNume": "Potravinová skříň"
+      },
+      "coloana-matura": {
+        "nume": "Skříň na smetáky",
+        "descriere": "Úzká a vysoká, s jedinou policí nahoře.",
+        "corpNume": "Skříň na smetáky"
+      },
+      "etajera-cuburi": {
+        "nume": "Regál s přihrádkami",
+        "descriere": "Mřížka 4×4 přihrádek, ze stojin a polic.",
+        "corpNume": "Regál s přihrádkami"
+      },
+      "bufet": {
+        "nume": "Příborník",
+        "descriere": "Nízký a široký, se stojinou uprostřed a čtyřmi dvířky.",
+        "corpNume": "Příborník"
+      },
+      "dulap-pantofi": {
+        "nume": "Botník",
+        "descriere": "Hluboký jako bota položená napříč, tři police.",
+        "corpNume": "Botník"
       }
     },
     "adaugaCorp": "Přidat korpus",
@@ -591,7 +650,8 @@
     "sertarFataSpate": "Zásuvka – předek/zadek koše",
     "sertarFund": "Zásuvka – dno z HDF",
     "montant": "Přepážka",
-    "piesaSimpla": "Díl"
+    "piesaSimpla": "Díl",
+    "soclu": "Sokl"
   },
   "directie": {
     "jos": "dole",
@@ -628,7 +688,8 @@
     "balamaleUsaOrb": "{n} pantů na dvířka, rameno {cot}; slepá zóna {orb} mm, zakrytá sousedním korpusem",
     "rostFronturi": "spára {rost} mm mezi čely",
     "glisieraDe": "výsuv {lg} mm",
-    "subCutie": "montováno pod košem"
+    "subCutie": "montováno pod košem",
+    "socluInFata": "vpředu, mezi bočnicemi — dno na něm stojí"
   },
   "avert": {
     "politeAtipic": "U atypických korpusů se police nepočítají samy: přidej je jako samostatné díly.",
@@ -658,7 +719,9 @@
     "usaPreaIngusta": "V oddílu {comp} není místo pro tolik dvířek: žádné tam nevzniklo.",
     "sertareNuUmplu": "Čela zásuvek nedosahují dolů: zůstává {gol} mm volného místa. Nastav výšku čela na {front} mm, aby se korpus zaplnil.",
     "piesaPreaMica": "Strana pod 20 mm: zkontroluj rozměry.",
-    "piesaLatimeMaiMare": "Šířka ({lat}) je větší než délka ({lung}): při nářezu je délka delší strana. Prohoď je, pokud má kresba jít jinak."
+    "piesaLatimeMaiMare": "Šířka ({lat}) je větší než délka ({lung}): při nářezu je délka delší strana. Prohoď je, pokud má kresba jít jinak.",
+    "socluNuMerge": "Sokl jde jen na rovnou skříňku stavěnou „mezi“. Tady zůstal bez užitku.",
+    "socluPreaInalt": "Sokl {soclu} mm u tak nízké skříňky: uvnitř zbývá jen {ramane} mm."
   },
   "csv": {
     "corp": "Korpus",
@@ -1175,7 +1238,8 @@
     "cantGrosOpt": "silná hrana",
     "cantSubtireOpt": "tenká hrana",
     "lungimePiesa": "Délka (L)",
-    "latimePiesa": "Šířka (l)"
+    "latimePiesa": "Šířka (l)",
+    "soclu": "Sokl (0 = nožky)"
   },
   "fata": {
     "px": "vpravo",

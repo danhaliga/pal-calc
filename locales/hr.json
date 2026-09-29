@@ -285,6 +285,10 @@
       "colt": {
         "nume": "Kutni korpusi",
         "descriere": "Za kut između dva zida. Gornja ploča, dno i police kroje se kao gabaritni pravokutnik i zatim izrezuju — mjere izreza su u popisu dijelova."
+      },
+      "bucatarie-inalt": {
+        "nume": "Kuhinja — visoki elementi",
+        "descriere": "Visoka tijela koja stoje na podu, na soklu."
       }
     },
     "m": {
@@ -443,6 +447,61 @@
         "rezumat": "Element",
         "descriere": "L1 i L2 su dugi rubovi, l1 i l2 kratki. Kant na dugima oduzima širinu, na kratkima oduzima duljinu.",
         "corpNume": "Element"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Donji element na soklu",
+        "descriere": "Stoji ravno na podu, bez nožica: stranice idu do dolje, a sprijeda ulazi sokl.",
+        "corpNume": "Donji na soklu"
+      },
+      "baza-2sertare": {
+        "nume": "Donji element, 2 ladice",
+        "descriere": "Dvije duboke ladice, za lonce.",
+        "corpNume": "Donji 2 ladice"
+      },
+      "baza-4sertare": {
+        "nume": "Donji element, 4 ladice",
+        "descriere": "Četiri niske ladice, za pribor i sitnice.",
+        "corpNume": "Donji 4 ladice"
+      },
+      "baza-ingusta": {
+        "nume": "Uzak donji element",
+        "descriere": "Širine 200 mm, za procjep na kraju niza.",
+        "corpNume": "Uzak donji"
+      },
+      "sus-2usi-600": {
+        "nume": "Viseći element 600",
+        "descriere": "Srednja visina, s jednom policom.",
+        "corpNume": "Viseći 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Viseći element 1000",
+        "descriere": "Visok, gotovo do stropa, s tri police.",
+        "corpNume": "Viseći 1000"
+      },
+      "coloana-camara": {
+        "nume": "Visoki element smočnica",
+        "descriere": "Od poda do vrha, pet polica i vrata pune visine.",
+        "corpNume": "Element smočnica"
+      },
+      "coloana-matura": {
+        "nume": "Visoki element za metle",
+        "descriere": "Uzak i visok, s jednom policom gore.",
+        "corpNume": "Element za metle"
+      },
+      "etajera-cuburi": {
+        "nume": "Polica s pregradama",
+        "descriere": "Mreža 4×4 pregrade, od vertikala i polica.",
+        "corpNume": "Polica s pregradama"
+      },
+      "bufet": {
+        "nume": "Komoda-bife",
+        "descriere": "Niska i široka, s vertikalom u sredini i četiri vrata.",
+        "corpNume": "Bife"
+      },
+      "dulap-pantofi": {
+        "nume": "Ormarić za cipele",
+        "descriere": "Dubok koliko cipela položena poprijeko, tri police.",
+        "corpNume": "Ormarić za cipele"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -591,7 +650,8 @@
     "sertarFataSpate": "Ladica – prednja/stražnja strana kutije",
     "sertarFund": "Ladica – dno od HDF-a",
     "montant": "Pregrada",
-    "piesaSimpla": "Element"
+    "piesaSimpla": "Element",
+    "soclu": "Sokl"
   },
   "directie": {
     "jos": "dolje",
@@ -628,7 +688,8 @@
     "balamaleUsaOrb": "{n} šarki po vratima, krak {cot}; slijepa zona od {orb} mm, prekrivena susjednim korpusom",
     "rostFronturi": "zazor {rost} mm između fronti",
     "glisieraDe": "vodilica {lg} mm",
-    "subCutie": "montirano ispod kutije"
+    "subCutie": "montirano ispod kutije",
+    "socluInFata": "sprijeda, između stranica — dno stoji na njemu"
   },
   "avert": {
     "politeAtipic": "Kod netipičnih korpusa police se ne računaju same: dodaj ih kao zasebne dijelove.",
@@ -658,7 +719,9 @@
     "usaPreaIngusta": "U pregradi {comp} nema mjesta za toliko vrata: ondje nije izašlo nijedno.",
     "sertareNuUmplu": "Prednjice ladica ne dosežu do dna: ostaje {gol} mm praznog prostora dolje. Stavi {front} mm za visinu prednjice da ispuni korpus.",
     "piesaPreaMica": "Strana ispod 20 mm: provjeri mjere.",
-    "piesaLatimeMaiMare": "Širina ({lat}) je veća od duljine ({lung}): pri krojenju je duljina dulja strana. Zamijeni ih ako tekstura treba ići drugačije."
+    "piesaLatimeMaiMare": "Širina ({lat}) je veća od duljine ({lung}): pri krojenju je duljina dulja strana. Zamijeni ih ako tekstura treba ići drugačije.",
+    "socluNuMerge": "Sokl ide samo na ravno tijelo građeno „između“. Ovdje je izostavljen.",
+    "socluPreaInalt": "Sokl od {soclu} mm na ovako niskom tijelu: unutra ostaje samo {ramane} mm."
   },
   "csv": {
     "corp": "Korpus",
@@ -1175,7 +1238,8 @@
     "cantGrosOpt": "debeli kant",
     "cantSubtireOpt": "tanki kant",
     "lungimePiesa": "Duljina (L)",
-    "latimePiesa": "Širina (l)"
+    "latimePiesa": "Širina (l)",
+    "soclu": "Sokl (0 = nožice)"
   },
   "fata": {
     "px": "desno",

@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Thùng tủ góc",
         "descriere": "Cho góc giữa hai bức tường. Nóc, đáy và kệ được cắt theo hình chữ nhật bao rồi mới khoét — kích thước phần khoét nằm trong bảng chi tiết."
+      },
+      "bucatarie-inalt": {
+        "nume": "Bếp — tủ cao",
+        "descriere": "Thùng cao đứng từ sàn lên, có chân đế."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Chi tiết",
         "descriere": "L1 và L2 là cạnh dài, l1 và l2 là cạnh ngắn. Chỉ dán cạnh dài trừ vào chiều rộng, cạnh ngắn trừ vào chiều dài.",
         "corpNume": "Chi tiết"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Thùng dưới có chân đế",
+        "descriere": "Đứng thẳng trên sàn, không chân rời: hai hông xuống tận đáy, phía trước lắp chân đế.",
+        "corpNume": "Thùng dưới chân đế"
+      },
+      "baza-2sertare": {
+        "nume": "Thùng dưới, 2 ngăn kéo",
+        "descriere": "Hai ngăn kéo sâu, để nồi.",
+        "corpNume": "Thùng dưới 2 ngăn"
+      },
+      "baza-4sertare": {
+        "nume": "Thùng dưới, 4 ngăn kéo",
+        "descriere": "Bốn ngăn kéo thấp, để dao dĩa và đồ lặt vặt.",
+        "corpNume": "Thùng dưới 4 ngăn"
+      },
+      "baza-ingusta": {
+        "nume": "Thùng dưới hẹp",
+        "descriere": "Rộng 200 mm, lấp khe còn lại ở cuối dãy.",
+        "corpNume": "Thùng dưới hẹp"
+      },
+      "sus-2usi-600": {
+        "nume": "Thùng treo cao 600",
+        "descriere": "Chiều cao trung bình, một tấm kệ.",
+        "corpNume": "Thùng treo 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Thùng treo cao 1000",
+        "descriere": "Cao gần tới trần, ba tấm kệ.",
+        "corpNume": "Thùng treo 1000"
+      },
+      "coloana-camara": {
+        "nume": "Tủ cao đựng thực phẩm",
+        "descriere": "Từ sàn lên tới đỉnh, năm kệ và cánh suốt chiều cao.",
+        "corpNume": "Tủ cao thực phẩm"
+      },
+      "coloana-matura": {
+        "nume": "Tủ cao để chổi",
+        "descriere": "Hẹp và cao, một kệ trên cùng.",
+        "corpNume": "Tủ cao để chổi"
+      },
+      "etajera-cuburi": {
+        "nume": "Kệ ô vuông",
+        "descriere": "Lưới 4×4 ô, làm từ vách đứng và kệ.",
+        "corpNume": "Kệ ô vuông"
+      },
+      "bufet": {
+        "nume": "Tủ bày",
+        "descriere": "Thấp và rộng, có vách giữa và bốn cánh.",
+        "corpNume": "Tủ bày"
+      },
+      "dulap-pantofi": {
+        "nume": "Tủ giày",
+        "descriere": "Sâu vừa một chiếc giày đặt ngang, ba kệ.",
+        "corpNume": "Tủ giày"
       }
     },
     "adaugaCorp": "Thêm một thùng tủ",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Ngăn kéo – mặt trước/sau hộc",
     "sertarFund": "Ngăn kéo – đáy HDF",
     "montant": "Vách ngăn",
-    "piesaSimpla": "Chi tiết"
+    "piesaSimpla": "Chi tiết",
+    "soclu": "Chân đế"
   },
   "directie": {
     "jos": "dưới",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} bản lề mỗi cánh, cong {cot}; vùng khuất {orb} mm, bị thùng tủ bên cạnh che",
     "rostFronturi": "khe hở {rost} mm giữa các cánh",
     "glisieraDe": "ray {lg} mm",
-    "subCutie": "lắp dưới hộc"
+    "subCutie": "lắp dưới hộc",
+    "socluInFata": "phía trước, giữa hai hông — đáy tựa lên nó"
   },
   "avert": {
     "politeAtipic": "Ở thùng tủ phi tiêu chuẩn, kệ không được tính tự động: hãy thêm chúng như chi tiết riêng.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "Ngăn {comp} không đủ chỗ cho ngần ấy cánh: ở đó không ra cánh nào.",
     "sertareNuUmplu": "Mặt ngăn kéo không xuống tới đáy: còn trống {gol} mm ở dưới. Đặt chiều cao mặt là {front} mm để lấp đầy tủ.",
     "piesaPreaMica": "Một cạnh dưới 20 mm: kiểm tra lại kích thước.",
-    "piesaLatimeMaiMare": "Chiều rộng ({lat}) lớn hơn chiều dài ({lung}): khi cắt, chiều dài là cạnh dài. Đổi chỗ chúng nếu vân phải chạy theo hướng khác."
+    "piesaLatimeMaiMare": "Chiều rộng ({lat}) lớn hơn chiều dài ({lung}): khi cắt, chiều dài là cạnh dài. Đổi chỗ chúng nếu vân phải chạy theo hướng khác.",
+    "socluNuMerge": "Chân đế chỉ lắp được cho thùng thẳng dựng kiểu „giữa\". Ở đây đã bỏ qua.",
+    "socluPreaInalt": "Chân đế {soclu} mm trên thùng thấp như vậy: bên trong chỉ còn {ramane} mm."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "chỉ dày",
     "cantSubtireOpt": "chỉ mỏng",
     "lungimePiesa": "Chiều dài (L)",
-    "latimePiesa": "Chiều rộng (l)"
+    "latimePiesa": "Chiều rộng (l)",
+    "soclu": "Chân đế (0 = chân rời)"
   },
   "fata": {
     "px": "phải",

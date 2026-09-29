@@ -285,6 +285,10 @@
       "colt": {
         "nume": "Corpuri de colț",
         "descriere": "Pentru colțul dintre doi pereți. Blatul, fundul și polițele se debitează ca dreptunghi de gabarit și apoi se decupează — cotele decupajului sunt în lista de piese."
+      },
+      "bucatarie-inalt": {
+        "nume": "Bucătărie — coloane",
+        "descriere": "Corpuri înalte, de la podea până sus, pe soclu."
       }
     },
     "m": {
@@ -443,6 +447,61 @@
         "rezumat": "Piesa",
         "descriere": "L1 și L2 sunt muchiile lungi, l1 și l2 cele scurte. Cantul de pe muchiile lungi scade lățimea, cel de pe cele scurte scade lungimea.",
         "corpNume": "Piesă"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Corp bază pe soclu",
+        "descriere": "Stă direct pe podea, fără picioare: lateralele merg până jos, iar în față intră soclul.",
+        "corpNume": "Corp bază pe soclu"
+      },
+      "baza-2sertare": {
+        "nume": "Corp bază cu 2 sertare",
+        "descriere": "Două sertare adânci, pentru oale.",
+        "corpNume": "Corp bază 2 sertare"
+      },
+      "baza-4sertare": {
+        "nume": "Corp bază cu 4 sertare",
+        "descriere": "Patru sertare joase, pentru tacâmuri și mărunțișuri.",
+        "corpNume": "Corp bază 4 sertare"
+      },
+      "baza-ingusta": {
+        "nume": "Corp bază îngust",
+        "descriere": "De 200 mm, pentru golul rămas la capătul frontului.",
+        "corpNume": "Corp îngust"
+      },
+      "sus-2usi-600": {
+        "nume": "Corp suspendat de 600",
+        "descriere": "Înălțime medie, cu o poliță.",
+        "corpNume": "Corp suspendat 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Corp suspendat de 1000",
+        "descriere": "Înalt, până aproape de tavan, cu trei polițe.",
+        "corpNume": "Corp suspendat 1000"
+      },
+      "coloana-camara": {
+        "nume": "Coloană cămară",
+        "descriere": "De la podea până sus, cu cinci polițe și uși pe toată înălțimea.",
+        "corpNume": "Coloană cămară"
+      },
+      "coloana-matura": {
+        "nume": "Coloană pentru mătură",
+        "descriere": "Îngustă și înaltă, cu o singură poliță sus.",
+        "corpNume": "Coloană mătură"
+      },
+      "etajera-cuburi": {
+        "nume": "Etajeră cu cuburi",
+        "descriere": "Grilă de 4×4 cuburi, din montanți și polițe.",
+        "corpNume": "Etajeră cuburi"
+      },
+      "bufet": {
+        "nume": "Bufet",
+        "descriere": "Corp jos și lat, cu montant la mijloc și patru uși.",
+        "corpNume": "Bufet"
+      },
+      "dulap-pantofi": {
+        "nume": "Dulap de pantofi",
+        "descriere": "Adânc cât un pantof pus pe lat, cu trei polițe.",
+        "corpNume": "Dulap pantofi"
       }
     },
     "adaugaCorp": "Adaugă un corp",
@@ -591,7 +650,8 @@
     "sertarFataSpate": "Sertar – față/spate cutie",
     "sertarFund": "Sertar – fund PFL",
     "montant": "Montant",
-    "piesaSimpla": "Piesă"
+    "piesaSimpla": "Piesă",
+    "soclu": "Soclu"
   },
   "directie": {
     "jos": "jos",
@@ -628,7 +688,8 @@
     "balamaleUsaOrb": "{n} balamale/ușă, cot {cot}; zonă oarbă de {orb} mm, acoperită de corpul vecin",
     "rostFronturi": "rost {rost} mm între fronturi",
     "glisieraDe": "glisieră {lg} mm",
-    "subCutie": "aplicat sub cutie"
+    "subCutie": "aplicat sub cutie",
+    "socluInFata": "în față, între laterale — fundul stă pe el"
   },
   "avert": {
     "politeAtipic": "Polițele nu se calculează automat la corpurile atipice: adaugă-le ca piese separate.",
@@ -658,7 +719,9 @@
     "usaPreaIngusta": "Compartimentul {comp} nu are loc pentru atâtea uși: acolo n-a ieșit niciuna.",
     "sertareNuUmplu": "Fronturile de sertar nu ajung la fund: rămâne un gol de {gol} mm jos. Pune {front} mm la înălțimea frontului ca să umple corpul.",
     "piesaPreaMica": "Piesă sub 20 mm pe o latură: verifică cotele.",
-    "piesaLatimeMaiMare": "Lățimea ({lat}) e mai mare decât lungimea ({lung}): la croire lungimea e latura mare. Schimbă-le între ele dacă fibra trebuie să meargă altfel."
+    "piesaLatimeMaiMare": "Lățimea ({lat}) e mai mare decât lungimea ({lung}): la croire lungimea e latura mare. Schimbă-le între ele dacă fibra trebuie să meargă altfel.",
+    "socluNuMerge": "Soclul se pune numai la corpul drept, construit „între\". Aici a rămas fără efect.",
+    "socluPreaInalt": "Soclu de {soclu} mm pe un corp prea scund: rămân doar {ramane} mm înăuntru."
   },
   "csv": {
     "corp": "Corp",
@@ -1175,7 +1238,8 @@
     "cantGrosOpt": "cant gros",
     "cantSubtireOpt": "cant subțire",
     "lungimePiesa": "Lungime (L)",
-    "latimePiesa": "Lățime (l)"
+    "latimePiesa": "Lățime (l)",
+    "soclu": "Soclu (0 = picioare)"
   },
   "fata": {
     "px": "dreapta",

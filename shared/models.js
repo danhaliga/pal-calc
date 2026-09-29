@@ -20,6 +20,7 @@
   var CATEGORIES = [
     { id: 'bucatarie-jos' },
     { id: 'bucatarie-sus' },
+    { id: 'bucatarie-inalt' },
     { id: 'living' },
     { id: 'baie' },
     { id: 'atipic' },
@@ -47,6 +48,28 @@
     {
       id: 'baza-1usa', cat: 'bucatarie-jos',
       set: { W: 400, H: 720, D: 560, nUsi: 1, nPol: 1 }
+    },
+    {
+      /* Corpul care stă pe podea, fără picioare: lateralele merg până jos,
+         iar în față intră soclul. H e cota de la podea, deci 800 = 720 de
+         corp folositor plus 80 de soclu. */
+      id: 'baza-2usi-soclu', cat: 'bucatarie-jos',
+      set: { W: 800, H: 800, D: 560, soclu: 80, nUsi: 2, nPol: 1 }
+    },
+    {
+      id: 'baza-2sertare', cat: 'bucatarie-jos',
+      set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0,
+             nSer: 2, hFront: frontEgal(720, 2, 1.5, 3), hCutie: 180 }
+    },
+    {
+      id: 'baza-4sertare', cat: 'bucatarie-jos',
+      set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0,
+             nSer: 4, hFront: frontEgal(720, 4, 1.5, 3), hCutie: 120 }
+    },
+    {
+      /* Corpul îngust de umplut golul rămas la capăt de front. */
+      id: 'baza-ingusta', cat: 'bucatarie-jos',
+      set: { W: 200, H: 720, D: 560, nUsi: 1, nPol: 2 }
     },
     {
       id: 'baza-3sertare', cat: 'bucatarie-jos',
@@ -77,12 +100,34 @@
       set: { W: 400, H: 720, D: 320, nUsi: 1, nPol: 2 }
     },
     {
+      id: 'sus-2usi-600', cat: 'bucatarie-sus',
+      set: { W: 800, H: 600, D: 320, nUsi: 2, nPol: 1 }
+    },
+    {
+      id: 'sus-2usi-1000', cat: 'bucatarie-sus',
+      set: { W: 800, H: 1000, D: 320, nUsi: 2, nPol: 3 }
+    },
+    {
       id: 'sus-hota', cat: 'bucatarie-sus',
       set: { W: 600, H: 360, D: 320, nUsi: 1, nPol: 0 }
     },
     {
       id: 'sus-raft', cat: 'bucatarie-sus',
       set: { W: 800, H: 360, D: 320, nUsi: 0, nPol: 1 }
+    },
+
+    /* ---------------- bucătărie, coloane ----------------
+
+       Corpurile înalte care stau pe podea și merg până sus. Alea cu nișă la
+       mijloc — cuptor, frigider — cer lucru în motorul de calcul: acum ușile
+       se pot pune numai de jos în sus, fără gol la mijloc. */
+    {
+      id: 'coloana-camara', cat: 'bucatarie-inalt',
+      set: { W: 600, H: 2000, D: 600, soclu: 80, nUsi: 2, nPol: 5 }
+    },
+    {
+      id: 'coloana-matura', cat: 'bucatarie-inalt',
+      set: { W: 400, H: 2000, D: 600, soclu: 80, nUsi: 1, nPol: 1 }
     },
 
     /* ---------------- living și dormitor ---------------- */
@@ -103,6 +148,22 @@
          linia lor, ca sa aiba canatul de ce se inchide sus. */
       id: 'biblioteca-usi-jos', cat: 'living',
       set: { W: 800, H: 1800, D: 300, nUsi: 2, nPol: 4, hUsi: 800 }
+    },
+    {
+      /* Etajera cu cuburi: montanții și polițele fac grila. Cu 3 montanți și
+         3 polițe ies 16 cuburi, adică formatul pe care-l știe toată lumea. */
+      id: 'etajera-cuburi', cat: 'living',
+      set: { W: 1470, H: 1470, D: 390, nUsi: 0, nDsp: 3, nPol: 3 }
+    },
+    {
+      id: 'bufet', cat: 'living',
+      set: { W: 1600, H: 800, D: 450, nUsi: 4, nDsp: 1, nPol: 1 }
+    },
+    {
+      /* Adânc cât un pantof pus pe lat, nu cât un dulap. */
+      id: 'dulap-pantofi', cat: 'living',
+      /* Fara montant, polita de 900 iese de 863 — prea lunga, se lasa. */
+      set: { W: 900, H: 1000, D: 280, nUsi: 2, nDsp: 1, nPol: 3 }
     },
     {
       id: 'comoda-4sertare', cat: 'living',

@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Eckkorpusse",
         "descriere": "Für die Ecke zwischen zwei Wänden. Ober-, Unterboden und Einlegeböden werden als Rechteck zugeschnitten und danach ausgefräst — die Maße des Ausschnitts stehen in der Teileliste."
+      },
+      "bucatarie-inalt": {
+        "nume": "Küche — Hochschränke",
+        "descriere": "Hohe Korpusse, die auf dem Boden stehen, auf Sockel."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Das Teil",
         "descriere": "L1 und L2 sind die langen Schmalflächen, l1 und l2 die kurzen. Die Kante der langen nimmt Breite weg, die der kurzen nimmt Länge weg.",
         "corpNume": "Teil"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Unterschrank auf Sockel",
+        "descriere": "Steht direkt auf dem Boden, ohne Füße: die Seiten gehen bis unten, vorn kommt der Sockel.",
+        "corpNume": "Unterschrank auf Sockel"
+      },
+      "baza-2sertare": {
+        "nume": "Unterschrank, 2 Schubladen",
+        "descriere": "Zwei tiefe Schubladen, für Töpfe.",
+        "corpNume": "Unterschrank 2 Schubladen"
+      },
+      "baza-4sertare": {
+        "nume": "Unterschrank, 4 Schubladen",
+        "descriere": "Vier flache Schubladen, für Besteck und Kleinkram.",
+        "corpNume": "Unterschrank 4 Schubladen"
+      },
+      "baza-ingusta": {
+        "nume": "Schmaler Unterschrank",
+        "descriere": "200 mm breit, für die Lücke am Zeilenende.",
+        "corpNume": "Schmaler Unterschrank"
+      },
+      "sus-2usi-600": {
+        "nume": "Oberschrank 600 hoch",
+        "descriere": "Mittlere Höhe, mit einem Boden.",
+        "corpNume": "Oberschrank 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Oberschrank 1000 hoch",
+        "descriere": "Hoch, fast bis zur Decke, mit drei Böden.",
+        "corpNume": "Oberschrank 1000"
+      },
+      "coloana-camara": {
+        "nume": "Vorratshochschrank",
+        "descriere": "Vom Boden bis oben, fünf Böden und Türen über die ganze Höhe.",
+        "corpNume": "Vorratsschrank"
+      },
+      "coloana-matura": {
+        "nume": "Besenschrank",
+        "descriere": "Schmal und hoch, mit einem einzigen Boden oben.",
+        "corpNume": "Besenschrank"
+      },
+      "etajera-cuburi": {
+        "nume": "Würfelregal",
+        "descriere": "Raster aus 4×4 Fächern, aus Mittelseiten und Böden.",
+        "corpNume": "Würfelregal"
+      },
+      "bufet": {
+        "nume": "Sideboard",
+        "descriere": "Niedrig und breit, mit Mittelseite und vier Türen.",
+        "corpNume": "Sideboard"
+      },
+      "dulap-pantofi": {
+        "nume": "Schuhschrank",
+        "descriere": "So tief wie ein quer gelegter Schuh, drei Böden.",
+        "corpNume": "Schuhschrank"
       }
     },
     "adaugaCorp": "Einen Korpus hinzufügen",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Schublade – Kasten vorn/hinten",
     "sertarFund": "Schublade – Boden aus Hartfaser",
     "montant": "Mittelseite",
-    "piesaSimpla": "Teil"
+    "piesaSimpla": "Teil",
+    "soclu": "Sockel"
   },
   "directie": {
     "jos": "unten",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} Bänder pro Tür, Kröpfung {cot}; blinder Bereich von {orb} mm, vom Nachbarkorpus verdeckt",
     "rostFronturi": "Fuge {rost} mm zwischen den Fronten",
     "glisieraDe": "Auszug {lg} mm",
-    "subCutie": "unter dem Kasten montiert"
+    "subCutie": "unter dem Kasten montiert",
+    "socluInFata": "vorn, zwischen den Seiten — der Boden steht darauf"
   },
   "avert": {
     "politeAtipic": "Bei Sonderkorpussen werden Böden nicht automatisch berechnet: füge sie als eigene Teile hinzu.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "Im Fach {comp} ist für so viele Türen kein Platz: dort ist keine entstanden.",
     "sertareNuUmplu": "Die Schubkastenfronten reichen nicht bis unten: {gol} mm bleiben offen. Setz die Fronthöhe auf {front} mm, damit der Korpus voll wird.",
     "piesaPreaMica": "Eine Seite unter 20 mm: prüf die Maße.",
-    "piesaLatimeMaiMare": "Die Breite ({lat}) ist größer als die Länge ({lung}): beim Zuschnitt ist die Länge die lange Seite. Tausch sie, wenn die Faser anders laufen soll."
+    "piesaLatimeMaiMare": "Die Breite ({lat}) ist größer als die Länge ({lung}): beim Zuschnitt ist die Länge die lange Seite. Tausch sie, wenn die Faser anders laufen soll.",
+    "socluNuMerge": "Ein Sockel geht nur bei einem geraden Korpus in „Zwischen“-Bauweise. Hier bleibt er weg.",
+    "socluPreaInalt": "Sockel von {soclu} mm bei einem so niedrigen Korpus: innen bleiben nur {ramane} mm."
   },
   "csv": {
     "corp": "Korpus",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "dicke Kante",
     "cantSubtireOpt": "dünne Kante",
     "lungimePiesa": "Länge (L)",
-    "latimePiesa": "Breite (l)"
+    "latimePiesa": "Breite (l)",
+    "soclu": "Sockel (0 = Füße)"
   },
   "fata": {
     "px": "rechts",

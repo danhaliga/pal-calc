@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Boks sudut",
         "descriere": "Untuk sudut di antara dua dinding. Atas, alas, dan rak dipotong sebagai persegi panjang selubung lalu dilubangi — ukuran lubangnya ada di daftar bagian."
+      },
+      "bucatarie-inalt": {
+        "nume": "Dapur — lemari tinggi",
+        "descriere": "Boks tinggi yang berdiri di lantai, di atas papan alas."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Bagian",
         "descriere": "L1 dan L2 adalah sisi panjang, l1 dan l2 sisi pendek. Edging di sisi panjang mengurangi lebar, di sisi pendek mengurangi panjang.",
         "corpNume": "Bagian"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Boks bawah dengan papan alas",
+        "descriere": "Berdiri langsung di lantai, tanpa kaki: sisi turun sampai bawah, di depan dipasang papan alas.",
+        "corpNume": "Bawah papan alas"
+      },
+      "baza-2sertare": {
+        "nume": "Boks bawah, 2 laci",
+        "descriere": "Dua laci dalam, untuk panci.",
+        "corpNume": "Bawah 2 laci"
+      },
+      "baza-4sertare": {
+        "nume": "Boks bawah, 4 laci",
+        "descriere": "Empat laci rendah, untuk sendok garpu dan barang kecil.",
+        "corpNume": "Bawah 4 laci"
+      },
+      "baza-ingusta": {
+        "nume": "Boks bawah sempit",
+        "descriere": "Lebar 200 mm, untuk celah di ujung deretan.",
+        "corpNume": "Bawah sempit"
+      },
+      "sus-2usi-600": {
+        "nume": "Boks gantung tinggi 600",
+        "descriere": "Tinggi sedang, satu rak.",
+        "corpNume": "Gantung 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Boks gantung tinggi 1000",
+        "descriere": "Tinggi, hampir ke langit-langit, tiga rak.",
+        "corpNume": "Gantung 1000"
+      },
+      "coloana-camara": {
+        "nume": "Lemari tinggi penyimpanan",
+        "descriere": "Dari lantai ke atas, lima rak dan pintu setinggi penuh.",
+        "corpNume": "Lemari penyimpanan"
+      },
+      "coloana-matura": {
+        "nume": "Lemari tinggi untuk sapu",
+        "descriere": "Sempit dan tinggi, satu rak di atas.",
+        "corpNume": "Lemari sapu"
+      },
+      "etajera-cuburi": {
+        "nume": "Rak kotak-kotak",
+        "descriere": "Kisi 4×4 kotak, dari sekat tegak dan rak.",
+        "corpNume": "Rak kotak"
+      },
+      "bufet": {
+        "nume": "Bufet",
+        "descriere": "Rendah dan lebar, dengan sekat di tengah dan empat pintu.",
+        "corpNume": "Bufet"
+      },
+      "dulap-pantofi": {
+        "nume": "Lemari sepatu",
+        "descriere": "Sedalam sepatu diletakkan melintang, tiga rak.",
+        "corpNume": "Lemari sepatu"
       }
     },
     "adaugaCorp": "Tambahkan sebuah boks",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Laci – muka/belakang kotak",
     "sertarFund": "Laci – dasar HDF",
     "montant": "Sekat",
-    "piesaSimpla": "Bagian"
+    "piesaSimpla": "Bagian",
+    "soclu": "Papan alas"
   },
   "directie": {
     "jos": "bawah",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} engsel per pintu, lengan {cot}; zona buntu {orb} mm, tertutup boks sebelah",
     "rostFronturi": "celah {rost} mm antar muka",
     "glisieraDe": "rel {lg} mm",
-    "subCutie": "dipasang di bawah kotak"
+    "subCutie": "dipasang di bawah kotak",
+    "socluInFata": "di depan, di antara sisi — alas bertumpu di atasnya"
   },
   "avert": {
     "politeAtipic": "Pada boks nonstandar, rak tidak dihitung otomatis: tambahkan sebagai bagian tersendiri.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "Ruang {comp} tidak muat sebanyak itu pintu: di sana tidak ada satu pun yang jadi.",
     "sertareNuUmplu": "Muka laci tidak sampai ke bawah: tersisa {gol} mm kosong. Setel tinggi muka ke {front} mm agar kabinet terisi penuh.",
     "piesaPreaMica": "Ada sisi di bawah 20 mm: periksa ukurannya.",
-    "piesaLatimeMaiMare": "Lebar ({lat}) lebih besar dari panjang ({lung}): saat memotong, panjang adalah sisi terpanjang. Tukar keduanya kalau serat harus berjalan lain."
+    "piesaLatimeMaiMare": "Lebar ({lat}) lebih besar dari panjang ({lung}): saat memotong, panjang adalah sisi terpanjang. Tukar keduanya kalau serat harus berjalan lain.",
+    "socluNuMerge": "Papan alas hanya untuk boks lurus yang dibangun „di antara\". Di sini dilewati.",
+    "socluPreaInalt": "Papan alas {soclu} mm pada boks serendah ini: di dalam hanya tersisa {ramane} mm."
   },
   "csv": {
     "corp": "Boks",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "edging tebal",
     "cantSubtireOpt": "edging tipis",
     "lungimePiesa": "Panjang (L)",
-    "latimePiesa": "Lebar (l)"
+    "latimePiesa": "Lebar (l)",
+    "soclu": "Papan alas (0 = kaki)"
   },
   "fata": {
     "px": "kanan",

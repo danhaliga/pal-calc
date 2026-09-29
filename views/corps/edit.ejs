@@ -70,6 +70,10 @@
             <option value="intre"><%= t('editor.constrIntre') %></option>
             <option value="peste"><%= t('editor.constrPeste') %></option>
           </select></label>
+          <%# Soclul: corpul sta pe podea, fara picioare. Zero inseamna
+              picioare — alea sunt feronerie, nu se taie din PAL. %>
+          <label><%= t('editor.soclu') %>
+            <input id="soclu" type="number" step="5" min="0" max="300"></label>
         </div>
         <p class="legend hidden" id="notaColt"></p>
       </fieldset>

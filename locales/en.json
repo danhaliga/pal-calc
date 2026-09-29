@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Corner cabinets",
         "descriere": "For the corner between two walls. The top, bottom and shelves are cut as a bounding rectangle and then routed — the cut-out sizes are in the parts list."
+      },
+      "bucatarie-inalt": {
+        "nume": "Kitchen — tall units",
+        "descriere": "Tall cabinets that stand on the floor, on a plinth."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Panel",
         "descriere": "L1 and L2 are the long edges, l1 and l2 the short ones. Banding on the long edges takes off width, banding on the short ones takes off length.",
         "corpNume": "Panel"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Base cabinet on a plinth",
+        "descriere": "Stands straight on the floor, no legs: the sides go all the way down and a plinth goes in front.",
+        "corpNume": "Base cabinet on plinth"
+      },
+      "baza-2sertare": {
+        "nume": "Base cabinet, 2 drawers",
+        "descriere": "Two deep drawers, for pots.",
+        "corpNume": "Base 2 drawers"
+      },
+      "baza-4sertare": {
+        "nume": "Base cabinet, 4 drawers",
+        "descriere": "Four shallow drawers, for cutlery and small things.",
+        "corpNume": "Base 4 drawers"
+      },
+      "baza-ingusta": {
+        "nume": "Narrow base cabinet",
+        "descriere": "200 mm wide, for the gap left at the end of a run.",
+        "corpNume": "Narrow base"
+      },
+      "sus-2usi-600": {
+        "nume": "Wall cabinet, 600 high",
+        "descriere": "Mid height, with one shelf.",
+        "corpNume": "Wall cabinet 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Wall cabinet, 1000 high",
+        "descriere": "Tall, almost to the ceiling, with three shelves.",
+        "corpNume": "Wall cabinet 1000"
+      },
+      "coloana-camara": {
+        "nume": "Pantry column",
+        "descriere": "Floor to top, five shelves and full-height doors.",
+        "corpNume": "Pantry column"
+      },
+      "coloana-matura": {
+        "nume": "Broom column",
+        "descriere": "Narrow and tall, with a single shelf at the top.",
+        "corpNume": "Broom column"
+      },
+      "etajera-cuburi": {
+        "nume": "Cube shelving",
+        "descriere": "A 4×4 grid of cubes, from uprights and shelves.",
+        "corpNume": "Cube shelving"
+      },
+      "bufet": {
+        "nume": "Sideboard",
+        "descriere": "Low and wide, with a middle upright and four doors.",
+        "corpNume": "Sideboard"
+      },
+      "dulap-pantofi": {
+        "nume": "Shoe cabinet",
+        "descriere": "As deep as a shoe laid sideways, with three shelves.",
+        "corpNume": "Shoe cabinet"
       }
     },
     "adaugaCorp": "Add a cabinet",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Drawer – box front/back",
     "sertarFund": "Drawer – hardboard bottom",
     "montant": "Partition",
-    "piesaSimpla": "Panel"
+    "piesaSimpla": "Panel",
+    "soclu": "Plinth"
   },
   "directie": {
     "jos": "bottom",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} hinges per door, {cot} crank; {orb} mm blind area, covered by the neighbouring cabinet",
     "rostFronturi": "{rost} mm reveal between fronts",
     "glisieraDe": "{lg} mm runner",
-    "subCutie": "fitted under the box"
+    "subCutie": "fitted under the box",
+    "socluInFata": "at the front, between the sides — the bottom rests on it"
   },
   "avert": {
     "politeAtipic": "Shelves are not calculated automatically for non-standard cabinets: add them as separate parts.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "Compartment {comp} has no room for that many doors: none came out there.",
     "sertareNuUmplu": "The drawer fronts do not reach the bottom: {gol} mm is left open below. Set the front height to {front} mm to fill the cabinet.",
     "piesaPreaMica": "A side under 20 mm: check the sizes.",
-    "piesaLatimeMaiMare": "The width ({lat}) is larger than the length ({lung}): when cutting, the length is the long side. Swap them if the grain has to run the other way."
+    "piesaLatimeMaiMare": "The width ({lat}) is larger than the length ({lung}): when cutting, the length is the long side. Swap them if the grain has to run the other way.",
+    "socluNuMerge": "A plinth only works on a straight cabinet built “between”. Here it was left out.",
+    "socluPreaInalt": "A {soclu} mm plinth on a cabinet this short: only {ramane} mm left inside."
   },
   "csv": {
     "corp": "Cabinet",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "thick banding",
     "cantSubtireOpt": "thin banding",
     "lungimePiesa": "Length (L)",
-    "latimePiesa": "Width (l)"
+    "latimePiesa": "Width (l)",
+    "soclu": "Plinth (0 = legs)"
   },
   "fata": {
     "px": "right",

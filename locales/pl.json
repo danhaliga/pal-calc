@@ -285,6 +285,10 @@
       "colt": {
         "nume": "Korpusy narożne",
         "descriere": "Na narożnik między dwiema ścianami. Wieniec górny, dolny i półki tnie się jako prostokąt gabarytowy, a potem wycina — wymiary wycięcia są na liście elementów."
+      },
+      "bucatarie-inalt": {
+        "nume": "Kuchnia — słupki",
+        "descriere": "Wysokie korpusy stojące na podłodze, na cokole."
       }
     },
     "m": {
@@ -443,6 +447,61 @@
         "rezumat": "Element",
         "descriere": "L1 i L2 to krawędzie długie, l1 i l2 krótkie. Obrzeże na długich zabiera szerokość, na krótkich zabiera długość.",
         "corpNume": "Element"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Szafka dolna na cokole",
+        "descriere": "Stoi wprost na podłodze, bez nóżek: boki schodzą do samego dołu, a z przodu wchodzi cokół.",
+        "corpNume": "Dolna na cokole"
+      },
+      "baza-2sertare": {
+        "nume": "Szafka dolna, 2 szuflady",
+        "descriere": "Dwie głębokie szuflady, na garnki.",
+        "corpNume": "Dolna 2 szuflady"
+      },
+      "baza-4sertare": {
+        "nume": "Szafka dolna, 4 szuflady",
+        "descriere": "Cztery niskie szuflady, na sztućce i drobiazgi.",
+        "corpNume": "Dolna 4 szuflady"
+      },
+      "baza-ingusta": {
+        "nume": "Wąska szafka dolna",
+        "descriere": "Szerokości 200 mm, na lukę na końcu ciągu.",
+        "corpNume": "Wąska dolna"
+      },
+      "sus-2usi-600": {
+        "nume": "Szafka górna 600",
+        "descriere": "Średnia wysokość, jedna półka.",
+        "corpNume": "Górna 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Szafka górna 1000",
+        "descriere": "Wysoka, prawie pod sufit, trzy półki.",
+        "corpNume": "Górna 1000"
+      },
+      "coloana-camara": {
+        "nume": "Słupek spiżarnia",
+        "descriere": "Od podłogi do góry, pięć półek i fronty na całą wysokość.",
+        "corpNume": "Słupek spiżarnia"
+      },
+      "coloana-matura": {
+        "nume": "Słupek na szczotki",
+        "descriere": "Wąski i wysoki, z jedną półką u góry.",
+        "corpNume": "Słupek na szczotki"
+      },
+      "etajera-cuburi": {
+        "nume": "Regał z przegrodami",
+        "descriere": "Siatka 4×4 pól, z pionów i półek.",
+        "corpNume": "Regał z przegrodami"
+      },
+      "bufet": {
+        "nume": "Komoda-bufet",
+        "descriere": "Niska i szeroka, z pionem pośrodku i czterema frontami.",
+        "corpNume": "Bufet"
+      },
+      "dulap-pantofi": {
+        "nume": "Szafka na buty",
+        "descriere": "Głęboka na jeden but ułożony w poprzek, trzy półki.",
+        "corpNume": "Szafka na buty"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -591,7 +650,8 @@
     "sertarFataSpate": "Szuflada – przód/tył skrzynki",
     "sertarFund": "Szuflada – dno z HDF",
     "montant": "Przegroda",
-    "piesaSimpla": "Element"
+    "piesaSimpla": "Element",
+    "soclu": "Cokół"
   },
   "directie": {
     "jos": "dół",
@@ -628,7 +688,8 @@
     "balamaleUsaOrb": "{n} zawiasy na front, ramię {cot}; strefa ślepa {orb} mm, zakryta przez sąsiedni korpus",
     "rostFronturi": "szczelina {rost} mm między frontami",
     "glisieraDe": "prowadnica {lg} mm",
-    "subCutie": "montowane pod skrzynką"
+    "subCutie": "montowane pod skrzynką",
+    "socluInFata": "z przodu, między bokami — na nim stoi dno"
   },
   "avert": {
     "politeAtipic": "W korpusach nietypowych półki nie liczą się same: dodaj je jako osobne elementy.",
@@ -658,7 +719,9 @@
     "usaPreaIngusta": "W komorze {comp} nie ma miejsca na tyle drzwi: żadne tam nie wyszły.",
     "sertareNuUmplu": "Fronty szuflad nie sięgają dołu: zostaje {gol} mm wolnego. Ustaw wysokość frontu na {front} mm, żeby wypełnić korpus.",
     "piesaPreaMica": "Bok poniżej 20 mm: sprawdź wymiary.",
-    "piesaLatimeMaiMare": "Szerokość ({lat}) jest większa niż długość ({lung}): przy rozkroju długość to bok dłuższy. Zamień je, jeśli słój ma iść inaczej."
+    "piesaLatimeMaiMare": "Szerokość ({lat}) jest większa niż długość ({lung}): przy rozkroju długość to bok dłuższy. Zamień je, jeśli słój ma iść inaczej.",
+    "socluNuMerge": "Cokół pasuje tylko do prostej skrzyni budowanej „między”. Tutaj został pominięty.",
+    "socluPreaInalt": "Cokół {soclu} mm przy tak niskiej skrzyni: w środku zostaje tylko {ramane} mm."
   },
   "csv": {
     "corp": "Korpus",
@@ -1175,7 +1238,8 @@
     "cantGrosOpt": "grube obrzeże",
     "cantSubtireOpt": "cienkie obrzeże",
     "lungimePiesa": "Długość (L)",
-    "latimePiesa": "Szerokość (l)"
+    "latimePiesa": "Szerokość (l)",
+    "soclu": "Cokół (0 = nóżki)"
   },
   "fata": {
     "px": "prawo",

@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Hoekkasten",
         "descriere": "Voor de hoek tussen twee wanden. Bovenblad, bodem en legplanken worden als buitenrechthoek gezaagd en daarna uitgefreesd — de maten van de uitsparing staan in de onderdelenlijst."
+      },
+      "bucatarie-inalt": {
+        "nume": "Keuken — hoge kasten",
+        "descriere": "Hoge kasten die op de vloer staan, op een plint."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Het paneel",
         "descriere": "L1 en L2 zijn de lange zijden, l1 en l2 de korte. Band op de lange zijden neemt breedte weg, band op de korte neemt lengte weg.",
         "corpNume": "Paneel"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Onderkast op plint",
+        "descriere": "Staat recht op de vloer, zonder pootjes: de zijden lopen tot onderaan en vooraan komt de plint.",
+        "corpNume": "Onderkast op plint"
+      },
+      "baza-2sertare": {
+        "nume": "Onderkast, 2 lades",
+        "descriere": "Twee diepe lades, voor pannen.",
+        "corpNume": "Onderkast 2 lades"
+      },
+      "baza-4sertare": {
+        "nume": "Onderkast, 4 lades",
+        "descriere": "Vier lage lades, voor bestek en kleingoed.",
+        "corpNume": "Onderkast 4 lades"
+      },
+      "baza-ingusta": {
+        "nume": "Smalle onderkast",
+        "descriere": "200 mm breed, voor het gat aan het einde van de rij.",
+        "corpNume": "Smalle onderkast"
+      },
+      "sus-2usi-600": {
+        "nume": "Bovenkast 600 hoog",
+        "descriere": "Middelhoog, met één legplank.",
+        "corpNume": "Bovenkast 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Bovenkast 1000 hoog",
+        "descriere": "Hoog, bijna tot het plafond, met drie legplanken.",
+        "corpNume": "Bovenkast 1000"
+      },
+      "coloana-camara": {
+        "nume": "Voorraadkast",
+        "descriere": "Van de vloer tot boven, vijf legplanken en deuren over de volle hoogte.",
+        "corpNume": "Voorraadkast"
+      },
+      "coloana-matura": {
+        "nume": "Bezemkast",
+        "descriere": "Smal en hoog, met één legplank bovenin.",
+        "corpNume": "Bezemkast"
+      },
+      "etajera-cuburi": {
+        "nume": "Vakkenkast",
+        "descriere": "Raster van 4×4 vakken, uit staanders en legplanken.",
+        "corpNume": "Vakkenkast"
+      },
+      "bufet": {
+        "nume": "Dressoir",
+        "descriere": "Laag en breed, met een staander in het midden en vier deuren.",
+        "corpNume": "Dressoir"
+      },
+      "dulap-pantofi": {
+        "nume": "Schoenenkast",
+        "descriere": "Zo diep als een schoen dwars, drie legplanken.",
+        "corpNume": "Schoenenkast"
       }
     },
     "adaugaCorp": "Een kast toevoegen",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Lade – voor/achter",
     "sertarFund": "Lade – bodem van hardboard",
     "montant": "Middenwand",
-    "piesaSimpla": "Paneel"
+    "piesaSimpla": "Paneel",
+    "soclu": "Plint"
   },
   "directie": {
     "jos": "onder",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "{n} scharnieren per deur, arm {cot}; blinde zone van {orb} mm, afgedekt door de buurkast",
     "rostFronturi": "naad van {rost} mm tussen de fronten",
     "glisieraDe": "geleider {lg} mm",
-    "subCutie": "onder de lade gemonteerd"
+    "subCutie": "onder de lade gemonteerd",
+    "socluInFata": "vooraan, tussen de zijden — de bodem rust erop"
   },
   "avert": {
     "politeAtipic": "Bij niet-standaard kasten worden legplanken niet automatisch berekend: voeg ze als losse onderdelen toe.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "In vak {comp} is geen plaats voor zoveel deuren: daar is er geen enkele uitgekomen.",
     "sertareNuUmplu": "De ladefronten reiken niet tot onderin: er blijft {gol} mm open. Zet de fronthoogte op {front} mm om de kast te vullen.",
     "piesaPreaMica": "Een zijde onder 20 mm: controleer de maten.",
-    "piesaLatimeMaiMare": "De breedte ({lat}) is groter dan de lengte ({lung}): bij het zagen is de lengte de lange zijde. Wissel ze om als de nerf anders moet lopen."
+    "piesaLatimeMaiMare": "De breedte ({lat}) is groter dan de lengte ({lung}): bij het zagen is de lengte de lange zijde. Wissel ze om als de nerf anders moet lopen.",
+    "socluNuMerge": "Een plint past alleen op een rechte kast gebouwd „ertussen”. Hier is hij weggelaten.",
+    "socluPreaInalt": "Plint van {soclu} mm bij zo’n lage kast: binnen blijft maar {ramane} mm over."
   },
   "csv": {
     "corp": "Kast",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "dikke band",
     "cantSubtireOpt": "dunne band",
     "lungimePiesa": "Lengte (L)",
-    "latimePiesa": "Breedte (l)"
+    "latimePiesa": "Breedte (l)",
+    "soclu": "Plint (0 = pootjes)"
   },
   "fata": {
     "px": "rechts",

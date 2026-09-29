@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Köşe gövdeler",
         "descriere": "İki duvarın köşesi için. Üst tabla, alt tabla ve raflar gabari dikdörtgeni olarak kesilir, sonra oyulur — oyuk ölçüleri parça listesindedir."
+      },
+      "bucatarie-inalt": {
+        "nume": "Mutfak — boy dolaplar",
+        "descriere": "Yerden yukarı çıkan, süpürgelikli yüksek gövdeler."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Parça",
         "descriere": "L1 ve L2 uzun kenarlar, l1 ve l2 kısa olanlar. Uzun kenarlardaki bant genişlikten, kısa olanlardaki uzunluktan götürür.",
         "corpNume": "Parça"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Süpürgelikli alt gövde",
+        "descriere": "Ayaksız, doğrudan yere oturur: yanlar aşağıya kadar iner, öne süpürgelik gelir.",
+        "corpNume": "Süpürgelikli alt gövde"
+      },
+      "baza-2sertare": {
+        "nume": "Alt gövde, 2 çekmece",
+        "descriere": "İki derin çekmece, tencereler için.",
+        "corpNume": "Alt 2 çekmece"
+      },
+      "baza-4sertare": {
+        "nume": "Alt gövde, 4 çekmece",
+        "descriere": "Dört alçak çekmece, çatal-bıçak ve ufak eşya için.",
+        "corpNume": "Alt 4 çekmece"
+      },
+      "baza-ingusta": {
+        "nume": "Dar alt gövde",
+        "descriere": "200 mm genişlikte, sıranın ucunda kalan boşluk için.",
+        "corpNume": "Dar alt gövde"
+      },
+      "sus-2usi-600": {
+        "nume": "Üst gövde, 600 yüksek",
+        "descriere": "Orta yükseklik, bir raf.",
+        "corpNume": "Üst gövde 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Üst gövde, 1000 yüksek",
+        "descriere": "Yüksek, neredeyse tavana kadar, üç raf.",
+        "corpNume": "Üst gövde 1000"
+      },
+      "coloana-camara": {
+        "nume": "Kiler boy dolabı",
+        "descriere": "Yerden yukarıya, beş raf ve tam boy kapaklar.",
+        "corpNume": "Kiler dolabı"
+      },
+      "coloana-matura": {
+        "nume": "Süpürge dolabı",
+        "descriere": "Dar ve yüksek, üstte tek raf.",
+        "corpNume": "Süpürge dolabı"
+      },
+      "etajera-cuburi": {
+        "nume": "Kare raf ünitesi",
+        "descriere": "4×4 kare ızgara, dikmeler ve raflardan.",
+        "corpNume": "Kare raf"
+      },
+      "bufet": {
+        "nume": "Büfe",
+        "descriere": "Alçak ve geniş, ortada dikme ve dört kapak.",
+        "corpNume": "Büfe"
+      },
+      "dulap-pantofi": {
+        "nume": "Ayakkabılık",
+        "descriere": "Yan yatırılmış bir ayakkabı derinliğinde, üç raf.",
+        "corpNume": "Ayakkabılık"
       }
     },
     "adaugaCorp": "Bir gövde ekle",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Çekmece – kutu ön/arka",
     "sertarFund": "Çekmece – HDF taban",
     "montant": "Orta bölme",
-    "piesaSimpla": "Parça"
+    "piesaSimpla": "Parça",
+    "soclu": "Süpürgelik"
   },
   "directie": {
     "jos": "alt",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "kapak başına {n} menteşe, kol {cot}; {orb} mm kör bölge, komşu gövde tarafından kapatılır",
     "rostFronturi": "kapaklar arasında {rost} mm boşluk",
     "glisieraDe": "{lg} mm ray",
-    "subCutie": "kutunun altına takılır"
+    "subCutie": "kutunun altına takılır",
+    "socluInFata": "önde, yanların arasında — taban onun üzerinde durur"
   },
   "avert": {
     "politeAtipic": "Standart dışı gövdelerde raflar kendiliğinden hesaplanmaz: onları ayrı parça olarak ekle.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "{comp}. bölmede bu kadar kapağa yer yok: orada hiç kapak çıkmadı.",
     "sertareNuUmplu": "Çekmece kapakları alta kadar inmiyor: altta {gol} mm boş kalıyor. Gövdeyi doldurmak için kapak yüksekliğini {front} mm yap.",
     "piesaPreaMica": "Bir kenar 20 mm altında: ölçüleri gözden geçir.",
-    "piesaLatimeMaiMare": "Genişlik ({lat}) uzunluktan ({lung}) büyük: kesimde uzunluk uzun kenardır. Damar başka yöne gidecekse ikisini değiştir."
+    "piesaLatimeMaiMare": "Genişlik ({lat}) uzunluktan ({lung}) büyük: kesimde uzunluk uzun kenardır. Damar başka yöne gidecekse ikisini değiştir.",
+    "socluNuMerge": "Süpürgelik yalnızca „aradan\" yapılmış düz gövdeye takılır. Burada eklenmedi.",
+    "socluPreaInalt": "Bu kadar alçak bir gövdede {soclu} mm süpürgelik: içeride yalnızca {ramane} mm kalıyor."
   },
   "csv": {
     "corp": "Gövde",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "kalın bant",
     "cantSubtireOpt": "ince bant",
     "lungimePiesa": "Uzunluk (L)",
-    "latimePiesa": "Genişlik (l)"
+    "latimePiesa": "Genişlik (l)",
+    "soclu": "Süpürgelik (0 = ayak)"
   },
   "fata": {
     "px": "sağ",

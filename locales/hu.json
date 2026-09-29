@@ -279,6 +279,10 @@
       "colt": {
         "nume": "Sarokkorpuszok",
         "descriere": "Két fal sarkába. A tetőt, az aljat és a polcokat befoglaló téglalapként szabjuk, majd kivágjuk — a kivágás méretei az elemjegyzékben vannak."
+      },
+      "bucatarie-inalt": {
+        "nume": "Konyha — magas elemek",
+        "descriere": "Padlóról induló magas korpuszok, lábazaton."
       }
     },
     "m": {
@@ -437,6 +441,61 @@
         "rezumat": "Az elem",
         "descriere": "L1 és L2 a hosszú élek, l1 és l2 a rövidek. A hosszú éleken az élzáró a szélességből vesz el, a rövideken a hosszból.",
         "corpNume": "Elem"
+      },
+      "baza-2usi-soclu": {
+        "nume": "Alsó elem lábazaton",
+        "descriere": "Közvetlenül a padlón áll, láb nélkül: az oldalak leérnek, elöl pedig a lábazat van.",
+        "corpNume": "Alsó lábazaton"
+      },
+      "baza-2sertare": {
+        "nume": "Alsó elem, 2 fiók",
+        "descriere": "Két mély fiók, lábasoknak.",
+        "corpNume": "Alsó 2 fiók"
+      },
+      "baza-4sertare": {
+        "nume": "Alsó elem, 4 fiók",
+        "descriere": "Négy alacsony fiók, evőeszköznek és apróságnak.",
+        "corpNume": "Alsó 4 fiók"
+      },
+      "baza-ingusta": {
+        "nume": "Keskeny alsó elem",
+        "descriere": "200 mm széles, a sor végén maradó résre.",
+        "corpNume": "Keskeny alsó"
+      },
+      "sus-2usi-600": {
+        "nume": "Felső elem, 600 magas",
+        "descriere": "Közepes magasság, egy polccal.",
+        "corpNume": "Felső 600"
+      },
+      "sus-2usi-1000": {
+        "nume": "Felső elem, 1000 magas",
+        "descriere": "Magas, majdnem a mennyezetig, három polccal.",
+        "corpNume": "Felső 1000"
+      },
+      "coloana-camara": {
+        "nume": "Kamraszekrény",
+        "descriere": "Padlótól a tetejéig, öt polc és teljes magasságú ajtók.",
+        "corpNume": "Kamraszekrény"
+      },
+      "coloana-matura": {
+        "nume": "Seprűszekrény",
+        "descriere": "Keskeny és magas, egyetlen polccal a tetején.",
+        "corpNume": "Seprűszekrény"
+      },
+      "etajera-cuburi": {
+        "nume": "Rekeszes polc",
+        "descriere": "4×4 rekeszből álló rács, osztókból és polcokból.",
+        "corpNume": "Rekeszes polc"
+      },
+      "bufet": {
+        "nume": "Tálalószekrény",
+        "descriere": "Alacsony és széles, középen osztóval és négy ajtóval.",
+        "corpNume": "Tálaló"
+      },
+      "dulap-pantofi": {
+        "nume": "Cipősszekrény",
+        "descriere": "Olyan mély, mint egy keresztbe fektetett cipő, három polc.",
+        "corpNume": "Cipősszekrény"
       }
     },
     "adaugaCorp": "Korpusz hozzáadása",
@@ -585,7 +644,8 @@
     "sertarFataSpate": "Fiók – elő/hátlap",
     "sertarFund": "Fiók – farostlemez fenék",
     "montant": "Közfal",
-    "piesaSimpla": "Elem"
+    "piesaSimpla": "Elem",
+    "soclu": "Lábazat"
   },
   "directie": {
     "jos": "alul",
@@ -622,7 +682,8 @@
     "balamaleUsaOrb": "ajtónként {n} pánt, {cot} kar; {orb} mm vak sáv, a szomszéd korpusz takarja",
     "rostFronturi": "{rost} mm hézag a frontok között",
     "glisieraDe": "{lg} mm-es sín",
-    "subCutie": "a fiók alá szerelve"
+    "subCutie": "a fiók alá szerelve",
+    "socluInFata": "elöl, az oldalak között — az alj rajta áll"
   },
   "avert": {
     "politeAtipic": "Egyedi korpuszoknál a polcok nem számolódnak magától: add hozzá őket külön elemként.",
@@ -652,7 +713,9 @@
     "usaPreaIngusta": "A(z) {comp}. rekeszbe nem fér ennyi ajtó: ott egy sem lett.",
     "sertareNuUmplu": "A fiókelőlapok nem érnek le: {gol} mm marad szabadon alul. Állítsd az előlapmagasságot {front} mm-re, hogy kitöltse a korpuszt.",
     "piesaPreaMica": "Egyik oldal 20 mm alatt: nézd meg a méreteket.",
-    "piesaLatimeMaiMare": "A szélesség ({lat}) nagyobb a hossznál ({lung}): szabáskor a hossz a hosszabbik oldal. Cseréld meg őket, ha az erezetnek máshogy kell futnia."
+    "piesaLatimeMaiMare": "A szélesség ({lat}) nagyobb a hossznál ({lung}): szabáskor a hossz a hosszabbik oldal. Cseréld meg őket, ha az erezetnek máshogy kell futnia.",
+    "socluNuMerge": "A lábazat csak „közé” épített egyenes korpuszra megy. Itt kimaradt.",
+    "socluPreaInalt": "{soclu} mm-es lábazat ilyen alacsony korpuszon: belül csak {ramane} mm marad."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1164,7 +1227,8 @@
     "cantGrosOpt": "vastag élzáró",
     "cantSubtireOpt": "vékony élzáró",
     "lungimePiesa": "Hossz (L)",
-    "latimePiesa": "Szélesség (l)"
+    "latimePiesa": "Szélesség (l)",
+    "soclu": "Lábazat (0 = lábak)"
   },
   "fata": {
     "px": "jobb",
