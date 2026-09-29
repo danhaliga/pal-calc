@@ -1313,7 +1313,15 @@
     "manerJos": "at the bottom",
     "manerLungime": "Handle length (mm)",
     "grupManere": "Handles",
-    "manerCatIncape": "as much as fits"
+    "manerCatIncape": "as much as fits",
+    "subScaraTitlu": "Under-stairs cabinet — from three sizes",
+    "subScaraBaza": "Base (mm)",
+    "subScaraStanga": "Left height (mm)",
+    "subScaraDreapta": "Right height (mm)",
+    "subScaraFa": "Build the outline from these",
+    "subScaraNota": "The slope and the two angles are worked out for you. It also works the other way round, with the stairs going down to the left: put the larger height on the right.",
+    "subScaraCote": "Fill in all three sizes, each at least 10 mm.",
+    "subScaraGata": "Done: {panta} mm slope, angles of {a}° and {b}°."
   },
   "fata": {
     "px": "right",

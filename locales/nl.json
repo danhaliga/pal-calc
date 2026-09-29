@@ -1313,7 +1313,15 @@
     "manerJos": "onderaan",
     "manerLungime": "Lengte greep (mm)",
     "grupManere": "Grepen",
-    "manerCatIncape": "zoveel als past"
+    "manerCatIncape": "zoveel als past",
+    "subScaraTitlu": "Kast onder de trap — uit drie maten",
+    "subScaraBaza": "Basis (mm)",
+    "subScaraStanga": "Hoogte links (mm)",
+    "subScaraDreapta": "Hoogte rechts (mm)",
+    "subScaraFa": "Maak de omtrek uit deze maten",
+    "subScaraNota": "De schuine zijde en de twee hoeken worden vanzelf berekend. Andersom kan ook, als de trap naar links afloopt: zet dan de grootste hoogte rechts.",
+    "subScaraCote": "Vul alle drie de maten in, elk minstens 10 mm.",
+    "subScaraGata": "Klaar: schuine zijde {panta} mm, hoeken {a}° en {b}°."
   },
   "fata": {
     "px": "rechts",

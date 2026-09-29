@@ -1313,7 +1313,15 @@
     "manerJos": "em baixo",
     "manerLungime": "Comprimento do puxador (mm)",
     "grupManere": "Puxadores",
-    "manerCatIncape": "o que couber"
+    "manerCatIncape": "o que couber",
+    "subScaraTitlu": "Móvel sob escada — a partir de três medidas",
+    "subScaraBaza": "Base (mm)",
+    "subScaraStanga": "Altura esquerda (mm)",
+    "subScaraDreapta": "Altura direita (mm)",
+    "subScaraFa": "Fazer o contorno com estas medidas",
+    "subScaraNota": "A inclinação e os dois ângulos calculam-se sozinhos. Também funciona ao contrário, com a escada a descer para a esquerda: ponha a altura maior à direita.",
+    "subScaraCote": "Preencha as três medidas, cada uma de pelo menos 10 mm.",
+    "subScaraGata": "Pronto: inclinação de {panta} mm, ângulos de {a}° e {b}°."
   },
   "fata": {
     "px": "direita",

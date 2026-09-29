@@ -1313,7 +1313,15 @@
     "manerJos": "unten",
     "manerLungime": "Grifflänge (mm)",
     "grupManere": "Griffe",
-    "manerCatIncape": "so viel wie passt"
+    "manerCatIncape": "so viel wie passt",
+    "subScaraTitlu": "Schrank unter der Treppe — aus drei Maßen",
+    "subScaraBaza": "Basis (mm)",
+    "subScaraStanga": "Höhe links (mm)",
+    "subScaraDreapta": "Höhe rechts (mm)",
+    "subScaraFa": "Kontur aus diesen Maßen bauen",
+    "subScaraNota": "Die Schräge und die beiden Winkel rechnen sich von selbst. Geht auch andersherum, wenn die Treppe nach links fällt: dann kommt die größere Höhe nach rechts.",
+    "subScaraCote": "Trag alle drei Maße ein, jedes mindestens 10 mm.",
+    "subScaraGata": "Fertig: Schräge {panta} mm, Winkel {a}° und {b}°."
   },
   "fata": {
     "px": "rechts",

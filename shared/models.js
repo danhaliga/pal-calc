@@ -270,10 +270,14 @@
     },
     /* ---------------- corpuri atipice ---------------- */
     {
+      /* Conturul se socotește din cele trei cote — bază 900, dreapta 400,
+         stânga 800 — nu se scrie de mână. Scris de mână, cu unghiurile
+         rotunjite la grad, rămânea 0.2 mm în colț: nu se vedea pe desen, dar
+         muchia din stânga ieșea din dreptunghiul de gabarit și lista CNC
+         cerea o frezare pe o latură care e dreaptă. */
       id: 'atipic-sub-scara', cat: 'atipic',
       set: { tip: 'atipic', D: 560, nUsi: 1, nPol: 0, nSer: 0,
-             contur: [{ lung: 900, unghi: 90 }, { lung: 400, unghi: 114 },
-                      { lung: 985, unghi: 66 }, { lung: 800, unghi: 90 }] }
+             contur: PalCalc.conturSubScara(900, 400, 800) }
     },
     {
       id: 'atipic-mansarda', cat: 'atipic',

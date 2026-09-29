@@ -1313,7 +1313,15 @@
     "manerJos": "下",
     "manerLungime": "取っ手の長さ（mm）",
     "grupManere": "取っ手",
-    "manerCatIncape": "入るだけ"
+    "manerCatIncape": "入るだけ",
+    "subScaraTitlu": "階段下の収納 — 三つの寸法から",
+    "subScaraBaza": "底辺（mm）",
+    "subScaraStanga": "左の高さ（mm）",
+    "subScaraDreapta": "右の高さ（mm）",
+    "subScaraFa": "この寸法から輪郭を作る",
+    "subScaraNota": "斜辺と二つの角度は自動で出ます。階段が左に下がる場合も同じで、大きいほうの高さを右に入れてください。",
+    "subScaraCote": "三つとも入力してください。どれも 10 mm 以上です。",
+    "subScaraGata": "できました：斜辺 {panta} mm、角度 {a}° と {b}°。"
   },
   "fata": {
     "px": "右",

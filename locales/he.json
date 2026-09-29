@@ -1324,7 +1324,15 @@
     "manerJos": "למטה",
     "manerLungime": "אורך הידית (מ״מ)",
     "grupManere": "ידיות",
-    "manerCatIncape": "כמה שנכנס"
+    "manerCatIncape": "כמה שנכנס",
+    "subScaraTitlu": "ארון מתחת למדרגות — משלוש מידות",
+    "subScaraBaza": "בסיס (מ״מ)",
+    "subScaraStanga": "גובה שמאל (מ״מ)",
+    "subScaraDreapta": "גובה ימין (מ״מ)",
+    "subScaraFa": "בנה את המתאר מהמידות האלה",
+    "subScaraNota": "השיפוע ושתי הזוויות מחושבים לבד. עובד גם הפוך, כשהמדרגות יורדות שמאלה: שים את הגובה הגדול בימין.",
+    "subScaraCote": "מלא את שלוש המידות, כל אחת לפחות 10 מ״מ.",
+    "subScaraGata": "מוכן: שיפוע {panta} מ״מ, זוויות {a}° ו-{b}°."
   },
   "fata": {
     "px": "ימין",

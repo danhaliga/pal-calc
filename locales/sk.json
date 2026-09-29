@@ -1324,7 +1324,15 @@
     "manerJos": "dole",
     "manerLungime": "Dĺžka úchytky (mm)",
     "grupManere": "Úchytky",
-    "manerCatIncape": "koľko sa zmestí"
+    "manerCatIncape": "koľko sa zmestí",
+    "subScaraTitlu": "Skrinka pod schodmi — z troch rozmerov",
+    "subScaraBaza": "Základňa (mm)",
+    "subScaraStanga": "Výška vľavo (mm)",
+    "subScaraDreapta": "Výška vpravo (mm)",
+    "subScaraFa": "Vytvor obrys z týchto rozmerov",
+    "subScaraNota": "Sklon aj oba uhly sa vypočítajú samy. Funguje aj naopak, keď schody klesajú doľava: väčšiu výšku daj doprava.",
+    "subScaraCote": "Vyplň všetky tri rozmery, každý aspoň 10 mm.",
+    "subScaraGata": "Hotovo: sklon {panta} mm, uhly {a}° a {b}°."
   },
   "fata": {
     "px": "vpravo",

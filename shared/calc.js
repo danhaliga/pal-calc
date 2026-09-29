@@ -218,6 +218,63 @@
     };
   }
 
+  /* Corpul de sub scară, din trei cote.
+
+     Până acum omul trebuia să dea patru laturi și patru unghiuri — adică să
+     socotească singur panta și cele două unghiuri, cu Pitagora și cu
+     arctangenta. Un producător de mobilă are altceva sub ochi: lățimea de
+     jos și cele două înălțimi. Din ele iese restul.
+
+         z ┌────╲                    x  = baza
+           │     ╲___                y  = înălțimea din dreapta
+           │         ╲ y             z  = înălțimea din stânga
+           └──────────┘              panta = √(x² + (z−y)²)
+                 x
+
+     Unghiul pantei față de orizontală: α = arctg((z−y) / x). Colțul de sus
+     din dreapta se deschide cu atât (90 + α), cel din stânga se strânge cu
+     atât (90 − α), iar suma rămâne 360 oricât de pieziș ar fi.
+
+     Merge și invers, cu scara coborând spre stânga: atunci `z` e mai mic
+     decât `y`, α iese negativ, și unghiurile se schimbă între ele singure.
+     Cu `y` egal cu `z` iese un dreptunghi curat, cu 90 peste tot.
+
+     Unghiurile se dau cu trei zecimale înadins. Cu ele rotunjite la grad —
+     cum era modelul scris de mână — conturul nu se închidea, rămânea 0.2 mm
+     în colț. Nu se vedea pe desen, dar muchia din stânga ieșea cu 0.2 mm în
+     afara dreptunghiului de gabarit, iar lista CNC o socotea muchie de
+     decupat: cerea o frezare pe o latură care e dreaptă. */
+  function conturSubScara(baza, hDreapta, hStanga) {
+    var x = Math.max(1, +baza || 0);
+    var y = Math.max(1, +hDreapta || 0);
+    var z = Math.max(1, +hStanga || 0);
+    var dz = z - y;
+    var panta = Math.hypot(x, dz);
+    var alfa = Math.atan2(dz, x) * 180 / Math.PI;
+    var r3 = function (v) { return Math.round(v * 1000) / 1000; };
+    return [
+      { lung: r1(x),     unghi: 90 },
+      { lung: r1(y),     unghi: r3(90 + alfa) },
+      { lung: r1(panta), unghi: r3(90 - alfa) },
+      { lung: r1(z),     unghi: 90 }
+    ];
+  }
+
+  /* Cotele unui contur de sub scară, citite înapoi din laturi. Întoarce null
+     dacă nu e așa ceva: patru laturi, prima jos, ultima în stânga. */
+  function coteSubScara(contur) {
+    var l = contur || [];
+    if (l.length !== 4) return null;
+    var g = conturGeometrie(l);
+    if (!g.puncte || g.puncte.length !== 4) return null;
+    var p = g.puncte;
+    /* jos orizontală, dreapta verticală, stânga verticală */
+    if (Math.abs(p[0][1] - p[1][1]) > 0.5) return null;
+    if (Math.abs(p[1][0] - p[2][0]) > 0.5) return null;
+    if (Math.abs(p[3][0] - p[0][0]) > 0.5) return null;
+    return { baza: r1(p[1][0] - p[0][0]), dreapta: r1(p[2][1]), stanga: r1(p[3][1]) };
+  }
+
   function conturImplicit(W, H) {
     return [
       { lung: W, unghi: 90 }, { lung: H, unghi: 90 },
@@ -1203,6 +1260,8 @@
     csv: csv,
     conturGeometrie: conturGeometrie,
     conturImplicit: conturImplicit,
+    conturSubScara: conturSubScara,
+    coteSubScara: coteSubScara,
     reducereCant: reducereCant,
     compartimenteAlese: compartimenteAlese,
     TIPURI: TIPURI,

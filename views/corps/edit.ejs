@@ -38,6 +38,23 @@
         <button type="button" class="btn small" id="conturInchide"><%= t('editor.inchideConturul') %></button>
         <button type="button" class="btn small" id="conturReset"><%= t('editor.resetConturul') %></button>
       </div>
+
+      <%# Corpul de sub scara din trei cote. Cine face asa ceva are sub ochi
+          latimea de jos si cele doua inaltimi, nu panta si unghiurile ei —
+          alea se socotesc, nu se masoara. %>
+      <fieldset class="sub-scara">
+        <legend><%= t('editor.subScaraTitlu') %></legend>
+        <div class="f3">
+          <label><%= t('editor.subScaraBaza') %>
+            <input id="ssBaza" type="number" step="10" min="10" max="4000"></label>
+          <label><%= t('editor.subScaraStanga') %>
+            <input id="ssStanga" type="number" step="10" min="10" max="4000"></label>
+          <label><%= t('editor.subScaraDreapta') %>
+            <input id="ssDreapta" type="number" step="10" min="10" max="4000"></label>
+        </div>
+        <button type="button" class="btn small primary" id="ssFa" style="margin-top:10px"><%= t('editor.subScaraFa') %></button>
+        <p class="legend"><%= t('editor.subScaraNota') %></p>
+      </fieldset>
       <div id="conturStare" class="legend"></div>
     </div>
     <div class="contur-preview" id="conturPreview"></div>

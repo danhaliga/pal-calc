@@ -1313,7 +1313,15 @@
     "manerJos": "altta",
     "manerLungime": "Kulp uzunluğu (mm)",
     "grupManere": "Kulplar",
-    "manerCatIncape": "sığdığı kadar"
+    "manerCatIncape": "sığdığı kadar",
+    "subScaraTitlu": "Merdiven altı dolap — üç ölçüden",
+    "subScaraBaza": "Taban (mm)",
+    "subScaraStanga": "Sol yükseklik (mm)",
+    "subScaraDreapta": "Sağ yükseklik (mm)",
+    "subScaraFa": "Bu ölçülerden konturu çıkar",
+    "subScaraNota": "Eğim ve iki açı kendiliğinden hesaplanır. Tersi de olur: merdiven sola iniyorsa büyük yüksekliği sağa yaz.",
+    "subScaraCote": "Üç ölçüyü de doldur, her biri en az 10 mm.",
+    "subScaraGata": "Tamam: {panta} mm eğim, {a}° ve {b}° açılar."
   },
   "fata": {
     "px": "sağ",

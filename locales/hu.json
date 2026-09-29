@@ -1313,7 +1313,15 @@
     "manerJos": "lent",
     "manerLungime": "Fogantyú hossza (mm)",
     "grupManere": "Fogantyúk",
-    "manerCatIncape": "amennyi elfér"
+    "manerCatIncape": "amennyi elfér",
+    "subScaraTitlu": "Lépcső alatti szekrény — három méretből",
+    "subScaraBaza": "Alap (mm)",
+    "subScaraStanga": "Bal oldali magasság (mm)",
+    "subScaraDreapta": "Jobb oldali magasság (mm)",
+    "subScaraFa": "Készítsd el a körvonalat ezekből",
+    "subScaraNota": "A ferde oldal és a két szög maguktól kijönnek. Fordítva is megy, ha a lépcső balra lejt: akkor a nagyobb magasság kerül jobbra.",
+    "subScaraCote": "Töltsd ki mind a három méretet, mindegyik legalább 10 mm.",
+    "subScaraGata": "Kész: {panta} mm ferde oldal, {a}° és {b}° szögek."
   },
   "fata": {
     "px": "jobb",

@@ -1324,7 +1324,15 @@
     "manerJos": "dolje",
     "manerLungime": "Duljina ručice (mm)",
     "grupManere": "Ručice",
-    "manerCatIncape": "koliko stane"
+    "manerCatIncape": "koliko stane",
+    "subScaraTitlu": "Element ispod stepenica — iz tri mjere",
+    "subScaraBaza": "Osnovica (mm)",
+    "subScaraStanga": "Visina lijevo (mm)",
+    "subScaraDreapta": "Visina desno (mm)",
+    "subScaraFa": "Napravi konturu iz ovih mjera",
+    "subScaraNota": "Nagib i oba kuta računaju se sami. Radi i obrnuto, kad stepenice padaju ulijevo: veću visinu stavi desno.",
+    "subScaraCote": "Popuni sve tri mjere, svaku bar 10 mm.",
+    "subScaraGata": "Gotovo: nagib {panta} mm, kutovi {a}° i {b}°."
   },
   "fata": {
     "px": "desno",

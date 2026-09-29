@@ -1324,7 +1324,15 @@
     "manerJos": "jos",
     "manerLungime": "Lungime mâner (mm)",
     "grupManere": "Mânere",
-    "manerCatIncape": "cât încape"
+    "manerCatIncape": "cât încape",
+    "subScaraTitlu": "Corp sub scară — din trei cote",
+    "subScaraBaza": "Baza (mm)",
+    "subScaraStanga": "Înălțime stânga (mm)",
+    "subScaraDreapta": "Înălțime dreapta (mm)",
+    "subScaraFa": "Fă conturul din cotele astea",
+    "subScaraNota": "Panta și cele două unghiuri se socotesc singure. Merge și invers, cu scara coborând spre stânga: pui înălțimea mai mare în dreapta.",
+    "subScaraCote": "Completează toate trei cotele, fiecare de cel puțin 10 mm.",
+    "subScaraGata": "Gata: pantă de {panta} mm, unghiuri de {a}° și {b}°."
   },
   "fata": {
     "px": "dreapta",

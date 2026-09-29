@@ -138,10 +138,24 @@ function randeazaContur() {
   actualizeazaContur();
 }
 
+/* Cele trei cote de sub scara, citite inapoi din conturul de acum. Se pun in
+   casete numai cand omul nu scrie in ele, ca sa nu-i sara cifra sub mana. */
+function umpleSubScara() {
+  if (!$('ssBaza')) return;
+  var c = window.PalCalc.coteSubScara(params.contur);
+  [['ssBaza', c && c.baza], ['ssStanga', c && c.stanga], ['ssDreapta', c && c.dreapta]]
+    .forEach(function (x) {
+      var el = $(x[0]);
+      if (!el || el === document.activeElement) return;
+      el.value = x[1] == null ? '' : x[1];
+    });
+}
+
 /* numele laturilor, starea conturului și desenul — fără a atinge câmpurile */
 function actualizeazaContur() {
   var tbody = $('conturTabel');
   if (!tbody) return;
+  umpleSubScara();
 
   var g = window.PalCalc.conturGeometrie(params.contur || []);
   g.laturi.forEach(function (l, i) {
@@ -236,6 +250,20 @@ function legaContur() {
   $('conturReset').onclick = function () {
     params.contur = window.PalCalc.conturImplicit(+params.W || 800, +params.H || 720);
     randeazaContur(); render(); scheduleSave();
+  };
+
+  /* Corpul de sub scara: trei cote, si iese conturul intreg. */
+  $('ssFa').onclick = function () {
+    var x = +$('ssBaza').value, z = +$('ssStanga').value, y = +$('ssDreapta').value;
+    if (!(x >= 10 && y >= 10 && z >= 10)) { toast(T('editor.subScaraCote')); return; }
+    params.contur = window.PalCalc.conturSubScara(x, y, z);
+    randeazaContur(); render(); scheduleSave();
+    var panta = params.contur[2];
+    toast(T('editor.subScaraGata', {
+      panta: fmt(panta.lung),
+      a: fmt(r1(params.contur[1].unghi)),
+      b: fmt(r1(panta.unghi))
+    }));
   };
 }
 

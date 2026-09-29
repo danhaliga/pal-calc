@@ -1324,7 +1324,15 @@
     "manerJos": "u dołu",
     "manerLungime": "Długość uchwytu (mm)",
     "grupManere": "Uchwyty",
-    "manerCatIncape": "ile się zmieści"
+    "manerCatIncape": "ile się zmieści",
+    "subScaraTitlu": "Szafka pod schodami — z trzech wymiarów",
+    "subScaraBaza": "Podstawa (mm)",
+    "subScaraStanga": "Wysokość z lewej (mm)",
+    "subScaraDreapta": "Wysokość z prawej (mm)",
+    "subScaraFa": "Zbuduj obrys z tych wymiarów",
+    "subScaraNota": "Skos i oba kąty liczą się same. Działa też odwrotnie, gdy schody opadają w lewo: większą wysokość wpisz po prawej.",
+    "subScaraCote": "Wypełnij wszystkie trzy wymiary, każdy co najmniej 10 mm.",
+    "subScaraGata": "Gotowe: skos {panta} mm, kąty {a}° i {b}°."
   },
   "fata": {
     "px": "prawo",

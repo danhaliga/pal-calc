@@ -1313,7 +1313,15 @@
     "manerJos": "in basso",
     "manerLungime": "Lunghezza maniglia (mm)",
     "grupManere": "Maniglie",
-    "manerCatIncape": "quanto ci sta"
+    "manerCatIncape": "quanto ci sta",
+    "subScaraTitlu": "Mobile sottoscala — da tre misure",
+    "subScaraBaza": "Base (mm)",
+    "subScaraStanga": "Altezza sinistra (mm)",
+    "subScaraDreapta": "Altezza destra (mm)",
+    "subScaraFa": "Fare il contorno con queste misure",
+    "subScaraNota": "La pendenza e i due angoli si calcolano da soli. Vale anche al contrario, con la scala che scende a sinistra: metti l’altezza maggiore a destra.",
+    "subScaraCote": "Compila tutte e tre le misure, ognuna di almeno 10 mm.",
+    "subScaraGata": "Fatto: pendenza di {panta} mm, angoli di {a}° e {b}°."
   },
   "fata": {
     "px": "destra",

@@ -1313,7 +1313,15 @@
     "manerJos": "abajo",
     "manerLungime": "Largo del tirador (mm)",
     "grupManere": "Tiradores",
-    "manerCatIncape": "lo que quepa"
+    "manerCatIncape": "lo que quepa",
+    "subScaraTitlu": "Mueble bajo escalera — con tres medidas",
+    "subScaraBaza": "Base (mm)",
+    "subScaraStanga": "Altura izquierda (mm)",
+    "subScaraDreapta": "Altura derecha (mm)",
+    "subScaraFa": "Haz el contorno con estas medidas",
+    "subScaraNota": "La pendiente y los dos ángulos se calculan solos. También vale al revés, con la escalera bajando hacia la izquierda: pon la altura mayor a la derecha.",
+    "subScaraCote": "Rellena las tres medidas, cada una de al menos 10 mm.",
+    "subScaraGata": "Listo: pendiente de {panta} mm, ángulos de {a}° y {b}°."
   },
   "fata": {
     "px": "derecha",

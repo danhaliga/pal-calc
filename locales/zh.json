@@ -1313,7 +1313,15 @@
     "manerJos": "下方",
     "manerLungime": "拉手长度（毫米）",
     "grupManere": "拉手",
-    "manerCatIncape": "按能放下的长度"
+    "manerCatIncape": "按能放下的长度",
+    "subScaraTitlu": "楼梯下柜 — 由三个尺寸",
+    "subScaraBaza": "底宽（毫米）",
+    "subScaraStanga": "左高（毫米）",
+    "subScaraDreapta": "右高（毫米）",
+    "subScaraFa": "按这些尺寸生成轮廓",
+    "subScaraNota": "斜边和两个角度自动算出。反过来也行：楼梯向左下降时，把较大的高度填在右边。",
+    "subScaraCote": "三个尺寸都要填，每个至少 10 毫米。",
+    "subScaraGata": "完成：斜边 {panta} 毫米，角度 {a}° 和 {b}°。"
   },
   "fata": {
     "px": "右",

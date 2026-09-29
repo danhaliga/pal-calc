@@ -1313,7 +1313,15 @@
     "manerJos": "di bawah",
     "manerLungime": "Panjang tarikan (mm)",
     "grupManere": "Tarikan",
-    "manerCatIncape": "sepanjang yang muat"
+    "manerCatIncape": "sepanjang yang muat",
+    "subScaraTitlu": "Lemari bawah tangga — dari tiga ukuran",
+    "subScaraBaza": "Alas (mm)",
+    "subScaraStanga": "Tinggi kiri (mm)",
+    "subScaraDreapta": "Tinggi kanan (mm)",
+    "subScaraFa": "Buat garis luar dari ukuran ini",
+    "subScaraNota": "Sisi miring dan kedua sudut dihitung sendiri. Bisa juga terbalik, kalau tangga turun ke kiri: taruh tinggi yang lebih besar di kanan.",
+    "subScaraCote": "Isi ketiga ukuran, masing-masing minimal 10 mm.",
+    "subScaraGata": "Selesai: sisi miring {panta} mm, sudut {a}° dan {b}°."
   },
   "fata": {
     "px": "kanan",

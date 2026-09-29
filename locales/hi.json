@@ -1313,7 +1313,15 @@
     "manerJos": "नीचे",
     "manerLungime": "हैंडल की लंबाई (मिमी)",
     "grupManere": "हैंडल",
-    "manerCatIncape": "जितना आए"
+    "manerCatIncape": "जितना आए",
+    "subScaraTitlu": "सीढ़ी के नीचे का खाना — तीन नापों से",
+    "subScaraBaza": "आधार (मिमी)",
+    "subScaraStanga": "बाईं ऊँचाई (मिमी)",
+    "subScaraDreapta": "दाईं ऊँचाई (मिमी)",
+    "subScaraFa": "इन नापों से रूपरेखा बनाइए",
+    "subScaraNota": "ढलान और दोनों कोण अपने आप निकलते हैं। उल्टा भी चलता है: सीढ़ी बाईं ओर उतरे तो बड़ी ऊँचाई दाईं ओर लिखिए।",
+    "subScaraCote": "तीनों नाप भरिए, हर एक कम से कम 10 मिमी।",
+    "subScaraGata": "हो गया: ढलान {panta} मिमी, कोण {a}° और {b}°।"
   },
   "fata": {
     "px": "दाएँ",

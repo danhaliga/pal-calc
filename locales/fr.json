@@ -1313,7 +1313,15 @@
     "manerJos": "en bas",
     "manerLungime": "Longueur de la poignée (mm)",
     "grupManere": "Poignées",
-    "manerCatIncape": "ce qui tient"
+    "manerCatIncape": "ce qui tient",
+    "subScaraTitlu": "Meuble sous escalier — à partir de trois cotes",
+    "subScaraBaza": "Base (mm)",
+    "subScaraStanga": "Hauteur gauche (mm)",
+    "subScaraDreapta": "Hauteur droite (mm)",
+    "subScaraFa": "Faire le contour avec ces cotes",
+    "subScaraNota": "La pente et les deux angles se calculent tout seuls. Cela marche aussi dans l’autre sens, avec l’escalier qui descend vers la gauche : mettez la plus grande hauteur à droite.",
+    "subScaraCote": "Remplissez les trois cotes, chacune d’au moins 10 mm.",
+    "subScaraGata": "Fait : pente de {panta} mm, angles de {a}° et {b}°."
   },
   "fata": {
     "px": "droite",

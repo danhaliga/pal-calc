@@ -1313,7 +1313,15 @@
     "manerJos": "ở dưới",
     "manerLungime": "Chiều dài tay nắm (mm)",
     "grupManere": "Tay nắm",
-    "manerCatIncape": "vừa đủ chỗ"
+    "manerCatIncape": "vừa đủ chỗ",
+    "subScaraTitlu": "Tủ gầm cầu thang — từ ba kích thước",
+    "subScaraBaza": "Đáy (mm)",
+    "subScaraStanga": "Chiều cao trái (mm)",
+    "subScaraDreapta": "Chiều cao phải (mm)",
+    "subScaraFa": "Dựng đường bao từ các kích thước này",
+    "subScaraNota": "Cạnh xiên và hai góc được tính sẵn. Ngược lại cũng được, khi cầu thang đi xuống bên trái: đặt chiều cao lớn hơn ở bên phải.",
+    "subScaraCote": "Điền cả ba kích thước, mỗi cái ít nhất 10 mm.",
+    "subScaraGata": "Xong: cạnh xiên {panta} mm, góc {a}° và {b}°."
   },
   "fata": {
     "px": "phải",
