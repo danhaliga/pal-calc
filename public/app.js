@@ -143,6 +143,11 @@ function randeazaContur() {
 function umpleSubScara() {
   if (!$('ssBaza')) return;
   var c = window.PalCalc.coteSubScara(params.contur);
+  /* O formă pe care cele trei cote n-o pot scrie — mansarda cu cinci laturi,
+     sau una făcută de mână — își deschide singură tabelul. Altfel omul s-ar
+     uita la trei casete goale și n-ar ști pe unde se umblă la ea. */
+  var manual = $('conturManual');
+  if (manual && !c) manual.open = true;
   [['ssBaza', c && c.baza], ['ssStanga', c && c.stanga], ['ssDreapta', c && c.dreapta]]
     .forEach(function (x) {
       var el = $(x[0]);

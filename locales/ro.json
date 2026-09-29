@@ -1411,7 +1411,8 @@
     "subScaraFa": "Fă conturul din cotele astea",
     "subScaraNota": "Panta și cele două unghiuri se socotesc singure. Merge și invers, cu scara coborând spre stânga: pui înălțimea mai mare în dreapta.",
     "subScaraCote": "Completează toate trei cotele, fiecare de cel puțin 10 mm.",
-    "subScaraGata": "Gata: pantă de {panta} mm, unghiuri de {a}° și {b}°."
+    "subScaraGata": "Gata: pantă de {panta} mm, unghiuri de {a}° și {b}°.",
+    "conturDeMana": "Laturi și unghiuri, de mână"
   },
   "fata": {
     "px": "dreapta",

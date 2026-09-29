@@ -1411,7 +1411,8 @@
     "subScaraFa": "Zbuduj obrys z tych wymiarów",
     "subScaraNota": "Skos i oba kąty liczą się same. Działa też odwrotnie, gdy schody opadają w lewo: większą wysokość wpisz po prawej.",
     "subScaraCote": "Wypełnij wszystkie trzy wymiary, każdy co najmniej 10 mm.",
-    "subScaraGata": "Gotowe: skos {panta} mm, kąty {a}° i {b}°."
+    "subScaraGata": "Gotowe: skos {panta} mm, kąty {a}° i {b}°.",
+    "conturDeMana": "Boki i kąty, ręcznie"
   },
   "fata": {
     "px": "prawo",

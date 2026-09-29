@@ -1400,7 +1400,8 @@
     "subScaraFa": "Haz el contorno con estas medidas",
     "subScaraNota": "La pendiente y los dos ángulos se calculan solos. También vale al revés, con la escalera bajando hacia la izquierda: pon la altura mayor a la derecha.",
     "subScaraCote": "Rellena las tres medidas, cada una de al menos 10 mm.",
-    "subScaraGata": "Listo: pendiente de {panta} mm, ángulos de {a}° y {b}°."
+    "subScaraGata": "Listo: pendiente de {panta} mm, ángulos de {a}° y {b}°.",
+    "conturDeMana": "Lados y ángulos, a mano"
   },
   "fata": {
     "px": "derecha",

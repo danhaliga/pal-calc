@@ -481,3 +481,14 @@ svg.sk .sk-usa.fara{stroke-dasharray:60 44;opacity:.7}
 .comutator{width:auto;flex:none;accent-color:var(--accent);vertical-align:-2px;margin-right:7px}
 .comutator + label.check{display:inline;cursor:pointer}
 .comutator:not(:checked) ~ .doar-daca{display:none}
+
+/* Tabelul de laturi si unghiuri sta strans: cotele vin primele, iar tabelul
+   se deschide cand e nevoie de el — la mansarda cu cinci laturi si la forma
+   facuta de mana. La un corp sub scara nu se deschide niciodata. */
+.contur-manual{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.contur-manual > summary{cursor:pointer;font-size:12px;font-weight:600;color:var(--muted);
+  letter-spacing:.04em;text-transform:uppercase;list-style:none}
+.contur-manual > summary::-webkit-details-marker{display:none}
+.contur-manual > summary::before{content:"▸ ";color:var(--accent)}
+.contur-manual[open] > summary::before{content:"▾ "}
+.contur-manual > summary:hover{color:var(--ink)}

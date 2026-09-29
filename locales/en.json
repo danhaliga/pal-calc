@@ -1400,7 +1400,8 @@
     "subScaraFa": "Build the outline from these",
     "subScaraNota": "The slope and the two angles are worked out for you. It also works the other way round, with the stairs going down to the left: put the larger height on the right.",
     "subScaraCote": "Fill in all three sizes, each at least 10 mm.",
-    "subScaraGata": "Done: {panta} mm slope, angles of {a}° and {b}°."
+    "subScaraGata": "Done: {panta} mm slope, angles of {a}° and {b}°.",
+    "conturDeMana": "Sides and angles, by hand"
   },
   "fata": {
     "px": "right",

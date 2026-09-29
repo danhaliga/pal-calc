@@ -1400,7 +1400,8 @@
     "subScaraFa": "Dựng đường bao từ các kích thước này",
     "subScaraNota": "Cạnh xiên và hai góc được tính sẵn. Ngược lại cũng được, khi cầu thang đi xuống bên trái: đặt chiều cao lớn hơn ở bên phải.",
     "subScaraCote": "Điền cả ba kích thước, mỗi cái ít nhất 10 mm.",
-    "subScaraGata": "Xong: cạnh xiên {panta} mm, góc {a}° và {b}°."
+    "subScaraGata": "Xong: cạnh xiên {panta} mm, góc {a}° và {b}°.",
+    "conturDeMana": "Cạnh và góc, nhập tay"
   },
   "fata": {
     "px": "phải",

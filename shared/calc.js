@@ -225,6 +225,35 @@
     };
   }
 
+  /* Conturul scris din COLȚURILE lui, nu din unghiuri.
+
+     Un corp atipic se desenează pe hârtie ca o listă de colțuri. Aici se
+     întoarce socoteala: din colțuri ies lungimile și unghiurile interioare,
+     exacte, iar conturul se închide fiindcă n-are de unde să nu se închidă.
+
+     Scrise de mână, cu unghiurile rotunjite la grad, conturuile modelelor
+     rămâneau cu două zecimi în colț. Nu se vedea pe desen, dar muchiile
+     drepte ieșeau din dreptunghiul de gabarit și lista CNC cerea frezări pe
+     laturi care se taie drept la panou. */
+  function conturDinPuncte(puncte) {
+    var p = puncte || [];
+    if (p.length < 3) return [];
+    var out = [];
+    for (var i = 0; i < p.length; i++) {
+      var a = p[i], b = p[(i + 1) % p.length], c = p[(i + 2) % p.length];
+      /* Unghiul interior în colțul `b`: între latura care vine și cea care
+         pleacă, măsurat pe dinăuntru. */
+      var u1 = Math.atan2(a[1] - b[1], a[0] - b[0]);
+      var u2 = Math.atan2(c[1] - b[1], c[0] - b[0]);
+      var d = (u1 - u2) * 180 / Math.PI;
+      while (d < 0) d += 360;
+      while (d >= 360) d -= 360;
+      out.push({ lung: r1(Math.hypot(b[0] - a[0], b[1] - a[1])),
+                 unghi: Math.round(d * 1000) / 1000 });
+    }
+    return out;
+  }
+
   /* Corpul de sub scară, din trei cote.
 
      Până acum omul trebuia să dea patru laturi și patru unghiuri — adică să
@@ -1354,6 +1383,7 @@
     csv: csv,
     conturGeometrie: conturGeometrie,
     conturImplicit: conturImplicit,
+    conturDinPuncte: conturDinPuncte,
     conturSubScara: conturSubScara,
     coteSubScara: coteSubScara,
     reducereCant: reducereCant,

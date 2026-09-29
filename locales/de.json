@@ -1400,7 +1400,8 @@
     "subScaraFa": "Kontur aus diesen Maßen bauen",
     "subScaraNota": "Die Schräge und die beiden Winkel rechnen sich von selbst. Geht auch andersherum, wenn die Treppe nach links fällt: dann kommt die größere Höhe nach rechts.",
     "subScaraCote": "Trag alle drei Maße ein, jedes mindestens 10 mm.",
-    "subScaraGata": "Fertig: Schräge {panta} mm, Winkel {a}° und {b}°."
+    "subScaraGata": "Fertig: Schräge {panta} mm, Winkel {a}° und {b}°.",
+    "conturDeMana": "Seiten und Winkel, von Hand"
   },
   "fata": {
     "px": "rechts",

@@ -1400,7 +1400,8 @@
     "subScaraFa": "Faire le contour avec ces cotes",
     "subScaraNota": "La pente et les deux angles se calculent tout seuls. Cela marche aussi dans l’autre sens, avec l’escalier qui descend vers la gauche : mettez la plus grande hauteur à droite.",
     "subScaraCote": "Remplissez les trois cotes, chacune d’au moins 10 mm.",
-    "subScaraGata": "Fait : pente de {panta} mm, angles de {a}° et {b}°."
+    "subScaraGata": "Fait : pente de {panta} mm, angles de {a}° et {b}°.",
+    "conturDeMana": "Côtés et angles, à la main"
   },
   "fata": {
     "px": "droite",

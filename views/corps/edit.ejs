@@ -17,31 +17,18 @@
 <% } %>
 
 <!-- conturul stă pe toată lățimea: tabelul cu laturi nu încape în coloana formularului -->
+<%# Conturul corpului atipic.
+
+    Cotele stau primele si tabelul de laturi sta strans, nu invers. Cine face
+    un corp sub scara are sub ochi latimea de jos si cele doua inaltimi — nu
+    panta si unghiurile ei, alea se socotesc. Tabelul ramane insa: corpul de
+    mansarda are cinci laturi si nu se poate scrie din trei cote, iar „atipic
+    liber" tocmai asta e — forma facuta de mana. %>
 <div class="panel hidden" id="conturBox">
   <h2><%= t('editor.conturTitlu') %></h2>
-  <p class="hint"><%= t('editor.conturHint') %></p>
 
   <div class="contur-lucru">
     <div>
-      <div class="tbl">
-        <table class="contur-tabel">
-          <thead><tr>
-            <th class="c">#</th><th><%= t('editor.colLatura') %></th>
-            <th class="c"><%= t('editor.colLungimeMm') %></th>
-            <th class="c"><%= t('editor.colUnghi') %></th><th></th>
-          </tr></thead>
-          <tbody id="conturTabel"></tbody>
-        </table>
-      </div>
-      <div class="btns">
-        <button type="button" class="btn small" id="conturAdauga"><%= t('editor.adaugaLatura') %></button>
-        <button type="button" class="btn small" id="conturInchide"><%= t('editor.inchideConturul') %></button>
-        <button type="button" class="btn small" id="conturReset"><%= t('editor.resetConturul') %></button>
-      </div>
-
-      <%# Corpul de sub scara din trei cote. Cine face asa ceva are sub ochi
-          latimea de jos si cele doua inaltimi, nu panta si unghiurile ei —
-          alea se socotesc, nu se masoara. %>
       <fieldset class="sub-scara">
         <legend><%= t('editor.subScaraTitlu') %></legend>
         <div class="f3">
@@ -55,7 +42,28 @@
         <button type="button" class="btn small primary" id="ssFa" style="margin-top:10px"><%= t('editor.subScaraFa') %></button>
         <p class="legend"><%= t('editor.subScaraNota') %></p>
       </fieldset>
+
       <div id="conturStare" class="legend"></div>
+
+      <details class="contur-manual" id="conturManual">
+        <summary><%= t('editor.conturDeMana') %></summary>
+        <p class="hint"><%= t('editor.conturHint') %></p>
+        <div class="tbl">
+          <table class="contur-tabel">
+            <thead><tr>
+              <th class="c">#</th><th><%= t('editor.colLatura') %></th>
+              <th class="c"><%= t('editor.colLungimeMm') %></th>
+              <th class="c"><%= t('editor.colUnghi') %></th><th></th>
+            </tr></thead>
+            <tbody id="conturTabel"></tbody>
+          </table>
+        </div>
+        <div class="btns">
+          <button type="button" class="btn small" id="conturAdauga"><%= t('editor.adaugaLatura') %></button>
+          <button type="button" class="btn small" id="conturInchide"><%= t('editor.inchideConturul') %></button>
+          <button type="button" class="btn small" id="conturReset"><%= t('editor.resetConturul') %></button>
+        </div>
+      </details>
     </div>
     <div class="contur-preview" id="conturPreview"></div>
   </div>

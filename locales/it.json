@@ -1400,7 +1400,8 @@
     "subScaraFa": "Fare il contorno con queste misure",
     "subScaraNota": "La pendenza e i due angoli si calcolano da soli. Vale anche al contrario, con la scala che scende a sinistra: metti l’altezza maggiore a destra.",
     "subScaraCote": "Compila tutte e tre le misure, ognuna di almeno 10 mm.",
-    "subScaraGata": "Fatto: pendenza di {panta} mm, angoli di {a}° e {b}°."
+    "subScaraGata": "Fatto: pendenza di {panta} mm, angoli di {a}° e {b}°.",
+    "conturDeMana": "Lati e angoli, a mano"
   },
   "fata": {
     "px": "destra",

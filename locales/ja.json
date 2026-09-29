@@ -1400,7 +1400,8 @@
     "subScaraFa": "この寸法から輪郭を作る",
     "subScaraNota": "斜辺と二つの角度は自動で出ます。階段が左に下がる場合も同じで、大きいほうの高さを右に入れてください。",
     "subScaraCote": "三つとも入力してください。どれも 10 mm 以上です。",
-    "subScaraGata": "できました：斜辺 {panta} mm、角度 {a}° と {b}°。"
+    "subScaraGata": "できました：斜辺 {panta} mm、角度 {a}° と {b}°。",
+    "conturDeMana": "辺と角度を手で入れる"
   },
   "fata": {
     "px": "右",

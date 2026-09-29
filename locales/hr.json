@@ -1411,7 +1411,8 @@
     "subScaraFa": "Napravi konturu iz ovih mjera",
     "subScaraNota": "Nagib i oba kuta računaju se sami. Radi i obrnuto, kad stepenice padaju ulijevo: veću visinu stavi desno.",
     "subScaraCote": "Popuni sve tri mjere, svaku bar 10 mm.",
-    "subScaraGata": "Gotovo: nagib {panta} mm, kutovi {a}° i {b}°."
+    "subScaraGata": "Gotovo: nagib {panta} mm, kutovi {a}° i {b}°.",
+    "conturDeMana": "Stranice i kutovi, ručno"
   },
   "fata": {
     "px": "desno",

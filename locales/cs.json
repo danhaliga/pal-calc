@@ -1411,7 +1411,8 @@
     "subScaraFa": "Vytvoř obrys z těchto rozměrů",
     "subScaraNota": "Sklon i oba úhly se spočítají samy. Funguje i obráceně, když schody klesají doleva: větší výšku dej doprava.",
     "subScaraCote": "Vyplň všechny tři rozměry, každý aspoň 10 mm.",
-    "subScaraGata": "Hotovo: sklon {panta} mm, úhly {a}° a {b}°."
+    "subScaraGata": "Hotovo: sklon {panta} mm, úhly {a}° a {b}°.",
+    "conturDeMana": "Strany a úhly, ručně"
   },
   "fata": {
     "px": "vpravo",

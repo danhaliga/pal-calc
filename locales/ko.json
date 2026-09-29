@@ -1400,7 +1400,8 @@
     "subScaraFa": "이 치수로 윤곽 만들기",
     "subScaraNota": "경사와 두 각도는 저절로 계산됩니다. 계단이 왼쪽으로 내려가도 똑같습니다. 큰 높이를 오른쪽에 넣으세요.",
     "subScaraCote": "세 치수를 모두 채우세요. 각각 10 mm 이상입니다.",
-    "subScaraGata": "됐습니다: 경사 {panta} mm, 각도 {a}° 와 {b}°."
+    "subScaraGata": "됐습니다: 경사 {panta} mm, 각도 {a}° 와 {b}°.",
+    "conturDeMana": "변과 각도, 직접 입력"
   },
   "fata": {
     "px": "오른쪽",

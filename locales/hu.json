@@ -1400,7 +1400,8 @@
     "subScaraFa": "Készítsd el a körvonalat ezekből",
     "subScaraNota": "A ferde oldal és a két szög maguktól kijönnek. Fordítva is megy, ha a lépcső balra lejt: akkor a nagyobb magasság kerül jobbra.",
     "subScaraCote": "Töltsd ki mind a három méretet, mindegyik legalább 10 mm.",
-    "subScaraGata": "Kész: {panta} mm ferde oldal, {a}° és {b}° szögek."
+    "subScaraGata": "Kész: {panta} mm ferde oldal, {a}° és {b}° szögek.",
+    "conturDeMana": "Oldalak és szögek, kézzel"
   },
   "fata": {
     "px": "jobb",

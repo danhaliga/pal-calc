@@ -1400,7 +1400,8 @@
     "subScaraFa": "Gör konturen av de här måtten",
     "subScaraNota": "Lutningen och de två vinklarna räknas ut av sig själva. Det går lika bra åt andra hållet, när trappan går ner åt vänster: sätt då den större höjden till höger.",
     "subScaraCote": "Fyll i alla tre måtten, vart och ett minst 10 mm.",
-    "subScaraGata": "Klart: lutning {panta} mm, vinklar {a}° och {b}°."
+    "subScaraGata": "Klart: lutning {panta} mm, vinklar {a}° och {b}°.",
+    "conturDeMana": "Sidor och vinklar, för hand"
   },
   "fata": {
     "px": "höger",

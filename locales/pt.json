@@ -1400,7 +1400,8 @@
     "subScaraFa": "Fazer o contorno com estas medidas",
     "subScaraNota": "A inclinação e os dois ângulos calculam-se sozinhos. Também funciona ao contrário, com a escada a descer para a esquerda: ponha a altura maior à direita.",
     "subScaraCote": "Preencha as três medidas, cada uma de pelo menos 10 mm.",
-    "subScaraGata": "Pronto: inclinação de {panta} mm, ângulos de {a}° e {b}°."
+    "subScaraGata": "Pronto: inclinação de {panta} mm, ângulos de {a}° e {b}°.",
+    "conturDeMana": "Lados e ângulos, à mão"
   },
   "fata": {
     "px": "direita",

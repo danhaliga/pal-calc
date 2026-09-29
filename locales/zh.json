@@ -1400,7 +1400,8 @@
     "subScaraFa": "按这些尺寸生成轮廓",
     "subScaraNota": "斜边和两个角度自动算出。反过来也行：楼梯向左下降时，把较大的高度填在右边。",
     "subScaraCote": "三个尺寸都要填，每个至少 10 毫米。",
-    "subScaraGata": "完成：斜边 {panta} 毫米，角度 {a}° 和 {b}°。"
+    "subScaraGata": "完成：斜边 {panta} 毫米，角度 {a}° 和 {b}°。",
+    "conturDeMana": "手动输入边长和角度"
   },
   "fata": {
     "px": "右",

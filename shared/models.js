@@ -288,11 +288,16 @@
              contur: PalCalc.conturSubScara(900, 400, 800) }
     },
     {
+      /* Scris din colțuri, nu din unghiuri: jos 1200, în dreapta se urcă 700,
+         de acolo o pantă de 45° până la 1100, apoi 800 pe orizontală sub
+         tavan și înapoi jos pe stânga. Panta e 400√2 = 565.685, iar rotunjită
+         la 566 — cum era scrisă de mână — conturul rămânea cu două zecimi în
+         colț și lista CNC cerea o frezare pe latura din stânga, care e
+         dreaptă. */
       id: 'atipic-mansarda', cat: 'atipic',
       set: { tip: 'atipic', D: 450, nUsi: 1, nPol: 0, nSer: 0,
-             contur: [{ lung: 1200, unghi: 90 }, { lung: 700, unghi: 135 },
-                      { lung: 566, unghi: 135 }, { lung: 800, unghi: 90 },
-                      { lung: 1100, unghi: 90 }] }
+             contur: PalCalc.conturDinPuncte(
+               [[0, 0], [1200, 0], [1200, 700], [800, 1100], [0, 1100]]) }
     },
     {
       id: 'atipic-liber', cat: 'atipic',

@@ -228,3 +228,130 @@ test('cele opt chei sunt în toate cele treizeci de limbi', () => {
     });
   });
 });
+
+/* ---------------- conturul scris din colturi ---------------- */
+
+test('din colțuri ies laturile și unghiurile, exact', () => {
+  /* Un corp atipic se desenează pe hârtie ca o listă de colțuri. Socoteala se
+     întoarce: din colțuri ies lungimile și unghiurile, iar conturul se închide
+     fiindcă n-are de unde să nu se închidă. */
+  const forme = [
+    ['dreptunghi', [[0, 0], [800, 0], [800, 720], [0, 720]]],
+    ['sub scară',  [[0, 0], [900, 0], [900, 400], [0, 800]]],
+    ['mansardă',   [[0, 0], [1200, 0], [1200, 700], [800, 1100], [0, 1100]]]
+  ];
+  forme.forEach(([nume, puncte]) => {
+    const g = PalCalc.conturGeometrie(PalCalc.conturDinPuncte(puncte));
+    assert.equal(g.puncte.length, puncte.length, nume + ': alt număr de colțuri');
+    puncte.forEach((q, i) => {
+      assert.ok(Math.abs(g.puncte[i][0] - q[0]) < 0.05 &&
+                Math.abs(g.puncte[i][1] - q[1]) < 0.05,
+        nume + ': colțul ' + (i + 1) + ' a ieșit ' + JSON.stringify(g.puncte[i]) +
+        ' în loc de ' + JSON.stringify(q));
+    });
+  });
+});
+
+test('din colțuri iese același lucru ca din cele trei cote', () => {
+  COTE.forEach(([x, y, z]) => {
+    const a = PalCalc.conturSubScara(x, y, z);
+    const b = PalCalc.conturDinPuncte([[0, 0], [x, 0], [x, y], [0, z]]);
+    a.forEach((l, i) => {
+      assert.ok(Math.abs(l.lung - b[i].lung) < 0.05, x + '/' + y + '/' + z + ': latura ' + i);
+      assert.ok(Math.abs(l.unghi - b[i].unghi) < 0.01, x + '/' + y + '/' + z + ': unghiul ' + i);
+    });
+  });
+});
+
+test('mai puțin de trei colțuri nu e contur', () => {
+  [[], [[0, 0]], [[0, 0], [100, 0]], null].forEach(p => {
+    assert.deepEqual(PalCalc.conturDinPuncte(p), []);
+  });
+});
+
+test('niciun model atipic nu mai are contur strâmb', () => {
+  /* Gabaritul iese rotund numai daca laturile drepte chiar sunt drepte.
+     Scrise de mana, cu unghiurile rotunjite la grad, ramaneau doua zecimi in
+     colt: 1200.2 x 1100.2 in loc de 1200 x 1100. */
+  const atipice = PalModels.modele(T)
+    .map(m => m.id)
+    .filter(id => PalModels.paramsFor(id, T).tip === 'atipic');
+  assert.ok(atipice.length >= 3, 'nu mai sunt modele atipice');
+  atipice.forEach(id => {
+    const g = PalCalc.conturGeometrie(PalModels.paramsFor(id, T).contur);
+    assert.equal(g.W, Math.round(g.W), id + ': gabaritul pe lățime e ' + g.W);
+    assert.equal(g.H, Math.round(g.H), id + ': gabaritul pe înălțime e ' + g.H);
+  });
+
+  const m = citeste('shared', 'models.js');
+  assert.match(m, /contur: PalCalc\.conturDinPuncte\(/, 'mansarda nu mai e scrisa din colturi');
+  assert.ok(!/lung: 566, unghi: 135/.test(m), 'a ramas panta rotunjita a mansardei');
+});
+
+test('nu se cere frezat pe nicio latură dreaptă, la niciun corp atipic', () => {
+  /* Muchia de frezat e cea care NU sta pe conturul dreptunghiului de gabarit.
+     Cu conturul strâmb, o latura dreapta iesea cu doua zecimi in afara si era
+     socotita muchie de decupat: o frezare de 800 sau 1100 mm ceruta degeaba. */
+  const t = PalCalc.traducator(T);
+  const comanda = {
+    id: 1, name: 'proba', materiale: [], formate: ['intreaga'],
+    feronerie: { asamblare: 'minifix', balama: 'blum-clip', glisiere: 'bila', suspensii: false }
+  };
+  PalModels.modele(T).map(x => x.id)
+    .filter(id => PalModels.paramsFor(id, T).tip === 'atipic')
+    .forEach(id => {
+      const p = PalModels.paramsFor(id, T);
+      const r = PalRaport.raport(comanda,
+        [{ id: 1, name: id, poz: 1, params: p, materiale: {} }],
+        { t: t, effortMs: 30, adaosCant: 15 });
+      const g = PalCalc.conturGeometrie(p.contur);
+      /* laturile inclinate: alea cu amandoua capetele in afara marginilor */
+      const inclinate = g.laturi.filter(l =>
+        Math.abs(l.de_la[0] - l.la[0]) > 0.5 && Math.abs(l.de_la[1] - l.la[1]) > 0.5);
+      r.cnc.filter(x => x.muchii && x.muchii.length).forEach(x => {
+        assert.equal(x.muchii.length, inclinate.length,
+          id + ' / ' + x.piesa + ': ' + x.muchii.length + ' muchii de frezat, dar numai ' +
+          inclinate.length + ' laturi sunt inclinate — ' + x.muchii.map(e => e.lung).join(', '));
+      });
+    });
+});
+
+/* ---------------- tabelul de laturi sta strans ---------------- */
+
+test('cotele vin primele, tabelul sta strâns', () => {
+  /* Cine face un corp sub scara are sub ochi latimea de jos si cele doua
+     inaltimi. Tabelul de laturi si unghiuri ramane insa: mansarda are cinci
+     laturi si nu se poate scrie din trei cote. */
+  const v = citeste('views', 'corps', 'edit.ejs');
+  const cote = v.indexOf('class="sub-scara"');
+  const tabel = v.indexOf('id="conturManual"');
+  assert.ok(cote !== -1 && tabel !== -1, 'lipsește una din cele două');
+  assert.ok(cote < tabel, 'tabelul a ajuns înaintea cotelor');
+  assert.match(v, /<details class="contur-manual" id="conturManual">/,
+    'tabelul nu mai e strâns');
+  assert.ok(!/<details[^>]*id="conturManual"[^>]*\sopen/.test(v),
+    'tabelul se deschide singur la orice corp');
+  /* tabelul si butoanele lui chiar sunt inauntru */
+  const inauntru = v.slice(tabel, v.indexOf('</details>', tabel));
+  ['conturTabel', 'conturAdauga', 'conturInchide', 'conturReset'].forEach(i => {
+    assert.ok(inauntru.indexOf(i) !== -1, i + ' a rămas afară din panoul strâns');
+  });
+
+  const css = citeste('public', 'styles.css');
+  assert.match(css, /\.contur-manual > summary\{/, 'panoul strâns n-are stil');
+});
+
+test('o formă pe care cele trei cote n-o pot scrie își deschide singură tabelul', () => {
+  const app = citeste('public', 'app.js');
+  assert.match(app, /if \(manual && !c\) manual\.open = true;/,
+    'mansarda ar arăta trei casete goale și niciun tabel');
+});
+
+test('cheia panoului strâns e în toate cele treizeci de limbi', () => {
+  const ia = (c, k) => k.split('.').reduce((o, x) => (o || {})[x], c);
+  PalI18n.LIMBI.forEach(l => {
+    const c = JSON.parse(citeste('locales', l.cod + '.json'));
+    const v = ia(c, 'editor.conturDeMana');
+    assert.ok(v && String(v).trim(), l.cod + ': lipsește editor.conturDeMana');
+  });
+});

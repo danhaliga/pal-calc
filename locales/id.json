@@ -1400,7 +1400,8 @@
     "subScaraFa": "Buat garis luar dari ukuran ini",
     "subScaraNota": "Sisi miring dan kedua sudut dihitung sendiri. Bisa juga terbalik, kalau tangga turun ke kiri: taruh tinggi yang lebih besar di kanan.",
     "subScaraCote": "Isi ketiga ukuran, masing-masing minimal 10 mm.",
-    "subScaraGata": "Selesai: sisi miring {panta} mm, sudut {a}° dan {b}°."
+    "subScaraGata": "Selesai: sisi miring {panta} mm, sudut {a}° dan {b}°.",
+    "conturDeMana": "Sisi dan sudut, manual"
   },
   "fata": {
     "px": "kanan",
