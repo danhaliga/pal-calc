@@ -79,15 +79,21 @@ test('http pe un domeniu public oprește pornirea', () => {
   assert.ok(r.opriri.some(o => /https/.test(o)), 'nu se plânge de http');
 });
 
-test('driverul fals pe public oprește pornirea', () => {
-  /* Cu el, oricine își pune singur credit. E bani, nu comoditate. */
+test('creditul virtual pe public nu oprește site-ul, dar se spune', () => {
+  /* Driverul și cheile se aleg din Administrare → Plata: dacă lipsa lor ar
+     opri pornirea, n-ai avea unde să le pui. Iar creditul virtual pe un site
+     public e o alegere a administratorului, cât timp aplicația se probează. */
   const r = cu({ PAYMENT_DRIVER: 'fake' });
-  assert.ok(r.opriri.some(o => /PAYMENT_DRIVER/.test(o)));
+  assert.deepEqual(r.opriri, []);
+  assert.ok(r.semne.some(s => /PAYMENT_DRIVER/.test(s) && /Administrare/.test(s)));
 });
 
-test('Stripe fără chei oprește pornirea', () => {
-  assert.ok(cu({ STRIPE_SECRET_KEY: '' }).opriri.some(o => /STRIPE_SECRET_KEY/.test(o)));
-  assert.ok(cu({ STRIPE_WEBHOOK_SECRET: '' }).opriri.some(o => /WEBHOOK/.test(o)));
+test('Stripe fără chei se spune, cu locul unde se pun', () => {
+  const a = cu({ STRIPE_SECRET_KEY: '' });
+  assert.deepEqual(a.opriri, []);
+  assert.ok(a.semne.some(s => /STRIPE_SECRET_KEY/.test(s) && /Administrare/.test(s)));
+  const b = cu({ STRIPE_WEBHOOK_SECRET: '' });
+  assert.ok(b.semne.some(s => /WEBHOOK/.test(s) && /Administrare/.test(s)));
 });
 
 test('cheia de test Stripe se spune, dar nu oprește', () => {
@@ -138,7 +144,7 @@ test('fiecare oprire numește setarea de reparat', () => {
   /* Omul citește mesajul în consolă și trebuie să știe la ce rând din .env
      să se uite. Lungimea mesajului nu spune nimic despre asta. */
   const r = cu({ SESSION_SECRET: 'abc', APP_URL: 'http://cutmodul.com', PAYMENT_DRIVER: 'fake' });
-  assert.ok(r.opriri.length >= 3);
+  assert.ok(r.opriri.length >= 2);
   r.opriri.forEach(o => {
     assert.match(o, /SESSION_SECRET|APP_URL|PAYMENT_DRIVER|STRIPE_[A-Z_]+|administrator/,
       `mesaj care nu spune ce setare e de schimbat: „${o}"`);

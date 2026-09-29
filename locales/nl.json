@@ -117,6 +117,46 @@
       "acoperire": "Dekking",
       "lipsaFisier": "De vertaalbestanden ontbreken voor: {coduri}"
     },
+    "plata": {
+      "legatura": "Betaling",
+      "titlu": "Betaling",
+      "intro": "Hoe klanten hun tegoed opwaarderen: met virtueel testgeld of met een kaart via Stripe. Stripe-sleutels worden versleuteld bewaard en na opslaan nooit meer volledig getoond.",
+      "stareFake": "Nu: virtueel geld. Iedereen die een account maakt, kan zichzelf zonder kaart tegoed geven. Handig om te testen; voor echte klanten schakel je over op Stripe.",
+      "stareOprita": "Nu: Stripe, maar er ontbreekt een sleutel. Opwaarderen is voor iedereen GESTOPT tot beide sleutels zijn ingevuld.",
+      "stareTest": "Nu: Stripe met een testsleutel (sk_test_). De betaling loopt via Stripe, maar er wordt geen echt geld geïnd.",
+      "stareLive": "Nu: Stripe, met echte kaarten. Het geld gaat naar het Stripe-account.",
+      "eroareNecitite": "De opgeslagen sleutels zijn niet meer leesbaar: SESSION_SECRET is op de server gewijzigd. Vul ze opnieuw in.",
+      "felul": "Betaalwijze",
+      "driverFake": "Virtueel testgeld (zonder kaart)",
+      "driverStripe": "Stripe, echte kaarten",
+      "felulNota": "Je kunt de Stripe-sleutels vooraf invullen en bij virtueel geld blijven; echte betaling start pas als je Stripe kiest.",
+      "chei": "Stripe-sleutels",
+      "cheieSecreta": "Geheime sleutel (Secret key)",
+      "cheieSecretaAjutor": "In Stripe: Developers → API keys → Secret key. Begint met sk_live_ (of sk_test_ om te testen).",
+      "acum": "Nu: {cheie}.",
+      "lipsa": "Nu: niet ingesteld.",
+      "dinFisier": "Komt uit het instellingenbestand van de server; wat je hier invult vervangt het.",
+      "cheieWebhook": "Webhookgeheim (Signing secret)",
+      "cheieWebhookAjutor": "Meestal hoef je het niet te zoeken: de applicatie maakt het in Stripe aan als je de geheime sleutel opslaat. Vul het alleen met de hand in als deze pagina erom vraagt. Begint met whsec_.",
+      "adresaWebhook": "Adres waar Stripe de betalingsbevestigingen naartoe stuurt:",
+      "faraAdresa": "Het openbare adres van de site (APP_URL) staat in de serverinstellingen nog niet op https. Zonder dat weet Stripe niet waar de bevestigingen heen moeten en kan de webhook niet automatisch worden aangemaakt.",
+      "golPastreaza": "Een leeg veld houdt de huidige sleutel.",
+      "salveaza": "Controleren en opslaan",
+      "sterge": "Sleutels verwijderen",
+      "stergeIntrebare": "Stripe-sleutels uit de applicatie verwijderen? De betaling gaat terug naar virtueel geld.",
+      "sters": "Sleutels verwijderd. De betaling staat op virtueel geld.",
+      "cheieSalvata": "De geheime sleutel is bij Stripe gecontroleerd en opgeslagen.",
+      "webhookSalvat": "Het webhookgeheim is opgeslagen.",
+      "webhookFacut": "De webhook is in Stripe aangemaakt en het geheim is opgeslagen.",
+      "pornitStripe": "Kaartbetaling via Stripe staat aan.",
+      "pornitFake": "De betaling staat op virtueel geld.",
+      "contStripe": "Stripe-account: {nume}",
+      "eroareFormat": "Dit lijkt geen geheime Stripe-sleutel. Hij moet beginnen met sk_live_ of sk_test_.",
+      "eroareFormatWebhook": "Het webhookgeheim moet beginnen met whsec_.",
+      "eroareStripe": "Stripe heeft de sleutel niet geaccepteerd, dus hij is niet opgeslagen: {mesaj}",
+      "eroareWebhook": "De sleutel is goed, maar de webhook kon niet automatisch worden aangemaakt ({mesaj}). In Stripe: Developers → Webhooks → Add endpoint, met het adres hieronder en het event checkout.session.completed; plak daarna hier het Signing secret.",
+      "eroareFaraChei": "Stripe kan niet starten zonder beide sleutels. De betaling is gebleven zoals ze was."
+    },
     "titlu": "Beheer",
     "kpiUtilizatori": "gebruikers",
     "kpiCorpuri": "kasten (de laatste 100)",
@@ -171,6 +211,7 @@
     },
     "driverFake": "De betaaldriver is <code>fake</code>: het tegoed wordt meteen bijgeschreven, zonder kaart.",
     "driverStripe": "Je gaat naar Stripe Checkout. Het tegoed wordt pas bijgeschreven als de betaling bevestigd is.",
+    "plataNepornita": "Betalen met kaart is nog niet beschikbaar. Kom binnenkort terug.",
     "miscari": "Mutaties op het account",
     "data": "Datum",
     "operatiune": "Handeling",
@@ -314,6 +355,11 @@
       "baza-nisa": {
         "nume": "Inbouwkast voor apparatuur",
         "descriere": "Open kast voor een oven of een vaatwasser. Controleer de nis die de fabrikant voorschrijft.",
+        "corpNume": "Ovenkast"
+      },
+      "baza-cuptor": {
+        "nume": "Onderkast voor oven",
+        "descriere": "Oven onder het werkblad, met een lade eronder. Controleer de nis die de fabrikant vraagt.",
         "corpNume": "Ovenkast"
       },
       "sus-2usi": {
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "Hoe wordt het korpus verbonden?",
     "intrebareBalama": "Welke scharnieren op de deuren?",
     "intrebareGlisiere": "Welke geleiders onder de lades?",
+    "intrebarePlinta": "Welke klikplint voor kasten op poten?",
     "intrebareSuspensii": "Worden bovenkasten met kastophangers bevestigd?",
     "jocPeParte": "Speling {mm} mm per zijde.",
     "suspensiiDetalii": "{n} per kast, {kg} kg per paar. Zonder deze worden kasten met zichtbare hoekprofielen bevestigd.",
@@ -620,6 +667,24 @@
         "descriere": "Deze opdracht heeft geen lades."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Aluminium klikplint H100",
+        "descriere": "Häfele, staven van 4 m, op de poten geklikt."
+      },
+      "alu-120": {
+        "nume": "Aluminium klikplint H120",
+        "descriere": "Häfele, staven van 4 m, op de poten geklikt."
+      },
+      "alu-150": {
+        "nume": "Aluminium klikplint H150",
+        "descriere": "Häfele, staven van 4 m, op de poten geklikt."
+      },
+      "fara": {
+        "nume": "Geen klikplint",
+        "descriere": "De poten blijven zichtbaar, of de plint wordt anders gemaakt."
+      }
+    },
     "suspensii": {
       "nume": "Kastophanger met borging",
       "descriere": "Verdekt achter de achterwand, verstelbaar in hoogte en diepte."
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "één per verbinding",
       "obsPeCorp": "twee per kast",
       "obsLa150": "om de 150 mm",
-      "obsCupleazaFronturi": "koppelt de twee fronten"
+      "obsCupleazaFronturi": "koppelt de twee fronten",
+      "piciorPlinta": "Verstelbare kunststof poot, voor klikplint H{h}",
+      "picior": "Verstelbare kunststof poot",
+      "obsPicioare": "{n} per kast, {m} boven {lat} mm breedte",
+      "clemaPlinta": "Plintclip",
+      "obsClemaPlinta": "één op elke voorste poot",
+      "plintaBara": "Aluminium klikplint H{h}, staaf van {bara} mm",
+      "obsPlinta": "{mm} mm in totaal; kasten op poten: {n}. Hoeken, verbinders en eindkappen volgens de opstelling."
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "geleider {lg} mm",
     "subCutie": "onder de lade gemonteerd",
     "socluInFata": "vooraan, tussen de zijden — de bodem rust erop",
+    "socluColtL": "op arm {n}, aan de voorkant — in de hoek loopt arm 1 voorbij het einde van arm 2",
+    "socluDiagonal": "op de diagonaal, aan de voorkant — uiteinden gezaagd op {u1}° en {u2}° ten opzichte van een rechte zaagsnede",
     "usiGlisante": "{n} schuifdeuren, overlap {supr}, rails {sine}",
     "traverseSusInLocDeBlat": "in plaats van het bovenblad: één voor, één achter, {lat} breed"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "De ladefronten reiken niet tot onderin: er blijft {gol} mm open. Zet de fronthoogte op {front} mm om de kast te vullen.",
     "piesaPreaMica": "Een zijde onder 20 mm: controleer de maten.",
     "piesaLatimeMaiMare": "De breedte ({lat}) is groter dan de lengte ({lung}): bij het zagen is de lengte de lange zijde. Wissel ze om als de nerf anders moet lopen.",
-    "socluNuMerge": "Een plint past alleen op een rechte kast gebouwd „ertussen”. Hier is hij weggelaten.",
+    "socluNuMerge": "Een plint kan niet op deze kast: hij past bij „Bovenblad/bodem tussen de zijwanden” en op hoekkasten, niet bij „Zijwanden tussen bovenblad en bodem” of op onregelmatige kasten. Hier is hij weggelaten.",
     "socluPreaInalt": "Plint van {soclu} mm bij zo’n lage kast: binnen blijft maar {ramane} mm over.",
     "nisaPreaMare": "Een nis van {nisa} mm past niet: boven {incape} mm blijft er geen plek voor de deur erboven.",
+    "nisaLangaSertare": "De nis van {nisa} mm past niet naast de laden: er blijft maar {incape} mm over. Maak de ladefronten kleiner of de kast hoger.",
+    "cutieSubPolitaNisa": "De ladebak van {cutie} mm raakt de plank waarop het apparaat staat. Neem hoogstens {max} mm bakhoogte.",
     "politeFixeInPlus": "Je vroeg om {cerut} legplanken, maar de kast heeft er {fac} nodig: die begrenzen de nis en dragen de deuren.",
     "politeNuIncap": "Voor {cate} legplanken is geen plek: de nis heeft de hele ruimte genomen.",
     "glisantaSingura": "Eén schuifdeur heeft niets om langs te schuiven. Neem er minstens twee.",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "Lengte (L)",
     "latimePiesa": "Breedte (l)",
     "soclu": "Plint (0 = pootjes)",
+    "picioare": "Poten",
+    "picioareNu": "Nee (hangend of op een plint)",
+    "picioareDa": "Ja, met klikplint",
     "nisa": "Nis (oven, koelkast)",
     "nisaFara": "geen",
     "montajGlisant": "Schuifdeuren",

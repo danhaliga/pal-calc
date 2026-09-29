@@ -117,6 +117,46 @@
       "acoperire": "Lefedettség",
       "lipsaFisier": "Hiányoznak a fordítási fájlok: {coduri}"
     },
+    "plata": {
+      "legatura": "Fizetés",
+      "titlu": "Fizetés",
+      "intro": "Hogyan töltik fel a vásárlók a kreditjüket: virtuális tesztpénzzel vagy kártyával a Stripe-on keresztül. A Stripe-kulcsokat titkosítva tároljuk, mentés után soha nem jelennek meg teljes egészükben.",
+      "stareFake": "Most: virtuális pénz. Bárki, aki fiókot nyit, kártya nélkül adhat magának kreditet. Teszteléshez jó; valódi vásárlókhoz válts Stripe-ra.",
+      "stareOprita": "Most: Stripe, de hiányzik egy kulcs. A kreditfeltöltés mindenkinek LEÁLLÍTVA, amíg mindkét kulcsot meg nem adod.",
+      "stareTest": "Most: Stripe tesztkulccsal (sk_test_). A fizetés a Stripe-on megy át, de valódi pénzt nem von le.",
+      "stareLive": "Most: Stripe, valódi kártyákkal. A pénz a Stripe-fiókba érkezik.",
+      "eroareNecitite": "A mentett kulcsok már nem olvashatók: a szerveren megváltozott a SESSION_SECRET. Add meg őket újra.",
+      "felul": "Fizetési mód",
+      "driverFake": "Virtuális tesztpénz (kártya nélkül)",
+      "driverStripe": "Stripe, valódi kártyák",
+      "felulNota": "A Stripe-kulcsokat előre megadhatod, és maradhatsz a virtuális pénznél; valódi fizetés csak akkor indul, ha a Stripe-ot választod.",
+      "chei": "Stripe-kulcsok",
+      "cheieSecreta": "Titkos kulcs (Secret key)",
+      "cheieSecretaAjutor": "A Stripe-ban: Developers → API keys → Secret key. sk_live_ előtaggal kezdődik (teszteléshez sk_test_).",
+      "acum": "Most: {cheie}.",
+      "lipsa": "Most: nincs megadva.",
+      "dinFisier": "A szerver beállításfájljából jön; amit itt megadsz, az felülírja.",
+      "cheieWebhook": "Webhook-titok (Signing secret)",
+      "cheieWebhookAjutor": "Általában nem kell keresni: az alkalmazás létrehozza a Stripe-ban, amikor elmented a titkos kulcsot. Csak akkor add meg kézzel, ha ez az oldal kéri. whsec_ előtaggal kezdődik.",
+      "adresaWebhook": "Cím, ahová a Stripe a fizetési visszaigazolásokat küldi:",
+      "faraAdresa": "Az oldal nyilvános címe (APP_URL) a szerverbeállításokban még nem https. Enélkül a Stripe nem tudja, hová küldje a visszaigazolásokat, és a webhook nem hozható létre automatikusan.",
+      "golPastreaza": "Az üresen hagyott mező megtartja a jelenlegi kulcsot.",
+      "salveaza": "Ellenőrzés és mentés",
+      "sterge": "Kulcsok törlése",
+      "stergeIntrebare": "Törlöd a Stripe-kulcsokat az alkalmazásból? A fizetés visszaáll virtuális pénzre.",
+      "sters": "A kulcsok törölve. A fizetés virtuális pénzzel megy.",
+      "cheieSalvata": "A titkos kulcsot a Stripe ellenőrizte, és el lett mentve.",
+      "webhookSalvat": "A webhook-titok el lett mentve.",
+      "webhookFacut": "A webhook létrejött a Stripe-ban, a titka el van mentve.",
+      "pornitStripe": "A kártyás fizetés a Stripe-on keresztül be van kapcsolva.",
+      "pornitFake": "A fizetés virtuális pénzzel megy.",
+      "contStripe": "Stripe-fiók: {nume}",
+      "eroareFormat": "Ez nem úgy néz ki, mint egy Stripe titkos kulcs. sk_live_ vagy sk_test_ előtaggal kell kezdődnie.",
+      "eroareFormatWebhook": "A webhook-titoknak whsec_ előtaggal kell kezdődnie.",
+      "eroareStripe": "A Stripe nem fogadta el a kulcsot, ezért nem lett mentve: {mesaj}",
+      "eroareWebhook": "A kulcs jó, de a webhookot nem sikerült automatikusan létrehozni ({mesaj}). A Stripe-ban: Developers → Webhooks → Add endpoint, a lenti címmel és a checkout.session.completed eseménnyel; aztán illeszd be ide a Signing secret értékét.",
+      "eroareFaraChei": "A Stripe nem indulhat el mindkét kulcs nélkül. A fizetés maradt, ahogy volt."
+    },
     "titlu": "Adminisztráció",
     "kpiUtilizatori": "felhasználó",
     "kpiCorpuri": "korpusz (az utolsó 100)",
@@ -171,6 +211,7 @@
     },
     "driverFake": "A fizetési meghajtó <code>fake</code>: az egyenleg azonnal jóváíródik, kártya nélkül.",
     "driverStripe": "A Stripe Checkoutra kerülsz. Az egyenleg csak a fizetés visszaigazolása után íródik jóvá.",
+    "plataNepornita": "A kártyás fizetés még nem érhető el. Nézz vissza hamarosan.",
     "miscari": "Számlamozgások",
     "data": "Dátum",
     "operatiune": "Művelet",
@@ -315,6 +356,11 @@
         "nume": "Beépíthető gép fülkéje",
         "descriere": "Nyitott doboz sütőnek vagy mosogatógépnek. Ellenőrizd a gyártó által előírt fülkeméretet.",
         "corpNume": "Sütőfülke"
+      },
+      "baza-cuptor": {
+        "nume": "Alsó szekrény sütőhöz",
+        "descriere": "Sütő a munkalap alatt, alatta egy fiók. Ellenőrizd a gyártó által kért fülkét.",
+        "corpNume": "Sütőszekrény"
       },
       "sus-2usi": {
         "nume": "Felsőszekrény 2 ajtóval",
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "Hogyan áll össze a korpusz?",
     "intrebareBalama": "Milyen pánt kerül az ajtókra?",
     "intrebareGlisiere": "Milyen sín kerül a fiókokba?",
+    "intrebarePlinta": "Milyen lábazati takaró kell a lábas szekrényekhez?",
     "intrebareSuspensii": "A felsőszekrények szekrényakasztóval rögzülnek?",
     "jocPeParte": "Hézag oldalanként {mm} mm.",
     "suspensiiDetalii": "Korpuszonként {n}, páronként {kg} kg. Nélkülük a korpuszok látszó sarokvassal rögzülnek.",
@@ -620,6 +667,24 @@
         "descriere": "Ebben a megrendelésben nincs fiók."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Alumínium lábazati takaró H100",
+        "descriere": "Häfele, 4 m-es szálak, a lábakra pattintva."
+      },
+      "alu-120": {
+        "nume": "Alumínium lábazati takaró H120",
+        "descriere": "Häfele, 4 m-es szálak, a lábakra pattintva."
+      },
+      "alu-150": {
+        "nume": "Alumínium lábazati takaró H150",
+        "descriere": "Häfele, 4 m-es szálak, a lábakra pattintva."
+      },
+      "fara": {
+        "nume": "Takaró nélkül",
+        "descriere": "A lábak látszanak, vagy a takaró másként készül."
+      }
+    },
     "suspensii": {
       "nume": "Szekrényakasztó biztosítással",
       "descriere": "A hátlap mögé rejtve, magasságban és mélységben állítható."
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "kötésenként egy",
       "obsPeCorp": "korpuszonként kettő",
       "obsLa150": "minden 150 mm-en",
-      "obsCupleazaFronturi": "összeköti a két frontot"
+      "obsCupleazaFronturi": "összeköti a két frontot",
+      "piciorPlinta": "Állítható műanyag láb, H{h} takaróhoz",
+      "picior": "Állítható műanyag láb",
+      "obsPicioare": "szekrényenként {n}, {lat} mm szélesség felett {m}",
+      "clemaPlinta": "Lábazati takaró klipsz",
+      "obsClemaPlinta": "minden első lábra egy",
+      "plintaBara": "Alumínium lábazati takaró H{h}, {bara} mm-es szál",
+      "obsPlinta": "Összesen {mm} mm; lábas szekrények: {n}. Sarkok, toldók és végzárók az elrendezés szerint."
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "{lg} mm-es sín",
     "subCutie": "a fiók alá szerelve",
     "socluInFata": "elöl, az oldalak között — az alj rajta áll",
+    "socluColtL": "a(z) {n}. száron, elöl — a sarokban az 1. szár túlmegy a 2. szár végén",
+    "socluDiagonal": "az átlón, elöl — a végek az egyenes vágáshoz képest {u1}° és {u2}° szögben vágva",
     "usiGlisante": "{n} tolóajtó, átfedés {supr}, sínek {sine}",
     "traverseSusInLocDeBlat": "a fedlap helyett: egy elöl, egy hátul, {lat} szélesek"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "A fiókelőlapok nem érnek le: {gol} mm marad szabadon alul. Állítsd az előlapmagasságot {front} mm-re, hogy kitöltse a korpuszt.",
     "piesaPreaMica": "Egyik oldal 20 mm alatt: nézd meg a méreteket.",
     "piesaLatimeMaiMare": "A szélesség ({lat}) nagyobb a hossznál ({lung}): szabáskor a hossz a hosszabbik oldal. Cseréld meg őket, ha az erezetnek máshogy kell futnia.",
-    "socluNuMerge": "A lábazat csak „közé” épített egyenes korpuszra megy. Itt kimaradt.",
+    "socluNuMerge": "Erre a korpuszra nem kerülhet lábazat: a „Tető/alj az oldalak között” szerkezethez és a sarokszekrényekhez való, nem a „Oldalak a tető és az alj között” szerkezethez vagy a szabálytalan korpuszokhoz. Itt kimaradt.",
     "socluPreaInalt": "{soclu} mm-es lábazat ilyen alacsony korpuszon: belül csak {ramane} mm marad.",
     "nisaPreaMare": "{nisa} mm-es nyílás nem fér el: {incape} mm fölött nem marad hely a fenti ajtónak.",
+    "nisaLangaSertare": "A {nisa} mm-es fülke nem fér el a fiókok mellett: csak {incape} mm marad. Csökkentsd a fiókelőlapokat, vagy növeld a szekrényt.",
+    "cutieSubPolitaNisa": "A {cutie} mm-es fiókdoboz beleütközik a polcba, amelyen a készülék áll. A doboz magassága legfeljebb {max} mm legyen.",
     "politeFixeInPlus": "{cerut} polcot kértél, de a korpusznak {fac} kell: azok szegélyezik a nyílást és tartják az ajtókat.",
     "politeNuIncap": "{cate} polcnak nincs helye: a nyílás elvitte az egész teret.",
     "glisantaSingura": "Egyetlen tolóajtónak nincs mi mellett elcsúsznia. Tegyél legalább kettőt.",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "Hossz (L)",
     "latimePiesa": "Szélesség (l)",
     "soclu": "Lábazat (0 = lábak)",
+    "picioare": "Lábak",
+    "picioareNu": "Nem (fali vagy lábazaton)",
+    "picioareDa": "Igen, pattintós lábazati takaróval",
     "nisa": "Nyílás (sütő, hűtő)",
     "nisaFara": "nincs",
     "montajGlisant": "Tolóajtós",

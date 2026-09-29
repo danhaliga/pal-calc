@@ -117,6 +117,46 @@
       "acoperire": "Pokrycie",
       "lipsaFisier": "Brakuje plików tłumaczeń dla: {coduri}"
     },
+    "plata": {
+      "legatura": "Płatność",
+      "titlu": "Płatność",
+      "intro": "Jak klienci doładowują kredyt: wirtualnymi pieniędzmi testowymi albo kartą przez Stripe. Klucze Stripe są przechowywane w postaci zaszyfrowanej i po zapisaniu nie są już pokazywane w całości.",
+      "stareFake": "Teraz: wirtualne pieniądze. Każdy, kto założy konto, może sam dodać sobie kredyt bez karty. Dobre do testów; dla prawdziwych klientów przełącz na Stripe.",
+      "stareOprita": "Teraz: Stripe, ale brakuje klucza. Doładowania są WSTRZYMANE dla wszystkich, dopóki nie wpiszesz obu kluczy.",
+      "stareTest": "Teraz: Stripe z kluczem testowym (sk_test_). Płatność przechodzi przez Stripe, ale prawdziwe pieniądze nie są pobierane.",
+      "stareLive": "Teraz: Stripe, prawdziwe karty. Pieniądze trafiają na konto Stripe.",
+      "eroareNecitite": "Zapisanych kluczy nie da się już odczytać: na serwerze zmienił się SESSION_SECRET. Wpisz je ponownie.",
+      "felul": "Sposób płatności",
+      "driverFake": "Wirtualne pieniądze testowe (bez karty)",
+      "driverStripe": "Stripe, prawdziwe karty",
+      "felulNota": "Możesz wpisać klucze Stripe wcześniej i zostać przy wirtualnych pieniądzach; prawdziwa płatność zaczyna się dopiero po wybraniu Stripe.",
+      "chei": "Klucze Stripe",
+      "cheieSecreta": "Klucz tajny (Secret key)",
+      "cheieSecretaAjutor": "W Stripe: Developers → API keys → Secret key. Zaczyna się od sk_live_ (lub sk_test_ do testów).",
+      "acum": "Teraz: {cheie}.",
+      "lipsa": "Teraz: nieustawiony.",
+      "dinFisier": "Pochodzi z pliku ustawień serwera; to, co wpiszesz tutaj, go zastępuje.",
+      "cheieWebhook": "Sekret webhooka (Signing secret)",
+      "cheieWebhookAjutor": "Zwykle nie trzeba go szukać: aplikacja tworzy go w Stripe po zapisaniu klucza tajnego. Wpisz go ręcznie tylko wtedy, gdy ta strona o to poprosi. Zaczyna się od whsec_.",
+      "adresaWebhook": "Adres, na który Stripe wysyła potwierdzenia płatności:",
+      "faraAdresa": "Publiczny adres strony (APP_URL) nie jest jeszcze ustawiony na https w ustawieniach serwera. Bez niego Stripe nie ma dokąd wysyłać potwierdzeń, a webhooka nie da się utworzyć automatycznie.",
+      "golPastreaza": "Puste pole zachowuje obecny klucz.",
+      "salveaza": "Sprawdź i zapisz",
+      "sterge": "Usuń klucze",
+      "stergeIntrebare": "Usunąć klucze Stripe z aplikacji? Płatność wróci do wirtualnych pieniędzy.",
+      "sters": "Klucze usunięte. Płatność działa na wirtualnych pieniądzach.",
+      "cheieSalvata": "Klucz tajny został sprawdzony w Stripe i zapisany.",
+      "webhookSalvat": "Sekret webhooka został zapisany.",
+      "webhookFacut": "Webhook został utworzony w Stripe, a jego sekret zapisany.",
+      "pornitStripe": "Płatność kartą przez Stripe jest włączona.",
+      "pornitFake": "Płatność działa na wirtualnych pieniądzach.",
+      "contStripe": "Konto Stripe: {nume}",
+      "eroareFormat": "To nie wygląda na klucz tajny Stripe. Musi zaczynać się od sk_live_ lub sk_test_.",
+      "eroareFormatWebhook": "Sekret webhooka musi zaczynać się od whsec_.",
+      "eroareStripe": "Stripe nie przyjął klucza, więc nie został zapisany: {mesaj}",
+      "eroareWebhook": "Klucz jest dobry, ale webhooka nie udało się utworzyć automatycznie ({mesaj}). W Stripe: Developers → Webhooks → Add endpoint, z adresem poniżej i zdarzeniem checkout.session.completed; potem wklej tutaj Signing secret.",
+      "eroareFaraChei": "Stripe nie może ruszyć bez obu kluczy. Płatność została bez zmian."
+    },
     "titlu": "Administracja",
     "kpiUtilizatori": "użytkowników",
     "kpiCorpuri": "korpusów (ostatnie 100)",
@@ -172,6 +212,7 @@
     },
     "driverFake": "Sterownik płatności to <code>fake</code>: środki dopisują się od razu, bez karty.",
     "driverStripe": "Przejdziesz do Stripe Checkout. Środki dopisują się dopiero po potwierdzeniu płatności.",
+    "plataNepornita": "Płatność kartą nie jest jeszcze dostępna. Zajrzyj wkrótce.",
     "miscari": "Ruchy na koncie",
     "data": "Data",
     "operatiune": "Operacja",
@@ -321,6 +362,11 @@
         "nume": "Korpus pod zabudowę AGD",
         "descriere": "Otwarta skrzynia na piekarnik albo zmywarkę. Sprawdź wnękę wymaganą przez producenta.",
         "corpNume": "Korpus pod piekarnik"
+      },
+      "baza-cuptor": {
+        "nume": "Szafka dolna pod piekarnik",
+        "descriere": "Piekarnik pod blatem, pod nim szuflada. Sprawdź wnękę wymaganą przez producenta.",
+        "corpNume": "Szafka piekarnik"
       },
       "sus-2usi": {
         "nume": "Szafka wisząca z 2 frontami",
@@ -565,6 +611,7 @@
     "intrebareAsamblare": "Jak łączony jest korpus?",
     "intrebareBalama": "Jakie zawiasy na frontach?",
     "intrebareGlisiere": "Jakie prowadnice w szufladach?",
+    "intrebarePlinta": "Jaka listwa cokołowa do szafek na nóżkach?",
     "intrebareSuspensii": "Czy szafki wiszące mocuje się na zawieszkach?",
     "jocPeParte": "Luz {mm} mm na stronę.",
     "suspensiiDetalii": "{n} na korpus, {kg} kg na parę. Bez nich korpusy mocuje się na widocznych kątownikach.",
@@ -626,6 +673,24 @@
         "descriere": "To zlecenie nie ma szuflad."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Listwa cokołowa aluminiowa H100",
+        "descriere": "Häfele, sztangi 4 m, zatrzaskiwana na nóżkach."
+      },
+      "alu-120": {
+        "nume": "Listwa cokołowa aluminiowa H120",
+        "descriere": "Häfele, sztangi 4 m, zatrzaskiwana na nóżkach."
+      },
+      "alu-150": {
+        "nume": "Listwa cokołowa aluminiowa H150",
+        "descriere": "Häfele, sztangi 4 m, zatrzaskiwana na nóżkach."
+      },
+      "fara": {
+        "nume": "Bez listwy",
+        "descriere": "Nóżki zostają widoczne albo listwę robi się inaczej."
+      }
+    },
     "suspensii": {
       "nume": "Zawieszka korpusu z zabezpieczeniem",
       "descriere": "Ukryta za plecami, regulowana na wysokość i na głębokość."
@@ -657,7 +722,14 @@
       "obsUnaPeImbinare": "po jednym na połączenie",
       "obsPeCorp": "po dwie na korpus",
       "obsLa150": "co 150 mm",
-      "obsCupleazaFronturi": "łączy oba fronty"
+      "obsCupleazaFronturi": "łączy oba fronty",
+      "piciorPlinta": "Nóżka regulowana z tworzywa, do listwy H{h}",
+      "picior": "Nóżka regulowana z tworzywa",
+      "obsPicioare": "{n} na szafkę, {m} powyżej {lat} mm szerokości",
+      "clemaPlinta": "Klips listwy cokołowej",
+      "obsClemaPlinta": "jeden na każdą przednią nóżkę",
+      "plintaBara": "Listwa cokołowa aluminiowa H{h}, sztanga {bara} mm",
+      "obsPlinta": "Razem {mm} mm; szafki na nóżkach: {n}. Narożniki, łączniki i zaślepki według ustawienia."
     }
   },
   "piesa": {
@@ -722,6 +794,8 @@
     "glisieraDe": "prowadnica {lg} mm",
     "subCutie": "montowane pod skrzynką",
     "socluInFata": "z przodu, między bokami — na nim stoi dno",
+    "socluColtL": "na ramieniu {n}, z przodu — w narożniku ramię 1 przechodzi za koniec ramienia 2",
+    "socluDiagonal": "na przekątnej, z przodu — końce cięte pod {u1}° i {u2}° względem cięcia prostego",
     "usiGlisante": "{n} fronty przesuwne, zachodzenie {supr}, szyny {sine}",
     "traverseSusInLocDeBlat": "zamiast wieńca: jedna z przodu, druga z tyłu, szerokie na {lat}"
   },
@@ -754,9 +828,11 @@
     "sertareNuUmplu": "Fronty szuflad nie sięgają dołu: zostaje {gol} mm wolnego. Ustaw wysokość frontu na {front} mm, żeby wypełnić korpus.",
     "piesaPreaMica": "Bok poniżej 20 mm: sprawdź wymiary.",
     "piesaLatimeMaiMare": "Szerokość ({lat}) jest większa niż długość ({lung}): przy rozkroju długość to bok dłuższy. Zamień je, jeśli słój ma iść inaczej.",
-    "socluNuMerge": "Cokół pasuje tylko do prostej skrzyni budowanej „między”. Tutaj został pominięty.",
+    "socluNuMerge": "Cokołu nie da się dać w tej szafce: pasuje do „Wieńce między bokami” i do narożników, nie do „Boki między wieńcami” ani do szafek nieregularnych. Tu został pominięty.",
     "socluPreaInalt": "Cokół {soclu} mm przy tak niskiej skrzyni: w środku zostaje tylko {ramane} mm.",
     "nisaPreaMare": "Wnęka {nisa} mm się nie mieści: powyżej {incape} mm nie zostaje miejsca na front u góry.",
+    "nisaLangaSertare": "Wnęka {nisa} mm nie mieści się obok szuflad: zostaje tylko {incape} mm. Zmniejsz fronty szuflad albo powiększ szafkę.",
+    "cutieSubPolitaNisa": "Skrzynka szuflady, {cutie} mm, uderza w półkę, na której stoi urządzenie. Daj najwyżej {max} mm wysokości skrzynki.",
     "politeFixeInPlus": "Poprosiłeś o {cerut} półek, ale skrzynia potrzebuje {fac}: te ograniczają wnękę i trzymają fronty.",
     "politeNuIncap": "{cate} półek nie ma gdzie postawić: wnęka zabrała cały prześwit.",
     "glisantaSingura": "Jeden przesuwny front nie ma obok czego się przesuwać. Daj co najmniej dwa.",
@@ -1296,6 +1372,9 @@
     "lungimePiesa": "Długość (L)",
     "latimePiesa": "Szerokość (l)",
     "soclu": "Cokół (0 = nóżki)",
+    "picioare": "Nóżki",
+    "picioareNu": "Nie (wiszący lub na cokole)",
+    "picioareDa": "Tak, z listwą cokołową na klips",
     "nisa": "Wnęka (piekarnik, lodówka)",
     "nisaFara": "brak",
     "montajGlisant": "Przesuwne",

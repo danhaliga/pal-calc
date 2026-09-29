@@ -73,6 +73,11 @@
          nu apar în listă. Peste 0, lateralele merg până la podea, fundul
          se ridică, iar în față intră o bucată de PAL. */
       soclu: 0,
+      /* Corpul stă pe picioare de plastic, cu plintă cumpărată prinsă în
+         față — felul corpurilor de bucătărie puse în șir. Nu se taie
+         nimic din PAL: picioarele și plinta intră la feronerie (vezi
+         shared/raport.js). Cu soclu pus, soclul câștigă. */
+      picioare: 0,
       /* Lățimea traverselor de sus. 0 înseamnă blat întreg, adică felul de
          până acum. Peste 0, în locul blatului se pun două traverse — una
          în față, una în spate — fiindcă sub blatul de bucătărie un panou
@@ -97,7 +102,9 @@
       /* Nișa: golul dintre zonele cu uși, pentru cuptor sau frigider.
          Cu `hUsi` pus: ușă jos, gol, ușă sus — coloana de cuptor.
          Cu `hUsi` gol: gol de la fund, ușă deasupra — coloana de frigider,
-         unde aparatul stă direct pe fundul corpului. */
+         unde aparatul stă direct pe fundul corpului.
+         Fără uși, cu sertare: golul e tot ce rămâne lângă sertare, iar
+         `hNisa` e cât cere aparatul — corpul bază de cuptor. */
       hNisa: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
@@ -374,12 +381,17 @@
     var zin = aplicat ? tp : NUT_OFF + tp;  /* fata interioara a spatelui */
     var Dint = D - zin;                     /* adancime interioara utila */
     /* Soclul mănâncă din înălțimea folositoare, fiindcă H rămâne cota de la
-       podea. Se poate numai la corpul drept construit „între": acolo
-       lateralele merg oricum pe toată înălțimea, deci ajung singure la
-       podea și au pe ce sta. La celelalte construcții lateralele stau PE
-       fund, iar un soclu dedesubt n-ar avea de ce se prinde. */
+       podea. Se poate acolo unde lateralele merg pe toată înălțimea, deci
+       ajung singure la podea și au pe ce sta: corpul drept construit
+       „între", colțul orb (tot un corp drept, cu o parte acoperită) și
+       colțurile în L sau pe diagonală, a căror ramură pune lateralele așa
+       oricum. La construcția „peste" lateralele stau PE fund, iar un soclu
+       dedesubt n-ar avea de ce se prinde; la cele atipice forma vine din
+       contur și n-are laterale drepte. */
     var socluCerut = Math.max(0, +c.soclu || 0);
-    var soclu = (socluCerut && c.tip === 'drept' && c.constr === 'intre') ? socluCerut : 0;
+    var soclu = (socluCerut && (esteColt(c.tip) ||
+                 ((c.tip === 'drept' || c.tip === 'colt-orb') && c.constr === 'intre')))
+      ? socluCerut : 0;
 
     /* Traversele se pot pune în aceleași condiții ca soclul: la corpul drept
        construit „între". Acolo lateralele merg pe toată înălțimea, deci
@@ -607,7 +619,9 @@
       var brA = r1(bA - D), brB = r1(bB - D);    /* decupajul din colțul opus */
       var diagL = r1(Math.sqrt(brA * brA + brB * brB));
       var aplK = c.montaj === 'aplicat';
-      var uHK = r1(aplK ? H - 2 * rm : Hint - 2 * rinc);
+      /* Cu soclu, fronturile pornesc de deasupra lui, ca la corpul drept. */
+      var uHK = r1(aplK ? Hutil - 2 * rm : Hint - 2 * rinc);
+      var yFK = aplK ? soclu + rm : y0 + rinc;
       var FDK = F({ pz: 'f', nz: 'f', px: 'g', nx: 'g', py: 'g', ny: 'g' });
       var jpK = +c.jp;
       var usiK = [];
@@ -637,15 +651,49 @@
       add('blat', null, 1, bA, bB, '-', '-', '-', '-', 'L', notaPanou,
         [bp(0, H - t, 0, polyOr, t, [0, 1, 0], 'corp')]);
       add('fund', null, 1, bA, bB, '-', '-', '-', '-', 'L', notaPanou,
-        [bp(0, 0, 0, polyOr, t, [0, -1, 0], 'corp')]);
+        [bp(0, soclu, 0, polyOr, t, [0, -1, 0], 'corp')]);
+
+      /* Soclul, pe linia fronturilor, retras cât grosimea plăcii — ca la
+         corpul drept, unde stă în spatele ușilor și sub fund.
+
+         În L sunt două bucăți, una pe fiecare braț. La colțul dinăuntru
+         brațul 1 trece peste capătul brațului 2: așa se prind cu un șurub
+         prin față, iar fundul are pe ce sta și în colț.
+
+         Pe diagonală e o singură bucată, cu capetele tăiate în unghi ca să
+         stea lipite de laterale. Unghiurile se scriu pe piesă: cu brațe
+         egale ies 45°, cu brațe diferite nu, și asta nu se ghicește la
+         fierăstrău. */
+      if (soclu > 0 && brA > 0 && brB > 0) {
+        var FSo = F({ pz: 'f', nz: 'f', py: 's', ny: 's' });
+        if (dg) {
+          var nX = -brB / diagL, nZ = -brA / diagL;          /* spre colțul din spate */
+          var u1 = Math.round(Math.atan2(brB, brA) * 180 / Math.PI);
+          var u2 = Math.round(Math.atan2(brA, brB) * 180 / Math.PI);
+          add('soclu', null, 1, diagL, soclu, 's', '-', '-', '-', 'L',
+            ['socluDiagonal', { u1: u1, u2: u2 }],
+            [{ x: (bA + D) / 2 + nX * t / 2 - diagL / 2, y: 0,
+               z: (D + bB) / 2 + nZ * t / 2 - t / 2,
+               sx: diagL, sy: soclu, sz: t, f: FSo, ex: [0, -1, 0], grp: 'corp',
+               ry: Math.atan2(-(bB - D), D - bA), rotCenter: true }]);
+        } else {
+          add('soclu', null, 1, r1(brA + t), soclu, 's', '-', '-', '-', 'L',
+            ['socluColtL', { n: 1 }],
+            [bx(D - t, 0, D - t, brA + t, soclu, t, FSo, [0, -1, 0], 'corp')]);
+          add('soclu', null, 1, brB, soclu, 's', '-', '-', '-', 'L',
+            ['socluColtL', { n: 2 }],
+            [bx(D - t, 0, D, t, soclu, brB, F({ px: 'f', nx: 'f', py: 's', ny: 's' }), [0, -1, 0], 'corp')]);
+        }
+      }
 
       /* spate: câte un panou pe fiecare perete */
       var matSp = { mat: tp >= 8 ? 'PAL' : 'PFL' };
       var FSK = F({ pz: 'p', nz: 'p', px: 'p', nx: 'p', py: 'p', ny: 'p' });
-      add('spatePerete1', matSp, 1, H - 3, A - 3, '-', '-', '-', '-', '-', ['capsatSprePerete'],
-        [bx(1.5, 1.5, -tp, A - 3, H - 3, tp, FSK, [0, 0, -1], 'spate')]);
-      add('spatePerete2', matSp, 1, H - 3, B - tp - 3, '-', '-', '-', '-', '-', ['capsatCealalta'],
-        [bx(-tp, 1.5, 1.5, tp, H - 3, B - tp - 3, FSK, [-1, 0, 0], 'spate')]);
+      /* Spatele nu coboară în zona soclului: sub fund nu e corp, e gol. */
+      add('spatePerete1', matSp, 1, Hutil - 3, A - 3, '-', '-', '-', '-', '-', ['capsatSprePerete'],
+        [bx(1.5, soclu + 1.5, -tp, A - 3, Hutil - 3, tp, FSK, [0, 0, -1], 'spate')]);
+      add('spatePerete2', matSp, 1, Hutil - 3, B - tp - 3, '-', '-', '-', '-', '-', ['capsatCealalta'],
+        [bx(-tp, soclu + 1.5, 1.5, tp, Hutil - 3, B - tp - 3, FSK, [-1, 0, 0], 'spate')]);
 
       /* fronturi (nUsi = 0 înseamnă colț deschis) */
       if (nUsi > 0 && dg) {
@@ -653,14 +701,14 @@
         var mx = (bA + D) / 2, mz = (D + bB) / 2;     /* mijlocul diagonalei */
         add('usaDiagonala', null, 1, uHK, uLK, 'g', 'g', 'g', 'g', 'LV',
             ['balamaleDiagonala', { n: balamale(uHK), cot: c.balama }],
-            [{ x: mx - uLK / 2, y: aplK ? rm : t + rinc, z: mz - t / 2,
+            [{ x: mx - uLK / 2, y: yFK, z: mz - t / 2,
                sx: uLK, sy: uHK, sz: t, f: FDK, ex: [1.1, 0, 1.1], grp: 'fronturi',
                ry: Math.atan2(-(bB - D), D - bA), rotCenter: true }]);
         usiK.push({ L: uLK, H: uHK });
         if (uLK > 600) avert('usaDiagonalaLata');
       } else if (nUsi > 0) {
         var uL1 = r1(brA - rm - ri / 2), uL2 = r1(brB - rm - ri / 2);
-        var yF = aplK ? rm : t + rinc;
+        var yF = yFK;
         add('usaBrat1', null, 1, uHK, uL1, 'g', 'g', 'g', 'g', 'LV',
             ['balamaleBrat1', { n: balamale(uHK), cot: c.balama }],
             [bx(D + rm, yF, D, uL1, uHK, t, FDK, [0, 0, 1.6], 'fronturi')]);
@@ -681,7 +729,7 @@
           : [[0, 0], [pA, 0], [pA, pD], [pD, pD], [pD, pB], [0, pB]];
         var boxesPol = [];
         for (var ip = 1; ip <= nPol; ip++) {
-          var ycK = t + (Hint) * ip / (nPol + 1);
+          var ycK = y0 + Hint * ip / (nPol + 1);
           boxesPol.push(bp(jpK / 2, ycK - t / 2, jpK / 2, polyPol, t, [0, 0, 0.6], 'polite'));
         }
         add('polita', null, nPol, pA, pB, '-', '-', '-', '-', 'L',
@@ -692,7 +740,8 @@
       }
 
       return { P: P, warn: warn, avertismente: avertismente, usi: scoateFronturile(usiK), Wint: bA, Hint: Hint, Dint: D,
-               W: A, H: H, D: B, colt: { A: A, B: B, brA: brA, brB: brB, diag: diagL, dg: dg } };
+               W: A, H: H, D: B, soclu: soclu,
+               colt: { A: A, B: B, brA: brA, brB: brB, diag: diagL, dg: dg } };
     }
 
     /* ---- corp ---- */
@@ -989,6 +1038,35 @@
       }
     }
 
+    /* ---- nișă fără uși ----
+
+       Corpul bază de cuptor: sertar jos, cuptor deasupra, fără nicio ușă.
+       Nișa e tot ce rămâne lângă sertare; `hNisa` spune cât cere aparatul,
+       ca să se vadă de pe acum dacă intră, nu la montaj.
+
+       Între sertare și nișă stă o poliță fixă — pe ea se sprijină cuptorul.
+       Se pune pe muchia fronturilor de sertar, ca la ușile parțiale: la front
+       aplicat frontul îi acoperă cantul, la unul încastrat se oprește sub ea.
+       Cu sertarele sus merge la fel, pe dos: nișa dedesubt. */
+    var yPolitaNisa = null;
+    if (nUsi === 0 && nSer > 0 && hNisaCerut > 0 && c.montaj !== 'glisant') {
+      var muchieFront = sertareJos ? yUsiBot - ri : yUsiTop + ri;
+      var spreNisa = sertareJos ? 1 : -1;
+      yPolitaNisa = apl ? muchieFront - spreNisa * t / 2 : muchieFront + spreNisa * t / 2;
+      var golNisa = sertareJos
+        ? (y0 + Hint) - (yPolitaNisa + t / 2)
+        : (yPolitaNisa - t / 2) - y0;
+      if (golNisa + 0.5 < hNisaCerut) {
+        avert('nisaLangaSertare', { nisa: fmt(hNisaCerut), incape: fmt(Math.max(0, golNisa)) });
+        yPolitaNisa = null;
+      } else {
+        politeFixe.push(yPolitaNisa);
+        zonaNisa = sertareJos
+          ? { jos: yPolitaNisa + t / 2, sus: y0 + Hint }
+          : { jos: y0, sus: yPolitaNisa - t / 2 };
+      }
+    }
+
     /* ---- sertare ---- */
     if (nSer > 0) {
       var jg = +c.jg, ts = +c.ts, hF = +c.hFront, hc = +c.hCutie;
@@ -1007,7 +1085,9 @@
          trebui să aibă fronturile ca să umple corpul. */
       var fataLibera = (apl ? Hutil - 2 * rm : Hint - 2 * rinc);
       var golSertare = fataLibera - (nSer * hF + (nSer - 1) * ri);
-      if (nUsi === 0 && golSertare > 20) {
+      /* Cu nișă cerută golul e voit — nu se spune de două ori, o dată ca
+         nișă care nu încape și o dată ca gol. */
+      if (nUsi === 0 && golSertare > 20 && !(hNisaCerut > 0)) {
         avert('sertareNuUmplu', {
           gol: fmt(golSertare),
           front: Math.round((fataLibera - (nSer - 1) * ri) / nSer)
@@ -1031,6 +1111,19 @@
           F({ pz: 'f', nz: 'f', py: 's', ny: 's' }), dz, 'sertare'));
         fnd.push(bx(t + jg, yb - PFL_SERTAR, zf - lg, cut, PFL_SERTAR, lg,
           F({ px: 'p', nx: 'p', py: 'p', ny: 'p', pz: 'p', nz: 'p' }), dz, 'sertare'));
+      }
+      /* Lângă nișă, cutia sertarului stă sub polița aparatului. Dacă e mai
+         înaltă decât golul, sertarul nu intră — se spune cât poate avea. */
+      if (yPolitaNisa !== null) {
+        /* Cutia stă pe mijlocul frontului ei, iar fundul de PFL sub ea. */
+        var kLangaNisa = sertareJos ? 0 : nSer - 1;
+        var frontJos = ySertare - kLangaNisa * (hF + ri) - hF;
+        var hcMax = sertareJos
+          ? 2 * ((yPolitaNisa - t / 2) - frontJos) - hF
+          : hF - 2 * ((yPolitaNisa + t / 2) + PFL_SERTAR - frontJos);
+        if (hc > hcMax + 0.01) {
+          avert('cutieSubPolitaNisa', { cutie: fmt(hc), max: fmt(Math.max(0, Math.floor(hcMax))) });
+        }
       }
       add('frontSertar', null, nSer, hF, fL, 'g', 'g', 'g', 'g', 'LO',
         ['rostFronturi', { rost: ri }], fr);
@@ -1186,6 +1279,7 @@
         })).max(32),
         constr: z.enum(['intre', 'peste']),
         soclu: mm(0, 300).catch(0),
+        picioare: int(0, 1).catch(0),
         traverse: mm(0, TRAVERSA_MAX).catch(0),
         /* Un semn, nu o cotă: 0 sau 1. Orice altceva înseamnă corp cu
            fronturi — felul de până acum, adică cel în care nu se pierde

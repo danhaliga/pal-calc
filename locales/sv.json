@@ -117,6 +117,46 @@
       "acoperire": "Täckning",
       "lipsaFisier": "Översättningsfiler saknas för: {coduri}"
     },
+    "plata": {
+      "legatura": "Betalning",
+      "titlu": "Betalning",
+      "intro": "Hur kunderna fyller på sin kredit: med virtuella testpengar eller med kort via Stripe. Stripe-nycklarna sparas krypterade och visas aldrig i sin helhet efter att de sparats.",
+      "stareFake": "Nu: virtuella pengar. Alla som skapar ett konto kan själva lägga till kredit utan kort. Bra för tester; för riktiga kunder, byt till Stripe.",
+      "stareOprita": "Nu: Stripe, men en nyckel saknas. Påfyllning av kredit är STOPPAD för alla tills båda nycklarna är ifyllda.",
+      "stareTest": "Nu: Stripe med en testnyckel (sk_test_). Betalningen går via Stripe, men inga riktiga pengar dras.",
+      "stareLive": "Nu: Stripe, med riktiga kort. Pengarna går till Stripe-kontot.",
+      "eroareNecitite": "De sparade nycklarna kan inte längre läsas: SESSION_SECRET har ändrats på servern. Fyll i dem igen.",
+      "felul": "Betalsätt",
+      "driverFake": "Virtuella testpengar (utan kort)",
+      "driverStripe": "Stripe, riktiga kort",
+      "felulNota": "Du kan fylla i Stripe-nycklarna i förväg och stanna på virtuella pengar; riktig betalning börjar först när du väljer Stripe.",
+      "chei": "Stripe-nycklar",
+      "cheieSecreta": "Hemlig nyckel (Secret key)",
+      "cheieSecretaAjutor": "I Stripe: Developers → API keys → Secret key. Börjar med sk_live_ (eller sk_test_ för tester).",
+      "acum": "Nu: {cheie}.",
+      "lipsa": "Nu: inte angiven.",
+      "dinFisier": "Kommer från serverns inställningsfil; det du fyller i här ersätter den.",
+      "cheieWebhook": "Webhook-hemlighet (Signing secret)",
+      "cheieWebhookAjutor": "Oftast behöver du inte leta efter den: appen skapar den i Stripe när du sparar den hemliga nyckeln. Fyll i den för hand bara om den här sidan ber om det. Börjar med whsec_.",
+      "adresaWebhook": "Adress dit Stripe skickar betalningsbekräftelser:",
+      "faraAdresa": "Webbplatsens offentliga adress (APP_URL) är ännu inte satt till https i serverns inställningar. Utan den vet Stripe inte vart bekräftelserna ska skickas, och webhooken kan inte skapas automatiskt.",
+      "golPastreaza": "Ett tomt fält behåller den nuvarande nyckeln.",
+      "salveaza": "Kontrollera och spara",
+      "sterge": "Radera nycklar",
+      "stergeIntrebare": "Radera Stripe-nycklarna från appen? Betalningen går tillbaka till virtuella pengar.",
+      "sters": "Nycklarna raderades. Betalningen använder virtuella pengar.",
+      "cheieSalvata": "Den hemliga nyckeln kontrollerades hos Stripe och sparades.",
+      "webhookSalvat": "Webhook-hemligheten sparades.",
+      "webhookFacut": "Webhooken skapades i Stripe och dess hemlighet är sparad.",
+      "pornitStripe": "Kortbetalning via Stripe är påslagen.",
+      "pornitFake": "Betalningen använder virtuella pengar.",
+      "contStripe": "Stripe-konto: {nume}",
+      "eroareFormat": "Det här ser inte ut som en hemlig Stripe-nyckel. Den måste börja med sk_live_ eller sk_test_.",
+      "eroareFormatWebhook": "Webhook-hemligheten måste börja med whsec_.",
+      "eroareStripe": "Stripe godtog inte nyckeln, så den sparades inte: {mesaj}",
+      "eroareWebhook": "Nyckeln är giltig, men webhooken kunde inte skapas automatiskt ({mesaj}). I Stripe: Developers → Webhooks → Add endpoint, med adressen nedan och händelsen checkout.session.completed; klistra sedan in Signing secret här.",
+      "eroareFaraChei": "Stripe kan inte starta utan båda nycklarna. Betalningen förblev som den var."
+    },
     "titlu": "Administration",
     "kpiUtilizatori": "användare",
     "kpiCorpuri": "stommar (de senaste 100)",
@@ -171,6 +211,7 @@
     },
     "driverFake": "Betaldrivrutinen är <code>fake</code>: saldot läggs till direkt, utan kort.",
     "driverStripe": "Du skickas till Stripe Checkout. Saldot läggs till först när betalningen är bekräftad.",
+    "plataNepornita": "Kortbetalning är inte tillgänglig ännu. Titta in snart igen.",
     "miscari": "Kontohändelser",
     "data": "Datum",
     "operatiune": "Händelse",
@@ -315,6 +356,11 @@
         "nume": "Stomme för inbyggd vitvara",
         "descriere": "Öppen låda för ugn eller diskmaskin. Kontrollera nischen som tillverkaren kräver.",
         "corpNume": "Ugnsstomme"
+      },
+      "baza-cuptor": {
+        "nume": "Bänkskåp för ugn",
+        "descriere": "Ugn under bänkskivan, med en låda under. Kontrollera nischen som tillverkaren kräver.",
+        "corpNume": "Ugnsskåp"
       },
       "sus-2usi": {
         "nume": "Överskåp med 2 luckor",
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "Hur sätts stommen ihop?",
     "intrebareBalama": "Vilka gångjärn på luckorna?",
     "intrebareGlisiere": "Vilka skenor i lådorna?",
+    "intrebarePlinta": "Vilken sockellist till skåp på ben?",
     "intrebareSuspensii": "Hängs överskåpen på skåpupphängning?",
     "jocPeParte": "Spel {mm} mm per sida.",
     "suspensiiDetalii": "{n} per stomme, {kg} kg per par. Utan dem fästs stommarna med synliga vinkelbeslag.",
@@ -620,6 +667,24 @@
         "descriere": "Den här ordern har inga lådor."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Sockellist i aluminium H100",
+        "descriere": "Häfele, 4 m-längder, klickas på benen."
+      },
+      "alu-120": {
+        "nume": "Sockellist i aluminium H120",
+        "descriere": "Häfele, 4 m-längder, klickas på benen."
+      },
+      "alu-150": {
+        "nume": "Sockellist i aluminium H150",
+        "descriere": "Häfele, 4 m-längder, klickas på benen."
+      },
+      "fara": {
+        "nume": "Ingen sockellist",
+        "descriere": "Benen syns, eller så görs listen på annat sätt."
+      }
+    },
     "suspensii": {
       "nume": "Skåpupphängning med säkring",
       "descriere": "Dold bakom bakstycket, justerbar i höjd och djup."
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "en per förband",
       "obsPeCorp": "två per stomme",
       "obsLa150": "var 150:e mm",
-      "obsCupleazaFronturi": "kopplar ihop de två fronterna"
+      "obsCupleazaFronturi": "kopplar ihop de två fronterna",
+      "piciorPlinta": "Ställbart plastben, för sockellist H{h}",
+      "picior": "Ställbart plastben",
+      "obsPicioare": "{n} per skåp, {m} över {lat} mm bredd",
+      "clemaPlinta": "Sockelclips",
+      "obsClemaPlinta": "ett på varje främre ben",
+      "plintaBara": "Sockellist i aluminium H{h}, längd {bara} mm",
+      "obsPlinta": "{mm} mm totalt; skåp på ben: {n}. Hörn, skarvar och ändlock beroende på uppställningen."
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "skena {lg} mm",
     "subCutie": "monterad under lådan",
     "socluInFata": "framtill, mellan sidorna — bottnen vilar på den",
+    "socluColtL": "på arm {n}, framtill — i hörnet går arm 1 förbi änden på arm 2",
+    "socluDiagonal": "på diagonalen, framtill — ändarna sågade i {u1}° och {u2}° mot ett rakt snitt",
     "usiGlisante": "{n} skjutdörrar, överlapp {supr}, skenor {sine}",
     "traverseSusInLocDeBlat": "i stället för topplattan: en fram, en bak, {lat} breda"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "Lådfronterna når inte ner: {gol} mm står öppet nedtill. Sätt fronthöjden till {front} mm för att fylla stommen.",
     "piesaPreaMica": "En sida under 20 mm: kontrollera måtten.",
     "piesaLatimeMaiMare": "Bredden ({lat}) är större än längden ({lung}): vid kapning är längden den långa sidan. Byt dem om fibern ska gå åt andra hållet.",
-    "socluNuMerge": "En sockel går bara på en rak stomme byggd ”emellan”. Här utelämnades den.",
+    "socluNuMerge": "En sockel går inte på det här skåpet: den passar med ”Topp/botten mellan gavlarna” och på hörnskåp, inte med ”Gavlar mellan topp och botten” eller på oregelbundna skåp. Här utelämnades den.",
     "socluPreaInalt": "Sockel på {soclu} mm i en så låg stomme: bara {ramane} mm blir kvar inuti.",
     "nisaPreaMare": "En öppning på {nisa} mm får inte plats: över {incape} mm finns ingen plats kvar för luckan ovanför.",
+    "nisaLangaSertare": "Nischen på {nisa} mm får inte plats bredvid lådorna: bara {incape} mm återstår. Gör lådfronterna mindre eller skåpet större.",
+    "cutieSubPolitaNisa": "Lådlådan på {cutie} mm tar i hyllan som apparaten står på. Använd högst {max} mm lådhöjd.",
     "politeFixeInPlus": "Du bad om {cerut} hyllplan, men stommen behöver {fac}: de kantar öppningen och håller luckorna.",
     "politeNuIncap": "{cate} hyllplan har ingenstans att ta vägen: öppningen tog hela utrymmet.",
     "glisantaSingura": "En ensam skjutdörr har inget att glida förbi. Ta minst två.",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "Längd (L)",
     "latimePiesa": "Bredd (l)",
     "soclu": "Sockel (0 = ben)",
+    "picioare": "Ben",
+    "picioareNu": "Nej (vägghängt eller på sockel)",
+    "picioareDa": "Ja, med påklickad sockellist",
     "nisa": "Öppning (ugn, kyl)",
     "nisaFara": "ingen",
     "montajGlisant": "Skjutdörrar",

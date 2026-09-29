@@ -117,6 +117,46 @@
       "acoperire": "Pokrytie",
       "lipsaFisier": "Chýbajú súbory prekladov pre: {coduri}"
     },
+    "plata": {
+      "legatura": "Platba",
+      "titlu": "Platba",
+      "intro": "Ako si zákazníci dobíjajú kredit: virtuálnymi testovacími peniazmi alebo kartou cez Stripe. Kľúče Stripe sa ukladajú šifrovane a po uložení sa už nikdy neukazujú celé.",
+      "stareFake": "Teraz: virtuálne peniaze. Ktokoľvek si založí účet, môže si sám pridať kredit bez karty. Dobré na skúšanie; pre skutočných zákazníkov prepni na Stripe.",
+      "stareOprita": "Teraz: Stripe, ale chýba kľúč. Dobíjanie kreditu je ZASTAVENÉ pre všetkých, kým nezadáš oba kľúče.",
+      "stareTest": "Teraz: Stripe s testovacím kľúčom (sk_test_). Platba ide cez Stripe, ale skutočné peniaze sa nevyberajú.",
+      "stareLive": "Teraz: Stripe so skutočnými kartami. Peniaze idú na účet Stripe.",
+      "eroareNecitite": "Uložené kľúče sa už nedajú prečítať: na serveri sa zmenil SESSION_SECRET. Zadaj ich znova.",
+      "felul": "Spôsob platby",
+      "driverFake": "Virtuálne testovacie peniaze (bez karty)",
+      "driverStripe": "Stripe, skutočné karty",
+      "felulNota": "Kľúče Stripe môžeš zadať vopred a zostať pri virtuálnych peniazoch; skutočná platba sa začne, až keď zvolíš Stripe.",
+      "chei": "Kľúče Stripe",
+      "cheieSecreta": "Tajný kľúč (Secret key)",
+      "cheieSecretaAjutor": "V Stripe: Developers → API keys → Secret key. Začína sa sk_live_ (alebo sk_test_ na skúšky).",
+      "acum": "Teraz: {cheie}.",
+      "lipsa": "Teraz: nenastavený.",
+      "dinFisier": "Pochádza zo súboru nastavení servera; čo zadáš tu, ho nahradí.",
+      "cheieWebhook": "Tajomstvo webhooku (Signing secret)",
+      "cheieWebhookAjutor": "Zvyčajne ho netreba hľadať: aplikácia ho v Stripe vytvorí, keď uložíš tajný kľúč. Zadaj ho ručne, iba ak o to táto stránka požiada. Začína sa whsec_.",
+      "adresaWebhook": "Adresa, na ktorú Stripe posiela potvrdenia platieb:",
+      "faraAdresa": "Verejná adresa webu (APP_URL) ešte nie je v nastaveniach servera na https. Bez nej Stripe nevie, kam posielať potvrdenia, a webhook sa nedá vytvoriť automaticky.",
+      "golPastreaza": "Prázdne pole ponechá súčasný kľúč.",
+      "salveaza": "Overiť a uložiť",
+      "sterge": "Zmazať kľúče",
+      "stergeIntrebare": "Zmazať kľúče Stripe z aplikácie? Platba sa vráti na virtuálne peniaze.",
+      "sters": "Kľúče zmazané. Platba je na virtuálnych peniazoch.",
+      "cheieSalvata": "Tajný kľúč bol overený v Stripe a uložený.",
+      "webhookSalvat": "Tajomstvo webhooku bolo uložené.",
+      "webhookFacut": "Webhook bol v Stripe vytvorený a jeho tajomstvo uložené.",
+      "pornitStripe": "Platba kartou cez Stripe je zapnutá.",
+      "pornitFake": "Platba je na virtuálnych peniazoch.",
+      "contStripe": "Účet Stripe: {nume}",
+      "eroareFormat": "Toto nevyzerá ako tajný kľúč Stripe. Musí sa začínať sk_live_ alebo sk_test_.",
+      "eroareFormatWebhook": "Tajomstvo webhooku sa musí začínať whsec_.",
+      "eroareStripe": "Stripe kľúč neprijal, takže sa neuložil: {mesaj}",
+      "eroareWebhook": "Kľúč je v poriadku, ale webhook sa nedal vytvoriť automaticky ({mesaj}). V Stripe: Developers → Webhooks → Add endpoint, s adresou nižšie a udalosťou checkout.session.completed; potom sem vlož Signing secret.",
+      "eroareFaraChei": "Stripe nemôže začať bez oboch kľúčov. Platba zostala, ako bola."
+    },
     "titlu": "Správa",
     "kpiUtilizatori": "používateľov",
     "kpiCorpuri": "korpusov (posledných 100)",
@@ -172,6 +212,7 @@
     },
     "driverFake": "Platobný ovládač je <code>fake</code>: kredit sa pripíše hneď, bez karty.",
     "driverStripe": "Prejdeš na Stripe Checkout. Kredit sa pripíše až po potvrdení platby.",
+    "plataNepornita": "Platba kartou zatiaľ nie je k dispozícii. Vráťte sa čoskoro.",
     "miscari": "Pohyby na účte",
     "data": "Dátum",
     "operatiune": "Operácia",
@@ -321,6 +362,11 @@
         "nume": "Korpus pre vstavaný spotrebič",
         "descriere": "Otvorená skriňa na rúru alebo umývačku. Over si výklenok, ktorý predpisuje výrobca.",
         "corpNume": "Korpus pre rúru"
+      },
+      "baza-cuptor": {
+        "nume": "Spodná skrinka na rúru",
+        "descriere": "Rúra pod pracovnou doskou, pod ňou zásuvka. Over niku, ktorú žiada výrobca.",
+        "corpNume": "Skrinka rúra"
       },
       "sus-2usi": {
         "nume": "Horná skrinka s 2 dvierkami",
@@ -565,6 +611,7 @@
     "intrebareAsamblare": "Ako sa korpus spája?",
     "intrebareBalama": "Aké pánty na dvierka?",
     "intrebareGlisiere": "Aké výsuvy do zásuviek?",
+    "intrebarePlinta": "Aká soklová lišta ku skrinkám na nožičkách?",
     "intrebareSuspensii": "Sú horné skrinky uchytené na závesníkoch?",
     "jocPeParte": "Vôľa {mm} mm na stranu.",
     "suspensiiDetalii": "{n} na korpus, {kg} kg na pár. Bez nich sa korpusy kotvia na viditeľné uholníky.",
@@ -626,6 +673,24 @@
         "descriere": "Táto zákazka zásuvky nemá."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Hliníková soklová lišta H100",
+        "descriere": "Häfele, tyče 4 m, nacvakáva sa na nožičky."
+      },
+      "alu-120": {
+        "nume": "Hliníková soklová lišta H120",
+        "descriere": "Häfele, tyče 4 m, nacvakáva sa na nožičky."
+      },
+      "alu-150": {
+        "nume": "Hliníková soklová lišta H150",
+        "descriere": "Häfele, tyče 4 m, nacvakáva sa na nožičky."
+      },
+      "fara": {
+        "nume": "Bez lišty",
+        "descriere": "Nožičky zostanú viditeľné, alebo sa lišta urobí inak."
+      }
+    },
     "suspensii": {
       "nume": "Závesník korpusu s poistkou",
       "descriere": "Skrytý za zadnou stenou, nastaviteľný na výšku aj do hĺbky."
@@ -657,7 +722,14 @@
       "obsUnaPeImbinare": "po jednom na spoj",
       "obsPeCorp": "po dvoch na korpus",
       "obsLa150": "každých 150 mm",
-      "obsCupleazaFronturi": "spája obe čelá"
+      "obsCupleazaFronturi": "spája obe čelá",
+      "piciorPlinta": "Nastaviteľná plastová nožička, pre lištu H{h}",
+      "picior": "Nastaviteľná plastová nožička",
+      "obsPicioare": "{n} na skrinku, {m} nad {lat} mm šírky",
+      "clemaPlinta": "Klip soklovej lišty",
+      "obsClemaPlinta": "jeden na každú prednú nožičku",
+      "plintaBara": "Hliníková soklová lišta H{h}, tyč {bara} mm",
+      "obsPlinta": "Spolu {mm} mm; skrinky na nožičkách: {n}. Rohy, spojky a koncovky podľa rozostavenia."
     }
   },
   "piesa": {
@@ -722,6 +794,8 @@
     "glisieraDe": "výsuv {lg} mm",
     "subCutie": "montované pod košom",
     "socluInFata": "vpredu, medzi bočnicami — dno na ňom stojí",
+    "socluColtL": "na ramene {n}, vpredu — v rohu vedie rameno 1 cez koniec ramena 2",
+    "socluDiagonal": "na uhlopriečke, vpredu — konce rezané pod {u1}° a {u2}° od rovného rezu",
     "usiGlisante": "{n} posuvné dvierka, prekrytie {supr}, koľajnice {sine}",
     "traverseSusInLocDeBlat": "namiesto hornej dosky: jedna vpredu, druhá vzadu, široké {lat}"
   },
@@ -754,9 +828,11 @@
     "sertareNuUmplu": "Čelá zásuviek nedosahujú dole: zostáva {gol} mm voľného miesta. Nastav výšku čela na {front} mm, aby sa korpus zaplnil.",
     "piesaPreaMica": "Strana pod 20 mm: skontroluj rozmery.",
     "piesaLatimeMaiMare": "Šírka ({lat}) je väčšia než dĺžka ({lung}): pri náreze je dĺžka dlhšia strana. Prehoď ich, ak má kresba ísť inak.",
-    "socluNuMerge": "Sokel ide len na rovnú skrinku stavanú „medzi“. Tu ostal bez účinku.",
+    "socluNuMerge": "Sokel na túto skrinku nejde: patrí k „Vrchná doska/dno medzi bokmi“ a na rohové skrinky, nie k „Boky medzi vrchnou doskou a dnom“ ani na nepravidelné skrinky. Tu bol vynechaný.",
     "socluPreaInalt": "Sokel {soclu} mm pri takej nízkej skrinke: vnútri ostáva len {ramane} mm.",
     "nisaPreaMare": "Výklenok {nisa} mm sa nezmestí: nad {incape} mm nezostáva miesto pre dvierka hore.",
+    "nisaLangaSertare": "Nika {nisa} mm sa vedľa zásuviek nezmestí: zostáva len {incape} mm. Zmenši čelá zásuviek alebo zväčši skrinku.",
+    "cutieSubPolitaNisa": "Korpus zásuvky, {cutie} mm, naráža do police, na ktorej stojí spotrebič. Daj výšku korpusu najviac {max} mm.",
     "politeFixeInPlus": "Chcel si {cerut} políc, ale skrinka potrebuje {fac}: tie ohraničujú výklenok a držia dvierka.",
     "politeNuIncap": "Pre {cate} políc nie je miesto: výklenok zabral celý priestor.",
     "glisantaSingura": "Jedny posuvné dvierka nemajú okolo čoho chodiť. Daj aspoň dvoje.",
@@ -1296,6 +1372,9 @@
     "lungimePiesa": "Dĺžka (L)",
     "latimePiesa": "Šírka (l)",
     "soclu": "Sokel (0 = nožičky)",
+    "picioare": "Nožičky",
+    "picioareNu": "Nie (závesná alebo na sokli)",
+    "picioareDa": "Áno, s nacvakávacou soklovou lištou",
     "nisa": "Výklenok (rúra, chladnička)",
     "nisaFara": "žiadny",
     "montajGlisant": "Posuvné",

@@ -117,6 +117,46 @@
       "acoperire": "Kapsama",
       "lipsaFisier": "Şu diller için çeviri dosyaları eksik: {coduri}"
     },
+    "plata": {
+      "legatura": "Ödeme",
+      "titlu": "Ödeme",
+      "intro": "Müşteriler kredilerini nasıl yükler: sanal test parasıyla ya da Stripe üzerinden kartla. Stripe anahtarları şifreli saklanır ve kaydedildikten sonra bir daha tam gösterilmez.",
+      "stareFake": "Şu an: sanal para. Hesap açan herkes kartsız kendine kredi ekleyebilir. Test için uygun; gerçek müşteriler için Stripe'a geç.",
+      "stareOprita": "Şu an: Stripe, ama bir anahtar eksik. İki anahtarı da girene kadar kredi yükleme herkes için DURDURULDU.",
+      "stareTest": "Şu an: test anahtarlı Stripe (sk_test_). Ödeme Stripe üzerinden geçer ama gerçek para tahsil edilmez.",
+      "stareLive": "Şu an: Stripe, gerçek kartlarla. Para Stripe hesabına gider.",
+      "eroareNecitite": "Kayıtlı anahtarlar artık okunamıyor: sunucuda SESSION_SECRET değişti. Yeniden gir.",
+      "felul": "Ödeme şekli",
+      "driverFake": "Sanal test parası (kartsız)",
+      "driverStripe": "Stripe, gerçek kartlar",
+      "felulNota": "Stripe anahtarlarını önceden girip sanal parada kalabilirsin; gerçek ödeme ancak Stripe'ı seçtiğinde başlar.",
+      "chei": "Stripe anahtarları",
+      "cheieSecreta": "Gizli anahtar (Secret key)",
+      "cheieSecretaAjutor": "Stripe'ta: Developers → API keys → Secret key. sk_live_ ile başlar (test için sk_test_).",
+      "acum": "Şu an: {cheie}.",
+      "lipsa": "Şu an: girilmedi.",
+      "dinFisier": "Sunucunun ayar dosyasından geliyor; buraya girdiğin onun yerine geçer.",
+      "cheieWebhook": "Webhook gizli anahtarı (Signing secret)",
+      "cheieWebhookAjutor": "Genelde aramana gerek yok: gizli anahtarı kaydettiğinde uygulama onu Stripe'ta kendisi oluşturur. Sadece bu sayfa isterse elle gir. whsec_ ile başlar.",
+      "adresaWebhook": "Stripe'ın ödeme onaylarını gönderdiği adres:",
+      "faraAdresa": "Sitenin genel adresi (APP_URL) sunucu ayarlarında henüz https değil. O olmadan Stripe onayları nereye göndereceğini bilemez ve webhook kendiliğinden oluşturulamaz.",
+      "golPastreaza": "Boş bırakılan alan mevcut anahtarı korur.",
+      "salveaza": "Kontrol et ve kaydet",
+      "sterge": "Anahtarları sil",
+      "stergeIntrebare": "Stripe anahtarları uygulamadan silinsin mi? Ödeme sanal paraya döner.",
+      "sters": "Anahtarlar silindi. Ödeme sanal parada.",
+      "cheieSalvata": "Gizli anahtar Stripe'ta kontrol edildi ve kaydedildi.",
+      "webhookSalvat": "Webhook gizli anahtarı kaydedildi.",
+      "webhookFacut": "Webhook Stripe'ta oluşturuldu ve gizli anahtarı kaydedildi.",
+      "pornitStripe": "Stripe üzerinden kartla ödeme açık.",
+      "pornitFake": "Ödeme sanal parada.",
+      "contStripe": "Stripe hesabı: {nume}",
+      "eroareFormat": "Bu bir Stripe gizli anahtarına benzemiyor. sk_live_ veya sk_test_ ile başlamalı.",
+      "eroareFormatWebhook": "Webhook gizli anahtarı whsec_ ile başlamalı.",
+      "eroareStripe": "Stripe anahtarı kabul etmedi, bu yüzden kaydedilmedi: {mesaj}",
+      "eroareWebhook": "Anahtar doğru, ama webhook kendiliğinden oluşturulamadı ({mesaj}). Stripe'ta: Developers → Webhooks → Add endpoint, aşağıdaki adres ve checkout.session.completed olayıyla; sonra Signing secret değerini buraya yapıştır.",
+      "eroareFaraChei": "Stripe iki anahtar olmadan başlayamaz. Ödeme olduğu gibi kaldı."
+    },
     "titlu": "Yönetim",
     "kpiUtilizatori": "kullanıcı",
     "kpiCorpuri": "gövde (son 100)",
@@ -171,6 +211,7 @@
     },
     "driverFake": "Ödeme sürücüsü <code>fake</code>: bakiye kartsız, hemen eklenir.",
     "driverStripe": "Stripe Checkout'a yönlendirileceksin. Bakiye ancak ödeme onaylandıktan sonra eklenir.",
+    "plataNepornita": "Kartla ödeme henüz kullanılamıyor. Lütfen yakında tekrar bakın.",
     "miscari": "Hesap hareketleri",
     "data": "Tarih",
     "operatiune": "İşlem",
@@ -315,6 +356,11 @@
         "nume": "Ankastre cihaz modülü",
         "descriere": "Fırın veya bulaşık makinesi için açık kasa. Üreticinin istediği niş ölçüsünü kontrol et.",
         "corpNume": "Fırın modülü"
+      },
+      "baza-cuptor": {
+        "nume": "Fırın alt dolabı",
+        "descriere": "Tezgâh altı fırın, altında bir çekmece. Üreticinin istediği nişi kontrol et.",
+        "corpNume": "Fırın dolabı"
       },
       "sus-2usi": {
         "nume": "2 kapaklı üst dolap",
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "Gövde nasıl birleştiriliyor?",
     "intrebareBalama": "Kapaklara hangi menteşe?",
     "intrebareGlisiere": "Çekmecelere hangi ray?",
+    "intrebarePlinta": "Ayaklı dolaplar için hangi baza?",
     "intrebareSuspensii": "Üst dolaplar askı takozuyla mı tutturuluyor?",
     "jocPeParte": "Kenar başına {mm} mm boşluk.",
     "suspensiiDetalii": "Gövde başına {n}, çift başına {kg} kg. Bunlar olmadan gövdeler görünen köşebentlerle tutturulur.",
@@ -620,6 +667,24 @@
         "descriere": "Bu siparişte çekmece yok."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Alüminyum baza H100",
+        "descriere": "Häfele, 4 m boy, ayaklara klipslenir."
+      },
+      "alu-120": {
+        "nume": "Alüminyum baza H120",
+        "descriere": "Häfele, 4 m boy, ayaklara klipslenir."
+      },
+      "alu-150": {
+        "nume": "Alüminyum baza H150",
+        "descriere": "Häfele, 4 m boy, ayaklara klipslenir."
+      },
+      "fara": {
+        "nume": "Bazasız",
+        "descriere": "Ayaklar görünür kalır ya da baza başka şekilde yapılır."
+      }
+    },
     "suspensii": {
       "nume": "Emniyetli dolap askı takozu",
       "descriere": "Arkalığın arkasında gizli, yükseklik ve derinlikte ayarlanabilir."
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "birleşim başına bir",
       "obsPeCorp": "gövde başına iki",
       "obsLa150": "her 150 mm'de bir",
-      "obsCupleazaFronturi": "iki kapağı birbirine bağlar"
+      "obsCupleazaFronturi": "iki kapağı birbirine bağlar",
+      "piciorPlinta": "Ayarlı plastik ayak, H{h} baza için",
+      "picior": "Ayarlı plastik ayak",
+      "obsPicioare": "dolap başına {n}, {lat} mm genişliğin üstünde {m}",
+      "clemaPlinta": "Baza klipsi",
+      "obsClemaPlinta": "her ön ayağa bir tane",
+      "plintaBara": "Alüminyum baza H{h}, {bara} mm boy",
+      "obsPlinta": "Toplam {mm} mm; ayaklı dolaplar: {n}. Köşe, ek ve kapaklar yerleşime göre."
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "{lg} mm ray",
     "subCutie": "kutunun altına takılır",
     "socluInFata": "önde, yanların arasında — taban onun üzerinde durur",
+    "socluColtL": "{n}. kolda, önde — köşede 1. kol, 2. kolun ucunun önünden geçer",
+    "socluDiagonal": "çaprazda, önde — uçlar düz kesime göre {u1}° ve {u2}° kesilir",
     "usiGlisante": "{n} sürme kapak, bindirme {supr}, raylar {sine}",
     "traverseSusInLocDeBlat": "üst tabla yerine: biri önde biri arkada, {lat} genişliğinde"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "Çekmece kapakları alta kadar inmiyor: altta {gol} mm boş kalıyor. Gövdeyi doldurmak için kapak yüksekliğini {front} mm yap.",
     "piesaPreaMica": "Bir kenar 20 mm altında: ölçüleri gözden geçir.",
     "piesaLatimeMaiMare": "Genişlik ({lat}) uzunluktan ({lung}) büyük: kesimde uzunluk uzun kenardır. Damar başka yöne gidecekse ikisini değiştir.",
-    "socluNuMerge": "Süpürgelik yalnızca „aradan\" yapılmış düz gövdeye takılır. Burada eklenmedi.",
+    "socluNuMerge": "Bu dolaba süpürgelik konmaz: “Tablalar yan paneller arasında” yapıda ve köşe dolaplarında olur, “Yan paneller tablalar arasında” yapıda ya da düzensiz dolaplarda olmaz. Burada atlandı.",
     "socluPreaInalt": "Bu kadar alçak bir gövdede {soclu} mm süpürgelik: içeride yalnızca {ramane} mm kalıyor.",
     "nisaPreaMare": "{nisa} mm boşluk sığmıyor: {incape} mm üstünde üstteki kapağa yer kalmıyor.",
+    "nisaLangaSertare": "{nisa} mm'lik niş çekmecelerin yanına sığmıyor: yalnızca {incape} mm kalıyor. Çekmece kapaklarını küçült ya da dolabı büyüt.",
+    "cutieSubPolitaNisa": "{cutie} mm'lik çekmece kutusu, cihazın durduğu rafa çarpıyor. Kutu yüksekliğine en fazla {max} mm koy.",
     "politeFixeInPlus": "{cerut} raf istedin ama gövdeye {fac} gerekiyor: onlar boşluğu sınırlar ve kapakları tutar.",
     "politeNuIncap": "{cate} rafa yer yok: boşluk tüm alanı aldı.",
     "glisantaSingura": "Tek sürme kapağın yanından kayacağı bir şey yok. En az iki tane koy.",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "Uzunluk (L)",
     "latimePiesa": "Genişlik (l)",
     "soclu": "Süpürgelik (0 = ayak)",
+    "picioare": "Ayaklar",
+    "picioareNu": "Hayır (asma ya da süpürgelikli)",
+    "picioareDa": "Evet, geçmeli baza ile",
     "nisa": "Boşluk (fırın, buzdolabı)",
     "nisaFara": "yok",
     "montajGlisant": "Sürme",

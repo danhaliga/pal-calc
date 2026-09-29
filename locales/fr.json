@@ -117,6 +117,46 @@
       "acoperire": "Couverture",
       "lipsaFisier": "Les fichiers de traduction manquent pour : {coduri}"
     },
+    "plata": {
+      "legatura": "Paiement",
+      "titlu": "Paiement",
+      "intro": "Comment les clients rechargent leur crédit : avec de l'argent virtuel de test, ou par carte via Stripe. Les clés Stripe sont stockées chiffrées et ne s'affichent plus en entier après l'enregistrement.",
+      "stareFake": "Actuellement : argent virtuel. Toute personne qui crée un compte peut s'ajouter du crédit sans carte. Pratique pour tester ; pour de vrais clients, passez à Stripe.",
+      "stareOprita": "Actuellement : Stripe, mais une clé manque. Les recharges de crédit sont ARRÊTÉES pour tout le monde jusqu'à ce que les deux clés soient saisies.",
+      "stareTest": "Actuellement : Stripe avec une clé de test (sk_test_). Le paiement passe par Stripe, mais aucun argent réel n'est encaissé.",
+      "stareLive": "Actuellement : Stripe, avec de vraies cartes. L'argent arrive sur le compte Stripe.",
+      "eroareNecitite": "Les clés enregistrées ne peuvent plus être lues : SESSION_SECRET a changé sur le serveur. Saisissez-les à nouveau.",
+      "felul": "Mode de paiement",
+      "driverFake": "Argent virtuel de test (sans carte)",
+      "driverStripe": "Stripe, vraies cartes",
+      "felulNota": "Vous pouvez saisir les clés Stripe à l'avance et rester sur l'argent virtuel ; le vrai paiement ne démarre que lorsque vous choisissez Stripe.",
+      "chei": "Clés Stripe",
+      "cheieSecreta": "Clé secrète (Secret key)",
+      "cheieSecretaAjutor": "Dans Stripe : Developers → API keys → Secret key. Commence par sk_live_ (ou sk_test_ pour les tests).",
+      "acum": "Actuellement : {cheie}.",
+      "lipsa": "Actuellement : non définie.",
+      "dinFisier": "Provient du fichier de configuration du serveur ; ce que vous saisissez ici le remplace.",
+      "cheieWebhook": "Secret du webhook (Signing secret)",
+      "cheieWebhookAjutor": "En général inutile de le chercher : l'application le crée dans Stripe quand vous enregistrez la clé secrète. Saisissez-le à la main seulement si cette page le demande. Commence par whsec_.",
+      "adresaWebhook": "Adresse où Stripe envoie les confirmations de paiement :",
+      "faraAdresa": "L'adresse publique du site (APP_URL) n'est pas encore en https dans la configuration du serveur. Sans elle, Stripe ne sait pas où envoyer les confirmations et le webhook ne peut pas être créé automatiquement.",
+      "golPastreaza": "Un champ laissé vide conserve la clé actuelle.",
+      "salveaza": "Vérifier et enregistrer",
+      "sterge": "Supprimer les clés",
+      "stergeIntrebare": "Supprimer les clés Stripe de l'application ? Le paiement repasse sur l'argent virtuel.",
+      "sters": "Clés supprimées. Le paiement est sur l'argent virtuel.",
+      "cheieSalvata": "La clé secrète a été vérifiée auprès de Stripe et enregistrée.",
+      "webhookSalvat": "Le secret du webhook a été enregistré.",
+      "webhookFacut": "Le webhook a été créé dans Stripe et son secret est enregistré.",
+      "pornitStripe": "Le paiement par carte via Stripe est activé.",
+      "pornitFake": "Le paiement est sur l'argent virtuel.",
+      "contStripe": "Compte Stripe : {nume}",
+      "eroareFormat": "Ceci ne ressemble pas à une clé secrète Stripe. Elle doit commencer par sk_live_ ou sk_test_.",
+      "eroareFormatWebhook": "Le secret du webhook doit commencer par whsec_.",
+      "eroareStripe": "Stripe n'a pas accepté la clé, elle n'a donc pas été enregistrée : {mesaj}",
+      "eroareWebhook": "La clé est bonne, mais le webhook n'a pas pu être créé automatiquement ({mesaj}). Dans Stripe : Developers → Webhooks → Add endpoint, avec l'adresse ci-dessous et l'événement checkout.session.completed ; puis collez ici le Signing secret.",
+      "eroareFaraChei": "Stripe ne peut pas démarrer sans les deux clés. Le paiement est resté tel quel."
+    },
     "titlu": "Administration",
     "kpiUtilizatori": "utilisateurs",
     "kpiCorpuri": "caissons (les 100 derniers)",
@@ -171,6 +211,7 @@
     },
     "driverFake": "Le pilote de paiement est <code>fake</code> : le crédit est ajouté immédiatement, sans carte.",
     "driverStripe": "Vous serez redirigé vers Stripe Checkout. Le crédit n'est ajouté qu'une fois le paiement confirmé.",
+    "plataNepornita": "Le paiement par carte n'est pas encore disponible. Revenez bientôt.",
     "miscari": "Mouvements du compte",
     "data": "Date",
     "operatiune": "Opération",
@@ -315,6 +356,11 @@
         "nume": "Meuble niche pour électroménager",
         "descriere": "Caisse ouverte pour un four ou un lave-vaisselle. Vérifiez la niche exigée par le fabricant.",
         "corpNume": "Meuble niche four"
+      },
+      "baza-cuptor": {
+        "nume": "Meuble bas pour four",
+        "descriere": "Four sous plan de travail, avec un tiroir dessous. Vérifiez la niche exigée par le fabricant.",
+        "corpNume": "Meuble four"
       },
       "sus-2usi": {
         "nume": "Meuble haut 2 portes",
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "Comment le caisson est-il assemblé ?",
     "intrebareBalama": "Quelles charnières sur les portes ?",
     "intrebareGlisiere": "Quelles coulisses sur les tiroirs ?",
+    "intrebarePlinta": "Quelle plinthe pour les meubles sur pieds ?",
     "intrebareSuspensii": "Les meubles hauts sont-ils fixés avec des suspensions ?",
     "jocPeParte": "Jeu de {mm} mm par côté.",
     "suspensiiDetalii": "{n} par caisson, {kg} kg par paire. Sans elles, les caissons se fixent avec des équerres apparentes.",
@@ -620,6 +667,24 @@
         "descriere": "Cette commande n'a pas de tiroirs."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Plinthe aluminium H100",
+        "descriere": "Häfele, barres de 4 m, clipsée sur les pieds."
+      },
+      "alu-120": {
+        "nume": "Plinthe aluminium H120",
+        "descriere": "Häfele, barres de 4 m, clipsée sur les pieds."
+      },
+      "alu-150": {
+        "nume": "Plinthe aluminium H150",
+        "descriere": "Häfele, barres de 4 m, clipsée sur les pieds."
+      },
+      "fara": {
+        "nume": "Sans plinthe",
+        "descriere": "Les pieds restent visibles, ou la plinthe se fait autrement."
+      }
+    },
     "suspensii": {
       "nume": "Suspension de caisson avec sécurité",
       "descriere": "Cachée derrière le panneau de fond, réglable en hauteur et en profondeur."
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "un par assemblage",
       "obsPeCorp": "deux par caisson",
       "obsLa150": "tous les 150 mm",
-      "obsCupleazaFronturi": "couple les deux façades"
+      "obsCupleazaFronturi": "couple les deux façades",
+      "piciorPlinta": "Pied réglable en plastique, pour plinthe H{h}",
+      "picior": "Pied réglable en plastique",
+      "obsPicioare": "{n} par meuble, {m} au-delà de {lat} mm de largeur",
+      "clemaPlinta": "Clip de plinthe",
+      "obsClemaPlinta": "un sur chaque pied avant",
+      "plintaBara": "Plinthe aluminium H{h}, barre de {bara} mm",
+      "obsPlinta": "{mm} mm au total ; meubles sur pieds : {n}. Angles, raccords et embouts selon l'implantation."
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "coulisse {lg} mm",
     "subCutie": "posé sous la caisse",
     "socluInFata": "à l’avant, entre les côtés — le fond repose dessus",
+    "socluColtL": "sur le bras {n}, à l'avant — dans l'angle, le bras 1 passe devant l'extrémité du bras 2",
+    "socluDiagonal": "sur la diagonale, à l'avant — extrémités coupées à {u1}° et {u2}° par rapport à une coupe droite",
     "usiGlisante": "{n} portes coulissantes, recouvrement {supr}, rails {sine}",
     "traverseSusInLocDeBlat": "à la place du panneau haut : une devant, une derrière, larges de {lat}"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "Les faces de tiroir n’atteignent pas le fond : il reste {gol} mm de vide en bas. Mettez {front} mm de hauteur de face pour remplir le caisson.",
     "piesaPreaMica": "Un côté sous 20 mm : vérifiez les cotes.",
     "piesaLatimeMaiMare": "La largeur ({lat}) dépasse la longueur ({lung}) : au débit, la longueur est le grand côté. Inversez-les si le fil doit aller autrement.",
-    "socluNuMerge": "La plinthe ne va que sur un caisson droit monté « entre ». Ici elle a été laissée de côté.",
+    "socluNuMerge": "Une plinthe ne peut pas aller sur ce meuble : elle va avec « Dessus/fond entre les côtés » et sur les meubles d'angle, pas avec « Côtés entre dessus et fond » ni sur les meubles irréguliers. Ici, elle a été laissée de côté.",
     "socluPreaInalt": "Plinthe de {soclu} mm sur un caisson aussi bas : il ne reste que {ramane} mm à l’intérieur.",
     "nisaPreaMare": "Une niche de {nisa} mm ne rentre pas : au-delà de {incape} mm il ne reste plus de place pour la porte du dessus.",
+    "nisaLangaSertare": "La niche de {nisa} mm ne tient pas à côté des tiroirs : il ne reste que {incape} mm. Réduisez les façades de tiroir ou agrandissez le meuble.",
+    "cutieSubPolitaNisa": "Le caisson du tiroir, de {cutie} mm, touche la tablette sur laquelle repose l'appareil. Mettez au plus {max} mm de hauteur de caisson.",
     "politeFixeInPlus": "Tu as demandé {cerut} étagères, mais le caisson en a besoin de {fac} : elles bordent la niche et tiennent les portes.",
     "politeNuIncap": "{cate} étagères n’ont nulle part où aller : la niche a pris tout le vide.",
     "glisantaSingura": "Une seule porte coulissante n'a rien devant quoi glisser. Mets-en au moins deux.",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "Longueur (L)",
     "latimePiesa": "Largeur (l)",
     "soclu": "Plinthe (0 = pieds)",
+    "picioare": "Pieds",
+    "picioareNu": "Non (suspendu ou sur socle)",
+    "picioareDa": "Oui, avec plinthe clipsée",
     "nisa": "Niche (four, frigo)",
     "nisaFara": "aucune",
     "montajGlisant": "Coulissantes",

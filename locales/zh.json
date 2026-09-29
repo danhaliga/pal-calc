@@ -117,6 +117,46 @@
       "acoperire": "覆盖率",
       "lipsaFisier": "还没有翻译文件的语言：{coduri}"
     },
+    "plata": {
+      "legatura": "支付",
+      "titlu": "支付",
+      "intro": "客户如何充值额度：用测试用的虚拟金额，或通过 Stripe 用银行卡。Stripe 密钥加密保存，保存后不再完整显示。",
+      "stareFake": "当前：虚拟金额。任何注册账户的人都可以不用银行卡给自己加额度。适合测试；面向真实客户时请切换到 Stripe。",
+      "stareOprita": "当前：Stripe，但缺少一个密钥。在填入两个密钥之前，所有人的充值都已停止。",
+      "stareTest": "当前：使用测试密钥（sk_test_）的 Stripe。付款经过 Stripe，但不会收取真实的钱。",
+      "stareLive": "当前：Stripe，真实银行卡。钱进入 Stripe 账户。",
+      "eroareNecitite": "已保存的密钥无法再读取：服务器上的 SESSION_SECRET 已更改。请重新填写。",
+      "felul": "付款方式",
+      "driverFake": "测试用虚拟金额（无需银行卡）",
+      "driverStripe": "Stripe，真实银行卡",
+      "felulNota": "可以先填好 Stripe 密钥并继续使用虚拟金额；只有选择 Stripe 后才开始真实付款。",
+      "chei": "Stripe 密钥",
+      "cheieSecreta": "私密密钥（Secret key）",
+      "cheieSecretaAjutor": "在 Stripe 中：Developers → API keys → Secret key。以 sk_live_ 开头（测试用 sk_test_）。",
+      "acum": "当前：{cheie}。",
+      "lipsa": "当前：未设置。",
+      "dinFisier": "来自服务器的配置文件；在这里填写的会替代它。",
+      "cheieWebhook": "Webhook 密钥（Signing secret）",
+      "cheieWebhookAjutor": "通常无需查找：保存私密密钥时，应用会自动在 Stripe 中创建它。只有本页要求时才手动填写。以 whsec_ 开头。",
+      "adresaWebhook": "Stripe 发送付款确认的地址：",
+      "faraAdresa": "网站的公开地址（APP_URL）在服务器配置中还不是 https。没有它，Stripe 不知道把确认发到哪里，Webhook 也无法自动创建。",
+      "golPastreaza": "留空的字段保留当前密钥。",
+      "salveaza": "检查并保存",
+      "sterge": "删除密钥",
+      "stergeIntrebare": "要从应用中删除 Stripe 密钥吗？付款将回到虚拟金额。",
+      "sters": "密钥已删除。付款使用虚拟金额。",
+      "cheieSalvata": "私密密钥已通过 Stripe 检查并保存。",
+      "webhookSalvat": "Webhook 密钥已保存。",
+      "webhookFacut": "已在 Stripe 中创建 Webhook 并保存其密钥。",
+      "pornitStripe": "通过 Stripe 的银行卡付款已开启。",
+      "pornitFake": "付款使用虚拟金额。",
+      "contStripe": "Stripe 账户：{nume}",
+      "eroareFormat": "这看起来不像 Stripe 私密密钥。必须以 sk_live_ 或 sk_test_ 开头。",
+      "eroareFormatWebhook": "Webhook 密钥必须以 whsec_ 开头。",
+      "eroareStripe": "Stripe 未接受该密钥，因此未保存：{mesaj}",
+      "eroareWebhook": "密钥正确，但无法自动创建 Webhook（{mesaj}）。在 Stripe 中：Developers → Webhooks → Add endpoint，使用下方地址和事件 checkout.session.completed；然后把 Signing secret 粘贴到这里。",
+      "eroareFaraChei": "缺少任一密钥时 Stripe 无法启用。付款保持原样。"
+    },
     "titlu": "后台管理",
     "kpiUtilizatori": "个用户",
     "kpiCorpuri": "个柜体（最近 100 个）",
@@ -171,6 +211,7 @@
     },
     "driverFake": "付款驱动是 <code>fake</code>：不用银行卡，余额立刻到账。",
     "driverStripe": "会跳转到 Stripe Checkout。付款确认后余额才到账。",
+    "plataNepornita": "银行卡支付暂不可用，请稍后再来。",
     "miscari": "账户明细",
     "data": "日期",
     "operatiune": "操作",
@@ -314,6 +355,11 @@
       "baza-nisa": {
         "nume": "嵌入电器柜",
         "descriere": "给烤箱或洗碗机留的开口箱体。按厂家要求的开孔尺寸核一遍。",
+        "corpNume": "烤箱柜"
+      },
+      "baza-cuptor": {
+        "nume": "烤箱地柜",
+        "descriere": "台面下的烤箱，下方一个抽屉。请核对厂家要求的嵌入空间。",
         "corpNume": "烤箱柜"
       },
       "sus-2usi": {
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "柜体怎么连接？",
     "intrebareBalama": "门板用什么铰链？",
     "intrebareGlisiere": "抽屉用什么滑轨？",
+    "intrebarePlinta": "带柜脚的柜体用哪种踢脚线？",
     "intrebareSuspensii": "吊柜用可调吊码挂吗？",
     "jocPeParte": "每边间隙 {mm} 毫米。",
     "suspensiiDetalii": "每个柜体 {n} 个，每对承重 {kg} 公斤。不用吊码就得用露在外面的角码挂。",
@@ -620,6 +667,24 @@
         "descriere": "这张订单里没有抽屉。"
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "铝踢脚线 H100",
+        "descriere": "Häfele，4 米长料，卡在柜脚上。"
+      },
+      "alu-120": {
+        "nume": "铝踢脚线 H120",
+        "descriere": "Häfele，4 米长料，卡在柜脚上。"
+      },
+      "alu-150": {
+        "nume": "铝踢脚线 H150",
+        "descriere": "Häfele，4 米长料，卡在柜脚上。"
+      },
+      "fara": {
+        "nume": "不用踢脚线",
+        "descriere": "柜脚外露，或用其他方式做踢脚线。"
+      }
+    },
     "suspensii": {
       "nume": "带锁扣的柜体吊码",
       "descriere": "藏在背板后面，高低和进深都能调。"
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "每个接头一个",
       "obsPeCorp": "每个柜体两个",
       "obsLa150": "每 150 毫米一个",
-      "obsCupleazaFronturi": "把两扇门连起来"
+      "obsCupleazaFronturi": "把两扇门连起来",
+      "piciorPlinta": "可调塑料柜脚，配 H{h} 踢脚线",
+      "picior": "可调塑料柜脚",
+      "obsPicioare": "每柜 {n} 个，宽度超过 {lat} 毫米时 {m} 个",
+      "clemaPlinta": "踢脚线卡扣",
+      "obsClemaPlinta": "每个前脚一个",
+      "plintaBara": "铝踢脚线 H{h}，{bara} 毫米长料",
+      "obsPlinta": "共 {mm} 毫米；带柜脚的柜体：{n}。转角、连接件和端盖视布置而定。"
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "{lg} 毫米滑轨",
     "subCutie": "装在抽屉盒下面",
     "socluInFata": "位于前方、两块侧板之间——底板搁在上面",
+    "socluColtL": "在第 {n} 臂前侧 — 转角处第 1 臂越过第 2 臂的端头",
+    "socluDiagonal": "在斜面前侧 — 两端相对直切分别切 {u1}° 和 {u2}°",
     "usiGlisante": "{n} 扇推拉门，搭接 {supr}，轨道 {sine}",
     "traverseSusInLocDeBlat": "代替顶板：前后各一条，宽 {lat}"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "抽屉面板没有做到底，下面空了 {gol} mm。把面板高度改成 {front} mm 就能填满柜体。",
     "piesaPreaMica": "有一边小于 20 mm，请核对尺寸。",
     "piesaLatimeMaiMare": "宽 ({lat}) 大于长 ({lung})：开料时长是长边。如果纹理要走另一个方向，把两个数对调。",
-    "socluNuMerge": "踢脚板只适用于“嵌入式”结构的直柜。这里未使用。",
+    "socluNuMerge": "此柜体不能加踢脚板：它用于“顶板/底板夹在侧板之间”和转角柜，不用于“侧板夹在顶板和底板之间”或异形柜体。这里已省略。",
     "socluPreaInalt": "柜体太矮却用 {soclu} 毫米踢脚板：内部只剩 {ramane} 毫米。",
     "nisaPreaMare": "{nisa} 毫米的开口放不下：超过 {incape} 毫米就没有地方装上方的门了。",
+    "nisaLangaSertare": "{nisa} 毫米的嵌入空间在抽屉旁放不下：只剩 {incape} 毫米。请减小抽屉面板或加大柜体。",
+    "cutieSubPolitaNisa": "{cutie} 毫米的抽屉盒会碰到放置电器的层板。盒子高度最多 {max} 毫米。",
     "politeFixeInPlus": "你要了 {cerut} 层隔板，但柜体需要 {fac} 层：它们夹住开口并支撑门。",
     "politeNuIncap": "{cate} 层隔板无处安放：开口占满了全部空间。",
     "glisantaSingura": "只有一扇推拉门就没有可以错开的对象。至少放两扇。",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "长 (L)",
     "latimePiesa": "宽 (l)",
     "soclu": "踢脚板（0 = 使用脚）",
+    "picioare": "柜脚",
+    "picioareNu": "否（吊柜或带踢脚板）",
+    "picioareDa": "是，配卡扣式踢脚线",
     "nisa": "开口（烤箱、冰箱）",
     "nisaFara": "无",
     "montajGlisant": "推拉",

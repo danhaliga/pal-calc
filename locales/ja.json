@@ -117,6 +117,46 @@
       "acoperire": "カバー率",
       "lipsaFisier": "翻訳ファイルがまだない言語：{coduri}"
     },
+    "plata": {
+      "legatura": "支払い",
+      "titlu": "支払い",
+      "intro": "お客様がクレジットをチャージする方法：テスト用の仮想マネー、または Stripe 経由のカード。Stripe のキーは暗号化して保存され、保存後に全体が表示されることはありません。",
+      "stareFake": "現在：仮想マネー。アカウントを作った人は誰でもカードなしで自分にクレジットを追加できます。テストには便利ですが、実際のお客様には Stripe に切り替えてください。",
+      "stareOprita": "現在：Stripe ですが、キーが1つ足りません。両方のキーを入れるまで、全員のクレジットチャージは停止しています。",
+      "stareTest": "現在：テストキー（sk_test_）の Stripe。支払いは Stripe を通りますが、実際のお金は請求されません。",
+      "stareLive": "現在：Stripe、実際のカード。お金は Stripe アカウントに入ります。",
+      "eroareNecitite": "保存したキーが読めなくなりました：サーバーの SESSION_SECRET が変わりました。もう一度入力してください。",
+      "felul": "支払い方法",
+      "driverFake": "テスト用の仮想マネー（カードなし）",
+      "driverStripe": "Stripe、実際のカード",
+      "felulNota": "Stripe のキーを先に入れておき、仮想マネーのままにできます。実際の支払いは Stripe を選んだときに始まります。",
+      "chei": "Stripe のキー",
+      "cheieSecreta": "シークレットキー（Secret key）",
+      "cheieSecretaAjutor": "Stripe で：Developers → API keys → Secret key。sk_live_ で始まります（テスト用は sk_test_）。",
+      "acum": "現在：{cheie}。",
+      "lipsa": "現在：未設定。",
+      "dinFisier": "サーバーの設定ファイルから来ています。ここに入れたものがそれに代わります。",
+      "cheieWebhook": "Webhook のシークレット（Signing secret）",
+      "cheieWebhookAjutor": "通常は探す必要はありません。シークレットキーを保存すると、アプリが Stripe に自動で作成します。このページに求められたときだけ手で入力してください。whsec_ で始まります。",
+      "adresaWebhook": "Stripe が支払い確認を送る先のアドレス：",
+      "faraAdresa": "サイトの公開アドレス（APP_URL）がサーバー設定でまだ https になっていません。これがないと Stripe は確認の送り先がわからず、Webhook も自動で作成できません。",
+      "golPastreaza": "空欄のままにすると現在のキーが残ります。",
+      "salveaza": "確認して保存",
+      "sterge": "キーを削除",
+      "stergeIntrebare": "アプリから Stripe のキーを削除しますか？支払いは仮想マネーに戻ります。",
+      "sters": "キーを削除しました。支払いは仮想マネーです。",
+      "cheieSalvata": "シークレットキーを Stripe で確認し、保存しました。",
+      "webhookSalvat": "Webhook のシークレットを保存しました。",
+      "webhookFacut": "Stripe に Webhook を作成し、そのシークレットを保存しました。",
+      "pornitStripe": "Stripe によるカード支払いがオンになりました。",
+      "pornitFake": "支払いは仮想マネーです。",
+      "contStripe": "Stripe アカウント：{nume}",
+      "eroareFormat": "Stripe のシークレットキーには見えません。sk_live_ または sk_test_ で始まる必要があります。",
+      "eroareFormatWebhook": "Webhook のシークレットは whsec_ で始まる必要があります。",
+      "eroareStripe": "Stripe がキーを受け付けなかったため、保存していません：{mesaj}",
+      "eroareWebhook": "キーは正しいですが、Webhook を自動で作成できませんでした（{mesaj}）。Stripe で：Developers → Webhooks → Add endpoint、下のアドレスとイベント checkout.session.completed を指定し、Signing secret をここに貼り付けてください。",
+      "eroareFaraChei": "両方のキーがないと Stripe は開始できません。支払いは元のままです。"
+    },
     "titlu": "管理",
     "kpiUtilizatori": "ユーザー",
     "kpiCorpuri": "キャビネット（直近100件）",
@@ -171,6 +211,7 @@
     },
     "driverFake": "決済ドライバは <code>fake</code> です。カードなしで残高がすぐ入ります。",
     "driverStripe": "Stripe Checkout に移動します。決済が確認されてから残高が入ります。",
+    "plataNepornita": "カード決済はまだご利用いただけません。しばらくしてから再度お試しください。",
     "miscari": "取引明細",
     "data": "日付",
     "operatiune": "取引",
@@ -315,6 +356,11 @@
         "nume": "ビルトイン機器用キャビネット",
         "descriere": "オーブンや食器洗い機のための開口箱。メーカー指定の開口寸法を確認してください。",
         "corpNume": "オーブン用"
+      },
+      "baza-cuptor": {
+        "nume": "オーブン用ベースキャビネット",
+        "descriere": "カウンター下のオーブン、下に引き出し1つ。メーカーが求めるニッチを確認してください。",
+        "corpNume": "オーブン用キャビネット"
       },
       "sus-2usi": {
         "nume": "吊戸棚、扉2枚",
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "キャビネットはどう締めますか？",
     "intrebareBalama": "扉の丁番はどれにしますか？",
     "intrebareGlisiere": "引き出しのレールはどれにしますか？",
+    "intrebarePlinta": "脚付きキャビネットの幅木は？",
     "intrebareSuspensii": "吊戸棚は調整できる吊り金具で掛けますか？",
     "jocPeParte": "片側クリアランス {mm} mm。",
     "suspensiiDetalii": "1台につき{n}個、1組で{kg}kg。使わない場合は見えるL金具で掛けることになります。",
@@ -620,6 +667,24 @@
         "descriere": "この注文に引き出しはありません。"
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "アルミ幅木 H100",
+        "descriere": "Häfele、4 m 材、脚にクリップで留める。"
+      },
+      "alu-120": {
+        "nume": "アルミ幅木 H120",
+        "descriere": "Häfele、4 m 材、脚にクリップで留める。"
+      },
+      "alu-150": {
+        "nume": "アルミ幅木 H150",
+        "descriere": "Häfele、4 m 材、脚にクリップで留める。"
+      },
+      "fara": {
+        "nume": "幅木なし",
+        "descriere": "脚が見えたまま、または別の方法で幅木を作る。"
+      }
+    },
     "suspensii": {
       "nume": "ロック付きキャビネット吊り金具",
       "descriere": "背板の裏に隠れ、高さも奥行も調整できます。"
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "1か所につき1個",
       "obsPeCorp": "1台につき2個",
       "obsLa150": "150mmごと",
-      "obsCupleazaFronturi": "扉2枚をつなぎます"
+      "obsCupleazaFronturi": "扉2枚をつなぎます",
+      "piciorPlinta": "樹脂製アジャスター脚（幅木 H{h} 用）",
+      "picior": "樹脂製アジャスター脚",
+      "obsPicioare": "1台につき {n}、幅 {lat} mm 超は {m}",
+      "clemaPlinta": "幅木クリップ",
+      "obsClemaPlinta": "前脚1本につき1個",
+      "plintaBara": "アルミ幅木 H{h}、{bara} mm 材",
+      "obsPlinta": "合計 {mm} mm；脚付きキャビネット：{n}。コーナー・ジョイント・エンドキャップは配置に応じて。"
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "レール {lg} mm",
     "subCutie": "箱の下に付きます",
     "socluInFata": "前面、側板のあいだ — 底板がこの上に載ります",
+    "socluColtL": "腕 {n} の前側 — 角では腕 1 が腕 2 の端の先まで通る",
+    "socluDiagonal": "対角線上の前側 — 両端を直角切りから {u1}° と {u2}° で切る",
     "usiGlisante": "引き戸 {n} 枚、重なり {supr}、レール {sine}",
     "traverseSusInLocDeBlat": "天板の代わりに、前と後ろに1枚ずつ、幅 {lat}"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "引き出しの前板が下まで届いていません。下に {gol} mm の空きが残ります。前板の高さを {front} mm にすると箱が埋まります。",
     "piesaPreaMica": "20 mm を切る辺があります。寸法を確かめてください。",
     "piesaLatimeMaiMare": "幅 ({lat}) が長さ ({lung}) より大きいです。木取りでは長さが長辺です。木目を逆に通すなら入れ替えてください。",
-    "socluNuMerge": "台輪は「はさみ込み」で組んだ直方体の箱にだけ付きます。ここでは付けていません。",
+    "socluNuMerge": "このキャビネットには台輪を付けられません：「天板・地板を側板の間に」とコーナーキャビネットには付きますが、「側板を天板と地板の間に」や不整形のキャビネットには付きません。ここでは省きました。",
     "socluPreaInalt": "これだけ低い箱に {soclu} mm の台輪：内部は {ramane} mm しか残りません。",
     "nisaPreaMare": "{nisa} mm の開口は入りません。{incape} mm を超えると上の扉の場所が残りません。",
+    "nisaLangaSertare": "{nisa} mm のニッチは引き出しの横に収まりません：残りは {incape} mm だけです。引き出しの前板を小さくするか、キャビネットを高くしてください。",
+    "cutieSubPolitaNisa": "{cutie} mm の引き出しボックスが、機器を載せる棚板に当たります。ボックスの高さは最大 {max} mm にしてください。",
     "politeFixeInPlus": "棚板を {cerut} 枚と指定しましたが、箱には {fac} 枚必要です。開口を挟み、扉を支えるものです。",
     "politeNuIncap": "棚板 {cate} 枚の置き場所がありません。開口が空間をすべて使いました。",
     "glisantaSingura": "引き戸が1枚では、すれ違う相手がありません。2枚以上にしてください。",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "長さ (L)",
     "latimePiesa": "幅 (l)",
     "soclu": "台輪（0 = 脚）",
+    "picioare": "脚",
+    "picioareNu": "なし（吊り戸棚または台輪）",
+    "picioareDa": "あり、クリップ式幅木付き",
     "nisa": "開口（オーブン・冷蔵庫）",
     "nisaFara": "なし",
     "montajGlisant": "引き戸",

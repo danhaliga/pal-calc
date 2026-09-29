@@ -166,3 +166,85 @@ test('nișa are nume în toate cele treizeci de limbi', () => {
     });
   });
 });
+
+/* ---------------- nișa fără uși: corpul bază de cuptor ----------------
+
+   Sertar jos, cuptor deasupra, nicio ușă. Nișa e tot ce rămâne lângă
+   sertare, despărțită de ele de polița pe care stă aparatul. */
+
+function bazaCuptor(extra) {
+  return Object.assign({}, PalModels.paramsFor('baza-cuptor', T), extra || {});
+}
+const avert = rez => rez.avertismente.map(a => a.cheie);
+
+test('corpul bază de cuptor iese curat, cu nișa de cuptor deasupra sertarului', () => {
+  const p = bazaCuptor();
+  const r = PalCalc.calc(p, T);
+  assert.deepEqual(r.warn, []);
+
+  const pol = polite(r);
+  assert.equal(pol.length, 1, 'polița cuptorului lipsește sau sunt mai multe');
+  const sfarsitInterior = (+p.soclu || 0) + p.t + r.Hint;
+  assert.ok(sfarsitInterior - (pol[0] + p.t / 2) >= 600, 'nu rămân 600 mm pentru cuptor');
+
+  /* Cutia sertarului stă sub poliță, nu în ea. */
+  const cutie = r.P.find(x => x.cheie === 'sertarLaterala').boxes[0];
+  assert.ok(cutie.y + cutie.sy <= pol[0] - p.t / 2 + 0.01, 'cutia sertarului intră în poliță');
+  assert.equal(r.P.filter(x => x.cheie === 'usa').length, 0);
+});
+
+test('și cu soclul din setări corpul bază de cuptor rămâne curat', () => {
+  /* Corpul creat din catalog primește soclul atelierului și urcă H cu el. */
+  const r = PalCalc.calc(bazaCuptor({ soclu: 80, H: 800 }), T);
+  assert.deepEqual(r.warn, []);
+});
+
+test('o nișă care nu încape se spune o singură dată, cu cât încape', () => {
+  const r = PalCalc.calc(bazaCuptor({ hNisa: 650 }), T);
+  assert.deepEqual(avert(r), ['nisaLangaSertare']);
+  assert.equal(r.avertismente[0].args.incape, '600.5');
+});
+
+test('o cutie de sertar prea înaltă pentru polița cuptorului se spune, cu cât poate avea', () => {
+  const r = PalCalc.calc(bazaCuptor({ hCutie: 70 }), T);
+  assert.deepEqual(avert(r), ['cutieSubPolitaNisa']);
+  assert.equal(r.avertismente[0].args.max, '64');
+  assert.deepEqual(PalCalc.calc(bazaCuptor({ hCutie: 64 }), T).warn, []);
+});
+
+test('cu sertarele sus, nișa vine dedesubt', () => {
+  const r = PalCalc.calc(bazaCuptor({ sertareJos: 0, hCutie: 50 }), T);
+  assert.deepEqual(r.warn, []);
+  const pol = polite(r);
+  assert.equal(pol.length, 1);
+  assert.ok(pol[0] > r.H / 2, 'polița nu stă sub sertarele de sus');
+});
+
+test('fără nișă, sertarele care nu umplu corpul se spun ca înainte', () => {
+  assert.deepEqual(avert(PalCalc.calc(bazaCuptor({ hNisa: '' }), T)), ['sertareNuUmplu']);
+});
+
+test('pe card, polița cuptorului e pe muchia sertarului, nu la mijloc', () => {
+  const svg = PalModels.sketch(PalModels.paramsFor('baza-cuptor', T));
+  const linii = svg.match(/<line[^>]*sk-polita[^>]*>/g) || [];
+  assert.equal(linii.length, 1);
+  const y = +linii[0].match(/y1="([\d.]+)"/)[1];
+  assert.ok(y > 600, 'polița e desenată prea sus: ' + y);
+});
+
+test('corpul bază de cuptor și avertismentele lui au text în toate limbile', () => {
+  const chei = ['modele.m.baza-cuptor.nume', 'modele.m.baza-cuptor.descriere',
+                'modele.m.baza-cuptor.corpNume',
+                'avert.nisaLangaSertare', 'avert.cutieSubPolitaNisa'];
+  const ro = JSON.parse(citeste('locales', 'ro.json'));
+  const ia = (c, k) => k.split('.').reduce((o, x) => (o || {})[x], c);
+  const param = t => (String(t).match(/\{[a-zA-Z]+\}/g) || []).sort().join(',');
+  PalI18n.LIMBI.forEach(l => {
+    const c = JSON.parse(citeste('locales', l.cod + '.json'));
+    chei.forEach(k => {
+      const v = ia(c, k);
+      assert.ok(v && String(v).trim(), l.cod + ': lipsește ' + k);
+      assert.equal(param(v), param(ia(ro, k)), l.cod + ': parametri schimbați la ' + k);
+    });
+  });
+});

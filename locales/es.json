@@ -117,6 +117,46 @@
       "acoperire": "Cobertura",
       "lipsaFisier": "Faltan los archivos de traducción de: {coduri}"
     },
+    "plata": {
+      "legatura": "Pago",
+      "titlu": "Pago",
+      "intro": "Cómo recargan crédito los clientes: con dinero virtual de prueba o con tarjeta a través de Stripe. Las claves de Stripe se guardan cifradas y no se vuelven a mostrar completas.",
+      "stareFake": "Ahora: dinero virtual. Cualquiera que cree una cuenta puede añadirse crédito sin tarjeta. Útil para pruebas; para clientes reales, cambia a Stripe.",
+      "stareOprita": "Ahora: Stripe, pero falta una clave. Las recargas de crédito están DETENIDAS para todos hasta que pongas ambas claves.",
+      "stareTest": "Ahora: Stripe con una clave de prueba (sk_test_). El pago pasa por Stripe, pero no se cobra dinero real.",
+      "stareLive": "Ahora: Stripe, con tarjetas reales. El dinero llega a la cuenta de Stripe.",
+      "eroareNecitite": "Las claves guardadas ya no se pueden leer: cambió SESSION_SECRET en el servidor. Vuelve a introducirlas.",
+      "felul": "Forma de pago",
+      "driverFake": "Dinero virtual de prueba (sin tarjeta)",
+      "driverStripe": "Stripe, tarjetas reales",
+      "felulNota": "Puedes poner las claves de Stripe antes y seguir con dinero virtual; el pago real empieza solo cuando eliges Stripe.",
+      "chei": "Claves de Stripe",
+      "cheieSecreta": "Clave secreta (Secret key)",
+      "cheieSecretaAjutor": "En Stripe: Developers → API keys → Secret key. Empieza por sk_live_ (o sk_test_ para pruebas).",
+      "acum": "Ahora: {cheie}.",
+      "lipsa": "Ahora: sin poner.",
+      "dinFisier": "Viene del archivo de configuración del servidor; lo que pongas aquí lo sustituye.",
+      "cheieWebhook": "Secreto del webhook (Signing secret)",
+      "cheieWebhookAjutor": "Normalmente no hay que buscarlo: la aplicación lo crea en Stripe al guardar la clave secreta. Ponlo a mano solo si esta página te lo pide. Empieza por whsec_.",
+      "adresaWebhook": "Dirección a la que Stripe envía las confirmaciones de pago:",
+      "faraAdresa": "La dirección pública del sitio (APP_URL) aún no está en https en la configuración del servidor. Sin ella, Stripe no tiene adónde enviar las confirmaciones y el webhook no se puede crear solo.",
+      "golPastreaza": "Un campo vacío conserva la clave actual.",
+      "salveaza": "Comprobar y guardar",
+      "sterge": "Borrar claves",
+      "stergeIntrebare": "¿Borrar las claves de Stripe de la aplicación? El pago vuelve a dinero virtual.",
+      "sters": "Claves borradas. El pago está en dinero virtual.",
+      "cheieSalvata": "La clave secreta se comprobó en Stripe y se guardó.",
+      "webhookSalvat": "El secreto del webhook se guardó.",
+      "webhookFacut": "El webhook se creó en Stripe y su secreto está guardado.",
+      "pornitStripe": "El pago con tarjeta a través de Stripe está activado.",
+      "pornitFake": "El pago está en dinero virtual.",
+      "contStripe": "Cuenta de Stripe: {nume}",
+      "eroareFormat": "Esto no parece una clave secreta de Stripe. Debe empezar por sk_live_ o sk_test_.",
+      "eroareFormatWebhook": "El secreto del webhook debe empezar por whsec_.",
+      "eroareStripe": "Stripe no aceptó la clave, así que no se guardó: {mesaj}",
+      "eroareWebhook": "La clave es correcta, pero el webhook no se pudo crear solo ({mesaj}). En Stripe: Developers → Webhooks → Add endpoint, con la dirección de abajo y el evento checkout.session.completed; luego pega aquí el Signing secret.",
+      "eroareFaraChei": "Stripe no puede activarse sin las dos claves. El pago sigue como estaba."
+    },
     "titlu": "Administración",
     "kpiUtilizatori": "usuarios",
     "kpiCorpuri": "módulos (los últimos 100)",
@@ -171,6 +211,7 @@
     },
     "driverFake": "El controlador de pago es <code>fake</code>: el crédito se añade al momento, sin tarjeta.",
     "driverStripe": "Se te llevará a Stripe Checkout. El crédito se añade solo cuando se confirma el pago.",
+    "plataNepornita": "El pago con tarjeta aún no está disponible. Vuelve pronto.",
     "miscari": "Movimientos de la cuenta",
     "data": "Fecha",
     "operatiune": "Operación",
@@ -315,6 +356,11 @@
         "nume": "Módulo hueco para electrodoméstico",
         "descriere": "Caja abierta para horno o lavavajillas. Comprueba el hueco que pide el fabricante.",
         "corpNume": "Módulo horno"
+      },
+      "baza-cuptor": {
+        "nume": "Mueble bajo para horno",
+        "descriere": "Horno bajo encimera, con un cajón debajo. Comprueba el hueco que pide el fabricante.",
+        "corpNume": "Mueble horno"
       },
       "sus-2usi": {
         "nume": "Mueble alto de 2 puertas",
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "¿Cómo se monta la carcasa?",
     "intrebareBalama": "¿Qué bisagras llevan las puertas?",
     "intrebareGlisiere": "¿Qué guías llevan los cajones?",
+    "intrebarePlinta": "¿Qué rodapié para los muebles con patas?",
     "intrebareSuspensii": "¿Los módulos altos se fijan con colgadores?",
     "jocPeParte": "Holgura de {mm} mm por lado.",
     "suspensiiDetalii": "{n} por módulo, {kg} kg por par. Sin ellos, los módulos se fijan con escuadras a la vista.",
@@ -620,6 +667,24 @@
         "descriere": "Este pedido no lleva cajones."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Rodapié de aluminio H100",
+        "descriere": "Häfele, barras de 4 m, se engancha en las patas."
+      },
+      "alu-120": {
+        "nume": "Rodapié de aluminio H120",
+        "descriere": "Häfele, barras de 4 m, se engancha en las patas."
+      },
+      "alu-150": {
+        "nume": "Rodapié de aluminio H150",
+        "descriere": "Häfele, barras de 4 m, se engancha en las patas."
+      },
+      "fara": {
+        "nume": "Sin rodapié",
+        "descriere": "Las patas quedan a la vista, o el rodapié se hace de otra forma."
+      }
+    },
     "suspensii": {
       "nume": "Colgador de módulo con seguro",
       "descriere": "Oculto detrás de la trasera, regulable en altura y en fondo."
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "una por unión",
       "obsPeCorp": "dos por módulo",
       "obsLa150": "cada 150 mm",
-      "obsCupleazaFronturi": "une los dos frentes"
+      "obsCupleazaFronturi": "une los dos frentes",
+      "piciorPlinta": "Pata regulable de plástico, para rodapié H{h}",
+      "picior": "Pata regulable de plástico",
+      "obsPicioare": "{n} por mueble, {m} a partir de {lat} mm de ancho",
+      "clemaPlinta": "Clip de rodapié",
+      "obsClemaPlinta": "uno en cada pata delantera",
+      "plintaBara": "Rodapié de aluminio H{h}, barra de {bara} mm",
+      "obsPlinta": "{mm} mm en total; muebles con patas: {n}. Esquinas, uniones y tapas, según la distribución."
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "guía de {lg} mm",
     "subCutie": "montado bajo la caja",
     "socluInFata": "delante, entre los laterales — el fondo se apoya en él",
+    "socluColtL": "en el brazo {n}, delante — en la esquina, el brazo 1 pasa por delante del extremo del brazo 2",
+    "socluDiagonal": "en la diagonal, delante — extremos cortados a {u1}° y {u2}° respecto al corte recto",
     "usiGlisante": "{n} puertas correderas, solape {supr}, guías {sine}",
     "traverseSusInLocDeBlat": "en lugar del tablero superior: uno delante, otro detrás, de {lat} de ancho"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "Los frentes de cajón no llegan abajo: quedan {gol} mm libres. Pon {front} mm de altura de frente para llenar el mueble.",
     "piesaPreaMica": "Un lado por debajo de 20 mm: revisa las medidas.",
     "piesaLatimeMaiMare": "El ancho ({lat}) es mayor que el largo ({lung}): al despiezar, el largo es el lado mayor. Cámbialos si la veta debe ir al revés.",
-    "socluNuMerge": "El zócalo solo cabe en un mueble recto construido «entre». Aquí se ha dejado fuera.",
+    "socluNuMerge": "El zócalo no se puede poner en este mueble: va con «Techo/suelo entre los costados» y en los rinconeros, no con «Costados entre techo y suelo» ni en los muebles irregulares. Aquí se ha omitido.",
     "socluPreaInalt": "Zócalo de {soclu} mm en un mueble tan bajo: solo quedan {ramane} mm dentro.",
     "nisaPreaMare": "Un hueco de {nisa} mm no cabe: por encima de {incape} mm no queda sitio para la puerta de arriba.",
+    "nisaLangaSertare": "El hueco de {nisa} mm no cabe junto a los cajones: solo quedan {incape} mm. Reduce los frentes de cajón o aumenta el mueble.",
+    "cutieSubPolitaNisa": "La caja del cajón, de {cutie} mm, choca con el estante donde se apoya el aparato. Pon como máximo {max} mm de altura de caja.",
     "politeFixeInPlus": "Has pedido {cerut} baldas, pero el mueble necesita {fac}: esas bordean el hueco y sujetan las puertas.",
     "politeNuIncap": "{cate} baldas no tienen dónde ir: el hueco se ha llevado todo el espacio.",
     "glisantaSingura": "Una sola puerta corredera no tiene junto a qué deslizarse. Pon al menos dos.",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "Largo (L)",
     "latimePiesa": "Ancho (l)",
     "soclu": "Zócalo (0 = patas)",
+    "picioare": "Patas",
+    "picioareNu": "No (colgado o sobre zócalo)",
+    "picioareDa": "Sí, con rodapié de clip",
     "nisa": "Hueco (horno, nevera)",
     "nisaFara": "sin hueco",
     "montajGlisant": "Correderas",

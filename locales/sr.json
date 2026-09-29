@@ -117,6 +117,46 @@
       "acoperire": "Pokrivenost",
       "lipsaFisier": "Nedostaju datoteke prevoda za: {coduri}"
     },
+    "plata": {
+      "legatura": "Plaćanje",
+      "titlu": "Plaćanje",
+      "intro": "Kako kupci dopunjuju kredit: virtuelnim test novcem ili karticom preko Stripe-a. Stripe ključevi se čuvaju šifrovano i posle čuvanja se nikad više ne prikazuju celi.",
+      "stareFake": "Sada: virtuelni novac. Svako ko otvori nalog može sam sebi da doda kredit bez kartice. Dobro za testiranje; za prave kupce pređi na Stripe.",
+      "stareOprita": "Sada: Stripe, ali nedostaje ključ. Dopuna kredita je ZAUSTAVLJENA za sve dok ne uneseš oba ključa.",
+      "stareTest": "Sada: Stripe sa test ključem (sk_test_). Plaćanje ide preko Stripe-a, ali pravi novac se ne naplaćuje.",
+      "stareLive": "Sada: Stripe, sa pravim karticama. Novac ide na Stripe nalog.",
+      "eroareNecitite": "Sačuvani ključevi više ne mogu da se pročitaju: na serveru se promenio SESSION_SECRET. Unesi ih ponovo.",
+      "felul": "Način plaćanja",
+      "driverFake": "Virtuelni test novac (bez kartice)",
+      "driverStripe": "Stripe, prave kartice",
+      "felulNota": "Stripe ključeve možeš uneti unapred i ostati na virtuelnom novcu; pravo plaćanje počinje tek kad izabereš Stripe.",
+      "chei": "Stripe ključevi",
+      "cheieSecreta": "Tajni ključ (Secret key)",
+      "cheieSecretaAjutor": "U Stripe-u: Developers → API keys → Secret key. Počinje sa sk_live_ (ili sk_test_ za testiranje).",
+      "acum": "Sada: {cheie}.",
+      "lipsa": "Sada: nije postavljen.",
+      "dinFisier": "Dolazi iz datoteke podešavanja servera; ono što uneseš ovde ga zamenjuje.",
+      "cheieWebhook": "Tajna webhook-a (Signing secret)",
+      "cheieWebhookAjutor": "Obično ne treba da je tražiš: aplikacija je sama pravi u Stripe-u kad sačuvaš tajni ključ. Unesi je ručno samo ako to ova stranica zatraži. Počinje sa whsec_.",
+      "adresaWebhook": "Adresa na koju Stripe šalje potvrde plaćanja:",
+      "faraAdresa": "Javna adresa sajta (APP_URL) još nije postavljena na https u podešavanjima servera. Bez nje Stripe ne zna gde da šalje potvrde, a webhook ne može sam da se napravi.",
+      "golPastreaza": "Prazno polje zadržava trenutni ključ.",
+      "salveaza": "Proveri i sačuvaj",
+      "sterge": "Obriši ključeve",
+      "stergeIntrebare": "Obrisati Stripe ključeve iz aplikacije? Plaćanje se vraća na virtuelni novac.",
+      "sters": "Ključevi obrisani. Plaćanje je na virtuelnom novcu.",
+      "cheieSalvata": "Tajni ključ je proveren u Stripe-u i sačuvan.",
+      "webhookSalvat": "Tajna webhook-a je sačuvana.",
+      "webhookFacut": "Webhook je napravljen u Stripe-u i njegova tajna je sačuvana.",
+      "pornitStripe": "Plaćanje karticom preko Stripe-a je uključeno.",
+      "pornitFake": "Plaćanje je na virtuelnom novcu.",
+      "contStripe": "Stripe nalog: {nume}",
+      "eroareFormat": "Ovo ne liči na tajni Stripe ključ. Mora da počinje sa sk_live_ ili sk_test_.",
+      "eroareFormatWebhook": "Tajna webhook-a mora da počinje sa whsec_.",
+      "eroareStripe": "Stripe nije prihvatio ključ, pa nije sačuvan: {mesaj}",
+      "eroareWebhook": "Ključ je dobar, ali webhook nije mogao sam da se napravi ({mesaj}). U Stripe-u: Developers → Webhooks → Add endpoint, sa adresom ispod i događajem checkout.session.completed; zatim ovde nalepi Signing secret.",
+      "eroareFaraChei": "Stripe ne može da krene bez oba ključa. Plaćanje je ostalo kakvo je bilo."
+    },
     "titlu": "Administracija",
     "kpiUtilizatori": "korisnika",
     "kpiCorpuri": "korpusa (poslednjih 100)",
@@ -172,6 +212,7 @@
     },
     "driverFake": "Pokretač plaćanja je <code>fake</code>: kredit se pripisuje odmah, bez kartice.",
     "driverStripe": "Bićeš prebačen na Stripe Checkout. Kredit se pripisuje tek posle potvrde plaćanja.",
+    "plataNepornita": "Plaćanje karticom još nije dostupno. Navratite uskoro.",
     "miscari": "Promet na nalogu",
     "data": "Datum",
     "operatiune": "Radnja",
@@ -321,6 +362,11 @@
         "nume": "Korpus za ugradni uređaj",
         "descriere": "Otvorena kutija za rernu ili mašinu za sudove. Proveri nišu koju traži proizvođač.",
         "corpNume": "Korpus za rernu"
+      },
+      "baza-cuptor": {
+        "nume": "Donji element za rernu",
+        "descriere": "Rerna ispod radne ploče, sa fiokom ispod. Proveri nišu koju traži proizvođač.",
+        "corpNume": "Element rerna"
       },
       "sus-2usi": {
         "nume": "Viseći element sa 2 vrata",
@@ -565,6 +611,7 @@
     "intrebareAsamblare": "Kako se korpus spaja?",
     "intrebareBalama": "Koje šarke na vrata?",
     "intrebareGlisiere": "Koje vođice u fioke?",
+    "intrebarePlinta": "Koja lajsna za elemente na nogicama?",
     "intrebareSuspensii": "Da li se viseći elementi kače na kačaljke?",
     "jocPeParte": "Zazor {mm} mm po strani.",
     "suspensiiDetalii": "{n} po korpusu, {kg} kg po paru. Bez njih se korpusi pričvršćuju vidljivim uglovnicima.",
@@ -626,6 +673,24 @@
         "descriere": "Ova porudžbina nema fioke."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Aluminijumska lajsna H100",
+        "descriere": "Häfele, šipke od 4 m, kači se na nogice."
+      },
+      "alu-120": {
+        "nume": "Aluminijumska lajsna H120",
+        "descriere": "Häfele, šipke od 4 m, kači se na nogice."
+      },
+      "alu-150": {
+        "nume": "Aluminijumska lajsna H150",
+        "descriere": "Häfele, šipke od 4 m, kači se na nogice."
+      },
+      "fara": {
+        "nume": "Bez lajsne",
+        "descriere": "Nogice ostaju vidljive, ili se lajsna pravi drugačije."
+      }
+    },
     "suspensii": {
       "nume": "Kačaljka korpusa sa osiguračem",
       "descriere": "Skrivena iza leđa, podesiva po visini i dubini."
@@ -657,7 +722,14 @@
       "obsUnaPeImbinare": "po jedan na spoj",
       "obsPeCorp": "po dva na korpus",
       "obsLa150": "svakih 150 mm",
-      "obsCupleazaFronturi": "spaja dva fronta"
+      "obsCupleazaFronturi": "spaja dva fronta",
+      "piciorPlinta": "Podesiva plastična nogica, za lajsnu H{h}",
+      "picior": "Podesiva plastična nogica",
+      "obsPicioare": "{n} po elementu, {m} preko {lat} mm širine",
+      "clemaPlinta": "Klips za lajsnu",
+      "obsClemaPlinta": "po jedan na svaku prednju nogicu",
+      "plintaBara": "Aluminijumska lajsna H{h}, šipka {bara} mm",
+      "obsPlinta": "Ukupno {mm} mm; elementi na nogicama: {n}. Uglovi, spojnice i završne kapice prema rasporedu."
     }
   },
   "piesa": {
@@ -722,6 +794,8 @@
     "glisieraDe": "vođica {lg} mm",
     "subCutie": "montirano ispod kutije",
     "socluInFata": "spreda, između stranica — dno stoji na njoj",
+    "socluColtL": "na kraku {n}, spreda — u uglu krak 1 prelazi preko kraja kraka 2",
+    "socluDiagonal": "na dijagonali, spreda — krajevi sečeni pod {u1}° i {u2}° u odnosu na pravi rez",
     "usiGlisante": "{n} klizna vrata, preklop {supr}, šine {sine}",
     "traverseSusInLocDeBlat": "umesto gornje ploče: jedna spreda, druga pozadi, široke {lat}"
   },
@@ -754,9 +828,11 @@
     "sertareNuUmplu": "Frontovi fioka ne dosežu do dna: ostaje {gol} mm praznog prostora dole. Stavi {front} mm za visinu fronta da ispuni korpus.",
     "piesaPreaMica": "Strana ispod 20 mm: proveri mere.",
     "piesaLatimeMaiMare": "Širina ({lat}) je veća od dužine ({lung}): pri krojenju je dužina duža strana. Zameni ih ako tekstura treba da ide drugačije.",
-    "socluNuMerge": "Sokla ide samo na pravo telo građeno „između“. Ovde je izostavljena.",
+    "socluNuMerge": "Sokla ne može na ovo telo: ide uz „Gornja ploča/dno između bokova“ i na ugaone elemente, ne uz „Bokovi između gornje ploče i dna“ ni na nepravilna tela. Ovde je izostavljena.",
     "socluPreaInalt": "Sokla od {soclu} mm na ovako niskom telu: unutra ostaje samo {ramane} mm.",
     "nisaPreaMare": "Otvor od {nisa} mm ne staje: iznad {incape} mm ne ostaje mesta za vrata iznad.",
+    "nisaLangaSertare": "Niša od {nisa} mm ne staje pored fioka: ostaje samo {incape} mm. Smanji frontove fioka ili povećaj element.",
+    "cutieSubPolitaNisa": "Kutija fioke, {cutie} mm, udara u policu na kojoj stoji uređaj. Stavi najviše {max} mm visine kutije.",
     "politeFixeInPlus": "Tražio si {cerut} polica, ali telu treba {fac}: one omeđuju otvor i drže vrata.",
     "politeNuIncap": "{cate} polica nema gde da stane: otvor je uzeo sav prostor.",
     "glisantaSingura": "Jedna klizna vrata nemaju pored čega da klize. Stavi bar dvoja.",
@@ -1296,6 +1372,9 @@
     "lungimePiesa": "Dužina (L)",
     "latimePiesa": "Širina (l)",
     "soclu": "Sokla (0 = nogice)",
+    "picioare": "Nogice",
+    "picioareNu": "Ne (viseći ili na sokli)",
+    "picioareDa": "Da, sa lajsnom na klik",
     "nisa": "Otvor (rerna, frižider)",
     "nisaFara": "nema",
     "montajGlisant": "Klizna",

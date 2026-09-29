@@ -1,27 +1,110 @@
 'use strict';
 /* Plăți: alimentarea creditului prin Stripe Checkout sau prin driverul 'fake'.
-   Trecerea între ele se face doar din .env, fără modificări de cod. */
+   Driverul și cheile se pun din Administrare → Plata (src/setari.js); .env
+   rămâne rezervă. */
 
 const express = require('express');
 const { db } = require('./db');
 const { requireAuth } = require('./auth');
+const setari = require('./setari');
+const { estePublic } = require('./pornire');
 
 const router = express.Router();
 
-const driver = () => (process.env.PAYMENT_DRIVER || 'fake').toLowerCase();
+const driver = () => (setari.citeste('PAYMENT_DRIVER') || 'fake').toLowerCase();
 const priceCents = () => Number(process.env.PRICE_PER_CORP_CENTS || 500);
 const currency = () => (process.env.CURRENCY || 'ron').toLowerCase();
 const appUrl = () => (process.env.APP_URL || 'http://localhost:3000').replace(/\/+$/, '');
 
+/* Clientul se face din nou când se schimbă cheia din panou; altfel ar
+   merge cu cea veche până la repornire. */
 let stripeClient = null;
+let stripeCheie = null;
+function clientPentru(key) {
+  return require('stripe')(key, { timeout: 20000, maxNetworkRetries: 1 });
+}
 function stripe() {
-  if (!stripeClient) {
-    const key = process.env.STRIPE_SECRET_KEY;
-    if (!key) throw new Error('STRIPE_SECRET_KEY lipsește din .env.');
-    stripeClient = require('stripe')(key);
+  const key = setari.citeste('STRIPE_SECRET_KEY');
+  if (!key) throw new Error('STRIPE_SECRET_KEY lipsește: se pune din Administrare → Plata.');
+  if (!stripeClient || stripeCheie !== key) {
+    stripeClient = clientPentru(key);
+    stripeCheie = key;
   }
   return stripeClient;
 }
+
+/* Poate cineva să-și alimenteze creditul chiar acum?
+
+   Driverul „fake" pune credit virtual, fără card. Pe un site public
+   înseamnă credit gratis pentru oricine — și e lăsat așa ÎNADINS cât
+   timp aplicația se probează: e alegerea administratorului, făcută în
+   Administrare → Plata, unde se și vede cu roșu.
+
+   Stripe e pornit doar cu amândouă cheile. Cu una lipsă, alimentarea stă
+   oprită, nu cade pe credit gratis: cine a ales Stripe a ales bani
+   adevărați. */
+function stare() {
+  const d = driver();
+  const publ = estePublic(process.env);
+  const cheie = setari.citeste('STRIPE_SECRET_KEY');
+  const webhook = setari.citeste('STRIPE_WEBHOOK_SECRET');
+  let pornita = false;
+  if (d === 'stripe') pornita = !!(cheie && webhook);
+  else if (d === 'fake') pornita = true;
+  return {
+    driver: d,
+    public: publ,
+    pornita: pornita,
+    areCheie: !!cheie,
+    areWebhook: !!webhook,
+    mod: /^[a-z]+_live_/.test(cheie) ? 'live' : /^[a-z]+_test_/.test(cheie) ? 'test' : ''
+  };
+}
+
+/* ---------- pentru pagina de administrare ---------- */
+
+const FORMAT_CHEIE = /^(sk|rk)_(live|test)_[A-Za-z0-9]{10,}$/;
+const FORMAT_WEBHOOK = /^whsec_[A-Za-z0-9+/=]{10,}$/;
+const EVENIMENTE = ['checkout.session.completed'];
+
+/* Întreabă Stripe dacă cheia merge, înainte s-o salvăm. O cheie greșită
+   salvată s-ar vedea abia la prima plată a unui client. Se cere lista de
+   plăți Checkout fiindcă exact de dreptul ăsta are nevoie aplicația — merge
+   și pentru o cheie restrânsă (rk_) care are doar ce-i trebuie. */
+async function verificaCheie(key) {
+  const s = clientPentru(key);
+  await s.checkout.sessions.list({ limit: 1 });
+  let cont = '';
+  try {
+    const a = await s.accounts.retrieve();
+    cont = (a.settings && a.settings.dashboard && a.settings.dashboard.display_name) ||
+           (a.business_profile && a.business_profile.name) || a.email || '';
+  } catch (e) { /* o cheie restrânsă poate să nu vadă contul: nu e o greșeală */ }
+  return { cont: cont };
+}
+
+/* Face în Stripe adresa la care vin confirmările de plată și întoarce
+   secretul ei — ca omul să nu trebuiască să-l caute prin panoul Stripe.
+
+   Stripe arată secretul O SINGURĂ DATĂ, la facere. Dacă există deja o
+   adresă spre același URL (de la o încercare de dinainte), secretul ei nu
+   se mai poate afla: o ștergem și o facem din nou. E a noastră — e chiar
+   adresa site-ului — deci nu atingem nimic străin. */
+async function facWebhook(key, url) {
+  const s = clientPentru(key);
+  const lista = await s.webhookEndpoints.list({ limit: 100 });
+  for (const w of lista.data) {
+    if (w.url === url) await s.webhookEndpoints.del(w.id);
+  }
+  const w = await s.webhookEndpoints.create({
+    url: url,
+    enabled_events: EVENIMENTE,
+    description: 'PAL Calc: confirmarea alimentărilor de credit'
+  });
+  return w.secret;
+}
+
+const webhookUrl = () => appUrl() + '/webhooks/stripe';
 
 /* ---------- rânduri în payments ---------- */
 
@@ -125,7 +208,7 @@ router.get('/payments/cancel', requireAuth, (req, res) => {
 /* ---------- webhook (corp brut, semnătură verificată) ---------- */
 
 function webhookHandler(req, res) {
-  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  const secret = setari.citeste('STRIPE_WEBHOOK_SECRET');
   if (!secret) return res.status(400).send('STRIPE_WEBHOOK_SECRET lipsește.');
 
   let event;
@@ -153,6 +236,7 @@ function webhookHandler(req, res) {
 }
 
 module.exports = {
-  router, webhookHandler, driver, priceCents, currency,
-  creeazaPlata, checkoutTopup, plataDupaRef
+  router, webhookHandler, driver, priceCents, currency, appUrl, stare,
+  creeazaPlata, checkoutTopup, plataDupaRef,
+  verificaCheie, facWebhook, webhookUrl, FORMAT_CHEIE, FORMAT_WEBHOOK
 };

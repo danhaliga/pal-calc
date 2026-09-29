@@ -127,7 +127,7 @@ test('traversele se pot cere din editor', () => {
   assert.match(vedere, /id="traverse"/);
   assert.match(vedere, /min="0" max="100"/);
   const app = citeste('public', 'app.js');
-  assert.match(app, /'soclu','traverse'/, 'editorul nu trimite traversele la calcul');
+  assert.match(app, /var fields = \[[^\]]*'traverse'/, 'editorul nu trimite traversele la calcul');
   assert.match(app, /\{ id: 'traverse',\s+camp: \['traverse'\]/, 'nu se pot ține minte ca setare');
 });
 

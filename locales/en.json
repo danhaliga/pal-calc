@@ -117,6 +117,46 @@
       "acoperire": "Coverage",
       "lipsaFisier": "Translation files are missing for: {coduri}"
     },
+    "plata": {
+      "legatura": "Payment",
+      "titlu": "Payment",
+      "intro": "How customers top up their credit: with virtual test money, or by card through Stripe. Stripe keys are stored encrypted and are never shown in full after saving.",
+      "stareFake": "Now: virtual money. Anyone who signs up can add credit themselves, without a card. Fine for testing; for real customers, switch to Stripe.",
+      "stareOprita": "Now: Stripe, but a key is missing. Credit top-ups are STOPPED for everyone until both keys are set.",
+      "stareTest": "Now: Stripe with a test key (sk_test_). Payments go through Stripe, but no real money is collected.",
+      "stareLive": "Now: Stripe, with real cards. Money goes to the Stripe account.",
+      "eroareNecitite": "The saved keys can no longer be read: SESSION_SECRET changed on the server. Enter them again.",
+      "felul": "Payment method",
+      "driverFake": "Virtual test money (no card)",
+      "driverStripe": "Stripe, real cards",
+      "felulNota": "You can enter the Stripe keys ahead of time and stay on virtual money; real payment starts only when you choose Stripe.",
+      "chei": "Stripe keys",
+      "cheieSecreta": "Secret key",
+      "cheieSecretaAjutor": "In Stripe: Developers → API keys → Secret key. Starts with sk_live_ (or sk_test_ for testing).",
+      "acum": "Now: {cheie}.",
+      "lipsa": "Now: not set.",
+      "dinFisier": "Comes from the server settings file; what you enter here replaces it.",
+      "cheieWebhook": "Webhook signing secret",
+      "cheieWebhookAjutor": "Usually you don't need to look for it: the app creates it in Stripe when you save the secret key. Enter it by hand only if this page asks you to. Starts with whsec_.",
+      "adresaWebhook": "Address where Stripe sends payment confirmations:",
+      "faraAdresa": "The site's public address (APP_URL) is not yet set to https in the server settings. Without it Stripe has nowhere to send confirmations, and the webhook cannot be created automatically.",
+      "golPastreaza": "A field left empty keeps the current key.",
+      "salveaza": "Check and save",
+      "sterge": "Delete keys",
+      "stergeIntrebare": "Delete the Stripe keys from the app? Payment goes back to virtual money.",
+      "sters": "The keys were deleted. Payment is on virtual money.",
+      "cheieSalvata": "The secret key was checked with Stripe and saved.",
+      "webhookSalvat": "The webhook secret was saved.",
+      "webhookFacut": "The webhook was created in Stripe and its secret is saved.",
+      "pornitStripe": "Card payment through Stripe is on.",
+      "pornitFake": "Payment is on virtual money.",
+      "contStripe": "Stripe account: {nume}",
+      "eroareFormat": "This doesn't look like a Stripe secret key. It must start with sk_live_ or sk_test_.",
+      "eroareFormatWebhook": "The webhook secret must start with whsec_.",
+      "eroareStripe": "Stripe did not accept the key, so it was not saved: {mesaj}",
+      "eroareWebhook": "The key is fine, but the webhook could not be created automatically ({mesaj}). In Stripe: Developers → Webhooks → Add endpoint, with the address below and the event checkout.session.completed; then paste the Signing secret here.",
+      "eroareFaraChei": "Stripe cannot start without both keys. Payment stayed as it was."
+    },
     "titlu": "Administration",
     "kpiUtilizatori": "users",
     "kpiCorpuri": "cabinets (last 100)",
@@ -171,6 +211,7 @@
     },
     "driverFake": "The payment driver is <code>fake</code>: credit is added immediately, without a card.",
     "driverStripe": "You will be taken to Stripe Checkout. Credit is added only once the payment is confirmed.",
+    "plataNepornita": "Card payment is not available yet. Please check back soon.",
     "miscari": "Account activity",
     "data": "Date",
     "operatiune": "Operation",
@@ -315,6 +356,11 @@
         "nume": "Appliance housing unit",
         "descriere": "An open box for an oven or a dishwasher. Check the recess the manufacturer asks for.",
         "corpNume": "Oven housing unit"
+      },
+      "baza-cuptor": {
+        "nume": "Oven base unit",
+        "descriere": "Oven under the worktop, with a drawer below. Check the niche the manufacturer requires.",
+        "corpNume": "Oven base"
       },
       "sus-2usi": {
         "nume": "Wall unit with 2 doors",
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "How is the carcass assembled?",
     "intrebareBalama": "Which hinges go on the doors?",
     "intrebareGlisiere": "Which runners go on the drawers?",
+    "intrebarePlinta": "Which kickboard for cabinets on legs?",
     "intrebareSuspensii": "Are wall units fixed with cabinet hangers?",
     "jocPeParte": "Clearance {mm} mm per side.",
     "suspensiiDetalii": "{n} per cabinet, {kg} kg per pair. Without them, cabinets are fixed with visible brackets.",
@@ -620,6 +667,24 @@
         "descriere": "This order has no drawers."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Aluminium kickboard H100",
+        "descriere": "Häfele, 4 m bars, clipped onto the legs."
+      },
+      "alu-120": {
+        "nume": "Aluminium kickboard H120",
+        "descriere": "Häfele, 4 m bars, clipped onto the legs."
+      },
+      "alu-150": {
+        "nume": "Aluminium kickboard H150",
+        "descriere": "Häfele, 4 m bars, clipped onto the legs."
+      },
+      "fara": {
+        "nume": "No kickboard",
+        "descriere": "The legs stay visible, or the kickboard is made another way."
+      }
+    },
     "suspensii": {
       "nume": "Cabinet hanger with safety catch",
       "descriere": "Concealed behind the back panel, adjustable for height and depth."
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "one per joint",
       "obsPeCorp": "two per cabinet",
       "obsLa150": "every 150 mm",
-      "obsCupleazaFronturi": "couples the two fronts"
+      "obsCupleazaFronturi": "couples the two fronts",
+      "piciorPlinta": "Adjustable plastic leg, for H{h} kickboard",
+      "picior": "Adjustable plastic leg",
+      "obsPicioare": "{n} per cabinet, {m} above {lat} mm width",
+      "clemaPlinta": "Kickboard clip",
+      "obsClemaPlinta": "one on each front leg",
+      "plintaBara": "Aluminium kickboard H{h}, {bara} mm bar",
+      "obsPlinta": "{mm} mm in total; cabinets on legs: {n}. Corners, joints and end caps depending on the layout."
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "{lg} mm runner",
     "subCutie": "fitted under the box",
     "socluInFata": "at the front, between the sides — the bottom rests on it",
+    "socluColtL": "on arm {n}, at the front — at the corner, arm 1 runs past the end of arm 2",
+    "socluDiagonal": "on the diagonal, at the front — ends cut at {u1}° and {u2}° from a square cut",
     "usiGlisante": "{n} sliding doors, overlap {supr}, tracks {sine}",
     "traverseSusInLocDeBlat": "instead of the top panel: one at the front, one at the back, {lat} wide"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "The drawer fronts do not reach the bottom: {gol} mm is left open below. Set the front height to {front} mm to fill the cabinet.",
     "piesaPreaMica": "A side under 20 mm: check the sizes.",
     "piesaLatimeMaiMare": "The width ({lat}) is larger than the length ({lung}): when cutting, the length is the long side. Swap them if the grain has to run the other way.",
-    "socluNuMerge": "A plinth only works on a straight cabinet built “between”. Here it was left out.",
+    "socluNuMerge": "A plinth can't go on this cabinet: it works with “Top/bottom between the sides” and on corner units, not with “Sides between top and bottom” or on irregular cabinets. Here it was left out.",
     "socluPreaInalt": "A {soclu} mm plinth on a cabinet this short: only {ramane} mm left inside.",
     "nisaPreaMare": "A {nisa} mm opening does not fit: above {incape} mm there is no room left for the door on top.",
+    "nisaLangaSertare": "The {nisa} mm niche doesn't fit next to the drawers: only {incape} mm remain. Make the drawer fronts smaller or the cabinet taller.",
+    "cutieSubPolitaNisa": "The {cutie} mm drawer box hits the shelf the appliance stands on. Use at most {max} mm for the box height.",
     "politeFixeInPlus": "You asked for {cerut} shelves, but the cabinet needs {fac}: those edge the opening and hold the doors.",
     "politeNuIncap": "{cate} shelves have nowhere to go: the opening took the whole space.",
     "glisantaSingura": "One sliding door has nothing to slide past. Put at least two.",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "Length (L)",
     "latimePiesa": "Width (l)",
     "soclu": "Plinth (0 = legs)",
+    "picioare": "Legs",
+    "picioareNu": "No (wall-hung or on a plinth)",
+    "picioareDa": "Yes, with a clip-on kickboard",
     "nisa": "Opening (oven, fridge)",
     "nisaFara": "none",
     "montajGlisant": "Sliding",

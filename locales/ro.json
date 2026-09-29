@@ -117,6 +117,46 @@
       "acoperire": "Acoperire",
       "lipsaFisier": "Lipsesc fișierele de traducere pentru: {coduri}"
     },
+    "plata": {
+      "legatura": "Plata",
+      "titlu": "Plata",
+      "intro": "Cum își alimentează clienții creditul: cu bani virtuali, de probă, sau cu cardul prin Stripe. Cheile Stripe se păstrează criptate și nu se mai afișează întregi după salvare.",
+      "stareFake": "Acum: bani virtuali. Oricine își face cont își poate pune singur credit, fără card. Bun pentru probe; pentru clienți adevărați, treci pe Stripe.",
+      "stareOprita": "Acum: Stripe, dar lipsește o cheie. Alimentarea creditului e OPRITĂ pentru toată lumea până pui amândouă cheile.",
+      "stareTest": "Acum: Stripe cu o cheie de test (sk_test_). Plata trece prin Stripe, dar nu se încasează bani adevărați.",
+      "stareLive": "Acum: Stripe, cu carduri adevărate. Banii intră în contul Stripe.",
+      "eroareNecitite": "Cheile salvate nu se mai pot citi: s-a schimbat SESSION_SECRET pe server. Pune-le din nou.",
+      "felul": "Felul plății",
+      "driverFake": "Bani virtuali, de probă (fără card)",
+      "driverStripe": "Stripe, carduri adevărate",
+      "felulNota": "Poți pune cheile Stripe dinainte și rămâne pe bani virtuali; plata reală pornește doar când alegi Stripe.",
+      "chei": "Cheile Stripe",
+      "cheieSecreta": "Cheia secretă (Secret key)",
+      "cheieSecretaAjutor": "În Stripe: Developers → API keys → Secret key. Începe cu sk_live_ (sau sk_test_ pentru probe).",
+      "acum": "Acum: {cheie}.",
+      "lipsa": "Acum: nepusă.",
+      "dinFisier": "Vine din fișierul de setări al serverului; ce pui aici o înlocuiește.",
+      "cheieWebhook": "Secretul webhook-ului (Signing secret)",
+      "cheieWebhookAjutor": "De obicei nu trebuie căutat: aplicația îl face singură în Stripe când salvezi cheia secretă. Îl pui de mână doar dacă ți-o cere pagina. Începe cu whsec_.",
+      "adresaWebhook": "Adresa la care Stripe trimite confirmările de plată:",
+      "faraAdresa": "Adresa publică a site-ului (APP_URL) nu e încă pusă pe https în setările serverului. Fără ea, Stripe nu are unde trimite confirmările, iar webhook-ul nu se poate face singur.",
+      "golPastreaza": "Un câmp lăsat gol păstrează cheia de acum.",
+      "salveaza": "Verifică și salvează",
+      "sterge": "Șterge cheile",
+      "stergeIntrebare": "Ștergi cheile Stripe din aplicație? Plata trece înapoi pe bani virtuali.",
+      "sters": "Cheile au fost șterse. Plata e pe bani virtuali.",
+      "cheieSalvata": "Cheia secretă a fost verificată la Stripe și salvată.",
+      "webhookSalvat": "Secretul webhook-ului a fost salvat.",
+      "webhookFacut": "Webhook-ul a fost făcut în Stripe și secretul lui e salvat.",
+      "pornitStripe": "Plata cu cardul prin Stripe e pornită.",
+      "pornitFake": "Plata e pe bani virtuali.",
+      "contStripe": "Contul Stripe: {nume}",
+      "eroareFormat": "Asta nu arată a cheie secretă Stripe. Trebuie să înceapă cu sk_live_ sau sk_test_.",
+      "eroareFormatWebhook": "Secretul webhook-ului trebuie să înceapă cu whsec_.",
+      "eroareStripe": "Stripe n-a primit cheia, deci nu s-a salvat: {mesaj}",
+      "eroareWebhook": "Cheia e bună, dar webhook-ul nu s-a putut face singur ({mesaj}). În Stripe: Developers → Webhooks → Add endpoint, cu adresa de mai jos și evenimentul checkout.session.completed; apoi lipește aici Signing secret.",
+      "eroareFaraChei": "Stripe nu poate porni fără amândouă cheile. Plata a rămas cum era."
+    },
     "titlu": "Administrare",
     "kpiUtilizatori": "utilizatori",
     "kpiCorpuri": "corpuri (ultimele 100)",
@@ -172,6 +212,7 @@
     },
     "driverFake": "Driverul de plată este <code>fake</code>: creditul se adaugă imediat, fără card.",
     "driverStripe": "Vei fi dus la Stripe Checkout. Creditul se adaugă doar după confirmarea plății.",
+    "plataNepornita": "Plata cu cardul nu e încă pornită. Revino în curând.",
     "miscari": "Mișcările din cont",
     "data": "Data",
     "operatiune": "Operațiune",
@@ -321,6 +362,11 @@
         "nume": "Corp nișă pentru electrocasnic",
         "descriere": "Cutie deschisă pentru cuptor sau mașină de spălat vase. Verifică nișa cerută de producător.",
         "corpNume": "Corp nișă cuptor"
+      },
+      "baza-cuptor": {
+        "nume": "Corp bază de cuptor",
+        "descriere": "Cuptor sub blat, cu un sertar dedesubt. Verifică nișa cerută de producător.",
+        "corpNume": "Corp cuptor"
       },
       "sus-2usi": {
         "nume": "Corp suspendat cu 2 uși",
@@ -565,6 +611,7 @@
     "intrebareAsamblare": "Cum se asamblează carcasa?",
     "intrebareBalama": "Ce balamale pui la uși?",
     "intrebareGlisiere": "Ce glisiere pui la sertare?",
+    "intrebarePlinta": "Ce plintă pui la corpurile pe picioare?",
     "intrebareSuspensii": "Corpurile suspendate se prind cu suspensii?",
     "jocPeParte": "Joc {mm} mm pe parte.",
     "suspensiiDetalii": "Câte {n} pe corp, {kg} kg pe pereche. Fără ele, corpurile se prind cu coltare vizibile.",
@@ -626,6 +673,24 @@
         "descriere": "Comanda nu are sertare."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Plintă aluminiu H100",
+        "descriere": "Häfele, bare de 4 m, clipsată pe picioare."
+      },
+      "alu-120": {
+        "nume": "Plintă aluminiu H120",
+        "descriere": "Häfele, bare de 4 m, clipsată pe picioare."
+      },
+      "alu-150": {
+        "nume": "Plintă aluminiu H150",
+        "descriere": "Häfele, bare de 4 m, clipsată pe picioare."
+      },
+      "fara": {
+        "nume": "Fără plintă",
+        "descriere": "Picioarele rămân la vedere, sau plinta se face altfel."
+      }
+    },
     "suspensii": {
       "nume": "Suspensie corp cu siguranță",
       "descriere": "Ascunsă în spatele panoului, reglabilă pe înălțime și adâncime."
@@ -657,7 +722,14 @@
       "obsUnaPeImbinare": "câte una pe îmbinare",
       "obsPeCorp": "câte două pe corp",
       "obsLa150": "la fiecare 150 mm",
-      "obsCupleazaFronturi": "cuplează cele două fronturi"
+      "obsCupleazaFronturi": "cuplează cele două fronturi",
+      "piciorPlinta": "Picior reglabil plastic, pentru plintă H{h}",
+      "picior": "Picior reglabil plastic",
+      "obsPicioare": "{n} pe corp, {m} peste {lat} mm lățime",
+      "clemaPlinta": "Clemă de plintă",
+      "obsClemaPlinta": "una pe fiecare picior din față",
+      "plintaBara": "Plintă aluminiu H{h}, bară de {bara} mm",
+      "obsPlinta": "{mm} mm în total; corpuri pe picioare: {n}. Colțarele, îmbinările și capacele, după așezare."
     }
   },
   "piesa": {
@@ -722,6 +794,8 @@
     "glisieraDe": "glisieră {lg} mm",
     "subCutie": "aplicat sub cutie",
     "socluInFata": "în față, între laterale — fundul stă pe el",
+    "socluColtL": "pe brațul {n}, în față — la colț, brațul 1 trece peste capătul brațului 2",
+    "socluDiagonal": "pe diagonală, în față — capetele tăiate la {u1}° și {u2}° față de tăietura dreaptă",
     "usiGlisante": "{n} uși glisante, suprapunere {supr}, șine {sine}",
     "traverseSusInLocDeBlat": "în locul blatului: una în față, una în spate, late de {lat}"
   },
@@ -754,9 +828,11 @@
     "sertareNuUmplu": "Fronturile de sertar nu ajung la fund: rămâne un gol de {gol} mm jos. Pune {front} mm la înălțimea frontului ca să umple corpul.",
     "piesaPreaMica": "Piesă sub 20 mm pe o latură: verifică cotele.",
     "piesaLatimeMaiMare": "Lățimea ({lat}) e mai mare decât lungimea ({lung}): la croire lungimea e latura mare. Schimbă-le între ele dacă fibra trebuie să meargă altfel.",
-    "socluNuMerge": "Soclul se pune numai la corpul drept, construit „între\". Aici a rămas fără efect.",
+    "socluNuMerge": "Soclul nu se poate pune la acest corp: merge la construcția „Blat/fund între laterale” și la colțuri, nu la „Laterale între blat și fund” sau la corpurile atipice. Aici a rămas fără efect.",
     "socluPreaInalt": "Soclu de {soclu} mm pe un corp prea scund: rămân doar {ramane} mm înăuntru.",
     "nisaPreaMare": "Nișa de {nisa} mm nu încape: peste {incape} mm nu mai rămâne loc pentru ușa de deasupra.",
+    "nisaLangaSertare": "Nișa de {nisa} mm nu încape lângă sertare: rămân doar {incape} mm. Micșorează fronturile de sertar sau mărește corpul.",
+    "cutieSubPolitaNisa": "Cutia sertarului, de {cutie} mm, se lovește de polița pe care stă aparatul. Pune cel mult {max} mm la înălțimea cutiei.",
     "politeFixeInPlus": "Ai cerut {cerut} polițe, dar corpul are nevoie de {fac}: alea mărginesc nișa și țin ușile.",
     "politeNuIncap": "{cate} polițe n-au unde sta: nișa a luat tot golul.",
     "glisantaSingura": "O singură ușă glisantă n-are pe lângă ce aluneca. Pune cel puțin două.",
@@ -1296,6 +1372,9 @@
     "lungimePiesa": "Lungime (L)",
     "latimePiesa": "Lățime (l)",
     "soclu": "Soclu (0 = picioare)",
+    "picioare": "Picioare",
+    "picioareNu": "Nu (suspendat sau pe soclu)",
+    "picioareDa": "Da, cu plintă aplicată",
     "nisa": "Nișă (cuptor, frigider)",
     "nisaFara": "fără",
     "montajGlisant": "Glisante",

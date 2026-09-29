@@ -19,14 +19,12 @@
 
   /* Categoriile carora li se poate pune soclu din setari.
 
-     Nu e acelasi lucru cu „sta pe podea": un corp de colt sta si el pe
-     podea, dar motorul nu stie sa-i puna soclu — acolo lateralele nu merg
-     drept in jos. La fel la cele atipice, unde forma vine din contur.
-     Categoria „sus" lipseste din alt motiv: alea atarna pe perete, si un
-     soclu acolo ar fi o bucata de PAL taiata degeaba.
+     Categoria „sus" lipseste: alea atarna pe perete, si un soclu acolo ar
+     fi o bucata de PAL taiata degeaba. Lipsesc si cele atipice, unde forma
+     vine din contur si n-au laterale drepte pana jos.
 
-     Colturile pe podea raman de facut: cer lucru in ramura de colt din
-     calc.js, care isi taie singura piesele. */
+     Colturile nu se pot lua pe categorie: in „colt" stau si cele de jos, si
+     cele suspendate. Cele care stau pe podea au `podea: true` pe model. */
   var PE_PODEA = ['bucatarie-jos', 'bucatarie-inalt', 'living', 'baie'];
 
   var CATEGORIES = [
@@ -107,6 +105,16 @@
     {
       id: 'baza-nisa', cat: 'bucatarie-jos',
       set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0 }
+    },
+    {
+      /* Cuptor sub blat, sertar dedesubt. Fără uși: fața de sus e a
+         cuptorului. Polița (singura) e cea pe care stă aparatul, deasupra
+         sertarului. Nișa de 600 încape cuptoarele obișnuite de 60; verifică
+         totuși ce cere producătorul. Cu front de 100, cutia sertarului
+         poate avea cel mult 64 — se pune 60, ca să rămână un joc. */
+      id: 'baza-cuptor', cat: 'bucatarie-jos',
+      set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 1,
+             nSer: 1, sertareJos: 1, hFront: 100, hCutie: 60, hNisa: 600 }
     },
 
     /* ---------------- bucătărie suspendate ---------------- */
@@ -234,17 +242,17 @@
 
     /* ---------------- corpuri de colț ---------------- */
     {
-      id: 'colt-jos-L', cat: 'colt',
+      id: 'colt-jos-L', cat: 'colt', podea: true,
       set: { tip: 'colt-L', W: 900, W2: 900, H: 720, D: 560,
              nUsi: 2, nPol: 0, nSer: 0 }
     },
     {
-      id: 'colt-jos-diagonal', cat: 'colt',
+      id: 'colt-jos-diagonal', cat: 'colt', podea: true,
       set: { tip: 'colt-diagonal', W: 900, W2: 900, H: 720, D: 560,
              nUsi: 1, nPol: 0, nSer: 0 }
     },
     {
-      id: 'colt-jos-orb', cat: 'colt',
+      id: 'colt-jos-orb', cat: 'colt', podea: true,
       set: { tip: 'colt-orb', W: 1000, H: 720, D: 560, orb: 550,
              nUsi: 1, nPol: 0, nSer: 0 }
     },
@@ -259,12 +267,12 @@
              nUsi: 1, nPol: 2, nSer: 0 }
     },
     {
-      id: 'colt-living-deschis', cat: 'colt',
+      id: 'colt-living-deschis', cat: 'colt', podea: true,
       set: { tip: 'colt-L', W: 800, W2: 800, H: 1800, D: 300,
              nUsi: 0, nPol: 4, nSer: 0 }
     },
     {
-      id: 'colt-baie', cat: 'colt',
+      id: 'colt-baie', cat: 'colt', podea: true,
       set: { tip: 'colt-diagonal', W: 500, W2: 500, H: 500, D: 300,
              nUsi: 1, nPol: 1, nSer: 0 }
     },
@@ -294,7 +302,7 @@
     },
 
     {
-      id: 'colt-dressing', cat: 'colt',
+      id: 'colt-dressing', cat: 'colt', podea: true,
       set: { tip: 'colt-L', W: 800, W2: 800, H: 2000, D: 560,
              nUsi: 2, nPol: 3, nSer: 0 }
     }
@@ -311,6 +319,10 @@
     if (!m) return null;
     var p = Object.assign(PalCalc.defaults(tr), m.set);
     p.nume = numeCorp(id, tr);
+    /* Corpurile de pe podea vin pe picioare, cu plintă de aluminiu în față
+       — felul bucătăriei puse în șir. Cele cu soclu în model rămân pe
+       soclu; cele suspendate n-au picioare. */
+    if (staPePodea(id) && !(+p.soclu > 0)) p.picioare = 1;
     return p;
   }
 
@@ -462,8 +474,19 @@
              '" height="' + soclu + '" class="sk-soclu"/>');
     }
 
+    /* Nișa fără uși (bază de cuptor): singura poliță e cea pe care stă
+       aparatul, pe muchia fronturilor de sertar — nu la mijlocul corpului. */
+    var nisaFaraUsi = nU === 0 && nS > 0 && +p.hNisa > 0;
+    if (nisaFaraUsi) {
+      var sirSer = nS * hF + (nS - 1) * ri;
+      var margF = aplicat ? rm : t + rinc;
+      var jumP = (aplicat ? 1 : -1) * t / 2;
+      var yN = +p.sertareJos ? H - margF - sirSer + jumP : margF + sirSer - jumP;
+      o.push('<line x1="' + t + '" y1="' + yN + '" x2="' + (W - t) + '" y2="' + yN + '" class="sk-polita"/>');
+    }
+
     /* polițe: calc le pune de jos în sus, SVG are y în jos */
-    for (var j = 1; j <= nP; j++) {
+    for (var j = 1; j <= (nisaFaraUsi ? 0 : nP); j++) {
       var yc = soclu + t + (Hint - usedTop) * j / (nP + 1);
       var y = H - yc;
       o.push('<line x1="' + t + '" y1="' + y + '" x2="' + (W - t) + '" y2="' + y + '" class="sk-polita"/>');
@@ -574,7 +597,7 @@
      trebuie, adica o bucata de PAL taiata degeaba si o cota gresita. */
   function staPePodea(id) {
     var m = id ? byId(String(id)) : null;
-    return !!(m && PE_PODEA.indexOf(m.cat) !== -1);
+    return !!(m && (m.podea || PE_PODEA.indexOf(m.cat) !== -1));
   }
 
   return {

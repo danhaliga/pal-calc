@@ -117,6 +117,46 @@
       "acoperire": "Abdeckung",
       "lipsaFisier": "Es fehlen die Übersetzungsdateien für: {coduri}"
     },
+    "plata": {
+      "legatura": "Zahlung",
+      "titlu": "Zahlung",
+      "intro": "Wie Kunden ihr Guthaben aufladen: mit virtuellem Testgeld oder per Karte über Stripe. Die Stripe-Schlüssel werden verschlüsselt gespeichert und nach dem Speichern nie mehr vollständig angezeigt.",
+      "stareFake": "Jetzt: virtuelles Geld. Jeder, der ein Konto anlegt, kann sich ohne Karte selbst Guthaben geben. Gut zum Testen; für echte Kunden auf Stripe umstellen.",
+      "stareOprita": "Jetzt: Stripe, aber ein Schlüssel fehlt. Das Aufladen ist für alle GESTOPPT, bis beide Schlüssel eingetragen sind.",
+      "stareTest": "Jetzt: Stripe mit einem Testschlüssel (sk_test_). Die Zahlung läuft über Stripe, aber es wird kein echtes Geld eingezogen.",
+      "stareLive": "Jetzt: Stripe mit echten Karten. Das Geld geht auf das Stripe-Konto.",
+      "eroareNecitite": "Die gespeicherten Schlüssel können nicht mehr gelesen werden: SESSION_SECRET wurde auf dem Server geändert. Bitte neu eintragen.",
+      "felul": "Zahlungsart",
+      "driverFake": "Virtuelles Testgeld (ohne Karte)",
+      "driverStripe": "Stripe, echte Karten",
+      "felulNota": "Du kannst die Stripe-Schlüssel vorab eintragen und bei virtuellem Geld bleiben; echte Zahlung beginnt erst, wenn du Stripe wählst.",
+      "chei": "Stripe-Schlüssel",
+      "cheieSecreta": "Geheimer Schlüssel (Secret key)",
+      "cheieSecretaAjutor": "In Stripe: Developers → API keys → Secret key. Beginnt mit sk_live_ (oder sk_test_ zum Testen).",
+      "acum": "Jetzt: {cheie}.",
+      "lipsa": "Jetzt: nicht gesetzt.",
+      "dinFisier": "Kommt aus der Einstellungsdatei des Servers; was du hier einträgst, ersetzt ihn.",
+      "cheieWebhook": "Webhook-Geheimnis (Signing secret)",
+      "cheieWebhookAjutor": "Meist musst du es nicht suchen: Die Anwendung legt es in Stripe an, wenn du den geheimen Schlüssel speicherst. Nur von Hand eintragen, wenn diese Seite danach fragt. Beginnt mit whsec_.",
+      "adresaWebhook": "Adresse, an die Stripe die Zahlungsbestätigungen schickt:",
+      "faraAdresa": "Die öffentliche Adresse der Website (APP_URL) steht in den Servereinstellungen noch nicht auf https. Ohne sie weiß Stripe nicht, wohin die Bestätigungen gehen, und der Webhook kann nicht automatisch angelegt werden.",
+      "golPastreaza": "Ein leeres Feld behält den aktuellen Schlüssel.",
+      "salveaza": "Prüfen und speichern",
+      "sterge": "Schlüssel löschen",
+      "stergeIntrebare": "Stripe-Schlüssel aus der Anwendung löschen? Die Zahlung geht zurück auf virtuelles Geld.",
+      "sters": "Schlüssel gelöscht. Die Zahlung läuft mit virtuellem Geld.",
+      "cheieSalvata": "Der geheime Schlüssel wurde bei Stripe geprüft und gespeichert.",
+      "webhookSalvat": "Das Webhook-Geheimnis wurde gespeichert.",
+      "webhookFacut": "Der Webhook wurde in Stripe angelegt und sein Geheimnis gespeichert.",
+      "pornitStripe": "Kartenzahlung über Stripe ist eingeschaltet.",
+      "pornitFake": "Die Zahlung läuft mit virtuellem Geld.",
+      "contStripe": "Stripe-Konto: {nume}",
+      "eroareFormat": "Das sieht nicht wie ein geheimer Stripe-Schlüssel aus. Er muss mit sk_live_ oder sk_test_ beginnen.",
+      "eroareFormatWebhook": "Das Webhook-Geheimnis muss mit whsec_ beginnen.",
+      "eroareStripe": "Stripe hat den Schlüssel nicht angenommen, er wurde nicht gespeichert: {mesaj}",
+      "eroareWebhook": "Der Schlüssel ist gültig, aber der Webhook konnte nicht automatisch angelegt werden ({mesaj}). In Stripe: Developers → Webhooks → Add endpoint, mit der Adresse unten und dem Ereignis checkout.session.completed; dann hier das Signing secret einfügen.",
+      "eroareFaraChei": "Stripe kann ohne beide Schlüssel nicht starten. Die Zahlung blieb, wie sie war."
+    },
     "titlu": "Verwaltung",
     "kpiUtilizatori": "Benutzer",
     "kpiCorpuri": "Korpusse (die letzten 100)",
@@ -171,6 +211,7 @@
     },
     "driverFake": "Der Zahlungstreiber ist <code>fake</code>: das Guthaben wird sofort gutgeschrieben, ohne Karte.",
     "driverStripe": "Du wirst zu Stripe Checkout weitergeleitet. Das Guthaben wird erst nach Bestätigung der Zahlung gutgeschrieben.",
+    "plataNepornita": "Kartenzahlung ist noch nicht verfügbar. Schau bald wieder vorbei.",
     "miscari": "Kontobewegungen",
     "data": "Datum",
     "operatiune": "Vorgang",
@@ -315,6 +356,11 @@
         "nume": "Geräteumbauschrank",
         "descriere": "Offener Kasten für Backofen oder Geschirrspüler. Prüfe die vom Hersteller geforderte Nische.",
         "corpNume": "Backofenumbau"
+      },
+      "baza-cuptor": {
+        "nume": "Unterschrank für Backofen",
+        "descriere": "Backofen unter der Arbeitsplatte, mit einer Schublade darunter. Prüfe die Nische, die der Hersteller verlangt.",
+        "corpNume": "Backofenschrank"
       },
       "sus-2usi": {
         "nume": "Hängeschrank mit 2 Türen",
@@ -559,6 +605,7 @@
     "intrebareAsamblare": "Wie wird der Korpus verbunden?",
     "intrebareBalama": "Welche Bänder kommen an die Türen?",
     "intrebareGlisiere": "Welche Auszüge kommen an die Schubladen?",
+    "intrebarePlinta": "Welche Sockelblende für Korpusse auf Füßen?",
     "intrebareSuspensii": "Werden Hängeschränke mit Schrankaufhängern befestigt?",
     "jocPeParte": "Luft {mm} mm pro Seite.",
     "suspensiiDetalii": "{n} pro Korpus, {kg} kg pro Paar. Ohne sie werden die Korpusse mit sichtbaren Winkeln befestigt.",
@@ -620,6 +667,24 @@
         "descriere": "Dieser Auftrag hat keine Schubladen."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Alu-Sockelblende H100",
+        "descriere": "Häfele, 4-m-Stangen, auf die Füße geklipst."
+      },
+      "alu-120": {
+        "nume": "Alu-Sockelblende H120",
+        "descriere": "Häfele, 4-m-Stangen, auf die Füße geklipst."
+      },
+      "alu-150": {
+        "nume": "Alu-Sockelblende H150",
+        "descriere": "Häfele, 4-m-Stangen, auf die Füße geklipst."
+      },
+      "fara": {
+        "nume": "Keine Sockelblende",
+        "descriere": "Die Füße bleiben sichtbar, oder die Blende wird anders gemacht."
+      }
+    },
     "suspensii": {
       "nume": "Schrankaufhänger mit Sicherung",
       "descriere": "Verdeckt hinter der Rückwand, in Höhe und Tiefe verstellbar."
@@ -651,7 +716,14 @@
       "obsUnaPeImbinare": "eine pro Verbindung",
       "obsPeCorp": "zwei pro Korpus",
       "obsLa150": "alle 150 mm",
-      "obsCupleazaFronturi": "koppelt die beiden Fronten"
+      "obsCupleazaFronturi": "koppelt die beiden Fronten",
+      "piciorPlinta": "Verstellbarer Kunststofffuß, für Sockelblende H{h}",
+      "picior": "Verstellbarer Kunststofffuß",
+      "obsPicioare": "{n} pro Korpus, {m} ab {lat} mm Breite",
+      "clemaPlinta": "Sockelblenden-Clip",
+      "obsClemaPlinta": "einer an jedem vorderen Fuß",
+      "plintaBara": "Alu-Sockelblende H{h}, Stange {bara} mm",
+      "obsPlinta": "{mm} mm insgesamt; Korpusse auf Füßen: {n}. Ecken, Verbinder und Endkappen je nach Aufstellung."
     }
   },
   "piesa": {
@@ -716,6 +788,8 @@
     "glisieraDe": "Auszug {lg} mm",
     "subCutie": "unter dem Kasten montiert",
     "socluInFata": "vorn, zwischen den Seiten — der Boden steht darauf",
+    "socluColtL": "am Schenkel {n}, vorn — in der Ecke läuft Schenkel 1 über das Ende von Schenkel 2",
+    "socluDiagonal": "auf der Diagonale, vorn — Enden auf {u1}° und {u2}° zum geraden Schnitt geschnitten",
     "usiGlisante": "{n} Schiebetüren, Überlappung {supr}, Schienen {sine}",
     "traverseSusInLocDeBlat": "statt des Deckels: eine vorn, eine hinten, {lat} breit"
   },
@@ -748,9 +822,11 @@
     "sertareNuUmplu": "Die Schubkastenfronten reichen nicht bis unten: {gol} mm bleiben offen. Setz die Fronthöhe auf {front} mm, damit der Korpus voll wird.",
     "piesaPreaMica": "Eine Seite unter 20 mm: prüf die Maße.",
     "piesaLatimeMaiMare": "Die Breite ({lat}) ist größer als die Länge ({lung}): beim Zuschnitt ist die Länge die lange Seite. Tausch sie, wenn die Faser anders laufen soll.",
-    "socluNuMerge": "Ein Sockel geht nur bei einem geraden Korpus in „Zwischen“-Bauweise. Hier bleibt er weg.",
+    "socluNuMerge": "Ein Sockel geht bei diesem Korpus nicht: Er passt zu „Ober-/Unterboden zwischen den Seiten“ und zu Eckschränken, nicht zu „Seiten zwischen Ober- und Unterboden“ oder zu unregelmäßigen Korpussen. Hier bleibt er weg.",
     "socluPreaInalt": "Sockel von {soclu} mm bei einem so niedrigen Korpus: innen bleiben nur {ramane} mm.",
     "nisaPreaMare": "Eine Nische von {nisa} mm passt nicht: über {incape} mm bleibt kein Platz für die Tür darüber.",
+    "nisaLangaSertare": "Die Nische von {nisa} mm passt nicht neben die Schubladen: Es bleiben nur {incape} mm. Mach die Schubladenfronten kleiner oder den Schrank höher.",
+    "cutieSubPolitaNisa": "Der Schubkasten mit {cutie} mm stößt an den Boden, auf dem das Gerät steht. Nimm höchstens {max} mm Kastenhöhe.",
     "politeFixeInPlus": "Du hast {cerut} Böden verlangt, der Korpus braucht aber {fac}: die fassen die Nische ein und halten die Türen.",
     "politeNuIncap": "Für {cate} Böden ist kein Platz: die Nische hat den ganzen Raum genommen.",
     "glisantaSingura": "Eine einzelne Schiebetür hat nichts, woran sie vorbeigleiten kann. Nimm mindestens zwei.",
@@ -1285,6 +1361,9 @@
     "lungimePiesa": "Länge (L)",
     "latimePiesa": "Breite (l)",
     "soclu": "Sockel (0 = Füße)",
+    "picioare": "Füße",
+    "picioareNu": "Nein (hängend oder auf Sockel)",
+    "picioareDa": "Ja, mit aufgeklipster Sockelblende",
     "nisa": "Nische (Backofen, Kühlschrank)",
     "nisaFara": "keine",
     "montajGlisant": "Schiebetüren",
