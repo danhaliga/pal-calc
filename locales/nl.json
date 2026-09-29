@@ -105,7 +105,10 @@
     "modelNecunoscut": "Onbekend model.",
     "sumaInvalida": "Ongeldig bedrag.",
     "dupaPlata": "De zaaglijst is beschikbaar na betaling.",
-    "csrf": "De sessie is verlopen. Laad de pagina opnieuw en probeer het nog eens."
+    "csrf": "De sessie is verlopen. Laad de pagina opnieuw en probeer het nog eens.",
+    "subScaraCote": "De maten onder de trap kloppen niet: elk moet minstens 10 mm zijn.",
+    "subScaraFaraComanda": "Meerdere kasten maak je alleen vanuit een opdracht. Open een opdracht en zet de kast erin.",
+    "creditInsuficient": "Niet genoeg tegoed voor alle kasten. Vul aan en probeer opnieuw."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "Te bestellen: glazen deur met aluminium kader, {h} × {l} mm — {n} st."
     },
     "conturDeMana": "Zijden en hoeken, met de hand",
-    "subScaraStramb": "De huidige omtrek sluit niet. De maten hierboven zijn er bij benadering uit afgelezen — druk op de knop en het klopt."
+    "subScaraStramb": "De huidige omtrek sluit niet. De maten hierboven zijn er bij benadering uit afgelezen — druk op de knop en het klopt.",
+    "subScaraBucati": "In hoeveel kasten",
+    "subScaraFaraComanda": "Deze kast zit niet in een opdracht. Meerdere kasten maak je alleen vanuit een opdracht.",
+    "subScaraIntreabaPlata": "De ruimte wordt uit {cate} kasten gemaakt. De huidige wordt de eerste, en de andere {noi} komen in de opdracht en kosten {cost} lei. Je hebt {sold} lei."
   },
   "fata": {
     "px": "rechts",

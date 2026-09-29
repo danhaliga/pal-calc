@@ -300,6 +300,42 @@
     ];
   }
 
+  /* Spațiul de sub scară, tăiat în mai multe corpuri.
+
+     Un corp de patru metri nu se face dintr-o bucată: nu se transportă, nu
+     intră pe ușă și nu se ridică în doi oameni. Se face din două, trei sau
+     patru, lipite pe perete.
+
+     Fiecare bucată e tot un corp sub scară — bază mai mică și cele două
+     înălțimi luate de pe pantă, acolo unde cade ea. Înălțimea e liniară pe
+     lățime, deci se citesc direct: la x=0 e cea din stânga, la x=baza e cea
+     din dreapta.
+
+     Întoarce o listă de { baza, dreapta, stanga, contur }, de la stânga la
+     dreapta. Cu o singură bucată iese chiar spațiul întreg. */
+  function subScaraInBucati(baza, hDreapta, hStanga, bucati) {
+    var n = Math.max(1, Math.min(8, Math.round(+bucati || 1)));
+    var x = Math.max(1, +baza || 0);
+    var dr = Math.max(1, +hDreapta || 0);
+    var st = Math.max(1, +hStanga || 0);
+    var inaltimeaLa = function (v) { return st + (dr - st) * (v / x); };
+    /* Se rotunjesc MARGINILE, nu lățimile. Rotunjind lățimile, trei bucăți
+       din 4000 ies de 1333.3 și fac împreună 3999.9: o zecime de milimetru
+       pierdută pe perete, care nu se vede nicăieri dar există. Așa,
+       diferențele se adună înapoi exact la cât era spațiul. */
+    var margini = [];
+    for (var im = 0; im <= n; im++) margini.push(r1(x * im / n));
+
+    var out = [];
+    for (var i = 0; i < n; i++) {
+      var xa = margini[i], xb = margini[i + 1];
+      var bStanga = r1(inaltimeaLa(xa)), bDreapta = r1(inaltimeaLa(xb));
+      out.push({ baza: r1(xb - xa), stanga: bStanga, dreapta: bDreapta,
+                 contur: conturSubScara(xb - xa, bDreapta, bStanga) });
+    }
+    return out;
+  }
+
   /* Cotele unui contur de sub scară, citite înapoi din laturi.
 
      Se citesc ȘI dintr-un contur care nu se închide. Un corp scris de mână,
@@ -1568,6 +1604,7 @@
     susLaX: susLaX,
     felieContur: felieContur,
     conturSubScara: conturSubScara,
+    subScaraInBucati: subScaraInBucati,
     coteSubScara: coteSubScara,
     reducereCant: reducereCant,
     compartimenteAlese: compartimenteAlese,

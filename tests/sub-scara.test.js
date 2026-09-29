@@ -380,3 +380,105 @@ test('cotele din desen stau in afara formei si se citesc', () => {
   assert.match(css, /\.ct-cota\{[^}]*stroke:var\(--panel\)/, 'cotele n-au contur, deci nu se citesc peste forma');
   assert.match(css, /paint-order:stroke fill/, 'conturul ar manca literele din interior');
 });
+
+/* ---------------- spatiul facut din mai multe corpuri ---------------- */
+
+test('bazele bucatilor se aduna exact la spatiul intreg', () => {
+  /* Se rotunjesc MARGINILE, nu latimile. Rotunjind latimile, trei bucati din
+     4000 ies de 1333.3 si fac impreuna 3999.9: o zecime de milimetru pierduta
+     pe perete, care nu se vede nicaieri dar exista. */
+  [[4000, 600, 2200], [2870, 450, 1935], [1200, 300, 2100], [3333, 777, 1111]].forEach(([x, y, z]) => {
+    [1, 2, 3, 4].forEach(n => {
+      const b = PalCalc.subScaraInBucati(x, y, z, n);
+      assert.equal(b.length, n, x + ' in ' + n + ': alt numar de bucati');
+      const suma = Math.round(b.reduce((a, q) => a + q.baza, 0) * 10) / 10;
+      assert.ok(Math.abs(suma - x) < 0.05,
+        x + ' in ' + n + ': bazele fac ' + suma);
+    });
+  });
+});
+
+test('bucatile se leaga intre ele, fara treapta si fara gol', () => {
+  /* Doua corpuri lipite pe perete trebuie sa aiba aceeasi inaltime acolo unde
+     se ating: inaltimea din dreapta a unuia e cea din stanga a urmatorului. */
+  [2, 3, 4].forEach(n => {
+    const b = PalCalc.subScaraInBucati(4000, 600, 2200, n);
+    for (let i = 1; i < n; i++) {
+      assert.ok(Math.abs(b[i].stanga - b[i - 1].dreapta) < 0.05,
+        'intre bucata ' + i + ' si ' + (i + 1) + ': ' + b[i - 1].dreapta + ' fata de ' + b[i].stanga);
+    }
+    /* capetele raman cele ale spatiului intreg */
+    assert.ok(Math.abs(b[0].stanga - 2200) < 0.05, 'capatul din stanga s-a mutat');
+    assert.ok(Math.abs(b[n - 1].dreapta - 600) < 0.05, 'capatul din dreapta s-a mutat');
+  });
+});
+
+test('fiecare bucata e tot un corp sub scara, cu conturul inchis', () => {
+  PalCalc.subScaraInBucati(4000, 600, 2200, 3).forEach((b, i) => {
+    const g = PalCalc.conturGeometrie(b.contur);
+    assert.equal(g.W, b.baza, 'bucata ' + (i + 1) + ': gabaritul nu e baza');
+    assert.equal(g.H, Math.max(b.stanga, b.dreapta), 'bucata ' + (i + 1) + ': gabaritul pe inaltime');
+    const cote = PalCalc.coteSubScara(b.contur);
+    assert.ok(cote && !cote.stramb, 'bucata ' + (i + 1) + ': conturul nu se inchide');
+  });
+});
+
+test('o bucata singura e chiar spatiul intreg', () => {
+  const una = PalCalc.subScaraInBucati(900, 400, 800, 1);
+  assert.equal(una.length, 1);
+  assert.deepEqual([una[0].baza, una[0].dreapta, una[0].stanga], [900, 400, 800]);
+  assert.deepEqual(una[0].contur, PalCalc.conturSubScara(900, 400, 800));
+});
+
+test('mai mult de opt bucati nu se fac', () => {
+  assert.equal(PalCalc.subScaraInBucati(4000, 600, 2200, 99).length, 8);
+  assert.equal(PalCalc.subScaraInBucati(4000, 600, 2200, 0).length, 1);
+});
+
+test('ruta face corpurile in comanda, si le plateste pe cele noi', () => {
+  const s = citeste('src', 'orders.js');
+  assert.match(s, /router\.post\('\/corps\/:id\/sub-scara'/, 'lipseste ruta');
+  assert.match(s, /db\.transaction\(\(user, corp, order, bucati, cost\)/,
+    'nu se face totul dintr-o data: ar iesi doua corpuri din patru');
+  assert.match(s, /CREDIT_INSUFICIENT/, 'nu se opreste cand nu ajunge creditul');
+  assert.match(s, /eroare\.subScaraFaraComanda/, 'nu se cere comanda');
+  /* bucata intai ia locul corpului deschis, deci NU se plateste din nou */
+  const inainte = s.indexOf('bucata întâi ia locul corpului deschis');
+  const primaPlata = s.indexOf('credit.scade', inainte);
+  const bucla = s.indexOf('for (let i = 1; i < n; i++)', inainte);
+  assert.ok(inainte !== -1 && bucla !== -1 && primaPlata > bucla,
+    'prima bucata se plateste din nou');
+});
+
+test('editorul cere in cate corpuri, si intreaba inainte sa cheltuie', () => {
+  const v = citeste('views', 'corps', 'edit.ejs');
+  assert.match(v, /id="ssBucati"/, 'lipseste caseta');
+  assert.match(v, /orderId: order \? order\.id : null/, 'editorul nu stie de comanda');
+
+  const app = citeste('public', 'app.js');
+  assert.match(app, /window\.PalIntreaba\(T\('editor\.subScaraIntreabaPlata'/,
+    'cheltuie fara sa intrebe');
+  assert.match(app, /function trimiteSubScara/, 'nu trimite la server');
+  assert.match(app, /if \(!DATA\.orderId\)/, 'nu verifica daca e intr-o comanda');
+});
+
+test('cele sase chei noi sunt in toate cele treizeci de limbi', () => {
+  const chei = ['editor.subScaraBucati', 'editor.subScaraFaraComanda',
+                'editor.subScaraIntreabaPlata', 'eroare.subScaraCote',
+                'eroare.subScaraFaraComanda', 'eroare.creditInsuficient'];
+  const ia = (c, k) => k.split('.').reduce((o, x) => (o || {})[x], c);
+  const param = v => (String(v).match(/\{[a-zA-Z]+\}/g) || []).sort().join(',');
+  const ro = JSON.parse(citeste('locales', 'ro.json'));
+  PalI18n.LIMBI.forEach(l => {
+    const c = JSON.parse(citeste('locales', l.cod + '.json'));
+    chei.forEach(k => {
+      const v = ia(c, k);
+      assert.ok(v && String(v).trim(), l.cod + ': lipseste ' + k);
+      assert.equal(param(v), param(ia(ro, k)), l.cod + ': parametri schimbati la ' + k);
+    });
+    ['{cate}', '{noi}', '{cost}', '{sold}'].forEach(x => {
+      assert.ok(String(ia(c, 'editor.subScaraIntreabaPlata')).indexOf(x) !== -1,
+        l.cod + ': s-a pierdut ' + x + ' din intrebarea de plata');
+    });
+  });
+});

@@ -38,6 +38,12 @@
             <input id="ssStanga" type="number" step="10" min="10" max="4000"></label>
           <label><%= t('editor.subScaraDreapta') %>
             <input id="ssDreapta" type="number" step="10" min="10" max="4000"></label>
+          <%# Un corp de patru metri nu se face dintr-o bucata: nu se
+              transporta si nu intra pe usa. %>
+          <label><%= t('editor.subScaraBucati') %><select id="ssBucati">
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+          </select></label>
         </div>
         <p class="warn hidden" id="subScaraStramb" style="margin:10px 0 0"></p>
         <button type="button" class="btn small primary" id="ssFa" style="margin-top:10px"><%= t('editor.subScaraFa') %></button>
@@ -413,7 +419,10 @@
   nou: nou,
   matFixat: matFixat,
   cheiModel: cheiModel,
-  pePodea: pePodea
+  pePodea: pePodea,
+  orderId: order ? order.id : null,
+  pretCorp: priceLei,
+  sold: (sold / 100).toFixed(2)
 }) %></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="/shared/calc.js?v=<%= assetV %>"></script>

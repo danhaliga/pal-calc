@@ -105,7 +105,10 @@
     "modelNecunoscut": "Neznámy model.",
     "sumaInvalida": "Neplatná suma.",
     "dupaPlata": "Rezací plán je dostupný po zaplatení.",
-    "csrf": "Relácia vypršala. Načítaj stránku znova a skús to ešte raz."
+    "csrf": "Relácia vypršala. Načítaj stránku znova a skús to ešte raz.",
+    "subScaraCote": "Rozmery pod schodmi nesedia: každý musí byť aspoň 10 mm.",
+    "subScaraFaraComanda": "Viac korpusov sa robí len zo zákazky. Otvor zákazku a vlož do nej korpus.",
+    "creditInsuficient": "Kredit nestačí na všetky korpusy. Dobi a skús to znova."
   },
   "admin": {
     "limbi": {
@@ -1441,7 +1444,10 @@
       "usaRamaAlu": "Na objednanie: sklenené dvierka v hliníkovom ráme, {h} × {l} mm — {n} ks."
     },
     "conturDeMana": "Strany a uhly, ručne",
-    "subScaraStramb": "Súčasný obrys sa nezatvára. Rozmery vyššie sú z neho odčítané, približne — stlač tlačidlo a bude presný."
+    "subScaraStramb": "Súčasný obrys sa nezatvára. Rozmery vyššie sú z neho odčítané, približne — stlač tlačidlo a bude presný.",
+    "subScaraBucati": "Na koľko korpusov",
+    "subScaraFaraComanda": "Tento korpus nie je v zákazke. Viac korpusov sa robí len zo zákazky.",
+    "subScaraIntreabaPlata": "Priestor sa urobí z {cate} korpusov. Súčasný bude prvý a ďalších {noi} pribudne do zákazky za {cost} lei. Máš {sold} lei."
   },
   "fata": {
     "px": "vpravo",

@@ -105,7 +105,10 @@
     "modelNecunoscut": "Mẫu không xác định.",
     "sumaInvalida": "Số tiền không hợp lệ.",
     "dupaPlata": "Bảng cắt có sau khi thanh toán.",
-    "csrf": "Phiên làm việc đã hết hạn. Tải lại trang và thử lại."
+    "csrf": "Phiên làm việc đã hết hạn. Tải lại trang và thử lại.",
+    "subScaraCote": "Kích thước gầm cầu thang không hợp lệ: mỗi cái ít nhất 10 mm.",
+    "subScaraFaraComanda": "Nhiều thùng chỉ làm được từ trong một đơn. Mở một đơn và đặt thùng vào.",
+    "creditInsuficient": "Không đủ tín dụng cho tất cả các thùng. Nạp thêm rồi thử lại."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "Cần đặt: cánh kính khung nhôm, {h} × {l} mm — {n} cái."
     },
     "conturDeMana": "Cạnh và góc, nhập tay",
-    "subScaraStramb": "Đường bao hiện tại không khép. Các kích thước ở trên đọc từ đó, gần đúng — bấm nút là chính xác."
+    "subScaraStramb": "Đường bao hiện tại không khép. Các kích thước ở trên đọc từ đó, gần đúng — bấm nút là chính xác.",
+    "subScaraBucati": "Thành mấy thùng",
+    "subScaraFaraComanda": "Thùng này không nằm trong đơn nào. Nhiều thùng chỉ làm được từ trong một đơn.",
+    "subScaraIntreabaPlata": "Không gian làm thành {cate} thùng. Thùng hiện tại thành thùng đầu, {noi} thùng còn lại thêm vào đơn và tốn {cost} lei. Bạn có {sold} lei."
   },
   "fata": {
     "px": "phải",

@@ -105,7 +105,10 @@
     "modelNecunoscut": "Modelo desconocido.",
     "sumaInvalida": "Importe no válido.",
     "dupaPlata": "La lista de despiece está disponible tras el pago.",
-    "csrf": "La sesión ha caducado. Recarga la página e inténtalo de nuevo."
+    "csrf": "La sesión ha caducado. Recarga la página e inténtalo de nuevo.",
+    "subScaraCote": "Las medidas del bajo escalera no son válidas: cada una debe ser de al menos 10 mm.",
+    "subScaraFaraComanda": "Varios muebles solo se hacen desde un pedido. Abre un pedido y mete el mueble en él.",
+    "creditInsuficient": "No hay crédito suficiente para todos los muebles. Recarga e inténtalo de nuevo."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "Por pedir: puerta de vidrio con marco de aluminio, {h} × {l} mm — {n} uds."
     },
     "conturDeMana": "Lados y ángulos, a mano",
-    "subScaraStramb": "El contorno actual no cierra. Las medidas de arriba están leídas de él, aproximadas — pulsa el botón y queda exacto."
+    "subScaraStramb": "El contorno actual no cierra. Las medidas de arriba están leídas de él, aproximadas — pulsa el botón y queda exacto.",
+    "subScaraBucati": "En cuántos muebles",
+    "subScaraFaraComanda": "Este mueble no está en un pedido. Varios muebles solo se hacen desde un pedido.",
+    "subScaraIntreabaPlata": "El espacio se hace con {cate} muebles. El actual pasa a ser el primero, y los otros {noi} se añaden al pedido y cuestan {cost} lei. Tienes {sold} lei."
   },
   "fata": {
     "px": "derecha",

@@ -105,7 +105,10 @@
     "modelNecunoscut": "Okänd modell.",
     "sumaInvalida": "Ogiltigt belopp.",
     "dupaPlata": "Kaplistan blir tillgänglig efter betalning.",
-    "csrf": "Sessionen har gått ut. Ladda om sidan och försök igen."
+    "csrf": "Sessionen har gått ut. Ladda om sidan och försök igen.",
+    "subScaraCote": "Måtten under trappan stämmer inte: vart och ett måste vara minst 10 mm.",
+    "subScaraFaraComanda": "Flera stommar gör man bara inifrån en order. Öppna en order och lägg stommen i den.",
+    "creditInsuficient": "Saldot räcker inte till alla stommar. Fyll på och försök igen."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "Att beställa: glaslucka med aluminiumram, {h} × {l} mm — {n} st."
     },
     "conturDeMana": "Sidor och vinklar, för hand",
-    "subScaraStramb": "Den nuvarande konturen sluter inte. Måtten ovan är avlästa från den, ungefärligt — tryck på knappen så blir den exakt."
+    "subScaraStramb": "Den nuvarande konturen sluter inte. Måtten ovan är avlästa från den, ungefärligt — tryck på knappen så blir den exakt.",
+    "subScaraBucati": "I hur många stommar",
+    "subScaraFaraComanda": "Den här stommen ligger inte i en order. Flera stommar gör man bara inifrån en order.",
+    "subScaraIntreabaPlata": "Utrymmet görs av {cate} stommar. Den nuvarande blir den första, och de andra {noi} läggs till i ordern och kostar {cost} lei. Du har {sold} lei."
   },
   "fata": {
     "px": "höger",

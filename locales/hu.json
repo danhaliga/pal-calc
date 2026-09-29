@@ -105,7 +105,10 @@
     "modelNecunoscut": "Ismeretlen modell.",
     "sumaInvalida": "Érvénytelen összeg.",
     "dupaPlata": "A szabásjegyzék fizetés után érhető el.",
-    "csrf": "A munkamenet lejárt. Töltsd újra az oldalt, és próbáld meg ismét."
+    "csrf": "A munkamenet lejárt. Töltsd újra az oldalt, és próbáld meg ismét.",
+    "subScaraCote": "A lépcső alatti méretek nem jók: mindegyik legalább 10 mm legyen.",
+    "subScaraFaraComanda": "Több korpusz csak rendelésen belül készül. Nyiss egy rendelést és tedd bele a korpuszt.",
+    "creditInsuficient": "Nincs elég kredit az összes korpuszra. Tölts fel és próbáld újra."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "Megrendelendő: alumínium keretes üvegajtó, {h} × {l} mm — {n} db."
     },
     "conturDeMana": "Oldalak és szögek, kézzel",
-    "subScaraStramb": "A mostani körvonal nem zár. A fenti méretek onnan vannak leolvasva, hozzávetőleg — nyomd meg a gombot, és pontos lesz."
+    "subScaraStramb": "A mostani körvonal nem zár. A fenti méretek onnan vannak leolvasva, hozzávetőleg — nyomd meg a gombot, és pontos lesz.",
+    "subScaraBucati": "Hány korpuszra",
+    "subScaraFaraComanda": "Ez a korpusz nincs rendelésben. Több korpusz csak rendelésen belül készül.",
+    "subScaraIntreabaPlata": "A tér {cate} korpuszból készül. A mostani lesz az első, a többi {noi} bekerül a rendelésbe és {cost} lejbe kerül. Van {sold} lejed."
   },
   "fata": {
     "px": "jobb",

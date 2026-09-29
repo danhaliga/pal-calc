@@ -105,7 +105,10 @@
     "modelNecunoscut": "Nepoznat model.",
     "sumaInvalida": "Neispravan iznos.",
     "dupaPlata": "Popis krojenja dostupan je nakon plaćanja.",
-    "csrf": "Sesija je istekla. Osvježi stranicu i pokušaj ponovno."
+    "csrf": "Sesija je istekla. Osvježi stranicu i pokušaj ponovno.",
+    "subScaraCote": "Mjere ispod stepenica nisu dobre: svaka bar 10 mm.",
+    "subScaraFaraComanda": "Više korpusa radi se samo iz narudžbe. Otvori narudžbu i stavi korpus u nju.",
+    "creditInsuficient": "Kredit ne dostaje za sve korpuse. Dopuni i pokušaj ponovno."
   },
   "admin": {
     "limbi": {
@@ -1441,7 +1444,10 @@
       "usaRamaAlu": "Za naručiti: staklena vrata u aluminijskom okviru, {h} × {l} mm — {n} kom."
     },
     "conturDeMana": "Stranice i kutovi, ručno",
-    "subScaraStramb": "Trenutna kontura se ne zatvara. Mjere iznad očitane su iz nje, približno — pritisni gumb i bit će točna."
+    "subScaraStramb": "Trenutna kontura se ne zatvara. Mjere iznad očitane su iz nje, približno — pritisni gumb i bit će točna.",
+    "subScaraBucati": "Na koliko korpusa",
+    "subScaraFaraComanda": "Ovaj korpus nije u narudžbi. Više korpusa radi se samo iz narudžbe.",
+    "subScaraIntreabaPlata": "Prostor se radi od {cate} korpusa. Sadašnji postaje prvi, a ostalih {noi} dodaje se u narudžbu i košta {cost} leja. Imaš {sold} leja."
   },
   "fata": {
     "px": "desno",

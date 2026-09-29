@@ -105,7 +105,10 @@
     "modelNecunoscut": "Model necunoscut.",
     "sumaInvalida": "Sumă invalidă.",
     "dupaPlata": "Lista de debitare este disponibilă după plată.",
-    "csrf": "Sesiunea a expirat. Reîncarcă pagina și încearcă din nou."
+    "csrf": "Sesiunea a expirat. Reîncarcă pagina și încearcă din nou.",
+    "subScaraCote": "Cotele spațiului de sub scară nu sunt bune: fiecare trebuie să fie de cel puțin 10 mm.",
+    "subScaraFaraComanda": "Mai multe corpuri se fac numai dintr-o comandă. Deschide o comandă și pune corpul în ea.",
+    "creditInsuficient": "Nu ajunge creditul pentru toate corpurile. Alimentează contul și încearcă din nou."
   },
   "admin": {
     "limbi": {
@@ -1441,7 +1444,10 @@
       "usaRamaAlu": "De comandat: ușă cu ramă de aluminiu și sticlă, {h} × {l} mm — {n} buc."
     },
     "conturDeMana": "Laturi și unghiuri, de mână",
-    "subScaraStramb": "Conturul de acum nu se închide. Cotele de mai sus sunt citite din el, aproximativ — apasă butonul și se face exact."
+    "subScaraStramb": "Conturul de acum nu se închide. Cotele de mai sus sunt citite din el, aproximativ — apasă butonul și se face exact.",
+    "subScaraBucati": "În câte corpuri",
+    "subScaraFaraComanda": "Corpul ăsta nu e într-o comandă. Mai multe corpuri se fac numai dintr-o comandă.",
+    "subScaraIntreabaPlata": "Spațiul se face din {cate} corpuri. Corpul de acum devine primul, iar celelalte {noi} se adaugă în comandă și costă {cost} lei. Ai {sold} lei."
   },
   "fata": {
     "px": "dreapta",

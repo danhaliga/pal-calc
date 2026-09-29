@@ -105,7 +105,10 @@
     "modelNecunoscut": "Modello sconosciuto.",
     "sumaInvalida": "Importo non valido.",
     "dupaPlata": "La distinta di taglio è disponibile dopo il pagamento.",
-    "csrf": "La sessione è scaduta. Ricarica la pagina e riprova."
+    "csrf": "La sessione è scaduta. Ricarica la pagina e riprova.",
+    "subScaraCote": "Le misure del sottoscala non vanno: ognuna deve essere di almeno 10 mm.",
+    "subScaraFaraComanda": "Più mobili si fanno solo da dentro un ordine. Apri un ordine e mettici il mobile.",
+    "creditInsuficient": "Il credito non basta per tutti i mobili. Ricarica e riprova."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "Da ordinare: anta in vetro con telaio in alluminio, {h} × {l} mm — {n} pz."
     },
     "conturDeMana": "Lati e angoli, a mano",
-    "subScaraStramb": "Il contorno attuale non si chiude. Le misure sopra sono lette da lì, approssimate — premi il bottone e diventa esatto."
+    "subScaraStramb": "Il contorno attuale non si chiude. Le misure sopra sono lette da lì, approssimate — premi il bottone e diventa esatto.",
+    "subScaraBucati": "In quanti mobili",
+    "subScaraFaraComanda": "Questo mobile non è in un ordine. Più mobili si fanno solo da dentro un ordine.",
+    "subScaraIntreabaPlata": "Lo spazio si fa con {cate} mobili. Quello attuale diventa il primo, e gli altri {noi} si aggiungono all’ordine e costano {cost} lei. Hai {sold} lei."
   },
   "fata": {
     "px": "destra",

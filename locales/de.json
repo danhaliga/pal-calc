@@ -105,7 +105,10 @@
     "modelNecunoscut": "Unbekanntes Modell.",
     "sumaInvalida": "Ungültiger Betrag.",
     "dupaPlata": "Die Zuschnittliste gibt es nach der Zahlung.",
-    "csrf": "Die Sitzung ist abgelaufen. Lade die Seite neu und versuche es noch einmal."
+    "csrf": "Die Sitzung ist abgelaufen. Lade die Seite neu und versuche es noch einmal.",
+    "subScaraCote": "Die Maße unter der Treppe stimmen nicht: jedes muss mindestens 10 mm sein.",
+    "subScaraFaraComanda": "Mehrere Schränke entstehen nur aus einem Auftrag. Leg einen Auftrag an und setz den Schrank hinein.",
+    "creditInsuficient": "Das Guthaben reicht nicht für alle Schränke. Lade auf und versuch es noch einmal."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "Zu bestellen: Glastür mit Alurahmen, {h} × {l} mm — {n} Stk."
     },
     "conturDeMana": "Seiten und Winkel, von Hand",
-    "subScaraStramb": "Die jetzige Kontur schließt nicht. Die Maße oben sind daraus abgelesen, ungefähr — drück den Knopf, dann stimmt sie."
+    "subScaraStramb": "Die jetzige Kontur schließt nicht. Die Maße oben sind daraus abgelesen, ungefähr — drück den Knopf, dann stimmt sie.",
+    "subScaraBucati": "In wie viele Schränke",
+    "subScaraFaraComanda": "Dieser Schrank ist in keinem Auftrag. Mehrere Schränke entstehen nur aus einem Auftrag.",
+    "subScaraIntreabaPlata": "Der Raum wird aus {cate} Schränken gemacht. Der jetzige wird der erste, die anderen {noi} kommen in den Auftrag und kosten {cost} Lei. Du hast {sold} Lei."
   },
   "fata": {
     "px": "rechts",

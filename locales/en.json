@@ -105,7 +105,10 @@
     "modelNecunoscut": "Unknown model.",
     "sumaInvalida": "Invalid amount.",
     "dupaPlata": "The cutting list becomes available after payment.",
-    "csrf": "Your session has expired. Reload the page and try again."
+    "csrf": "Your session has expired. Reload the page and try again.",
+    "subScaraCote": "The under-stairs sizes are not right: each must be at least 10 mm.",
+    "subScaraFaraComanda": "Several cabinets can only be made from within an order. Open an order and put the cabinet in it.",
+    "creditInsuficient": "Not enough credit for all the cabinets. Top up and try again."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "To order: aluminium-frame glass door, {h} × {l} mm — {n} pcs."
     },
     "conturDeMana": "Sides and angles, by hand",
-    "subScaraStramb": "The current outline does not close. The sizes above are read from it, roughly — press the button and it is made exact."
+    "subScaraStramb": "The current outline does not close. The sizes above are read from it, roughly — press the button and it is made exact.",
+    "subScaraBucati": "How many cabinets",
+    "subScaraFaraComanda": "This cabinet is not in an order. Several cabinets can only be made from within an order.",
+    "subScaraIntreabaPlata": "The space is made of {cate} cabinets. The current one becomes the first, and the other {noi} are added to the order and cost {cost} lei. You have {sold} lei."
   },
   "fata": {
     "px": "right",

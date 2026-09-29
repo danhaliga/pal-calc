@@ -105,7 +105,10 @@
     "modelNecunoscut": "Nieznany model.",
     "sumaInvalida": "Nieprawidłowa kwota.",
     "dupaPlata": "Lista rozkroju jest dostępna po opłacie.",
-    "csrf": "Sesja wygasła. Odśwież stronę i spróbuj ponownie."
+    "csrf": "Sesja wygasła. Odśwież stronę i spróbuj ponownie.",
+    "subScaraCote": "Wymiary pod schodami są nieprawidłowe: każdy musi mieć co najmniej 10 mm.",
+    "subScaraFaraComanda": "Kilka korpusów robi się tylko z poziomu zamówienia. Otwórz zamówienie i włóż do niego korpus.",
+    "creditInsuficient": "Kredytu nie starczy na wszystkie korpusy. Doładuj i spróbuj ponownie."
   },
   "admin": {
     "limbi": {
@@ -1441,7 +1444,10 @@
       "usaRamaAlu": "Do zamówienia: drzwiczki szklane w ramie aluminiowej, {h} × {l} mm — {n} szt."
     },
     "conturDeMana": "Boki i kąty, ręcznie",
-    "subScaraStramb": "Obecny obrys się nie zamyka. Wymiary powyżej są z niego odczytane, w przybliżeniu — naciśnij przycisk, a będzie dokładny."
+    "subScaraStramb": "Obecny obrys się nie zamyka. Wymiary powyżej są z niego odczytane, w przybliżeniu — naciśnij przycisk, a będzie dokładny.",
+    "subScaraBucati": "Na ile korpusów",
+    "subScaraFaraComanda": "Ten korpus nie jest w zamówieniu. Kilka korpusów robi się tylko z poziomu zamówienia.",
+    "subScaraIntreabaPlata": "Przestrzeń robi się z {cate} korpusów. Obecny staje się pierwszym, a pozostałe {noi} dochodzą do zamówienia i kosztują {cost} lei. Masz {sold} lei."
   },
   "fata": {
     "px": "prawo",

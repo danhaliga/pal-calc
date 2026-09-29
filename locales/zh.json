@@ -105,7 +105,10 @@
     "modelNecunoscut": "不认识这个款式。",
     "sumaInvalida": "金额不对。",
     "dupaPlata": "开料清单付款后才能看。",
-    "csrf": "会话已过期。刷新页面再试一次。"
+    "csrf": "会话已过期。刷新页面再试一次。",
+    "subScaraCote": "楼梯下的尺寸不对：每个至少 10 毫米。",
+    "subScaraFaraComanda": "多个柜只能在订单里制作。请新建订单并把柜放进去。",
+    "creditInsuficient": "余额不足以制作全部柜子。请充值后重试。"
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "需订购：铝框玻璃门 {h} × {l} 毫米 — {n} 扇。"
     },
     "conturDeMana": "手动输入边长和角度",
-    "subScaraStramb": "当前轮廓没有闭合。上面的尺寸是从中大致读出的——按下按钮即可修正。"
+    "subScaraStramb": "当前轮廓没有闭合。上面的尺寸是从中大致读出的——按下按钮即可修正。",
+    "subScaraBucati": "做成几个柜",
+    "subScaraFaraComanda": "这个柜不属于任何订单。多个柜只能在订单里制作。",
+    "subScaraIntreabaPlata": "这块空间做成 {cate} 个柜。当前的柜成为第一个，其余 {noi} 个加入订单，费用 {cost} 列伊。你有 {sold} 列伊。"
   },
   "fata": {
     "px": "右",

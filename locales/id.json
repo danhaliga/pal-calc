@@ -105,7 +105,10 @@
     "modelNecunoscut": "Model tidak dikenal.",
     "sumaInvalida": "Jumlah tidak sah.",
     "dupaPlata": "Daftar potong tersedia setelah pembayaran.",
-    "csrf": "Sesi sudah berakhir. Muat ulang halaman dan coba lagi."
+    "csrf": "Sesi sudah berakhir. Muat ulang halaman dan coba lagi.",
+    "subScaraCote": "Ukuran bawah tangga tidak benar: masing-masing minimal 10 mm.",
+    "subScaraFaraComanda": "Beberapa lemari hanya bisa dibuat dari dalam pesanan. Buka pesanan dan masukkan lemarinya.",
+    "creditInsuficient": "Kredit tidak cukup untuk semua lemari. Isi ulang lalu coba lagi."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "Untuk dipesan: pintu kaca rangka aluminium, {h} × {l} mm — {n} buah."
     },
     "conturDeMana": "Sisi dan sudut, manual",
-    "subScaraStramb": "Garis luar saat ini tidak menutup. Ukuran di atas dibaca darinya, kira-kira — tekan tombolnya dan jadi tepat."
+    "subScaraStramb": "Garis luar saat ini tidak menutup. Ukuran di atas dibaca darinya, kira-kira — tekan tombolnya dan jadi tepat.",
+    "subScaraBucati": "Jadi berapa lemari",
+    "subScaraFaraComanda": "Lemari ini tidak ada dalam pesanan. Beberapa lemari hanya bisa dibuat dari dalam pesanan.",
+    "subScaraIntreabaPlata": "Ruangnya dibuat dari {cate} lemari. Yang sekarang jadi yang pertama, dan {noi} lainnya ditambahkan ke pesanan dengan biaya {cost} lei. Kamu punya {sold} lei."
   },
   "fata": {
     "px": "kanan",

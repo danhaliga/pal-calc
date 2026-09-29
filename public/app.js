@@ -283,15 +283,46 @@ function legaContur() {
     toast(T('editor.conturAdaugat', { mm: Math.round(g.eroare) }));
   };
 
+  /* Formular trimis la server, nu `fetch`: raspunsul e o pagina noua —
+     comanda, cu toate corpurile facute. */
+  function trimiteSubScara(x, y, z, bucati) {
+    var f = document.createElement('form');
+    f.method = 'post';
+    f.action = '/corps/' + CORP_ID + '/sub-scara';
+    [['_csrf', DATA.csrf], ['baza', x], ['dreapta', y], ['stanga', z], ['bucati', bucati]]
+      .forEach(function (c) {
+        var i = document.createElement('input');
+        i.type = 'hidden'; i.name = c[0]; i.value = c[1];
+        f.appendChild(i);
+      });
+    document.body.appendChild(f);
+    f.submit();
+  }
+
   $('conturReset').onclick = function () {
     params.contur = window.PalCalc.conturImplicit(+params.W || 800, +params.H || 720);
     randeazaContur(); render(); scheduleSave();
   };
 
-  /* Corpul de sub scara: trei cote, si iese conturul intreg. */
+  /* Corpul de sub scara: trei cote, si iese conturul intreg.
+
+     Cu mai multe bucati nu se mai poate face aici: se fac corpuri NOI, deci
+     trebuie server. Corpul deschis devine bucata din stanga, restul se
+     adauga in aceeasi comanda si se platesc ca oricare alt corp. */
   $('ssFa').onclick = function () {
     var x = +$('ssBaza').value, z = +$('ssStanga').value, y = +$('ssDreapta').value;
     if (!(x >= 10 && y >= 10 && z >= 10)) { toast(T('editor.subScaraCote')); return; }
+
+    var bucati = +($('ssBucati') || { value: 1 }).value || 1;
+    if (bucati > 1) {
+      if (!DATA.orderId) { toast(T('editor.subScaraFaraComanda')); return; }
+      window.PalIntreaba(T('editor.subScaraIntreabaPlata', {
+        cate: bucati, noi: bucati - 1,
+        cost: (bucati - 1) * (+DATA.pretCorp || 0),
+        sold: DATA.sold
+      }), function () { trimiteSubScara(x, y, z, bucati); });
+      return;
+    }
     params.contur = window.PalCalc.conturSubScara(x, y, z);
     randeazaContur(); render(); scheduleSave();
     var panta = params.contur[2];

@@ -105,7 +105,10 @@
     "modelNecunoscut": "Bilinmeyen model.",
     "sumaInvalida": "Geçersiz tutar.",
     "dupaPlata": "Kesim listesi ödemeden sonra erişilebilir.",
-    "csrf": "Oturum süresi doldu. Sayfayı yenile ve tekrar dene."
+    "csrf": "Oturum süresi doldu. Sayfayı yenile ve tekrar dene.",
+    "subScaraCote": "Merdiven altı ölçüleri uygun değil: her biri en az 10 mm olmalı.",
+    "subScaraFaraComanda": "Birden fazla gövde ancak sipariş içinden yapılır. Bir sipariş aç ve gövdeyi içine koy.",
+    "creditInsuficient": "Bütün gövdeler için bakiye yetmiyor. Yükleyip tekrar dene."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "Sipariş edilecek: alüminyum çerçeveli cam kapak, {h} × {l} mm — {n} adet."
     },
     "conturDeMana": "Kenarlar ve açılar, elle",
-    "subScaraStramb": "Şu anki kontur kapanmıyor. Yukarıdaki ölçüler ondan yaklaşık olarak okundu — düğmeye bas, tam olsun."
+    "subScaraStramb": "Şu anki kontur kapanmıyor. Yukarıdaki ölçüler ondan yaklaşık olarak okundu — düğmeye bas, tam olsun.",
+    "subScaraBucati": "Kaç gövdeye",
+    "subScaraFaraComanda": "Bu gövde bir siparişte değil. Birden fazla gövde ancak sipariş içinden yapılır.",
+    "subScaraIntreabaPlata": "Alan {cate} gövdeden yapılır. Şimdiki gövde birincisi olur, diğer {noi} tanesi siparişe eklenir ve {cost} lei tutar. {sold} lei var."
   },
   "fata": {
     "px": "sağ",

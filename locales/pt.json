@@ -105,7 +105,10 @@
     "modelNecunoscut": "Modelo desconhecido.",
     "sumaInvalida": "Valor inválido.",
     "dupaPlata": "A lista de corte fica disponível depois do pagamento.",
-    "csrf": "A sessão expirou. Recarrega a página e tenta de novo."
+    "csrf": "A sessão expirou. Recarrega a página e tenta de novo.",
+    "subScaraCote": "As medidas do vão da escada não estão certas: cada uma tem de ter pelo menos 10 mm.",
+    "subScaraFaraComanda": "Vários móveis só se fazem a partir de uma encomenda. Abra uma encomenda e ponha o móvel nela.",
+    "creditInsuficient": "O crédito não chega para todos os móveis. Carregue e tente de novo."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "A encomendar: porta de vidro com caixilho de alumínio, {h} × {l} mm — {n} un."
     },
     "conturDeMana": "Lados e ângulos, à mão",
-    "subScaraStramb": "O contorno atual não fecha. As medidas acima são lidas dele, aproximadas — carrega no botão e fica exato."
+    "subScaraStramb": "O contorno atual não fecha. As medidas acima são lidas dele, aproximadas — carrega no botão e fica exato.",
+    "subScaraBucati": "Em quantos móveis",
+    "subScaraFaraComanda": "Este móvel não está numa encomenda. Vários móveis só se fazem a partir de uma encomenda.",
+    "subScaraIntreabaPlata": "O espaço faz-se com {cate} móveis. O atual passa a ser o primeiro, e os outros {noi} são acrescentados à encomenda e custam {cost} lei. Tem {sold} lei."
   },
   "fata": {
     "px": "direita",

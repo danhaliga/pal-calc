@@ -105,7 +105,10 @@
     "modelNecunoscut": "Modèle inconnu.",
     "sumaInvalida": "Montant invalide.",
     "dupaPlata": "La liste de débit est disponible après le paiement.",
-    "csrf": "Votre session a expiré. Rechargez la page et réessayez."
+    "csrf": "Votre session a expiré. Rechargez la page et réessayez.",
+    "subScaraCote": "Les cotes du sous-escalier ne sont pas bonnes : chacune doit faire au moins 10 mm.",
+    "subScaraFaraComanda": "Plusieurs meubles ne se font que depuis une commande. Ouvrez une commande et mettez-y le meuble.",
+    "creditInsuficient": "Le crédit ne suffit pas pour tous les meubles. Rechargez et réessayez."
   },
   "admin": {
     "limbi": {
@@ -1430,7 +1433,10 @@
       "usaRamaAlu": "À commander : porte vitrée à cadre aluminium, {h} × {l} mm — {n} pcs."
     },
     "conturDeMana": "Côtés et angles, à la main",
-    "subScaraStramb": "Le contour actuel ne se ferme pas. Les cotes ci-dessus en sont tirées, approximativement — appuyez sur le bouton et il devient exact."
+    "subScaraStramb": "Le contour actuel ne se ferme pas. Les cotes ci-dessus en sont tirées, approximativement — appuyez sur le bouton et il devient exact.",
+    "subScaraBucati": "En combien de meubles",
+    "subScaraFaraComanda": "Ce meuble n’est pas dans une commande. Plusieurs meubles ne se font que depuis une commande.",
+    "subScaraIntreabaPlata": "L’espace se fait en {cate} meubles. Le meuble actuel devient le premier, et les {noi} autres sont ajoutés à la commande et coûtent {cost} lei. Vous avez {sold} lei."
   },
   "fata": {
     "px": "droite",

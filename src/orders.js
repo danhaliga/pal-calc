@@ -513,6 +513,85 @@ router.post('/corps/:id/material', requireAuth, (req, res, next) => {
   res.redirect(`/corps/${corp.id}`);
 });
 
+/* Spațiul de sub scară, făcut din mai multe corpuri.
+
+   Un corp de patru metri nu se face dintr-o bucată: nu se transportă, nu
+   intră pe ușă și nu se ridică în doi oameni. Corpul deschis devine bucata
+   din stânga, iar restul se adaugă în aceeași comandă, în ordine.
+
+   Fiecare corp nou se plătește ca oricare altul — de-aia se numără întâi
+   câte sunt și se cere creditul pentru toate deodată: mai bine nu se face
+   niciunul decât să iasă două din patru și omul să rămână cu un perete pe
+   jumătate. */
+const faceSubScaraInBucati = db.transaction((user, corp, order, bucati, cost) => {
+  const params = Object.assign(PalCalc.defaults(), JSON.parse(corp.params));
+  const numeDeBaza = String(corp.name || 'Corp sub scară').replace(/\s*\(\d+\/\d+\)\s*$/, '');
+  const n = bucati.length;
+
+  /* bucata întâi ia locul corpului deschis: nu se plătește din nou */
+  const primul = Object.assign({}, params, {
+    tip: 'atipic', contur: bucati[0].contur,
+    W: bucati[0].baza, H: Math.max(bucati[0].stanga, bucati[0].dreapta),
+    nume: numeDeBaza + ' (1/' + n + ')'
+  });
+  db.prepare("UPDATE corps SET name = ?, params = ?, updated_at = datetime('now') WHERE id = ?")
+    .run(primul.nume, JSON.stringify(primul), corp.id);
+
+  const facute = [corp.id];
+  for (let i = 1; i < n; i++) {
+    const ramas = credit.scade(user.id, cost, 'corp', null, 'corp.subScara|' + numeDeBaza);
+    if (ramas === null) throw new Error('CREDIT_INSUFICIENT');
+    const p = Object.assign({}, params, {
+      tip: 'atipic', contur: bucati[i].contur,
+      W: bucati[i].baza, H: Math.max(bucati[i].stanga, bucati[i].dreapta),
+      nume: numeDeBaza + ' (' + (i + 1) + '/' + n + ')'
+    });
+    const poz = db.prepare('SELECT COALESCE(MAX(poz), 0) AS m FROM corps WHERE order_id = ?')
+                  .get(order.id).m + 1;
+    const info = db.prepare(
+      'INSERT INTO corps (user_id, order_id, name, params, status, poz, mat_corp_id, mat_front_id) ' +
+      'VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+    ).run(user.id, order.id, p.nume, JSON.stringify(p), 'paid', poz,
+          corp.mat_corp_id, corp.mat_front_id);
+    const idNou = Number(info.lastInsertRowid);
+    db.prepare('UPDATE credit_tx SET ref = ? WHERE id = (SELECT MAX(id) FROM credit_tx WHERE user_id = ?)')
+      .run(String(idNou), user.id);
+    facute.push(idNou);
+  }
+  return facute;
+});
+
+router.post('/corps/:id/sub-scara', requireAuth, (req, res, next) => {
+  const corp = db.prepare('SELECT * FROM corps WHERE id = ?').get(Number(req.params.id));
+  if (!corp || corp.user_id !== req.user.id) return next(util.eroare('eroare.corpLipsa', 404));
+
+  const baza = Number(req.body.baza), stanga = Number(req.body.stanga), dreapta = Number(req.body.dreapta);
+  const cate = Math.max(1, Math.min(4, Math.round(Number(req.body.bucati) || 1)));
+  if (!(baza >= 10 && stanga >= 10 && dreapta >= 10)) {
+    return next(util.eroare('eroare.subScaraCote', 400));
+  }
+
+  const order = corp.order_id ? getOwned(corp.order_id, req.user.id) : null;
+  if (cate > 1 && !order) return next(util.eroare('eroare.subScaraFaraComanda', 400));
+
+  const bucati = PalCalc.subScaraInBucati(baza, dreapta, stanga, cate);
+  const cost = credit.pretCorp();
+  if (cate > 1 && credit.sold(req.user.id) < cost * (cate - 1)) {
+    return next(util.eroare('eroare.creditInsuficient', 402));
+  }
+
+  try {
+    faceSubScaraInBucati(req.user, corp, order, bucati, cost);
+  } catch (e) {
+    if (String(e.message) === 'CREDIT_INSUFICIENT') {
+      return next(util.eroare('eroare.creditInsuficient', 402));
+    }
+    throw e;
+  }
+
+  res.redirect(cate > 1 ? `/orders/${order.id}` : `/corps/${corp.id}`);
+});
+
 /* Fronturile pe toată comanda, dintr-o apăsare.
 
    O bucătărie se comandă fără fronturi ca bucătărie, nu corp cu corp: cine
