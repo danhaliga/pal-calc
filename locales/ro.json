@@ -611,6 +611,7 @@
     "intrebareAsamblare": "Cum se asamblează carcasa?",
     "intrebareBalama": "Ce balamale pui la uși?",
     "intrebareGlisiere": "Ce glisiere pui la sertare?",
+    "intrebarePlinta": "Ce plintă pui la corpurile pe picioare?",
     "intrebareSuspensii": "Corpurile suspendate se prind cu suspensii?",
     "jocPeParte": "Joc {mm} mm pe parte.",
     "suspensiiDetalii": "Câte {n} pe corp, {kg} kg pe pereche. Fără ele, corpurile se prind cu coltare vizibile.",
@@ -672,6 +673,24 @@
         "descriere": "Comanda nu are sertare."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Plintă aluminiu H100",
+        "descriere": "Häfele, bare de 4 m, clipsată pe picioare."
+      },
+      "alu-120": {
+        "nume": "Plintă aluminiu H120",
+        "descriere": "Häfele, bare de 4 m, clipsată pe picioare."
+      },
+      "alu-150": {
+        "nume": "Plintă aluminiu H150",
+        "descriere": "Häfele, bare de 4 m, clipsată pe picioare."
+      },
+      "fara": {
+        "nume": "Fără plintă",
+        "descriere": "Picioarele rămân la vedere, sau plinta se face altfel."
+      }
+    },
     "suspensii": {
       "nume": "Suspensie corp cu siguranță",
       "descriere": "Ascunsă în spatele panoului, reglabilă pe înălțime și adâncime."
@@ -703,7 +722,14 @@
       "obsUnaPeImbinare": "câte una pe îmbinare",
       "obsPeCorp": "câte două pe corp",
       "obsLa150": "la fiecare 150 mm",
-      "obsCupleazaFronturi": "cuplează cele două fronturi"
+      "obsCupleazaFronturi": "cuplează cele două fronturi",
+      "piciorPlinta": "Picior reglabil plastic, pentru plintă H{h}",
+      "picior": "Picior reglabil plastic",
+      "obsPicioare": "{n} pe corp, {m} peste {lat} mm lățime",
+      "clemaPlinta": "Clemă de plintă",
+      "obsClemaPlinta": "una pe fiecare picior din față",
+      "plintaBara": "Plintă aluminiu H{h}, bară de {bara} mm",
+      "obsPlinta": "{mm} mm în total; corpuri pe picioare: {n}. Colțarele, îmbinările și capacele, după așezare."
     }
   },
   "piesa": {
@@ -1346,6 +1372,9 @@
     "lungimePiesa": "Lungime (L)",
     "latimePiesa": "Lățime (l)",
     "soclu": "Soclu (0 = picioare)",
+    "picioare": "Picioare",
+    "picioareNu": "Nu (suspendat sau pe soclu)",
+    "picioareDa": "Da, cu plintă aplicată",
     "nisa": "Nișă (cuptor, frigider)",
     "nisaFara": "fără",
     "montajGlisant": "Glisante",

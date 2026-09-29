@@ -605,6 +605,7 @@
     "intrebareAsamblare": "キャビネットはどう締めますか？",
     "intrebareBalama": "扉の丁番はどれにしますか？",
     "intrebareGlisiere": "引き出しのレールはどれにしますか？",
+    "intrebarePlinta": "脚付きキャビネットの幅木は？",
     "intrebareSuspensii": "吊戸棚は調整できる吊り金具で掛けますか？",
     "jocPeParte": "片側クリアランス {mm} mm。",
     "suspensiiDetalii": "1台につき{n}個、1組で{kg}kg。使わない場合は見えるL金具で掛けることになります。",
@@ -666,6 +667,24 @@
         "descriere": "この注文に引き出しはありません。"
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "アルミ幅木 H100",
+        "descriere": "Häfele、4 m 材、脚にクリップで留める。"
+      },
+      "alu-120": {
+        "nume": "アルミ幅木 H120",
+        "descriere": "Häfele、4 m 材、脚にクリップで留める。"
+      },
+      "alu-150": {
+        "nume": "アルミ幅木 H150",
+        "descriere": "Häfele、4 m 材、脚にクリップで留める。"
+      },
+      "fara": {
+        "nume": "幅木なし",
+        "descriere": "脚が見えたまま、または別の方法で幅木を作る。"
+      }
+    },
     "suspensii": {
       "nume": "ロック付きキャビネット吊り金具",
       "descriere": "背板の裏に隠れ、高さも奥行も調整できます。"
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "1か所につき1個",
       "obsPeCorp": "1台につき2個",
       "obsLa150": "150mmごと",
-      "obsCupleazaFronturi": "扉2枚をつなぎます"
+      "obsCupleazaFronturi": "扉2枚をつなぎます",
+      "piciorPlinta": "樹脂製アジャスター脚（幅木 H{h} 用）",
+      "picior": "樹脂製アジャスター脚",
+      "obsPicioare": "1台につき {n}、幅 {lat} mm 超は {m}",
+      "clemaPlinta": "幅木クリップ",
+      "obsClemaPlinta": "前脚1本につき1個",
+      "plintaBara": "アルミ幅木 H{h}、{bara} mm 材",
+      "obsPlinta": "合計 {mm} mm；脚付きキャビネット：{n}。コーナー・ジョイント・エンドキャップは配置に応じて。"
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "長さ (L)",
     "latimePiesa": "幅 (l)",
     "soclu": "台輪（0 = 脚）",
+    "picioare": "脚",
+    "picioareNu": "なし（吊り戸棚または台輪）",
+    "picioareDa": "あり、クリップ式幅木付き",
     "nisa": "開口（オーブン・冷蔵庫）",
     "nisaFara": "なし",
     "montajGlisant": "引き戸",

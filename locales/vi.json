@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Thùng tủ liên kết bằng gì?",
     "intrebareBalama": "Cánh dùng bản lề nào?",
     "intrebareGlisiere": "Ngăn kéo dùng ray nào?",
+    "intrebarePlinta": "Len chân nào cho tủ có chân?",
     "intrebareSuspensii": "Tủ treo có bắt bằng móc treo không?",
     "jocPeParte": "Khe hở {mm} mm mỗi bên.",
     "suspensiiDetalii": "{n} cái mỗi thùng tủ, {kg} kg mỗi cặp. Không có chúng thì tủ bắt bằng ke góc lộ ra ngoài.",
@@ -666,6 +667,24 @@
         "descriere": "Đơn hàng này không có ngăn kéo."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Len chân nhôm H100",
+        "descriere": "Häfele, thanh 4 m, kẹp vào chân tủ."
+      },
+      "alu-120": {
+        "nume": "Len chân nhôm H120",
+        "descriere": "Häfele, thanh 4 m, kẹp vào chân tủ."
+      },
+      "alu-150": {
+        "nume": "Len chân nhôm H150",
+        "descriere": "Häfele, thanh 4 m, kẹp vào chân tủ."
+      },
+      "fara": {
+        "nume": "Không len chân",
+        "descriere": "Chân tủ để lộ, hoặc len chân làm theo cách khác."
+      }
+    },
     "suspensii": {
       "nume": "Móc treo thùng tủ có khóa an toàn",
       "descriere": "Giấu sau tấm hậu, chỉnh được theo chiều cao và chiều sâu."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "một cái mỗi mối nối",
       "obsPeCorp": "hai cái mỗi thùng tủ",
       "obsLa150": "cứ 150 mm một cái",
-      "obsCupleazaFronturi": "nối hai cánh với nhau"
+      "obsCupleazaFronturi": "nối hai cánh với nhau",
+      "piciorPlinta": "Chân nhựa điều chỉnh, cho len chân H{h}",
+      "picior": "Chân nhựa điều chỉnh",
+      "obsPicioare": "{n} mỗi tủ, {m} khi rộng trên {lat} mm",
+      "clemaPlinta": "Kẹp len chân",
+      "obsClemaPlinta": "một cái cho mỗi chân trước",
+      "plintaBara": "Len chân nhôm H{h}, thanh {bara} mm",
+      "obsPlinta": "Tổng {mm} mm; tủ có chân: {n}. Góc, nối và nắp đầu tùy cách bố trí."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Chiều dài (L)",
     "latimePiesa": "Chiều rộng (l)",
     "soclu": "Chân đế (0 = chân rời)",
+    "picioare": "Chân",
+    "picioareNu": "Không (treo tường hoặc trên chân đế)",
+    "picioareDa": "Có, với len chân kẹp",
     "nisa": "Khoảng hở (lò, tủ lạnh)",
     "nisaFara": "không có",
     "montajGlisant": "Lùa",

@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Hogyan áll össze a korpusz?",
     "intrebareBalama": "Milyen pánt kerül az ajtókra?",
     "intrebareGlisiere": "Milyen sín kerül a fiókokba?",
+    "intrebarePlinta": "Milyen lábazati takaró kell a lábas szekrényekhez?",
     "intrebareSuspensii": "A felsőszekrények szekrényakasztóval rögzülnek?",
     "jocPeParte": "Hézag oldalanként {mm} mm.",
     "suspensiiDetalii": "Korpuszonként {n}, páronként {kg} kg. Nélkülük a korpuszok látszó sarokvassal rögzülnek.",
@@ -666,6 +667,24 @@
         "descriere": "Ebben a megrendelésben nincs fiók."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Alumínium lábazati takaró H100",
+        "descriere": "Häfele, 4 m-es szálak, a lábakra pattintva."
+      },
+      "alu-120": {
+        "nume": "Alumínium lábazati takaró H120",
+        "descriere": "Häfele, 4 m-es szálak, a lábakra pattintva."
+      },
+      "alu-150": {
+        "nume": "Alumínium lábazati takaró H150",
+        "descriere": "Häfele, 4 m-es szálak, a lábakra pattintva."
+      },
+      "fara": {
+        "nume": "Takaró nélkül",
+        "descriere": "A lábak látszanak, vagy a takaró másként készül."
+      }
+    },
     "suspensii": {
       "nume": "Szekrényakasztó biztosítással",
       "descriere": "A hátlap mögé rejtve, magasságban és mélységben állítható."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "kötésenként egy",
       "obsPeCorp": "korpuszonként kettő",
       "obsLa150": "minden 150 mm-en",
-      "obsCupleazaFronturi": "összeköti a két frontot"
+      "obsCupleazaFronturi": "összeköti a két frontot",
+      "piciorPlinta": "Állítható műanyag láb, H{h} takaróhoz",
+      "picior": "Állítható műanyag láb",
+      "obsPicioare": "szekrényenként {n}, {lat} mm szélesség felett {m}",
+      "clemaPlinta": "Lábazati takaró klipsz",
+      "obsClemaPlinta": "minden első lábra egy",
+      "plintaBara": "Alumínium lábazati takaró H{h}, {bara} mm-es szál",
+      "obsPlinta": "Összesen {mm} mm; lábas szekrények: {n}. Sarkok, toldók és végzárók az elrendezés szerint."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Hossz (L)",
     "latimePiesa": "Szélesség (l)",
     "soclu": "Lábazat (0 = lábak)",
+    "picioare": "Lábak",
+    "picioareNu": "Nem (fali vagy lábazaton)",
+    "picioareDa": "Igen, pattintós lábazati takaróval",
     "nisa": "Nyílás (sütő, hűtő)",
     "nisaFara": "nincs",
     "montajGlisant": "Tolóajtós",

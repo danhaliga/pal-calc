@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Hoe wordt het korpus verbonden?",
     "intrebareBalama": "Welke scharnieren op de deuren?",
     "intrebareGlisiere": "Welke geleiders onder de lades?",
+    "intrebarePlinta": "Welke klikplint voor kasten op poten?",
     "intrebareSuspensii": "Worden bovenkasten met kastophangers bevestigd?",
     "jocPeParte": "Speling {mm} mm per zijde.",
     "suspensiiDetalii": "{n} per kast, {kg} kg per paar. Zonder deze worden kasten met zichtbare hoekprofielen bevestigd.",
@@ -666,6 +667,24 @@
         "descriere": "Deze opdracht heeft geen lades."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Aluminium klikplint H100",
+        "descriere": "Häfele, staven van 4 m, op de poten geklikt."
+      },
+      "alu-120": {
+        "nume": "Aluminium klikplint H120",
+        "descriere": "Häfele, staven van 4 m, op de poten geklikt."
+      },
+      "alu-150": {
+        "nume": "Aluminium klikplint H150",
+        "descriere": "Häfele, staven van 4 m, op de poten geklikt."
+      },
+      "fara": {
+        "nume": "Geen klikplint",
+        "descriere": "De poten blijven zichtbaar, of de plint wordt anders gemaakt."
+      }
+    },
     "suspensii": {
       "nume": "Kastophanger met borging",
       "descriere": "Verdekt achter de achterwand, verstelbaar in hoogte en diepte."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "één per verbinding",
       "obsPeCorp": "twee per kast",
       "obsLa150": "om de 150 mm",
-      "obsCupleazaFronturi": "koppelt de twee fronten"
+      "obsCupleazaFronturi": "koppelt de twee fronten",
+      "piciorPlinta": "Verstelbare kunststof poot, voor klikplint H{h}",
+      "picior": "Verstelbare kunststof poot",
+      "obsPicioare": "{n} per kast, {m} boven {lat} mm breedte",
+      "clemaPlinta": "Plintclip",
+      "obsClemaPlinta": "één op elke voorste poot",
+      "plintaBara": "Aluminium klikplint H{h}, staaf van {bara} mm",
+      "obsPlinta": "{mm} mm in totaal; kasten op poten: {n}. Hoeken, verbinders en eindkappen volgens de opstelling."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Lengte (L)",
     "latimePiesa": "Breedte (l)",
     "soclu": "Plint (0 = pootjes)",
+    "picioare": "Poten",
+    "picioareNu": "Nee (hangend of op een plint)",
+    "picioareDa": "Ja, met klikplint",
     "nisa": "Nis (oven, koelkast)",
     "nisaFara": "geen",
     "montajGlisant": "Schuifdeuren",

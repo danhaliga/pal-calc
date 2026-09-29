@@ -605,6 +605,7 @@
     "intrebareAsamblare": "柜体怎么连接？",
     "intrebareBalama": "门板用什么铰链？",
     "intrebareGlisiere": "抽屉用什么滑轨？",
+    "intrebarePlinta": "带柜脚的柜体用哪种踢脚线？",
     "intrebareSuspensii": "吊柜用可调吊码挂吗？",
     "jocPeParte": "每边间隙 {mm} 毫米。",
     "suspensiiDetalii": "每个柜体 {n} 个，每对承重 {kg} 公斤。不用吊码就得用露在外面的角码挂。",
@@ -666,6 +667,24 @@
         "descriere": "这张订单里没有抽屉。"
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "铝踢脚线 H100",
+        "descriere": "Häfele，4 米长料，卡在柜脚上。"
+      },
+      "alu-120": {
+        "nume": "铝踢脚线 H120",
+        "descriere": "Häfele，4 米长料，卡在柜脚上。"
+      },
+      "alu-150": {
+        "nume": "铝踢脚线 H150",
+        "descriere": "Häfele，4 米长料，卡在柜脚上。"
+      },
+      "fara": {
+        "nume": "不用踢脚线",
+        "descriere": "柜脚外露，或用其他方式做踢脚线。"
+      }
+    },
     "suspensii": {
       "nume": "带锁扣的柜体吊码",
       "descriere": "藏在背板后面，高低和进深都能调。"
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "每个接头一个",
       "obsPeCorp": "每个柜体两个",
       "obsLa150": "每 150 毫米一个",
-      "obsCupleazaFronturi": "把两扇门连起来"
+      "obsCupleazaFronturi": "把两扇门连起来",
+      "piciorPlinta": "可调塑料柜脚，配 H{h} 踢脚线",
+      "picior": "可调塑料柜脚",
+      "obsPicioare": "每柜 {n} 个，宽度超过 {lat} 毫米时 {m} 个",
+      "clemaPlinta": "踢脚线卡扣",
+      "obsClemaPlinta": "每个前脚一个",
+      "plintaBara": "铝踢脚线 H{h}，{bara} 毫米长料",
+      "obsPlinta": "共 {mm} 毫米；带柜脚的柜体：{n}。转角、连接件和端盖视布置而定。"
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "长 (L)",
     "latimePiesa": "宽 (l)",
     "soclu": "踢脚板（0 = 使用脚）",
+    "picioare": "柜脚",
+    "picioareNu": "否（吊柜或带踢脚板）",
+    "picioareDa": "是，配卡扣式踢脚线",
     "nisa": "开口（烤箱、冰箱）",
     "nisaFara": "无",
     "montajGlisant": "推拉",

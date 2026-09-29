@@ -611,6 +611,7 @@
     "intrebareAsamblare": "Jak łączony jest korpus?",
     "intrebareBalama": "Jakie zawiasy na frontach?",
     "intrebareGlisiere": "Jakie prowadnice w szufladach?",
+    "intrebarePlinta": "Jaka listwa cokołowa do szafek na nóżkach?",
     "intrebareSuspensii": "Czy szafki wiszące mocuje się na zawieszkach?",
     "jocPeParte": "Luz {mm} mm na stronę.",
     "suspensiiDetalii": "{n} na korpus, {kg} kg na parę. Bez nich korpusy mocuje się na widocznych kątownikach.",
@@ -672,6 +673,24 @@
         "descriere": "To zlecenie nie ma szuflad."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Listwa cokołowa aluminiowa H100",
+        "descriere": "Häfele, sztangi 4 m, zatrzaskiwana na nóżkach."
+      },
+      "alu-120": {
+        "nume": "Listwa cokołowa aluminiowa H120",
+        "descriere": "Häfele, sztangi 4 m, zatrzaskiwana na nóżkach."
+      },
+      "alu-150": {
+        "nume": "Listwa cokołowa aluminiowa H150",
+        "descriere": "Häfele, sztangi 4 m, zatrzaskiwana na nóżkach."
+      },
+      "fara": {
+        "nume": "Bez listwy",
+        "descriere": "Nóżki zostają widoczne albo listwę robi się inaczej."
+      }
+    },
     "suspensii": {
       "nume": "Zawieszka korpusu z zabezpieczeniem",
       "descriere": "Ukryta za plecami, regulowana na wysokość i na głębokość."
@@ -703,7 +722,14 @@
       "obsUnaPeImbinare": "po jednym na połączenie",
       "obsPeCorp": "po dwie na korpus",
       "obsLa150": "co 150 mm",
-      "obsCupleazaFronturi": "łączy oba fronty"
+      "obsCupleazaFronturi": "łączy oba fronty",
+      "piciorPlinta": "Nóżka regulowana z tworzywa, do listwy H{h}",
+      "picior": "Nóżka regulowana z tworzywa",
+      "obsPicioare": "{n} na szafkę, {m} powyżej {lat} mm szerokości",
+      "clemaPlinta": "Klips listwy cokołowej",
+      "obsClemaPlinta": "jeden na każdą przednią nóżkę",
+      "plintaBara": "Listwa cokołowa aluminiowa H{h}, sztanga {bara} mm",
+      "obsPlinta": "Razem {mm} mm; szafki na nóżkach: {n}. Narożniki, łączniki i zaślepki według ustawienia."
     }
   },
   "piesa": {
@@ -1346,6 +1372,9 @@
     "lungimePiesa": "Długość (L)",
     "latimePiesa": "Szerokość (l)",
     "soclu": "Cokół (0 = nóżki)",
+    "picioare": "Nóżki",
+    "picioareNu": "Nie (wiszący lub na cokole)",
+    "picioareDa": "Tak, z listwą cokołową na klips",
     "nisa": "Wnęka (piekarnik, lodówka)",
     "nisaFara": "brak",
     "montajGlisant": "Przesuwne",

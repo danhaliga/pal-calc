@@ -605,6 +605,7 @@
     "intrebareAsamblare": "How is the carcass assembled?",
     "intrebareBalama": "Which hinges go on the doors?",
     "intrebareGlisiere": "Which runners go on the drawers?",
+    "intrebarePlinta": "Which kickboard for cabinets on legs?",
     "intrebareSuspensii": "Are wall units fixed with cabinet hangers?",
     "jocPeParte": "Clearance {mm} mm per side.",
     "suspensiiDetalii": "{n} per cabinet, {kg} kg per pair. Without them, cabinets are fixed with visible brackets.",
@@ -666,6 +667,24 @@
         "descriere": "This order has no drawers."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Aluminium kickboard H100",
+        "descriere": "Häfele, 4 m bars, clipped onto the legs."
+      },
+      "alu-120": {
+        "nume": "Aluminium kickboard H120",
+        "descriere": "Häfele, 4 m bars, clipped onto the legs."
+      },
+      "alu-150": {
+        "nume": "Aluminium kickboard H150",
+        "descriere": "Häfele, 4 m bars, clipped onto the legs."
+      },
+      "fara": {
+        "nume": "No kickboard",
+        "descriere": "The legs stay visible, or the kickboard is made another way."
+      }
+    },
     "suspensii": {
       "nume": "Cabinet hanger with safety catch",
       "descriere": "Concealed behind the back panel, adjustable for height and depth."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "one per joint",
       "obsPeCorp": "two per cabinet",
       "obsLa150": "every 150 mm",
-      "obsCupleazaFronturi": "couples the two fronts"
+      "obsCupleazaFronturi": "couples the two fronts",
+      "piciorPlinta": "Adjustable plastic leg, for H{h} kickboard",
+      "picior": "Adjustable plastic leg",
+      "obsPicioare": "{n} per cabinet, {m} above {lat} mm width",
+      "clemaPlinta": "Kickboard clip",
+      "obsClemaPlinta": "one on each front leg",
+      "plintaBara": "Aluminium kickboard H{h}, {bara} mm bar",
+      "obsPlinta": "{mm} mm in total; cabinets on legs: {n}. Corners, joints and end caps depending on the layout."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Length (L)",
     "latimePiesa": "Width (l)",
     "soclu": "Plinth (0 = legs)",
+    "picioare": "Legs",
+    "picioareNu": "No (wall-hung or on a plinth)",
+    "picioareDa": "Yes, with a clip-on kickboard",
     "nisa": "Opening (oven, fridge)",
     "nisaFara": "none",
     "montajGlisant": "Sliding",

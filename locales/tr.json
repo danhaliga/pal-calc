@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Gövde nasıl birleştiriliyor?",
     "intrebareBalama": "Kapaklara hangi menteşe?",
     "intrebareGlisiere": "Çekmecelere hangi ray?",
+    "intrebarePlinta": "Ayaklı dolaplar için hangi baza?",
     "intrebareSuspensii": "Üst dolaplar askı takozuyla mı tutturuluyor?",
     "jocPeParte": "Kenar başına {mm} mm boşluk.",
     "suspensiiDetalii": "Gövde başına {n}, çift başına {kg} kg. Bunlar olmadan gövdeler görünen köşebentlerle tutturulur.",
@@ -666,6 +667,24 @@
         "descriere": "Bu siparişte çekmece yok."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Alüminyum baza H100",
+        "descriere": "Häfele, 4 m boy, ayaklara klipslenir."
+      },
+      "alu-120": {
+        "nume": "Alüminyum baza H120",
+        "descriere": "Häfele, 4 m boy, ayaklara klipslenir."
+      },
+      "alu-150": {
+        "nume": "Alüminyum baza H150",
+        "descriere": "Häfele, 4 m boy, ayaklara klipslenir."
+      },
+      "fara": {
+        "nume": "Bazasız",
+        "descriere": "Ayaklar görünür kalır ya da baza başka şekilde yapılır."
+      }
+    },
     "suspensii": {
       "nume": "Emniyetli dolap askı takozu",
       "descriere": "Arkalığın arkasında gizli, yükseklik ve derinlikte ayarlanabilir."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "birleşim başına bir",
       "obsPeCorp": "gövde başına iki",
       "obsLa150": "her 150 mm'de bir",
-      "obsCupleazaFronturi": "iki kapağı birbirine bağlar"
+      "obsCupleazaFronturi": "iki kapağı birbirine bağlar",
+      "piciorPlinta": "Ayarlı plastik ayak, H{h} baza için",
+      "picior": "Ayarlı plastik ayak",
+      "obsPicioare": "dolap başına {n}, {lat} mm genişliğin üstünde {m}",
+      "clemaPlinta": "Baza klipsi",
+      "obsClemaPlinta": "her ön ayağa bir tane",
+      "plintaBara": "Alüminyum baza H{h}, {bara} mm boy",
+      "obsPlinta": "Toplam {mm} mm; ayaklı dolaplar: {n}. Köşe, ek ve kapaklar yerleşime göre."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Uzunluk (L)",
     "latimePiesa": "Genişlik (l)",
     "soclu": "Süpürgelik (0 = ayak)",
+    "picioare": "Ayaklar",
+    "picioareNu": "Hayır (asma ya da süpürgelikli)",
+    "picioareDa": "Evet, geçmeli baza ile",
     "nisa": "Boşluk (fırın, buzdolabı)",
     "nisaFara": "yok",
     "montajGlisant": "Sürme",

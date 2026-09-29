@@ -605,6 +605,7 @@
     "intrebareAsamblare": "¿Cómo se monta la carcasa?",
     "intrebareBalama": "¿Qué bisagras llevan las puertas?",
     "intrebareGlisiere": "¿Qué guías llevan los cajones?",
+    "intrebarePlinta": "¿Qué rodapié para los muebles con patas?",
     "intrebareSuspensii": "¿Los módulos altos se fijan con colgadores?",
     "jocPeParte": "Holgura de {mm} mm por lado.",
     "suspensiiDetalii": "{n} por módulo, {kg} kg por par. Sin ellos, los módulos se fijan con escuadras a la vista.",
@@ -666,6 +667,24 @@
         "descriere": "Este pedido no lleva cajones."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Rodapié de aluminio H100",
+        "descriere": "Häfele, barras de 4 m, se engancha en las patas."
+      },
+      "alu-120": {
+        "nume": "Rodapié de aluminio H120",
+        "descriere": "Häfele, barras de 4 m, se engancha en las patas."
+      },
+      "alu-150": {
+        "nume": "Rodapié de aluminio H150",
+        "descriere": "Häfele, barras de 4 m, se engancha en las patas."
+      },
+      "fara": {
+        "nume": "Sin rodapié",
+        "descriere": "Las patas quedan a la vista, o el rodapié se hace de otra forma."
+      }
+    },
     "suspensii": {
       "nume": "Colgador de módulo con seguro",
       "descriere": "Oculto detrás de la trasera, regulable en altura y en fondo."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "una por unión",
       "obsPeCorp": "dos por módulo",
       "obsLa150": "cada 150 mm",
-      "obsCupleazaFronturi": "une los dos frentes"
+      "obsCupleazaFronturi": "une los dos frentes",
+      "piciorPlinta": "Pata regulable de plástico, para rodapié H{h}",
+      "picior": "Pata regulable de plástico",
+      "obsPicioare": "{n} por mueble, {m} a partir de {lat} mm de ancho",
+      "clemaPlinta": "Clip de rodapié",
+      "obsClemaPlinta": "uno en cada pata delantera",
+      "plintaBara": "Rodapié de aluminio H{h}, barra de {bara} mm",
+      "obsPlinta": "{mm} mm en total; muebles con patas: {n}. Esquinas, uniones y tapas, según la distribución."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Largo (L)",
     "latimePiesa": "Ancho (l)",
     "soclu": "Zócalo (0 = patas)",
+    "picioare": "Patas",
+    "picioareNu": "No (colgado o sobre zócalo)",
+    "picioareDa": "Sí, con rodapié de clip",
     "nisa": "Hueco (horno, nevera)",
     "nisaFara": "sin hueco",
     "montajGlisant": "Correderas",

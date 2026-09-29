@@ -611,6 +611,7 @@
     "intrebareAsamblare": "Jak se korpus spojuje?",
     "intrebareBalama": "Jaké panty na dvířka?",
     "intrebareGlisiere": "Jaké výsuvy do zásuvek?",
+    "intrebarePlinta": "Jaká sokl. lišta ke skříňkám na nožkách?",
     "intrebareSuspensii": "Jsou horní skříňky uchycené na závěsy?",
     "jocPeParte": "Vůle {mm} mm na stranu.",
     "suspensiiDetalii": "{n} na korpus, {kg} kg na pár. Bez nich se korpusy kotví na viditelné úhelníky.",
@@ -672,6 +673,24 @@
         "descriere": "Tahle zakázka zásuvky nemá."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Hliníková soklová lišta H100",
+        "descriere": "Häfele, tyče 4 m, nacvakává se na nožky."
+      },
+      "alu-120": {
+        "nume": "Hliníková soklová lišta H120",
+        "descriere": "Häfele, tyče 4 m, nacvakává se na nožky."
+      },
+      "alu-150": {
+        "nume": "Hliníková soklová lišta H150",
+        "descriere": "Häfele, tyče 4 m, nacvakává se na nožky."
+      },
+      "fara": {
+        "nume": "Bez lišty",
+        "descriere": "Nožky zůstanou vidět, nebo se lišta udělá jinak."
+      }
+    },
     "suspensii": {
       "nume": "Závěs korpusu s pojistkou",
       "descriere": "Skrytý za zády, stavitelný na výšku i do hloubky."
@@ -703,7 +722,14 @@
       "obsUnaPeImbinare": "po jednom na spoj",
       "obsPeCorp": "po dvou na korpus",
       "obsLa150": "každých 150 mm",
-      "obsCupleazaFronturi": "spojuje obě čela"
+      "obsCupleazaFronturi": "spojuje obě čela",
+      "piciorPlinta": "Stavitelná plastová nožka, pro lištu H{h}",
+      "picior": "Stavitelná plastová nožka",
+      "obsPicioare": "{n} na skříňku, {m} nad {lat} mm šířky",
+      "clemaPlinta": "Klip soklové lišty",
+      "obsClemaPlinta": "jeden na každou přední nožku",
+      "plintaBara": "Hliníková soklová lišta H{h}, tyč {bara} mm",
+      "obsPlinta": "Celkem {mm} mm; skříňky na nožkách: {n}. Rohy, spojky a koncovky podle rozestavění."
     }
   },
   "piesa": {
@@ -1346,6 +1372,9 @@
     "lungimePiesa": "Délka (L)",
     "latimePiesa": "Šířka (l)",
     "soclu": "Sokl (0 = nožky)",
+    "picioare": "Nožky",
+    "picioareNu": "Ne (závěsná nebo na soklu)",
+    "picioareDa": "Ano, s nacvakávací soklovou lištou",
     "nisa": "Výklenek (trouba, lednice)",
     "nisaFara": "žádný",
     "montajGlisant": "Posuvné",

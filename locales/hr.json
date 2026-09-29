@@ -611,6 +611,7 @@
     "intrebareAsamblare": "Kako se korpus spaja?",
     "intrebareBalama": "Koje šarke na vrata?",
     "intrebareGlisiere": "Koje vodilice u ladice?",
+    "intrebarePlinta": "Koja letvica za elemente na nožicama?",
     "intrebareSuspensii": "Vješaju li se viseći elementi na ovjese?",
     "jocPeParte": "Zazor {mm} mm po strani.",
     "suspensiiDetalii": "{n} po korpusu, {kg} kg po paru. Bez njih se korpusi pričvršćuju vidljivim kutnicima.",
@@ -672,6 +673,24 @@
         "descriere": "Ovaj nalog nema ladica."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Aluminijska letvica H100",
+        "descriere": "Häfele, šipke od 4 m, kvači se na nožice."
+      },
+      "alu-120": {
+        "nume": "Aluminijska letvica H120",
+        "descriere": "Häfele, šipke od 4 m, kvači se na nožice."
+      },
+      "alu-150": {
+        "nume": "Aluminijska letvica H150",
+        "descriere": "Häfele, šipke od 4 m, kvači se na nožice."
+      },
+      "fara": {
+        "nume": "Bez letvice",
+        "descriere": "Nožice ostaju vidljive, ili se letvica radi drukčije."
+      }
+    },
     "suspensii": {
       "nume": "Ovjes korpusa s osiguračem",
       "descriere": "Skriven iza leđa, podesiv po visini i dubini."
@@ -703,7 +722,14 @@
       "obsUnaPeImbinare": "po jedan na spoj",
       "obsPeCorp": "po dva na korpus",
       "obsLa150": "svakih 150 mm",
-      "obsCupleazaFronturi": "spaja dvije fronte"
+      "obsCupleazaFronturi": "spaja dvije fronte",
+      "piciorPlinta": "Podesiva plastična nožica, za letvicu H{h}",
+      "picior": "Podesiva plastična nožica",
+      "obsPicioare": "{n} po elementu, {m} iznad {lat} mm širine",
+      "clemaPlinta": "Klips za letvicu",
+      "obsClemaPlinta": "po jedan na svaku prednju nožicu",
+      "plintaBara": "Aluminijska letvica H{h}, šipka {bara} mm",
+      "obsPlinta": "Ukupno {mm} mm; elementi na nožicama: {n}. Kutovi, spojnice i završne kapice prema rasporedu."
     }
   },
   "piesa": {
@@ -1346,6 +1372,9 @@
     "lungimePiesa": "Duljina (L)",
     "latimePiesa": "Širina (l)",
     "soclu": "Sokl (0 = nožice)",
+    "picioare": "Nožice",
+    "picioareNu": "Ne (viseći ili na soklu)",
+    "picioareDa": "Da, s letvicom na klik",
     "nisa": "Otvor (pećnica, hladnjak)",
     "nisaFara": "nema",
     "montajGlisant": "Klizna",

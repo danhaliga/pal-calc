@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Comment le caisson est-il assemblé ?",
     "intrebareBalama": "Quelles charnières sur les portes ?",
     "intrebareGlisiere": "Quelles coulisses sur les tiroirs ?",
+    "intrebarePlinta": "Quelle plinthe pour les meubles sur pieds ?",
     "intrebareSuspensii": "Les meubles hauts sont-ils fixés avec des suspensions ?",
     "jocPeParte": "Jeu de {mm} mm par côté.",
     "suspensiiDetalii": "{n} par caisson, {kg} kg par paire. Sans elles, les caissons se fixent avec des équerres apparentes.",
@@ -666,6 +667,24 @@
         "descriere": "Cette commande n'a pas de tiroirs."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Plinthe aluminium H100",
+        "descriere": "Häfele, barres de 4 m, clipsée sur les pieds."
+      },
+      "alu-120": {
+        "nume": "Plinthe aluminium H120",
+        "descriere": "Häfele, barres de 4 m, clipsée sur les pieds."
+      },
+      "alu-150": {
+        "nume": "Plinthe aluminium H150",
+        "descriere": "Häfele, barres de 4 m, clipsée sur les pieds."
+      },
+      "fara": {
+        "nume": "Sans plinthe",
+        "descriere": "Les pieds restent visibles, ou la plinthe se fait autrement."
+      }
+    },
     "suspensii": {
       "nume": "Suspension de caisson avec sécurité",
       "descriere": "Cachée derrière le panneau de fond, réglable en hauteur et en profondeur."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "un par assemblage",
       "obsPeCorp": "deux par caisson",
       "obsLa150": "tous les 150 mm",
-      "obsCupleazaFronturi": "couple les deux façades"
+      "obsCupleazaFronturi": "couple les deux façades",
+      "piciorPlinta": "Pied réglable en plastique, pour plinthe H{h}",
+      "picior": "Pied réglable en plastique",
+      "obsPicioare": "{n} par meuble, {m} au-delà de {lat} mm de largeur",
+      "clemaPlinta": "Clip de plinthe",
+      "obsClemaPlinta": "un sur chaque pied avant",
+      "plintaBara": "Plinthe aluminium H{h}, barre de {bara} mm",
+      "obsPlinta": "{mm} mm au total ; meubles sur pieds : {n}. Angles, raccords et embouts selon l'implantation."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Longueur (L)",
     "latimePiesa": "Largeur (l)",
     "soclu": "Plinthe (0 = pieds)",
+    "picioare": "Pieds",
+    "picioareNu": "Non (suspendu ou sur socle)",
+    "picioareDa": "Oui, avec plinthe clipsée",
     "nisa": "Niche (four, frigo)",
     "nisaFara": "aucune",
     "montajGlisant": "Coulissantes",

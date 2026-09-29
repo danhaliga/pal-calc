@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Come si assembla la struttura?",
     "intrebareBalama": "Quali cerniere sulle ante?",
     "intrebareGlisiere": "Quali guide sui cassetti?",
+    "intrebarePlinta": "Quale zoccolo per i mobili su piedini?",
     "intrebareSuspensii": "I pensili si fissano con gli attacchi?",
     "jocPeParte": "Gioco di {mm} mm per lato.",
     "suspensiiDetalii": "{n} per mobile, {kg} kg a coppia. Senza, i mobili si fissano con squadrette a vista.",
@@ -666,6 +667,24 @@
         "descriere": "Questo ordine non ha cassetti."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Zoccolo in alluminio H100",
+        "descriere": "Häfele, barre da 4 m, si aggancia ai piedini."
+      },
+      "alu-120": {
+        "nume": "Zoccolo in alluminio H120",
+        "descriere": "Häfele, barre da 4 m, si aggancia ai piedini."
+      },
+      "alu-150": {
+        "nume": "Zoccolo in alluminio H150",
+        "descriere": "Häfele, barre da 4 m, si aggancia ai piedini."
+      },
+      "fara": {
+        "nume": "Senza zoccolo",
+        "descriere": "I piedini restano a vista, o lo zoccolo si fa in altro modo."
+      }
+    },
     "suspensii": {
       "nume": "Attacco pensile con sicurezza",
       "descriere": "Nascosto dietro lo schienale, regolabile in altezza e in profondità."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "uno per giunzione",
       "obsPeCorp": "due per mobile",
       "obsLa150": "ogni 150 mm",
-      "obsCupleazaFronturi": "unisce i due frontali"
+      "obsCupleazaFronturi": "unisce i due frontali",
+      "piciorPlinta": "Piedino regolabile in plastica, per zoccolo H{h}",
+      "picior": "Piedino regolabile in plastica",
+      "obsPicioare": "{n} per mobile, {m} oltre {lat} mm di larghezza",
+      "clemaPlinta": "Clip per zoccolo",
+      "obsClemaPlinta": "una su ogni piedino anteriore",
+      "plintaBara": "Zoccolo in alluminio H{h}, barra da {bara} mm",
+      "obsPlinta": "{mm} mm in totale; mobili su piedini: {n}. Angoli, giunti e tappi secondo la disposizione."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Lunghezza (L)",
     "latimePiesa": "Larghezza (l)",
     "soclu": "Zoccolo (0 = piedini)",
+    "picioare": "Piedini",
+    "picioareNu": "No (pensile o su zoccolo)",
+    "picioareDa": "Sì, con zoccolo a clip",
     "nisa": "Vano (forno, frigo)",
     "nisaFara": "nessuno",
     "montajGlisant": "Scorrevoli",

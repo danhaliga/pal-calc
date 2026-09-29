@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Hur sätts stommen ihop?",
     "intrebareBalama": "Vilka gångjärn på luckorna?",
     "intrebareGlisiere": "Vilka skenor i lådorna?",
+    "intrebarePlinta": "Vilken sockellist till skåp på ben?",
     "intrebareSuspensii": "Hängs överskåpen på skåpupphängning?",
     "jocPeParte": "Spel {mm} mm per sida.",
     "suspensiiDetalii": "{n} per stomme, {kg} kg per par. Utan dem fästs stommarna med synliga vinkelbeslag.",
@@ -666,6 +667,24 @@
         "descriere": "Den här ordern har inga lådor."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Sockellist i aluminium H100",
+        "descriere": "Häfele, 4 m-längder, klickas på benen."
+      },
+      "alu-120": {
+        "nume": "Sockellist i aluminium H120",
+        "descriere": "Häfele, 4 m-längder, klickas på benen."
+      },
+      "alu-150": {
+        "nume": "Sockellist i aluminium H150",
+        "descriere": "Häfele, 4 m-längder, klickas på benen."
+      },
+      "fara": {
+        "nume": "Ingen sockellist",
+        "descriere": "Benen syns, eller så görs listen på annat sätt."
+      }
+    },
     "suspensii": {
       "nume": "Skåpupphängning med säkring",
       "descriere": "Dold bakom bakstycket, justerbar i höjd och djup."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "en per förband",
       "obsPeCorp": "två per stomme",
       "obsLa150": "var 150:e mm",
-      "obsCupleazaFronturi": "kopplar ihop de två fronterna"
+      "obsCupleazaFronturi": "kopplar ihop de två fronterna",
+      "piciorPlinta": "Ställbart plastben, för sockellist H{h}",
+      "picior": "Ställbart plastben",
+      "obsPicioare": "{n} per skåp, {m} över {lat} mm bredd",
+      "clemaPlinta": "Sockelclips",
+      "obsClemaPlinta": "ett på varje främre ben",
+      "plintaBara": "Sockellist i aluminium H{h}, längd {bara} mm",
+      "obsPlinta": "{mm} mm totalt; skåp på ben: {n}. Hörn, skarvar och ändlock beroende på uppställningen."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Längd (L)",
     "latimePiesa": "Bredd (l)",
     "soclu": "Sockel (0 = ben)",
+    "picioare": "Ben",
+    "picioareNu": "Nej (vägghängt eller på sockel)",
+    "picioareDa": "Ja, med påklickad sockellist",
     "nisa": "Öppning (ugn, kyl)",
     "nisaFara": "ingen",
     "montajGlisant": "Skjutdörrar",

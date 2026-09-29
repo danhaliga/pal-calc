@@ -315,6 +315,10 @@
     if (!m) return null;
     var p = Object.assign(PalCalc.defaults(tr), m.set);
     p.nume = numeCorp(id, tr);
+    /* Corpurile de pe podea vin pe picioare, cu plintă de aluminiu în față
+       — felul bucătăriei puse în șir. Cele cu soclu în model rămân pe
+       soclu; cele suspendate n-au picioare. */
+    if (staPePodea(id) && !(+p.soclu > 0)) p.picioare = 1;
     return p;
   }
 

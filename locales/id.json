@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Bagaimana boks disambung?",
     "intrebareBalama": "Engsel apa untuk pintunya?",
     "intrebareGlisiere": "Rel apa untuk lacinya?",
+    "intrebarePlinta": "Plint apa untuk kabinet berkaki?",
     "intrebareSuspensii": "Apakah kabinet gantung dipasang dengan gantungan kabinet?",
     "jocPeParte": "Kelonggaran {mm} mm per sisi.",
     "suspensiiDetalii": "{n} per boks, {kg} kg per pasang. Tanpa itu, boks dipasang dengan siku yang terlihat.",
@@ -666,6 +667,24 @@
         "descriere": "Pesanan ini tidak punya laci."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Plint aluminium H100",
+        "descriere": "Häfele, batang 4 m, dijepitkan ke kaki."
+      },
+      "alu-120": {
+        "nume": "Plint aluminium H120",
+        "descriere": "Häfele, batang 4 m, dijepitkan ke kaki."
+      },
+      "alu-150": {
+        "nume": "Plint aluminium H150",
+        "descriere": "Häfele, batang 4 m, dijepitkan ke kaki."
+      },
+      "fara": {
+        "nume": "Tanpa plint",
+        "descriere": "Kaki tetap terlihat, atau plint dibuat dengan cara lain."
+      }
+    },
     "suspensii": {
       "nume": "Gantungan boks dengan pengunci",
       "descriere": "Tersembunyi di balik punggung, bisa disetel tinggi dan dalamnya."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "satu per sambungan",
       "obsPeCorp": "dua per boks",
       "obsLa150": "setiap 150 mm",
-      "obsCupleazaFronturi": "menyatukan kedua muka"
+      "obsCupleazaFronturi": "menyatukan kedua muka",
+      "piciorPlinta": "Kaki plastik yang bisa diatur, untuk plint H{h}",
+      "picior": "Kaki plastik yang bisa diatur",
+      "obsPicioare": "{n} per kabinet, {m} di atas lebar {lat} mm",
+      "clemaPlinta": "Klip plint",
+      "obsClemaPlinta": "satu di setiap kaki depan",
+      "plintaBara": "Plint aluminium H{h}, batang {bara} mm",
+      "obsPlinta": "Total {mm} mm; kabinet berkaki: {n}. Sudut, sambungan, dan tutup ujung sesuai tata letak."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Panjang (L)",
     "latimePiesa": "Lebar (l)",
     "soclu": "Papan alas (0 = kaki)",
+    "picioare": "Kaki",
+    "picioareNu": "Tidak (gantung atau di atas papan alas)",
+    "picioareDa": "Ya, dengan plint jepit",
     "nisa": "Bukaan (oven, kulkas)",
     "nisaFara": "tidak ada",
     "montajGlisant": "Geser",

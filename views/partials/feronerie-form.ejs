@@ -9,7 +9,8 @@
 
   <% [['asamblare', 'fero.intrebareAsamblare'],
       ['balama',    'fero.intrebareBalama'],
-      ['glisiere',  'fero.intrebareGlisiere']].forEach(function (grup) { %>
+      ['glisiere',  'fero.intrebareGlisiere'],
+      ['plinta',    'fero.intrebarePlinta']].forEach(function (grup) { %>
     <div class="alegeri">
       <p class="alegeri-titlu"><%= t(grup[1]) %></p>
       <% f[grup[0]].forEach(function (o) { %>

@@ -321,6 +321,21 @@
       });
     }
 
+    /* ---- picioare ----
+
+       Numai la corpul care stă pe podea fără soclu: cu soclu, stă pe el.
+       Câte picioare și câte cleme — vezi PICIOARE în shared/feronerie.js. */
+    var lungPlinta = lungimePlinta(c, res);
+    if (lungPlinta > 0) {
+      var pic = s.picioare || PalFeronerie.PICIOARE;
+      var lat = Math.max(+c.W || 0, c.tip === 'colt-L' || c.tip === 'colt-diagonal' ? +c.W2 || 0 : 0);
+      var nPic = lat > pic.latDeLa ? pic.peCorpLat : pic.peCorp;
+      var plinta = s.plinta && s.plinta.id !== 'fara' ? s.plinta : null;
+      pune(plinta ? t_('fero.art.piciorPlinta', { h: plinta.h }) : art('picior'), nPic, 'buc',
+           t_('fero.art.obsPicioare', { n: pic.peCorp, m: pic.peCorpLat, lat: pic.latDeLa }));
+      if (plinta) pune(art('clemaPlinta'), nPic / 2, 'buc', t_('fero.art.obsClemaPlinta'));
+    }
+
     /* ---- fronturi ----
 
        Mânerul se prinde ÎN front, deci se numără fronturile tăiate, nu
@@ -338,6 +353,21 @@
     }
 
     return rotunjeste();
+  }
+
+  /* Cât din fața corpului acoperă plinta, în mm. 0 = corpul n-are plintă
+     (e suspendat, are soclu, sau n-are picioare). Plinta merge pe linia
+     fronturilor: la colțul în L pe cele două brațe, la cel pe diagonală pe
+     diagonală, la colțul orb numai pe partea care se vede — restul stă
+     sub corpul vecin, care are plinta lui. */
+  function lungimePlinta(c, res) {
+    if (!+c.picioare || (res && +res.soclu > 0) || +c.soclu > 0) return 0;
+    if (c.tip === 'atipic' || c.tip === 'piesa') return 0;
+    var k = res && res.colt;
+    if (c.tip === 'colt-L') return k ? k.brA + k.brB : 0;
+    if (c.tip === 'colt-diagonal') return k ? k.diag : 0;
+    if (c.tip === 'colt-orb') return Math.max(0, (+c.W || 0) - (+c.orb || 0));
+    return +c.W || 0;
   }
 
   /* ---------- croirea în coli ---------- */
@@ -531,6 +561,25 @@
       });
     });
 
+    /* ---- plinta de aluminiu, pe toată comanda ----
+
+       O bară lungă pe toată bucătăria, nu o bucată pe corp: se adună
+       lungimea din fața tuturor corpurilor pe picioare și se cumpără bare
+       întregi. Colțarele, îmbinările și capacele de capăt depind de cum se
+       așază corpurile în cameră, deci nu se numără aici — se spune. */
+    if (sist.plinta && sist.plinta.id !== 'fara') {
+      var mmPlinta = 0, corpuriPlinta = 0;
+      corpuriOut.forEach(function (co) {
+        var l = lungimePlinta(co.params, co.res);
+        if (l > 0) { mmPlinta += l; corpuriPlinta++; }
+      });
+      if (mmPlinta > 0) {
+        pune(feroTotal, t_('fero.art.plintaBara', { h: sist.plinta.h, bara: sist.plinta.bara }),
+             Math.ceil(mmPlinta / sist.plinta.bara), t_('comun.buc'),
+             t_('fero.art.obsPlinta', { mm: Math.round(mmPlinta), n: corpuriPlinta }));
+      }
+    }
+
     var materiale = necesarPlaci(toateP, formate, Object.assign({}, optiuni, { t: t_ }));
 
     var cant = Object.keys(cantPe).map(function (k) {
@@ -656,6 +705,7 @@
 
   return {
     raport: raport,
+    lungimePlinta: lungimePlinta,
     feronerie: feronerie,
     materialPiesa: materialPiesa,
     rolPiesa: rolPiesa,

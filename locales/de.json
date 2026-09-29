@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Wie wird der Korpus verbunden?",
     "intrebareBalama": "Welche Bänder kommen an die Türen?",
     "intrebareGlisiere": "Welche Auszüge kommen an die Schubladen?",
+    "intrebarePlinta": "Welche Sockelblende für Korpusse auf Füßen?",
     "intrebareSuspensii": "Werden Hängeschränke mit Schrankaufhängern befestigt?",
     "jocPeParte": "Luft {mm} mm pro Seite.",
     "suspensiiDetalii": "{n} pro Korpus, {kg} kg pro Paar. Ohne sie werden die Korpusse mit sichtbaren Winkeln befestigt.",
@@ -666,6 +667,24 @@
         "descriere": "Dieser Auftrag hat keine Schubladen."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Alu-Sockelblende H100",
+        "descriere": "Häfele, 4-m-Stangen, auf die Füße geklipst."
+      },
+      "alu-120": {
+        "nume": "Alu-Sockelblende H120",
+        "descriere": "Häfele, 4-m-Stangen, auf die Füße geklipst."
+      },
+      "alu-150": {
+        "nume": "Alu-Sockelblende H150",
+        "descriere": "Häfele, 4-m-Stangen, auf die Füße geklipst."
+      },
+      "fara": {
+        "nume": "Keine Sockelblende",
+        "descriere": "Die Füße bleiben sichtbar, oder die Blende wird anders gemacht."
+      }
+    },
     "suspensii": {
       "nume": "Schrankaufhänger mit Sicherung",
       "descriere": "Verdeckt hinter der Rückwand, in Höhe und Tiefe verstellbar."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "eine pro Verbindung",
       "obsPeCorp": "zwei pro Korpus",
       "obsLa150": "alle 150 mm",
-      "obsCupleazaFronturi": "koppelt die beiden Fronten"
+      "obsCupleazaFronturi": "koppelt die beiden Fronten",
+      "piciorPlinta": "Verstellbarer Kunststofffuß, für Sockelblende H{h}",
+      "picior": "Verstellbarer Kunststofffuß",
+      "obsPicioare": "{n} pro Korpus, {m} ab {lat} mm Breite",
+      "clemaPlinta": "Sockelblenden-Clip",
+      "obsClemaPlinta": "einer an jedem vorderen Fuß",
+      "plintaBara": "Alu-Sockelblende H{h}, Stange {bara} mm",
+      "obsPlinta": "{mm} mm insgesamt; Korpusse auf Füßen: {n}. Ecken, Verbinder und Endkappen je nach Aufstellung."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Länge (L)",
     "latimePiesa": "Breite (l)",
     "soclu": "Sockel (0 = Füße)",
+    "picioare": "Füße",
+    "picioareNu": "Nein (hängend oder auf Sockel)",
+    "picioareDa": "Ja, mit aufgeklipster Sockelblende",
     "nisa": "Nische (Backofen, Kühlschrank)",
     "nisaFara": "keine",
     "montajGlisant": "Schiebetüren",

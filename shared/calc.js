@@ -73,6 +73,11 @@
          nu apar în listă. Peste 0, lateralele merg până la podea, fundul
          se ridică, iar în față intră o bucată de PAL. */
       soclu: 0,
+      /* Corpul stă pe picioare de plastic, cu plintă cumpărată prinsă în
+         față — felul corpurilor de bucătărie puse în șir. Nu se taie
+         nimic din PAL: picioarele și plinta intră la feronerie (vezi
+         shared/raport.js). Cu soclu pus, soclul câștigă. */
+      picioare: 0,
       /* Lățimea traverselor de sus. 0 înseamnă blat întreg, adică felul de
          până acum. Peste 0, în locul blatului se pun două traverse — una
          în față, una în spate — fiindcă sub blatul de bucătărie un panou
@@ -1217,6 +1222,7 @@
         })).max(32),
         constr: z.enum(['intre', 'peste']),
         soclu: mm(0, 300).catch(0),
+        picioare: int(0, 1).catch(0),
         traverse: mm(0, TRAVERSA_MAX).catch(0),
         /* Un semn, nu o cotă: 0 sau 1. Orice altceva înseamnă corp cu
            fronturi — felul de până acum, adică cel în care nu se pierde

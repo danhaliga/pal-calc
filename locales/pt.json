@@ -605,6 +605,7 @@
     "intrebareAsamblare": "Como se monta a estrutura?",
     "intrebareBalama": "Que dobradiças levam as portas?",
     "intrebareGlisiere": "Que corrediças levam as gavetas?",
+    "intrebarePlinta": "Que rodapé para os móveis com pés?",
     "intrebareSuspensii": "Os móveis suspensos fixam-se com suspensores?",
     "jocPeParte": "Folga de {mm} mm por lado.",
     "suspensiiDetalii": "{n} por módulo, {kg} kg por par. Sem eles, os módulos fixam-se com esquadros à vista.",
@@ -666,6 +667,24 @@
         "descriere": "Esta encomenda não tem gavetas."
       }
     },
+    "plinta": {
+      "alu-100": {
+        "nume": "Rodapé de alumínio H100",
+        "descriere": "Häfele, barras de 4 m, encaixa nos pés."
+      },
+      "alu-120": {
+        "nume": "Rodapé de alumínio H120",
+        "descriere": "Häfele, barras de 4 m, encaixa nos pés."
+      },
+      "alu-150": {
+        "nume": "Rodapé de alumínio H150",
+        "descriere": "Häfele, barras de 4 m, encaixa nos pés."
+      },
+      "fara": {
+        "nume": "Sem rodapé",
+        "descriere": "Os pés ficam à vista, ou o rodapé faz-se de outra forma."
+      }
+    },
     "suspensii": {
       "nume": "Suspensor de módulo com segurança",
       "descriere": "Escondido atrás das costas, regulável em altura e em profundidade."
@@ -697,7 +716,14 @@
       "obsUnaPeImbinare": "uma por ligação",
       "obsPeCorp": "duas por módulo",
       "obsLa150": "a cada 150 mm",
-      "obsCupleazaFronturi": "une as duas frentes"
+      "obsCupleazaFronturi": "une as duas frentes",
+      "piciorPlinta": "Pé regulável de plástico, para rodapé H{h}",
+      "picior": "Pé regulável de plástico",
+      "obsPicioare": "{n} por móvel, {m} acima de {lat} mm de largura",
+      "clemaPlinta": "Clipe de rodapé",
+      "obsClemaPlinta": "um em cada pé da frente",
+      "plintaBara": "Rodapé de alumínio H{h}, barra de {bara} mm",
+      "obsPlinta": "{mm} mm no total; móveis com pés: {n}. Cantos, uniões e tampas conforme a disposição."
     }
   },
   "piesa": {
@@ -1335,6 +1361,9 @@
     "lungimePiesa": "Comprimento (L)",
     "latimePiesa": "Largura (l)",
     "soclu": "Rodapé (0 = pés)",
+    "picioare": "Pés",
+    "picioareNu": "Não (suspenso ou sobre rodapé)",
+    "picioareDa": "Sim, com rodapé de encaixe",
     "nisa": "Vão (forno, frigorífico)",
     "nisaFara": "sem vão",
     "montajGlisant": "De correr",

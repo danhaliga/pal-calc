@@ -113,8 +113,34 @@
     ]
   };
 
+  /* ---------- plinta aplicată și picioarele ----------
+
+     Corpurile de bucătărie puse în șir stau pe picioare de plastic, iar în
+     față se prinde o plintă cumpărată, nu tăiată: se clipsează pe
+     picioare. Un corp singur pe podea se face cu soclu din PAL — ăla e în
+     calc.js, nu aici.
+
+     Înălțimile sunt cele din catalogul Häfele (100, 120, 150). Bara de 4000
+     e lungimea plintei Häfele cu garnitură (P-01549881); distribuitorii
+     vând și bare de 2 m, tăiate din ea.
+
+     Câte picioare pe corp NU e o măsurătoare: 4, și 6 când corpul trece de
+     1000 mm lățime, ca să nu se lase fundul la mijloc. E valoare de
+     pornire — se schimbă aici când atelierul spune altceva. Clemele de
+     plintă merg pe picioarele din față, deci câte o clemă pentru fiecare
+     picior din față. */
+  var PICIOARE = { peCorp: 4, peCorpLat: 6, latDeLa: 1000 };
+
+  var PLINTE = {
+    'alu-100': { id: 'alu-100', h: 100, bara: 4000 },
+    'alu-120': { id: 'alu-120', h: 120, bara: 4000 },
+    'alu-150': { id: 'alu-150', h: 150, bara: 4000 },
+    'fara':    { id: 'fara' }
+  };
+
   function implicit() {
-    return { asamblare: 'minifix', balama: 'blum-clip', glisiere: 'bila', suspensii: true };
+    return { asamblare: 'minifix', balama: 'blum-clip', glisiere: 'bila', suspensii: true,
+             plinta: 'alu-100' };
   }
 
   function citeste(valoare) {
@@ -125,7 +151,8 @@
       asamblare: ASAMBLARE[v.asamblare] ? v.asamblare : 'minifix',
       balama: BALAMALE[v.balama] ? v.balama : 'blum-clip',
       glisiere: GLISIERE[v.glisiere] ? v.glisiere : 'bila',
-      suspensii: v.suspensii === undefined ? true : !!v.suspensii
+      suspensii: v.suspensii === undefined ? true : !!v.suspensii,
+      plinta: PLINTE[v.plinta] ? v.plinta : 'alu-100'
     };
   }
 
@@ -154,7 +181,9 @@
       asamblare: cuNume('asamblare', ASAMBLARE[a.asamblare], t),
       balama: cuNume('balama', BALAMALE[a.balama], t),
       glisiere: cuNume('glisiere', GLISIERE[a.glisiere], t),
-      suspensii: susp
+      suspensii: susp,
+      plinta: cuNume('plinta', PLINTE[a.plinta], t),
+      picioare: PICIOARE
     };
   }
 
@@ -172,12 +201,14 @@
       asamblare: lista('asamblare', ASAMBLARE),
       balama: lista('balama', BALAMALE),
       glisiere: lista('glisiere', GLISIERE),
+      plinta: lista('plinta', PLINTE),
       suspensii: susp
     };
   }
 
   return {
     ASAMBLARE: ASAMBLARE, BALAMALE: BALAMALE, GLISIERE: GLISIERE, SUSPENSII: SUSPENSII,
+    PLINTE: PLINTE, PICIOARE: PICIOARE,
     implicit: implicit, citeste: citeste, sistem: sistem, optiuni: optiuni
   };
 });
