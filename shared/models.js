@@ -373,32 +373,6 @@
      adica alt corp. */
   function faraFront(p) { return +p.faraFront ? ' fara' : ''; }
 
-  /* Mânerul pe un front, ca linie în desen.
-
-     `dirImplicita` e felul în care se pune de obicei pe FELUL ăsta de front:
-     vertical la uși, orizontal la fronturile de sertar. Omul o poate
-     schimba, dar dacă n-a cerut nimic rămâne cum s-a pus dintotdeauna.
-
-     `spreDreapta` spune încotro e mijlocul corpului, ca mânerul „de obicei"
-     să cadă pe muchia dinspre el — acolo se prinde mâna.
-
-     Cele două alegeri nu se pot bate cap în cap: fiecare poziție lucrează
-     pe axa ei. La un mâner vertical, stânga/dreapta/centru mută linia pe
-     lățime, iar sus/jos o urcă sau o coboară — tot verticală rămâne. */
-  /* Desenul folosește ACEEAȘI regulă ca vederea 3D — `PalCalc.asezareManer`.
-     Aici se întoarce doar numărătoarea pe verticală: `fy` e măsurat de jos,
-     iar SVG-ul are y în jos. */
-  function liniaManerului(p, x, y, w, h, dirImplicita, spreDreapta) {
-    var a = PalCalc.asezareManer(p, w, h, dirImplicita, spreDreapta);
-    if (!a) return '';
-    var cx = x + a.fx * w;
-    var cy = y + (1 - a.fy) * h;
-    var jum = a.lung / 2;
-    var x1 = a.vertical ? cx : cx - jum, x2 = a.vertical ? cx : cx + jum;
-    var y1 = a.vertical ? cy - jum : cy, y2 = a.vertical ? cy + jum : cy;
-    return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 +
-           '" y2="' + y2 + '" class="sk-maner"/>';
-  }
   function clasaFront(p) { return +p.faraFront ? 'sk-front fara' : 'sk-front'; }
 
   /* Schita in plan pentru corpurile de colt: acolo vederea frontala nu spune nimic. */
@@ -472,88 +446,147 @@
     if (p.tip === 'piesa') return sketchPiesa(p);
     if (p.tip === 'atipic') return sketchContur(p);
     if (p.tip && p.tip !== 'drept') return sketchColt(p);
-    var W = +p.W, H = +p.H, t = +p.t;
-    var rm = +p.rm, ri = +p.ri, rinc = +p.rinc;
-    var nU = +p.nUsi, nS = +p.nSer, nP = +p.nPol;
-    var aplicat = p.montaj === 'aplicat';
-    var hF = +p.hFront;
-    /* Soclul mananca din inaltimea folositoare, ca in calcul: H e cota de
-       la podea. Fara asta desenul ar arata un corp mai inalt decat e. */
-    var soclu = Math.max(0, +p.soclu || 0);
-    var Hint = H - 2 * t - soclu, Wint = W - 2 * t;
-    var usedTop = nS > 0 ? nS * (hF + ri) : 0;
+    return sketchDinCalcul(p);
+  }
+
+  /* Schița frontală a corpului drept, FĂCUTĂ DIN CALCUL.
+
+     Până aici schița era un desen separat, scris de mână: știa de uși și de
+     sertare, dar nu de nișă, de montanți, de ușile doar jos, de sertarele
+     de jos sau de sticlă. Iar pagina corpului desenează din piesele
+     calculate — așa că omul alegea un card și primea alt corp decât cel
+     din poză.
+
+     Acum cardul se desenează din aceleași piese ca vederea 3D, privite din
+     față: ce se schimbă în calcul se schimbă singur și pe card. */
+  var FARA_NUME = function (k) { return k; };
+
+  function sketchDinCalcul(p) {
+    var faraF = !!(+p.faraFront);
+    /* Fără fronturi, calculul le scoate din listă. Pe desen se văd totuși,
+       punctate: golul unde vin ușile trebuie să se vadă. */
+    var r = PalCalc.calc(faraF ? Object.assign({}, p, { faraFront: 0 }) : p, FARA_NUME);
+    var W = r.W, H = r.H, t = +p.t || 18;
+    var soclu = Math.max(0, +r.soclu || 0);
     var o = [];
+    var y = function (b) { return H - (b.y + b.sy); };      /* SVG are y în jos */
+    var dreptunghi = function (b, cls) {
+      o.push('<rect x="' + b.x + '" y="' + y(b) + '" width="' + b.sx +
+             '" height="' + b.sy + '" class="' + cls + '"/>');
+    };
+    var cutii = function (cheie) {
+      var out = [];
+      r.P.forEach(function (x) { if (x.cheie === cheie) out = out.concat(x.boxes || []); });
+      return out;
+    };
 
+    /* Carcasa, apoi golul din ea. */
     o.push('<rect x="0" y="0" width="' + W + '" height="' + H + '" class="sk-corp"/>');
-    o.push('<rect x="' + t + '" y="' + t + '" width="' + Wint + '" height="' + Hint + '" class="sk-gol"/>');
+    o.push('<rect x="' + t + '" y="' + (H - soclu - t - r.Hint) + '" width="' + (W - 2 * t) +
+           '" height="' + r.Hint + '" class="sk-gol"/>');
 
-    /* Soclul: fasia de jos, intre laterale. Se deseneaza mai inchis la
-       culoare fiindca sta RETRAS fata de fronturi — asa se si vede in
-       atelier, ca o umbra sub usi. */
-    if (soclu > 0) {
-      o.push('<rect x="' + t + '" y="' + (H - soclu) + '" width="' + Wint +
-             '" height="' + soclu + '" class="sk-soclu"/>');
-    }
+    /* Soclul: mai închis la culoare, fiindcă stă retras față de fronturi. */
+    cutii('soclu').forEach(function (b) { dreptunghi(b, 'sk-soclu'); });
+    /* Montanții, ca niște laterale în mijloc. */
+    cutii('montant').forEach(function (b) { dreptunghi(b, 'sk-corp'); });
+    /* Polițele, pe linia lor adevărată — și cea pe care stă cuptorul. */
+    cutii('polita').forEach(function (b) {
+      var yc = H - (b.y + b.sy / 2);
+      o.push('<line x1="' + b.x + '" y1="' + yc + '" x2="' + (b.x + b.sx) + '" y2="' + yc +
+             '" class="sk-polita"/>');
+    });
 
-    /* Nișa fără uși (bază de cuptor): singura poliță e cea pe care stă
-       aparatul, pe muchia fronturilor de sertar — nu la mijlocul corpului. */
-    var nisaFaraUsi = nU === 0 && nS > 0 && +p.hNisa > 0;
-    if (nisaFaraUsi) {
-      var sirSer = nS * hF + (nS - 1) * ri;
-      var margF = aplicat ? rm : t + rinc;
-      var jumP = (aplicat ? 1 : -1) * t / 2;
-      var yN = +p.sertareJos ? H - margF - sirSer + jumP : margF + sirSer - jumP;
-      o.push('<line x1="' + t + '" y1="' + yN + '" x2="' + (W - t) + '" y2="' + yN + '" class="sk-polita"/>');
-    }
+    /* Fronturile, peste tot ce e în corp. */
+    var clasa = faraF ? 'sk-front fara' : 'sk-front';
+    r.P.forEach(function (x) {
+      if (x.rol !== 'front') return;
+      (x.boxes || []).forEach(function (b) { dreptunghi(b, clasa); });
+    });
+    (r.sticla3d || []).forEach(function (b) { dreptunghi(b, 'sk-front sticla'); });
 
-    /* polițe: calc le pune de jos în sus, SVG are y în jos */
-    for (var j = 1; j <= (nisaFaraUsi ? 0 : nP); j++) {
-      var yc = soclu + t + (Hint - usedTop) * j / (nP + 1);
-      var y = H - yc;
-      o.push('<line x1="' + t + '" y1="' + y + '" x2="' + (W - t) + '" y2="' + y + '" class="sk-polita"/>');
-    }
-
-    var xoff = aplicat ? rm : t + rinc;
-    var fL = aplicat ? W - 2 * rm : Wint - 2 * rinc;
-    var yTop = aplicat ? rm : t + rinc;
-
-    /* Sertarele: sus, sau jos cu ușile deasupra. Mânerul se prinde în
-       front: fără fronturi nu se desenează, ca să nu iasă un mâner care
-       plutește în gol. */
-    var cf = clasaFront(p), manere = !+p.faraFront;
-    var jos = !!(+p.sertareJos) && nS > 0;
-    /* SVG are y în jos, deci „sertarele jos" înseamnă y mare. Se numără tot
-       de la primul, ca să rămână un singur șir de calcule. */
-    var ySer = jos ? (H - (aplicat ? rm : t + rinc) - nS * hF - (nS - 1) * ri) : yTop;
-    for (var i = 0; i < nS; i++) {
-      o.push('<rect x="' + xoff + '" y="' + (ySer + i * (hF + ri)) + '" width="' + fL +
-             '" height="' + hF + '" class="' + cf + '"/>');
-      /* Frontul de sertar: de obicei mâner orizontal, la mijloc. */
-      if (manere) {
-        o.push(liniaManerului(p, xoff, ySer + i * (hF + ri), fL, hF, 'orizontal', false));
-      }
-    }
-
-    /* uși: sub sertare când alea stau sus, deasupra lor când stau jos */
-    if (nU > 0) {
-      var uH = (aplicat ? H - soclu - 2 * rm : Hint - 2 * rinc) - usedTop;
-      var uL = (fL - (nU - 1) * ri) / nU;
-      var yU = jos ? yTop : yTop + usedTop;
-      for (var k = 0; k < nU; k++) {
-        var x = xoff + k * (uL + ri);
-        /* Ușa de vitrină se desenează ca sticlă; sertarele rămân din PAL. */
-        o.push('<rect x="' + x + '" y="' + yU + '" width="' + uL + '" height="' + uH + '" class="' + cf +
-               (+p.usiSticla && !+p.faraFront ? ' sticla' : '') + '"/>');
-        /* Ușa: de obicei mâner vertical, pe muchia dinspre mijlocul corpului.
-           La două canaturi, primul îl are pe dreapta, restul pe stânga. */
-        if (manere) {
-          o.push(liniaManerului(p, x, yU, uL, uH, 'vertical', (x + uL / 2) < W / 2));
-        }
-      }
+    /* Mânerele, ca linie pe lungimea lor. Fără fronturi nu se pun. */
+    if (!faraF) {
+      (r.manere || []).forEach(function (b) {
+        var vert = b.sy > b.sx;
+        var cx = b.x + b.sx / 2, cy = H - (b.y + b.sy / 2);
+        var jum = (vert ? b.sy : b.sx) / 2;
+        o.push('<line x1="' + (vert ? cx : cx - jum) + '" y1="' + (vert ? cy - jum : cy) +
+               '" x2="' + (vert ? cx : cx + jum) + '" y2="' + (vert ? cy + jum : cy) +
+               '" class="sk-maner"/>');
+      });
     }
 
     return '<svg viewBox="0 0 ' + W + ' ' + H + '" class="sk" preserveAspectRatio="xMidYMid meet" ' +
            'aria-hidden="true" focusable="false">' + o.join('') + '</svg>';
+  }
+
+  /* ---------- setările atelierului, puse peste model ----------
+
+     Omul își ține minte felul de lucru (materialul, rosturile, soclul...) și
+     la un corp nou el se pune singur peste valorile modelului. Regula stă
+     AICI, o singură dată, fiindcă o folosesc două locuri: editorul, când se
+     creează corpul, și cardurile din catalog, care trebuie să arate corpul
+     care va ieși — nu modelul curat. Două copii ale regulii ar ajunge să
+     spună lucruri diferite, adică exact greșeala de reparat. */
+  var GRUPE_SETARI = [
+    { id: 'material',   camp: ['t', 'cg', 'cs'] },
+    { id: 'spate',      camp: ['spate', 'tp'] },
+    { id: 'usi',        camp: ['montaj', 'balama', 'rm', 'ri', 'rinc'] },
+    { id: 'polite',     camp: ['jp', 'rp'] },
+    { id: 'sertare',    camp: ['hFront', 'hCutie', 'jg', 'ts'] },
+    { id: 'dimensiuni', camp: ['W', 'H', 'D', 'constr'] },
+    { id: 'cantitati',  camp: ['nUsi', 'nPol', 'nDsp', 'nSer'] },
+    { id: 'soclu',      camp: ['soclu'] },
+    { id: 'traverse',   camp: ['traverse'] },
+    { id: 'faraFront',  camp: ['faraFront'] }
+  ];
+
+  function campuriGrup(id) {
+    for (var i = 0; i < GRUPE_SETARI.length; i++) {
+      if (GRUPE_SETARI[i].id === id) return GRUPE_SETARI[i].camp.slice();
+    }
+    return [];
+  }
+
+  /* Pune setările `s` ({ grupe: {id: bool}, val: {camp: valoare} }) peste
+     `params`, pe loc. Întoarce `true` dacă s-a schimbat ceva.
+       o.cheiModel — ce a hotărât modelul rămâne al modelului
+       o.pePodea   — soclul numai la corpurile care stau pe podea
+       o.matFixat  — în comandă, materialul vine din comandă */
+  function aplicaSetari(params, s, o) {
+    o = o || {};
+    if (!s || !s.grupe || !s.val) return false;
+    var dinModel = o.cheiModel || [];
+    var atins = false;
+    var socluInainte = +params.soclu || 0;
+
+    GRUPE_SETARI.forEach(function (g) {
+      if (!s.grupe[g.id]) return;
+      if (g.id === 'material' && o.matFixat) return;
+      if (g.id === 'soclu' && !o.pePodea) return;
+      g.camp.forEach(function (f) {
+        if (s.val[f] === undefined) return;
+        if (dinModel.indexOf(f) !== -1) return;
+        params[f] = s.val[f];
+        atins = true;
+      });
+    });
+
+    /* Soclul pus peste un model care n-avea: ÎNĂLȚIMEA CREȘTE CU EL. `H` e
+       cota de la podea; modelul a spus cât corp folositor vrea, atâta
+       rămâne, iar soclul se adaugă dedesubt. */
+    var socluDupa = +params.soclu || 0;
+    if (socluDupa > socluInainte && +params.H > 0) {
+      params.H = +params.H + (socluDupa - socluInainte);
+      atins = true;
+    }
+    return atins;
+  }
+
+  /* Ce cotă a hotărât modelul, ca setările să nu calce peste ea. */
+  function cheileModelului(id) {
+    var m = id ? byId(String(id)) : null;
+    return m && m.set ? Object.keys(m.set) : [];
   }
 
   /* rezumat scurt pentru cardul din catalog */
@@ -635,6 +668,10 @@
     byId: byId,
     paramsFor: paramsFor,
     sketch: sketch,
-    rezumat: rezumat
+    rezumat: rezumat,
+    GRUPE_SETARI: GRUPE_SETARI,
+    campuriGrup: campuriGrup,
+    aplicaSetari: aplicaSetari,
+    cheileModelului: cheileModelului
   };
 });
