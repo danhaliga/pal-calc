@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "As portas de correr passam à frente dos montantes, por isso não se podem pôr em vãos escolhidos.",
     "traverseNuMerg": "As travessas só vão num móvel direito construído «entre». Aqui ficou o tampo inteiro.",
     "traversePreaLate": "Travessas de {lat} mm não cabem: duas tão largas tocam-se. Acima de {incape} mm seria um tampo mal cortado.",
-    "traverseInAfara": "A travessa faz-se entre {min} e {max} mm. {lat} foi ajustado para {pus}."
+    "traverseInAfara": "A travessa faz-se entre {min} e {max} mm. {lat} foi ajustado para {pus}.",
+    "faraFronturi": "Sem frentes: só o corpo é entregue, {cate} peças não entram na lista de corte. As medidas acabadas, para quem as fizer: {cote}."
   },
   "csv": {
     "corp": "Módulo",
@@ -823,7 +824,8 @@
     "corpDeschis": "módulo aberto",
     "piesa": "uma só placa",
     "peSoclu": "rodapé {h} mm",
-    "cuTraverse": "travessas {lat} mm"
+    "cuTraverse": "travessas {lat} mm",
+    "faraFront": "sem frentes"
   },
   "comanda": {
     "inapoiComenzi": "As minhas encomendas",
@@ -905,7 +907,10 @@
     "telefon": "Telefone",
     "telefonExemplu": "+351 9xx xxx xxx",
     "livrareNota": "Ambos podem ficar vazios e ser preenchidos mais tarde. Saem em cada folha impressa.",
-    "cantScos": "já não se fabrica"
+    "cantScos": "já não se fabrica",
+    "faraFronturi": "sem frentes",
+    "toateFaraFronturi": "todos sem frentes",
+    "puneFronturileInapoi": "pôr as frentes de volta"
   },
   "rol": {
     "corp": "Estrutura",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Sobreposição das portas",
     "hSine": "Calhas (cima + baixo)",
     "traverse": "Travessas em cima (0 = tampo inteiro)",
-    "traverseFara": "tampo inteiro"
+    "traverseFara": "tampo inteiro",
+    "fronturi": "Frentes",
+    "fronturiSeFac": "são feitas",
+    "fronturiNuSeFac": "não são feitas"
   },
   "fata": {
     "px": "direita",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Largura, altura, profundidade, construção",
     "grupCantitati": "Quantas portas, prateleiras, divisórias, gavetas",
     "grupSoclu": "Rodapé: o móvel assenta no chão, sem pés",
-    "grupTraverse": "Travessas: o móvel inferior não leva tampo inteiro"
+    "grupTraverse": "Travessas: o móvel inferior não leva tampo inteiro",
+    "grupFaraFront": "Frentes: feitas ou não"
   },
   "mesaj": {
     "intrebare": "O que falta ao cálculo?",

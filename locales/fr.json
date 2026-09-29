@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Les coulissantes passent devant les montants, elles ne peuvent donc pas être posées sur des compartiments choisis.",
     "traverseNuMerg": "Les traverses ne vont que sur un caisson droit monté « entre ». Ici le panneau entier est resté.",
     "traversePreaLate": "Des traverses de {lat} mm ne rentrent pas : deux aussi larges se touchent. Au-delà de {incape} mm ce serait un panneau mal coupé.",
-    "traverseInAfara": "Une traverse se fait entre {min} et {max} mm. {lat} a été ramené à {pus}."
+    "traverseInAfara": "Une traverse se fait entre {min} et {max} mm. {lat} a été ramené à {pus}.",
+    "faraFronturi": "Sans façades : seul le caisson est livré, {cate} pièces ne figurent pas dans la liste de coupe. Leurs dimensions finies, pour celui qui les fabrique : {cote}."
   },
   "csv": {
     "corp": "Caisson",
@@ -823,7 +824,8 @@
     "corpDeschis": "caisson ouvert",
     "piesa": "un seul panneau",
     "peSoclu": "plinthe {h} mm",
-    "cuTraverse": "traverses {lat} mm"
+    "cuTraverse": "traverses {lat} mm",
+    "faraFront": "sans façades"
   },
   "comanda": {
     "inapoiComenzi": "Mes commandes",
@@ -905,7 +907,10 @@
     "telefon": "Téléphone",
     "telefonExemplu": "+33 6 xx xx xx xx",
     "livrareNota": "Les deux peuvent rester vides et être remplis plus tard. Ils figurent sur chaque feuille imprimée.",
-    "cantScos": "ne se fabrique plus"
+    "cantScos": "ne se fabrique plus",
+    "faraFronturi": "sans façades",
+    "toateFaraFronturi": "tous sans façades",
+    "puneFronturileInapoi": "remettre les façades"
   },
   "rol": {
     "corp": "Caisson",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Recouvrement des portes",
     "hSine": "Rails (haut + bas)",
     "traverse": "Traverses en haut (0 = panneau entier)",
-    "traverseFara": "panneau entier"
+    "traverseFara": "panneau entier",
+    "fronturi": "Façades",
+    "fronturiSeFac": "à faire",
+    "fronturiNuSeFac": "à ne pas faire"
   },
   "fata": {
     "px": "droite",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Largeur, hauteur, profondeur, construction",
     "grupCantitati": "Combien de portes, tablettes, montants, tiroirs",
     "grupSoclu": "Plinthe : le caisson pose au sol, sans pieds",
-    "grupTraverse": "Traverses : le caisson bas n’a pas de panneau entier en haut"
+    "grupTraverse": "Traverses : le caisson bas n’a pas de panneau entier en haut",
+    "grupFaraFront": "Façades : faites ou non"
   },
   "mesaj": {
     "intrebare": "Qu’est-ce qui manque au calcul ?",

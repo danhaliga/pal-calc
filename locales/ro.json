@@ -761,7 +761,8 @@
     "glisantaFaraCompartimente": "Ușile glisante trec peste montanți, deci nu se pot pune pe compartimente alese.",
     "traverseNuMerg": "Traversele se pun numai la corpul drept, construit „între\". Aici a rămas blatul întreg.",
     "traversePreaLate": "Traverse de {lat} mm nu încap: două atât de late se ating. Peste {incape} mm ar fi un blat prost tăiat.",
-    "traverseInAfara": "Traversa se face între {min} și {max} mm. {lat} a fost adus la {pus}."
+    "traverseInAfara": "Traversa se face între {min} și {max} mm. {lat} a fost adus la {pus}.",
+    "faraFronturi": "Fără fronturi: se livrează doar corpul, {cate} bucăți nu intră în lista de debitare. Cotele lor, pentru cine le face: {cote}."
   },
   "csv": {
     "corp": "Corp",
@@ -830,7 +831,8 @@
     "corpDeschis": "corp deschis",
     "piesa": "un singur panou",
     "peSoclu": "soclu {h} mm",
-    "cuTraverse": "traverse {lat} mm"
+    "cuTraverse": "traverse {lat} mm",
+    "faraFront": "fără fronturi"
   },
   "comanda": {
     "inapoiComenzi": "Comenzile mele",
@@ -914,7 +916,10 @@
     "telefon": "Telefon",
     "telefonExemplu": "07xx xxx xxx",
     "livrareNota": "Amândouă se pot lăsa goale și completa mai târziu. Apar pe fiecare foaie tipărită.",
-    "cantScos": "nu se mai fabrică"
+    "cantScos": "nu se mai fabrică",
+    "faraFronturi": "fără fronturi",
+    "toateFaraFronturi": "toate fără fronturi",
+    "puneFronturileInapoi": "pune fronturile înapoi"
   },
   "rol": {
     "corp": "Carcasă",
@@ -1288,7 +1293,10 @@
     "suprapunere": "Suprapunere uși",
     "hSine": "Șine (sus + jos)",
     "traverse": "Traverse sus (0 = blat întreg)",
-    "traverseFara": "blat întreg"
+    "traverseFara": "blat întreg",
+    "fronturi": "Fronturi",
+    "fronturiSeFac": "se fac",
+    "fronturiNuSeFac": "nu se fac"
   },
   "fata": {
     "px": "dreapta",
@@ -1319,7 +1327,8 @@
     "grupDimensiuni": "Lățime, înălțime, adâncime, construcție",
     "grupCantitati": "Câte uși, polițe, montanți, sertare",
     "grupSoclu": "Soclu: corpul stă pe podea, fără picioare",
-    "grupTraverse": "Traverse: corpul de bază n-are blat întreg"
+    "grupTraverse": "Traverse: corpul de bază n-are blat întreg",
+    "grupFaraFront": "Fronturile: se fac sau nu se fac"
   },
   "mesaj": {
     "intrebare": "Ce-ți lipsește din calcul?",

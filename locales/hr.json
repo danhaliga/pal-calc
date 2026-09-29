@@ -761,7 +761,8 @@
     "glisantaFaraCompartimente": "Klizna vrata prolaze ispred vertikala, pa se ne mogu staviti na izabrane pregrade.",
     "traverseNuMerg": "Traverze idu samo na ravno tijelo građeno „između“. Ovdje je ostala cijela ploča.",
     "traversePreaLate": "Traverze od {lat} mm ne stanu: dvije tako široke se dodiruju. Iznad {incape} mm to je loše skrojena ploča.",
-    "traverseInAfara": "Traverza se radi između {min} i {max} mm. {lat} je sveden na {pus}."
+    "traverseInAfara": "Traverza se radi između {min} i {max} mm. {lat} je sveden na {pus}.",
+    "faraFronturi": "Bez fronti: dostavlja se samo korpus, {cate} dijelova ne ulazi u plan krojenja. Njihove gotove mjere, za onoga ko ih izrađuje: {cote}."
   },
   "csv": {
     "corp": "Korpus",
@@ -830,7 +831,8 @@
     "corpDeschis": "otvoren korpus",
     "piesa": "jedna ploča",
     "peSoclu": "sokl {h} mm",
-    "cuTraverse": "traverze {lat} mm"
+    "cuTraverse": "traverze {lat} mm",
+    "faraFront": "bez fronti"
   },
   "comanda": {
     "inapoiComenzi": "Moji nalozi",
@@ -914,7 +916,10 @@
     "telefon": "Telefon",
     "telefonExemplu": "+385 9x xxx xxxx",
     "livrareNota": "Oba se mogu ostaviti prazna i popuniti kasnije. Izlaze na svakom otisnutom listu.",
-    "cantScos": "više se ne proizvodi"
+    "cantScos": "više se ne proizvodi",
+    "faraFronturi": "bez fronti",
+    "toateFaraFronturi": "sve bez fronti",
+    "puneFronturileInapoi": "vrati fronte"
   },
   "rol": {
     "corp": "Korpus",
@@ -1288,7 +1293,10 @@
     "suprapunere": "Preklop vrata",
     "hSine": "Vodilice (gore + dolje)",
     "traverse": "Traverze gore (0 = cijela ploča)",
-    "traverseFara": "cijela ploča"
+    "traverseFara": "cijela ploča",
+    "fronturi": "Fronte",
+    "fronturiSeFac": "rade se",
+    "fronturiNuSeFac": "ne rade se"
   },
   "fata": {
     "px": "desno",
@@ -1319,7 +1327,8 @@
     "grupDimensiuni": "Širina, visina, dubina, konstrukcija",
     "grupCantitati": "Koliko vrata, polica, srednjih stranica, ladica",
     "grupSoclu": "Sokl: tijelo stoji na podu, bez nožica",
-    "grupTraverse": "Traverze: donji element nema cijelu gornju ploču"
+    "grupTraverse": "Traverze: donji element nema cijelu gornju ploču",
+    "grupFaraFront": "Fronte: rade se ili ne"
   },
   "mesaj": {
     "intrebare": "Što nedostaje proračunu?",

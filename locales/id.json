@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Pintu geser melewati sekat tegak, jadi tidak bisa dipasang pada kotak tertentu.",
     "traverseNuMerg": "Palang hanya untuk boks lurus yang dibangun „di antara\". Di sini papan atas penuh tetap dipakai.",
     "traversePreaLate": "Palang {lat} mm tidak muat: dua selebar itu saling bersentuhan. Di atas {incape} mm jadinya papan atas yang salah potong.",
-    "traverseInAfara": "Palang dibuat antara {min} dan {max} mm. {lat} disesuaikan menjadi {pus}."
+    "traverseInAfara": "Palang dibuat antara {min} dan {max} mm. {lat} disesuaikan menjadi {pus}.",
+    "faraFronturi": "Tanpa pintu depan: hanya badan lemari yang dikirim, {cate} lembar tidak masuk daftar potong. Ukuran jadinya, untuk yang membuatnya: {cote}."
   },
   "csv": {
     "corp": "Boks",
@@ -823,7 +824,8 @@
     "corpDeschis": "boks terbuka",
     "piesa": "satu papan saja",
     "peSoclu": "papan alas {h} mm",
-    "cuTraverse": "palang {lat} mm"
+    "cuTraverse": "palang {lat} mm",
+    "faraFront": "tanpa pintu depan"
   },
   "comanda": {
     "inapoiComenzi": "Pesanan saya",
@@ -905,7 +907,10 @@
     "telefon": "Telepon",
     "telefonExemplu": "+62 8xx xxxx xxxx",
     "livrareNota": "Keduanya boleh dikosongkan dan diisi nanti. Keduanya muncul di setiap lembar cetak.",
-    "cantScos": "tidak diproduksi lagi"
+    "cantScos": "tidak diproduksi lagi",
+    "faraFronturi": "tanpa pintu depan",
+    "toateFaraFronturi": "semua tanpa pintu depan",
+    "puneFronturileInapoi": "pasang kembali pintu depan"
   },
   "rol": {
     "corp": "Boks",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Tumpang pintu",
     "hSine": "Rel (atas + bawah)",
     "traverse": "Palang atas (0 = papan atas penuh)",
-    "traverseFara": "papan atas penuh"
+    "traverseFara": "papan atas penuh",
+    "fronturi": "Pintu depan",
+    "fronturiSeFac": "dibuat",
+    "fronturiNuSeFac": "tidak dibuat"
   },
   "fata": {
     "px": "kanan",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Lebar, tinggi, dalam, cara rakit",
     "grupCantitati": "Berapa pintu, rak, sekat tengah, laci",
     "grupSoclu": "Papan alas: boks berdiri di lantai, tanpa kaki",
-    "grupTraverse": "Palang: boks bawah tidak perlu papan atas penuh"
+    "grupTraverse": "Palang: boks bawah tidak perlu papan atas penuh",
+    "grupFaraFront": "Pintu depan: dibuat atau tidak"
   },
   "mesaj": {
     "intrebare": "Apa yang kurang dari perhitungan?",

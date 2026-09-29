@@ -761,7 +761,8 @@
     "glisantaFaraCompartimente": "Klizna vrata prolaze ispred vertikala, pa se ne mogu staviti na izabrane pregrade.",
     "traverseNuMerg": "Traverze idu samo na pravo telo građeno „između“. Ovde je ostala cela ploča.",
     "traversePreaLate": "Traverze od {lat} mm ne staju: dve tako široke se dodiruju. Iznad {incape} mm to je loše iskrojena ploča.",
-    "traverseInAfara": "Traverza se pravi između {min} i {max} mm. {lat} je sveden na {pus}."
+    "traverseInAfara": "Traverza se pravi između {min} i {max} mm. {lat} je sveden na {pus}.",
+    "faraFronturi": "Bez fronti: isporučuje se samo korpus, {cate} delova ne ulaze u plan krojenja. Njihove gotove mere, za onoga ko ih pravi: {cote}."
   },
   "csv": {
     "corp": "Korpus",
@@ -830,7 +831,8 @@
     "corpDeschis": "otvoren korpus",
     "piesa": "jedna ploča",
     "peSoclu": "sokla {h} mm",
-    "cuTraverse": "traverze {lat} mm"
+    "cuTraverse": "traverze {lat} mm",
+    "faraFront": "bez fronti"
   },
   "comanda": {
     "inapoiComenzi": "Moje porudžbine",
@@ -914,7 +916,10 @@
     "telefon": "Telefon",
     "telefonExemplu": "+381 6x xxx xxxx",
     "livrareNota": "Oba se mogu ostaviti prazna i popuniti kasnije. Izlaze na svakom odštampanom listu.",
-    "cantScos": "više se ne proizvodi"
+    "cantScos": "više se ne proizvodi",
+    "faraFronturi": "bez fronti",
+    "toateFaraFronturi": "sve bez fronti",
+    "puneFronturileInapoi": "vrati fronte"
   },
   "rol": {
     "corp": "Korpus",
@@ -1288,7 +1293,10 @@
     "suprapunere": "Preklop vrata",
     "hSine": "Šine (gore + dole)",
     "traverse": "Traverze gore (0 = cela ploča)",
-    "traverseFara": "cela ploča"
+    "traverseFara": "cela ploča",
+    "fronturi": "Fronte",
+    "fronturiSeFac": "rade se",
+    "fronturiNuSeFac": "ne rade se"
   },
   "fata": {
     "px": "desno",
@@ -1319,7 +1327,8 @@
     "grupDimensiuni": "Širina, visina, dubina, konstrukcija",
     "grupCantitati": "Koliko vrata, polica, srednjih stranica, fioka",
     "grupSoclu": "Sokla: telo stoji na podu, bez nogica",
-    "grupTraverse": "Traverze: donji element nema celu gornju ploču"
+    "grupTraverse": "Traverze: donji element nema celu gornju ploču",
+    "grupFaraFront": "Fronte: rade se ili ne"
   },
   "mesaj": {
     "intrebare": "Šta nedostaje proračunu?",

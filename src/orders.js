@@ -423,20 +423,50 @@ router.post('/corps/:id/material', requireAuth, (req, res, next) => {
   const ale = corp.order_id ? materiale.aleComenzii(corp.order_id) : [];
   const valid = id => (id && ale.some(m => m.id === Number(id))) ? Number(id) : null;
   const matCorp = valid(req.body.mat_corp_id);
-  const matFront = valid(req.body.mat_front_id);
+  /* „fara” nu e un material, e lipsa lui: corpul se comandă fără fronturi.
+     Stă în același selector fiindcă acolo se uită omul când hotărăște din ce
+     sunt ușile, iar „din nimic” e un răspuns la fel de bun ca un decor. */
+  const faraFront = String(req.body.mat_front_id || '') === 'fara';
+  const matFront = faraFront ? null : valid(req.body.mat_front_id);
 
   db.prepare("UPDATE corps SET mat_corp_id = ?, mat_front_id = ?, updated_at = datetime('now') WHERE id = ?")
     .run(matCorp, matFront, corp.id);
 
-  /* grosimea și cantul carcasei intră în parametrii corpului */
-  if (matCorp) {
-    const m = ale.find(x => x.id === matCorp);
-    const params = Object.assign(PalCalc.defaults(), JSON.parse(corp.params),
-      { t: m.pal_mm, cg: m.cant_gros, cs: m.cant_subtire });
-    db.prepare('UPDATE corps SET params = ? WHERE id = ?').run(JSON.stringify(params), corp.id);
-  }
+  /* Grosimea și cantul carcasei intră în parametrii corpului, și tot acolo
+     intră semnul că fronturile nu se fac: calculul citește din params, nu
+     din coloanele de material. */
+  const m = matCorp ? ale.find(x => x.id === matCorp) : null;
+  const params = Object.assign(PalCalc.defaults(), JSON.parse(corp.params),
+    m ? { t: m.pal_mm, cg: m.cant_gros, cs: m.cant_subtire } : null,
+    { faraFront: faraFront ? 1 : 0 });
+  db.prepare('UPDATE corps SET params = ? WHERE id = ?').run(JSON.stringify(params), corp.id);
 
   res.redirect(`/corps/${corp.id}`);
+});
+
+/* Fronturile pe toată comanda, dintr-o apăsare.
+
+   O bucătărie se comandă fără fronturi ca bucătărie, nu corp cu corp: cine
+   își cumpără ușile din altă parte — MDF vopsit, folie, sticlă — și le
+   cumpără pe toate. Se poate și înapoi, cu aceeași apăsare. */
+const fronturileComenzii = db.transaction((orderId, fara) => {
+  const corpuri = db.prepare('SELECT id, params FROM corps WHERE order_id = ?').all(orderId);
+  const scrie = db.prepare("UPDATE corps SET params = ?, updated_at = datetime('now') WHERE id = ?");
+  corpuri.forEach(c => {
+    const params = Object.assign(PalCalc.defaults(), JSON.parse(c.params), { faraFront: fara });
+    scrie.run(JSON.stringify(params), c.id);
+  });
+  /* Fără fronturi, materialul de fronturi pus pe corp n-are ce tăia: se
+     scoate, ca să nu pară mai târziu că s-a comandat o placă degeaba. */
+  if (fara) db.prepare('UPDATE corps SET mat_front_id = NULL WHERE order_id = ?').run(orderId);
+  return corpuri.length;
+});
+
+router.post('/orders/:id/fronturi', requireAuth, (req, res, next) => {
+  const order = getOwned(req.params.id, req.user.id);
+  if (!order) return notFound(next);
+  fronturileComenzii(order.id, String(req.body.fara || '') === '1' ? 1 : 0);
+  res.redirect(`/orders/${order.id}`);
 });
 
 /* ---------- ansamblul: corpurile alipite în cameră ---------- */

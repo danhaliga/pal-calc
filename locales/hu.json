@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "A tolóajtók az osztók előtt futnak, ezért nem tehetők kiválasztott rekeszekre.",
     "traverseNuMerg": "A merevítők csak „közé” épített egyenes korpuszra mennek. Itt maradt a teljes fedlap.",
     "traversePreaLate": "A {lat} mm-es merevítők nem férnek el: két ilyen széles összeér. {incape} mm fölött ez már rosszul szabott fedlap.",
-    "traverseInAfara": "A merevítő {min} és {max} mm között készül. A {lat} {pus} lett."
+    "traverseInAfara": "A merevítő {min} és {max} mm között készül. A {lat} {pus} lett.",
+    "faraFronturi": "Front nélkül: csak a korpusz készül el, {cate} darab nem kerül a szabásjegyzékre. A készméreteik, annak, aki elkészíti: {cote}."
   },
   "csv": {
     "corp": "Korpusz",
@@ -823,7 +824,8 @@
     "corpDeschis": "nyitott korpusz",
     "piesa": "egyetlen lap",
     "peSoclu": "{h} mm lábazat",
-    "cuTraverse": "merevítők {lat} mm"
+    "cuTraverse": "merevítők {lat} mm",
+    "faraFront": "front nélkül"
   },
   "comanda": {
     "inapoiComenzi": "A megrendeléseim",
@@ -905,7 +907,10 @@
     "telefon": "Telefon",
     "telefonExemplu": "+36 xx xxx xxxx",
     "livrareNota": "Mindkettő üresen hagyható és később kitölthető. Minden kinyomtatott lapon rajta van.",
-    "cantScos": "már nem gyártják"
+    "cantScos": "már nem gyártják",
+    "faraFronturi": "front nélkül",
+    "toateFaraFronturi": "mind front nélkül",
+    "puneFronturileInapoi": "frontok visszatétele"
   },
   "rol": {
     "corp": "Korpusz",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Ajtók átfedése",
     "hSine": "Sínek (fent + lent)",
     "traverse": "Merevítők felül (0 = teljes fedlap)",
-    "traverseFara": "teljes fedlap"
+    "traverseFara": "teljes fedlap",
+    "fronturi": "Frontok",
+    "fronturiSeFac": "készülnek",
+    "fronturiNuSeFac": "nem készülnek"
   },
   "fata": {
     "px": "jobb",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Szélesség, magasság, mélység, felépítés",
     "grupCantitati": "Hány ajtó, polc, közfal, fiók",
     "grupSoclu": "Lábazat: a korpusz a padlón áll, láb nélkül",
-    "grupTraverse": "Merevítők: az alsó elemnek nincs teljes fedlapja"
+    "grupTraverse": "Merevítők: az alsó elemnek nincs teljes fedlapja",
+    "grupFaraFront": "Frontok: készülnek vagy nem"
   },
   "mesaj": {
     "intrebare": "Mi hiányzik a számításból?",

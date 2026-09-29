@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Las correderas pasan por delante de los montantes, así que no se pueden poner en huecos elegidos.",
     "traverseNuMerg": "Los travesaños solo van en un mueble recto construido «entre». Aquí se ha quedado el tablero entero.",
     "traversePreaLate": "Travesaños de {lat} mm no caben: dos tan anchos se tocan. Por encima de {incape} mm sería un tablero mal cortado.",
-    "traverseInAfara": "El travesaño se hace entre {min} y {max} mm. {lat} se ha ajustado a {pus}."
+    "traverseInAfara": "El travesaño se hace entre {min} y {max} mm. {lat} se ha ajustado a {pus}.",
+    "faraFronturi": "Sin frentes: se entrega solo el cuerpo, {cate} piezas no entran en la lista de corte. Sus medidas acabadas, para quien los haga: {cote}."
   },
   "csv": {
     "corp": "Módulo",
@@ -823,7 +824,8 @@
     "corpDeschis": "módulo abierto",
     "piesa": "un solo tablero",
     "peSoclu": "zócalo {h} mm",
-    "cuTraverse": "travesaños {lat} mm"
+    "cuTraverse": "travesaños {lat} mm",
+    "faraFront": "sin frentes"
   },
   "comanda": {
     "inapoiComenzi": "Mis pedidos",
@@ -905,7 +907,10 @@
     "telefon": "Teléfono",
     "telefonExemplu": "+34 6xx xxx xxx",
     "livrareNota": "Ambos se pueden dejar vacíos y rellenar más tarde. Salen en cada hoja impresa.",
-    "cantScos": "ya no se fabrica"
+    "cantScos": "ya no se fabrica",
+    "faraFronturi": "sin frentes",
+    "toateFaraFronturi": "todos sin frentes",
+    "puneFronturileInapoi": "volver a poner los frentes"
   },
   "rol": {
     "corp": "Carcasa",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Solape de puertas",
     "hSine": "Guías (arriba + abajo)",
     "traverse": "Travesaños arriba (0 = tablero entero)",
-    "traverseFara": "tablero entero"
+    "traverseFara": "tablero entero",
+    "fronturi": "Frentes",
+    "fronturiSeFac": "se hacen",
+    "fronturiNuSeFac": "no se hacen"
   },
   "fata": {
     "px": "derecha",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Ancho, alto, fondo, construcción",
     "grupCantitati": "Cuántas puertas, baldas, divisiones, cajones",
     "grupSoclu": "Zócalo: el mueble apoya en el suelo, sin patas",
-    "grupTraverse": "Travesaños: el mueble bajo no lleva tablero entero arriba"
+    "grupTraverse": "Travesaños: el mueble bajo no lleva tablero entero arriba",
+    "grupFaraFront": "Frentes: se hacen o no"
   },
   "mesaj": {
     "intrebare": "¿Qué le falta al cálculo?",

@@ -761,7 +761,8 @@
     "glisantaFaraCompartimente": "דלתות הזזה עוברות לפני החוצצים, ולכן אי אפשר לשים אותן על תאים נבחרים.",
     "traverseNuMerg": "קורות מתאימות רק לארון ישר הבנוי „בין”. כאן נשאר הלוח השלם.",
     "traversePreaLate": "קורות של {lat} מ״מ אינן נכנסות: שתיים ברוחב כזה נוגעות זו בזו. מעל {incape} מ״מ זה לוח חתוך גרוע.",
-    "traverseInAfara": "קורה נעשית בין {min} ל־{max} מ״מ. {lat} הובא ל־{pus}."
+    "traverseInAfara": "קורה נעשית בין {min} ל־{max} מ״מ. {lat} הובא ל־{pus}.",
+    "faraFronturi": "בלי חזיתות: מסופק רק הגוף, {cate} חלקים לא נכנסים לרשימת הניסור. המידות הסופיות שלהם, למי שמייצר אותן: {cote}."
   },
   "csv": {
     "corp": "גוף",
@@ -830,7 +831,8 @@
     "corpDeschis": "גוף פתוח",
     "piesa": "לוח אחד",
     "peSoclu": "סוקל {h} מ״מ",
-    "cuTraverse": "קורות {lat} מ״מ"
+    "cuTraverse": "קורות {lat} מ״מ",
+    "faraFront": "בלי חזיתות"
   },
   "comanda": {
     "inapoiComenzi": "ההזמנות שלי",
@@ -914,7 +916,10 @@
     "telefon": "טלפון",
     "telefonExemplu": "+972 5x-xxx-xxxx",
     "livrareNota": "אפשר להשאיר את שניהם ריקים ולמלא מאוחר יותר. הם מופיעים בכל דף מודפס.",
-    "cantScos": "לא מיוצר עוד"
+    "cantScos": "לא מיוצר עוד",
+    "faraFronturi": "בלי חזיתות",
+    "toateFaraFronturi": "הכול בלי חזיתות",
+    "puneFronturileInapoi": "החזרת החזיתות"
   },
   "rol": {
     "corp": "גוף",
@@ -1288,7 +1293,10 @@
     "suprapunere": "חפיפת הדלתות",
     "hSine": "מסילות (עליונה + תחתונה)",
     "traverse": "קורות למעלה (0 = לוח שלם)",
-    "traverseFara": "לוח שלם"
+    "traverseFara": "לוח שלם",
+    "fronturi": "חזיתות",
+    "fronturiSeFac": "נעשות",
+    "fronturiNuSeFac": "לא נעשות"
   },
   "fata": {
     "px": "ימין",
@@ -1319,7 +1327,8 @@
     "grupDimensiuni": "רוחב, גובה, עומק, בנייה",
     "grupCantitati": "כמה דלתות, מדפים, חוצצים, מגירות",
     "grupSoclu": "סוקל: הארון עומד על הרצפה, בלי רגליים",
-    "grupTraverse": "קורות: לארון התחתון אין לוח עליון שלם"
+    "grupTraverse": "קורות: לארון התחתון אין לוח עליון שלם",
+    "grupFaraFront": "חזיתות: נעשות או לא"
   },
   "mesaj": {
     "intrebare": "מה חסר לחישוב?",

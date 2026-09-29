@@ -78,6 +78,11 @@
          în față, una în spate — fiindcă sub blatul de bucătărie un panou
          pe toată adâncimea e PAL aruncat: îl acoperă blatul oricum. */
       traverse: 0,
+      /* Fronturile nu se fac deloc: se comandă doar corpul. Ușile și
+         fronturile de sertar vine omul cu ale lui — MDF vopsit, folie,
+         sticlă — sau le are deja de la lucrarea de dinainte. 0 înseamnă
+         corp cu fronturi, ca până acum. */
+      faraFront: 0,
       tip: 'drept', W2: 900, orb: 550, contur: [],
       /* piesă simplă: bucăți, cantul pe fiecare muchie, fibra */
       pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
@@ -304,6 +309,39 @@
     if (soclu && Hint < 100) {
       avert('socluPreaInalt', { soclu: fmt(soclu), ramane: fmt(Math.max(0, Hint)) });
     }
+
+    /* ---- comandă fără fronturi: se livrează doar corpul ----
+
+       Carcasa NU se schimbă cu nimic. Ușa aplicată stă oricum în afara
+       ei, iar cea încastrată stă în golul care rămâne; sertarele se așază
+       mai departe după înălțimile fronturilor, fiindcă fronturile care vin
+       pe urmă trebuie să cadă exact pe cutiile astea. De-aia fronturile se
+       scot la SFÂRȘIT, nu se sar pe drum: tot calculul rămâne cel al
+       corpului întreg, doar lista de tăiat e mai scurtă.
+
+       Se golește și lista de uși, ca să nu se numere balamale și mânere
+       pentru niște canaturi care nu se fac. Se SPUNE câte piese au rămas
+       afară: cine se uită la o listă de debitare fără uși trebuie să afle
+       de ce, altfel pleacă din atelier un corp fără fronturi din greșeală.
+
+       Se cheamă chiar înainte de fiecare `return`, la orice fel de corp. */
+    var faraFront = !!(+c.faraFront);
+    var scoateFronturile = function (usiLista) {
+      if (!faraFront) return usiLista;
+      var cate = 0, cote = [];
+      for (var iF = P.length - 1; iF >= 0; iF--) {
+        if (P[iF].rol !== 'front') continue;
+        cate += P[iF].buc;
+        /* Cota FINITĂ, nu cea de tăiere: fronturile le face altcineva, cu
+           cantul lui, iar reducerea de cant e a atelierului ăsta. */
+        cote.unshift(fmt(P[iF].L) + '×' + fmt(P[iF].l) +
+                     ' (' + P[iF].buc + ' ' + t_('comun.buc') + ')');
+        P.splice(iF, 1);
+      }
+      if (!cate) return usiLista;
+      avert('faraFronturi', { cate: cate, cote: cote.join(', ') });
+      return [];
+    };
     var bx = function (x, y, z, sx, sy, sz, f, ex, grp) {
       return { x: x, y: y, z: z, sx: sx, sy: sy, sz: sz, f: f, ex: ex, grp: grp };
     };
@@ -400,7 +438,7 @@
       }
 
       return {
-        P: P, warn: warn, avertismente: avertismente, usi: usiA,
+        P: P, warn: warn, avertismente: avertismente, usi: scoateFronturile(usiA),
         Wint: r1(g.W - 2 * t), Hint: r1(g.H - 2 * t), Dint: r1(Da - tp),
         W: g.W, H: g.H, D: Da,
         contur: g
@@ -502,7 +540,7 @@
         if (pA > 800 || pB > 800) avert('politaColtLata');
       }
 
-      return { P: P, warn: warn, avertismente: avertismente, usi: usiK, Wint: bA, Hint: Hint, Dint: D,
+      return { P: P, warn: warn, avertismente: avertismente, usi: scoateFronturile(usiK), Wint: bA, Hint: Hint, Dint: D,
                W: A, H: H, D: B, colt: { A: A, B: B, brA: brA, brB: brB, diag: diagL, dg: dg } };
     }
 
@@ -910,7 +948,7 @@
       avert('usiJosFaraPolita');
     }
 
-    return { P: P, warn: warn, avertismente: avertismente, usi: usi, Wint: Wint, Hint: Hint, Dint: Dint,
+    return { P: P, warn: warn, avertismente: avertismente, usi: scoateFronturile(usi), Wint: Wint, Hint: Hint, Dint: Dint,
              W: W, H: H, D: D, soclu: soclu };
   }
 
@@ -967,6 +1005,10 @@
         constr: z.enum(['intre', 'peste']),
         soclu: mm(0, 300).catch(0),
         traverse: mm(0, TRAVERSA_MAX).catch(0),
+        /* Un semn, nu o cotă: 0 sau 1. Orice altceva înseamnă corp cu
+           fronturi — felul de până acum, adică cel în care nu se pierde
+           nimic dacă valoarea vine stricată de undeva. */
+        faraFront: int(0, 1).catch(0),
         pBuc: int(1, 999).catch(1),
         pcL1: cantMuchie, pcL2: cantMuchie, pcl1: cantMuchie, pcl2: cantMuchie,
         pFibra: z.enum(['L', 'l', '-']).catch('L'),

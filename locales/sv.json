@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Skjutdörrar löper förbi mittsidorna och kan därför inte sättas på valda fack.",
     "traverseNuMerg": "Reglar går bara på en rak stomme byggd ”emellan”. Här blev hela topplattan kvar.",
     "traversePreaLate": "Reglar på {lat} mm får inte plats: två så breda tar i varandra. Över {incape} mm blir det en illa sågad topplatta.",
-    "traverseInAfara": "En regel görs mellan {min} och {max} mm. {lat} ändrades till {pus}."
+    "traverseInAfara": "En regel görs mellan {min} och {max} mm. {lat} ändrades till {pus}.",
+    "faraFronturi": "Utan fronter: bara stommen levereras, {cate} delar kommer inte med på sågplanen. Deras färdigmått, för den som gör dem: {cote}."
   },
   "csv": {
     "corp": "Stomme",
@@ -823,7 +824,8 @@
     "corpDeschis": "öppen stomme",
     "piesa": "en enda skiva",
     "peSoclu": "sockel {h} mm",
-    "cuTraverse": "reglar {lat} mm"
+    "cuTraverse": "reglar {lat} mm",
+    "faraFront": "utan fronter"
   },
   "comanda": {
     "inapoiComenzi": "Mina ordrar",
@@ -905,7 +907,10 @@
     "telefon": "Telefon",
     "telefonExemplu": "+46 7x xxx xx xx",
     "livrareNota": "Båda kan lämnas tomma och fyllas i senare. De står på varje utskrivet blad.",
-    "cantScos": "tillverkas inte längre"
+    "cantScos": "tillverkas inte längre",
+    "faraFronturi": "utan fronter",
+    "toateFaraFronturi": "alla utan fronter",
+    "puneFronturileInapoi": "sätt tillbaka fronterna"
   },
   "rol": {
     "corp": "Stomme",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Dörrarnas överlapp",
     "hSine": "Skenor (upptill + nedtill)",
     "traverse": "Reglar upptill (0 = hel topplatta)",
-    "traverseFara": "hel topplatta"
+    "traverseFara": "hel topplatta",
+    "fronturi": "Fronter",
+    "fronturiSeFac": "görs",
+    "fronturiNuSeFac": "görs inte"
   },
   "fata": {
     "px": "höger",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Bredd, höjd, djup, byggsätt",
     "grupCantitati": "Hur många dörrar, hyllplan, mellanstycken, lådor",
     "grupSoclu": "Sockel: stommen står på golvet, utan ben",
-    "grupTraverse": "Reglar: underskåpet behöver ingen hel topplatta"
+    "grupTraverse": "Reglar: underskåpet behöver ingen hel topplatta",
+    "grupFaraFront": "Fronter: görs eller inte"
   },
   "mesaj": {
     "intrebare": "Vad saknas i beräkningen?",

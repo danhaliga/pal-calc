@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Cánh lùa đi qua trước vách đứng nên không lắp riêng cho từng ngăn được.",
     "traverseNuMerg": "Thanh giằng chỉ dùng cho thùng thẳng dựng kiểu „giữa\". Ở đây vẫn là tấm nóc liền.",
     "traversePreaLate": "Thanh giằng {lat} mm không vừa: hai thanh rộng vậy chạm nhau. Trên {incape} mm thì chẳng khác gì tấm nóc cắt hỏng.",
-    "traverseInAfara": "Thanh giằng làm từ {min} đến {max} mm. {lat} đã được đưa về {pus}."
+    "traverseInAfara": "Thanh giằng làm từ {min} đến {max} mm. {lat} đã được đưa về {pus}.",
+    "faraFronturi": "Không mặt cánh: chỉ giao thùng, {cate} tấm không vào bảng cắt. Kích thước thành phẩm, cho người làm: {cote}."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -823,7 +824,8 @@
     "corpDeschis": "thùng tủ để mở",
     "piesa": "một tấm duy nhất",
     "peSoclu": "chân đế {h} mm",
-    "cuTraverse": "thanh giằng {lat} mm"
+    "cuTraverse": "thanh giằng {lat} mm",
+    "faraFront": "không mặt cánh"
   },
   "comanda": {
     "inapoiComenzi": "Đơn hàng của tôi",
@@ -905,7 +907,10 @@
     "telefon": "Điện thoại",
     "telefonExemplu": "+84 9xx xxx xxx",
     "livrareNota": "Cả hai có thể để trống và điền sau. Chúng hiện trên mọi tờ in.",
-    "cantScos": "không còn sản xuất"
+    "cantScos": "không còn sản xuất",
+    "faraFronturi": "không mặt cánh",
+    "toateFaraFronturi": "tất cả không mặt cánh",
+    "puneFronturileInapoi": "đặt lại mặt cánh"
   },
   "rol": {
     "corp": "Thùng tủ",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Độ chồng mép cánh",
     "hSine": "Ray (trên + dưới)",
     "traverse": "Thanh giằng trên (0 = tấm nóc liền)",
-    "traverseFara": "tấm nóc liền"
+    "traverseFara": "tấm nóc liền",
+    "fronturi": "Mặt cánh",
+    "fronturiSeFac": "có làm",
+    "fronturiNuSeFac": "không làm"
   },
   "fata": {
     "px": "phải",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Rộng, cao, sâu, cách dựng",
     "grupCantitati": "Bao nhiêu cánh, kệ, vách giữa, ngăn kéo",
     "grupSoclu": "Chân đế: thùng đứng trên sàn, không chân rời",
-    "grupTraverse": "Thanh giằng: thùng dưới không cần tấm nóc liền"
+    "grupTraverse": "Thanh giằng: thùng dưới không cần tấm nóc liền",
+    "grupFaraFront": "Mặt cánh: làm hay không"
   },
   "mesaj": {
     "intrebare": "Phép tính còn thiếu gì?",

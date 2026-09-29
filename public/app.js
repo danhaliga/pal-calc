@@ -12,7 +12,7 @@ var CORP_ID = DATA.corpId;
 var params = DATA.params;
 var paid = !!DATA.paid;
 
-var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','traverse','t','cg','cs','spate','tp','nUsi','montaj','balama','supr','hSine',
+var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','traverse','t','cg','cs','spate','tp','faraFront','nUsi','montaj','balama','supr','hSine',
               'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg',
               'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 
@@ -396,7 +396,10 @@ function formule(c, r) {
                                          n: (+c.nUsi) - 1, nUsi: c.nUsi, sertare: sertare })
       : T('editor.formulaUsaIncastrata', { Wint: fmt(r.Wint), Hint: fmt(r.Hint), rinc: c.rinc,
                                            ri: c.ri, n: (+c.nUsi) - 1, nUsi: c.nUsi, sertare: sertare }));
-    l.push(T('editor.formulaBalamale'));
+    /* Cupa de balama se freaza in front. Fara fronturi nu se cumpara
+       balamale si nu se freaza nimic — dar formula usii rămâne, fiindca ea
+       da cotele pe care omul le duce la cine ii face fronturile. */
+    if (!+c.faraFront) l.push(T('editor.formulaBalamale'));
   }
   if (+c.nPol > 0) l.push(T('editor.formulaPolita', { jp: c.jp, rp: c.rp }));
   if (+c.nSer > 0) l.push(T('editor.formulaSertar', { jg: c.jg, ts: c.ts }));
@@ -701,7 +704,15 @@ var GRUPE = [
   { id: 'soclu',      camp: ['soclu'],                                bifatLaInceput: false },
   /* Traversele stau in grupa lor, nu cu soclul: se poate foarte bine un
      corp pe picioare cu traverse, sau unul pe soclu cu blat intreg. */
-  { id: 'traverse',   camp: ['traverse'],                             bifatLaInceput: false }
+  { id: 'traverse',   camp: ['traverse'],                             bifatLaInceput: false },
+  /* Cine livreaza carcase livreaza carcase: e felul de-a lucra, nu ceva ce
+     se hotaraste corp cu corp. Nebifat la inceput, insa — un corp fara
+     fronturi aparut din senin e o paguba, nu o comoditate. */
+  { id: 'faraFront',  camp: ['faraFront'],                            bifatLaInceput: false,
+    /* Un „1" langa numele grupei nu spune nimic nimanui. */
+    arata: function (val) {
+      return T(+val.faraFront ? 'editor.fronturiNuSeFac' : 'editor.fronturiSeFac');
+    } }
 ];
 
 function cheieGrup(id) { return 'setari.grup' + id.charAt(0).toUpperCase() + id.slice(1); }
@@ -787,9 +798,9 @@ function randeazaSetari() {
 
   cutie.innerHTML = GRUPE.map(function (g) {
     var bifat = s ? !!s.grupe[g.id] : g.bifatLaInceput;
-    var val = s ? g.camp.map(function (f) {
+    var val = !s ? '' : (g.arata ? g.arata(s.val) : g.camp.map(function (f) {
       return (s.val[f] === undefined || s.val[f] === '') ? null : s.val[f];
-    }).filter(function (v) { return v !== null; }).join(' · ') : '';
+    }).filter(function (v) { return v !== null; }).join(' · '));
     var blocat = g.id === 'material' && DATA.matFixat;
     return '<label class="check' + (blocat ? ' muted' : '') + '">' +
       '<input type="checkbox" data-grup="' + g.id + '"' + (bifat ? ' checked' : '') + '> ' +

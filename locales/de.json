@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Schiebetüren laufen an den Mittelseiten vorbei, sie lassen sich also nicht auf ausgewählte Fächer setzen.",
     "traverseNuMerg": "Traversen gehen nur bei einem geraden Korpus in „Zwischen“-Bauweise. Hier bleibt der ganze Deckel.",
     "traversePreaLate": "Traversen von {lat} mm passen nicht: zwei so breite berühren sich. Über {incape} mm wäre es ein schlecht zugeschnittener Deckel.",
-    "traverseInAfara": "Eine Traverse wird zwischen {min} und {max} mm gemacht. {lat} wurde auf {pus} gebracht."
+    "traverseInAfara": "Eine Traverse wird zwischen {min} und {max} mm gemacht. {lat} wurde auf {pus} gebracht.",
+    "faraFronturi": "Ohne Fronten: geliefert wird nur der Korpus, {cate} Teile stehen nicht auf der Zuschnittliste. Ihre Fertigmaße, für den, der sie macht: {cote}."
   },
   "csv": {
     "corp": "Korpus",
@@ -823,7 +824,8 @@
     "corpDeschis": "offener Korpus",
     "piesa": "eine einzelne Platte",
     "peSoclu": "{h} mm Sockel",
-    "cuTraverse": "Traversen {lat} mm"
+    "cuTraverse": "Traversen {lat} mm",
+    "faraFront": "ohne Fronten"
   },
   "comanda": {
     "inapoiComenzi": "Meine Aufträge",
@@ -905,7 +907,10 @@
     "telefon": "Telefon",
     "telefonExemplu": "+49 1xx xxxxxxx",
     "livrareNota": "Beides kann leer bleiben und später ausgefüllt werden. Es steht auf jedem gedruckten Blatt.",
-    "cantScos": "wird nicht mehr hergestellt"
+    "cantScos": "wird nicht mehr hergestellt",
+    "faraFronturi": "ohne Fronten",
+    "toateFaraFronturi": "alle ohne Fronten",
+    "puneFronturileInapoi": "Fronten wieder einsetzen"
   },
   "rol": {
     "corp": "Korpus",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Überlappung der Türen",
     "hSine": "Laufschienen (oben + unten)",
     "traverse": "Traversen oben (0 = ganzer Deckel)",
-    "traverseFara": "ganzer Deckel"
+    "traverseFara": "ganzer Deckel",
+    "fronturi": "Fronten",
+    "fronturiSeFac": "werden gemacht",
+    "fronturiNuSeFac": "werden nicht gemacht"
   },
   "fata": {
     "px": "rechts",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Breite, Höhe, Tiefe, Bauart",
     "grupCantitati": "Wie viele Türen, Böden, Mittelseiten, Schubkästen",
     "grupSoclu": "Sockel: der Korpus steht auf dem Boden, ohne Füße",
-    "grupTraverse": "Traversen: der Unterschrank hat keinen ganzen Deckel"
+    "grupTraverse": "Traversen: der Unterschrank hat keinen ganzen Deckel",
+    "grupFaraFront": "Fronten: gemacht oder nicht"
   },
   "mesaj": {
     "intrebare": "Was fehlt der Berechnung?",

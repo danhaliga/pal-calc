@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "미닫이문은 세로판 앞을 지나가므로 선택한 칸에만 달 수 없습니다.",
     "traverseNuMerg": "가로대는 “사이” 방식으로 짠 직선 몸통에만 씁니다. 여기서는 상판 전체가 남았습니다.",
     "traversePreaLate": "{lat} mm 가로대는 들어가지 않습니다. 그 폭이면 둘이 맞닿습니다. {incape} mm를 넘으면 잘못 자른 상판과 같습니다.",
-    "traverseInAfara": "가로대는 {min}~{max} mm 사이로 만듭니다. {lat}은(는) {pus}으로 맞췄습니다."
+    "traverseInAfara": "가로대는 {min}~{max} mm 사이로 만듭니다. {lat}은(는) {pus}으로 맞췄습니다.",
+    "faraFronturi": "전면판 없음: 몸통만 납품하며 {cate}장이 재단 목록에 들어가지 않습니다. 제작하는 쪽을 위한 완성 치수: {cote}."
   },
   "csv": {
     "corp": "캐비닛",
@@ -823,7 +824,8 @@
     "corpDeschis": "오픈 캐비닛",
     "piesa": "판 한 장",
     "peSoclu": "걸레받이 {h} mm",
-    "cuTraverse": "가로대 {lat} mm"
+    "cuTraverse": "가로대 {lat} mm",
+    "faraFront": "전면판 없음"
   },
   "comanda": {
     "inapoiComenzi": "내 주문",
@@ -905,7 +907,10 @@
     "telefon": "전화",
     "telefonExemplu": "+82 10-xxxx-xxxx",
     "livrareNota": "둘 다 비워 두었다가 나중에 채워도 됩니다. 인쇄하는 모든 장에 나옵니다.",
-    "cantScos": "단종"
+    "cantScos": "단종",
+    "faraFronturi": "전면판 없음",
+    "toateFaraFronturi": "전부 전면판 없이",
+    "puneFronturileInapoi": "전면판 되돌리기"
   },
   "rol": {
     "corp": "몸통",
@@ -1277,7 +1282,10 @@
     "suprapunere": "문 겹침",
     "hSine": "레일 (위 + 아래)",
     "traverse": "윗 가로대 (0 = 상판 전체)",
-    "traverseFara": "상판 전체"
+    "traverseFara": "상판 전체",
+    "fronturi": "전면판",
+    "fronturiSeFac": "제작",
+    "fronturiNuSeFac": "제작 안 함"
   },
   "fata": {
     "px": "오른쪽",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "폭, 높이, 깊이, 짜는 방식",
     "grupCantitati": "문, 선반, 중간칸막이, 서랍 개수",
     "grupSoclu": "걸레받이: 다리 없이 바닥에 서는 몸통",
-    "grupTraverse": "가로대: 하부장에는 상판 전체가 필요 없습니다"
+    "grupTraverse": "가로대: 하부장에는 상판 전체가 필요 없습니다",
+    "grupFaraFront": "전면판: 제작 여부"
   },
   "mesaj": {
     "intrebare": "계산에 무엇이 빠져 있나요?",

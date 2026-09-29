@@ -133,6 +133,13 @@
       <fieldset id="fsUsi">
         <legend><%= t('editor.legUsi') %></legend>
         <div class="f3">
+          <%# Fronturile se pot lasa afara cu totul: se comanda doar corpul,
+              iar usile le pune omul de la el. Sta PRIMUL in grupa usilor,
+              nu la coada: hotaraste ce se intampla cu tot ce vine dupa. %>
+          <label><%= t('editor.fronturi') %><select id="faraFront">
+            <option value="0"><%= t('editor.fronturiSeFac') %></option>
+            <option value="1"><%= t('editor.fronturiNuSeFac') %></option>
+          </select></label>
           <label><%= t('editor.numarUsi') %><select id="nUsi">
             <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
           </select></label>

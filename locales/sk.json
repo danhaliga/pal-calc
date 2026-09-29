@@ -761,7 +761,8 @@
     "glisantaFaraCompartimente": "Posuvné dvierka chodia pred stojinami, takže sa nedajú dať na vybrané priehradky.",
     "traverseNuMerg": "Výstuhy idú len na rovnú skrinku stavanú „medzi“. Tu ostala celá doska.",
     "traversePreaLate": "Výstuhy {lat} mm sa nezmestia: dve také široké sa dotýkajú. Nad {incape} mm by to bola zle narezaná doska.",
-    "traverseInAfara": "Výstuha sa robí od {min} do {max} mm. {lat} bolo upravené na {pus}."
+    "traverseInAfara": "Výstuha sa robí od {min} do {max} mm. {lat} bolo upravené na {pus}.",
+    "faraFronturi": "Bez dvierok: dodáva sa len korpus, {cate} dielov nejde do nárezového plánu. Ich hotové rozmery, pre toho, kto ich vyrobí: {cote}."
   },
   "csv": {
     "corp": "Korpus",
@@ -830,7 +831,8 @@
     "corpDeschis": "otvorený korpus",
     "piesa": "jediná doska",
     "peSoclu": "sokel {h} mm",
-    "cuTraverse": "výstuhy {lat} mm"
+    "cuTraverse": "výstuhy {lat} mm",
+    "faraFront": "bez dvierok"
   },
   "comanda": {
     "inapoiComenzi": "Moje zákazky",
@@ -914,7 +916,10 @@
     "telefon": "Telefón",
     "telefonExemplu": "+421 9xx xxx xxx",
     "livrareNota": "Oboje sa dá nechať prázdne a doplniť neskôr. Objaví sa na každom vytlačenom liste.",
-    "cantScos": "už sa nevyrába"
+    "cantScos": "už sa nevyrába",
+    "faraFronturi": "bez dvierok",
+    "toateFaraFronturi": "všetky bez dvierok",
+    "puneFronturileInapoi": "vrátiť dvierka"
   },
   "rol": {
     "corp": "Korpus",
@@ -1288,7 +1293,10 @@
     "suprapunere": "Prekrytie dvierok",
     "hSine": "Koľajnice (hore + dole)",
     "traverse": "Výstuhy hore (0 = celá doska)",
-    "traverseFara": "celá doska"
+    "traverseFara": "celá doska",
+    "fronturi": "Dvierka",
+    "fronturiSeFac": "robia sa",
+    "fronturiNuSeFac": "nerobia sa"
   },
   "fata": {
     "px": "vpravo",
@@ -1319,7 +1327,8 @@
     "grupDimensiuni": "Šírka, výška, hĺbka, konštrukcia",
     "grupCantitati": "Koľko dvierok, políc, stredových stojok, zásuviek",
     "grupSoclu": "Sokel: skrinka stojí na podlahe, bez nožičiek",
-    "grupTraverse": "Výstuhy: spodná skrinka nemá celú hornú dosku"
+    "grupTraverse": "Výstuhy: spodná skrinka nemá celú hornú dosku",
+    "grupFaraFront": "Dvierka: robia sa alebo nie"
   },
   "mesaj": {
     "intrebare": "Čo výpočtu chýba?",

@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Schuifdeuren lopen langs de staanders, dus ze kunnen niet op gekozen vakken.",
     "traverseNuMerg": "Regels gaan alleen op een rechte kast gebouwd „ertussen”. Hier bleef het hele bovenblad.",
     "traversePreaLate": "Regels van {lat} mm passen niet: twee zo brede raken elkaar. Boven {incape} mm is het een slecht gezaagd bovenblad.",
-    "traverseInAfara": "Een regel maak je tussen {min} en {max} mm. {lat} is teruggebracht naar {pus}."
+    "traverseInAfara": "Een regel maak je tussen {min} en {max} mm. {lat} is teruggebracht naar {pus}.",
+    "faraFronturi": "Zonder fronten: alleen de kast wordt geleverd, {cate} stuks staan niet op de zaaglijst. Hun eindmaten, voor wie ze maakt: {cote}."
   },
   "csv": {
     "corp": "Kast",
@@ -823,7 +824,8 @@
     "corpDeschis": "open kast",
     "piesa": "één enkel paneel",
     "peSoclu": "plint {h} mm",
-    "cuTraverse": "regels {lat} mm"
+    "cuTraverse": "regels {lat} mm",
+    "faraFront": "zonder fronten"
   },
   "comanda": {
     "inapoiComenzi": "Mijn opdrachten",
@@ -905,7 +907,10 @@
     "telefon": "Telefoon",
     "telefonExemplu": "+31 6 xxxxxxxx",
     "livrareNota": "Beide mogen leeg blijven en later worden ingevuld. Ze staan op elk afgedrukt blad.",
-    "cantScos": "wordt niet meer gemaakt"
+    "cantScos": "wordt niet meer gemaakt",
+    "faraFronturi": "zonder fronten",
+    "toateFaraFronturi": "alle zonder fronten",
+    "puneFronturileInapoi": "fronten terugzetten"
   },
   "rol": {
     "corp": "Korpus",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Overlap van de deuren",
     "hSine": "Rails (boven + onder)",
     "traverse": "Regels bovenin (0 = heel bovenblad)",
-    "traverseFara": "heel bovenblad"
+    "traverseFara": "heel bovenblad",
+    "fronturi": "Fronten",
+    "fronturiSeFac": "worden gemaakt",
+    "fronturiNuSeFac": "worden niet gemaakt"
   },
   "fata": {
     "px": "rechts",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Breedte, hoogte, diepte, opbouw",
     "grupCantitati": "Hoeveel deuren, legplanken, tussenschotten, laden",
     "grupSoclu": "Plint: de kast staat op de vloer, zonder pootjes",
-    "grupTraverse": "Regels: de onderkast heeft geen heel bovenblad"
+    "grupTraverse": "Regels: de onderkast heeft geen heel bovenblad",
+    "grupFaraFront": "Fronten: wel of niet gemaakt"
   },
   "mesaj": {
     "intrebare": "Wat mist de berekening?",

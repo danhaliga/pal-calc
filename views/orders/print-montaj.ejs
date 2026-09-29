@@ -27,7 +27,8 @@
       PAL <%= c.params.t %> mm ·
       <%= [+c.params.nUsi ? t('corpuri.metaUsi', { n: +c.params.nUsi }) : null,
            +c.params.nSer ? t('corpuri.metaSertare', { n: +c.params.nSer }) : null,
-           +c.params.nPol ? t('corpuri.metaPolite', { n: +c.params.nPol }) : null
+           +c.params.nPol ? t('corpuri.metaPolite', { n: +c.params.nPol }) : null,
+           +c.params.faraFront ? t('rezumat.faraFront') : null
           ].filter(Boolean).join(' · ') || t('print.corpDeschis') %>
       · <%= c.params.spate === 'aplicat' ? t('print.spateAplicat') : t('print.spateNut') %>
     </div>
@@ -85,7 +86,10 @@
           <li><%= t('print.pasCarcasa') %></li>
           <li><%= t('print.pasSpate') %></li>
           <% if (+c.params.nSer) { %><li><%= t('print.pasSertare') %></li><% } %>
-          <% if (+c.params.nUsi) { %><li><%= t('print.pasUsi') %></li><% } %>
+          <%# Pasul cu usile se sare cand nu se fac: un montator care citeste
+              „pune usile" si n-are ce pune sta si cauta niste canaturi care
+              nu exista. Cutiile de sertar RAMAN — alea se fac oricum. %>
+          <% if (+c.params.nUsi && !+c.params.faraFront) { %><li><%= t('print.pasUsi') %></li><% } %>
           <% if (raport.sistemFeronerie.suspensii && +c.params.D <= 450) { %>
             <li><%= t('print.pasSuspensii') %></li>
           <% } %>

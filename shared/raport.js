@@ -275,7 +275,10 @@
         pune(art(x.art), totalBalamale * x.peBalama);
       });
     }
-    if (c.tip === 'colt-L' && nUsi >= 2) {
+    /* Balamaua de carte cuplează două fronturi între ele. Fără fronturi n-are
+       ce cupla, deci se uită de ea — de-aia întrebarea e câte canaturi s-au
+       tăiat, nu câte s-au cerut. */
+    if (c.tip === 'colt-L' && nUsi >= 2 && usiPiese.length) {
       pune(art('balamaCarte'), 1, 'buc', t_('fero.art.obsCupleazaFronturi'));
     }
 
@@ -318,9 +321,17 @@
       });
     }
 
-    /* ---- fronturi ---- */
-    pune(art('maner'), nUsi + nSer);
-    pune(art('surubManer'), (nUsi + nSer) * 2);
+    /* ---- fronturi ----
+
+       Mânerul se prinde ÎN front, deci se numără fronturile tăiate, nu
+       `nUsi + nSer`. Nu e același lucru: la o coloană de cuptor cele două
+       uși cerute ies în două zone, adică patru canaturi, iar la o comandă
+       fără fronturi nu iese niciunul. */
+    var cateFronturi = res.P.reduce(function (s, p) {
+      return s + (rolPiesa(p) === 'front' ? p.buc : 0);
+    }, 0);
+    pune(art('maner'), cateFronturi);
+    pune(art('surubManer'), cateFronturi * 2);
 
     return rotunjeste();
   }
@@ -448,7 +459,9 @@
       var acelasiCant = paramsCorp.cg === paramsFront.cg && paramsCorp.cs === paramsFront.cs;
       var resFront = acelasiCant ? resCorp : PalCalc.calc(paramsFront, t_);
 
-      if (matFront && matCorp && +matFront.pal_mm !== +matCorp.pal_mm) {
+      /* Fără fronturi, materialul de fronturi nu se taie: o placă de altă
+         grosime pusă pe rândul lui nu mai supără pe nimeni. */
+      if (!+params.faraFront && matFront && matCorp && +matFront.pal_mm !== +matCorp.pal_mm) {
         avertismenteComanda.push(t_('avert.frontAltPal', {
           corp: corp.name, front: matFront.pal_mm, corpMm: matCorp.pal_mm
         }));

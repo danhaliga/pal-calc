@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Sürme kapaklar dikmelerin önünden geçer, bu yüzden seçilmiş bölmelere konamaz.",
     "traverseNuMerg": "Kuşaklar yalnızca „aradan\" yapılmış düz gövdeye takılır. Burada tam tabla kaldı.",
     "traversePreaLate": "{lat} mm kuşaklar sığmıyor: bu genişlikte ikisi birbirine değer. {incape} mm üstü, kötü kesilmiş bir tabla olur.",
-    "traverseInAfara": "Kuşak {min} ile {max} mm arasında yapılır. {lat} değeri {pus} yapıldı."
+    "traverseInAfara": "Kuşak {min} ile {max} mm arasında yapılır. {lat} değeri {pus} yapıldı.",
+    "faraFronturi": "Kapaksız: yalnızca gövde teslim edilir, {cate} parça kesim listesine girmez. Yapacak olana bitmiş ölçüler: {cote}."
   },
   "csv": {
     "corp": "Gövde",
@@ -823,7 +824,8 @@
     "corpDeschis": "açık gövde",
     "piesa": "tek levha",
     "peSoclu": "{h} mm süpürgelik",
-    "cuTraverse": "kuşak {lat} mm"
+    "cuTraverse": "kuşak {lat} mm",
+    "faraFront": "kapaksız"
   },
   "comanda": {
     "inapoiComenzi": "Siparişlerim",
@@ -905,7 +907,10 @@
     "telefon": "Telefon",
     "telefonExemplu": "+90 5xx xxx xx xx",
     "livrareNota": "İkisi de boş bırakılabilir, sonra doldurulur. Basılan her sayfada çıkar.",
-    "cantScos": "artık üretilmiyor"
+    "cantScos": "artık üretilmiyor",
+    "faraFronturi": "kapaksız",
+    "toateFaraFronturi": "hepsi kapaksız",
+    "puneFronturileInapoi": "kapakları geri koy"
   },
   "rol": {
     "corp": "Gövde",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Kapak bindirmesi",
     "hSine": "Raylar (üst + alt)",
     "traverse": "Üstte kuşak (0 = tam tabla)",
-    "traverseFara": "tam tabla"
+    "traverseFara": "tam tabla",
+    "fronturi": "Kapaklar",
+    "fronturiSeFac": "yapılır",
+    "fronturiNuSeFac": "yapılmaz"
   },
   "fata": {
     "px": "sağ",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Genişlik, yükseklik, derinlik, yapım",
     "grupCantitati": "Kaç kapak, raf, ara dikme, çekmece",
     "grupSoclu": "Süpürgelik: gövde ayaksız, yere oturur",
-    "grupTraverse": "Kuşak: alt gövdede tam tabla yok"
+    "grupTraverse": "Kuşak: alt gövdede tam tabla yok",
+    "grupFaraFront": "Kapaklar: yapılır ya da yapılmaz"
   },
   "mesaj": {
     "intrebare": "Hesapta ne eksik?",

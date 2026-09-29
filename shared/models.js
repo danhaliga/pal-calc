@@ -323,12 +323,19 @@
     if (+p.nUsi > 0) {
       o.push('<polygon points="' + g.puncte.map(function (q) {
         return (q[0] * 0.88 + W * 0.06) + ',' + (H - (q[1] * 0.88 + H * 0.06));
-      }).join(' ') + '" class="sk-front"/>');
+      }).join(' ') + '" class="' + clasaFront(p) + '"/>');
     }
     return '<svg viewBox="' + (-t) + ' ' + (-t) + ' ' + (W + 2 * t) + ' ' + (H + 2 * t) +
            '" class="sk" preserveAspectRatio="xMidYMid meet" ' +
            'aria-hidden="true" focusable="false"><g>' + o.join('') + '</g></svg>';
   }
+
+  /* Corpul comandat fara fronturi se deseneaza cu fronturile PUNCTATE, nu
+     fara ele: golul unde vin usile se vede in atelier si trebuie sa se vada
+     si pe desen. Un card fara nimic in fata ar arata ca un corp deschis,
+     adica alt corp. */
+  function faraFront(p) { return +p.faraFront ? ' fara' : ''; }
+  function clasaFront(p) { return +p.faraFront ? 'sk-front fara' : 'sk-front'; }
 
   /* Schita in plan pentru corpurile de colt: acolo vederea frontala nu spune nimic. */
   function sketchColt(p) {
@@ -341,7 +348,7 @@
       o.push('<rect x="0" y="0" width="' + A + '" height="' + D + '" class="sk-corp"/>');
       o.push('<rect x="' + (A - orb) + '" y="0" width="' + orb + '" height="' + D + '" class="sk-orb"/>');
       o.push('<line x1="' + rm + '" y1="' + (D - t / 2) + '" x2="' + (A - orb - rm) +
-             '" y2="' + (D - t / 2) + '" class="sk-usa"/>');
+             '" y2="' + (D - t / 2) + '" class="sk-usa' + faraFront(p) + '"/>');
       return '<svg viewBox="' + (-t) + ' ' + (-t) + ' ' + (A + 2 * t) + ' ' + (D + 2 * t) +
              '" class="sk" preserveAspectRatio="xMidYMid meet" ' +
              'aria-hidden="true" focusable="false"><g>' + o.join('') + '</g></svg>';
@@ -353,11 +360,12 @@
     o.push('<polygon points="' + pts.map(function (q) { return q.join(','); }).join(' ') + '" class="sk-corp"/>');
 
     if (+p.nUsi > 0) {
+      var cu = 'sk-usa' + faraFront(p);
       if (dg) {
-        o.push('<line x1="' + A + '" y1="' + D + '" x2="' + D + '" y2="' + B + '" class="sk-usa"/>');
+        o.push('<line x1="' + A + '" y1="' + D + '" x2="' + D + '" y2="' + B + '" class="' + cu + '"/>');
       } else {
-        o.push('<line x1="' + D + '" y1="' + D + '" x2="' + A + '" y2="' + D + '" class="sk-usa"/>');
-        o.push('<line x1="' + D + '" y1="' + D + '" x2="' + D + '" y2="' + B + '" class="sk-usa"/>');
+        o.push('<line x1="' + D + '" y1="' + D + '" x2="' + A + '" y2="' + D + '" class="' + cu + '"/>');
+        o.push('<line x1="' + D + '" y1="' + D + '" x2="' + D + '" y2="' + B + '" class="' + cu + '"/>');
       }
     }
     /* pereții */
@@ -434,13 +442,17 @@
     var fL = aplicat ? W - 2 * rm : Wint - 2 * rinc;
     var yTop = aplicat ? rm : t + rinc;
 
-    /* sertare, de sus în jos */
+    /* sertare, de sus în jos. Mânerul se prinde în front: fără fronturi nu
+       se desenează, ca să nu iasă un mâner care plutește în gol. */
+    var cf = clasaFront(p), manere = !+p.faraFront;
     for (var i = 0; i < nS; i++) {
       o.push('<rect x="' + xoff + '" y="' + (yTop + i * (hF + ri)) + '" width="' + fL +
-             '" height="' + hF + '" class="sk-front"/>');
+             '" height="' + hF + '" class="' + cf + '"/>');
       var ym = yTop + i * (hF + ri) + hF / 2;
-      o.push('<line x1="' + (xoff + fL / 2 - fL * 0.16) + '" y1="' + ym +
-             '" x2="' + (xoff + fL / 2 + fL * 0.16) + '" y2="' + ym + '" class="sk-maner"/>');
+      if (manere) {
+        o.push('<line x1="' + (xoff + fL / 2 - fL * 0.16) + '" y1="' + ym +
+               '" x2="' + (xoff + fL / 2 + fL * 0.16) + '" y2="' + ym + '" class="sk-maner"/>');
+      }
     }
 
     /* uși, sub sertare */
@@ -450,11 +462,13 @@
       var yU = yTop + usedTop;
       for (var k = 0; k < nU; k++) {
         var x = xoff + k * (uL + ri);
-        o.push('<rect x="' + x + '" y="' + yU + '" width="' + uL + '" height="' + uH + '" class="sk-front"/>');
+        o.push('<rect x="' + x + '" y="' + yU + '" width="' + uL + '" height="' + uH + '" class="' + cf + '"/>');
         /* mâner pe muchia dinspre mijloc */
         var xm = nU > 1 && k === 0 ? x + uL - uL * 0.12 : x + uL * 0.12;
-        o.push('<line x1="' + xm + '" y1="' + (yU + uH * 0.42) + '" x2="' + xm +
-               '" y2="' + (yU + uH * 0.58) + '" class="sk-maner"/>');
+        if (manere) {
+          o.push('<line x1="' + xm + '" y1="' + (yU + uH * 0.42) + '" x2="' + xm +
+                 '" y2="' + (yU + uH * 0.58) + '" class="sk-maner"/>');
+        }
       }
     }
 
@@ -482,6 +496,9 @@
        obisnuit, si scris pe fiecare card ar fi zgomot. */
     if (+p.soclu > 0) b.push(t_('rezumat.peSoclu', { h: +p.soclu }));
     if (+p.traverse > 0) b.push(t_('rezumat.cuTraverse', { lat: +p.traverse }));
+    /* Fără fronturi se scrie ORICUM, chiar dacă rândul e deja plin: e
+       singurul lucru de pe card care schimbă ce pleacă din atelier. */
+    if (+p.faraFront) b.push(t_('rezumat.faraFront'));
     if (!b.length) b.push(t_('rezumat.corpDeschis'));
     return b.join(' · ');
   }

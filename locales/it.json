@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Le scorrevoli passano davanti ai montanti, quindi non si possono mettere su vani scelti.",
     "traverseNuMerg": "Le traverse vanno solo su un mobile diritto costruito «tra». Qui è rimasto il top intero.",
     "traversePreaLate": "Traverse da {lat} mm non ci stanno: due così larghe si toccano. Oltre {incape} mm sarebbe un top tagliato male.",
-    "traverseInAfara": "La traversa si fa tra {min} e {max} mm. {lat} è stato portato a {pus}."
+    "traverseInAfara": "La traversa si fa tra {min} e {max} mm. {lat} è stato portato a {pus}.",
+    "faraFronturi": "Senza frontali: si consegna solo il corpo, {cate} pezzi non entrano nella lista di taglio. Le misure finite, per chi li fa: {cote}."
   },
   "csv": {
     "corp": "Mobile",
@@ -823,7 +824,8 @@
     "corpDeschis": "mobile aperto",
     "piesa": "un solo pannello",
     "peSoclu": "zoccolo {h} mm",
-    "cuTraverse": "traverse {lat} mm"
+    "cuTraverse": "traverse {lat} mm",
+    "faraFront": "senza frontali"
   },
   "comanda": {
     "inapoiComenzi": "I miei ordini",
@@ -905,7 +907,10 @@
     "telefon": "Telefono",
     "telefonExemplu": "+39 3xx xxx xxxx",
     "livrareNota": "Si possono lasciare vuoti entrambi e compilarli dopo. Escono su ogni foglio stampato.",
-    "cantScos": "non si produce più"
+    "cantScos": "non si produce più",
+    "faraFronturi": "senza frontali",
+    "toateFaraFronturi": "tutti senza frontali",
+    "puneFronturileInapoi": "rimetti i frontali"
   },
   "rol": {
     "corp": "Struttura",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Sovrapposizione ante",
     "hSine": "Binari (alto + basso)",
     "traverse": "Traverse in alto (0 = top intero)",
-    "traverseFara": "top intero"
+    "traverseFara": "top intero",
+    "fronturi": "Frontali",
+    "fronturiSeFac": "si fanno",
+    "fronturiNuSeFac": "non si fanno"
   },
   "fata": {
     "px": "destra",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Larghezza, altezza, profondità, costruzione",
     "grupCantitati": "Quante ante, ripiani, montanti, cassetti",
     "grupSoclu": "Zoccolo: il mobile appoggia a terra, senza piedini",
-    "grupTraverse": "Traverse: la base non ha il top intero"
+    "grupTraverse": "Traverse: la base non ha il top intero",
+    "grupFaraFront": "Frontali: si fanno o no"
   },
   "mesaj": {
     "intrebare": "Che cosa manca al calcolo?",

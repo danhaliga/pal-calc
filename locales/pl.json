@@ -761,7 +761,8 @@
     "glisantaFaraCompartimente": "Fronty przesuwne przechodzą przed pionami, więc nie da się ich dać na wybrane pola.",
     "traverseNuMerg": "Trawersy pasują tylko do prostej skrzyni budowanej „między”. Tutaj został pełny wieniec.",
     "traversePreaLate": "Trawersy {lat} mm się nie mieszczą: dwie takie szerokie stykają się. Powyżej {incape} mm to już źle pocięty wieniec.",
-    "traverseInAfara": "Trawersę robi się od {min} do {max} mm. {lat} sprowadzono do {pus}."
+    "traverseInAfara": "Trawersę robi się od {min} do {max} mm. {lat} sprowadzono do {pus}.",
+    "faraFronturi": "Bez frontów: dostarczany jest tylko korpus, {cate} elementów nie wchodzi na listę rozkroju. Ich wymiary gotowe, dla tego, kto je wykona: {cote}."
   },
   "csv": {
     "corp": "Korpus",
@@ -830,7 +831,8 @@
     "corpDeschis": "korpus otwarty",
     "piesa": "pojedyncza płyta",
     "peSoclu": "cokół {h} mm",
-    "cuTraverse": "trawersy {lat} mm"
+    "cuTraverse": "trawersy {lat} mm",
+    "faraFront": "bez frontów"
   },
   "comanda": {
     "inapoiComenzi": "Moje zlecenia",
@@ -914,7 +916,10 @@
     "telefon": "Telefon",
     "telefonExemplu": "+48 xxx xxx xxx",
     "livrareNota": "Oba można zostawić puste i uzupełnić później. Wychodzą na każdej drukowanej kartce.",
-    "cantScos": "już nie produkowane"
+    "cantScos": "już nie produkowane",
+    "faraFronturi": "bez frontów",
+    "toateFaraFronturi": "wszystkie bez frontów",
+    "puneFronturileInapoi": "przywróć fronty"
   },
   "rol": {
     "corp": "Korpus",
@@ -1288,7 +1293,10 @@
     "suprapunere": "Zachodzenie frontów",
     "hSine": "Szyny (góra + dół)",
     "traverse": "Trawersy u góry (0 = pełny wieniec)",
-    "traverseFara": "pełny wieniec"
+    "traverseFara": "pełny wieniec",
+    "fronturi": "Fronty",
+    "fronturiSeFac": "robione",
+    "fronturiNuSeFac": "nierobione"
   },
   "fata": {
     "px": "prawo",
@@ -1319,7 +1327,8 @@
     "grupDimensiuni": "Szerokość, wysokość, głębokość, konstrukcja",
     "grupCantitati": "Ile drzwi, półek, przegród, szuflad",
     "grupSoclu": "Cokół: skrzynia stoi na podłodze, bez nóżek",
-    "grupTraverse": "Trawersy: szafka dolna nie ma pełnego wieńca"
+    "grupTraverse": "Trawersy: szafka dolna nie ma pełnego wieńca",
+    "grupFaraFront": "Fronty: robione albo nie"
   },
   "mesaj": {
     "intrebare": "Czego brakuje w obliczeniach?",

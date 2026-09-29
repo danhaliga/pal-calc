@@ -213,9 +213,25 @@
 
 <!-- ---------------- corpurile ---------------- -->
 <div class="panel">
+  <%# Comanda fara fronturi: cine-si cumpara usile in alta parte le cumpara
+      pe toate, deci se apasa o data pentru toata comanda. Se poate si
+      inapoi, cu aceeasi apasare. %>
+  <% var faraTot = raport.corpuri.length &&
+       raport.corpuri.every(function (c) { return +c.params.faraFront; }); %>
   <div class="top" style="margin-bottom:8px">
     <h2 style="margin:0"><%= t('comanda.corpuriInComanda') %></h2>
-    <a class="btn small primary" href="/orders/<%= order.id %>/corp-nou"><%= t('comanda.adaugaCorpScurt') %></a>
+    <div class="btns" style="margin:0">
+      <% if (raport.corpuri.length) { %>
+        <form method="post" action="/orders/<%= order.id %>/fronturi" class="inline">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <input type="hidden" name="fara" value="<%= faraTot ? '0' : '1' %>">
+          <button class="btn small" type="submit"><%= faraTot
+            ? t('comanda.puneFronturileInapoi')
+            : t('comanda.toateFaraFronturi') %></button>
+        </form>
+      <% } %>
+      <a class="btn small primary" href="/orders/<%= order.id %>/corp-nou"><%= t('comanda.adaugaCorpScurt') %></a>
+    </div>
   </div>
 
   <% if (!raport.corpuri.length) { %>
@@ -262,6 +278,10 @@
                       <%= m.nume %>
                     </option>
                   <% }); %>
+                  <%# Lipsa materialului e tot un raspuns la „din ce sunt
+                      usile”: din nimic, ca nu se fac. Sta la coada, dupa
+                      decoruri, fiindca e alegerea rara. %>
+                  <option value="fara" <%= +c.params.faraFront ? 'selected' : '' %>><%= t('comanda.faraFronturi') %></option>
                 </select>
               </form>
             </td>

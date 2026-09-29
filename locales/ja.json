@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "引き戸は中仕切りの前を通るため、特定の区画だけに付けることはできません。",
     "traverseNuMerg": "幕板は「はさみ込み」で組んだ直方体の箱にだけ付きます。ここでは天板が全面のままです。",
     "traversePreaLate": "幅 {lat} mm の幕板は入りません。2枚が触れてしまいます。{incape} mm を超えると、切り損じた天板と同じです。",
-    "traverseInAfara": "幕板の幅は {min}〜{max} mm です。{lat} は {pus} に直しました。"
+    "traverseInAfara": "幕板の幅は {min}〜{max} mm です。{lat} は {pus} に直しました。",
+    "faraFronturi": "前板なし：箱だけを納め、{cate} 枚が木取り表に入りません。作る人のための仕上がり寸法：{cote}。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -823,7 +824,8 @@
     "corpDeschis": "オープンキャビネット",
     "piesa": "板一枚",
     "peSoclu": "台輪 {h} mm",
-    "cuTraverse": "幕板 {lat} mm"
+    "cuTraverse": "幕板 {lat} mm",
+    "faraFront": "前板なし"
   },
   "comanda": {
     "inapoiComenzi": "自分の注文",
@@ -905,7 +907,10 @@
     "telefon": "電話",
     "telefonExemplu": "+81 90-xxxx-xxxx",
     "livrareNota": "どちらも空のままにして、あとで入れられます。印刷するすべての用紙に出ます。",
-    "cantScos": "生産終了"
+    "cantScos": "生産終了",
+    "faraFronturi": "前板なし",
+    "toateFaraFronturi": "すべて前板なし",
+    "puneFronturileInapoi": "前板を戻す"
   },
   "rol": {
     "corp": "本体",
@@ -1277,7 +1282,10 @@
     "suprapunere": "戸の重なり",
     "hSine": "レール（上＋下）",
     "traverse": "上の幕板（0 = 天板を全面）",
-    "traverseFara": "天板を全面"
+    "traverseFara": "天板を全面",
+    "fronturi": "前板",
+    "fronturiSeFac": "作る",
+    "fronturiNuSeFac": "作らない"
   },
   "fata": {
     "px": "右",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "幅・高さ・奥行・組み方",
     "grupCantitati": "扉・棚板・仕切り・引き出しの数",
     "grupSoclu": "台輪：脚を使わず床に据える",
-    "grupTraverse": "幕板：床置き箱に全面の天板は要りません"
+    "grupTraverse": "幕板：床置き箱に全面の天板は要りません",
+    "grupFaraFront": "前板：作るか作らないか"
   },
   "mesaj": {
     "intrebare": "計算に足りないものは何ですか。",

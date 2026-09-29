@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "Sliding doors run past the uprights, so they cannot be put on chosen compartments.",
     "traverseNuMerg": "Rails only work on a straight cabinet built “between”. Here the full top panel stayed.",
     "traversePreaLate": "Rails of {lat} mm do not fit: two that wide touch each other. Above {incape} mm it would be a badly cut top panel.",
-    "traverseInAfara": "A rail is made between {min} and {max} mm. {lat} was brought to {pus}."
+    "traverseInAfara": "A rail is made between {min} and {max} mm. {lat} was brought to {pus}.",
+    "faraFronturi": "No fronts: only the carcass is supplied, {cate} pieces are left out of the cutting list. Their finished sizes, for whoever makes them: {cote}."
   },
   "csv": {
     "corp": "Cabinet",
@@ -823,7 +824,8 @@
     "corpDeschis": "open cabinet",
     "piesa": "a single panel",
     "peSoclu": "{h} mm plinth",
-    "cuTraverse": "{lat} mm rails"
+    "cuTraverse": "{lat} mm rails",
+    "faraFront": "no fronts"
   },
   "comanda": {
     "inapoiComenzi": "My orders",
@@ -905,7 +907,10 @@
     "telefon": "Phone",
     "telefonExemplu": "+1 555 xxx xxxx",
     "livrareNota": "Both can be left empty and filled in later. They appear on every printed sheet.",
-    "cantScos": "no longer made"
+    "cantScos": "no longer made",
+    "faraFronturi": "no fronts",
+    "toateFaraFronturi": "all without fronts",
+    "puneFronturileInapoi": "put the fronts back"
   },
   "rol": {
     "corp": "Carcass",
@@ -1277,7 +1282,10 @@
     "suprapunere": "Door overlap",
     "hSine": "Tracks (top + bottom)",
     "traverse": "Top rails (0 = full top panel)",
-    "traverseFara": "full top panel"
+    "traverseFara": "full top panel",
+    "fronturi": "Fronts",
+    "fronturiSeFac": "included",
+    "fronturiNuSeFac": "not included"
   },
   "fata": {
     "px": "right",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "Width, height, depth, construction",
     "grupCantitati": "How many doors, shelves, partitions, drawers",
     "grupSoclu": "Plinth: the cabinet stands on the floor, no legs",
-    "grupTraverse": "Rails: the base cabinet has no full top panel"
+    "grupTraverse": "Rails: the base cabinet has no full top panel",
+    "grupFaraFront": "Fronts: made or left out"
   },
   "mesaj": {
     "intrebare": "What is the calculation missing?",

@@ -779,7 +779,8 @@
     "glisantaFaraCompartimente": "الأبواب المنزلقة تمرّ أمام القوائم، فلا يمكن وضعها على أقسام مختارة.",
     "traverseNuMerg": "العوارض لا تُركَّب إلا على خزانة مستقيمة مبنية «بين». هنا بقي اللوح الكامل.",
     "traversePreaLate": "عوارض بعرض {lat} مم لا تتسع: اثنتان بهذا العرض تتلامسان. فوق {incape} مم يصبح لوحًا مقصوصًا بسوء.",
-    "traverseInAfara": "العارضة تُصنع بين {min} و{max} مم. تم ضبط {lat} إلى {pus}."
+    "traverseInAfara": "العارضة تُصنع بين {min} و{max} مم. تم ضبط {lat} إلى {pus}.",
+    "faraFronturi": "بدون واجهات: يُسلَّم الهيكل فقط، و{cate} قطعة لا تدخل في قائمة التقطيع. مقاساتها النهائية، لمن يصنعها: {cote}."
   },
   "csv": {
     "corp": "الهيكل",
@@ -851,7 +852,8 @@
     "corpDeschis": "هيكل مفتوح",
     "piesa": "لوح واحد",
     "peSoclu": "قاعدة {h} مم",
-    "cuTraverse": "عوارض {lat} مم"
+    "cuTraverse": "عوارض {lat} مم",
+    "faraFront": "بدون واجهات"
   },
   "comanda": {
     "inapoiComenzi": "طلباتي",
@@ -941,7 +943,10 @@
     "telefon": "الهاتف",
     "telefonExemplu": "+971 5x xxx xxxx",
     "livrareNota": "يمكن ترك كليهما فارغين وملؤهما لاحقًا. يظهران في كل ورقة مطبوعة.",
-    "cantScos": "لم يعد يُصنع"
+    "cantScos": "لم يعد يُصنع",
+    "faraFronturi": "بدون واجهات",
+    "toateFaraFronturi": "الكل بدون واجهات",
+    "puneFronturileInapoi": "إعادة الواجهات"
   },
   "rol": {
     "corp": "الهيكل",
@@ -1321,7 +1326,10 @@
     "suprapunere": "تداخل الأبواب",
     "hSine": "السكك (علوية + سفلية)",
     "traverse": "عوارض علوية (0 = لوح كامل)",
-    "traverseFara": "لوح كامل"
+    "traverseFara": "لوح كامل",
+    "fronturi": "الواجهات",
+    "fronturiSeFac": "تُصنع",
+    "fronturiNuSeFac": "لا تُصنع"
   },
   "fata": {
     "px": "يمين",
@@ -1352,7 +1360,8 @@
     "grupDimensiuni": "العرض والارتفاع والعمق وطريقة التجميع",
     "grupCantitati": "كم باب ورف وحاجز ودرج",
     "grupSoclu": "قاعدة سفلية: الخزانة تقف على الأرض بلا أرجل",
-    "grupTraverse": "العوارض: الخزانة السفلية بلا لوح علوي كامل"
+    "grupTraverse": "العوارض: الخزانة السفلية بلا لوح علوي كامل",
+    "grupFaraFront": "الواجهات: تُصنع أو لا تُصنع"
   },
   "mesaj": {
     "intrebare": "ما الذي ينقص الحساب؟",

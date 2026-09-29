@@ -755,7 +755,8 @@
     "glisantaFaraCompartimente": "推拉门横跨立板，因此无法只装在选定的格内。",
     "traverseNuMerg": "横档只适用于“嵌入式”结构的直柜。这里保留了整块顶板。",
     "traversePreaLate": "{lat} 毫米的横档放不下：两条这么宽会碰到一起。超过 {incape} 毫米就等于一块切坏的顶板。",
-    "traverseInAfara": "横档的宽度在 {min} 到 {max} 毫米之间。{lat} 已调整为 {pus}。"
+    "traverseInAfara": "横档的宽度在 {min} 到 {max} 毫米之间。{lat} 已调整为 {pus}。",
+    "faraFronturi": "不做门板：只交柜体，{cate} 件不进裁板清单。成品尺寸，给做门板的人：{cote}。"
   },
   "csv": {
     "corp": "柜体",
@@ -823,7 +824,8 @@
     "corpDeschis": "开放柜体",
     "piesa": "单独一块板",
     "peSoclu": "{h} 毫米踢脚板",
-    "cuTraverse": "{lat} 毫米横档"
+    "cuTraverse": "{lat} 毫米横档",
+    "faraFront": "无门板"
   },
   "comanda": {
     "inapoiComenzi": "我的订单",
@@ -905,7 +907,10 @@
     "telefon": "电话",
     "telefonExemplu": "+86 1xx xxxx xxxx",
     "livrareNota": "两项都可以先留空，以后再填。它们会出现在每张打印的单子上。",
-    "cantScos": "已停产"
+    "cantScos": "已停产",
+    "faraFronturi": "无门板",
+    "toateFaraFronturi": "全部不做门板",
+    "puneFronturileInapoi": "恢复门板"
   },
   "rol": {
     "corp": "柜体",
@@ -1277,7 +1282,10 @@
     "suprapunere": "门扇搭接",
     "hSine": "轨道（上+下）",
     "traverse": "顶部横档（0 = 整块顶板）",
-    "traverseFara": "整块顶板"
+    "traverseFara": "整块顶板",
+    "fronturi": "门板",
+    "fronturiSeFac": "要做",
+    "fronturiNuSeFac": "不做"
   },
   "fata": {
     "px": "右",
@@ -1308,7 +1316,8 @@
     "grupDimensiuni": "宽、高、深、做法",
     "grupCantitati": "几扇门、几块层板、几块中隔、几个抽屉",
     "grupSoclu": "踢脚板：柜体直接落地，不用柜脚",
-    "grupTraverse": "横档：地柜不用整块顶板"
+    "grupTraverse": "横档：地柜不用整块顶板",
+    "grupFaraFront": "门板：做或不做"
   },
   "mesaj": {
     "intrebare": "计算还缺什么？",
