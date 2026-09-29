@@ -76,21 +76,31 @@ function verifica(env, admini) {
                 'sesiune pleacă nesecurizat, iar cine stă pe drum îl poate citi.');
   }
 
-  /* ---- plata ---- */
+  /* ---- plata ----
+
+     Plata NU mai oprește pornirea. Driverul și cheile Stripe se aleg acum
+     din Administrare → Plata, deci aplicația trebuie să fie pornită ca să
+     le poți pune — și creditul virtual pe un site public e o alegere
+     făcută acolo, pe față, cât timp aplicația se probează. Panoul o arată
+     cu roșu; aici doar se spune în jurnalul de pornire. Stripe cu o cheie
+     lipsă oprește alimentarea (vezi `stare()` în src/payments.js). */
   const driver = String(env.PAYMENT_DRIVER || 'fake');
+  const unde = ' Se pune din Administrare → Plata.';
   if (driver === 'fake') {
-    zi.push('PAYMENT_DRIVER=fake. Alimentările de credit trec fără să se ' +
-            'încaseze nimic: pe un site public, oricine își pune credit singur.');
+    semne.push(public_
+      ? 'PAYMENT_DRIVER=fake pe un site public: oricine își pune singur credit virtual, fără card.' + unde
+      : 'PAYMENT_DRIVER=fake. Alimentările de credit trec fără să se încaseze nimic.');
   } else if (driver === 'stripe') {
-    if (!env.STRIPE_SECRET_KEY) opriri.push('PAYMENT_DRIVER=stripe, dar STRIPE_SECRET_KEY lipsește.');
-    if (!env.STRIPE_WEBHOOK_SECRET) {
-      opriri.push('PAYMENT_DRIVER=stripe, dar STRIPE_WEBHOOK_SECRET lipsește: ' +
-                  'fără el nu se poate verifica cine trimite confirmările de plată.');
+    if (!env.STRIPE_SECRET_KEY) {
+      semne.push('PAYMENT_DRIVER=stripe, dar STRIPE_SECRET_KEY lipsește: alimentarea creditului e oprită.' + unde);
     }
-    if (/^sk_test_/.test(String(env.STRIPE_SECRET_KEY || ''))) {
-      /* Avertisment, nu oprire, nici pe public: un site de probă pe un
-         domeniu adevărat, cu chei de test, e o purtare cinstită. Spre
-         deosebire de driverul fals, aici plata trece tot prin Stripe. */
+    if (!env.STRIPE_WEBHOOK_SECRET) {
+      semne.push('PAYMENT_DRIVER=stripe, dar STRIPE_WEBHOOK_SECRET lipsește: fără el nu se poate ' +
+                 'verifica cine trimite confirmările de plată, deci alimentarea e oprită.' + unde);
+    }
+    if (/^[a-z]+_test_/.test(String(env.STRIPE_SECRET_KEY || ''))) {
+      /* Un site de probă pe un domeniu adevărat, cu chei de test, e o
+         purtare cinstită: plata trece tot prin Stripe. */
       semne.push('Cheia Stripe e una de test (sk_test_). Plățile adevărate nu se încasează.');
     }
   }

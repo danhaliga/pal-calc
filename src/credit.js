@@ -67,6 +67,7 @@ router.get('/credit', requireAuth, (req, res) => {
     pretCorp: pretCorp(),
     istoric: istoric(req.user.id),
     alimentat: req.query.ok === '1',
+    plataPornita: plati.stare().pornita,
     insuficient: req.query.insuficient === '1'
   });
 });
@@ -79,8 +80,16 @@ router.post('/credit/topup', requireAuth, async (req, res, next) => {
     return next(err);
   }
 
+  /* Plata nepusă pe un site public: nu se alimentează nimic, nici gratis. */
+  const stare = plati.stare();
+  if (!stare.pornita) {
+    require('./jurnal').scrie('atentie', 'plata', 'alimentare cerută cu plata nepornită',
+      { req, detalii: { driver: stare.driver } });
+    return res.redirect('/credit');
+  }
+
   try {
-    if (plati.driver() === 'fake') {
+    if (stare.driver === 'fake') {
       const plataId = plati.creeazaPlata({
         userId: req.user.id, kind: 'topup', provider: 'fake',
         providerRef: 'fake_topup_' + Date.now(), amountCents: cents, status: 'paid'

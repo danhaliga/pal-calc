@@ -16,7 +16,7 @@ piese se taie, la ce cotă finită și la ce cotă de tăiere, cu ce cant pe
 fiecare muchie, plus feroneria, croirea în coli și fișa de montaj.
 
 - **46 de modele** în catalog, **7 categorii**, **30 de limbi**
-- **491 de teste**, toate trec: `npm test`
+- **506 de teste**, toate trec: `npm test`
 - Node ≥ 20, Express 4, EJS, better-sqlite3, zod, bcryptjs
 - Motorul de calcul (`shared/*.js`) e UMD: **același fișier rulează și pe
   server, și în browser**. Nu-l rupe în două.
@@ -33,7 +33,7 @@ programator.** Vezi capitolul 8 înainte să-i scrii ceva.
 | calculatorul lui Dan | `C:\Users\Dan.Haliga\Documents\corpuri-mobila\pal-calc` | se pornește cu `porneste.bat`, merge pe `localhost:3000` |
 | GitHub | `github.com/danhaliga/pal-calc` (public) | ramura `main`, de aici se ia peste tot |
 | Render | `palcalc.onrender.com` | **merge**, se actualizează singur la fiecare `git push` |
-| VPS propriu | **https://cutmodul.com** | **live**, cu https, din 29 septembrie. Plata e încă „fake" — vezi 4c |
+| VPS propriu | **https://cutmodul.com** | **live**, cu https, din 29 septembrie. Plata e pe bani virtuali, înadins — vezi 4c |
 
 Render și VPS-ul rulează amândouă în paralel, cu baze de date separate.
 Nu s-a hotărât încă dacă Render se oprește.
@@ -70,7 +70,7 @@ invers de pe IP e doar o rămășiță.
 PORT=3000
 APP_URL=http://localhost:3000     ← de schimbat când intră domeniul
 DATA_DIR=/var/palcalc
-PAYMENT_DRIVER=fake               ← de schimbat pe stripe
+PAYMENT_DRIVER=fake               ← rezervă; felul plății se alege din Administrare → Plata
 PRICE_PER_CORP_CENTS=500
 CURRENCY=ron
 SESSION_SECRET=...                ← făcut pe server cu openssl, nu-l trece prin chat
@@ -110,25 +110,38 @@ certbot --apache -d "$DOM" -d "$W.$DOM" --agree-tos -m danhaliga@gmail.com --red
 
 Se reînnoiește singur, systemd are deja `certbot.timer`.
 
-### c. Trecerea în producție — SINGURUL LUCRU RĂMAS
+### c. Plata — se face din Administrare → Plata, nu din `.env`
 
-După certificat, în `/opt/palcalc/.env`:
+Din 29 septembrie (seara) cheile Stripe **nu se mai pun în `.env`**. Se pun
+din contul de administrator: **Administrare → Plata**. Acolo:
 
-```
-APP_URL=https://cutmodul.com
-NODE_ENV=production
-PAYMENT_DRIVER=stripe
-STRIPE_SECRET_KEY=sk_live_...
-STRIPE_WEBHOOK_SECRET=whsec_...
-```
+- se alege felul plății: **bani virtuali** (probă) sau **Stripe**;
+- se lipește cheia secretă `sk_live_…`; aplicația o verifică la Stripe
+  înainte s-o salveze, și o ține criptată în baza de date (`src/setari.js`,
+  tabelul `setari`, cheia de criptare e scoasă din `SESSION_SECRET`);
+- secretul webhook-ului (`whsec_…`) îl face aplicația singură în Stripe —
+  dar numai dacă `APP_URL` e pe https (vezi mai jos).
 
-apoi `systemctl restart palcalc`.
+Ce e pus în aplicație bate ce e în `.env`; `.env` rămâne rezervă (Render).
 
-**Cheile Stripe lipsesc încă.** Până intră, plata e pe „fake": oricine ajunge
-pe site își face cont și își pune singur credit. Nu e pagubă în bani — creditul
-ăla nu e bani adevărați — dar înseamnă corpuri calculate gratis. Site-ul e
-deja public, deci ăsta e singurul lucru care mai stă între el și o comandă
-adevărată.
+**Dan a hotărât pe 29 septembrie: rămâne pe bani virtuali, pentru probe.**
+Oricine își face cont își pune singur credit virtual. E voit. Pagina de
+plată o arată cu roșu.
+
+Plata nu mai oprește pornirea (`src/pornire.js`): cu cheile în aplicație,
+aplicația trebuie să fie pornită ca să le poți pune. Stripe ales cu o cheie
+lipsă **oprește alimentarea**, nu cade pe credit gratis.
+
+**Când trece pe Stripe, pe server mai trebuie, o singură dată:**
+
+1. în `/opt/palcalc/.env`: `APP_URL=https://cutmodul.com` și
+   `NODE_ENV=production` (altfel Stripe trimite omul înapoi pe localhost
+   după plată, și webhook-ul nu se poate face);
+2. în Apache, în vhost-ul de 443: `RequestHeader set X-Forwarded-Proto "https"`
+   (`a2enmod headers`). Fără el, cu `APP_URL` pe https cookie-ul de sesiune
+   devine `secure`, Express crede că cererea e pe http și **nu mai trimite
+   cookie-ul — nu mai poate intra nimeni în cont**;
+3. `systemctl restart palcalc`, apoi cheile din Administrare → Plata.
 
 ### d. De curățat, oricând
 
@@ -291,7 +304,7 @@ src/                rutele Express, baza de date, conturile, plata
 views/              paginile EJS
 public/app.js       editorul de corp: formular, tabel, vederea 3D
 locales/*.json      textele, 30 de fișiere
-tests/              22 de fișiere, 491 de teste
+tests/              23 de fișiere, 506 de teste
 .lucru/             scripturi de-o dată: traduceri, petice, probe
 db/migrations/      schema, se aplică singură la pornire
 ```

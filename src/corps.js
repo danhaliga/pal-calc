@@ -157,7 +157,7 @@ router.get('/corps/:id', requireAuth, (req, res, next) => {
     order,
     priceLei: (credit.pretCorp() / 100).toFixed(2),
     sold: credit.sold(req.user.id),
-    paymentDriver: process.env.PAYMENT_DRIVER || 'fake',
+    paymentDriver: res.locals.paymentDriver,
     justPaid: req.query.paid === '1',
     nou: req.query.nou === '1',
     /* Cheile pe care le-a hotărât modelul ales. Setările din browser nu au

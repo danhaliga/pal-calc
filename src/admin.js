@@ -9,6 +9,9 @@ const jurnal = require('./jurnal');
 const cont = require('./cont');
 const statistici = require('./statistici');
 const PalTari = require('../shared/tari');
+const setari = require('./setari');
+const plati = require('./payments');
+const { eLocal } = require('./pornire');
 
 const router = express.Router();
 
@@ -104,6 +107,117 @@ router.get('/admin/jurnal', requireAuth, requireAdmin, (req, res) => {
     zile: jurnal.ZILE,
     maxim: jurnal.MAXIM
   });
+});
+
+/* Plata: driverul (credit virtual de probă sau Stripe) și cheile Stripe.
+   ------------------------------------------------------------
+   Aici se pun, nu în .env pe server. Cheile se verifică la Stripe ÎNAINTE
+   de salvare — o cheie greșită salvată s-ar vedea abia la prima plată a
+   unui client, adică exact când doare. Iar secretul webhook-ului îl face
+   aplicația singură în Stripe, ca omul să nu-l caute prin panoul lor. */
+
+/* Adresa la care Stripe trimite confirmările. Doar pe https: Stripe nu
+   trimite la http, iar pe localhost n-are cum ajunge. */
+function adresaWebhook() {
+  const url = plati.appUrl();
+  return /^https:\/\//.test(url) && !eLocal(url) ? plati.webhookUrl() : null;
+}
+
+router.get('/admin/plata', requireAuth, requireAdmin, (req, res) => {
+  const flash = req.session.plataFlash || {};
+  delete req.session.plataFlash;
+  const cheie = setari.citeste('STRIPE_SECRET_KEY');
+  const webhook = setari.citeste('STRIPE_WEBHOOK_SECRET');
+
+  res.render('admin/plata', {
+    title: req.t('admin.plata.titlu'),
+    stare: plati.stare(),
+    cheie: { masca: setari.mascheaza(cheie), sursa: setari.sursa('STRIPE_SECRET_KEY') },
+    webhook: { masca: setari.mascheaza(webhook), sursa: setari.sursa('STRIPE_WEBHOOK_SECRET') },
+    necitite: setari.necitite().length > 0,
+    adresaWebhook: adresaWebhook(),
+    ok: flash.ok || [],
+    erori: flash.erori || [],
+    contStripe: flash.contStripe || ''
+  });
+});
+
+router.post('/admin/plata', requireAuth, requireAdmin, async (req, res, next) => {
+  const ok = [];
+  const erori = [];
+  let contStripe = '';
+  const uid = req.user.id;
+  const t = req.t;
+
+  try {
+    if (req.body.sterge === '1') {
+      setari.sterge('STRIPE_SECRET_KEY');
+      setari.sterge('STRIPE_WEBHOOK_SECRET');
+      setari.pune('PAYMENT_DRIVER', 'fake', uid);
+      ok.push(t('admin.plata.sters'));
+      jurnal.fapta('plata', 'cheile Stripe șterse din aplicație', { req });
+    } else {
+      const cheie = String(req.body.cheie || '').trim();
+      const whsec = String(req.body.whsec || '').trim();
+
+      /* ---- cheia secretă: format, apoi Stripe ---- */
+      let cheieBuna = false;
+      if (cheie) {
+        if (!plati.FORMAT_CHEIE.test(cheie)) {
+          erori.push(t('admin.plata.eroareFormat'));
+        } else {
+          try {
+            contStripe = (await plati.verificaCheie(cheie)).cont;
+            setari.pune('STRIPE_SECRET_KEY', cheie, uid);
+            cheieBuna = true;
+            ok.push(t('admin.plata.cheieSalvata'));
+            jurnal.fapta('plata', 'cheia Stripe schimbată', {
+              req, detalii: { mod: /_live_/.test(cheie) ? 'live' : 'test' }
+            });
+          } catch (e) {
+            erori.push(t('admin.plata.eroareStripe', { mesaj: e.message }));
+          }
+        }
+      }
+
+      /* ---- secretul webhook-ului: pus de mână, sau făcut singur ---- */
+      if (whsec) {
+        if (!plati.FORMAT_WEBHOOK.test(whsec)) {
+          erori.push(t('admin.plata.eroareFormatWebhook'));
+        } else {
+          setari.pune('STRIPE_WEBHOOK_SECRET', whsec, uid);
+          ok.push(t('admin.plata.webhookSalvat'));
+          jurnal.fapta('plata', 'secretul webhook-ului pus de mână', { req });
+        }
+      } else if (cheieBuna && adresaWebhook()) {
+        /* Cheie nouă = poate alt cont Stripe, deci și webhook nou. */
+        try {
+          const secret = await plati.facWebhook(cheie, adresaWebhook());
+          setari.pune('STRIPE_WEBHOOK_SECRET', secret, uid);
+          ok.push(t('admin.plata.webhookFacut'));
+          jurnal.fapta('plata', 'webhook făcut în Stripe', { req, detalii: { url: adresaWebhook() } });
+        } catch (e) {
+          erori.push(t('admin.plata.eroareWebhook', { mesaj: e.message }));
+        }
+      }
+
+      /* ---- driverul ---- */
+      const driver = req.body.driver === 'stripe' ? 'stripe' : 'fake';
+      if (driver !== plati.driver()) {
+        if (driver === 'stripe' &&
+            !(setari.citeste('STRIPE_SECRET_KEY') && setari.citeste('STRIPE_WEBHOOK_SECRET'))) {
+          erori.push(t('admin.plata.eroareFaraChei'));
+        } else {
+          setari.pune('PAYMENT_DRIVER', driver, uid);
+          ok.push(t(driver === 'stripe' ? 'admin.plata.pornitStripe' : 'admin.plata.pornitFake'));
+          jurnal.fapta('plata', 'felul plății schimbat', { req, detalii: { driver } });
+        }
+      }
+    }
+
+    req.session.plataFlash = { ok, erori, contStripe };
+    res.redirect('/admin/plata');
+  } catch (e) { next(e); }
 });
 
 module.exports = { router };

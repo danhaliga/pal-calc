@@ -22,6 +22,9 @@
   <div class="panel">
     <h2><%= t('credit.alimenteaza') %></h2>
     <p class="hint"><%= t('credit.explicatie') %></p>
+    <% if (!plataPornita) { %>
+      <div class="warn"><%= t('credit.plataNepornita') %></div>
+    <% } else { %>
     <div class="pachete">
       <% pachete.forEach(function (p) { %>
         <form method="post" action="/credit/topup" class="inline">
@@ -37,6 +40,7 @@
     <p class="hint" style="margin-top:12px">
       <%- paymentDriver === 'fake' ? t('credit.driverFake') : t('credit.driverStripe') %>
     </p>
+    <% } %>
   </div>
 </div>
 

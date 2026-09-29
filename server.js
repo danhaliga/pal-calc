@@ -112,7 +112,10 @@ app.use((req, res, next) => {
   res.locals.catalogPagina = (...spatii) =>
     require('./src/util').catalogPagina(req.lang, spatii);
   res.locals.appName = 'PAL Calc';
-  res.locals.paymentDriver = payments.driver();
+  /* „fake" doar când chiar merge: pe un site public driverul fals nu pune
+     credit (vezi payments.stare), deci bara „plată de test" ar minți. */
+  const plata = payments.stare();
+  res.locals.paymentDriver = plata.pornita ? plata.driver : 'oprita';
   res.locals.priceLei = (payments.priceCents() / 100).toFixed(2);
   res.locals.currentPath = req.path;
   res.locals.soldLei = req.user ? (credit.sold(req.user.id) / 100).toFixed(2) : null;
@@ -210,7 +213,10 @@ if (require.main === module) {
      decât o eroare: nu se vede nicăieri. Vezi src/pornire.js. */
   const pornire = require('./src/pornire');
   const admini = db.prepare('SELECT email, password_hash FROM users WHERE is_admin = 1').all();
-  if (!pornire.aplica(pornire.verifica(process.env, admini))) process.exit(1);
+  /* Cu setările din Administrare → Plata puse peste .env: acolo stau acum
+     cheile Stripe. */
+  const mediu = require('./src/setari').mediu(process.env);
+  if (!pornire.aplica(pornire.verifica(mediu, admini))) process.exit(1);
 
   app.listen(PORT, () => {
     console.log(`PAL Calc pornit pe http://localhost:${PORT}  (plată: ${payments.driver()})`);
