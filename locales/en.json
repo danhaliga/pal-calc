@@ -577,9 +577,19 @@
         "corpNume": "Sliding walk-in"
       },
       "baza-jolly": {
-        "nume": "Narrow pull-out cabinet",
-        "descriere": "For the pull-out bottle and spice unit. No shelf: the pull-out fills it.",
-        "corpNume": "Pull-out cabinet"
+        "nume": "Pull-out basket cabinet 300",
+        "descriere": "Full-height pull-out basket for bottles and spices. The front is fixed to the basket, no hinges.",
+        "corpNume": "Pull-out 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Pull-out basket cabinet 200",
+        "descriere": "Full-height pull-out basket for bottles and spices. The front is fixed to the basket, no hinges.",
+        "corpNume": "Pull-out 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Pull-out basket cabinet 150",
+        "descriere": "Full-height pull-out basket for bottles and spices. The front is fixed to the basket, no hinges.",
+        "corpNume": "Pull-out 150"
       }
     },
     "adaugaCorp": "Add a cabinet",
@@ -739,7 +749,9 @@
       "obsPlinta": "{mm} mm in total; cabinets on legs: {n}. Corners, joints and end caps depending on the layout.",
       "usaRamaAlu": "Aluminium-frame glass door {h} × {l} mm",
       "obsUsaRamaAlu": "ordered ready-made, at finished size",
-      "balamaRamaAlu": "Hinge for aluminium frame"
+      "balamaRamaAlu": "Hinge for aluminium frame",
+      "cosJolly": "Pull-out basket for {lat} mm cabinet",
+      "obsCosJolly": "chosen by cabinet width; the front is fixed to it"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Door, arm 1",
     "usaBrat2": "Door, arm 2",
     "frontSertar": "Drawer front",
+    "frontJolly": "Pull-out basket front",
     "frontAtipic": "Front",
     "panouLatura": "Panel {n} ({latura})",
     "spateAtipic": "{mat} back",
@@ -810,7 +823,8 @@
     "socluDiagonal": "on the diagonal, at the front — ends cut at {u1}° and {u2}° from a square cut",
     "usiGlisante": "{n} sliding doors, overlap {supr}, tracks {sine}",
     "traverseSusInLocDeBlat": "instead of the top panel: one at the front, one at the back, {lat} wide",
-    "montantSubPanta": "under the slope: top edge cut at an angle, from {mare} down to {mic}"
+    "montantSubPanta": "under the slope: top edge cut at an angle, from {mare} down to {mic}",
+    "frontPeCadruJolly": "fixed to the basket frame, no hinges"
   },
   "avert": {
     "politeAtipic": "Shelves are not calculated automatically for non-standard cabinets: add them as separate parts.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "Divider {n} has no room: the cabinet is under 50 mm tall there.",
     "usiPeCompartimentPreaMulte": "{cerut} doors on one compartment is not done; two were made.",
     "compUsiFaraMontanti": "You picked compartments, but the cabinet has no dividers.",
-    "politeNuIncapAtipic": "No shelf fits in compartment {comp}: it is too short."
+    "politeNuIncapAtipic": "No shelf fits in compartment {comp}: it is too short.",
+    "jollyUnFront": "A pull-out basket has a single front, fixed to its frame. {n} doors are set here: use 1.",
+    "jollyFaraPolite": "The pull-out basket fills the full height: the {n} shelves won't fit. Set shelves to 0.",
+    "jollyLatime": "Pull-out baskets are sold for {lista} mm cabinets. This one is {lat} mm — check you can find a basket for it."
   },
   "csv": {
     "corp": "Cabinet",
@@ -935,7 +952,8 @@
     "faraFront": "no fronts",
     "sertareJos": "drawers at the bottom",
     "faraManer": "no handle",
-    "usiSticla": "glass doors"
+    "usiSticla": "glass doors",
+    "jolly": "pull-out basket"
   },
   "comanda": {
     "inapoiComenzi": "My orders",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Doors",
     "usiSticlaNu": "Chipboard",
     "usiSticlaDa": "Aluminium frame with glass (bought)",
+    "jolly": "Pull-out basket",
+    "jollyNu": "No",
+    "jollyDa": "Yes, front on the basket",
     "pozitieSertare": "Drawers",
     "sertareSus": "at the top",
     "sertareJos": "at the bottom, doors above",

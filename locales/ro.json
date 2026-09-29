@@ -583,9 +583,19 @@
         "corpNume": "Dressing glisant"
       },
       "baza-jolly": {
-        "nume": "Corp îngust pentru cargo",
-        "descriere": "Pentru sistemul glisant de sticle și condimente. Fără poliță: îl umple cargoul.",
-        "corpNume": "Corp cargo"
+        "nume": "Corp cu coș Jolly 300",
+        "descriere": "Coș glisant pe toată înălțimea, pentru sticle și condimente. Frontul se prinde pe coș, fără balamale.",
+        "corpNume": "Corp Jolly 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Corp cu coș Jolly 200",
+        "descriere": "Coș glisant pe toată înălțimea, pentru sticle și condimente. Frontul se prinde pe coș, fără balamale.",
+        "corpNume": "Corp Jolly 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Corp cu coș Jolly 150",
+        "descriere": "Coș glisant pe toată înălțimea, pentru sticle și condimente. Frontul se prinde pe coș, fără balamale.",
+        "corpNume": "Corp Jolly 150"
       }
     },
     "adaugaCorp": "Adaugă un corp",
@@ -745,7 +755,9 @@
       "obsPlinta": "{mm} mm în total; corpuri pe picioare: {n}. Colțarele, îmbinările și capacele, după așezare.",
       "usaRamaAlu": "Ușă ramă aluminiu cu sticlă {h} × {l} mm",
       "obsUsaRamaAlu": "se comandă gata, la cota finită",
-      "balamaRamaAlu": "Balama pentru ramă de aluminiu"
+      "balamaRamaAlu": "Balama pentru ramă de aluminiu",
+      "cosJolly": "Coș Jolly pentru corp de {lat} mm",
+      "obsCosJolly": "se alege după lățimea corpului; frontul se prinde pe el"
     }
   },
   "piesa": {
@@ -758,6 +770,7 @@
     "usaBrat1": "Ușă braț 1",
     "usaBrat2": "Ușă braț 2",
     "frontSertar": "Front sertar",
+    "frontJolly": "Front coș Jolly",
     "frontAtipic": "Front",
     "panouLatura": "Panou {n} ({latura})",
     "spateAtipic": "Spate {mat}",
@@ -816,7 +829,8 @@
     "socluDiagonal": "pe diagonală, în față — capetele tăiate la {u1}° și {u2}° față de tăietura dreaptă",
     "usiGlisante": "{n} uși glisante, suprapunere {supr}, șine {sine}",
     "traverseSusInLocDeBlat": "în locul blatului: una în față, una în spate, late de {lat}",
-    "montantSubPanta": "sub pantă: muchia de sus tăiată în unghi, de la {mare} la {mic}"
+    "montantSubPanta": "sub pantă: muchia de sus tăiată în unghi, de la {mare} la {mic}",
+    "frontPeCadruJolly": "se prinde pe cadrul coșului, fără balamale"
   },
   "avert": {
     "politeAtipic": "Polițele nu se calculează automat la corpurile atipice: adaugă-le ca piese separate.",
@@ -869,7 +883,10 @@
     "montantNuIncape": "Montantul {n} n-are loc: acolo corpul e mai scund de 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} uși pe un compartiment nu se pun; s-au făcut două.",
     "compUsiFaraMontanti": "Ai ales compartimente, dar corpul n-are niciun montant.",
-    "politeNuIncapAtipic": "În compartimentul {comp} nu încape nicio poliță: e prea scund."
+    "politeNuIncapAtipic": "În compartimentul {comp} nu încape nicio poliță: e prea scund.",
+    "jollyUnFront": "Coșul Jolly are un singur front, prins pe cadrul lui. Aici sunt cerute {n} uși: pune 1.",
+    "jollyFaraPolite": "Coșul Jolly umple corpul pe toată înălțimea: cele {n} polițe n-au loc. Pune 0 la polițe.",
+    "jollyLatime": "Coșurile Jolly se vând pentru corpuri de {lista} mm. Corpul are {lat} mm — verifică dacă găsești coș pentru el."
   },
   "csv": {
     "corp": "Corp",
@@ -942,7 +959,8 @@
     "faraFront": "fără fronturi",
     "sertareJos": "sertare jos",
     "faraManer": "fără mâner",
-    "usiSticla": "uși de sticlă"
+    "usiSticla": "uși de sticlă",
+    "jolly": "coș Jolly"
   },
   "comanda": {
     "inapoiComenzi": "Comenzile mele",
@@ -1413,6 +1431,9 @@
     "usiSticla": "Ușile",
     "usiSticlaNu": "Din PAL",
     "usiSticlaDa": "Ramă aluminiu cu sticlă (cumpărate)",
+    "jolly": "Coș Jolly",
+    "jollyNu": "Nu",
+    "jollyDa": "Da, frontul pe coș",
     "pozitieSertare": "Sertarele",
     "sertareSus": "sus",
     "sertareJos": "jos, cu ușile deasupra",

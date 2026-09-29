@@ -583,9 +583,19 @@
         "corpNume": "Posuvná šatna"
       },
       "baza-jolly": {
-        "nume": "Úzká skříňka s výsuvem",
-        "descriere": "Pro výsuvný koš na lahve a koření. Bez police: vyplní ji výsuv.",
-        "corpNume": "Skříňka s výsuvem"
+        "nume": "Skříňka s košem Jolly 300",
+        "descriere": "Výsuvný koš na celou výšku pro lahve a koření. Čelo na koši, bez závěsů.",
+        "corpNume": "Skříňka Jolly 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Skříňka s košem Jolly 200",
+        "descriere": "Výsuvný koš na celou výšku pro lahve a koření. Čelo na koši, bez závěsů.",
+        "corpNume": "Skříňka Jolly 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Skříňka s košem Jolly 150",
+        "descriere": "Výsuvný koš na celou výšku pro lahve a koření. Čelo na koši, bez závěsů.",
+        "corpNume": "Skříňka Jolly 150"
       }
     },
     "adaugaCorp": "Přidat korpus",
@@ -745,7 +755,9 @@
       "obsPlinta": "Celkem {mm} mm; skříňky na nožkách: {n}. Rohy, spojky a koncovky podle rozestavění.",
       "usaRamaAlu": "Skleněná dvířka v hliníkovém rámu {h} × {l} mm",
       "obsUsaRamaAlu": "objednávají se hotová, na čistý rozměr",
-      "balamaRamaAlu": "Závěs pro hliníkový rám"
+      "balamaRamaAlu": "Závěs pro hliníkový rám",
+      "cosJolly": "Koš Jolly pro skříňku {lat} mm",
+      "obsCosJolly": "vybírá se podle šířky skříňky; čelo se připevní na něj"
     }
   },
   "piesa": {
@@ -758,6 +770,7 @@
     "usaBrat1": "Dvířka, rameno 1",
     "usaBrat2": "Dvířka, rameno 2",
     "frontSertar": "Čelo zásuvky",
+    "frontJolly": "Čelo koše Jolly",
     "frontAtipic": "Čelo",
     "panouLatura": "Panel {n} ({latura})",
     "spateAtipic": "Záda {mat}",
@@ -816,7 +829,8 @@
     "socluDiagonal": "na úhlopříčce, vpředu — konce řezané pod {u1}° a {u2}° od rovného řezu",
     "usiGlisante": "{n} posuvná dvířka, překrytí {supr}, kolejnice {sine}",
     "traverseSusInLocDeBlat": "místo horní desky: jedna vpředu, druhá vzadu, široké {lat}",
-    "montantSubPanta": "pod sklonem: horní hrana řezaná pod úhlem, z {mare} na {mic}"
+    "montantSubPanta": "pod sklonem: horní hrana řezaná pod úhlem, z {mare} na {mic}",
+    "frontPeCadruJolly": "připevněné na rám koše, bez závěsů"
   },
   "avert": {
     "politeAtipic": "U atypických korpusů se police nepočítají samy: přidej je jako samostatné díly.",
@@ -869,7 +883,10 @@
     "montantNuIncape": "Příčka {n} nemá místo: tam je korpus nižší než 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} dvířka na jeden oddíl se nedávají; udělala se dvoje.",
     "compUsiFaraMontanti": "Vybral jsi oddíly, ale korpus nemá žádnou příčku.",
-    "politeNuIncapAtipic": "Do oddílu {comp} se nevejde žádná police: je moc nízký."
+    "politeNuIncapAtipic": "Do oddílu {comp} se nevejde žádná police: je moc nízký.",
+    "jollyUnFront": "Koš Jolly má jen jedno čelo, na svém rámu. Tady je {n} dvířek: dej 1.",
+    "jollyFaraPolite": "Koš Jolly vyplní celou výšku: {n} polic se nevejde. Dej 0 polic.",
+    "jollyLatime": "Koše Jolly se prodávají pro skříňky {lista} mm. Tahle má {lat} mm — ověř, že se k ní koš najde."
   },
   "csv": {
     "corp": "Korpus",
@@ -942,7 +959,8 @@
     "faraFront": "bez dvířek",
     "sertareJos": "zásuvky dole",
     "faraManer": "bez úchytky",
-    "usiSticla": "skleněná dvířka"
+    "usiSticla": "skleněná dvířka",
+    "jolly": "koš Jolly"
   },
   "comanda": {
     "inapoiComenzi": "Moje zakázky",
@@ -1413,6 +1431,9 @@
     "usiSticla": "Dvířka",
     "usiSticlaNu": "Z DTD",
     "usiSticlaDa": "Hliníkový rám se sklem (kupovaná)",
+    "jolly": "Koš Jolly",
+    "jollyNu": "Ne",
+    "jollyDa": "Ano, čelo na koši",
     "pozitieSertare": "Zásuvky",
     "sertareSus": "nahoře",
     "sertareJos": "dole, dvířka nad nimi",

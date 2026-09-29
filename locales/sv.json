@@ -577,9 +577,19 @@
         "corpNume": "Skjut-walk-in"
       },
       "baza-jolly": {
-        "nume": "Smalt utdragsskåp",
-        "descriere": "För utdragbar flask- och kryddkorg. Utan hyllplan: utdraget fyller det.",
-        "corpNume": "Utdragsskåp"
+        "nume": "Skåp med Jolly-korg 300",
+        "descriere": "Utdragbar korg i full höjd för flaskor och kryddor. Fronten sitter på korgen, utan gångjärn.",
+        "corpNume": "Jolly-skåp 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Skåp med Jolly-korg 200",
+        "descriere": "Utdragbar korg i full höjd för flaskor och kryddor. Fronten sitter på korgen, utan gångjärn.",
+        "corpNume": "Jolly-skåp 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Skåp med Jolly-korg 150",
+        "descriere": "Utdragbar korg i full höjd för flaskor och kryddor. Fronten sitter på korgen, utan gångjärn.",
+        "corpNume": "Jolly-skåp 150"
       }
     },
     "adaugaCorp": "Lägg till en stomme",
@@ -739,7 +749,9 @@
       "obsPlinta": "{mm} mm totalt; skåp på ben: {n}. Hörn, skarvar och ändlock beroende på uppställningen.",
       "usaRamaAlu": "Glaslucka med aluminiumram {h} × {l} mm",
       "obsUsaRamaAlu": "beställs färdig, i färdigmått",
-      "balamaRamaAlu": "Gångjärn för aluminiumram"
+      "balamaRamaAlu": "Gångjärn för aluminiumram",
+      "cosJolly": "Jolly-korg för {lat} mm skåp",
+      "obsCosJolly": "väljs efter skåpets bredd; fronten fästs på den"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Lucka, ben 1",
     "usaBrat2": "Lucka, ben 2",
     "frontSertar": "Lådfront",
+    "frontJolly": "Front för Jolly-korg",
     "frontAtipic": "Front",
     "panouLatura": "Skiva {n} ({latura})",
     "spateAtipic": "Bakstycke {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "på diagonalen, framtill — ändarna sågade i {u1}° och {u2}° mot ett rakt snitt",
     "usiGlisante": "{n} skjutdörrar, överlapp {supr}, skenor {sine}",
     "traverseSusInLocDeBlat": "i stället för topplattan: en fram, en bak, {lat} breda",
-    "montantSubPanta": "under lutningen: överkanten geringssågad, från {mare} till {mic}"
+    "montantSubPanta": "under lutningen: överkanten geringssågad, från {mare} till {mic}",
+    "frontPeCadruJolly": "fäst på korgens ram, utan gångjärn"
   },
   "avert": {
     "politeAtipic": "I specialstommar räknas hyllplanen inte automatiskt: lägg till dem som egna delar.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "Mellanvägg {n} har ingen plats: där är stommen lägre än 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} luckor på ett fack gör man inte; det blev två.",
     "compUsiFaraMontanti": "Du valde fack, men stommen har ingen mellanvägg.",
-    "politeNuIncapAtipic": "Ingen hylla får plats i fack {comp}: det är för lågt."
+    "politeNuIncapAtipic": "Ingen hylla får plats i fack {comp}: det är för lågt.",
+    "jollyUnFront": "Jolly-korgen har bara en front, fäst på ramen. Här står {n} luckor: sätt 1.",
+    "jollyFaraPolite": "Jolly-korgen fyller hela höjden: de {n} hyllorna får inte plats. Sätt 0 hyllor.",
+    "jollyLatime": "Jolly-korgar säljs för skåp på {lista} mm. Det här är {lat} mm — kontrollera att det finns en korg till det."
   },
   "csv": {
     "corp": "Stomme",
@@ -935,7 +952,8 @@
     "faraFront": "utan fronter",
     "sertareJos": "lådor nedtill",
     "faraManer": "utan handtag",
-    "usiSticla": "glasluckor"
+    "usiSticla": "glasluckor",
+    "jolly": "Jolly-korg"
   },
   "comanda": {
     "inapoiComenzi": "Mina ordrar",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Luckor",
     "usiSticlaNu": "Av spånskiva",
     "usiSticlaDa": "Aluminiumram med glas (köpta)",
+    "jolly": "Jolly-korg",
+    "jollyNu": "Nej",
+    "jollyDa": "Ja, front på korgen",
     "pozitieSertare": "Lådorna",
     "sertareSus": "upptill",
     "sertareJos": "nedtill, med luckorna ovanför",

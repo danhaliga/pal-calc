@@ -577,9 +577,19 @@
         "corpNume": "Phòng thay đồ lùa"
       },
       "baza-jolly": {
-        "nume": "Thùng hẹp lắp giá kéo",
-        "descriere": "Cho giá kéo đựng chai lọ và gia vị. Không kệ: giá kéo chiếm hết.",
-        "corpNume": "Thùng giá kéo"
+        "nume": "Tủ giỏ Jolly 300",
+        "descriere": "Giỏ kéo cao hết tủ cho chai lọ và gia vị. Mặt gắn vào giỏ, không bản lề.",
+        "corpNume": "Tủ Jolly 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Tủ giỏ Jolly 200",
+        "descriere": "Giỏ kéo cao hết tủ cho chai lọ và gia vị. Mặt gắn vào giỏ, không bản lề.",
+        "corpNume": "Tủ Jolly 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Tủ giỏ Jolly 150",
+        "descriere": "Giỏ kéo cao hết tủ cho chai lọ và gia vị. Mặt gắn vào giỏ, không bản lề.",
+        "corpNume": "Tủ Jolly 150"
       }
     },
     "adaugaCorp": "Thêm một thùng tủ",
@@ -739,7 +749,9 @@
       "obsPlinta": "Tổng {mm} mm; tủ có chân: {n}. Góc, nối và nắp đầu tùy cách bố trí.",
       "usaRamaAlu": "Cánh kính khung nhôm {h} × {l} mm",
       "obsUsaRamaAlu": "đặt làm sẵn theo kích thước hoàn thiện",
-      "balamaRamaAlu": "Bản lề cho khung nhôm"
+      "balamaRamaAlu": "Bản lề cho khung nhôm",
+      "cosJolly": "Giỏ Jolly cho tủ {lat} mm",
+      "obsCosJolly": "chọn theo chiều rộng tủ; mặt tủ gắn vào giỏ"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Cánh, nhánh 1",
     "usaBrat2": "Cánh, nhánh 2",
     "frontSertar": "Mặt ngăn kéo",
+    "frontJolly": "Mặt giỏ Jolly",
     "frontAtipic": "Cánh",
     "panouLatura": "Tấm {n} ({latura})",
     "spateAtipic": "Tấm hậu {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "trên đường chéo, phía trước — hai đầu cắt {u1}° và {u2}° so với đường cắt vuông",
     "usiGlisante": "{n} cánh lùa, chồng mép {supr}, ray {sine}",
     "traverseSusInLocDeBlat": "thay cho tấm nóc: một phía trước, một phía sau, rộng {lat}",
-    "montantSubPanta": "dưới mái dốc: cạnh trên cắt vát, từ {mare} xuống {mic}"
+    "montantSubPanta": "dưới mái dốc: cạnh trên cắt vát, từ {mare} xuống {mic}",
+    "frontPeCadruJolly": "gắn vào khung giỏ, không bản lề"
   },
   "avert": {
     "politeAtipic": "Ở thùng tủ phi tiêu chuẩn, kệ không được tính tự động: hãy thêm chúng như chi tiết riêng.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "Vách ngăn {n} không có chỗ: ở đó thùng cao chưa tới 50 mm.",
     "usiPeCompartimentPreaMulte": "Một ngăn không lắp {cerut} cánh; đã làm hai.",
     "compUsiFaraMontanti": "Bạn chọn ngăn, nhưng thùng không có vách ngăn nào.",
-    "politeNuIncapAtipic": "Ngăn {comp} không vừa kệ nào: quá thấp."
+    "politeNuIncapAtipic": "Ngăn {comp} không vừa kệ nào: quá thấp.",
+    "jollyUnFront": "Giỏ Jolly chỉ có một mặt, gắn vào khung. Ở đây có {n} cánh: hãy đặt 1.",
+    "jollyFaraPolite": "Giỏ Jolly chiếm hết chiều cao: {n} đợt kệ không có chỗ. Hãy đặt 0 đợt.",
+    "jollyLatime": "Giỏ Jolly bán cho tủ rộng {lista} mm. Tủ này {lat} mm — hãy kiểm tra có giỏ phù hợp."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -935,7 +952,8 @@
     "faraFront": "không mặt cánh",
     "sertareJos": "ngăn kéo ở dưới",
     "faraManer": "không tay nắm",
-    "usiSticla": "cánh kính"
+    "usiSticla": "cánh kính",
+    "jolly": "giỏ Jolly"
   },
   "comanda": {
     "inapoiComenzi": "Đơn hàng của tôi",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Cánh tủ",
     "usiSticlaNu": "Bằng ván",
     "usiSticlaDa": "Khung nhôm kính (mua sẵn)",
+    "jolly": "Giỏ Jolly",
+    "jollyNu": "Không",
+    "jollyDa": "Có, mặt gắn vào giỏ",
     "pozitieSertare": "Ngăn kéo",
     "sertareSus": "ở trên",
     "sertareJos": "ở dưới, cánh ở trên",

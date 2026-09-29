@@ -577,9 +577,19 @@
         "corpNume": "Cabina scorrevole"
       },
       "baza-jolly": {
-        "nume": "Mobile stretto estraibile",
-        "descriere": "Per il portabottiglie o portaspezie estraibile. Senza ripiano: lo riempie l’estraibile.",
-        "corpNume": "Mobile estraibile"
+        "nume": "Mobile con cestello Jolly 300",
+        "descriere": "Cestello estraibile a tutta altezza per bottiglie e spezie. Il frontale si fissa al cestello, senza cerniere.",
+        "corpNume": "Mobile Jolly 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Mobile con cestello Jolly 200",
+        "descriere": "Cestello estraibile a tutta altezza per bottiglie e spezie. Il frontale si fissa al cestello, senza cerniere.",
+        "corpNume": "Mobile Jolly 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Mobile con cestello Jolly 150",
+        "descriere": "Cestello estraibile a tutta altezza per bottiglie e spezie. Il frontale si fissa al cestello, senza cerniere.",
+        "corpNume": "Mobile Jolly 150"
       }
     },
     "adaugaCorp": "Aggiungi un mobile",
@@ -739,7 +749,9 @@
       "obsPlinta": "{mm} mm in totale; mobili su piedini: {n}. Angoli, giunti e tappi secondo la disposizione.",
       "usaRamaAlu": "Anta in vetro con telaio in alluminio {h} × {l} mm",
       "obsUsaRamaAlu": "si ordina pronta, alla misura finita",
-      "balamaRamaAlu": "Cerniera per telaio in alluminio"
+      "balamaRamaAlu": "Cerniera per telaio in alluminio",
+      "cosJolly": "Cestello Jolly per mobile da {lat} mm",
+      "obsCosJolly": "si sceglie dalla larghezza del mobile; il frontale si fissa sopra"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Anta, braccio 1",
     "usaBrat2": "Anta, braccio 2",
     "frontSertar": "Frontale cassetto",
+    "frontJolly": "Frontale cestello Jolly",
     "frontAtipic": "Frontale",
     "panouLatura": "Pannello {n} ({latura})",
     "spateAtipic": "Schienale {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "sulla diagonale, davanti — estremità tagliate a {u1}° e {u2}° rispetto al taglio dritto",
     "usiGlisante": "{n} ante scorrevoli, sovrapposizione {supr}, binari {sine}",
     "traverseSusInLocDeBlat": "al posto del top: una davanti, una dietro, larghe {lat}",
-    "montantSubPanta": "sotto la pendenza: bordo superiore tagliato a squadra, da {mare} a {mic}"
+    "montantSubPanta": "sotto la pendenza: bordo superiore tagliato a squadra, da {mare} a {mic}",
+    "frontPeCadruJolly": "si fissa al telaio del cestello, senza cerniere"
   },
   "avert": {
     "politeAtipic": "Nei mobili fuori misura i ripiani non si calcolano da soli: aggiungili come pezzi separati.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "Il montante {n} non ha posto: lì il mobile è sotto i 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} ante su un vano non si mettono; ne sono state fatte due.",
     "compUsiFaraMontanti": "Hai scelto dei vani, ma il mobile non ha montanti.",
-    "politeNuIncapAtipic": "Nel vano {comp} non ci sta nessun ripiano: è troppo basso."
+    "politeNuIncapAtipic": "Nel vano {comp} non ci sta nessun ripiano: è troppo basso.",
+    "jollyUnFront": "Il cestello Jolly ha un solo frontale, fissato al telaio. Qui ci sono {n} ante: metti 1.",
+    "jollyFaraPolite": "Il cestello Jolly occupa tutta l'altezza: i {n} ripiani non ci stanno. Metti 0 ripiani.",
+    "jollyLatime": "I cestelli Jolly si vendono per mobili da {lista} mm. Questo è di {lat} mm: verifica di trovare un cestello."
   },
   "csv": {
     "corp": "Mobile",
@@ -935,7 +952,8 @@
     "faraFront": "senza frontali",
     "sertareJos": "cassetti in basso",
     "faraManer": "senza maniglia",
-    "usiSticla": "ante in vetro"
+    "usiSticla": "ante in vetro",
+    "jolly": "cestello Jolly"
   },
   "comanda": {
     "inapoiComenzi": "I miei ordini",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Ante",
     "usiSticlaNu": "In truciolare",
     "usiSticlaDa": "Telaio in alluminio con vetro (acquistate)",
+    "jolly": "Cestello Jolly",
+    "jollyNu": "No",
+    "jollyDa": "Sì, frontale sul cestello",
     "pozitieSertare": "I cassetti",
     "sertareSus": "in alto",
     "sertareJos": "in basso, con le ante sopra",

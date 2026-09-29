@@ -577,9 +577,19 @@
         "corpNume": "Vestidor corredera"
       },
       "baza-jolly": {
-        "nume": "Mueble estrecho extraíble",
-        "descriere": "Para el botellero o especiero extraíble. Sin balda: lo llena el extraíble.",
-        "corpNume": "Mueble extraíble"
+        "nume": "Mueble con cesto Jolly 300",
+        "descriere": "Cesto extraíble de altura completa para botellas y especias. El frente va en el cesto, sin bisagras.",
+        "corpNume": "Mueble Jolly 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Mueble con cesto Jolly 200",
+        "descriere": "Cesto extraíble de altura completa para botellas y especias. El frente va en el cesto, sin bisagras.",
+        "corpNume": "Mueble Jolly 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Mueble con cesto Jolly 150",
+        "descriere": "Cesto extraíble de altura completa para botellas y especias. El frente va en el cesto, sin bisagras.",
+        "corpNume": "Mueble Jolly 150"
       }
     },
     "adaugaCorp": "Añadir un módulo",
@@ -739,7 +749,9 @@
       "obsPlinta": "{mm} mm en total; muebles con patas: {n}. Esquinas, uniones y tapas, según la distribución.",
       "usaRamaAlu": "Puerta de vidrio con marco de aluminio {h} × {l} mm",
       "obsUsaRamaAlu": "se pide hecha, a medida final",
-      "balamaRamaAlu": "Bisagra para marco de aluminio"
+      "balamaRamaAlu": "Bisagra para marco de aluminio",
+      "cosJolly": "Cesto Jolly para mueble de {lat} mm",
+      "obsCosJolly": "se elige por el ancho del mueble; el frente se fija en él"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Puerta, brazo 1",
     "usaBrat2": "Puerta, brazo 2",
     "frontSertar": "Frente de cajón",
+    "frontJolly": "Frente de cesto Jolly",
     "frontAtipic": "Frente",
     "panouLatura": "Panel {n} ({latura})",
     "spateAtipic": "Trasera {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "en la diagonal, delante — extremos cortados a {u1}° y {u2}° respecto al corte recto",
     "usiGlisante": "{n} puertas correderas, solape {supr}, guías {sine}",
     "traverseSusInLocDeBlat": "en lugar del tablero superior: uno delante, otro detrás, de {lat} de ancho",
-    "montantSubPanta": "bajo la pendiente: canto superior cortado en ángulo, de {mare} a {mic}"
+    "montantSubPanta": "bajo la pendiente: canto superior cortado en ángulo, de {mare} a {mic}",
+    "frontPeCadruJolly": "se fija al marco del cesto, sin bisagras"
   },
   "avert": {
     "politeAtipic": "En los módulos atípicos las baldas no se calculan solas: añádelas como piezas aparte.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "El montante {n} no tiene sitio: ahí el mueble mide menos de 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} puertas en un compartimento no se ponen; se han hecho dos.",
     "compUsiFaraMontanti": "Has elegido compartimentos, pero el mueble no tiene montantes.",
-    "politeNuIncapAtipic": "En el compartimento {comp} no cabe ningún estante: es demasiado bajo."
+    "politeNuIncapAtipic": "En el compartimento {comp} no cabe ningún estante: es demasiado bajo.",
+    "jollyUnFront": "El cesto Jolly tiene un solo frente, fijado a su marco. Aquí hay {n} puertas: pon 1.",
+    "jollyFaraPolite": "El cesto Jolly ocupa toda la altura: los {n} estantes no caben. Pon 0 estantes.",
+    "jollyLatime": "Los cestos Jolly se venden para muebles de {lista} mm. Este mide {lat} mm: comprueba que encuentres cesto."
   },
   "csv": {
     "corp": "Módulo",
@@ -935,7 +952,8 @@
     "faraFront": "sin frentes",
     "sertareJos": "cajones abajo",
     "faraManer": "sin tirador",
-    "usiSticla": "puertas de vidrio"
+    "usiSticla": "puertas de vidrio",
+    "jolly": "cesto Jolly"
   },
   "comanda": {
     "inapoiComenzi": "Mis pedidos",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Puertas",
     "usiSticlaNu": "De aglomerado",
     "usiSticlaDa": "Marco de aluminio con vidrio (compradas)",
+    "jolly": "Cesto Jolly",
+    "jollyNu": "No",
+    "jollyDa": "Sí, frente en el cesto",
     "pozitieSertare": "Los cajones",
     "sertareSus": "arriba",
     "sertareJos": "abajo, con las puertas encima",

@@ -577,9 +577,19 @@
         "corpNume": "推拉衣帽间"
       },
       "baza-jolly": {
-        "nume": "窄型拉篮柜",
-        "descriere": "用于瓶罐调料拉篮。不设隔板：拉篮占满内部。",
-        "corpNume": "拉篮柜"
+        "nume": "Jolly 拉篮柜 300",
+        "descriere": "放瓶子和调料的全高拉篮。面板装在拉篮上，无铰链。",
+        "corpNume": "Jolly 柜 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Jolly 拉篮柜 200",
+        "descriere": "放瓶子和调料的全高拉篮。面板装在拉篮上，无铰链。",
+        "corpNume": "Jolly 柜 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Jolly 拉篮柜 150",
+        "descriere": "放瓶子和调料的全高拉篮。面板装在拉篮上，无铰链。",
+        "corpNume": "Jolly 柜 150"
       }
     },
     "adaugaCorp": "添加柜体",
@@ -739,7 +749,9 @@
       "obsPlinta": "共 {mm} 毫米；带柜脚的柜体：{n}。转角、连接件和端盖视布置而定。",
       "usaRamaAlu": "铝框玻璃门 {h} × {l} 毫米",
       "obsUsaRamaAlu": "按成品尺寸订购成品",
-      "balamaRamaAlu": "铝框门铰链"
+      "balamaRamaAlu": "铝框门铰链",
+      "cosJolly": "{lat} 毫米柜用 Jolly 拉篮",
+      "obsCosJolly": "按柜宽选择；面板固定在其上"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "门板，1 号臂",
     "usaBrat2": "门板，2 号臂",
     "frontSertar": "抽屉面板",
+    "frontJolly": "Jolly 拉篮面板",
     "frontAtipic": "面板",
     "panouLatura": "板 {n}（{latura}）",
     "spateAtipic": "{mat} 背板",
@@ -810,7 +823,8 @@
     "socluDiagonal": "在斜面前侧 — 两端相对直切分别切 {u1}° 和 {u2}°",
     "usiGlisante": "{n} 扇推拉门，搭接 {supr}，轨道 {sine}",
     "traverseSusInLocDeBlat": "代替顶板：前后各一条，宽 {lat}",
-    "montantSubPanta": "斜面下：顶边斜切，从 {mare} 到 {mic}"
+    "montantSubPanta": "斜面下：顶边斜切，从 {mare} 到 {mic}",
+    "frontPeCadruJolly": "固定在拉篮框架上，无铰链"
   },
   "avert": {
     "politeAtipic": "异形柜体的层板不会自动算：单独当板件加进去。",
@@ -863,7 +877,10 @@
     "montantNuIncape": "立板 {n} 没有位置：那里柜高不足 50 毫米。",
     "usiPeCompartimentPreaMulte": "一格不做 {cerut} 扇门；已做两扇。",
     "compUsiFaraMontanti": "你选了分格，但柜子没有立板。",
-    "politeNuIncapAtipic": "第 {comp} 格放不下隔板：太矮了。"
+    "politeNuIncapAtipic": "第 {comp} 格放不下隔板：太矮了。",
+    "jollyUnFront": "Jolly 拉篮只有一块面板，固定在框架上。这里设了 {n} 扇门：请设为 1。",
+    "jollyFaraPolite": "Jolly 拉篮占满整个高度：{n} 块层板放不下。请把层板设为 0。",
+    "jollyLatime": "Jolly 拉篮按 {lista} 毫米柜宽出售。此柜宽 {lat} 毫米——请确认有合适的拉篮。"
   },
   "csv": {
     "corp": "柜体",
@@ -935,7 +952,8 @@
     "faraFront": "无门板",
     "sertareJos": "抽屉在下",
     "faraManer": "无拉手",
-    "usiSticla": "玻璃门"
+    "usiSticla": "玻璃门",
+    "jolly": "Jolly 拉篮"
   },
   "comanda": {
     "inapoiComenzi": "我的订单",
@@ -1402,6 +1420,9 @@
     "usiSticla": "柜门",
     "usiSticlaNu": "板材",
     "usiSticlaDa": "铝框玻璃门（外购）",
+    "jolly": "Jolly 拉篮",
+    "jollyNu": "否",
+    "jollyDa": "是，面板装在拉篮上",
     "pozitieSertare": "抽屉",
     "sertareSus": "在上方",
     "sertareJos": "在下方，门在上",

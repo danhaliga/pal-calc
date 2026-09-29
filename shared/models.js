@@ -90,7 +90,16 @@
          Frontul se prinde de cadrul cargoului, nu de balamale — dar în
          lista de debitare tot o ușă e, cu aceleași cote. */
       id: 'baza-jolly', cat: 'bucatarie-jos',
-      set: { W: 300, H: 720, D: 560, nUsi: 1, nPol: 0 }
+      set: { W: 300, H: 720, D: 560, nUsi: 1, nPol: 0, jolly: 1 }
+    },
+    {
+      /* Coșurile Jolly se vând pentru corpuri de 150, 200 și 300. */
+      id: 'baza-jolly-200', cat: 'bucatarie-jos',
+      set: { W: 200, H: 720, D: 560, nUsi: 1, nPol: 0, jolly: 1 }
+    },
+    {
+      id: 'baza-jolly-150', cat: 'bucatarie-jos',
+      set: { W: 150, H: 720, D: 560, nUsi: 1, nPol: 0, jolly: 1 }
     },
     {
       id: 'baza-3sertare', cat: 'bucatarie-jos',
@@ -602,7 +611,9 @@
     if (p.tip === 'colt-L') b.push(t_('rezumat.coltL'));
     else if (p.tip === 'colt-diagonal') b.push(t_('rezumat.coltDiagonal'));
     else if (p.tip === 'colt-orb') b.push(t_('rezumat.coltOrb'));
-    if (+p.nUsi) b.push(t_('corpuri.metaUsi', { n: +p.nUsi }));
+    /* Corpul cu coș Jolly are un front, dar nu e „o ușă": se scrie coșul. */
+    if (+p.jolly) b.push(t_('rezumat.jolly'));
+    else if (+p.nUsi) b.push(t_('corpuri.metaUsi', { n: +p.nUsi }));
     if (+p.nSer) b.push(t_('corpuri.metaSertare', { n: +p.nSer }));
     if (+p.nPol) b.push(t_('corpuri.metaPolite', { n: +p.nPol }));
     /* Pe ce stă corpul. Numai cand are soclu: „pe picioare" e felul

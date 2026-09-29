@@ -583,9 +583,19 @@
         "corpNume": "Garderober klizni"
       },
       "baza-jolly": {
-        "nume": "Uzak element sa korpom",
-        "descriere": "Za izvlačnu korpu za flaše i začine. Bez police: popunjava je korpa.",
-        "corpNume": "Element sa korpom"
+        "nume": "Element sa korpom Jolly 300",
+        "descriere": "Izvlačna korpa cele visine za flaše i začine. Front na korpi, bez šarki.",
+        "corpNume": "Element Jolly 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Element sa korpom Jolly 200",
+        "descriere": "Izvlačna korpa cele visine za flaše i začine. Front na korpi, bez šarki.",
+        "corpNume": "Element Jolly 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Element sa korpom Jolly 150",
+        "descriere": "Izvlačna korpa cele visine za flaše i začine. Front na korpi, bez šarki.",
+        "corpNume": "Element Jolly 150"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -745,7 +755,9 @@
       "obsPlinta": "Ukupno {mm} mm; elementi na nogicama: {n}. Uglovi, spojnice i završne kapice prema rasporedu.",
       "usaRamaAlu": "Staklena vrata u aluminijumskom ramu {h} × {l} mm",
       "obsUsaRamaAlu": "naručuju se gotova, na čistu meru",
-      "balamaRamaAlu": "Šarka za aluminijumski ram"
+      "balamaRamaAlu": "Šarka za aluminijumski ram",
+      "cosJolly": "Korpa Jolly za element od {lat} mm",
+      "obsCosJolly": "bira se po širini elementa; front se kači na nju"
     }
   },
   "piesa": {
@@ -758,6 +770,7 @@
     "usaBrat1": "Vrata, krak 1",
     "usaBrat2": "Vrata, krak 2",
     "frontSertar": "Front fioke",
+    "frontJolly": "Front korpe Jolly",
     "frontAtipic": "Front",
     "panouLatura": "Ploča {n} ({latura})",
     "spateAtipic": "Leđa {mat}",
@@ -816,7 +829,8 @@
     "socluDiagonal": "na dijagonali, spreda — krajevi sečeni pod {u1}° i {u2}° u odnosu na pravi rez",
     "usiGlisante": "{n} klizna vrata, preklop {supr}, šine {sine}",
     "traverseSusInLocDeBlat": "umesto gornje ploče: jedna spreda, druga pozadi, široke {lat}",
-    "montantSubPanta": "ispod nagiba: gornja ivica sečena pod uglom, od {mare} do {mic}"
+    "montantSubPanta": "ispod nagiba: gornja ivica sečena pod uglom, od {mare} do {mic}",
+    "frontPeCadruJolly": "kači se na ram korpe, bez šarki"
   },
   "avert": {
     "politeAtipic": "Kod netipičnih korpusa police se ne računaju same: dodaj ih kao zasebne delove.",
@@ -869,7 +883,10 @@
     "montantNuIncape": "Pregrada {n} nema mesta: tamo je korpus niži od 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} vrata na jedan pregradak se ne stavljaju; napravljena su dvoja.",
     "compUsiFaraMontanti": "Izabrao si pregratke, ali korpus nema nijednu pregradu.",
-    "politeNuIncapAtipic": "U pregradak {comp} ne staje nijedna polica: prenizak je."
+    "politeNuIncapAtipic": "U pregradak {comp} ne staje nijedna polica: prenizak je.",
+    "jollyUnFront": "Korpa Jolly ima samo jedan front, na svom ramu. Ovde je {n} vrata: stavi 1.",
+    "jollyFaraPolite": "Korpa Jolly zauzima celu visinu: {n} polica nema mesta. Stavi 0 polica.",
+    "jollyLatime": "Korpe Jolly se prodaju za elemente od {lista} mm. Ovaj ima {lat} mm — proveri da li postoji korpa za njega."
   },
   "csv": {
     "corp": "Korpus",
@@ -942,7 +959,8 @@
     "faraFront": "bez fronti",
     "sertareJos": "fioke dole",
     "faraManer": "bez ručice",
-    "usiSticla": "staklena vrata"
+    "usiSticla": "staklena vrata",
+    "jolly": "korpa Jolly"
   },
   "comanda": {
     "inapoiComenzi": "Moje porudžbine",
@@ -1413,6 +1431,9 @@
     "usiSticla": "Vrata",
     "usiSticlaNu": "Od iverice",
     "usiSticlaDa": "Aluminijumski ram sa staklom (kupljena)",
+    "jolly": "Korpa Jolly",
+    "jollyNu": "Ne",
+    "jollyDa": "Da, front na korpi",
     "pozitieSertare": "Fioke",
     "sertareSus": "gore",
     "sertareJos": "dole, vrata iznad njih",

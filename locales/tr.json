@@ -577,9 +577,19 @@
         "corpNume": "Sürme giyinme"
       },
       "baza-jolly": {
-        "nume": "Dar çekmeli gövde",
-        "descriere": "Şişelik ve baharatlık çekmesi için. Rafsız: içini çekme doldurur.",
-        "corpNume": "Çekmeli gövde"
+        "nume": "Jolly sepetli dolap 300",
+        "descriere": "Şişe ve baharat için tam boy çekmeli sepet. Kapak sepete takılır, menteşesiz.",
+        "corpNume": "Jolly dolap 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Jolly sepetli dolap 200",
+        "descriere": "Şişe ve baharat için tam boy çekmeli sepet. Kapak sepete takılır, menteşesiz.",
+        "corpNume": "Jolly dolap 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Jolly sepetli dolap 150",
+        "descriere": "Şişe ve baharat için tam boy çekmeli sepet. Kapak sepete takılır, menteşesiz.",
+        "corpNume": "Jolly dolap 150"
       }
     },
     "adaugaCorp": "Bir gövde ekle",
@@ -739,7 +749,9 @@
       "obsPlinta": "Toplam {mm} mm; ayaklı dolaplar: {n}. Köşe, ek ve kapaklar yerleşime göre.",
       "usaRamaAlu": "Alüminyum çerçeveli cam kapak {h} × {l} mm",
       "obsUsaRamaAlu": "net ölçüde hazır sipariş edilir",
-      "balamaRamaAlu": "Alüminyum çerçeve menteşesi"
+      "balamaRamaAlu": "Alüminyum çerçeve menteşesi",
+      "cosJolly": "{lat} mm dolap için Jolly sepet",
+      "obsCosJolly": "dolap genişliğine göre seçilir; kapak ona takılır"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Kapak, kol 1",
     "usaBrat2": "Kapak, kol 2",
     "frontSertar": "Çekmece kapağı",
+    "frontJolly": "Jolly sepet kapağı",
     "frontAtipic": "Kapak",
     "panouLatura": "Panel {n} ({latura})",
     "spateAtipic": "Arkalık {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "çaprazda, önde — uçlar düz kesime göre {u1}° ve {u2}° kesilir",
     "usiGlisante": "{n} sürme kapak, bindirme {supr}, raylar {sine}",
     "traverseSusInLocDeBlat": "üst tabla yerine: biri önde biri arkada, {lat} genişliğinde",
-    "montantSubPanta": "eğimin altında: üst kenar açılı kesilmiş, {mare} ile {mic} arası"
+    "montantSubPanta": "eğimin altında: üst kenar açılı kesilmiş, {mare} ile {mic} arası",
+    "frontPeCadruJolly": "sepetin çerçevesine takılır, menteşesiz"
   },
   "avert": {
     "politeAtipic": "Standart dışı gövdelerde raflar kendiliğinden hesaplanmaz: onları ayrı parça olarak ekle.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "Dikme {n} için yer yok: orada gövde 50 mm’den alçak.",
     "usiPeCompartimentPreaMulte": "Bir göze {cerut} kapak takılmaz; iki tane yapıldı.",
     "compUsiFaraMontanti": "Göz seçtin ama gövdede hiç dikme yok.",
-    "politeNuIncapAtipic": "{comp}. göze raf sığmıyor: fazla alçak."
+    "politeNuIncapAtipic": "{comp}. göze raf sığmıyor: fazla alçak.",
+    "jollyUnFront": "Jolly sepetin tek kapağı olur, çerçevesine takılır. Burada {n} kapak var: 1 yap.",
+    "jollyFaraPolite": "Jolly sepet tüm yüksekliği doldurur: {n} rafa yer yok. Rafı 0 yap.",
+    "jollyLatime": "Jolly sepetler {lista} mm dolaplar için satılır. Bu dolap {lat} mm — ona uygun sepet bulunduğunu kontrol et."
   },
   "csv": {
     "corp": "Gövde",
@@ -935,7 +952,8 @@
     "faraFront": "kapaksız",
     "sertareJos": "çekmeceler altta",
     "faraManer": "kulpsuz",
-    "usiSticla": "cam kapaklar"
+    "usiSticla": "cam kapaklar",
+    "jolly": "Jolly sepet"
   },
   "comanda": {
     "inapoiComenzi": "Siparişlerim",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Kapaklar",
     "usiSticlaNu": "Sunta",
     "usiSticlaDa": "Cam dolgulu alüminyum çerçeve (hazır alınır)",
+    "jolly": "Jolly sepet",
+    "jollyNu": "Hayır",
+    "jollyDa": "Evet, kapak sepette",
     "pozitieSertare": "Çekmeceler",
     "sertareSus": "üstte",
     "sertareJos": "altta, kapaklar üstünde",

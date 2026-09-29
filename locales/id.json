@@ -577,9 +577,19 @@
         "corpNume": "Ruang pakaian geser"
       },
       "baza-jolly": {
-        "nume": "Boks sempit rak tarik",
-        "descriere": "Untuk rak tarik botol dan bumbu. Tanpa rak: diisi penuh oleh rak tarik.",
-        "corpNume": "Boks rak tarik"
+        "nume": "Kabinet keranjang Jolly 300",
+        "descriere": "Keranjang tarik setinggi kabinet untuk botol dan bumbu. Muka dipasang pada keranjang, tanpa engsel.",
+        "corpNume": "Kabinet Jolly 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Kabinet keranjang Jolly 200",
+        "descriere": "Keranjang tarik setinggi kabinet untuk botol dan bumbu. Muka dipasang pada keranjang, tanpa engsel.",
+        "corpNume": "Kabinet Jolly 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Kabinet keranjang Jolly 150",
+        "descriere": "Keranjang tarik setinggi kabinet untuk botol dan bumbu. Muka dipasang pada keranjang, tanpa engsel.",
+        "corpNume": "Kabinet Jolly 150"
       }
     },
     "adaugaCorp": "Tambahkan sebuah boks",
@@ -739,7 +749,9 @@
       "obsPlinta": "Total {mm} mm; kabinet berkaki: {n}. Sudut, sambungan, dan tutup ujung sesuai tata letak.",
       "usaRamaAlu": "Pintu kaca rangka aluminium {h} × {l} mm",
       "obsUsaRamaAlu": "dipesan jadi, dengan ukuran akhir",
-      "balamaRamaAlu": "Engsel untuk rangka aluminium"
+      "balamaRamaAlu": "Engsel untuk rangka aluminium",
+      "cosJolly": "Keranjang Jolly untuk kabinet {lat} mm",
+      "obsCosJolly": "dipilih menurut lebar kabinet; muka dipasang padanya"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Pintu, lengan 1",
     "usaBrat2": "Pintu, lengan 2",
     "frontSertar": "Muka laci",
+    "frontJolly": "Muka keranjang Jolly",
     "frontAtipic": "Muka",
     "panouLatura": "Panel {n} ({latura})",
     "spateAtipic": "Punggung {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "pada diagonal, di depan — ujung dipotong {u1}° dan {u2}° dari potongan lurus",
     "usiGlisante": "{n} pintu geser, tumpang {supr}, rel {sine}",
     "traverseSusInLocDeBlat": "menggantikan papan atas: satu di depan, satu di belakang, lebar {lat}",
-    "montantSubPanta": "di bawah kemiringan: tepi atas dipotong menyudut, dari {mare} ke {mic}"
+    "montantSubPanta": "di bawah kemiringan: tepi atas dipotong menyudut, dari {mare} ke {mic}",
+    "frontPeCadruJolly": "dipasang pada rangka keranjang, tanpa engsel"
   },
   "avert": {
     "politeAtipic": "Pada boks nonstandar, rak tidak dihitung otomatis: tambahkan sebagai bagian tersendiri.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "Sekat {n} tidak ada tempat: di situ badan lemari kurang dari 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} pintu pada satu ruang tidak dipasang; dibuat dua.",
     "compUsiFaraMontanti": "Kamu memilih ruang, tapi lemarinya tidak punya sekat.",
-    "politeNuIncapAtipic": "Tidak ada rak yang muat di ruang {comp}: terlalu pendek."
+    "politeNuIncapAtipic": "Tidak ada rak yang muat di ruang {comp}: terlalu pendek.",
+    "jollyUnFront": "Keranjang Jolly hanya punya satu muka, dipasang pada rangkanya. Di sini ada {n} pintu: isi 1.",
+    "jollyFaraPolite": "Keranjang Jolly mengisi seluruh tinggi: {n} rak tidak muat. Isi 0 rak.",
+    "jollyLatime": "Keranjang Jolly dijual untuk kabinet {lista} mm. Kabinet ini {lat} mm — pastikan ada keranjangnya."
   },
   "csv": {
     "corp": "Boks",
@@ -935,7 +952,8 @@
     "faraFront": "tanpa pintu depan",
     "sertareJos": "laci di bawah",
     "faraManer": "tanpa tarikan",
-    "usiSticla": "pintu kaca"
+    "usiSticla": "pintu kaca",
+    "jolly": "keranjang Jolly"
   },
   "comanda": {
     "inapoiComenzi": "Pesanan saya",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Pintu",
     "usiSticlaNu": "Dari papan",
     "usiSticlaDa": "Rangka aluminium dengan kaca (dibeli)",
+    "jolly": "Keranjang Jolly",
+    "jollyNu": "Tidak",
+    "jollyDa": "Ya, muka pada keranjang",
     "pozitieSertare": "Laci",
     "sertareSus": "di atas",
     "sertareJos": "di bawah, pintu di atasnya",

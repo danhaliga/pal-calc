@@ -92,6 +92,11 @@
          cotă. Nu se taie din PAL, deci ies din lista de debitare și intră
          la „de comandat" — cu balamalele lor, care nu sunt cele de PAL. */
       usiSticla: 0,
+      /* Coșul Jolly (cargo): un coș glisant pe toată înălțimea, într-un corp
+         îngust. Frontul se taie tot din PAL, dar se prinde pe cadrul
+         coșului, nu în balamale — deci nu se cumpără balamale pentru el, se
+         cumpără coșul. */
+      jolly: 0,
       tip: 'drept', W2: 900, orb: 550, contur: [],
       /* piesă simplă: bucăți, cantul pe fiecare muchie, fibra */
       pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
@@ -527,7 +532,7 @@
      în toate limbile. */
   var ROL = {
     usa: 'front', usaDiagonala: 'front', usaBrat1: 'front', usaBrat2: 'front',
-    frontSertar: 'front', frontAtipic: 'front', usaAtipica: 'front',
+    frontSertar: 'front', frontAtipic: 'front', usaAtipica: 'front', frontJolly: 'front',
     spateAtipic: 'spate', spatePerete1: 'spate', spatePerete2: 'spate',
     spateAplicat: 'spate', spateNut: 'spate',
     sertarLaterala: 'sertar', sertarFataSpate: 'sertar',
@@ -663,7 +668,30 @@
     var usiSticla = !!(+c.usiSticla) && !faraFront;
     var deComandat = [], sticla3d = [];
     var CHEI_USA = ['usa', 'usaDiagonala', 'usaBrat1', 'usaBrat2'];
+    /* Lățimile de corp pentru care se vând coșuri Jolly: 150, 200 și 300
+       sunt coșurile obișnuite, 400 și 500 cargourile late. Coșul se alege
+       după lățimea EXTERIOARĂ a corpului. */
+    var LATIMI_JOLLY = [150, 200, 300, 400, 500];
+    var jolly = !!(+c.jolly) && (c.tip || 'drept') === 'drept';
     var scoateFronturile = function (usiLista) {
+      if (jolly) {
+        /* Aici, la sfârșit, ca să prindă orice fel de corp drept: ușa
+           rămâne piesa de tăiat, doar că e frontul coșului. */
+        if (nUsi !== 1) avert('jollyUnFront', { n: nUsi });
+        if (nPol > 0) avert('jollyFaraPolite', { n: nPol });
+        if (LATIMI_JOLLY.indexOf(Math.round(W)) === -1) {
+          avert('jollyLatime', { lat: fmt(W), lista: LATIMI_JOLLY.join(', ') });
+        }
+        if (!faraFront) {
+          P.forEach(function (x) {
+            if (x.cheie !== 'usa') return;
+            x.cheie = 'frontJolly';
+            x.nume = t_('piesa.frontJolly');
+            x.notaCheie = 'frontPeCadruJolly'; x.notaArgs = null;
+            x.nota = t_('nota.frontPeCadruJolly');
+          });
+        }
+      }
       if (usiSticla) {
         for (var iS = P.length - 1; iS >= 0; iS--) {
           if (CHEI_USA.indexOf(P[iS].cheie) === -1) continue;
@@ -1567,6 +1595,7 @@
            nimic dacă valoarea vine stricată de undeva. */
         faraFront: int(0, 1).catch(0),
         usiSticla: int(0, 1).catch(0),
+        jolly: int(0, 1).catch(0),
         pBuc: int(1, 999).catch(1),
         pcL1: cantMuchie, pcL2: cantMuchie, pcl1: cantMuchie, pcl2: cantMuchie,
         pFibra: z.enum(['L', 'l', '-']).catch('L'),

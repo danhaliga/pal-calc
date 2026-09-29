@@ -577,9 +577,19 @@
         "corpNume": "引き戸ウォークイン"
       },
       "baza-jolly": {
-        "nume": "細い引き出し式の箱",
-        "descriere": "瓶や調味料のスライドラック用。棚板なし：ラックが中を占めます。",
-        "corpNume": "スライドラック箱"
+        "nume": "引出しバスケット付きキャビネット 300",
+        "descriere": "瓶や調味料用の全高引出しバスケット。前板はバスケットに取り付け、ヒンジなし。",
+        "corpNume": "バスケット 300"
+      },
+      "baza-jolly-200": {
+        "nume": "引出しバスケット付きキャビネット 200",
+        "descriere": "瓶や調味料用の全高引出しバスケット。前板はバスケットに取り付け、ヒンジなし。",
+        "corpNume": "バスケット 200"
+      },
+      "baza-jolly-150": {
+        "nume": "引出しバスケット付きキャビネット 150",
+        "descriere": "瓶や調味料用の全高引出しバスケット。前板はバスケットに取り付け、ヒンジなし。",
+        "corpNume": "バスケット 150"
       }
     },
     "adaugaCorp": "キャビネットを追加",
@@ -739,7 +749,9 @@
       "obsPlinta": "合計 {mm} mm；脚付きキャビネット：{n}。コーナー・ジョイント・エンドキャップは配置に応じて。",
       "usaRamaAlu": "アルミ框ガラス扉 {h} × {l} mm",
       "obsUsaRamaAlu": "仕上がり寸法で完成品を発注",
-      "balamaRamaAlu": "アルミ框用ヒンジ"
+      "balamaRamaAlu": "アルミ框用ヒンジ",
+      "cosJolly": "{lat} mm キャビネット用引出しバスケット",
+      "obsCosJolly": "キャビネット幅で選ぶ；前板はこれに取り付ける"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "扉、腕1",
     "usaBrat2": "扉、腕2",
     "frontSertar": "引き出し前板",
+    "frontJolly": "引出しバスケットの前板",
     "frontAtipic": "前板",
     "panouLatura": "板 {n}（{latura}）",
     "spateAtipic": "背板 {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "対角線上の前側 — 両端を直角切りから {u1}° と {u2}° で切る",
     "usiGlisante": "引き戸 {n} 枚、重なり {supr}、レール {sine}",
     "traverseSusInLocDeBlat": "天板の代わりに、前と後ろに1枚ずつ、幅 {lat}",
-    "montantSubPanta": "斜面の下：上端を角度切り、{mare} から {mic} まで"
+    "montantSubPanta": "斜面の下：上端を角度切り、{mare} から {mic} まで",
+    "frontPeCadruJolly": "バスケットのフレームに取り付け、ヒンジなし"
   },
   "avert": {
     "politeAtipic": "変形キャビネットの棚板は自動では数えません。別の部材として足してください。",
@@ -863,7 +877,10 @@
     "montantNuIncape": "仕切り {n} の場所がありません：そこは高さ 50 mm 未満です。",
     "usiPeCompartimentPreaMulte": "一区画に {cerut} 枚の扉は付けません。二枚にしました。",
     "compUsiFaraMontanti": "区画を選びましたが、この箱には仕切りがありません。",
-    "politeNuIncapAtipic": "{comp} 番目の区画には棚が入りません：低すぎます。"
+    "politeNuIncapAtipic": "{comp} 番目の区画には棚が入りません：低すぎます。",
+    "jollyUnFront": "引出しバスケットの前板は1枚で、フレームに取り付けます。ここでは扉が {n} 枚です：1にしてください。",
+    "jollyFaraPolite": "引出しバスケットは全高を使います：棚板 {n} 枚は入りません。棚板を0にしてください。",
+    "jollyLatime": "引出しバスケットは {lista} mm のキャビネット用に販売されています。このキャビネットは {lat} mm です。合うものがあるか確認してください。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -935,7 +952,8 @@
     "faraFront": "前板なし",
     "sertareJos": "引き出しは下",
     "faraManer": "取っ手なし",
-    "usiSticla": "ガラス扉"
+    "usiSticla": "ガラス扉",
+    "jolly": "引出しバスケット"
   },
   "comanda": {
     "inapoiComenzi": "自分の注文",
@@ -1402,6 +1420,9 @@
     "usiSticla": "扉",
     "usiSticlaNu": "パーティクルボード",
     "usiSticlaDa": "アルミ框ガラス扉（購入品）",
+    "jolly": "引出しバスケット",
+    "jollyNu": "なし",
+    "jollyDa": "あり、前板をバスケットに",
     "pozitieSertare": "引き出し",
     "sertareSus": "上",
     "sertareJos": "下、扉はその上",

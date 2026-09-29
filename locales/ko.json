@@ -577,9 +577,19 @@
         "corpNume": "미닫이 드레스룸"
       },
       "baza-jolly": {
-        "nume": "좁은 슬라이드장",
-        "descriere": "병과 양념 슬라이드 바구니용. 선반 없음: 바구니가 채웁니다.",
-        "corpNume": "슬라이드장"
+        "nume": "Jolly 바스켓 장 300",
+        "descriere": "병과 양념용 전체 높이 슬라이딩 바스켓. 앞판은 바스켓에 고정, 경첩 없음.",
+        "corpNume": "Jolly 장 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Jolly 바스켓 장 200",
+        "descriere": "병과 양념용 전체 높이 슬라이딩 바스켓. 앞판은 바스켓에 고정, 경첩 없음.",
+        "corpNume": "Jolly 장 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Jolly 바스켓 장 150",
+        "descriere": "병과 양념용 전체 높이 슬라이딩 바스켓. 앞판은 바스켓에 고정, 경첩 없음.",
+        "corpNume": "Jolly 장 150"
       }
     },
     "adaugaCorp": "캐비닛 추가",
@@ -739,7 +749,9 @@
       "obsPlinta": "총 {mm} mm; 다리 달린 장: {n}. 코너·연결재·끝캡은 배치에 따라.",
       "usaRamaAlu": "알루미늄 프레임 유리문 {h} × {l} mm",
       "obsUsaRamaAlu": "완성 치수로 완제품 주문",
-      "balamaRamaAlu": "알루미늄 프레임용 경첩"
+      "balamaRamaAlu": "알루미늄 프레임용 경첩",
+      "cosJolly": "{lat} mm 장용 Jolly 바스켓",
+      "obsCosJolly": "장 폭에 맞춰 고름; 앞판을 여기에 고정"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "문짝, 1번 팔",
     "usaBrat2": "문짝, 2번 팔",
     "frontSertar": "서랍 전판",
+    "frontJolly": "Jolly 바스켓 앞판",
     "frontAtipic": "전판",
     "panouLatura": "판 {n} ({latura})",
     "spateAtipic": "뒷판 {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "대각선 앞쪽 — 양 끝을 직각 절단에서 {u1}°와 {u2}°로 자른다",
     "usiGlisante": "미닫이 {n}짝, 겹침 {supr}, 레일 {sine}",
     "traverseSusInLocDeBlat": "상판 대신: 앞뒤로 하나씩, 폭 {lat}",
-    "montantSubPanta": "경사 아래: 윗면을 비스듬히 재단, {mare}에서 {mic}까지"
+    "montantSubPanta": "경사 아래: 윗면을 비스듬히 재단, {mare}에서 {mic}까지",
+    "frontPeCadruJolly": "바스켓 프레임에 고정, 경첩 없음"
   },
   "avert": {
     "politeAtipic": "비정형 캐비닛에서는 선반이 자동으로 계산되지 않습니다. 따로 부재로 더하세요.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "칸막이 {n}은 자리가 없습니다: 그곳 높이가 50mm 미만입니다.",
     "usiPeCompartimentPreaMulte": "한 칸에 문 {cerut}장은 달지 않습니다. 두 장으로 했습니다.",
     "compUsiFaraMontanti": "칸을 골랐지만 몸통에 칸막이가 없습니다.",
-    "politeNuIncapAtipic": "{comp}번 칸에는 선반이 들어가지 않습니다: 너무 낮습니다."
+    "politeNuIncapAtipic": "{comp}번 칸에는 선반이 들어가지 않습니다: 너무 낮습니다.",
+    "jollyUnFront": "Jolly 바스켓은 앞판이 하나로 프레임에 고정됩니다. 여기서는 문이 {n}개입니다: 1로 하세요.",
+    "jollyFaraPolite": "Jolly 바스켓은 전체 높이를 채웁니다: 선반 {n}개가 들어갈 자리가 없습니다. 선반을 0으로 하세요.",
+    "jollyLatime": "Jolly 바스켓은 {lista} mm 장용으로 판매됩니다. 이 장은 {lat} mm입니다 — 맞는 바스켓이 있는지 확인하세요."
   },
   "csv": {
     "corp": "캐비닛",
@@ -935,7 +952,8 @@
     "faraFront": "전면판 없음",
     "sertareJos": "서랍 아래",
     "faraManer": "손잡이 없음",
-    "usiSticla": "유리문"
+    "usiSticla": "유리문",
+    "jolly": "Jolly 바스켓"
   },
   "comanda": {
     "inapoiComenzi": "내 주문",
@@ -1402,6 +1420,9 @@
     "usiSticla": "문",
     "usiSticlaNu": "PB 판재",
     "usiSticlaDa": "알루미늄 프레임 유리문(구매품)",
+    "jolly": "Jolly 바스켓",
+    "jollyNu": "아니요",
+    "jollyDa": "예, 앞판을 바스켓에",
     "pozitieSertare": "서랍",
     "sertareSus": "위쪽",
     "sertareJos": "아래쪽, 문은 그 위에",

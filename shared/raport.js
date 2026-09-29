@@ -282,6 +282,15 @@
       pune(art('balamaCarte'), 1, 'buc', t_('fero.art.obsCupleazaFronturi'));
     }
 
+    /* ---- coșul Jolly ----
+
+       Se cumpără coșul, după lățimea corpului. Frontul lui se taie din PAL
+       ca oricare altul, dar se prinde pe cadrul coșului: n-are balamale,
+       și nu le primește — frontul nu se cheamă „ușă" în lista de piese. */
+    if (+c.jolly && (c.tip || 'drept') === 'drept') {
+      pune(t_('fero.art.cosJolly', { lat: +c.W }), 1, 'buc', t_('fero.art.obsCosJolly'));
+    }
+
     /* ---- uși de vitrină: ramă de aluminiu cu sticlă, cumpărate ----
 
        Nu se taie, deci nu stau în lista de piese: se comandă gata la cota

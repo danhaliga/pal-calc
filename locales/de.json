@@ -577,9 +577,19 @@
         "corpNume": "Ankleide-Schiebe"
       },
       "baza-jolly": {
-        "nume": "Schmaler Apothekerschrank",
-        "descriere": "Für den Flaschen- und Gewürzauszug. Ohne Boden: der Auszug füllt ihn.",
-        "corpNume": "Apothekerschrank"
+        "nume": "Korpus mit Apothekerauszug 300",
+        "descriere": "Auszug über die ganze Höhe für Flaschen und Gewürze. Die Front sitzt am Auszug, ohne Scharniere.",
+        "corpNume": "Apothekerschrank 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Korpus mit Apothekerauszug 200",
+        "descriere": "Auszug über die ganze Höhe für Flaschen und Gewürze. Die Front sitzt am Auszug, ohne Scharniere.",
+        "corpNume": "Apothekerschrank 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Korpus mit Apothekerauszug 150",
+        "descriere": "Auszug über die ganze Höhe für Flaschen und Gewürze. Die Front sitzt am Auszug, ohne Scharniere.",
+        "corpNume": "Apothekerschrank 150"
       }
     },
     "adaugaCorp": "Einen Korpus hinzufügen",
@@ -739,7 +749,9 @@
       "obsPlinta": "{mm} mm insgesamt; Korpusse auf Füßen: {n}. Ecken, Verbinder und Endkappen je nach Aufstellung.",
       "usaRamaAlu": "Glastür mit Alurahmen {h} × {l} mm",
       "obsUsaRamaAlu": "fertig bestellt, auf Fertigmaß",
-      "balamaRamaAlu": "Scharnier für Alurahmen"
+      "balamaRamaAlu": "Scharnier für Alurahmen",
+      "cosJolly": "Apothekerauszug für {lat}-mm-Korpus",
+      "obsCosJolly": "wird nach der Korpusbreite gewählt; die Front sitzt darauf"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Tür, Schenkel 1",
     "usaBrat2": "Tür, Schenkel 2",
     "frontSertar": "Schubladenfront",
+    "frontJolly": "Front Apothekerauszug",
     "frontAtipic": "Front",
     "panouLatura": "Paneel {n} ({latura})",
     "spateAtipic": "Rückwand {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "auf der Diagonale, vorn — Enden auf {u1}° und {u2}° zum geraden Schnitt geschnitten",
     "usiGlisante": "{n} Schiebetüren, Überlappung {supr}, Schienen {sine}",
     "traverseSusInLocDeBlat": "statt des Deckels: eine vorn, eine hinten, {lat} breit",
-    "montantSubPanta": "unter der Schräge: obere Kante auf Gehrung, von {mare} auf {mic}"
+    "montantSubPanta": "unter der Schräge: obere Kante auf Gehrung, von {mare} auf {mic}",
+    "frontPeCadruJolly": "am Rahmen des Auszugs befestigt, ohne Scharniere"
   },
   "avert": {
     "politeAtipic": "Bei Sonderkorpussen werden Böden nicht automatisch berechnet: füge sie als eigene Teile hinzu.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "Mittelseite {n} hat keinen Platz: dort ist der Korpus unter 50 mm hoch.",
     "usiPeCompartimentPreaMulte": "{cerut} Türen auf ein Fach macht man nicht; es wurden zwei gemacht.",
     "compUsiFaraMontanti": "Du hast Fächer gewählt, aber der Korpus hat keine Mittelseite.",
-    "politeNuIncapAtipic": "In Fach {comp} passt kein Boden: es ist zu niedrig."
+    "politeNuIncapAtipic": "In Fach {comp} passt kein Boden: es ist zu niedrig.",
+    "jollyUnFront": "Der Apothekerauszug hat nur eine Front, am Rahmen befestigt. Hier sind {n} Türen gesetzt: nimm 1.",
+    "jollyFaraPolite": "Der Apothekerauszug füllt die ganze Höhe: Die {n} Fachböden passen nicht. Setz 0 Fachböden.",
+    "jollyLatime": "Apothekerauszüge gibt es für Korpusse mit {lista} mm. Dieser hat {lat} mm — prüf, ob es einen Auszug dafür gibt."
   },
   "csv": {
     "corp": "Korpus",
@@ -935,7 +952,8 @@
     "faraFront": "ohne Fronten",
     "sertareJos": "Schubladen unten",
     "faraManer": "ohne Griff",
-    "usiSticla": "Glastüren"
+    "usiSticla": "Glastüren",
+    "jolly": "Apothekerauszug"
   },
   "comanda": {
     "inapoiComenzi": "Meine Aufträge",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Türen",
     "usiSticlaNu": "Aus Spanplatte",
     "usiSticlaDa": "Alurahmen mit Glas (gekauft)",
+    "jolly": "Apothekerauszug",
+    "jollyNu": "Nein",
+    "jollyDa": "Ja, Front am Auszug",
     "pozitieSertare": "Die Schubladen",
     "sertareSus": "oben",
     "sertareJos": "unten, Türen darüber",

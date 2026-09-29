@@ -186,6 +186,11 @@
             <option value="0"><%= t('editor.fronturiSeFac') %></option>
             <option value="1"><%= t('editor.fronturiNuSeFac') %></option>
           </select></label>
+          <%# Cosul Jolly: frontul se prinde pe cadrul cosului, nu in balamale. %>
+          <label><%= t('editor.jolly') %><select id="jolly">
+            <option value="0"><%= t('editor.jollyNu') %></option>
+            <option value="1"><%= t('editor.jollyDa') %></option>
+          </select></label>
           <%# Usile de vitrina: rama de aluminiu cu sticla, cumparata gata la
               cota. Ies din lista de debitare si intra la „de comandat". %>
           <label><%= t('editor.usiSticla') %><select id="usiSticla">

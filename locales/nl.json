@@ -577,9 +577,19 @@
         "corpNume": "Inloop schuif"
       },
       "baza-jolly": {
-        "nume": "Smalle apothekerskast",
-        "descriere": "Voor de uittrekbare flessen- en kruidenmand. Zonder legplank: de mand vult hem.",
-        "corpNume": "Apothekerskast"
+        "nume": "Kast met apothekerskorf 300",
+        "descriere": "Uittrekbare korf over de volle hoogte voor flessen en kruiden. Het front zit op de korf, zonder scharnieren.",
+        "corpNume": "Apothekerskast 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Kast met apothekerskorf 200",
+        "descriere": "Uittrekbare korf over de volle hoogte voor flessen en kruiden. Het front zit op de korf, zonder scharnieren.",
+        "corpNume": "Apothekerskast 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Kast met apothekerskorf 150",
+        "descriere": "Uittrekbare korf over de volle hoogte voor flessen en kruiden. Het front zit op de korf, zonder scharnieren.",
+        "corpNume": "Apothekerskast 150"
       }
     },
     "adaugaCorp": "Een kast toevoegen",
@@ -739,7 +749,9 @@
       "obsPlinta": "{mm} mm in totaal; kasten op poten: {n}. Hoeken, verbinders en eindkappen volgens de opstelling.",
       "usaRamaAlu": "Glazen deur met aluminium kader {h} × {l} mm",
       "obsUsaRamaAlu": "kant-en-klaar besteld, op eindmaat",
-      "balamaRamaAlu": "Scharnier voor aluminium kader"
+      "balamaRamaAlu": "Scharnier voor aluminium kader",
+      "cosJolly": "Apothekerskorf voor kast van {lat} mm",
+      "obsCosJolly": "gekozen op de kastbreedte; het front zit erop"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Deur, been 1",
     "usaBrat2": "Deur, been 2",
     "frontSertar": "Ladefront",
+    "frontJolly": "Front apothekerskast",
     "frontAtipic": "Front",
     "panouLatura": "Paneel {n} ({latura})",
     "spateAtipic": "Achterwand {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "op de diagonaal, aan de voorkant — uiteinden gezaagd op {u1}° en {u2}° ten opzichte van een rechte zaagsnede",
     "usiGlisante": "{n} schuifdeuren, overlap {supr}, rails {sine}",
     "traverseSusInLocDeBlat": "in plaats van het bovenblad: één voor, één achter, {lat} breed",
-    "montantSubPanta": "onder de schuinte: bovenkant op verstek gezaagd, van {mare} naar {mic}"
+    "montantSubPanta": "onder de schuinte: bovenkant op verstek gezaagd, van {mare} naar {mic}",
+    "frontPeCadruJolly": "op het frame van de korf, zonder scharnieren"
   },
   "avert": {
     "politeAtipic": "Bij niet-standaard kasten worden legplanken niet automatisch berekend: voeg ze als losse onderdelen toe.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "Tussenwand {n} heeft geen plaats: daar is de kast lager dan 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} deuren op één vak doe je niet; er zijn er twee gemaakt.",
     "compUsiFaraMontanti": "Je koos vakken, maar de kast heeft geen tussenwand.",
-    "politeNuIncapAtipic": "In vak {comp} past geen plank: het is te laag."
+    "politeNuIncapAtipic": "In vak {comp} past geen plank: het is te laag.",
+    "jollyUnFront": "De apothekerskorf heeft één front, op zijn frame. Hier staan {n} deuren: zet 1.",
+    "jollyFaraPolite": "De apothekerskorf vult de hele hoogte: de {n} legplanken passen niet. Zet 0 legplanken.",
+    "jollyLatime": "Apothekerskorven worden verkocht voor kasten van {lista} mm. Deze is {lat} mm — kijk of er een korf voor is."
   },
   "csv": {
     "corp": "Kast",
@@ -935,7 +952,8 @@
     "faraFront": "zonder fronten",
     "sertareJos": "lades onderin",
     "faraManer": "zonder greep",
-    "usiSticla": "glazen deuren"
+    "usiSticla": "glazen deuren",
+    "jolly": "apothekerskorf"
   },
   "comanda": {
     "inapoiComenzi": "Mijn opdrachten",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Deuren",
     "usiSticlaNu": "Van spaanplaat",
     "usiSticlaDa": "Aluminium kader met glas (gekocht)",
+    "jolly": "Apothekerskorf",
+    "jollyNu": "Nee",
+    "jollyDa": "Ja, front op de korf",
     "pozitieSertare": "De lades",
     "sertareSus": "bovenin",
     "sertareJos": "onderin, deuren erboven",

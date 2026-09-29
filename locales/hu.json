@@ -577,9 +577,19 @@
         "corpNume": "Tolóajtós gardrób"
       },
       "baza-jolly": {
-        "nume": "Keskeny kihúzós elem",
-        "descriere": "Kihúzható üveg- és fűszertartóhoz. Polc nélkül: a kihúzó tölti ki.",
-        "corpNume": "Kihúzós elem"
+        "nume": "Szekrény Jolly kosárral 300",
+        "descriere": "Teljes magasságú kihúzható kosár üvegeknek és fűszereknek. Az előlap a kosáron, zsanér nélkül.",
+        "corpNume": "Jolly szekrény 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Szekrény Jolly kosárral 200",
+        "descriere": "Teljes magasságú kihúzható kosár üvegeknek és fűszereknek. Az előlap a kosáron, zsanér nélkül.",
+        "corpNume": "Jolly szekrény 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Szekrény Jolly kosárral 150",
+        "descriere": "Teljes magasságú kihúzható kosár üvegeknek és fűszereknek. Az előlap a kosáron, zsanér nélkül.",
+        "corpNume": "Jolly szekrény 150"
       }
     },
     "adaugaCorp": "Korpusz hozzáadása",
@@ -739,7 +749,9 @@
       "obsPlinta": "Összesen {mm} mm; lábas szekrények: {n}. Sarkok, toldók és végzárók az elrendezés szerint.",
       "usaRamaAlu": "Alumínium keretes üvegajtó {h} × {l} mm",
       "obsUsaRamaAlu": "készen rendelve, kész méretre",
-      "balamaRamaAlu": "Zsanér alumínium kerethez"
+      "balamaRamaAlu": "Zsanér alumínium kerethez",
+      "cosJolly": "Jolly kosár {lat} mm-es szekrényhez",
+      "obsCosJolly": "a szekrény szélessége szerint választandó; az előlap erre kerül"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Ajtó, 1. szár",
     "usaBrat2": "Ajtó, 2. szár",
     "frontSertar": "Fiókfront",
+    "frontJolly": "Jolly kosár előlap",
     "frontAtipic": "Front",
     "panouLatura": "{n}. panel ({latura})",
     "spateAtipic": "Hátlap {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "az átlón, elöl — a végek az egyenes vágáshoz képest {u1}° és {u2}° szögben vágva",
     "usiGlisante": "{n} tolóajtó, átfedés {supr}, sínek {sine}",
     "traverseSusInLocDeBlat": "a fedlap helyett: egy elöl, egy hátul, {lat} szélesek",
-    "montantSubPanta": "a ferde alatt: a felső él szögben vágva, {mare}-ről {mic}-re"
+    "montantSubPanta": "a ferde alatt: a felső él szögben vágva, {mare}-ről {mic}-re",
+    "frontPeCadruJolly": "a kosár keretére szerelve, zsanér nélkül"
   },
   "avert": {
     "politeAtipic": "Egyedi korpuszoknál a polcok nem számolódnak magától: add hozzá őket külön elemként.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "A(z) {n}. válaszfalnak nincs helye: ott a korpusz 50 mm-nél alacsonyabb.",
     "usiPeCompartimentPreaMulte": "Egy rekeszre nem tesznek {cerut} ajtót; kettő készült.",
     "compUsiFaraMontanti": "Rekeszeket választottál, de a korpuszban nincs válaszfal.",
-    "politeNuIncapAtipic": "A(z) {comp}. rekeszbe nem fér polc: túl alacsony."
+    "politeNuIncapAtipic": "A(z) {comp}. rekeszbe nem fér polc: túl alacsony.",
+    "jollyUnFront": "A Jolly kosárnak egyetlen előlapja van, a keretére szerelve. Itt {n} ajtó van: legyen 1.",
+    "jollyFaraPolite": "A Jolly kosár kitölti a teljes magasságot: a {n} polc nem fér el. Legyen 0 polc.",
+    "jollyLatime": "Jolly kosarak {lista} mm-es szekrényekhez kaphatók. Ez {lat} mm — nézd meg, van-e hozzá kosár."
   },
   "csv": {
     "corp": "Korpusz",
@@ -935,7 +952,8 @@
     "faraFront": "front nélkül",
     "sertareJos": "fiókok lent",
     "faraManer": "fogantyú nélkül",
-    "usiSticla": "üvegajtók"
+    "usiSticla": "üvegajtók",
+    "jolly": "Jolly kosár"
   },
   "comanda": {
     "inapoiComenzi": "A megrendeléseim",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Ajtók",
     "usiSticlaNu": "Forgácslapból",
     "usiSticlaDa": "Alumínium keretes üveg (vásárolt)",
+    "jolly": "Jolly kosár",
+    "jollyNu": "Nem",
+    "jollyDa": "Igen, előlap a kosáron",
     "pozitieSertare": "A fiókok",
     "sertareSus": "fent",
     "sertareJos": "lent, az ajtók fölöttük",

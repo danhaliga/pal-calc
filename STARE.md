@@ -15,8 +15,8 @@ Jumătățile de context au costat deja timp în sesiunea de dinainte.
 piese se taie, la ce cotă finită și la ce cotă de tăiere, cu ce cant pe
 fiecare muchie, plus feroneria, croirea în coli și fișa de montaj.
 
-- **49 de modele** în catalog, **7 categorii**, **30 de limbi**
-- **591 de teste**, toate trec: `npm test`
+- **51 de modele** în catalog, **7 categorii**, **30 de limbi**
+- **597 de teste**, toate trec: `npm test`
 - Node ≥ 20, Express 4, EJS, better-sqlite3, zod, bcryptjs
 - Motorul de calcul (`shared/*.js`) e UMD: **același fișier rulează și pe
   server, și în browser**. Nu-l rupe în două.
@@ -275,6 +275,16 @@ Dacă se vrea ceva de acolo, se ia de mână, peste ce e pe GitHub.
   ultimul); `randeazaLatimi()` / `potrivesteRestul()` în `public/app.js`;
   ruta primește `latimi` și cade pe bucăți egale dacă nu se potrivesc.
 
+## 6e. Corpul cu coș Jolly (29 septembrie, noaptea)
+
+Modelul „cargo" era un corp cu o ușă: ieșeau balamale care nu se montează,
+iar coșul nu apărea nicăieri. Acum param `jolly: 1`: frontul rămâne de tăiat
+din PAL (aceeași cotă), dar se cheamă `frontJolly`, cu nota că se prinde pe
+cadrul coșului — deci nu primește balamale. La feronerie: „Coș Jolly pentru
+corp de {W} mm". Avertismente: lățime la care nu se vând coșuri (150, 200,
+300, 400, 500), polițe, mai mult de un front. Modele `baza-jolly` (300),
+`baza-jolly-200`, `baza-jolly-150`.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E
@@ -358,7 +368,7 @@ src/                rutele Express, baza de date, conturile, plata
 views/              paginile EJS
 public/app.js       editorul de corp: formular, tabel, vederea 3D
 locales/*.json      textele, 30 de fișiere
-tests/              28 de fișiere, 591 de teste
+tests/              29 de fișiere, 597 de teste
 .lucru/             scripturi de-o dată: traduceri, petice, probe
 db/migrations/      schema, se aplică singură la pornire
 ```

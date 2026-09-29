@@ -577,9 +577,19 @@
         "corpNume": "Dressing coulissant"
       },
       "baza-jolly": {
-        "nume": "Caisson étroit coulissant",
-        "descriere": "Pour le range-bouteilles ou épicier coulissant. Sans étagère : le coulissant l'occupe.",
-        "corpNume": "Caisson coulissant"
+        "nume": "Meuble avec panier Jolly 300",
+        "descriere": "Panier coulissant pleine hauteur pour bouteilles et épices. La façade se fixe sur le panier, sans charnières.",
+        "corpNume": "Meuble Jolly 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Meuble avec panier Jolly 200",
+        "descriere": "Panier coulissant pleine hauteur pour bouteilles et épices. La façade se fixe sur le panier, sans charnières.",
+        "corpNume": "Meuble Jolly 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Meuble avec panier Jolly 150",
+        "descriere": "Panier coulissant pleine hauteur pour bouteilles et épices. La façade se fixe sur le panier, sans charnières.",
+        "corpNume": "Meuble Jolly 150"
       }
     },
     "adaugaCorp": "Ajouter un caisson",
@@ -739,7 +749,9 @@
       "obsPlinta": "{mm} mm au total ; meubles sur pieds : {n}. Angles, raccords et embouts selon l'implantation.",
       "usaRamaAlu": "Porte vitrée à cadre aluminium {h} × {l} mm",
       "obsUsaRamaAlu": "commandée toute faite, à la cote finie",
-      "balamaRamaAlu": "Charnière pour cadre aluminium"
+      "balamaRamaAlu": "Charnière pour cadre aluminium",
+      "cosJolly": "Panier Jolly pour meuble de {lat} mm",
+      "obsCosJolly": "choisi selon la largeur du meuble ; la façade s'y fixe"
     }
   },
   "piesa": {
@@ -752,6 +764,7 @@
     "usaBrat1": "Porte, branche 1",
     "usaBrat2": "Porte, branche 2",
     "frontSertar": "Façade de tiroir",
+    "frontJolly": "Façade du panier Jolly",
     "frontAtipic": "Façade",
     "panouLatura": "Panneau {n} ({latura})",
     "spateAtipic": "Fond arrière {mat}",
@@ -810,7 +823,8 @@
     "socluDiagonal": "sur la diagonale, à l'avant — extrémités coupées à {u1}° et {u2}° par rapport à une coupe droite",
     "usiGlisante": "{n} portes coulissantes, recouvrement {supr}, rails {sine}",
     "traverseSusInLocDeBlat": "à la place du panneau haut : une devant, une derrière, larges de {lat}",
-    "montantSubPanta": "sous la pente : chant du haut coupé en biais, de {mare} à {mic}"
+    "montantSubPanta": "sous la pente : chant du haut coupé en biais, de {mare} à {mic}",
+    "frontPeCadruJolly": "fixée sur le cadre du panier, sans charnières"
   },
   "avert": {
     "politeAtipic": "Les étagères ne sont pas calculées automatiquement pour les caissons hors standard : ajoutez-les comme pièces séparées.",
@@ -863,7 +877,10 @@
     "montantNuIncape": "Le montant {n} n’a pas de place : là le meuble fait moins de 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} portes sur un compartiment, cela ne se fait pas ; deux ont été faites.",
     "compUsiFaraMontanti": "Vous avez choisi des compartiments, mais le meuble n’a aucun montant.",
-    "politeNuIncapAtipic": "Aucune étagère ne tient dans le compartiment {comp} : il est trop bas."
+    "politeNuIncapAtipic": "Aucune étagère ne tient dans le compartiment {comp} : il est trop bas.",
+    "jollyUnFront": "Le panier Jolly n'a qu'une façade, fixée sur son cadre. Ici il y a {n} portes : mettez 1.",
+    "jollyFaraPolite": "Le panier Jolly occupe toute la hauteur : les {n} tablettes n'ont pas de place. Mettez 0 tablette.",
+    "jollyLatime": "Les paniers Jolly se vendent pour des meubles de {lista} mm. Celui-ci fait {lat} mm — vérifiez qu'il existe un panier."
   },
   "csv": {
     "corp": "Caisson",
@@ -935,7 +952,8 @@
     "faraFront": "sans façades",
     "sertareJos": "tiroirs en bas",
     "faraManer": "sans poignée",
-    "usiSticla": "portes vitrées"
+    "usiSticla": "portes vitrées",
+    "jolly": "panier Jolly"
   },
   "comanda": {
     "inapoiComenzi": "Mes commandes",
@@ -1402,6 +1420,9 @@
     "usiSticla": "Portes",
     "usiSticlaNu": "En panneau",
     "usiSticlaDa": "Cadre aluminium avec verre (achetées)",
+    "jolly": "Panier Jolly",
+    "jollyNu": "Non",
+    "jollyDa": "Oui, façade sur le panier",
     "pozitieSertare": "Les tiroirs",
     "sertareSus": "en haut",
     "sertareJos": "en bas, portes au-dessus",

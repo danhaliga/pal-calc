@@ -583,9 +583,19 @@
         "corpNume": "Garderoba przesuwna"
       },
       "baza-jolly": {
-        "nume": "Wąska szafka cargo",
-        "descriere": "Pod wysuwane cargo na butelki i przyprawy. Bez półki: wypełnia je cargo.",
-        "corpNume": "Szafka cargo"
+        "nume": "Szafka z cargo Jolly 300",
+        "descriere": "Wysuwany kosz na całą wysokość na butelki i przyprawy. Front na koszu, bez zawiasów.",
+        "corpNume": "Szafka Jolly 300"
+      },
+      "baza-jolly-200": {
+        "nume": "Szafka z cargo Jolly 200",
+        "descriere": "Wysuwany kosz na całą wysokość na butelki i przyprawy. Front na koszu, bez zawiasów.",
+        "corpNume": "Szafka Jolly 200"
+      },
+      "baza-jolly-150": {
+        "nume": "Szafka z cargo Jolly 150",
+        "descriere": "Wysuwany kosz na całą wysokość na butelki i przyprawy. Front na koszu, bez zawiasów.",
+        "corpNume": "Szafka Jolly 150"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -745,7 +755,9 @@
       "obsPlinta": "Razem {mm} mm; szafki na nóżkach: {n}. Narożniki, łączniki i zaślepki według ustawienia.",
       "usaRamaAlu": "Drzwiczki szklane w ramie aluminiowej {h} × {l} mm",
       "obsUsaRamaAlu": "zamawiane gotowe, na wymiar końcowy",
-      "balamaRamaAlu": "Zawias do ramy aluminiowej"
+      "balamaRamaAlu": "Zawias do ramy aluminiowej",
+      "cosJolly": "Cargo Jolly do szafki {lat} mm",
+      "obsCosJolly": "dobierane do szerokości szafki; front mocuje się na nim"
     }
   },
   "piesa": {
@@ -758,6 +770,7 @@
     "usaBrat1": "Front, ramię 1",
     "usaBrat2": "Front, ramię 2",
     "frontSertar": "Front szuflady",
+    "frontJolly": "Front cargo Jolly",
     "frontAtipic": "Front",
     "panouLatura": "Panel {n} ({latura})",
     "spateAtipic": "Plecy {mat}",
@@ -816,7 +829,8 @@
     "socluDiagonal": "na przekątnej, z przodu — końce cięte pod {u1}° i {u2}° względem cięcia prostego",
     "usiGlisante": "{n} fronty przesuwne, zachodzenie {supr}, szyny {sine}",
     "traverseSusInLocDeBlat": "zamiast wieńca: jedna z przodu, druga z tyłu, szerokie na {lat}",
-    "montantSubPanta": "pod skosem: górna krawędź cięta pod kątem, od {mare} do {mic}"
+    "montantSubPanta": "pod skosem: górna krawędź cięta pod kątem, od {mare} do {mic}",
+    "frontPeCadruJolly": "mocowany na ramie kosza, bez zawiasów"
   },
   "avert": {
     "politeAtipic": "W korpusach nietypowych półki nie liczą się same: dodaj je jako osobne elementy.",
@@ -869,7 +883,10 @@
     "montantNuIncape": "Przegroda {n} nie ma miejsca: korpus ma tam poniżej 50 mm.",
     "usiPeCompartimentPreaMulte": "{cerut} drzwi na jedną komorę się nie robi; zrobiono dwoje.",
     "compUsiFaraMontanti": "Wybrałeś komory, ale korpus nie ma żadnej przegrody.",
-    "politeNuIncapAtipic": "W komorze {comp} nie mieści się żadna półka: jest za niska."
+    "politeNuIncapAtipic": "W komorze {comp} nie mieści się żadna półka: jest za niska.",
+    "jollyUnFront": "Cargo Jolly ma jeden front, mocowany na ramie. Tu jest {n} drzwiczek: daj 1.",
+    "jollyFaraPolite": "Cargo Jolly wypełnia całą wysokość: {n} półek się nie zmieści. Daj 0 półek.",
+    "jollyLatime": "Cargo Jolly sprzedaje się do szafek {lista} mm. Ta ma {lat} mm — sprawdź, czy jest do niej kosz."
   },
   "csv": {
     "corp": "Korpus",
@@ -942,7 +959,8 @@
     "faraFront": "bez frontów",
     "sertareJos": "szuflady na dole",
     "faraManer": "bez uchwytu",
-    "usiSticla": "drzwiczki szklane"
+    "usiSticla": "drzwiczki szklane",
+    "jolly": "cargo Jolly"
   },
   "comanda": {
     "inapoiComenzi": "Moje zlecenia",
@@ -1413,6 +1431,9 @@
     "usiSticla": "Drzwiczki",
     "usiSticlaNu": "Z płyty",
     "usiSticlaDa": "Rama aluminiowa ze szkłem (kupowane)",
+    "jolly": "Cargo Jolly",
+    "jollyNu": "Nie",
+    "jollyDa": "Tak, front na cargo",
     "pozitieSertare": "Szuflady",
     "sertareSus": "na górze",
     "sertareJos": "na dole, drzwi nad nimi",
