@@ -49,7 +49,6 @@ router.get('/admin', requireAuth, requireAdmin, (req, res) => {
     tari: cont.dupaTara(30),
     profile: cont.dupaProfil(),
     numeTara: (cod) => PalTari.numeTara(cod, req.lang),
-    unitatePentru: PalTari.unitatePentru,
     mesaje: mesaje.ultimele(100),
     mesajeNoi: mesaje.cateNoi(),
     totalLei: (totals.cents / 100).toFixed(2),

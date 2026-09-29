@@ -17,9 +17,14 @@
 -- Tara, cod ISO 3166-1 alpha-2 ('RO', 'US'). Goala inseamna "nu ne-a spus".
 ALTER TABLE users ADD COLUMN tara TEXT NOT NULL DEFAULT '';
 
--- 'mm' sau 'inch'. Goala inseamna "cea care vine din tara" — asa alegerea
--- omului se deosebeste de o valoare nimerita din intamplare, si tot ce nu a
--- fost ales explicit se muta singur daca tara se schimba.
+-- NEFOLOSITA. A tinut alegerea mm / toli cat timp aplicatia a stiut sa
+-- lucreze si in toli. Tolii s-au scos: costul nu era conversia, ci faptul
+-- ca fiecare lucru nou de-atunci inainte ar fi trebuit gandit in doua
+-- unitati de masura.
+--
+-- Coloana ramane, goala. Nu se sterge fiindca un DROP COLUMN pe o baza care
+-- merge e o unealta ascutita scoasa pentru nimic: asa, goala, nu incurca pe
+-- nimeni, iar daca se face vreodata la loc, e aici.
 ALTER TABLE users ADD COLUMN unitate TEXT NOT NULL DEFAULT '';
 
 -- Cine e, pentru capul foii de debitare.

@@ -13,8 +13,8 @@
   <form method="post" action="/cont" autocomplete="on">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
-    <%# Locul si unitatea stau primele: sunt singurele care schimba felul in
-        care arata aplicatia. Restul sunt date care se scriu pe hartie. %>
+    <%# Tara si limba stau primele: alea schimba felul in care arata
+        aplicatia. Restul sunt date care se scriu pe hartie. %>
     <fieldset>
       <legend><%= t('cont.legLocul') %></legend>
       <div class="f">
@@ -22,16 +22,8 @@
           <select name="tara" id="tara">
             <option value=""><%= t('cont.taraNealeasa') %></option>
             <% tari.forEach(function (x) { %>
-              <option value="<%= x.cod %>" <%= valori.tara === x.cod ? 'selected' : '' %>><%= x.nume %></option>
+              <option value="<%= x.cod %>" <%= taraAleasa === x.cod ? 'selected' : '' %>><%= x.nume %></option>
             <% }); %>
-          </select>
-        </label>
-        <label><%= t('cont.unitate') %>
-          <select name="unitate" id="unitate">
-            <option value="" <%= valori.unitate === '' ? 'selected' : '' %>
-                    data-dupa-tara><%= t('cont.unitateDupaTara', { unitate: t('unitate.' + unitateDinTara) }) %></option>
-            <option value="mm"   <%= valori.unitate === 'mm'   ? 'selected' : '' %>><%= t('unitate.mm') %></option>
-            <option value="inch" <%= valori.unitate === 'inch' ? 'selected' : '' %>><%= t('unitate.inch') %></option>
           </select>
         </label>
         <label><%= t('cont.limba') %>
@@ -51,15 +43,6 @@
           </select>
         </label>
       </div>
-      <p class="legend"><%= t('cont.notaUnitate') %></p>
-      <% if (taraPropusa) { %>
-        <%# Cat timp tara e nealeasa, spunem ce credem noi si de unde: din
-            antetul browserului. O propunere pe care o confirma omul, nu o
-            hotarare luata in spatele lui. %>
-        <p class="legend"><b><%= t('cont.propunere', {
-          tara: numeTara(taraPropusa),
-          unitate: t('unitate.' + unitatePentru(taraPropusa)) }) %></b></p>
-      <% } %>
     </fieldset>
 
     <fieldset>
@@ -113,6 +96,3 @@
   </form>
 </div>
 
-<script type="application/json" id="i18n"><%- jsonPentruPagina(catalogPagina('cont', 'unitate')) %></script>
-<script type="application/json" id="page-data"><%- jsonPentruPagina({ inToli: tariInToli }) %></script>
-<script src="/static/cont.js?v=<%= assetV %>"></script>

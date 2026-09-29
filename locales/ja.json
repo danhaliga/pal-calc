@@ -1274,19 +1274,15 @@
     "salveaza": "アカウントを保存",
     "preaLung": "入力が長すぎる項目があります。",
     "siteGresit": "ウェブアドレスのようには見えません。",
-    "legLocul": "場所と単位",
+    "legLocul": "場所と言語",
     "legCine": "あなたの情報（木取り表用）",
     "legIntrare": "ログイン情報",
     "tara": "国",
     "taraNealeasa": "— 未選択 —",
-    "unitate": "測定単位",
-    "unitateDupaTara": "国に合わせる（{unitate}）",
     "limba": "言語",
     "limbaDinBrowser": "ブラウザの言語",
     "profil": "お仕事",
     "profilNealeasa": "— 未選択 —",
-    "notaUnitate": "寸法はミリメートルで計算し、ミリメートルで保存します。単位は画面の表示と入力のしかただけを変えます。",
-    "propunere": "ブラウザによると{tara}にいるようです。そこでは{unitate}で作業します — 合うように国を選んでください。",
     "nume": "お名前",
     "firma": "工房または会社",
     "firmaExemplu": "山田家具製作所",
@@ -1323,8 +1319,6 @@
     "colConstanta": "定数",
     "colImplicit": "初期値",
     "colCelMaiDes": "最も多い",
-    "colAltfel": "ほか",
-    "unitatiTitlu": "選んだ単位",
-    "unitatiNota": "刻みとは別のものです。刻みは何で切るかを示し、こちらはアカウントで何を選んだかを示します。"
+    "colAltfel": "ほか"
   }
 }

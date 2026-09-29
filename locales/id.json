@@ -1274,19 +1274,15 @@
     "salveaza": "Simpan akun",
     "preaLung": "Salah satu kolom terlalu panjang.",
     "siteGresit": "Itu tidak tampak seperti alamat web.",
-    "legLocul": "Tempat dan satuan",
+    "legLocul": "Tempat dan bahasa",
     "legCine": "Siapa Anda — untuk lembar potong",
     "legIntrare": "Masuk ke akun",
     "tara": "Negara",
     "taraNealeasa": "— belum dipilih —",
-    "unitate": "Satuan ukuran",
-    "unitateDupaTara": "Menurut negara ({unitate})",
     "limba": "Bahasa",
     "limbaDinBrowser": "Bahasa peramban",
     "profil": "Apa pekerjaan Anda",
     "profilNealeasa": "— belum dipilih —",
-    "notaUnitate": "Ukuran dihitung dan disimpan dalam milimeter. Satuan hanya mengubah apa yang tampil di layar dan satuan saat Anda mengisi ukuran.",
-    "propunere": "Peramban menyebut Anda di {tara}. Di sana orang bekerja dengan {unitate} — pilih negara agar sesuai.",
     "nume": "Nama Anda",
     "firma": "Bengkel atau perusahaan",
     "firmaExemplu": "Mebel Jaya",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Konstanta",
     "colImplicit": "Bawaan",
     "colCelMaiDes": "Paling sering",
-    "colAltfel": "Lain",
-    "unitatiTitlu": "Satuan apa yang mereka pilih",
-    "unitatiNota": "Berbeda dari kisi: kisi menyatakan mereka memotong dengan apa, ini menyatakan apa yang mereka pilih di akun."
+    "colAltfel": "Lain"
   }
 }

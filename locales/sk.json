@@ -1285,19 +1285,15 @@
     "salveaza": "Uložiť konto",
     "preaLung": "Jedno z polí je príliš dlhé.",
     "siteGresit": "To nevypadá ako webová adresa.",
-    "legLocul": "Miesto a jednotka",
+    "legLocul": "Miesto a jazyk",
     "legCine": "Kto si — pre nárezový plán",
     "legIntrare": "Prihlásenie",
     "tara": "Krajina",
     "taraNealeasa": "— nevybrané —",
-    "unitate": "Jednotka miery",
-    "unitateDupaTara": "Podľa krajiny ({unitate})",
     "limba": "Jazyk",
     "limbaDinBrowser": "Jazyk prehliadača",
     "profil": "Čím sa zaoberáš",
     "profilNealeasa": "— nevybrané —",
-    "notaUnitate": "Rozmery sa počítajú a ukladajú v milimetroch. Jednotka mení len to, čo je napísané na obrazovke, a to, v čom rozmery zadávaš.",
-    "propunere": "Prehliadač hovorí, že si v {tara}. Tam sa pracuje v {unitate} — vyber krajinu, aby to sedelo.",
     "nume": "Tvoje meno",
     "firma": "Dielňa alebo firma",
     "firmaExemplu": "Nábytok Horváth s.r.o.",
@@ -1334,8 +1330,6 @@
     "colConstanta": "Konštanta",
     "colImplicit": "Predvolené",
     "colCelMaiDes": "Najčastejšie",
-    "colAltfel": "Inak",
-    "unitatiTitlu": "Akú jednotku si zvolili",
-    "unitatiNota": "Niečo iné ako mriežka: mriežka hovorí, v čom režú, toto, čo si zvolili v konte."
+    "colAltfel": "Inak"
   }
 }

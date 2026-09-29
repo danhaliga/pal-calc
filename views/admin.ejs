@@ -24,14 +24,19 @@
       <% if (!tari.length) { %>
         <p class="muted"><%= t('admin.nimeniNuAZis') %></p>
       <% } else { %>
+        <%# Aici a stat o coloana cu unitatea in care se lucreaza in fiecare
+            tara. A fost scoasa: era o PRESUPUNERE (dintr-o lista scrisa de
+            noi) asezata langa niste numaratori adevarate, si asa ceva se
+            citeste ca dat. Raspunsul masurat sta la „Ce se lucreaza, pe
+            tari": acolo se vede pe ce grila taie oamenii, din corpurile
+            lor, nu din ce credem noi despre tara lor. %>
         <div class="tbl"><table>
-          <thead><tr><th><%= t('cont.tara') %></th><th><%= t('cont.unitate') %></th>
+          <thead><tr><th><%= t('cont.tara') %></th>
             <th class="num"><%= t('admin.kpiUtilizatori') %></th></tr></thead>
           <tbody>
             <% tari.forEach(function (r) { %>
               <tr>
                 <td><%= numeTara(r.tara) %></td>
-                <td class="muted small"><%= t('unitate.' + unitatePentru(r.tara)) %></td>
                 <td class="num"><%= r.n %></td>
               </tr>
             <% }); %>

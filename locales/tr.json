@@ -1274,19 +1274,15 @@
     "salveaza": "Hesabı kaydet",
     "preaLung": "Alanlardan biri fazla uzun.",
     "siteGresit": "Bu bir web adresine benzemiyor.",
-    "legLocul": "Yer ve ölçü birimi",
+    "legLocul": "Yer ve dil",
     "legCine": "Kim olduğun — kesim listesi için",
     "legIntrare": "Hesaba giriş",
     "tara": "Ülke",
     "taraNealeasa": "— seçilmedi —",
-    "unitate": "Ölçü birimi",
-    "unitateDupaTara": "Ülkeye göre ({unitate})",
     "limba": "Dil",
     "limbaDinBrowser": "Tarayıcının dili",
     "profil": "Ne yapıyorsun",
     "profilNealeasa": "— seçilmedi —",
-    "notaUnitate": "Ölçüler milimetre ile hesaplanır ve milimetre olarak saklanır. Birim yalnızca ekranda yazılanı ve ölçüleri hangi birimde girdiğini değiştirir.",
-    "propunere": "Tarayıcı {tara} ülkesinde olduğunu söylüyor. Orada {unitate} ile çalışılır — uyması için ülkeyi seç.",
     "nume": "Adın",
     "firma": "Atölye veya firma",
     "firmaExemplu": "Yılmaz Mobilya Ltd.",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Sabit",
     "colImplicit": "Varsayılan",
     "colCelMaiDes": "En çok",
-    "colAltfel": "Başka",
-    "unitatiTitlu": "Hangi birimi seçtiler",
-    "unitatiNota": "Kademeden farklı: kademe neyle kestiklerini söyler, bu ise hesaplarında ne seçtiklerini."
+    "colAltfel": "Başka"
   }
 }

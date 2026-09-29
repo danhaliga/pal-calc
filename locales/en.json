@@ -1263,19 +1263,15 @@
     "salveaza": "Save account",
     "preaLung": "One of the fields is too long.",
     "siteGresit": "That does not look like a web address.",
-    "legLocul": "Place and units",
+    "legLocul": "Place and language",
     "legCine": "Who you are, for the cutting sheet",
     "legIntrare": "Signing in",
     "tara": "Country",
     "taraNealeasa": "— not chosen —",
-    "unitate": "Unit of measure",
-    "unitateDupaTara": "From the country ({unitate})",
     "limba": "Language",
     "limbaDinBrowser": "The browser's",
     "profil": "What you do",
     "profilNealeasa": "— not chosen —",
-    "notaUnitate": "Dimensions are computed and kept in millimetres. The unit only changes what is written on screen and what you type dimensions in.",
-    "propunere": "Your browser says you are in {tara}. The trade there works in {unitate} — pick the country so it matches.",
     "nume": "Your name",
     "firma": "Workshop or company",
     "firmaExemplu": "Smith Cabinetry Ltd",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Constant",
     "colImplicit": "Default",
     "colCelMaiDes": "Most used",
-    "colAltfel": "Other",
-    "unitatiTitlu": "Which unit they chose",
-    "unitatiNota": "Different from the grid: the grid says what they cut, this says what they picked in their account."
+    "colAltfel": "Other"
   }
 }

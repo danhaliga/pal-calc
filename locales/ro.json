@@ -1274,19 +1274,15 @@
     "salveaza": "Salvează contul",
     "preaLung": "Un câmp e prea lung.",
     "siteGresit": "Adresa site-ului nu pare o adresă de web.",
-    "legLocul": "Locul și unitatea",
+    "legLocul": "Locul și limba",
     "legCine": "Cine ești, pentru foaia de debitare",
     "legIntrare": "Intrarea în cont",
     "tara": "Țara",
     "taraNealeasa": "— nealeasă —",
-    "unitate": "Unitatea de măsură",
-    "unitateDupaTara": "După țară ({unitate})",
     "limba": "Limba",
     "limbaDinBrowser": "Cea din browser",
     "profil": "Ce faci",
     "profilNealeasa": "— nealeasă —",
-    "notaUnitate": "Cotele se calculează și se păstrează în milimetri. Unitatea schimbă doar ce se scrie pe ecran și în ce introduci cotele.",
-    "propunere": "Browserul spune că ești în {tara}. Acolo se lucrează în {unitate} — alege țara ca să se potrivească.",
     "nume": "Numele tău",
     "firma": "Atelierul sau firma",
     "firmaExemplu": "Atelier Mobilă SRL",
@@ -1334,8 +1330,6 @@
     "colConstanta": "Constanta",
     "colImplicit": "Implicit",
     "colCelMaiDes": "Cel mai des",
-    "colAltfel": "Altfel",
-    "unitatiTitlu": "Ce unitate și-au ales",
-    "unitatiNota": "Altceva decât grila: grila spune în ce cote taie, asta ce au ales din cont."
+    "colAltfel": "Altfel"
   }
 }

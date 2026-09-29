@@ -1274,19 +1274,15 @@
     "salveaza": "Konto speichern",
     "preaLung": "Ein Feld ist zu lang.",
     "siteGresit": "Das sieht nicht wie eine Web-Adresse aus.",
-    "legLocul": "Ort und Maßeinheit",
+    "legLocul": "Ort und Sprache",
     "legCine": "Wer du bist — für den Zuschnittzettel",
     "legIntrare": "Anmeldung",
     "tara": "Land",
     "taraNealeasa": "— nicht gewählt —",
-    "unitate": "Maßeinheit",
-    "unitateDupaTara": "Nach Land ({unitate})",
     "limba": "Sprache",
     "limbaDinBrowser": "Die des Browsers",
     "profil": "Was du machst",
     "profilNealeasa": "— nicht gewählt —",
-    "notaUnitate": "Die Maße werden in Millimetern gerechnet und in Millimetern gespeichert. Die Einheit ändert nur, was auf dem Bildschirm steht und worin du die Maße eingibst.",
-    "propunere": "Der Browser sagt, du bist in {tara}. Dort wird in {unitate} gearbeitet — wähle das Land, damit es passt.",
     "nume": "Dein Name",
     "firma": "Werkstatt oder Firma",
     "firmaExemplu": "Möbelwerkstatt Müller GmbH",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Konstante",
     "colImplicit": "Vorgabe",
     "colCelMaiDes": "Am häufigsten",
-    "colAltfel": "Anders",
-    "unitatiTitlu": "Welche Einheit sie gewählt haben",
-    "unitatiNota": "Etwas anderes als das Raster: das Raster sagt, worin zugeschnitten wird, dies sagt, was im Konto gewählt wurde."
+    "colAltfel": "Anders"
   }
 }

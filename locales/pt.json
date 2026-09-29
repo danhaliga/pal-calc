@@ -1274,19 +1274,15 @@
     "salveaza": "Guardar a conta",
     "preaLung": "Um dos campos é demasiado longo.",
     "siteGresit": "Isso não parece um endereço de web.",
-    "legLocul": "O lugar e a unidade",
+    "legLocul": "O lugar e o idioma",
     "legCine": "Quem você é, para a folha de corte",
     "legIntrare": "Entrada na conta",
     "tara": "País",
     "taraNealeasa": "— não escolhido —",
-    "unitate": "Unidade de medida",
-    "unitateDupaTara": "Conforme o país ({unitate})",
     "limba": "Idioma",
     "limbaDinBrowser": "O do navegador",
     "profil": "O que você faz",
     "profilNealeasa": "— não escolhido —",
-    "notaUnitate": "As medidas são calculadas e guardadas em milímetros. A unidade muda apenas o que aparece no ecrã e aquilo em que você escreve as medidas.",
-    "propunere": "O navegador diz que você está em {tara}. Ali trabalha-se em {unitate} — escolha o país para que corresponda.",
     "nume": "O seu nome",
     "firma": "A oficina ou a empresa",
     "firmaExemplu": "Móveis Silva Lda.",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Constante",
     "colImplicit": "Por omissão",
     "colCelMaiDes": "Mais usado",
-    "colAltfel": "Outro",
-    "unitatiTitlu": "Que unidade escolheram",
-    "unitatiNota": "Diferente da grelha: a grelha diz o que cortam, isto diz o que escolheram na conta."
+    "colAltfel": "Outro"
   }
 }

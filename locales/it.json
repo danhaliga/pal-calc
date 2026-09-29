@@ -1274,19 +1274,15 @@
     "salveaza": "Salva l'account",
     "preaLung": "Uno dei campi è troppo lungo.",
     "siteGresit": "Non sembra un indirizzo web.",
-    "legLocul": "Il luogo e l’unità",
+    "legLocul": "Il luogo e la lingua",
     "legCine": "Chi sei, per il foglio di taglio",
     "legIntrare": "Accesso all'account",
     "tara": "Paese",
     "taraNealeasa": "— non scelto —",
-    "unitate": "Unità di misura",
-    "unitateDupaTara": "Secondo il paese ({unitate})",
     "limba": "Lingua",
     "limbaDinBrowser": "Quella del browser",
     "profil": "Che cosa fai",
     "profilNealeasa": "— non scelto —",
-    "notaUnitate": "Le quote si calcolano e si conservano in millimetri. L'unità cambia solo ciò che compare sullo schermo e ciò in cui inserisci le quote.",
-    "propunere": "Il browser dice che sei in {tara}. Là si lavora in {unitate} — scegli il paese perché corrisponda.",
     "nume": "Il tuo nome",
     "firma": "La falegnameria o la ditta",
     "firmaExemplu": "Mobili Rossi S.r.l.",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Costante",
     "colImplicit": "Predefinito",
     "colCelMaiDes": "Più usato",
-    "colAltfel": "Altro",
-    "unitatiTitlu": "Quale unità hanno scelto",
-    "unitatiNota": "Cosa diversa dal reticolo: il reticolo dice in che cosa tagliano, questo dice che cosa hanno scelto nel loro account."
+    "colAltfel": "Altro"
   }
 }

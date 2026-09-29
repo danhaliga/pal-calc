@@ -64,16 +64,6 @@
     return IN_TOLI[normalizeaza(tara)] ? 'inch' : 'mm';
   }
 
-  /* Unitatea de folosit: alegerea omului dacă a făcut una, altfel cea care
-     vine din țară. Un singur loc care hotărăște, ca să nu fie două păreri
-     diferite în două pagini. */
-  function unitateaLui(utilizator) {
-    var u = utilizator || {};
-    var aleasa = String(u.unitate || '').trim().toLowerCase();
-    if (UNITATI.indexOf(aleasa) !== -1) return aleasa;
-    return unitatePentru(u.tara);
-  }
-
   /* „en-US,en;q=0.9" -> „US". Ce are browserul în antet e tot ce știm despre
      locul de unde vine omul înainte să ne spună el. Ajunge ca să propunem. */
   function dinAntet(antet) {
@@ -127,7 +117,6 @@
     areTara: areTara,
     normalizeaza: normalizeaza,
     unitatePentru: unitatePentru,
-    unitateaLui: unitateaLui,
     dinAntet: dinAntet,
     numeTara: numeTara,
     lista: lista

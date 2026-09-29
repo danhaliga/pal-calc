@@ -1274,19 +1274,15 @@
     "salveaza": "Enregistrer le compte",
     "preaLung": "L'un des champs est trop long.",
     "siteGresit": "Cela ne ressemble pas à une adresse web.",
-    "legLocul": "Le lieu et l'unité",
+    "legLocul": "Le lieu et la langue",
     "legCine": "Qui vous êtes, pour la feuille de découpe",
     "legIntrare": "Accès au compte",
     "tara": "Pays",
     "taraNealeasa": "— non choisi —",
-    "unitate": "Unité de mesure",
-    "unitateDupaTara": "Selon le pays ({unitate})",
     "limba": "Langue",
     "limbaDinBrowser": "Celle du navigateur",
     "profil": "Ce que vous faites",
     "profilNealeasa": "— non choisi —",
-    "notaUnitate": "Les cotes sont calculées et conservées en millimètres. L'unité ne change que ce qui s'affiche à l'écran et ce dans quoi vous saisissez les cotes.",
-    "propunere": "Le navigateur indique que vous êtes en {tara}. Là-bas on travaille en {unitate} — choisissez le pays pour que cela corresponde.",
     "nume": "Votre nom",
     "firma": "L'atelier ou l'entreprise",
     "firmaExemplu": "Meubles Durand SARL",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Constante",
     "colImplicit": "Par défaut",
     "colCelMaiDes": "Le plus utilisé",
-    "colAltfel": "Autre",
-    "unitatiTitlu": "Quelle unité ils ont choisie",
-    "unitatiNota": "Différent de la trame : la trame dit ce qu'ils coupent, ceci dit ce qu'ils ont choisi dans leur compte."
+    "colAltfel": "Autre"
   }
 }

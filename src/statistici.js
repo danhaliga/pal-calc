@@ -195,24 +195,11 @@ function raport(tara) {
     numeTara: tara ? PalTari.numeTara(tara) : null,
     cote: COTE.map(k => ({ cheie: k, valori: coteFolosite(k, tara, 8) })),
     constante: constante(tara),
-    grila: g,
-    /* Unitatea pe care o folosesc oamenii din țara asta, după conturile lor.
-       E altceva decât grila: grila spune ce cote taie, asta ce au ales. */
-    unitatiAlese: unitatiAlese(tara)
+    grila: g
   };
-}
-
-function unitatiAlese(tara) {
-  const f = tara == null ? { sql: '', par: [] }
-                         : { sql: " WHERE COALESCE(NULLIF(u.tara,''),'') = ? ", par: [tara] };
-  return db.prepare(`
-    SELECT COALESCE(NULLIF(u.unitate, ''), '(după țară)') AS unitate, COUNT(*) AS ateliere
-    FROM users u ${f.sql}
-    GROUP BY 1 ORDER BY ateliere DESC
-  `).all(...f.par);
 }
 
 module.exports = {
   CONSTANTE, COTE, SFERT_DE_TOL, TOLERANTA_MM, TOLERANTA_TOL,
-  tari, coteFolosite, constante, grila, verdictulGrilei, raport, peGrila, unitatiAlese
+  tari, coteFolosite, constante, grila, verdictulGrilei, raport, peGrila
 };

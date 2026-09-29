@@ -45,17 +45,22 @@ test('țară necunoscută sau lipsă → milimetri, ca restul lumii', () => {
   });
 });
 
-test('alegerea omului bate propunerea țării', () => {
-  assert.equal(PalTari.unitateaLui({ tara: 'US' }), 'inch');
-  assert.equal(PalTari.unitateaLui({ tara: 'US', unitate: 'mm' }), 'mm');
-  assert.equal(PalTari.unitateaLui({ tara: 'RO', unitate: 'inch' }), 'inch');
-  /* Gol înseamnă „n-a ales", nu „a ales milimetri": de-aia se mută singur
-     dacă țara se schimbă. */
-  assert.equal(PalTari.unitateaLui({ tara: 'US', unitate: '' }), 'inch');
-  /* O unitate care nu există cade pe cea din țară, nu pe o eroare. */
-  assert.equal(PalTari.unitateaLui({ tara: 'US', unitate: 'coti' }), 'inch');
-  assert.equal(PalTari.unitateaLui({}), 'mm');
-  assert.equal(PalTari.unitateaLui(null), 'mm');
+test('nimeni nu poate alege o unitate, fiindcă aplicația are una singură', () => {
+  /* Aplicația a știut o vreme să lucreze și în țoli, și contul avea un
+     selector. S-a dat înapoi: costul nu era conversia, ci că fiecare lucru
+     nou de-atunci înainte ar fi trebuit gândit în două unități.
+
+     Ce a rămas din unități e doar informativ — în ce lucrează o țară, la
+     raportul de piață. Dacă selectorul se întoarce vreodată în pagina
+     contului fără ca motorul de calcul să știe iar de țoli, testul ăsta
+     cade, și bine face: ar fi un comutator care nu schimbă nimic. */
+  const vedere = citeste('views', 'cont.ejs');
+  assert.ok(vedere.indexOf('name="unitate"') === -1,
+    'a apărut iar un selector de unitate în pagina contului');
+
+  const PalCalc = require('../shared/calc');
+  assert.ok(!('unitate' in PalCalc.defaults()),
+    'motorul de calcul a căpătat iar un parametru de unitate');
 });
 
 /* ---------------- ce spune browserul ---------------- */
@@ -278,8 +283,8 @@ test('fiecare dată cerută are un loc unde se folosește', () => {
     .map(s => s.slice(6, -1)))).filter(c => c !== '_csrf');
 
   const folosesc = ['src/cont.js', 'src/orders.js', 'src/admin.js', 'src/auth.js',
-                    'views/layout-print.ejs', 'views/admin.ejs', 'views/register.ejs',
-                    'public/cont.js'].map(f => citeste(...f.split('/'))).join('\n');
+                    'views/layout-print.ejs', 'views/admin.ejs', 'views/register.ejs'
+                   ].map(f => citeste(...f.split('/'))).join('\n');
 
   cerute.forEach(c => {
     assert.ok(folosesc.indexOf(c) !== -1, `câmpul „${c}" nu se folosește nicăieri`);

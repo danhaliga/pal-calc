@@ -121,18 +121,4 @@
     </div>
   </div>
 
-  <div class="panel">
-    <h2><%= t('stat.unitatiTitlu') %></h2>
-    <div class="tbl"><table>
-      <thead><tr><th><%= t('cont.unitate') %></th><th class="num"><%= t('stat.colAteliere') %></th></tr></thead>
-      <tbody>
-        <% r.unitatiAlese.forEach(function (u) { %>
-          <tr><td><%= u.unitate === 'mm' || u.unitate === 'inch' ? t('unitate.' + u.unitate) : u.unitate %></td>
-              <td class="num"><%= u.ateliere %></td></tr>
-        <% }); %>
-      </tbody>
-    </table></div>
-    <p class="legend"><%= t('stat.unitatiNota') %></p>
-  </div>
-
 <% } %>

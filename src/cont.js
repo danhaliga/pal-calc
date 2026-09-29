@@ -5,9 +5,10 @@
    Până acum contul era un email și o parolă, plus limba. Ajunge ca să intri,
    nu ajunge ca să lucreze aplicația cum trebuie. Două lucruri lipseau:
 
-     ȚARA, de la care vine UNITATEA DE MĂSURĂ. Toată aplicația e scrisă în
-     milimetri. Un atelier american nu taie corpuri de 720 mm, ci de 34½
-     țoli, și dacă îi arătăm milimetri se uită la unealtă ca la una străină.
+     ȚARA. Din ea ies statisticile de piață — ce corpuri se fac și unde.
+     Aplicația lucrează în milimetri peste tot, deci țara NU schimbă cotele:
+     a știut să lucreze și în țoli o vreme, dar s-a dat înapoi, fiindcă
+     fiecare lucru nou ar fi trebuit de-atunci gândit în două unități.
 
      CINE E, pentru capul foii de debitare. Foaia aia pleacă la cel care taie
      palul; până acum nu scria pe ea nici al cui e corpul, nici pe ce număr
@@ -56,7 +57,6 @@ const schema = z.object({
      formular, ci de la unul care l-a măsluit, iar lui nu-i datorăm o
      explicație — îi datorăm doar să nu intre nimic strâmb în tabel. */
   tara:    z.string().trim().toUpperCase().catch(''),
-  unitate: z.string().trim().toLowerCase().catch(''),
   profil:  z.string().trim().toLowerCase().catch(''),
   lang:    z.string().trim().catch('')
 });
@@ -74,8 +74,8 @@ function siteBun(brut) {
 }
 
 /* Ce se pune în tabel: gol înseamnă NULL, nu șir vid, ca să nu avem în
-   coloană două feluri de „nu mi-a spus”. Țara, unitatea și profilul rămân
-   șir vid — așa le-a definit migrarea, NOT NULL DEFAULT ''. */
+   coloană două feluri de „nu mi-a spus”. Țara și profilul rămân șir vid —
+   așa le-a definit migrarea, NOT NULL DEFAULT ''. */
 function oriNull(s) {
   const v = String(s == null ? '' : s).trim();
   return v === '' ? null : v;
@@ -91,7 +91,6 @@ function dateleFormularului(corp) {
     adresa:  String(corp.adresa  || ''),
     site:    String(corp.site    || ''),
     tara:    String(corp.tara    || ''),
-    unitate: String(corp.unitate || ''),
     profil:  String(corp.profil  || ''),
     lang:    String(corp.lang    || '')
   };
@@ -109,22 +108,11 @@ function vedere(req, valori, eroare) {
     profile: PROFILE,
     limbi: PalI18n.LIMBI,
     lungimi: LUNGIMI,
-    /* Ajutoarele pleacă în vedere ca funcții, nu ca text gata făcut: pagina
-       are nevoie de numele țării propuse și de unitatea ei, iar amândouă
-       depind de limba cererii. */
-    numeTara: (cod) => PalTari.numeTara(cod, req.lang),
-    unitatePentru: PalTari.unitatePentru,
-    /* Pentru scriptul din pagină: doar țările care lucrează în țoli. Patru
-       rânduri, nu două sute — restul lumii e în milimetri, iar o listă cu
-       toate țările în pagină ar fi date cărate degeaba. */
-    tariInToli: PalTari.IN_TOLI,
-    /* Unitatea care ar ieși dacă omul lasă alegerea „după țară”. Se arată
-       lângă selector, altfel „după țară” nu spune nimic. */
-    unitateDinTara: PalTari.unitatePentru(valori.tara),
-    unitateAcum: PalTari.unitateaLui(valori),
-    /* Țara propusă din antetul browserului, pentru un cont care n-a spus
-       încă nimic. O propunere, nu o hotărâre. */
-    taraPropusa: valori.tara ? null : PalTari.dinAntet(req.headers['accept-language'])
+    /* Ce e ales în selectorul de țară: ce a spus omul, altfel ce ghicim din
+       antetul browserului — ca la înregistrare. Ghicitul e o propunere pe
+       care o vede și o poate schimba, nu o hotărâre luată în spatele lui. */
+    taraAleasa: PalTari.normalizeaza(valori.tara) ||
+                PalTari.dinAntet(req.headers['accept-language']) || ''
   };
 }
 
@@ -147,7 +135,6 @@ router.post('/cont', requireAuth, (req, res, next) => {
   }
 
   const tara = PalTari.normalizeaza(parsed.data.tara) || '';
-  const unitate = PalTari.UNITATI.indexOf(parsed.data.unitate) !== -1 ? parsed.data.unitate : '';
   const profil = PROFILE.indexOf(parsed.data.profil) !== -1 ? parsed.data.profil : '';
   const lang = PalI18n.normalizeaza(parsed.data.lang) || '';
 
@@ -155,12 +142,12 @@ router.post('/cont', requireAuth, (req, res, next) => {
     db.prepare(
       'UPDATE users SET ' +
       '  name = ?, firma = ?, cui = ?, telefon = ?, oras = ?, adresa = ?, site = ?, ' +
-      '  tara = ?, unitate = ?, profil = ?, lang = ? ' +
+      '  tara = ?, profil = ?, lang = ? ' +
       'WHERE id = ?'
     ).run(
       oriNull(parsed.data.name), oriNull(parsed.data.firma), oriNull(parsed.data.cui),
       oriNull(parsed.data.telefon), oriNull(parsed.data.oras), oriNull(parsed.data.adresa),
-      oriNull(site), tara, unitate, profil, lang, req.user.id
+      oriNull(site), tara, profil, lang, req.user.id
     );
   } catch (e) { return next(e); }
 
@@ -175,7 +162,6 @@ router.post('/cont', requireAuth, (req, res, next) => {
     req,
     detalii: {
       tara: tara || '(gol)',
-      unitate: unitate || '(după țară)',
       profil: profil || '(gol)',
       completate: Object.keys(LUNGIMI).filter(k => String(brut[k] || '').trim() !== '')
     }
@@ -185,12 +171,6 @@ router.post('/cont', requireAuth, (req, res, next) => {
 });
 
 /* ---- pentru restul aplicației ---- */
-
-/* Unitatea celui care cere pagina. Un singur loc care hotărăște, ca să nu
-   iasă două păreri diferite în două pagini ale aceluiași om. */
-function unitatea(req) {
-  return PalTari.unitateaLui(req && req.user);
-}
 
 /* Datele de pe capul foii de debitare. Întoarce null dacă omul n-a completat
    nimic — atunci foaia rămâne cum era, fără un cap gol care ocupă hârtie. */
@@ -229,5 +209,5 @@ function citeste(userId) {
 
 module.exports = {
   router, PROFILE, LUNGIMI,
-  unitatea, capDeFoaie, siteBun, dupaTara, dupaProfil, citeste
+  capDeFoaie, siteBun, dupaTara, dupaProfil, citeste
 };

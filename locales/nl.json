@@ -1274,19 +1274,15 @@
     "salveaza": "Account opslaan",
     "preaLung": "Een van de velden is te lang.",
     "siteGresit": "Dat lijkt geen webadres.",
-    "legLocul": "Plaats en maateenheid",
+    "legLocul": "Plaats en taal",
     "legCine": "Wie je bent — voor het zaagbriefje",
     "legIntrare": "Aanmelden",
     "tara": "Land",
     "taraNealeasa": "— niet gekozen —",
-    "unitate": "Maateenheid",
-    "unitateDupaTara": "Volgens het land ({unitate})",
     "limba": "Taal",
     "limbaDinBrowser": "Die van de browser",
     "profil": "Wat je doet",
     "profilNealeasa": "— niet gekozen —",
-    "notaUnitate": "Maten worden in millimeters gerekend en in millimeters bewaard. De eenheid verandert alleen wat op het scherm staat en waarin je de maten invoert.",
-    "propunere": "De browser zegt dat je in {tara} bent. Daar wordt in {unitate} gewerkt — kies het land zodat het klopt.",
     "nume": "Je naam",
     "firma": "Werkplaats of bedrijf",
     "firmaExemplu": "Meubelmakerij De Jong BV",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Constante",
     "colImplicit": "Standaard",
     "colCelMaiDes": "Meest gebruikt",
-    "colAltfel": "Anders",
-    "unitatiTitlu": "Welke eenheid ze kozen",
-    "unitatiNota": "Iets anders dan het raster: het raster zegt waarin ze zagen, dit zegt wat ze in hun account hebben gekozen."
+    "colAltfel": "Anders"
   }
 }

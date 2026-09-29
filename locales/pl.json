@@ -1285,19 +1285,15 @@
     "salveaza": "Zapisz konto",
     "preaLung": "Jedno z pól jest za długie.",
     "siteGresit": "To nie wygląda na adres internetowy.",
-    "legLocul": "Miejsce i jednostka",
+    "legLocul": "Miejsce i język",
     "legCine": "Kim jesteś — na arkusz rozkroju",
     "legIntrare": "Logowanie",
     "tara": "Kraj",
     "taraNealeasa": "— nie wybrano —",
-    "unitate": "Jednostka miary",
-    "unitateDupaTara": "Według kraju ({unitate})",
     "limba": "Język",
     "limbaDinBrowser": "Język przeglądarki",
     "profil": "Czym się zajmujesz",
     "profilNealeasa": "— nie wybrano —",
-    "notaUnitate": "Wymiary są liczone i przechowywane w milimetrach. Jednostka zmienia tylko to, co widać na ekranie i w czym wpisujesz wymiary.",
-    "propunere": "Przeglądarka mówi, że jesteś w {tara}. Tam pracuje się w {unitate} — wybierz kraj, żeby się zgadzało.",
     "nume": "Twoje imię",
     "firma": "Warsztat lub firma",
     "firmaExemplu": "Meble Kowalski Sp. z o.o.",
@@ -1334,8 +1330,6 @@
     "colConstanta": "Stała",
     "colImplicit": "Domyślnie",
     "colCelMaiDes": "Najczęściej",
-    "colAltfel": "Inaczej",
-    "unitatiTitlu": "Jaką jednostkę wybrali",
-    "unitatiNota": "Co innego niż siatka: siatka mówi, w czym tną, a to — co wybrali na koncie."
+    "colAltfel": "Inaczej"
   }
 }

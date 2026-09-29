@@ -1274,19 +1274,15 @@
     "salveaza": "Spara kontot",
     "preaLung": "Ett av fälten är för långt.",
     "siteGresit": "Det ser inte ut som en webbadress.",
-    "legLocul": "Plats och enhet",
+    "legLocul": "Plats och språk",
     "legCine": "Vem du är — för kaplistan",
     "legIntrare": "Inloggning",
     "tara": "Land",
     "taraNealeasa": "— inte valt —",
-    "unitate": "Måttenhet",
-    "unitateDupaTara": "Efter landet ({unitate})",
     "limba": "Språk",
     "limbaDinBrowser": "Webbläsarens",
     "profil": "Vad du gör",
     "profilNealeasa": "— inte valt —",
-    "notaUnitate": "Måtten räknas och sparas i millimeter. Enheten ändrar bara vad som står på skärmen och vad du skriver måtten i.",
-    "propunere": "Webbläsaren säger att du är i {tara}. Där arbetar man i {unitate} — välj land så att det stämmer.",
     "nume": "Ditt namn",
     "firma": "Verkstaden eller företaget",
     "firmaExemplu": "Möbelsnickeri Andersson AB",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Konstant",
     "colImplicit": "Standard",
     "colCelMaiDes": "Vanligast",
-    "colAltfel": "Annat",
-    "unitatiTitlu": "Vilken enhet de valde",
-    "unitatiNota": "Något annat än rastret: rastret säger vad de kapar i, detta vad de valt på kontot."
+    "colAltfel": "Annat"
   }
 }

@@ -1274,19 +1274,15 @@
     "salveaza": "Lưu tài khoản",
     "preaLung": "Một ô nhập quá dài.",
     "siteGresit": "Đây không giống một địa chỉ web.",
-    "legLocul": "Nơi ở và đơn vị đo",
+    "legLocul": "Nơi ở và ngôn ngữ",
     "legCine": "Bạn là ai — cho phiếu cắt",
     "legIntrare": "Đăng nhập",
     "tara": "Quốc gia",
     "taraNealeasa": "— chưa chọn —",
-    "unitate": "Đơn vị đo",
-    "unitateDupaTara": "Theo quốc gia ({unitate})",
     "limba": "Ngôn ngữ",
     "limbaDinBrowser": "Của trình duyệt",
     "profil": "Bạn làm gì",
     "profilNealeasa": "— chưa chọn —",
-    "notaUnitate": "Kích thước được tính và lưu bằng milimét. Đơn vị chỉ thay đổi những gì hiện trên màn hình và đơn vị bạn nhập kích thước.",
-    "propunere": "Trình duyệt nói bạn đang ở {tara}. Ở đó người ta làm việc bằng {unitate} — hãy chọn quốc gia cho khớp.",
     "nume": "Tên của bạn",
     "firma": "Xưởng hoặc công ty",
     "firmaExemplu": "Nội thất Minh Anh",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Hằng số",
     "colImplicit": "Mặc định",
     "colCelMaiDes": "Dùng nhiều nhất",
-    "colAltfel": "Khác",
-    "unitatiTitlu": "Họ đã chọn đơn vị nào",
-    "unitatiNota": "Khác với lưới: lưới cho biết họ cắt theo gì, còn đây cho biết họ chọn gì trong tài khoản."
+    "colAltfel": "Khác"
   }
 }

@@ -1274,19 +1274,15 @@
     "salveaza": "Guardar la cuenta",
     "preaLung": "Uno de los campos es demasiado largo.",
     "siteGresit": "Eso no parece una dirección web.",
-    "legLocul": "El lugar y la unidad",
+    "legLocul": "El lugar y el idioma",
     "legCine": "Quién eres, para la hoja de corte",
     "legIntrare": "Acceso a la cuenta",
     "tara": "País",
     "taraNealeasa": "— sin elegir —",
-    "unitate": "Unidad de medida",
-    "unitateDupaTara": "Según el país ({unitate})",
     "limba": "Idioma",
     "limbaDinBrowser": "El del navegador",
     "profil": "A qué te dedicas",
     "profilNealeasa": "— sin elegir —",
-    "notaUnitate": "Las medidas se calculan y se guardan en milímetros. La unidad solo cambia lo que se escribe en pantalla y aquello en lo que tú escribes las medidas.",
-    "propunere": "El navegador dice que estás en {tara}. Allí se trabaja en {unitate} — elige el país para que coincida.",
     "nume": "Tu nombre",
     "firma": "El taller o la empresa",
     "firmaExemplu": "Muebles Pérez S.L.",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Constante",
     "colImplicit": "Por defecto",
     "colCelMaiDes": "Más usado",
-    "colAltfel": "Otro",
-    "unitatiTitlu": "Qué unidad eligieron",
-    "unitatiNota": "Distinto de la retícula: la retícula dice qué cortan, esto dice qué eligieron en su cuenta."
+    "colAltfel": "Otro"
   }
 }

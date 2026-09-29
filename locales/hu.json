@@ -1274,19 +1274,15 @@
     "salveaza": "Fiók mentése",
     "preaLung": "Az egyik mező túl hosszú.",
     "siteGresit": "Ez nem tűnik webcímnek.",
-    "legLocul": "A hely és a mértékegység",
+    "legLocul": "Hely és nyelv",
     "legCine": "Ki vagy — a szabásjegyhez",
     "legIntrare": "Belépés",
     "tara": "Ország",
     "taraNealeasa": "— nincs kiválasztva —",
-    "unitate": "Mértékegység",
-    "unitateDupaTara": "Az ország szerint ({unitate})",
     "limba": "Nyelv",
     "limbaDinBrowser": "A böngészőé",
     "profil": "Mivel foglalkozol",
     "profilNealeasa": "— nincs kiválasztva —",
-    "notaUnitate": "A méretek milliméterben számolódnak és milliméterben tárolódnak. A mértékegység csak azt változtatja meg, ami a képernyőn látszik, és amiben a méreteket beírod.",
-    "propunere": "A böngésző szerint {tara} területén vagy. Ott {unitate} szerint dolgoznak — válaszd ki az országot, hogy egyezzen.",
     "nume": "A neved",
     "firma": "A műhely vagy a cég",
     "firmaExemplu": "Bútorműhely Kovács Kft.",
@@ -1323,8 +1319,6 @@
     "colConstanta": "Állandó",
     "colImplicit": "Alapérték",
     "colCelMaiDes": "Leggyakrabban",
-    "colAltfel": "Eltérő",
-    "unitatiTitlu": "Melyik mértékegységet választották",
-    "unitatiNota": "Más, mint a rács: a rács azt mondja meg, miben szabnak, ez azt, mit választottak a fiókjukban."
+    "colAltfel": "Eltérő"
   }
 }

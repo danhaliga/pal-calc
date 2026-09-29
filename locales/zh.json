@@ -1274,19 +1274,15 @@
     "salveaza": "保存账户",
     "preaLung": "有一个字段太长。",
     "siteGresit": "这看起来不像网址。",
-    "legLocul": "所在地与单位",
+    "legLocul": "所在地与语言",
     "legCine": "你的信息，用于开料单",
     "legIntrare": "登录信息",
     "tara": "国家或地区",
     "taraNealeasa": "— 未选择 —",
-    "unitate": "计量单位",
-    "unitateDupaTara": "按国家或地区（{unitate}）",
     "limba": "语言",
     "limbaDinBrowser": "跟随浏览器",
     "profil": "你从事什么",
     "profilNealeasa": "— 未选择 —",
-    "notaUnitate": "所有尺寸都以毫米计算并以毫米保存。单位只改变屏幕上的显示方式以及你输入尺寸时使用的单位。",
-    "propunere": "浏览器显示你在{tara}。当地行业使用{unitate} — 请选择国家或地区以便匹配。",
     "nume": "你的姓名",
     "firma": "工厂或公司",
     "firmaExemplu": "示例家具有限公司",
@@ -1323,8 +1319,6 @@
     "colConstanta": "常量",
     "colImplicit": "默认",
     "colCelMaiDes": "最常用",
-    "colAltfel": "其他",
-    "unitatiTitlu": "他们选择的单位",
-    "unitatiNota": "与网格不同：网格说明他们怎么下料，这里说明他们在账户中选了什么。"
+    "colAltfel": "其他"
   }
 }

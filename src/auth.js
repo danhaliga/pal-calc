@@ -169,8 +169,7 @@ router.post('/register', limiter, (req, res, next) => {
       tara: parsed.data.tara
     });
     jurnal.fapta('cont', 'cont nou', { req, userId: user.id,
-      detalii: { email: parsed.data.email, tara: user.tara || '(gol)',
-                 unitate: PalTari.unitateaLui(user) } });
+      detalii: { email: parsed.data.email, tara: user.tara || '(gol)' } });
     req.session.regenerate(err => {
       if (err) return next(err);
       req.session.userId = user.id;

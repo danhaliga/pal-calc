@@ -1285,19 +1285,15 @@
     "salveaza": "Spremi račun",
     "preaLung": "Jedno od polja je predugo.",
     "siteGresit": "To ne izgleda kao web adresa.",
-    "legLocul": "Mjesto i jedinica",
+    "legLocul": "Mjesto i jezik",
     "legCine": "Ko si — za list krojenja",
     "legIntrare": "Prijava na račun",
     "tara": "Zemlja",
     "taraNealeasa": "— nije odabrana —",
-    "unitate": "Mjerna jedinica",
-    "unitateDupaTara": "Po zemlji ({unitate})",
     "limba": "Jezik",
     "limbaDinBrowser": "Jezik pregledavača",
     "profil": "Čime se baviš",
     "profilNealeasa": "— nije odabrano —",
-    "notaUnitate": "Mjere se računaju i čuvaju u milimetrima. Jedinica mijenja samo ono što se piše na ekranu i ono u čemu unosiš mjere.",
-    "propunere": "Pregledavač kaže da si u {tara}. Tamo se radi u {unitate} — odaberi zemlju da se poklopi.",
     "nume": "Tvoje ime",
     "firma": "Radionica ili firma",
     "firmaExemplu": "Stolarija Horvat d.o.o.",
@@ -1334,8 +1330,6 @@
     "colConstanta": "Konstanta",
     "colImplicit": "Zadano",
     "colCelMaiDes": "Najčešće",
-    "colAltfel": "Drukčije",
-    "unitatiTitlu": "Koju su jedinicu odabrali",
-    "unitatiNota": "Nešto drugo od mreže: mreža kaže u čemu režu, ovo što su odabrali na računu."
+    "colAltfel": "Drukčije"
   }
 }
