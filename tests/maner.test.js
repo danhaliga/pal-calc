@@ -307,7 +307,15 @@ test('bara intra in vederea 3D, cu grupa ei', () => {
 test('schita si vederea 3D folosesc ACEEASI regula', () => {
   /* Doua socoteli ar fi mers in ritmuri diferite, iar desenul de pe card ar
      fi ajuns sa nu mai fie corpul din editor. */
+  /* Acum schita nu mai socoteste nimic: ia chiar manerele din calcul. */
   const m = citeste('shared', 'models.js');
-  assert.match(m, /PalCalc\.asezareManer\(/, 'schita si-a facut socoteala ei');
-  assert.ok(!/MARGINE_MANER/.test(m), 'a ramas o a doua regula in models.js');
+  assert.match(m, /r\.manere/, 'schita nu mai ia manerele din calcul');
+  assert.ok(!/MARGINE_MANER|asezareManer/.test(m), 'a ramas o a doua regula in models.js');
+  const PalModels = require('../shared/models');
+  ['baza-2usi', 'coloana-cuptor', 'baza-4sertare'].forEach(id => {
+    const p = PalModels.paramsFor(id, k => k);
+    const din = PalCalc.calc(p, k => k).manere.length;
+    const desen = (PalModels.sketch(p).match(/class="sk-maner"/g) || []).length;
+    assert.equal(desen, din, id + ': alte manere pe card decat in 3D');
+  });
 });

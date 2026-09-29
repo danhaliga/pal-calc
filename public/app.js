@@ -794,24 +794,27 @@ var CHEIE_SETARI = 'pal-calc.setari-corp';
 /* `tip`, `W2`, `orb` și conturul lipsesc înadins: alea sunt forma corpului,
    nu felul de-a lucra al atelierului. La fel `nume`. */
 var GRUPE = [
-  { id: 'material',   camp: ['t', 'cg', 'cs'],                        bifatLaInceput: true },
-  { id: 'spate',      camp: ['spate', 'tp'],                          bifatLaInceput: true },
-  { id: 'usi',        camp: ['montaj', 'balama', 'rm', 'ri', 'rinc'], bifatLaInceput: true },
-  { id: 'polite',     camp: ['jp', 'rp'],                             bifatLaInceput: true },
-  { id: 'sertare',    camp: ['hFront', 'hCutie', 'jg', 'ts'],         bifatLaInceput: true },
-  { id: 'dimensiuni', camp: ['W', 'H', 'D', 'constr'],                bifatLaInceput: false },
-  { id: 'cantitati',  camp: ['nUsi', 'nPol', 'nDsp', 'nSer'],         bifatLaInceput: false },
+  /* Câmpurile fiecărei grupe stau în shared/models.js, lângă regula care
+     le pune peste model — aceeași regulă o folosesc și cardurile din
+     catalog. Aici stă doar ce ține de pagina asta. */
+  { id: 'material',   camp: window.PalModels.campuriGrup('material'),   bifatLaInceput: true },
+  { id: 'spate',      camp: window.PalModels.campuriGrup('spate'),      bifatLaInceput: true },
+  { id: 'usi',        camp: window.PalModels.campuriGrup('usi'),        bifatLaInceput: true },
+  { id: 'polite',     camp: window.PalModels.campuriGrup('polite'),     bifatLaInceput: true },
+  { id: 'sertare',    camp: window.PalModels.campuriGrup('sertare'),    bifatLaInceput: true },
+  { id: 'dimensiuni', camp: window.PalModels.campuriGrup('dimensiuni'), bifatLaInceput: false },
+  { id: 'cantitati',  camp: window.PalModels.campuriGrup('cantitati'),  bifatLaInceput: false },
   /* Soclul sta singur, nu cu dimensiunile: latimea si inaltimea sunt ale
      corpului, soclul e felul de-a lucra al atelierului. Cine face fara
      picioare face fara picioare la toate corpurile de pe podea. */
-  { id: 'soclu',      camp: ['soclu'],                                bifatLaInceput: false },
+  { id: 'soclu',      camp: window.PalModels.campuriGrup('soclu'),      bifatLaInceput: false },
   /* Traversele stau in grupa lor, nu cu soclul: se poate foarte bine un
      corp pe picioare cu traverse, sau unul pe soclu cu blat intreg. */
-  { id: 'traverse',   camp: ['traverse'],                             bifatLaInceput: false },
+  { id: 'traverse',   camp: window.PalModels.campuriGrup('traverse'),   bifatLaInceput: false },
   /* Cine livreaza carcase livreaza carcase: e felul de-a lucra, nu ceva ce
      se hotaraste corp cu corp. Nebifat la inceput, insa — un corp fara
      fronturi aparut din senin e o paguba, nu o comoditate. */
-  { id: 'faraFront',  camp: ['faraFront'],                            bifatLaInceput: false,
+  { id: 'faraFront',  camp: window.PalModels.campuriGrup('faraFront'),  bifatLaInceput: false,
     /* Un „1" langa numele grupei nu spune nimic nimanui. */
     arata: function (val) {
       return T(+val.faraFront ? 'editor.fronturiNuSeFac' : 'editor.fronturiSeFac');
@@ -856,42 +859,11 @@ function grupeBifate() {
 function aplicaSetari() {
   var s = citesteSetari();
   if (!DATA.nou || !s) return false;
-  /* Ce a hotărât modelul rămâne al modelului. Altfel un „înălțime front
-     150" ținut minte de la un corp cu uși calcă peste cele 237 ale corpului
-     cu trei sertare, iar omul vede un gol de 261 mm jos și n-are de unde
-     ști că vine din setări. */
-  var dinModel = DATA.cheiModel || [];
-
-  var atins = false;
-  var socluInainte = +params.soclu || 0;
-
-  GRUPE.forEach(function (g) {
-    if (!s.grupe[g.id]) return;
-    if (g.id === 'material' && DATA.matFixat) return;
-    /* Soclul numai la corpurile care stau pe podea. Unul suspendat n-are pe
-       ce sta, iar un soclu acolo ar fi o bucată de PAL tăiată degeaba. */
-    if (g.id === 'soclu' && !DATA.pePodea) return;
-    g.camp.forEach(function (f) {
-      if (s.val[f] === undefined) return;
-      if (dinModel.indexOf(f) !== -1) return;
-      params[f] = s.val[f];
-      atins = true;
-    });
+  /* Regula stă în shared/models.js: aceeași o folosesc și cardurile din
+     catalog, ca poza de pe card să fie corpul care iese. */
+  return window.PalModels.aplicaSetari(params, s, {
+    cheiModel: DATA.cheiModel || [], pePodea: DATA.pePodea, matFixat: DATA.matFixat
   });
-
-  /* Soclul pus peste un model care n-avea: ÎNĂLȚIMEA CREȘTE CU EL.
-
-     `H` e cota de la podea. Dacă am lăsa-o cum era, un soclu de 80 pus sub
-     un corp de 720 ar da un corp cu interiorul de 604 — adică am fi furat
-     din corp, nu am fi pus soclu dedesubt. Modelul a spus 720 de corp
-     folositor; atâta rămâne, iar soclul se adaugă sub el. */
-  var socluDupa = +params.soclu || 0;
-  if (socluDupa > socluInainte && +params.H > 0) {
-    params.H = +params.H + (socluDupa - socluInainte);
-    atins = true;
-  }
-
-  return atins;
 }
 
 function randeazaSetari() {

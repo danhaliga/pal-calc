@@ -94,7 +94,8 @@ router.get('/corps/new', requireAuth, (req, res) => {
       id: m.id, cat: m.cat, nume: m.nume, descriere: m.descriere,
       params,
       rezumat: PalModels.rezumat(params, req.t),
-      sketch: PalModels.sketch(params)
+      sketch: PalModels.sketch(params),
+      pePodea: PalModels.staPePodea(m.id), cheiModel: PalModels.cheileModelului(m.id)
     };
   });
 
@@ -218,11 +219,7 @@ router.post('/corps/:id/duplicate', requireAuth, (req, res, next) => {
    Restul câmpurilor rămân cu mesajul general: la ele câmpul din formular se
    colorează oricum, fiindcă e unul singur. */
 /* Ce anume a pus modelul în parametri. Gol dacă nu s-a pornit de la unul. */
-function cheileModelului(id) {
-  if (!id) return [];
-  const m = PalModels.byId(String(id));
-  return m && m.set ? Object.keys(m.set) : [];
-}
+const cheileModelului = PalModels.cheileModelului;
 
 function mesajEroareParams(issues, t) {
   const laturaRea = issues.find(i => i.path[0] === 'contur' && typeof i.path[1] === 'number');

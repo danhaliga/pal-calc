@@ -202,15 +202,16 @@ test('soclul e o grupă de setări a lui, nu se amestecă cu dimensiunile', () =
   /* Lățimea și înălțimea sunt ale corpului; soclul e felul de-a lucra al
      atelierului. Dacă ar fi în aceeași grupă, cine vrea soclul ar fi nevoit
      să-și pironească și cotele. */
-  const app = citeste('public', 'app.js');
-  assert.match(app, /\{ id: 'soclu',\s+camp: \['soclu'\]/);
-  assert.ok(!/id: 'dimensiuni',\s+camp: \[[^\]]*soclu/.test(app),
+  assert.deepEqual(PalModels.campuriGrup('soclu'), ['soclu']);
+  assert.ok(PalModels.campuriGrup('dimensiuni').indexOf('soclu') === -1,
     'soclul s-a amestecat în grupa dimensiunilor');
 });
 
 test('setarea nu se pune pe corpurile suspendate', () => {
-  const app = citeste('public', 'app.js');
-  assert.match(app, /if \(g\.id === 'soclu' && !DATA\.pePodea\) return;/);
+  const p = { soclu: 0, H: 720 };
+  PalModels.aplicaSetari(p, { grupe: { soclu: true }, val: { soclu: 80 } }, { pePodea: false });
+  assert.deepEqual(p, { soclu: 0, H: 720 }, 'soclu pus pe un corp suspendat');
+  assert.match(citeste('public', 'app.js'), /pePodea: DATA\.pePodea/);
   /* și semnalul chiar ajunge în pagină */
   assert.match(citeste('views', 'corps', 'edit.ejs'), /pePodea: pePodea/);
   assert.match(citeste('src', 'corps.js'), /pePodea: PalModels\.staPePodea/);
@@ -220,9 +221,9 @@ test('soclul pus din setări ridică înălțimea, nu fură din corp', () => {
   /* `H` e cota de la podea. Un soclu de 80 pus sub un corp de 720 fără să
      crească H ar da un interior de 604 — adică am fura din corp, nu am pune
      soclu dedesubt. Modelul a spus 720 de corp folositor; atâta rămâne. */
-  const app = citeste('public', 'app.js');
-  assert.match(app, /var socluInainte = \+params\.soclu \|\| 0;/);
-  assert.match(app, /params\.H = \+params\.H \+ \(socluDupa - socluInainte\);/);
+  const p = { soclu: 0, H: 720 };
+  PalModels.aplicaSetari(p, { grupe: { soclu: true }, val: { soclu: 80 } }, { pePodea: true });
+  assert.deepEqual(p, { soclu: 80, H: 800 });
 });
 
 test('eticheta grupei există în toate cele treizeci de limbi', () => {

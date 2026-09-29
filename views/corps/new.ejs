@@ -43,7 +43,7 @@
         <form method="post" action="<%= actiune %>" class="model-form">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <input type="hidden" name="model" value="<%= m.id %>">
-          <button class="model-card" type="submit" title="<%= t('modele.creeazaDupaModel') %>">
+          <button class="model-card" type="submit" data-model="<%= m.id %>" title="<%= t('modele.creeazaDupaModel') %>">
             <span class="sk-wrap"><%- m.sketch %></span>
             <span class="model-body">
               <span class="model-nume"><%= m.nume %></span>
@@ -118,4 +118,15 @@
   </form>
 </div>
 
+<%# Cardurile se redesenează în browser cu setările ținute minte ale omului
+    (soclu, material, rosturi...), cu aceeași regulă ca editorul: poza de pe
+    card trebuie să fie corpul care iese, nu modelul curat. %>
+<script type="application/json" id="modele-data"><%- jsonPentruPagina({
+  matFixat: typeof order !== 'undefined' && !!order,
+  modele: models.map(function (m) {
+    return { id: m.id, params: m.params, pePodea: m.pePodea, cheiModel: m.cheiModel };
+  })
+}) %></script>
+<script src="/shared/calc.js?v=<%= assetV %>"></script>
+<script src="/shared/models.js?v=<%= assetV %>"></script>
 <script src="/static/models-pick.js?v=<%= assetV %>"></script>

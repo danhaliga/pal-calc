@@ -422,7 +422,8 @@ router.get('/orders/:id/corp-nou', requireAuth, (req, res, next) => {
     const params = PalModels.paramsFor(m.id, req.t);
     return {
       id: m.id, cat: m.cat, nume: m.nume, descriere: m.descriere,
-      params, rezumat: PalModels.rezumat(params, req.t), sketch: PalModels.sketch(params)
+      params, rezumat: PalModels.rezumat(params, req.t), sketch: PalModels.sketch(params),
+      pePodea: PalModels.staPePodea(m.id), cheiModel: PalModels.cheileModelului(m.id)
     };
   });
 

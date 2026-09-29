@@ -16,7 +16,7 @@ piese se taie, la ce cotă finită și la ce cotă de tăiere, cu ce cant pe
 fiecare muchie, plus feroneria, croirea în coli și fișa de montaj.
 
 - **49 de modele** în catalog, **7 categorii**, **30 de limbi**
-- **554 de teste**, toate trec: `npm test`
+- **566 de teste**, toate trec: `npm test`
 - Node ≥ 20, Express 4, EJS, better-sqlite3, zod, bcryptjs
 - Motorul de calcul (`shared/*.js`) e UMD: **același fișier rulează și pe
   server, și în browser**. Nu-l rupe în două.
@@ -270,9 +270,6 @@ de cote.
 - **Nu se poate oglindi un corp.** La sub-scară se ocolește dând înălțimile
   invers, dar la corpurile de colț și la cele cu uși pe compartimente alese
   n-are cum.
-- **Desenul de pe card nu știe de setările omului.** Cardul din catalog
-  desenează modelul curat; corpul creat vine cu soclul din setări, deci poza
-  minte. Dan a fost întrebat, a zis „m-am prins" — dar gaura a rămas.
 
 ---
 
@@ -345,7 +342,7 @@ src/                rutele Express, baza de date, conturile, plata
 views/              paginile EJS
 public/app.js       editorul de corp: formular, tabel, vederea 3D
 locales/*.json      textele, 30 de fișiere
-tests/              26 de fișiere, 554 de teste
+tests/              27 de fișiere, 566 de teste
 .lucru/             scripturi de-o dată: traduceri, petice, probe
 db/migrations/      schema, se aplică singură la pornire
 ```

@@ -128,7 +128,8 @@ test('traversele se pot cere din editor', () => {
   assert.match(vedere, /min="0" max="100"/);
   const app = citeste('public', 'app.js');
   assert.match(app, /var fields = \[[^\]]*'traverse'/, 'editorul nu trimite traversele la calcul');
-  assert.match(app, /\{ id: 'traverse',\s+camp: \['traverse'\]/, 'nu se pot ține minte ca setare');
+  assert.deepEqual(require('../shared/models').campuriGrup('traverse'), ['traverse'], 'nu se pot ține minte ca setare');
+  assert.match(app, /id: 'traverse',\s+camp: window\.PalModels\.campuriGrup\('traverse'\)/);
 });
 
 test('cardul spune dacă sunt traverse', () => {

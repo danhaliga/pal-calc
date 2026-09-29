@@ -82,7 +82,12 @@ test('corpurile drepte au schiță frontală, proporțională cu corpul', () => 
     assert.ok(svg.includes(`viewBox="0 0 ${p.W} ${p.H}"`), `${m.id}: viewBox greșit`);
     /* ușile de vitrină se desenează ca sticlă, dar tot fronturi sunt */
     const fronturi = (svg.match(/class="sk-front(?: sticla)?"/g) || []).length;
-    assert.equal(fronturi, +p.nUsi + +p.nSer, `${m.id}: număr greșit de fronturi desenate`);
+    /* Câte fronturi scoate CALCULUL, nu câte s-au cerut: la coloana de
+       cuptor o ușă cerută iese de două ori, sub nișă și deasupra ei. */
+    const r = require('../shared/calc').calc(p, k => k);
+    const dinCalcul = r.P.reduce((s, x) => s + (x.rol === 'front' ? x.buc : 0), 0) +
+      (r.deComandat || []).reduce((s, x) => s + x.buc, 0);
+    assert.equal(fronturi, dinCalcul, `${m.id}: alt număr de fronturi decât în calcul`);
   }
 });
 

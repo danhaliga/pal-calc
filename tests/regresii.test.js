@@ -554,22 +554,17 @@ const SURSA_CORPS = fs.readFileSync(path.join(__dirname, '..', 'src', 'corps.js'
 const SURSA_ORD = fs.readFileSync(path.join(__dirname, '..', 'src', 'orders.js'), 'utf8');
 const EDIT_EJS = fs.readFileSync(path.join(__dirname, '..', 'views', 'corps', 'edit.ejs'), 'utf8');
 
-/* Scoate lista GRUPE din app.js. Fișierul e pentru browser, nu se poate
-   cere cu require(), așa că îi citim sursa. */
+/* Grupele de setări stau în shared/models.js, lângă regula care le pune
+   peste model — aceeași regulă o folosesc editorul și cardurile din
+   catalog. Editorul trebuie să aibă exact aceleași grupe, cu câmpurile
+   luate de acolo, nu scrise a doua oară. */
 function grupeleDinApp() {
+  const grupe = require('../shared/models').GRUPE_SETARI;
   const bloc = SURSA_APP.match(/var GRUPE = \[([\s\S]*?)\n\];/);
   assert.ok(bloc, 'nu mai există lista GRUPE în public/app.js');
-  const grupe = [];
-  bloc[1].split('\n').forEach(linie => {
-    const id = linie.match(/id:\s*'([^']+)'/);
-    if (!id) return;
-    const camp = linie.match(/camp:\s*\[([^\]]*)\]/);
-    assert.ok(camp, `grupa ${id[1]} n-are lista de câmpuri`);
-    grupe.push({
-      id: id[1],
-      camp: (camp[1].match(/'[^']+'/g) || []).map(s => s.slice(1, -1))
-    });
-  });
+  const idApp = (bloc[1].match(/id:\s*'[^']+'/g) || []).map(s => s.match(/'([^']+)'/)[1]);
+  assert.deepEqual(idApp, grupe.map(g => g.id), 'editorul are alte grupe decât regula comună');
+  assert.ok(!/camp:\s*\[/.test(bloc[1]), 'editorul și-a scris iar câmpurile de mână');
   assert.ok(grupe.length >= 5, 'prea puține grupe de setări');
   return grupe;
 }
@@ -636,8 +631,12 @@ test('materialul comenzii bate setarea din browser', () => {
   /* Placa și cantul unui corp dintr-o comandă sunt ale comenzii. Dacă
      browserul ar călca peste ele, piesele ar ieși din altă placă decât
      cea cumpărată — și nimeni n-ar vedea de ce. */
-  assert.match(SURSA_APP, /if \(g\.id === 'material' && DATA\.matFixat\) return;/,
-    'aplicaSetari() nu mai ferește materialul comenzii');
+  const p = { t: 18, cg: 2, cs: 0.4, H: 720 };
+  Models.aplicaSetari(p, { grupe: { material: true }, val: { t: 25, cg: 1, cs: 1 } }, { matFixat: true });
+  assert.deepEqual(p, { t: 18, cg: 2, cs: 0.4, H: 720 }, 'setarea din browser a călcat peste materialul comenzii');
+  Models.aplicaSetari(p, { grupe: { material: true }, val: { t: 25 } }, { matFixat: false });
+  assert.equal(p.t, 25, 'fără comandă, setarea de material nu se mai pune');
+  assert.match(SURSA_APP, /matFixat: DATA\.matFixat/, 'editorul nu mai spune regulii că materialul e fixat');
 });
 
 test('spatele de PFL pornește de la 2.5, cum se lucrează în atelier', () => {
@@ -1057,15 +1056,23 @@ test('setările nu pot călca peste niciun câmp hotărât de vreun model', () =
   Models.MODELS.forEach(m => Object.keys(m.set || {}).forEach(k => atinseDeModele.add(k)));
   assert.ok(atinseDeModele.has('hFront'), 'modelele nu mai ating hFront; testul s-a demodat');
 
-  assert.match(SURSA_APP, /var dinModel = DATA\.cheiModel \|\| \[\];/,
-    'editorul nu mai știe ce a hotărât modelul');
-  assert.match(SURSA_APP, /if \(dinModel\.indexOf\(f\) !== -1\) return;/,
-    'setările au voie iar să calce peste model');
+  /* Toate setările bifate, cu valori care calcă peste orice câmp. */
+  const s = { grupe: {}, val: {} };
+  Models.GRUPE_SETARI.forEach(g => { s.grupe[g.id] = true; g.camp.forEach(f => { s.val[f] = 12345; }); });
+  Models.MODELS.forEach(m => {
+    const p = Models.paramsFor(m.id);
+    const inainte = Object.assign({}, p);
+    Models.aplicaSetari(p, s, { cheiModel: Models.cheileModelului(m.id), pePodea: false });
+    Object.keys(m.set || {}).forEach(k => {
+      assert.deepEqual(p[k], inainte[k], `${m.id}: setarea a călcat peste «${k}» hotărât de model`);
+    });
+  });
+  assert.match(SURSA_APP, /cheiModel: DATA\.cheiModel/, 'editorul nu mai spune regulii ce a hotărât modelul');
 });
 
 test('editorul primește cheile modelului de la server', () => {
   assert.match(SURSA_CORPS, /cheiModel: cheileModelului\(req\.query\.model\)/);
-  assert.match(SURSA_CORPS, /function cheileModelului\(/);
+  assert.match(SURSA_CORPS, /cheileModelului = PalModels\.cheileModelului/);
   assert.match(EDIT_UI, /cheiModel: cheiModel/, 'page-data nu mai trimite cheile modelului');
 });
 
