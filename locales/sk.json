@@ -840,7 +840,8 @@
     "peSoclu": "sokel {h} mm",
     "cuTraverse": "výstuhy {lat} mm",
     "faraFront": "bez dvierok",
-    "sertareJos": "zásuvky dole"
+    "sertareJos": "zásuvky dole",
+    "faraManer": "bez úchytky"
   },
   "comanda": {
     "inapoiComenzi": "Moje zákazky",
@@ -1307,7 +1308,20 @@
     "fronturiNuSeFac": "nerobia sa",
     "pozitieSertare": "Zásuvky",
     "sertareSus": "hore",
-    "sertareJos": "dole, dvierka nad nimi"
+    "sertareJos": "dole, dvierka nad nimi",
+    "legManer": "Úchytka",
+    "sePuneManer": "Dáva sa úchytka",
+    "notaManer": "Bez zaškrtnutia sa žiadna úchytka nekupuje ani nekreslí — push-to-open, profil gola, alebo úchop vyfrézovaný v dvierkach.",
+    "manerCum": "Ako leží",
+    "manerUnde": "Kde na dvierkach",
+    "manerObisnuit": "ako sa dáva zvyčajne",
+    "manerOrizontal": "vodorovne",
+    "manerVertical": "zvisle",
+    "manerCentru": "v strede",
+    "manerStanga": "k ľavému kraju",
+    "manerDreapta": "k pravému kraju",
+    "manerSus": "hore",
+    "manerJos": "dole"
   },
   "fata": {
     "px": "vpravo",

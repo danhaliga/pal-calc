@@ -833,7 +833,8 @@
     "peSoclu": "chân đế {h} mm",
     "cuTraverse": "thanh giằng {lat} mm",
     "faraFront": "không mặt cánh",
-    "sertareJos": "ngăn kéo ở dưới"
+    "sertareJos": "ngăn kéo ở dưới",
+    "faraManer": "không tay nắm"
   },
   "comanda": {
     "inapoiComenzi": "Đơn hàng của tôi",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "không làm",
     "pozitieSertare": "Ngăn kéo",
     "sertareSus": "ở trên",
-    "sertareJos": "ở dưới, cánh ở trên"
+    "sertareJos": "ở dưới, cánh ở trên",
+    "legManer": "Tay nắm",
+    "sePuneManer": "Có lắp tay nắm",
+    "notaManer": "Không đánh dấu thì không mua và không vẽ tay nắm — mở ấn, nẹp gola, hoặc chỗ cầm phay ngay trên mặt cánh.",
+    "manerCum": "Đặt thế nào",
+    "manerUnde": "Ở đâu trên mặt cánh",
+    "manerObisnuit": "như thường lắp",
+    "manerOrizontal": "ngang",
+    "manerVertical": "dọc",
+    "manerCentru": "ở giữa",
+    "manerStanga": "về bên trái",
+    "manerDreapta": "về bên phải",
+    "manerSus": "ở trên",
+    "manerJos": "ở dưới"
   },
   "fata": {
     "px": "phải",

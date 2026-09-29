@@ -840,7 +840,8 @@
     "peSoclu": "soclu {h} mm",
     "cuTraverse": "traverse {lat} mm",
     "faraFront": "fără fronturi",
-    "sertareJos": "sertare jos"
+    "sertareJos": "sertare jos",
+    "faraManer": "fără mâner"
   },
   "comanda": {
     "inapoiComenzi": "Comenzile mele",
@@ -1307,7 +1308,20 @@
     "fronturiNuSeFac": "nu se fac",
     "pozitieSertare": "Sertarele",
     "sertareSus": "sus",
-    "sertareJos": "jos, cu ușile deasupra"
+    "sertareJos": "jos, cu ușile deasupra",
+    "legManer": "Mâner",
+    "sePuneManer": "Se pune mâner",
+    "notaManer": "Nebifat: nu se cumpără niciun mâner și nu se desenează niciunul — push-to-open, profil gola, sau prindere frezată în front.",
+    "manerCum": "Cum se pune",
+    "manerUnde": "Unde pe front",
+    "manerObisnuit": "cum se pune de obicei",
+    "manerOrizontal": "orizontal",
+    "manerVertical": "vertical",
+    "manerCentru": "la mijloc",
+    "manerStanga": "spre stânga",
+    "manerDreapta": "spre dreapta",
+    "manerSus": "sus",
+    "manerJos": "jos"
   },
   "fata": {
     "px": "dreapta",

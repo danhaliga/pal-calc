@@ -840,7 +840,8 @@
     "peSoclu": "цоколь {h} мм",
     "cuTraverse": "царги {lat} мм",
     "faraFront": "без фасадів",
-    "sertareJos": "шухляди знизу"
+    "sertareJos": "шухляди знизу",
+    "faraManer": "без ручки"
   },
   "comanda": {
     "inapoiComenzi": "Мої замовлення",
@@ -1307,7 +1308,20 @@
     "fronturiNuSeFac": "не робляться",
     "pozitieSertare": "Шухляди",
     "sertareSus": "згори",
-    "sertareJos": "знизу, дверцята над ними"
+    "sertareJos": "знизу, дверцята над ними",
+    "legManer": "Ручка",
+    "sePuneManer": "Ставиться ручка",
+    "notaManer": "Без позначки ручку не купують і не малюють — натискне відкривання, профіль gola або фрезерований захват у фасаді.",
+    "manerCum": "Як стоїть",
+    "manerUnde": "Де на фасаді",
+    "manerObisnuit": "як ставлять зазвичай",
+    "manerOrizontal": "горизонтально",
+    "manerVertical": "вертикально",
+    "manerCentru": "посередині",
+    "manerStanga": "ближче до лівого краю",
+    "manerDreapta": "ближче до правого краю",
+    "manerSus": "угорі",
+    "manerJos": "унизу"
   },
   "fata": {
     "px": "справа",

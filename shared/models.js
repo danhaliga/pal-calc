@@ -335,6 +335,47 @@
      si pe desen. Un card fara nimic in fata ar arata ca un corp deschis,
      adica alt corp. */
   function faraFront(p) { return +p.faraFront ? ' fara' : ''; }
+
+  /* Mânerul pe un front, ca linie în desen.
+
+     `dirImplicita` e felul în care se pune de obicei pe FELUL ăsta de front:
+     vertical la uși, orizontal la fronturile de sertar. Omul o poate
+     schimba, dar dacă n-a cerut nimic rămâne cum s-a pus dintotdeauna.
+
+     `spreDreapta` spune încotro e mijlocul corpului, ca mânerul „de obicei"
+     să cadă pe muchia dinspre el — acolo se prinde mâna.
+
+     Cele două alegeri nu se pot bate cap în cap: fiecare poziție lucrează
+     pe axa ei. La un mâner vertical, stânga/dreapta/centru mută linia pe
+     lățime, iar sus/jos o urcă sau o coboară — tot verticală rămâne. */
+  var MARGINE_MANER = 0.12;   /* cât de aproape de muchie, din latura frontului */
+  var LUNG_MANER = 0.32;      /* cât se desenează din el, din latura pe care stă */
+
+  function liniaManerului(p, x, y, w, h, dirImplicita, spreDreapta) {
+    if (+p.faraFront || !+p.maner) return '';
+    var dir = (p.manerDir && p.manerDir !== 'obisnuit') ? p.manerDir : dirImplicita;
+    var poz = p.manerPoz || 'obisnuit';
+    var mg = MARGINE_MANER, x1, y1, x2, y2;
+
+    if (dir === 'vertical') {
+      var lv = h * LUNG_MANER;
+      var cx = poz === 'stanga'  ? x + w * mg
+             : poz === 'dreapta' ? x + w * (1 - mg)
+             : poz === 'centru'  ? x + w / 2
+             : (spreDreapta ? x + w * (1 - mg) : x + w * mg);
+      var cy = poz === 'sus' ? y + h * 0.25 : poz === 'jos' ? y + h * 0.75 : y + h / 2;
+      x1 = x2 = cx; y1 = cy - lv / 2; y2 = cy + lv / 2;
+    } else {
+      var lo = w * LUNG_MANER;
+      var cy2 = poz === 'sus' ? y + h * mg
+              : poz === 'jos' ? y + h * (1 - mg)
+              : y + h / 2;
+      var cx2 = poz === 'stanga' ? x + w * 0.25 : poz === 'dreapta' ? x + w * 0.75 : x + w / 2;
+      y1 = y2 = cy2; x1 = cx2 - lo / 2; x2 = cx2 + lo / 2;
+    }
+    return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 +
+           '" y2="' + y2 + '" class="sk-maner"/>';
+  }
   function clasaFront(p) { return +p.faraFront ? 'sk-front fara' : 'sk-front'; }
 
   /* Schita in plan pentru corpurile de colt: acolo vederea frontala nu spune nimic. */
@@ -453,10 +494,9 @@
     for (var i = 0; i < nS; i++) {
       o.push('<rect x="' + xoff + '" y="' + (ySer + i * (hF + ri)) + '" width="' + fL +
              '" height="' + hF + '" class="' + cf + '"/>');
-      var ym = ySer + i * (hF + ri) + hF / 2;
+      /* Frontul de sertar: de obicei mâner orizontal, la mijloc. */
       if (manere) {
-        o.push('<line x1="' + (xoff + fL / 2 - fL * 0.16) + '" y1="' + ym +
-               '" x2="' + (xoff + fL / 2 + fL * 0.16) + '" y2="' + ym + '" class="sk-maner"/>');
+        o.push(liniaManerului(p, xoff, ySer + i * (hF + ri), fL, hF, 'orizontal', false));
       }
     }
 
@@ -468,11 +508,10 @@
       for (var k = 0; k < nU; k++) {
         var x = xoff + k * (uL + ri);
         o.push('<rect x="' + x + '" y="' + yU + '" width="' + uL + '" height="' + uH + '" class="' + cf + '"/>');
-        /* mâner pe muchia dinspre mijloc */
-        var xm = nU > 1 && k === 0 ? x + uL - uL * 0.12 : x + uL * 0.12;
+        /* Ușa: de obicei mâner vertical, pe muchia dinspre mijlocul corpului.
+           La două canaturi, primul îl are pe dreapta, restul pe stânga. */
         if (manere) {
-          o.push('<line x1="' + xm + '" y1="' + (yU + uH * 0.42) + '" x2="' + xm +
-                 '" y2="' + (yU + uH * 0.58) + '" class="sk-maner"/>');
+          o.push(liniaManerului(p, x, yU, uL, uH, 'vertical', nU > 1 && k === 0));
         }
       }
     }
@@ -506,6 +545,10 @@
     if (+p.faraFront) b.push(t_('rezumat.faraFront'));
     /* Unde stau sertarele schimbă fața corpului, deci se scrie pe card. */
     if (+p.sertareJos && +p.nSer > 0) b.push(t_('rezumat.sertareJos'));
+    /* Fără mâner se scrie; cu mâner nu, că ăla e felul obișnuit. */
+    if (!+p.maner && !+p.faraFront && (+p.nUsi > 0 || +p.nSer > 0)) {
+      b.push(t_('rezumat.faraManer'));
+    }
     if (!b.length) b.push(t_('rezumat.corpDeschis'));
     return b.join(' · ');
   }

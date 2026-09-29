@@ -833,7 +833,8 @@
     "peSoclu": "{h} मिमी प्लिंथ",
     "cuTraverse": "{lat} मिमी पट्टियाँ",
     "faraFront": "फ़्रंट नहीं",
-    "sertareJos": "दराज़ नीचे"
+    "sertareJos": "दराज़ नीचे",
+    "faraManer": "हैंडल नहीं"
   },
   "comanda": {
     "inapoiComenzi": "मेरे ऑर्डर",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "नहीं बनेंगे",
     "pozitieSertare": "दराज़",
     "sertareSus": "ऊपर",
-    "sertareJos": "नीचे, दरवाज़े ऊपर"
+    "sertareJos": "नीचे, दरवाज़े ऊपर",
+    "legManer": "हैंडल",
+    "sePuneManer": "हैंडल लगाना है",
+    "notaManer": "बिना टिक किए न हैंडल ख़रीदा जाता है न बनाया जाता है — पुश-टू-ओपन, गोला प्रोफ़ाइल, या फ़्रंट में ही काटी पकड़।",
+    "manerCum": "कैसे लगे",
+    "manerUnde": "फ़्रंट पर कहाँ",
+    "manerObisnuit": "जैसे आम तौर पर",
+    "manerOrizontal": "आड़ा",
+    "manerVertical": "खड़ा",
+    "manerCentru": "बीच में",
+    "manerStanga": "बाईं ओर",
+    "manerDreapta": "दाईं ओर",
+    "manerSus": "ऊपर",
+    "manerJos": "नीचे"
   },
   "fata": {
     "px": "दाएँ",

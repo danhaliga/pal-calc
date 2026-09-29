@@ -330,8 +330,12 @@
     var cateFronturi = res.P.reduce(function (s, p) {
       return s + (rolPiesa(p) === 'front' ? p.buc : 0);
     }, 0);
-    pune(art('maner'), cateFronturi);
-    pune(art('surubManer'), cateFronturi * 2);
+    /* Fără mâner nu se cumpără niciunul: la push-to-open, la profil gola sau
+       la prinderea frezată în front nu intră nimic în listă. */
+    if (!(+c.maner === 0)) {
+      pune(art('maner'), cateFronturi);
+      pune(art('surubManer'), cateFronturi * 2);
+    }
 
     return rotunjeste();
   }

@@ -833,7 +833,8 @@
     "peSoclu": "{h} mm plinth",
     "cuTraverse": "{lat} mm rails",
     "faraFront": "no fronts",
-    "sertareJos": "drawers at the bottom"
+    "sertareJos": "drawers at the bottom",
+    "faraManer": "no handle"
   },
   "comanda": {
     "inapoiComenzi": "My orders",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "not included",
     "pozitieSertare": "Drawers",
     "sertareSus": "at the top",
-    "sertareJos": "at the bottom, doors above"
+    "sertareJos": "at the bottom, doors above",
+    "legManer": "Handle",
+    "sePuneManer": "Fit a handle",
+    "notaManer": "Unticked: no handle is bought and none is drawn — push-to-open, gola profile, or a grip milled into the front.",
+    "manerCum": "How it sits",
+    "manerUnde": "Where on the front",
+    "manerObisnuit": "the usual way",
+    "manerOrizontal": "horizontal",
+    "manerVertical": "vertical",
+    "manerCentru": "in the middle",
+    "manerStanga": "towards the left",
+    "manerDreapta": "towards the right",
+    "manerSus": "at the top",
+    "manerJos": "at the bottom"
   },
   "fata": {
     "px": "right",

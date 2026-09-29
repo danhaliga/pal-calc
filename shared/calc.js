@@ -101,6 +101,12 @@
       hNisa: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
+      /* Mânerul. Se poate scoate cu totul: la push-to-open, la profil gola
+         sau la fronturile cu prindere frezată nu se cumpără niciunul și nu
+         se găurește nimic. Direcția și locul pe front au fiecare o valoare
+         „ca de obicei": vertical pe muchia dinspre mijloc la uși, orizontal
+         la mijlocul frontului de sertar — adică felul de până acum. */
+      maner: 1, manerDir: 'obisnuit', manerPoz: 'obisnuit',
       /* Unde stau sertarele: sus, ca pana acum, sau jos, cu ușile deasupra.
          Jos e felul de-a face corpul de cuptor cu sertar dedesubt, și
          singurul fel în care golul lăsat la fund se umple cu ceva. */
@@ -1067,6 +1073,9 @@
         nSer: int(0, 12), hFront: mm(20, 1200), hCutie: mm(20, 1200),
         /* Un semn, nu o cotă: 0 = sertarele sus, ca până acum. */
         sertareJos: int(0, 1).catch(0),
+        maner: int(0, 1).catch(1),
+        manerDir: z.enum(['obisnuit', 'orizontal', 'vertical']).catch('obisnuit'),
+        manerPoz: z.enum(['obisnuit', 'centru', 'stanga', 'dreapta', 'sus', 'jos']).catch('obisnuit'),
         jg: mm(0, 50), ts: mm(10, 30),
         /* reglajul de debitare al atelierului; implicit cel măsurat pe
            lucrările reale — vezi reducereCant() */

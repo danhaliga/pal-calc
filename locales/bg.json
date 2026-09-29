@@ -833,7 +833,8 @@
     "peSoclu": "цокъл {h} мм",
     "cuTraverse": "траверси {lat} мм",
     "faraFront": "без фасади",
-    "sertareJos": "чекмеджета долу"
+    "sertareJos": "чекмеджета долу",
+    "faraManer": "без дръжка"
   },
   "comanda": {
     "inapoiComenzi": "Моите поръчки",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "не се правят",
     "pozitieSertare": "Чекмеджетата",
     "sertareSus": "горе",
-    "sertareJos": "долу, с вратите отгоре"
+    "sertareJos": "долу, с вратите отгоре",
+    "legManer": "Дръжка",
+    "sePuneManer": "Слага се дръжка",
+    "notaManer": "Без отметка не се купува дръжка и не се чертае — натискащо отваряне, профил гола, или хват, фрезован във фасадата.",
+    "manerCum": "Как стои",
+    "manerUnde": "Къде на фасадата",
+    "manerObisnuit": "както се слага обикновено",
+    "manerOrizontal": "хоризонтално",
+    "manerVertical": "вертикално",
+    "manerCentru": "по средата",
+    "manerStanga": "към левия край",
+    "manerDreapta": "към десния край",
+    "manerSus": "горе",
+    "manerJos": "долу"
   },
   "fata": {
     "px": "отдясно",

@@ -833,7 +833,8 @@
     "peSoclu": "papan alas {h} mm",
     "cuTraverse": "palang {lat} mm",
     "faraFront": "tanpa pintu depan",
-    "sertareJos": "laci di bawah"
+    "sertareJos": "laci di bawah",
+    "faraManer": "tanpa tarikan"
   },
   "comanda": {
     "inapoiComenzi": "Pesanan saya",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "tidak dibuat",
     "pozitieSertare": "Laci",
     "sertareSus": "di atas",
-    "sertareJos": "di bawah, pintu di atasnya"
+    "sertareJos": "di bawah, pintu di atasnya",
+    "legManer": "Tarikan",
+    "sePuneManer": "Dipasang tarikan",
+    "notaManer": "Tanpa dicentang, tarikan tidak dibeli dan tidak digambar — buka tekan, profil gola, atau pegangan yang difrais pada pintu.",
+    "manerCum": "Arah pasang",
+    "manerUnde": "Di mana pada pintu",
+    "manerObisnuit": "seperti biasanya",
+    "manerOrizontal": "mendatar",
+    "manerVertical": "tegak",
+    "manerCentru": "di tengah",
+    "manerStanga": "ke kiri",
+    "manerDreapta": "ke kanan",
+    "manerSus": "di atas",
+    "manerJos": "di bawah"
   },
   "fata": {
     "px": "kanan",

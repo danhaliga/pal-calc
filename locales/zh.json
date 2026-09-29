@@ -833,7 +833,8 @@
     "peSoclu": "{h} 毫米踢脚板",
     "cuTraverse": "{lat} 毫米横档",
     "faraFront": "无门板",
-    "sertareJos": "抽屉在下"
+    "sertareJos": "抽屉在下",
+    "faraManer": "无拉手"
   },
   "comanda": {
     "inapoiComenzi": "我的订单",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "不做",
     "pozitieSertare": "抽屉",
     "sertareSus": "在上方",
-    "sertareJos": "在下方，门在上"
+    "sertareJos": "在下方，门在上",
+    "legManer": "拉手",
+    "sePuneManer": "装拉手",
+    "notaManer": "不勾选时不买拉手也不画拉手——按压反弹、gola 型材，或门板上铣出的手位。",
+    "manerCum": "怎么装",
+    "manerUnde": "装在门板哪里",
+    "manerObisnuit": "按常规",
+    "manerOrizontal": "横装",
+    "manerVertical": "竖装",
+    "manerCentru": "居中",
+    "manerStanga": "偏左",
+    "manerDreapta": "偏右",
+    "manerSus": "上方",
+    "manerJos": "下方"
   },
   "fata": {
     "px": "右",

@@ -833,7 +833,8 @@
     "peSoclu": "zócalo {h} mm",
     "cuTraverse": "travesaños {lat} mm",
     "faraFront": "sin frentes",
-    "sertareJos": "cajones abajo"
+    "sertareJos": "cajones abajo",
+    "faraManer": "sin tirador"
   },
   "comanda": {
     "inapoiComenzi": "Mis pedidos",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "no se hacen",
     "pozitieSertare": "Los cajones",
     "sertareSus": "arriba",
-    "sertareJos": "abajo, con las puertas encima"
+    "sertareJos": "abajo, con las puertas encima",
+    "legManer": "Tirador",
+    "sePuneManer": "Se pone tirador",
+    "notaManer": "Sin marcar no se compra ningún tirador ni se dibuja — push-to-open, perfil gola o uñero fresado en el frente.",
+    "manerCum": "Cómo va",
+    "manerUnde": "Dónde en el frente",
+    "manerObisnuit": "como se pone normalmente",
+    "manerOrizontal": "horizontal",
+    "manerVertical": "vertical",
+    "manerCentru": "en el medio",
+    "manerStanga": "hacia la izquierda",
+    "manerDreapta": "hacia la derecha",
+    "manerSus": "arriba",
+    "manerJos": "abajo"
   },
   "fata": {
     "px": "derecha",

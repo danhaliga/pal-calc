@@ -840,7 +840,8 @@
     "peSoclu": "סוקל {h} מ״מ",
     "cuTraverse": "קורות {lat} מ״מ",
     "faraFront": "בלי חזיתות",
-    "sertareJos": "מגירות למטה"
+    "sertareJos": "מגירות למטה",
+    "faraManer": "בלי ידית"
   },
   "comanda": {
     "inapoiComenzi": "ההזמנות שלי",
@@ -1307,7 +1308,20 @@
     "fronturiNuSeFac": "לא נעשות",
     "pozitieSertare": "המגירות",
     "sertareSus": "למעלה",
-    "sertareJos": "למטה, הדלתות מעליהן"
+    "sertareJos": "למטה, הדלתות מעליהן",
+    "legManer": "ידית",
+    "sePuneManer": "מתקינים ידית",
+    "notaManer": "בלי סימון לא נקנית ידית ולא מצוירת — פתיחת לחיצה, פרופיל גולה, או אחיזה שמסוגננת בחזית עצמה.",
+    "manerCum": "איך יושבת",
+    "manerUnde": "איפה על החזית",
+    "manerObisnuit": "כמו שמתקינים בדרך כלל",
+    "manerOrizontal": "אופקית",
+    "manerVertical": "אנכית",
+    "manerCentru": "באמצע",
+    "manerStanga": "לכיוון שמאל",
+    "manerDreapta": "לכיוון ימין",
+    "manerSus": "למעלה",
+    "manerJos": "למטה"
   },
   "fata": {
     "px": "ימין",

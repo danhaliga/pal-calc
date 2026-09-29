@@ -833,7 +833,8 @@
     "peSoclu": "{h} mm lábazat",
     "cuTraverse": "merevítők {lat} mm",
     "faraFront": "front nélkül",
-    "sertareJos": "fiókok lent"
+    "sertareJos": "fiókok lent",
+    "faraManer": "fogantyú nélkül"
   },
   "comanda": {
     "inapoiComenzi": "A megrendeléseim",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "nem készülnek",
     "pozitieSertare": "A fiókok",
     "sertareSus": "fent",
-    "sertareJos": "lent, az ajtók fölöttük"
+    "sertareJos": "lent, az ajtók fölöttük",
+    "legManer": "Fogantyú",
+    "sePuneManer": "Kerül fogantyú",
+    "notaManer": "Pipa nélkül nem vásárolunk fogantyút és nem is rajzolunk — push-to-open, gola profil, vagy a frontba mart fogás.",
+    "manerCum": "Hogyan áll",
+    "manerUnde": "Hol a fronton",
+    "manerObisnuit": "ahogy szokás",
+    "manerOrizontal": "vízszintesen",
+    "manerVertical": "függőlegesen",
+    "manerCentru": "középen",
+    "manerStanga": "bal felé",
+    "manerDreapta": "jobb felé",
+    "manerSus": "fent",
+    "manerJos": "lent"
   },
   "fata": {
     "px": "jobb",

@@ -833,7 +833,8 @@
     "peSoclu": "걸레받이 {h} mm",
     "cuTraverse": "가로대 {lat} mm",
     "faraFront": "전면판 없음",
-    "sertareJos": "서랍 아래"
+    "sertareJos": "서랍 아래",
+    "faraManer": "손잡이 없음"
   },
   "comanda": {
     "inapoiComenzi": "내 주문",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "제작 안 함",
     "pozitieSertare": "서랍",
     "sertareSus": "위쪽",
-    "sertareJos": "아래쪽, 문은 그 위에"
+    "sertareJos": "아래쪽, 문은 그 위에",
+    "legManer": "손잡이",
+    "sePuneManer": "손잡이를 답니다",
+    "notaManer": "체크하지 않으면 손잡이를 사지도 그리지도 않습니다 — 푸시 오픈, 골라 프로파일, 또는 전면판에 파낸 손잡이.",
+    "manerCum": "방향",
+    "manerUnde": "전면판의 어디에",
+    "manerObisnuit": "보통 다는 대로",
+    "manerOrizontal": "가로",
+    "manerVertical": "세로",
+    "manerCentru": "가운데",
+    "manerStanga": "왼쪽으로",
+    "manerDreapta": "오른쪽으로",
+    "manerSus": "위",
+    "manerJos": "아래"
   },
   "fata": {
     "px": "오른쪽",

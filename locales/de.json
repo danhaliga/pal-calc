@@ -833,7 +833,8 @@
     "peSoclu": "{h} mm Sockel",
     "cuTraverse": "Traversen {lat} mm",
     "faraFront": "ohne Fronten",
-    "sertareJos": "Schubladen unten"
+    "sertareJos": "Schubladen unten",
+    "faraManer": "ohne Griff"
   },
   "comanda": {
     "inapoiComenzi": "Meine Aufträge",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "werden nicht gemacht",
     "pozitieSertare": "Die Schubladen",
     "sertareSus": "oben",
-    "sertareJos": "unten, Türen darüber"
+    "sertareJos": "unten, Türen darüber",
+    "legManer": "Griff",
+    "sePuneManer": "Es kommt ein Griff dran",
+    "notaManer": "Ohne Haken wird kein Griff gekauft und keiner gezeichnet — Push-to-open, Gola-Profil oder eine in die Front gefräste Griffmulde.",
+    "manerCum": "Wie er sitzt",
+    "manerUnde": "Wo auf der Front",
+    "manerObisnuit": "wie man ihn üblich setzt",
+    "manerOrizontal": "waagrecht",
+    "manerVertical": "senkrecht",
+    "manerCentru": "in der Mitte",
+    "manerStanga": "nach links",
+    "manerDreapta": "nach rechts",
+    "manerSus": "oben",
+    "manerJos": "unten"
   },
   "fata": {
     "px": "rechts",

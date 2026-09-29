@@ -833,7 +833,8 @@
     "peSoclu": "zoccolo {h} mm",
     "cuTraverse": "traverse {lat} mm",
     "faraFront": "senza frontali",
-    "sertareJos": "cassetti in basso"
+    "sertareJos": "cassetti in basso",
+    "faraManer": "senza maniglia"
   },
   "comanda": {
     "inapoiComenzi": "I miei ordini",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "non si fanno",
     "pozitieSertare": "I cassetti",
     "sertareSus": "in alto",
-    "sertareJos": "in basso, con le ante sopra"
+    "sertareJos": "in basso, con le ante sopra",
+    "legManer": "Maniglia",
+    "sePuneManer": "Si mette la maniglia",
+    "notaManer": "Senza spunta non si compra nessuna maniglia e non se ne disegna — push-to-open, profilo gola, o presa fresata nel frontale.",
+    "manerCum": "Come sta",
+    "manerUnde": "Dove sul frontale",
+    "manerObisnuit": "come si mette di solito",
+    "manerOrizontal": "orizzontale",
+    "manerVertical": "verticale",
+    "manerCentru": "al centro",
+    "manerStanga": "verso sinistra",
+    "manerDreapta": "verso destra",
+    "manerSus": "in alto",
+    "manerJos": "in basso"
   },
   "fata": {
     "px": "destra",

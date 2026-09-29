@@ -833,7 +833,8 @@
     "peSoclu": "σοβατεπί {h} mm",
     "cuTraverse": "τραβέρσες {lat} mm",
     "faraFront": "χωρίς προσόψεις",
-    "sertareJos": "συρτάρια κάτω"
+    "sertareJos": "συρτάρια κάτω",
+    "faraManer": "χωρίς χερούλι"
   },
   "comanda": {
     "inapoiComenzi": "Οι παραγγελίες μου",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "δεν γίνονται",
     "pozitieSertare": "Τα συρτάρια",
     "sertareSus": "επάνω",
-    "sertareJos": "κάτω, με τις πόρτες από πάνω"
+    "sertareJos": "κάτω, με τις πόρτες από πάνω",
+    "legManer": "Χερούλι",
+    "sePuneManer": "Μπαίνει χερούλι",
+    "notaManer": "Χωρίς τσεκάρισμα δεν αγοράζεται χερούλι ούτε σχεδιάζεται — push-to-open, προφίλ gola, ή πιάσιμο φρεζαρισμένο στην πρόσοψη.",
+    "manerCum": "Πώς κάθεται",
+    "manerUnde": "Πού στην πρόσοψη",
+    "manerObisnuit": "όπως μπαίνει συνήθως",
+    "manerOrizontal": "οριζόντια",
+    "manerVertical": "κατακόρυφα",
+    "manerCentru": "στη μέση",
+    "manerStanga": "προς τα αριστερά",
+    "manerDreapta": "προς τα δεξιά",
+    "manerSus": "επάνω",
+    "manerJos": "κάτω"
   },
   "fata": {
     "px": "δεξιά",

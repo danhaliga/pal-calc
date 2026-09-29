@@ -833,7 +833,8 @@
     "peSoclu": "plint {h} mm",
     "cuTraverse": "regels {lat} mm",
     "faraFront": "zonder fronten",
-    "sertareJos": "lades onderin"
+    "sertareJos": "lades onderin",
+    "faraManer": "zonder greep"
   },
   "comanda": {
     "inapoiComenzi": "Mijn opdrachten",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "worden niet gemaakt",
     "pozitieSertare": "De lades",
     "sertareSus": "bovenin",
-    "sertareJos": "onderin, deuren erboven"
+    "sertareJos": "onderin, deuren erboven",
+    "legManer": "Greep",
+    "sePuneManer": "Er komt een greep op",
+    "notaManer": "Niet aangevinkt wordt er geen greep gekocht en geen getekend — push-to-open, gola-profiel of een in het front gefreesde greep.",
+    "manerCum": "Hoe hij zit",
+    "manerUnde": "Waar op het front",
+    "manerObisnuit": "zoals je hem gewoonlijk zet",
+    "manerOrizontal": "horizontaal",
+    "manerVertical": "verticaal",
+    "manerCentru": "in het midden",
+    "manerStanga": "naar links",
+    "manerDreapta": "naar rechts",
+    "manerSus": "bovenaan",
+    "manerJos": "onderaan"
   },
   "fata": {
     "px": "rechts",

@@ -833,7 +833,8 @@
     "peSoclu": "台輪 {h} mm",
     "cuTraverse": "幕板 {lat} mm",
     "faraFront": "前板なし",
-    "sertareJos": "引き出しは下"
+    "sertareJos": "引き出しは下",
+    "faraManer": "取っ手なし"
   },
   "comanda": {
     "inapoiComenzi": "自分の注文",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "作らない",
     "pozitieSertare": "引き出し",
     "sertareSus": "上",
-    "sertareJos": "下、扉はその上"
+    "sertareJos": "下、扉はその上",
+    "legManer": "取っ手",
+    "sePuneManer": "取っ手を付ける",
+    "notaManer": "チェックしなければ取っ手は買わず、描きもしません — プッシュ開き、ゴラ材、または前板に彫り込んだ手掛け。",
+    "manerCum": "向き",
+    "manerUnde": "前板のどこに",
+    "manerObisnuit": "いつもの付け方",
+    "manerOrizontal": "横",
+    "manerVertical": "縦",
+    "manerCentru": "真ん中",
+    "manerStanga": "左寄り",
+    "manerDreapta": "右寄り",
+    "manerSus": "上",
+    "manerJos": "下"
   },
   "fata": {
     "px": "右",

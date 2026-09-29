@@ -840,7 +840,8 @@
     "peSoclu": "sokl {h} mm",
     "cuTraverse": "traverze {lat} mm",
     "faraFront": "bez fronti",
-    "sertareJos": "ladice dolje"
+    "sertareJos": "ladice dolje",
+    "faraManer": "bez ručice"
   },
   "comanda": {
     "inapoiComenzi": "Moji nalozi",
@@ -1307,7 +1308,20 @@
     "fronturiNuSeFac": "ne rade se",
     "pozitieSertare": "Ladice",
     "sertareSus": "gore",
-    "sertareJos": "dolje, vrata iznad njih"
+    "sertareJos": "dolje, vrata iznad njih",
+    "legManer": "Ručica",
+    "sePuneManer": "Stavlja se ručica",
+    "notaManer": "Bez kvačice ne kupuje se nijedna ručica niti se crta — push-to-open, gola profil, ili hvat izglodan u samoj fronti.",
+    "manerCum": "Kako stoji",
+    "manerUnde": "Gdje na fronti",
+    "manerObisnuit": "kako se obično stavlja",
+    "manerOrizontal": "vodoravno",
+    "manerVertical": "uspravno",
+    "manerCentru": "na sredini",
+    "manerStanga": "prema lijevom rubu",
+    "manerDreapta": "prema desnom rubu",
+    "manerSus": "gore",
+    "manerJos": "dolje"
   },
   "fata": {
     "px": "desno",

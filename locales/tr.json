@@ -833,7 +833,8 @@
     "peSoclu": "{h} mm süpürgelik",
     "cuTraverse": "kuşak {lat} mm",
     "faraFront": "kapaksız",
-    "sertareJos": "çekmeceler altta"
+    "sertareJos": "çekmeceler altta",
+    "faraManer": "kulpsuz"
   },
   "comanda": {
     "inapoiComenzi": "Siparişlerim",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "yapılmaz",
     "pozitieSertare": "Çekmeceler",
     "sertareSus": "üstte",
-    "sertareJos": "altta, kapaklar üstünde"
+    "sertareJos": "altta, kapaklar üstünde",
+    "legManer": "Kulp",
+    "sePuneManer": "Kulp takılır",
+    "notaManer": "İşaretlenmezse kulp alınmaz ve çizilmez — bas-aç, gola profili ya da kapağa frezelenmiş tutamak.",
+    "manerCum": "Nasıl durur",
+    "manerUnde": "Kapakta nerede",
+    "manerObisnuit": "her zamanki gibi",
+    "manerOrizontal": "yatay",
+    "manerVertical": "dikey",
+    "manerCentru": "ortada",
+    "manerStanga": "sola doğru",
+    "manerDreapta": "sağa doğru",
+    "manerSus": "üstte",
+    "manerJos": "altta"
   },
   "fata": {
     "px": "sağ",

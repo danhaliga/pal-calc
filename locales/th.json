@@ -833,7 +833,8 @@
     "peSoclu": "แผงฐาน {h} มม.",
     "cuTraverse": "คานยึด {lat} มม.",
     "faraFront": "ไม่มีหน้าบาน",
-    "sertareJos": "ลิ้นชักด้านล่าง"
+    "sertareJos": "ลิ้นชักด้านล่าง",
+    "faraManer": "ไม่มีมือจับ"
   },
   "comanda": {
     "inapoiComenzi": "ออเดอร์ของฉัน",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "ไม่ทำ",
     "pozitieSertare": "ลิ้นชัก",
     "sertareSus": "ด้านบน",
-    "sertareJos": "ด้านล่าง บานอยู่เหนือ"
+    "sertareJos": "ด้านล่าง บานอยู่เหนือ",
+    "legManer": "มือจับ",
+    "sePuneManer": "ติดมือจับ",
+    "notaManer": "ถ้าไม่ติ๊ก จะไม่ซื้อและไม่วาดมือจับ — แบบกดเปิด ราง gola หรือร่องจับที่เซาะบนหน้าบาน",
+    "manerCum": "วางอย่างไร",
+    "manerUnde": "ตรงไหนของหน้าบาน",
+    "manerObisnuit": "อย่างที่ติดตามปกติ",
+    "manerOrizontal": "แนวนอน",
+    "manerVertical": "แนวตั้ง",
+    "manerCentru": "ตรงกลาง",
+    "manerStanga": "ไปทางซ้าย",
+    "manerDreapta": "ไปทางขวา",
+    "manerSus": "ด้านบน",
+    "manerJos": "ด้านล่าง"
   },
   "fata": {
     "px": "ขวา",

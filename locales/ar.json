@@ -861,7 +861,8 @@
     "peSoclu": "قاعدة {h} مم",
     "cuTraverse": "عوارض {lat} مم",
     "faraFront": "بدون واجهات",
-    "sertareJos": "أدراج في الأسفل"
+    "sertareJos": "أدراج في الأسفل",
+    "faraManer": "بدون مقبض"
   },
   "comanda": {
     "inapoiComenzi": "طلباتي",
@@ -1340,7 +1341,20 @@
     "fronturiNuSeFac": "لا تُصنع",
     "pozitieSertare": "الأدراج",
     "sertareSus": "في الأعلى",
-    "sertareJos": "في الأسفل، والأبواب فوقها"
+    "sertareJos": "في الأسفل، والأبواب فوقها",
+    "legManer": "المقبض",
+    "sePuneManer": "يُركَّب مقبض",
+    "notaManer": "بدون تحديد لا يُشترى مقبض ولا يُرسم — فتح بالضغط، أو مقطع غولا، أو مسكة محفورة في الواجهة.",
+    "manerCum": "كيف يُركَّب",
+    "manerUnde": "أين على الواجهة",
+    "manerObisnuit": "كما يُركَّب عادةً",
+    "manerOrizontal": "أفقي",
+    "manerVertical": "عمودي",
+    "manerCentru": "في الوسط",
+    "manerStanga": "نحو اليسار",
+    "manerDreapta": "نحو اليمين",
+    "manerSus": "في الأعلى",
+    "manerJos": "في الأسفل"
   },
   "fata": {
     "px": "يمين",

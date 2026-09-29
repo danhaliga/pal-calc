@@ -833,7 +833,8 @@
     "peSoclu": "rodapé {h} mm",
     "cuTraverse": "travessas {lat} mm",
     "faraFront": "sem frentes",
-    "sertareJos": "gavetas em baixo"
+    "sertareJos": "gavetas em baixo",
+    "faraManer": "sem puxador"
   },
   "comanda": {
     "inapoiComenzi": "As minhas encomendas",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "não são feitas",
     "pozitieSertare": "As gavetas",
     "sertareSus": "em cima",
-    "sertareJos": "em baixo, com as portas por cima"
+    "sertareJos": "em baixo, com as portas por cima",
+    "legManer": "Puxador",
+    "sePuneManer": "Põe-se puxador",
+    "notaManer": "Sem marcar não se compra nenhum puxador nem se desenha — push-to-open, perfil gola, ou pega fresada na frente.",
+    "manerCum": "Como fica",
+    "manerUnde": "Onde na frente",
+    "manerObisnuit": "como se põe de costume",
+    "manerOrizontal": "horizontal",
+    "manerVertical": "vertical",
+    "manerCentru": "ao meio",
+    "manerStanga": "para a esquerda",
+    "manerDreapta": "para a direita",
+    "manerSus": "em cima",
+    "manerJos": "em baixo"
   },
   "fata": {
     "px": "direita",

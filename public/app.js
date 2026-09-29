@@ -13,7 +13,7 @@ var params = DATA.params;
 var paid = !!DATA.paid;
 
 var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','traverse','t','cg','cs','spate','tp','faraFront','nUsi','montaj','balama','supr','hSine',
-              'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','sertareJos','hFront','hCutie','jg','ts','lg',
+              'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','sertareJos','hFront','hCutie','jg','ts','lg','maner','manerDir','manerPoz',
               'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 
 /* Compartimentele care primesc uși. Bife, nu un câmp de scris: numerele se
@@ -73,6 +73,9 @@ function aplicaTip() {
   arata('wrapConstr', !colt && !atipic && !piesa);
   /* Suprapunerea și șinele sunt numai ale ușilor glisante. La balamale
      n-au niciun înțeles, deci nu stau în drum. */
+  /* Cum și unde se pune mânerul n-au niciun înțeles când nu se pune. */
+  arata('randManer', !!+params.maner);
+
   var glisant = params.montaj === 'glisant';
   arata('wrapSupr', glisant);
   arata('wrapSine', glisant);
@@ -358,6 +361,7 @@ function render() {
   fields.forEach(function (f) {
     if (!$(f)) return;
     var v = params[f];
+    if ($(f).type === 'checkbox') { $(f).checked = !!+v; return; }
     $(f).value = (ZERO_E_GOL.indexOf(f) !== -1 && (v === 0 || v === '0')) ? '' : v;
   });
   aplicaTip();
@@ -853,9 +857,14 @@ function legaSetari() {
 $('form').addEventListener('input', function (e) {
   var f = e.target.id;
   if (fields.indexOf(f) === -1) return;
-  params[f] = e.target.type === 'number'
-    ? (e.target.value === '' ? '' : +e.target.value)
-    : e.target.value;
+  /* O bifă n-are `value` bun de citit: „on" nu înseamnă nimic pentru
+     calcul. Se citește `checked` și se ține ca 0 sau 1, ca restul semnelor
+     din parametri. */
+  params[f] = e.target.type === 'checkbox'
+    ? (e.target.checked ? 1 : 0)
+    : e.target.type === 'number'
+      ? (e.target.value === '' ? '' : +e.target.value)
+      : e.target.value;
   render();
   scheduleSave();
 });

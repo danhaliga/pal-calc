@@ -214,6 +214,30 @@
           <label><%= t('editor.lungimeGlisiera') %><input id="lg" type="number" step="50" min="0" max="1200" placeholder="<%= t('editor.auto') %>"></label>
         </div>
       </fieldset>
+
+      <%# Manerul sta in grupa lui, nu la usi: e si al sertarelor. Bifa
+          intai, ca de ea atarna restul. %>
+      <fieldset id="fsManer">
+        <legend><%= t('editor.legManer') %></legend>
+        <label class="check"><input id="maner" type="checkbox">
+          <span><%= t('editor.sePuneManer') %></span></label>
+        <p class="legend"><%= t('editor.notaManer') %></p>
+        <div class="f3" id="randManer">
+          <label><%= t('editor.manerCum') %><select id="manerDir">
+            <option value="obisnuit"><%= t('editor.manerObisnuit') %></option>
+            <option value="orizontal"><%= t('editor.manerOrizontal') %></option>
+            <option value="vertical"><%= t('editor.manerVertical') %></option>
+          </select></label>
+          <label><%= t('editor.manerUnde') %><select id="manerPoz">
+            <option value="obisnuit"><%= t('editor.manerObisnuit') %></option>
+            <option value="centru"><%= t('editor.manerCentru') %></option>
+            <option value="stanga"><%= t('editor.manerStanga') %></option>
+            <option value="dreapta"><%= t('editor.manerDreapta') %></option>
+            <option value="sus"><%= t('editor.manerSus') %></option>
+            <option value="jos"><%= t('editor.manerJos') %></option>
+          </select></label>
+        </div>
+      </fieldset>
     </form>
     <p class="legend"><%= t('editor.salvareAutomata') %></p>
 

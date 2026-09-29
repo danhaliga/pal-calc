@@ -833,7 +833,8 @@
     "peSoclu": "قرنیز {h} میلی‌متر",
     "cuTraverse": "کلاف {lat} میلی‌متر",
     "faraFront": "بدون در",
-    "sertareJos": "کشوها پایین"
+    "sertareJos": "کشوها پایین",
+    "faraManer": "بدون دستگیره"
   },
   "comanda": {
     "inapoiComenzi": "سفارش‌های من",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "ساخته نمی‌شوند",
     "pozitieSertare": "کشوها",
     "sertareSus": "بالا",
-    "sertareJos": "پایین، درها بالای آن‌ها"
+    "sertareJos": "پایین، درها بالای آن‌ها",
+    "legManer": "دستگیره",
+    "sePuneManer": "دستگیره گذاشته می‌شود",
+    "notaManer": "اگر تیک نخورد، دستگیره نه خریده می‌شود نه کشیده — بازشوی فشاری، پروفیل گولا، یا دستگیرهٔ فرز شده در خودِ در.",
+    "manerCum": "چطور بنشیند",
+    "manerUnde": "کجای در",
+    "manerObisnuit": "مثل همیشه",
+    "manerOrizontal": "افقی",
+    "manerVertical": "عمودی",
+    "manerCentru": "وسط",
+    "manerStanga": "به سمت چپ",
+    "manerDreapta": "به سمت راست",
+    "manerSus": "بالا",
+    "manerJos": "پایین"
   },
   "fata": {
     "px": "راست",

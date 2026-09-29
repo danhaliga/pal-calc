@@ -840,7 +840,8 @@
     "peSoclu": "cokół {h} mm",
     "cuTraverse": "trawersy {lat} mm",
     "faraFront": "bez frontów",
-    "sertareJos": "szuflady na dole"
+    "sertareJos": "szuflady na dole",
+    "faraManer": "bez uchwytu"
   },
   "comanda": {
     "inapoiComenzi": "Moje zlecenia",
@@ -1307,7 +1308,20 @@
     "fronturiNuSeFac": "nierobione",
     "pozitieSertare": "Szuflady",
     "sertareSus": "na górze",
-    "sertareJos": "na dole, drzwi nad nimi"
+    "sertareJos": "na dole, drzwi nad nimi",
+    "legManer": "Uchwyt",
+    "sePuneManer": "Daje się uchwyt",
+    "notaManer": "Bez zaznaczenia nie kupuje się żadnego uchwytu ani się go nie rysuje — push-to-open, profil gola albo uchwyt frezowany we froncie.",
+    "manerCum": "Jak leży",
+    "manerUnde": "Gdzie na froncie",
+    "manerObisnuit": "jak się zwykle daje",
+    "manerOrizontal": "poziomo",
+    "manerVertical": "pionowo",
+    "manerCentru": "na środku",
+    "manerStanga": "ku lewej",
+    "manerDreapta": "ku prawej",
+    "manerSus": "u góry",
+    "manerJos": "u dołu"
   },
   "fata": {
     "px": "prawo",

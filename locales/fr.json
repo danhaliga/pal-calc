@@ -833,7 +833,8 @@
     "peSoclu": "plinthe {h} mm",
     "cuTraverse": "traverses {lat} mm",
     "faraFront": "sans façades",
-    "sertareJos": "tiroirs en bas"
+    "sertareJos": "tiroirs en bas",
+    "faraManer": "sans poignée"
   },
   "comanda": {
     "inapoiComenzi": "Mes commandes",
@@ -1296,7 +1297,20 @@
     "fronturiNuSeFac": "à ne pas faire",
     "pozitieSertare": "Les tiroirs",
     "sertareSus": "en haut",
-    "sertareJos": "en bas, portes au-dessus"
+    "sertareJos": "en bas, portes au-dessus",
+    "legManer": "Poignée",
+    "sePuneManer": "On pose une poignée",
+    "notaManer": "Non coché : aucune poignée n’est achetée ni dessinée — push-to-open, profil gola, ou prise fraisée dans la façade.",
+    "manerCum": "Comment elle est posée",
+    "manerUnde": "Où sur la façade",
+    "manerObisnuit": "comme on la pose d’habitude",
+    "manerOrizontal": "horizontale",
+    "manerVertical": "verticale",
+    "manerCentru": "au milieu",
+    "manerStanga": "vers la gauche",
+    "manerDreapta": "vers la droite",
+    "manerSus": "en haut",
+    "manerJos": "en bas"
   },
   "fata": {
     "px": "droite",
