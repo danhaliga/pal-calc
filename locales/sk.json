@@ -512,6 +512,16 @@
         "nume": "Skriňa na chladničku",
         "descriere": "Výklenok odo dna na chladničku, hore dvierka. Over si výklenok, ktorý žiada výrobca.",
         "corpNume": "Skriňa na chladničku"
+      },
+      "dulap-glisant": {
+        "nume": "Skriňa s posuvnými dverami",
+        "descriere": "Dvere sa neotvárajú von, zmestí sa aj do tesnej spálne.",
+        "corpNume": "Posuvná skriňa"
+      },
+      "dressing-glisant": {
+        "nume": "Šatník s posuvnými dverami",
+        "descriere": "Troje posuvné dvere a štyri priehradky, na celú stenu.",
+        "corpNume": "Posuvný šatník"
       }
     },
     "adaugaCorp": "Pridať korpus",
@@ -699,7 +709,8 @@
     "rostFronturi": "škára {rost} mm medzi čelami",
     "glisieraDe": "výsuv {lg} mm",
     "subCutie": "montované pod košom",
-    "socluInFata": "vpredu, medzi bočnicami — dno na ňom stojí"
+    "socluInFata": "vpredu, medzi bočnicami — dno na ňom stojí",
+    "usiGlisante": "{n} posuvné dvierka, prekrytie {supr}, koľajnice {sine}"
   },
   "avert": {
     "politeAtipic": "Pri atypických korpusoch sa police nepočítajú samy: pridaj ich ako samostatné diely.",
@@ -734,7 +745,13 @@
     "socluPreaInalt": "Sokel {soclu} mm pri takej nízkej skrinke: vnútri ostáva len {ramane} mm.",
     "nisaPreaMare": "Výklenok {nisa} mm sa nezmestí: nad {incape} mm nezostáva miesto pre dvierka hore.",
     "politeFixeInPlus": "Chcel si {cerut} políc, ale skrinka potrebuje {fac}: tie ohraničujú výklenok a držia dvierka.",
-    "politeNuIncap": "Pre {cate} políc nie je miesto: výklenok zabral celý priestor."
+    "politeNuIncap": "Pre {cate} políc nie je miesto: výklenok zabral celý priestor.",
+    "glisantaSingura": "Jedny posuvné dvierka nemajú okolo čoho chodiť. Daj aspoň dvoje.",
+    "glisantaNuIncape": "Posuvné dvierka nevyjdú: skrinka je na koľajnice a prekrytie príliš malá.",
+    "glisantaLata": "Posuvné dvierka {lat} mm sú široké: časom sa prehnú a vyskočia z koľajnice. Urob ich z dvoch alebo daj hliníkový rám.",
+    "glisantaInalta": "Posuvné dvierka {inalt} mm sú vysoké: potrebujú rám, nie holú dosku.",
+    "glisantaFaraZone": "Posuvné dvierka idú cez celú výšku: výška spodných dvierok a výklenok sa nepočítajú.",
+    "glisantaFaraCompartimente": "Posuvné dvierka chodia pred stojinami, takže sa nedajú dať na vybrané priehradky."
   },
   "csv": {
     "corp": "Korpus",
@@ -1254,7 +1271,10 @@
     "latimePiesa": "Šírka (l)",
     "soclu": "Sokel (0 = nožičky)",
     "nisa": "Výklenok (rúra, chladnička)",
-    "nisaFara": "žiadny"
+    "nisaFara": "žiadny",
+    "montajGlisant": "Posuvné",
+    "suprapunere": "Prekrytie dvierok",
+    "hSine": "Koľajnice (hore + dole)"
   },
   "fata": {
     "px": "vpravo",

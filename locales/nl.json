@@ -506,6 +506,16 @@
         "nume": "Koelkastkast",
         "descriere": "Nis vanaf de bodem voor de koelkast, met een deur erboven. Controleer de nis die de fabrikant vraagt.",
         "corpNume": "Koelkastkast"
+      },
+      "dulap-glisant": {
+        "nume": "Kast met schuifdeuren",
+        "descriere": "De deuren draaien niet naar buiten, dus hij past ook in een krappe slaapkamer.",
+        "corpNume": "Schuifkast"
+      },
+      "dressing-glisant": {
+        "nume": "Inloopkast met schuifdeuren",
+        "descriere": "Drie schuifdeuren en vier vakken, voor een hele wand.",
+        "corpNume": "Inloop schuif"
       }
     },
     "adaugaCorp": "Een kast toevoegen",
@@ -693,7 +703,8 @@
     "rostFronturi": "naad van {rost} mm tussen de fronten",
     "glisieraDe": "geleider {lg} mm",
     "subCutie": "onder de lade gemonteerd",
-    "socluInFata": "vooraan, tussen de zijden — de bodem rust erop"
+    "socluInFata": "vooraan, tussen de zijden — de bodem rust erop",
+    "usiGlisante": "{n} schuifdeuren, overlap {supr}, rails {sine}"
   },
   "avert": {
     "politeAtipic": "Bij niet-standaard kasten worden legplanken niet automatisch berekend: voeg ze als losse onderdelen toe.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Plint van {soclu} mm bij zo’n lage kast: binnen blijft maar {ramane} mm over.",
     "nisaPreaMare": "Een nis van {nisa} mm past niet: boven {incape} mm blijft er geen plek voor de deur erboven.",
     "politeFixeInPlus": "Je vroeg om {cerut} legplanken, maar de kast heeft er {fac} nodig: die begrenzen de nis en dragen de deuren.",
-    "politeNuIncap": "Voor {cate} legplanken is geen plek: de nis heeft de hele ruimte genomen."
+    "politeNuIncap": "Voor {cate} legplanken is geen plek: de nis heeft de hele ruimte genomen.",
+    "glisantaSingura": "Eén schuifdeur heeft niets om langs te schuiven. Neem er minstens twee.",
+    "glisantaNuIncape": "De schuifdeuren komen er niet uit: de kast is te klein voor rails en overlap.",
+    "glisantaLata": "Een schuifdeur van {lat} mm is breed: hij gaat doorhangen en springt uit de rail. Maak er twee van of neem een aluminium kader.",
+    "glisantaInalta": "Een schuifdeur van {inalt} mm is hoog: die heeft een kader nodig, geen kale plaat.",
+    "glisantaFaraZone": "Schuifdeuren lopen over de volle hoogte: de hoogte van de onderste deuren en de nis tellen niet mee.",
+    "glisantaFaraCompartimente": "Schuifdeuren lopen langs de staanders, dus ze kunnen niet op gekozen vakken."
   },
   "csv": {
     "corp": "Kast",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Breedte (l)",
     "soclu": "Plint (0 = pootjes)",
     "nisa": "Nis (oven, koelkast)",
-    "nisaFara": "geen"
+    "nisaFara": "geen",
+    "montajGlisant": "Schuifdeuren",
+    "suprapunere": "Overlap van de deuren",
+    "hSine": "Rails (boven + onder)"
   },
   "fata": {
     "px": "rechts",

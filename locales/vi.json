@@ -506,6 +506,16 @@
         "nume": "Tủ cao đặt tủ lạnh",
         "descriere": "Khoảng hở từ đáy cho tủ lạnh, có cánh phía trên. Kiểm tra kích thước hở mà hãng yêu cầu.",
         "corpNume": "Tủ cao tủ lạnh"
+      },
+      "dulap-glisant": {
+        "nume": "Tủ áo cánh lùa",
+        "descriere": "Cánh không mở ra ngoài nên vừa cả phòng ngủ chật.",
+        "corpNume": "Tủ áo lùa"
+      },
+      "dressing-glisant": {
+        "nume": "Phòng thay đồ cánh lùa",
+        "descriere": "Ba cánh lùa và bốn ngăn, cho trọn một bức tường.",
+        "corpNume": "Phòng thay đồ lùa"
       }
     },
     "adaugaCorp": "Thêm một thùng tủ",
@@ -693,7 +703,8 @@
     "rostFronturi": "khe hở {rost} mm giữa các cánh",
     "glisieraDe": "ray {lg} mm",
     "subCutie": "lắp dưới hộc",
-    "socluInFata": "phía trước, giữa hai hông — đáy tựa lên nó"
+    "socluInFata": "phía trước, giữa hai hông — đáy tựa lên nó",
+    "usiGlisante": "{n} cánh lùa, chồng mép {supr}, ray {sine}"
   },
   "avert": {
     "politeAtipic": "Ở thùng tủ phi tiêu chuẩn, kệ không được tính tự động: hãy thêm chúng như chi tiết riêng.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Chân đế {soclu} mm trên thùng thấp như vậy: bên trong chỉ còn {ramane} mm.",
     "nisaPreaMare": "Khoảng hở {nisa} mm không vừa: quá {incape} mm thì không còn chỗ cho cánh phía trên.",
     "politeFixeInPlus": "Bạn yêu cầu {cerut} kệ, nhưng thùng cần {fac}: chúng chặn khoảng hở và đỡ cánh.",
-    "politeNuIncap": "{cate} kệ không có chỗ đặt: khoảng hở đã chiếm hết."
+    "politeNuIncap": "{cate} kệ không có chỗ đặt: khoảng hở đã chiếm hết.",
+    "glisantaSingura": "Một cánh lùa thì không có gì để lùa qua. Hãy đặt ít nhất hai cánh.",
+    "glisantaNuIncape": "Cánh lùa không ra được: thùng quá nhỏ so với ray và phần chồng mép.",
+    "glisantaLata": "Cánh lùa {lat} mm khá rộng: lâu ngày sẽ võng và trật ray. Hãy chia làm hai hoặc dùng khung nhôm.",
+    "glisantaInalta": "Cánh lùa {inalt} mm khá cao: cần khung, không dùng tấm ván trơn được.",
+    "glisantaFaraZone": "Cánh lùa chạy suốt chiều cao: chiều cao cánh dưới và khoảng hở không được tính.",
+    "glisantaFaraCompartimente": "Cánh lùa đi qua trước vách đứng nên không lắp riêng cho từng ngăn được."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Chiều rộng (l)",
     "soclu": "Chân đế (0 = chân rời)",
     "nisa": "Khoảng hở (lò, tủ lạnh)",
-    "nisaFara": "không có"
+    "nisaFara": "không có",
+    "montajGlisant": "Lùa",
+    "suprapunere": "Độ chồng mép cánh",
+    "hSine": "Ray (trên + dưới)"
   },
   "fata": {
     "px": "phải",

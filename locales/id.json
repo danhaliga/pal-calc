@@ -506,6 +506,16 @@
         "nume": "Lemari tinggi kulkas",
         "descriere": "Bukaan dari dasar untuk kulkas, dengan pintu di atas. Periksa ukuran bukaan yang diminta pabrik.",
         "corpNume": "Lemari kulkas"
+      },
+      "dulap-glisant": {
+        "nume": "Lemari pintu geser",
+        "descriere": "Pintu tidak membuka ke luar, jadi muat di kamar sempit sekalipun.",
+        "corpNume": "Lemari geser"
+      },
+      "dressing-glisant": {
+        "nume": "Ruang pakaian pintu geser",
+        "descriere": "Tiga pintu geser dan empat kotak, untuk satu dinding penuh.",
+        "corpNume": "Ruang pakaian geser"
       }
     },
     "adaugaCorp": "Tambahkan sebuah boks",
@@ -693,7 +703,8 @@
     "rostFronturi": "celah {rost} mm antar muka",
     "glisieraDe": "rel {lg} mm",
     "subCutie": "dipasang di bawah kotak",
-    "socluInFata": "di depan, di antara sisi — alas bertumpu di atasnya"
+    "socluInFata": "di depan, di antara sisi — alas bertumpu di atasnya",
+    "usiGlisante": "{n} pintu geser, tumpang {supr}, rel {sine}"
   },
   "avert": {
     "politeAtipic": "Pada boks nonstandar, rak tidak dihitung otomatis: tambahkan sebagai bagian tersendiri.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Papan alas {soclu} mm pada boks serendah ini: di dalam hanya tersisa {ramane} mm.",
     "nisaPreaMare": "Bukaan {nisa} mm tidak muat: di atas {incape} mm tidak tersisa tempat untuk pintu di atasnya.",
     "politeFixeInPlus": "Anda minta {cerut} rak, tetapi boks perlu {fac}: rak itu membatasi bukaan dan menahan pintu.",
-    "politeNuIncap": "{cate} rak tidak punya tempat: bukaan mengambil seluruh ruang."
+    "politeNuIncap": "{cate} rak tidak punya tempat: bukaan mengambil seluruh ruang.",
+    "glisantaSingura": "Satu pintu geser tidak punya apa pun untuk dilewati. Pasang paling sedikit dua.",
+    "glisantaNuIncape": "Pintu geser tidak keluar: boks terlalu kecil untuk rel dan tumpangnya.",
+    "glisantaLata": "Pintu geser {lat} mm tergolong lebar: lama-lama melendut dan lepas dari rel. Bagi jadi dua atau pakai rangka aluminium.",
+    "glisantaInalta": "Pintu geser {inalt} mm tergolong tinggi: perlu rangka, bukan papan polos.",
+    "glisantaFaraZone": "Pintu geser setinggi penuh: tinggi pintu bawah dan bukaan tidak diperhitungkan.",
+    "glisantaFaraCompartimente": "Pintu geser melewati sekat tegak, jadi tidak bisa dipasang pada kotak tertentu."
   },
   "csv": {
     "corp": "Boks",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Lebar (l)",
     "soclu": "Papan alas (0 = kaki)",
     "nisa": "Bukaan (oven, kulkas)",
-    "nisaFara": "tidak ada"
+    "nisaFara": "tidak ada",
+    "montajGlisant": "Geser",
+    "suprapunere": "Tumpang pintu",
+    "hSine": "Rel (atas + bawah)"
   },
   "fata": {
     "px": "kanan",

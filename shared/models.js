@@ -149,6 +149,16 @@
       set: { W: 800, H: 2000, D: 580, nUsi: 2, nPol: 4 }
     },
     {
+      /* Usi glisante: nu se deschid in afara, deci merg si intr-un dormitor
+         stramt, unde un canat pe balamale n-ar avea loc sa se roteasca. */
+      id: 'dulap-glisant', cat: 'living',
+      set: { W: 1800, H: 2400, D: 600, nUsi: 2, montaj: 'glisant', nDsp: 2, nPol: 4 }
+    },
+    {
+      id: 'dressing-glisant', cat: 'living',
+      set: { W: 2400, H: 2400, D: 600, nUsi: 3, montaj: 'glisant', nDsp: 3, nPol: 4 }
+    },
+    {
       id: 'dulap-3usi', cat: 'living',
       set: { W: 1350, H: 2000, D: 580, nUsi: 3, nPol: 0 }
     },

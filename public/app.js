@@ -12,7 +12,7 @@ var CORP_ID = DATA.corpId;
 var params = DATA.params;
 var paid = !!DATA.paid;
 
-var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','t','cg','cs','spate','tp','nUsi','montaj','balama',
+var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','t','cg','cs','spate','tp','nUsi','montaj','balama','supr','hSine',
               'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg',
               'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 
@@ -71,6 +71,13 @@ function aplicaTip() {
   arata('wrapW2', colt);
   arata('wrapOrb', tip === 'colt-orb');
   arata('wrapConstr', !colt && !atipic && !piesa);
+  /* Suprapunerea și șinele sunt numai ale ușilor glisante. La balamale
+     n-au niciun înțeles, deci nu stau în drum. */
+  var glisant = params.montaj === 'glisant';
+  arata('wrapSupr', glisant);
+  arata('wrapSine', glisant);
+  /* Tot ce ține de balamale și de zonele de uși n-are rost la glisante. */
+  var balamaEl = $('balama'); if (balamaEl) balamaEl.closest('label').classList.toggle('hidden', glisant);
   arata('conturBox', atipic);
   var wrapW = $('W') ? $('W').closest('label') : null;
   var wrapH = $('H') ? $('H').closest('label') : null;

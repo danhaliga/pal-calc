@@ -512,6 +512,16 @@
         "nume": "Skříň na lednici",
         "descriere": "Výklenek ode dna na lednici, nahoře dvířka. Ověř výklenek, který žádá výrobce.",
         "corpNume": "Skříň na lednici"
+      },
+      "dulap-glisant": {
+        "nume": "Skříň s posuvnými dveřmi",
+        "descriere": "Dveře se neotvírají ven, takže se vejde i do těsné ložnice.",
+        "corpNume": "Posuvná skříň"
+      },
+      "dressing-glisant": {
+        "nume": "Šatna s posuvnými dveřmi",
+        "descriere": "Troje posuvné dveře a čtyři přihrádky, na celou stěnu.",
+        "corpNume": "Posuvná šatna"
       }
     },
     "adaugaCorp": "Přidat korpus",
@@ -699,7 +709,8 @@
     "rostFronturi": "spára {rost} mm mezi čely",
     "glisieraDe": "výsuv {lg} mm",
     "subCutie": "montováno pod košem",
-    "socluInFata": "vpředu, mezi bočnicemi — dno na něm stojí"
+    "socluInFata": "vpředu, mezi bočnicemi — dno na něm stojí",
+    "usiGlisante": "{n} posuvná dvířka, překrytí {supr}, kolejnice {sine}"
   },
   "avert": {
     "politeAtipic": "U atypických korpusů se police nepočítají samy: přidej je jako samostatné díly.",
@@ -734,7 +745,13 @@
     "socluPreaInalt": "Sokl {soclu} mm u tak nízké skříňky: uvnitř zbývá jen {ramane} mm.",
     "nisaPreaMare": "Výklenek {nisa} mm se nevejde: nad {incape} mm nezbývá místo pro dvířka nahoře.",
     "politeFixeInPlus": "Chtěl jsi {cerut} polic, ale skříňka potřebuje {fac}: ty ohraničují výklenek a drží dvířka.",
-    "politeNuIncap": "Pro {cate} polic není místo: výklenek zabral celý prostor."
+    "politeNuIncap": "Pro {cate} polic není místo: výklenek zabral celý prostor.",
+    "glisantaSingura": "Jedna posuvná dvířka nemají kolem čeho jezdit. Dej aspoň dvoje.",
+    "glisantaNuIncape": "Posuvná dvířka nevyjdou: skříňka je na kolejnice a překrytí moc malá.",
+    "glisantaLata": "Posuvná dvířka {lat} mm jsou široká: časem se prohnou a vyskočí z kolejnice. Udělej je ze dvou nebo dej hliníkový rám.",
+    "glisantaInalta": "Posuvná dvířka {inalt} mm jsou vysoká: potřebují rám, ne holou desku.",
+    "glisantaFaraZone": "Posuvná dvířka jdou přes celou výšku: výška spodních dvířek a výklenek se nepočítají.",
+    "glisantaFaraCompartimente": "Posuvná dvířka jezdí před stojinami, takže je nelze dát na vybrané přihrádky."
   },
   "csv": {
     "corp": "Korpus",
@@ -1254,7 +1271,10 @@
     "latimePiesa": "Šířka (l)",
     "soclu": "Sokl (0 = nožky)",
     "nisa": "Výklenek (trouba, lednice)",
-    "nisaFara": "žádný"
+    "nisaFara": "žádný",
+    "montajGlisant": "Posuvné",
+    "suprapunere": "Překrytí dvířek",
+    "hSine": "Kolejnice (nahoře + dole)"
   },
   "fata": {
     "px": "vpravo",

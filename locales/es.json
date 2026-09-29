@@ -506,6 +506,16 @@
         "nume": "Columna de nevera",
         "descriere": "Hueco desde el fondo para la nevera, con puerta encima. Comprueba el hueco que pide el fabricante.",
         "corpNume": "Columna nevera"
+      },
+      "dulap-glisant": {
+        "nume": "Armario con puertas correderas",
+        "descriere": "Las puertas no se abren hacia fuera, así que cabe en un dormitorio estrecho.",
+        "corpNume": "Armario corredera"
+      },
+      "dressing-glisant": {
+        "nume": "Vestidor con puertas correderas",
+        "descriere": "Tres correderas y cuatro huecos, para una pared entera.",
+        "corpNume": "Vestidor corredera"
       }
     },
     "adaugaCorp": "Añadir un módulo",
@@ -693,7 +703,8 @@
     "rostFronturi": "holgura de {rost} mm entre frentes",
     "glisieraDe": "guía de {lg} mm",
     "subCutie": "montado bajo la caja",
-    "socluInFata": "delante, entre los laterales — el fondo se apoya en él"
+    "socluInFata": "delante, entre los laterales — el fondo se apoya en él",
+    "usiGlisante": "{n} puertas correderas, solape {supr}, guías {sine}"
   },
   "avert": {
     "politeAtipic": "En los módulos atípicos las baldas no se calculan solas: añádelas como piezas aparte.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Zócalo de {soclu} mm en un mueble tan bajo: solo quedan {ramane} mm dentro.",
     "nisaPreaMare": "Un hueco de {nisa} mm no cabe: por encima de {incape} mm no queda sitio para la puerta de arriba.",
     "politeFixeInPlus": "Has pedido {cerut} baldas, pero el mueble necesita {fac}: esas bordean el hueco y sujetan las puertas.",
-    "politeNuIncap": "{cate} baldas no tienen dónde ir: el hueco se ha llevado todo el espacio."
+    "politeNuIncap": "{cate} baldas no tienen dónde ir: el hueco se ha llevado todo el espacio.",
+    "glisantaSingura": "Una sola puerta corredera no tiene junto a qué deslizarse. Pon al menos dos.",
+    "glisantaNuIncape": "Las puertas correderas no salen: el mueble es demasiado pequeño para las guías y el solape.",
+    "glisantaLata": "Una corredera de {lat} mm es ancha: con el tiempo se pandea y se sale de la guía. Hazla de dos o pon marco de aluminio.",
+    "glisantaInalta": "Una corredera de {inalt} mm es alta: necesita marco, no un tablero simple.",
+    "glisantaFaraZone": "Las correderas van de arriba abajo: la altura de las puertas bajas y el hueco no se tienen en cuenta.",
+    "glisantaFaraCompartimente": "Las correderas pasan por delante de los montantes, así que no se pueden poner en huecos elegidos."
   },
   "csv": {
     "corp": "Módulo",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Ancho (l)",
     "soclu": "Zócalo (0 = patas)",
     "nisa": "Hueco (horno, nevera)",
-    "nisaFara": "sin hueco"
+    "nisaFara": "sin hueco",
+    "montajGlisant": "Correderas",
+    "suprapunere": "Solape de puertas",
+    "hSine": "Guías (arriba + abajo)"
   },
   "fata": {
     "px": "derecha",

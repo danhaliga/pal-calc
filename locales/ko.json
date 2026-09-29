@@ -506,6 +506,16 @@
         "nume": "냉장고 키큰장",
         "descriere": "바닥부터 냉장고용 개구부, 그 위에 문. 제조사가 요구하는 개구부 치수를 확인하세요.",
         "corpNume": "냉장고 키큰장"
+      },
+      "dulap-glisant": {
+        "nume": "미닫이 옷장",
+        "descriere": "문이 앞으로 열리지 않아 좁은 침실에도 들어갑니다.",
+        "corpNume": "미닫이 옷장"
+      },
+      "dressing-glisant": {
+        "nume": "미닫이 드레스룸",
+        "descriere": "미닫이 세 짝과 네 칸, 벽 하나를 채웁니다.",
+        "corpNume": "미닫이 드레스룸"
       }
     },
     "adaugaCorp": "캐비닛 추가",
@@ -693,7 +703,8 @@
     "rostFronturi": "문짝 사이 간격 {rost} mm",
     "glisieraDe": "레일 {lg} mm",
     "subCutie": "서랍통 아래에 붙습니다",
-    "socluInFata": "앞쪽, 옆판 사이 — 밑판이 그 위에 놓입니다"
+    "socluInFata": "앞쪽, 옆판 사이 — 밑판이 그 위에 놓입니다",
+    "usiGlisante": "미닫이 {n}짝, 겹침 {supr}, 레일 {sine}"
   },
   "avert": {
     "politeAtipic": "비정형 캐비닛에서는 선반이 자동으로 계산되지 않습니다. 따로 부재로 더하세요.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "이렇게 낮은 몸통에 {soclu} mm 걸레받이: 안쪽에 {ramane} mm만 남습니다.",
     "nisaPreaMare": "{nisa} mm 개구부는 들어가지 않습니다. {incape} mm를 넘으면 위쪽 문 자리가 남지 않습니다.",
     "politeFixeInPlus": "선반을 {cerut}개 요청했지만 몸통에는 {fac}개가 필요합니다. 개구부를 막고 문을 지탱합니다.",
-    "politeNuIncap": "선반 {cate}개를 놓을 자리가 없습니다. 개구부가 공간을 모두 차지했습니다."
+    "politeNuIncap": "선반 {cate}개를 놓을 자리가 없습니다. 개구부가 공간을 모두 차지했습니다.",
+    "glisantaSingura": "미닫이 한 짝은 옆으로 비켜 갈 상대가 없습니다. 최소 두 짝을 넣으세요.",
+    "glisantaNuIncape": "미닫이문이 나오지 않습니다. 몸통이 레일과 겹침에 비해 너무 작습니다.",
+    "glisantaLata": "{lat} mm 미닫이문은 넓습니다. 시간이 지나면 처져서 레일을 벗어납니다. 두 짝으로 나누거나 알루미늄 프레임을 쓰세요.",
+    "glisantaInalta": "{inalt} mm 미닫이문은 높습니다. 프레임이 필요하며 민판으로는 부족합니다.",
+    "glisantaFaraZone": "미닫이문은 전체 높이입니다. 아래 문 높이와 개구부는 계산에 넣지 않습니다.",
+    "glisantaFaraCompartimente": "미닫이문은 세로판 앞을 지나가므로 선택한 칸에만 달 수 없습니다."
   },
   "csv": {
     "corp": "캐비닛",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "폭 (l)",
     "soclu": "걸레받이 (0 = 다리)",
     "nisa": "개구부 (오븐, 냉장고)",
-    "nisaFara": "없음"
+    "nisaFara": "없음",
+    "montajGlisant": "미닫이",
+    "suprapunere": "문 겹침",
+    "hSine": "레일 (위 + 아래)"
   },
   "fata": {
     "px": "오른쪽",

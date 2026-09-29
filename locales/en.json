@@ -506,6 +506,16 @@
         "nume": "Fridge column",
         "descriere": "An opening from the bottom for the fridge, with a door above. Check the opening the maker asks for.",
         "corpNume": "Fridge column"
+      },
+      "dulap-glisant": {
+        "nume": "Wardrobe with sliding doors",
+        "descriere": "The doors do not swing out, so it fits a tight bedroom too.",
+        "corpNume": "Sliding wardrobe"
+      },
+      "dressing-glisant": {
+        "nume": "Walk-in with sliding doors",
+        "descriere": "Three sliding doors and four compartments, for a whole wall.",
+        "corpNume": "Sliding walk-in"
       }
     },
     "adaugaCorp": "Add a cabinet",
@@ -693,7 +703,8 @@
     "rostFronturi": "{rost} mm reveal between fronts",
     "glisieraDe": "{lg} mm runner",
     "subCutie": "fitted under the box",
-    "socluInFata": "at the front, between the sides — the bottom rests on it"
+    "socluInFata": "at the front, between the sides — the bottom rests on it",
+    "usiGlisante": "{n} sliding doors, overlap {supr}, tracks {sine}"
   },
   "avert": {
     "politeAtipic": "Shelves are not calculated automatically for non-standard cabinets: add them as separate parts.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "A {soclu} mm plinth on a cabinet this short: only {ramane} mm left inside.",
     "nisaPreaMare": "A {nisa} mm opening does not fit: above {incape} mm there is no room left for the door on top.",
     "politeFixeInPlus": "You asked for {cerut} shelves, but the cabinet needs {fac}: those edge the opening and hold the doors.",
-    "politeNuIncap": "{cate} shelves have nowhere to go: the opening took the whole space."
+    "politeNuIncap": "{cate} shelves have nowhere to go: the opening took the whole space.",
+    "glisantaSingura": "One sliding door has nothing to slide past. Put at least two.",
+    "glisantaNuIncape": "The sliding doors do not come out: the cabinet is too small for the tracks and the overlap.",
+    "glisantaLata": "A {lat} mm sliding door is wide: it sags in time and jumps the track. Make it from two, or use an aluminium frame.",
+    "glisantaInalta": "A {inalt} mm sliding door is tall: it needs a frame, not a plain chipboard panel.",
+    "glisantaFaraZone": "Sliding doors run the full height: the lower-door height and the opening are ignored.",
+    "glisantaFaraCompartimente": "Sliding doors run past the uprights, so they cannot be put on chosen compartments."
   },
   "csv": {
     "corp": "Cabinet",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Width (l)",
     "soclu": "Plinth (0 = legs)",
     "nisa": "Opening (oven, fridge)",
-    "nisaFara": "none"
+    "nisaFara": "none",
+    "montajGlisant": "Sliding",
+    "suprapunere": "Door overlap",
+    "hSine": "Tracks (top + bottom)"
   },
   "fata": {
     "px": "right",

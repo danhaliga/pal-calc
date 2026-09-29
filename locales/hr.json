@@ -512,6 +512,16 @@
         "nume": "Element za hladnjak",
         "descriere": "Otvor od dna za hladnjak, s vratima iznad. Provjeri otvor koji traži proizvođač.",
         "corpNume": "Element hladnjak"
+      },
+      "dulap-glisant": {
+        "nume": "Ormar s kliznim vratima",
+        "descriere": "Vrata se ne otvaraju van, pa stane i u tijesnu spavaću sobu.",
+        "corpNume": "Ormar klizni"
+      },
+      "dressing-glisant": {
+        "nume": "Garderoba s kliznim vratima",
+        "descriere": "Troja klizna vrata i četiri pregrade, za cijeli zid.",
+        "corpNume": "Garderoba klizna"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -699,7 +709,8 @@
     "rostFronturi": "zazor {rost} mm između fronti",
     "glisieraDe": "vodilica {lg} mm",
     "subCutie": "montirano ispod kutije",
-    "socluInFata": "sprijeda, između stranica — dno stoji na njemu"
+    "socluInFata": "sprijeda, između stranica — dno stoji na njemu",
+    "usiGlisante": "{n} klizna vrata, preklop {supr}, vodilice {sine}"
   },
   "avert": {
     "politeAtipic": "Kod netipičnih korpusa police se ne računaju same: dodaj ih kao zasebne dijelove.",
@@ -734,7 +745,13 @@
     "socluPreaInalt": "Sokl od {soclu} mm na ovako niskom tijelu: unutra ostaje samo {ramane} mm.",
     "nisaPreaMare": "Otvor od {nisa} mm ne stane: iznad {incape} mm ne ostaje mjesta za vrata iznad.",
     "politeFixeInPlus": "Tražio si {cerut} polica, ali tijelu treba {fac}: one omeđuju otvor i drže vrata.",
-    "politeNuIncap": "{cate} polica nema gdje stati: otvor je uzeo sav prostor."
+    "politeNuIncap": "{cate} polica nema gdje stati: otvor je uzeo sav prostor.",
+    "glisantaSingura": "Jedna klizna vrata nemaju pokraj čega kliziti. Stavi barem dvoja.",
+    "glisantaNuIncape": "Klizna vrata ne izlaze: tijelo je premalo za vodilice i preklop.",
+    "glisantaLata": "Klizna vrata od {lat} mm su široka: s vremenom se ugnu i iskoče iz vodilice. Napravi ih od dvoja ili stavi aluminijski okvir.",
+    "glisantaInalta": "Klizna vrata od {inalt} mm su visoka: traže okvir, ne golu ploču.",
+    "glisantaFaraZone": "Klizna vrata idu cijelom visinom: visina donjih vrata i otvor se ne računaju.",
+    "glisantaFaraCompartimente": "Klizna vrata prolaze ispred vertikala, pa se ne mogu staviti na izabrane pregrade."
   },
   "csv": {
     "corp": "Korpus",
@@ -1254,7 +1271,10 @@
     "latimePiesa": "Širina (l)",
     "soclu": "Sokl (0 = nožice)",
     "nisa": "Otvor (pećnica, hladnjak)",
-    "nisaFara": "nema"
+    "nisaFara": "nema",
+    "montajGlisant": "Klizna",
+    "suprapunere": "Preklop vrata",
+    "hSine": "Vodilice (gore + dolje)"
   },
   "fata": {
     "px": "desno",

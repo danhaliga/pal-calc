@@ -142,7 +142,13 @@
           <label><%= t('editor.montaj') %><select id="montaj">
             <option value="aplicat"><%= t('editor.montajAplicat') %></option>
             <option value="incastrat"><%= t('editor.montajIncastrat') %></option>
+            <option value="glisant"><%= t('editor.montajGlisant') %></option>
           </select></label>
+          <%# Numai pentru usi glisante: alea se suprapun si merg pe sine. %>
+          <label id="wrapSupr" class="hidden"><%= t('editor.suprapunere') %>
+            <input id="supr" type="number" step="5" min="0" max="200"></label>
+          <label id="wrapSine" class="hidden"><%= t('editor.hSine') %>
+            <input id="hSine" type="number" step="5" min="0" max="300"></label>
           <label><%= t('editor.balama') %><select id="balama">
             <option value="0"><%= t('editor.balamaCot0') %></option>
             <option value="9"><%= t('editor.balamaCot9') %></option>

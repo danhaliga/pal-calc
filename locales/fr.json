@@ -506,6 +506,16 @@
         "nume": "Colonne frigo",
         "descriere": "Niche depuis le fond pour le frigo, avec une porte au-dessus. Vérifie la niche demandée par le fabricant.",
         "corpNume": "Colonne frigo"
+      },
+      "dulap-glisant": {
+        "nume": "Armoire à portes coulissantes",
+        "descriere": "Les portes ne s'ouvrent pas vers l'extérieur : elle passe même dans une chambre étroite.",
+        "corpNume": "Armoire coulissante"
+      },
+      "dressing-glisant": {
+        "nume": "Dressing à portes coulissantes",
+        "descriere": "Trois coulissantes et quatre compartiments, pour tout un mur.",
+        "corpNume": "Dressing coulissant"
       }
     },
     "adaugaCorp": "Ajouter un caisson",
@@ -693,7 +703,8 @@
     "rostFronturi": "jeu de {rost} mm entre les façades",
     "glisieraDe": "coulisse {lg} mm",
     "subCutie": "posé sous la caisse",
-    "socluInFata": "à l’avant, entre les côtés — le fond repose dessus"
+    "socluInFata": "à l’avant, entre les côtés — le fond repose dessus",
+    "usiGlisante": "{n} portes coulissantes, recouvrement {supr}, rails {sine}"
   },
   "avert": {
     "politeAtipic": "Les étagères ne sont pas calculées automatiquement pour les caissons hors standard : ajoutez-les comme pièces séparées.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Plinthe de {soclu} mm sur un caisson aussi bas : il ne reste que {ramane} mm à l’intérieur.",
     "nisaPreaMare": "Une niche de {nisa} mm ne rentre pas : au-delà de {incape} mm il ne reste plus de place pour la porte du dessus.",
     "politeFixeInPlus": "Tu as demandé {cerut} étagères, mais le caisson en a besoin de {fac} : elles bordent la niche et tiennent les portes.",
-    "politeNuIncap": "{cate} étagères n’ont nulle part où aller : la niche a pris tout le vide."
+    "politeNuIncap": "{cate} étagères n’ont nulle part où aller : la niche a pris tout le vide.",
+    "glisantaSingura": "Une seule porte coulissante n'a rien devant quoi glisser. Mets-en au moins deux.",
+    "glisantaNuIncape": "Les portes coulissantes ne sortent pas : le caisson est trop petit pour les rails et le recouvrement.",
+    "glisantaLata": "Une coulissante de {lat} mm est large : elle finit par gauchir et sortir du rail. Fais-en deux, ou pose un cadre alu.",
+    "glisantaInalta": "Une coulissante de {inalt} mm est haute : il lui faut un cadre, pas un simple panneau.",
+    "glisantaFaraZone": "Les coulissantes font toute la hauteur : la hauteur des portes du bas et la niche ne comptent pas.",
+    "glisantaFaraCompartimente": "Les coulissantes passent devant les montants, elles ne peuvent donc pas être posées sur des compartiments choisis."
   },
   "csv": {
     "corp": "Caisson",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Largeur (l)",
     "soclu": "Plinthe (0 = pieds)",
     "nisa": "Niche (four, frigo)",
-    "nisaFara": "aucune"
+    "nisaFara": "aucune",
+    "montajGlisant": "Coulissantes",
+    "suprapunere": "Recouvrement des portes",
+    "hSine": "Rails (haut + bas)"
   },
   "fata": {
     "px": "droite",

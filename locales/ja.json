@@ -506,6 +506,16 @@
         "nume": "冷蔵庫用の縦箱",
         "descriere": "底から冷蔵庫用の開口、その上に扉。メーカー指定の開口寸法を確かめてください。",
         "corpNume": "冷蔵庫縦箱"
+      },
+      "dulap-glisant": {
+        "nume": "引き戸の衣装箱",
+        "descriere": "扉が手前に開かないので、狭い寝室にも入ります。",
+        "corpNume": "引き戸衣装箱"
+      },
+      "dressing-glisant": {
+        "nume": "引き戸のウォークイン",
+        "descriere": "引き戸3枚と区画4つ、壁一面ぶん。",
+        "corpNume": "引き戸ウォークイン"
       }
     },
     "adaugaCorp": "キャビネットを追加",
@@ -693,7 +703,8 @@
     "rostFronturi": "扉の間に目地 {rost} mm",
     "glisieraDe": "レール {lg} mm",
     "subCutie": "箱の下に付きます",
-    "socluInFata": "前面、側板のあいだ — 底板がこの上に載ります"
+    "socluInFata": "前面、側板のあいだ — 底板がこの上に載ります",
+    "usiGlisante": "引き戸 {n} 枚、重なり {supr}、レール {sine}"
   },
   "avert": {
     "politeAtipic": "変形キャビネットの棚板は自動では数えません。別の部材として足してください。",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "これだけ低い箱に {soclu} mm の台輪：内部は {ramane} mm しか残りません。",
     "nisaPreaMare": "{nisa} mm の開口は入りません。{incape} mm を超えると上の扉の場所が残りません。",
     "politeFixeInPlus": "棚板を {cerut} 枚と指定しましたが、箱には {fac} 枚必要です。開口を挟み、扉を支えるものです。",
-    "politeNuIncap": "棚板 {cate} 枚の置き場所がありません。開口が空間をすべて使いました。"
+    "politeNuIncap": "棚板 {cate} 枚の置き場所がありません。開口が空間をすべて使いました。",
+    "glisantaSingura": "引き戸が1枚では、すれ違う相手がありません。2枚以上にしてください。",
+    "glisantaNuIncape": "引き戸が取れません。レールと重なりの分に対して箱が小さすぎます。",
+    "glisantaLata": "{lat} mm の引き戸は幅が広く、時間とともに垂れてレールから外れます。2枚に分けるか、アルミ枠を使ってください。",
+    "glisantaInalta": "{inalt} mm の引き戸は高く、枠が必要です。パーティクルボード1枚では持ちません。",
+    "glisantaFaraZone": "引き戸は全高です。下の扉の高さと開口は考慮されません。",
+    "glisantaFaraCompartimente": "引き戸は中仕切りの前を通るため、特定の区画だけに付けることはできません。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "幅 (l)",
     "soclu": "台輪（0 = 脚）",
     "nisa": "開口（オーブン・冷蔵庫）",
-    "nisaFara": "なし"
+    "nisaFara": "なし",
+    "montajGlisant": "引き戸",
+    "suprapunere": "戸の重なり",
+    "hSine": "レール（上＋下）"
   },
   "fata": {
     "px": "右",

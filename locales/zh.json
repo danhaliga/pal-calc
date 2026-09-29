@@ -506,6 +506,16 @@
         "nume": "冰箱高柜",
         "descriere": "从底部留开口放冰箱，上方装门。请核对厂家要求的开口尺寸。",
         "corpNume": "冰箱高柜"
+      },
+      "dulap-glisant": {
+        "nume": "推拉门衣柜",
+        "descriere": "门不向外开，狭窄卧室也放得下。",
+        "corpNume": "推拉衣柜"
+      },
+      "dressing-glisant": {
+        "nume": "推拉门衣帽间",
+        "descriere": "三扇推拉门、四个分格，占满整面墙。",
+        "corpNume": "推拉衣帽间"
       }
     },
     "adaugaCorp": "添加柜体",
@@ -693,7 +703,8 @@
     "rostFronturi": "门板之间留 {rost} 毫米缝",
     "glisieraDe": "{lg} 毫米滑轨",
     "subCutie": "装在抽屉盒下面",
-    "socluInFata": "位于前方、两块侧板之间——底板搁在上面"
+    "socluInFata": "位于前方、两块侧板之间——底板搁在上面",
+    "usiGlisante": "{n} 扇推拉门，搭接 {supr}，轨道 {sine}"
   },
   "avert": {
     "politeAtipic": "异形柜体的层板不会自动算：单独当板件加进去。",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "柜体太矮却用 {soclu} 毫米踢脚板：内部只剩 {ramane} 毫米。",
     "nisaPreaMare": "{nisa} 毫米的开口放不下：超过 {incape} 毫米就没有地方装上方的门了。",
     "politeFixeInPlus": "你要了 {cerut} 层隔板，但柜体需要 {fac} 层：它们夹住开口并支撑门。",
-    "politeNuIncap": "{cate} 层隔板无处安放：开口占满了全部空间。"
+    "politeNuIncap": "{cate} 层隔板无处安放：开口占满了全部空间。",
+    "glisantaSingura": "只有一扇推拉门就没有可以错开的对象。至少放两扇。",
+    "glisantaNuIncape": "推拉门做不出来：柜体太小，容不下轨道和搭接。",
+    "glisantaLata": "{lat} 毫米的推拉门偏宽：时间久了会下垂并脱轨。做成两扇，或加铝框。",
+    "glisantaInalta": "{inalt} 毫米的推拉门偏高：需要加框，不能用整块刨花板。",
+    "glisantaFaraZone": "推拉门通高：下层门高度和中间开口不予考虑。",
+    "glisantaFaraCompartimente": "推拉门横跨立板，因此无法只装在选定的格内。"
   },
   "csv": {
     "corp": "柜体",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "宽 (l)",
     "soclu": "踢脚板（0 = 使用脚）",
     "nisa": "开口（烤箱、冰箱）",
-    "nisaFara": "无"
+    "nisaFara": "无",
+    "montajGlisant": "推拉",
+    "suprapunere": "门扇搭接",
+    "hSine": "轨道（上+下）"
   },
   "fata": {
     "px": "右",

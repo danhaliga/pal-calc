@@ -506,6 +506,16 @@
         "nume": "Colonna frigo",
         "descriere": "Vano dal fondo per il frigo, con anta sopra. Controlla il vano richiesto dal costruttore.",
         "corpNume": "Colonna frigo"
+      },
+      "dulap-glisant": {
+        "nume": "Armadio con ante scorrevoli",
+        "descriere": "Le ante non si aprono verso fuori: ci sta anche in una camera stretta.",
+        "corpNume": "Armadio scorrevole"
+      },
+      "dressing-glisant": {
+        "nume": "Cabina con ante scorrevoli",
+        "descriere": "Tre ante scorrevoli e quattro vani, per una parete intera.",
+        "corpNume": "Cabina scorrevole"
       }
     },
     "adaugaCorp": "Aggiungi un mobile",
@@ -693,7 +703,8 @@
     "rostFronturi": "gioco di {rost} mm fra i frontali",
     "glisieraDe": "guida {lg} mm",
     "subCutie": "montato sotto il cassetto",
-    "socluInFata": "davanti, tra i fianchi — il fondo ci appoggia sopra"
+    "socluInFata": "davanti, tra i fianchi — il fondo ci appoggia sopra",
+    "usiGlisante": "{n} ante scorrevoli, sovrapposizione {supr}, binari {sine}"
   },
   "avert": {
     "politeAtipic": "Nei mobili fuori misura i ripiani non si calcolano da soli: aggiungili come pezzi separati.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Zoccolo da {soclu} mm su un mobile così basso: dentro restano solo {ramane} mm.",
     "nisaPreaMare": "Un vano da {nisa} mm non ci sta: oltre {incape} mm non resta posto per l’anta di sopra.",
     "politeFixeInPlus": "Hai chiesto {cerut} ripiani, ma il mobile ne ha bisogno di {fac}: quelli delimitano il vano e reggono le ante.",
-    "politeNuIncap": "{cate} ripiani non hanno dove stare: il vano ha preso tutto lo spazio."
+    "politeNuIncap": "{cate} ripiani non hanno dove stare: il vano ha preso tutto lo spazio.",
+    "glisantaSingura": "Un'anta scorrevole sola non ha accanto a cosa scorrere. Mettine almeno due.",
+    "glisantaNuIncape": "Le ante scorrevoli non escono: il mobile è troppo piccolo per binari e sovrapposizione.",
+    "glisantaLata": "Un'anta scorrevole da {lat} mm è larga: col tempo si imbarca ed esce dal binario. Falla in due o metti telaio in alluminio.",
+    "glisantaInalta": "Un'anta scorrevole da {inalt} mm è alta: le serve un telaio, non un pannello semplice.",
+    "glisantaFaraZone": "Le scorrevoli vanno per tutta l’altezza: l’altezza delle ante basse e il vano non contano.",
+    "glisantaFaraCompartimente": "Le scorrevoli passano davanti ai montanti, quindi non si possono mettere su vani scelti."
   },
   "csv": {
     "corp": "Mobile",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Larghezza (l)",
     "soclu": "Zoccolo (0 = piedini)",
     "nisa": "Vano (forno, frigo)",
-    "nisaFara": "nessuno"
+    "nisaFara": "nessuno",
+    "montajGlisant": "Scorrevoli",
+    "suprapunere": "Sovrapposizione ante",
+    "hSine": "Binari (alto + basso)"
   },
   "fata": {
     "px": "destra",

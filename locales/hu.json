@@ -506,6 +506,16 @@
         "nume": "Hűtős magas elem",
         "descriere": "Nyílás az aljától a hűtőnek, fölötte ajtó. Ellenőrizd a gyártó által kért nyílást.",
         "corpNume": "Hűtős elem"
+      },
+      "dulap-glisant": {
+        "nume": "Tolóajtós szekrény",
+        "descriere": "Az ajtók nem nyílnak kifelé, így szűk hálóba is befér.",
+        "corpNume": "Tolóajtós szekrény"
+      },
+      "dressing-glisant": {
+        "nume": "Tolóajtós gardrób",
+        "descriere": "Három tolóajtó és négy rekesz, egy egész falra.",
+        "corpNume": "Tolóajtós gardrób"
       }
     },
     "adaugaCorp": "Korpusz hozzáadása",
@@ -693,7 +703,8 @@
     "rostFronturi": "{rost} mm hézag a frontok között",
     "glisieraDe": "{lg} mm-es sín",
     "subCutie": "a fiók alá szerelve",
-    "socluInFata": "elöl, az oldalak között — az alj rajta áll"
+    "socluInFata": "elöl, az oldalak között — az alj rajta áll",
+    "usiGlisante": "{n} tolóajtó, átfedés {supr}, sínek {sine}"
   },
   "avert": {
     "politeAtipic": "Egyedi korpuszoknál a polcok nem számolódnak magától: add hozzá őket külön elemként.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "{soclu} mm-es lábazat ilyen alacsony korpuszon: belül csak {ramane} mm marad.",
     "nisaPreaMare": "{nisa} mm-es nyílás nem fér el: {incape} mm fölött nem marad hely a fenti ajtónak.",
     "politeFixeInPlus": "{cerut} polcot kértél, de a korpusznak {fac} kell: azok szegélyezik a nyílást és tartják az ajtókat.",
-    "politeNuIncap": "{cate} polcnak nincs helye: a nyílás elvitte az egész teret."
+    "politeNuIncap": "{cate} polcnak nincs helye: a nyílás elvitte az egész teret.",
+    "glisantaSingura": "Egyetlen tolóajtónak nincs mi mellett elcsúsznia. Tegyél legalább kettőt.",
+    "glisantaNuIncape": "A tolóajtók nem jönnek ki: a korpusz túl kicsi a sínekhez és az átfedéshez.",
+    "glisantaLata": "A {lat} mm-es tolóajtó széles: idővel megereszkedik és kiugrik a sínből. Csináld kettőből, vagy tegyél alumíniumkeretet.",
+    "glisantaInalta": "A {inalt} mm-es tolóajtó magas: keret kell hozzá, nem puszta lap.",
+    "glisantaFaraZone": "A tolóajtók teljes magasságúak: az alsó ajtók magassága és a nyílás nem számít.",
+    "glisantaFaraCompartimente": "A tolóajtók az osztók előtt futnak, ezért nem tehetők kiválasztott rekeszekre."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Szélesség (l)",
     "soclu": "Lábazat (0 = lábak)",
     "nisa": "Nyílás (sütő, hűtő)",
-    "nisaFara": "nincs"
+    "nisaFara": "nincs",
+    "montajGlisant": "Tolóajtós",
+    "suprapunere": "Ajtók átfedése",
+    "hSine": "Sínek (fent + lent)"
   },
   "fata": {
     "px": "jobb",

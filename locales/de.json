@@ -506,6 +506,16 @@
         "nume": "Kühlschrank-Hochschrank",
         "descriere": "Nische vom Boden für den Kühlschrank, darüber eine Tür. Prüfe die vom Hersteller verlangte Nische.",
         "corpNume": "Kühlschrank"
+      },
+      "dulap-glisant": {
+        "nume": "Schrank mit Schiebetüren",
+        "descriere": "Die Türen schwingen nicht auf — er passt auch in ein enges Schlafzimmer.",
+        "corpNume": "Schiebeschrank"
+      },
+      "dressing-glisant": {
+        "nume": "Ankleide mit Schiebetüren",
+        "descriere": "Drei Schiebetüren und vier Fächer, für eine ganze Wand.",
+        "corpNume": "Ankleide-Schiebe"
       }
     },
     "adaugaCorp": "Einen Korpus hinzufügen",
@@ -693,7 +703,8 @@
     "rostFronturi": "Fuge {rost} mm zwischen den Fronten",
     "glisieraDe": "Auszug {lg} mm",
     "subCutie": "unter dem Kasten montiert",
-    "socluInFata": "vorn, zwischen den Seiten — der Boden steht darauf"
+    "socluInFata": "vorn, zwischen den Seiten — der Boden steht darauf",
+    "usiGlisante": "{n} Schiebetüren, Überlappung {supr}, Schienen {sine}"
   },
   "avert": {
     "politeAtipic": "Bei Sonderkorpussen werden Böden nicht automatisch berechnet: füge sie als eigene Teile hinzu.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Sockel von {soclu} mm bei einem so niedrigen Korpus: innen bleiben nur {ramane} mm.",
     "nisaPreaMare": "Eine Nische von {nisa} mm passt nicht: über {incape} mm bleibt kein Platz für die Tür darüber.",
     "politeFixeInPlus": "Du hast {cerut} Böden verlangt, der Korpus braucht aber {fac}: die fassen die Nische ein und halten die Türen.",
-    "politeNuIncap": "Für {cate} Böden ist kein Platz: die Nische hat den ganzen Raum genommen."
+    "politeNuIncap": "Für {cate} Böden ist kein Platz: die Nische hat den ganzen Raum genommen.",
+    "glisantaSingura": "Eine einzelne Schiebetür hat nichts, woran sie vorbeigleiten kann. Nimm mindestens zwei.",
+    "glisantaNuIncape": "Die Schiebetüren gehen nicht auf: der Korpus ist zu klein für Schienen und Überlappung.",
+    "glisantaLata": "Eine Schiebetür von {lat} mm ist breit: sie hängt mit der Zeit durch und springt aus der Schiene. Mach zwei daraus oder nimm einen Alurahmen.",
+    "glisantaInalta": "Eine Schiebetür von {inalt} mm ist hoch: sie braucht einen Rahmen, keine reine Spanplatte.",
+    "glisantaFaraZone": "Schiebetüren gehen über die ganze Höhe: die Höhe der unteren Türen und die Nische zählen nicht.",
+    "glisantaFaraCompartimente": "Schiebetüren laufen an den Mittelseiten vorbei, sie lassen sich also nicht auf ausgewählte Fächer setzen."
   },
   "csv": {
     "corp": "Korpus",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Breite (l)",
     "soclu": "Sockel (0 = Füße)",
     "nisa": "Nische (Backofen, Kühlschrank)",
-    "nisaFara": "keine"
+    "nisaFara": "keine",
+    "montajGlisant": "Schiebetüren",
+    "suprapunere": "Überlappung der Türen",
+    "hSine": "Laufschienen (oben + unten)"
   },
   "fata": {
     "px": "rechts",

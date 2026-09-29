@@ -73,6 +73,12 @@
       pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
       t: 18, cg: 2, cs: 0.8, spate: 'aplicat', tp: 2.5,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: '', compUsi: '',
+      /* Ușile glisante se suprapun una peste alta, ca să nu rămână o fantă
+         între ele când sunt închise. 30 mm e cât se pune de obicei. */
+      supr: 30,
+      /* Cât mănâncă șinele din înălțime, sus și jos la un loc. Depinde de
+         sistemul cumpărat — 40 e o valoare de pornire, nu o măsurătoare. */
+      hSine: 40,
       /* Nișa: golul dintre zonele cu uși, pentru cuptor sau frigider.
          Cu `hUsi` pus: ușă jos, gol, ușă sus — coloana de cuptor.
          Cu `hUsi` gol: gol de la fund, ușă deasupra — coloana de frigider,
@@ -557,7 +563,39 @@
        piesă tăiată degeaba și un corp care nu se poate monta. */
     var zonaNisa = null;
 
-    if (nUsi > 0) {
+    /* Ușile glisante nu se împart pe zone și n-au balamale: se suprapun și
+       merg pe șine. Toată socoteala lor stă aici, deoparte. */
+    if (nUsi > 0 && c.montaj === 'glisant') {
+      var supr = Math.max(0, +c.supr || 0);
+      var hSine = Math.max(0, +c.hSine || 0);
+      var gH = H - hSine;
+      /* Fiecare ușă acoperă partea ei PLUS suprapunerea cu vecina. Suma
+         lățimilor e mai mare decât corpul, tocmai cu suprapunerile. */
+      var gL = (W + (nUsi - 1) * supr) / nUsi;
+
+      if (nUsi < 2) avert('glisantaSingura');
+      if (gH <= 0 || gL <= 0) {
+        avert('glisantaNuIncape');
+      } else {
+        var boxesG = [];
+        for (var gi = 0; gi < nUsi; gi++) {
+          /* Ușile stau pe două șine, una în fața celeilalte: altfel nu s-ar
+             putea trece una pe lângă alta. */
+          boxesG.push(bx(gi * (gL - supr), hSine / 2, D + (gi % 2) * t, gL, gH, t,
+            FD, [0, 0, 1.6], 'fronturi'));
+        }
+        add('usa', null, nUsi, gH, gL, 'g', 'g', 'g', 'g', 'LV',
+          ['usiGlisante', { n: nUsi, supr: fmt(supr), sine: fmt(hSine) }], boxesG);
+        usi.push({ L: gL, H: gH });
+        /* O ușă de dulap glisantă de peste 1200 se lasă în timp și sare de
+           pe șină; atelierele o fac din două sau pun profil de aluminiu. */
+        if (gL > 1200) avert('glisantaLata', { lat: fmt(gL) });
+        if (gH > 2600) avert('glisantaInalta', { inalt: fmt(gH) });
+      }
+      if (hUsiCerut > 0 || hNisaCerut > 0) avert('glisantaFaraZone');
+      if (String(c.compUsi || '').trim()) avert('glisantaFaraCompartimente');
+
+    } else if (nUsi > 0) {
       var uH = usiPartiale ? hUsiCerut : uHplin;
       if (hUsiCerut > uHplin) avert('usiPesteInaltime', { cerut: fmt(hUsiCerut), incape: fmt(uHplin) });
 
@@ -894,7 +932,9 @@
         /* Compartimentele cu usi, numerotate de la stanga: „1", „1,3". Gol
            inseamna toate. Text, nu numar: e o lista, nu o cota. */
         compUsi: z.string().trim().max(40).catch(''),
-        montaj: z.enum(['aplicat', 'incastrat']),
+        montaj: z.enum(['aplicat', 'incastrat', 'glisant']),
+        supr: mm(0, 200).catch(30),
+        hSine: mm(0, 300).catch(40),
         balama: z.preprocess(function (v) { return String(v); }, z.enum(['0', '9', '18'])),
         rm: mm(0, 50), ri: mm(0, 50), rinc: mm(0, 50),
         nPol: int(0, 20), jp: mm(0, 50), rp: mm(0, 300),

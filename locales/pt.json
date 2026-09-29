@@ -506,6 +506,16 @@
         "nume": "Coluna de frigorífico",
         "descriere": "Vão desde o fundo para o frigorífico, com porta por cima. Confirma o vão que o fabricante pede.",
         "corpNume": "Coluna frigorífico"
+      },
+      "dulap-glisant": {
+        "nume": "Roupeiro com portas de correr",
+        "descriere": "As portas não abrem para fora, por isso cabe num quarto estreito.",
+        "corpNume": "Roupeiro de correr"
+      },
+      "dressing-glisant": {
+        "nume": "Closet com portas de correr",
+        "descriere": "Três portas de correr e quatro vãos, para uma parede inteira.",
+        "corpNume": "Closet de correr"
       }
     },
     "adaugaCorp": "Adicionar um módulo",
@@ -693,7 +703,8 @@
     "rostFronturi": "folga de {rost} mm entre as frentes",
     "glisieraDe": "corrediça {lg} mm",
     "subCutie": "montado sob a caixa",
-    "socluInFata": "à frente, entre as laterais — o fundo assenta nele"
+    "socluInFata": "à frente, entre as laterais — o fundo assenta nele",
+    "usiGlisante": "{n} portas de correr, sobreposição {supr}, calhas {sine}"
   },
   "avert": {
     "politeAtipic": "Nos módulos fora de padrão as prateleiras não são calculadas sozinhas: acrescenta-as como peças à parte.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Rodapé de {soclu} mm num móvel tão baixo: sobram apenas {ramane} mm por dentro.",
     "nisaPreaMare": "Um vão de {nisa} mm não cabe: acima de {incape} mm não sobra lugar para a porta de cima.",
     "politeFixeInPlus": "Pediste {cerut} prateleiras, mas o móvel precisa de {fac}: essas limitam o vão e seguram as portas.",
-    "politeNuIncap": "{cate} prateleiras não têm onde ficar: o vão levou todo o espaço."
+    "politeNuIncap": "{cate} prateleiras não têm onde ficar: o vão levou todo o espaço.",
+    "glisantaSingura": "Uma só porta de correr não tem ao lado de quê deslizar. Põe pelo menos duas.",
+    "glisantaNuIncape": "As portas de correr não saem: o móvel é pequeno demais para as calhas e a sobreposição.",
+    "glisantaLata": "Uma porta de correr de {lat} mm é larga: com o tempo empena e sai da calha. Faz de duas ou põe aro de alumínio.",
+    "glisantaInalta": "Uma porta de correr de {inalt} mm é alta: precisa de aro, não de um painel simples.",
+    "glisantaFaraZone": "As portas de correr vão de alto a baixo: a altura das portas de baixo e o vão não contam.",
+    "glisantaFaraCompartimente": "As portas de correr passam à frente dos montantes, por isso não se podem pôr em vãos escolhidos."
   },
   "csv": {
     "corp": "Módulo",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Largura (l)",
     "soclu": "Rodapé (0 = pés)",
     "nisa": "Vão (forno, frigorífico)",
-    "nisaFara": "sem vão"
+    "nisaFara": "sem vão",
+    "montajGlisant": "De correr",
+    "suprapunere": "Sobreposição das portas",
+    "hSine": "Calhas (cima + baixo)"
   },
   "fata": {
     "px": "direita",

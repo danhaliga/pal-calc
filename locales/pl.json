@@ -512,6 +512,16 @@
         "nume": "Słupek pod lodówkę",
         "descriere": "Wnęka od dna na lodówkę, front u góry. Sprawdź wnękę wymaganą przez producenta.",
         "corpNume": "Słupek lodówka"
+      },
+      "dulap-glisant": {
+        "nume": "Szafa z drzwiami przesuwnymi",
+        "descriere": "Drzwi nie otwierają się na zewnątrz, więc zmieści się i w ciasnej sypialni.",
+        "corpNume": "Szafa przesuwna"
+      },
+      "dressing-glisant": {
+        "nume": "Garderoba z drzwiami przesuwnymi",
+        "descriere": "Trzy drzwi przesuwne i cztery pola, na całą ścianę.",
+        "corpNume": "Garderoba przesuwna"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -699,7 +709,8 @@
     "rostFronturi": "szczelina {rost} mm między frontami",
     "glisieraDe": "prowadnica {lg} mm",
     "subCutie": "montowane pod skrzynką",
-    "socluInFata": "z przodu, między bokami — na nim stoi dno"
+    "socluInFata": "z przodu, między bokami — na nim stoi dno",
+    "usiGlisante": "{n} fronty przesuwne, zachodzenie {supr}, szyny {sine}"
   },
   "avert": {
     "politeAtipic": "W korpusach nietypowych półki nie liczą się same: dodaj je jako osobne elementy.",
@@ -734,7 +745,13 @@
     "socluPreaInalt": "Cokół {soclu} mm przy tak niskiej skrzyni: w środku zostaje tylko {ramane} mm.",
     "nisaPreaMare": "Wnęka {nisa} mm się nie mieści: powyżej {incape} mm nie zostaje miejsca na front u góry.",
     "politeFixeInPlus": "Poprosiłeś o {cerut} półek, ale skrzynia potrzebuje {fac}: te ograniczają wnękę i trzymają fronty.",
-    "politeNuIncap": "{cate} półek nie ma gdzie postawić: wnęka zabrała cały prześwit."
+    "politeNuIncap": "{cate} półek nie ma gdzie postawić: wnęka zabrała cały prześwit.",
+    "glisantaSingura": "Jeden przesuwny front nie ma obok czego się przesuwać. Daj co najmniej dwa.",
+    "glisantaNuIncape": "Fronty przesuwne nie wychodzą: skrzynia jest za mała na szyny i zachodzenie.",
+    "glisantaLata": "Front przesuwny {lat} mm jest szeroki: z czasem się wygnie i wyskoczy z szyny. Zrób z dwóch albo daj ramę aluminiową.",
+    "glisantaInalta": "Front przesuwny {inalt} mm jest wysoki: potrzebuje ramy, nie samej płyty.",
+    "glisantaFaraZone": "Fronty przesuwne idą na całą wysokość: wysokość dolnych frontów i wnęka nie są brane pod uwagę.",
+    "glisantaFaraCompartimente": "Fronty przesuwne przechodzą przed pionami, więc nie da się ich dać na wybrane pola."
   },
   "csv": {
     "corp": "Korpus",
@@ -1254,7 +1271,10 @@
     "latimePiesa": "Szerokość (l)",
     "soclu": "Cokół (0 = nóżki)",
     "nisa": "Wnęka (piekarnik, lodówka)",
-    "nisaFara": "brak"
+    "nisaFara": "brak",
+    "montajGlisant": "Przesuwne",
+    "suprapunere": "Zachodzenie frontów",
+    "hSine": "Szyny (góra + dół)"
   },
   "fata": {
     "px": "prawo",

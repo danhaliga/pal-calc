@@ -506,6 +506,16 @@
         "nume": "Buzdolabı boy dolabı",
         "descriere": "Tabandan başlayan buzdolabı boşluğu, üstünde kapak. Üreticinin istediği boşluğu kontrol et.",
         "corpNume": "Buzdolabı dolabı"
+      },
+      "dulap-glisant": {
+        "nume": "Sürme kapaklı dolap",
+        "descriere": "Kapaklar dışa açılmaz, dar bir yatak odasına da sığar.",
+        "corpNume": "Sürme dolap"
+      },
+      "dressing-glisant": {
+        "nume": "Sürme kapaklı giyinme odası",
+        "descriere": "Üç sürme kapak ve dört bölme, bütün bir duvar için.",
+        "corpNume": "Sürme giyinme"
       }
     },
     "adaugaCorp": "Bir gövde ekle",
@@ -693,7 +703,8 @@
     "rostFronturi": "kapaklar arasında {rost} mm boşluk",
     "glisieraDe": "{lg} mm ray",
     "subCutie": "kutunun altına takılır",
-    "socluInFata": "önde, yanların arasında — taban onun üzerinde durur"
+    "socluInFata": "önde, yanların arasında — taban onun üzerinde durur",
+    "usiGlisante": "{n} sürme kapak, bindirme {supr}, raylar {sine}"
   },
   "avert": {
     "politeAtipic": "Standart dışı gövdelerde raflar kendiliğinden hesaplanmaz: onları ayrı parça olarak ekle.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Bu kadar alçak bir gövdede {soclu} mm süpürgelik: içeride yalnızca {ramane} mm kalıyor.",
     "nisaPreaMare": "{nisa} mm boşluk sığmıyor: {incape} mm üstünde üstteki kapağa yer kalmıyor.",
     "politeFixeInPlus": "{cerut} raf istedin ama gövdeye {fac} gerekiyor: onlar boşluğu sınırlar ve kapakları tutar.",
-    "politeNuIncap": "{cate} rafa yer yok: boşluk tüm alanı aldı."
+    "politeNuIncap": "{cate} rafa yer yok: boşluk tüm alanı aldı.",
+    "glisantaSingura": "Tek sürme kapağın yanından kayacağı bir şey yok. En az iki tane koy.",
+    "glisantaNuIncape": "Sürme kapaklar çıkmıyor: gövde raylar ve bindirme için fazla küçük.",
+    "glisantaLata": "{lat} mm sürme kapak geniş: zamanla sarkar ve raydan çıkar. İkiye böl ya da alüminyum çerçeve kullan.",
+    "glisantaInalta": "{inalt} mm sürme kapak yüksek: çerçeve ister, düz sunta olmaz.",
+    "glisantaFaraZone": "Sürme kapaklar tüm boyu kaplar: alt kapak yüksekliği ve boşluk hesaba katılmaz.",
+    "glisantaFaraCompartimente": "Sürme kapaklar dikmelerin önünden geçer, bu yüzden seçilmiş bölmelere konamaz."
   },
   "csv": {
     "corp": "Gövde",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Genişlik (l)",
     "soclu": "Süpürgelik (0 = ayak)",
     "nisa": "Boşluk (fırın, buzdolabı)",
-    "nisaFara": "yok"
+    "nisaFara": "yok",
+    "montajGlisant": "Sürme",
+    "suprapunere": "Kapak bindirmesi",
+    "hSine": "Raylar (üst + alt)"
   },
   "fata": {
     "px": "sağ",

@@ -506,6 +506,16 @@
         "nume": "Kylskåpsskåp",
         "descriere": "Öppning från botten för kylen, med lucka ovanför. Kontrollera öppningen som tillverkaren kräver.",
         "corpNume": "Kylskåpsskåp"
+      },
+      "dulap-glisant": {
+        "nume": "Garderob med skjutdörrar",
+        "descriere": "Dörrarna slår inte ut, så den får plats även i ett trångt sovrum.",
+        "corpNume": "Skjutgarderob"
+      },
+      "dressing-glisant": {
+        "nume": "Walk-in med skjutdörrar",
+        "descriere": "Tre skjutdörrar och fyra fack, för en hel vägg.",
+        "corpNume": "Skjut-walk-in"
       }
     },
     "adaugaCorp": "Lägg till en stomme",
@@ -693,7 +703,8 @@
     "rostFronturi": "springa {rost} mm mellan fronterna",
     "glisieraDe": "skena {lg} mm",
     "subCutie": "monterad under lådan",
-    "socluInFata": "framtill, mellan sidorna — bottnen vilar på den"
+    "socluInFata": "framtill, mellan sidorna — bottnen vilar på den",
+    "usiGlisante": "{n} skjutdörrar, överlapp {supr}, skenor {sine}"
   },
   "avert": {
     "politeAtipic": "I specialstommar räknas hyllplanen inte automatiskt: lägg till dem som egna delar.",
@@ -728,7 +739,13 @@
     "socluPreaInalt": "Sockel på {soclu} mm i en så låg stomme: bara {ramane} mm blir kvar inuti.",
     "nisaPreaMare": "En öppning på {nisa} mm får inte plats: över {incape} mm finns ingen plats kvar för luckan ovanför.",
     "politeFixeInPlus": "Du bad om {cerut} hyllplan, men stommen behöver {fac}: de kantar öppningen och håller luckorna.",
-    "politeNuIncap": "{cate} hyllplan har ingenstans att ta vägen: öppningen tog hela utrymmet."
+    "politeNuIncap": "{cate} hyllplan har ingenstans att ta vägen: öppningen tog hela utrymmet.",
+    "glisantaSingura": "En ensam skjutdörr har inget att glida förbi. Ta minst två.",
+    "glisantaNuIncape": "Skjutdörrarna går inte ut: stommen är för liten för skenor och överlapp.",
+    "glisantaLata": "En skjutdörr på {lat} mm är bred: den svackar med tiden och hoppar ur skenan. Gör två av den, eller sätt aluminiumram.",
+    "glisantaInalta": "En skjutdörr på {inalt} mm är hög: den behöver ram, inte bara en skiva.",
+    "glisantaFaraZone": "Skjutdörrar går hela höjden: höjden på de nedre dörrarna och öppningen räknas inte.",
+    "glisantaFaraCompartimente": "Skjutdörrar löper förbi mittsidorna och kan därför inte sättas på valda fack."
   },
   "csv": {
     "corp": "Stomme",
@@ -1243,7 +1260,10 @@
     "latimePiesa": "Bredd (l)",
     "soclu": "Sockel (0 = ben)",
     "nisa": "Öppning (ugn, kyl)",
-    "nisaFara": "ingen"
+    "nisaFara": "ingen",
+    "montajGlisant": "Skjutdörrar",
+    "suprapunere": "Dörrarnas överlapp",
+    "hSine": "Skenor (upptill + nedtill)"
   },
   "fata": {
     "px": "höger",
