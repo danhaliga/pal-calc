@@ -63,6 +63,22 @@
   </div>
 </footer>
 
+<%# Fereastra de confirmare. Sta in layout, nu in scripturi, ca sa fie scrisa
+    de server in limba paginii — altfel butoanele ei ar trebui traduse in
+    browser, iar cataloagele de traduceri se pun doar pe paginile care le cer.
+
+    Inlocuieste `window.confirm`, care e o fereastra a BROWSERULUI si pe care
+    browserul are voie s-o opreasca — si o opreste, in panourile din
+    aplicatii si in webview-uri. Cand o opreste, `confirm()` intoarce false
+    fara sa intrebe, iar butonul de stergere nu face nimic, tacut. %>
+<dialog id="intreaba" class="intreaba">
+  <p data-intrebare></p>
+  <div class="btns">
+    <button type="button" class="btn danger" data-da><%= t('comun.sterge') %></button>
+    <button type="button" class="btn" data-nu><%= t('comun.anuleaza') %></button>
+  </div>
+</dialog>
+
 <script src="/static/interactiuni.js?v=<%= assetV %>"></script>
 </body>
 </html>

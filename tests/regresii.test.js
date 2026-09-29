@@ -1322,3 +1322,91 @@ test('măsurătoarea de 0,4 rămâne scrisă în motorul de calcul', () => {
   assert.match(calc, /bandă 0\.4 mm\s+->\s+scade 0/);
   assert.match(calc, /nu se mai fabrică/);
 });
+
+/* =====================================================================
+   Ștergerile nu au voie să atârne de `window.confirm`
+
+   Butonul „Șterge" de pe corp nu ștergea nimic, și nu scria nicio eroare
+   nicăieri. Cauza: `window.confirm` e o fereastră a BROWSERULUI, iar
+   browserul are voie s-o oprească — și o oprește, în panourile de browser
+   din aplicații și în webview-uri. Când o oprește, `confirm()` întoarce
+   false fără să întrebe pe nimeni: butonul nu face NIMIC, tăcut, și omul
+   crede că e stricată aplicația.
+
+   Cinci ștergeri din aplicație atârnau de ea, inclusiv cea de comandă.
+   ===================================================================== */
+
+const PUBLIC = path.join(__dirname, '..', 'public');
+const VIEWS = path.join(__dirname, '..', 'views');
+const citesteFisier = (...p) => fs.readFileSync(path.join(...p), 'utf8');
+
+/* Codul, fără comentarii. Fără asta, un test care caută „confirm(" în sursă
+   îl găsește în comentariul care explică DE CE nu se mai folosește — adică
+   tocmai în dovada că totul e în regulă. */
+function doarCod(sursa) {
+  return sursa
+    .replace(/\/\*[\s\S]*?\*\//g, ' ')
+    .replace(/^[ \t]*\/\/.*$/gm, ' ');
+}
+
+test('fereastra de confirmare e în pagină, nu a browserului', () => {
+  const layout = citesteFisier(VIEWS, 'layout.ejs');
+  assert.match(layout, /<dialog id="intreaba"/, 'lipsește fereastra de confirmare din layout');
+  /* Cele trei agățători pe care le caută scriptul. Una lipsă, și se cade
+     înapoi pe `confirm()`, adică exact pe eroarea de la care am plecat. */
+  ['data-intrebare', 'data-da', 'data-nu'].forEach(a => {
+    assert.ok(layout.indexOf(a) !== -1, `lipsește „${a}" din fereastra de confirmare`);
+  });
+  /* Scrisul de pe butoane vine de la server, tradus: altfel ar trebui
+     catalog de traduceri pe fiecare pagină care are un buton de ștergere. */
+  assert.match(layout, /data-da><%= t\('comun\.sterge'\)/);
+  assert.match(layout, /data-nu><%= t\('comun\.anuleaza'\)/);
+});
+
+test('ștergerea corpului trece prin fereastra paginii', () => {
+  const lista = doarCod(citesteFisier(PUBLIC, 'corps-list.js'));
+  assert.match(lista, /PalIntreaba/, 'nu mai cheamă fereastra paginii');
+  assert.ok(!/(^|[^.\w])confirm\s*\(/.test(lista),
+    'a revenit `confirm()` în ștergerea corpului');
+});
+
+test('`confirm()` a rămas doar ca plasă de siguranță', () => {
+  /* Are voie să existe un singur loc care-l cheamă: căderea de rezervă din
+     `interactiuni.js`, pentru paginile fără fereastră (tiparul). Oriunde
+     altundeva înseamnă o ștergere care se poate pierde în tăcere. */
+  const fisiere = fs.readdirSync(PUBLIC).filter(f => f.endsWith('.js'));
+  fisiere.forEach(f => {
+    const sursa = doarCod(citesteFisier(PUBLIC, f));
+    const cate = (sursa.match(/window\.confirm\s*\(/g) || []).length;
+    const altfel = (sursa.match(/(^|[^.\w])confirm\s*\(/gm) || []).length;
+    if (f === 'interactiuni.js') {
+      assert.ok(cate <= 2, `interactiuni.js cheamă confirm() de ${cate} ori — rezerva e una singură pe ramură`);
+    } else {
+      assert.equal(altfel, 0, `${f} cheamă confirm() direct`);
+    }
+  });
+});
+
+test('butonul apăsat își păstrează numele la retrimitere', () => {
+  /* Două ștergeri trimit `sterge=1` CHIAR PRIN BUTON (materialul comenzii și
+     articolul). Un `form.submit()` simplu pierde numele și valoarea
+     butonului, deci formularul ar ajunge la server fără `sterge` — adică ar
+     SALVA în loc să șteargă. De-aia se retrimite cu `requestSubmit(buton)`,
+     și de-aia există și o cădere de rezervă care pune un câmp ascuns. */
+  const inter = citesteFisier(PUBLIC, 'interactiuni.js');
+  assert.match(inter, /requestSubmit\(buton\)/);
+  assert.match(inter, /ascuns\.name = buton\.name/);
+
+  const show = citesteFisier(VIEWS, 'orders', 'show.ejs');
+  assert.match(show, /name="sterge" value="1"[\s\S]{0,120}data-confirma/,
+    'butonul de ștergere a materialului nu mai trimite sterge=1 prin el');
+});
+
+test('o întrebare nu calcă peste alta', () => {
+  /* Prima variantă punea și scotea ascultătorii la fiecare întrebare. Două
+     întrebări deschise una peste alta ar fi lăsat doi ascultători pe același
+     buton, iar o apăsare pe „Șterge" ar fi șters două lucruri. */
+  const inter = citesteFisier(PUBLIC, 'interactiuni.js');
+  assert.match(inter, /if \(f\.open\) return;/, 'a doua întrebare nu mai e oprită');
+  assert.match(inter, /deFacut = null;/, 'răspunsul așteptat nu mai e uitat înainte de a fi făcut');
+});

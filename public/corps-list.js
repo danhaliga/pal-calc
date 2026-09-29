@@ -10,8 +10,16 @@ document.addEventListener('click', function (e) {
   if (!btn) return;
   var id = btn.dataset.delete;
   var intrebare = String(T.confirmaStergere || 'Delete?').replace('{nume}', btn.dataset.name);
-  if (!confirm(intrebare)) return;
 
+  /* NU `confirm()`. Ala e o fereastra a browserului, iar browserul are voie
+     s-o opreasca — si o opreste, in panourile din aplicatii si in
+     webview-uri. Cand o opreste, `confirm()` intoarce false fara sa intrebe
+     pe nimeni: butonul de stergere nu facea NIMIC, tacut, si omul credea ca
+     e stricata aplicatia. `PalIntreaba` e o fereastra a paginii. */
+  window.PalIntreaba(intrebare, function () { sterge(btn, id); });
+});
+
+function sterge(btn, id) {
   btn.disabled = true;
   fetch('/api/corps/' + id, {
     method: 'DELETE',
@@ -27,5 +35,5 @@ document.addEventListener('click', function (e) {
     btn.disabled = false;
     alert(T.eroareStergere || 'Delete failed.');
   });
-});
+}
 })();

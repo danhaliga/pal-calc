@@ -450,3 +450,13 @@ td.nr-piesa{color:var(--muted);font-size:12px}
 /* Desenul corpului în lista comenzii: mic, doar cât să recunoști forma. */
 .sk-mic{display:block;width:44px;line-height:0}
 .sk-mic svg.sk{max-height:52px}
+
+/* Fereastra de confirmare. Ia locul lui `window.confirm`, pe care browserul
+   are voie sa-l opreasca — si il opreste, in panourile din aplicatii si in
+   webview-uri. Aia intorcea false fara sa intrebe pe nimeni, deci butonul de
+   stergere nu facea nimic, tacut. Asta e a paginii; n-o opreste nimeni. */
+.intreaba{border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);
+  padding:18px 20px;max-width:420px;box-shadow:0 12px 34px rgba(0,0,0,.28)}
+.intreaba p{margin:0 0 14px;font-size:14px;line-height:1.5;text-wrap:pretty}
+.intreaba .btns{margin:0;justify-content:flex-end}
+.intreaba::backdrop{background:rgba(0,0,0,.45)}
