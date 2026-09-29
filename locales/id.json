@@ -1292,7 +1292,8 @@
     "grupPolite": "Rak: celah samping dan mundur",
     "grupSertare": "Laci: tinggi, celah, papan",
     "grupDimensiuni": "Lebar, tinggi, dalam, cara rakit",
-    "grupCantitati": "Berapa pintu, rak, sekat tengah, laci"
+    "grupCantitati": "Berapa pintu, rak, sekat tengah, laci",
+    "grupSoclu": "Papan alas: boks berdiri di lantai, tanpa kaki"
   },
   "mesaj": {
     "intrebare": "Apa yang kurang dari perhitungan?",

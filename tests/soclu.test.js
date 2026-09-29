@@ -169,3 +169,65 @@ test('soclul are nume în toate cele treizeci de limbi', () => {
     });
   });
 });
+
+/* ---------------- soclul ca setare de atelier ----------------
+
+   Un atelier care lucrează fără picioare lucrează așa LA TOATE corpurile de
+   pe podea, nu la unul. Se pune o dată în setări și vine singur. */
+
+test('categoriile care stau pe podea sunt cele care stau pe podea', () => {
+  /* Un corp suspendat n-are pe ce sta; un soclu acolo ar fi o bucată de PAL
+     tăiată degeaba și o cotă greșită pe foaie. */
+  [['baza-2usi', true], ['baza-sertar-usa', true], ['coloana-cuptor', true],
+   ['dulap-glisant', true], ['baie-lavoar', true],
+   ['sus-2usi', false], ['sus-1usa', false], ['sus-hota', false], ['sus-raft', false],
+   /* Colturile si cele atipice stau si ele pe podea, dar motorul nu stie sa le
+      puna soclu: acolo lateralele nu merg drept in jos. Mai bine lipseste
+      decat sa iasa un avertisment la fiecare corp. */
+   ['colt-sus-L', false], ['colt-jos-L', false], ['atipic-mansarda', false]
+  ].forEach(([id, asteptat]) => {
+    assert.equal(PalModels.staPePodea(id), asteptat, id + ' e pus greșit');
+  });
+});
+
+test('un model necunoscut nu primește soclu', () => {
+  /* Mai bine lipsește soclul decât să apară unde nu trebuie. */
+  ['habar-n-am', '', null, undefined, 0].forEach(x => {
+    assert.equal(PalModels.staPePodea(x), false, JSON.stringify(x) + ' a trecut');
+  });
+});
+
+test('soclul e o grupă de setări a lui, nu se amestecă cu dimensiunile', () => {
+  /* Lățimea și înălțimea sunt ale corpului; soclul e felul de-a lucra al
+     atelierului. Dacă ar fi în aceeași grupă, cine vrea soclul ar fi nevoit
+     să-și pironească și cotele. */
+  const app = citeste('public', 'app.js');
+  assert.match(app, /\{ id: 'soclu',\s+camp: \['soclu'\]/);
+  assert.ok(!/id: 'dimensiuni',\s+camp: \[[^\]]*soclu/.test(app),
+    'soclul s-a amestecat în grupa dimensiunilor');
+});
+
+test('setarea nu se pune pe corpurile suspendate', () => {
+  const app = citeste('public', 'app.js');
+  assert.match(app, /if \(g\.id === 'soclu' && !DATA\.pePodea\) return;/);
+  /* și semnalul chiar ajunge în pagină */
+  assert.match(citeste('views', 'corps', 'edit.ejs'), /pePodea: pePodea/);
+  assert.match(citeste('src', 'corps.js'), /pePodea: PalModels\.staPePodea/);
+});
+
+test('soclul pus din setări ridică înălțimea, nu fură din corp', () => {
+  /* `H` e cota de la podea. Un soclu de 80 pus sub un corp de 720 fără să
+     crească H ar da un interior de 604 — adică am fura din corp, nu am pune
+     soclu dedesubt. Modelul a spus 720 de corp folositor; atâta rămâne. */
+  const app = citeste('public', 'app.js');
+  assert.match(app, /var socluInainte = \+params\.soclu \|\| 0;/);
+  assert.match(app, /params\.H = \+params\.H \+ \(socluDupa - socluInainte\);/);
+});
+
+test('eticheta grupei există în toate cele treizeci de limbi', () => {
+  PalI18n.LIMBI.forEach(l => {
+    const c = JSON.parse(citeste('locales', l.cod + '.json'));
+    const v = c.setari && c.setari.grupSoclu;
+    assert.ok(v && String(v).trim(), l.cod + ': lipsește setari.grupSoclu');
+  });
+});

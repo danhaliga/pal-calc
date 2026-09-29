@@ -1292,7 +1292,8 @@
     "grupPolite": "Ripiani: gioco laterale e arretramento",
     "grupSertare": "Cassetti: altezze, gioco, pannello",
     "grupDimensiuni": "Larghezza, altezza, profondità, costruzione",
-    "grupCantitati": "Quante ante, ripiani, montanti, cassetti"
+    "grupCantitati": "Quante ante, ripiani, montanti, cassetti",
+    "grupSoclu": "Zoccolo: il mobile appoggia a terra, senza piedini"
   },
   "mesaj": {
     "intrebare": "Che cosa manca al calcolo?",

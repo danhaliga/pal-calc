@@ -1292,7 +1292,8 @@
     "grupPolite": "Polcok: oldalhézag és visszahúzás",
     "grupSertare": "Fiókok: magasságok, hézag, lap",
     "grupDimensiuni": "Szélesség, magasság, mélység, felépítés",
-    "grupCantitati": "Hány ajtó, polc, közfal, fiók"
+    "grupCantitati": "Hány ajtó, polc, közfal, fiók",
+    "grupSoclu": "Lábazat: a korpusz a padlón áll, láb nélkül"
   },
   "mesaj": {
     "intrebare": "Mi hiányzik a számításból?",

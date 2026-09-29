@@ -1303,7 +1303,8 @@
     "grupPolite": "Półki: luz boczny i cofnięcie",
     "grupSertare": "Szuflady: wysokości, luz, płyta",
     "grupDimensiuni": "Szerokość, wysokość, głębokość, konstrukcja",
-    "grupCantitati": "Ile drzwi, półek, przegród, szuflad"
+    "grupCantitati": "Ile drzwi, półek, przegród, szuflad",
+    "grupSoclu": "Cokół: skrzynia stoi na podłodze, bez nóżek"
   },
   "mesaj": {
     "intrebare": "Czego brakuje w obliczeniach?",

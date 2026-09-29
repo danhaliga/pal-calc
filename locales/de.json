@@ -1292,7 +1292,8 @@
     "grupPolite": "Böden: seitliches Spiel und Rücksprung",
     "grupSertare": "Schubkästen: Höhen, Spiel, Platte",
     "grupDimensiuni": "Breite, Höhe, Tiefe, Bauart",
-    "grupCantitati": "Wie viele Türen, Böden, Mittelseiten, Schubkästen"
+    "grupCantitati": "Wie viele Türen, Böden, Mittelseiten, Schubkästen",
+    "grupSoclu": "Sockel: der Korpus steht auf dem Boden, ohne Füße"
   },
   "mesaj": {
     "intrebare": "Was fehlt der Berechnung?",

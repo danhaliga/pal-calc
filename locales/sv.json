@@ -1292,7 +1292,8 @@
     "grupPolite": "Hyllplan: sidospel och indrag",
     "grupSertare": "Lådor: höjder, spel, skiva",
     "grupDimensiuni": "Bredd, höjd, djup, byggsätt",
-    "grupCantitati": "Hur många dörrar, hyllplan, mellanstycken, lådor"
+    "grupCantitati": "Hur många dörrar, hyllplan, mellanstycken, lådor",
+    "grupSoclu": "Sockel: stommen står på golvet, utan ben"
   },
   "mesaj": {
     "intrebare": "Vad saknas i beräkningen?",

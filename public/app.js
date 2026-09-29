@@ -694,7 +694,11 @@ var GRUPE = [
   { id: 'polite',     camp: ['jp', 'rp'],                             bifatLaInceput: true },
   { id: 'sertare',    camp: ['hFront', 'hCutie', 'jg', 'ts'],         bifatLaInceput: true },
   { id: 'dimensiuni', camp: ['W', 'H', 'D', 'constr'],                bifatLaInceput: false },
-  { id: 'cantitati',  camp: ['nUsi', 'nPol', 'nDsp', 'nSer'],         bifatLaInceput: false }
+  { id: 'cantitati',  camp: ['nUsi', 'nPol', 'nDsp', 'nSer'],         bifatLaInceput: false },
+  /* Soclul sta singur, nu cu dimensiunile: latimea si inaltimea sunt ale
+     corpului, soclul e felul de-a lucra al atelierului. Cine face fara
+     picioare face fara picioare la toate corpurile de pe podea. */
+  { id: 'soclu',      camp: ['soclu'],                                bifatLaInceput: false }
 ];
 
 function cheieGrup(id) { return 'setari.grup' + id.charAt(0).toUpperCase() + id.slice(1); }
@@ -742,9 +746,14 @@ function aplicaSetari() {
   var dinModel = DATA.cheiModel || [];
 
   var atins = false;
+  var socluInainte = +params.soclu || 0;
+
   GRUPE.forEach(function (g) {
     if (!s.grupe[g.id]) return;
     if (g.id === 'material' && DATA.matFixat) return;
+    /* Soclul numai la corpurile care stau pe podea. Unul suspendat n-are pe
+       ce sta, iar un soclu acolo ar fi o bucată de PAL tăiată degeaba. */
+    if (g.id === 'soclu' && !DATA.pePodea) return;
     g.camp.forEach(function (f) {
       if (s.val[f] === undefined) return;
       if (dinModel.indexOf(f) !== -1) return;
@@ -752,6 +761,19 @@ function aplicaSetari() {
       atins = true;
     });
   });
+
+  /* Soclul pus peste un model care n-avea: ÎNĂLȚIMEA CREȘTE CU EL.
+
+     `H` e cota de la podea. Dacă am lăsa-o cum era, un soclu de 80 pus sub
+     un corp de 720 ar da un corp cu interiorul de 604 — adică am fi furat
+     din corp, nu am fi pus soclu dedesubt. Modelul a spus 720 de corp
+     folositor; atâta rămâne, iar soclul se adaugă sub el. */
+  var socluDupa = +params.soclu || 0;
+  if (socluDupa > socluInainte && +params.H > 0) {
+    params.H = +params.H + (socluDupa - socluInainte);
+    atins = true;
+  }
+
   return atins;
 }
 

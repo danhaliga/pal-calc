@@ -1292,7 +1292,8 @@
     "grupPolite": "Kệ: khe hai bên và độ lùi",
     "grupSertare": "Ngăn kéo: chiều cao, khe hở, ván",
     "grupDimensiuni": "Rộng, cao, sâu, cách dựng",
-    "grupCantitati": "Bao nhiêu cánh, kệ, vách giữa, ngăn kéo"
+    "grupCantitati": "Bao nhiêu cánh, kệ, vách giữa, ngăn kéo",
+    "grupSoclu": "Chân đế: thùng đứng trên sàn, không chân rời"
   },
   "mesaj": {
     "intrebare": "Phép tính còn thiếu gì?",

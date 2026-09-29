@@ -1303,7 +1303,8 @@
     "grupPolite": "Police: bočná vôľa a zapustenie",
     "grupSertare": "Zásuvky: výšky, vôľa, doska",
     "grupDimensiuni": "Šírka, výška, hĺbka, konštrukcia",
-    "grupCantitati": "Koľko dvierok, políc, stredových stojok, zásuviek"
+    "grupCantitati": "Koľko dvierok, políc, stredových stojok, zásuviek",
+    "grupSoclu": "Sokel: skrinka stojí na podlahe, bez nožičiek"
   },
   "mesaj": {
     "intrebare": "Čo výpočtu chýba?",

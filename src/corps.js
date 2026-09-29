@@ -165,7 +165,10 @@ router.get('/corps/:id', requireAuth, (req, res, next) => {
     cheiModel: cheileModelului(req.query.model),
     /* Când corpul stă într-o comandă, placa și cantul vin din materialul
        comenzii, nu din browser. Editorul sare atunci peste grupa „material". */
-    matFixat: !!corp.mat_corp_id
+    matFixat: !!corp.mat_corp_id,
+    /* Setarea „soclu" se pune numai pe corpurile care stau pe podea. Unul
+       suspendat n-are pe ce sta, iar un soclu acolo ar fi PAL taiat degeaba. */
+    pePodea: PalModels.staPePodea(req.query.model)
   });
 });
 

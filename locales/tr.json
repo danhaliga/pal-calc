@@ -1292,7 +1292,8 @@
     "grupPolite": "Raflar: yan boşluk ve geri çekme",
     "grupSertare": "Çekmeceler: yükseklikler, boşluk, levha",
     "grupDimensiuni": "Genişlik, yükseklik, derinlik, yapım",
-    "grupCantitati": "Kaç kapak, raf, ara dikme, çekmece"
+    "grupCantitati": "Kaç kapak, raf, ara dikme, çekmece",
+    "grupSoclu": "Süpürgelik: gövde ayaksız, yere oturur"
   },
   "mesaj": {
     "intrebare": "Hesapta ne eksik?",

@@ -1292,7 +1292,8 @@
     "grupPolite": "선반: 옆 여유와 물림",
     "grupSertare": "서랍: 높이, 여유, 판",
     "grupDimensiuni": "폭, 높이, 깊이, 짜는 방식",
-    "grupCantitati": "문, 선반, 중간칸막이, 서랍 개수"
+    "grupCantitati": "문, 선반, 중간칸막이, 서랍 개수",
+    "grupSoclu": "걸레받이: 다리 없이 바닥에 서는 몸통"
   },
   "mesaj": {
     "intrebare": "계산에 무엇이 빠져 있나요?",

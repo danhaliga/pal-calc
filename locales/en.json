@@ -1292,7 +1292,8 @@
     "grupPolite": "Shelves: side play and setback",
     "grupSertare": "Drawers: heights, play, board",
     "grupDimensiuni": "Width, height, depth, construction",
-    "grupCantitati": "How many doors, shelves, partitions, drawers"
+    "grupCantitati": "How many doors, shelves, partitions, drawers",
+    "grupSoclu": "Plinth: the cabinet stands on the floor, no legs"
   },
   "mesaj": {
     "intrebare": "What is the calculation missing?",

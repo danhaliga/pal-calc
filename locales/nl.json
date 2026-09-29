@@ -1292,7 +1292,8 @@
     "grupPolite": "Legplanken: speling en terugzetting",
     "grupSertare": "Laden: hoogtes, speling, plaat",
     "grupDimensiuni": "Breedte, hoogte, diepte, opbouw",
-    "grupCantitati": "Hoeveel deuren, legplanken, tussenschotten, laden"
+    "grupCantitati": "Hoeveel deuren, legplanken, tussenschotten, laden",
+    "grupSoclu": "Plint: de kast staat op de vloer, zonder pootjes"
   },
   "mesaj": {
     "intrebare": "Wat mist de berekening?",

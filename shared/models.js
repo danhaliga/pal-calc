@@ -17,6 +17,18 @@
 })(typeof self !== 'undefined' ? self : this, function (PalCalc) {
   'use strict';
 
+  /* Categoriile carora li se poate pune soclu din setari.
+
+     Nu e acelasi lucru cu „sta pe podea": un corp de colt sta si el pe
+     podea, dar motorul nu stie sa-i puna soclu — acolo lateralele nu merg
+     drept in jos. La fel la cele atipice, unde forma vine din contur.
+     Categoria „sus" lipseste din alt motiv: alea atarna pe perete, si un
+     soclu acolo ar fi o bucata de PAL taiata degeaba.
+
+     Colturile pe podea raman de facut: cer lucru in ramura de colt din
+     calc.js, care isi taie singura piesele. */
+  var PE_PODEA = ['bucatarie-jos', 'bucatarie-inalt', 'living', 'baie'];
+
   var CATEGORIES = [
     { id: 'bucatarie-jos' },
     { id: 'bucatarie-sus' },
@@ -478,8 +490,17 @@
     return PalCalc.traducator(tr)('modele.m.' + id + '.corpNume');
   }
 
+  /* Modelul asta poate primi soclu din setarile atelierului? Gol sau
+     necunoscut: NU — mai bine lipseste soclul decat sa apara unde nu
+     trebuie, adica o bucata de PAL taiata degeaba si o cota gresita. */
+  function staPePodea(id) {
+    var m = id ? byId(String(id)) : null;
+    return !!(m && PE_PODEA.indexOf(m.cat) !== -1);
+  }
+
   return {
-    CATEGORIES: CATEGORIES,
+    PE_PODEA: PE_PODEA,
+    staPePodea: staPePodea,    CATEGORIES: CATEGORIES,
     MODELS: MODELS,
     categorii: categorii,
     modele: modele,

@@ -1303,7 +1303,8 @@
     "grupPolite": "Police: boční vůle a zapuštění",
     "grupSertare": "Zásuvky: výšky, vůle, deska",
     "grupDimensiuni": "Šířka, výška, hloubka, konstrukce",
-    "grupCantitati": "Kolik dvířek, polic, středových stojin, zásuvek"
+    "grupCantitati": "Kolik dvířek, polic, středových stojin, zásuvek",
+    "grupSoclu": "Sokl: skříňka stojí na podlaze, bez nožek"
   },
   "mesaj": {
     "intrebare": "Co výpočtu chybí?",

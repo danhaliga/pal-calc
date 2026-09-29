@@ -1292,7 +1292,8 @@
     "grupPolite": "Baldas: holgura lateral y retranqueo",
     "grupSertare": "Cajones: alturas, holgura, tablero",
     "grupDimensiuni": "Ancho, alto, fondo, construcción",
-    "grupCantitati": "Cuántas puertas, baldas, divisiones, cajones"
+    "grupCantitati": "Cuántas puertas, baldas, divisiones, cajones",
+    "grupSoclu": "Zócalo: el mueble apoya en el suelo, sin patas"
   },
   "mesaj": {
     "intrebare": "¿Qué le falta al cálculo?",

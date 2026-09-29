@@ -1303,7 +1303,8 @@
     "grupPolite": "Polițe: joc și retragere",
     "grupSertare": "Sertare: înălțimi, joc, placă",
     "grupDimensiuni": "Lățime, înălțime, adâncime, construcție",
-    "grupCantitati": "Câte uși, polițe, montanți, sertare"
+    "grupCantitati": "Câte uși, polițe, montanți, sertare",
+    "grupSoclu": "Soclu: corpul stă pe podea, fără picioare"
   },
   "mesaj": {
     "intrebare": "Ce-ți lipsește din calcul?",

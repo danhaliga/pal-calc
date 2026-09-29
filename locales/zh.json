@@ -1292,7 +1292,8 @@
     "grupPolite": "层板：两侧间隙和后退",
     "grupSertare": "抽屉：高度、间隙、板材",
     "grupDimensiuni": "宽、高、深、做法",
-    "grupCantitati": "几扇门、几块层板、几块中隔、几个抽屉"
+    "grupCantitati": "几扇门、几块层板、几块中隔、几个抽屉",
+    "grupSoclu": "踢脚板：柜体直接落地，不用柜脚"
   },
   "mesaj": {
     "intrebare": "计算还缺什么？",

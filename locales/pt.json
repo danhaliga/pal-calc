@@ -1292,7 +1292,8 @@
     "grupPolite": "Prateleiras: folga lateral e recuo",
     "grupSertare": "Gavetas: alturas, folga, placa",
     "grupDimensiuni": "Largura, altura, profundidade, construção",
-    "grupCantitati": "Quantas portas, prateleiras, divisórias, gavetas"
+    "grupCantitati": "Quantas portas, prateleiras, divisórias, gavetas",
+    "grupSoclu": "Rodapé: o móvel assenta no chão, sem pés"
   },
   "mesaj": {
     "intrebare": "O que falta ao cálculo?",

@@ -1292,7 +1292,8 @@
     "grupPolite": "棚板: 横の逃げと控え",
     "grupSertare": "引き出し: 高さ・逃げ・板",
     "grupDimensiuni": "幅・高さ・奥行・組み方",
-    "grupCantitati": "扉・棚板・仕切り・引き出しの数"
+    "grupCantitati": "扉・棚板・仕切り・引き出しの数",
+    "grupSoclu": "台輪：脚を使わず床に据える"
   },
   "mesaj": {
     "intrebare": "計算に足りないものは何ですか。",

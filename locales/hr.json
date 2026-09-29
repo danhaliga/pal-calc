@@ -1303,7 +1303,8 @@
     "grupPolite": "Police: bočni zazor i uvlačenje",
     "grupSertare": "Ladice: visine, zazor, ploča",
     "grupDimensiuni": "Širina, visina, dubina, konstrukcija",
-    "grupCantitati": "Koliko vrata, polica, srednjih stranica, ladica"
+    "grupCantitati": "Koliko vrata, polica, srednjih stranica, ladica",
+    "grupSoclu": "Sokl: tijelo stoji na podu, bez nožica"
   },
   "mesaj": {
     "intrebare": "Što nedostaje proračunu?",
