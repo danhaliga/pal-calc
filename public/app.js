@@ -57,6 +57,8 @@ function aplicaTip() {
   var atipic = tip === 'atipic';
   var piesa = tip === 'piesa';
   var arata = function (id, da) { var el = $(id); if (el) el.classList.toggle('hidden', !da); };
+  /* Fișele CNC pe piesă sunt ale corpului de sub scară. */
+  arata('fiseCnc', atipic);
 
   /* O piesă răzleață n-are uși, polițe, sertare, montanți sau spate. Ce nu
      are ce căuta acolo se ascunde, nu se lasă gri: un formular plin de
@@ -369,6 +371,13 @@ function legaContur() {
     if (!(x >= 10 && y >= 10 && z >= 10)) { toast(T('editor.subScaraCote')); return; }
 
     var bucati = +($('ssBucati') || { value: 1 }).value || 1;
+    /* Aceeași regulă ca pe server: nici corpuri prea înguste, nici unele pe
+       care editorul nu le-ar mai primi la salvare. */
+    var deVerificat = bucati > 1 && $('ssLatimiCampuri') && potrivesteRestul()
+      ? window.PalCalc.subScaraDinLatimi(x, y, z, potrivesteRestul())
+      : window.PalCalc.subScaraInBucati(x, y, z, bucati);
+    var problema = window.PalCalc.subScaraProblema(deVerificat);
+    if (problema) { toast(T('editor.' + problema)); return; }
     if (bucati > 1) {
       if (!DATA.orderId) { toast(T('editor.subScaraFaraComanda')); return; }
       if (!$('ssLatimiCampuri').querySelector('input')) randeazaLatimi();

@@ -108,7 +108,9 @@
     "csrf": "Sesija je istekla. Osveži stranicu i pokušaj ponovo.",
     "subScaraCote": "Mere ispod stepenica nisu dobre: svaka bar 10 mm.",
     "subScaraFaraComanda": "Više korpusa se pravi samo iz porudžbine. Otvori porudžbinu i stavi korpus u nju.",
-    "creditInsuficient": "Kredit ne stiže za sve korpuse. Dopuni i pokušaj ponovo."
+    "creditInsuficient": "Kredit ne stiže za sve korpuse. Dopuni i pokušaj ponovo.",
+    "subScaraPreaMare": "Element bi izašao veći od 3000 mm (ili kosina duža od 4000 mm). Podeli prostor na više elemenata.",
+    "subScaraPreaIngust": "Element bi izašao uži od 100 mm. Stavi manje elemenata ili veće širine."
   },
   "admin": {
     "limbi": {
@@ -757,7 +759,9 @@
       "obsUsaRamaAlu": "naručuju se gotova, na čistu meru",
       "balamaRamaAlu": "Šarka za aluminijumski ram",
       "cosJolly": "Korpa Jolly za element od {lat} mm",
-      "obsCosJolly": "bira se po širini elementa; front se kači na nju"
+      "obsCosJolly": "bira se po širini elementa; front se kači na nju",
+      "sistemGlisant": "Sistem kliznih vrata (šine i točkići)",
+      "obsSistemGlisant": "{n} vrata, element {lat} mm"
     }
   },
   "piesa": {
@@ -941,7 +945,8 @@
   "corp": {
     "faraComanda": "korpus bez porudžbine",
     "inComanda": "korpus u porudžbini „{nume}“",
-    "deblocare": "otključavanje korpusa"
+    "deblocare": "otključavanje korpusa",
+    "subScara": "element ispod stepenica u porudžbini „{nume}“"
   },
   "rezumat": {
     "laturi": {
@@ -1470,7 +1475,9 @@
     "subScaraLatimi": "Širina svakog elementa, s leva (mm). Poslednji izlazi sam, od onoga što ostane od osnove.",
     "subScaraLatimiRele": "Svaki element mora imati bar {min} mm. Poslednji bi imao {rest} mm — smanji ostale.",
     "subScaraFaraComanda": "Ovaj korpus nije u porudžbini. Više korpusa se pravi samo iz porudžbine.",
-    "subScaraIntreabaPlata": "Prostor se pravi od {cate} korpusa. Sadašnji postaje prvi, a ostalih {noi} se dodaje u porudžbinu i košta {cost} leja. Imaš {sold} leja."
+    "subScaraIntreabaPlata": "Prostor se pravi od {cate} korpusa. Sadašnji postaje prvi, a ostalih {noi} se dodaje u porudžbinu i košta {cost} leja. Imaš {sold} leja.",
+    "subScaraPreaMare": "Element bi izašao veći od 3000 mm (ili kosina duža od 4000 mm). Podeli prostor na više elemenata.",
+    "subScaraPreaIngust": "Element bi izašao uži od 100 mm. Stavi manje elemenata ili veće širine."
   },
   "fata": {
     "px": "desno",
@@ -1629,5 +1636,42 @@
     "colImplicit": "Podrazumevano",
     "colCelMaiDes": "Najčešće",
     "colAltfel": "Drugačije"
+  },
+  "fisa": {
+    "titlu": "CNC listovi po delovima",
+    "intro": "Svaki deo elementa, nacrtan sa svim merama i uglovima. Mere su završne, sa kantom; kontura sečenja se smanjuje za kant tamo gde je ivica kantovana.",
+    "buton": "CNC listovi po delovima",
+    "piesaNr": "Deo {cod}",
+    "bucati": "{n} kom",
+    "gabaritL": "pravougaonik {mm}",
+    "gabaritH": "pravougaonik {mm}",
+    "exterior": "spoljna {mm}",
+    "interior": "unutrašnja {mm}",
+    "exteriorScurt": "spoljna strana",
+    "interiorScurt": "unutrašnja strana",
+    "vedereSus": "Pogled na lice dela",
+    "vedereFata": "Kontura dela",
+    "vedere3d": "Deo u 3D",
+    "capat": "Kraj {lit}: rez pod {u}° prema licu · list testere nagnut na {panza}°",
+    "rExterior": "Dužina po spoljnoj ivici: {mm} mm",
+    "rInterior": "Dužina po unutrašnjoj ivici: {mm} mm",
+    "rLatime": "Širina: {mm} mm (za sečenje {taiere} mm, kant oduzet)",
+    "rCapat": "Kraj {lit}: {u}° prema licu — na testeri list na {panza}°; unutrašnja strana je kraća za {d} mm",
+    "rDreptunghi": "Pravougaonik {a} × {b} mm, pravi uglovi",
+    "rGabarit": "Seče se iz pravougaonika {a} × {b} mm i izrezuje kontura",
+    "rLaturi": "Stranice (u smeru konture): {lista} mm",
+    "rUnghiuri": "Uglovi između stranica: {lista}",
+    "rGrosime": "Debljina: {mm} mm",
+    "rTaiereDreapta": "Ivice se seku pravo (pod 90° prema licu)",
+    "faraFise": "Ovaj element nema delove sa uglovima ili konturom: lista sečenja kaže sve.",
+    "fataInalta": "visoka strana {mm}",
+    "fataJoasa": "niska strana {mm}",
+    "montantSus": "Gornja ivica: {u}° prema visokoj strani · list testere nagnut na {panza}°",
+    "rFataInalta": "Visina po visokoj strani: {mm} mm",
+    "rFataJoasa": "Visina po niskoj strani: {mm} mm",
+    "rAdancime": "Dubina: {mm} mm (za sečenje {taiere} mm, kant oduzet)",
+    "rMontantSus": "Gornja ivica se seče koso kroz debljinu: {u}° prema visokoj strani — na testeri list na {panza}°",
+    "capatInterior": "Kraj {lit}: rez pod {u}° prema unutrašnjoj strani · list testere nagnut na {panza}°",
+    "rCapatInterior": "Kraj {lit}: {u}° prema unutrašnjoj strani (unutrašnji ugao) — na testeri list na {panza}°; unutrašnja strana je duža za {d} mm"
   }
 }

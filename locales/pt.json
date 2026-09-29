@@ -108,7 +108,9 @@
     "csrf": "A sessão expirou. Recarrega a página e tenta de novo.",
     "subScaraCote": "As medidas do vão da escada não estão certas: cada uma tem de ter pelo menos 10 mm.",
     "subScaraFaraComanda": "Vários móveis só se fazem a partir de uma encomenda. Abra uma encomenda e ponha o móvel nela.",
-    "creditInsuficient": "O crédito não chega para todos os móveis. Carregue e tente de novo."
+    "creditInsuficient": "O crédito não chega para todos os móveis. Carregue e tente de novo.",
+    "subScaraPreaMare": "Um móvel ficaria com mais de 3000 mm (ou com a inclinação acima de 4000 mm). Divida o espaço em mais móveis.",
+    "subScaraPreaIngust": "Um móvel ficaria com menos de 100 mm. Use menos móveis ou larguras maiores."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "encomenda-se pronta, à medida final",
       "balamaRamaAlu": "Dobradiça para caixilho de alumínio",
       "cosJolly": "Cesto Jolly para móvel de {lat} mm",
-      "obsCosJolly": "escolhe-se pela largura do móvel; a frente fixa-se nele"
+      "obsCosJolly": "escolhe-se pela largura do móvel; a frente fixa-se nele",
+      "sistemGlisant": "Sistema de portas de correr (calhas e roletes)",
+      "obsSistemGlisant": "{n} portas, móvel de {lat} mm"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "módulo sem encomenda",
     "inComanda": "módulo na encomenda «{nume}»",
-    "deblocare": "desbloqueio de módulo"
+    "deblocare": "desbloqueio de módulo",
+    "subScara": "móvel sob escada na encomenda «{nume}»"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Largura de cada móvel, a partir da esquerda (mm). O último sai do que resta da base.",
     "subScaraLatimiRele": "Cada móvel precisa de pelo menos {min} mm. O último ficaria com {rest} mm — reduza os outros.",
     "subScaraFaraComanda": "Este móvel não está numa encomenda. Vários móveis só se fazem a partir de uma encomenda.",
-    "subScaraIntreabaPlata": "O espaço faz-se com {cate} móveis. O atual passa a ser o primeiro, e os outros {noi} são acrescentados à encomenda e custam {cost} lei. Tem {sold} lei."
+    "subScaraIntreabaPlata": "O espaço faz-se com {cate} móveis. O atual passa a ser o primeiro, e os outros {noi} são acrescentados à encomenda e custam {cost} lei. Tem {sold} lei.",
+    "subScaraPreaMare": "Um móvel ficaria com mais de 3000 mm (ou com a inclinação acima de 4000 mm). Divida o espaço em mais móveis.",
+    "subScaraPreaIngust": "Um móvel ficaria com menos de 100 mm. Use menos móveis ou larguras maiores."
   },
   "fata": {
     "px": "direita",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Por omissão",
     "colCelMaiDes": "Mais usado",
     "colAltfel": "Outro"
+  },
+  "fisa": {
+    "titlu": "Fichas CNC por peça",
+    "intro": "Cada peça do móvel, desenhada com todas as cotas e ângulos. As cotas são finais, com orla; o contorno de corte reduz-se na orla onde a aresta é orlada.",
+    "buton": "Fichas CNC por peça",
+    "piesaNr": "Peça {cod}",
+    "bucati": "{n} un",
+    "gabaritL": "retângulo {mm}",
+    "gabaritH": "retângulo {mm}",
+    "exterior": "exterior {mm}",
+    "interior": "interior {mm}",
+    "exteriorScurt": "face exterior",
+    "interiorScurt": "face interior",
+    "vedereSus": "Vista da face da peça",
+    "vedereFata": "Contorno da peça",
+    "vedere3d": "Peça em 3D",
+    "capat": "Extremo {lit}: corte a {u}° em relação à face · lâmina inclinada a {panza}°",
+    "rExterior": "Comprimento na aresta exterior: {mm} mm",
+    "rInterior": "Comprimento na aresta interior: {mm} mm",
+    "rLatime": "Largura: {mm} mm (de corte {taiere} mm, com a orla descontada)",
+    "rCapat": "Extremo {lit}: {u}° em relação à face — na serra, lâmina a {panza}°; a face interior é mais curta {d} mm",
+    "rDreptunghi": "Retângulo {a} × {b} mm, cantos retos",
+    "rGabarit": "Corta-se de um retângulo de {a} × {b} mm e recorta-se o contorno",
+    "rLaturi": "Lados (no sentido do contorno): {lista} mm",
+    "rUnghiuri": "Ângulos entre lados: {lista}",
+    "rGrosime": "Espessura: {mm} mm",
+    "rTaiereDreapta": "As arestas cortam-se a direito (a 90° da face)",
+    "faraFise": "Este móvel não tem peças com ângulos ou contorno: a lista de corte diz tudo.",
+    "fataInalta": "face alta {mm}",
+    "fataJoasa": "face baixa {mm}",
+    "montantSus": "Aresta de cima: {u}° em relação à face alta · lâmina inclinada a {panza}°",
+    "rFataInalta": "Altura na face alta: {mm} mm",
+    "rFataJoasa": "Altura na face baixa: {mm} mm",
+    "rAdancime": "Profundidade: {mm} mm (de corte {taiere} mm, com a orla descontada)",
+    "rMontantSus": "A aresta de cima corta-se inclinada na espessura: {u}° em relação à face alta — na serra, lâmina a {panza}°",
+    "capatInterior": "Extremo {lit}: corte a {u}° em relação à face interior · lâmina inclinada a {panza}°",
+    "rCapatInterior": "Extremo {lit}: {u}° em relação à face interior (canto reentrante) — na serra, lâmina a {panza}°; a face interior é mais longa {d} mm"
   }
 }

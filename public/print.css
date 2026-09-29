@@ -125,3 +125,30 @@ svg.cnc-svg .cnc-cota { fill: #43372a; font-family: "IBM Plex Mono", monospace; 
   tr, .doc-corp, .cnc-card, .doc-sect { break-inside: avoid; }
   @page { margin: 12mm; size: A4; }
 }
+
+/* ---- fișele CNC pe piesă (corpul de sub scară) ----
+   Desenele sunt în milimetri, deci liniile se țin la grosime fixă pe
+   ecran/hârtie, oricât de mare ar fi piesa: altfel un detaliu de 18 mm ar
+   ieși cu linii cât piesa. */
+.fisa { border: 1px solid #cfc8bc; border-radius: 8px; padding: 12px 14px; margin: 0 0 16px; break-inside: avoid; }
+.fisa h3 { margin: 0 0 6px; font-size: 15px; }
+.fisa ul { margin: 0 0 10px; padding-left: 18px; font-size: 12.5px; line-height: 1.55; }
+.fisa-desene { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.fisa-desene figure { margin: 0; }
+.fisa-desene figcaption { font-size: 11.5px; color: #555; margin-bottom: 4px; }
+svg.fisa-svg { width: 100%; height: auto; max-height: 300px; display: block; }
+svg.fisa-svg * { vector-effect: non-scaling-stroke; }
+svg.fisa-svg .fisa-piesa { fill: #f1e3c6; stroke: #3b2f20; stroke-width: 1.4px; }
+svg.fisa-svg .fisa-gabarit { fill: none; stroke: #8a939c; stroke-width: 1px; stroke-dasharray: 6 4; }
+svg.fisa-svg .fisa-ajut { stroke: #6d7780; stroke-width: .7px; }
+svg.fisa-svg .fisa-cota-linie { stroke: #1d4f91; stroke-width: 1px; }
+svg.fisa-svg .fisa-cota { fill: #1d4f91; font-family: "IBM Plex Mono", monospace; font-weight: 600; }
+svg.fisa-svg .fisa-cota-gabarit { fill: #6d7780; font-family: "IBM Plex Mono", monospace; }
+svg.fisa-svg .fisa-arc { fill: none; stroke: #b3261e; stroke-width: 1.2px; }
+svg.fisa-svg .fisa-unghi { fill: #b3261e; font-family: "IBM Plex Mono", monospace; font-weight: 700; }
+svg.fisa-svg .fisa-ascuns { stroke: #3b2f20; stroke-width: 1px; stroke-dasharray: 6 4; }
+svg.fisa-svg .fisa-cant { stroke: #d48a1e; stroke-width: 4px; }
+svg.fisa-svg .fisa-rupt { stroke: #3b2f20; stroke-width: 1px; stroke-dasharray: 3 3; }
+svg.fisa-svg .fisa-3d-spate { fill: #cdb893; stroke: #3b2f20; stroke-width: .8px; }
+svg.fisa-svg .fisa-3d-muchie { fill: #d9c4a0; stroke: #3b2f20; stroke-width: .8px; }
+svg.fisa-svg .fisa-3d-fata { fill: #f1e3c6; stroke: #3b2f20; stroke-width: .8px; }

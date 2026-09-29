@@ -108,7 +108,9 @@
     "csrf": "Sesija je istekla. Osvježi stranicu i pokušaj ponovno.",
     "subScaraCote": "Mjere ispod stepenica nisu dobre: svaka bar 10 mm.",
     "subScaraFaraComanda": "Više korpusa radi se samo iz narudžbe. Otvori narudžbu i stavi korpus u nju.",
-    "creditInsuficient": "Kredit ne dostaje za sve korpuse. Dopuni i pokušaj ponovno."
+    "creditInsuficient": "Kredit ne dostaje za sve korpuse. Dopuni i pokušaj ponovno.",
+    "subScaraPreaMare": "Element bi izašao veći od 3000 mm (ili kosina dulja od 4000 mm). Podijeli prostor na više elemenata.",
+    "subScaraPreaIngust": "Element bi izašao uži od 100 mm. Stavi manje elemenata ili veće širine."
   },
   "admin": {
     "limbi": {
@@ -757,7 +759,9 @@
       "obsUsaRamaAlu": "naručuju se gotova, na završnu mjeru",
       "balamaRamaAlu": "Šarka za aluminijski okvir",
       "cosJolly": "Košara Jolly za element od {lat} mm",
-      "obsCosJolly": "bira se po širini elementa; front se pričvrsti na nju"
+      "obsCosJolly": "bira se po širini elementa; front se pričvrsti na nju",
+      "sistemGlisant": "Sustav kliznih vrata (tračnice i kotačići)",
+      "obsSistemGlisant": "{n} vrata, element {lat} mm"
     }
   },
   "piesa": {
@@ -941,7 +945,8 @@
   "corp": {
     "faraComanda": "korpus bez naloga",
     "inComanda": "korpus u nalogu „{nume}“",
-    "deblocare": "otključavanje korpusa"
+    "deblocare": "otključavanje korpusa",
+    "subScara": "element ispod stepenica u narudžbi „{nume}“"
   },
   "rezumat": {
     "laturi": {
@@ -1470,7 +1475,9 @@
     "subScaraLatimi": "Širina svakog elementa, slijeva (mm). Zadnji izlazi sam, od onoga što ostane od osnovice.",
     "subScaraLatimiRele": "Svaki element mora imati barem {min} mm. Zadnji bi imao {rest} mm — smanji ostale.",
     "subScaraFaraComanda": "Ovaj korpus nije u narudžbi. Više korpusa radi se samo iz narudžbe.",
-    "subScaraIntreabaPlata": "Prostor se radi od {cate} korpusa. Sadašnji postaje prvi, a ostalih {noi} dodaje se u narudžbu i košta {cost} leja. Imaš {sold} leja."
+    "subScaraIntreabaPlata": "Prostor se radi od {cate} korpusa. Sadašnji postaje prvi, a ostalih {noi} dodaje se u narudžbu i košta {cost} leja. Imaš {sold} leja.",
+    "subScaraPreaMare": "Element bi izašao veći od 3000 mm (ili kosina dulja od 4000 mm). Podijeli prostor na više elemenata.",
+    "subScaraPreaIngust": "Element bi izašao uži od 100 mm. Stavi manje elemenata ili veće širine."
   },
   "fata": {
     "px": "desno",
@@ -1629,5 +1636,42 @@
     "colImplicit": "Zadano",
     "colCelMaiDes": "Najčešće",
     "colAltfel": "Drukčije"
+  },
+  "fisa": {
+    "titlu": "CNC listovi po dijelovima",
+    "intro": "Svaki dio elementa, nacrtan sa svim mjerama i kutovima. Mjere su završne, s rubnom trakom; kontura rezanja smanjuje se za traku ondje gdje je rub obrubljen.",
+    "buton": "CNC listovi po dijelovima",
+    "piesaNr": "Dio {cod}",
+    "bucati": "{n} kom",
+    "gabaritL": "pravokutnik {mm}",
+    "gabaritH": "pravokutnik {mm}",
+    "exterior": "vanjska {mm}",
+    "interior": "unutarnja {mm}",
+    "exteriorScurt": "vanjska strana",
+    "interiorScurt": "unutarnja strana",
+    "vedereSus": "Pogled na lice dijela",
+    "vedereFata": "Kontura dijela",
+    "vedere3d": "Dio u 3D",
+    "capat": "Kraj {lit}: rez pod {u}° prema licu · list pile nagnut na {panza}°",
+    "rExterior": "Duljina po vanjskom rubu: {mm} mm",
+    "rInterior": "Duljina po unutarnjem rubu: {mm} mm",
+    "rLatime": "Širina: {mm} mm (za rezanje {taiere} mm, traka oduzeta)",
+    "rCapat": "Kraj {lit}: {u}° prema licu — na pili list na {panza}°; unutarnja strana kraća je za {d} mm",
+    "rDreptunghi": "Pravokutnik {a} × {b} mm, pravi kutovi",
+    "rGabarit": "Reže se iz pravokutnika {a} × {b} mm i izrezuje kontura",
+    "rLaturi": "Stranice (u smjeru konture): {lista} mm",
+    "rUnghiuri": "Kutovi između stranica: {lista}",
+    "rGrosime": "Debljina: {mm} mm",
+    "rTaiereDreapta": "Rubovi se režu ravno (pod 90° prema licu)",
+    "faraFise": "Ovaj element nema dijelova s kutovima ili konturom: lista rezanja kaže sve.",
+    "fataInalta": "visoka strana {mm}",
+    "fataJoasa": "niska strana {mm}",
+    "montantSus": "Gornji rub: {u}° prema visokoj strani · list pile nagnut na {panza}°",
+    "rFataInalta": "Visina na visokoj strani: {mm} mm",
+    "rFataJoasa": "Visina na niskoj strani: {mm} mm",
+    "rAdancime": "Dubina: {mm} mm (za rezanje {taiere} mm, traka oduzeta)",
+    "rMontantSus": "Gornji rub reže se koso kroz debljinu: {u}° prema visokoj strani — na pili list na {panza}°",
+    "capatInterior": "Kraj {lit}: rez pod {u}° prema unutarnjoj strani · list pile nagnut na {panza}°",
+    "rCapatInterior": "Kraj {lit}: {u}° prema unutarnjoj strani (unutarnji kut) — na pili list na {panza}°; unutarnja strana dulja je za {d} mm"
   }
 }

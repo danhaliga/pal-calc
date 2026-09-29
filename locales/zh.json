@@ -108,7 +108,9 @@
     "csrf": "会话已过期。刷新页面再试一次。",
     "subScaraCote": "楼梯下的尺寸不对：每个至少 10 毫米。",
     "subScaraFaraComanda": "多个柜只能在订单里制作。请新建订单并把柜放进去。",
-    "creditInsuficient": "余额不足以制作全部柜子。请充值后重试。"
+    "creditInsuficient": "余额不足以制作全部柜子。请充值后重试。",
+    "subScaraPreaMare": "有柜体会超过 3000 毫米（或斜边超过 4000 毫米）。请把空间分成更多柜体。",
+    "subScaraPreaIngust": "有柜体会窄于 100 毫米。请减少柜体数量或加大宽度。"
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "按成品尺寸订购成品",
       "balamaRamaAlu": "铝框门铰链",
       "cosJolly": "{lat} 毫米柜用 Jolly 拉篮",
-      "obsCosJolly": "按柜宽选择；面板固定在其上"
+      "obsCosJolly": "按柜宽选择；面板固定在其上",
+      "sistemGlisant": "移门系统（轨道和滑轮）",
+      "obsSistemGlisant": "{n} 扇门，{lat} 毫米柜"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "不属于订单的柜体",
     "inComanda": "订单“{nume}”里的柜体",
-    "deblocare": "解锁柜体"
+    "deblocare": "解锁柜体",
+    "subScara": "订单“{nume}”中的楼梯下柜"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "从左起每个柜体的宽度（毫米）。最后一个由底边剩余部分自动得出。",
     "subScaraLatimiRele": "每个柜体至少需要 {min} 毫米。最后一个将只有 {rest} 毫米——请减小其他柜体。",
     "subScaraFaraComanda": "这个柜不属于任何订单。多个柜只能在订单里制作。",
-    "subScaraIntreabaPlata": "这块空间做成 {cate} 个柜。当前的柜成为第一个，其余 {noi} 个加入订单，费用 {cost} 列伊。你有 {sold} 列伊。"
+    "subScaraIntreabaPlata": "这块空间做成 {cate} 个柜。当前的柜成为第一个，其余 {noi} 个加入订单，费用 {cost} 列伊。你有 {sold} 列伊。",
+    "subScaraPreaMare": "有柜体会超过 3000 毫米（或斜边超过 4000 毫米）。请把空间分成更多柜体。",
+    "subScaraPreaIngust": "有柜体会窄于 100 毫米。请减少柜体数量或加大宽度。"
   },
   "fata": {
     "px": "右",
@@ -1618,5 +1625,42 @@
     "colImplicit": "默认",
     "colCelMaiDes": "最常用",
     "colAltfel": "其他"
+  },
+  "fisa": {
+    "titlu": "逐件 CNC 图",
+    "intro": "柜体的每一块板件，标出全部尺寸和角度。尺寸为含封边的成品尺寸；封边的边上，切割轮廓要减去封边厚度。",
+    "buton": "逐件 CNC 图",
+    "piesaNr": "板件 {cod}",
+    "bucati": "{n} 件",
+    "gabaritL": "矩形 {mm}",
+    "gabaritH": "矩形 {mm}",
+    "exterior": "外侧 {mm}",
+    "interior": "内侧 {mm}",
+    "exteriorScurt": "外面",
+    "interiorScurt": "内面",
+    "vedereSus": "板面视图",
+    "vedereFata": "板件轮廓",
+    "vedere3d": "板件三维图",
+    "capat": "端头 {lit}：与板面成 {u}° 切割 · 锯片倾斜 {panza}°",
+    "rExterior": "外侧边长度：{mm} 毫米",
+    "rInterior": "内侧边长度：{mm} 毫米",
+    "rLatime": "宽度：{mm} 毫米（开料 {taiere} 毫米，已减封边）",
+    "rCapat": "端头 {lit}：与板面成 {u}° — 锯上锯片 {panza}°；内面短 {d} 毫米",
+    "rDreptunghi": "矩形 {a} × {b} 毫米，直角",
+    "rGabarit": "从 {a} × {b} 毫米矩形开料，再切出轮廓",
+    "rLaturi": "各边（沿轮廓方向）：{lista} 毫米",
+    "rUnghiuri": "边与边的夹角：{lista}",
+    "rGrosime": "厚度：{mm} 毫米",
+    "rTaiereDreapta": "边直切（与板面成 90°）",
+    "faraFise": "此柜体没有带角度或轮廓的板件：开料清单即可。",
+    "fataInalta": "高面 {mm}",
+    "fataJoasa": "低面 {mm}",
+    "montantSus": "上边：与高面成 {u}° · 锯片倾斜 {panza}°",
+    "rFataInalta": "高面高度：{mm} 毫米",
+    "rFataJoasa": "低面高度：{mm} 毫米",
+    "rAdancime": "深度：{mm} 毫米（开料 {taiere} 毫米，已减封边）",
+    "rMontantSus": "上边沿厚度斜切：与高面成 {u}° — 锯上锯片 {panza}°",
+    "capatInterior": "端头 {lit}：与内面成 {u}° 切割 · 锯片倾斜 {panza}°",
+    "rCapatInterior": "端头 {lit}：与内面成 {u}°（阴角）— 锯上锯片 {panza}°；内面长 {d} 毫米"
   }
 }

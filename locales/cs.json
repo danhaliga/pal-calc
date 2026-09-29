@@ -108,7 +108,9 @@
     "csrf": "Relace vypršela. Načti stránku znovu a zkus to ještě jednou.",
     "subScaraCote": "Rozměry pod schody nesedí: každý musí být aspoň 10 mm.",
     "subScaraFaraComanda": "Více korpusů se dělá jen ze zakázky. Otevři zakázku a vlož do ní korpus.",
-    "creditInsuficient": "Kredit nestačí na všechny korpusy. Dobij a zkus to znovu."
+    "creditInsuficient": "Kredit nestačí na všechny korpusy. Dobij a zkus to znovu.",
+    "subScaraPreaMare": "Skříňka by vyšla větší než 3000 mm (nebo šikmina delší než 4000 mm). Rozděl prostor do více skříněk.",
+    "subScaraPreaIngust": "Skříňka by vyšla užší než 100 mm. Dej méně skříněk nebo větší šířky."
   },
   "admin": {
     "limbi": {
@@ -757,7 +759,9 @@
       "obsUsaRamaAlu": "objednávají se hotová, na čistý rozměr",
       "balamaRamaAlu": "Závěs pro hliníkový rám",
       "cosJolly": "Koš Jolly pro skříňku {lat} mm",
-      "obsCosJolly": "vybírá se podle šířky skříňky; čelo se připevní na něj"
+      "obsCosJolly": "vybírá se podle šířky skříňky; čelo se připevní na něj",
+      "sistemGlisant": "Systém posuvných dveří (kolejnice a kladky)",
+      "obsSistemGlisant": "{n} dveří, skříňka {lat} mm"
     }
   },
   "piesa": {
@@ -941,7 +945,8 @@
   "corp": {
     "faraComanda": "korpus bez zakázky",
     "inComanda": "korpus v zakázce „{nume}“",
-    "deblocare": "odemčení korpusu"
+    "deblocare": "odemčení korpusu",
+    "subScara": "skříňka pod schody v zakázce „{nume}“"
   },
   "rezumat": {
     "laturi": {
@@ -1470,7 +1475,9 @@
     "subScaraLatimi": "Šířka každé skříňky zleva (mm). Poslední vyjde sama z toho, co zbyde ze základny.",
     "subScaraLatimiRele": "Každá skříňka musí mít aspoň {min} mm. Poslední by měla {rest} mm — zmenši ostatní.",
     "subScaraFaraComanda": "Tento korpus není v zakázce. Více korpusů se dělá jen ze zakázky.",
-    "subScaraIntreabaPlata": "Prostor se udělá z {cate} korpusů. Současný bude první a dalších {noi} přibude do zakázky za {cost} lei. Máš {sold} lei."
+    "subScaraIntreabaPlata": "Prostor se udělá z {cate} korpusů. Současný bude první a dalších {noi} přibude do zakázky za {cost} lei. Máš {sold} lei.",
+    "subScaraPreaMare": "Skříňka by vyšla větší než 3000 mm (nebo šikmina delší než 4000 mm). Rozděl prostor do více skříněk.",
+    "subScaraPreaIngust": "Skříňka by vyšla užší než 100 mm. Dej méně skříněk nebo větší šířky."
   },
   "fata": {
     "px": "vpravo",
@@ -1629,5 +1636,42 @@
     "colImplicit": "Výchozí",
     "colCelMaiDes": "Nejčastěji",
     "colAltfel": "Jinak"
+  },
+  "fisa": {
+    "titlu": "CNC listy po dílech",
+    "intro": "Každý díl skříňky, nakreslený se všemi rozměry a úhly. Rozměry jsou čisté, s hranou; obrys řezu se zmenší o hranu tam, kde je hrana olepená.",
+    "buton": "CNC listy po dílech",
+    "piesaNr": "Díl {cod}",
+    "bucati": "{n} ks",
+    "gabaritL": "obdélník {mm}",
+    "gabaritH": "obdélník {mm}",
+    "exterior": "vnější {mm}",
+    "interior": "vnitřní {mm}",
+    "exteriorScurt": "vnější strana",
+    "interiorScurt": "vnitřní strana",
+    "vedereSus": "Pohled na plochu dílu",
+    "vedereFata": "Obrys dílu",
+    "vedere3d": "Díl ve 3D",
+    "capat": "Konec {lit}: řez pod {u}° k ploše · pila nakloněná na {panza}°",
+    "rExterior": "Délka na vnější hraně: {mm} mm",
+    "rInterior": "Délka na vnitřní hraně: {mm} mm",
+    "rLatime": "Šířka: {mm} mm (řezná {taiere} mm, po odečtení hrany)",
+    "rCapat": "Konec {lit}: {u}° k ploše — na pile kotouč na {panza}°; vnitřní strana je kratší o {d} mm",
+    "rDreptunghi": "Obdélník {a} × {b} mm, pravé úhly",
+    "rGabarit": "Řeže se z obdélníku {a} × {b} mm a vyfrézuje se obrys",
+    "rLaturi": "Strany (ve směru obrysu): {lista} mm",
+    "rUnghiuri": "Úhly mezi stranami: {lista}",
+    "rGrosime": "Tloušťka: {mm} mm",
+    "rTaiereDreapta": "Hrany se řežou rovně (pod 90° k ploše)",
+    "faraFise": "Tato skříňka nemá díly s úhly ani obrysem: řezný plán řekne vše.",
+    "fataInalta": "vysoká strana {mm}",
+    "fataJoasa": "nízká strana {mm}",
+    "montantSus": "Horní hrana: {u}° k vysoké straně · pila nakloněná na {panza}°",
+    "rFataInalta": "Výška na vysoké straně: {mm} mm",
+    "rFataJoasa": "Výška na nízké straně: {mm} mm",
+    "rAdancime": "Hloubka: {mm} mm (řezná {taiere} mm, po odečtení hrany)",
+    "rMontantSus": "Horní hrana se řeže šikmo přes tloušťku: {u}° k vysoké straně — na pile kotouč na {panza}°",
+    "capatInterior": "Konec {lit}: řez pod {u}° k vnitřní straně · pila nakloněná na {panza}°",
+    "rCapatInterior": "Konec {lit}: {u}° k vnitřní straně (vnitřní roh) — na pile kotouč na {panza}°; vnitřní strana je delší o {d} mm"
   }
 }

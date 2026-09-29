@@ -108,7 +108,9 @@
     "csrf": "Votre session a expiré. Rechargez la page et réessayez.",
     "subScaraCote": "Les cotes du sous-escalier ne sont pas bonnes : chacune doit faire au moins 10 mm.",
     "subScaraFaraComanda": "Plusieurs meubles ne se font que depuis une commande. Ouvrez une commande et mettez-y le meuble.",
-    "creditInsuficient": "Le crédit ne suffit pas pour tous les meubles. Rechargez et réessayez."
+    "creditInsuficient": "Le crédit ne suffit pas pour tous les meubles. Rechargez et réessayez.",
+    "subScaraPreaMare": "Un meuble dépasserait 3000 mm (ou une pente de 4000 mm). Divisez l'espace en plus de meubles.",
+    "subScaraPreaIngust": "Un meuble ferait moins de 100 mm. Mettez moins de meubles ou des largeurs plus grandes."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "commandée toute faite, à la cote finie",
       "balamaRamaAlu": "Charnière pour cadre aluminium",
       "cosJolly": "Panier Jolly pour meuble de {lat} mm",
-      "obsCosJolly": "choisi selon la largeur du meuble ; la façade s'y fixe"
+      "obsCosJolly": "choisi selon la largeur du meuble ; la façade s'y fixe",
+      "sistemGlisant": "Système de portes coulissantes (rails et galets)",
+      "obsSistemGlisant": "{n} portes, meuble de {lat} mm"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "caisson sans commande",
     "inComanda": "caisson dans la commande « {nume} »",
-    "deblocare": "déblocage de caisson"
+    "deblocare": "déblocage de caisson",
+    "subScara": "meuble sous escalier dans la commande « {nume} »"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Largeur de chaque meuble, depuis la gauche (mm). Le dernier se déduit de ce qui reste de la base.",
     "subScaraLatimiRele": "Chaque meuble doit faire au moins {min} mm. Le dernier ferait {rest} mm — réduisez les autres.",
     "subScaraFaraComanda": "Ce meuble n’est pas dans une commande. Plusieurs meubles ne se font que depuis une commande.",
-    "subScaraIntreabaPlata": "L’espace se fait en {cate} meubles. Le meuble actuel devient le premier, et les {noi} autres sont ajoutés à la commande et coûtent {cost} lei. Vous avez {sold} lei."
+    "subScaraIntreabaPlata": "L’espace se fait en {cate} meubles. Le meuble actuel devient le premier, et les {noi} autres sont ajoutés à la commande et coûtent {cost} lei. Vous avez {sold} lei.",
+    "subScaraPreaMare": "Un meuble dépasserait 3000 mm (ou une pente de 4000 mm). Divisez l'espace en plus de meubles.",
+    "subScaraPreaIngust": "Un meuble ferait moins de 100 mm. Mettez moins de meubles ou des largeurs plus grandes."
   },
   "fata": {
     "px": "droite",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Par défaut",
     "colCelMaiDes": "Le plus utilisé",
     "colAltfel": "Autre"
+  },
+  "fisa": {
+    "titlu": "Fiches CNC par pièce",
+    "intro": "Chaque pièce du meuble, dessinée avec toutes les cotes et tous les angles. Les cotes sont finies, avec chant ; le contour de découpe se réduit du chant là où l'arête est plaquée.",
+    "buton": "Fiches CNC par pièce",
+    "piesaNr": "Pièce {cod}",
+    "bucati": "{n} pcs",
+    "gabaritL": "rectangle {mm}",
+    "gabaritH": "rectangle {mm}",
+    "exterior": "extérieur {mm}",
+    "interior": "intérieur {mm}",
+    "exteriorScurt": "face extérieure",
+    "interiorScurt": "face intérieure",
+    "vedereSus": "Vue sur la face de la pièce",
+    "vedereFata": "Contour de la pièce",
+    "vedere3d": "Pièce en 3D",
+    "capat": "Extrémité {lit} : coupe à {u}° par rapport à la face · lame inclinée à {panza}°",
+    "rExterior": "Longueur sur l'arête extérieure : {mm} mm",
+    "rInterior": "Longueur sur l'arête intérieure : {mm} mm",
+    "rLatime": "Largeur : {mm} mm (de coupe {taiere} mm, chant déduit)",
+    "rCapat": "Extrémité {lit} : {u}° par rapport à la face — à la scie, lame à {panza}° ; la face intérieure est plus courte de {d} mm",
+    "rDreptunghi": "Rectangle {a} × {b} mm, angles droits",
+    "rGabarit": "Se découpe dans un rectangle de {a} × {b} mm, puis on détoure le contour",
+    "rLaturi": "Côtés (dans le sens du contour) : {lista} mm",
+    "rUnghiuri": "Angles entre côtés : {lista}",
+    "rGrosime": "Épaisseur : {mm} mm",
+    "rTaiereDreapta": "Les arêtes se coupent droit (à 90° de la face)",
+    "faraFise": "Ce meuble n'a pas de pièces avec angles ou contour : la liste de débit dit tout.",
+    "fataInalta": "face haute {mm}",
+    "fataJoasa": "face basse {mm}",
+    "montantSus": "Arête du haut : {u}° par rapport à la face haute · lame inclinée à {panza}°",
+    "rFataInalta": "Hauteur sur la face haute : {mm} mm",
+    "rFataJoasa": "Hauteur sur la face basse : {mm} mm",
+    "rAdancime": "Profondeur : {mm} mm (de coupe {taiere} mm, chant déduit)",
+    "rMontantSus": "L'arête du haut se coupe en biais dans l'épaisseur : {u}° par rapport à la face haute — à la scie, lame à {panza}°",
+    "capatInterior": "Extrémité {lit} : coupe à {u}° par rapport à la face intérieure · lame inclinée à {panza}°",
+    "rCapatInterior": "Extrémité {lit} : {u}° par rapport à la face intérieure (angle rentrant) — à la scie, lame à {panza}° ; la face intérieure est plus longue de {d} mm"
   }
 }

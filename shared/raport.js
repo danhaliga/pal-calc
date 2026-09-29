@@ -263,6 +263,13 @@
              p.cheie === 'usaBrat1' || p.cheie === 'usaBrat2';
     });
     var totalBalamale = 0, perUsa = 0;
+    /* Ușile glisante n-au balamale: merg pe șine. Se cumpără sistemul. */
+    if (c.montaj === 'glisant') {
+      var nGl = usiPiese.reduce(function (s, p) { return s + p.buc; }, 0) +
+        (res.deComandat || []).reduce(function (s, u) { return s + (u.fel === 'usaRamaAlu' ? u.buc : 0); }, 0);
+      if (nGl) pune(art('sistemGlisant'), 1, 'set', t_('fero.art.obsSistemGlisant', { n: nGl, lat: +c.W }));
+      usiPiese = [];
+    }
     usiPiese.forEach(function (p) {
       var n = PalCalc.balamale(p.L);
       totalBalamale += n * p.buc;
@@ -304,7 +311,7 @@
       balAlu += n * u.buc;
       perUsaAlu = Math.max(perUsaAlu, n);
     });
-    if (balAlu && s.balama && s.balama.id !== 'fara') {
+    if (balAlu && s.balama && s.balama.id !== 'fara' && c.montaj !== 'glisant') {
       pune(art('balamaRamaAlu'), balAlu, 'buc', t_('fero.art.obsPeUsa', { n: perUsaAlu }));
     }
 
@@ -387,7 +394,10 @@
      diagonală, la colțul orb numai pe partea care se vede — restul stă
      sub corpul vecin, care are plinta lui. */
   function lungimePlinta(c, res) {
-    if (!+c.picioare || (res && +res.soclu > 0) || +c.soclu > 0) return 0;
+    /* Soclul care chiar s-a pus (din calcul), nu cel cerut: un soclu cerut
+       la o construcție care nu-l primește lasă corpul pe picioare. */
+    var areSoclu = res ? +res.soclu > 0 : +c.soclu > 0;
+    if (!+c.picioare || areSoclu) return 0;
     if (c.tip === 'atipic' || c.tip === 'piesa') return 0;
     var k = res && res.colt;
     if (c.tip === 'colt-L') return k ? k.brA + k.brB : 0;

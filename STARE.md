@@ -16,7 +16,7 @@ piese se taie, la ce cotă finită și la ce cotă de tăiere, cu ce cant pe
 fiecare muchie, plus feroneria, croirea în coli și fișa de montaj.
 
 - **51 de modele** în catalog, **7 categorii**, **30 de limbi**
-- **597 de teste**, toate trec: `npm test`
+- **606 de teste**, toate trec: `npm test`
 - Node ≥ 20, Express 4, EJS, better-sqlite3, zod, bcryptjs
 - Motorul de calcul (`shared/*.js`) e UMD: **același fișier rulează și pe
   server, și în browser**. Nu-l rupe în două.
@@ -285,6 +285,55 @@ corp de {W} mm". Avertismente: lățime la care nu se vând coșuri (150, 200,
 300, 400, 500), polițe, mai mult de un front. Modele `baza-jolly` (300),
 `baza-jolly-200`, `baza-jolly-150`.
 
+## 6f. Fișe CNC pe piesă pentru corpul de sub scară (29 septembrie, noaptea)
+
+Dan: „la corpul de sub scară să existe desenele cu fiecare piesă 3D pentru
+CNC, cu dimensiuni și unghiuri de tăiere clare — foarte important!!".
+
+`shared/fisa-piesa.js` (UMD) face din `PalCalc.calc` câte o fișă pe piesă:
+- **laturile îmbinate în unghi** (`panouLatura`): vederea pe față cu lungimea
+  pe muchia exterioară și pe cea interioară, cele două capete mărite în
+  secțiune cu unghiul de tăiere față de față (jumătate din unghiul colțului,
+  luat EXACT din `res.contur.laturi`, nu din nota rotunjită) și înclinarea
+  pânzei (90° − unghiul), plus 3D;
+- **montantul**: fața înaltă / fața joasă, muchia de sus tăiată înclinat pe
+  grosime (unghiul pantei), plus 3D;
+- **spatele, ușile, polițele**: conturul cu fiecare latură cotată pe dinafară,
+  unghiul din fiecare colț, dreptunghiul din care se taie, plus 3D.
+Unghiurile se scriu cu două zecimale. Liniile au grosime fixă
+(`vector-effect: non-scaling-stroke`, în `public/print.css`).
+
+Unde se văd: planșa CNC a comenzii (`/orders/:id/print/cnc`, la sfârșit) și
+`/corps/:id/fise` (buton „Fișe CNC pe piesă" în editor, numai la corpul
+atipic; numai corp plătit). `layout-print.ejs` merge acum și fără comandă.
+
+## 6g. Auditul din 29 septembrie, noaptea
+
+- Probă automată pe toate modelele × 16 feluri de setări, plus sub-scara în
+  1–10 bucăți pe patru pereți (872 de cazuri): cote ≤ 0, NaN, texte
+  netraduse, desene stricate. **Găsit și reparat:** colțul în L cu brațele mai
+  scurte decât adâncimea scotea o ușă de −131 mm (veche, nu de azi).
+- Citire de cod (agent separat), reparate toate:
+  1. **GRAV — sub scară, piesele dinăuntru nu intrau.** Motorul socotea
+     golul ca și cum laturile ar sta călare pe contur (t/2), iar lista și
+     fișele le pun înăuntru (cota pe muchia exterioară). Polița ieșea 982 în
+     gol de 964, montantul cu ~20 mm prea înalt. Acum golul e
+     `conturInterior(contur, t)` — conturul mutat înăuntru pe normala
+     fiecărei laturi (sub pantă: t / cos(pantă)). Ușile de la capete ies
+     acum mai late decât cele din mijloc (acoperă latura), ca la corpul drept.
+  2. Colț intrând (> 180°): fișa scria unghiuri și cote negative; acum spune
+     unghiul față de fața interioară și că aceasta e mai LUNGĂ.
+  3. `POST /corps/:id/sub-scara` putea face corpuri pe care editorul nu le
+     mai primește (> 3000) sau de 30 mm, plătite. Regulă comună
+     `PalCalc.subScaraProblema()`, pe server și în editor.
+  4. Lipsea textul `corp.subScara` din istoricul de credit.
+  5. Soclu cerut dar nepus („peste") lăsa corpul fără picioare și plintă.
+  6. „(1/1)" la împărțirea într-un singur corp.
+  7. (veche) Ușile glisante primeau balamale; acum „sistem uși glisante".
+- Jurnalul de pe server: nicio eroare a aplicației; doar roboți care caută
+  WordPress și o autentificare greșită. Erorile „unable to open database file"
+  din 15:31 sunt de la punerea serverului, dinainte de permisiuni.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E
@@ -368,7 +417,7 @@ src/                rutele Express, baza de date, conturile, plata
 views/              paginile EJS
 public/app.js       editorul de corp: formular, tabel, vederea 3D
 locales/*.json      textele, 30 de fișiere
-tests/              29 de fișiere, 597 de teste
+tests/              31 de fișiere, 606 de teste
 .lucru/             scripturi de-o dată: traduceri, petice, probe
 db/migrations/      schema, se aplică singură la pornire
 ```

@@ -108,7 +108,9 @@
     "csrf": "Your session has expired. Reload the page and try again.",
     "subScaraCote": "The under-stairs sizes are not right: each must be at least 10 mm.",
     "subScaraFaraComanda": "Several cabinets can only be made from within an order. Open an order and put the cabinet in it.",
-    "creditInsuficient": "Not enough credit for all the cabinets. Top up and try again."
+    "creditInsuficient": "Not enough credit for all the cabinets. Top up and try again.",
+    "subScaraPreaMare": "A cabinet would come out larger than 3000 mm (or with a slope over 4000 mm). Split the space into more cabinets.",
+    "subScaraPreaIngust": "A cabinet would come out narrower than 100 mm. Use fewer cabinets or larger widths."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "ordered ready-made, at finished size",
       "balamaRamaAlu": "Hinge for aluminium frame",
       "cosJolly": "Pull-out basket for {lat} mm cabinet",
-      "obsCosJolly": "chosen by cabinet width; the front is fixed to it"
+      "obsCosJolly": "chosen by cabinet width; the front is fixed to it",
+      "sistemGlisant": "Sliding door system (tracks and rollers)",
+      "obsSistemGlisant": "{n} doors, {lat} mm cabinet"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "cabinet without an order",
     "inComanda": "cabinet in the order “{nume}”",
-    "deblocare": "cabinet unlock"
+    "deblocare": "cabinet unlock",
+    "subScara": "under-stairs cabinet in order “{nume}”"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Width of each cabinet, from the left (mm). The last one is what remains of the base.",
     "subScaraLatimiRele": "Each cabinet needs at least {min} mm. The last one would be {rest} mm — make the others smaller.",
     "subScaraFaraComanda": "This cabinet is not in an order. Several cabinets can only be made from within an order.",
-    "subScaraIntreabaPlata": "The space is made of {cate} cabinets. The current one becomes the first, and the other {noi} are added to the order and cost {cost} lei. You have {sold} lei."
+    "subScaraIntreabaPlata": "The space is made of {cate} cabinets. The current one becomes the first, and the other {noi} are added to the order and cost {cost} lei. You have {sold} lei.",
+    "subScaraPreaMare": "A cabinet would come out larger than 3000 mm (or with a slope over 4000 mm). Split the space into more cabinets.",
+    "subScaraPreaIngust": "A cabinet would come out narrower than 100 mm. Use fewer cabinets or larger widths."
   },
   "fata": {
     "px": "right",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Default",
     "colCelMaiDes": "Most used",
     "colAltfel": "Other"
+  },
+  "fisa": {
+    "titlu": "CNC sheets per piece",
+    "intro": "Every piece of the cabinet, drawn with all dimensions and angles. Dimensions are finished, with edging; the cutting contour is reduced by the edging where an edge is banded.",
+    "buton": "CNC sheets per piece",
+    "piesaNr": "Piece {cod}",
+    "bucati": "{n} pcs",
+    "gabaritL": "rectangle {mm}",
+    "gabaritH": "rectangle {mm}",
+    "exterior": "outer {mm}",
+    "interior": "inner {mm}",
+    "exteriorScurt": "outer face",
+    "interiorScurt": "inner face",
+    "vedereSus": "View on the face of the piece",
+    "vedereFata": "Piece outline",
+    "vedere3d": "Piece in 3D",
+    "capat": "End {lit}: cut at {u}° to the face · blade tilted to {panza}°",
+    "rExterior": "Length on the outer edge: {mm} mm",
+    "rInterior": "Length on the inner edge: {mm} mm",
+    "rLatime": "Width: {mm} mm (cutting {taiere} mm, edging deducted)",
+    "rCapat": "End {lit}: {u}° to the face — on the saw, blade at {panza}°; the inner face is shorter by {d} mm",
+    "rDreptunghi": "Rectangle {a} × {b} mm, square corners",
+    "rGabarit": "Cut from a {a} × {b} mm rectangle, then cut out the outline",
+    "rLaturi": "Sides (along the outline): {lista} mm",
+    "rUnghiuri": "Angles between sides: {lista}",
+    "rGrosime": "Thickness: {mm} mm",
+    "rTaiereDreapta": "Edges are cut square (90° to the face)",
+    "faraFise": "This cabinet has no pieces with angles or outlines: the cutting list says it all.",
+    "fataInalta": "high face {mm}",
+    "fataJoasa": "low face {mm}",
+    "montantSus": "Top edge: {u}° to the high face · blade tilted to {panza}°",
+    "rFataInalta": "Height on the high face: {mm} mm",
+    "rFataJoasa": "Height on the low face: {mm} mm",
+    "rAdancime": "Depth: {mm} mm (cutting {taiere} mm, edging deducted)",
+    "rMontantSus": "The top edge is bevelled across the thickness: {u}° to the high face — on the saw, blade at {panza}°",
+    "capatInterior": "End {lit}: cut at {u}° to the inner face · blade tilted to {panza}°",
+    "rCapatInterior": "End {lit}: {u}° to the inner face (inside corner) — on the saw, blade at {panza}°; the inner face is longer by {d} mm"
   }
 }

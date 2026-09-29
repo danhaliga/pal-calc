@@ -108,7 +108,9 @@
     "csrf": "Sesiunea a expirat. Reîncarcă pagina și încearcă din nou.",
     "subScaraCote": "Cotele spațiului de sub scară nu sunt bune: fiecare trebuie să fie de cel puțin 10 mm.",
     "subScaraFaraComanda": "Mai multe corpuri se fac numai dintr-o comandă. Deschide o comandă și pune corpul în ea.",
-    "creditInsuficient": "Nu ajunge creditul pentru toate corpurile. Alimentează contul și încearcă din nou."
+    "creditInsuficient": "Nu ajunge creditul pentru toate corpurile. Alimentează contul și încearcă din nou.",
+    "subScaraPreaMare": "Un corp ar ieși mai mare de 3000 mm (sau cu panta peste 4000 mm). Împarte spațiul în mai multe corpuri.",
+    "subScaraPreaIngust": "Un corp ar ieși mai îngust de 100 mm. Pune mai puține corpuri sau lățimi mai mari."
   },
   "admin": {
     "limbi": {
@@ -757,7 +759,9 @@
       "obsUsaRamaAlu": "se comandă gata, la cota finită",
       "balamaRamaAlu": "Balama pentru ramă de aluminiu",
       "cosJolly": "Coș Jolly pentru corp de {lat} mm",
-      "obsCosJolly": "se alege după lățimea corpului; frontul se prinde pe el"
+      "obsCosJolly": "se alege după lățimea corpului; frontul se prinde pe el",
+      "sistemGlisant": "Sistem pentru uși glisante (șine și role)",
+      "obsSistemGlisant": "{n} uși, corp de {lat} mm"
     }
   },
   "piesa": {
@@ -941,7 +945,8 @@
   "corp": {
     "faraComanda": "corp fără comandă",
     "inComanda": "corp în comanda „{nume}”",
-    "deblocare": "deblocare corp"
+    "deblocare": "deblocare corp",
+    "subScara": "corp sub scară în comanda „{nume}”"
   },
   "rezumat": {
     "laturi": {
@@ -1470,7 +1475,9 @@
     "subScaraLatimi": "Lățimea fiecărui corp, de la stânga (mm). Ultimul iese singur, din ce rămâne din bază.",
     "subScaraLatimiRele": "Fiecare corp trebuie să aibă cel puțin {min} mm. Ultimul ar ieși de {rest} mm — micșorează-le pe celelalte.",
     "subScaraFaraComanda": "Corpul ăsta nu e într-o comandă. Mai multe corpuri se fac numai dintr-o comandă.",
-    "subScaraIntreabaPlata": "Spațiul se face din {cate} corpuri. Corpul de acum devine primul, iar celelalte {noi} se adaugă în comandă și costă {cost} lei. Ai {sold} lei."
+    "subScaraIntreabaPlata": "Spațiul se face din {cate} corpuri. Corpul de acum devine primul, iar celelalte {noi} se adaugă în comandă și costă {cost} lei. Ai {sold} lei.",
+    "subScaraPreaMare": "Un corp ar ieși mai mare de 3000 mm (sau cu panta peste 4000 mm). Împarte spațiul în mai multe corpuri.",
+    "subScaraPreaIngust": "Un corp ar ieși mai îngust de 100 mm. Pune mai puține corpuri sau lățimi mai mari."
   },
   "fata": {
     "px": "dreapta",
@@ -1629,5 +1636,42 @@
     "colImplicit": "Implicit",
     "colCelMaiDes": "Cel mai des",
     "colAltfel": "Altfel"
+  },
+  "fisa": {
+    "titlu": "Fișe CNC pe piesă",
+    "intro": "Fiecare piesă a corpului, desenată cu toate cotele și unghiurile. Cotele sunt finite, cu cant; la conturul de tăiere se scade cantul acolo unde e muchie cantuită.",
+    "buton": "Fișe CNC pe piesă",
+    "piesaNr": "Piesa {cod}",
+    "bucati": "{n} buc",
+    "gabaritL": "dreptunghi {mm}",
+    "gabaritH": "dreptunghi {mm}",
+    "exterior": "exterior {mm}",
+    "interior": "interior {mm}",
+    "exteriorScurt": "fața exterioară",
+    "interiorScurt": "fața interioară",
+    "vedereSus": "Vedere pe fața piesei",
+    "vedereFata": "Conturul piesei",
+    "vedere3d": "Piesa în 3D",
+    "capat": "Capătul {lit}: tăiere la {u}° față de fața piesei · pânza înclinată la {panza}°",
+    "rExterior": "Lungime pe muchia exterioară: {mm} mm",
+    "rInterior": "Lungime pe muchia interioară: {mm} mm",
+    "rLatime": "Lățime: {mm} mm (de tăiere {taiere} mm, cu cantul scăzut)",
+    "rCapat": "Capătul {lit}: {u}° față de față — la fierăstrău pânza la {panza}°; fața interioară e mai scurtă cu {d} mm",
+    "rDreptunghi": "Dreptunghi {a} × {b} mm, colțuri drepte",
+    "rGabarit": "Se taie din dreptunghiul {a} × {b} mm și se decupează conturul",
+    "rLaturi": "Laturi (în sensul conturului): {lista} mm",
+    "rUnghiuri": "Unghiuri între laturi: {lista}",
+    "rGrosime": "Grosime: {mm} mm",
+    "rTaiereDreapta": "Muchiile se taie drept (la 90° față de fața piesei)",
+    "faraFise": "Corpul ăsta nu are piese cu unghiuri sau contur: lista de debitare spune tot.",
+    "fataInalta": "fața înaltă {mm}",
+    "fataJoasa": "fața joasă {mm}",
+    "montantSus": "Muchia de sus: {u}° față de fața înaltă · pânza înclinată la {panza}°",
+    "rFataInalta": "Înălțime pe fața înaltă: {mm} mm",
+    "rFataJoasa": "Înălțime pe fața joasă: {mm} mm",
+    "rAdancime": "Adâncime: {mm} mm (de tăiere {taiere} mm, cu cantul scăzut)",
+    "rMontantSus": "Muchia de sus se taie înclinat pe grosime: {u}° față de fața înaltă — la fierăstrău pânza la {panza}°",
+    "capatInterior": "Capătul {lit}: tăiere la {u}° față de fața interioară · pânza înclinată la {panza}°",
+    "rCapatInterior": "Capătul {lit}: {u}° față de fața interioară (colț intrând) — la fierăstrău pânza la {panza}°; fața interioară e mai lungă cu {d} mm"
   }
 }

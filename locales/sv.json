@@ -108,7 +108,9 @@
     "csrf": "Sessionen har gått ut. Ladda om sidan och försök igen.",
     "subScaraCote": "Måtten under trappan stämmer inte: vart och ett måste vara minst 10 mm.",
     "subScaraFaraComanda": "Flera stommar gör man bara inifrån en order. Öppna en order och lägg stommen i den.",
-    "creditInsuficient": "Saldot räcker inte till alla stommar. Fyll på och försök igen."
+    "creditInsuficient": "Saldot räcker inte till alla stommar. Fyll på och försök igen.",
+    "subScaraPreaMare": "Ett skåp skulle bli större än 3000 mm (eller snedsidan längre än 4000 mm). Dela upp utrymmet i fler skåp.",
+    "subScaraPreaIngust": "Ett skåp skulle bli smalare än 100 mm. Använd färre skåp eller större bredder."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "beställs färdig, i färdigmått",
       "balamaRamaAlu": "Gångjärn för aluminiumram",
       "cosJolly": "Jolly-korg för {lat} mm skåp",
-      "obsCosJolly": "väljs efter skåpets bredd; fronten fästs på den"
+      "obsCosJolly": "väljs efter skåpets bredd; fronten fästs på den",
+      "sistemGlisant": "Skjutdörrssystem (skenor och hjul)",
+      "obsSistemGlisant": "{n} dörrar, {lat} mm skåp"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "stomme utan order",
     "inComanda": "stomme i ordern ”{nume}”",
-    "deblocare": "upplåsning av stomme"
+    "deblocare": "upplåsning av stomme",
+    "subScara": "skåp under trappa i beställningen ”{nume}”"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Bredd på varje skåp, från vänster (mm). Det sista blir det som återstår av basen.",
     "subScaraLatimiRele": "Varje skåp behöver minst {min} mm. Det sista skulle bli {rest} mm — gör de andra smalare.",
     "subScaraFaraComanda": "Den här stommen ligger inte i en order. Flera stommar gör man bara inifrån en order.",
-    "subScaraIntreabaPlata": "Utrymmet görs av {cate} stommar. Den nuvarande blir den första, och de andra {noi} läggs till i ordern och kostar {cost} lei. Du har {sold} lei."
+    "subScaraIntreabaPlata": "Utrymmet görs av {cate} stommar. Den nuvarande blir den första, och de andra {noi} läggs till i ordern och kostar {cost} lei. Du har {sold} lei.",
+    "subScaraPreaMare": "Ett skåp skulle bli större än 3000 mm (eller snedsidan längre än 4000 mm). Dela upp utrymmet i fler skåp.",
+    "subScaraPreaIngust": "Ett skåp skulle bli smalare än 100 mm. Använd färre skåp eller större bredder."
   },
   "fata": {
     "px": "höger",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Standard",
     "colCelMaiDes": "Vanligast",
     "colAltfel": "Annat"
+  },
+  "fisa": {
+    "titlu": "CNC-blad per del",
+    "intro": "Varje del i skåpet, ritad med alla mått och vinklar. Måtten är färdigmått med kantlist; skärkonturen minskas med kantlisten där en kant är kantlimmad.",
+    "buton": "CNC-blad per del",
+    "piesaNr": "Del {cod}",
+    "bucati": "{n} st",
+    "gabaritL": "rektangel {mm}",
+    "gabaritH": "rektangel {mm}",
+    "exterior": "yttre {mm}",
+    "interior": "inre {mm}",
+    "exteriorScurt": "yttersida",
+    "interiorScurt": "innersida",
+    "vedereSus": "Vy mot delens yta",
+    "vedereFata": "Delens kontur",
+    "vedere3d": "Delen i 3D",
+    "capat": "Ände {lit}: snitt {u}° mot ytan · klingan lutad {panza}°",
+    "rExterior": "Längd på ytterkanten: {mm} mm",
+    "rInterior": "Längd på innerkanten: {mm} mm",
+    "rLatime": "Bredd: {mm} mm (skärmått {taiere} mm, kantlist avdragen)",
+    "rCapat": "Ände {lit}: {u}° mot ytan — på sågen klingan på {panza}°; innersidan är {d} mm kortare",
+    "rDreptunghi": "Rektangel {a} × {b} mm, räta hörn",
+    "rGabarit": "Sågas ur en rektangel {a} × {b} mm, sedan fräses konturen",
+    "rLaturi": "Sidor (längs konturen): {lista} mm",
+    "rUnghiuri": "Vinklar mellan sidorna: {lista}",
+    "rGrosime": "Tjocklek: {mm} mm",
+    "rTaiereDreapta": "Kanterna sågas raka (90° mot ytan)",
+    "faraFise": "Det här skåpet har inga delar med vinklar eller kontur: skärlistan säger allt.",
+    "fataInalta": "hög sida {mm}",
+    "fataJoasa": "låg sida {mm}",
+    "montantSus": "Överkant: {u}° mot den höga sidan · klingan lutad {panza}°",
+    "rFataInalta": "Höjd på den höga sidan: {mm} mm",
+    "rFataJoasa": "Höjd på den låga sidan: {mm} mm",
+    "rAdancime": "Djup: {mm} mm (skärmått {taiere} mm, kantlist avdragen)",
+    "rMontantSus": "Överkanten sågas snett genom tjockleken: {u}° mot den höga sidan — på sågen klingan på {panza}°",
+    "capatInterior": "Ände {lit}: snitt {u}° mot innersidan · klingan lutad {panza}°",
+    "rCapatInterior": "Ände {lit}: {u}° mot innersidan (innerhörn) — på sågen klingan på {panza}°; innersidan är {d} mm längre"
   }
 }

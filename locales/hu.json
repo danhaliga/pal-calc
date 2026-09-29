@@ -108,7 +108,9 @@
     "csrf": "A munkamenet lejárt. Töltsd újra az oldalt, és próbáld meg ismét.",
     "subScaraCote": "A lépcső alatti méretek nem jók: mindegyik legalább 10 mm legyen.",
     "subScaraFaraComanda": "Több korpusz csak rendelésen belül készül. Nyiss egy rendelést és tedd bele a korpuszt.",
-    "creditInsuficient": "Nincs elég kredit az összes korpuszra. Tölts fel és próbáld újra."
+    "creditInsuficient": "Nincs elég kredit az összes korpuszra. Tölts fel és próbáld újra.",
+    "subScaraPreaMare": "Egy korpusz nagyobb lenne 3000 mm-nél (vagy a ferde oldal 4000 mm-nél). Oszd a teret több korpuszra.",
+    "subScaraPreaIngust": "Egy korpusz keskenyebb lenne 100 mm-nél. Kevesebb korpusz vagy nagyobb szélesség kell."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "készen rendelve, kész méretre",
       "balamaRamaAlu": "Zsanér alumínium kerethez",
       "cosJolly": "Jolly kosár {lat} mm-es szekrényhez",
-      "obsCosJolly": "a szekrény szélessége szerint választandó; az előlap erre kerül"
+      "obsCosJolly": "a szekrény szélessége szerint választandó; az előlap erre kerül",
+      "sistemGlisant": "Tolóajtó-rendszer (sínek és görgők)",
+      "obsSistemGlisant": "{n} ajtó, {lat} mm-es korpusz"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "korpusz megrendelés nélkül",
     "inComanda": "korpusz a(z) „{nume}” megrendelésben",
-    "deblocare": "korpusz feloldása"
+    "deblocare": "korpusz feloldása",
+    "subScara": "lépcső alatti korpusz a(z) „{nume}” rendelésben"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Az egyes korpuszok szélessége balról (mm). Az utolsó magától jön ki abból, ami az alapból marad.",
     "subScaraLatimiRele": "Minden korpusz legalább {min} mm kell legyen. Az utolsó {rest} mm lenne — csökkentsd a többit.",
     "subScaraFaraComanda": "Ez a korpusz nincs rendelésben. Több korpusz csak rendelésen belül készül.",
-    "subScaraIntreabaPlata": "A tér {cate} korpuszból készül. A mostani lesz az első, a többi {noi} bekerül a rendelésbe és {cost} lejbe kerül. Van {sold} lejed."
+    "subScaraIntreabaPlata": "A tér {cate} korpuszból készül. A mostani lesz az első, a többi {noi} bekerül a rendelésbe és {cost} lejbe kerül. Van {sold} lejed.",
+    "subScaraPreaMare": "Egy korpusz nagyobb lenne 3000 mm-nél (vagy a ferde oldal 4000 mm-nél). Oszd a teret több korpuszra.",
+    "subScaraPreaIngust": "Egy korpusz keskenyebb lenne 100 mm-nél. Kevesebb korpusz vagy nagyobb szélesség kell."
   },
   "fata": {
     "px": "jobb",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Alapérték",
     "colCelMaiDes": "Leggyakrabban",
     "colAltfel": "Eltérő"
+  },
+  "fisa": {
+    "titlu": "CNC-lapok alkatrészenként",
+    "intro": "A korpusz minden alkatrésze, minden mérettel és szöggel megrajzolva. A méretek készméretek, élzárással; a vágási kontúr az élzárással csökken, ahol az él élzárt.",
+    "buton": "CNC-lapok alkatrészenként",
+    "piesaNr": "{cod}. alkatrész",
+    "bucati": "{n} db",
+    "gabaritL": "téglalap {mm}",
+    "gabaritH": "téglalap {mm}",
+    "exterior": "külső {mm}",
+    "interior": "belső {mm}",
+    "exteriorScurt": "külső oldal",
+    "interiorScurt": "belső oldal",
+    "vedereSus": "Nézet az alkatrész lapjára",
+    "vedereFata": "Az alkatrész kontúrja",
+    "vedere3d": "Az alkatrész 3D-ben",
+    "capat": "{lit} vég: vágás {u}°-ban a laphoz · fűrészlap {panza}°-ra döntve",
+    "rExterior": "Hossz a külső élen: {mm} mm",
+    "rInterior": "Hossz a belső élen: {mm} mm",
+    "rLatime": "Szélesség: {mm} mm (vágási {taiere} mm, élzárás levonva)",
+    "rCapat": "{lit} vég: {u}° a laphoz — a fűrészen a lap {panza}°-on; a belső oldal {d} mm-rel rövidebb",
+    "rDreptunghi": "Téglalap {a} × {b} mm, derékszögű sarkok",
+    "rGabarit": "{a} × {b} mm-es téglalapból vágandó, majd a kontúr kimarandó",
+    "rLaturi": "Oldalak (a kontúr irányában): {lista} mm",
+    "rUnghiuri": "Oldalak közti szögek: {lista}",
+    "rGrosime": "Vastagság: {mm} mm",
+    "rTaiereDreapta": "Az élek egyenesen vágandók (90°-ban a laphoz)",
+    "faraFise": "Ennek a korpusznak nincs szöges vagy kontúros alkatrésze: a szabásjegyzék mindent elmond.",
+    "fataInalta": "magas oldal {mm}",
+    "fataJoasa": "alacsony oldal {mm}",
+    "montantSus": "Felső él: {u}° a magas oldalhoz · fűrészlap {panza}°-ra döntve",
+    "rFataInalta": "Magasság a magas oldalon: {mm} mm",
+    "rFataJoasa": "Magasság az alacsony oldalon: {mm} mm",
+    "rAdancime": "Mélység: {mm} mm (vágási {taiere} mm, élzárás levonva)",
+    "rMontantSus": "A felső él ferdén vágandó a vastagságon át: {u}° a magas oldalhoz — a fűrészen a lap {panza}°-on",
+    "capatInterior": "{lit} vég: vágás {u}°-ban a belső oldalhoz · fűrészlap {panza}°-ra döntve",
+    "rCapatInterior": "{lit} vég: {u}° a belső oldalhoz (belső sarok) — a fűrészen a lap {panza}°-on; a belső oldal {d} mm-rel hosszabb"
   }
 }

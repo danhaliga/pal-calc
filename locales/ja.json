@@ -108,7 +108,9 @@
     "csrf": "セッションが切れました。ページを読み込み直してもう一度お試しください。",
     "subScaraCote": "階段下の寸法が正しくありません。どれも 10 mm 以上必要です。",
     "subScaraFaraComanda": "複数の箱は注文の中でしか作れません。注文を開いて箱を入れてください。",
-    "creditInsuficient": "全部の箱を作るには残高が足りません。追加してからやり直してください。"
+    "creditInsuficient": "全部の箱を作るには残高が足りません。追加してからやり直してください。",
+    "subScaraPreaMare": "3000 mm を超える（または斜辺が 4000 mm を超える）キャビネットになります。空間をもっと多くのキャビネットに分けてください。",
+    "subScaraPreaIngust": "100 mm より狭いキャビネットになります。数を減らすか幅を広げてください。"
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "仕上がり寸法で完成品を発注",
       "balamaRamaAlu": "アルミ框用ヒンジ",
       "cosJolly": "{lat} mm キャビネット用引出しバスケット",
-      "obsCosJolly": "キャビネット幅で選ぶ；前板はこれに取り付ける"
+      "obsCosJolly": "キャビネット幅で選ぶ；前板はこれに取り付ける",
+      "sistemGlisant": "引き戸システム（レールとローラー）",
+      "obsSistemGlisant": "扉 {n} 枚、{lat} mm キャビネット"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "注文に属さないキャビネット",
     "inComanda": "注文「{nume}」のキャビネット",
-    "deblocare": "キャビネットのロック解除"
+    "deblocare": "キャビネットのロック解除",
+    "subScara": "注文「{nume}」の階段下キャビネット"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "左から各キャビネットの幅（mm）。最後のものは底辺の残りから自動で決まります。",
     "subScaraLatimiRele": "各キャビネットは {min} mm 以上必要です。最後のものが {rest} mm になります。ほかを小さくしてください。",
     "subScaraFaraComanda": "この箱はどの注文にも入っていません。複数の箱は注文の中でしか作れません。",
-    "subScaraIntreabaPlata": "この空間を {cate} 個の箱で作ります。今の箱が一つ目になり、残り {noi} 個が注文に加わり {cost} レイかかります。残高は {sold} レイです。"
+    "subScaraIntreabaPlata": "この空間を {cate} 個の箱で作ります。今の箱が一つ目になり、残り {noi} 個が注文に加わり {cost} レイかかります。残高は {sold} レイです。",
+    "subScaraPreaMare": "3000 mm を超える（または斜辺が 4000 mm を超える）キャビネットになります。空間をもっと多くのキャビネットに分けてください。",
+    "subScaraPreaIngust": "100 mm より狭いキャビネットになります。数を減らすか幅を広げてください。"
   },
   "fata": {
     "px": "右",
@@ -1618,5 +1625,42 @@
     "colImplicit": "初期値",
     "colCelMaiDes": "最も多い",
     "colAltfel": "ほか"
+  },
+  "fisa": {
+    "titlu": "部材ごとのCNCシート",
+    "intro": "キャビネットの各部材を、すべての寸法と角度付きで描いています。寸法はエッジ込みの仕上がり寸法で、エッジを貼る辺では切断輪郭がエッジ分小さくなります。",
+    "buton": "部材ごとのCNCシート",
+    "piesaNr": "部材 {cod}",
+    "bucati": "{n} 枚",
+    "gabaritL": "長方形 {mm}",
+    "gabaritH": "長方形 {mm}",
+    "exterior": "外側 {mm}",
+    "interior": "内側 {mm}",
+    "exteriorScurt": "外面",
+    "interiorScurt": "内面",
+    "vedereSus": "部材の面の図",
+    "vedereFata": "部材の輪郭",
+    "vedere3d": "部材の3D",
+    "capat": "端 {lit}：面に対して {u}° で切断 · 刃を {panza}° 傾ける",
+    "rExterior": "外側の辺の長さ：{mm} mm",
+    "rInterior": "内側の辺の長さ：{mm} mm",
+    "rLatime": "幅：{mm} mm（切断 {taiere} mm、エッジ分差引）",
+    "rCapat": "端 {lit}：面に対して {u}° — 丸のこは刃を {panza}° に；内面は {d} mm 短い",
+    "rDreptunghi": "長方形 {a} × {b} mm、直角",
+    "rGabarit": "{a} × {b} mm の長方形から切り出し、輪郭を切り抜く",
+    "rLaturi": "辺（輪郭の向き）：{lista} mm",
+    "rUnghiuri": "辺どうしの角度：{lista}",
+    "rGrosime": "厚さ：{mm} mm",
+    "rTaiereDreapta": "辺は直角に切る（面に対して90°）",
+    "faraFise": "このキャビネットには角度や輪郭のある部材がありません：切断リストで足ります。",
+    "fataInalta": "高い面 {mm}",
+    "fataJoasa": "低い面 {mm}",
+    "montantSus": "上端：高い面に対して {u}° · 刃を {panza}° 傾ける",
+    "rFataInalta": "高い面の高さ：{mm} mm",
+    "rFataJoasa": "低い面の高さ：{mm} mm",
+    "rAdancime": "奥行：{mm} mm（切断 {taiere} mm、エッジ分差引）",
+    "rMontantSus": "上端は厚み方向に斜めに切る：高い面に対して {u}° — 丸のこは刃を {panza}° に",
+    "capatInterior": "端 {lit}：内面に対して {u}° で切断 · 刃を {panza}° 傾ける",
+    "rCapatInterior": "端 {lit}：内面に対して {u}°（入隅）— 丸のこは刃を {panza}° に；内面は {d} mm 長い"
   }
 }

@@ -108,7 +108,9 @@
     "csrf": "La sesión ha caducado. Recarga la página e inténtalo de nuevo.",
     "subScaraCote": "Las medidas del bajo escalera no son válidas: cada una debe ser de al menos 10 mm.",
     "subScaraFaraComanda": "Varios muebles solo se hacen desde un pedido. Abre un pedido y mete el mueble en él.",
-    "creditInsuficient": "No hay crédito suficiente para todos los muebles. Recarga e inténtalo de nuevo."
+    "creditInsuficient": "No hay crédito suficiente para todos los muebles. Recarga e inténtalo de nuevo.",
+    "subScaraPreaMare": "Un mueble saldría de más de 3000 mm (o con la pendiente de más de 4000 mm). Divide el espacio en más muebles.",
+    "subScaraPreaIngust": "Un mueble saldría de menos de 100 mm. Pon menos muebles o anchos mayores."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "se pide hecha, a medida final",
       "balamaRamaAlu": "Bisagra para marco de aluminio",
       "cosJolly": "Cesto Jolly para mueble de {lat} mm",
-      "obsCosJolly": "se elige por el ancho del mueble; el frente se fija en él"
+      "obsCosJolly": "se elige por el ancho del mueble; el frente se fija en él",
+      "sistemGlisant": "Sistema para puertas correderas (rieles y ruedas)",
+      "obsSistemGlisant": "{n} puertas, mueble de {lat} mm"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "módulo sin pedido",
     "inComanda": "módulo del pedido «{nume}»",
-    "deblocare": "desbloqueo de módulo"
+    "deblocare": "desbloqueo de módulo",
+    "subScara": "mueble bajo escalera en el pedido «{nume}»"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Ancho de cada mueble, desde la izquierda (mm). El último sale solo, con lo que queda de la base.",
     "subScaraLatimiRele": "Cada mueble necesita al menos {min} mm. El último saldría de {rest} mm: reduce los demás.",
     "subScaraFaraComanda": "Este mueble no está en un pedido. Varios muebles solo se hacen desde un pedido.",
-    "subScaraIntreabaPlata": "El espacio se hace con {cate} muebles. El actual pasa a ser el primero, y los otros {noi} se añaden al pedido y cuestan {cost} lei. Tienes {sold} lei."
+    "subScaraIntreabaPlata": "El espacio se hace con {cate} muebles. El actual pasa a ser el primero, y los otros {noi} se añaden al pedido y cuestan {cost} lei. Tienes {sold} lei.",
+    "subScaraPreaMare": "Un mueble saldría de más de 3000 mm (o con la pendiente de más de 4000 mm). Divide el espacio en más muebles.",
+    "subScaraPreaIngust": "Un mueble saldría de menos de 100 mm. Pon menos muebles o anchos mayores."
   },
   "fata": {
     "px": "derecha",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Por defecto",
     "colCelMaiDes": "Más usado",
     "colAltfel": "Otro"
+  },
+  "fisa": {
+    "titlu": "Fichas CNC por pieza",
+    "intro": "Cada pieza del mueble, dibujada con todas las cotas y ángulos. Las cotas son finales, con canto; el contorno de corte se reduce en el canto donde hay borde canteado.",
+    "buton": "Fichas CNC por pieza",
+    "piesaNr": "Pieza {cod}",
+    "bucati": "{n} uds",
+    "gabaritL": "rectángulo {mm}",
+    "gabaritH": "rectángulo {mm}",
+    "exterior": "exterior {mm}",
+    "interior": "interior {mm}",
+    "exteriorScurt": "cara exterior",
+    "interiorScurt": "cara interior",
+    "vedereSus": "Vista de la cara de la pieza",
+    "vedereFata": "Contorno de la pieza",
+    "vedere3d": "Pieza en 3D",
+    "capat": "Extremo {lit}: corte a {u}° respecto a la cara · hoja inclinada a {panza}°",
+    "rExterior": "Largo en el borde exterior: {mm} mm",
+    "rInterior": "Largo en el borde interior: {mm} mm",
+    "rLatime": "Ancho: {mm} mm (de corte {taiere} mm, con el canto descontado)",
+    "rCapat": "Extremo {lit}: {u}° respecto a la cara — en la sierra, hoja a {panza}°; la cara interior es más corta en {d} mm",
+    "rDreptunghi": "Rectángulo {a} × {b} mm, esquinas rectas",
+    "rGabarit": "Se corta de un rectángulo de {a} × {b} mm y se recorta el contorno",
+    "rLaturi": "Lados (en el sentido del contorno): {lista} mm",
+    "rUnghiuri": "Ángulos entre lados: {lista}",
+    "rGrosime": "Grosor: {mm} mm",
+    "rTaiereDreapta": "Los bordes se cortan rectos (a 90° de la cara)",
+    "faraFise": "Este mueble no tiene piezas con ángulos o contorno: la lista de corte lo dice todo.",
+    "fataInalta": "cara alta {mm}",
+    "fataJoasa": "cara baja {mm}",
+    "montantSus": "Borde superior: {u}° respecto a la cara alta · hoja inclinada a {panza}°",
+    "rFataInalta": "Alto en la cara alta: {mm} mm",
+    "rFataJoasa": "Alto en la cara baja: {mm} mm",
+    "rAdancime": "Fondo: {mm} mm (de corte {taiere} mm, con el canto descontado)",
+    "rMontantSus": "El borde superior se corta inclinado en el grosor: {u}° respecto a la cara alta — en la sierra, hoja a {panza}°",
+    "capatInterior": "Extremo {lit}: corte a {u}° respecto a la cara interior · hoja inclinada a {panza}°",
+    "rCapatInterior": "Extremo {lit}: {u}° respecto a la cara interior (rincón) — en la sierra, hoja a {panza}°; la cara interior es más larga en {d} mm"
   }
 }

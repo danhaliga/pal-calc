@@ -7,6 +7,7 @@ const { db } = require('./db');
 const { requireAuth } = require('./auth');
 const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
+const PalFisa = require('../shared/fisa-piesa');
 const credit = require('./credit');
 const util = require('./util');
 const jurnal = require('./jurnal');
@@ -279,6 +280,30 @@ router.get('/api/corps/:id/pieces', requireAuth, (req, res, next) => {
   const corp = getOwned(req.params.id, req.user.id);
   if (!corp) return notFound(next);
   res.json(piecesFor(corp, req.t));
+});
+
+/* ---- fișele CNC pe piesă (corpul de sub scară), doar corpuri plătite ----
+   Spun tot ce spune lista de debitare, și mai mult: se deschid numai după
+   plată, ca lista. */
+router.get('/corps/:id/fise', requireAuth, (req, res, next) => {
+  const corp = getOwned(req.params.id, req.user.id);
+  if (!corp) return notFound(next);
+  if (corp.status !== 'paid') {
+    const err = util.eroare('eroare.dupaPlata', 402);
+    err.status = 402;
+    return next(err);
+  }
+  const params = parseParams(corp.params);
+  const order = corp.order_id
+    ? db.prepare('SELECT * FROM orders WHERE id = ? AND user_id = ?').get(corp.order_id, req.user.id)
+    : null;
+  res.render('corps/fise', {
+    title: req.t('fisa.titlu') + ' – ' + corp.name,
+    titlu: req.t('fisa.titlu'),
+    corp, order,
+    fiseCorpuri: [{ nume: corp.name, fise: PalFisa.fise(params, req.t) }],
+    print: true
+  });
 });
 
 /* ---- export CSV (doar corpuri platite) ---- */

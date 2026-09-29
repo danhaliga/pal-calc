@@ -108,7 +108,9 @@
     "csrf": "Sesja wygasła. Odśwież stronę i spróbuj ponownie.",
     "subScaraCote": "Wymiary pod schodami są nieprawidłowe: każdy musi mieć co najmniej 10 mm.",
     "subScaraFaraComanda": "Kilka korpusów robi się tylko z poziomu zamówienia. Otwórz zamówienie i włóż do niego korpus.",
-    "creditInsuficient": "Kredytu nie starczy na wszystkie korpusy. Doładuj i spróbuj ponownie."
+    "creditInsuficient": "Kredytu nie starczy na wszystkie korpusy. Doładuj i spróbuj ponownie.",
+    "subScaraPreaMare": "Szafka wyszłaby większa niż 3000 mm (albo skos dłuższy niż 4000 mm). Podziel przestrzeń na więcej szafek.",
+    "subScaraPreaIngust": "Szafka wyszłaby węższa niż 100 mm. Daj mniej szafek albo większe szerokości."
   },
   "admin": {
     "limbi": {
@@ -757,7 +759,9 @@
       "obsUsaRamaAlu": "zamawiane gotowe, na wymiar końcowy",
       "balamaRamaAlu": "Zawias do ramy aluminiowej",
       "cosJolly": "Cargo Jolly do szafki {lat} mm",
-      "obsCosJolly": "dobierane do szerokości szafki; front mocuje się na nim"
+      "obsCosJolly": "dobierane do szerokości szafki; front mocuje się na nim",
+      "sistemGlisant": "System drzwi przesuwnych (szyny i wózki)",
+      "obsSistemGlisant": "{n} drzwi, szafka {lat} mm"
     }
   },
   "piesa": {
@@ -941,7 +945,8 @@
   "corp": {
     "faraComanda": "korpus bez zlecenia",
     "inComanda": "korpus w zleceniu „{nume}”",
-    "deblocare": "odblokowanie korpusu"
+    "deblocare": "odblokowanie korpusu",
+    "subScara": "szafka pod schodami w zamówieniu „{nume}”"
   },
   "rezumat": {
     "laturi": {
@@ -1470,7 +1475,9 @@
     "subScaraLatimi": "Szerokość każdej szafki, od lewej (mm). Ostatnia wychodzi sama z tego, co zostaje z podstawy.",
     "subScaraLatimiRele": "Każda szafka musi mieć co najmniej {min} mm. Ostatnia miałaby {rest} mm — zmniejsz pozostałe.",
     "subScaraFaraComanda": "Ten korpus nie jest w zamówieniu. Kilka korpusów robi się tylko z poziomu zamówienia.",
-    "subScaraIntreabaPlata": "Przestrzeń robi się z {cate} korpusów. Obecny staje się pierwszym, a pozostałe {noi} dochodzą do zamówienia i kosztują {cost} lei. Masz {sold} lei."
+    "subScaraIntreabaPlata": "Przestrzeń robi się z {cate} korpusów. Obecny staje się pierwszym, a pozostałe {noi} dochodzą do zamówienia i kosztują {cost} lei. Masz {sold} lei.",
+    "subScaraPreaMare": "Szafka wyszłaby większa niż 3000 mm (albo skos dłuższy niż 4000 mm). Podziel przestrzeń na więcej szafek.",
+    "subScaraPreaIngust": "Szafka wyszłaby węższa niż 100 mm. Daj mniej szafek albo większe szerokości."
   },
   "fata": {
     "px": "prawo",
@@ -1629,5 +1636,42 @@
     "colImplicit": "Domyślnie",
     "colCelMaiDes": "Najczęściej",
     "colAltfel": "Inaczej"
+  },
+  "fisa": {
+    "titlu": "Karty CNC dla każdego elementu",
+    "intro": "Każdy element szafki, narysowany ze wszystkimi wymiarami i kątami. Wymiary są gotowe, z obrzeżem; kontur cięcia zmniejsza się o obrzeże tam, gdzie krawędź jest oklejona.",
+    "buton": "Karty CNC dla elementów",
+    "piesaNr": "Element {cod}",
+    "bucati": "{n} szt",
+    "gabaritL": "prostokąt {mm}",
+    "gabaritH": "prostokąt {mm}",
+    "exterior": "zewn. {mm}",
+    "interior": "wewn. {mm}",
+    "exteriorScurt": "strona zewnętrzna",
+    "interiorScurt": "strona wewnętrzna",
+    "vedereSus": "Widok na płaszczyznę elementu",
+    "vedereFata": "Kontur elementu",
+    "vedere3d": "Element w 3D",
+    "capat": "Koniec {lit}: cięcie pod {u}° do płaszczyzny · piła pochylona na {panza}°",
+    "rExterior": "Długość na krawędzi zewnętrznej: {mm} mm",
+    "rInterior": "Długość na krawędzi wewnętrznej: {mm} mm",
+    "rLatime": "Szerokość: {mm} mm (do cięcia {taiere} mm, po odjęciu obrzeża)",
+    "rCapat": "Koniec {lit}: {u}° do płaszczyzny — na pile tarcza na {panza}°; strona wewnętrzna jest krótsza o {d} mm",
+    "rDreptunghi": "Prostokąt {a} × {b} mm, kąty proste",
+    "rGabarit": "Wycina się z prostokąta {a} × {b} mm i frezuje kontur",
+    "rLaturi": "Boki (w kierunku konturu): {lista} mm",
+    "rUnghiuri": "Kąty między bokami: {lista}",
+    "rGrosime": "Grubość: {mm} mm",
+    "rTaiereDreapta": "Krawędzie cięte prosto (pod 90° do płaszczyzny)",
+    "faraFise": "Ta szafka nie ma elementów z kątami ani konturem: lista rozkroju mówi wszystko.",
+    "fataInalta": "strona wysoka {mm}",
+    "fataJoasa": "strona niska {mm}",
+    "montantSus": "Górna krawędź: {u}° do strony wysokiej · piła pochylona na {panza}°",
+    "rFataInalta": "Wysokość po stronie wysokiej: {mm} mm",
+    "rFataJoasa": "Wysokość po stronie niskiej: {mm} mm",
+    "rAdancime": "Głębokość: {mm} mm (do cięcia {taiere} mm, po odjęciu obrzeża)",
+    "rMontantSus": "Górną krawędź tnie się ukośnie przez grubość: {u}° do strony wysokiej — na pile tarcza na {panza}°",
+    "capatInterior": "Koniec {lit}: cięcie pod {u}° do strony wewnętrznej · piła pochylona na {panza}°",
+    "rCapatInterior": "Koniec {lit}: {u}° do strony wewnętrznej (narożnik wklęsły) — na pile tarcza na {panza}°; strona wewnętrzna jest dłuższa o {d} mm"
   }
 }

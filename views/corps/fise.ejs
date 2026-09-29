@@ -1,0 +1,5 @@
+<% if (!fiseCorpuri[0].fise.length) { %>
+  <p class="doc-nota"><%= t('fisa.faraFise') %></p>
+<% } else { %>
+  <%- include('../partials/fise-piese', { fiseCorpuri: fiseCorpuri }) %>
+<% } %>

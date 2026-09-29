@@ -85,9 +85,13 @@ test('fiecare compartiment primește ușa lui, de înălțimea lui', () => {
   for (let i = 1; i < h.length; i++) {
     assert.ok(h[i] < h[i - 1], 'ușa ' + (i + 1) + ' nu e mai scundă decât cea dinainte');
   }
-  /* toate de aceeași lățime, fiindcă montanții împart egal */
-  const late = new Set(u.map(x => x.l));
-  assert.equal(late.size, 1, 'ușile au ieșit de lățimi diferite: ' + [...late].join(', '));
+  /* Golurile sunt egale, dar ușile nu: cele de la capete acoperă toată
+     latura corpului, cele din mijloc își împart montantul cu vecina — ca la
+     corpul drept. Deci două lățimi: capetele egale între ele, mijlocul la fel. */
+  const l = u.map(x => x.l);
+  assert.equal(l[0], l[4], 'ușile de la capete au ieșit diferite');
+  assert.ok(l[1] === l[2] && l[2] === l[3], 'ușile din mijloc au ieșit diferite: ' + l.join(', '));
+  assert.ok(l[0] > l[1], 'ușa de la capăt nu acoperă latura corpului');
 });
 
 test('două canaturi pe un compartiment se despart cu rostul dintre ele', () => {

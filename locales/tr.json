@@ -108,7 +108,9 @@
     "csrf": "Oturum süresi doldu. Sayfayı yenile ve tekrar dene.",
     "subScaraCote": "Merdiven altı ölçüleri uygun değil: her biri en az 10 mm olmalı.",
     "subScaraFaraComanda": "Birden fazla gövde ancak sipariş içinden yapılır. Bir sipariş aç ve gövdeyi içine koy.",
-    "creditInsuficient": "Bütün gövdeler için bakiye yetmiyor. Yükleyip tekrar dene."
+    "creditInsuficient": "Bütün gövdeler için bakiye yetmiyor. Yükleyip tekrar dene.",
+    "subScaraPreaMare": "Bir dolap 3000 mm'den büyük (ya da eğim 4000 mm'den uzun) çıkardı. Alanı daha çok dolaba böl.",
+    "subScaraPreaIngust": "Bir dolap 100 mm'den dar çıkardı. Daha az dolap ya da daha büyük genişlik koy."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "net ölçüde hazır sipariş edilir",
       "balamaRamaAlu": "Alüminyum çerçeve menteşesi",
       "cosJolly": "{lat} mm dolap için Jolly sepet",
-      "obsCosJolly": "dolap genişliğine göre seçilir; kapak ona takılır"
+      "obsCosJolly": "dolap genişliğine göre seçilir; kapak ona takılır",
+      "sistemGlisant": "Sürgülü kapı sistemi (ray ve makaralar)",
+      "obsSistemGlisant": "{n} kapak, {lat} mm dolap"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "siparişsiz gövde",
     "inComanda": "„{nume}” siparişindeki gövde",
-    "deblocare": "gövde kilidi açma"
+    "deblocare": "gövde kilidi açma",
+    "subScara": "“{nume}” siparişinde merdiven altı dolabı"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Soldan her dolabın genişliği (mm). Sonuncusu tabandan kalandan kendiliğinden çıkar.",
     "subScaraLatimiRele": "Her dolap en az {min} mm olmalı. Sonuncusu {rest} mm çıkardı — diğerlerini küçült.",
     "subScaraFaraComanda": "Bu gövde bir siparişte değil. Birden fazla gövde ancak sipariş içinden yapılır.",
-    "subScaraIntreabaPlata": "Alan {cate} gövdeden yapılır. Şimdiki gövde birincisi olur, diğer {noi} tanesi siparişe eklenir ve {cost} lei tutar. {sold} lei var."
+    "subScaraIntreabaPlata": "Alan {cate} gövdeden yapılır. Şimdiki gövde birincisi olur, diğer {noi} tanesi siparişe eklenir ve {cost} lei tutar. {sold} lei var.",
+    "subScaraPreaMare": "Bir dolap 3000 mm'den büyük (ya da eğim 4000 mm'den uzun) çıkardı. Alanı daha çok dolaba böl.",
+    "subScaraPreaIngust": "Bir dolap 100 mm'den dar çıkardı. Daha az dolap ya da daha büyük genişlik koy."
   },
   "fata": {
     "px": "sağ",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Varsayılan",
     "colCelMaiDes": "En çok",
     "colAltfel": "Başka"
+  },
+  "fisa": {
+    "titlu": "Parça başına CNC föyleri",
+    "intro": "Dolabın her parçası, tüm ölçüler ve açılarla çizilmiş. Ölçüler bantlı net ölçülerdir; bantlı kenarlarda kesim konturu bant kadar küçülür.",
+    "buton": "Parça başına CNC föyleri",
+    "piesaNr": "Parça {cod}",
+    "bucati": "{n} adet",
+    "gabaritL": "dikdörtgen {mm}",
+    "gabaritH": "dikdörtgen {mm}",
+    "exterior": "dış {mm}",
+    "interior": "iç {mm}",
+    "exteriorScurt": "dış yüz",
+    "interiorScurt": "iç yüz",
+    "vedereSus": "Parça yüzünün görünüşü",
+    "vedereFata": "Parçanın konturu",
+    "vedere3d": "Parça 3D",
+    "capat": "{lit} ucu: yüze göre {u}° kesim · testere {panza}° eğik",
+    "rExterior": "Dış kenardaki boy: {mm} mm",
+    "rInterior": "İç kenardaki boy: {mm} mm",
+    "rLatime": "En: {mm} mm (kesim {taiere} mm, bant düşülmüş)",
+    "rCapat": "{lit} ucu: yüze göre {u}° — testerede bıçak {panza}°; iç yüz {d} mm daha kısa",
+    "rDreptunghi": "Dikdörtgen {a} × {b} mm, dik köşeler",
+    "rGabarit": "{a} × {b} mm dikdörtgenden kesilir, sonra kontur oyulur",
+    "rLaturi": "Kenarlar (kontur yönünde): {lista} mm",
+    "rUnghiuri": "Kenarlar arası açılar: {lista}",
+    "rGrosime": "Kalınlık: {mm} mm",
+    "rTaiereDreapta": "Kenarlar düz kesilir (yüze 90°)",
+    "faraFise": "Bu dolapta açılı ya da konturlu parça yok: kesim listesi her şeyi söyler.",
+    "fataInalta": "yüksek yüz {mm}",
+    "fataJoasa": "alçak yüz {mm}",
+    "montantSus": "Üst kenar: yüksek yüze göre {u}° · testere {panza}° eğik",
+    "rFataInalta": "Yüksek yüzdeki yükseklik: {mm} mm",
+    "rFataJoasa": "Alçak yüzdeki yükseklik: {mm} mm",
+    "rAdancime": "Derinlik: {mm} mm (kesim {taiere} mm, bant düşülmüş)",
+    "rMontantSus": "Üst kenar kalınlık boyunca eğik kesilir: yüksek yüze göre {u}° — testerede bıçak {panza}°",
+    "capatInterior": "{lit} ucu: iç yüze göre {u}° kesim · testere {panza}° eğik",
+    "rCapatInterior": "{lit} ucu: iç yüze göre {u}° (iç köşe) — testerede bıçak {panza}°; iç yüz {d} mm daha uzun"
   }
 }

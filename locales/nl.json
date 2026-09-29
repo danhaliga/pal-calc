@@ -108,7 +108,9 @@
     "csrf": "De sessie is verlopen. Laad de pagina opnieuw en probeer het nog eens.",
     "subScaraCote": "De maten onder de trap kloppen niet: elk moet minstens 10 mm zijn.",
     "subScaraFaraComanda": "Meerdere kasten maak je alleen vanuit een opdracht. Open een opdracht en zet de kast erin.",
-    "creditInsuficient": "Niet genoeg tegoed voor alle kasten. Vul aan en probeer opnieuw."
+    "creditInsuficient": "Niet genoeg tegoed voor alle kasten. Vul aan en probeer opnieuw.",
+    "subScaraPreaMare": "Een kast zou groter worden dan 3000 mm (of de schuine kant langer dan 4000 mm). Verdeel de ruimte over meer kasten.",
+    "subScaraPreaIngust": "Een kast zou smaller worden dan 100 mm. Neem minder kasten of grotere breedtes."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "kant-en-klaar besteld, op eindmaat",
       "balamaRamaAlu": "Scharnier voor aluminium kader",
       "cosJolly": "Apothekerskorf voor kast van {lat} mm",
-      "obsCosJolly": "gekozen op de kastbreedte; het front zit erop"
+      "obsCosJolly": "gekozen op de kastbreedte; het front zit erop",
+      "sistemGlisant": "Schuifdeursysteem (rails en rollen)",
+      "obsSistemGlisant": "{n} deuren, kast van {lat} mm"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "kast zonder opdracht",
     "inComanda": "kast in de opdracht „{nume}”",
-    "deblocare": "kast ontgrendeld"
+    "deblocare": "kast ontgrendeld",
+    "subScara": "trapkast in bestelling „{nume}”"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Breedte van elke kast, van links (mm). De laatste volgt uit wat er van de basis overblijft.",
     "subScaraLatimiRele": "Elke kast moet minstens {min} mm zijn. De laatste zou {rest} mm worden — maak de andere smaller.",
     "subScaraFaraComanda": "Deze kast zit niet in een opdracht. Meerdere kasten maak je alleen vanuit een opdracht.",
-    "subScaraIntreabaPlata": "De ruimte wordt uit {cate} kasten gemaakt. De huidige wordt de eerste, en de andere {noi} komen in de opdracht en kosten {cost} lei. Je hebt {sold} lei."
+    "subScaraIntreabaPlata": "De ruimte wordt uit {cate} kasten gemaakt. De huidige wordt de eerste, en de andere {noi} komen in de opdracht en kosten {cost} lei. Je hebt {sold} lei.",
+    "subScaraPreaMare": "Een kast zou groter worden dan 3000 mm (of de schuine kant langer dan 4000 mm). Verdeel de ruimte over meer kasten.",
+    "subScaraPreaIngust": "Een kast zou smaller worden dan 100 mm. Neem minder kasten of grotere breedtes."
   },
   "fata": {
     "px": "rechts",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Standaard",
     "colCelMaiDes": "Meest gebruikt",
     "colAltfel": "Anders"
+  },
+  "fisa": {
+    "titlu": "CNC-bladen per onderdeel",
+    "intro": "Elk onderdeel van de kast, getekend met alle maten en hoeken. De maten zijn afmaten, met kantband; de zaagcontour wordt kleiner met het kantband waar een kant is afgeplakt.",
+    "buton": "CNC-bladen per onderdeel",
+    "piesaNr": "Onderdeel {cod}",
+    "bucati": "{n} st",
+    "gabaritL": "rechthoek {mm}",
+    "gabaritH": "rechthoek {mm}",
+    "exterior": "buiten {mm}",
+    "interior": "binnen {mm}",
+    "exteriorScurt": "buitenkant",
+    "interiorScurt": "binnenkant",
+    "vedereSus": "Zicht op het vlak",
+    "vedereFata": "Contour van het onderdeel",
+    "vedere3d": "Onderdeel in 3D",
+    "capat": "Eind {lit}: zaagsnede op {u}° t.o.v. het vlak · zaagblad gekanteld op {panza}°",
+    "rExterior": "Lengte op de buitenkant: {mm} mm",
+    "rInterior": "Lengte op de binnenkant: {mm} mm",
+    "rLatime": "Breedte: {mm} mm (zaagmaat {taiere} mm, kantband afgetrokken)",
+    "rCapat": "Eind {lit}: {u}° t.o.v. het vlak — op de zaag, blad op {panza}°; de binnenkant is {d} mm korter",
+    "rDreptunghi": "Rechthoek {a} × {b} mm, rechte hoeken",
+    "rGabarit": "Zagen uit een rechthoek van {a} × {b} mm en de contour uitfrezen",
+    "rLaturi": "Zijden (in de richting van de contour): {lista} mm",
+    "rUnghiuri": "Hoeken tussen de zijden: {lista}",
+    "rGrosime": "Dikte: {mm} mm",
+    "rTaiereDreapta": "Kanten worden recht gezaagd (90° t.o.v. het vlak)",
+    "faraFise": "Deze kast heeft geen onderdelen met hoeken of contour: de zaaglijst zegt alles.",
+    "fataInalta": "hoge kant {mm}",
+    "fataJoasa": "lage kant {mm}",
+    "montantSus": "Bovenkant: {u}° t.o.v. de hoge kant · zaagblad gekanteld op {panza}°",
+    "rFataInalta": "Hoogte aan de hoge kant: {mm} mm",
+    "rFataJoasa": "Hoogte aan de lage kant: {mm} mm",
+    "rAdancime": "Diepte: {mm} mm (zaagmaat {taiere} mm, kantband afgetrokken)",
+    "rMontantSus": "De bovenkant wordt schuin over de dikte gezaagd: {u}° t.o.v. de hoge kant — op de zaag, blad op {panza}°",
+    "capatInterior": "Eind {lit}: zaagsnede op {u}° t.o.v. de binnenkant · zaagblad gekanteld op {panza}°",
+    "rCapatInterior": "Eind {lit}: {u}° t.o.v. de binnenkant (binnenhoek) — op de zaag, blad op {panza}°; de binnenkant is {d} mm langer"
   }
 }

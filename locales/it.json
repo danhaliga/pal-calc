@@ -108,7 +108,9 @@
     "csrf": "La sessione è scaduta. Ricarica la pagina e riprova.",
     "subScaraCote": "Le misure del sottoscala non vanno: ognuna deve essere di almeno 10 mm.",
     "subScaraFaraComanda": "Più mobili si fanno solo da dentro un ordine. Apri un ordine e mettici il mobile.",
-    "creditInsuficient": "Il credito non basta per tutti i mobili. Ricarica e riprova."
+    "creditInsuficient": "Il credito non basta per tutti i mobili. Ricarica e riprova.",
+    "subScaraPreaMare": "Un mobile verrebbe più grande di 3000 mm (o con la pendenza oltre 4000 mm). Dividi lo spazio in più mobili.",
+    "subScaraPreaIngust": "Un mobile verrebbe più stretto di 100 mm. Metti meno mobili o larghezze maggiori."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "si ordina pronta, alla misura finita",
       "balamaRamaAlu": "Cerniera per telaio in alluminio",
       "cosJolly": "Cestello Jolly per mobile da {lat} mm",
-      "obsCosJolly": "si sceglie dalla larghezza del mobile; il frontale si fissa sopra"
+      "obsCosJolly": "si sceglie dalla larghezza del mobile; il frontale si fissa sopra",
+      "sistemGlisant": "Sistema per ante scorrevoli (binari e carrelli)",
+      "obsSistemGlisant": "{n} ante, mobile da {lat} mm"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "mobile senza ordine",
     "inComanda": "mobile nell'ordine «{nume}»",
-    "deblocare": "sblocco mobile"
+    "deblocare": "sblocco mobile",
+    "subScara": "mobile sottoscala nell'ordine «{nume}»"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Larghezza di ogni mobile, da sinistra (mm). L'ultimo esce da solo, da ciò che resta della base.",
     "subScaraLatimiRele": "Ogni mobile deve avere almeno {min} mm. L'ultimo verrebbe di {rest} mm: riduci gli altri.",
     "subScaraFaraComanda": "Questo mobile non è in un ordine. Più mobili si fanno solo da dentro un ordine.",
-    "subScaraIntreabaPlata": "Lo spazio si fa con {cate} mobili. Quello attuale diventa il primo, e gli altri {noi} si aggiungono all’ordine e costano {cost} lei. Hai {sold} lei."
+    "subScaraIntreabaPlata": "Lo spazio si fa con {cate} mobili. Quello attuale diventa il primo, e gli altri {noi} si aggiungono all’ordine e costano {cost} lei. Hai {sold} lei.",
+    "subScaraPreaMare": "Un mobile verrebbe più grande di 3000 mm (o con la pendenza oltre 4000 mm). Dividi lo spazio in più mobili.",
+    "subScaraPreaIngust": "Un mobile verrebbe più stretto di 100 mm. Metti meno mobili o larghezze maggiori."
   },
   "fata": {
     "px": "destra",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Predefinito",
     "colCelMaiDes": "Più usato",
     "colAltfel": "Altro"
+  },
+  "fisa": {
+    "titlu": "Schede CNC per pezzo",
+    "intro": "Ogni pezzo del mobile, disegnato con tutte le quote e gli angoli. Le quote sono finite, con bordo; il contorno di taglio si riduce del bordo dove lo spigolo è bordato.",
+    "buton": "Schede CNC per pezzo",
+    "piesaNr": "Pezzo {cod}",
+    "bucati": "{n} pz",
+    "gabaritL": "rettangolo {mm}",
+    "gabaritH": "rettangolo {mm}",
+    "exterior": "esterno {mm}",
+    "interior": "interno {mm}",
+    "exteriorScurt": "faccia esterna",
+    "interiorScurt": "faccia interna",
+    "vedereSus": "Vista sulla faccia del pezzo",
+    "vedereFata": "Contorno del pezzo",
+    "vedere3d": "Pezzo in 3D",
+    "capat": "Estremità {lit}: taglio a {u}° rispetto alla faccia · lama inclinata a {panza}°",
+    "rExterior": "Lunghezza sullo spigolo esterno: {mm} mm",
+    "rInterior": "Lunghezza sullo spigolo interno: {mm} mm",
+    "rLatime": "Larghezza: {mm} mm (di taglio {taiere} mm, bordo dedotto)",
+    "rCapat": "Estremità {lit}: {u}° rispetto alla faccia — alla sega, lama a {panza}°; la faccia interna è più corta di {d} mm",
+    "rDreptunghi": "Rettangolo {a} × {b} mm, angoli retti",
+    "rGabarit": "Si taglia da un rettangolo di {a} × {b} mm e si ritaglia il contorno",
+    "rLaturi": "Lati (nel verso del contorno): {lista} mm",
+    "rUnghiuri": "Angoli tra i lati: {lista}",
+    "rGrosime": "Spessore: {mm} mm",
+    "rTaiereDreapta": "Gli spigoli si tagliano dritti (a 90° dalla faccia)",
+    "faraFise": "Questo mobile non ha pezzi con angoli o contorno: la distinta di taglio dice tutto.",
+    "fataInalta": "faccia alta {mm}",
+    "fataJoasa": "faccia bassa {mm}",
+    "montantSus": "Spigolo superiore: {u}° rispetto alla faccia alta · lama inclinata a {panza}°",
+    "rFataInalta": "Altezza sulla faccia alta: {mm} mm",
+    "rFataJoasa": "Altezza sulla faccia bassa: {mm} mm",
+    "rAdancime": "Profondità: {mm} mm (di taglio {taiere} mm, bordo dedotto)",
+    "rMontantSus": "Lo spigolo superiore si taglia inclinato nello spessore: {u}° rispetto alla faccia alta — alla sega, lama a {panza}°",
+    "capatInterior": "Estremità {lit}: taglio a {u}° rispetto alla faccia interna · lama inclinata a {panza}°",
+    "rCapatInterior": "Estremità {lit}: {u}° rispetto alla faccia interna (angolo rientrante) — alla sega, lama a {panza}°; la faccia interna è più lunga di {d} mm"
   }
 }

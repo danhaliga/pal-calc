@@ -108,7 +108,9 @@
     "csrf": "Sesi sudah berakhir. Muat ulang halaman dan coba lagi.",
     "subScaraCote": "Ukuran bawah tangga tidak benar: masing-masing minimal 10 mm.",
     "subScaraFaraComanda": "Beberapa lemari hanya bisa dibuat dari dalam pesanan. Buka pesanan dan masukkan lemarinya.",
-    "creditInsuficient": "Kredit tidak cukup untuk semua lemari. Isi ulang lalu coba lagi."
+    "creditInsuficient": "Kredit tidak cukup untuk semua lemari. Isi ulang lalu coba lagi.",
+    "subScaraPreaMare": "Sebuah kabinet akan lebih besar dari 3000 mm (atau sisi miring lebih dari 4000 mm). Bagi ruang ke lebih banyak kabinet.",
+    "subScaraPreaIngust": "Sebuah kabinet akan lebih sempit dari 100 mm. Kurangi jumlah kabinet atau perbesar lebarnya."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "dipesan jadi, dengan ukuran akhir",
       "balamaRamaAlu": "Engsel untuk rangka aluminium",
       "cosJolly": "Keranjang Jolly untuk kabinet {lat} mm",
-      "obsCosJolly": "dipilih menurut lebar kabinet; muka dipasang padanya"
+      "obsCosJolly": "dipilih menurut lebar kabinet; muka dipasang padanya",
+      "sistemGlisant": "Sistem pintu geser (rel dan roda)",
+      "obsSistemGlisant": "{n} pintu, kabinet {lat} mm"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "boks tanpa pesanan",
     "inComanda": "boks dalam pesanan „{nume}”",
-    "deblocare": "pembukaan boks"
+    "deblocare": "pembukaan boks",
+    "subScara": "kabinet bawah tangga di pesanan “{nume}”"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Lebar tiap kabinet, dari kiri (mm). Yang terakhir keluar sendiri dari sisa alas.",
     "subScaraLatimiRele": "Tiap kabinet perlu paling sedikit {min} mm. Yang terakhir akan jadi {rest} mm — perkecil yang lain.",
     "subScaraFaraComanda": "Lemari ini tidak ada dalam pesanan. Beberapa lemari hanya bisa dibuat dari dalam pesanan.",
-    "subScaraIntreabaPlata": "Ruangnya dibuat dari {cate} lemari. Yang sekarang jadi yang pertama, dan {noi} lainnya ditambahkan ke pesanan dengan biaya {cost} lei. Kamu punya {sold} lei."
+    "subScaraIntreabaPlata": "Ruangnya dibuat dari {cate} lemari. Yang sekarang jadi yang pertama, dan {noi} lainnya ditambahkan ke pesanan dengan biaya {cost} lei. Kamu punya {sold} lei.",
+    "subScaraPreaMare": "Sebuah kabinet akan lebih besar dari 3000 mm (atau sisi miring lebih dari 4000 mm). Bagi ruang ke lebih banyak kabinet.",
+    "subScaraPreaIngust": "Sebuah kabinet akan lebih sempit dari 100 mm. Kurangi jumlah kabinet atau perbesar lebarnya."
   },
   "fata": {
     "px": "kanan",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Bawaan",
     "colCelMaiDes": "Paling sering",
     "colAltfel": "Lain"
+  },
+  "fisa": {
+    "titlu": "Lembar CNC per potongan",
+    "intro": "Setiap potongan kabinet, digambar dengan semua ukuran dan sudut. Ukuran adalah ukuran jadi, dengan edging; kontur potong dikurangi edging di sisi yang di-edging.",
+    "buton": "Lembar CNC per potongan",
+    "piesaNr": "Potongan {cod}",
+    "bucati": "{n} buah",
+    "gabaritL": "persegi panjang {mm}",
+    "gabaritH": "persegi panjang {mm}",
+    "exterior": "luar {mm}",
+    "interior": "dalam {mm}",
+    "exteriorScurt": "sisi luar",
+    "interiorScurt": "sisi dalam",
+    "vedereSus": "Tampak muka potongan",
+    "vedereFata": "Kontur potongan",
+    "vedere3d": "Potongan dalam 3D",
+    "capat": "Ujung {lit}: potong {u}° terhadap muka · mata gergaji dimiringkan {panza}°",
+    "rExterior": "Panjang di tepi luar: {mm} mm",
+    "rInterior": "Panjang di tepi dalam: {mm} mm",
+    "rLatime": "Lebar: {mm} mm (ukuran potong {taiere} mm, edging dikurangi)",
+    "rCapat": "Ujung {lit}: {u}° terhadap muka — di gergaji, mata pada {panza}°; sisi dalam lebih pendek {d} mm",
+    "rDreptunghi": "Persegi panjang {a} × {b} mm, sudut siku",
+    "rGabarit": "Dipotong dari persegi panjang {a} × {b} mm lalu konturnya dipotong",
+    "rLaturi": "Sisi (searah kontur): {lista} mm",
+    "rUnghiuri": "Sudut antar sisi: {lista}",
+    "rGrosime": "Tebal: {mm} mm",
+    "rTaiereDreapta": "Tepi dipotong lurus (90° terhadap muka)",
+    "faraFise": "Kabinet ini tidak punya potongan bersudut atau berkontur: daftar potong sudah lengkap.",
+    "fataInalta": "sisi tinggi {mm}",
+    "fataJoasa": "sisi rendah {mm}",
+    "montantSus": "Tepi atas: {u}° terhadap sisi tinggi · mata gergaji dimiringkan {panza}°",
+    "rFataInalta": "Tinggi di sisi tinggi: {mm} mm",
+    "rFataJoasa": "Tinggi di sisi rendah: {mm} mm",
+    "rAdancime": "Dalam: {mm} mm (ukuran potong {taiere} mm, edging dikurangi)",
+    "rMontantSus": "Tepi atas dipotong miring menembus tebal: {u}° terhadap sisi tinggi — di gergaji, mata pada {panza}°",
+    "capatInterior": "Ujung {lit}: potong {u}° terhadap sisi dalam · mata gergaji dimiringkan {panza}°",
+    "rCapatInterior": "Ujung {lit}: {u}° terhadap sisi dalam (sudut dalam) — di gergaji, mata pada {panza}°; sisi dalam lebih panjang {d} mm"
   }
 }

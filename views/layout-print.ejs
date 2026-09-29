@@ -15,6 +15,9 @@
 <body class="doc">
 
 <div class="doc-bar no-print">
+  <% if (typeof order === 'undefined' || !order) { %>
+  <a href="/corps/<%= corp.id %>">← <%= corp.name %></a>
+  <% } else { %>
   <a href="/orders/<%= order.id %>">← <%= t('print.inapoiLaComanda') %></a>
   <span class="doc-links">
     <a href="/orders/<%= order.id %>/print/ansamblu"><%= t('print.linkAnsamblu') %></a>
@@ -25,16 +28,21 @@
     <a href="/orders/<%= order.id %>/print/cnc"><%= t('print.linkCnc') %></a>
     <a href="/orders/<%= order.id %>/export.csv">CSV</a>
   </span>
+  <% } %>
   <%- include('partials/limba') %>
   <button data-tipareste class="btn small primary"><%= t('comun.tipareste') %></button>
 </div>
 
+<%# Foaia unui corp singur (fișele CNC ale corpului de sub scară) n-are
+    neapărat o comandă: atunci capul foii spune corpul. %>
+<% var cmd = (typeof order !== 'undefined' && order) ? order : null; %>
+<% var mats = (typeof materiale !== 'undefined' && materiale) ? materiale : []; %>
 <header class="doc-head">
   <div>
     <h1><%= titlu %></h1>
     <div class="doc-sub">
-      <b><%= order.name %></b>
-      <% materiale.forEach(function (m) { %>
+      <b><%= cmd ? cmd.name : corp.name %></b>
+      <% mats.forEach(function (m) { %>
         · <%= m.nume %>
         <span class="muted"><%= t('print.materialDetalii', {
           brand: m.brand,
@@ -55,15 +63,17 @@
         <% if (capFoaie.cui) { %><br><span class="muted"><%= capFoaie.cui %></span><% } %>
       </div>
     <% } %>
-    <div><%= t('print.comandaNr', { id: order.id }) %></div>
-    <div><%= order.created_at.slice(0, 10) %></div>
+    <% if (cmd) { %>
+    <div><%= t('print.comandaNr', { id: cmd.id }) %></div>
+    <div><%= String(cmd.created_at || '').slice(0, 10) %></div>
+    <% } %>
     <%# Livrarea si telefonul intra pe fiecare foaie care pleaca in atelier:
         acolo se uita omul dupa ele, nu in aplicatie. %>
-    <% if (order.livrare_la) { %>
-      <div><b><%= t('comanda.livrareLa') %>: <%= order.livrare_la %></b></div>
+    <% if (cmd && cmd.livrare_la) { %>
+      <div><b><%= t('comanda.livrareLa') %>: <%= cmd.livrare_la %></b></div>
     <% } %>
-    <% if (order.telefon) { %>
-      <div><%= t('comanda.telefon') %>: <%= order.telefon %></div>
+    <% if (cmd && cmd.telefon) { %>
+      <div><%= t('comanda.telefon') %>: <%= cmd.telefon %></div>
     <% } %>
     <div class="muted"><%= t('print.tiparitLa', { data: new Date().toLocaleDateString(lang) }) %></div>
   </div>

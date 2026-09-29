@@ -1,0 +1,19 @@
+<%# Fișele CNC pe piesă ale corpurilor atipice (sub scară).
+    Parametru: fiseCorpuri = [{ nume, fise: [PalFisa.fise(...)] }]. %>
+<% fiseCorpuri.forEach(function (c) { %>
+  <section class="doc-sect">
+    <h2><%= t('fisa.titlu') %> — <%= c.nume %></h2>
+    <p class="doc-nota"><%= t('fisa.intro') %></p>
+    <% c.fise.forEach(function (f) { %>
+      <article class="fisa">
+        <h3><%= t('fisa.piesaNr', { cod: f.cod }) %> · <%= f.piesa %> · <%= t('fisa.bucati', { n: f.buc }) %></h3>
+        <ul><% f.randuri.forEach(function (r) { %><li><%= r %></li><% }); %></ul>
+        <div class="fisa-desene">
+          <% f.desene.forEach(function (d) { %>
+            <figure><figcaption><%= d.titlu %></figcaption><%- d.svg %></figure>
+          <% }); %>
+        </div>
+      </article>
+    <% }); %>
+  </section>
+<% }); %>

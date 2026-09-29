@@ -1150,8 +1150,9 @@ test('telefonul nu se verifică pe formă', () => {
 test('amândouă ajung pe hârtia care pleacă în atelier', () => {
   const layout = fs.readFileSync(
     path.join(__dirname, '..', 'views', 'layout-print.ejs'), 'utf8');
-  assert.match(layout, /order\.livrare_la/, 'data livrării nu se tipărește');
-  assert.match(layout, /order\.telefon/, 'telefonul nu se tipărește');
+  /* `cmd` e comanda foii (lipsește doar la foaia unui corp singur). */
+  assert.match(layout, /cmd\.livrare_la/, 'data livrării nu se tipărește');
+  assert.match(layout, /cmd\.telefon/, 'telefonul nu se tipărește');
 });
 
 test('se pot și schimba după deschiderea comenzii, nu doar la creare', () => {

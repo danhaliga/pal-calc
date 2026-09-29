@@ -108,7 +108,9 @@
     "csrf": "세션이 끝났습니다. 페이지를 새로 불러온 뒤 다시 해 보세요.",
     "subScaraCote": "계단 밑 치수가 올바르지 않습니다: 각각 최소 10 mm여야 합니다.",
     "subScaraFaraComanda": "여러 몸통은 주문 안에서만 만들 수 있습니다. 주문을 열고 몸통을 넣으십시오.",
-    "creditInsuficient": "모든 몸통을 만들기에 잔액이 부족합니다. 충전 후 다시 시도하십시오."
+    "creditInsuficient": "모든 몸통을 만들기에 잔액이 부족합니다. 충전 후 다시 시도하십시오.",
+    "subScaraPreaMare": "장이 3000 mm보다 크게(또는 경사가 4000 mm보다 길게) 나옵니다. 공간을 더 많은 장으로 나누세요.",
+    "subScaraPreaIngust": "장이 100 mm보다 좁게 나옵니다. 장 수를 줄이거나 폭을 늘리세요."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "완성 치수로 완제품 주문",
       "balamaRamaAlu": "알루미늄 프레임용 경첩",
       "cosJolly": "{lat} mm 장용 Jolly 바스켓",
-      "obsCosJolly": "장 폭에 맞춰 고름; 앞판을 여기에 고정"
+      "obsCosJolly": "장 폭에 맞춰 고름; 앞판을 여기에 고정",
+      "sistemGlisant": "미닫이문 시스템 (레일과 롤러)",
+      "obsSistemGlisant": "문 {n}개, {lat} mm 장"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "주문에 속하지 않은 캐비닛",
     "inComanda": "주문 “{nume}”의 캐비닛",
-    "deblocare": "캐비닛 잠금 해제"
+    "deblocare": "캐비닛 잠금 해제",
+    "subScara": "주문 “{nume}”의 계단 밑 장"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "왼쪽부터 각 장의 폭(mm). 마지막 것은 밑변에서 남은 만큼 자동으로 정해집니다.",
     "subScaraLatimiRele": "각 장은 최소 {min} mm여야 합니다. 마지막 것이 {rest} mm가 됩니다. 다른 것을 줄이세요.",
     "subScaraFaraComanda": "이 몸통은 주문에 들어 있지 않습니다. 여러 몸통은 주문 안에서만 만들 수 있습니다.",
-    "subScaraIntreabaPlata": "이 공간을 {cate}개의 몸통으로 만듭니다. 지금 몸통이 첫 번째가 되고, 나머지 {noi}개가 주문에 추가되며 {cost} 레이가 듭니다. 잔액은 {sold} 레이입니다."
+    "subScaraIntreabaPlata": "이 공간을 {cate}개의 몸통으로 만듭니다. 지금 몸통이 첫 번째가 되고, 나머지 {noi}개가 주문에 추가되며 {cost} 레이가 듭니다. 잔액은 {sold} 레이입니다.",
+    "subScaraPreaMare": "장이 3000 mm보다 크게(또는 경사가 4000 mm보다 길게) 나옵니다. 공간을 더 많은 장으로 나누세요.",
+    "subScaraPreaIngust": "장이 100 mm보다 좁게 나옵니다. 장 수를 줄이거나 폭을 늘리세요."
   },
   "fata": {
     "px": "오른쪽",
@@ -1618,5 +1625,42 @@
     "colImplicit": "기본값",
     "colCelMaiDes": "가장 많이",
     "colAltfel": "다름"
+  },
+  "fisa": {
+    "titlu": "부재별 CNC 시트",
+    "intro": "장의 모든 부재를 모든 치수와 각도와 함께 그렸습니다. 치수는 엣지를 포함한 완성 치수이며, 엣지를 붙이는 모서리에서는 절단선이 엣지만큼 작아집니다.",
+    "buton": "부재별 CNC 시트",
+    "piesaNr": "부재 {cod}",
+    "bucati": "{n}개",
+    "gabaritL": "직사각형 {mm}",
+    "gabaritH": "직사각형 {mm}",
+    "exterior": "바깥 {mm}",
+    "interior": "안쪽 {mm}",
+    "exteriorScurt": "바깥면",
+    "interiorScurt": "안쪽면",
+    "vedereSus": "부재 면 보기",
+    "vedereFata": "부재 윤곽",
+    "vedere3d": "부재 3D",
+    "capat": "끝 {lit}: 면에 대해 {u}° 절단 · 톱날 {panza}° 기울임",
+    "rExterior": "바깥 모서리 길이: {mm} mm",
+    "rInterior": "안쪽 모서리 길이: {mm} mm",
+    "rLatime": "폭: {mm} mm (절단 {taiere} mm, 엣지 공제)",
+    "rCapat": "끝 {lit}: 면에 대해 {u}° — 톱에서 날을 {panza}°로; 안쪽면이 {d} mm 짧음",
+    "rDreptunghi": "직사각형 {a} × {b} mm, 직각 모서리",
+    "rGabarit": "{a} × {b} mm 직사각형에서 자른 뒤 윤곽을 따냄",
+    "rLaturi": "변 (윤곽 방향): {lista} mm",
+    "rUnghiuri": "변 사이 각도: {lista}",
+    "rGrosime": "두께: {mm} mm",
+    "rTaiereDreapta": "모서리는 직각으로 자름 (면에 대해 90°)",
+    "faraFise": "이 장에는 각도나 윤곽이 있는 부재가 없습니다: 재단 목록이면 충분합니다.",
+    "fataInalta": "높은 면 {mm}",
+    "fataJoasa": "낮은 면 {mm}",
+    "montantSus": "윗모서리: 높은 면에 대해 {u}° · 톱날 {panza}° 기울임",
+    "rFataInalta": "높은 면 높이: {mm} mm",
+    "rFataJoasa": "낮은 면 높이: {mm} mm",
+    "rAdancime": "깊이: {mm} mm (절단 {taiere} mm, 엣지 공제)",
+    "rMontantSus": "윗모서리는 두께 방향으로 비스듬히 자름: 높은 면에 대해 {u}° — 톱에서 날을 {panza}°로",
+    "capatInterior": "끝 {lit}: 안쪽면에 대해 {u}° 절단 · 톱날 {panza}° 기울임",
+    "rCapatInterior": "끝 {lit}: 안쪽면에 대해 {u}° (안쪽 모서리) — 톱에서 날을 {panza}°로; 안쪽면이 {d} mm 김"
   }
 }

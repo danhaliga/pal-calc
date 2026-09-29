@@ -112,9 +112,13 @@ test('ușile apar doar dacă sunt cerute, și acoperă carcasa', () => {
   doua.forEach(u => assert.equal(u.l, 447));   // (897 − 3) / 2
 
   /* Cu montanți, câte una pe compartiment. */
+  /* Golurile: (900 − 2×18 − 2×18) / 3 = 276. Ușa de la capăt merge de la
+     muchia din afară (1.5) până la mijlocul montantului (303), minus
+     jumătate de rost: 300. Cea din mijloc stă între două mijloace de
+     montant (303 … 597), minus rosturile: 291. */
   const trei = usi(calc(atipic(conturImplicit(900, 700), { nUsi: 1, nDsp: 2, rm: 1.5, ri: 3 })));
   assert.equal(trei.length, 3);
-  trei.forEach(u => assert.equal(u.l, 297));
+  assert.deepEqual(trei.map(u => u.l), [300, 291, 300]);
 });
 
 test('conturul deschis dă avertisment, nu eroare', () => {

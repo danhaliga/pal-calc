@@ -166,3 +166,11 @@ test('toate piesele de colț au cote pozitive', () => {
     }
   }
 });
+
+test('un colț cu brațele mai scurte decât adâncimea nu scoate piese cu cote negative', () => {
+  /* Găsit la audit: 450 lățime la 560 adâncime scotea o ușă de −131 mm. */
+  const PalModels = require('../shared/models');
+  const r = require('../shared/calc').calc(Object.assign(PalModels.paramsFor('colt-jos-L', k => k), { W: 450 }), k => k);
+  assert.ok(r.avertismente.some(a => a.cheie === 'adancimePreaMare'));
+  r.P.forEach(p => assert.ok(p.L > 0 && p.l > 0, `${p.cheie}: ${p.L} × ${p.l}`));
+});

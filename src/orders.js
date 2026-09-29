@@ -13,6 +13,7 @@ const Catalog = require('../shared/catalog');
 const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
 const PalRaport = require('../shared/raport');
+const PalFisa = require('../shared/fisa-piesa');
 const PalAnsamblu = require('../shared/ansamblu');
 const PalFeronerie = require('../shared/feronerie');
 
@@ -533,7 +534,8 @@ const faceSubScaraInBucati = db.transaction((user, corp, order, bucati, cost) =>
   const primul = Object.assign({}, params, {
     tip: 'atipic', contur: bucati[0].contur,
     W: bucati[0].baza, H: Math.max(bucati[0].stanga, bucati[0].dreapta),
-    nume: numeDeBaza + ' (1/' + n + ')'
+    /* dintr-o singură bucată rămâne cu numele lui, fără „(1/1)" */
+    nume: n > 1 ? numeDeBaza + ' (1/' + n + ')' : numeDeBaza
   });
   db.prepare("UPDATE corps SET name = ?, params = ?, updated_at = datetime('now') WHERE id = ?")
     .run(primul.nume, JSON.stringify(primul), corp.id);
@@ -582,6 +584,10 @@ router.post('/corps/:id/sub-scara', requireAuth, (req, res, next) => {
   const dinLatimi = cate > 1 && latimi.length === cate - 1
     ? PalCalc.subScaraDinLatimi(baza, dreapta, stanga, latimi) : null;
   const bucati = dinLatimi || PalCalc.subScaraInBucati(baza, dreapta, stanga, cate);
+  /* Aceeași regulă ca în editor: nu se fac corpuri de 30 mm (și nu se
+     plătesc), nici corpuri pe care editorul nu le-ar mai primi. */
+  const problema = PalCalc.subScaraProblema(bucati);
+  if (problema) return next(util.eroare('eroare.' + problema, 400));
   const cost = credit.pretCorp();
   if (cate > 1 && credit.sold(req.user.id) < cost * (cate - 1)) {
     return next(util.eroare('eroare.creditInsuficient', 402));
@@ -755,6 +761,11 @@ router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
     elevatie: PalAnsamblu.elevatie,
     materiale: materiale.aleComenzii(order.id),
     planse: PalRaport.planseCnc,
+    /* Fișele pe piesă ale corpurilor de sub scară: numai pe planșa CNC. */
+    fiseCorpuri: req.params.tip === 'cnc'
+      ? raport.corpuri.filter(c => c.params && c.params.tip === 'atipic')
+          .map(c => ({ nume: c.nume, fise: PalFisa.fise(c.params, req.t) }))
+      : [],
     planColi: PalRaport.planColi,
     coala: PalRaport.COALA,
     /* adaosul la cant rămâne intern: clientul vede metrii exacți */

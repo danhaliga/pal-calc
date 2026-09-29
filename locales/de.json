@@ -108,7 +108,9 @@
     "csrf": "Die Sitzung ist abgelaufen. Lade die Seite neu und versuche es noch einmal.",
     "subScaraCote": "Die Maße unter der Treppe stimmen nicht: jedes muss mindestens 10 mm sein.",
     "subScaraFaraComanda": "Mehrere Schränke entstehen nur aus einem Auftrag. Leg einen Auftrag an und setz den Schrank hinein.",
-    "creditInsuficient": "Das Guthaben reicht nicht für alle Schränke. Lade auf und versuch es noch einmal."
+    "creditInsuficient": "Das Guthaben reicht nicht für alle Schränke. Lade auf und versuch es noch einmal.",
+    "subScaraPreaMare": "Ein Korpus würde größer als 3000 mm (oder die Schräge länger als 4000 mm). Teile den Raum in mehr Korpusse.",
+    "subScaraPreaIngust": "Ein Korpus würde schmaler als 100 mm. Weniger Korpusse oder größere Breiten nehmen."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "fertig bestellt, auf Fertigmaß",
       "balamaRamaAlu": "Scharnier für Alurahmen",
       "cosJolly": "Apothekerauszug für {lat}-mm-Korpus",
-      "obsCosJolly": "wird nach der Korpusbreite gewählt; die Front sitzt darauf"
+      "obsCosJolly": "wird nach der Korpusbreite gewählt; die Front sitzt darauf",
+      "sistemGlisant": "Schiebetürsystem (Schienen und Rollen)",
+      "obsSistemGlisant": "{n} Türen, Korpus {lat} mm"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "Korpus ohne Auftrag",
     "inComanda": "Korpus im Auftrag „{nume}“",
-    "deblocare": "Korpus freigeschaltet"
+    "deblocare": "Korpus freigeschaltet",
+    "subScara": "Korpus unter der Treppe im Auftrag „{nume}“"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Breite jedes Korpus, von links (mm). Der letzte ergibt sich aus dem Rest der Basis.",
     "subScaraLatimiRele": "Jeder Korpus braucht mindestens {min} mm. Der letzte hätte {rest} mm — mach die anderen schmaler.",
     "subScaraFaraComanda": "Dieser Schrank ist in keinem Auftrag. Mehrere Schränke entstehen nur aus einem Auftrag.",
-    "subScaraIntreabaPlata": "Der Raum wird aus {cate} Schränken gemacht. Der jetzige wird der erste, die anderen {noi} kommen in den Auftrag und kosten {cost} Lei. Du hast {sold} Lei."
+    "subScaraIntreabaPlata": "Der Raum wird aus {cate} Schränken gemacht. Der jetzige wird der erste, die anderen {noi} kommen in den Auftrag und kosten {cost} Lei. Du hast {sold} Lei.",
+    "subScaraPreaMare": "Ein Korpus würde größer als 3000 mm (oder die Schräge länger als 4000 mm). Teile den Raum in mehr Korpusse.",
+    "subScaraPreaIngust": "Ein Korpus würde schmaler als 100 mm. Weniger Korpusse oder größere Breiten nehmen."
   },
   "fata": {
     "px": "rechts",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Vorgabe",
     "colCelMaiDes": "Am häufigsten",
     "colAltfel": "Anders"
+  },
+  "fisa": {
+    "titlu": "CNC-Blätter je Teil",
+    "intro": "Jedes Teil des Korpus, gezeichnet mit allen Maßen und Winkeln. Die Maße sind Fertigmaße mit Kante; die Schnittkontur verringert sich um die Kante, wo eine Kante bekantet ist.",
+    "buton": "CNC-Blätter je Teil",
+    "piesaNr": "Teil {cod}",
+    "bucati": "{n} Stk",
+    "gabaritL": "Rechteck {mm}",
+    "gabaritH": "Rechteck {mm}",
+    "exterior": "außen {mm}",
+    "interior": "innen {mm}",
+    "exteriorScurt": "Außenseite",
+    "interiorScurt": "Innenseite",
+    "vedereSus": "Ansicht auf die Fläche",
+    "vedereFata": "Umriss des Teils",
+    "vedere3d": "Teil in 3D",
+    "capat": "Ende {lit}: Schnitt {u}° zur Fläche · Sägeblatt auf {panza}° geneigt",
+    "rExterior": "Länge an der Außenkante: {mm} mm",
+    "rInterior": "Länge an der Innenkante: {mm} mm",
+    "rLatime": "Breite: {mm} mm (Zuschnitt {taiere} mm, Kante abgezogen)",
+    "rCapat": "Ende {lit}: {u}° zur Fläche — an der Säge Blatt auf {panza}°; die Innenseite ist {d} mm kürzer",
+    "rDreptunghi": "Rechteck {a} × {b} mm, rechte Winkel",
+    "rGabarit": "Aus einem Rechteck {a} × {b} mm schneiden, dann den Umriss ausfräsen",
+    "rLaturi": "Seiten (im Umlaufsinn): {lista} mm",
+    "rUnghiuri": "Winkel zwischen den Seiten: {lista}",
+    "rGrosime": "Stärke: {mm} mm",
+    "rTaiereDreapta": "Kanten werden gerade geschnitten (90° zur Fläche)",
+    "faraFise": "Dieser Korpus hat keine Teile mit Winkeln oder Umriss: die Zuschnittliste sagt alles.",
+    "fataInalta": "hohe Seite {mm}",
+    "fataJoasa": "niedrige Seite {mm}",
+    "montantSus": "Oberkante: {u}° zur hohen Seite · Sägeblatt auf {panza}° geneigt",
+    "rFataInalta": "Höhe an der hohen Seite: {mm} mm",
+    "rFataJoasa": "Höhe an der niedrigen Seite: {mm} mm",
+    "rAdancime": "Tiefe: {mm} mm (Zuschnitt {taiere} mm, Kante abgezogen)",
+    "rMontantSus": "Die Oberkante wird über die Stärke schräg geschnitten: {u}° zur hohen Seite — an der Säge Blatt auf {panza}°",
+    "capatInterior": "Ende {lit}: Schnitt {u}° zur Innenseite · Sägeblatt auf {panza}° geneigt",
+    "rCapatInterior": "Ende {lit}: {u}° zur Innenseite (Innenecke) — an der Säge Blatt auf {panza}°; die Innenseite ist {d} mm länger"
   }
 }

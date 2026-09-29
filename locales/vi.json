@@ -108,7 +108,9 @@
     "csrf": "Phiên làm việc đã hết hạn. Tải lại trang và thử lại.",
     "subScaraCote": "Kích thước gầm cầu thang không hợp lệ: mỗi cái ít nhất 10 mm.",
     "subScaraFaraComanda": "Nhiều thùng chỉ làm được từ trong một đơn. Mở một đơn và đặt thùng vào.",
-    "creditInsuficient": "Không đủ tín dụng cho tất cả các thùng. Nạp thêm rồi thử lại."
+    "creditInsuficient": "Không đủ tín dụng cho tất cả các thùng. Nạp thêm rồi thử lại.",
+    "subScaraPreaMare": "Một tủ sẽ lớn hơn 3000 mm (hoặc cạnh dốc dài hơn 4000 mm). Hãy chia không gian thành nhiều tủ hơn.",
+    "subScaraPreaIngust": "Một tủ sẽ hẹp hơn 100 mm. Hãy giảm số tủ hoặc tăng chiều rộng."
   },
   "admin": {
     "limbi": {
@@ -751,7 +753,9 @@
       "obsUsaRamaAlu": "đặt làm sẵn theo kích thước hoàn thiện",
       "balamaRamaAlu": "Bản lề cho khung nhôm",
       "cosJolly": "Giỏ Jolly cho tủ {lat} mm",
-      "obsCosJolly": "chọn theo chiều rộng tủ; mặt tủ gắn vào giỏ"
+      "obsCosJolly": "chọn theo chiều rộng tủ; mặt tủ gắn vào giỏ",
+      "sistemGlisant": "Hệ cửa trượt (ray và bánh xe)",
+      "obsSistemGlisant": "{n} cánh, tủ {lat} mm"
     }
   },
   "piesa": {
@@ -935,7 +939,8 @@
   "corp": {
     "faraComanda": "thùng tủ không thuộc đơn hàng",
     "inComanda": "thùng tủ trong đơn hàng „{nume}”",
-    "deblocare": "mở khóa thùng tủ"
+    "deblocare": "mở khóa thùng tủ",
+    "subScara": "tủ dưới cầu thang trong đơn “{nume}”"
   },
   "rezumat": {
     "laturi": {
@@ -1459,7 +1464,9 @@
     "subScaraLatimi": "Chiều rộng từng tủ, từ trái sang (mm). Tủ cuối tự lấy phần còn lại của cạnh đáy.",
     "subScaraLatimiRele": "Mỗi tủ cần ít nhất {min} mm. Tủ cuối sẽ chỉ còn {rest} mm — hãy giảm các tủ khác.",
     "subScaraFaraComanda": "Thùng này không nằm trong đơn nào. Nhiều thùng chỉ làm được từ trong một đơn.",
-    "subScaraIntreabaPlata": "Không gian làm thành {cate} thùng. Thùng hiện tại thành thùng đầu, {noi} thùng còn lại thêm vào đơn và tốn {cost} lei. Bạn có {sold} lei."
+    "subScaraIntreabaPlata": "Không gian làm thành {cate} thùng. Thùng hiện tại thành thùng đầu, {noi} thùng còn lại thêm vào đơn và tốn {cost} lei. Bạn có {sold} lei.",
+    "subScaraPreaMare": "Một tủ sẽ lớn hơn 3000 mm (hoặc cạnh dốc dài hơn 4000 mm). Hãy chia không gian thành nhiều tủ hơn.",
+    "subScaraPreaIngust": "Một tủ sẽ hẹp hơn 100 mm. Hãy giảm số tủ hoặc tăng chiều rộng."
   },
   "fata": {
     "px": "phải",
@@ -1618,5 +1625,42 @@
     "colImplicit": "Mặc định",
     "colCelMaiDes": "Dùng nhiều nhất",
     "colAltfel": "Khác"
+  },
+  "fisa": {
+    "titlu": "Phiếu CNC từng tấm",
+    "intro": "Mỗi tấm của tủ, vẽ với đầy đủ kích thước và góc. Kích thước là kích thước hoàn thiện, có nẹp cạnh; đường cắt nhỏ đi phần nẹp ở cạnh có dán nẹp.",
+    "buton": "Phiếu CNC từng tấm",
+    "piesaNr": "Tấm {cod}",
+    "bucati": "{n} tấm",
+    "gabaritL": "hình chữ nhật {mm}",
+    "gabaritH": "hình chữ nhật {mm}",
+    "exterior": "ngoài {mm}",
+    "interior": "trong {mm}",
+    "exteriorScurt": "mặt ngoài",
+    "interiorScurt": "mặt trong",
+    "vedereSus": "Nhìn thẳng mặt tấm",
+    "vedereFata": "Đường bao tấm",
+    "vedere3d": "Tấm dạng 3D",
+    "capat": "Đầu {lit}: cắt {u}° so với mặt tấm · lưỡi cưa nghiêng {panza}°",
+    "rExterior": "Chiều dài cạnh ngoài: {mm} mm",
+    "rInterior": "Chiều dài cạnh trong: {mm} mm",
+    "rLatime": "Chiều rộng: {mm} mm (kích thước cắt {taiere} mm, đã trừ nẹp)",
+    "rCapat": "Đầu {lit}: {u}° so với mặt — trên máy cưa, lưỡi ở {panza}°; mặt trong ngắn hơn {d} mm",
+    "rDreptunghi": "Hình chữ nhật {a} × {b} mm, góc vuông",
+    "rGabarit": "Cắt từ hình chữ nhật {a} × {b} mm rồi cắt theo đường bao",
+    "rLaturi": "Các cạnh (theo chiều đường bao): {lista} mm",
+    "rUnghiuri": "Góc giữa các cạnh: {lista}",
+    "rGrosime": "Độ dày: {mm} mm",
+    "rTaiereDreapta": "Các cạnh cắt thẳng (90° so với mặt)",
+    "faraFise": "Tủ này không có tấm nào có góc hay đường bao: bảng cắt đã đủ.",
+    "fataInalta": "mặt cao {mm}",
+    "fataJoasa": "mặt thấp {mm}",
+    "montantSus": "Cạnh trên: {u}° so với mặt cao · lưỡi cưa nghiêng {panza}°",
+    "rFataInalta": "Chiều cao ở mặt cao: {mm} mm",
+    "rFataJoasa": "Chiều cao ở mặt thấp: {mm} mm",
+    "rAdancime": "Chiều sâu: {mm} mm (kích thước cắt {taiere} mm, đã trừ nẹp)",
+    "rMontantSus": "Cạnh trên cắt xiên theo độ dày: {u}° so với mặt cao — trên máy cưa, lưỡi ở {panza}°",
+    "capatInterior": "Đầu {lit}: cắt {u}° so với mặt trong · lưỡi cưa nghiêng {panza}°",
+    "rCapatInterior": "Đầu {lit}: {u}° so với mặt trong (góc trong) — trên máy cưa, lưỡi ở {panza}°; mặt trong dài hơn {d} mm"
   }
 }
