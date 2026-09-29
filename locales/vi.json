@@ -382,6 +382,11 @@
         "descriere": "Không cánh, có một kệ. Chỉ cạnh dày ở mọi cạnh lộ ra.",
         "corpNume": "Kệ tường"
       },
+      "sus-vitrina": {
+        "nume": "Tủ kính treo",
+        "descriere": "Cánh kính khung nhôm mua sẵn. Từ ván chỉ cắt thùng tủ.",
+        "corpNume": "Tủ kính treo"
+      },
       "dulap-2usi": {
         "nume": "Tủ quần áo 2 cánh",
         "descriere": "Tủ phòng ngủ với bốn kệ. Trên 2000 mm thì cánh cần bản lề thứ năm, nên chiều cao dừng ở đây; muốn cao hơn thì thêm một tủ nóc riêng.",
@@ -411,6 +416,11 @@
         "nume": "Kệ TV",
         "descriere": "Thùng tủ thấp và rộng, hai cánh. Cánh chạm đến giới hạn 600 mm chiều rộng.",
         "corpNume": "Kệ TV"
+      },
+      "vitrina": {
+        "nume": "Tủ kính",
+        "descriere": "Tủ cao có cánh kính khung nhôm mua sẵn. Từ ván chỉ cắt thùng tủ.",
+        "corpNume": "Tủ kính"
       },
       "baie-lavoar": {
         "nume": "Tủ lavabo",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Kẹp len chân",
       "obsClemaPlinta": "một cái cho mỗi chân trước",
       "plintaBara": "Len chân nhôm H{h}, thanh {bara} mm",
-      "obsPlinta": "Tổng {mm} mm; tủ có chân: {n}. Góc, nối và nắp đầu tùy cách bố trí."
+      "obsPlinta": "Tổng {mm} mm; tủ có chân: {n}. Góc, nối và nắp đầu tùy cách bố trí.",
+      "usaRamaAlu": "Cánh kính khung nhôm {h} × {l} mm",
+      "obsUsaRamaAlu": "đặt làm sẵn theo kích thước hoàn thiện",
+      "balamaRamaAlu": "Bản lề cho khung nhôm"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "thanh giằng {lat} mm",
     "faraFront": "không mặt cánh",
     "sertareJos": "ngăn kéo ở dưới",
-    "faraManer": "không tay nắm"
+    "faraManer": "không tay nắm",
+    "usiSticla": "cánh kính"
   },
   "comanda": {
     "inapoiComenzi": "Đơn hàng của tôi",
@@ -1374,6 +1388,9 @@
     "fronturi": "Mặt cánh",
     "fronturiSeFac": "có làm",
     "fronturiNuSeFac": "không làm",
+    "usiSticla": "Cánh tủ",
+    "usiSticlaNu": "Bằng ván",
+    "usiSticlaDa": "Khung nhôm kính (mua sẵn)",
     "pozitieSertare": "Ngăn kéo",
     "sertareSus": "ở trên",
     "sertareJos": "ở dưới, cánh ở trên",
@@ -1401,6 +1418,9 @@
     "subScaraNota": "Cạnh xiên và hai góc được tính sẵn. Ngược lại cũng được, khi cầu thang đi xuống bên trái: đặt chiều cao lớn hơn ở bên phải.",
     "subScaraCote": "Điền cả ba kích thước, mỗi cái ít nhất 10 mm.",
     "subScaraGata": "Xong: cạnh xiên {panta} mm, góc {a}° và {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "Cần đặt: cánh kính khung nhôm, {h} × {l} mm — {n} cái."
+    },
     "conturDeMana": "Cạnh và góc, nhập tay"
   },
   "fata": {

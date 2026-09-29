@@ -382,6 +382,11 @@
         "descriere": "No doors, one shelf. Thick edging on every visible edge.",
         "corpNume": "Wall shelf unit"
       },
+      "sus-vitrina": {
+        "nume": "Wall display cabinet",
+        "descriere": "Aluminium-frame glass doors, bought ready-made. Only the carcass is cut from board.",
+        "corpNume": "Wall display cabinet"
+      },
       "dulap-2usi": {
         "nume": "Wardrobe with 2 doors",
         "descriere": "A bedroom wardrobe with four shelves. Above 2000 mm the doors need a fifth hinge, so the height stops here; for more, add a separate top box.",
@@ -411,6 +416,11 @@
         "nume": "TV unit",
         "descriere": "A low, wide unit with two doors. The doors reach the 600 mm width limit.",
         "corpNume": "TV unit"
+      },
+      "vitrina": {
+        "nume": "Display cabinet",
+        "descriere": "Tall cabinet with aluminium-frame glass doors, bought ready-made. Only the carcass is cut from board.",
+        "corpNume": "Display cabinet"
       },
       "baie-lavoar": {
         "nume": "Vanity unit",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Kickboard clip",
       "obsClemaPlinta": "one on each front leg",
       "plintaBara": "Aluminium kickboard H{h}, {bara} mm bar",
-      "obsPlinta": "{mm} mm in total; cabinets on legs: {n}. Corners, joints and end caps depending on the layout."
+      "obsPlinta": "{mm} mm in total; cabinets on legs: {n}. Corners, joints and end caps depending on the layout.",
+      "usaRamaAlu": "Aluminium-frame glass door {h} × {l} mm",
+      "obsUsaRamaAlu": "ordered ready-made, at finished size",
+      "balamaRamaAlu": "Hinge for aluminium frame"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "{lat} mm rails",
     "faraFront": "no fronts",
     "sertareJos": "drawers at the bottom",
-    "faraManer": "no handle"
+    "faraManer": "no handle",
+    "usiSticla": "glass doors"
   },
   "comanda": {
     "inapoiComenzi": "My orders",
@@ -1374,6 +1388,9 @@
     "fronturi": "Fronts",
     "fronturiSeFac": "included",
     "fronturiNuSeFac": "not included",
+    "usiSticla": "Doors",
+    "usiSticlaNu": "Chipboard",
+    "usiSticlaDa": "Aluminium frame with glass (bought)",
     "pozitieSertare": "Drawers",
     "sertareSus": "at the top",
     "sertareJos": "at the bottom, doors above",
@@ -1401,6 +1418,9 @@
     "subScaraNota": "The slope and the two angles are worked out for you. It also works the other way round, with the stairs going down to the left: put the larger height on the right.",
     "subScaraCote": "Fill in all three sizes, each at least 10 mm.",
     "subScaraGata": "Done: {panta} mm slope, angles of {a}° and {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "To order: aluminium-frame glass door, {h} × {l} mm — {n} pcs."
+    },
     "conturDeMana": "Sides and angles, by hand"
   },
   "fata": {

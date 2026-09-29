@@ -471,6 +471,7 @@ svg.sk .sk-soclu{fill:#6b5a40;stroke:#453520;stroke-width:12}
    deseneaza punctate, ca in atelier — golul unde vin usile se vede, dar se
    vede si ca nu se taie nimic pentru el. Fara asta un corp comandat fara
    fronturi ar arata exact ca un corp deschis, adica alt corp. */
+svg.sk .sk-front.sticla{fill:#cfe3ea;fill-opacity:.55}
 svg.sk .sk-front.fara{fill:none;stroke:#5c4a2e;stroke-width:10;stroke-dasharray:34 24;opacity:.75}
 svg.sk .sk-usa.fara{stroke-dasharray:60 44;opacity:.7}
 

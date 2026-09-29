@@ -12,7 +12,7 @@ var CORP_ID = DATA.corpId;
 var params = DATA.params;
 var paid = !!DATA.paid;
 
-var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','picioare','traverse','t','cg','cs','spate','tp','faraFront','nUsi','montaj','balama','supr','hSine',
+var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','picioare','traverse','t','cg','cs','spate','tp','faraFront','usiSticla','nUsi','montaj','balama','supr','hSine',
               'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','sertareJos','hFront','hCutie','jg','ts','lg','maner','manerDir','manerPoz','manerL',
               'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 
@@ -409,7 +409,11 @@ function render() {
   $('titlu3d').textContent = T('editor.vedere3d') + ' – ' + nume;
 
   var warns = (serverPieces && serverPieces.warn) ? serverPieces.warn : res.warn;
-  $('warns').innerHTML = warns.map(function (w) { return '<div class="warn">' + esc(w) + '</div>'; }).join('');
+  $('warns').innerHTML = warns.map(function (w) { return '<div class="warn">' + esc(w) + '</div>'; }).join('') +
+    /* Ce nu se taie, dar se comandă: nu e o greșeală, deci stă pe verde. */
+    (res.deComandat || []).map(function (d) {
+      return '<div class="warn ok">' + esc(T('editor.deComandat.' + d.fel, { h: d.H, l: d.L, n: d.buc })) + '</div>';
+    }).join('');
 
   renderTable();
   $('formule').innerHTML = formule(params, res);
@@ -469,6 +473,8 @@ function init3D() {
   var dl2 = new THREE.DirectionalLight(0xffffff, 0.25); dl2.position.set(-1, 0.4, -0.8); scene.add(dl2);
   var group = new THREE.Group(); scene.add(group);
   var mats = {}; Object.keys(COL).forEach(function (k) { mats[k] = new THREE.MeshLambertMaterial({ color: COL[k] }); });
+  /* Ușa de vitrină: sticlă, adică se vede prin ea ce e în corp. */
+  mats.sticla = new THREE.MeshLambertMaterial({ color: 0x9cc7d6, transparent: true, opacity: 0.35 });
   var lineMat = new THREE.LineBasicMaterial({ color: 0x2a2622, transparent: true, opacity: 0.45 });
 
   V3 = { renderer: renderer, scene: scene, camera: camera, group: group, mats: mats, lineMat: lineMat,
@@ -595,6 +601,18 @@ function build3D(c, res) {
                        base: [b.x + b.sx / 2, b.y + b.sy / 2, b.z + b.sz / 2] };
     meshM.add(new THREE.LineSegments(new THREE.EdgesGeometry(geoM), V3.lineMat));
     g.add(meshM); V3.meshes.push(meshM);
+  });
+
+  /* Ușile de vitrină nu se taie, deci nici ele nu stau în `res.P`. Se văd
+     de sticlă, cu grupa fronturilor, ca să se stingă odată cu ele. */
+  (res.sticla3d || []).forEach(function (b, bi) {
+    var geoS = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
+    var meshS = new THREE.Mesh(geoS, V3.mats.sticla);
+    if (b.ry) meshS.rotation.y = b.ry;
+    meshS.userData = { p: null, pi: -1, bi: bi, b: b,
+                       base: [b.x + b.sx / 2, b.y + b.sy / 2, b.z + b.sz / 2] };
+    meshS.add(new THREE.LineSegments(new THREE.EdgesGeometry(geoS), V3.lineMat));
+    g.add(meshS); V3.meshes.push(meshS);
   });
 
   var prevMax = V3.maxDim || 0, maxDim = Math.max(res.W, res.H, res.D);

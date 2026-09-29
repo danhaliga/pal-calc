@@ -382,6 +382,11 @@
         "descriere": "没有门，一块层板。所有看得见的边都用厚封边。",
         "corpNume": "上墙搁板"
       },
+      "sus-vitrina": {
+        "nume": "玻璃吊柜",
+        "descriere": "铝框玻璃门外购成品。板材只裁柜体。",
+        "corpNume": "玻璃吊柜"
+      },
       "dulap-2usi": {
         "nume": "衣柜，双门",
         "descriere": "卧室衣柜，四块层板。超过 2000 毫米门板就得上第五个铰链，所以高度停在这里；要更高就单独加一节顶柜。",
@@ -411,6 +416,11 @@
         "nume": "电视柜",
         "descriere": "又矮又宽的柜体，两扇门。门板正好到 600 毫米这个宽度上限。",
         "corpNume": "电视柜"
+      },
+      "vitrina": {
+        "nume": "玻璃展示柜",
+        "descriere": "带铝框玻璃门的高柜，门外购成品。板材只裁柜体。",
+        "corpNume": "玻璃展示柜"
       },
       "baie-lavoar": {
         "nume": "洗手盆下柜",
@@ -723,7 +733,10 @@
       "clemaPlinta": "踢脚线卡扣",
       "obsClemaPlinta": "每个前脚一个",
       "plintaBara": "铝踢脚线 H{h}，{bara} 毫米长料",
-      "obsPlinta": "共 {mm} 毫米；带柜脚的柜体：{n}。转角、连接件和端盖视布置而定。"
+      "obsPlinta": "共 {mm} 毫米；带柜脚的柜体：{n}。转角、连接件和端盖视布置而定。",
+      "usaRamaAlu": "铝框玻璃门 {h} × {l} 毫米",
+      "obsUsaRamaAlu": "按成品尺寸订购成品",
+      "balamaRamaAlu": "铝框门铰链"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "{lat} 毫米横档",
     "faraFront": "无门板",
     "sertareJos": "抽屉在下",
-    "faraManer": "无拉手"
+    "faraManer": "无拉手",
+    "usiSticla": "玻璃门"
   },
   "comanda": {
     "inapoiComenzi": "我的订单",
@@ -1374,6 +1388,9 @@
     "fronturi": "门板",
     "fronturiSeFac": "要做",
     "fronturiNuSeFac": "不做",
+    "usiSticla": "柜门",
+    "usiSticlaNu": "板材",
+    "usiSticlaDa": "铝框玻璃门（外购）",
     "pozitieSertare": "抽屉",
     "sertareSus": "在上方",
     "sertareJos": "在下方，门在上",
@@ -1401,6 +1418,9 @@
     "subScaraNota": "斜边和两个角度自动算出。反过来也行：楼梯向左下降时，把较大的高度填在右边。",
     "subScaraCote": "三个尺寸都要填，每个至少 10 毫米。",
     "subScaraGata": "完成：斜边 {panta} 毫米，角度 {a}° 和 {b}°。",
+    "deComandat": {
+      "usaRamaAlu": "需订购：铝框玻璃门 {h} × {l} 毫米 — {n} 扇。"
+    },
     "conturDeMana": "手动输入边长和角度"
   },
   "fata": {

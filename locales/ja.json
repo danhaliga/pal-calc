@@ -382,6 +382,11 @@
         "descriere": "扉なし、棚板1枚。見えるすべての辺に厚い木口テープ。",
         "corpNume": "壁付棚"
       },
+      "sus-vitrina": {
+        "nume": "吊り戸棚ガラスキャビネット",
+        "descriere": "アルミ框ガラス扉は完成品を購入。板から切るのは本体だけ。",
+        "corpNume": "吊り戸ガラスキャビネット"
+      },
       "dulap-2usi": {
         "nume": "洋服だんす、扉2枚",
         "descriere": "棚板4枚の寝室用。2000mmを超えると扉に5個目の丁番が必要になるので高さはここで止めています。もっと高くするなら上置きを別に足してください。",
@@ -411,6 +416,11 @@
         "nume": "テレビボード",
         "descriere": "低くて幅の広いキャビネット、扉2枚。扉は幅600mmの上限まで届きます。",
         "corpNume": "テレビボード"
+      },
+      "vitrina": {
+        "nume": "ガラスキャビネット",
+        "descriere": "アルミ框ガラス扉付きの背の高いキャビネット、扉は完成品を購入。板から切るのは本体だけ。",
+        "corpNume": "ガラスキャビネット"
       },
       "baie-lavoar": {
         "nume": "洗面ボウル下のキャビネット",
@@ -723,7 +733,10 @@
       "clemaPlinta": "幅木クリップ",
       "obsClemaPlinta": "前脚1本につき1個",
       "plintaBara": "アルミ幅木 H{h}、{bara} mm 材",
-      "obsPlinta": "合計 {mm} mm；脚付きキャビネット：{n}。コーナー・ジョイント・エンドキャップは配置に応じて。"
+      "obsPlinta": "合計 {mm} mm；脚付きキャビネット：{n}。コーナー・ジョイント・エンドキャップは配置に応じて。",
+      "usaRamaAlu": "アルミ框ガラス扉 {h} × {l} mm",
+      "obsUsaRamaAlu": "仕上がり寸法で完成品を発注",
+      "balamaRamaAlu": "アルミ框用ヒンジ"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "幕板 {lat} mm",
     "faraFront": "前板なし",
     "sertareJos": "引き出しは下",
-    "faraManer": "取っ手なし"
+    "faraManer": "取っ手なし",
+    "usiSticla": "ガラス扉"
   },
   "comanda": {
     "inapoiComenzi": "自分の注文",
@@ -1374,6 +1388,9 @@
     "fronturi": "前板",
     "fronturiSeFac": "作る",
     "fronturiNuSeFac": "作らない",
+    "usiSticla": "扉",
+    "usiSticlaNu": "パーティクルボード",
+    "usiSticlaDa": "アルミ框ガラス扉（購入品）",
     "pozitieSertare": "引き出し",
     "sertareSus": "上",
     "sertareJos": "下、扉はその上",
@@ -1401,6 +1418,9 @@
     "subScaraNota": "斜辺と二つの角度は自動で出ます。階段が左に下がる場合も同じで、大きいほうの高さを右に入れてください。",
     "subScaraCote": "三つとも入力してください。どれも 10 mm 以上です。",
     "subScaraGata": "できました：斜辺 {panta} mm、角度 {a}° と {b}°。",
+    "deComandat": {
+      "usaRamaAlu": "発注：アルミ框ガラス扉 {h} × {l} mm — {n} 枚。"
+    },
     "conturDeMana": "辺と角度を手で入れる"
   },
   "fata": {

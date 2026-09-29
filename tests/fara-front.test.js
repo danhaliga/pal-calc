@@ -210,7 +210,7 @@ test('se cere din editor și se poate ține minte ca setare', () => {
   assert.match(vedere, /id="faraFront"/);
   assert.match(vedere, /editor\.fronturiNuSeFac/);
   const app = citeste('public', 'app.js');
-  assert.match(app, /'faraFront','nUsi'/, 'editorul nu trimite semnul la calcul');
+  assert.match(app, /var fields = \[[^\]]*'faraFront'/, 'editorul nu trimite semnul la calcul');
   assert.match(app, /\{ id: 'faraFront',\s+camp: \['faraFront'\]/, 'nu se poate ține minte');
   assert.match(app, /grupFaraFront|g\.arata/, 'setarea s-ar arăta ca un „1"');
 });

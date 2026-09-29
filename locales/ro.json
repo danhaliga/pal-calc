@@ -388,6 +388,11 @@
         "descriere": "Fără uși, cu o poliță. Canturi groase pe muchiile vizibile.",
         "corpNume": "Raft suspendat"
       },
+      "sus-vitrina": {
+        "nume": "Vitrină suspendată",
+        "descriere": "Uși cu ramă de aluminiu și sticlă, cumpărate gata. Din PAL se taie doar corpul.",
+        "corpNume": "Vitrină suspendată"
+      },
       "dulap-2usi": {
         "nume": "Dulap cu 2 uși",
         "descriere": "Dulap de dormitor cu patru polițe. Peste 2000 mm, ușile au nevoie de a cincea balama, așa că înălțimea e oprită aici; pentru mai mult se adaugă un antresol separat.",
@@ -417,6 +422,11 @@
         "nume": "Corp TV",
         "descriere": "Corp jos și lat, cu două uși. Ușile ajung la limita de 600 mm lățime.",
         "corpNume": "Corp TV"
+      },
+      "vitrina": {
+        "nume": "Vitrină",
+        "descriere": "Corp înalt cu uși de sticlă în ramă de aluminiu, cumpărate gata. Din PAL se taie doar corpul.",
+        "corpNume": "Vitrină"
       },
       "baie-lavoar": {
         "nume": "Corp sub lavoar",
@@ -729,7 +739,10 @@
       "clemaPlinta": "Clemă de plintă",
       "obsClemaPlinta": "una pe fiecare picior din față",
       "plintaBara": "Plintă aluminiu H{h}, bară de {bara} mm",
-      "obsPlinta": "{mm} mm în total; corpuri pe picioare: {n}. Colțarele, îmbinările și capacele, după așezare."
+      "obsPlinta": "{mm} mm în total; corpuri pe picioare: {n}. Colțarele, îmbinările și capacele, după așezare.",
+      "usaRamaAlu": "Ușă ramă aluminiu cu sticlă {h} × {l} mm",
+      "obsUsaRamaAlu": "se comandă gata, la cota finită",
+      "balamaRamaAlu": "Balama pentru ramă de aluminiu"
     }
   },
   "piesa": {
@@ -917,7 +930,8 @@
     "cuTraverse": "traverse {lat} mm",
     "faraFront": "fără fronturi",
     "sertareJos": "sertare jos",
-    "faraManer": "fără mâner"
+    "faraManer": "fără mâner",
+    "usiSticla": "uși de sticlă"
   },
   "comanda": {
     "inapoiComenzi": "Comenzile mele",
@@ -1385,6 +1399,9 @@
     "fronturi": "Fronturi",
     "fronturiSeFac": "se fac",
     "fronturiNuSeFac": "nu se fac",
+    "usiSticla": "Ușile",
+    "usiSticlaNu": "Din PAL",
+    "usiSticlaDa": "Ramă aluminiu cu sticlă (cumpărate)",
     "pozitieSertare": "Sertarele",
     "sertareSus": "sus",
     "sertareJos": "jos, cu ușile deasupra",
@@ -1412,6 +1429,9 @@
     "subScaraNota": "Panta și cele două unghiuri se socotesc singure. Merge și invers, cu scara coborând spre stânga: pui înălțimea mai mare în dreapta.",
     "subScaraCote": "Completează toate trei cotele, fiecare de cel puțin 10 mm.",
     "subScaraGata": "Gata: pantă de {panta} mm, unghiuri de {a}° și {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "De comandat: ușă cu ramă de aluminiu și sticlă, {h} × {l} mm — {n} buc."
+    },
     "conturDeMana": "Laturi și unghiuri, de mână"
   },
   "fata": {

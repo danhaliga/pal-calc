@@ -382,6 +382,11 @@
         "descriere": "Ohne Türen, mit einem Boden. Dicke Kante auf allen sichtbaren Schmalseiten.",
         "corpNume": "Hängeregal"
       },
+      "sus-vitrina": {
+        "nume": "Hängevitrine",
+        "descriere": "Glastüren mit Alurahmen, fertig gekauft. Aus der Platte wird nur der Korpus geschnitten.",
+        "corpNume": "Hängevitrine"
+      },
       "dulap-2usi": {
         "nume": "Kleiderschrank mit 2 Türen",
         "descriere": "Schlafzimmerschrank mit vier Böden. Über 2000 mm brauchen die Türen ein fünftes Band, deshalb endet die Höhe hier; für mehr kommt ein eigener Aufsatzschrank dazu.",
@@ -411,6 +416,11 @@
         "nume": "TV-Möbel",
         "descriere": "Niedriger, breiter Korpus mit zwei Türen. Die Türen erreichen die Grenze von 600 mm Breite.",
         "corpNume": "TV-Möbel"
+      },
+      "vitrina": {
+        "nume": "Vitrine",
+        "descriere": "Hochschrank mit Glastüren im Alurahmen, fertig gekauft. Aus der Platte wird nur der Korpus geschnitten.",
+        "corpNume": "Vitrine"
       },
       "baie-lavoar": {
         "nume": "Waschtischunterschrank",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Sockelblenden-Clip",
       "obsClemaPlinta": "einer an jedem vorderen Fuß",
       "plintaBara": "Alu-Sockelblende H{h}, Stange {bara} mm",
-      "obsPlinta": "{mm} mm insgesamt; Korpusse auf Füßen: {n}. Ecken, Verbinder und Endkappen je nach Aufstellung."
+      "obsPlinta": "{mm} mm insgesamt; Korpusse auf Füßen: {n}. Ecken, Verbinder und Endkappen je nach Aufstellung.",
+      "usaRamaAlu": "Glastür mit Alurahmen {h} × {l} mm",
+      "obsUsaRamaAlu": "fertig bestellt, auf Fertigmaß",
+      "balamaRamaAlu": "Scharnier für Alurahmen"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "Traversen {lat} mm",
     "faraFront": "ohne Fronten",
     "sertareJos": "Schubladen unten",
-    "faraManer": "ohne Griff"
+    "faraManer": "ohne Griff",
+    "usiSticla": "Glastüren"
   },
   "comanda": {
     "inapoiComenzi": "Meine Aufträge",
@@ -1374,6 +1388,9 @@
     "fronturi": "Fronten",
     "fronturiSeFac": "werden gemacht",
     "fronturiNuSeFac": "werden nicht gemacht",
+    "usiSticla": "Türen",
+    "usiSticlaNu": "Aus Spanplatte",
+    "usiSticlaDa": "Alurahmen mit Glas (gekauft)",
     "pozitieSertare": "Die Schubladen",
     "sertareSus": "oben",
     "sertareJos": "unten, Türen darüber",
@@ -1401,6 +1418,9 @@
     "subScaraNota": "Die Schräge und die beiden Winkel rechnen sich von selbst. Geht auch andersherum, wenn die Treppe nach links fällt: dann kommt die größere Höhe nach rechts.",
     "subScaraCote": "Trag alle drei Maße ein, jedes mindestens 10 mm.",
     "subScaraGata": "Fertig: Schräge {panta} mm, Winkel {a}° und {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "Zu bestellen: Glastür mit Alurahmen, {h} × {l} mm — {n} Stk."
+    },
     "conturDeMana": "Seiten und Winkel, von Hand"
   },
   "fata": {

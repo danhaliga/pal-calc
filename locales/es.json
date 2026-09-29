@@ -382,6 +382,11 @@
         "descriere": "Sin puertas, con una balda. Canto grueso en todos los bordes visibles.",
         "corpNume": "Estante de pared"
       },
+      "sus-vitrina": {
+        "nume": "Vitrina alta de pared",
+        "descriere": "Puertas de vidrio con marco de aluminio, compradas hechas. Del tablero solo se corta el cuerpo.",
+        "corpNume": "Vitrina de pared"
+      },
       "dulap-2usi": {
         "nume": "Armario de 2 puertas",
         "descriere": "Armario de dormitorio con cuatro baldas. Por encima de 2000 mm las puertas necesitan una quinta bisagra, así que la altura se detiene aquí; para más, añade un altillo aparte.",
@@ -411,6 +416,11 @@
         "nume": "Mueble de TV",
         "descriere": "Módulo bajo y ancho, con dos puertas. Las puertas llegan al límite de 600 mm de anchura.",
         "corpNume": "Mueble de TV"
+      },
+      "vitrina": {
+        "nume": "Vitrina",
+        "descriere": "Mueble alto con puertas de vidrio en marco de aluminio, compradas hechas. Del tablero solo se corta el cuerpo.",
+        "corpNume": "Vitrina"
       },
       "baie-lavoar": {
         "nume": "Mueble de lavabo",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Clip de rodapié",
       "obsClemaPlinta": "uno en cada pata delantera",
       "plintaBara": "Rodapié de aluminio H{h}, barra de {bara} mm",
-      "obsPlinta": "{mm} mm en total; muebles con patas: {n}. Esquinas, uniones y tapas, según la distribución."
+      "obsPlinta": "{mm} mm en total; muebles con patas: {n}. Esquinas, uniones y tapas, según la distribución.",
+      "usaRamaAlu": "Puerta de vidrio con marco de aluminio {h} × {l} mm",
+      "obsUsaRamaAlu": "se pide hecha, a medida final",
+      "balamaRamaAlu": "Bisagra para marco de aluminio"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "travesaños {lat} mm",
     "faraFront": "sin frentes",
     "sertareJos": "cajones abajo",
-    "faraManer": "sin tirador"
+    "faraManer": "sin tirador",
+    "usiSticla": "puertas de vidrio"
   },
   "comanda": {
     "inapoiComenzi": "Mis pedidos",
@@ -1374,6 +1388,9 @@
     "fronturi": "Frentes",
     "fronturiSeFac": "se hacen",
     "fronturiNuSeFac": "no se hacen",
+    "usiSticla": "Puertas",
+    "usiSticlaNu": "De aglomerado",
+    "usiSticlaDa": "Marco de aluminio con vidrio (compradas)",
     "pozitieSertare": "Los cajones",
     "sertareSus": "arriba",
     "sertareJos": "abajo, con las puertas encima",
@@ -1401,6 +1418,9 @@
     "subScaraNota": "La pendiente y los dos ángulos se calculan solos. También vale al revés, con la escalera bajando hacia la izquierda: pon la altura mayor a la derecha.",
     "subScaraCote": "Rellena las tres medidas, cada una de al menos 10 mm.",
     "subScaraGata": "Listo: pendiente de {panta} mm, ángulos de {a}° y {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "Por pedir: puerta de vidrio con marco de aluminio, {h} × {l} mm — {n} uds."
+    },
     "conturDeMana": "Lados y ángulos, a mano"
   },
   "fata": {

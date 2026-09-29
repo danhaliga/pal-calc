@@ -382,6 +382,11 @@
         "descriere": "Sem portas, com uma prateleira. Orla grossa em todos os topos à vista.",
         "corpNume": "Prateleira de parede"
       },
+      "sus-vitrina": {
+        "nume": "Vitrine suspensa",
+        "descriere": "Portas de vidro com caixilho de alumínio, compradas prontas. Do painel corta-se só o corpo.",
+        "corpNume": "Vitrine suspensa"
+      },
       "dulap-2usi": {
         "nume": "Roupeiro de 2 portas",
         "descriere": "Roupeiro de quarto com quatro prateleiras. Acima de 2000 mm as portas precisam de uma quinta dobradiça, por isso a altura para aqui; para mais alto, acrescenta um sobreposto separado.",
@@ -411,6 +416,11 @@
         "nume": "Móvel de TV",
         "descriere": "Módulo baixo e largo, com duas portas. As portas chegam ao limite de 600 mm de largura.",
         "corpNume": "Móvel de TV"
+      },
+      "vitrina": {
+        "nume": "Vitrine",
+        "descriere": "Móvel alto com portas de vidro em caixilho de alumínio, compradas prontas. Do painel corta-se só o corpo.",
+        "corpNume": "Vitrine"
       },
       "baie-lavoar": {
         "nume": "Móvel de lavatório",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Clipe de rodapé",
       "obsClemaPlinta": "um em cada pé da frente",
       "plintaBara": "Rodapé de alumínio H{h}, barra de {bara} mm",
-      "obsPlinta": "{mm} mm no total; móveis com pés: {n}. Cantos, uniões e tampas conforme a disposição."
+      "obsPlinta": "{mm} mm no total; móveis com pés: {n}. Cantos, uniões e tampas conforme a disposição.",
+      "usaRamaAlu": "Porta de vidro com caixilho de alumínio {h} × {l} mm",
+      "obsUsaRamaAlu": "encomenda-se pronta, à medida final",
+      "balamaRamaAlu": "Dobradiça para caixilho de alumínio"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "travessas {lat} mm",
     "faraFront": "sem frentes",
     "sertareJos": "gavetas em baixo",
-    "faraManer": "sem puxador"
+    "faraManer": "sem puxador",
+    "usiSticla": "portas de vidro"
   },
   "comanda": {
     "inapoiComenzi": "As minhas encomendas",
@@ -1374,6 +1388,9 @@
     "fronturi": "Frentes",
     "fronturiSeFac": "são feitas",
     "fronturiNuSeFac": "não são feitas",
+    "usiSticla": "Portas",
+    "usiSticlaNu": "De aglomerado",
+    "usiSticlaDa": "Caixilho de alumínio com vidro (compradas)",
     "pozitieSertare": "As gavetas",
     "sertareSus": "em cima",
     "sertareJos": "em baixo, com as portas por cima",
@@ -1401,6 +1418,9 @@
     "subScaraNota": "A inclinação e os dois ângulos calculam-se sozinhos. Também funciona ao contrário, com a escada a descer para a esquerda: ponha a altura maior à direita.",
     "subScaraCote": "Preencha as três medidas, cada uma de pelo menos 10 mm.",
     "subScaraGata": "Pronto: inclinação de {panta} mm, ângulos de {a}° e {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "A encomendar: porta de vidro com caixilho de alumínio, {h} × {l} mm — {n} un."
+    },
     "conturDeMana": "Lados e ângulos, à mão"
   },
   "fata": {
