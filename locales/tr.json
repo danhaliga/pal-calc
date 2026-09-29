@@ -382,6 +382,11 @@
         "descriere": "Kapaksız, tek rafla. Görünen tüm kenarlarda kalın bant.",
         "corpNume": "Duvar rafı"
       },
+      "sus-vitrina": {
+        "nume": "Üst vitrin dolabı",
+        "descriere": "Alüminyum çerçeveli cam kapaklar hazır alınır. Levhadan yalnızca gövde kesilir.",
+        "corpNume": "Üst vitrin"
+      },
       "dulap-2usi": {
         "nume": "2 kapaklı gardırop",
         "descriere": "Dört raflı yatak odası gardırobu. 2000 mm üstünde kapaklar beşinci menteşeyi ister, bu yüzden yükseklik burada durur; daha yukarısı için ayrı bir üst modül eklenir.",
@@ -411,6 +416,11 @@
         "nume": "TV ünitesi",
         "descriere": "Alçak ve geniş gövde, iki kapakla. Kapaklar 600 mm genişlik sınırına dayanıyor.",
         "corpNume": "TV ünitesi"
+      },
+      "vitrina": {
+        "nume": "Vitrin",
+        "descriere": "Alüminyum çerçeveli cam kapaklı uzun dolap, kapaklar hazır alınır. Levhadan yalnızca gövde kesilir.",
+        "corpNume": "Vitrin"
       },
       "baie-lavoar": {
         "nume": "Lavabo altı dolabı",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Baza klipsi",
       "obsClemaPlinta": "her ön ayağa bir tane",
       "plintaBara": "Alüminyum baza H{h}, {bara} mm boy",
-      "obsPlinta": "Toplam {mm} mm; ayaklı dolaplar: {n}. Köşe, ek ve kapaklar yerleşime göre."
+      "obsPlinta": "Toplam {mm} mm; ayaklı dolaplar: {n}. Köşe, ek ve kapaklar yerleşime göre.",
+      "usaRamaAlu": "Alüminyum çerçeveli cam kapak {h} × {l} mm",
+      "obsUsaRamaAlu": "net ölçüde hazır sipariş edilir",
+      "balamaRamaAlu": "Alüminyum çerçeve menteşesi"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "kuşak {lat} mm",
     "faraFront": "kapaksız",
     "sertareJos": "çekmeceler altta",
-    "faraManer": "kulpsuz"
+    "faraManer": "kulpsuz",
+    "usiSticla": "cam kapaklar"
   },
   "comanda": {
     "inapoiComenzi": "Siparişlerim",
@@ -1374,6 +1388,9 @@
     "fronturi": "Kapaklar",
     "fronturiSeFac": "yapılır",
     "fronturiNuSeFac": "yapılmaz",
+    "usiSticla": "Kapaklar",
+    "usiSticlaNu": "Sunta",
+    "usiSticlaDa": "Cam dolgulu alüminyum çerçeve (hazır alınır)",
     "pozitieSertare": "Çekmeceler",
     "sertareSus": "üstte",
     "sertareJos": "altta, kapaklar üstünde",
@@ -1400,7 +1417,10 @@
     "subScaraFa": "Bu ölçülerden konturu çıkar",
     "subScaraNota": "Eğim ve iki açı kendiliğinden hesaplanır. Tersi de olur: merdiven sola iniyorsa büyük yüksekliği sağa yaz.",
     "subScaraCote": "Üç ölçüyü de doldur, her biri en az 10 mm.",
-    "subScaraGata": "Tamam: {panta} mm eğim, {a}° ve {b}° açılar."
+    "subScaraGata": "Tamam: {panta} mm eğim, {a}° ve {b}° açılar.",
+    "deComandat": {
+      "usaRamaAlu": "Sipariş edilecek: alüminyum çerçeveli cam kapak, {h} × {l} mm — {n} adet."
+    }
   },
   "fata": {
     "px": "sağ",

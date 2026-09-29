@@ -41,6 +41,10 @@ test('corpurile de jos din catalog vin pe picioare; cele suspendate și cele pe 
   assert.ok(!+PalModels.paramsFor('sus-2usi', T).picioare, 'un corp suspendat pe picioare');
   assert.ok(!+PalModels.paramsFor('colt-sus-L', T).picioare);
   assert.ok(!+PalModels.paramsFor('baza-2usi-soclu', T).picioare, 'soclul și picioarele deodată');
+  /* Numai bucătăria: la living și baie nu s-a spus așa. */
+  assert.ok(!+PalModels.paramsFor('dulap-2usi', T).picioare);
+  assert.ok(!+PalModels.paramsFor('vitrina', T).picioare);
+  assert.ok(!+PalModels.paramsFor('colt-dressing', T).picioare);
 });
 
 test('picioarele nu schimbă nicio piesă de tăiat', () => {

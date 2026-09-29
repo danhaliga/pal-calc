@@ -15,8 +15,8 @@ Jumătățile de context au costat deja timp în sesiunea de dinainte.
 piese se taie, la ce cotă finită și la ce cotă de tăiere, cu ce cant pe
 fiecare muchie, plus feroneria, croirea în coli și fișa de montaj.
 
-- **47 de modele** în catalog, **7 categorii**, **30 de limbi**
-- **533 de teste**, toate trec: `npm test`
+- **49 de modele** în catalog, **7 categorii**, **30 de limbi**
+- **554 de teste**, toate trec: `npm test`
 - Node ≥ 20, Express 4, EJS, better-sqlite3, zod, bcryptjs
 - Motorul de calcul (`shared/*.js`) e UMD: **același fișier rulează și pe
   server, și în browser**. Nu-l rupe în două.
@@ -240,12 +240,30 @@ de cote.
 
 ---
 
+## 6b. Ce s-a lucrat pe 29 septembrie, seara (pe server, în sesiunea „server_nou")
+
+- **Administrare → Plata**: cheile Stripe și felul plății se pun din aplicație
+  (criptate în baza de date), nu din `.env`. Rămâne pe bani virtuali, voit.
+- **Corp bază de cuptor**: motorul știe nișa FĂRĂ uși — sertar jos, cuptor
+  deasupra, poliță fixă între ele. Model `baza-cuptor`.
+- **Colțurile de jos pe soclu**: L (două bucăți), diagonal (una, cu unghiurile
+  scrise pe ea), orb (ca un corp drept).
+- **Plinta de aluminiu și picioarele** (răspunsul lui Dan: corp singur → soclu
+  din PAL; bucătărie în șir → picioare de plastic + plintă de aluminiu
+  cumpărată, o bară lungă, Häfele H100/120/150 în bare de 4 m). Se alege la
+  feronerie, pe comandă; corpurile de bucătărie de jos vin cu `picioare: 1`.
+- **Vitrina** (răspunsul lui Dan: ramă de aluminiu cumpărată): `usiSticla: 1`
+  scoate ușile din debitare și le trece la „de comandat", cu balamale de ramă.
+  Modele `sus-vitrina` și `vitrina`.
+- Pe server există o cheie de acces la GitHub doar pentru depozitul ăsta
+  (`/root/.ssh/github-pal-calc`, pusă de Dan ca „deploy key" cu scriere).
+  Copia de lucru pentru modificări e separată de `/opt/palcalc`.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E
   valoare de pornire (`PICIOARE` în `shared/feronerie.js`), pusă când s-a
   făcut plinta de aluminiu. De întrebat pe Dan câte pune el.
-- **Vitrina** — cere ușă pe cadru, cu sticlă la mijloc.
 - **Corpul sub scară n-are poliță.** Una sub pantă nu poate fi întreagă:
   ori se scurtează, ori se taie în unghi. Nici despărțitor n-are. De
   întrebat pe Dan cum le face el.
@@ -327,7 +345,7 @@ src/                rutele Express, baza de date, conturile, plata
 views/              paginile EJS
 public/app.js       editorul de corp: formular, tabel, vederea 3D
 locales/*.json      textele, 30 de fișiere
-tests/              24 de fișiere, 533 de teste
+tests/              26 de fișiere, 554 de teste
 .lucru/             scripturi de-o dată: traduceri, petice, probe
 db/migrations/      schema, se aplică singură la pornire
 ```

@@ -88,6 +88,10 @@
          sticlă — sau le are deja de la lucrarea de dinainte. 0 înseamnă
          corp cu fronturi, ca până acum. */
       faraFront: 0,
+      /* Ușile de vitrină: ramă de aluminiu cu sticlă, cumpărată gata la
+         cotă. Nu se taie din PAL, deci ies din lista de debitare și intră
+         la „de comandat" — cu balamalele lor, care nu sunt cele de PAL. */
+      usiSticla: 0,
       tip: 'drept', W2: 900, orb: 550, contur: [],
       /* piesă simplă: bucăți, cantul pe fiecare muchie, fibra */
       pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
@@ -489,7 +493,23 @@
 
        Se cheamă chiar înainte de fiecare `return`, la orice fel de corp. */
     var faraFront = !!(+c.faraFront);
+    /* Ce nu se taie, dar se comandă: ușile cu ramă de aluminiu. Cota e cea
+       FINITĂ a ușii — rama se face la ea, cu sticla în ea. Cutiile rămân
+       și pentru vederea 3D, unde ușa se vede de sticlă. */
+    var usiSticla = !!(+c.usiSticla) && !faraFront;
+    var deComandat = [], sticla3d = [];
+    var CHEI_USA = ['usa', 'usaDiagonala', 'usaBrat1', 'usaBrat2'];
     var scoateFronturile = function (usiLista) {
+      if (usiSticla) {
+        for (var iS = P.length - 1; iS >= 0; iS--) {
+          if (CHEI_USA.indexOf(P[iS].cheie) === -1) continue;
+          deComandat.unshift({ fel: 'usaRamaAlu', cheie: P[iS].cheie,
+                               H: P[iS].L, L: P[iS].l, buc: P[iS].buc });
+          (P[iS].boxes || []).forEach(function (b) { sticla3d.push(b); });
+          P.splice(iS, 1);
+        }
+        return usiLista;
+      }
       if (!faraFront) return usiLista;
       var cate = 0, cote = [];
       for (var iF = P.length - 1; iF >= 0; iF--) {
@@ -601,7 +621,7 @@
       }
 
       return {
-        P: P, warn: warn, avertismente: avertismente, usi: scoateFronturile(usiA),
+        P: P, warn: warn, avertismente: avertismente, deComandat: deComandat, sticla3d: sticla3d, usi: scoateFronturile(usiA),
         Wint: r1(g.W - 2 * t), Hint: r1(g.H - 2 * t), Dint: r1(Da - tp),
         W: g.W, H: g.H, D: Da,
         contur: g
@@ -739,7 +759,7 @@
         if (pA > 800 || pB > 800) avert('politaColtLata');
       }
 
-      return { P: P, warn: warn, avertismente: avertismente, usi: scoateFronturile(usiK), Wint: bA, Hint: Hint, Dint: D,
+      return { P: P, warn: warn, avertismente: avertismente, deComandat: deComandat, sticla3d: sticla3d, usi: scoateFronturile(usiK), Wint: bA, Hint: Hint, Dint: D,
                W: A, H: H, D: B, soclu: soclu,
                colt: { A: A, B: B, brA: brA, brB: brB, diag: diagL, dg: dg } };
     }
@@ -1223,7 +1243,7 @@
     }
 
     return { P: P, warn: warn, avertismente: avertismente, manere: manere,
-             usi: scoateFronturile(usi), Wint: Wint, Hint: Hint, Dint: Dint,
+             deComandat: deComandat, sticla3d: sticla3d, usi: scoateFronturile(usi), Wint: Wint, Hint: Hint, Dint: Dint,
              W: W, H: H, D: D, soclu: soclu };
   }
 
@@ -1285,6 +1305,7 @@
            fronturi — felul de până acum, adică cel în care nu se pierde
            nimic dacă valoarea vine stricată de undeva. */
         faraFront: int(0, 1).catch(0),
+        usiSticla: int(0, 1).catch(0),
         pBuc: int(1, 999).catch(1),
         pcL1: cantMuchie, pcL2: cantMuchie, pcl1: cantMuchie, pcl2: cantMuchie,
         pFibra: z.enum(['L', 'l', '-']).catch('L'),

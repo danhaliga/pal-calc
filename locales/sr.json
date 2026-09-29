@@ -388,6 +388,11 @@
         "descriere": "Bez vrata, sa jednom policom. Debeli kant na svim vidljivim ivicama.",
         "corpNume": "Zidna polica"
       },
+      "sus-vitrina": {
+        "nume": "Viseća vitrina",
+        "descriere": "Staklena vrata u aluminijumskom ramu kupuju se gotova. Od ploče se seče samo korpus.",
+        "corpNume": "Viseća vitrina"
+      },
       "dulap-2usi": {
         "nume": "Ormar sa 2 vrata",
         "descriere": "Ormar za spavaću sobu sa četiri police. Iznad 2000 mm vratima treba peta šarka, pa visina tu staje; više se dodaje zaseban nadgradni element.",
@@ -417,6 +422,11 @@
         "nume": "TV element",
         "descriere": "Nizak i širok korpus sa dvoja vrata. Vrata dostižu granicu od 600 mm širine.",
         "corpNume": "TV element"
+      },
+      "vitrina": {
+        "nume": "Vitrina",
+        "descriere": "Visok element sa staklenim vratima u aluminijumskom ramu, kupljenim gotovim. Od ploče se seče samo korpus.",
+        "corpNume": "Vitrina"
       },
       "baie-lavoar": {
         "nume": "Element ispod lavaboa",
@@ -729,7 +739,10 @@
       "clemaPlinta": "Klips za lajsnu",
       "obsClemaPlinta": "po jedan na svaku prednju nogicu",
       "plintaBara": "Aluminijumska lajsna H{h}, šipka {bara} mm",
-      "obsPlinta": "Ukupno {mm} mm; elementi na nogicama: {n}. Uglovi, spojnice i završne kapice prema rasporedu."
+      "obsPlinta": "Ukupno {mm} mm; elementi na nogicama: {n}. Uglovi, spojnice i završne kapice prema rasporedu.",
+      "usaRamaAlu": "Staklena vrata u aluminijumskom ramu {h} × {l} mm",
+      "obsUsaRamaAlu": "naručuju se gotova, na čistu meru",
+      "balamaRamaAlu": "Šarka za aluminijumski ram"
     }
   },
   "piesa": {
@@ -917,7 +930,8 @@
     "cuTraverse": "traverze {lat} mm",
     "faraFront": "bez fronti",
     "sertareJos": "fioke dole",
-    "faraManer": "bez ručice"
+    "faraManer": "bez ručice",
+    "usiSticla": "staklena vrata"
   },
   "comanda": {
     "inapoiComenzi": "Moje porudžbine",
@@ -1385,6 +1399,9 @@
     "fronturi": "Fronte",
     "fronturiSeFac": "rade se",
     "fronturiNuSeFac": "ne rade se",
+    "usiSticla": "Vrata",
+    "usiSticlaNu": "Od iverice",
+    "usiSticlaDa": "Aluminijumski ram sa staklom (kupljena)",
     "pozitieSertare": "Fioke",
     "sertareSus": "gore",
     "sertareJos": "dole, vrata iznad njih",
@@ -1411,7 +1428,10 @@
     "subScaraFa": "Napravi konturu iz ovih mera",
     "subScaraNota": "Nagib i oba ugla se računaju sami. Radi i obrnuto, kad stepenice padaju ulevo: veću visinu stavi desno.",
     "subScaraCote": "Popuni sve tri mere, svaku bar 10 mm.",
-    "subScaraGata": "Gotovo: nagib {panta} mm, uglovi {a}° i {b}°."
+    "subScaraGata": "Gotovo: nagib {panta} mm, uglovi {a}° i {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "Za naručiti: staklena vrata u aluminijumskom ramu, {h} × {l} mm — {n} kom."
+    }
   },
   "fata": {
     "px": "desno",

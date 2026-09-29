@@ -27,6 +27,10 @@
      cele suspendate. Cele care stau pe podea au `podea: true` pe model. */
   var PE_PODEA = ['bucatarie-jos', 'bucatarie-inalt', 'living', 'baie'];
 
+  /* Categoriile care vin pe picioare cu plintă de aluminiu: bucătăria.
+     Un corp singur pe podea se face cu soclu din PAL — vezi `soclu`. */
+  var PE_PICIOARE = ['bucatarie-jos', 'bucatarie-inalt'];
+
   var CATEGORIES = [
     { id: 'bucatarie-jos' },
     { id: 'bucatarie-sus' },
@@ -135,6 +139,12 @@
       set: { W: 800, H: 1000, D: 320, nUsi: 2, nPol: 3 }
     },
     {
+      /* Vitrina: uși cu ramă de aluminiu și sticlă, cumpărate gata la cotă.
+         Din PAL se taie doar corpul și polițele. */
+      id: 'sus-vitrina', cat: 'bucatarie-sus',
+      set: { W: 800, H: 720, D: 320, nUsi: 2, nPol: 2, usiSticla: 1 }
+    },
+    {
       id: 'sus-hota', cat: 'bucatarie-sus',
       set: { W: 600, H: 360, D: 320, nUsi: 1, nPol: 0 }
     },
@@ -188,6 +198,10 @@
     {
       id: 'dulap-3usi', cat: 'living',
       set: { W: 1350, H: 2000, D: 580, nUsi: 3, nPol: 0 }
+    },
+    {
+      id: 'vitrina', cat: 'living',
+      set: { W: 800, H: 1800, D: 400, nUsi: 2, nPol: 4, usiSticla: 1 }
     },
     {
       id: 'biblioteca', cat: 'living',
@@ -319,10 +333,12 @@
     if (!m) return null;
     var p = Object.assign(PalCalc.defaults(tr), m.set);
     p.nume = numeCorp(id, tr);
-    /* Corpurile de pe podea vin pe picioare, cu plintă de aluminiu în față
-       — felul bucătăriei puse în șir. Cele cu soclu în model rămân pe
-       soclu; cele suspendate n-au picioare. */
-    if (staPePodea(id) && !(+p.soclu > 0)) p.picioare = 1;
+    /* Corpurile de bucătărie de pe podea vin pe picioare, cu plintă de
+       aluminiu în față — felul bucătăriei puse în șir. Numai bucătăria:
+       la living și baie nu s-a spus așa, deci acolo se pune din editor.
+       Cele cu soclu în model rămân pe soclu. */
+    if (PE_PICIOARE.indexOf(m.cat) !== -1 && staPePodea(id) && !(+p.soclu > 0)) p.picioare = 1;
+    if (m.cat === 'colt' && m.podea && /^colt-jos-/.test(id) && !(+p.soclu > 0)) p.picioare = 1;
     return p;
   }
 
@@ -520,7 +536,9 @@
       var yU = jos ? yTop : yTop + usedTop;
       for (var k = 0; k < nU; k++) {
         var x = xoff + k * (uL + ri);
-        o.push('<rect x="' + x + '" y="' + yU + '" width="' + uL + '" height="' + uH + '" class="' + cf + '"/>');
+        /* Ușa de vitrină se desenează ca sticlă; sertarele rămân din PAL. */
+        o.push('<rect x="' + x + '" y="' + yU + '" width="' + uL + '" height="' + uH + '" class="' + cf +
+               (+p.usiSticla && !+p.faraFront ? ' sticla' : '') + '"/>');
         /* Ușa: de obicei mâner vertical, pe muchia dinspre mijlocul corpului.
            La două canaturi, primul îl are pe dreapta, restul pe stânga. */
         if (manere) {
@@ -556,6 +574,8 @@
     /* Fără fronturi se scrie ORICUM, chiar dacă rândul e deja plin: e
        singurul lucru de pe card care schimbă ce pleacă din atelier. */
     if (+p.faraFront) b.push(t_('rezumat.faraFront'));
+    /* Vitrina se recunoaște după uși: altfel cardul ar arăta ca un dulap. */
+    if (+p.usiSticla && !+p.faraFront && +p.nUsi > 0) b.push(t_('rezumat.usiSticla'));
     /* Unde stau sertarele schimbă fața corpului, deci se scrie pe card. */
     if (+p.sertareJos && +p.nSer > 0) b.push(t_('rezumat.sertareJos'));
     /* Fără mâner se scrie; cu mâner nu, că ăla e felul obișnuit. */

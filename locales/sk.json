@@ -388,6 +388,11 @@
         "descriere": "Bez dvierok, s jednou policou. Hrubá hrana na všetkých viditeľných hranách.",
         "corpNume": "Nástenná polica"
       },
+      "sus-vitrina": {
+        "nume": "Závesná vitrína",
+        "descriere": "Sklenené dvierka v hliníkovom ráme sa kupujú hotové. Z dosky sa reže len korpus.",
+        "corpNume": "Závesná vitrína"
+      },
       "dulap-2usi": {
         "nume": "Šatníková skriňa s 2 dvierkami",
         "descriere": "Spálňová skriňa so štyrmi policami. Nad 2000 mm potrebujú dvierka piaty pánt, preto výška končí tu; vyššie sa pridáva samostatný nadstavec.",
@@ -417,6 +422,11 @@
         "nume": "TV stolík",
         "descriere": "Nízky a široký korpus s dvoma dvierkami. Dvierka sú na hranici 600 mm šírky.",
         "corpNume": "TV stolík"
+      },
+      "vitrina": {
+        "nume": "Vitrína",
+        "descriere": "Vysoká skriňa so sklenenými dvierkami v hliníkovom ráme, kupovanými hotové. Z dosky sa reže len korpus.",
+        "corpNume": "Vitrína"
       },
       "baie-lavoar": {
         "nume": "Skrinka pod umývadlo",
@@ -729,7 +739,10 @@
       "clemaPlinta": "Klip soklovej lišty",
       "obsClemaPlinta": "jeden na každú prednú nožičku",
       "plintaBara": "Hliníková soklová lišta H{h}, tyč {bara} mm",
-      "obsPlinta": "Spolu {mm} mm; skrinky na nožičkách: {n}. Rohy, spojky a koncovky podľa rozostavenia."
+      "obsPlinta": "Spolu {mm} mm; skrinky na nožičkách: {n}. Rohy, spojky a koncovky podľa rozostavenia.",
+      "usaRamaAlu": "Sklenené dvierka v hliníkovom ráme {h} × {l} mm",
+      "obsUsaRamaAlu": "objednávajú sa hotové, na čistý rozmer",
+      "balamaRamaAlu": "Záves pre hliníkový rám"
     }
   },
   "piesa": {
@@ -917,7 +930,8 @@
     "cuTraverse": "výstuhy {lat} mm",
     "faraFront": "bez dvierok",
     "sertareJos": "zásuvky dole",
-    "faraManer": "bez úchytky"
+    "faraManer": "bez úchytky",
+    "usiSticla": "sklenené dvierka"
   },
   "comanda": {
     "inapoiComenzi": "Moje zákazky",
@@ -1385,6 +1399,9 @@
     "fronturi": "Dvierka",
     "fronturiSeFac": "robia sa",
     "fronturiNuSeFac": "nerobia sa",
+    "usiSticla": "Dvierka",
+    "usiSticlaNu": "Z DTD",
+    "usiSticlaDa": "Hliníkový rám so sklom (kupované)",
     "pozitieSertare": "Zásuvky",
     "sertareSus": "hore",
     "sertareJos": "dole, dvierka nad nimi",
@@ -1411,7 +1428,10 @@
     "subScaraFa": "Vytvor obrys z týchto rozmerov",
     "subScaraNota": "Sklon aj oba uhly sa vypočítajú samy. Funguje aj naopak, keď schody klesajú doľava: väčšiu výšku daj doprava.",
     "subScaraCote": "Vyplň všetky tri rozmery, každý aspoň 10 mm.",
-    "subScaraGata": "Hotovo: sklon {panta} mm, uhly {a}° a {b}°."
+    "subScaraGata": "Hotovo: sklon {panta} mm, uhly {a}° a {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "Na objednanie: sklenené dvierka v hliníkovom ráme, {h} × {l} mm — {n} ks."
+    }
   },
   "fata": {
     "px": "vpravo",

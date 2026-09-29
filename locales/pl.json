@@ -388,6 +388,11 @@
         "descriere": "Bez frontów, z jedną półką. Grube obrzeże na wszystkich widocznych bokach.",
         "corpNume": "Półka wisząca"
       },
+      "sus-vitrina": {
+        "nume": "Witryna wisząca",
+        "descriere": "Drzwiczki szklane w ramie aluminiowej, kupowane gotowe. Z płyty tnie się tylko korpus.",
+        "corpNume": "Witryna wisząca"
+      },
       "dulap-2usi": {
         "nume": "Szafa z 2 frontami",
         "descriere": "Szafa do sypialni z czterema półkami. Powyżej 2000 mm fronty potrzebują piątego zawiasu, więc wysokość kończy się tutaj; wyżej dokłada się osobną nadstawkę.",
@@ -417,6 +422,11 @@
         "nume": "Szafka RTV",
         "descriere": "Niski i szeroki korpus z dwoma frontami. Fronty dochodzą do granicy 600 mm szerokości.",
         "corpNume": "Szafka RTV"
+      },
+      "vitrina": {
+        "nume": "Witryna",
+        "descriere": "Wysoka szafka z drzwiczkami szklanymi w ramie aluminiowej, kupowanymi gotowe. Z płyty tnie się tylko korpus.",
+        "corpNume": "Witryna"
       },
       "baie-lavoar": {
         "nume": "Szafka podumywalkowa",
@@ -729,7 +739,10 @@
       "clemaPlinta": "Klips listwy cokołowej",
       "obsClemaPlinta": "jeden na każdą przednią nóżkę",
       "plintaBara": "Listwa cokołowa aluminiowa H{h}, sztanga {bara} mm",
-      "obsPlinta": "Razem {mm} mm; szafki na nóżkach: {n}. Narożniki, łączniki i zaślepki według ustawienia."
+      "obsPlinta": "Razem {mm} mm; szafki na nóżkach: {n}. Narożniki, łączniki i zaślepki według ustawienia.",
+      "usaRamaAlu": "Drzwiczki szklane w ramie aluminiowej {h} × {l} mm",
+      "obsUsaRamaAlu": "zamawiane gotowe, na wymiar końcowy",
+      "balamaRamaAlu": "Zawias do ramy aluminiowej"
     }
   },
   "piesa": {
@@ -917,7 +930,8 @@
     "cuTraverse": "trawersy {lat} mm",
     "faraFront": "bez frontów",
     "sertareJos": "szuflady na dole",
-    "faraManer": "bez uchwytu"
+    "faraManer": "bez uchwytu",
+    "usiSticla": "drzwiczki szklane"
   },
   "comanda": {
     "inapoiComenzi": "Moje zlecenia",
@@ -1385,6 +1399,9 @@
     "fronturi": "Fronty",
     "fronturiSeFac": "robione",
     "fronturiNuSeFac": "nierobione",
+    "usiSticla": "Drzwiczki",
+    "usiSticlaNu": "Z płyty",
+    "usiSticlaDa": "Rama aluminiowa ze szkłem (kupowane)",
     "pozitieSertare": "Szuflady",
     "sertareSus": "na górze",
     "sertareJos": "na dole, drzwi nad nimi",
@@ -1411,7 +1428,10 @@
     "subScaraFa": "Zbuduj obrys z tych wymiarów",
     "subScaraNota": "Skos i oba kąty liczą się same. Działa też odwrotnie, gdy schody opadają w lewo: większą wysokość wpisz po prawej.",
     "subScaraCote": "Wypełnij wszystkie trzy wymiary, każdy co najmniej 10 mm.",
-    "subScaraGata": "Gotowe: skos {panta} mm, kąty {a}° i {b}°."
+    "subScaraGata": "Gotowe: skos {panta} mm, kąty {a}° i {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "Do zamówienia: drzwiczki szklane w ramie aluminiowej, {h} × {l} mm — {n} szt."
+    }
   },
   "fata": {
     "px": "prawo",

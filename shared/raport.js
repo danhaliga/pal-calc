@@ -282,6 +282,23 @@
       pune(art('balamaCarte'), 1, 'buc', t_('fero.art.obsCupleazaFronturi'));
     }
 
+    /* ---- uși de vitrină: ramă de aluminiu cu sticlă, cumpărate ----
+
+       Nu se taie, deci nu stau în lista de piese: se comandă gata la cota
+       finită a ușii. Balamaua e alta decât cea de PAL — la rama de
+       aluminiu cupa nu se frezează în placă — deci are rândul ei. */
+    var usiAlu = (res.deComandat || []).filter(function (x) { return x.fel === 'usaRamaAlu'; });
+    var balAlu = 0, perUsaAlu = 0;
+    usiAlu.forEach(function (u) {
+      pune(t_('fero.art.usaRamaAlu', { h: u.H, l: u.L }), u.buc, 'buc', t_('fero.art.obsUsaRamaAlu'));
+      var n = PalCalc.balamale(u.H);
+      balAlu += n * u.buc;
+      perUsaAlu = Math.max(perUsaAlu, n);
+    });
+    if (balAlu && s.balama && s.balama.id !== 'fara') {
+      pune(art('balamaRamaAlu'), balAlu, 'buc', t_('fero.art.obsPeUsa', { n: perUsaAlu }));
+    }
+
     /* ---- sertare ---- */
     if (nSer > 0 && s.glisiere && s.glisiere.id !== 'fara') {
       var lg = +c.lg;
@@ -344,7 +361,7 @@
        fără fronturi nu iese niciunul. */
     var cateFronturi = res.P.reduce(function (s, p) {
       return s + (rolPiesa(p) === 'front' ? p.buc : 0);
-    }, 0);
+    }, 0) + usiAlu.reduce(function (s, u) { return s + u.buc; }, 0);
     /* Fără mâner nu se cumpără niciunul: la push-to-open, la profil gola sau
        la prinderea frezată în front nu intră nimic în listă. */
     if (!(+c.maner === 0)) {

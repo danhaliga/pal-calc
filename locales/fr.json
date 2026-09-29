@@ -382,6 +382,11 @@
         "descriere": "Sans portes, avec une étagère. Chant épais sur toutes les rives visibles.",
         "corpNume": "Étagère murale"
       },
+      "sus-vitrina": {
+        "nume": "Vitrine haute",
+        "descriere": "Portes vitrées à cadre aluminium, achetées toutes faites. Seul le caisson est découpé dans le panneau.",
+        "corpNume": "Vitrine haute"
+      },
       "dulap-2usi": {
         "nume": "Armoire 2 portes",
         "descriere": "Armoire de chambre avec quatre étagères. Au-delà de 2000 mm les portes demandent une cinquième charnière, la hauteur s'arrête donc ici ; pour plus haut, ajoutez un surmeuble séparé.",
@@ -411,6 +416,11 @@
         "nume": "Meuble TV",
         "descriere": "Caisson bas et large, avec deux portes. Les portes atteignent la limite de 600 mm de largeur.",
         "corpNume": "Meuble TV"
+      },
+      "vitrina": {
+        "nume": "Vitrine",
+        "descriere": "Meuble haut à portes vitrées en cadre aluminium, achetées toutes faites. Seul le caisson est découpé dans le panneau.",
+        "corpNume": "Vitrine"
       },
       "baie-lavoar": {
         "nume": "Meuble sous vasque",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Clip de plinthe",
       "obsClemaPlinta": "un sur chaque pied avant",
       "plintaBara": "Plinthe aluminium H{h}, barre de {bara} mm",
-      "obsPlinta": "{mm} mm au total ; meubles sur pieds : {n}. Angles, raccords et embouts selon l'implantation."
+      "obsPlinta": "{mm} mm au total ; meubles sur pieds : {n}. Angles, raccords et embouts selon l'implantation.",
+      "usaRamaAlu": "Porte vitrée à cadre aluminium {h} × {l} mm",
+      "obsUsaRamaAlu": "commandée toute faite, à la cote finie",
+      "balamaRamaAlu": "Charnière pour cadre aluminium"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "traverses {lat} mm",
     "faraFront": "sans façades",
     "sertareJos": "tiroirs en bas",
-    "faraManer": "sans poignée"
+    "faraManer": "sans poignée",
+    "usiSticla": "portes vitrées"
   },
   "comanda": {
     "inapoiComenzi": "Mes commandes",
@@ -1374,6 +1388,9 @@
     "fronturi": "Façades",
     "fronturiSeFac": "à faire",
     "fronturiNuSeFac": "à ne pas faire",
+    "usiSticla": "Portes",
+    "usiSticlaNu": "En panneau",
+    "usiSticlaDa": "Cadre aluminium avec verre (achetées)",
     "pozitieSertare": "Les tiroirs",
     "sertareSus": "en haut",
     "sertareJos": "en bas, portes au-dessus",
@@ -1400,7 +1417,10 @@
     "subScaraFa": "Faire le contour avec ces cotes",
     "subScaraNota": "La pente et les deux angles se calculent tout seuls. Cela marche aussi dans l’autre sens, avec l’escalier qui descend vers la gauche : mettez la plus grande hauteur à droite.",
     "subScaraCote": "Remplissez les trois cotes, chacune d’au moins 10 mm.",
-    "subScaraGata": "Fait : pente de {panta} mm, angles de {a}° et {b}°."
+    "subScaraGata": "Fait : pente de {panta} mm, angles de {a}° et {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "À commander : porte vitrée à cadre aluminium, {h} × {l} mm — {n} pcs."
+    }
   },
   "fata": {
     "px": "droite",

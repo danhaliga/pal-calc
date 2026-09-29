@@ -382,6 +382,11 @@
         "descriere": "Senza ante, con un ripiano. Bordo spesso su tutte le coste a vista.",
         "corpNume": "Mensola a parete"
       },
+      "sus-vitrina": {
+        "nume": "Vetrina pensile",
+        "descriere": "Ante in vetro con telaio in alluminio, acquistate pronte. Dal pannello si taglia solo il mobile.",
+        "corpNume": "Vetrina pensile"
+      },
       "dulap-2usi": {
         "nume": "Armadio con 2 ante",
         "descriere": "Armadio da camera con quattro ripiani. Oltre 2000 mm le ante richiedono una quinta cerniera, perciò l'altezza si ferma qui; per andare più in alto si aggiunge un sopralzo separato.",
@@ -411,6 +416,11 @@
         "nume": "Mobile TV",
         "descriere": "Mobile basso e largo, con due ante. Le ante arrivano al limite di 600 mm di larghezza.",
         "corpNume": "Mobile TV"
+      },
+      "vitrina": {
+        "nume": "Vetrina",
+        "descriere": "Mobile alto con ante in vetro e telaio in alluminio, acquistate pronte. Dal pannello si taglia solo il mobile.",
+        "corpNume": "Vetrina"
       },
       "baie-lavoar": {
         "nume": "Mobile sottolavabo",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Clip per zoccolo",
       "obsClemaPlinta": "una su ogni piedino anteriore",
       "plintaBara": "Zoccolo in alluminio H{h}, barra da {bara} mm",
-      "obsPlinta": "{mm} mm in totale; mobili su piedini: {n}. Angoli, giunti e tappi secondo la disposizione."
+      "obsPlinta": "{mm} mm in totale; mobili su piedini: {n}. Angoli, giunti e tappi secondo la disposizione.",
+      "usaRamaAlu": "Anta in vetro con telaio in alluminio {h} × {l} mm",
+      "obsUsaRamaAlu": "si ordina pronta, alla misura finita",
+      "balamaRamaAlu": "Cerniera per telaio in alluminio"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "traverse {lat} mm",
     "faraFront": "senza frontali",
     "sertareJos": "cassetti in basso",
-    "faraManer": "senza maniglia"
+    "faraManer": "senza maniglia",
+    "usiSticla": "ante in vetro"
   },
   "comanda": {
     "inapoiComenzi": "I miei ordini",
@@ -1374,6 +1388,9 @@
     "fronturi": "Frontali",
     "fronturiSeFac": "si fanno",
     "fronturiNuSeFac": "non si fanno",
+    "usiSticla": "Ante",
+    "usiSticlaNu": "In truciolare",
+    "usiSticlaDa": "Telaio in alluminio con vetro (acquistate)",
     "pozitieSertare": "I cassetti",
     "sertareSus": "in alto",
     "sertareJos": "in basso, con le ante sopra",
@@ -1400,7 +1417,10 @@
     "subScaraFa": "Fare il contorno con queste misure",
     "subScaraNota": "La pendenza e i due angoli si calcolano da soli. Vale anche al contrario, con la scala che scende a sinistra: metti l’altezza maggiore a destra.",
     "subScaraCote": "Compila tutte e tre le misure, ognuna di almeno 10 mm.",
-    "subScaraGata": "Fatto: pendenza di {panta} mm, angoli di {a}° e {b}°."
+    "subScaraGata": "Fatto: pendenza di {panta} mm, angoli di {a}° e {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "Da ordinare: anta in vetro con telaio in alluminio, {h} × {l} mm — {n} pz."
+    }
   },
   "fata": {
     "px": "destra",

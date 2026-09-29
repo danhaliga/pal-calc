@@ -382,6 +382,11 @@
         "descriere": "Utan luckor, med ett hyllplan. Tjock kantlist på alla synliga kanter.",
         "corpNume": "Vägghylla"
       },
+      "sus-vitrina": {
+        "nume": "Vägghängt vitrinskåp",
+        "descriere": "Glasluckor med aluminiumram köps färdiga. Ur skivan sågas bara stommen.",
+        "corpNume": "Väggvitrin"
+      },
       "dulap-2usi": {
         "nume": "Garderob med 2 luckor",
         "descriere": "Sovrumsgarderob med fyra hyllplan. Över 2000 mm behöver luckorna ett femte gångjärn, därför slutar höjden här; vill du högre sätter du ett eget överskåp ovanpå.",
@@ -411,6 +416,11 @@
         "nume": "Tv-bänk",
         "descriere": "Låg och bred stomme med två luckor. Luckorna når gränsen på 600 mm bredd.",
         "corpNume": "Tv-bänk"
+      },
+      "vitrina": {
+        "nume": "Vitrinskåp",
+        "descriere": "Högt skåp med glasluckor i aluminiumram, köpta färdiga. Ur skivan sågas bara stommen.",
+        "corpNume": "Vitrinskåp"
       },
       "baie-lavoar": {
         "nume": "Tvättställsskåp",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Sockelclips",
       "obsClemaPlinta": "ett på varje främre ben",
       "plintaBara": "Sockellist i aluminium H{h}, längd {bara} mm",
-      "obsPlinta": "{mm} mm totalt; skåp på ben: {n}. Hörn, skarvar och ändlock beroende på uppställningen."
+      "obsPlinta": "{mm} mm totalt; skåp på ben: {n}. Hörn, skarvar och ändlock beroende på uppställningen.",
+      "usaRamaAlu": "Glaslucka med aluminiumram {h} × {l} mm",
+      "obsUsaRamaAlu": "beställs färdig, i färdigmått",
+      "balamaRamaAlu": "Gångjärn för aluminiumram"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "reglar {lat} mm",
     "faraFront": "utan fronter",
     "sertareJos": "lådor nedtill",
-    "faraManer": "utan handtag"
+    "faraManer": "utan handtag",
+    "usiSticla": "glasluckor"
   },
   "comanda": {
     "inapoiComenzi": "Mina ordrar",
@@ -1374,6 +1388,9 @@
     "fronturi": "Fronter",
     "fronturiSeFac": "görs",
     "fronturiNuSeFac": "görs inte",
+    "usiSticla": "Luckor",
+    "usiSticlaNu": "Av spånskiva",
+    "usiSticlaDa": "Aluminiumram med glas (köpta)",
     "pozitieSertare": "Lådorna",
     "sertareSus": "upptill",
     "sertareJos": "nedtill, med luckorna ovanför",
@@ -1400,7 +1417,10 @@
     "subScaraFa": "Gör konturen av de här måtten",
     "subScaraNota": "Lutningen och de två vinklarna räknas ut av sig själva. Det går lika bra åt andra hållet, när trappan går ner åt vänster: sätt då den större höjden till höger.",
     "subScaraCote": "Fyll i alla tre måtten, vart och ett minst 10 mm.",
-    "subScaraGata": "Klart: lutning {panta} mm, vinklar {a}° och {b}°."
+    "subScaraGata": "Klart: lutning {panta} mm, vinklar {a}° och {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "Att beställa: glaslucka med aluminiumram, {h} × {l} mm — {n} st."
+    }
   },
   "fata": {
     "px": "höger",

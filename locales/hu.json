@@ -382,6 +382,11 @@
         "descriere": "Ajtó nélkül, egy polccal. Vastag élzáró minden látszó élen.",
         "corpNume": "Fali polc"
       },
+      "sus-vitrina": {
+        "nume": "Fali vitrin",
+        "descriere": "Alumínium keretes üvegajtók, készen vásárolva. A lapból csak a korpusz készül.",
+        "corpNume": "Fali vitrin"
+      },
       "dulap-2usi": {
         "nume": "Szekrény 2 ajtóval",
         "descriere": "Hálószobai szekrény négy polccal. 2000 mm fölött az ajtóknak ötödik pánt kell, ezért itt áll meg a magasság; feljebb külön felsőszekrény kerül rá.",
@@ -411,6 +416,11 @@
         "nume": "TV-bútor",
         "descriere": "Alacsony és széles korpusz két ajtóval. Az ajtók elérik a 600 mm-es szélességi határt.",
         "corpNume": "TV-bútor"
+      },
+      "vitrina": {
+        "nume": "Vitrin",
+        "descriere": "Magas szekrény alumínium keretes üvegajtókkal, készen vásárolva. A lapból csak a korpusz készül.",
+        "corpNume": "Vitrin"
       },
       "baie-lavoar": {
         "nume": "Mosdó alatti szekrény",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Lábazati takaró klipsz",
       "obsClemaPlinta": "minden első lábra egy",
       "plintaBara": "Alumínium lábazati takaró H{h}, {bara} mm-es szál",
-      "obsPlinta": "Összesen {mm} mm; lábas szekrények: {n}. Sarkok, toldók és végzárók az elrendezés szerint."
+      "obsPlinta": "Összesen {mm} mm; lábas szekrények: {n}. Sarkok, toldók és végzárók az elrendezés szerint.",
+      "usaRamaAlu": "Alumínium keretes üvegajtó {h} × {l} mm",
+      "obsUsaRamaAlu": "készen rendelve, kész méretre",
+      "balamaRamaAlu": "Zsanér alumínium kerethez"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "merevítők {lat} mm",
     "faraFront": "front nélkül",
     "sertareJos": "fiókok lent",
-    "faraManer": "fogantyú nélkül"
+    "faraManer": "fogantyú nélkül",
+    "usiSticla": "üvegajtók"
   },
   "comanda": {
     "inapoiComenzi": "A megrendeléseim",
@@ -1374,6 +1388,9 @@
     "fronturi": "Frontok",
     "fronturiSeFac": "készülnek",
     "fronturiNuSeFac": "nem készülnek",
+    "usiSticla": "Ajtók",
+    "usiSticlaNu": "Forgácslapból",
+    "usiSticlaDa": "Alumínium keretes üveg (vásárolt)",
     "pozitieSertare": "A fiókok",
     "sertareSus": "fent",
     "sertareJos": "lent, az ajtók fölöttük",
@@ -1400,7 +1417,10 @@
     "subScaraFa": "Készítsd el a körvonalat ezekből",
     "subScaraNota": "A ferde oldal és a két szög maguktól kijönnek. Fordítva is megy, ha a lépcső balra lejt: akkor a nagyobb magasság kerül jobbra.",
     "subScaraCote": "Töltsd ki mind a három méretet, mindegyik legalább 10 mm.",
-    "subScaraGata": "Kész: {panta} mm ferde oldal, {a}° és {b}° szögek."
+    "subScaraGata": "Kész: {panta} mm ferde oldal, {a}° és {b}° szögek.",
+    "deComandat": {
+      "usaRamaAlu": "Megrendelendő: alumínium keretes üvegajtó, {h} × {l} mm — {n} db."
+    }
   },
   "fata": {
     "px": "jobb",

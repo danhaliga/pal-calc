@@ -382,6 +382,11 @@
         "descriere": "Tanpa pintu, dengan satu rak. Tepi tebal di semua sisi yang terlihat.",
         "corpNume": "Rak dinding"
       },
+      "sus-vitrina": {
+        "nume": "Lemari kaca gantung",
+        "descriere": "Pintu kaca rangka aluminium dibeli jadi. Dari papan hanya badan kabinet yang dipotong.",
+        "corpNume": "Lemari kaca gantung"
+      },
       "dulap-2usi": {
         "nume": "Lemari pakaian 2 pintu",
         "descriere": "Lemari kamar tidur dengan empat rak. Di atas 2000 mm pintunya butuh engsel kelima, jadi tingginya berhenti di sini; untuk lebih tinggi tambahkan kabinet atas terpisah.",
@@ -411,6 +416,11 @@
         "nume": "Meja TV",
         "descriere": "Boks rendah dan lebar dengan dua pintu. Pintunya mencapai batas lebar 600 mm.",
         "corpNume": "Meja TV"
+      },
+      "vitrina": {
+        "nume": "Lemari kaca",
+        "descriere": "Kabinet tinggi dengan pintu kaca rangka aluminium yang dibeli jadi. Dari papan hanya badan kabinet yang dipotong.",
+        "corpNume": "Lemari kaca"
       },
       "baie-lavoar": {
         "nume": "Kabinet bawah wastafel",
@@ -723,7 +733,10 @@
       "clemaPlinta": "Klip plint",
       "obsClemaPlinta": "satu di setiap kaki depan",
       "plintaBara": "Plint aluminium H{h}, batang {bara} mm",
-      "obsPlinta": "Total {mm} mm; kabinet berkaki: {n}. Sudut, sambungan, dan tutup ujung sesuai tata letak."
+      "obsPlinta": "Total {mm} mm; kabinet berkaki: {n}. Sudut, sambungan, dan tutup ujung sesuai tata letak.",
+      "usaRamaAlu": "Pintu kaca rangka aluminium {h} × {l} mm",
+      "obsUsaRamaAlu": "dipesan jadi, dengan ukuran akhir",
+      "balamaRamaAlu": "Engsel untuk rangka aluminium"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "palang {lat} mm",
     "faraFront": "tanpa pintu depan",
     "sertareJos": "laci di bawah",
-    "faraManer": "tanpa tarikan"
+    "faraManer": "tanpa tarikan",
+    "usiSticla": "pintu kaca"
   },
   "comanda": {
     "inapoiComenzi": "Pesanan saya",
@@ -1374,6 +1388,9 @@
     "fronturi": "Pintu depan",
     "fronturiSeFac": "dibuat",
     "fronturiNuSeFac": "tidak dibuat",
+    "usiSticla": "Pintu",
+    "usiSticlaNu": "Dari papan",
+    "usiSticlaDa": "Rangka aluminium dengan kaca (dibeli)",
     "pozitieSertare": "Laci",
     "sertareSus": "di atas",
     "sertareJos": "di bawah, pintu di atasnya",
@@ -1400,7 +1417,10 @@
     "subScaraFa": "Buat garis luar dari ukuran ini",
     "subScaraNota": "Sisi miring dan kedua sudut dihitung sendiri. Bisa juga terbalik, kalau tangga turun ke kiri: taruh tinggi yang lebih besar di kanan.",
     "subScaraCote": "Isi ketiga ukuran, masing-masing minimal 10 mm.",
-    "subScaraGata": "Selesai: sisi miring {panta} mm, sudut {a}° dan {b}°."
+    "subScaraGata": "Selesai: sisi miring {panta} mm, sudut {a}° dan {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "Untuk dipesan: pintu kaca rangka aluminium, {h} × {l} mm — {n} buah."
+    }
   },
   "fata": {
     "px": "kanan",

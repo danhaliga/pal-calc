@@ -382,6 +382,11 @@
         "descriere": "문짝 없이 선반 1장. 보이는 모든 변에 두꺼운 엣지.",
         "corpNume": "벽걸이 선반"
       },
+      "sus-vitrina": {
+        "nume": "상부 장식장",
+        "descriere": "알루미늄 프레임 유리문은 완제품을 구매합니다. 판재에서는 몸통만 자릅니다.",
+        "corpNume": "상부 장식장"
+      },
       "dulap-2usi": {
         "nume": "옷장, 문짝 2장",
         "descriere": "선반 4장인 침실 옷장. 2000mm를 넘으면 문짝에 다섯 번째 경첩이 필요하므로 높이를 여기서 멈춥니다. 더 높이려면 위장을 따로 올리세요.",
@@ -411,6 +416,11 @@
         "nume": "TV장",
         "descriere": "낮고 넓은 캐비닛, 문짝 2장. 문짝이 폭 600mm 한계까지 갑니다.",
         "corpNume": "TV장"
+      },
+      "vitrina": {
+        "nume": "장식장",
+        "descriere": "알루미늄 프레임 유리문이 달린 키 큰 장, 문은 완제품을 구매합니다. 판재에서는 몸통만 자릅니다.",
+        "corpNume": "장식장"
       },
       "baie-lavoar": {
         "nume": "세면대 하부장",
@@ -723,7 +733,10 @@
       "clemaPlinta": "하부 몰딩 클립",
       "obsClemaPlinta": "앞다리마다 하나",
       "plintaBara": "알루미늄 하부 몰딩 H{h}, {bara} mm 바",
-      "obsPlinta": "총 {mm} mm; 다리 달린 장: {n}. 코너·연결재·끝캡은 배치에 따라."
+      "obsPlinta": "총 {mm} mm; 다리 달린 장: {n}. 코너·연결재·끝캡은 배치에 따라.",
+      "usaRamaAlu": "알루미늄 프레임 유리문 {h} × {l} mm",
+      "obsUsaRamaAlu": "완성 치수로 완제품 주문",
+      "balamaRamaAlu": "알루미늄 프레임용 경첩"
     }
   },
   "piesa": {
@@ -910,7 +923,8 @@
     "cuTraverse": "가로대 {lat} mm",
     "faraFront": "전면판 없음",
     "sertareJos": "서랍 아래",
-    "faraManer": "손잡이 없음"
+    "faraManer": "손잡이 없음",
+    "usiSticla": "유리문"
   },
   "comanda": {
     "inapoiComenzi": "내 주문",
@@ -1374,6 +1388,9 @@
     "fronturi": "전면판",
     "fronturiSeFac": "제작",
     "fronturiNuSeFac": "제작 안 함",
+    "usiSticla": "문",
+    "usiSticlaNu": "PB 판재",
+    "usiSticlaDa": "알루미늄 프레임 유리문(구매품)",
     "pozitieSertare": "서랍",
     "sertareSus": "위쪽",
     "sertareJos": "아래쪽, 문은 그 위에",
@@ -1400,7 +1417,10 @@
     "subScaraFa": "이 치수로 윤곽 만들기",
     "subScaraNota": "경사와 두 각도는 저절로 계산됩니다. 계단이 왼쪽으로 내려가도 똑같습니다. 큰 높이를 오른쪽에 넣으세요.",
     "subScaraCote": "세 치수를 모두 채우세요. 각각 10 mm 이상입니다.",
-    "subScaraGata": "됐습니다: 경사 {panta} mm, 각도 {a}° 와 {b}°."
+    "subScaraGata": "됐습니다: 경사 {panta} mm, 각도 {a}° 와 {b}°.",
+    "deComandat": {
+      "usaRamaAlu": "주문할 것: 알루미늄 프레임 유리문 {h} × {l} mm — {n}개."
+    }
   },
   "fata": {
     "px": "오른쪽",

@@ -80,7 +80,8 @@ test('corpurile drepte au schiță frontală, proporțională cu corpul', () => 
     const svg = sketch(p);
     assert.match(svg, /^<svg /, `${m.id}: nu e SVG`);
     assert.ok(svg.includes(`viewBox="0 0 ${p.W} ${p.H}"`), `${m.id}: viewBox greșit`);
-    const fronturi = (svg.match(/class="sk-front"/g) || []).length;
+    /* ușile de vitrină se desenează ca sticlă, dar tot fronturi sunt */
+    const fronturi = (svg.match(/class="sk-front(?: sticla)?"/g) || []).length;
     assert.equal(fronturi, +p.nUsi + +p.nSer, `${m.id}: număr greșit de fronturi desenate`);
   }
 });
