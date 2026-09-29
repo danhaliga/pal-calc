@@ -218,12 +218,40 @@ pornește" nu e o defecțiune, e plasa de siguranță.
 
 ---
 
+### Corpul de sub scară se cere din trei cote (29 septembrie, seara)
+
+Dan a cerut: bază, înălțimea din dreapta, înălțimea din stânga. Atât. Până
+atunci trebuia să dea patru laturi ȘI patru unghiuri — adică să socotească
+singur panta cu Pitagora și cele două unghiuri cu arctangenta.
+
+`PalCalc.conturSubScara(baza, hDreapta, hStanga)` scoate conturul întreg;
+`coteSubScara()` îl citește înapoi, ca să se umple casetele din editor din
+corpul deschis. În editor: trei casete și un buton, în panoul de contur.
+Merge și invers (scara coboară spre stânga) și degenerat (înălțimi egale →
+dreptunghi curat).
+
+**Și o eroare care venea de-acolo:** conturul modelului era scris de mână,
+cu unghiurile rotunjite la grad (114 și 66 în loc de 113.962 și 66.038). Nu
+se închidea — rămâneau 0.2 mm în colț. Pe desen nu se vedea, dar muchia din
+stânga ieșea din dreptunghiul de gabarit, `muchiiFrontale` o socotea muchie
+de decupat, iar planșa CNC cerea o frezare de 800 mm pe o latură care se
+taie drept la panou. Acum conturul se închide sub 0.05 mm la orice potrivire
+de cote.
+
+---
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E
   valoare de pornire (`PICIOARE` în `shared/feronerie.js`), pusă când s-a
   făcut plinta de aluminiu. De întrebat pe Dan câte pune el.
 - **Vitrina** — cere ușă pe cadru, cu sticlă la mijloc.
+- **Corpul sub scară n-are poliță.** Una sub pantă nu poate fi întreagă:
+  ori se scurtează, ori se taie în unghi. Nici despărțitor n-are. De
+  întrebat pe Dan cum le face el.
+- **Nu se poate oglindi un corp.** La sub-scară se ocolește dând înălțimile
+  invers, dar la corpurile de colț și la cele cu uși pe compartimente alese
+  n-are cum.
 - **Desenul de pe card nu știe de setările omului.** Cardul din catalog
   desenează modelul curat; corpul creat vine cu soclul din setări, deci poza
   minte. Dan a fost întrebat, a zis „m-am prins" — dar gaura a rămas.
