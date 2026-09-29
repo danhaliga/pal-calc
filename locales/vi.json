@@ -762,6 +762,8 @@
     "glisieraDe": "ray {lg} mm",
     "subCutie": "lắp dưới hộc",
     "socluInFata": "phía trước, giữa hai hông — đáy tựa lên nó",
+    "socluColtL": "trên cánh {n}, phía trước — ở góc, cánh 1 chạy qua đầu cánh 2",
+    "socluDiagonal": "trên đường chéo, phía trước — hai đầu cắt {u1}° và {u2}° so với đường cắt vuông",
     "usiGlisante": "{n} cánh lùa, chồng mép {supr}, ray {sine}",
     "traverseSusInLocDeBlat": "thay cho tấm nóc: một phía trước, một phía sau, rộng {lat}"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "Mặt ngăn kéo không xuống tới đáy: còn trống {gol} mm ở dưới. Đặt chiều cao mặt là {front} mm để lấp đầy tủ.",
     "piesaPreaMica": "Một cạnh dưới 20 mm: kiểm tra lại kích thước.",
     "piesaLatimeMaiMare": "Chiều rộng ({lat}) lớn hơn chiều dài ({lung}): khi cắt, chiều dài là cạnh dài. Đổi chỗ chúng nếu vân phải chạy theo hướng khác.",
-    "socluNuMerge": "Chân đế chỉ lắp được cho thùng thẳng dựng kiểu „giữa\". Ở đây đã bỏ qua.",
+    "socluNuMerge": "Không thể lắp chân đế cho tủ này: dùng được với “Nóc/đáy nằm giữa hai hông” và tủ góc, không dùng với “Hông nằm giữa nóc và đáy” hay tủ không đều. Ở đây đã bỏ qua.",
     "socluPreaInalt": "Chân đế {soclu} mm trên thùng thấp như vậy: bên trong chỉ còn {ramane} mm.",
     "nisaPreaMare": "Khoảng hở {nisa} mm không vừa: quá {incape} mm thì không còn chỗ cho cánh phía trên.",
     "nisaLangaSertare": "Hốc {nisa} mm không vừa bên cạnh các ngăn kéo: chỉ còn {incape} mm. Hãy giảm mặt ngăn kéo hoặc tăng kích thước tủ.",

@@ -768,6 +768,8 @@
     "glisieraDe": "glisieră {lg} mm",
     "subCutie": "aplicat sub cutie",
     "socluInFata": "în față, între laterale — fundul stă pe el",
+    "socluColtL": "pe brațul {n}, în față — la colț, brațul 1 trece peste capătul brațului 2",
+    "socluDiagonal": "pe diagonală, în față — capetele tăiate la {u1}° și {u2}° față de tăietura dreaptă",
     "usiGlisante": "{n} uși glisante, suprapunere {supr}, șine {sine}",
     "traverseSusInLocDeBlat": "în locul blatului: una în față, una în spate, late de {lat}"
   },
@@ -800,7 +802,7 @@
     "sertareNuUmplu": "Fronturile de sertar nu ajung la fund: rămâne un gol de {gol} mm jos. Pune {front} mm la înălțimea frontului ca să umple corpul.",
     "piesaPreaMica": "Piesă sub 20 mm pe o latură: verifică cotele.",
     "piesaLatimeMaiMare": "Lățimea ({lat}) e mai mare decât lungimea ({lung}): la croire lungimea e latura mare. Schimbă-le între ele dacă fibra trebuie să meargă altfel.",
-    "socluNuMerge": "Soclul se pune numai la corpul drept, construit „între\". Aici a rămas fără efect.",
+    "socluNuMerge": "Soclul nu se poate pune la acest corp: merge la construcția „Blat/fund între laterale” și la colțuri, nu la „Laterale între blat și fund” sau la corpurile atipice. Aici a rămas fără efect.",
     "socluPreaInalt": "Soclu de {soclu} mm pe un corp prea scund: rămân doar {ramane} mm înăuntru.",
     "nisaPreaMare": "Nișa de {nisa} mm nu încape: peste {incape} mm nu mai rămâne loc pentru ușa de deasupra.",
     "nisaLangaSertare": "Nișa de {nisa} mm nu încape lângă sertare: rămân doar {incape} mm. Micșorează fronturile de sertar sau mărește corpul.",

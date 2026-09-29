@@ -762,6 +762,8 @@
     "glisieraDe": "Auszug {lg} mm",
     "subCutie": "unter dem Kasten montiert",
     "socluInFata": "vorn, zwischen den Seiten — der Boden steht darauf",
+    "socluColtL": "am Schenkel {n}, vorn — in der Ecke läuft Schenkel 1 über das Ende von Schenkel 2",
+    "socluDiagonal": "auf der Diagonale, vorn — Enden auf {u1}° und {u2}° zum geraden Schnitt geschnitten",
     "usiGlisante": "{n} Schiebetüren, Überlappung {supr}, Schienen {sine}",
     "traverseSusInLocDeBlat": "statt des Deckels: eine vorn, eine hinten, {lat} breit"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "Die Schubkastenfronten reichen nicht bis unten: {gol} mm bleiben offen. Setz die Fronthöhe auf {front} mm, damit der Korpus voll wird.",
     "piesaPreaMica": "Eine Seite unter 20 mm: prüf die Maße.",
     "piesaLatimeMaiMare": "Die Breite ({lat}) ist größer als die Länge ({lung}): beim Zuschnitt ist die Länge die lange Seite. Tausch sie, wenn die Faser anders laufen soll.",
-    "socluNuMerge": "Ein Sockel geht nur bei einem geraden Korpus in „Zwischen“-Bauweise. Hier bleibt er weg.",
+    "socluNuMerge": "Ein Sockel geht bei diesem Korpus nicht: Er passt zu „Ober-/Unterboden zwischen den Seiten“ und zu Eckschränken, nicht zu „Seiten zwischen Ober- und Unterboden“ oder zu unregelmäßigen Korpussen. Hier bleibt er weg.",
     "socluPreaInalt": "Sockel von {soclu} mm bei einem so niedrigen Korpus: innen bleiben nur {ramane} mm.",
     "nisaPreaMare": "Eine Nische von {nisa} mm passt nicht: über {incape} mm bleibt kein Platz für die Tür darüber.",
     "nisaLangaSertare": "Die Nische von {nisa} mm passt nicht neben die Schubladen: Es bleiben nur {incape} mm. Mach die Schubladenfronten kleiner oder den Schrank höher.",

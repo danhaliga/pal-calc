@@ -762,6 +762,8 @@
     "glisieraDe": "{lg} mm-es sín",
     "subCutie": "a fiók alá szerelve",
     "socluInFata": "elöl, az oldalak között — az alj rajta áll",
+    "socluColtL": "a(z) {n}. száron, elöl — a sarokban az 1. szár túlmegy a 2. szár végén",
+    "socluDiagonal": "az átlón, elöl — a végek az egyenes vágáshoz képest {u1}° és {u2}° szögben vágva",
     "usiGlisante": "{n} tolóajtó, átfedés {supr}, sínek {sine}",
     "traverseSusInLocDeBlat": "a fedlap helyett: egy elöl, egy hátul, {lat} szélesek"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "A fiókelőlapok nem érnek le: {gol} mm marad szabadon alul. Állítsd az előlapmagasságot {front} mm-re, hogy kitöltse a korpuszt.",
     "piesaPreaMica": "Egyik oldal 20 mm alatt: nézd meg a méreteket.",
     "piesaLatimeMaiMare": "A szélesség ({lat}) nagyobb a hossznál ({lung}): szabáskor a hossz a hosszabbik oldal. Cseréld meg őket, ha az erezetnek máshogy kell futnia.",
-    "socluNuMerge": "A lábazat csak „közé” épített egyenes korpuszra megy. Itt kimaradt.",
+    "socluNuMerge": "Erre a korpuszra nem kerülhet lábazat: a „Tető/alj az oldalak között” szerkezethez és a sarokszekrényekhez való, nem a „Oldalak a tető és az alj között” szerkezethez vagy a szabálytalan korpuszokhoz. Itt kimaradt.",
     "socluPreaInalt": "{soclu} mm-es lábazat ilyen alacsony korpuszon: belül csak {ramane} mm marad.",
     "nisaPreaMare": "{nisa} mm-es nyílás nem fér el: {incape} mm fölött nem marad hely a fenti ajtónak.",
     "nisaLangaSertare": "A {nisa} mm-es fülke nem fér el a fiókok mellett: csak {incape} mm marad. Csökkentsd a fiókelőlapokat, vagy növeld a szekrényt.",

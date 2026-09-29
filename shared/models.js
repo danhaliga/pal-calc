@@ -19,14 +19,12 @@
 
   /* Categoriile carora li se poate pune soclu din setari.
 
-     Nu e acelasi lucru cu „sta pe podea": un corp de colt sta si el pe
-     podea, dar motorul nu stie sa-i puna soclu — acolo lateralele nu merg
-     drept in jos. La fel la cele atipice, unde forma vine din contur.
-     Categoria „sus" lipseste din alt motiv: alea atarna pe perete, si un
-     soclu acolo ar fi o bucata de PAL taiata degeaba.
+     Categoria „sus" lipseste: alea atarna pe perete, si un soclu acolo ar
+     fi o bucata de PAL taiata degeaba. Lipsesc si cele atipice, unde forma
+     vine din contur si n-au laterale drepte pana jos.
 
-     Colturile pe podea raman de facut: cer lucru in ramura de colt din
-     calc.js, care isi taie singura piesele. */
+     Colturile nu se pot lua pe categorie: in „colt" stau si cele de jos, si
+     cele suspendate. Cele care stau pe podea au `podea: true` pe model. */
   var PE_PODEA = ['bucatarie-jos', 'bucatarie-inalt', 'living', 'baie'];
 
   var CATEGORIES = [
@@ -244,17 +242,17 @@
 
     /* ---------------- corpuri de colț ---------------- */
     {
-      id: 'colt-jos-L', cat: 'colt',
+      id: 'colt-jos-L', cat: 'colt', podea: true,
       set: { tip: 'colt-L', W: 900, W2: 900, H: 720, D: 560,
              nUsi: 2, nPol: 0, nSer: 0 }
     },
     {
-      id: 'colt-jos-diagonal', cat: 'colt',
+      id: 'colt-jos-diagonal', cat: 'colt', podea: true,
       set: { tip: 'colt-diagonal', W: 900, W2: 900, H: 720, D: 560,
              nUsi: 1, nPol: 0, nSer: 0 }
     },
     {
-      id: 'colt-jos-orb', cat: 'colt',
+      id: 'colt-jos-orb', cat: 'colt', podea: true,
       set: { tip: 'colt-orb', W: 1000, H: 720, D: 560, orb: 550,
              nUsi: 1, nPol: 0, nSer: 0 }
     },
@@ -269,12 +267,12 @@
              nUsi: 1, nPol: 2, nSer: 0 }
     },
     {
-      id: 'colt-living-deschis', cat: 'colt',
+      id: 'colt-living-deschis', cat: 'colt', podea: true,
       set: { tip: 'colt-L', W: 800, W2: 800, H: 1800, D: 300,
              nUsi: 0, nPol: 4, nSer: 0 }
     },
     {
-      id: 'colt-baie', cat: 'colt',
+      id: 'colt-baie', cat: 'colt', podea: true,
       set: { tip: 'colt-diagonal', W: 500, W2: 500, H: 500, D: 300,
              nUsi: 1, nPol: 1, nSer: 0 }
     },
@@ -300,7 +298,7 @@
     },
 
     {
-      id: 'colt-dressing', cat: 'colt',
+      id: 'colt-dressing', cat: 'colt', podea: true,
       set: { tip: 'colt-L', W: 800, W2: 800, H: 2000, D: 560,
              nUsi: 2, nPol: 3, nSer: 0 }
     }
@@ -591,7 +589,7 @@
      trebuie, adica o bucata de PAL taiata degeaba si o cota gresita. */
   function staPePodea(id) {
     var m = id ? byId(String(id)) : null;
-    return !!(m && PE_PODEA.indexOf(m.cat) !== -1);
+    return !!(m && (m.podea || PE_PODEA.indexOf(m.cat) !== -1));
   }
 
   return {

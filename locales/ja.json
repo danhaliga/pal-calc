@@ -762,6 +762,8 @@
     "glisieraDe": "レール {lg} mm",
     "subCutie": "箱の下に付きます",
     "socluInFata": "前面、側板のあいだ — 底板がこの上に載ります",
+    "socluColtL": "腕 {n} の前側 — 角では腕 1 が腕 2 の端の先まで通る",
+    "socluDiagonal": "対角線上の前側 — 両端を直角切りから {u1}° と {u2}° で切る",
     "usiGlisante": "引き戸 {n} 枚、重なり {supr}、レール {sine}",
     "traverseSusInLocDeBlat": "天板の代わりに、前と後ろに1枚ずつ、幅 {lat}"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "引き出しの前板が下まで届いていません。下に {gol} mm の空きが残ります。前板の高さを {front} mm にすると箱が埋まります。",
     "piesaPreaMica": "20 mm を切る辺があります。寸法を確かめてください。",
     "piesaLatimeMaiMare": "幅 ({lat}) が長さ ({lung}) より大きいです。木取りでは長さが長辺です。木目を逆に通すなら入れ替えてください。",
-    "socluNuMerge": "台輪は「はさみ込み」で組んだ直方体の箱にだけ付きます。ここでは付けていません。",
+    "socluNuMerge": "このキャビネットには台輪を付けられません：「天板・地板を側板の間に」とコーナーキャビネットには付きますが、「側板を天板と地板の間に」や不整形のキャビネットには付きません。ここでは省きました。",
     "socluPreaInalt": "これだけ低い箱に {soclu} mm の台輪：内部は {ramane} mm しか残りません。",
     "nisaPreaMare": "{nisa} mm の開口は入りません。{incape} mm を超えると上の扉の場所が残りません。",
     "nisaLangaSertare": "{nisa} mm のニッチは引き出しの横に収まりません：残りは {incape} mm だけです。引き出しの前板を小さくするか、キャビネットを高くしてください。",

@@ -762,6 +762,8 @@
     "glisieraDe": "rel {lg} mm",
     "subCutie": "dipasang di bawah kotak",
     "socluInFata": "di depan, di antara sisi — alas bertumpu di atasnya",
+    "socluColtL": "pada lengan {n}, di depan — di sudut, lengan 1 melewati ujung lengan 2",
+    "socluDiagonal": "pada diagonal, di depan — ujung dipotong {u1}° dan {u2}° dari potongan lurus",
     "usiGlisante": "{n} pintu geser, tumpang {supr}, rel {sine}",
     "traverseSusInLocDeBlat": "menggantikan papan atas: satu di depan, satu di belakang, lebar {lat}"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "Muka laci tidak sampai ke bawah: tersisa {gol} mm kosong. Setel tinggi muka ke {front} mm agar kabinet terisi penuh.",
     "piesaPreaMica": "Ada sisi di bawah 20 mm: periksa ukurannya.",
     "piesaLatimeMaiMare": "Lebar ({lat}) lebih besar dari panjang ({lung}): saat memotong, panjang adalah sisi terpanjang. Tukar keduanya kalau serat harus berjalan lain.",
-    "socluNuMerge": "Papan alas hanya untuk boks lurus yang dibangun „di antara\". Di sini dilewati.",
+    "socluNuMerge": "Papan alas tidak bisa dipasang pada kabinet ini: papan alas untuk “Atas/alas di antara sisi” dan kabinet sudut, bukan untuk “Sisi di antara atas dan alas” atau kabinet tidak beraturan. Di sini dilewati.",
     "socluPreaInalt": "Papan alas {soclu} mm pada boks serendah ini: di dalam hanya tersisa {ramane} mm.",
     "nisaPreaMare": "Bukaan {nisa} mm tidak muat: di atas {incape} mm tidak tersisa tempat untuk pintu di atasnya.",
     "nisaLangaSertare": "Ceruk {nisa} mm tidak muat di samping laci: hanya tersisa {incape} mm. Perkecil muka laci atau perbesar kabinet.",

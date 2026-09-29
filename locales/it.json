@@ -762,6 +762,8 @@
     "glisieraDe": "guida {lg} mm",
     "subCutie": "montato sotto il cassetto",
     "socluInFata": "davanti, tra i fianchi — il fondo ci appoggia sopra",
+    "socluColtL": "sul braccio {n}, davanti — nell'angolo il braccio 1 passa oltre la testa del braccio 2",
+    "socluDiagonal": "sulla diagonale, davanti — estremità tagliate a {u1}° e {u2}° rispetto al taglio dritto",
     "usiGlisante": "{n} ante scorrevoli, sovrapposizione {supr}, binari {sine}",
     "traverseSusInLocDeBlat": "al posto del top: una davanti, una dietro, larghe {lat}"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "I frontali dei cassetti non arrivano in basso: restano {gol} mm liberi. Metti {front} mm di altezza frontale per riempire il mobile.",
     "piesaPreaMica": "Un lato sotto i 20 mm: controlla le misure.",
     "piesaLatimeMaiMare": "La larghezza ({lat}) supera la lunghezza ({lung}): al taglio la lunghezza è il lato lungo. Invertile se la venatura deve andare diversamente.",
-    "socluNuMerge": "Lo zoccolo va solo su un mobile diritto costruito «tra». Qui è stato lasciato fuori.",
+    "socluNuMerge": "Lo zoccolo non si può mettere su questo mobile: va con «Cappello/fondo tra i fianchi» e sugli angolari, non con «Fianchi tra cappello e fondo» né sui mobili irregolari. Qui è stato tralasciato.",
     "socluPreaInalt": "Zoccolo da {soclu} mm su un mobile così basso: dentro restano solo {ramane} mm.",
     "nisaPreaMare": "Un vano da {nisa} mm non ci sta: oltre {incape} mm non resta posto per l’anta di sopra.",
     "nisaLangaSertare": "La nicchia di {nisa} mm non entra accanto ai cassetti: restano solo {incape} mm. Riduci i frontali dei cassetti o alza il mobile.",

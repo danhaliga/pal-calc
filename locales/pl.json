@@ -768,6 +768,8 @@
     "glisieraDe": "prowadnica {lg} mm",
     "subCutie": "montowane pod skrzynką",
     "socluInFata": "z przodu, między bokami — na nim stoi dno",
+    "socluColtL": "na ramieniu {n}, z przodu — w narożniku ramię 1 przechodzi za koniec ramienia 2",
+    "socluDiagonal": "na przekątnej, z przodu — końce cięte pod {u1}° i {u2}° względem cięcia prostego",
     "usiGlisante": "{n} fronty przesuwne, zachodzenie {supr}, szyny {sine}",
     "traverseSusInLocDeBlat": "zamiast wieńca: jedna z przodu, druga z tyłu, szerokie na {lat}"
   },
@@ -800,7 +802,7 @@
     "sertareNuUmplu": "Fronty szuflad nie sięgają dołu: zostaje {gol} mm wolnego. Ustaw wysokość frontu na {front} mm, żeby wypełnić korpus.",
     "piesaPreaMica": "Bok poniżej 20 mm: sprawdź wymiary.",
     "piesaLatimeMaiMare": "Szerokość ({lat}) jest większa niż długość ({lung}): przy rozkroju długość to bok dłuższy. Zamień je, jeśli słój ma iść inaczej.",
-    "socluNuMerge": "Cokół pasuje tylko do prostej skrzyni budowanej „między”. Tutaj został pominięty.",
+    "socluNuMerge": "Cokołu nie da się dać w tej szafce: pasuje do „Wieńce między bokami” i do narożników, nie do „Boki między wieńcami” ani do szafek nieregularnych. Tu został pominięty.",
     "socluPreaInalt": "Cokół {soclu} mm przy tak niskiej skrzyni: w środku zostaje tylko {ramane} mm.",
     "nisaPreaMare": "Wnęka {nisa} mm się nie mieści: powyżej {incape} mm nie zostaje miejsca na front u góry.",
     "nisaLangaSertare": "Wnęka {nisa} mm nie mieści się obok szuflad: zostaje tylko {incape} mm. Zmniejsz fronty szuflad albo powiększ szafkę.",

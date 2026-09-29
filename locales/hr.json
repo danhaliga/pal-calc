@@ -768,6 +768,8 @@
     "glisieraDe": "vodilica {lg} mm",
     "subCutie": "montirano ispod kutije",
     "socluInFata": "sprijeda, između stranica — dno stoji na njemu",
+    "socluColtL": "na kraku {n}, sprijeda — u kutu krak 1 prelazi preko kraja kraka 2",
+    "socluDiagonal": "na dijagonali, sprijeda — krajevi rezani pod {u1}° i {u2}° u odnosu na ravni rez",
     "usiGlisante": "{n} klizna vrata, preklop {supr}, vodilice {sine}",
     "traverseSusInLocDeBlat": "umjesto gornje ploče: jedna sprijeda, druga straga, široke {lat}"
   },
@@ -800,7 +802,7 @@
     "sertareNuUmplu": "Prednjice ladica ne dosežu do dna: ostaje {gol} mm praznog prostora dolje. Stavi {front} mm za visinu prednjice da ispuni korpus.",
     "piesaPreaMica": "Strana ispod 20 mm: provjeri mjere.",
     "piesaLatimeMaiMare": "Širina ({lat}) je veća od duljine ({lung}): pri krojenju je duljina dulja strana. Zamijeni ih ako tekstura treba ići drugačije.",
-    "socluNuMerge": "Sokl ide samo na ravno tijelo građeno „između“. Ovdje je izostavljen.",
+    "socluNuMerge": "Sokl ne može na ovaj korpus: ide uz „Gornja ploča/dno između bokova“ i na kutne elemente, ne uz „Bokovi između gornje ploče i dna“ ni na nepravilne korpuse. Ovdje je izostavljen.",
     "socluPreaInalt": "Sokl od {soclu} mm na ovako niskom tijelu: unutra ostaje samo {ramane} mm.",
     "nisaPreaMare": "Otvor od {nisa} mm ne stane: iznad {incape} mm ne ostaje mjesta za vrata iznad.",
     "nisaLangaSertare": "Niša od {nisa} mm ne stane pokraj ladica: ostaje samo {incape} mm. Smanji frontove ladica ili povećaj element.",

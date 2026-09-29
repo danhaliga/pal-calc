@@ -762,6 +762,8 @@
     "glisieraDe": "{lg} mm ray",
     "subCutie": "kutunun altına takılır",
     "socluInFata": "önde, yanların arasında — taban onun üzerinde durur",
+    "socluColtL": "{n}. kolda, önde — köşede 1. kol, 2. kolun ucunun önünden geçer",
+    "socluDiagonal": "çaprazda, önde — uçlar düz kesime göre {u1}° ve {u2}° kesilir",
     "usiGlisante": "{n} sürme kapak, bindirme {supr}, raylar {sine}",
     "traverseSusInLocDeBlat": "üst tabla yerine: biri önde biri arkada, {lat} genişliğinde"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "Çekmece kapakları alta kadar inmiyor: altta {gol} mm boş kalıyor. Gövdeyi doldurmak için kapak yüksekliğini {front} mm yap.",
     "piesaPreaMica": "Bir kenar 20 mm altında: ölçüleri gözden geçir.",
     "piesaLatimeMaiMare": "Genişlik ({lat}) uzunluktan ({lung}) büyük: kesimde uzunluk uzun kenardır. Damar başka yöne gidecekse ikisini değiştir.",
-    "socluNuMerge": "Süpürgelik yalnızca „aradan\" yapılmış düz gövdeye takılır. Burada eklenmedi.",
+    "socluNuMerge": "Bu dolaba süpürgelik konmaz: “Tablalar yan paneller arasında” yapıda ve köşe dolaplarında olur, “Yan paneller tablalar arasında” yapıda ya da düzensiz dolaplarda olmaz. Burada atlandı.",
     "socluPreaInalt": "Bu kadar alçak bir gövdede {soclu} mm süpürgelik: içeride yalnızca {ramane} mm kalıyor.",
     "nisaPreaMare": "{nisa} mm boşluk sığmıyor: {incape} mm üstünde üstteki kapağa yer kalmıyor.",
     "nisaLangaSertare": "{nisa} mm'lik niş çekmecelerin yanına sığmıyor: yalnızca {incape} mm kalıyor. Çekmece kapaklarını küçült ya da dolabı büyüt.",

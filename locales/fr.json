@@ -762,6 +762,8 @@
     "glisieraDe": "coulisse {lg} mm",
     "subCutie": "posé sous la caisse",
     "socluInFata": "à l’avant, entre les côtés — le fond repose dessus",
+    "socluColtL": "sur le bras {n}, à l'avant — dans l'angle, le bras 1 passe devant l'extrémité du bras 2",
+    "socluDiagonal": "sur la diagonale, à l'avant — extrémités coupées à {u1}° et {u2}° par rapport à une coupe droite",
     "usiGlisante": "{n} portes coulissantes, recouvrement {supr}, rails {sine}",
     "traverseSusInLocDeBlat": "à la place du panneau haut : une devant, une derrière, larges de {lat}"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "Les faces de tiroir n’atteignent pas le fond : il reste {gol} mm de vide en bas. Mettez {front} mm de hauteur de face pour remplir le caisson.",
     "piesaPreaMica": "Un côté sous 20 mm : vérifiez les cotes.",
     "piesaLatimeMaiMare": "La largeur ({lat}) dépasse la longueur ({lung}) : au débit, la longueur est le grand côté. Inversez-les si le fil doit aller autrement.",
-    "socluNuMerge": "La plinthe ne va que sur un caisson droit monté « entre ». Ici elle a été laissée de côté.",
+    "socluNuMerge": "Une plinthe ne peut pas aller sur ce meuble : elle va avec « Dessus/fond entre les côtés » et sur les meubles d'angle, pas avec « Côtés entre dessus et fond » ni sur les meubles irréguliers. Ici, elle a été laissée de côté.",
     "socluPreaInalt": "Plinthe de {soclu} mm sur un caisson aussi bas : il ne reste que {ramane} mm à l’intérieur.",
     "nisaPreaMare": "Une niche de {nisa} mm ne rentre pas : au-delà de {incape} mm il ne reste plus de place pour la porte du dessus.",
     "nisaLangaSertare": "La niche de {nisa} mm ne tient pas à côté des tiroirs : il ne reste que {incape} mm. Réduisez les façades de tiroir ou agrandissez le meuble.",

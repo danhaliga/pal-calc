@@ -762,6 +762,8 @@
     "glisieraDe": "{lg} mm runner",
     "subCutie": "fitted under the box",
     "socluInFata": "at the front, between the sides — the bottom rests on it",
+    "socluColtL": "on arm {n}, at the front — at the corner, arm 1 runs past the end of arm 2",
+    "socluDiagonal": "on the diagonal, at the front — ends cut at {u1}° and {u2}° from a square cut",
     "usiGlisante": "{n} sliding doors, overlap {supr}, tracks {sine}",
     "traverseSusInLocDeBlat": "instead of the top panel: one at the front, one at the back, {lat} wide"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "The drawer fronts do not reach the bottom: {gol} mm is left open below. Set the front height to {front} mm to fill the cabinet.",
     "piesaPreaMica": "A side under 20 mm: check the sizes.",
     "piesaLatimeMaiMare": "The width ({lat}) is larger than the length ({lung}): when cutting, the length is the long side. Swap them if the grain has to run the other way.",
-    "socluNuMerge": "A plinth only works on a straight cabinet built “between”. Here it was left out.",
+    "socluNuMerge": "A plinth can't go on this cabinet: it works with “Top/bottom between the sides” and on corner units, not with “Sides between top and bottom” or on irregular cabinets. Here it was left out.",
     "socluPreaInalt": "A {soclu} mm plinth on a cabinet this short: only {ramane} mm left inside.",
     "nisaPreaMare": "A {nisa} mm opening does not fit: above {incape} mm there is no room left for the door on top.",
     "nisaLangaSertare": "The {nisa} mm niche doesn't fit next to the drawers: only {incape} mm remain. Make the drawer fronts smaller or the cabinet taller.",

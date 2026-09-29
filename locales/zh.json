@@ -762,6 +762,8 @@
     "glisieraDe": "{lg} 毫米滑轨",
     "subCutie": "装在抽屉盒下面",
     "socluInFata": "位于前方、两块侧板之间——底板搁在上面",
+    "socluColtL": "在第 {n} 臂前侧 — 转角处第 1 臂越过第 2 臂的端头",
+    "socluDiagonal": "在斜面前侧 — 两端相对直切分别切 {u1}° 和 {u2}°",
     "usiGlisante": "{n} 扇推拉门，搭接 {supr}，轨道 {sine}",
     "traverseSusInLocDeBlat": "代替顶板：前后各一条，宽 {lat}"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "抽屉面板没有做到底，下面空了 {gol} mm。把面板高度改成 {front} mm 就能填满柜体。",
     "piesaPreaMica": "有一边小于 20 mm，请核对尺寸。",
     "piesaLatimeMaiMare": "宽 ({lat}) 大于长 ({lung})：开料时长是长边。如果纹理要走另一个方向，把两个数对调。",
-    "socluNuMerge": "踢脚板只适用于“嵌入式”结构的直柜。这里未使用。",
+    "socluNuMerge": "此柜体不能加踢脚板：它用于“顶板/底板夹在侧板之间”和转角柜，不用于“侧板夹在顶板和底板之间”或异形柜体。这里已省略。",
     "socluPreaInalt": "柜体太矮却用 {soclu} 毫米踢脚板：内部只剩 {ramane} 毫米。",
     "nisaPreaMare": "{nisa} 毫米的开口放不下：超过 {incape} 毫米就没有地方装上方的门了。",
     "nisaLangaSertare": "{nisa} 毫米的嵌入空间在抽屉旁放不下：只剩 {incape} 毫米。请减小抽屉面板或加大柜体。",

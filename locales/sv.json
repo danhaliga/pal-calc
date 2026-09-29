@@ -762,6 +762,8 @@
     "glisieraDe": "skena {lg} mm",
     "subCutie": "monterad under lådan",
     "socluInFata": "framtill, mellan sidorna — bottnen vilar på den",
+    "socluColtL": "på arm {n}, framtill — i hörnet går arm 1 förbi änden på arm 2",
+    "socluDiagonal": "på diagonalen, framtill — ändarna sågade i {u1}° och {u2}° mot ett rakt snitt",
     "usiGlisante": "{n} skjutdörrar, överlapp {supr}, skenor {sine}",
     "traverseSusInLocDeBlat": "i stället för topplattan: en fram, en bak, {lat} breda"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "Lådfronterna når inte ner: {gol} mm står öppet nedtill. Sätt fronthöjden till {front} mm för att fylla stommen.",
     "piesaPreaMica": "En sida under 20 mm: kontrollera måtten.",
     "piesaLatimeMaiMare": "Bredden ({lat}) är större än längden ({lung}): vid kapning är längden den långa sidan. Byt dem om fibern ska gå åt andra hållet.",
-    "socluNuMerge": "En sockel går bara på en rak stomme byggd ”emellan”. Här utelämnades den.",
+    "socluNuMerge": "En sockel går inte på det här skåpet: den passar med ”Topp/botten mellan gavlarna” och på hörnskåp, inte med ”Gavlar mellan topp och botten” eller på oregelbundna skåp. Här utelämnades den.",
     "socluPreaInalt": "Sockel på {soclu} mm i en så låg stomme: bara {ramane} mm blir kvar inuti.",
     "nisaPreaMare": "En öppning på {nisa} mm får inte plats: över {incape} mm finns ingen plats kvar för luckan ovanför.",
     "nisaLangaSertare": "Nischen på {nisa} mm får inte plats bredvid lådorna: bara {incape} mm återstår. Gör lådfronterna mindre eller skåpet större.",

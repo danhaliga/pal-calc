@@ -762,6 +762,8 @@
     "glisieraDe": "레일 {lg} mm",
     "subCutie": "서랍통 아래에 붙습니다",
     "socluInFata": "앞쪽, 옆판 사이 — 밑판이 그 위에 놓입니다",
+    "socluColtL": "팔 {n} 앞쪽 — 모서리에서 팔 1이 팔 2의 끝을 지나간다",
+    "socluDiagonal": "대각선 앞쪽 — 양 끝을 직각 절단에서 {u1}°와 {u2}°로 자른다",
     "usiGlisante": "미닫이 {n}짝, 겹침 {supr}, 레일 {sine}",
     "traverseSusInLocDeBlat": "상판 대신: 앞뒤로 하나씩, 폭 {lat}"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "서랍 앞판이 아래까지 닿지 않습니다. 아래에 {gol} mm가 비어 있습니다. 앞판 높이를 {front} mm로 하면 몸통이 채워집니다.",
     "piesaPreaMica": "20 mm 미만인 변이 있습니다. 치수를 확인하세요.",
     "piesaLatimeMaiMare": "폭 ({lat})이 길이 ({lung})보다 큽니다. 재단에서는 길이가 긴 변입니다. 결을 다르게 두려면 둘을 바꾸세요.",
-    "socluNuMerge": "걸레받이는 “사이” 방식으로 짠 직선 몸통에만 붙습니다. 여기서는 빠졌습니다.",
+    "socluNuMerge": "이 장에는 걸레받이를 달 수 없습니다: “상판/하판을 측판 사이에” 구조와 코너장에는 달지만, “측판을 상판과 하판 사이에” 구조나 비정형 장에는 달지 않습니다. 여기서는 빠졌습니다.",
     "socluPreaInalt": "이렇게 낮은 몸통에 {soclu} mm 걸레받이: 안쪽에 {ramane} mm만 남습니다.",
     "nisaPreaMare": "{nisa} mm 개구부는 들어가지 않습니다. {incape} mm를 넘으면 위쪽 문 자리가 남지 않습니다.",
     "nisaLangaSertare": "{nisa} mm 공간이 서랍 옆에 들어가지 않습니다: {incape} mm만 남습니다. 서랍 앞판을 줄이거나 장을 키우세요.",

@@ -768,6 +768,8 @@
     "glisieraDe": "výsuv {lg} mm",
     "subCutie": "montované pod košom",
     "socluInFata": "vpredu, medzi bočnicami — dno na ňom stojí",
+    "socluColtL": "na ramene {n}, vpredu — v rohu vedie rameno 1 cez koniec ramena 2",
+    "socluDiagonal": "na uhlopriečke, vpredu — konce rezané pod {u1}° a {u2}° od rovného rezu",
     "usiGlisante": "{n} posuvné dvierka, prekrytie {supr}, koľajnice {sine}",
     "traverseSusInLocDeBlat": "namiesto hornej dosky: jedna vpredu, druhá vzadu, široké {lat}"
   },
@@ -800,7 +802,7 @@
     "sertareNuUmplu": "Čelá zásuviek nedosahujú dole: zostáva {gol} mm voľného miesta. Nastav výšku čela na {front} mm, aby sa korpus zaplnil.",
     "piesaPreaMica": "Strana pod 20 mm: skontroluj rozmery.",
     "piesaLatimeMaiMare": "Šírka ({lat}) je väčšia než dĺžka ({lung}): pri náreze je dĺžka dlhšia strana. Prehoď ich, ak má kresba ísť inak.",
-    "socluNuMerge": "Sokel ide len na rovnú skrinku stavanú „medzi“. Tu ostal bez účinku.",
+    "socluNuMerge": "Sokel na túto skrinku nejde: patrí k „Vrchná doska/dno medzi bokmi“ a na rohové skrinky, nie k „Boky medzi vrchnou doskou a dnom“ ani na nepravidelné skrinky. Tu bol vynechaný.",
     "socluPreaInalt": "Sokel {soclu} mm pri takej nízkej skrinke: vnútri ostáva len {ramane} mm.",
     "nisaPreaMare": "Výklenok {nisa} mm sa nezmestí: nad {incape} mm nezostáva miesto pre dvierka hore.",
     "nisaLangaSertare": "Nika {nisa} mm sa vedľa zásuviek nezmestí: zostáva len {incape} mm. Zmenši čelá zásuviek alebo zväčši skrinku.",

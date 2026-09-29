@@ -762,6 +762,8 @@
     "glisieraDe": "corrediça {lg} mm",
     "subCutie": "montado sob a caixa",
     "socluInFata": "à frente, entre as laterais — o fundo assenta nele",
+    "socluColtL": "no braço {n}, à frente — no canto, o braço 1 passa à frente da ponta do braço 2",
+    "socluDiagonal": "na diagonal, à frente — pontas cortadas a {u1}° e {u2}° em relação ao corte reto",
     "usiGlisante": "{n} portas de correr, sobreposição {supr}, calhas {sine}",
     "traverseSusInLocDeBlat": "em vez do tampo: uma à frente, outra atrás, com {lat} de largura"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "As frentes de gaveta não chegam ao fundo: ficam {gol} mm livres em baixo. Ponha {front} mm de altura de frente para encher o móvel.",
     "piesaPreaMica": "Um lado abaixo de 20 mm: confira as medidas.",
     "piesaLatimeMaiMare": "A largura ({lat}) é maior que o comprimento ({lung}): ao cortar, o comprimento é o lado maior. Troque-os se o veio tiver de ir ao contrário.",
-    "socluNuMerge": "O rodapé só assenta num móvel direito construído «entre». Aqui ficou de fora.",
+    "socluNuMerge": "O rodapé não pode ir neste móvel: vai com «Tampo/base entre as laterais» e nos móveis de canto, não com «Laterais entre tampo e base» nem nos móveis irregulares. Aqui ficou de fora.",
     "socluPreaInalt": "Rodapé de {soclu} mm num móvel tão baixo: sobram apenas {ramane} mm por dentro.",
     "nisaPreaMare": "Um vão de {nisa} mm não cabe: acima de {incape} mm não sobra lugar para a porta de cima.",
     "nisaLangaSertare": "O nicho de {nisa} mm não cabe junto às gavetas: restam apenas {incape} mm. Reduza as frentes de gaveta ou aumente o móvel.",

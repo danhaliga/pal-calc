@@ -762,6 +762,8 @@
     "glisieraDe": "guía de {lg} mm",
     "subCutie": "montado bajo la caja",
     "socluInFata": "delante, entre los laterales — el fondo se apoya en él",
+    "socluColtL": "en el brazo {n}, delante — en la esquina, el brazo 1 pasa por delante del extremo del brazo 2",
+    "socluDiagonal": "en la diagonal, delante — extremos cortados a {u1}° y {u2}° respecto al corte recto",
     "usiGlisante": "{n} puertas correderas, solape {supr}, guías {sine}",
     "traverseSusInLocDeBlat": "en lugar del tablero superior: uno delante, otro detrás, de {lat} de ancho"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "Los frentes de cajón no llegan abajo: quedan {gol} mm libres. Pon {front} mm de altura de frente para llenar el mueble.",
     "piesaPreaMica": "Un lado por debajo de 20 mm: revisa las medidas.",
     "piesaLatimeMaiMare": "El ancho ({lat}) es mayor que el largo ({lung}): al despiezar, el largo es el lado mayor. Cámbialos si la veta debe ir al revés.",
-    "socluNuMerge": "El zócalo solo cabe en un mueble recto construido «entre». Aquí se ha dejado fuera.",
+    "socluNuMerge": "El zócalo no se puede poner en este mueble: va con «Techo/suelo entre los costados» y en los rinconeros, no con «Costados entre techo y suelo» ni en los muebles irregulares. Aquí se ha omitido.",
     "socluPreaInalt": "Zócalo de {soclu} mm en un mueble tan bajo: solo quedan {ramane} mm dentro.",
     "nisaPreaMare": "Un hueco de {nisa} mm no cabe: por encima de {incape} mm no queda sitio para la puerta de arriba.",
     "nisaLangaSertare": "El hueco de {nisa} mm no cabe junto a los cajones: solo quedan {incape} mm. Reduce los frentes de cajón o aumenta el mueble.",

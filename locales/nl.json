@@ -762,6 +762,8 @@
     "glisieraDe": "geleider {lg} mm",
     "subCutie": "onder de lade gemonteerd",
     "socluInFata": "vooraan, tussen de zijden — de bodem rust erop",
+    "socluColtL": "op arm {n}, aan de voorkant — in de hoek loopt arm 1 voorbij het einde van arm 2",
+    "socluDiagonal": "op de diagonaal, aan de voorkant — uiteinden gezaagd op {u1}° en {u2}° ten opzichte van een rechte zaagsnede",
     "usiGlisante": "{n} schuifdeuren, overlap {supr}, rails {sine}",
     "traverseSusInLocDeBlat": "in plaats van het bovenblad: één voor, één achter, {lat} breed"
   },
@@ -794,7 +796,7 @@
     "sertareNuUmplu": "De ladefronten reiken niet tot onderin: er blijft {gol} mm open. Zet de fronthoogte op {front} mm om de kast te vullen.",
     "piesaPreaMica": "Een zijde onder 20 mm: controleer de maten.",
     "piesaLatimeMaiMare": "De breedte ({lat}) is groter dan de lengte ({lung}): bij het zagen is de lengte de lange zijde. Wissel ze om als de nerf anders moet lopen.",
-    "socluNuMerge": "Een plint past alleen op een rechte kast gebouwd „ertussen”. Hier is hij weggelaten.",
+    "socluNuMerge": "Een plint kan niet op deze kast: hij past bij „Bovenblad/bodem tussen de zijwanden” en op hoekkasten, niet bij „Zijwanden tussen bovenblad en bodem” of op onregelmatige kasten. Hier is hij weggelaten.",
     "socluPreaInalt": "Plint van {soclu} mm bij zo’n lage kast: binnen blijft maar {ramane} mm over.",
     "nisaPreaMare": "Een nis van {nisa} mm past niet: boven {incape} mm blijft er geen plek voor de deur erboven.",
     "nisaLangaSertare": "De nis van {nisa} mm past niet naast de laden: er blijft maar {incape} mm over. Maak de ladefronten kleiner of de kast hoger.",
