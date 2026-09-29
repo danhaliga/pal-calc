@@ -197,7 +197,10 @@
 </details>
 
 <!-- ---------------- feroneria comenzii ---------------- -->
-<details class="panel" id="feronerie" <%= raport.corpuri.length ? '' : 'open' %>>
+<%# Strans, ca setarile de deasupra. Sistemul se alege la deschiderea
+    comenzii, in formularul de comanda noua; aici se schimba rar, iar un
+    panou de trei ecrane deschis din start impinge corpurile jos. %>
+<details class="panel" id="feronerie" <%= deschideFeronerie ? 'open' : '' %>>
   <summary><b><%= t('fero.rezumat') %></b>
     <%= feroSistem.asamblare.nume %> ·
     <%= feroSistem.balama ? feroSistem.balama.nume : t('fero.faraBalamale') %> ·
@@ -366,7 +369,7 @@
       <h2><%= t('comanda.feronerieTitlu') %></h2>
       <p class="muted small" style="margin:0 0 6px">
         <%= t('fero.pentruSistem', { sistem: feroSistem.asamblare.nume }) %>
-        <a href="#feronerie"><%= t('fero.schimbaSistemul') %></a>
+        <a href="?fero=1#feronerie"><%= t('fero.schimbaSistemul') %></a>
       </p>
       <div class="tbl"><table>
         <thead><tr><th><%= t('comun.articol') %></th><th class="num"><%= t('comun.cant') %></th>

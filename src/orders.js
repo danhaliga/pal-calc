@@ -352,7 +352,12 @@ router.get('/orders/:id', requireAuth, (req, res, next) => {
     feroSistem: PalFeronerie.sistem(order.feronerie, req.t),
     sold: credit.sold(req.user.id),
     pretCorp: credit.pretCorp(),
-    adaugat: req.query.adaugat === '1'
+    adaugat: req.query.adaugat === '1',
+    /* Panoul de feronerie sta strans. Se deschide numai cand cineva vine
+       anume dupa el — din legatura „schimba sistemul" sau intors de la
+       salvare. Un `#feronerie` singur ar duce omul in dreptul unui panou
+       inchis, iar CSS nu poate deschide un <details>. */
+    deschideFeronerie: req.query.fero === '1'
   });
 });
 
@@ -387,7 +392,9 @@ router.post('/orders/:id/feronerie', requireAuth, (req, res, next) => {
   db.prepare(`UPDATE orders SET feronerie = ?, updated_at = datetime('now') WHERE id = ?`)
     .run(JSON.stringify(feronerieDinBody(req.body)), order.id);
 
-  res.redirect(`/orders/${order.id}#feronerie`);
+  /* Intors la panoul deschis: omul tocmai a schimbat sistemul si trebuie sa
+     vada ce-a iesit, nu un panou strans si o pagina care pare neatinsa. */
+  res.redirect(`/orders/${order.id}?fero=1#feronerie`);
 });
 
 router.post('/orders/:id/delete', requireAuth, (req, res, next) => {

@@ -1410,3 +1410,43 @@ test('o întrebare nu calcă peste alta', () => {
   assert.match(inter, /if \(f\.open\) return;/, 'a doua întrebare nu mai e oprită');
   assert.match(inter, /deFacut = null;/, 'răspunsul așteptat nu mai e uitat înainte de a fi făcut');
 });
+
+
+/* =====================================================================
+   Panourile de pe pagina comenzii stau STRÂNSE
+
+   Feroneria se deschidea singură la o comandă fără corpuri — adică exact
+   când omul tocmai răspunsese la întrebările alea în formularul de comandă
+   nouă. Trei ecrane de întrebări deja rezolvate, cu butonul de adăugat
+   corpuri împins sub ele.
+   ===================================================================== */
+
+test('niciun panou de pe pagina comenzii nu se deschide singur', () => {
+  const show = citesteFisier(VIEWS, 'orders', 'show.ejs');
+  const panouri = show.match(/<details[^>]*class="panel"[^>]*>/g) || [];
+  assert.ok(panouri.length >= 2, 'nu mai sunt panouri strânse pe pagina comenzii');
+  panouri.forEach(d => {
+    /* `open` e îngăduit numai pus de o condiție — nu bătut în cuie. */
+    const deschisMereu = /\sopen(?![^<]*<%)/.test(d) && !/<%[^%]*open/.test(d);
+    assert.ok(!deschisMereu, 'un panou se deschide singur: ' + d.trim());
+  });
+  assert.match(show, /id="feronerie" <%= deschideFeronerie \? 'open' : '' %>/,
+    'feroneria nu mai atârnă de întrebarea din adresă');
+  assert.ok(!/raport\.corpuri\.length \? '' : 'open'/.test(show),
+    'a rămas regula veche: deschis cât timp comanda e goală');
+});
+
+test('cine vine anume după feronerie o găsește deschisă', () => {
+  /* CSS nu poate deschide un <details>, iar un `#feronerie` singur ar duce
+     omul în dreptul unui panou închis, de mai apăsat o dată. De-aia
+     întrebarea e în adresă, nu în foaia de stil. */
+  const show = citesteFisier(VIEWS, 'orders', 'show.ejs');
+  assert.match(show, /href="\?fero=1#feronerie"/,
+    'legătura „schimbă sistemul" duce la un panou închis');
+
+  const rute = citesteFisier(__dirname, '..', 'src', 'orders.js');
+  assert.match(rute, /deschideFeronerie: req\.query\.fero === '1'/,
+    'pagina nu mai ascultă întrebarea din adresă');
+  assert.match(rute, /res\.redirect\(`\/orders\/\$\{order\.id\}\?fero=1#feronerie`\)/,
+    'după salvare te întorci la un panou închis, adică la o pagină care pare neatinsă');
+});
