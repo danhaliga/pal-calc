@@ -496,6 +496,16 @@
         "nume": "Schuhschrank",
         "descriere": "So tief wie ein quer gelegter Schuh, drei Böden.",
         "corpNume": "Schuhschrank"
+      },
+      "coloana-cuptor": {
+        "nume": "Backofen-Hochschrank",
+        "descriere": "Tür unten, Nische in der Mitte für den Backofen, Tür darüber. Prüfe die vom Hersteller verlangte Nische.",
+        "corpNume": "Backofenschrank"
+      },
+      "coloana-frigider": {
+        "nume": "Kühlschrank-Hochschrank",
+        "descriere": "Nische vom Boden für den Kühlschrank, darüber eine Tür. Prüfe die vom Hersteller verlangte Nische.",
+        "corpNume": "Kühlschrank"
       }
     },
     "adaugaCorp": "Einen Korpus hinzufügen",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "Eine Seite unter 20 mm: prüf die Maße.",
     "piesaLatimeMaiMare": "Die Breite ({lat}) ist größer als die Länge ({lung}): beim Zuschnitt ist die Länge die lange Seite. Tausch sie, wenn die Faser anders laufen soll.",
     "socluNuMerge": "Ein Sockel geht nur bei einem geraden Korpus in „Zwischen“-Bauweise. Hier bleibt er weg.",
-    "socluPreaInalt": "Sockel von {soclu} mm bei einem so niedrigen Korpus: innen bleiben nur {ramane} mm."
+    "socluPreaInalt": "Sockel von {soclu} mm bei einem so niedrigen Korpus: innen bleiben nur {ramane} mm.",
+    "nisaPreaMare": "Eine Nische von {nisa} mm passt nicht: über {incape} mm bleibt kein Platz für die Tür darüber.",
+    "politeFixeInPlus": "Du hast {cerut} Böden verlangt, der Korpus braucht aber {fac}: die fassen die Nische ein und halten die Türen.",
+    "politeNuIncap": "Für {cate} Böden ist kein Platz: die Nische hat den ganzen Raum genommen."
   },
   "csv": {
     "corp": "Korpus",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "dünne Kante",
     "lungimePiesa": "Länge (L)",
     "latimePiesa": "Breite (l)",
-    "soclu": "Sockel (0 = Füße)"
+    "soclu": "Sockel (0 = Füße)",
+    "nisa": "Nische (Backofen, Kühlschrank)",
+    "nisaFara": "keine"
   },
   "fata": {
     "px": "rechts",

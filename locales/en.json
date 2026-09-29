@@ -496,6 +496,16 @@
         "nume": "Shoe cabinet",
         "descriere": "As deep as a shoe laid sideways, with three shelves.",
         "corpNume": "Shoe cabinet"
+      },
+      "coloana-cuptor": {
+        "nume": "Oven column",
+        "descriere": "Door below, an opening in the middle for the oven, door above. Check the opening the maker asks for.",
+        "corpNume": "Oven column"
+      },
+      "coloana-frigider": {
+        "nume": "Fridge column",
+        "descriere": "An opening from the bottom for the fridge, with a door above. Check the opening the maker asks for.",
+        "corpNume": "Fridge column"
       }
     },
     "adaugaCorp": "Add a cabinet",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "A side under 20 mm: check the sizes.",
     "piesaLatimeMaiMare": "The width ({lat}) is larger than the length ({lung}): when cutting, the length is the long side. Swap them if the grain has to run the other way.",
     "socluNuMerge": "A plinth only works on a straight cabinet built “between”. Here it was left out.",
-    "socluPreaInalt": "A {soclu} mm plinth on a cabinet this short: only {ramane} mm left inside."
+    "socluPreaInalt": "A {soclu} mm plinth on a cabinet this short: only {ramane} mm left inside.",
+    "nisaPreaMare": "A {nisa} mm opening does not fit: above {incape} mm there is no room left for the door on top.",
+    "politeFixeInPlus": "You asked for {cerut} shelves, but the cabinet needs {fac}: those edge the opening and hold the doors.",
+    "politeNuIncap": "{cate} shelves have nowhere to go: the opening took the whole space."
   },
   "csv": {
     "corp": "Cabinet",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "thin banding",
     "lungimePiesa": "Length (L)",
     "latimePiesa": "Width (l)",
-    "soclu": "Plinth (0 = legs)"
+    "soclu": "Plinth (0 = legs)",
+    "nisa": "Opening (oven, fridge)",
+    "nisaFara": "none"
   },
   "fata": {
     "px": "right",

@@ -502,6 +502,16 @@
         "nume": "Botník",
         "descriere": "Hlboký ako topánka položená naprieč, tri police.",
         "corpNume": "Botník"
+      },
+      "coloana-cuptor": {
+        "nume": "Skriňa na rúru",
+        "descriere": "Dvierka dole, výklenok v strede na rúru, dvierka hore. Over si výklenok, ktorý žiada výrobca.",
+        "corpNume": "Skriňa na rúru"
+      },
+      "coloana-frigider": {
+        "nume": "Skriňa na chladničku",
+        "descriere": "Výklenok odo dna na chladničku, hore dvierka. Over si výklenok, ktorý žiada výrobca.",
+        "corpNume": "Skriňa na chladničku"
       }
     },
     "adaugaCorp": "Pridať korpus",
@@ -721,7 +731,10 @@
     "piesaPreaMica": "Strana pod 20 mm: skontroluj rozmery.",
     "piesaLatimeMaiMare": "Šírka ({lat}) je väčšia než dĺžka ({lung}): pri náreze je dĺžka dlhšia strana. Prehoď ich, ak má kresba ísť inak.",
     "socluNuMerge": "Sokel ide len na rovnú skrinku stavanú „medzi“. Tu ostal bez účinku.",
-    "socluPreaInalt": "Sokel {soclu} mm pri takej nízkej skrinke: vnútri ostáva len {ramane} mm."
+    "socluPreaInalt": "Sokel {soclu} mm pri takej nízkej skrinke: vnútri ostáva len {ramane} mm.",
+    "nisaPreaMare": "Výklenok {nisa} mm sa nezmestí: nad {incape} mm nezostáva miesto pre dvierka hore.",
+    "politeFixeInPlus": "Chcel si {cerut} políc, ale skrinka potrebuje {fac}: tie ohraničujú výklenok a držia dvierka.",
+    "politeNuIncap": "Pre {cate} políc nie je miesto: výklenok zabral celý priestor."
   },
   "csv": {
     "corp": "Korpus",
@@ -1239,7 +1252,9 @@
     "cantSubtireOpt": "tenká hrana",
     "lungimePiesa": "Dĺžka (L)",
     "latimePiesa": "Šírka (l)",
-    "soclu": "Sokel (0 = nožičky)"
+    "soclu": "Sokel (0 = nožičky)",
+    "nisa": "Výklenok (rúra, chladnička)",
+    "nisaFara": "žiadny"
   },
   "fata": {
     "px": "vpravo",

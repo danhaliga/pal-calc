@@ -134,6 +134,11 @@
               „ușă doar pe jumătate de corp" se uită întâi aici. %>
           <label><%= t('editor.inaltimeUsi') %><input id="hUsi" type="number" step="10" min="0" max="3000"
                  placeholder="<%= t('editor.hUsiToata') %>"></label>
+          <%# Nisa: golul dintre zonele cu usi. Cu inaltimea usilor de jos
+              pusa, golul vine deasupra lor — coloana de cuptor. Fara ea,
+              golul incepe de la fund — coloana de frigider. %>
+          <label><%= t('editor.nisa') %><input id="hNisa" type="number" step="10" min="0" max="3000"
+                 placeholder="<%= t('editor.nisaFara') %>"></label>
           <label><%= t('editor.montaj') %><select id="montaj">
             <option value="aplicat"><%= t('editor.montajAplicat') %></option>
             <option value="incastrat"><%= t('editor.montajIncastrat') %></option>

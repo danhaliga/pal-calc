@@ -502,6 +502,16 @@
         "nume": "Ormar za cipele",
         "descriere": "Dubok koliko cipela položena poprečno, tri police.",
         "corpNume": "Ormar za cipele"
+      },
+      "coloana-cuptor": {
+        "nume": "Element za rernu",
+        "descriere": "Vrata dole, otvor na sredini za rernu, vrata iznad. Proveri otvor koji traži proizvođač.",
+        "corpNume": "Element rerna"
+      },
+      "coloana-frigider": {
+        "nume": "Element za frižider",
+        "descriere": "Otvor od dna za frižider, sa vratima iznad. Proveri otvor koji traži proizvođač.",
+        "corpNume": "Element frižider"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -721,7 +731,10 @@
     "piesaPreaMica": "Strana ispod 20 mm: proveri mere.",
     "piesaLatimeMaiMare": "Širina ({lat}) je veća od dužine ({lung}): pri krojenju je dužina duža strana. Zameni ih ako tekstura treba da ide drugačije.",
     "socluNuMerge": "Sokla ide samo na pravo telo građeno „između“. Ovde je izostavljena.",
-    "socluPreaInalt": "Sokla od {soclu} mm na ovako niskom telu: unutra ostaje samo {ramane} mm."
+    "socluPreaInalt": "Sokla od {soclu} mm na ovako niskom telu: unutra ostaje samo {ramane} mm.",
+    "nisaPreaMare": "Otvor od {nisa} mm ne staje: iznad {incape} mm ne ostaje mesta za vrata iznad.",
+    "politeFixeInPlus": "Tražio si {cerut} polica, ali telu treba {fac}: one omeđuju otvor i drže vrata.",
+    "politeNuIncap": "{cate} polica nema gde da stane: otvor je uzeo sav prostor."
   },
   "csv": {
     "corp": "Korpus",
@@ -1239,7 +1252,9 @@
     "cantSubtireOpt": "tanak kant",
     "lungimePiesa": "Dužina (L)",
     "latimePiesa": "Širina (l)",
-    "soclu": "Sokla (0 = nogice)"
+    "soclu": "Sokla (0 = nogice)",
+    "nisa": "Otvor (rerna, frižider)",
+    "nisaFara": "nema"
   },
   "fata": {
     "px": "desno",

@@ -496,6 +496,16 @@
         "nume": "靴の収納箱",
         "descriere": "靴を横に置ける奥行き、棚板3枚。",
         "corpNume": "靴の収納箱"
+      },
+      "coloana-cuptor": {
+        "nume": "オーブン用の縦箱",
+        "descriere": "下に扉、中ほどにオーブン用の開口、その上にも扉。メーカー指定の開口寸法を確かめてください。",
+        "corpNume": "オーブン縦箱"
+      },
+      "coloana-frigider": {
+        "nume": "冷蔵庫用の縦箱",
+        "descriere": "底から冷蔵庫用の開口、その上に扉。メーカー指定の開口寸法を確かめてください。",
+        "corpNume": "冷蔵庫縦箱"
       }
     },
     "adaugaCorp": "キャビネットを追加",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "20 mm を切る辺があります。寸法を確かめてください。",
     "piesaLatimeMaiMare": "幅 ({lat}) が長さ ({lung}) より大きいです。木取りでは長さが長辺です。木目を逆に通すなら入れ替えてください。",
     "socluNuMerge": "台輪は「はさみ込み」で組んだ直方体の箱にだけ付きます。ここでは付けていません。",
-    "socluPreaInalt": "これだけ低い箱に {soclu} mm の台輪：内部は {ramane} mm しか残りません。"
+    "socluPreaInalt": "これだけ低い箱に {soclu} mm の台輪：内部は {ramane} mm しか残りません。",
+    "nisaPreaMare": "{nisa} mm の開口は入りません。{incape} mm を超えると上の扉の場所が残りません。",
+    "politeFixeInPlus": "棚板を {cerut} 枚と指定しましたが、箱には {fac} 枚必要です。開口を挟み、扉を支えるものです。",
+    "politeNuIncap": "棚板 {cate} 枚の置き場所がありません。開口が空間をすべて使いました。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "薄いテープ",
     "lungimePiesa": "長さ (L)",
     "latimePiesa": "幅 (l)",
-    "soclu": "台輪（0 = 脚）"
+    "soclu": "台輪（0 = 脚）",
+    "nisa": "開口（オーブン・冷蔵庫）",
+    "nisaFara": "なし"
   },
   "fata": {
     "px": "右",

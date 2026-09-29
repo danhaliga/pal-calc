@@ -496,6 +496,16 @@
         "nume": "Scarpiera",
         "descriere": "Profonda quanto una scarpa messa di traverso, tre ripiani.",
         "corpNume": "Scarpiera"
+      },
+      "coloana-cuptor": {
+        "nume": "Colonna forno",
+        "descriere": "Anta sotto, vano al centro per il forno, anta sopra. Controlla il vano richiesto dal costruttore.",
+        "corpNume": "Colonna forno"
+      },
+      "coloana-frigider": {
+        "nume": "Colonna frigo",
+        "descriere": "Vano dal fondo per il frigo, con anta sopra. Controlla il vano richiesto dal costruttore.",
+        "corpNume": "Colonna frigo"
       }
     },
     "adaugaCorp": "Aggiungi un mobile",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "Un lato sotto i 20 mm: controlla le misure.",
     "piesaLatimeMaiMare": "La larghezza ({lat}) supera la lunghezza ({lung}): al taglio la lunghezza è il lato lungo. Invertile se la venatura deve andare diversamente.",
     "socluNuMerge": "Lo zoccolo va solo su un mobile diritto costruito «tra». Qui è stato lasciato fuori.",
-    "socluPreaInalt": "Zoccolo da {soclu} mm su un mobile così basso: dentro restano solo {ramane} mm."
+    "socluPreaInalt": "Zoccolo da {soclu} mm su un mobile così basso: dentro restano solo {ramane} mm.",
+    "nisaPreaMare": "Un vano da {nisa} mm non ci sta: oltre {incape} mm non resta posto per l’anta di sopra.",
+    "politeFixeInPlus": "Hai chiesto {cerut} ripiani, ma il mobile ne ha bisogno di {fac}: quelli delimitano il vano e reggono le ante.",
+    "politeNuIncap": "{cate} ripiani non hanno dove stare: il vano ha preso tutto lo spazio."
   },
   "csv": {
     "corp": "Mobile",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "bordo sottile",
     "lungimePiesa": "Lunghezza (L)",
     "latimePiesa": "Larghezza (l)",
-    "soclu": "Zoccolo (0 = piedini)"
+    "soclu": "Zoccolo (0 = piedini)",
+    "nisa": "Vano (forno, frigo)",
+    "nisaFara": "nessuno"
   },
   "fata": {
     "px": "destra",

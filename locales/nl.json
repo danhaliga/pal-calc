@@ -496,6 +496,16 @@
         "nume": "Schoenenkast",
         "descriere": "Zo diep als een schoen dwars, drie legplanken.",
         "corpNume": "Schoenenkast"
+      },
+      "coloana-cuptor": {
+        "nume": "Ovenkast",
+        "descriere": "Deur onder, nis in het midden voor de oven, deur erboven. Controleer de nis die de fabrikant vraagt.",
+        "corpNume": "Ovenkast"
+      },
+      "coloana-frigider": {
+        "nume": "Koelkastkast",
+        "descriere": "Nis vanaf de bodem voor de koelkast, met een deur erboven. Controleer de nis die de fabrikant vraagt.",
+        "corpNume": "Koelkastkast"
       }
     },
     "adaugaCorp": "Een kast toevoegen",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "Een zijde onder 20 mm: controleer de maten.",
     "piesaLatimeMaiMare": "De breedte ({lat}) is groter dan de lengte ({lung}): bij het zagen is de lengte de lange zijde. Wissel ze om als de nerf anders moet lopen.",
     "socluNuMerge": "Een plint past alleen op een rechte kast gebouwd „ertussen”. Hier is hij weggelaten.",
-    "socluPreaInalt": "Plint van {soclu} mm bij zo’n lage kast: binnen blijft maar {ramane} mm over."
+    "socluPreaInalt": "Plint van {soclu} mm bij zo’n lage kast: binnen blijft maar {ramane} mm over.",
+    "nisaPreaMare": "Een nis van {nisa} mm past niet: boven {incape} mm blijft er geen plek voor de deur erboven.",
+    "politeFixeInPlus": "Je vroeg om {cerut} legplanken, maar de kast heeft er {fac} nodig: die begrenzen de nis en dragen de deuren.",
+    "politeNuIncap": "Voor {cate} legplanken is geen plek: de nis heeft de hele ruimte genomen."
   },
   "csv": {
     "corp": "Kast",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "dunne band",
     "lungimePiesa": "Lengte (L)",
     "latimePiesa": "Breedte (l)",
-    "soclu": "Plint (0 = pootjes)"
+    "soclu": "Plint (0 = pootjes)",
+    "nisa": "Nis (oven, koelkast)",
+    "nisaFara": "geen"
   },
   "fata": {
     "px": "rechts",

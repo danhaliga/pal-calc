@@ -502,6 +502,16 @@
         "nume": "Dulap de pantofi",
         "descriere": "Adânc cât un pantof pus pe lat, cu trei polițe.",
         "corpNume": "Dulap pantofi"
+      },
+      "coloana-cuptor": {
+        "nume": "Coloană de cuptor",
+        "descriere": "Ușă jos, gol la mijloc pentru cuptor, ușă deasupra. Verifică nișa cerută de producător.",
+        "corpNume": "Coloană cuptor"
+      },
+      "coloana-frigider": {
+        "nume": "Coloană de frigider",
+        "descriere": "Gol de la fund pentru frigider, cu ușă deasupra. Verifică nișa cerută de producător.",
+        "corpNume": "Coloană frigider"
       }
     },
     "adaugaCorp": "Adaugă un corp",
@@ -721,7 +731,10 @@
     "piesaPreaMica": "Piesă sub 20 mm pe o latură: verifică cotele.",
     "piesaLatimeMaiMare": "Lățimea ({lat}) e mai mare decât lungimea ({lung}): la croire lungimea e latura mare. Schimbă-le între ele dacă fibra trebuie să meargă altfel.",
     "socluNuMerge": "Soclul se pune numai la corpul drept, construit „între\". Aici a rămas fără efect.",
-    "socluPreaInalt": "Soclu de {soclu} mm pe un corp prea scund: rămân doar {ramane} mm înăuntru."
+    "socluPreaInalt": "Soclu de {soclu} mm pe un corp prea scund: rămân doar {ramane} mm înăuntru.",
+    "nisaPreaMare": "Nișa de {nisa} mm nu încape: peste {incape} mm nu mai rămâne loc pentru ușa de deasupra.",
+    "politeFixeInPlus": "Ai cerut {cerut} polițe, dar corpul are nevoie de {fac}: alea mărginesc nișa și țin ușile.",
+    "politeNuIncap": "{cate} polițe n-au unde sta: nișa a luat tot golul."
   },
   "csv": {
     "corp": "Corp",
@@ -1239,7 +1252,9 @@
     "cantSubtireOpt": "cant subțire",
     "lungimePiesa": "Lungime (L)",
     "latimePiesa": "Lățime (l)",
-    "soclu": "Soclu (0 = picioare)"
+    "soclu": "Soclu (0 = picioare)",
+    "nisa": "Nișă (cuptor, frigider)",
+    "nisaFara": "fără"
   },
   "fata": {
     "px": "dreapta",

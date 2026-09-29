@@ -496,6 +496,16 @@
         "nume": "鞋柜",
         "descriere": "进深仅够横放一只鞋，三层隔板。",
         "corpNume": "鞋柜"
+      },
+      "coloana-cuptor": {
+        "nume": "烤箱高柜",
+        "descriere": "下方装门，中间留开口放烤箱，上方再装门。请核对厂家要求的开口尺寸。",
+        "corpNume": "烤箱高柜"
+      },
+      "coloana-frigider": {
+        "nume": "冰箱高柜",
+        "descriere": "从底部留开口放冰箱，上方装门。请核对厂家要求的开口尺寸。",
+        "corpNume": "冰箱高柜"
       }
     },
     "adaugaCorp": "添加柜体",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "有一边小于 20 mm，请核对尺寸。",
     "piesaLatimeMaiMare": "宽 ({lat}) 大于长 ({lung})：开料时长是长边。如果纹理要走另一个方向，把两个数对调。",
     "socluNuMerge": "踢脚板只适用于“嵌入式”结构的直柜。这里未使用。",
-    "socluPreaInalt": "柜体太矮却用 {soclu} 毫米踢脚板：内部只剩 {ramane} 毫米。"
+    "socluPreaInalt": "柜体太矮却用 {soclu} 毫米踢脚板：内部只剩 {ramane} 毫米。",
+    "nisaPreaMare": "{nisa} 毫米的开口放不下：超过 {incape} 毫米就没有地方装上方的门了。",
+    "politeFixeInPlus": "你要了 {cerut} 层隔板，但柜体需要 {fac} 层：它们夹住开口并支撑门。",
+    "politeNuIncap": "{cate} 层隔板无处安放：开口占满了全部空间。"
   },
   "csv": {
     "corp": "柜体",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "薄封边",
     "lungimePiesa": "长 (L)",
     "latimePiesa": "宽 (l)",
-    "soclu": "踢脚板（0 = 使用脚）"
+    "soclu": "踢脚板（0 = 使用脚）",
+    "nisa": "开口（烤箱、冰箱）",
+    "nisaFara": "无"
   },
   "fata": {
     "px": "右",

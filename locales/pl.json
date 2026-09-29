@@ -502,6 +502,16 @@
         "nume": "Szafka na buty",
         "descriere": "Głęboka na jeden but ułożony w poprzek, trzy półki.",
         "corpNume": "Szafka na buty"
+      },
+      "coloana-cuptor": {
+        "nume": "Słupek pod piekarnik",
+        "descriere": "Front na dole, wnęka pośrodku na piekarnik, front u góry. Sprawdź wnękę wymaganą przez producenta.",
+        "corpNume": "Słupek piekarnik"
+      },
+      "coloana-frigider": {
+        "nume": "Słupek pod lodówkę",
+        "descriere": "Wnęka od dna na lodówkę, front u góry. Sprawdź wnękę wymaganą przez producenta.",
+        "corpNume": "Słupek lodówka"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -721,7 +731,10 @@
     "piesaPreaMica": "Bok poniżej 20 mm: sprawdź wymiary.",
     "piesaLatimeMaiMare": "Szerokość ({lat}) jest większa niż długość ({lung}): przy rozkroju długość to bok dłuższy. Zamień je, jeśli słój ma iść inaczej.",
     "socluNuMerge": "Cokół pasuje tylko do prostej skrzyni budowanej „między”. Tutaj został pominięty.",
-    "socluPreaInalt": "Cokół {soclu} mm przy tak niskiej skrzyni: w środku zostaje tylko {ramane} mm."
+    "socluPreaInalt": "Cokół {soclu} mm przy tak niskiej skrzyni: w środku zostaje tylko {ramane} mm.",
+    "nisaPreaMare": "Wnęka {nisa} mm się nie mieści: powyżej {incape} mm nie zostaje miejsca na front u góry.",
+    "politeFixeInPlus": "Poprosiłeś o {cerut} półek, ale skrzynia potrzebuje {fac}: te ograniczają wnękę i trzymają fronty.",
+    "politeNuIncap": "{cate} półek nie ma gdzie postawić: wnęka zabrała cały prześwit."
   },
   "csv": {
     "corp": "Korpus",
@@ -1239,7 +1252,9 @@
     "cantSubtireOpt": "cienkie obrzeże",
     "lungimePiesa": "Długość (L)",
     "latimePiesa": "Szerokość (l)",
-    "soclu": "Cokół (0 = nóżki)"
+    "soclu": "Cokół (0 = nóżki)",
+    "nisa": "Wnęka (piekarnik, lodówka)",
+    "nisaFara": "brak"
   },
   "fata": {
     "px": "prawo",

@@ -13,7 +13,7 @@ var params = DATA.params;
 var paid = !!DATA.paid;
 
 var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','t','cg','cs','spate','tp','nUsi','montaj','balama',
-              'rm','ri','rinc','hUsi','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg',
+              'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','hFront','hCutie','jg','ts','lg',
               'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 
 /* Compartimentele care primesc uși. Bife, nu un câmp de scris: numerele se
@@ -345,7 +345,7 @@ function renderTable() {
    casetă nu spune asta nimănui, și acoperă și indiciul din spate. Corpurile
    făcute înainte au 0 salvat, deci nu ajunge să schimbăm doar valoarea
    implicită: îl arătăm gol oricând îl găsim. */
-var ZERO_E_GOL = ['hUsi', 'lg'];
+var ZERO_E_GOL = ['hUsi', 'hNisa', 'lg'];
 
 function render() {
   fields.forEach(function (f) {

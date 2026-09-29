@@ -496,6 +496,16 @@
         "nume": "Skoskåp",
         "descriere": "Så djupt som en sko lagd på tvären, tre hyllor.",
         "corpNume": "Skoskåp"
+      },
+      "coloana-cuptor": {
+        "nume": "Ugnsskåp",
+        "descriere": "Lucka nedtill, öppning i mitten för ugnen, lucka ovanför. Kontrollera öppningen som tillverkaren kräver.",
+        "corpNume": "Ugnsskåp"
+      },
+      "coloana-frigider": {
+        "nume": "Kylskåpsskåp",
+        "descriere": "Öppning från botten för kylen, med lucka ovanför. Kontrollera öppningen som tillverkaren kräver.",
+        "corpNume": "Kylskåpsskåp"
       }
     },
     "adaugaCorp": "Lägg till en stomme",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "En sida under 20 mm: kontrollera måtten.",
     "piesaLatimeMaiMare": "Bredden ({lat}) är större än längden ({lung}): vid kapning är längden den långa sidan. Byt dem om fibern ska gå åt andra hållet.",
     "socluNuMerge": "En sockel går bara på en rak stomme byggd ”emellan”. Här utelämnades den.",
-    "socluPreaInalt": "Sockel på {soclu} mm i en så låg stomme: bara {ramane} mm blir kvar inuti."
+    "socluPreaInalt": "Sockel på {soclu} mm i en så låg stomme: bara {ramane} mm blir kvar inuti.",
+    "nisaPreaMare": "En öppning på {nisa} mm får inte plats: över {incape} mm finns ingen plats kvar för luckan ovanför.",
+    "politeFixeInPlus": "Du bad om {cerut} hyllplan, men stommen behöver {fac}: de kantar öppningen och håller luckorna.",
+    "politeNuIncap": "{cate} hyllplan har ingenstans att ta vägen: öppningen tog hela utrymmet."
   },
   "csv": {
     "corp": "Stomme",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "tunn list",
     "lungimePiesa": "Längd (L)",
     "latimePiesa": "Bredd (l)",
-    "soclu": "Sockel (0 = ben)"
+    "soclu": "Sockel (0 = ben)",
+    "nisa": "Öppning (ugn, kyl)",
+    "nisaFara": "ingen"
   },
   "fata": {
     "px": "höger",

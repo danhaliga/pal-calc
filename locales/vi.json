@@ -496,6 +496,16 @@
         "nume": "Tủ giày",
         "descriere": "Sâu vừa một chiếc giày đặt ngang, ba kệ.",
         "corpNume": "Tủ giày"
+      },
+      "coloana-cuptor": {
+        "nume": "Tủ cao đặt lò",
+        "descriere": "Cánh dưới, khoảng hở ở giữa cho lò, cánh trên. Kiểm tra kích thước hở mà hãng yêu cầu.",
+        "corpNume": "Tủ cao đặt lò"
+      },
+      "coloana-frigider": {
+        "nume": "Tủ cao đặt tủ lạnh",
+        "descriere": "Khoảng hở từ đáy cho tủ lạnh, có cánh phía trên. Kiểm tra kích thước hở mà hãng yêu cầu.",
+        "corpNume": "Tủ cao tủ lạnh"
       }
     },
     "adaugaCorp": "Thêm một thùng tủ",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "Một cạnh dưới 20 mm: kiểm tra lại kích thước.",
     "piesaLatimeMaiMare": "Chiều rộng ({lat}) lớn hơn chiều dài ({lung}): khi cắt, chiều dài là cạnh dài. Đổi chỗ chúng nếu vân phải chạy theo hướng khác.",
     "socluNuMerge": "Chân đế chỉ lắp được cho thùng thẳng dựng kiểu „giữa\". Ở đây đã bỏ qua.",
-    "socluPreaInalt": "Chân đế {soclu} mm trên thùng thấp như vậy: bên trong chỉ còn {ramane} mm."
+    "socluPreaInalt": "Chân đế {soclu} mm trên thùng thấp như vậy: bên trong chỉ còn {ramane} mm.",
+    "nisaPreaMare": "Khoảng hở {nisa} mm không vừa: quá {incape} mm thì không còn chỗ cho cánh phía trên.",
+    "politeFixeInPlus": "Bạn yêu cầu {cerut} kệ, nhưng thùng cần {fac}: chúng chặn khoảng hở và đỡ cánh.",
+    "politeNuIncap": "{cate} kệ không có chỗ đặt: khoảng hở đã chiếm hết."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "chỉ mỏng",
     "lungimePiesa": "Chiều dài (L)",
     "latimePiesa": "Chiều rộng (l)",
-    "soclu": "Chân đế (0 = chân rời)"
+    "soclu": "Chân đế (0 = chân rời)",
+    "nisa": "Khoảng hở (lò, tủ lạnh)",
+    "nisaFara": "không có"
   },
   "fata": {
     "px": "phải",

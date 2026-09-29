@@ -496,6 +496,16 @@
         "nume": "Lemari sepatu",
         "descriere": "Sedalam sepatu diletakkan melintang, tiga rak.",
         "corpNume": "Lemari sepatu"
+      },
+      "coloana-cuptor": {
+        "nume": "Lemari tinggi oven",
+        "descriere": "Pintu di bawah, bukaan di tengah untuk oven, pintu di atas. Periksa ukuran bukaan yang diminta pabrik.",
+        "corpNume": "Lemari oven"
+      },
+      "coloana-frigider": {
+        "nume": "Lemari tinggi kulkas",
+        "descriere": "Bukaan dari dasar untuk kulkas, dengan pintu di atas. Periksa ukuran bukaan yang diminta pabrik.",
+        "corpNume": "Lemari kulkas"
       }
     },
     "adaugaCorp": "Tambahkan sebuah boks",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "Ada sisi di bawah 20 mm: periksa ukurannya.",
     "piesaLatimeMaiMare": "Lebar ({lat}) lebih besar dari panjang ({lung}): saat memotong, panjang adalah sisi terpanjang. Tukar keduanya kalau serat harus berjalan lain.",
     "socluNuMerge": "Papan alas hanya untuk boks lurus yang dibangun „di antara\". Di sini dilewati.",
-    "socluPreaInalt": "Papan alas {soclu} mm pada boks serendah ini: di dalam hanya tersisa {ramane} mm."
+    "socluPreaInalt": "Papan alas {soclu} mm pada boks serendah ini: di dalam hanya tersisa {ramane} mm.",
+    "nisaPreaMare": "Bukaan {nisa} mm tidak muat: di atas {incape} mm tidak tersisa tempat untuk pintu di atasnya.",
+    "politeFixeInPlus": "Anda minta {cerut} rak, tetapi boks perlu {fac}: rak itu membatasi bukaan dan menahan pintu.",
+    "politeNuIncap": "{cate} rak tidak punya tempat: bukaan mengambil seluruh ruang."
   },
   "csv": {
     "corp": "Boks",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "edging tipis",
     "lungimePiesa": "Panjang (L)",
     "latimePiesa": "Lebar (l)",
-    "soclu": "Papan alas (0 = kaki)"
+    "soclu": "Papan alas (0 = kaki)",
+    "nisa": "Bukaan (oven, kulkas)",
+    "nisaFara": "tidak ada"
   },
   "fata": {
     "px": "kanan",

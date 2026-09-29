@@ -129,6 +129,19 @@
       id: 'coloana-matura', cat: 'bucatarie-inalt',
       set: { W: 400, H: 2000, D: 600, soclu: 80, nUsi: 1, nPol: 1 }
     },
+    {
+      /* Usa jos, gol la mijloc pentru cuptor, usa deasupra. Nisa de 600
+         incape cuptoarele obisnuite de 60; verifica totusi ce cere
+         producatorul aparatului. */
+      id: 'coloana-cuptor', cat: 'bucatarie-inalt',
+      set: { W: 600, H: 2000, D: 600, soclu: 80, nUsi: 1, hUsi: 700, hNisa: 600, nPol: 3 }
+    },
+    {
+      /* Aparatul sta direct pe fundul corpului, deci nu e usa dedesubt:
+         golul incepe de jos si se inchide cu o usa deasupra. */
+      id: 'coloana-frigider', cat: 'bucatarie-inalt',
+      set: { W: 600, H: 2200, D: 600, soclu: 80, nUsi: 1, hNisa: 1780, nPol: 2 }
+    },
 
     /* ---------------- living și dormitor ---------------- */
     {

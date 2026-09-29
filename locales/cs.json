@@ -502,6 +502,16 @@
         "nume": "Botník",
         "descriere": "Hluboký jako bota položená napříč, tři police.",
         "corpNume": "Botník"
+      },
+      "coloana-cuptor": {
+        "nume": "Skříň na troubu",
+        "descriere": "Dvířka dole, výklenek uprostřed na troubu, dvířka nahoře. Ověř výklenek, který žádá výrobce.",
+        "corpNume": "Skříň na troubu"
+      },
+      "coloana-frigider": {
+        "nume": "Skříň na lednici",
+        "descriere": "Výklenek ode dna na lednici, nahoře dvířka. Ověř výklenek, který žádá výrobce.",
+        "corpNume": "Skříň na lednici"
       }
     },
     "adaugaCorp": "Přidat korpus",
@@ -721,7 +731,10 @@
     "piesaPreaMica": "Strana pod 20 mm: zkontroluj rozměry.",
     "piesaLatimeMaiMare": "Šířka ({lat}) je větší než délka ({lung}): při nářezu je délka delší strana. Prohoď je, pokud má kresba jít jinak.",
     "socluNuMerge": "Sokl jde jen na rovnou skříňku stavěnou „mezi“. Tady zůstal bez užitku.",
-    "socluPreaInalt": "Sokl {soclu} mm u tak nízké skříňky: uvnitř zbývá jen {ramane} mm."
+    "socluPreaInalt": "Sokl {soclu} mm u tak nízké skříňky: uvnitř zbývá jen {ramane} mm.",
+    "nisaPreaMare": "Výklenek {nisa} mm se nevejde: nad {incape} mm nezbývá místo pro dvířka nahoře.",
+    "politeFixeInPlus": "Chtěl jsi {cerut} polic, ale skříňka potřebuje {fac}: ty ohraničují výklenek a drží dvířka.",
+    "politeNuIncap": "Pro {cate} polic není místo: výklenek zabral celý prostor."
   },
   "csv": {
     "corp": "Korpus",
@@ -1239,7 +1252,9 @@
     "cantSubtireOpt": "tenká hrana",
     "lungimePiesa": "Délka (L)",
     "latimePiesa": "Šířka (l)",
-    "soclu": "Sokl (0 = nožky)"
+    "soclu": "Sokl (0 = nožky)",
+    "nisa": "Výklenek (trouba, lednice)",
+    "nisaFara": "žádný"
   },
   "fata": {
     "px": "vpravo",

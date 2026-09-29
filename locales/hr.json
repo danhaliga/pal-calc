@@ -502,6 +502,16 @@
         "nume": "Ormarić za cipele",
         "descriere": "Dubok koliko cipela položena poprijeko, tri police.",
         "corpNume": "Ormarić za cipele"
+      },
+      "coloana-cuptor": {
+        "nume": "Element za pećnicu",
+        "descriere": "Vrata dolje, otvor na sredini za pećnicu, vrata iznad. Provjeri otvor koji traži proizvođač.",
+        "corpNume": "Element pećnica"
+      },
+      "coloana-frigider": {
+        "nume": "Element za hladnjak",
+        "descriere": "Otvor od dna za hladnjak, s vratima iznad. Provjeri otvor koji traži proizvođač.",
+        "corpNume": "Element hladnjak"
       }
     },
     "adaugaCorp": "Dodaj korpus",
@@ -721,7 +731,10 @@
     "piesaPreaMica": "Strana ispod 20 mm: provjeri mjere.",
     "piesaLatimeMaiMare": "Širina ({lat}) je veća od duljine ({lung}): pri krojenju je duljina dulja strana. Zamijeni ih ako tekstura treba ići drugačije.",
     "socluNuMerge": "Sokl ide samo na ravno tijelo građeno „između“. Ovdje je izostavljen.",
-    "socluPreaInalt": "Sokl od {soclu} mm na ovako niskom tijelu: unutra ostaje samo {ramane} mm."
+    "socluPreaInalt": "Sokl od {soclu} mm na ovako niskom tijelu: unutra ostaje samo {ramane} mm.",
+    "nisaPreaMare": "Otvor od {nisa} mm ne stane: iznad {incape} mm ne ostaje mjesta za vrata iznad.",
+    "politeFixeInPlus": "Tražio si {cerut} polica, ali tijelu treba {fac}: one omeđuju otvor i drže vrata.",
+    "politeNuIncap": "{cate} polica nema gdje stati: otvor je uzeo sav prostor."
   },
   "csv": {
     "corp": "Korpus",
@@ -1239,7 +1252,9 @@
     "cantSubtireOpt": "tanki kant",
     "lungimePiesa": "Duljina (L)",
     "latimePiesa": "Širina (l)",
-    "soclu": "Sokl (0 = nožice)"
+    "soclu": "Sokl (0 = nožice)",
+    "nisa": "Otvor (pećnica, hladnjak)",
+    "nisaFara": "nema"
   },
   "fata": {
     "px": "desno",

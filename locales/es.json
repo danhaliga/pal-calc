@@ -496,6 +496,16 @@
         "nume": "Zapatero",
         "descriere": "Tan hondo como un zapato de lado, con tres baldas.",
         "corpNume": "Zapatero"
+      },
+      "coloana-cuptor": {
+        "nume": "Columna de horno",
+        "descriere": "Puerta abajo, hueco en medio para el horno, puerta arriba. Comprueba el hueco que pide el fabricante.",
+        "corpNume": "Columna horno"
+      },
+      "coloana-frigider": {
+        "nume": "Columna de nevera",
+        "descriere": "Hueco desde el fondo para la nevera, con puerta encima. Comprueba el hueco que pide el fabricante.",
+        "corpNume": "Columna nevera"
       }
     },
     "adaugaCorp": "Añadir un módulo",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "Un lado por debajo de 20 mm: revisa las medidas.",
     "piesaLatimeMaiMare": "El ancho ({lat}) es mayor que el largo ({lung}): al despiezar, el largo es el lado mayor. Cámbialos si la veta debe ir al revés.",
     "socluNuMerge": "El zócalo solo cabe en un mueble recto construido «entre». Aquí se ha dejado fuera.",
-    "socluPreaInalt": "Zócalo de {soclu} mm en un mueble tan bajo: solo quedan {ramane} mm dentro."
+    "socluPreaInalt": "Zócalo de {soclu} mm en un mueble tan bajo: solo quedan {ramane} mm dentro.",
+    "nisaPreaMare": "Un hueco de {nisa} mm no cabe: por encima de {incape} mm no queda sitio para la puerta de arriba.",
+    "politeFixeInPlus": "Has pedido {cerut} baldas, pero el mueble necesita {fac}: esas bordean el hueco y sujetan las puertas.",
+    "politeNuIncap": "{cate} baldas no tienen dónde ir: el hueco se ha llevado todo el espacio."
   },
   "csv": {
     "corp": "Módulo",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "canto fino",
     "lungimePiesa": "Largo (L)",
     "latimePiesa": "Ancho (l)",
-    "soclu": "Zócalo (0 = patas)"
+    "soclu": "Zócalo (0 = patas)",
+    "nisa": "Hueco (horno, nevera)",
+    "nisaFara": "sin hueco"
   },
   "fata": {
     "px": "derecha",

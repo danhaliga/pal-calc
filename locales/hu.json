@@ -496,6 +496,16 @@
         "nume": "Cipősszekrény",
         "descriere": "Olyan mély, mint egy keresztbe fektetett cipő, három polc.",
         "corpNume": "Cipősszekrény"
+      },
+      "coloana-cuptor": {
+        "nume": "Sütős magas elem",
+        "descriere": "Ajtó alul, nyílás középen a sütőnek, ajtó felül. Ellenőrizd a gyártó által kért nyílást.",
+        "corpNume": "Sütős elem"
+      },
+      "coloana-frigider": {
+        "nume": "Hűtős magas elem",
+        "descriere": "Nyílás az aljától a hűtőnek, fölötte ajtó. Ellenőrizd a gyártó által kért nyílást.",
+        "corpNume": "Hűtős elem"
       }
     },
     "adaugaCorp": "Korpusz hozzáadása",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "Egyik oldal 20 mm alatt: nézd meg a méreteket.",
     "piesaLatimeMaiMare": "A szélesség ({lat}) nagyobb a hossznál ({lung}): szabáskor a hossz a hosszabbik oldal. Cseréld meg őket, ha az erezetnek máshogy kell futnia.",
     "socluNuMerge": "A lábazat csak „közé” épített egyenes korpuszra megy. Itt kimaradt.",
-    "socluPreaInalt": "{soclu} mm-es lábazat ilyen alacsony korpuszon: belül csak {ramane} mm marad."
+    "socluPreaInalt": "{soclu} mm-es lábazat ilyen alacsony korpuszon: belül csak {ramane} mm marad.",
+    "nisaPreaMare": "{nisa} mm-es nyílás nem fér el: {incape} mm fölött nem marad hely a fenti ajtónak.",
+    "politeFixeInPlus": "{cerut} polcot kértél, de a korpusznak {fac} kell: azok szegélyezik a nyílást és tartják az ajtókat.",
+    "politeNuIncap": "{cate} polcnak nincs helye: a nyílás elvitte az egész teret."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "vékony élzáró",
     "lungimePiesa": "Hossz (L)",
     "latimePiesa": "Szélesség (l)",
-    "soclu": "Lábazat (0 = lábak)"
+    "soclu": "Lábazat (0 = lábak)",
+    "nisa": "Nyílás (sütő, hűtő)",
+    "nisaFara": "nincs"
   },
   "fata": {
     "px": "jobb",

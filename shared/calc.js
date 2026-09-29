@@ -73,6 +73,11 @@
       pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
       t: 18, cg: 2, cs: 0.8, spate: 'aplicat', tp: 2.5,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: '', compUsi: '',
+      /* Nișa: golul dintre zonele cu uși, pentru cuptor sau frigider.
+         Cu `hUsi` pus: ușă jos, gol, ușă sus — coloana de cuptor.
+         Cu `hUsi` gol: gol de la fund, ușă deasupra — coloana de frigider,
+         unde aparatul stă direct pe fundul corpului. */
+      hNisa: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
       pragCant: PRAG_CANT, rezervaCant: REZERVA_CANT
@@ -527,23 +532,67 @@
     var FD = F({ pz: 'f', nz: 'f', px: 'g', nx: 'g', py: 'g', ny: 'g' });
     var usedTop = nSer > 0 ? nSer * (+c.hFront) + nSer * ri : 0;
 
-    /* ---- usi ---- */
+    /* ---- usi ----
+
+       Ușile se pun pe ZONE, nu pe tot golul. O zonă e o fâșie pe înălțime în
+       care intră `nUsi` canaturi, împărțite pe compartimentele alese.
+
+       Până acum era o singură zonă. Coloana de cuptor cere două: ușă jos,
+       GOL la mijloc pentru aparat, ușă sus. Golul ăla nu se putea scrie în
+       niciun fel — `hUsi` pune uși numai de jos în sus. */
     var usi = [];
-    /* Zona cu uși, măsurată de la fund în sus. Goală înseamnă uși pe toată
-       înălțimea — biblioteca cu uși doar jos cere o valoare aici. */
+    /* Tot golul pe care pot sta uși, măsurat de la fund în sus. */
     var uHplin = (apl ? Hutil - 2 * rm : Hint - 2 * rinc) - usedTop;
+    var hNisaCerut = +c.hNisa || 0;
     var usiPartiale = nUsi > 0 && hUsiCerut > 0 && hUsiCerut < uHplin;
-    /* linia de sus a ușilor, în coordonatele corpului; polița fixă stă acolo */
+
+    /* Polițele care NU se pot muta: alea care închid o zonă de uși sau
+       mărginesc nișa. Pe ele stă aparatul și de ele se prinde canatul, deci
+       se pun înaintea celor împărțite egal. */
+    var politeFixe = [];
+    /* păstrat pentru partea de polițe: linia de sus a ușilor de jos */
     var yLinieUsi = null;
+    /* Golul nișei. În el NU se pune nicio poliță: acolo intră aparatul, iar
+       o poliță la mijlocul cuptorului n-ar fi o scăpare de desen, ar fi o
+       piesă tăiată degeaba și un corp care nu se poate monta. */
+    var zonaNisa = null;
 
     if (nUsi > 0) {
       var uH = usiPartiale ? hUsiCerut : uHplin;
       if (hUsiCerut > uHplin) avert('usiPesteInaltime', { cerut: fmt(hUsiCerut), incape: fmt(uHplin) });
+
+      /* Nișa: golul dintre zonele cu uși.
+
+         Cu ușă jos (`hUsi` pus), golul începe deasupra ei: coloana de
+         cuptor. Fără ușă jos, golul începe chiar de la fundul corpului și
+         aparatul stă pe el: coloana de frigider. */
+      var nisa = 0;
+      var yNisaJos = usiPartiale ? (apl ? yBot + uH : yBot + uH + t) : yBot;
+      /* De unde pornește ușa de deasupra nișei. La ușă aplicată canatul
+         acoperă polița; la una încastrată se oprește sub ea. */
+      var yUsaSus = 0, hUsaSus = 0;
+
+      if (hNisaCerut > 0) {
+        yUsaSus = yNisaJos + hNisaCerut + (apl ? 0 : t);
+        hUsaSus = yTop - yUsaSus;
+        if (hUsaSus < 50) {
+          /* Cât ar încăpea, ca omul să nu ghicească. */
+          avert('nisaPreaMare', {
+            nisa: fmt(hNisaCerut),
+            incape: fmt(Math.max(0, hNisaCerut + hUsaSus - 50))
+          });
+        } else {
+          nisa = hNisaCerut;
+        }
+      }
+
       if (usiPartiale) {
         /* La ușă aplicată, canatul acoperă muchia poliței de sus; la una
            încastrată se oprește sub ea. */
         yLinieUsi = apl ? yBot + uH - t / 2 : yBot + uH + t / 2;
+        politeFixe.push(yLinieUsi);
       }
+
       if (uH <= 0) {
         avert('fronturiSertarPreaInalte');
       } else {
@@ -583,37 +632,55 @@
         var perComp = [], baza = Math.floor(nUsi / alese), rest = nUsi % alese;
         for (var q = 0; q < alese; q++) perComp.push(baza + (q < rest ? 1 : 0));
 
-        /* Compartimentele de la capete ies putin mai late decat cele din
-           mijloc, fiindca acolo canatul acopera toata latura, nu jumatate de
-           montant. Usile se grupeaza dupa latime, ca in lista de piese sa nu
-           apara doua randuri identice. */
-        var grupe = {}, ordine = [];
-        compCuUsi.forEach(function (idx, k) {
-          var n = perComp[k];
-          if (!n) return;
-          var z = zonaUsa(idx);
-          var lat = (z.lat - (n - 1) * ri) / n;
-          if (lat <= 0) { avert('usaPreaIngusta', { comp: idx + 1 }); return; }
-          var cheie = String(r1(lat));
-          if (!grupe[cheie]) { grupe[cheie] = { lat: lat, boxes: [] }; ordine.push(cheie); }
-          for (var d = 0; d < n; d++) {
-            grupe[cheie].boxes.push(bx(z.st + d * (lat + ri), yBot, zF, lat, uH, t,
-              FD, [0, 0, 1.6], 'fronturi'));
-          }
-        });
+        /* O zonă de uși: `nUsi` canaturi de la `yDeLa` în sus, înalte `inalt`.
+           Se cheamă o dată pentru corpul obișnuit și de două ori când e nișă
+           la mijloc. */
+        var faZonaDeUsi = function (yDeLa, inalt) {
+          if (inalt <= 0) return;
+          /* Compartimentele de la capete ies putin mai late decat cele din
+             mijloc, fiindca acolo canatul acopera toata latura, nu jumatate
+             de montant. Usile se grupeaza dupa latime, ca in lista de piese
+             sa nu apara doua randuri identice. */
+          var grupe = {}, ordine = [];
+          compCuUsi.forEach(function (idx, k) {
+            var n = perComp[k];
+            if (!n) return;
+            var z = zonaUsa(idx);
+            var lat = (z.lat - (n - 1) * ri) / n;
+            if (lat <= 0) { avert('usaPreaIngusta', { comp: idx + 1 }); return; }
+            var cheie = String(r1(lat));
+            if (!grupe[cheie]) { grupe[cheie] = { lat: lat, boxes: [] }; ordine.push(cheie); }
+            for (var d = 0; d < n; d++) {
+              grupe[cheie].boxes.push(bx(z.st + d * (lat + ri), yDeLa, zF, lat, inalt, t,
+                FD, [0, 0, 1.6], 'fronturi'));
+            }
+          });
 
-        ordine.forEach(function (cheie) {
-          var g = grupe[cheie];
-          add('usa', null, g.boxes.length, uH, g.lat, 'g', 'g', 'g', 'g', 'LV',
-            orb > 0
-              ? ['balamaleUsaOrb', { n: balamale(uH), cot: c.balama, orb: fmt(orb) }]
-              : ['balamaleUsa', { n: balamale(uH), cot: c.balama }], g.boxes);
-          usi.push({ L: g.lat, H: uH });
-          if (g.lat > 600) avert('usaLata');
-        });
+          ordine.forEach(function (cheie) {
+            var g = grupe[cheie];
+            add('usa', null, g.boxes.length, inalt, g.lat, 'g', 'g', 'g', 'g', 'LV',
+              orb > 0
+                ? ['balamaleUsaOrb', { n: balamale(inalt), cot: c.balama, orb: fmt(orb) }]
+                : ['balamaleUsa', { n: balamale(inalt), cot: c.balama }], g.boxes);
+            usi.push({ L: g.lat, H: inalt });
+            if (g.lat > 600) avert('usaLata');
+            if (inalt > 2000) avert('usaInalta');
+          });
+        };
+
+        /* Zona de jos. Fără ușă jos (coloana de frigider) e goală, iar
+           `faZonaDeUsi` se întoarce singură. */
+        if (nisa === 0 || usiPartiale) faZonaDeUsi(yBot, uH);
+
+        if (nisa > 0) {
+          /* Polița care închide nișa pe deasupra: pe ea se sprijină corpul
+             de sus, iar aparatul intră dedesubt. */
+          politeFixe.push(yNisaJos + nisa + t / 2);
+          zonaNisa = { jos: yNisaJos, sus: yNisaJos + nisa };
+          faZonaDeUsi(yUsaSus, hUsaSus);
+        }
 
         if (usi.length) {
-          if (uH > 2000) avert('usaInalta');
           if (apl && c.balama !== '0' && nUsi === 1) avert('balamaCot0');
           if (!apl && c.balama !== '18') avert('balamaCot18');
         }
@@ -685,7 +752,9 @@
     }
 
     /* ---- polite ---- */
-    if (nPol > 0) {
+    /* Polițele se fac și când omul n-a cerut niciuna, dacă zonele de uși sau
+       nișa cer polițe fixe: alea țin corpul, nu sunt de pus lucruri pe ele. */
+    if (nPol > 0 || politeFixe.length > 0) {
       var jp = +c.jp, pL = Wcomp - jp, pl = Dint - (+c.rp);
       var boxesP = [];
 
@@ -695,17 +764,51 @@
          rămâne fără legătură la mijloc — iar restul se împart între cele
          două goluri, după cât de înalt e fiecare. */
       var inaltimi = [];
-      if (yLinieUsi == null) {
-        for (var j = 1; j <= nPol; j++) inaltimi.push(y0 + (Hint - usedTop) * j / (nPol + 1));
-      } else {
-        inaltimi.push(yLinieUsi);
-        var golJos = yLinieUsi - y0, golSus = (y0 + Hint - usedTop) - yLinieUsi;
-        var ramase = nPol - 1;
-        var jos = Math.round(ramase * golJos / Math.max(1, golJos + golSus));
-        var sus = ramase - jos;
-        for (var jj = 1; jj <= jos; jj++) inaltimi.push(y0 + golJos * jj / (jos + 1));
-        for (var js = 1; js <= sus; js++) inaltimi.push(yLinieUsi + golSus * js / (sus + 1));
+      /* Polițele fixe intră întâi: alea închid o zonă de uși sau mărginesc
+         nișa, deci nu se pot muta. Restul se împart în golurile rămase,
+         fiecare gol primind pe măsura lui — un gol de două ori mai mare
+         primește de două ori mai multe polițe. */
+      var fixe = politeFixe.slice().sort(function (a, b) { return a - b; });
+      var jos = y0, sus = y0 + Hint - usedTop;
+
+      /* Polițele fixe nu sunt opționale: pe ele stă aparatul din nișă și de
+         ele se prinde canatul. Dacă omul a cerut mai puține decât atât, tot
+         se fac — dar i se spune de ce are mai multe decât a cerut. */
+      if (fixe.length > nPol) avert('politeFixeInPlus', { cerut: nPol, fac: fixe.length });
+
+      fixe.forEach(function (y) { inaltimi.push(y); });
+
+      var ramase = Math.max(0, nPol - fixe.length);
+      if (ramase > 0) {
+        /* Golurile dintre polițele fixe, de jos în sus. */
+        var margini = [jos].concat(fixe, [sus]);
+        var goluri = [];
+        for (var g = 0; g < margini.length - 1; g++) {
+          var mij = (margini[g] + margini[g + 1]) / 2;
+          /* Golul nișei se sare: acolo intră aparatul. */
+          if (zonaNisa && mij > zonaNisa.jos && mij < zonaNisa.sus) continue;
+          goluri.push({ de_la: margini[g], la: margini[g + 1],
+                        marime: Math.max(0, margini[g + 1] - margini[g]) });
+        }
+        /* Dacă nișa a înghițit tot golul, polițele cerute n-au unde sta. */
+        if (!goluri.length) {
+          avert('politeNuIncap', { cate: ramase });
+          ramase = 0;
+        }
+        var total = goluri.reduce(function (a, x) { return a + x.marime; }, 0) || 1;
+
+        /* Împărțeala se face pe rând, scăzând ce s-a dat: altfel rotunjirile
+           fiecărui gol se adună și ies cu una mai multe sau mai puține. */
+        var deDat = ramase;
+        goluri.forEach(function (x, k) {
+          var n = (k === goluri.length - 1)
+            ? deDat
+            : Math.min(deDat, Math.round(ramase * x.marime / total));
+          deDat -= n;
+          for (var p = 1; p <= n; p++) inaltimi.push(x.de_la + x.marime * p / (n + 1));
+        });
       }
+      inaltimi.sort(function (a, b) { return a - b; });
 
       for (var ic = 0; ic < compartimente; ic++) {
         inaltimi.forEach(function (yc) {
@@ -713,7 +816,7 @@
             F({ py: 'f', ny: 'f', pz: 'g' }), [0, 0, 0.6], 'polite'));
         });
       }
-      add('polita', null, nPol * compartimente, pL, pl, 'g', '-', '-', '-', 'L', null, boxesP);
+      add('polita', null, inaltimi.length * compartimente, pL, pl, 'g', '-', '-', '-', 'L', null, boxesP);
       if (pL > 800) avert('politaLunga', { lung: fmt(pL) });
     } else if (yLinieUsi != null) {
       avert('usiJosFaraPolita');
@@ -787,6 +890,7 @@
            trebuie să arate indiciul „toată înălțimea", iar un „0" scris
            acolo nu spune asta nimănui. Ca la lungimea glisierei. */
         hUsi: z.union([z.literal(''), z.coerce.number().min(0).max(3000)]).catch(''),
+        hNisa: z.union([z.literal(''), z.coerce.number().min(0).max(3000)]).catch(''),
         /* Compartimentele cu usi, numerotate de la stanga: „1", „1,3". Gol
            inseamna toate. Text, nu numar: e o lista, nu o cota. */
         compUsi: z.string().trim().max(40).catch(''),

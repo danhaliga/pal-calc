@@ -496,6 +496,16 @@
         "nume": "Ayakkabılık",
         "descriere": "Yan yatırılmış bir ayakkabı derinliğinde, üç raf.",
         "corpNume": "Ayakkabılık"
+      },
+      "coloana-cuptor": {
+        "nume": "Fırın boy dolabı",
+        "descriere": "Altta kapak, ortada fırın için boşluk, üstte kapak. Üreticinin istediği boşluğu kontrol et.",
+        "corpNume": "Fırın dolabı"
+      },
+      "coloana-frigider": {
+        "nume": "Buzdolabı boy dolabı",
+        "descriere": "Tabandan başlayan buzdolabı boşluğu, üstünde kapak. Üreticinin istediği boşluğu kontrol et.",
+        "corpNume": "Buzdolabı dolabı"
       }
     },
     "adaugaCorp": "Bir gövde ekle",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "Bir kenar 20 mm altında: ölçüleri gözden geçir.",
     "piesaLatimeMaiMare": "Genişlik ({lat}) uzunluktan ({lung}) büyük: kesimde uzunluk uzun kenardır. Damar başka yöne gidecekse ikisini değiştir.",
     "socluNuMerge": "Süpürgelik yalnızca „aradan\" yapılmış düz gövdeye takılır. Burada eklenmedi.",
-    "socluPreaInalt": "Bu kadar alçak bir gövdede {soclu} mm süpürgelik: içeride yalnızca {ramane} mm kalıyor."
+    "socluPreaInalt": "Bu kadar alçak bir gövdede {soclu} mm süpürgelik: içeride yalnızca {ramane} mm kalıyor.",
+    "nisaPreaMare": "{nisa} mm boşluk sığmıyor: {incape} mm üstünde üstteki kapağa yer kalmıyor.",
+    "politeFixeInPlus": "{cerut} raf istedin ama gövdeye {fac} gerekiyor: onlar boşluğu sınırlar ve kapakları tutar.",
+    "politeNuIncap": "{cate} rafa yer yok: boşluk tüm alanı aldı."
   },
   "csv": {
     "corp": "Gövde",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "ince bant",
     "lungimePiesa": "Uzunluk (L)",
     "latimePiesa": "Genişlik (l)",
-    "soclu": "Süpürgelik (0 = ayak)"
+    "soclu": "Süpürgelik (0 = ayak)",
+    "nisa": "Boşluk (fırın, buzdolabı)",
+    "nisaFara": "yok"
   },
   "fata": {
     "px": "sağ",

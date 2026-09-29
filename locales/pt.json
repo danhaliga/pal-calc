@@ -496,6 +496,16 @@
         "nume": "Sapateira",
         "descriere": "Fundo o bastante para um sapato deitado, três prateleiras.",
         "corpNume": "Sapateira"
+      },
+      "coloana-cuptor": {
+        "nume": "Coluna de forno",
+        "descriere": "Porta em baixo, vão ao meio para o forno, porta por cima. Confirma o vão que o fabricante pede.",
+        "corpNume": "Coluna forno"
+      },
+      "coloana-frigider": {
+        "nume": "Coluna de frigorífico",
+        "descriere": "Vão desde o fundo para o frigorífico, com porta por cima. Confirma o vão que o fabricante pede.",
+        "corpNume": "Coluna frigorífico"
       }
     },
     "adaugaCorp": "Adicionar um módulo",
@@ -715,7 +725,10 @@
     "piesaPreaMica": "Um lado abaixo de 20 mm: confira as medidas.",
     "piesaLatimeMaiMare": "A largura ({lat}) é maior que o comprimento ({lung}): ao cortar, o comprimento é o lado maior. Troque-os se o veio tiver de ir ao contrário.",
     "socluNuMerge": "O rodapé só assenta num móvel direito construído «entre». Aqui ficou de fora.",
-    "socluPreaInalt": "Rodapé de {soclu} mm num móvel tão baixo: sobram apenas {ramane} mm por dentro."
+    "socluPreaInalt": "Rodapé de {soclu} mm num móvel tão baixo: sobram apenas {ramane} mm por dentro.",
+    "nisaPreaMare": "Um vão de {nisa} mm não cabe: acima de {incape} mm não sobra lugar para a porta de cima.",
+    "politeFixeInPlus": "Pediste {cerut} prateleiras, mas o móvel precisa de {fac}: essas limitam o vão e seguram as portas.",
+    "politeNuIncap": "{cate} prateleiras não têm onde ficar: o vão levou todo o espaço."
   },
   "csv": {
     "corp": "Módulo",
@@ -1228,7 +1241,9 @@
     "cantSubtireOpt": "orla fina",
     "lungimePiesa": "Comprimento (L)",
     "latimePiesa": "Largura (l)",
-    "soclu": "Rodapé (0 = pés)"
+    "soclu": "Rodapé (0 = pés)",
+    "nisa": "Vão (forno, frigorífico)",
+    "nisaFara": "sem vão"
   },
   "fata": {
     "px": "direita",
