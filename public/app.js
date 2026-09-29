@@ -229,20 +229,7 @@ function legaContur() {
   };
 }
 
-/* Unitatea atelierului, citită o dată de pe corp. Nu se schimbă cât ține
-   pagina: un corp are unitatea lui, scrisă pe el când s-a făcut. */
-var U = window.PalUnitati;
-var UNITATE = (params && params.unitate) === 'inch' ? 'inch' : 'mm';
-var IN_TOLI = UNITATE === 'inch';
-
-/* O cotă, scrisă cum o citește omul: „571.5" sau „22 1/2". */
-var fmt = function (v) { return U.scrie(v, UNITATE); };
-
-/* Cotele corpului se arată în unitatea atelierului; grosimile de material
-   rămân în milimetri, fiindcă în milimetri se cumpără. Vezi COTE_UNITATE
-   în shared/calc.js. */
-var COTE_U = window.PalCalc.COTE_UNITATE;
-var esteCota = function (f) { return IN_TOLI && COTE_U.indexOf(f) !== -1; };
+var fmt = function (v) { return Number.isInteger(v) ? String(v) : Number(v).toFixed(1); };
 var r1 = function (v) { return Math.round(v * 10) / 10; };
 function esc(s) { return String(s).replace(/[&<>"]/g, function (m) {
   return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[m]; }); }
@@ -364,10 +351,7 @@ function render() {
   fields.forEach(function (f) {
     if (!$(f)) return;
     var v = params[f];
-    if (ZERO_E_GOL.indexOf(f) !== -1 && (v === 0 || v === '0')) { $(f).value = ''; return; }
-    /* În țoli, caseta primește „22 1/2", nu 571.5. Casetele au fost trecute
-       pe text la pornire — o fracție n-are ce căuta într-un input number. */
-    $(f).value = (esteCota(f) && v !== '' && v != null) ? U.scrie(v, UNITATE) : v;
+    $(f).value = (ZERO_E_GOL.indexOf(f) !== -1 && (v === 0 || v === '0')) ? '' : v;
   });
   aplicaTip();
 
@@ -659,8 +643,7 @@ function select(mesh) {
   var s = srv(pi, p);
   var taiere = paid
     ? (s ? '<div>' + esc(T('editor.taiere')) + ' <span class="k"><b>' +
-           fmt(s.TL) + ' × ' + fmt(s.Tl) + '</b></span> ' +
-           (IN_TOLI ? '"' : 'mm') + '</div>'
+           fmt(s.TL) + ' × ' + fmt(s.Tl) + '</b></span> mm</div>'
          : '<div class="muted">' + esc(T('editor.taiereAstept')) + '</div>')
     : '<div class="muted">🔒 ' + esc(T('editor.taiereBlocata')) + '</div>';
 
@@ -827,45 +810,12 @@ function legaSetari() {
 $('form').addEventListener('input', function (e) {
   var f = e.target.id;
   if (fields.indexOf(f) === -1) return;
-
-  if (esteCota(f)) {
-    /* „22 1/2" -> 571.5 mm. Cât omul scrie ceva ce nu se poate citi încă
-       („22 1/"), se lasă params neatins: altfel cota ar sări la zero între
-       două apăsări de tastă, iar desenul ar clipi. */
-    var mm = U.citeste(e.target.value, UNITATE);
-    if (e.target.value.trim() === '') params[f] = '';
-    else if (mm === null) return;
-    else params[f] = mm;
-  } else {
-    params[f] = e.target.type === 'number'
-      ? (e.target.value === '' ? '' : +e.target.value)
-      : e.target.value;
-  }
-
+  params[f] = e.target.type === 'number'
+    ? (e.target.value === '' ? '' : +e.target.value)
+    : e.target.value;
   render();
   scheduleSave();
 });
-
-/* La ieșirea din casetă, ce-a scris omul se așază pe grilă și se rescrie
-   curat: „22.7" devine „22 11/16". Așa vede ce-a ieșit înainte să taie. */
-$('form').addEventListener('change', function (e) {
-  if (!esteCota(e.target.id)) return;
-  render();
-});
-
-/* Casetele de cotă trec pe text: o fracție n-are ce căuta într-un input
-   number, iar săgețile sus/jos ar sări din milimetru în milimetru, ceea ce
-   într-o casetă de țoli n-are niciun înțeles. */
-if (IN_TOLI) {
-  COTE_U.forEach(function (f) {
-    var el = $(f);
-    if (!el || el.tagName !== 'INPUT') return;
-    el.type = 'text';
-    el.removeAttribute('step');
-    el.setAttribute('inputmode', 'text');
-    el.setAttribute('autocomplete', 'off');
-  });
-}
 
 $('compUsiLista').addEventListener('change', function (e) {
   if (!e.target.dataset.comp) return;

@@ -402,8 +402,8 @@
           <td class="small"><%= p.corpNume %></td>
           <td><%= p.nume %><% if (p.cnc) { %> <span class="chip cnc">CNC</span><% } %></td>
           <td class="num"><%= p.buc %></td>
-          <td class="num"><b><%= cota(p.TL, p.unitate) %></b></td>
-          <td class="num"><b><%= cota(p.Tl, p.unitate) %></b></td>
+          <td class="num"><b><%= p.TL %></b></td>
+          <td class="num"><b><%= p.Tl %></b></td>
           <td class="small"><%= p.cant.special ? t('comanda.muchiiFrontale') : p.cant.muchii.join(' · ') %></td>
           <td class="small">
             <span class="decor-sw mic" style="background:<%= p.material.hex || '#cfd6dd' %>"></span>

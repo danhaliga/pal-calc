@@ -109,11 +109,6 @@ const ASSET_V = Date.now().toString(36);
 app.use((req, res, next) => {
   res.locals.assetV = ASSET_V;
   res.locals.jsonPentruPagina = require('./src/util').jsonPentruPagina;
-  /* O cotă, scrisă cum o citește omul: „571.5" în milimetri, „22 1/2" în
-     țoli. Unitatea vine de pe piesă, nu din contul celui care se uită: o
-     foaie tipărită trebuie să spună cum s-a tăiat. */
-  res.locals.cota = (mm, unitate) => require('./shared/unitati').scrie(mm, unitate);
-  res.locals.semnUnitate = (unitate) => (unitate === 'inch' ? '"' : 'mm');
   res.locals.catalogPagina = (...spatii) =>
     require('./src/util').catalogPagina(req.lang, spatii);
   res.locals.appName = 'PAL Calc';

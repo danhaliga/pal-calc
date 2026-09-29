@@ -10,26 +10,13 @@
    pentru ca zod nu se incarca in pagina.
    ============================================================ */
 (function (root, factory) {
-  var peServer = typeof module === 'object' && module.exports;
   var api = factory(
-    peServer ? require('./i18n') : root.PalI18n,
-    peServer ? require('./unitati') : root.PalUnitati
+    typeof module === 'object' && module.exports ? require('./i18n') : root.PalI18n
   );
-  if (peServer) module.exports = api;
+  if (typeof module === 'object' && module.exports) module.exports = api;
   else root.PalCalc = api;
-})(typeof self !== 'undefined' ? self : this, function (PalI18n, PalUnitati) {
+})(typeof self !== 'undefined' ? self : this, function (PalI18n) {
   'use strict';
-
-  /* Parametrii care se ARATA in unitatea atelierului. Restul raman in
-     milimetri, si nu din lene: placa, cantul si PFL-ul se fabrica metric in
-     toata lumea si se vand in milimetri — placa vanduta in Statele Unite ca
-     „3/4 toli" are de fapt 23/32, adica 18,26 mm. A le scrie ca fractii de
-     tol n-ar ajuta pe nimeni: nu asa scrie pe factura, si nu asa le cere
-     omul la depozit.
-
-     Cotele corpului, in schimb, le hotaraste atelierul. */
-  var COTE_UNITATE = ['W', 'H', 'D', 'W2', 'orb', 'rm', 'ri', 'rinc',
-                      'hUsi', 'jp', 'rp', 'hFront', 'hCutie', 'jg', 'lg'];
 
   var NUT_OFF = 10;      /* distanta nutului fata de spatele corpului */
   var NUT_AD = 8;        /* adancimea nutului */
@@ -79,15 +66,6 @@
       tip: 'drept', W2: 900, orb: 550, contur: [],
       /* piesă simplă: bucăți, cantul pe fiecare muchie, fibra */
       pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
-      /* Unitatea atelierului. GOALĂ înseamnă milimetri, adică exact cum a
-         fost dintotdeauna: un corp salvat înainte de ziua de azi se
-         calculează identic, până la ultima zecimală.
-
-         Stă pe CORP, nu se citește din contul omului la fiecare deschidere,
-         și asta e înadins: dacă atelierul își schimbă unitatea, lista de
-         debitare a unui corp vechi trebuie să rămână cea după care s-a
-         tăiat, nu să se mute în tăcere sub picioarele lui. */
-      unitate: '',
       t: 18, cg: 2, cs: 0.8, spate: 'aplicat', tp: 2.5,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: '', compUsi: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
@@ -232,27 +210,16 @@
     var ev = function (v) { return v === 'g' ? cg : v === 's' ? cs : 0; };
     var red = function (v) { return reducereCant(ev(v), c.pragCant, c.rezervaCant); };
 
-    /* Cresătura pe care cade cota de debitare. În milimetri e 0,1 — cât
-       arată afișajul unui ferăstrău de panouri, și cum a fost până acum. În
-       țoli e 1/16, cât citește omul pe ruletă.
-
-       Nu se rotunjește NIMIC ALTCEVA pe grila asta: unghiurile rămân grade,
-       iar socoteala dinăuntru rămâne neatinsă. Numai numărul care ajunge pe
-       hârtie trece pe aici. */
-    var rCota = c.unitate === 'inch'
-      ? function (v) { return PalUnitati.rotunjeste(v, 'inch'); }
-      : r1;
-
     /* O piesă ține cheia ei (stabilă, pentru potriviri și pentru raport) și
        numele scris în limba cerută. `nota` și `fibra` sunt tot chei. */
     var add = function (cheie, args, buc, L, l, cL1, cL2, cl1, cl2, fibra, nota, boxes) {
       P.push({
         cheie: cheie, args: args || null, rol: rolPiesa(cheie),
         nume: t_('piesa.' + cheie, args || null),
-        buc: buc, L: rCota(L), l: rCota(l), c: [cL1, cL2, cl1, cl2],
+        buc: buc, L: r1(L), l: r1(l), c: [cL1, cL2, cl1, cl2],
         /* cL1/cL2 sunt muchiile paralele cu L, deci banda de pe ele îngroașă
            piesa pe l — și invers. Vezi comentariul de la reducereCant(). */
-        TL: rCota(L - red(cl1) - red(cl2)), Tl: rCota(l - red(cL1) - red(cL2)),
+        TL: r1(L - red(cl1) - red(cl2)), Tl: r1(l - red(cL1) - red(cL2)),
         fibra: fibra, fibraText: t_('fibra.' + fibra),
         notaCheie: nota ? nota[0] : '', notaArgs: nota ? (nota[1] || null) : null,
         nota: nota ? t_('nota.' + nota[0], nota[1] || null) : '',
@@ -757,8 +724,6 @@
            in lista de debitare. */
         W: mm(20, 3000), H: mm(20, 3000), D: mm(20, 3000),
         tip: z.enum(TIPURI).catch('drept'),
-        /* Ce nu e pe listă cade la gol, adică la milimetri. */
-        unitate: z.enum(['', 'mm', 'inch']).catch(''),
         W2: mm(100, 3000).catch(900),
         orb: mm(0, 2000).catch(0),
         /* Fără `.catch` aici, înadins. Un `.catch([])` pe vector înseamnă că o
@@ -819,7 +784,6 @@
   }
 
   return {
-    COTE_UNITATE: COTE_UNITATE,
     calc: calc,
     rolPiesa: rolPiesa,
     directie: directie,

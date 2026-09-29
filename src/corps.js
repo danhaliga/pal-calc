@@ -7,7 +7,6 @@ const { db } = require('./db');
 const { requireAuth } = require('./auth');
 const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
-const PalTari = require('../shared/tari');
 const credit = require('./credit');
 const util = require('./util');
 const jurnal = require('./jurnal');
@@ -126,11 +125,6 @@ router.post('/corps', requireAuth, (req, res, next) => {
   const params = fromModel || PalCalc.defaults(req.t);
   params.nume = (req.body.name || params.nume || req.t('modele.corpImplicit'))
     .toString().trim().slice(0, 80);
-  /* Unitatea atelierului se scrie pe corp ACUM, o dată, și de-atunci stă
-     acolo. Nu se citește din cont la fiecare deschidere: dacă atelierul
-     își schimbă unitatea, lista de debitare a unui corp vechi trebuie să
-     rămână cea după care s-a tăiat. Vezi shared/calc.js, la "unitate". */
-  params.unitate = PalTari.unitateaLui(req.user);
 
   try {
     /* `nou=1` e semnalul pentru editor să pună setările implicite ale

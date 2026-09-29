@@ -932,8 +932,7 @@
     "pasUsi": "Montează cupele de balama și ușile, apoi reglează rosturile.",
     "pasSuspensii": "Prinde suspensiile în spatele corpului și șina pe perete, apoi reglează pe verticală.",
     "feronerieTotal": "Feronerie — total comandă",
-    "corpDeschis": "corp deschis",
-    "subsolToli": "Cotele sunt în țoli și reprezintă <b>cota de tăiere</b> (fără cant), dacă nu scrie altfel. Verifică cu serviciul de debitare ce cotă cere."
+    "corpDeschis": "corp deschis"
   },
   "plata": {
     "reusitTitlu": "Plata a fost înregistrată",

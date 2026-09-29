@@ -12,8 +12,6 @@ const materiale = require('./materiale');
 const Catalog = require('../shared/catalog');
 const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
-const PalTari = require('../shared/tari');
-const PalUnitati = require('../shared/unitati');
 const PalRaport = require('../shared/raport');
 const PalAnsamblu = require('../shared/ansamblu');
 const PalFeronerie = require('../shared/feronerie');
@@ -394,12 +392,6 @@ router.post('/orders/:id/corps', requireAuth, (req, res, next) => {
     : PalCalc.defaults(req.t);
   if (!params) return next(util.eroare('eroare.modelNecunoscut', 400));
 
-  /* Unitatea atelierului se scrie pe corp ACUM, o data. Nu se citeste din
-     cont la fiecare deschidere: daca atelierul isi schimba unitatea, lista
-     de debitare a unui corp vechi trebuie sa ramana cea dupa care s-a
-     taiat, nu sa se mute in tacere sub picioarele lui. */
-  params.unitate = PalTari.unitateaLui(req.user);
-
   const mats = materiale.aleComenzii(order.id);
   const roluri = materiale.peRoluri(mats);
   const matCorp = roluri.corp;
@@ -549,16 +541,6 @@ router.get('/api/orders/:id/ansamblu', requireAuth, (req, res, next) => {
 
 /* ---------- listele de producție ---------- */
 
-/* Unitatea unei foi intregi: cea a pieselor, daca toate sunt la fel.
-   Amestecate — se poate, o comanda poate aduna corpuri facute in unitati
-   deosebite — intoarce 'mm', fiindca fiecare rand isi scrie oricum
-   unitatea lui, si subsolul nu are voie sa minta despre intreg. */
-function unitateaRaportului(raport) {
-  const piese = (raport && raport.piese) || [];
-  const unitati = new Set(piese.map(p => p.unitate || 'mm'));
-  return unitati.size === 1 ? Array.from(unitati)[0] : 'mm';
-}
-
 const PRINTURI = {
   ansamblu: { view: 'orders/print-ansamblu', titlu: 'print.titluAnsamblu' },
   corpuri: { view: 'orders/print-corpuri', titlu: 'print.titluCorpuri' },
@@ -590,12 +572,6 @@ router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
     planse: PalRaport.planseCnc,
     planColi: PalRaport.planColi,
     coala: PalRaport.COALA,
-    /* Unitatea foii. Se ia de pe piese, nu din contul celui care tipareste:
-       foaia trebuie sa spuna cum s-a taiat. Daca toate piesele sunt in
-       aceeasi unitate, aia e; daca sunt amestecate — se poate, o comanda
-       poate aduna corpuri facute in unitati deosebite — subsolul ramane pe
-       milimetri, iar fiecare rand isi scrie oricum unitatea lui. */
-    unitateFoaie: unitateaRaportului(raport),
     /* adaosul la cant rămâne intern: clientul vede metrii exacți */
     aratAdaos: !!req.user.is_admin,
     print: true
@@ -617,13 +593,7 @@ router.get('/orders/:id/export.csv', requireAuth, (req, res, next) => {
 
   raport.piese.forEach(p => {
     linii.push([
-      /* Cotele merg in unitatea corpului, dar ca NUMAR, nu ca fractie:
-         fisierul asta il citeste programul de debitare al celui care taie,
-         si acolo „22 1/2" ar cadea la citire — sau, mai rau, ar fi citit
-         ca 22. Nici milimetrii nu sunt raspunsul pentru un atelier care
-         lucreaza in toli: masina lui e setata pe toli. */
-      p.corpNume, p.cod, p.nume, p.buc,
-      PalUnitati.pentruMasina(p.TL, p.unitate), PalUnitati.pentruMasina(p.Tl, p.unitate),
+      p.corpNume, p.cod, p.nume, p.buc, p.TL, p.Tl,
       p.material.tip + ' ' + p.material.gros,
       p.material.decorNume || p.material.decor || '',
       p.cant.muchii[0], p.cant.muchii[1], p.cant.muchii[2], p.cant.muchii[3],
