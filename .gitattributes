@@ -1,0 +1,14 @@
+# Fisierele .bat TREBUIE sa aiba terminatii de linie Windows (CRLF).
+#
+# Cu terminatii Unix, `cmd` nu le recunoaste deloc: raspunde
+# „'porneste.bat' is not recognized as an internal or external command",
+# desi fisierul e acolo, sub ochii lui. S-a intamplat exact asa.
+#
+# `git` schimba terminatiile la checkout dupa cum e setat pe masina, deci
+# fara randul asta fisierul se strica singur la urmatoarea clonare.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Scripturile de shell merg pe invers: cu CRLF, `bash` se impiedica de
+# „\r" de la capatul fiecarei linii.
+*.sh text eol=lf
