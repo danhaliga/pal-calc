@@ -762,7 +762,9 @@
     "montant": "Partition",
     "piesaSimpla": "Panel",
     "soclu": "Plinth",
-    "traversa": "Rail"
+    "traversa": "Rail",
+    "montantAtipic": "Divider {n}",
+    "usaAtipica": "Door (compartment {comp})"
   },
   "directie": {
     "jos": "bottom",
@@ -804,7 +806,8 @@
     "socluColtL": "on arm {n}, at the front — at the corner, arm 1 runs past the end of arm 2",
     "socluDiagonal": "on the diagonal, at the front — ends cut at {u1}° and {u2}° from a square cut",
     "usiGlisante": "{n} sliding doors, overlap {supr}, tracks {sine}",
-    "traverseSusInLocDeBlat": "instead of the top panel: one at the front, one at the back, {lat} wide"
+    "traverseSusInLocDeBlat": "instead of the top panel: one at the front, one at the back, {lat} wide",
+    "montantSubPanta": "under the slope: top edge cut at an angle, from {mare} down to {mic}"
   },
   "avert": {
     "politeAtipic": "Shelves are not calculated automatically for non-standard cabinets: add them as separate parts.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Rails of {lat} mm do not fit: two that wide touch each other. Above {incape} mm it would be a badly cut top panel.",
     "traverseInAfara": "A rail is made between {min} and {max} mm. {lat} was brought to {pus}.",
     "faraFronturi": "No fronts: only the carcass is supplied, {cate} pieces are left out of the cutting list. Their finished sizes, for whoever makes them: {cote}.",
-    "sertareSusNisaJos": "The {nisa} mm gap at the bottom stays empty: the drawers are at the top. Move them down with “Drawers: at the bottom” and the gap moves above them; if the gap was meant for the drawer, set the niche to 0."
+    "sertareSusNisaJos": "The {nisa} mm gap at the bottom stays empty: the drawers are at the top. Move them down with “Drawers: at the bottom” and the gap moves above them; if the gap was meant for the drawer, set the niche to 0.",
+    "montantiPreaMulti": "{cate} dividers do not fit: compartments would be {lat} mm wide. They were dropped.",
+    "montantNuIncape": "Divider {n} has no room: the cabinet is under 50 mm tall there.",
+    "usiPeCompartimentPreaMulte": "{cerut} doors on one compartment is not done; two were made.",
+    "compUsiFaraMontanti": "You picked compartments, but the cabinet has no dividers.",
+    "politeNuIncapAtipic": "No shelf fits in compartment {comp}: it is too short."
   },
   "csv": {
     "corp": "Cabinet",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "To order: aluminium-frame glass door, {h} × {l} mm — {n} pcs."
     },
-    "conturDeMana": "Sides and angles, by hand"
+    "conturDeMana": "Sides and angles, by hand",
+    "subScaraStramb": "The current outline does not close. The sizes above are read from it, roughly — press the button and it is made exact."
   },
   "fata": {
     "px": "right",

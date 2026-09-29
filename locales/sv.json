@@ -762,7 +762,9 @@
     "montant": "Mellanvägg",
     "piesaSimpla": "Detalj",
     "soclu": "Sockel",
-    "traversa": "Regel"
+    "traversa": "Regel",
+    "montantAtipic": "Mellanvägg {n}",
+    "usaAtipica": "Lucka (fack {comp})"
   },
   "directie": {
     "jos": "ner",
@@ -804,7 +806,8 @@
     "socluColtL": "på arm {n}, framtill — i hörnet går arm 1 förbi änden på arm 2",
     "socluDiagonal": "på diagonalen, framtill — ändarna sågade i {u1}° och {u2}° mot ett rakt snitt",
     "usiGlisante": "{n} skjutdörrar, överlapp {supr}, skenor {sine}",
-    "traverseSusInLocDeBlat": "i stället för topplattan: en fram, en bak, {lat} breda"
+    "traverseSusInLocDeBlat": "i stället för topplattan: en fram, en bak, {lat} breda",
+    "montantSubPanta": "under lutningen: överkanten geringssågad, från {mare} till {mic}"
   },
   "avert": {
     "politeAtipic": "I specialstommar räknas hyllplanen inte automatiskt: lägg till dem som egna delar.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Reglar på {lat} mm får inte plats: två så breda tar i varandra. Över {incape} mm blir det en illa sågad topplatta.",
     "traverseInAfara": "En regel görs mellan {min} och {max} mm. {lat} ändrades till {pus}.",
     "faraFronturi": "Utan fronter: bara stommen levereras, {cate} delar kommer inte med på sågplanen. Deras färdigmått, för den som gör dem: {cote}.",
-    "sertareSusNisaJos": "Glappet nertill på {nisa} mm står tomt: lådorna sitter upptill. Flytta ner dem med ”Lådorna: nedtill”, så hamnar glappet ovanför dem; var glappet tänkt för lådan, sätt nischen till 0."
+    "sertareSusNisaJos": "Glappet nertill på {nisa} mm står tomt: lådorna sitter upptill. Flytta ner dem med ”Lådorna: nedtill”, så hamnar glappet ovanför dem; var glappet tänkt för lådan, sätt nischen till 0.",
+    "montantiPreaMulti": "{cate} mellanväggar får inte plats: facken skulle bli {lat} mm. De togs bort.",
+    "montantNuIncape": "Mellanvägg {n} har ingen plats: där är stommen lägre än 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} luckor på ett fack gör man inte; det blev två.",
+    "compUsiFaraMontanti": "Du valde fack, men stommen har ingen mellanvägg.",
+    "politeNuIncapAtipic": "Ingen hylla får plats i fack {comp}: det är för lågt."
   },
   "csv": {
     "corp": "Stomme",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "Att beställa: glaslucka med aluminiumram, {h} × {l} mm — {n} st."
     },
-    "conturDeMana": "Sidor och vinklar, för hand"
+    "conturDeMana": "Sidor och vinklar, för hand",
+    "subScaraStramb": "Den nuvarande konturen sluter inte. Måtten ovan är avlästa från den, ungefärligt — tryck på knappen så blir den exakt."
   },
   "fata": {
     "px": "höger",

@@ -762,7 +762,9 @@
     "montant": "Közfal",
     "piesaSimpla": "Elem",
     "soclu": "Lábazat",
-    "traversa": "Merevítő"
+    "traversa": "Merevítő",
+    "montantAtipic": "Válaszfal {n}",
+    "usaAtipica": "Ajtó ({comp}. rekesz)"
   },
   "directie": {
     "jos": "alul",
@@ -804,7 +806,8 @@
     "socluColtL": "a(z) {n}. száron, elöl — a sarokban az 1. szár túlmegy a 2. szár végén",
     "socluDiagonal": "az átlón, elöl — a végek az egyenes vágáshoz képest {u1}° és {u2}° szögben vágva",
     "usiGlisante": "{n} tolóajtó, átfedés {supr}, sínek {sine}",
-    "traverseSusInLocDeBlat": "a fedlap helyett: egy elöl, egy hátul, {lat} szélesek"
+    "traverseSusInLocDeBlat": "a fedlap helyett: egy elöl, egy hátul, {lat} szélesek",
+    "montantSubPanta": "a ferde alatt: a felső él szögben vágva, {mare}-ről {mic}-re"
   },
   "avert": {
     "politeAtipic": "Egyedi korpuszoknál a polcok nem számolódnak magától: add hozzá őket külön elemként.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "A {lat} mm-es merevítők nem férnek el: két ilyen széles összeér. {incape} mm fölött ez már rosszul szabott fedlap.",
     "traverseInAfara": "A merevítő {min} és {max} mm között készül. A {lat} {pus} lett.",
     "faraFronturi": "Front nélkül: csak a korpusz készül el, {cate} darab nem kerül a szabásjegyzékre. A készméreteik, annak, aki elkészíti: {cote}.",
-    "sertareSusNisaJos": "Az alsó, {nisa} mm-es rés üresen marad: a fiókok fent vannak. A „Fiókok: lent” beállítással leviheted, és a rés föléjük kerül; ha a rés éppen a fióknak kellett, állítsd a fülkét 0-ra."
+    "sertareSusNisaJos": "Az alsó, {nisa} mm-es rés üresen marad: a fiókok fent vannak. A „Fiókok: lent” beállítással leviheted, és a rés föléjük kerül; ha a rés éppen a fióknak kellett, állítsd a fülkét 0-ra.",
+    "montantiPreaMulti": "{cate} válaszfal nem fér el: a rekeszek {lat} mm-esek lennének. Kikerültek.",
+    "montantNuIncape": "A(z) {n}. válaszfalnak nincs helye: ott a korpusz 50 mm-nél alacsonyabb.",
+    "usiPeCompartimentPreaMulte": "Egy rekeszre nem tesznek {cerut} ajtót; kettő készült.",
+    "compUsiFaraMontanti": "Rekeszeket választottál, de a korpuszban nincs válaszfal.",
+    "politeNuIncapAtipic": "A(z) {comp}. rekeszbe nem fér polc: túl alacsony."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "Megrendelendő: alumínium keretes üvegajtó, {h} × {l} mm — {n} db."
     },
-    "conturDeMana": "Oldalak és szögek, kézzel"
+    "conturDeMana": "Oldalak és szögek, kézzel",
+    "subScaraStramb": "A mostani körvonal nem zár. A fenti méretek onnan vannak leolvasva, hozzávetőleg — nyomd meg a gombot, és pontos lesz."
   },
   "fata": {
     "px": "jobb",

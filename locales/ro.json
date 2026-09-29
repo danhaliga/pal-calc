@@ -768,7 +768,9 @@
     "montant": "Montant",
     "piesaSimpla": "Piesă",
     "soclu": "Soclu",
-    "traversa": "Traversă"
+    "traversa": "Traversă",
+    "montantAtipic": "Montant {n}",
+    "usaAtipica": "Ușă (compartiment {comp})"
   },
   "directie": {
     "jos": "jos",
@@ -810,7 +812,8 @@
     "socluColtL": "pe brațul {n}, în față — la colț, brațul 1 trece peste capătul brațului 2",
     "socluDiagonal": "pe diagonală, în față — capetele tăiate la {u1}° și {u2}° față de tăietura dreaptă",
     "usiGlisante": "{n} uși glisante, suprapunere {supr}, șine {sine}",
-    "traverseSusInLocDeBlat": "în locul blatului: una în față, una în spate, late de {lat}"
+    "traverseSusInLocDeBlat": "în locul blatului: una în față, una în spate, late de {lat}",
+    "montantSubPanta": "sub pantă: muchia de sus tăiată în unghi, de la {mare} la {mic}"
   },
   "avert": {
     "politeAtipic": "Polițele nu se calculează automat la corpurile atipice: adaugă-le ca piese separate.",
@@ -858,7 +861,12 @@
     "traversePreaLate": "Traverse de {lat} mm nu încap: două atât de late se ating. Peste {incape} mm ar fi un blat prost tăiat.",
     "traverseInAfara": "Traversa se face între {min} și {max} mm. {lat} a fost adus la {pus}.",
     "faraFronturi": "Fără fronturi: se livrează doar corpul, {cate} bucăți nu intră în lista de debitare. Cotele lor, pentru cine le face: {cote}.",
-    "sertareSusNisaJos": "Golul de jos, de {nisa} mm, rămâne gol: sertarele stau sus. Le cobori cu „Sertarele: jos”, iar golul urcă deasupra lor; dacă golul era chiar pentru sertar, pune nișa pe 0."
+    "sertareSusNisaJos": "Golul de jos, de {nisa} mm, rămâne gol: sertarele stau sus. Le cobori cu „Sertarele: jos”, iar golul urcă deasupra lor; dacă golul era chiar pentru sertar, pune nișa pe 0.",
+    "montantiPreaMulti": "{cate} montanți nu încap: ar rămâne compartimente de {lat} mm. S-au scos.",
+    "montantNuIncape": "Montantul {n} n-are loc: acolo corpul e mai scund de 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} uși pe un compartiment nu se pun; s-au făcut două.",
+    "compUsiFaraMontanti": "Ai ales compartimente, dar corpul n-are niciun montant.",
+    "politeNuIncapAtipic": "În compartimentul {comp} nu încape nicio poliță: e prea scund."
   },
   "csv": {
     "corp": "Corp",
@@ -1432,7 +1440,8 @@
     "deComandat": {
       "usaRamaAlu": "De comandat: ușă cu ramă de aluminiu și sticlă, {h} × {l} mm — {n} buc."
     },
-    "conturDeMana": "Laturi și unghiuri, de mână"
+    "conturDeMana": "Laturi și unghiuri, de mână",
+    "subScaraStramb": "Conturul de acum nu se închide. Cotele de mai sus sunt citite din el, aproximativ — apasă butonul și se face exact."
   },
   "fata": {
     "px": "dreapta",

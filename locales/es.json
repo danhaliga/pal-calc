@@ -762,7 +762,9 @@
     "montant": "Montante",
     "piesaSimpla": "Pieza",
     "soclu": "Zócalo",
-    "traversa": "Travesaño"
+    "traversa": "Travesaño",
+    "montantAtipic": "Montante {n}",
+    "usaAtipica": "Puerta (compartimento {comp})"
   },
   "directie": {
     "jos": "abajo",
@@ -804,7 +806,8 @@
     "socluColtL": "en el brazo {n}, delante — en la esquina, el brazo 1 pasa por delante del extremo del brazo 2",
     "socluDiagonal": "en la diagonal, delante — extremos cortados a {u1}° y {u2}° respecto al corte recto",
     "usiGlisante": "{n} puertas correderas, solape {supr}, guías {sine}",
-    "traverseSusInLocDeBlat": "en lugar del tablero superior: uno delante, otro detrás, de {lat} de ancho"
+    "traverseSusInLocDeBlat": "en lugar del tablero superior: uno delante, otro detrás, de {lat} de ancho",
+    "montantSubPanta": "bajo la pendiente: canto superior cortado en ángulo, de {mare} a {mic}"
   },
   "avert": {
     "politeAtipic": "En los módulos atípicos las baldas no se calculan solas: añádelas como piezas aparte.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Travesaños de {lat} mm no caben: dos tan anchos se tocan. Por encima de {incape} mm sería un tablero mal cortado.",
     "traverseInAfara": "El travesaño se hace entre {min} y {max} mm. {lat} se ha ajustado a {pus}.",
     "faraFronturi": "Sin frentes: se entrega solo el cuerpo, {cate} piezas no entran en la lista de corte. Sus medidas acabadas, para quien los haga: {cote}.",
-    "sertareSusNisaJos": "El hueco de abajo, de {nisa} mm, se queda vacío: los cajones están arriba. Bájalos con «Los cajones: abajo» y el hueco sube por encima de ellos; si el hueco era para el cajón, pon el nicho a 0."
+    "sertareSusNisaJos": "El hueco de abajo, de {nisa} mm, se queda vacío: los cajones están arriba. Bájalos con «Los cajones: abajo» y el hueco sube por encima de ellos; si el hueco era para el cajón, pon el nicho a 0.",
+    "montantiPreaMulti": "{cate} montantes no caben: los compartimentos quedarían de {lat} mm. Se han quitado.",
+    "montantNuIncape": "El montante {n} no tiene sitio: ahí el mueble mide menos de 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} puertas en un compartimento no se ponen; se han hecho dos.",
+    "compUsiFaraMontanti": "Has elegido compartimentos, pero el mueble no tiene montantes.",
+    "politeNuIncapAtipic": "En el compartimento {comp} no cabe ningún estante: es demasiado bajo."
   },
   "csv": {
     "corp": "Módulo",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "Por pedir: puerta de vidrio con marco de aluminio, {h} × {l} mm — {n} uds."
     },
-    "conturDeMana": "Lados y ángulos, a mano"
+    "conturDeMana": "Lados y ángulos, a mano",
+    "subScaraStramb": "El contorno actual no cierra. Las medidas de arriba están leídas de él, aproximadas — pulsa el botón y queda exacto."
   },
   "fata": {
     "px": "derecha",

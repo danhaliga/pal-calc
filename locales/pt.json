@@ -762,7 +762,9 @@
     "montant": "Montante",
     "piesaSimpla": "Peça",
     "soclu": "Rodapé",
-    "traversa": "Travessa"
+    "traversa": "Travessa",
+    "montantAtipic": "Montante {n}",
+    "usaAtipica": "Porta (compartimento {comp})"
   },
   "directie": {
     "jos": "baixo",
@@ -804,7 +806,8 @@
     "socluColtL": "no braço {n}, à frente — no canto, o braço 1 passa à frente da ponta do braço 2",
     "socluDiagonal": "na diagonal, à frente — pontas cortadas a {u1}° e {u2}° em relação ao corte reto",
     "usiGlisante": "{n} portas de correr, sobreposição {supr}, calhas {sine}",
-    "traverseSusInLocDeBlat": "em vez do tampo: uma à frente, outra atrás, com {lat} de largura"
+    "traverseSusInLocDeBlat": "em vez do tampo: uma à frente, outra atrás, com {lat} de largura",
+    "montantSubPanta": "sob a inclinação: topo cortado em ângulo, de {mare} a {mic}"
   },
   "avert": {
     "politeAtipic": "Nos módulos fora de padrão as prateleiras não são calculadas sozinhas: acrescenta-as como peças à parte.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Travessas de {lat} mm não cabem: duas tão largas tocam-se. Acima de {incape} mm seria um tampo mal cortado.",
     "traverseInAfara": "A travessa faz-se entre {min} e {max} mm. {lat} foi ajustado para {pus}.",
     "faraFronturi": "Sem frentes: só o corpo é entregue, {cate} peças não entram na lista de corte. As medidas acabadas, para quem as fizer: {cote}.",
-    "sertareSusNisaJos": "O vão de baixo, de {nisa} mm, fica vazio: as gavetas estão em cima. Desça-as com «As gavetas: em baixo» e o vão passa para cima delas; se o vão era mesmo para a gaveta, ponha o nicho a 0."
+    "sertareSusNisaJos": "O vão de baixo, de {nisa} mm, fica vazio: as gavetas estão em cima. Desça-as com «As gavetas: em baixo» e o vão passa para cima delas; se o vão era mesmo para a gaveta, ponha o nicho a 0.",
+    "montantiPreaMulti": "{cate} montantes não cabem: os compartimentos ficariam com {lat} mm. Foram retirados.",
+    "montantNuIncape": "O montante {n} não tem lugar: ali o móvel tem menos de 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} portas num compartimento não se põem; foram feitas duas.",
+    "compUsiFaraMontanti": "Escolheu compartimentos, mas o móvel não tem montantes.",
+    "politeNuIncapAtipic": "Não cabe nenhuma prateleira no compartimento {comp}: é baixo demais."
   },
   "csv": {
     "corp": "Módulo",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "A encomendar: porta de vidro com caixilho de alumínio, {h} × {l} mm — {n} un."
     },
-    "conturDeMana": "Lados e ângulos, à mão"
+    "conturDeMana": "Lados e ângulos, à mão",
+    "subScaraStramb": "O contorno atual não fecha. As medidas acima são lidas dele, aproximadas — carrega no botão e fica exato."
   },
   "fata": {
     "px": "direita",

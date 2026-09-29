@@ -762,7 +762,9 @@
     "montant": "중간 칸막이",
     "piesaSimpla": "부재",
     "soclu": "걸레받이",
-    "traversa": "가로대"
+    "traversa": "가로대",
+    "montantAtipic": "칸막이 {n}",
+    "usaAtipica": "문 ({comp}번 칸)"
   },
   "directie": {
     "jos": "아래",
@@ -804,7 +806,8 @@
     "socluColtL": "팔 {n} 앞쪽 — 모서리에서 팔 1이 팔 2의 끝을 지나간다",
     "socluDiagonal": "대각선 앞쪽 — 양 끝을 직각 절단에서 {u1}°와 {u2}°로 자른다",
     "usiGlisante": "미닫이 {n}짝, 겹침 {supr}, 레일 {sine}",
-    "traverseSusInLocDeBlat": "상판 대신: 앞뒤로 하나씩, 폭 {lat}"
+    "traverseSusInLocDeBlat": "상판 대신: 앞뒤로 하나씩, 폭 {lat}",
+    "montantSubPanta": "경사 아래: 윗면을 비스듬히 재단, {mare}에서 {mic}까지"
   },
   "avert": {
     "politeAtipic": "비정형 캐비닛에서는 선반이 자동으로 계산되지 않습니다. 따로 부재로 더하세요.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "{lat} mm 가로대는 들어가지 않습니다. 그 폭이면 둘이 맞닿습니다. {incape} mm를 넘으면 잘못 자른 상판과 같습니다.",
     "traverseInAfara": "가로대는 {min}~{max} mm 사이로 만듭니다. {lat}은(는) {pus}으로 맞췄습니다.",
     "faraFronturi": "전면판 없음: 몸통만 납품하며 {cate}장이 재단 목록에 들어가지 않습니다. 제작하는 쪽을 위한 완성 치수: {cote}.",
-    "sertareSusNisaJos": "아래의 {nisa}mm 빈칸이 그대로 비어 있습니다: 서랍이 위에 있습니다. „서랍: 아래쪽”으로 내리면 빈칸이 그 위로 올라갑니다. 그 빈칸이 서랍 자리였다면 니치를 0으로 두십시오."
+    "sertareSusNisaJos": "아래의 {nisa}mm 빈칸이 그대로 비어 있습니다: 서랍이 위에 있습니다. „서랍: 아래쪽”으로 내리면 빈칸이 그 위로 올라갑니다. 그 빈칸이 서랍 자리였다면 니치를 0으로 두십시오.",
+    "montantiPreaMulti": "칸막이 {cate}개는 들어가지 않습니다: 칸이 {lat}mm가 됩니다. 제외했습니다.",
+    "montantNuIncape": "칸막이 {n}은 자리가 없습니다: 그곳 높이가 50mm 미만입니다.",
+    "usiPeCompartimentPreaMulte": "한 칸에 문 {cerut}장은 달지 않습니다. 두 장으로 했습니다.",
+    "compUsiFaraMontanti": "칸을 골랐지만 몸통에 칸막이가 없습니다.",
+    "politeNuIncapAtipic": "{comp}번 칸에는 선반이 들어가지 않습니다: 너무 낮습니다."
   },
   "csv": {
     "corp": "캐비닛",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "주문할 것: 알루미늄 프레임 유리문 {h} × {l} mm — {n}개."
     },
-    "conturDeMana": "변과 각도, 직접 입력"
+    "conturDeMana": "변과 각도, 직접 입력",
+    "subScaraStramb": "지금 윤곽은 닫히지 않습니다. 위의 치수는 거기서 대략 읽은 것입니다. 버튼을 누르면 정확해집니다."
   },
   "fata": {
     "px": "오른쪽",

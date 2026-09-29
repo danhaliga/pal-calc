@@ -762,7 +762,9 @@
     "montant": "Montant",
     "piesaSimpla": "Pièce",
     "soclu": "Plinthe",
-    "traversa": "Traverse"
+    "traversa": "Traverse",
+    "montantAtipic": "Montant {n}",
+    "usaAtipica": "Porte (compartiment {comp})"
   },
   "directie": {
     "jos": "bas",
@@ -804,7 +806,8 @@
     "socluColtL": "sur le bras {n}, à l'avant — dans l'angle, le bras 1 passe devant l'extrémité du bras 2",
     "socluDiagonal": "sur la diagonale, à l'avant — extrémités coupées à {u1}° et {u2}° par rapport à une coupe droite",
     "usiGlisante": "{n} portes coulissantes, recouvrement {supr}, rails {sine}",
-    "traverseSusInLocDeBlat": "à la place du panneau haut : une devant, une derrière, larges de {lat}"
+    "traverseSusInLocDeBlat": "à la place du panneau haut : une devant, une derrière, larges de {lat}",
+    "montantSubPanta": "sous la pente : chant du haut coupé en biais, de {mare} à {mic}"
   },
   "avert": {
     "politeAtipic": "Les étagères ne sont pas calculées automatiquement pour les caissons hors standard : ajoutez-les comme pièces séparées.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Des traverses de {lat} mm ne rentrent pas : deux aussi larges se touchent. Au-delà de {incape} mm ce serait un panneau mal coupé.",
     "traverseInAfara": "Une traverse se fait entre {min} et {max} mm. {lat} a été ramené à {pus}.",
     "faraFronturi": "Sans façades : seul le caisson est livré, {cate} pièces ne figurent pas dans la liste de coupe. Leurs dimensions finies, pour celui qui les fabrique : {cote}.",
-    "sertareSusNisaJos": "Le vide du bas, de {nisa} mm, reste vide : les tiroirs sont en haut. Descendez-les avec « Les tiroirs : en bas » et le vide passe au-dessus ; si ce vide était justement pour le tiroir, mettez la niche à 0."
+    "sertareSusNisaJos": "Le vide du bas, de {nisa} mm, reste vide : les tiroirs sont en haut. Descendez-les avec « Les tiroirs : en bas » et le vide passe au-dessus ; si ce vide était justement pour le tiroir, mettez la niche à 0.",
+    "montantiPreaMulti": "{cate} montants ne tiennent pas : les compartiments feraient {lat} mm. Ils ont été retirés.",
+    "montantNuIncape": "Le montant {n} n’a pas de place : là le meuble fait moins de 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} portes sur un compartiment, cela ne se fait pas ; deux ont été faites.",
+    "compUsiFaraMontanti": "Vous avez choisi des compartiments, mais le meuble n’a aucun montant.",
+    "politeNuIncapAtipic": "Aucune étagère ne tient dans le compartiment {comp} : il est trop bas."
   },
   "csv": {
     "corp": "Caisson",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "À commander : porte vitrée à cadre aluminium, {h} × {l} mm — {n} pcs."
     },
-    "conturDeMana": "Côtés et angles, à la main"
+    "conturDeMana": "Côtés et angles, à la main",
+    "subScaraStramb": "Le contour actuel ne se ferme pas. Les cotes ci-dessus en sont tirées, approximativement — appuyez sur le bouton et il devient exact."
   },
   "fata": {
     "px": "droite",

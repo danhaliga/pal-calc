@@ -3,7 +3,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { calc, defaults, conturGeometrie, conturImplicit, numeDirectie } = require('../shared/calc');
+const { calc, defaults, conturGeometrie, conturImplicit, numeDirectie, conturSubScara } = require('../shared/calc');
 const { raport } = require('../shared/raport');
 
 const atipic = (contur, over) => Object.assign(defaults(), {
@@ -94,12 +94,27 @@ test('spatele se decupează după contur', () => {
   assert.ok(spate.boxes[0].polyFata, 'spatele trebuie să aibă conturul pentru 3D');
 });
 
-test('frontul apare doar dacă e cerut', () => {
-  assert.equal(calc(atipic(conturImplicit(900, 700))).P.find(p => p.nume === 'Front'), undefined);
-  const cuFront = calc(atipic(conturImplicit(900, 700), { nUsi: 1, rm: 1.5 }));
-  const front = cuFront.P.find(p => p.nume === 'Front');
-  assert.equal(front.L, 897);            // 900 − 2×1.5
-  assert.equal(front.l, 697);
+test('ușile apar doar dacă sunt cerute, și acoperă carcasa', () => {
+  const usi = r => r.P.filter(p => p.rol === 'front');
+  assert.deepEqual(usi(calc(atipic(conturImplicit(900, 700)))), []);
+
+  /* Ușa aplicată acoperă carcasa: merge până la muchia din afară, mai puțin
+     rostul de margine. Socotită pe golul dinăuntru ar ieși cu o grosime de
+     placă mai îngustă, și s-ar vedea lateralele. */
+  const una = usi(calc(atipic(conturImplicit(900, 700), { nUsi: 1, rm: 1.5 })));
+  assert.equal(una.length, 1);
+  assert.equal(una[0].l, 897);           // 900 − 2×1.5
+  assert.equal(una[0].L, 697);
+
+  /* Două canaturi pe același gol se despart cu rostul dintre ele. */
+  const doua = usi(calc(atipic(conturImplicit(900, 700), { nUsi: 2, rm: 1.5, ri: 3 })));
+  assert.equal(doua.length, 2);
+  doua.forEach(u => assert.equal(u.l, 447));   // (897 − 3) / 2
+
+  /* Cu montanți, câte una pe compartiment. */
+  const trei = usi(calc(atipic(conturImplicit(900, 700), { nUsi: 1, nDsp: 2, rm: 1.5, ri: 3 })));
+  assert.equal(trei.length, 3);
+  trei.forEach(u => assert.equal(u.l, 297));
 });
 
 test('conturul deschis dă avertisment, nu eroare', () => {
@@ -112,9 +127,31 @@ test('conturul deschis dă avertisment, nu eroare', () => {
   assert.ok(warn.some(w => /360°/.test(w)), 'trebuie spus ce sumă de unghiuri se cere');
 });
 
-test('polițele nu se generează la corpurile atipice', () => {
-  const { warn } = calc(atipic(conturImplicit(900, 700), { nPol: 2 }));
-  assert.ok(warn.some(w => /Polițele nu se calculează/.test(w)));
+test('polițele se fac, câte una pe compartiment, dreptunghiulare', () => {
+  /* Pana la 29 septembrie corpul atipic le refuza cu totul: „adauga-le ca
+     piese separate". Acum se fac — dreptunghiulare, cate incap, si se opresc
+     acolo unde compartimentul e cel mai scund, ca sa nu intre in panta. */
+  const r = calc(atipic(conturImplicit(900, 700), { nPol: 2 }));
+  const pol = r.P.filter(p => p.cheie === 'polita');
+  assert.equal(pol.length, 1, 'polițele se grupează într-un singur rând');
+  assert.equal(pol[0].buc, 2);
+  assert.ok(!r.warn.some(w => /nu se calculează/.test(w)), 'încă le refuză');
+
+  /* Cu montanți: câte `nPol` în fiecare compartiment. */
+  const cu = calc(atipic(conturImplicit(900, 700), { nPol: 2, nDsp: 2 }));
+  assert.equal(cu.P.filter(p => p.cheie === 'polita')[0].buc, 6);
+
+  /* Sub panta, compartimentul scund primeste politele mai jos decat cel inalt,
+     dar niciuna nu iese din corp. */
+  const subScara = calc(atipic(conturSubScara(2400, 500, 1800),
+                               { nPol: 1, nDsp: 3, W: 2400 }));
+  const y = [];
+  subScara.P.forEach(p => (p.boxes || []).forEach(b => {
+    if (b.grp === 'polite') y.push(b.y);
+  }));
+  assert.equal(y.length, 4, 'patru compartimente, o poliță în fiecare');
+  y.sort((a, b) => a - b);
+  assert.ok(y[0] < y[y.length - 1], 'toate au ieșit la aceeași înălțime');
 });
 
 /* ---------------- raport și CNC ---------------- */

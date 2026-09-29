@@ -768,7 +768,9 @@
     "montant": "Przegroda",
     "piesaSimpla": "Element",
     "soclu": "Cokół",
-    "traversa": "Trawersa"
+    "traversa": "Trawersa",
+    "montantAtipic": "Przegroda {n}",
+    "usaAtipica": "Drzwi (przegroda {comp})"
   },
   "directie": {
     "jos": "dół",
@@ -810,7 +812,8 @@
     "socluColtL": "na ramieniu {n}, z przodu — w narożniku ramię 1 przechodzi za koniec ramienia 2",
     "socluDiagonal": "na przekątnej, z przodu — końce cięte pod {u1}° i {u2}° względem cięcia prostego",
     "usiGlisante": "{n} fronty przesuwne, zachodzenie {supr}, szyny {sine}",
-    "traverseSusInLocDeBlat": "zamiast wieńca: jedna z przodu, druga z tyłu, szerokie na {lat}"
+    "traverseSusInLocDeBlat": "zamiast wieńca: jedna z przodu, druga z tyłu, szerokie na {lat}",
+    "montantSubPanta": "pod skosem: górna krawędź cięta pod kątem, od {mare} do {mic}"
   },
   "avert": {
     "politeAtipic": "W korpusach nietypowych półki nie liczą się same: dodaj je jako osobne elementy.",
@@ -858,7 +861,12 @@
     "traversePreaLate": "Trawersy {lat} mm się nie mieszczą: dwie takie szerokie stykają się. Powyżej {incape} mm to już źle pocięty wieniec.",
     "traverseInAfara": "Trawersę robi się od {min} do {max} mm. {lat} sprowadzono do {pus}.",
     "faraFronturi": "Bez frontów: dostarczany jest tylko korpus, {cate} elementów nie wchodzi na listę rozkroju. Ich wymiary gotowe, dla tego, kto je wykona: {cote}.",
-    "sertareSusNisaJos": "Dolna luka {nisa} mm zostaje pusta: szuflady są na górze. Opuść je przez „Szuflady: na dole”, a luka przejdzie nad nie; jeśli luka była właśnie na szufladę, ustaw wnękę na 0."
+    "sertareSusNisaJos": "Dolna luka {nisa} mm zostaje pusta: szuflady są na górze. Opuść je przez „Szuflady: na dole”, a luka przejdzie nad nie; jeśli luka była właśnie na szufladę, ustaw wnękę na 0.",
+    "montantiPreaMulti": "{cate} przegród się nie mieści: komory miałyby {lat} mm. Zostały usunięte.",
+    "montantNuIncape": "Przegroda {n} nie ma miejsca: korpus ma tam poniżej 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} drzwi na jedną komorę się nie robi; zrobiono dwoje.",
+    "compUsiFaraMontanti": "Wybrałeś komory, ale korpus nie ma żadnej przegrody.",
+    "politeNuIncapAtipic": "W komorze {comp} nie mieści się żadna półka: jest za niska."
   },
   "csv": {
     "corp": "Korpus",
@@ -1432,7 +1440,8 @@
     "deComandat": {
       "usaRamaAlu": "Do zamówienia: drzwiczki szklane w ramie aluminiowej, {h} × {l} mm — {n} szt."
     },
-    "conturDeMana": "Boki i kąty, ręcznie"
+    "conturDeMana": "Boki i kąty, ręcznie",
+    "subScaraStramb": "Obecny obrys się nie zamyka. Wymiary powyżej są z niego odczytane, w przybliżeniu — naciśnij przycisk, a będzie dokładny."
   },
   "fata": {
     "px": "prawo",

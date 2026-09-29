@@ -762,7 +762,9 @@
     "montant": "中隔板",
     "piesaSimpla": "板件",
     "soclu": "踢脚板",
-    "traversa": "横档"
+    "traversa": "横档",
+    "montantAtipic": "立板 {n}",
+    "usaAtipica": "门板（第 {comp} 格）"
   },
   "directie": {
     "jos": "下",
@@ -804,7 +806,8 @@
     "socluColtL": "在第 {n} 臂前侧 — 转角处第 1 臂越过第 2 臂的端头",
     "socluDiagonal": "在斜面前侧 — 两端相对直切分别切 {u1}° 和 {u2}°",
     "usiGlisante": "{n} 扇推拉门，搭接 {supr}，轨道 {sine}",
-    "traverseSusInLocDeBlat": "代替顶板：前后各一条，宽 {lat}"
+    "traverseSusInLocDeBlat": "代替顶板：前后各一条，宽 {lat}",
+    "montantSubPanta": "斜面下：顶边斜切，从 {mare} 到 {mic}"
   },
   "avert": {
     "politeAtipic": "异形柜体的层板不会自动算：单独当板件加进去。",
@@ -852,7 +855,12 @@
     "traversePreaLate": "{lat} 毫米的横档放不下：两条这么宽会碰到一起。超过 {incape} 毫米就等于一块切坏的顶板。",
     "traverseInAfara": "横档的宽度在 {min} 到 {max} 毫米之间。{lat} 已调整为 {pus}。",
     "faraFronturi": "不做门板：只交柜体，{cate} 件不进裁板清单。成品尺寸，给做门板的人：{cote}。",
-    "sertareSusNisaJos": "底部 {nisa} 毫米的空档空着：抽屉在上方。用“抽屉：在下方”把它们移下来，空档就升到上面；如果这个空档本来就是给抽屉的，把凹槽设为 0。"
+    "sertareSusNisaJos": "底部 {nisa} 毫米的空档空着：抽屉在上方。用“抽屉：在下方”把它们移下来，空档就升到上面；如果这个空档本来就是给抽屉的，把凹槽设为 0。",
+    "montantiPreaMulti": "{cate} 块立板放不下：每格只有 {lat} 毫米。已取消。",
+    "montantNuIncape": "立板 {n} 没有位置：那里柜高不足 50 毫米。",
+    "usiPeCompartimentPreaMulte": "一格不做 {cerut} 扇门；已做两扇。",
+    "compUsiFaraMontanti": "你选了分格，但柜子没有立板。",
+    "politeNuIncapAtipic": "第 {comp} 格放不下隔板：太矮了。"
   },
   "csv": {
     "corp": "柜体",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "需订购：铝框玻璃门 {h} × {l} 毫米 — {n} 扇。"
     },
-    "conturDeMana": "手动输入边长和角度"
+    "conturDeMana": "手动输入边长和角度",
+    "subScaraStramb": "当前轮廓没有闭合。上面的尺寸是从中大致读出的——按下按钮即可修正。"
   },
   "fata": {
     "px": "右",

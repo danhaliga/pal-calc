@@ -768,7 +768,9 @@
     "montant": "Priečka",
     "piesaSimpla": "Diel",
     "soclu": "Sokel",
-    "traversa": "Výstuha"
+    "traversa": "Výstuha",
+    "montantAtipic": "Priečka {n}",
+    "usaAtipica": "Dvierka (oddiel {comp})"
   },
   "directie": {
     "jos": "dole",
@@ -810,7 +812,8 @@
     "socluColtL": "na ramene {n}, vpredu — v rohu vedie rameno 1 cez koniec ramena 2",
     "socluDiagonal": "na uhlopriečke, vpredu — konce rezané pod {u1}° a {u2}° od rovného rezu",
     "usiGlisante": "{n} posuvné dvierka, prekrytie {supr}, koľajnice {sine}",
-    "traverseSusInLocDeBlat": "namiesto hornej dosky: jedna vpredu, druhá vzadu, široké {lat}"
+    "traverseSusInLocDeBlat": "namiesto hornej dosky: jedna vpredu, druhá vzadu, široké {lat}",
+    "montantSubPanta": "pod sklonom: horná hrana rezaná pod uhlom, z {mare} na {mic}"
   },
   "avert": {
     "politeAtipic": "Pri atypických korpusoch sa police nepočítajú samy: pridaj ich ako samostatné diely.",
@@ -858,7 +861,12 @@
     "traversePreaLate": "Výstuhy {lat} mm sa nezmestia: dve také široké sa dotýkajú. Nad {incape} mm by to bola zle narezaná doska.",
     "traverseInAfara": "Výstuha sa robí od {min} do {max} mm. {lat} bolo upravené na {pus}.",
     "faraFronturi": "Bez dvierok: dodáva sa len korpus, {cate} dielov nejde do nárezového plánu. Ich hotové rozmery, pre toho, kto ich vyrobí: {cote}.",
-    "sertareSusNisaJos": "Spodná medzera {nisa} mm ostáva prázdna: zásuvky sú hore. Spusti ich cez „Zásuvky: dole“ a medzera sa presunie nad ne; ak bola medzera práve pre zásuvku, daj výklenok na 0."
+    "sertareSusNisaJos": "Spodná medzera {nisa} mm ostáva prázdna: zásuvky sú hore. Spusti ich cez „Zásuvky: dole“ a medzera sa presunie nad ne; ak bola medzera práve pre zásuvku, daj výklenok na 0.",
+    "montantiPreaMulti": "{cate} priečok sa nezmestí: oddiely by mali {lat} mm. Boli odobraté.",
+    "montantNuIncape": "Priečka {n} nemá miesto: tam je korpus nižší ako 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} dvierka na jeden oddiel sa nedávajú; urobili sa dvoje.",
+    "compUsiFaraMontanti": "Vybral si oddiely, ale korpus nemá žiadnu priečku.",
+    "politeNuIncapAtipic": "Do oddielu {comp} sa nezmestí žiadna polica: je príliš nízky."
   },
   "csv": {
     "corp": "Korpus",
@@ -1432,7 +1440,8 @@
     "deComandat": {
       "usaRamaAlu": "Na objednanie: sklenené dvierka v hliníkovom ráme, {h} × {l} mm — {n} ks."
     },
-    "conturDeMana": "Strany a uhly, ručne"
+    "conturDeMana": "Strany a uhly, ručne",
+    "subScaraStramb": "Súčasný obrys sa nezatvára. Rozmery vyššie sú z neho odčítané, približne — stlač tlačidlo a bude presný."
   },
   "fata": {
     "px": "vpravo",

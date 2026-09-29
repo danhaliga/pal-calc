@@ -762,7 +762,9 @@
     "montant": "中仕切り",
     "piesaSimpla": "部材",
     "soclu": "台輪",
-    "traversa": "幕板"
+    "traversa": "幕板",
+    "montantAtipic": "仕切り {n}",
+    "usaAtipica": "扉（{comp} 番目の区画）"
   },
   "directie": {
     "jos": "下",
@@ -804,7 +806,8 @@
     "socluColtL": "腕 {n} の前側 — 角では腕 1 が腕 2 の端の先まで通る",
     "socluDiagonal": "対角線上の前側 — 両端を直角切りから {u1}° と {u2}° で切る",
     "usiGlisante": "引き戸 {n} 枚、重なり {supr}、レール {sine}",
-    "traverseSusInLocDeBlat": "天板の代わりに、前と後ろに1枚ずつ、幅 {lat}"
+    "traverseSusInLocDeBlat": "天板の代わりに、前と後ろに1枚ずつ、幅 {lat}",
+    "montantSubPanta": "斜面の下：上端を角度切り、{mare} から {mic} まで"
   },
   "avert": {
     "politeAtipic": "変形キャビネットの棚板は自動では数えません。別の部材として足してください。",
@@ -852,7 +855,12 @@
     "traversePreaLate": "幅 {lat} mm の幕板は入りません。2枚が触れてしまいます。{incape} mm を超えると、切り損じた天板と同じです。",
     "traverseInAfara": "幕板の幅は {min}〜{max} mm です。{lat} は {pus} に直しました。",
     "faraFronturi": "前板なし：箱だけを納め、{cate} 枚が木取り表に入りません。作る人のための仕上がり寸法：{cote}。",
-    "sertareSusNisaJos": "下の {nisa} mm の空きはそのまま空いています：引き出しは上にあります。「引き出し：下」で下ろせば、空きはその上に移ります。その空きが引き出しのためだったなら、ニッチを 0 にしてください。"
+    "sertareSusNisaJos": "下の {nisa} mm の空きはそのまま空いています：引き出しは上にあります。「引き出し：下」で下ろせば、空きはその上に移ります。その空きが引き出しのためだったなら、ニッチを 0 にしてください。",
+    "montantiPreaMulti": "仕切り {cate} 枚は入りません：区画が {lat} mm になります。外しました。",
+    "montantNuIncape": "仕切り {n} の場所がありません：そこは高さ 50 mm 未満です。",
+    "usiPeCompartimentPreaMulte": "一区画に {cerut} 枚の扉は付けません。二枚にしました。",
+    "compUsiFaraMontanti": "区画を選びましたが、この箱には仕切りがありません。",
+    "politeNuIncapAtipic": "{comp} 番目の区画には棚が入りません：低すぎます。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "発注：アルミ框ガラス扉 {h} × {l} mm — {n} 枚。"
     },
-    "conturDeMana": "辺と角度を手で入れる"
+    "conturDeMana": "辺と角度を手で入れる",
+    "subScaraStramb": "今の輪郭は閉じていません。上の寸法はそこからおおよそ読み取ったものです。ボタンを押せば正確になります。"
   },
   "fata": {
     "px": "右",

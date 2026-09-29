@@ -762,7 +762,9 @@
     "montant": "Mittelseite",
     "piesaSimpla": "Teil",
     "soclu": "Sockel",
-    "traversa": "Traverse"
+    "traversa": "Traverse",
+    "montantAtipic": "Mittelseite {n}",
+    "usaAtipica": "Tür (Fach {comp})"
   },
   "directie": {
     "jos": "unten",
@@ -804,7 +806,8 @@
     "socluColtL": "am Schenkel {n}, vorn — in der Ecke läuft Schenkel 1 über das Ende von Schenkel 2",
     "socluDiagonal": "auf der Diagonale, vorn — Enden auf {u1}° und {u2}° zum geraden Schnitt geschnitten",
     "usiGlisante": "{n} Schiebetüren, Überlappung {supr}, Schienen {sine}",
-    "traverseSusInLocDeBlat": "statt des Deckels: eine vorn, eine hinten, {lat} breit"
+    "traverseSusInLocDeBlat": "statt des Deckels: eine vorn, eine hinten, {lat} breit",
+    "montantSubPanta": "unter der Schräge: obere Kante auf Gehrung, von {mare} auf {mic}"
   },
   "avert": {
     "politeAtipic": "Bei Sonderkorpussen werden Böden nicht automatisch berechnet: füge sie als eigene Teile hinzu.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Traversen von {lat} mm passen nicht: zwei so breite berühren sich. Über {incape} mm wäre es ein schlecht zugeschnittener Deckel.",
     "traverseInAfara": "Eine Traverse wird zwischen {min} und {max} mm gemacht. {lat} wurde auf {pus} gebracht.",
     "faraFronturi": "Ohne Fronten: geliefert wird nur der Korpus, {cate} Teile stehen nicht auf der Zuschnittliste. Ihre Fertigmaße, für den, der sie macht: {cote}.",
-    "sertareSusNisaJos": "Die Lücke unten, {nisa} mm, bleibt leer: die Schubladen sitzen oben. Mit „Die Schubladen: unten“ rutschen sie nach unten und die Lücke wandert darüber; war die Lücke für die Schublade gedacht, setz die Nische auf 0."
+    "sertareSusNisaJos": "Die Lücke unten, {nisa} mm, bleibt leer: die Schubladen sitzen oben. Mit „Die Schubladen: unten“ rutschen sie nach unten und die Lücke wandert darüber; war die Lücke für die Schublade gedacht, setz die Nische auf 0.",
+    "montantiPreaMulti": "{cate} Mittelseiten passen nicht: die Fächer wären {lat} mm breit. Sie wurden entfernt.",
+    "montantNuIncape": "Mittelseite {n} hat keinen Platz: dort ist der Korpus unter 50 mm hoch.",
+    "usiPeCompartimentPreaMulte": "{cerut} Türen auf ein Fach macht man nicht; es wurden zwei gemacht.",
+    "compUsiFaraMontanti": "Du hast Fächer gewählt, aber der Korpus hat keine Mittelseite.",
+    "politeNuIncapAtipic": "In Fach {comp} passt kein Boden: es ist zu niedrig."
   },
   "csv": {
     "corp": "Korpus",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "Zu bestellen: Glastür mit Alurahmen, {h} × {l} mm — {n} Stk."
     },
-    "conturDeMana": "Seiten und Winkel, von Hand"
+    "conturDeMana": "Seiten und Winkel, von Hand",
+    "subScaraStramb": "Die jetzige Kontur schließt nicht. Die Maße oben sind daraus abgelesen, ungefähr — drück den Knopf, dann stimmt sie."
   },
   "fata": {
     "px": "rechts",

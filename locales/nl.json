@@ -762,7 +762,9 @@
     "montant": "Middenwand",
     "piesaSimpla": "Paneel",
     "soclu": "Plint",
-    "traversa": "Regel"
+    "traversa": "Regel",
+    "montantAtipic": "Tussenwand {n}",
+    "usaAtipica": "Deur (vak {comp})"
   },
   "directie": {
     "jos": "onder",
@@ -804,7 +806,8 @@
     "socluColtL": "op arm {n}, aan de voorkant — in de hoek loopt arm 1 voorbij het einde van arm 2",
     "socluDiagonal": "op de diagonaal, aan de voorkant — uiteinden gezaagd op {u1}° en {u2}° ten opzichte van een rechte zaagsnede",
     "usiGlisante": "{n} schuifdeuren, overlap {supr}, rails {sine}",
-    "traverseSusInLocDeBlat": "in plaats van het bovenblad: één voor, één achter, {lat} breed"
+    "traverseSusInLocDeBlat": "in plaats van het bovenblad: één voor, één achter, {lat} breed",
+    "montantSubPanta": "onder de schuinte: bovenkant op verstek gezaagd, van {mare} naar {mic}"
   },
   "avert": {
     "politeAtipic": "Bij niet-standaard kasten worden legplanken niet automatisch berekend: voeg ze als losse onderdelen toe.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Regels van {lat} mm passen niet: twee zo brede raken elkaar. Boven {incape} mm is het een slecht gezaagd bovenblad.",
     "traverseInAfara": "Een regel maak je tussen {min} en {max} mm. {lat} is teruggebracht naar {pus}.",
     "faraFronturi": "Zonder fronten: alleen de kast wordt geleverd, {cate} stuks staan niet op de zaaglijst. Hun eindmaten, voor wie ze maakt: {cote}.",
-    "sertareSusNisaJos": "Het gat onderin van {nisa} mm blijft leeg: de lades zitten bovenin. Zet ze omlaag met „De lades: onderin”, dan schuift het gat erboven; was dat gat juist voor de lade, zet de nis op 0."
+    "sertareSusNisaJos": "Het gat onderin van {nisa} mm blijft leeg: de lades zitten bovenin. Zet ze omlaag met „De lades: onderin”, dan schuift het gat erboven; was dat gat juist voor de lade, zet de nis op 0.",
+    "montantiPreaMulti": "{cate} tussenwanden passen niet: de vakken zouden {lat} mm worden. Ze zijn weggelaten.",
+    "montantNuIncape": "Tussenwand {n} heeft geen plaats: daar is de kast lager dan 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} deuren op één vak doe je niet; er zijn er twee gemaakt.",
+    "compUsiFaraMontanti": "Je koos vakken, maar de kast heeft geen tussenwand.",
+    "politeNuIncapAtipic": "In vak {comp} past geen plank: het is te laag."
   },
   "csv": {
     "corp": "Kast",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "Te bestellen: glazen deur met aluminium kader, {h} × {l} mm — {n} st."
     },
-    "conturDeMana": "Zijden en hoeken, met de hand"
+    "conturDeMana": "Zijden en hoeken, met de hand",
+    "subScaraStramb": "De huidige omtrek sluit niet. De maten hierboven zijn er bij benadering uit afgelezen — druk op de knop en het klopt."
   },
   "fata": {
     "px": "rechts",

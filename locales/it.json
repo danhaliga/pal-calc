@@ -762,7 +762,9 @@
     "montant": "Montante",
     "piesaSimpla": "Pezzo",
     "soclu": "Zoccolo",
-    "traversa": "Traversa"
+    "traversa": "Traversa",
+    "montantAtipic": "Montante {n}",
+    "usaAtipica": "Anta (vano {comp})"
   },
   "directie": {
     "jos": "basso",
@@ -804,7 +806,8 @@
     "socluColtL": "sul braccio {n}, davanti — nell'angolo il braccio 1 passa oltre la testa del braccio 2",
     "socluDiagonal": "sulla diagonale, davanti — estremità tagliate a {u1}° e {u2}° rispetto al taglio dritto",
     "usiGlisante": "{n} ante scorrevoli, sovrapposizione {supr}, binari {sine}",
-    "traverseSusInLocDeBlat": "al posto del top: una davanti, una dietro, larghe {lat}"
+    "traverseSusInLocDeBlat": "al posto del top: una davanti, una dietro, larghe {lat}",
+    "montantSubPanta": "sotto la pendenza: bordo superiore tagliato a squadra, da {mare} a {mic}"
   },
   "avert": {
     "politeAtipic": "Nei mobili fuori misura i ripiani non si calcolano da soli: aggiungili come pezzi separati.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Traverse da {lat} mm non ci stanno: due così larghe si toccano. Oltre {incape} mm sarebbe un top tagliato male.",
     "traverseInAfara": "La traversa si fa tra {min} e {max} mm. {lat} è stato portato a {pus}.",
     "faraFronturi": "Senza frontali: si consegna solo il corpo, {cate} pezzi non entrano nella lista di taglio. Le misure finite, per chi li fa: {cote}.",
-    "sertareSusNisaJos": "Il vano in basso, di {nisa} mm, resta vuoto: i cassetti stanno in alto. Abbassali con «I cassetti: in basso» e il vano sale sopra di loro; se quel vano era proprio per il cassetto, metti la nicchia a 0."
+    "sertareSusNisaJos": "Il vano in basso, di {nisa} mm, resta vuoto: i cassetti stanno in alto. Abbassali con «I cassetti: in basso» e il vano sale sopra di loro; se quel vano era proprio per il cassetto, metti la nicchia a 0.",
+    "montantiPreaMulti": "{cate} montanti non ci stanno: i vani sarebbero da {lat} mm. Sono stati tolti.",
+    "montantNuIncape": "Il montante {n} non ha posto: lì il mobile è sotto i 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} ante su un vano non si mettono; ne sono state fatte due.",
+    "compUsiFaraMontanti": "Hai scelto dei vani, ma il mobile non ha montanti.",
+    "politeNuIncapAtipic": "Nel vano {comp} non ci sta nessun ripiano: è troppo basso."
   },
   "csv": {
     "corp": "Mobile",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "Da ordinare: anta in vetro con telaio in alluminio, {h} × {l} mm — {n} pz."
     },
-    "conturDeMana": "Lati e angoli, a mano"
+    "conturDeMana": "Lati e angoli, a mano",
+    "subScaraStramb": "Il contorno attuale non si chiude. Le misure sopra sono lette da lì, approssimate — premi il bottone e diventa esatto."
   },
   "fata": {
     "px": "destra",

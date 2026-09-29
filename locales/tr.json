@@ -762,7 +762,9 @@
     "montant": "Orta bölme",
     "piesaSimpla": "Parça",
     "soclu": "Süpürgelik",
-    "traversa": "Kuşak"
+    "traversa": "Kuşak",
+    "montantAtipic": "Dikme {n}",
+    "usaAtipica": "Kapak ({comp}. göz)"
   },
   "directie": {
     "jos": "alt",
@@ -804,7 +806,8 @@
     "socluColtL": "{n}. kolda, önde — köşede 1. kol, 2. kolun ucunun önünden geçer",
     "socluDiagonal": "çaprazda, önde — uçlar düz kesime göre {u1}° ve {u2}° kesilir",
     "usiGlisante": "{n} sürme kapak, bindirme {supr}, raylar {sine}",
-    "traverseSusInLocDeBlat": "üst tabla yerine: biri önde biri arkada, {lat} genişliğinde"
+    "traverseSusInLocDeBlat": "üst tabla yerine: biri önde biri arkada, {lat} genişliğinde",
+    "montantSubPanta": "eğimin altında: üst kenar açılı kesilmiş, {mare} ile {mic} arası"
   },
   "avert": {
     "politeAtipic": "Standart dışı gövdelerde raflar kendiliğinden hesaplanmaz: onları ayrı parça olarak ekle.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "{lat} mm kuşaklar sığmıyor: bu genişlikte ikisi birbirine değer. {incape} mm üstü, kötü kesilmiş bir tabla olur.",
     "traverseInAfara": "Kuşak {min} ile {max} mm arasında yapılır. {lat} değeri {pus} yapıldı.",
     "faraFronturi": "Kapaksız: yalnızca gövde teslim edilir, {cate} parça kesim listesine girmez. Yapacak olana bitmiş ölçüler: {cote}.",
-    "sertareSusNisaJos": "Alttaki {nisa} mm boşluk boş kalıyor: çekmeceler üstte. «Çekmeceler: altta» ile aşağı al, boşluk onların üstüne çıkar; boşluk zaten çekmece içinse nişi 0 yap."
+    "sertareSusNisaJos": "Alttaki {nisa} mm boşluk boş kalıyor: çekmeceler üstte. «Çekmeceler: altta» ile aşağı al, boşluk onların üstüne çıkar; boşluk zaten çekmece içinse nişi 0 yap.",
+    "montantiPreaMulti": "{cate} dikme sığmıyor: gözler {lat} mm kalırdı. Kaldırıldı.",
+    "montantNuIncape": "Dikme {n} için yer yok: orada gövde 50 mm’den alçak.",
+    "usiPeCompartimentPreaMulte": "Bir göze {cerut} kapak takılmaz; iki tane yapıldı.",
+    "compUsiFaraMontanti": "Göz seçtin ama gövdede hiç dikme yok.",
+    "politeNuIncapAtipic": "{comp}. göze raf sığmıyor: fazla alçak."
   },
   "csv": {
     "corp": "Gövde",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "Sipariş edilecek: alüminyum çerçeveli cam kapak, {h} × {l} mm — {n} adet."
     },
-    "conturDeMana": "Kenarlar ve açılar, elle"
+    "conturDeMana": "Kenarlar ve açılar, elle",
+    "subScaraStramb": "Şu anki kontur kapanmıyor. Yukarıdaki ölçüler ondan yaklaşık olarak okundu — düğmeye bas, tam olsun."
   },
   "fata": {
     "px": "sağ",

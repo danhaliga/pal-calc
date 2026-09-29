@@ -143,11 +143,21 @@ function randeazaContur() {
 function umpleSubScara() {
   if (!$('ssBaza')) return;
   var c = window.PalCalc.coteSubScara(params.contur);
-  /* O formă pe care cele trei cote n-o pot scrie — mansarda cu cinci laturi,
-     sau una făcută de mână — își deschide singură tabelul. Altfel omul s-ar
-     uita la trei casete goale și n-ar ști pe unde se umblă la ea. */
+  /* O formă pe care cele trei cote CHIAR n-o pot scrie — mansarda cu cinci
+     laturi, sau una făcută de mână — își deschide singură tabelul. Una doar
+     strâmbă nu: acolo cotele se citesc, iar butonul de lângă ele o repară
+     dintr-o apăsare. */
   var manual = $('conturManual');
   if (manual && !c) manual.open = true;
+
+  /* Contur strâmb, dar de recunoscut: se spune ce s-a citit și ce face
+     butonul, ca omul să nu creadă că i s-au pierdut cotele. */
+  var semn = $('subScaraStramb');
+  if (semn) {
+    var stramb = !!(c && c.stramb);
+    semn.classList.toggle('hidden', !stramb);
+    if (stramb) semn.textContent = T('editor.subScaraStramb');
+  }
   [['ssBaza', c && c.baza], ['ssStanga', c && c.stanga], ['ssDreapta', c && c.dreapta]]
     .forEach(function (x) {
       var el = $(x[0]);

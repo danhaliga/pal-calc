@@ -180,14 +180,22 @@ test('lista CNC cere frezat NUMAI panta, nu și muchia dreaptă', () => {
     { t: t, effortMs: 30, adaosCant: 15 });
 
   const decupate = r.cnc.filter(x => x.muchii && x.muchii.length);
-  assert.ok(decupate.length >= 2, 'spatele și frontul ar trebui decupate după contur');
+  assert.ok(decupate.length >= 2, 'spatele și ușa ar trebui decupate după contur');
+  /* Fiecare piesă decupată are o singură muchie de frezat: bucata ei de pantă.
+     Spatele o ia pe toată; o ușă doar cât ține compartimentul ei. Ce NU are
+     voie să apară e o a doua muchie — aia ar fi o latură dreaptă, cerută la
+     frezat degeaba, și exact asta se întâmpla cu conturul strâmb. */
   decupate.forEach(x => {
     assert.equal(x.muchii.length, 1,
       x.piesa + ': ' + x.muchii.length + ' muchii de frezat, ar trebui una singură — ' +
       x.muchii.map(m => m.lung).join(', '));
-    assert.ok(Math.abs(x.muchii[0].lung - 984.9) < 0.2,
-      x.piesa + ': muchia de frezat e ' + x.muchii[0].lung + ', nu panta');
+    assert.ok(x.muchii[0].lung > 100 && x.muchii[0].lung <= 984.9 + 0.2,
+      x.piesa + ': muchia de frezat e ' + x.muchii[0].lung + ', nu o bucată de pantă');
   });
+  /* spatele o ia pe toată */
+  const spate = decupate.filter(x => /spate/i.test(x.piesa))[0];
+  assert.ok(spate && Math.abs(spate.muchii[0].lung - 984.9) < 0.2,
+    'spatele nu mai are panta întreagă');
 });
 
 /* ---------------- unde se cere ---------------- */

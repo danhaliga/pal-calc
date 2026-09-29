@@ -768,7 +768,9 @@
     "montant": "Pregrada",
     "piesaSimpla": "Element",
     "soclu": "Sokl",
-    "traversa": "Traverza"
+    "traversa": "Traverza",
+    "montantAtipic": "Pregrada {n}",
+    "usaAtipica": "Vrata (pretinac {comp})"
   },
   "directie": {
     "jos": "dolje",
@@ -810,7 +812,8 @@
     "socluColtL": "na kraku {n}, sprijeda — u kutu krak 1 prelazi preko kraja kraka 2",
     "socluDiagonal": "na dijagonali, sprijeda — krajevi rezani pod {u1}° i {u2}° u odnosu na ravni rez",
     "usiGlisante": "{n} klizna vrata, preklop {supr}, vodilice {sine}",
-    "traverseSusInLocDeBlat": "umjesto gornje ploče: jedna sprijeda, druga straga, široke {lat}"
+    "traverseSusInLocDeBlat": "umjesto gornje ploče: jedna sprijeda, druga straga, široke {lat}",
+    "montantSubPanta": "ispod nagiba: gornji rub rezan pod kutom, od {mare} do {mic}"
   },
   "avert": {
     "politeAtipic": "Kod netipičnih korpusa police se ne računaju same: dodaj ih kao zasebne dijelove.",
@@ -858,7 +861,12 @@
     "traversePreaLate": "Traverze od {lat} mm ne stanu: dvije tako široke se dodiruju. Iznad {incape} mm to je loše skrojena ploča.",
     "traverseInAfara": "Traverza se radi između {min} i {max} mm. {lat} je sveden na {pus}.",
     "faraFronturi": "Bez fronti: dostavlja se samo korpus, {cate} dijelova ne ulazi u plan krojenja. Njihove gotove mjere, za onoga ko ih izrađuje: {cote}.",
-    "sertareSusNisaJos": "Donji otvor od {nisa} mm ostaje prazan: ladice su gore. Spusti ih s „Ladice: dolje“ i otvor prelazi iznad njih; ako je otvor bio baš za ladicu, stavi nišu na 0."
+    "sertareSusNisaJos": "Donji otvor od {nisa} mm ostaje prazan: ladice su gore. Spusti ih s „Ladice: dolje“ i otvor prelazi iznad njih; ako je otvor bio baš za ladicu, stavi nišu na 0.",
+    "montantiPreaMulti": "{cate} pregrada ne stane: pretinci bi bili {lat} mm. Uklonjene su.",
+    "montantNuIncape": "Pregrada {n} nema mjesta: ondje je korpus niži od 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} vrata na jedan pretinac se ne stavljaju; napravljena su dvoja.",
+    "compUsiFaraMontanti": "Izabrao si pretince, ali korpus nema nijednu pregradu.",
+    "politeNuIncapAtipic": "U pretinac {comp} ne stane nijedna polica: prenizak je."
   },
   "csv": {
     "corp": "Korpus",
@@ -1432,7 +1440,8 @@
     "deComandat": {
       "usaRamaAlu": "Za naručiti: staklena vrata u aluminijskom okviru, {h} × {l} mm — {n} kom."
     },
-    "conturDeMana": "Stranice i kutovi, ručno"
+    "conturDeMana": "Stranice i kutovi, ručno",
+    "subScaraStramb": "Trenutna kontura se ne zatvara. Mjere iznad očitane su iz nje, približno — pritisni gumb i bit će točna."
   },
   "fata": {
     "px": "desno",

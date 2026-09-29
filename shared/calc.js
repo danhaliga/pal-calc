@@ -300,19 +300,82 @@
     ];
   }
 
-  /* Cotele unui contur de sub scară, citite înapoi din laturi. Întoarce null
-     dacă nu e așa ceva: patru laturi, prima jos, ultima în stânga. */
+  /* Cotele unui contur de sub scară, citite înapoi din laturi.
+
+     Se citesc ȘI dintr-un contur care nu se închide. Un corp scris de mână,
+     cu panta rotunjită, rămâne cu câțiva milimetri în colț — și tocmai
+     atunci omul are nevoie de cele trei casete pline, fiindcă butonul de
+     lângă ele e ieșirea din contururile strâmbe. Strâmtorat la jumătate de
+     milimetru, cum era, se golea exact când trebuia să ajute.
+
+     Toleranța e pe măsura corpului, nu o cifră fixă: un milimetru contează
+     la un corp de 300 și nu contează la unul de 3000. Peste ea nu se mai
+     citește nimic — atunci chiar e altă formă, nu una strâmbă. */
   function coteSubScara(contur) {
     var l = contur || [];
     if (l.length !== 4) return null;
     var g = conturGeometrie(l);
     if (!g.puncte || g.puncte.length !== 4) return null;
     var p = g.puncte;
+    var toleranta = Math.min(10, Math.max(1, Math.max(g.W, g.H) * 0.01));
     /* jos orizontală, dreapta verticală, stânga verticală */
-    if (Math.abs(p[0][1] - p[1][1]) > 0.5) return null;
-    if (Math.abs(p[1][0] - p[2][0]) > 0.5) return null;
-    if (Math.abs(p[3][0] - p[0][0]) > 0.5) return null;
-    return { baza: r1(p[1][0] - p[0][0]), dreapta: r1(p[2][1]), stanga: r1(p[3][1]) };
+    if (Math.abs(p[0][1] - p[1][1]) > toleranta) return null;
+    if (Math.abs(p[1][0] - p[2][0]) > toleranta) return null;
+    if (Math.abs(p[3][0] - p[0][0]) > toleranta) return null;
+    return { baza: r1(p[1][0] - p[0][0]), dreapta: r1(p[2][1]), stanga: r1(p[3][1]),
+             /* `stramb` spune că cifrele sunt citite dintr-un contur care nu
+                se închide: sunt bune de pus în casete, nu de crezut pe cuvânt. */
+             stramb: !g.inchis };
+  }
+
+  /* Cât de sus urcă conturul la o anumită abscisă.
+
+     Sub o scară, „înălțimea corpului" nu e un număr: e altul la fiecare
+     centimetru pe lățime. Montanții, ușile și polițele au nevoie de el ca să
+     știe unde se opresc. Se ia muchia de SUS: din toate laturile care trec
+     peste abscisa asta, cea mai înaltă. */
+  function susLaX(puncte, x) {
+    var sus = null;
+    for (var i = 0; i < puncte.length; i++) {
+      var a = puncte[i], b = puncte[(i + 1) % puncte.length];
+      var st = Math.min(a[0], b[0]), dr = Math.max(a[0], b[0]);
+      if (x < st - 0.001 || x > dr + 0.001) continue;
+      var y;
+      if (Math.abs(b[0] - a[0]) < 0.001) y = Math.max(a[1], b[1]);   /* latură verticală */
+      else y = a[1] + (b[1] - a[1]) * (x - a[0]) / (b[0] - a[0]);
+      if (sus === null || y > sus) sus = y;
+    }
+    return sus === null ? 0 : sus;
+  }
+
+  /* Felia de contur dintre două abscise, ca poligon.
+
+     De aici ies ușile: fiecare acoperă bucata ei din față, iar sub pantă
+     bucata aia are muchia de sus înclinată. Se taie cu două plane verticale,
+     fiecare latură pe rând (Sutherland–Hodgman). */
+  function felieContur(puncte, x0, x1) {
+    var taie = function (poly, prag, pastreazaDreapta) {
+      var out = [];
+      var inauntru = function (p) {
+        return pastreazaDreapta ? p[0] >= prag - 0.001 : p[0] <= prag + 0.001;
+      };
+      for (var i = 0; i < poly.length; i++) {
+        var a = poly[i], b = poly[(i + 1) % poly.length];
+        var ia = inauntru(a), ib = inauntru(b);
+        if (ia) out.push(a);
+        if (ia !== ib && Math.abs(b[0] - a[0]) > 0.001) {
+          var k = (prag - a[0]) / (b[0] - a[0]);
+          out.push([prag, a[1] + (b[1] - a[1]) * k]);
+        }
+      }
+      return out;
+    };
+    var p = taie(taie(puncte, x0, true), x1, false);
+    /* punctele lipite se scot: altfel ies laturi de lungime zero */
+    return p.filter(function (q, i) {
+      var n = p[(i + 1) % p.length];
+      return Math.hypot(n[0] - q[0], n[1] - q[1]) > 0.01;
+    });
   }
 
   function conturImplicit(W, H) {
@@ -392,7 +455,7 @@
      în toate limbile. */
   var ROL = {
     usa: 'front', usaDiagonala: 'front', usaBrat1: 'front', usaBrat2: 'front',
-    frontSertar: 'front', frontAtipic: 'front',
+    frontSertar: 'front', frontAtipic: 'front', usaAtipica: 'front',
     spateAtipic: 'spate', spatePerete1: 'spate', spatePerete2: 'spate',
     spateAplicat: 'spate', spateNut: 'spate',
     sertarLaterala: 'sertar', sertarFataSpate: 'sertar',
@@ -636,17 +699,114 @@
                polyFata: g.puncte, f: F({ pz: 'p', nz: 'p' }), ex: [0, 0, -1], grp: 'spate' }]);
       }
 
-      if (nUsi > 0) {
-        var rmA = rm;
-        add('frontAtipic', null, 1, r1(g.W - 2 * rmA), r1(g.H - 2 * rmA), 'g', 'g', 'g', 'g', 'LV',
-            ['dupaConturCuRost', { rost: fmt(rmA) }],
-            [{ x: 0, y: 0, z: Da, sx: g.W, sy: g.H, sz: t,
-               polyFata: g.puncte, f: FDa, ex: [0, 0, 1.6], grp: 'fronturi' }]);
-        usiA.push({ L: r1(g.H - 2 * rmA), H: r1(g.H - 2 * rmA) });
+      /* ---- înăuntru: montanți, uși pe compartiment, polițe ----
+
+         Sub o scară nu se face un corp lung cu patru uși: se pun montanți, iar
+         fiecare compartiment primește ușa lui și polițele lui. Ce e altfel
+         decât la corpul drept e că tavanul e înclinat, deci fiecare montant,
+         fiecare ușă și fiecare poliță se oprește la altă înălțime.
+
+         Panourile de contur stau CĂLARE pe linia lor (vezi mai sus, `my - t/2`),
+         deci golul dinăuntru începe la o jumătate de grosime de fiecare
+         margine. De aici `t / 2` peste tot mai jos. */
+      var jumP = t / 2;
+      var xIntA = jumP, xIntB = g.W - jumP;       /* golul pe lățime */
+      var nDspA = Math.max(0, Math.min(6, nDsp));
+      var compA = nDspA + 1;
+      var latComp = (xIntB - xIntA - nDspA * t) / compA;
+      /* unde începe compartimentul i */
+      var xComp = function (i) { return xIntA + i * (latComp + t); };
+      /* cât de sus se poate merge la abscisa x, sub panoul înclinat */
+      var susUtil = function (x) { return susLaX(g.puncte, x) - jumP; };
+
+      if (latComp < 50 && nDspA > 0) {
+        avert('montantiPreaMulti', { cate: nDspA, lat: fmt(Math.max(0, latComp)) });
+        nDspA = 0; compA = 1; latComp = xIntB - xIntA;
       }
 
+      /* ---- montanții ----
+         Fiecare urcă din fund până în panta de deasupra, deci muchia lui de
+         sus e tăiată la unghi: una din laturi e mai înaltă decât cealaltă. */
+      for (var im = 1; im <= nDspA; im++) {
+        var xm = xComp(im) - t;
+        var h1 = susUtil(xm), h2 = susUtil(xm + t);
+        var hMic = Math.min(h1, h2), hMare = Math.max(h1, h2);
+        if (hMare - jumP < 50) { avert('montantNuIncape', { n: im }); continue; }
+        add('montantAtipic', { n: im }, 1, r1(hMare - jumP), Da, 'g', '-', '-', '-', 'LV',
+            Math.abs(h1 - h2) > 0.5
+              ? ['montantSubPanta', { mare: fmt(r1(hMare - jumP)), mic: fmt(r1(hMic - jumP)) }]
+              : null,
+            [{ x: xm, y: jumP, z: 0, sx: t, sy: hMare - jumP, sz: Da,
+               polyFata: [[xm, jumP], [xm + t, jumP], [xm + t, h2], [xm, h1]],
+               f: F({ px: 'f', nx: 'f', py: 'g' }), ex: [0, 0, 0], grp: 'corp' }]);
+      }
+
+      /* ---- ușile, pe compartimente ----
+         Aici `nUsi` înseamnă câte uși intră pe UN compartiment — una sau două.
+         Așa se și desenează pe hârtie: montanții împart corpul, iar fiecare
+         gol primește un canat sau două. */
+      if (nUsi > 0) {
+        var rmA = rm;
+        var peComp = Math.max(1, Math.min(2, nUsi));
+        if (nUsi > 2) avert('usiPeCompartimentPreaMulte', { cerut: nUsi });
+        var aleseA = compartimenteAlese(c.compUsi, compA);
+        if (String(c.compUsi || '').trim() && compA === 1) avert('compUsiFaraMontanti');
+
+        /* Ușa aplicată ACOPERĂ carcasa, nu intră în golul ei: cea de la capăt
+           merge până la muchia din afară, mai puțin rostul de margine, iar
+           două vecine se despart la mijlocul montantului, cu rostul dintre
+           ele. Socotit pe golul dinăuntru, cum era întâi, fiecare ușă ieșea
+           cu o grosime de placă mai îngustă, și se vedea lateralele. */
+        var mijlocMontant = function (im) { return xComp(im) - t / 2; };
+        aleseA.forEach(function (ic) {
+          var xa = ic === 0 ? rmA : mijlocMontant(ic) + ri / 2;
+          var xb = ic === compA - 1 ? g.W - rmA : mijlocMontant(ic + 1) - ri / 2;
+          var latUsi = xb - xa;
+          for (var k = 0; k < peComp; k++) {
+            /* două canaturi pe același gol se despart tot cu un rost */
+            var pas = (latUsi - (peComp - 1) * ri) / peComp;
+            var ua = xa + k * (pas + ri), ub = ua + pas;
+            var poly = felieContur(g.puncte, ua, ub);
+            if (poly.length < 3) { avert('usaPreaIngusta', { comp: ic + 1 }); continue; }
+            var xs = poly.map(function (q) { return q[0]; });
+            var ys = poly.map(function (q) { return q[1]; });
+            var lat = Math.max.apply(null, xs) - Math.min.apply(null, xs);
+            var inalt = Math.max.apply(null, ys) - Math.min.apply(null, ys) - 2 * rmA;
+            if (lat < 50 || inalt < 50) { avert('usaPreaIngusta', { comp: ic + 1 }); continue; }
+            add('usaAtipica', { comp: ic + 1 }, 1, r1(inalt), r1(lat), 'g', 'g', 'g', 'g', 'LV',
+                ['dupaConturCuRost', { rost: fmt(rmA) }],
+                [{ x: 0, y: rmA, z: Da, sx: lat, sy: inalt, sz: t,
+                   polyFata: poly.map(function (q) { return [q[0], Math.max(rmA, q[1] - rmA)]; }),
+                   f: FDa, ex: [0, 0, 1.6], grp: 'fronturi' }]);
+            usiA.push({ L: r1(lat), H: r1(inalt) });
+          }
+        });
+      }
+
+      /* ---- polițele, în fiecare compartiment ----
+         Dreptunghiulare, câte încap. Sub pantă o poliță se oprește acolo unde
+         compartimentul e cel mai SCUND: una pusă mai sus ar intra în panou cu
+         un colț. Compartimentele înalte primesc deci polițe mai sus decât
+         cele scunde, iar cotele lor sunt aceleași — lățimea golului. */
       if (nPol > 0) {
-        avert('politeAtipic');
+        var polDeep = Math.max(10, Da - tp - (+c.rp || 0));
+        var boxPol = [], cate = 0;
+        for (var ic2 = 0; ic2 < compA; ic2++) {
+          var xa2 = xComp(ic2), xb2 = xa2 + latComp;
+          var util = Math.min(susUtil(xa2), susUtil(xb2)) - jumP;
+          if (util < 100) { avert('politeNuIncapAtipic', { comp: ic2 + 1 }); continue; }
+          for (var ip = 1; ip <= nPol; ip++) {
+            var yp = jumP + util * ip / (nPol + 1);
+            boxPol.push(bx(xa2 + (+c.jp || 0) / 2, yp - t / 2, tp,
+              latComp - (+c.jp || 0), t, polDeep,
+              F({ py: 'f', ny: 'f', pz: 'g' }), [0, 0, 0.6], 'polite'));
+            cate++;
+          }
+        }
+        if (cate) {
+          add('polita', null, cate, r1(latComp - (+c.jp || 0)), r1(polDeep),
+              'g', '-', '-', '-', 'L', null, boxPol);
+        }
       }
 
       return {
@@ -1405,6 +1565,8 @@
     conturGeometrie: conturGeometrie,
     conturImplicit: conturImplicit,
     conturDinPuncte: conturDinPuncte,
+    susLaX: susLaX,
+    felieContur: felieContur,
     conturSubScara: conturSubScara,
     coteSubScara: coteSubScara,
     reducereCant: reducereCant,

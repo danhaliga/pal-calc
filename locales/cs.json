@@ -768,7 +768,9 @@
     "montant": "Přepážka",
     "piesaSimpla": "Díl",
     "soclu": "Sokl",
-    "traversa": "Výztuha"
+    "traversa": "Výztuha",
+    "montantAtipic": "Příčka {n}",
+    "usaAtipica": "Dvířka (oddíl {comp})"
   },
   "directie": {
     "jos": "dole",
@@ -810,7 +812,8 @@
     "socluColtL": "na rameni {n}, vpředu — v rohu vede rameno 1 přes konec ramene 2",
     "socluDiagonal": "na úhlopříčce, vpředu — konce řezané pod {u1}° a {u2}° od rovného řezu",
     "usiGlisante": "{n} posuvná dvířka, překrytí {supr}, kolejnice {sine}",
-    "traverseSusInLocDeBlat": "místo horní desky: jedna vpředu, druhá vzadu, široké {lat}"
+    "traverseSusInLocDeBlat": "místo horní desky: jedna vpředu, druhá vzadu, široké {lat}",
+    "montantSubPanta": "pod sklonem: horní hrana řezaná pod úhlem, z {mare} na {mic}"
   },
   "avert": {
     "politeAtipic": "U atypických korpusů se police nepočítají samy: přidej je jako samostatné díly.",
@@ -858,7 +861,12 @@
     "traversePreaLate": "Výztuhy {lat} mm se nevejdou: dvě tak široké se dotýkají. Nad {incape} mm by to byla špatně nařezaná deska.",
     "traverseInAfara": "Výztuha se dělá od {min} do {max} mm. {lat} bylo upraveno na {pus}.",
     "faraFronturi": "Bez dvířek: dodává se jen korpus, {cate} dílů nejde do nářezového plánu. Jejich hotové rozměry, pro toho, kdo je vyrobí: {cote}.",
-    "sertareSusNisaJos": "Spodní mezera {nisa} mm zůstává prázdná: zásuvky jsou nahoře. Spusť je přes „Zásuvky: dole“ a mezera se přesune nad ně; pokud byla mezera právě pro zásuvku, dej výklenek na 0."
+    "sertareSusNisaJos": "Spodní mezera {nisa} mm zůstává prázdná: zásuvky jsou nahoře. Spusť je přes „Zásuvky: dole“ a mezera se přesune nad ně; pokud byla mezera právě pro zásuvku, dej výklenek na 0.",
+    "montantiPreaMulti": "{cate} příček se nevejde: oddíly by měly {lat} mm. Byly odebrány.",
+    "montantNuIncape": "Příčka {n} nemá místo: tam je korpus nižší než 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} dvířka na jeden oddíl se nedávají; udělala se dvoje.",
+    "compUsiFaraMontanti": "Vybral jsi oddíly, ale korpus nemá žádnou příčku.",
+    "politeNuIncapAtipic": "Do oddílu {comp} se nevejde žádná police: je moc nízký."
   },
   "csv": {
     "corp": "Korpus",
@@ -1432,7 +1440,8 @@
     "deComandat": {
       "usaRamaAlu": "K objednání: skleněná dvířka v hliníkovém rámu, {h} × {l} mm — {n} ks."
     },
-    "conturDeMana": "Strany a úhly, ručně"
+    "conturDeMana": "Strany a úhly, ručně",
+    "subScaraStramb": "Současný obrys se nezavírá. Rozměry výše jsou z něj odečtené, přibližně — stiskni tlačítko a bude přesný."
   },
   "fata": {
     "px": "vpravo",

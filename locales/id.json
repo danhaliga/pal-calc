@@ -762,7 +762,9 @@
     "montant": "Sekat",
     "piesaSimpla": "Bagian",
     "soclu": "Papan alas",
-    "traversa": "Palang"
+    "traversa": "Palang",
+    "montantAtipic": "Sekat {n}",
+    "usaAtipica": "Pintu (ruang {comp})"
   },
   "directie": {
     "jos": "bawah",
@@ -804,7 +806,8 @@
     "socluColtL": "pada lengan {n}, di depan — di sudut, lengan 1 melewati ujung lengan 2",
     "socluDiagonal": "pada diagonal, di depan — ujung dipotong {u1}° dan {u2}° dari potongan lurus",
     "usiGlisante": "{n} pintu geser, tumpang {supr}, rel {sine}",
-    "traverseSusInLocDeBlat": "menggantikan papan atas: satu di depan, satu di belakang, lebar {lat}"
+    "traverseSusInLocDeBlat": "menggantikan papan atas: satu di depan, satu di belakang, lebar {lat}",
+    "montantSubPanta": "di bawah kemiringan: tepi atas dipotong menyudut, dari {mare} ke {mic}"
   },
   "avert": {
     "politeAtipic": "Pada boks nonstandar, rak tidak dihitung otomatis: tambahkan sebagai bagian tersendiri.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Palang {lat} mm tidak muat: dua selebar itu saling bersentuhan. Di atas {incape} mm jadinya papan atas yang salah potong.",
     "traverseInAfara": "Palang dibuat antara {min} dan {max} mm. {lat} disesuaikan menjadi {pus}.",
     "faraFronturi": "Tanpa pintu depan: hanya badan lemari yang dikirim, {cate} lembar tidak masuk daftar potong. Ukuran jadinya, untuk yang membuatnya: {cote}.",
-    "sertareSusNisaJos": "Rongga {nisa} mm di bawah tetap kosong: lacinya ada di atas. Turunkan dengan „Laci: di bawah”, rongganya naik ke atas laci; kalau rongga itu memang untuk laci, setel ceruk ke 0."
+    "sertareSusNisaJos": "Rongga {nisa} mm di bawah tetap kosong: lacinya ada di atas. Turunkan dengan „Laci: di bawah”, rongganya naik ke atas laci; kalau rongga itu memang untuk laci, setel ceruk ke 0.",
+    "montantiPreaMulti": "{cate} sekat tidak muat: ruangnya jadi {lat} mm. Sudah dihapus.",
+    "montantNuIncape": "Sekat {n} tidak ada tempat: di situ badan lemari kurang dari 50 mm.",
+    "usiPeCompartimentPreaMulte": "{cerut} pintu pada satu ruang tidak dipasang; dibuat dua.",
+    "compUsiFaraMontanti": "Kamu memilih ruang, tapi lemarinya tidak punya sekat.",
+    "politeNuIncapAtipic": "Tidak ada rak yang muat di ruang {comp}: terlalu pendek."
   },
   "csv": {
     "corp": "Boks",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "Untuk dipesan: pintu kaca rangka aluminium, {h} × {l} mm — {n} buah."
     },
-    "conturDeMana": "Sisi dan sudut, manual"
+    "conturDeMana": "Sisi dan sudut, manual",
+    "subScaraStramb": "Garis luar saat ini tidak menutup. Ukuran di atas dibaca darinya, kira-kira — tekan tombolnya dan jadi tepat."
   },
   "fata": {
     "px": "kanan",

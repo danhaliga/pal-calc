@@ -762,7 +762,9 @@
     "montant": "Vách ngăn",
     "piesaSimpla": "Chi tiết",
     "soclu": "Chân đế",
-    "traversa": "Thanh giằng"
+    "traversa": "Thanh giằng",
+    "montantAtipic": "Vách ngăn {n}",
+    "usaAtipica": "Cánh (ngăn {comp})"
   },
   "directie": {
     "jos": "dưới",
@@ -804,7 +806,8 @@
     "socluColtL": "trên cánh {n}, phía trước — ở góc, cánh 1 chạy qua đầu cánh 2",
     "socluDiagonal": "trên đường chéo, phía trước — hai đầu cắt {u1}° và {u2}° so với đường cắt vuông",
     "usiGlisante": "{n} cánh lùa, chồng mép {supr}, ray {sine}",
-    "traverseSusInLocDeBlat": "thay cho tấm nóc: một phía trước, một phía sau, rộng {lat}"
+    "traverseSusInLocDeBlat": "thay cho tấm nóc: một phía trước, một phía sau, rộng {lat}",
+    "montantSubPanta": "dưới mái dốc: cạnh trên cắt vát, từ {mare} xuống {mic}"
   },
   "avert": {
     "politeAtipic": "Ở thùng tủ phi tiêu chuẩn, kệ không được tính tự động: hãy thêm chúng như chi tiết riêng.",
@@ -852,7 +855,12 @@
     "traversePreaLate": "Thanh giằng {lat} mm không vừa: hai thanh rộng vậy chạm nhau. Trên {incape} mm thì chẳng khác gì tấm nóc cắt hỏng.",
     "traverseInAfara": "Thanh giằng làm từ {min} đến {max} mm. {lat} đã được đưa về {pus}.",
     "faraFronturi": "Không mặt cánh: chỉ giao thùng, {cate} tấm không vào bảng cắt. Kích thước thành phẩm, cho người làm: {cote}.",
-    "sertareSusNisaJos": "Khoảng trống {nisa} mm ở dưới vẫn để trống: ngăn kéo nằm ở trên. Hạ xuống bằng „Ngăn kéo: ở dưới”, khoảng trống sẽ lên trên chúng; nếu khoảng đó vốn là cho ngăn kéo thì đặt hốc về 0."
+    "sertareSusNisaJos": "Khoảng trống {nisa} mm ở dưới vẫn để trống: ngăn kéo nằm ở trên. Hạ xuống bằng „Ngăn kéo: ở dưới”, khoảng trống sẽ lên trên chúng; nếu khoảng đó vốn là cho ngăn kéo thì đặt hốc về 0.",
+    "montantiPreaMulti": "{cate} vách ngăn không vừa: các ngăn chỉ còn {lat} mm. Đã bỏ.",
+    "montantNuIncape": "Vách ngăn {n} không có chỗ: ở đó thùng cao chưa tới 50 mm.",
+    "usiPeCompartimentPreaMulte": "Một ngăn không lắp {cerut} cánh; đã làm hai.",
+    "compUsiFaraMontanti": "Bạn chọn ngăn, nhưng thùng không có vách ngăn nào.",
+    "politeNuIncapAtipic": "Ngăn {comp} không vừa kệ nào: quá thấp."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -1421,7 +1429,8 @@
     "deComandat": {
       "usaRamaAlu": "Cần đặt: cánh kính khung nhôm, {h} × {l} mm — {n} cái."
     },
-    "conturDeMana": "Cạnh và góc, nhập tay"
+    "conturDeMana": "Cạnh và góc, nhập tay",
+    "subScaraStramb": "Đường bao hiện tại không khép. Các kích thước ở trên đọc từ đó, gần đúng — bấm nút là chính xác."
   },
   "fata": {
     "px": "phải",
