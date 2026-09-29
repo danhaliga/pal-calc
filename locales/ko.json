@@ -762,7 +762,8 @@
     "traverseNuMerg": "가로대는 “사이” 방식으로 짠 직선 몸통에만 씁니다. 여기서는 상판 전체가 남았습니다.",
     "traversePreaLate": "{lat} mm 가로대는 들어가지 않습니다. 그 폭이면 둘이 맞닿습니다. {incape} mm를 넘으면 잘못 자른 상판과 같습니다.",
     "traverseInAfara": "가로대는 {min}~{max} mm 사이로 만듭니다. {lat}은(는) {pus}으로 맞췄습니다.",
-    "faraFronturi": "전면판 없음: 몸통만 납품하며 {cate}장이 재단 목록에 들어가지 않습니다. 제작하는 쪽을 위한 완성 치수: {cote}."
+    "faraFronturi": "전면판 없음: 몸통만 납품하며 {cate}장이 재단 목록에 들어가지 않습니다. 제작하는 쪽을 위한 완성 치수: {cote}.",
+    "sertareSusNisaJos": "아래의 {nisa}mm 빈칸이 그대로 비어 있습니다: 서랍이 위에 있습니다. „서랍: 아래쪽”으로 내리면 빈칸이 그 위로 올라갑니다. 그 빈칸이 서랍 자리였다면 니치를 0으로 두십시오."
   },
   "csv": {
     "corp": "캐비닛",
@@ -831,7 +832,8 @@
     "piesa": "판 한 장",
     "peSoclu": "걸레받이 {h} mm",
     "cuTraverse": "가로대 {lat} mm",
-    "faraFront": "전면판 없음"
+    "faraFront": "전면판 없음",
+    "sertareJos": "서랍 아래"
   },
   "comanda": {
     "inapoiComenzi": "내 주문",
@@ -1291,7 +1293,10 @@
     "traverseFara": "상판 전체",
     "fronturi": "전면판",
     "fronturiSeFac": "제작",
-    "fronturiNuSeFac": "제작 안 함"
+    "fronturiNuSeFac": "제작 안 함",
+    "pozitieSertare": "서랍",
+    "sertareSus": "위쪽",
+    "sertareJos": "아래쪽, 문은 그 위에"
   },
   "fata": {
     "px": "오른쪽",

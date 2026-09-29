@@ -762,7 +762,8 @@
     "traverseNuMerg": "Le traverse vanno solo su un mobile diritto costruito «tra». Qui è rimasto il top intero.",
     "traversePreaLate": "Traverse da {lat} mm non ci stanno: due così larghe si toccano. Oltre {incape} mm sarebbe un top tagliato male.",
     "traverseInAfara": "La traversa si fa tra {min} e {max} mm. {lat} è stato portato a {pus}.",
-    "faraFronturi": "Senza frontali: si consegna solo il corpo, {cate} pezzi non entrano nella lista di taglio. Le misure finite, per chi li fa: {cote}."
+    "faraFronturi": "Senza frontali: si consegna solo il corpo, {cate} pezzi non entrano nella lista di taglio. Le misure finite, per chi li fa: {cote}.",
+    "sertareSusNisaJos": "Il vano in basso, di {nisa} mm, resta vuoto: i cassetti stanno in alto. Abbassali con «I cassetti: in basso» e il vano sale sopra di loro; se quel vano era proprio per il cassetto, metti la nicchia a 0."
   },
   "csv": {
     "corp": "Mobile",
@@ -831,7 +832,8 @@
     "piesa": "un solo pannello",
     "peSoclu": "zoccolo {h} mm",
     "cuTraverse": "traverse {lat} mm",
-    "faraFront": "senza frontali"
+    "faraFront": "senza frontali",
+    "sertareJos": "cassetti in basso"
   },
   "comanda": {
     "inapoiComenzi": "I miei ordini",
@@ -1291,7 +1293,10 @@
     "traverseFara": "top intero",
     "fronturi": "Frontali",
     "fronturiSeFac": "si fanno",
-    "fronturiNuSeFac": "non si fanno"
+    "fronturiNuSeFac": "non si fanno",
+    "pozitieSertare": "I cassetti",
+    "sertareSus": "in alto",
+    "sertareJos": "in basso, con le ante sopra"
   },
   "fata": {
     "px": "destra",

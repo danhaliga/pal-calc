@@ -762,7 +762,8 @@
     "traverseNuMerg": "Regels gaan alleen op een rechte kast gebouwd „ertussen”. Hier bleef het hele bovenblad.",
     "traversePreaLate": "Regels van {lat} mm passen niet: twee zo brede raken elkaar. Boven {incape} mm is het een slecht gezaagd bovenblad.",
     "traverseInAfara": "Een regel maak je tussen {min} en {max} mm. {lat} is teruggebracht naar {pus}.",
-    "faraFronturi": "Zonder fronten: alleen de kast wordt geleverd, {cate} stuks staan niet op de zaaglijst. Hun eindmaten, voor wie ze maakt: {cote}."
+    "faraFronturi": "Zonder fronten: alleen de kast wordt geleverd, {cate} stuks staan niet op de zaaglijst. Hun eindmaten, voor wie ze maakt: {cote}.",
+    "sertareSusNisaJos": "Het gat onderin van {nisa} mm blijft leeg: de lades zitten bovenin. Zet ze omlaag met „De lades: onderin”, dan schuift het gat erboven; was dat gat juist voor de lade, zet de nis op 0."
   },
   "csv": {
     "corp": "Kast",
@@ -831,7 +832,8 @@
     "piesa": "één enkel paneel",
     "peSoclu": "plint {h} mm",
     "cuTraverse": "regels {lat} mm",
-    "faraFront": "zonder fronten"
+    "faraFront": "zonder fronten",
+    "sertareJos": "lades onderin"
   },
   "comanda": {
     "inapoiComenzi": "Mijn opdrachten",
@@ -1291,7 +1293,10 @@
     "traverseFara": "heel bovenblad",
     "fronturi": "Fronten",
     "fronturiSeFac": "worden gemaakt",
-    "fronturiNuSeFac": "worden niet gemaakt"
+    "fronturiNuSeFac": "worden niet gemaakt",
+    "pozitieSertare": "De lades",
+    "sertareSus": "bovenin",
+    "sertareJos": "onderin, deuren erboven"
   },
   "fata": {
     "px": "rechts",

@@ -762,7 +762,8 @@
     "traverseNuMerg": "Los travesaños solo van en un mueble recto construido «entre». Aquí se ha quedado el tablero entero.",
     "traversePreaLate": "Travesaños de {lat} mm no caben: dos tan anchos se tocan. Por encima de {incape} mm sería un tablero mal cortado.",
     "traverseInAfara": "El travesaño se hace entre {min} y {max} mm. {lat} se ha ajustado a {pus}.",
-    "faraFronturi": "Sin frentes: se entrega solo el cuerpo, {cate} piezas no entran en la lista de corte. Sus medidas acabadas, para quien los haga: {cote}."
+    "faraFronturi": "Sin frentes: se entrega solo el cuerpo, {cate} piezas no entran en la lista de corte. Sus medidas acabadas, para quien los haga: {cote}.",
+    "sertareSusNisaJos": "El hueco de abajo, de {nisa} mm, se queda vacío: los cajones están arriba. Bájalos con «Los cajones: abajo» y el hueco sube por encima de ellos; si el hueco era para el cajón, pon el nicho a 0."
   },
   "csv": {
     "corp": "Módulo",
@@ -831,7 +832,8 @@
     "piesa": "un solo tablero",
     "peSoclu": "zócalo {h} mm",
     "cuTraverse": "travesaños {lat} mm",
-    "faraFront": "sin frentes"
+    "faraFront": "sin frentes",
+    "sertareJos": "cajones abajo"
   },
   "comanda": {
     "inapoiComenzi": "Mis pedidos",
@@ -1291,7 +1293,10 @@
     "traverseFara": "tablero entero",
     "fronturi": "Frentes",
     "fronturiSeFac": "se hacen",
-    "fronturiNuSeFac": "no se hacen"
+    "fronturiNuSeFac": "no se hacen",
+    "pozitieSertare": "Los cajones",
+    "sertareSus": "arriba",
+    "sertareJos": "abajo, con las puertas encima"
   },
   "fata": {
     "px": "derecha",

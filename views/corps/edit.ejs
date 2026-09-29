@@ -200,6 +200,13 @@
         <legend><%= t('editor.legSertare') %></legend>
         <div class="f3">
           <label><%= t('editor.numarSertare') %><input id="nSer" type="number" min="0" max="12" step="1"></label>
+          <%# Unde stau: sus, ca pana acum, sau jos cu usile deasupra —
+              corpul de cuptor cu sertar dedesubt. Sta langa numar, fiindca
+              e a doua intrebare pe care si-o pune omul dupa „cate". %>
+          <label><%= t('editor.pozitieSertare') %><select id="sertareJos">
+            <option value="0"><%= t('editor.sertareSus') %></option>
+            <option value="1"><%= t('editor.sertareJos') %></option>
+          </select></label>
           <label><%= t('editor.inaltimeFront') %><input id="hFront" type="number" step="1" min="20" max="1200"></label>
           <label><%= t('editor.inaltimeCutie') %><input id="hCutie" type="number" step="1" min="20" max="1200"></label>
           <label><%= t('editor.jocGlisiera') %><input id="jg" type="number" step="0.5" min="0" max="50"></label>

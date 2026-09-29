@@ -762,7 +762,8 @@
     "traverseNuMerg": "Reglar går bara på en rak stomme byggd ”emellan”. Här blev hela topplattan kvar.",
     "traversePreaLate": "Reglar på {lat} mm får inte plats: två så breda tar i varandra. Över {incape} mm blir det en illa sågad topplatta.",
     "traverseInAfara": "En regel görs mellan {min} och {max} mm. {lat} ändrades till {pus}.",
-    "faraFronturi": "Utan fronter: bara stommen levereras, {cate} delar kommer inte med på sågplanen. Deras färdigmått, för den som gör dem: {cote}."
+    "faraFronturi": "Utan fronter: bara stommen levereras, {cate} delar kommer inte med på sågplanen. Deras färdigmått, för den som gör dem: {cote}.",
+    "sertareSusNisaJos": "Glappet nertill på {nisa} mm står tomt: lådorna sitter upptill. Flytta ner dem med ”Lådorna: nedtill”, så hamnar glappet ovanför dem; var glappet tänkt för lådan, sätt nischen till 0."
   },
   "csv": {
     "corp": "Stomme",
@@ -831,7 +832,8 @@
     "piesa": "en enda skiva",
     "peSoclu": "sockel {h} mm",
     "cuTraverse": "reglar {lat} mm",
-    "faraFront": "utan fronter"
+    "faraFront": "utan fronter",
+    "sertareJos": "lådor nedtill"
   },
   "comanda": {
     "inapoiComenzi": "Mina ordrar",
@@ -1291,7 +1293,10 @@
     "traverseFara": "hel topplatta",
     "fronturi": "Fronter",
     "fronturiSeFac": "görs",
-    "fronturiNuSeFac": "görs inte"
+    "fronturiNuSeFac": "görs inte",
+    "pozitieSertare": "Lådorna",
+    "sertareSus": "upptill",
+    "sertareJos": "nedtill, med luckorna ovanför"
   },
   "fata": {
     "px": "höger",

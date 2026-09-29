@@ -442,24 +442,29 @@
     var fL = aplicat ? W - 2 * rm : Wint - 2 * rinc;
     var yTop = aplicat ? rm : t + rinc;
 
-    /* sertare, de sus în jos. Mânerul se prinde în front: fără fronturi nu
-       se desenează, ca să nu iasă un mâner care plutește în gol. */
+    /* Sertarele: sus, sau jos cu ușile deasupra. Mânerul se prinde în
+       front: fără fronturi nu se desenează, ca să nu iasă un mâner care
+       plutește în gol. */
     var cf = clasaFront(p), manere = !+p.faraFront;
+    var jos = !!(+p.sertareJos) && nS > 0;
+    /* SVG are y în jos, deci „sertarele jos" înseamnă y mare. Se numără tot
+       de la primul, ca să rămână un singur șir de calcule. */
+    var ySer = jos ? (H - (aplicat ? rm : t + rinc) - nS * hF - (nS - 1) * ri) : yTop;
     for (var i = 0; i < nS; i++) {
-      o.push('<rect x="' + xoff + '" y="' + (yTop + i * (hF + ri)) + '" width="' + fL +
+      o.push('<rect x="' + xoff + '" y="' + (ySer + i * (hF + ri)) + '" width="' + fL +
              '" height="' + hF + '" class="' + cf + '"/>');
-      var ym = yTop + i * (hF + ri) + hF / 2;
+      var ym = ySer + i * (hF + ri) + hF / 2;
       if (manere) {
         o.push('<line x1="' + (xoff + fL / 2 - fL * 0.16) + '" y1="' + ym +
                '" x2="' + (xoff + fL / 2 + fL * 0.16) + '" y2="' + ym + '" class="sk-maner"/>');
       }
     }
 
-    /* uși, sub sertare */
+    /* uși: sub sertare când alea stau sus, deasupra lor când stau jos */
     if (nU > 0) {
       var uH = (aplicat ? H - soclu - 2 * rm : Hint - 2 * rinc) - usedTop;
       var uL = (fL - (nU - 1) * ri) / nU;
-      var yU = yTop + usedTop;
+      var yU = jos ? yTop : yTop + usedTop;
       for (var k = 0; k < nU; k++) {
         var x = xoff + k * (uL + ri);
         o.push('<rect x="' + x + '" y="' + yU + '" width="' + uL + '" height="' + uH + '" class="' + cf + '"/>');
@@ -499,6 +504,8 @@
     /* Fără fronturi se scrie ORICUM, chiar dacă rândul e deja plin: e
        singurul lucru de pe card care schimbă ce pleacă din atelier. */
     if (+p.faraFront) b.push(t_('rezumat.faraFront'));
+    /* Unde stau sertarele schimbă fața corpului, deci se scrie pe card. */
+    if (+p.sertareJos && +p.nSer > 0) b.push(t_('rezumat.sertareJos'));
     if (!b.length) b.push(t_('rezumat.corpDeschis'));
     return b.join(' · ');
   }

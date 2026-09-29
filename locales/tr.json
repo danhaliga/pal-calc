@@ -762,7 +762,8 @@
     "traverseNuMerg": "Kuşaklar yalnızca „aradan\" yapılmış düz gövdeye takılır. Burada tam tabla kaldı.",
     "traversePreaLate": "{lat} mm kuşaklar sığmıyor: bu genişlikte ikisi birbirine değer. {incape} mm üstü, kötü kesilmiş bir tabla olur.",
     "traverseInAfara": "Kuşak {min} ile {max} mm arasında yapılır. {lat} değeri {pus} yapıldı.",
-    "faraFronturi": "Kapaksız: yalnızca gövde teslim edilir, {cate} parça kesim listesine girmez. Yapacak olana bitmiş ölçüler: {cote}."
+    "faraFronturi": "Kapaksız: yalnızca gövde teslim edilir, {cate} parça kesim listesine girmez. Yapacak olana bitmiş ölçüler: {cote}.",
+    "sertareSusNisaJos": "Alttaki {nisa} mm boşluk boş kalıyor: çekmeceler üstte. «Çekmeceler: altta» ile aşağı al, boşluk onların üstüne çıkar; boşluk zaten çekmece içinse nişi 0 yap."
   },
   "csv": {
     "corp": "Gövde",
@@ -831,7 +832,8 @@
     "piesa": "tek levha",
     "peSoclu": "{h} mm süpürgelik",
     "cuTraverse": "kuşak {lat} mm",
-    "faraFront": "kapaksız"
+    "faraFront": "kapaksız",
+    "sertareJos": "çekmeceler altta"
   },
   "comanda": {
     "inapoiComenzi": "Siparişlerim",
@@ -1291,7 +1293,10 @@
     "traverseFara": "tam tabla",
     "fronturi": "Kapaklar",
     "fronturiSeFac": "yapılır",
-    "fronturiNuSeFac": "yapılmaz"
+    "fronturiNuSeFac": "yapılmaz",
+    "pozitieSertare": "Çekmeceler",
+    "sertareSus": "üstte",
+    "sertareJos": "altta, kapaklar üstünde"
   },
   "fata": {
     "px": "sağ",

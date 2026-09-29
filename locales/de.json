@@ -762,7 +762,8 @@
     "traverseNuMerg": "Traversen gehen nur bei einem geraden Korpus in „Zwischen“-Bauweise. Hier bleibt der ganze Deckel.",
     "traversePreaLate": "Traversen von {lat} mm passen nicht: zwei so breite berühren sich. Über {incape} mm wäre es ein schlecht zugeschnittener Deckel.",
     "traverseInAfara": "Eine Traverse wird zwischen {min} und {max} mm gemacht. {lat} wurde auf {pus} gebracht.",
-    "faraFronturi": "Ohne Fronten: geliefert wird nur der Korpus, {cate} Teile stehen nicht auf der Zuschnittliste. Ihre Fertigmaße, für den, der sie macht: {cote}."
+    "faraFronturi": "Ohne Fronten: geliefert wird nur der Korpus, {cate} Teile stehen nicht auf der Zuschnittliste. Ihre Fertigmaße, für den, der sie macht: {cote}.",
+    "sertareSusNisaJos": "Die Lücke unten, {nisa} mm, bleibt leer: die Schubladen sitzen oben. Mit „Die Schubladen: unten“ rutschen sie nach unten und die Lücke wandert darüber; war die Lücke für die Schublade gedacht, setz die Nische auf 0."
   },
   "csv": {
     "corp": "Korpus",
@@ -831,7 +832,8 @@
     "piesa": "eine einzelne Platte",
     "peSoclu": "{h} mm Sockel",
     "cuTraverse": "Traversen {lat} mm",
-    "faraFront": "ohne Fronten"
+    "faraFront": "ohne Fronten",
+    "sertareJos": "Schubladen unten"
   },
   "comanda": {
     "inapoiComenzi": "Meine Aufträge",
@@ -1291,7 +1293,10 @@
     "traverseFara": "ganzer Deckel",
     "fronturi": "Fronten",
     "fronturiSeFac": "werden gemacht",
-    "fronturiNuSeFac": "werden nicht gemacht"
+    "fronturiNuSeFac": "werden nicht gemacht",
+    "pozitieSertare": "Die Schubladen",
+    "sertareSus": "oben",
+    "sertareJos": "unten, Türen darüber"
   },
   "fata": {
     "px": "rechts",

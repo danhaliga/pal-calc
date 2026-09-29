@@ -768,7 +768,8 @@
     "traverseNuMerg": "Trawersy pasują tylko do prostej skrzyni budowanej „między”. Tutaj został pełny wieniec.",
     "traversePreaLate": "Trawersy {lat} mm się nie mieszczą: dwie takie szerokie stykają się. Powyżej {incape} mm to już źle pocięty wieniec.",
     "traverseInAfara": "Trawersę robi się od {min} do {max} mm. {lat} sprowadzono do {pus}.",
-    "faraFronturi": "Bez frontów: dostarczany jest tylko korpus, {cate} elementów nie wchodzi na listę rozkroju. Ich wymiary gotowe, dla tego, kto je wykona: {cote}."
+    "faraFronturi": "Bez frontów: dostarczany jest tylko korpus, {cate} elementów nie wchodzi na listę rozkroju. Ich wymiary gotowe, dla tego, kto je wykona: {cote}.",
+    "sertareSusNisaJos": "Dolna luka {nisa} mm zostaje pusta: szuflady są na górze. Opuść je przez „Szuflady: na dole”, a luka przejdzie nad nie; jeśli luka była właśnie na szufladę, ustaw wnękę na 0."
   },
   "csv": {
     "corp": "Korpus",
@@ -838,7 +839,8 @@
     "piesa": "pojedyncza płyta",
     "peSoclu": "cokół {h} mm",
     "cuTraverse": "trawersy {lat} mm",
-    "faraFront": "bez frontów"
+    "faraFront": "bez frontów",
+    "sertareJos": "szuflady na dole"
   },
   "comanda": {
     "inapoiComenzi": "Moje zlecenia",
@@ -1302,7 +1304,10 @@
     "traverseFara": "pełny wieniec",
     "fronturi": "Fronty",
     "fronturiSeFac": "robione",
-    "fronturiNuSeFac": "nierobione"
+    "fronturiNuSeFac": "nierobione",
+    "pozitieSertare": "Szuflady",
+    "sertareSus": "na górze",
+    "sertareJos": "na dole, drzwi nad nimi"
   },
   "fata": {
     "px": "prawo",

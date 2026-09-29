@@ -762,7 +762,8 @@
     "traverseNuMerg": "Palang hanya untuk boks lurus yang dibangun „di antara\". Di sini papan atas penuh tetap dipakai.",
     "traversePreaLate": "Palang {lat} mm tidak muat: dua selebar itu saling bersentuhan. Di atas {incape} mm jadinya papan atas yang salah potong.",
     "traverseInAfara": "Palang dibuat antara {min} dan {max} mm. {lat} disesuaikan menjadi {pus}.",
-    "faraFronturi": "Tanpa pintu depan: hanya badan lemari yang dikirim, {cate} lembar tidak masuk daftar potong. Ukuran jadinya, untuk yang membuatnya: {cote}."
+    "faraFronturi": "Tanpa pintu depan: hanya badan lemari yang dikirim, {cate} lembar tidak masuk daftar potong. Ukuran jadinya, untuk yang membuatnya: {cote}.",
+    "sertareSusNisaJos": "Rongga {nisa} mm di bawah tetap kosong: lacinya ada di atas. Turunkan dengan „Laci: di bawah”, rongganya naik ke atas laci; kalau rongga itu memang untuk laci, setel ceruk ke 0."
   },
   "csv": {
     "corp": "Boks",
@@ -831,7 +832,8 @@
     "piesa": "satu papan saja",
     "peSoclu": "papan alas {h} mm",
     "cuTraverse": "palang {lat} mm",
-    "faraFront": "tanpa pintu depan"
+    "faraFront": "tanpa pintu depan",
+    "sertareJos": "laci di bawah"
   },
   "comanda": {
     "inapoiComenzi": "Pesanan saya",
@@ -1291,7 +1293,10 @@
     "traverseFara": "papan atas penuh",
     "fronturi": "Pintu depan",
     "fronturiSeFac": "dibuat",
-    "fronturiNuSeFac": "tidak dibuat"
+    "fronturiNuSeFac": "tidak dibuat",
+    "pozitieSertare": "Laci",
+    "sertareSus": "di atas",
+    "sertareJos": "di bawah, pintu di atasnya"
   },
   "fata": {
     "px": "kanan",

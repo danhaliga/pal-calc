@@ -762,7 +762,8 @@
     "traverseNuMerg": "幕板は「はさみ込み」で組んだ直方体の箱にだけ付きます。ここでは天板が全面のままです。",
     "traversePreaLate": "幅 {lat} mm の幕板は入りません。2枚が触れてしまいます。{incape} mm を超えると、切り損じた天板と同じです。",
     "traverseInAfara": "幕板の幅は {min}〜{max} mm です。{lat} は {pus} に直しました。",
-    "faraFronturi": "前板なし：箱だけを納め、{cate} 枚が木取り表に入りません。作る人のための仕上がり寸法：{cote}。"
+    "faraFronturi": "前板なし：箱だけを納め、{cate} 枚が木取り表に入りません。作る人のための仕上がり寸法：{cote}。",
+    "sertareSusNisaJos": "下の {nisa} mm の空きはそのまま空いています：引き出しは上にあります。「引き出し：下」で下ろせば、空きはその上に移ります。その空きが引き出しのためだったなら、ニッチを 0 にしてください。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -831,7 +832,8 @@
     "piesa": "板一枚",
     "peSoclu": "台輪 {h} mm",
     "cuTraverse": "幕板 {lat} mm",
-    "faraFront": "前板なし"
+    "faraFront": "前板なし",
+    "sertareJos": "引き出しは下"
   },
   "comanda": {
     "inapoiComenzi": "自分の注文",
@@ -1291,7 +1293,10 @@
     "traverseFara": "天板を全面",
     "fronturi": "前板",
     "fronturiSeFac": "作る",
-    "fronturiNuSeFac": "作らない"
+    "fronturiNuSeFac": "作らない",
+    "pozitieSertare": "引き出し",
+    "sertareSus": "上",
+    "sertareJos": "下、扉はその上"
   },
   "fata": {
     "px": "右",

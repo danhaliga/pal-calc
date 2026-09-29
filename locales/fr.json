@@ -762,7 +762,8 @@
     "traverseNuMerg": "Les traverses ne vont que sur un caisson droit monté « entre ». Ici le panneau entier est resté.",
     "traversePreaLate": "Des traverses de {lat} mm ne rentrent pas : deux aussi larges se touchent. Au-delà de {incape} mm ce serait un panneau mal coupé.",
     "traverseInAfara": "Une traverse se fait entre {min} et {max} mm. {lat} a été ramené à {pus}.",
-    "faraFronturi": "Sans façades : seul le caisson est livré, {cate} pièces ne figurent pas dans la liste de coupe. Leurs dimensions finies, pour celui qui les fabrique : {cote}."
+    "faraFronturi": "Sans façades : seul le caisson est livré, {cate} pièces ne figurent pas dans la liste de coupe. Leurs dimensions finies, pour celui qui les fabrique : {cote}.",
+    "sertareSusNisaJos": "Le vide du bas, de {nisa} mm, reste vide : les tiroirs sont en haut. Descendez-les avec « Les tiroirs : en bas » et le vide passe au-dessus ; si ce vide était justement pour le tiroir, mettez la niche à 0."
   },
   "csv": {
     "corp": "Caisson",
@@ -831,7 +832,8 @@
     "piesa": "un seul panneau",
     "peSoclu": "plinthe {h} mm",
     "cuTraverse": "traverses {lat} mm",
-    "faraFront": "sans façades"
+    "faraFront": "sans façades",
+    "sertareJos": "tiroirs en bas"
   },
   "comanda": {
     "inapoiComenzi": "Mes commandes",
@@ -1291,7 +1293,10 @@
     "traverseFara": "panneau entier",
     "fronturi": "Façades",
     "fronturiSeFac": "à faire",
-    "fronturiNuSeFac": "à ne pas faire"
+    "fronturiNuSeFac": "à ne pas faire",
+    "pozitieSertare": "Les tiroirs",
+    "sertareSus": "en haut",
+    "sertareJos": "en bas, portes au-dessus"
   },
   "fata": {
     "px": "droite",

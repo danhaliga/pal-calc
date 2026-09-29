@@ -762,7 +762,8 @@
     "traverseNuMerg": "Rails only work on a straight cabinet built “between”. Here the full top panel stayed.",
     "traversePreaLate": "Rails of {lat} mm do not fit: two that wide touch each other. Above {incape} mm it would be a badly cut top panel.",
     "traverseInAfara": "A rail is made between {min} and {max} mm. {lat} was brought to {pus}.",
-    "faraFronturi": "No fronts: only the carcass is supplied, {cate} pieces are left out of the cutting list. Their finished sizes, for whoever makes them: {cote}."
+    "faraFronturi": "No fronts: only the carcass is supplied, {cate} pieces are left out of the cutting list. Their finished sizes, for whoever makes them: {cote}.",
+    "sertareSusNisaJos": "The {nisa} mm gap at the bottom stays empty: the drawers are at the top. Move them down with “Drawers: at the bottom” and the gap moves above them; if the gap was meant for the drawer, set the niche to 0."
   },
   "csv": {
     "corp": "Cabinet",
@@ -831,7 +832,8 @@
     "piesa": "a single panel",
     "peSoclu": "{h} mm plinth",
     "cuTraverse": "{lat} mm rails",
-    "faraFront": "no fronts"
+    "faraFront": "no fronts",
+    "sertareJos": "drawers at the bottom"
   },
   "comanda": {
     "inapoiComenzi": "My orders",
@@ -1291,7 +1293,10 @@
     "traverseFara": "full top panel",
     "fronturi": "Fronts",
     "fronturiSeFac": "included",
-    "fronturiNuSeFac": "not included"
+    "fronturiNuSeFac": "not included",
+    "pozitieSertare": "Drawers",
+    "sertareSus": "at the top",
+    "sertareJos": "at the bottom, doors above"
   },
   "fata": {
     "px": "right",

@@ -768,7 +768,8 @@
     "traverseNuMerg": "Traverze idu samo na ravno tijelo građeno „između“. Ovdje je ostala cijela ploča.",
     "traversePreaLate": "Traverze od {lat} mm ne stanu: dvije tako široke se dodiruju. Iznad {incape} mm to je loše skrojena ploča.",
     "traverseInAfara": "Traverza se radi između {min} i {max} mm. {lat} je sveden na {pus}.",
-    "faraFronturi": "Bez fronti: dostavlja se samo korpus, {cate} dijelova ne ulazi u plan krojenja. Njihove gotove mjere, za onoga ko ih izrađuje: {cote}."
+    "faraFronturi": "Bez fronti: dostavlja se samo korpus, {cate} dijelova ne ulazi u plan krojenja. Njihove gotove mjere, za onoga ko ih izrađuje: {cote}.",
+    "sertareSusNisaJos": "Donji otvor od {nisa} mm ostaje prazan: ladice su gore. Spusti ih s „Ladice: dolje“ i otvor prelazi iznad njih; ako je otvor bio baš za ladicu, stavi nišu na 0."
   },
   "csv": {
     "corp": "Korpus",
@@ -838,7 +839,8 @@
     "piesa": "jedna ploča",
     "peSoclu": "sokl {h} mm",
     "cuTraverse": "traverze {lat} mm",
-    "faraFront": "bez fronti"
+    "faraFront": "bez fronti",
+    "sertareJos": "ladice dolje"
   },
   "comanda": {
     "inapoiComenzi": "Moji nalozi",
@@ -1302,7 +1304,10 @@
     "traverseFara": "cijela ploča",
     "fronturi": "Fronte",
     "fronturiSeFac": "rade se",
-    "fronturiNuSeFac": "ne rade se"
+    "fronturiNuSeFac": "ne rade se",
+    "pozitieSertare": "Ladice",
+    "sertareSus": "gore",
+    "sertareJos": "dolje, vrata iznad njih"
   },
   "fata": {
     "px": "desno",

@@ -768,7 +768,8 @@
     "traverseNuMerg": "Traversele se pun numai la corpul drept, construit „între\". Aici a rămas blatul întreg.",
     "traversePreaLate": "Traverse de {lat} mm nu încap: două atât de late se ating. Peste {incape} mm ar fi un blat prost tăiat.",
     "traverseInAfara": "Traversa se face între {min} și {max} mm. {lat} a fost adus la {pus}.",
-    "faraFronturi": "Fără fronturi: se livrează doar corpul, {cate} bucăți nu intră în lista de debitare. Cotele lor, pentru cine le face: {cote}."
+    "faraFronturi": "Fără fronturi: se livrează doar corpul, {cate} bucăți nu intră în lista de debitare. Cotele lor, pentru cine le face: {cote}.",
+    "sertareSusNisaJos": "Golul de jos, de {nisa} mm, rămâne gol: sertarele stau sus. Le cobori cu „Sertarele: jos”, iar golul urcă deasupra lor; dacă golul era chiar pentru sertar, pune nișa pe 0."
   },
   "csv": {
     "corp": "Corp",
@@ -838,7 +839,8 @@
     "piesa": "un singur panou",
     "peSoclu": "soclu {h} mm",
     "cuTraverse": "traverse {lat} mm",
-    "faraFront": "fără fronturi"
+    "faraFront": "fără fronturi",
+    "sertareJos": "sertare jos"
   },
   "comanda": {
     "inapoiComenzi": "Comenzile mele",
@@ -1302,7 +1304,10 @@
     "traverseFara": "blat întreg",
     "fronturi": "Fronturi",
     "fronturiSeFac": "se fac",
-    "fronturiNuSeFac": "nu se fac"
+    "fronturiNuSeFac": "nu se fac",
+    "pozitieSertare": "Sertarele",
+    "sertareSus": "sus",
+    "sertareJos": "jos, cu ușile deasupra"
   },
   "fata": {
     "px": "dreapta",

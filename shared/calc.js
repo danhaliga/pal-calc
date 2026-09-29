@@ -101,6 +101,10 @@
       hNisa: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
       nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
+      /* Unde stau sertarele: sus, ca pana acum, sau jos, cu ușile deasupra.
+         Jos e felul de-a face corpul de cuptor cu sertar dedesubt, și
+         singurul fel în care golul lăsat la fund se umple cu ceva. */
+      sertareJos: 0,
       pragCant: PRAG_CANT, rezervaCant: REZERVA_CANT
     };
   }
@@ -624,7 +628,20 @@
     var xComp = function (i) { return t + i * (Wcomp + t); };  /* unde începe compartimentul i */
 
     var FD = F({ pz: 'f', nz: 'f', px: 'g', nx: 'g', py: 'g', ny: 'g' });
-    var usedTop = nSer > 0 ? nSer * (+c.hFront) + nSer * ri : 0;
+    /* Cât mănâncă sertarele din fața corpului, și DIN CARE CAPĂT.
+
+       `ri` de la urmă e rostul dintre ultimul sertar și ușa de lângă el;
+       fără el s-ar atinge. Sertarele de sus se lipesc de tavan, cele de jos
+       de fund, iar rostul rămâne întotdeauna spre uși. */
+    var sertareJos = !!(+c.sertareJos) && nSer > 0;
+    var cereSertare = nSer > 0 ? nSer * (+c.hFront) + nSer * ri : 0;
+    var usedTop = sertareJos ? 0 : cereSertare;
+    var usedBot = sertareJos ? cereSertare : 0;
+    /* Fâșia care rămâne ușilor, între sertare și capetele corpului. Tot ce
+       se așază în față se măsoară între astea două, nu între `yBot` și
+       `yTop`: alea sunt marginile frontului întreg, sertare cu tot. */
+    var yUsiBot = yBot + usedBot;
+    var yUsiTop = yTop - usedTop;
 
     /* ---- usi ----
 
@@ -636,7 +653,7 @@
        niciun fel — `hUsi` pune uși numai de jos în sus. */
     var usi = [];
     /* Tot golul pe care pot sta uși, măsurat de la fund în sus. */
-    var uHplin = (apl ? Hutil - 2 * rm : Hint - 2 * rinc) - usedTop;
+    var uHplin = (apl ? Hutil - 2 * rm : Hint - 2 * rinc) - usedTop - usedBot;
     var hNisaCerut = +c.hNisa || 0;
     var usiPartiale = nUsi > 0 && hUsiCerut > 0 && hUsiCerut < uHplin;
 
@@ -693,14 +710,17 @@
          cuptor. Fără ușă jos, golul începe chiar de la fundul corpului și
          aparatul stă pe el: coloana de frigider. */
       var nisa = 0;
-      var yNisaJos = usiPartiale ? (apl ? yBot + uH : yBot + uH + t) : yBot;
+      var yNisaJos = usiPartiale ? (apl ? yUsiBot + uH : yUsiBot + uH + t) : yUsiBot;
       /* De unde pornește ușa de deasupra nișei. La ușă aplicată canatul
          acoperă polița; la una încastrată se oprește sub ea. */
       var yUsaSus = 0, hUsaSus = 0;
 
       if (hNisaCerut > 0) {
         yUsaSus = yNisaJos + hNisaCerut + (apl ? 0 : t);
-        hUsaSus = yTop - yUsaSus;
+        /* `yUsiTop`, nu `yTop`: deasupra stau fronturile de sertar. Cu
+           `yTop` ieșeau două uși de 512 ȘI un front de 150 peste aceiași
+           150 de milimetri — două piese tăiate pentru același loc. */
+        hUsaSus = yUsiTop - yUsaSus;
         if (hUsaSus < 50) {
           /* Cât ar încăpea, ca omul să nu ghicească. */
           avert('nisaPreaMare', {
@@ -715,7 +735,7 @@
       if (usiPartiale) {
         /* La ușă aplicată, canatul acoperă muchia poliței de sus; la una
            încastrată se oprește sub ea. */
-        yLinieUsi = apl ? yBot + uH - t / 2 : yBot + uH + t / 2;
+        yLinieUsi = apl ? yUsiBot + uH - t / 2 : yUsiBot + uH + t / 2;
         politeFixe.push(yLinieUsi);
       }
 
@@ -796,7 +816,14 @@
 
         /* Zona de jos. Fără ușă jos (coloana de frigider) e goală, iar
            `faZonaDeUsi` se întoarce singură. */
-        if (nisa === 0 || usiPartiale) faZonaDeUsi(yBot, uH);
+        if (nisa === 0 || usiPartiale) faZonaDeUsi(yUsiBot, uH);
+
+        /* Gol jos, sertare sus: se poate foarte bine — frigider dedesubt,
+           sertar deasupra — dar de cele mai multe ori omul a lăsat golul
+           TOCMAI pentru sertare. Se spune, ca să nu afle din desen. */
+        if (nisa > 0 && !usiPartiale && nSer > 0 && !sertareJos) {
+          avert('sertareSusNisaJos', { nisa: fmt(nisa) });
+        }
 
         if (nisa > 0) {
           /* Polița care închide nișa pe deasupra: pe ea se sprijină corpul
@@ -821,6 +848,10 @@
       if (lg > Dint) avert('glisieraNuIncape', { lg: lg, dint: fmt(Dint) });
       if (hc > hF) avert('cutiePreaInalta');
 
+      /* De unde pornește șirul de sertare. Sus se lipesc de tavan; jos, de
+         fund — iar rostul de `ri` rămâne spre uși, nu sub ele. */
+      var ySertare = sertareJos ? yBot + usedBot - ri : yTop;
+
       /* Sertarele se așază de sus în jos. Dacă fronturile nu ajung până la
          fund și nici nu urmează o ușă dedesubt, rămâne un gol pe care omul
          îl vede în desen și nu-și explică de unde vine. Spunem și cât ar
@@ -837,7 +868,7 @@
       var zf = zF - 2, dz = [0, 0, 1.1];
       var fr = [], lat = [], fsp = [], fnd = [];
       for (var k = 0; k < nSer; k++) {
-        var yt = yTop - k * (hF + ri), yb0 = yt - hF;
+        var yt = ySertare - k * (hF + ri), yb0 = yt - hF;
         var yb = yb0 + Math.max(0, (hF - hc) / 2);
         fr.push(bx(xoff, yb0, zF, fL, hF, t, FD, [0, 0, 1.6], 'fronturi'));
         lat.push(bx(t + jg, yb, zf - lg, ts, hc, lg,
@@ -895,7 +926,7 @@
          fiecare gol primind pe măsura lui — un gol de două ori mai mare
          primește de două ori mai multe polițe. */
       var fixe = politeFixe.slice().sort(function (a, b) { return a - b; });
-      var jos = y0, sus = y0 + Hint - usedTop;
+      var jos = y0 + usedBot, sus = y0 + Hint - usedTop;
 
       /* Polițele fixe nu sunt opționale: pe ele stă aparatul din nișă și de
          ele se prinde canatul. Dacă omul a cerut mai puține decât atât, tot
@@ -1034,6 +1065,8 @@
         /* montanți (despărțitori) — 0 înseamnă corp fără compartimentare */
         nDsp: int(0, 6).catch(0),
         nSer: int(0, 12), hFront: mm(20, 1200), hCutie: mm(20, 1200),
+        /* Un semn, nu o cotă: 0 = sertarele sus, ca până acum. */
+        sertareJos: int(0, 1).catch(0),
         jg: mm(0, 50), ts: mm(10, 30),
         /* reglajul de debitare al atelierului; implicit cel măsurat pe
            lucrările reale — vezi reducereCant() */

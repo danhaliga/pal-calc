@@ -768,7 +768,8 @@
     "traverseNuMerg": "Výztuhy jdou jen na rovnou skříňku stavěnou „mezi“. Tady zůstala celá deska.",
     "traversePreaLate": "Výztuhy {lat} mm se nevejdou: dvě tak široké se dotýkají. Nad {incape} mm by to byla špatně nařezaná deska.",
     "traverseInAfara": "Výztuha se dělá od {min} do {max} mm. {lat} bylo upraveno na {pus}.",
-    "faraFronturi": "Bez dvířek: dodává se jen korpus, {cate} dílů nejde do nářezového plánu. Jejich hotové rozměry, pro toho, kdo je vyrobí: {cote}."
+    "faraFronturi": "Bez dvířek: dodává se jen korpus, {cate} dílů nejde do nářezového plánu. Jejich hotové rozměry, pro toho, kdo je vyrobí: {cote}.",
+    "sertareSusNisaJos": "Spodní mezera {nisa} mm zůstává prázdná: zásuvky jsou nahoře. Spusť je přes „Zásuvky: dole“ a mezera se přesune nad ně; pokud byla mezera právě pro zásuvku, dej výklenek na 0."
   },
   "csv": {
     "corp": "Korpus",
@@ -838,7 +839,8 @@
     "piesa": "jediná deska",
     "peSoclu": "sokl {h} mm",
     "cuTraverse": "výztuhy {lat} mm",
-    "faraFront": "bez dvířek"
+    "faraFront": "bez dvířek",
+    "sertareJos": "zásuvky dole"
   },
   "comanda": {
     "inapoiComenzi": "Moje zakázky",
@@ -1302,7 +1304,10 @@
     "traverseFara": "celá deska",
     "fronturi": "Dvířka",
     "fronturiSeFac": "dělají se",
-    "fronturiNuSeFac": "nedělají se"
+    "fronturiNuSeFac": "nedělají se",
+    "pozitieSertare": "Zásuvky",
+    "sertareSus": "nahoře",
+    "sertareJos": "dole, dvířka nad nimi"
   },
   "fata": {
     "px": "vpravo",

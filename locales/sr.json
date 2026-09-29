@@ -768,7 +768,8 @@
     "traverseNuMerg": "Traverze idu samo na pravo telo građeno „između“. Ovde je ostala cela ploča.",
     "traversePreaLate": "Traverze od {lat} mm ne staju: dve tako široke se dodiruju. Iznad {incape} mm to je loše iskrojena ploča.",
     "traverseInAfara": "Traverza se pravi između {min} i {max} mm. {lat} je sveden na {pus}.",
-    "faraFronturi": "Bez fronti: isporučuje se samo korpus, {cate} delova ne ulaze u plan krojenja. Njihove gotove mere, za onoga ko ih pravi: {cote}."
+    "faraFronturi": "Bez fronti: isporučuje se samo korpus, {cate} delova ne ulaze u plan krojenja. Njihove gotove mere, za onoga ko ih pravi: {cote}.",
+    "sertareSusNisaJos": "Donji otvor od {nisa} mm ostaje prazan: fioke su gore. Spusti ih sa „Fioke: dole“ i otvor prelazi iznad njih; ako je otvor bio baš za fioku, stavi nišu na 0."
   },
   "csv": {
     "corp": "Korpus",
@@ -838,7 +839,8 @@
     "piesa": "jedna ploča",
     "peSoclu": "sokla {h} mm",
     "cuTraverse": "traverze {lat} mm",
-    "faraFront": "bez fronti"
+    "faraFront": "bez fronti",
+    "sertareJos": "fioke dole"
   },
   "comanda": {
     "inapoiComenzi": "Moje porudžbine",
@@ -1302,7 +1304,10 @@
     "traverseFara": "cela ploča",
     "fronturi": "Fronte",
     "fronturiSeFac": "rade se",
-    "fronturiNuSeFac": "ne rade se"
+    "fronturiNuSeFac": "ne rade se",
+    "pozitieSertare": "Fioke",
+    "sertareSus": "gore",
+    "sertareJos": "dole, vrata iznad njih"
   },
   "fata": {
     "px": "desno",

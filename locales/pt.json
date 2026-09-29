@@ -762,7 +762,8 @@
     "traverseNuMerg": "As travessas só vão num móvel direito construído «entre». Aqui ficou o tampo inteiro.",
     "traversePreaLate": "Travessas de {lat} mm não cabem: duas tão largas tocam-se. Acima de {incape} mm seria um tampo mal cortado.",
     "traverseInAfara": "A travessa faz-se entre {min} e {max} mm. {lat} foi ajustado para {pus}.",
-    "faraFronturi": "Sem frentes: só o corpo é entregue, {cate} peças não entram na lista de corte. As medidas acabadas, para quem as fizer: {cote}."
+    "faraFronturi": "Sem frentes: só o corpo é entregue, {cate} peças não entram na lista de corte. As medidas acabadas, para quem as fizer: {cote}.",
+    "sertareSusNisaJos": "O vão de baixo, de {nisa} mm, fica vazio: as gavetas estão em cima. Desça-as com «As gavetas: em baixo» e o vão passa para cima delas; se o vão era mesmo para a gaveta, ponha o nicho a 0."
   },
   "csv": {
     "corp": "Módulo",
@@ -831,7 +832,8 @@
     "piesa": "uma só placa",
     "peSoclu": "rodapé {h} mm",
     "cuTraverse": "travessas {lat} mm",
-    "faraFront": "sem frentes"
+    "faraFront": "sem frentes",
+    "sertareJos": "gavetas em baixo"
   },
   "comanda": {
     "inapoiComenzi": "As minhas encomendas",
@@ -1291,7 +1293,10 @@
     "traverseFara": "tampo inteiro",
     "fronturi": "Frentes",
     "fronturiSeFac": "são feitas",
-    "fronturiNuSeFac": "não são feitas"
+    "fronturiNuSeFac": "não são feitas",
+    "pozitieSertare": "As gavetas",
+    "sertareSus": "em cima",
+    "sertareJos": "em baixo, com as portas por cima"
   },
   "fata": {
     "px": "direita",

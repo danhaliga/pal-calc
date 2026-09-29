@@ -762,7 +762,8 @@
     "traverseNuMerg": "A merevítők csak „közé” épített egyenes korpuszra mennek. Itt maradt a teljes fedlap.",
     "traversePreaLate": "A {lat} mm-es merevítők nem férnek el: két ilyen széles összeér. {incape} mm fölött ez már rosszul szabott fedlap.",
     "traverseInAfara": "A merevítő {min} és {max} mm között készül. A {lat} {pus} lett.",
-    "faraFronturi": "Front nélkül: csak a korpusz készül el, {cate} darab nem kerül a szabásjegyzékre. A készméreteik, annak, aki elkészíti: {cote}."
+    "faraFronturi": "Front nélkül: csak a korpusz készül el, {cate} darab nem kerül a szabásjegyzékre. A készméreteik, annak, aki elkészíti: {cote}.",
+    "sertareSusNisaJos": "Az alsó, {nisa} mm-es rés üresen marad: a fiókok fent vannak. A „Fiókok: lent” beállítással leviheted, és a rés föléjük kerül; ha a rés éppen a fióknak kellett, állítsd a fülkét 0-ra."
   },
   "csv": {
     "corp": "Korpusz",
@@ -831,7 +832,8 @@
     "piesa": "egyetlen lap",
     "peSoclu": "{h} mm lábazat",
     "cuTraverse": "merevítők {lat} mm",
-    "faraFront": "front nélkül"
+    "faraFront": "front nélkül",
+    "sertareJos": "fiókok lent"
   },
   "comanda": {
     "inapoiComenzi": "A megrendeléseim",
@@ -1291,7 +1293,10 @@
     "traverseFara": "teljes fedlap",
     "fronturi": "Frontok",
     "fronturiSeFac": "készülnek",
-    "fronturiNuSeFac": "nem készülnek"
+    "fronturiNuSeFac": "nem készülnek",
+    "pozitieSertare": "A fiókok",
+    "sertareSus": "fent",
+    "sertareJos": "lent, az ajtók fölöttük"
   },
   "fata": {
     "px": "jobb",

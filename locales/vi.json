@@ -762,7 +762,8 @@
     "traverseNuMerg": "Thanh giằng chỉ dùng cho thùng thẳng dựng kiểu „giữa\". Ở đây vẫn là tấm nóc liền.",
     "traversePreaLate": "Thanh giằng {lat} mm không vừa: hai thanh rộng vậy chạm nhau. Trên {incape} mm thì chẳng khác gì tấm nóc cắt hỏng.",
     "traverseInAfara": "Thanh giằng làm từ {min} đến {max} mm. {lat} đã được đưa về {pus}.",
-    "faraFronturi": "Không mặt cánh: chỉ giao thùng, {cate} tấm không vào bảng cắt. Kích thước thành phẩm, cho người làm: {cote}."
+    "faraFronturi": "Không mặt cánh: chỉ giao thùng, {cate} tấm không vào bảng cắt. Kích thước thành phẩm, cho người làm: {cote}.",
+    "sertareSusNisaJos": "Khoảng trống {nisa} mm ở dưới vẫn để trống: ngăn kéo nằm ở trên. Hạ xuống bằng „Ngăn kéo: ở dưới”, khoảng trống sẽ lên trên chúng; nếu khoảng đó vốn là cho ngăn kéo thì đặt hốc về 0."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -831,7 +832,8 @@
     "piesa": "một tấm duy nhất",
     "peSoclu": "chân đế {h} mm",
     "cuTraverse": "thanh giằng {lat} mm",
-    "faraFront": "không mặt cánh"
+    "faraFront": "không mặt cánh",
+    "sertareJos": "ngăn kéo ở dưới"
   },
   "comanda": {
     "inapoiComenzi": "Đơn hàng của tôi",
@@ -1291,7 +1293,10 @@
     "traverseFara": "tấm nóc liền",
     "fronturi": "Mặt cánh",
     "fronturiSeFac": "có làm",
-    "fronturiNuSeFac": "không làm"
+    "fronturiNuSeFac": "không làm",
+    "pozitieSertare": "Ngăn kéo",
+    "sertareSus": "ở trên",
+    "sertareJos": "ở dưới, cánh ở trên"
   },
   "fata": {
     "px": "phải",
