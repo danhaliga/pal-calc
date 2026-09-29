@@ -1435,6 +1435,8 @@
     "conturDeMana": "辺と角度を手で入れる",
     "subScaraStramb": "今の輪郭は閉じていません。上の寸法はそこからおおよそ読み取ったものです。ボタンを押せば正確になります。",
     "subScaraBucati": "いくつの箱に",
+    "subScaraLatimi": "左から各キャビネットの幅（mm）。最後のものは底辺の残りから自動で決まります。",
+    "subScaraLatimiRele": "各キャビネットは {min} mm 以上必要です。最後のものが {rest} mm になります。ほかを小さくしてください。",
     "subScaraFaraComanda": "この箱はどの注文にも入っていません。複数の箱は注文の中でしか作れません。",
     "subScaraIntreabaPlata": "この空間を {cate} 個の箱で作ります。今の箱が一つ目になり、残り {noi} 個が注文に加わり {cost} レイかかります。残高は {sold} レイです。"
   },

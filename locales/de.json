@@ -1435,6 +1435,8 @@
     "conturDeMana": "Seiten und Winkel, von Hand",
     "subScaraStramb": "Die jetzige Kontur schließt nicht. Die Maße oben sind daraus abgelesen, ungefähr — drück den Knopf, dann stimmt sie.",
     "subScaraBucati": "In wie viele Schränke",
+    "subScaraLatimi": "Breite jedes Korpus, von links (mm). Der letzte ergibt sich aus dem Rest der Basis.",
+    "subScaraLatimiRele": "Jeder Korpus braucht mindestens {min} mm. Der letzte hätte {rest} mm — mach die anderen schmaler.",
     "subScaraFaraComanda": "Dieser Schrank ist in keinem Auftrag. Mehrere Schränke entstehen nur aus einem Auftrag.",
     "subScaraIntreabaPlata": "Der Raum wird aus {cate} Schränken gemacht. Der jetzige wird der erste, die anderen {noi} kommen in den Auftrag und kosten {cost} Lei. Du hast {sold} Lei."
   },

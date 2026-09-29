@@ -1446,6 +1446,8 @@
     "conturDeMana": "Strany a úhly, ručně",
     "subScaraStramb": "Současný obrys se nezavírá. Rozměry výše jsou z něj odečtené, přibližně — stiskni tlačítko a bude přesný.",
     "subScaraBucati": "Na kolik korpusů",
+    "subScaraLatimi": "Šířka každé skříňky zleva (mm). Poslední vyjde sama z toho, co zbyde ze základny.",
+    "subScaraLatimiRele": "Každá skříňka musí mít aspoň {min} mm. Poslední by měla {rest} mm — zmenši ostatní.",
     "subScaraFaraComanda": "Tento korpus není v zakázce. Více korpusů se dělá jen ze zakázky.",
     "subScaraIntreabaPlata": "Prostor se udělá z {cate} korpusů. Současný bude první a dalších {noi} přibude do zakázky za {cost} lei. Máš {sold} lei."
   },

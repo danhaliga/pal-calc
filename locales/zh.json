@@ -1435,6 +1435,8 @@
     "conturDeMana": "手动输入边长和角度",
     "subScaraStramb": "当前轮廓没有闭合。上面的尺寸是从中大致读出的——按下按钮即可修正。",
     "subScaraBucati": "做成几个柜",
+    "subScaraLatimi": "从左起每个柜体的宽度（毫米）。最后一个由底边剩余部分自动得出。",
+    "subScaraLatimiRele": "每个柜体至少需要 {min} 毫米。最后一个将只有 {rest} 毫米——请减小其他柜体。",
     "subScaraFaraComanda": "这个柜不属于任何订单。多个柜只能在订单里制作。",
     "subScaraIntreabaPlata": "这块空间做成 {cate} 个柜。当前的柜成为第一个，其余 {noi} 个加入订单，费用 {cost} 列伊。你有 {sold} 列伊。"
   },

@@ -313,27 +313,63 @@
 
      Întoarce o listă de { baza, dreapta, stanga, contur }, de la stânga la
      dreapta. Cu o singură bucată iese chiar spațiul întreg. */
-  function subScaraInBucati(baza, hDreapta, hStanga, bucati) {
-    var n = Math.max(1, Math.min(8, Math.round(+bucati || 1)));
-    var x = Math.max(1, +baza || 0);
-    var dr = Math.max(1, +hDreapta || 0);
-    var st = Math.max(1, +hStanga || 0);
-    var inaltimeaLa = function (v) { return st + (dr - st) * (v / x); };
-    /* Se rotunjesc MARGINILE, nu lățimile. Rotunjind lățimile, trei bucăți
-       din 4000 ies de 1333.3 și fac împreună 3999.9: o zecime de milimetru
-       pierdută pe perete, care nu se vede nicăieri dar există. Așa,
-       diferențele se adună înapoi exact la cât era spațiul. */
-    var margini = [];
-    for (var im = 0; im <= n; im++) margini.push(r1(x * im / n));
+  /* Câte corpuri se pot face dintr-un spațiu, cel mult. Dan: „vreau să pot
+     până la 10 corpuri". */
+  var SUB_SCARA_MAX = 10;
+  /* Cel mai îngust corp care are rost. Sub atât nu mai încape nici o ușă,
+     nici o poliță — ar fi PAL tăiat pentru o fantă. */
+  var SUB_SCARA_LAT_MIN = 100;
 
+  /* Bucățile, din marginile lor pe bază (de la 0 la baza întreagă). */
+  function subScaraDinMargini(x, dr, st, margini) {
+    var inaltimeaLa = function (v) { return st + (dr - st) * (v / x); };
     var out = [];
-    for (var i = 0; i < n; i++) {
+    for (var i = 0; i < margini.length - 1; i++) {
       var xa = margini[i], xb = margini[i + 1];
       var bStanga = r1(inaltimeaLa(xa)), bDreapta = r1(inaltimeaLa(xb));
       out.push({ baza: r1(xb - xa), stanga: bStanga, dreapta: bDreapta,
                  contur: conturSubScara(xb - xa, bDreapta, bStanga) });
     }
     return out;
+  }
+
+  function subScaraInBucati(baza, hDreapta, hStanga, bucati) {
+    var n = Math.max(1, Math.min(SUB_SCARA_MAX, Math.round(+bucati || 1)));
+    var x = Math.max(1, +baza || 0);
+    var dr = Math.max(1, +hDreapta || 0);
+    var st = Math.max(1, +hStanga || 0);
+    /* Se rotunjesc MARGINILE, nu lățimile. Rotunjind lățimile, trei bucăți
+       din 4000 ies de 1333.3 și fac împreună 3999.9: o zecime de milimetru
+       pierdută pe perete, care nu se vede nicăieri dar există. Așa,
+       diferențele se adună înapoi exact la cât era spațiul. */
+    var margini = [];
+    for (var im = 0; im <= n; im++) margini.push(r1(x * im / n));
+    return subScaraDinMargini(x, dr, st, margini);
+  }
+
+  /* Spațiul tăiat după lățimile date de om, de la stânga.
+
+     Se dau lățimile TUTUROR corpurilor în afară de ultimul; ultimul e ce
+     rămâne din bază. Dacă omul ar scrie toate lățimile, s-ar putea ajunge la
+     o sumă care nu dă peretele — și atunci ori se taie corpuri care nu
+     încap, ori programul strică în tăcere o cotă scrisă înadins. Așa starea
+     greșită nu există: suma e peretele, mereu.
+
+     Întoarce null când lățimile nu se pot folosi: vreuna sub
+     SUB_SCARA_LAT_MIN, sau nu mai rămâne destul pentru ultimul corp. */
+  function subScaraDinLatimi(baza, hDreapta, hStanga, latimi) {
+    var x = Math.max(1, +baza || 0);
+    var lista = (latimi || []).map(function (v) { return r1(+v); });
+    if (lista.length + 1 > SUB_SCARA_MAX) return null;
+    var margini = [0], suma = 0;
+    for (var i = 0; i < lista.length; i++) {
+      if (!(lista[i] >= SUB_SCARA_LAT_MIN)) return null;
+      suma = r1(suma + lista[i]);
+      margini.push(suma);
+    }
+    if (x - suma < SUB_SCARA_LAT_MIN) return null;
+    margini.push(r1(x));
+    return subScaraDinMargini(x, Math.max(1, +hDreapta || 0), Math.max(1, +hStanga || 0), margini);
   }
 
   /* Cotele unui contur de sub scară, citite înapoi din laturi.
@@ -1605,6 +1641,9 @@
     felieContur: felieContur,
     conturSubScara: conturSubScara,
     subScaraInBucati: subScaraInBucati,
+    subScaraDinLatimi: subScaraDinLatimi,
+    SUB_SCARA_MAX: SUB_SCARA_MAX,
+    SUB_SCARA_LAT_MIN: SUB_SCARA_LAT_MIN,
     coteSubScara: coteSubScara,
     reducereCant: reducereCant,
     compartimenteAlese: compartimenteAlese,

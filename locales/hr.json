@@ -1446,6 +1446,8 @@
     "conturDeMana": "Stranice i kutovi, ručno",
     "subScaraStramb": "Trenutna kontura se ne zatvara. Mjere iznad očitane su iz nje, približno — pritisni gumb i bit će točna.",
     "subScaraBucati": "Na koliko korpusa",
+    "subScaraLatimi": "Širina svakog elementa, slijeva (mm). Zadnji izlazi sam, od onoga što ostane od osnovice.",
+    "subScaraLatimiRele": "Svaki element mora imati barem {min} mm. Zadnji bi imao {rest} mm — smanji ostale.",
     "subScaraFaraComanda": "Ovaj korpus nije u narudžbi. Više korpusa radi se samo iz narudžbe.",
     "subScaraIntreabaPlata": "Prostor se radi od {cate} korpusa. Sadašnji postaje prvi, a ostalih {noi} dodaje se u narudžbu i košta {cost} leja. Imaš {sold} leja."
   },

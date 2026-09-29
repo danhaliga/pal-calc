@@ -1435,6 +1435,8 @@
     "conturDeMana": "Côtés et angles, à la main",
     "subScaraStramb": "Le contour actuel ne se ferme pas. Les cotes ci-dessus en sont tirées, approximativement — appuyez sur le bouton et il devient exact.",
     "subScaraBucati": "En combien de meubles",
+    "subScaraLatimi": "Largeur de chaque meuble, depuis la gauche (mm). Le dernier se déduit de ce qui reste de la base.",
+    "subScaraLatimiRele": "Chaque meuble doit faire au moins {min} mm. Le dernier ferait {rest} mm — réduisez les autres.",
     "subScaraFaraComanda": "Ce meuble n’est pas dans une commande. Plusieurs meubles ne se font que depuis une commande.",
     "subScaraIntreabaPlata": "L’espace se fait en {cate} meubles. Le meuble actuel devient le premier, et les {noi} autres sont ajoutés à la commande et coûtent {cost} lei. Vous avez {sold} lei."
   },

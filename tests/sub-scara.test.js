@@ -430,8 +430,10 @@ test('o bucata singura e chiar spatiul intreg', () => {
   assert.deepEqual(una[0].contur, PalCalc.conturSubScara(900, 400, 800));
 });
 
-test('mai mult de opt bucati nu se fac', () => {
-  assert.equal(PalCalc.subScaraInBucati(4000, 600, 2200, 99).length, 8);
+test('mai mult de zece bucati nu se fac', () => {
+  /* Dan: „vreau sa pot pana la 10 corpuri". */
+  assert.equal(PalCalc.SUB_SCARA_MAX, 10);
+  assert.equal(PalCalc.subScaraInBucati(4000, 600, 2200, 99).length, 10);
   assert.equal(PalCalc.subScaraInBucati(4000, 600, 2200, 0).length, 1);
 });
 
@@ -481,4 +483,44 @@ test('cele sase chei noi sunt in toate cele treizeci de limbi', () => {
         l.cod + ': s-a pierdut ' + x + ' din intrebarea de plata');
     });
   });
+});
+
+/* ---------------- lățimile scrise de om ----------------
+
+   Primele se scriu, ultima iese din ce rămâne: suma e peretele, mereu. */
+
+test('lățimile date de om: ultima e restul, înălțimile se iau de pe pantă', () => {
+  const b = PalCalc.subScaraDinLatimi(4000, 2200, 600, [1200, 900]);
+  assert.deepEqual(b.map(x => x.baza), [1200, 900, 1900]);
+  assert.equal(b.reduce((s, x) => s + x.baza, 0), 4000);
+  /* Pe pantă de la 600 (stânga) la 2200 (dreapta): la 1200 → 1080. */
+  assert.equal(b[0].stanga, 600);
+  assert.equal(b[0].dreapta, 1080);
+  assert.equal(b[1].stanga, 1080);
+  assert.equal(b[2].dreapta, 2200);
+});
+
+test('lățimi care nu se pot folosi nu se folosesc', () => {
+  const min = PalCalc.SUB_SCARA_LAT_MIN;
+  assert.equal(PalCalc.subScaraDinLatimi(4000, 2200, 600, [min - 1]), null, 'un corp prea îngust');
+  assert.equal(PalCalc.subScaraDinLatimi(4000, 2200, 600, [3950]), null, 'ultimului nu-i rămâne destul');
+  assert.equal(PalCalc.subScaraDinLatimi(4000, 2200, 600, new Array(10).fill(200)), null, 'peste zece corpuri');
+  assert.equal(PalCalc.subScaraDinLatimi(4000, 2200, 600, new Array(9).fill(400)).length, 10);
+});
+
+test('ruta primește lățimile și cade pe bucăți egale când nu se potrivesc', () => {
+  const s = citeste('src', 'orders.js');
+  assert.match(s, /Math\.min\(PalCalc\.SUB_SCARA_MAX,/);
+  assert.match(s, /PalCalc\.subScaraDinLatimi\(baza, dreapta, stanga, latimi\)/);
+  assert.match(s, /dinLatimi \|\| PalCalc\.subScaraInBucati/);
+});
+
+test('editorul are până la zece corpuri și casetele de lățime', () => {
+  const v = citeste('views', 'corps', 'edit.ejs');
+  assert.match(v, /nb <= 10/);
+  assert.match(v, /id="ssLatimiCampuri"/);
+  const app = citeste('public', 'app.js');
+  assert.match(app, /function randeazaLatimi\(/);
+  assert.match(app, /function potrivesteRestul\(/);
+  assert.match(app, /\['latimi', \(latimi \|\| \[\]\)\.join\(','\)\]/);
 });

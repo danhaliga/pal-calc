@@ -1435,6 +1435,8 @@
     "conturDeMana": "Sidor och vinklar, för hand",
     "subScaraStramb": "Den nuvarande konturen sluter inte. Måtten ovan är avlästa från den, ungefärligt — tryck på knappen så blir den exakt.",
     "subScaraBucati": "I hur många stommar",
+    "subScaraLatimi": "Bredd på varje skåp, från vänster (mm). Det sista blir det som återstår av basen.",
+    "subScaraLatimiRele": "Varje skåp behöver minst {min} mm. Det sista skulle bli {rest} mm — gör de andra smalare.",
     "subScaraFaraComanda": "Den här stommen ligger inte i en order. Flera stommar gör man bara inifrån en order.",
     "subScaraIntreabaPlata": "Utrymmet görs av {cate} stommar. Den nuvarande blir den första, och de andra {noi} läggs till i ordern och kostar {cost} lei. Du har {sold} lei."
   },

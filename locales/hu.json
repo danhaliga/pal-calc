@@ -1435,6 +1435,8 @@
     "conturDeMana": "Oldalak és szögek, kézzel",
     "subScaraStramb": "A mostani körvonal nem zár. A fenti méretek onnan vannak leolvasva, hozzávetőleg — nyomd meg a gombot, és pontos lesz.",
     "subScaraBucati": "Hány korpuszra",
+    "subScaraLatimi": "Az egyes korpuszok szélessége balról (mm). Az utolsó magától jön ki abból, ami az alapból marad.",
+    "subScaraLatimiRele": "Minden korpusz legalább {min} mm kell legyen. Az utolsó {rest} mm lenne — csökkentsd a többit.",
     "subScaraFaraComanda": "Ez a korpusz nincs rendelésben. Több korpusz csak rendelésen belül készül.",
     "subScaraIntreabaPlata": "A tér {cate} korpuszból készül. A mostani lesz az első, a többi {noi} bekerül a rendelésbe és {cost} lejbe kerül. Van {sold} lejed."
   },

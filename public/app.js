@@ -285,11 +285,12 @@ function legaContur() {
 
   /* Formular trimis la server, nu `fetch`: raspunsul e o pagina noua —
      comanda, cu toate corpurile facute. */
-  function trimiteSubScara(x, y, z, bucati) {
+  function trimiteSubScara(x, y, z, bucati, latimi) {
     var f = document.createElement('form');
     f.method = 'post';
     f.action = '/corps/' + CORP_ID + '/sub-scara';
-    [['_csrf', DATA.csrf], ['baza', x], ['dreapta', y], ['stanga', z], ['bucati', bucati]]
+    [['_csrf', DATA.csrf], ['baza', x], ['dreapta', y], ['stanga', z], ['bucati', bucati],
+     ['latimi', (latimi || []).join(',')]]
       .forEach(function (c) {
         var i = document.createElement('input');
         i.type = 'hidden'; i.name = c[0]; i.value = c[1];
@@ -309,6 +310,60 @@ function legaContur() {
      Cu mai multe bucati nu se mai poate face aici: se fac corpuri NOI, deci
      trebuie server. Corpul deschis devine bucata din stanga, restul se
      adauga in aceeasi comanda si se platesc ca oricare alt corp. */
+  /* Lățimea fiecărui corp, de la stânga: A, B, C...
+
+     Primele se scriu, ultima e blocată și arată ce rămâne din bază. Dacă
+     s-ar scrie toate, s-ar putea ajunge la o sumă care nu dă peretele; așa
+     starea greșită nu există. La schimbarea bazei sau a numărului de
+     corpuri se pornește iar din bucăți egale. */
+  var LITERE = 'ABCDEFGHIJ';
+  function randeazaLatimi() {
+    var cutie = $('ssLatimi'), campuri = $('ssLatimiCampuri');
+    if (!cutie || !campuri) return;
+    var n = +($('ssBucati') || { value: 1 }).value || 1;
+    var x = +$('ssBaza').value;
+    cutie.classList.toggle('hidden', !(n > 1 && x >= 10));
+    if (!(n > 1 && x >= 10)) { campuri.innerHTML = ''; return; }
+    var egale = window.PalCalc.subScaraInBucati(x, 1000, 1000, n);
+    campuri.innerHTML = egale.map(function (b, i) {
+      var ultima = i === n - 1;
+      return '<label>' + LITERE.charAt(i) +
+        '<input type="number" step="10" min="' + window.PalCalc.SUB_SCARA_LAT_MIN + '"' +
+        ' data-latime="' + i + '" value="' + b.baza + '"' +
+        (ultima ? ' readonly tabindex="-1" class="muted"' : '') + '></label>';
+    }).join('');
+    potrivesteRestul();
+  }
+
+  /* Ultima lățime iese din bază minus celelalte. Întoarce lățimile scrise
+     (fără ultima), sau null dacă nu se pot folosi — și atunci spune de ce. */
+  function potrivesteRestul() {
+    var campuri = $('ssLatimiCampuri'), rele = $('ssLatimiRele');
+    if (!campuri) return null;
+    var inputs = campuri.querySelectorAll('input[data-latime]');
+    if (!inputs.length) return null;
+    var x = +$('ssBaza').value, min = window.PalCalc.SUB_SCARA_LAT_MIN;
+    var latimi = [], suma = 0, bune = true;
+    for (var i = 0; i < inputs.length - 1; i++) {
+      var v = +inputs[i].value;
+      latimi.push(v);
+      suma += v;
+      if (!(v >= min)) bune = false;
+    }
+    var rest = r1(x - suma);
+    inputs[inputs.length - 1].value = rest;
+    if (!(rest >= min)) bune = false;
+    if (rele) {
+      rele.classList.toggle('hidden', bune);
+      rele.textContent = bune ? '' : T('editor.subScaraLatimiRele', { min: min, rest: fmt(rest) });
+    }
+    return bune ? latimi : null;
+  }
+
+  if ($('ssBucati')) $('ssBucati').addEventListener('change', randeazaLatimi);
+  if ($('ssBaza')) $('ssBaza').addEventListener('input', randeazaLatimi);
+  if ($('ssLatimiCampuri')) $('ssLatimiCampuri').addEventListener('input', potrivesteRestul);
+
   $('ssFa').onclick = function () {
     var x = +$('ssBaza').value, z = +$('ssStanga').value, y = +$('ssDreapta').value;
     if (!(x >= 10 && y >= 10 && z >= 10)) { toast(T('editor.subScaraCote')); return; }
@@ -316,11 +371,14 @@ function legaContur() {
     var bucati = +($('ssBucati') || { value: 1 }).value || 1;
     if (bucati > 1) {
       if (!DATA.orderId) { toast(T('editor.subScaraFaraComanda')); return; }
+      if (!$('ssLatimiCampuri').querySelector('input')) randeazaLatimi();
+      var latimi = potrivesteRestul();
+      if (!latimi) { toast($('ssLatimiRele').textContent); return; }
       window.PalIntreaba(T('editor.subScaraIntreabaPlata', {
         cate: bucati, noi: bucati - 1,
         cost: (bucati - 1) * (+DATA.pretCorp || 0),
         sold: DATA.sold
-      }), function () { trimiteSubScara(x, y, z, bucati); });
+      }), function () { trimiteSubScara(x, y, z, bucati, latimi); });
       return;
     }
     params.contur = window.PalCalc.conturSubScara(x, y, z);

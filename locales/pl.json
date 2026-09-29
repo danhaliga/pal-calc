@@ -1446,6 +1446,8 @@
     "conturDeMana": "Boki i kąty, ręcznie",
     "subScaraStramb": "Obecny obrys się nie zamyka. Wymiary powyżej są z niego odczytane, w przybliżeniu — naciśnij przycisk, a będzie dokładny.",
     "subScaraBucati": "Na ile korpusów",
+    "subScaraLatimi": "Szerokość każdej szafki, od lewej (mm). Ostatnia wychodzi sama z tego, co zostaje z podstawy.",
+    "subScaraLatimiRele": "Każda szafka musi mieć co najmniej {min} mm. Ostatnia miałaby {rest} mm — zmniejsz pozostałe.",
     "subScaraFaraComanda": "Ten korpus nie jest w zamówieniu. Kilka korpusów robi się tylko z poziomu zamówienia.",
     "subScaraIntreabaPlata": "Przestrzeń robi się z {cate} korpusów. Obecny staje się pierwszym, a pozostałe {noi} dochodzą do zamówienia i kosztują {cost} lei. Masz {sold} lei."
   },

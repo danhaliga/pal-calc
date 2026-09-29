@@ -1435,6 +1435,8 @@
     "conturDeMana": "변과 각도, 직접 입력",
     "subScaraStramb": "지금 윤곽은 닫히지 않습니다. 위의 치수는 거기서 대략 읽은 것입니다. 버튼을 누르면 정확해집니다.",
     "subScaraBucati": "몇 개의 몸통으로",
+    "subScaraLatimi": "왼쪽부터 각 장의 폭(mm). 마지막 것은 밑변에서 남은 만큼 자동으로 정해집니다.",
+    "subScaraLatimiRele": "각 장은 최소 {min} mm여야 합니다. 마지막 것이 {rest} mm가 됩니다. 다른 것을 줄이세요.",
     "subScaraFaraComanda": "이 몸통은 주문에 들어 있지 않습니다. 여러 몸통은 주문 안에서만 만들 수 있습니다.",
     "subScaraIntreabaPlata": "이 공간을 {cate}개의 몸통으로 만듭니다. 지금 몸통이 첫 번째가 되고, 나머지 {noi}개가 주문에 추가되며 {cost} 레이가 듭니다. 잔액은 {sold} 레이입니다."
   },

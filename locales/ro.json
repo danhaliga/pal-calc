@@ -1446,6 +1446,8 @@
     "conturDeMana": "Laturi și unghiuri, de mână",
     "subScaraStramb": "Conturul de acum nu se închide. Cotele de mai sus sunt citite din el, aproximativ — apasă butonul și se face exact.",
     "subScaraBucati": "În câte corpuri",
+    "subScaraLatimi": "Lățimea fiecărui corp, de la stânga (mm). Ultimul iese singur, din ce rămâne din bază.",
+    "subScaraLatimiRele": "Fiecare corp trebuie să aibă cel puțin {min} mm. Ultimul ar ieși de {rest} mm — micșorează-le pe celelalte.",
     "subScaraFaraComanda": "Corpul ăsta nu e într-o comandă. Mai multe corpuri se fac numai dintr-o comandă.",
     "subScaraIntreabaPlata": "Spațiul se face din {cate} corpuri. Corpul de acum devine primul, iar celelalte {noi} se adaugă în comandă și costă {cost} lei. Ai {sold} lei."
   },

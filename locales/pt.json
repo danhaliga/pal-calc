@@ -1435,6 +1435,8 @@
     "conturDeMana": "Lados e ângulos, à mão",
     "subScaraStramb": "O contorno atual não fecha. As medidas acima são lidas dele, aproximadas — carrega no botão e fica exato.",
     "subScaraBucati": "Em quantos móveis",
+    "subScaraLatimi": "Largura de cada móvel, a partir da esquerda (mm). O último sai do que resta da base.",
+    "subScaraLatimiRele": "Cada móvel precisa de pelo menos {min} mm. O último ficaria com {rest} mm — reduza os outros.",
     "subScaraFaraComanda": "Este móvel não está numa encomenda. Vários móveis só se fazem a partir de uma encomenda.",
     "subScaraIntreabaPlata": "O espaço faz-se com {cate} móveis. O atual passa a ser o primeiro, e os outros {noi} são acrescentados à encomenda e custam {cost} lei. Tem {sold} lei."
   },

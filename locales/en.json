@@ -1435,6 +1435,8 @@
     "conturDeMana": "Sides and angles, by hand",
     "subScaraStramb": "The current outline does not close. The sizes above are read from it, roughly — press the button and it is made exact.",
     "subScaraBucati": "How many cabinets",
+    "subScaraLatimi": "Width of each cabinet, from the left (mm). The last one is what remains of the base.",
+    "subScaraLatimiRele": "Each cabinet needs at least {min} mm. The last one would be {rest} mm — make the others smaller.",
     "subScaraFaraComanda": "This cabinet is not in an order. Several cabinets can only be made from within an order.",
     "subScaraIntreabaPlata": "The space is made of {cate} cabinets. The current one becomes the first, and the other {noi} are added to the order and cost {cost} lei. You have {sold} lei."
   },

@@ -1446,6 +1446,8 @@
     "conturDeMana": "Strany a uhly, ručne",
     "subScaraStramb": "Súčasný obrys sa nezatvára. Rozmery vyššie sú z neho odčítané, približne — stlač tlačidlo a bude presný.",
     "subScaraBucati": "Na koľko korpusov",
+    "subScaraLatimi": "Šírka každej skrinky zľava (mm). Posledná vyjde sama z toho, čo zostane zo základne.",
+    "subScaraLatimiRele": "Každá skrinka musí mať aspoň {min} mm. Posledná by mala {rest} mm — zmenši ostatné.",
     "subScaraFaraComanda": "Tento korpus nie je v zákazke. Viac korpusov sa robí len zo zákazky.",
     "subScaraIntreabaPlata": "Priestor sa urobí z {cate} korpusov. Súčasný bude prvý a ďalších {noi} pribudne do zákazky za {cost} lei. Máš {sold} lei."
   },

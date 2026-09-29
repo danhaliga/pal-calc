@@ -1435,6 +1435,8 @@
     "conturDeMana": "Lati e angoli, a mano",
     "subScaraStramb": "Il contorno attuale non si chiude. Le misure sopra sono lette da lì, approssimate — premi il bottone e diventa esatto.",
     "subScaraBucati": "In quanti mobili",
+    "subScaraLatimi": "Larghezza di ogni mobile, da sinistra (mm). L'ultimo esce da solo, da ciò che resta della base.",
+    "subScaraLatimiRele": "Ogni mobile deve avere almeno {min} mm. L'ultimo verrebbe di {rest} mm: riduci gli altri.",
     "subScaraFaraComanda": "Questo mobile non è in un ordine. Più mobili si fanno solo da dentro un ordine.",
     "subScaraIntreabaPlata": "Lo spazio si fa con {cate} mobili. Quello attuale diventa il primo, e gli altri {noi} si aggiungono all’ordine e costano {cost} lei. Hai {sold} lei."
   },

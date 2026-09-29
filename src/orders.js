@@ -567,7 +567,7 @@ router.post('/corps/:id/sub-scara', requireAuth, (req, res, next) => {
   if (!corp || corp.user_id !== req.user.id) return next(util.eroare('eroare.corpLipsa', 404));
 
   const baza = Number(req.body.baza), stanga = Number(req.body.stanga), dreapta = Number(req.body.dreapta);
-  const cate = Math.max(1, Math.min(4, Math.round(Number(req.body.bucati) || 1)));
+  const cate = Math.max(1, Math.min(PalCalc.SUB_SCARA_MAX, Math.round(Number(req.body.bucati) || 1)));
   if (!(baza >= 10 && stanga >= 10 && dreapta >= 10)) {
     return next(util.eroare('eroare.subScaraCote', 400));
   }
@@ -575,7 +575,13 @@ router.post('/corps/:id/sub-scara', requireAuth, (req, res, next) => {
   const order = corp.order_id ? getOwned(corp.order_id, req.user.id) : null;
   if (cate > 1 && !order) return next(util.eroare('eroare.subScaraFaraComanda', 400));
 
-  const bucati = PalCalc.subScaraInBucati(baza, dreapta, stanga, cate);
+  /* Lățimile scrise de om, pentru toate corpurile în afară de ultimul.
+     Dacă nu se potrivesc (alt număr, prea înguste, nu mai rămâne pentru
+     ultimul), se cade pe bucăți egale — editorul oricum nu le trimite așa. */
+  const latimi = String(req.body.latimi || '').split(',').map(v => v.trim()).filter(Boolean).map(Number);
+  const dinLatimi = cate > 1 && latimi.length === cate - 1
+    ? PalCalc.subScaraDinLatimi(baza, dreapta, stanga, latimi) : null;
+  const bucati = dinLatimi || PalCalc.subScaraInBucati(baza, dreapta, stanga, cate);
   const cost = credit.pretCorp();
   if (cate > 1 && credit.sold(req.user.id) < cost * (cate - 1)) {
     return next(util.eroare('eroare.creditInsuficient', 402));

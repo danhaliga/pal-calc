@@ -1435,6 +1435,8 @@
     "conturDeMana": "Zijden en hoeken, met de hand",
     "subScaraStramb": "De huidige omtrek sluit niet. De maten hierboven zijn er bij benadering uit afgelezen — druk op de knop en het klopt.",
     "subScaraBucati": "In hoeveel kasten",
+    "subScaraLatimi": "Breedte van elke kast, van links (mm). De laatste volgt uit wat er van de basis overblijft.",
+    "subScaraLatimiRele": "Elke kast moet minstens {min} mm zijn. De laatste zou {rest} mm worden — maak de andere smaller.",
     "subScaraFaraComanda": "Deze kast zit niet in een opdracht. Meerdere kasten maak je alleen vanuit een opdracht.",
     "subScaraIntreabaPlata": "De ruimte wordt uit {cate} kasten gemaakt. De huidige wordt de eerste, en de andere {noi} komen in de opdracht en kosten {cost} lei. Je hebt {sold} lei."
   },

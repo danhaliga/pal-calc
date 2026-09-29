@@ -16,7 +16,7 @@ piese se taie, la ce cotă finită și la ce cotă de tăiere, cu ce cant pe
 fiecare muchie, plus feroneria, croirea în coli și fișa de montaj.
 
 - **49 de modele** în catalog, **7 categorii**, **30 de limbi**
-- **566 de teste**, toate trec: `npm test`
+- **591 de teste**, toate trec: `npm test`
 - Node ≥ 20, Express 4, EJS, better-sqlite3, zod, bcryptjs
 - Motorul de calcul (`shared/*.js`) e UMD: **același fișier rulează și pe
   server, și în browser**. Nu-l rupe în două.
@@ -259,6 +259,22 @@ de cote.
   (`/root/.ssh/github-pal-calc`, pusă de Dan ca „deploy key" cu scriere).
   Copia de lucru pentru modificări e separată de `/opt/palcalc`.
 
+## 6d. Sub scară, preluat pe server (29 septembrie, noaptea)
+
+Dan a oprit sesiunea de pe calculatorul lui să urce lățimile scrise de mână
+(„lucrai tu la acele corpuri") și a cerut să le fac eu pe site. Făcute din
+nou pe server, după descrierea de mai sus — codul de pe calculatorul lui
+NU s-a urcat și **nu trebuie urcat peste**: ar dubla aceleași funcții.
+Dacă se vrea ceva de acolo, se ia de mână, peste ce e pe GitHub.
+
+- **Până la 10 corpuri** (cerut de Dan; era 4 în editor și pe server, 8 în
+  motor). `PalCalc.SUB_SCARA_MAX = 10`.
+- **Lățimile de mână**: casete A…J; primele se scriu, ultima e blocată și
+  arată restul. `subScaraDinLatimi()` în `shared/calc.js` (null dacă vreun
+  corp e sub `SUB_SCARA_LAT_MIN` = 100 mm sau nu rămâne destul pentru
+  ultimul); `randeazaLatimi()` / `potrivesteRestul()` în `public/app.js`;
+  ruta primește `latimi` și cade pe bucăți egale dacă nu se potrivesc.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E
@@ -342,7 +358,7 @@ src/                rutele Express, baza de date, conturile, plata
 views/              paginile EJS
 public/app.js       editorul de corp: formular, tabel, vederea 3D
 locales/*.json      textele, 30 de fișiere
-tests/              27 de fișiere, 566 de teste
+tests/              28 de fișiere, 591 de teste
 .lucru/             scripturi de-o dată: traduceri, petice, probe
 db/migrations/      schema, se aplică singură la pornire
 ```

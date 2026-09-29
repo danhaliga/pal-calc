@@ -1435,6 +1435,8 @@
     "conturDeMana": "Lados y ángulos, a mano",
     "subScaraStramb": "El contorno actual no cierra. Las medidas de arriba están leídas de él, aproximadas — pulsa el botón y queda exacto.",
     "subScaraBucati": "En cuántos muebles",
+    "subScaraLatimi": "Ancho de cada mueble, desde la izquierda (mm). El último sale solo, con lo que queda de la base.",
+    "subScaraLatimiRele": "Cada mueble necesita al menos {min} mm. El último saldría de {rest} mm: reduce los demás.",
     "subScaraFaraComanda": "Este mueble no está en un pedido. Varios muebles solo se hacen desde un pedido.",
     "subScaraIntreabaPlata": "El espacio se hace con {cate} muebles. El actual pasa a ser el primero, y los otros {noi} se añaden al pedido y cuestan {cost} lei. Tienes {sold} lei."
   },

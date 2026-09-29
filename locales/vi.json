@@ -1435,6 +1435,8 @@
     "conturDeMana": "Cạnh và góc, nhập tay",
     "subScaraStramb": "Đường bao hiện tại không khép. Các kích thước ở trên đọc từ đó, gần đúng — bấm nút là chính xác.",
     "subScaraBucati": "Thành mấy thùng",
+    "subScaraLatimi": "Chiều rộng từng tủ, từ trái sang (mm). Tủ cuối tự lấy phần còn lại của cạnh đáy.",
+    "subScaraLatimiRele": "Mỗi tủ cần ít nhất {min} mm. Tủ cuối sẽ chỉ còn {rest} mm — hãy giảm các tủ khác.",
     "subScaraFaraComanda": "Thùng này không nằm trong đơn nào. Nhiều thùng chỉ làm được từ trong một đơn.",
     "subScaraIntreabaPlata": "Không gian làm thành {cate} thùng. Thùng hiện tại thành thùng đầu, {noi} thùng còn lại thêm vào đơn và tốn {cost} lei. Bạn có {sold} lei."
   },

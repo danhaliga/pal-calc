@@ -1435,6 +1435,8 @@
     "conturDeMana": "Kenarlar ve açılar, elle",
     "subScaraStramb": "Şu anki kontur kapanmıyor. Yukarıdaki ölçüler ondan yaklaşık olarak okundu — düğmeye bas, tam olsun.",
     "subScaraBucati": "Kaç gövdeye",
+    "subScaraLatimi": "Soldan her dolabın genişliği (mm). Sonuncusu tabandan kalandan kendiliğinden çıkar.",
+    "subScaraLatimiRele": "Her dolap en az {min} mm olmalı. Sonuncusu {rest} mm çıkardı — diğerlerini küçült.",
     "subScaraFaraComanda": "Bu gövde bir siparişte değil. Birden fazla gövde ancak sipariş içinden yapılır.",
     "subScaraIntreabaPlata": "Alan {cate} gövdeden yapılır. Şimdiki gövde birincisi olur, diğer {noi} tanesi siparişe eklenir ve {cost} lei tutar. {sold} lei var."
   },

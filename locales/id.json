@@ -1435,6 +1435,8 @@
     "conturDeMana": "Sisi dan sudut, manual",
     "subScaraStramb": "Garis luar saat ini tidak menutup. Ukuran di atas dibaca darinya, kira-kira — tekan tombolnya dan jadi tepat.",
     "subScaraBucati": "Jadi berapa lemari",
+    "subScaraLatimi": "Lebar tiap kabinet, dari kiri (mm). Yang terakhir keluar sendiri dari sisa alas.",
+    "subScaraLatimiRele": "Tiap kabinet perlu paling sedikit {min} mm. Yang terakhir akan jadi {rest} mm — perkecil yang lain.",
     "subScaraFaraComanda": "Lemari ini tidak ada dalam pesanan. Beberapa lemari hanya bisa dibuat dari dalam pesanan.",
     "subScaraIntreabaPlata": "Ruangnya dibuat dari {cate} lemari. Yang sekarang jadi yang pertama, dan {noi} lainnya ditambahkan ke pesanan dengan biaya {cost} lei. Kamu punya {sold} lei."
   },

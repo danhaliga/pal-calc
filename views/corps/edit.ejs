@@ -41,9 +41,15 @@
           <%# Un corp de patru metri nu se face dintr-o bucata: nu se
               transporta si nu intra pe usa. %>
           <label><%= t('editor.subScaraBucati') %><select id="ssBucati">
-            <option value="1">1</option><option value="2">2</option>
-            <option value="3">3</option><option value="4">4</option>
+            <% for (var nb = 1; nb <= 10; nb++) { %><option value="<%= nb %>"><%= nb %></option><% } %>
           </select></label>
+        </div>
+        <%# Latimea fiecarui corp, de la stanga. Primele se scriu, ultima e
+            blocata si arata ce ramane din baza: asa suma e mereu peretele. %>
+        <div id="ssLatimi" class="hidden" style="margin-top:10px">
+          <p class="legend" style="margin:0 0 6px"><%= t('editor.subScaraLatimi') %></p>
+          <div class="f3" id="ssLatimiCampuri"></div>
+          <p class="warn hidden" id="ssLatimiRele" style="margin:8px 0 0"></p>
         </div>
         <p class="warn hidden" id="subScaraStramb" style="margin:10px 0 0"></p>
         <button type="button" class="btn small primary" id="ssFa" style="margin-top:10px"><%= t('editor.subScaraFa') %></button>
