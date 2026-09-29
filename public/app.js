@@ -13,7 +13,7 @@ var params = DATA.params;
 var paid = !!DATA.paid;
 
 var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','traverse','t','cg','cs','spate','tp','faraFront','nUsi','montaj','balama','supr','hSine',
-              'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','sertareJos','hFront','hCutie','jg','ts','lg','maner','manerDir','manerPoz',
+              'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','sertareJos','hFront','hCutie','jg','ts','lg','maner','manerDir','manerPoz','manerL',
               'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 
 /* Compartimentele care primesc uși. Bife, nu un câmp de scris: numerele se
@@ -355,7 +355,7 @@ function renderTable() {
    casetă nu spune asta nimănui, și acoperă și indiciul din spate. Corpurile
    făcute înainte au 0 salvat, deci nu ajunge să schimbăm doar valoarea
    implicită: îl arătăm gol oricând îl găsim. */
-var ZERO_E_GOL = ['hUsi', 'hNisa', 'traverse', 'lg'];
+var ZERO_E_GOL = ['hUsi', 'hNisa', 'traverse', 'lg', 'manerL'];
 
 function render() {
   fields.forEach(function (f) {
@@ -415,7 +415,9 @@ function formule(c, r) {
 /* ---------------- 3D ---------------- */
 
 var V3 = null;
-var COL = { f: 0xd9c7a8, g: 0xd48a1e, s: 0xf1cf93, '-': 0xb09572, p: 0x7a6650 };
+/* `m` e metalul manerului: singura piesa din desen care nu e PAL, deci
+   singura care n-are voie sa aiba culoare de PAL. */
+var COL = { f: 0xd9c7a8, g: 0xd48a1e, s: 0xf1cf93, '-': 0xb09572, p: 0x7a6650, m: 0x8d99a6 };
 var ORDER = ['px', 'nx', 'py', 'ny', 'pz', 'nz'];
 var FETE = ['px', 'nx', 'py', 'ny', 'pz', 'nz'];
 
@@ -550,6 +552,18 @@ function build3D(c, res) {
     });
   });
 
+  /* Manerele nu sunt piese de taiat, deci nu stau in `res.P` si n-au rand in
+     lista. Intra aici, cu grupa lor, ca sa se poata stinge singure — cine se
+     uita la imbinari nu vrea barele in fata. */
+  (res.manere || []).forEach(function (b, bi) {
+    var geoM = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
+    var meshM = new THREE.Mesh(geoM, V3.mats.m);
+    meshM.userData = { p: null, pi: -1, bi: bi, b: b,
+                       base: [b.x + b.sx / 2, b.y + b.sy / 2, b.z + b.sz / 2] };
+    meshM.add(new THREE.LineSegments(new THREE.EdgesGeometry(geoM), V3.lineMat));
+    g.add(meshM); V3.meshes.push(meshM);
+  });
+
   var prevMax = V3.maxDim || 0, maxDim = Math.max(res.W, res.H, res.D);
   V3.target.set(res.W / 2, res.H / 2, res.D / 2);
   if (Math.abs(prevMax - maxDim) > 1) { V3.r = maxDim * 2.9; V3.maxDim = maxDim; }
@@ -629,6 +643,9 @@ function applyVis() {
 
 function select(mesh) {
   if (!V3) return;
+  /* Manerul n-are rand in lista de debitare: nu e piesa de taiat. Se poate
+     vedea, dar nu se poate alege. */
+  if (mesh && !mesh.userData.p) mesh = null;
   if (V3.helper) { V3.scene.remove(V3.helper); V3.helper.geometry.dispose(); V3.helper = null; }
   V3.sel = mesh;
   document.querySelectorAll('#rows tr').forEach(function (tr) { tr.classList.remove('sel'); });

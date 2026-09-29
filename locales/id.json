@@ -1310,7 +1310,10 @@
     "manerStanga": "ke kiri",
     "manerDreapta": "ke kanan",
     "manerSus": "di atas",
-    "manerJos": "di bawah"
+    "manerJos": "di bawah",
+    "manerLungime": "Panjang tarikan (mm)",
+    "grupManere": "Tarikan",
+    "manerCatIncape": "sepanjang yang muat"
   },
   "fata": {
     "px": "kanan",

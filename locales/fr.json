@@ -1310,7 +1310,10 @@
     "manerStanga": "vers la gauche",
     "manerDreapta": "vers la droite",
     "manerSus": "en haut",
-    "manerJos": "en bas"
+    "manerJos": "en bas",
+    "manerLungime": "Longueur de la poignée (mm)",
+    "grupManere": "Poignées",
+    "manerCatIncape": "ce qui tient"
   },
   "fata": {
     "px": "droite",

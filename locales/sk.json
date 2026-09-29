@@ -1321,7 +1321,10 @@
     "manerStanga": "k ľavému kraju",
     "manerDreapta": "k pravému kraju",
     "manerSus": "hore",
-    "manerJos": "dole"
+    "manerJos": "dole",
+    "manerLungime": "Dĺžka úchytky (mm)",
+    "grupManere": "Úchytky",
+    "manerCatIncape": "koľko sa zmestí"
   },
   "fata": {
     "px": "vpravo",

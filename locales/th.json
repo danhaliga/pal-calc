@@ -1310,7 +1310,10 @@
     "manerStanga": "ไปทางซ้าย",
     "manerDreapta": "ไปทางขวา",
     "manerSus": "ด้านบน",
-    "manerJos": "ด้านล่าง"
+    "manerJos": "ด้านล่าง",
+    "manerLungime": "ความยาวมือจับ (มม.)",
+    "grupManere": "มือจับ",
+    "manerCatIncape": "เท่าที่พอดี"
   },
   "fata": {
     "px": "ขวา",

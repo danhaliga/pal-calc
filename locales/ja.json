@@ -1310,7 +1310,10 @@
     "manerStanga": "左寄り",
     "manerDreapta": "右寄り",
     "manerSus": "上",
-    "manerJos": "下"
+    "manerJos": "下",
+    "manerLungime": "取っ手の長さ（mm）",
+    "grupManere": "取っ手",
+    "manerCatIncape": "入るだけ"
   },
   "fata": {
     "px": "右",

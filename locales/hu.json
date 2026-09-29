@@ -1310,7 +1310,10 @@
     "manerStanga": "bal felé",
     "manerDreapta": "jobb felé",
     "manerSus": "fent",
-    "manerJos": "lent"
+    "manerJos": "lent",
+    "manerLungime": "Fogantyú hossza (mm)",
+    "grupManere": "Fogantyúk",
+    "manerCatIncape": "amennyi elfér"
   },
   "fata": {
     "px": "jobb",

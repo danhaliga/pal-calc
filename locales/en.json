@@ -1310,7 +1310,10 @@
     "manerStanga": "towards the left",
     "manerDreapta": "towards the right",
     "manerSus": "at the top",
-    "manerJos": "at the bottom"
+    "manerJos": "at the bottom",
+    "manerLungime": "Handle length (mm)",
+    "grupManere": "Handles",
+    "manerCatIncape": "as much as fits"
   },
   "fata": {
     "px": "right",

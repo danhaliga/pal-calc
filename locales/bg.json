@@ -1310,7 +1310,10 @@
     "manerStanga": "към левия край",
     "manerDreapta": "към десния край",
     "manerSus": "горе",
-    "manerJos": "долу"
+    "manerJos": "долу",
+    "manerLungime": "Дължина на дръжката (мм)",
+    "grupManere": "Дръжки",
+    "manerCatIncape": "колкото се побира"
   },
   "fata": {
     "px": "отдясно",

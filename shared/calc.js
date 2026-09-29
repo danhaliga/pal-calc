@@ -107,6 +107,11 @@
          „ca de obicei": vertical pe muchia dinspre mijloc la uși, orizontal
          la mijlocul frontului de sertar — adică felul de până acum. */
       maner: 1, manerDir: 'obisnuit', manerPoz: 'obisnuit',
+      /* Lungimea mânerului, în milimetri. 128 e mărimea cea mai obișnuită;
+         se cumpără de la 96 până pe la 320, iar la sertarele late se pun
+         și de 500. Mai lung decât frontul nu poate fi, deci se scurtează
+         singur când nu încape. */
+      manerL: 128,
       /* Unde stau sertarele: sus, ca pana acum, sau jos, cu ușile deasupra.
          Jos e felul de-a face corpul de cuptor cu sertar dedesubt, și
          singurul fel în care golul lăsat la fund se umple cu ceva. */
@@ -222,6 +227,70 @@
 
   function balamale(h) { return h <= 900 ? 2 : h <= 1600 ? 3 : h <= 2000 ? 4 : 5; }
 
+  /* ---- mânerul ----
+
+     Unde stă pe un front, ca fracții din laturile lui: `fx` de la muchia
+     din stânga, `fy` de la muchia de JOS. Fracții, și de jos, fiindcă
+     regula asta o citesc două desene care numără invers pe verticală —
+     vederea 3D are y în sus, schița SVG îl are în jos. Cine se uită la ea
+     nu trebuie să țină minte în care dintre ele e.
+
+     `dirImplicita` e felul în care se pune de obicei pe FELUL ăsta de
+     front: vertical la uși, orizontal la fronturile de sertar.
+     `spreDreapta` spune dacă muchia dinspre mijlocul corpului e cea din
+     dreapta — acolo se prinde mâna.
+
+     Cele două alegeri nu se pot bate cap în cap: fiecare lucrează pe axa
+     ei. Un mâner vertical pus „sus" rămâne vertical și urcă. */
+  var MANER_MARGINE = 0.12;   /* cât de aproape de muchie, din latura frontului */
+  var MANER_GROS = 20;        /* cât de gros se desenează bara, în 3D */
+  var MANER_IESIRE = 32;      /* cât iese din front */
+
+  function asezareManer(c, lat, inalt, dirImplicita, spreDreapta) {
+    if (+c.faraFront || !+c.maner) return null;
+    var dir = (c.manerDir && c.manerDir !== 'obisnuit') ? c.manerDir : dirImplicita;
+    var poz = c.manerPoz || 'obisnuit';
+    var mg = MANER_MARGINE;
+    var cerut = Math.max(0, +c.manerL || 0);
+    var vertical = dir === 'vertical';
+    /* Pe latura pe care stă. Mai lung decât frontul n-are cum să fie. */
+    var latura = vertical ? inalt : lat;
+    var lung = Math.min(cerut || latura * 0.32, latura * 0.9);
+    if (!(lung > 0)) return null;
+
+    var fx, fy;
+    if (vertical) {
+      /* „Cum se pune de obicei" tine de FELUL frontului, nu de directia
+         ceruta. Un front de sertar are manerul la mijloc, si acolo ramane
+         chiar daca omul l-a intors pe verticala: o bara verticala lipita de
+         muchia unui sertar lat de 800 n-a pus-o nimeni niciodata. Muchia
+         dinspre mijlocul corpului e treaba usilor. */
+      fx = poz === 'stanga'  ? mg
+         : poz === 'dreapta' ? 1 - mg
+         : poz === 'centru'  ? 0.5
+         : dirImplicita === 'orizontal' ? 0.5
+         : (spreDreapta ? 1 - mg : mg);
+      fy = poz === 'sus' ? 0.75 : poz === 'jos' ? 0.25 : 0.5;
+    } else {
+      fx = poz === 'stanga' ? 0.25 : poz === 'dreapta' ? 0.75 : 0.5;
+      fy = poz === 'sus' ? 1 - mg : poz === 'jos' ? mg : 0.5;
+    }
+    /* Manerul nu are voie sa iasa din front.
+
+       Lungimea e taiata dupa latura pe care sta, dar asta nu ajunge: pus
+       „sus" pe un front de sertar de 150, un maner de 128 ii iese in sus cu
+       25 de milimetri — atarna in aer deasupra piesei. Se trage inapoi
+       inauntru, pe axa pe care se intinde. */
+    var intre = function (v, minim, maxim) {
+      return v < minim ? minim : v > maxim ? maxim : v;
+    };
+    var jumatate = (lung / 2) / (vertical ? inalt : lat);
+    if (vertical) fy = intre(fy, jumatate, 1 - jumatate);
+    else fx = intre(fx, jumatate, 1 - jumatate);
+
+    return { vertical: vertical, fx: fx, fy: fy, lung: r1(lung) };
+  }
+
   /* Rolul unei piese se ia din cheia ei, nu din text: așa rămâne același
      în toate limbile. */
   var ROL = {
@@ -296,6 +365,21 @@
     };
 
     /* Avertismentele merg tot pe chei: textul se compune la afișare. */
+    /* Mânerele nu sunt piese de tăiat, deci nu intră în `P`: stau deoparte,
+       ca vederea 3D să le poată arăta și stinge singure. */
+    var manere = [];
+    var puneManer = function (x, y, lat, inalt, zFront, dirImplicita) {
+      /* Muchia dinspre mijlocul corpului: acolo se prinde mâna. */
+      var a = asezareManer(c, lat, inalt, dirImplicita, (x + lat / 2) < W / 2);
+      if (!a) return;
+      var cx = x + a.fx * lat, cy = y + a.fy * inalt;
+      var sx = a.vertical ? MANER_GROS : a.lung;
+      var sy = a.vertical ? a.lung : MANER_GROS;
+      manere.push(bx(cx - sx / 2, cy - sy / 2, zFront + t, sx, sy, MANER_IESIRE,
+                     F({ px: 'p', nx: 'p', py: 'p', ny: 'p', pz: 'p', nz: 'p' }),
+                     [0, 0, 1.6], 'manere'));
+    };
+
     var avert = function (cheie, args) {
       var text = t_('avert.' + cheie, args || null);
       avertismente.push({ cheie: cheie, args: args || null, text: text });
@@ -803,8 +887,10 @@
             var cheie = String(r1(lat));
             if (!grupe[cheie]) { grupe[cheie] = { lat: lat, boxes: [] }; ordine.push(cheie); }
             for (var d = 0; d < n; d++) {
-              grupe[cheie].boxes.push(bx(z.st + d * (lat + ri), yDeLa, zF, lat, inalt, t,
+              var xUsa = z.st + d * (lat + ri);
+              grupe[cheie].boxes.push(bx(xUsa, yDeLa, zF, lat, inalt, t,
                 FD, [0, 0, 1.6], 'fronturi'));
+              puneManer(xUsa, yDeLa, lat, inalt, zF, 'vertical');
             }
           });
 
@@ -877,6 +963,7 @@
         var yt = ySertare - k * (hF + ri), yb0 = yt - hF;
         var yb = yb0 + Math.max(0, (hF - hc) / 2);
         fr.push(bx(xoff, yb0, zF, fL, hF, t, FD, [0, 0, 1.6], 'fronturi'));
+        puneManer(xoff, yb0, fL, hF, zF, 'orizontal');
         lat.push(bx(t + jg, yb, zf - lg, ts, hc, lg,
           F({ px: 'f', nx: 'f', py: 's', ny: 's', pz: 's', nz: 's' }), dz, 'sertare'));
         lat.push(bx(W - t - jg - ts, yb, zf - lg, ts, hc, lg,
@@ -985,7 +1072,8 @@
       avert('usiJosFaraPolita');
     }
 
-    return { P: P, warn: warn, avertismente: avertismente, usi: scoateFronturile(usi), Wint: Wint, Hint: Hint, Dint: Dint,
+    return { P: P, warn: warn, avertismente: avertismente, manere: manere,
+             usi: scoateFronturile(usi), Wint: Wint, Hint: Hint, Dint: Dint,
              W: W, H: H, D: D, soclu: soclu };
   }
 
@@ -1076,6 +1164,7 @@
         maner: int(0, 1).catch(1),
         manerDir: z.enum(['obisnuit', 'orizontal', 'vertical']).catch('obisnuit'),
         manerPoz: z.enum(['obisnuit', 'centru', 'stanga', 'dreapta', 'sus', 'jos']).catch('obisnuit'),
+        manerL: mm(0, 1200).catch(128),
         jg: mm(0, 50), ts: mm(10, 30),
         /* reglajul de debitare al atelierului; implicit cel măsurat pe
            lucrările reale — vezi reducereCant() */
@@ -1110,6 +1199,7 @@
     traducator: traducator,
     defaults: defaults,
     balamale: balamale,
+    asezareManer: asezareManer,
     csv: csv,
     conturGeometrie: conturGeometrie,
     conturImplicit: conturImplicit,

@@ -1321,7 +1321,10 @@
     "manerStanga": "ka levoj ivici",
     "manerDreapta": "ka desnoj ivici",
     "manerSus": "gore",
-    "manerJos": "dole"
+    "manerJos": "dole",
+    "manerLungime": "Dužina ručice (mm)",
+    "grupManere": "Ručice",
+    "manerCatIncape": "koliko stane"
   },
   "fata": {
     "px": "desno",

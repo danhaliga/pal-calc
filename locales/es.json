@@ -1310,7 +1310,10 @@
     "manerStanga": "hacia la izquierda",
     "manerDreapta": "hacia la derecha",
     "manerSus": "arriba",
-    "manerJos": "abajo"
+    "manerJos": "abajo",
+    "manerLungime": "Largo del tirador (mm)",
+    "grupManere": "Tiradores",
+    "manerCatIncape": "lo que quepa"
   },
   "fata": {
     "px": "derecha",

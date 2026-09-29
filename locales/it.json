@@ -1310,7 +1310,10 @@
     "manerStanga": "verso sinistra",
     "manerDreapta": "verso destra",
     "manerSus": "in alto",
-    "manerJos": "in basso"
+    "manerJos": "in basso",
+    "manerLungime": "Lunghezza maniglia (mm)",
+    "grupManere": "Maniglie",
+    "manerCatIncape": "quanto ci sta"
   },
   "fata": {
     "px": "destra",

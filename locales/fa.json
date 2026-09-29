@@ -1310,7 +1310,10 @@
     "manerStanga": "به سمت چپ",
     "manerDreapta": "به سمت راست",
     "manerSus": "بالا",
-    "manerJos": "پایین"
+    "manerJos": "پایین",
+    "manerLungime": "طول دستگیره (میلی‌متر)",
+    "grupManere": "دستگیره‌ها",
+    "manerCatIncape": "هرچه جا شود"
   },
   "fata": {
     "px": "راست",

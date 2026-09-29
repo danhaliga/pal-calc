@@ -1310,7 +1310,10 @@
     "manerStanga": "về bên trái",
     "manerDreapta": "về bên phải",
     "manerSus": "ở trên",
-    "manerJos": "ở dưới"
+    "manerJos": "ở dưới",
+    "manerLungime": "Chiều dài tay nắm (mm)",
+    "grupManere": "Tay nắm",
+    "manerCatIncape": "vừa đủ chỗ"
   },
   "fata": {
     "px": "phải",

@@ -1321,7 +1321,10 @@
     "manerStanga": "ближче до лівого краю",
     "manerDreapta": "ближче до правого краю",
     "manerSus": "угорі",
-    "manerJos": "унизу"
+    "manerJos": "унизу",
+    "manerLungime": "Довжина ручки (мм)",
+    "grupManere": "Ручки",
+    "manerCatIncape": "скільки вміститься"
   },
   "fata": {
     "px": "справа",

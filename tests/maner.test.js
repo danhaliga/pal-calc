@@ -222,3 +222,92 @@ test('cele paisprezece chei sunt în toate cele treizeci de limbi', () => {
     assert.equal(new Set(locuri).size, 5, l.cod + ': două locuri se cheamă la fel');
   });
 });
+
+/* ---------------- lungimea, si bara din vederea 3D ---------------- */
+
+test('lungimea se ia in milimetri, nu din ochi', () => {
+  const lung = L => manere(corp({ manerL: L })).map(x =>
+    Math.round(Math.max(Math.abs(x.x2 - x.x1), Math.abs(x.y2 - x.y1))));
+  assert.equal(PalCalc.defaults().manerL, 128, '128 nu mai e marimea obisnuita');
+  [96, 128, 224].forEach(L => {
+    lung(L).forEach(l => assert.ok(Math.abs(l - L) <= 1 || l < L,
+      'la ' + L + ' mm a iesit ' + l));
+  });
+  /* Pe un front scurt se scurteaza singur, nu iese din piesa. */
+  assert.ok(Math.max.apply(null, lung(2000)) < 900, 'un maner de 2000 a ramas de 2000');
+});
+
+test('gol inseamna „cat incape", ca inainte de caseta asta', () => {
+  const l = manere(corp({ manerL: 0 })).map(x =>
+    Math.max(Math.abs(x.x2 - x.x1), Math.abs(x.y2 - x.y1)));
+  assert.ok(l.every(x => x > 0), 'cu 0 nu se mai deseneaza niciun maner');
+  assert.ok(new Set(l.map(Math.round)).size > 1,
+    'toate au iesit de aceeasi lungime, deci nu se mai masoara din front');
+  assert.match(citeste('public', 'app.js'), /'lg', 'manerL'\]/,
+    'caseta nu arata goala cand e 0, si nimeni nu ghiceste ce inseamna');
+});
+
+test('manerul nu iese niciodata din front', () => {
+  /* Un maner de 128 pus „sus" pe un front de sertar de 150 ii iesea in sus cu
+     25 de milimetri: atarna in aer deasupra piesei. Se trage inapoi inauntru. */
+  let n = 0;
+  ['obisnuit', 'orizontal', 'vertical'].forEach(dir => {
+    ['obisnuit', 'centru', 'stanga', 'dreapta', 'sus', 'jos'].forEach(poz => {
+      [0, 96, 128, 320, 1200].forEach(L => {
+        [[797, 150], [398, 565], [300, 2000], [1200, 120], [120, 120]].forEach(([lat, inalt]) => {
+          ['vertical', 'orizontal'].forEach(imp => {
+            const a = PalCalc.asezareManer(corp({ manerDir: dir, manerPoz: poz, manerL: L }),
+                                           lat, inalt, imp, true);
+            n++;
+            if (!a) return;
+            const jx = a.vertical ? 0 : a.lung / 2, jy = a.vertical ? a.lung / 2 : 0;
+            const unde = dir + '/' + poz + ' L=' + L + ' front ' + lat + '×' + inalt;
+            assert.ok(a.fx * lat - jx >= -0.01, unde + ': iese pe stanga');
+            assert.ok(a.fx * lat + jx <= lat + 0.01, unde + ': iese pe dreapta');
+            assert.ok(a.fy * inalt - jy >= -0.01, unde + ': iese pe jos');
+            assert.ok(a.fy * inalt + jy <= inalt + 0.01, unde + ': iese pe sus');
+          });
+        });
+      });
+    });
+  });
+  assert.ok(n >= 900, 'prea putine potriviri incercate: ' + n);
+});
+
+test('frontul de sertar isi tine manerul la mijloc, si intors pe verticala', () => {
+  /* O bara verticala lipita de muchia unui sertar lat de 800 n-a pus-o nimeni
+     niciodata. Muchia dinspre mijlocul corpului e treaba usilor. */
+  const p = corp({ manerDir: 'vertical' });
+  assert.equal(PalCalc.asezareManer(p, 797, 150, 'orizontal', false).fx, 0.5);
+  assert.equal(PalCalc.asezareManer(p, 398, 565, 'vertical', false).fx, 0.12);
+});
+
+test('bara intra in vederea 3D, cu grupa ei', () => {
+  /* Nu e piesa de taiat, deci nu are rand in lista: sta deoparte, in
+     `manere`, ca sa se poata stinge singura din vedere. */
+  const r = PalCalc.calc(corp({ manerL: 160 }), T);
+  assert.equal(r.manere.length, 3, 'doua usi si un sertar, deci trei bare');
+  r.manere.forEach(b => {
+    assert.equal(b.grp, 'manere', 'bara a ajuns in alta grupa');
+    assert.equal(Math.round(Math.max(b.sx, b.sy)), 160, 'bara nu are lungimea ceruta');
+    assert.ok(b.sz > 0, 'bara nu iese din front');
+  });
+  assert.ok(!r.P.some(p => (p.boxes || []).some(b => b.grp === 'manere')),
+    'o bara a intrat intre piesele de taiat');
+  assert.deepEqual(PalCalc.calc(corp({ maner: 0 }), T).manere, []);
+
+  const vedere = citeste('views', 'corps', 'edit.ejs');
+  assert.match(vedere, /class="vis" data-g="manere"/, 'nu se poate stinge din vedere');
+  const app = citeste('public', 'app.js');
+  assert.match(app, /res\.manere \|\| \[\]/, 'vederea 3D nu deseneaza barele');
+  assert.match(app, /if \(mesh && !mesh\.userData\.p\) mesh = null;/,
+    'apasarea pe o bara ar cauta un rand care nu exista');
+});
+
+test('schita si vederea 3D folosesc ACEEASI regula', () => {
+  /* Doua socoteli ar fi mers in ritmuri diferite, iar desenul de pe card ar
+     fi ajuns sa nu mai fie corpul din editor. */
+  const m = citeste('shared', 'models.js');
+  assert.match(m, /PalCalc\.asezareManer\(/, 'schita si-a facut socoteala ei');
+  assert.ok(!/MARGINE_MANER/.test(m), 'a ramas o a doua regula in models.js');
+});

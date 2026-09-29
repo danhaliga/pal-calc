@@ -1310,7 +1310,10 @@
     "manerStanga": "προς τα αριστερά",
     "manerDreapta": "προς τα δεξιά",
     "manerSus": "επάνω",
-    "manerJos": "κάτω"
+    "manerJos": "κάτω",
+    "manerLungime": "Μήκος χερουλιού (mm)",
+    "grupManere": "Χερούλια",
+    "manerCatIncape": "όσο χωράει"
   },
   "fata": {
     "px": "δεξιά",

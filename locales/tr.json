@@ -1310,7 +1310,10 @@
     "manerStanga": "sola doğru",
     "manerDreapta": "sağa doğru",
     "manerSus": "üstte",
-    "manerJos": "altta"
+    "manerJos": "altta",
+    "manerLungime": "Kulp uzunluğu (mm)",
+    "grupManere": "Kulplar",
+    "manerCatIncape": "sığdığı kadar"
   },
   "fata": {
     "px": "sağ",

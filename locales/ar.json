@@ -1354,7 +1354,10 @@
     "manerStanga": "نحو اليسار",
     "manerDreapta": "نحو اليمين",
     "manerSus": "في الأعلى",
-    "manerJos": "في الأسفل"
+    "manerJos": "في الأسفل",
+    "manerLungime": "طول المقبض (مم)",
+    "grupManere": "المقابض",
+    "manerCatIncape": "بقدر ما يتسع"
   },
   "fata": {
     "px": "يمين",

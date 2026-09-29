@@ -1321,7 +1321,10 @@
     "manerStanga": "לכיוון שמאל",
     "manerDreapta": "לכיוון ימין",
     "manerSus": "למעלה",
-    "manerJos": "למטה"
+    "manerJos": "למטה",
+    "manerLungime": "אורך הידית (מ״מ)",
+    "grupManere": "ידיות",
+    "manerCatIncape": "כמה שנכנס"
   },
   "fata": {
     "px": "ימין",

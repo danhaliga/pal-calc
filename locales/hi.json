@@ -1310,7 +1310,10 @@
     "manerStanga": "बाईं ओर",
     "manerDreapta": "दाईं ओर",
     "manerSus": "ऊपर",
-    "manerJos": "नीचे"
+    "manerJos": "नीचे",
+    "manerLungime": "हैंडल की लंबाई (मिमी)",
+    "grupManere": "हैंडल",
+    "manerCatIncape": "जितना आए"
   },
   "fata": {
     "px": "दाएँ",

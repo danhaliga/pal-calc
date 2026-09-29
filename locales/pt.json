@@ -1310,7 +1310,10 @@
     "manerStanga": "para a esquerda",
     "manerDreapta": "para a direita",
     "manerSus": "em cima",
-    "manerJos": "em baixo"
+    "manerJos": "em baixo",
+    "manerLungime": "Comprimento do puxador (mm)",
+    "grupManere": "Puxadores",
+    "manerCatIncape": "o que couber"
   },
   "fata": {
     "px": "direita",

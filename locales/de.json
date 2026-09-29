@@ -1310,7 +1310,10 @@
     "manerStanga": "nach links",
     "manerDreapta": "nach rechts",
     "manerSus": "oben",
-    "manerJos": "unten"
+    "manerJos": "unten",
+    "manerLungime": "Grifflänge (mm)",
+    "grupManere": "Griffe",
+    "manerCatIncape": "so viel wie passt"
   },
   "fata": {
     "px": "rechts",

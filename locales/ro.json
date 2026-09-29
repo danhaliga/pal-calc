@@ -1321,7 +1321,10 @@
     "manerStanga": "spre stânga",
     "manerDreapta": "spre dreapta",
     "manerSus": "sus",
-    "manerJos": "jos"
+    "manerJos": "jos",
+    "manerLungime": "Lungime mâner (mm)",
+    "grupManere": "Mânere",
+    "manerCatIncape": "cât încape"
   },
   "fata": {
     "px": "dreapta",

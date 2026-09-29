@@ -228,6 +228,11 @@
             <option value="orizontal"><%= t('editor.manerOrizontal') %></option>
             <option value="vertical"><%= t('editor.manerVertical') %></option>
           </select></label>
+          <%# Gol inseamna „cat incape": manerul se deseneaza pe o treime din
+              latura frontului, ca inainte de a exista caseta asta. %>
+          <label><%= t('editor.manerLungime') %>
+            <input id="manerL" type="number" step="8" min="0" max="1200"
+                   placeholder="<%= t('editor.manerCatIncape') %>"></label>
           <label><%= t('editor.manerUnde') %><select id="manerPoz">
             <option value="obisnuit"><%= t('editor.manerObisnuit') %></option>
             <option value="centru"><%= t('editor.manerCentru') %></option>
@@ -278,6 +283,7 @@
           <label><input type="checkbox" class="vis" data-g="fronturi" checked> <%= t('editor.grupFronturi') %></label>
           <label><input type="checkbox" class="vis" data-g="sertare" checked> <%= t('editor.grupSertare') %></label>
           <label><input type="checkbox" class="vis" data-g="polite" checked> <%= t('editor.grupPolite') %></label>
+          <label><input type="checkbox" class="vis" data-g="manere" checked> <%= t('editor.grupManere') %></label>
         </span>
       </div>
       <%# Etichetele cu numere stau peste canvas, nu in el: text HTML

@@ -1310,7 +1310,10 @@
     "manerStanga": "naar links",
     "manerDreapta": "naar rechts",
     "manerSus": "bovenaan",
-    "manerJos": "onderaan"
+    "manerJos": "onderaan",
+    "manerLungime": "Lengte greep (mm)",
+    "grupManere": "Grepen",
+    "manerCatIncape": "zoveel als past"
   },
   "fata": {
     "px": "rechts",

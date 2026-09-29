@@ -1321,7 +1321,10 @@
     "manerStanga": "ku lewej",
     "manerDreapta": "ku prawej",
     "manerSus": "u góry",
-    "manerJos": "u dołu"
+    "manerJos": "u dołu",
+    "manerLungime": "Długość uchwytu (mm)",
+    "grupManere": "Uchwyty",
+    "manerCatIncape": "ile się zmieści"
   },
   "fata": {
     "px": "prawo",

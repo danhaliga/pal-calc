@@ -1310,7 +1310,10 @@
     "manerStanga": "mot vänster",
     "manerDreapta": "mot höger",
     "manerSus": "upptill",
-    "manerJos": "nedtill"
+    "manerJos": "nedtill",
+    "manerLungime": "Handtagets längd (mm)",
+    "grupManere": "Handtag",
+    "manerCatIncape": "så mycket som får plats"
   },
   "fata": {
     "px": "höger",

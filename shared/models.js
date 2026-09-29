@@ -348,31 +348,17 @@
      Cele două alegeri nu se pot bate cap în cap: fiecare poziție lucrează
      pe axa ei. La un mâner vertical, stânga/dreapta/centru mută linia pe
      lățime, iar sus/jos o urcă sau o coboară — tot verticală rămâne. */
-  var MARGINE_MANER = 0.12;   /* cât de aproape de muchie, din latura frontului */
-  var LUNG_MANER = 0.32;      /* cât se desenează din el, din latura pe care stă */
-
+  /* Desenul folosește ACEEAȘI regulă ca vederea 3D — `PalCalc.asezareManer`.
+     Aici se întoarce doar numărătoarea pe verticală: `fy` e măsurat de jos,
+     iar SVG-ul are y în jos. */
   function liniaManerului(p, x, y, w, h, dirImplicita, spreDreapta) {
-    if (+p.faraFront || !+p.maner) return '';
-    var dir = (p.manerDir && p.manerDir !== 'obisnuit') ? p.manerDir : dirImplicita;
-    var poz = p.manerPoz || 'obisnuit';
-    var mg = MARGINE_MANER, x1, y1, x2, y2;
-
-    if (dir === 'vertical') {
-      var lv = h * LUNG_MANER;
-      var cx = poz === 'stanga'  ? x + w * mg
-             : poz === 'dreapta' ? x + w * (1 - mg)
-             : poz === 'centru'  ? x + w / 2
-             : (spreDreapta ? x + w * (1 - mg) : x + w * mg);
-      var cy = poz === 'sus' ? y + h * 0.25 : poz === 'jos' ? y + h * 0.75 : y + h / 2;
-      x1 = x2 = cx; y1 = cy - lv / 2; y2 = cy + lv / 2;
-    } else {
-      var lo = w * LUNG_MANER;
-      var cy2 = poz === 'sus' ? y + h * mg
-              : poz === 'jos' ? y + h * (1 - mg)
-              : y + h / 2;
-      var cx2 = poz === 'stanga' ? x + w * 0.25 : poz === 'dreapta' ? x + w * 0.75 : x + w / 2;
-      y1 = y2 = cy2; x1 = cx2 - lo / 2; x2 = cx2 + lo / 2;
-    }
+    var a = PalCalc.asezareManer(p, w, h, dirImplicita, spreDreapta);
+    if (!a) return '';
+    var cx = x + a.fx * w;
+    var cy = y + (1 - a.fy) * h;
+    var jum = a.lung / 2;
+    var x1 = a.vertical ? cx : cx - jum, x2 = a.vertical ? cx : cx + jum;
+    var y1 = a.vertical ? cy - jum : cy, y2 = a.vertical ? cy + jum : cy;
     return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 +
            '" y2="' + y2 + '" class="sk-maner"/>';
   }
@@ -511,7 +497,7 @@
         /* Ușa: de obicei mâner vertical, pe muchia dinspre mijlocul corpului.
            La două canaturi, primul îl are pe dreapta, restul pe stânga. */
         if (manere) {
-          o.push(liniaManerului(p, x, yU, uL, uH, 'vertical', nU > 1 && k === 0));
+          o.push(liniaManerului(p, x, yU, uL, uH, 'vertical', (x + uL / 2) < W / 2));
         }
       }
     }

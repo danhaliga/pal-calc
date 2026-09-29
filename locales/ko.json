@@ -1310,7 +1310,10 @@
     "manerStanga": "왼쪽으로",
     "manerDreapta": "오른쪽으로",
     "manerSus": "위",
-    "manerJos": "아래"
+    "manerJos": "아래",
+    "manerLungime": "손잡이 길이 (mm)",
+    "grupManere": "손잡이",
+    "manerCatIncape": "들어가는 만큼"
   },
   "fata": {
     "px": "오른쪽",

@@ -1310,7 +1310,10 @@
     "manerStanga": "偏左",
     "manerDreapta": "偏右",
     "manerSus": "上方",
-    "manerJos": "下方"
+    "manerJos": "下方",
+    "manerLungime": "拉手长度（毫米）",
+    "grupManere": "拉手",
+    "manerCatIncape": "按能放下的长度"
   },
   "fata": {
     "px": "右",
