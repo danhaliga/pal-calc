@@ -33,7 +33,7 @@ programator.** Vezi capitolul 8 înainte să-i scrii ceva.
 | calculatorul lui Dan | `C:\Users\Dan.Haliga\Documents\corpuri-mobila\pal-calc` | se pornește cu `porneste.bat`, merge pe `localhost:3000` |
 | GitHub | `github.com/danhaliga/pal-calc` (public) | ramura `main`, de aici se ia peste tot |
 | Render | `palcalc.onrender.com` | **merge**, se actualizează singur la fiecare `git push` |
-| VPS propriu | `188.212.156.158` | **merge**, pus pe 29 septembrie, încă fără domeniu și fără https |
+| VPS propriu | **https://cutmodul.com** | **live**, cu https, din 29 septembrie. Plata e încă „fake" — vezi 4c |
 
 Render și VPS-ul rulează amândouă în paralel, cu baze de date separate.
 Nu s-a hotărât încă dacă Render se oprește.
@@ -85,26 +85,22 @@ local, iar atunci refuză să pornească fără https și fără cheile Stripe. 
 
 ## 4. Ce a mai rămas de făcut, în ordine
 
-### a. DNS-ul — la cyberFolks, îl face Dan
+### a. DNS-ul — FĂCUT pe 29 septembrie
 
-Nameserverele domeniului sunt `ns1-ns4.cyberfolks.ro`, deci zona se editează
-în panoul lor. De schimbat:
-
-```
-A   @   93.119.153.225   →   188.212.156.158
-```
-
-Subdomeniul cu prefix nu se atinge: e legat de domeniul principal și urmează
-singur. TTL 14400, deci până la 4 ore de așteptare.
+Nameserverele domeniului sunt `ns1-ns4.cyberfolks.ro`. Suportul lor a mutat
+înregistrarea A de la `93.119.153.225` pe `188.212.156.158`. Subdomeniul cu
+prefix urmează singur, fiindcă e legat de domeniul principal.
 
 **MX-ul:** arăta spre chiar `cutmodul.com`, adică spre adresa care se mută.
 Dan a confirmat pe 29 septembrie că **nu are nicio căsuță de mail pe domeniu**,
 deci nu e nimic de reparat acolo. Dacă își face vreodată, MX-ul trebuie mutat
 pe `mail.cutmodul.com` (există deja, arată spre serverul cyberFolks).
 
-### b. Certificatul https
+### b. Certificatul https — FĂCUT pe 29 septembrie
 
-Numai DUPĂ ce DNS-ul s-a propagat — certbot verifică prin domeniu.
+Let's Encrypt, valabil până pe 28 decembrie 2026, acoperă amândouă numele.
+`http` întoarce 301 spre `https`. Reînnoirea e pe `certbot.timer`, singură.
+Comanda cu care s-a făcut, dacă e nevoie vreodată din nou:
 
 ```bash
 apt-get install -y certbot python3-certbot-apache
@@ -114,7 +110,7 @@ certbot --apache -d "$DOM" -d "$W.$DOM" --agree-tos -m danhaliga@gmail.com --red
 
 Se reînnoiește singur, systemd are deja `certbot.timer`.
 
-### c. Trecerea în producție
+### c. Trecerea în producție — SINGURUL LUCRU RĂMAS
 
 După certificat, în `/opt/palcalc/.env`:
 
@@ -128,9 +124,11 @@ STRIPE_WEBHOOK_SECRET=whsec_...
 
 apoi `systemctl restart palcalc`.
 
-**Cheile Stripe lipsesc încă.** Până intră, plata e pe „fake" — oricine ajunge
-pe site își pune singur credit. Nu e pagubă în bani, dar nu e de lăsat
-deschis, și de-aia domeniul n-a fost încă legat.
+**Cheile Stripe lipsesc încă.** Până intră, plata e pe „fake": oricine ajunge
+pe site își face cont și își pune singur credit. Nu e pagubă în bani — creditul
+ăla nu e bani adevărați — dar înseamnă corpuri calculate gratis. Site-ul e
+deja public, deci ăsta e singurul lucru care mai stă între el și o comandă
+adevărată.
 
 ### d. De curățat, oricând
 
