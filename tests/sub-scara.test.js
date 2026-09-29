@@ -355,3 +355,20 @@ test('cheia panoului strâns e în toate cele treizeci de limbi', () => {
     assert.ok(v && String(v).trim(), l.cod + ': lipsește editor.conturDeMana');
   });
 });
+
+test('cotele din desen stau in afara formei si se citesc', () => {
+  /* Stateau peste desen, scrise mic si maro pe maro: „1: 900" se vedea pe
+     din doua, taiat de marginea panzei. Acum se impinge fiecare in afara pe
+     normala laturii ei, iar marginea panzei se face DUPA ele. */
+  const app = citeste('public', 'app.js');
+  assert.match(app, /var nx = y2 - y1, ny = x1 - x2;/, 'cota nu se mai imping pe normala');
+  assert.match(app, /if \(nx \* \(mx - cx\) \+ ny \* \(my - cy\) < 0\)/,
+    'normala nu se mai intoarce dinspre mijlocul formei');
+  assert.match(app, /var pad = iesire \+ fs \* 1\.6;/,
+    'marginea panzei nu mai tine cont de cote, deci se taie');
+
+  const css = citeste('public', 'styles.css');
+  assert.match(css, /\.ct-cota\{[^}]*fill:var\(--accent\)/, 'cotele nu mai au culoare de contrast');
+  assert.match(css, /\.ct-cota\{[^}]*stroke:var\(--panel\)/, 'cotele n-au contur, deci nu se citesc peste forma');
+  assert.match(css, /paint-order:stroke fill/, 'conturul ar manca literele din interior');
+});

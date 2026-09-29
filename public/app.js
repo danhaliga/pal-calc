@@ -187,20 +187,41 @@ function actualizeazaContur() {
 function desenContur(g) {
   if (!g.puncte.length) return '';
   var W = Math.max(g.W, 10), H = Math.max(g.H, 10);
-  var pad = Math.max(W, H) * 0.16;
-  var fs = Math.max(W, H) / 22;
+  var mare = Math.max(W, H);
+  var fs = mare / 16;          /* cota scrisă cât să se citească, nu cât să încapă */
+  var iesire = mare * 0.075;   /* cât de departe de latură stă cota */
+  /* Marginea desenului se face DUPĂ cote, nu înaintea lor: altfel cota de jos
+     iese din pânză și se vede tăiată pe din două. */
+  var pad = iesire + fs * 1.6;
   var o = [];
 
-  o.push('<polygon points="' + g.puncte.map(function (p) {
-    return p[0] + ',' + (H - p[1]);
+  var svgP = g.puncte.map(function (p) { return [p[0], H - p[1]]; });
+
+  o.push('<polygon points="' + svgP.map(function (p) {
+    return p[0] + ',' + p[1];
   }).join(' ') + '" class="ct-forma"/>');
+
+  /* Mijlocul formei. Cotele se împing în afară față de el, ca să nu cadă
+     niciuna peste desen — oricum ar fi întoarsă latura. */
+  var cx = 0, cy = 0;
+  svgP.forEach(function (p) { cx += p[0]; cy += p[1]; });
+  cx /= svgP.length; cy /= svgP.length;
 
   g.laturi.forEach(function (l, i) {
     var x1 = l.de_la[0], y1 = H - l.de_la[1], x2 = l.la[0], y2 = H - l.la[1];
     o.push('<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" class="ct-latura"/>');
+
     var mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
-    o.push('<text x="' + mx + '" y="' + my + '" class="ct-cota" text-anchor="middle" ' +
-           'dominant-baseline="central" font-size="' + fs + '">' + (i + 1) + ': ' + l.lung + '</text>');
+    /* Normala la latură, întoarsă dinspre mijlocul formei spre afară. */
+    var nx = y2 - y1, ny = x1 - x2;
+    var lung = Math.hypot(nx, ny) || 1;
+    nx /= lung; ny /= lung;
+    if (nx * (mx - cx) + ny * (my - cy) < 0) { nx = -nx; ny = -ny; }
+
+    o.push('<text x="' + r1(mx + nx * iesire) + '" y="' + r1(my + ny * iesire) +
+           '" class="ct-cota" text-anchor="middle" dominant-baseline="central" ' +
+           'font-size="' + r1(fs) + '" stroke-width="' + r1(fs * 0.22) + '">' +
+           (i + 1) + ': ' + l.lung + '</text>');
   });
 
   if (!g.inchis) {

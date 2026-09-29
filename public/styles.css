@@ -249,11 +249,17 @@ td.peste{color:var(--danger);font-weight:600}
 .contur-tabel input.dim{width:72px;text-align:right}
 .contur-preview{background:var(--row);border:1px solid var(--line);border-radius:6px;padding:8px;
   display:flex;align-items:center;justify-content:center;min-height:150px;overflow:hidden}
-svg.ct-svg{width:100%;height:auto;max-height:230px}
+svg.ct-svg{width:100%;height:auto;max-height:260px}
 svg.ct-svg .ct-forma{fill:#c9ab7d;fill-opacity:.45;stroke:none}
 svg.ct-svg .ct-latura{stroke:#5c4a2e;stroke-width:8;stroke-linecap:round}
 svg.ct-svg .ct-lipsa{stroke:#b3261e;stroke-width:8;stroke-dasharray:24 16}
-svg.ct-svg .ct-cota{fill:#43372a;font-family:"IBM Plex Mono",monospace}
+/* Cotele stau IN AFARA formei, nu peste ea, si sunt scrise cu culoarea de
+   accent pe un contur de culoarea panoului. Conturul e ce le face citibile
+   oriunde ar cadea: pe fundalul panoului, peste forma, sau la jumatate pe
+   fiecare. `paint-order` pune conturul DEDESUBT; fara el ar manca literele
+   din interior. Culorile sunt variabile, deci merg si pe tema deschisa. */
+svg.ct-svg .ct-cota{fill:var(--accent);font-family:"IBM Plex Mono",monospace;font-weight:600;
+  stroke:var(--panel);paint-order:stroke fill;stroke-linejoin:round}
 
 /* ---------- selector de decoruri ---------- */
 .decor-sw{display:inline-block;width:20px;height:20px;border-radius:4px;vertical-align:-4px;
