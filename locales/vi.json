@@ -811,7 +811,8 @@
     "coltDiagonal": "góc chéo",
     "coltOrb": "góc khuất",
     "corpDeschis": "thùng tủ để mở",
-    "piesa": "một tấm duy nhất"
+    "piesa": "một tấm duy nhất",
+    "peSoclu": "chân đế {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Đơn hàng của tôi",

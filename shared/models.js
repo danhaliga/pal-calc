@@ -398,16 +398,27 @@
     var nU = +p.nUsi, nS = +p.nSer, nP = +p.nPol;
     var aplicat = p.montaj === 'aplicat';
     var hF = +p.hFront;
-    var Hint = H - 2 * t, Wint = W - 2 * t;
+    /* Soclul mananca din inaltimea folositoare, ca in calcul: H e cota de
+       la podea. Fara asta desenul ar arata un corp mai inalt decat e. */
+    var soclu = Math.max(0, +p.soclu || 0);
+    var Hint = H - 2 * t - soclu, Wint = W - 2 * t;
     var usedTop = nS > 0 ? nS * (hF + ri) : 0;
     var o = [];
 
     o.push('<rect x="0" y="0" width="' + W + '" height="' + H + '" class="sk-corp"/>');
     o.push('<rect x="' + t + '" y="' + t + '" width="' + Wint + '" height="' + Hint + '" class="sk-gol"/>');
 
+    /* Soclul: fasia de jos, intre laterale. Se deseneaza mai inchis la
+       culoare fiindca sta RETRAS fata de fronturi — asa se si vede in
+       atelier, ca o umbra sub usi. */
+    if (soclu > 0) {
+      o.push('<rect x="' + t + '" y="' + (H - soclu) + '" width="' + Wint +
+             '" height="' + soclu + '" class="sk-soclu"/>');
+    }
+
     /* polițe: calc le pune de jos în sus, SVG are y în jos */
     for (var j = 1; j <= nP; j++) {
-      var yc = t + (Hint - usedTop) * j / (nP + 1);
+      var yc = soclu + t + (Hint - usedTop) * j / (nP + 1);
       var y = H - yc;
       o.push('<line x1="' + t + '" y1="' + y + '" x2="' + (W - t) + '" y2="' + y + '" class="sk-polita"/>');
     }
@@ -427,7 +438,7 @@
 
     /* uși, sub sertare */
     if (nU > 0) {
-      var uH = (aplicat ? H - 2 * rm : Hint - 2 * rinc) - usedTop;
+      var uH = (aplicat ? H - soclu - 2 * rm : Hint - 2 * rinc) - usedTop;
       var uL = (fL - (nU - 1) * ri) / nU;
       var yU = yTop + usedTop;
       for (var k = 0; k < nU; k++) {
@@ -460,6 +471,9 @@
     if (+p.nUsi) b.push(t_('corpuri.metaUsi', { n: +p.nUsi }));
     if (+p.nSer) b.push(t_('corpuri.metaSertare', { n: +p.nSer }));
     if (+p.nPol) b.push(t_('corpuri.metaPolite', { n: +p.nPol }));
+    /* Pe ce stă corpul. Numai cand are soclu: „pe picioare" e felul
+       obisnuit, si scris pe fiecare card ar fi zgomot. */
+    if (+p.soclu > 0) b.push(t_('rezumat.peSoclu', { h: +p.soclu }));
     if (!b.length) b.push(t_('rezumat.corpDeschis'));
     return b.join(' · ');
   }

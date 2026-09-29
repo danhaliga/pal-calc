@@ -811,7 +811,8 @@
     "coltDiagonal": "átlós sarok",
     "coltOrb": "vak sarok",
     "corpDeschis": "nyitott korpusz",
-    "piesa": "egyetlen lap"
+    "piesa": "egyetlen lap",
+    "peSoclu": "{h} mm lábazat"
   },
   "comanda": {
     "inapoiComenzi": "A megrendeléseim",

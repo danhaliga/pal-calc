@@ -818,7 +818,8 @@
     "coltDiagonal": "šikmý roh",
     "coltOrb": "slepý roh",
     "corpDeschis": "otvorený korpus",
-    "piesa": "jediná doska"
+    "piesa": "jediná doska",
+    "peSoclu": "sokel {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Moje zákazky",

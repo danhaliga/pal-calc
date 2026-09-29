@@ -811,7 +811,8 @@
     "coltDiagonal": "angle en diagonale",
     "coltOrb": "angle borgne",
     "corpDeschis": "caisson ouvert",
-    "piesa": "un seul panneau"
+    "piesa": "un seul panneau",
+    "peSoclu": "plinthe {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Mes commandes",

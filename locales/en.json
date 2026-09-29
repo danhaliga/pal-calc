@@ -811,7 +811,8 @@
     "coltDiagonal": "diagonal corner",
     "coltOrb": "blind corner",
     "corpDeschis": "open cabinet",
-    "piesa": "a single panel"
+    "piesa": "a single panel",
+    "peSoclu": "{h} mm plinth"
   },
   "comanda": {
     "inapoiComenzi": "My orders",

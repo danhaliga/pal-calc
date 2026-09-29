@@ -818,7 +818,8 @@
     "coltDiagonal": "פינה אלכסונית",
     "coltOrb": "פינה סמויה",
     "corpDeschis": "גוף פתוח",
-    "piesa": "לוח אחד"
+    "piesa": "לוח אחד",
+    "peSoclu": "סוקל {h} מ״מ"
   },
   "comanda": {
     "inapoiComenzi": "ההזמנות שלי",

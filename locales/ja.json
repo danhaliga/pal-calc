@@ -811,7 +811,8 @@
     "coltDiagonal": "斜めコーナー",
     "coltOrb": "死角コーナー",
     "corpDeschis": "オープンキャビネット",
-    "piesa": "板一枚"
+    "piesa": "板一枚",
+    "peSoclu": "台輪 {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "自分の注文",

@@ -818,7 +818,8 @@
     "coltDiagonal": "narożnik skośny",
     "coltOrb": "narożnik ślepy",
     "corpDeschis": "korpus otwarty",
-    "piesa": "pojedyncza płyta"
+    "piesa": "pojedyncza płyta",
+    "peSoclu": "cokół {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Moje zlecenia",

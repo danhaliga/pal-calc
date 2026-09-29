@@ -811,7 +811,8 @@
     "coltDiagonal": "sudut diagonal",
     "coltOrb": "sudut buntu",
     "corpDeschis": "boks terbuka",
-    "piesa": "satu papan saja"
+    "piesa": "satu papan saja",
+    "peSoclu": "papan alas {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Pesanan saya",

@@ -811,7 +811,8 @@
     "coltDiagonal": "diyagonal köşe",
     "coltOrb": "kör köşe",
     "corpDeschis": "açık gövde",
-    "piesa": "tek levha"
+    "piesa": "tek levha",
+    "peSoclu": "{h} mm süpürgelik"
   },
   "comanda": {
     "inapoiComenzi": "Siparişlerim",

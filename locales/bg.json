@@ -811,7 +811,8 @@
     "coltDiagonal": "диагонален ъгъл",
     "coltOrb": "сляп ъгъл",
     "corpDeschis": "отворен корпус",
-    "piesa": "една плоскост"
+    "piesa": "една плоскост",
+    "peSoclu": "цокъл {h} мм"
   },
   "comanda": {
     "inapoiComenzi": "Моите поръчки",

@@ -811,7 +811,8 @@
     "coltDiagonal": "esquina diagonal",
     "coltOrb": "esquina ciega",
     "corpDeschis": "módulo abierto",
-    "piesa": "un solo tablero"
+    "piesa": "un solo tablero",
+    "peSoclu": "zócalo {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Mis pedidos",

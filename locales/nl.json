@@ -811,7 +811,8 @@
     "coltDiagonal": "diagonale hoek",
     "coltOrb": "blinde hoek",
     "corpDeschis": "open kast",
-    "piesa": "één enkel paneel"
+    "piesa": "één enkel paneel",
+    "peSoclu": "plint {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Mijn opdrachten",

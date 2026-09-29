@@ -811,7 +811,8 @@
     "coltDiagonal": "Diagonalecke",
     "coltOrb": "blinde Ecke",
     "corpDeschis": "offener Korpus",
-    "piesa": "eine einzelne Platte"
+    "piesa": "eine einzelne Platte",
+    "peSoclu": "{h} mm Sockel"
   },
   "comanda": {
     "inapoiComenzi": "Meine Aufträge",

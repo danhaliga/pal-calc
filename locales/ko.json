@@ -811,7 +811,8 @@
     "coltDiagonal": "사선 코너",
     "coltOrb": "막힌 코너",
     "corpDeschis": "오픈 캐비닛",
-    "piesa": "판 한 장"
+    "piesa": "판 한 장",
+    "peSoclu": "걸레받이 {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "내 주문",

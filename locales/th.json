@@ -811,7 +811,8 @@
     "coltDiagonal": "มุมทแยง",
     "coltOrb": "มุมตาบอด",
     "corpDeschis": "ตัวตู้แบบเปิด",
-    "piesa": "แผ่นเดียว"
+    "piesa": "แผ่นเดียว",
+    "peSoclu": "แผงฐาน {h} มม."
   },
   "comanda": {
     "inapoiComenzi": "ออเดอร์ของฉัน",

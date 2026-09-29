@@ -231,3 +231,74 @@ test('eticheta grupei există în toate cele treizeci de limbi', () => {
     assert.ok(v && String(v).trim(), l.cod + ': lipsește setari.grupSoclu');
   });
 });
+
+/* ---------------- soclul se vede în schița de pe card ----------------
+
+   „Corp bază pe soclu" avea exact același desen ca „Corp bază cu 2 uși":
+   schița nu știa de soclu deloc. Cine se uită la catalog n-avea de unde ști
+   care pe ce stă — și tocmai asta cauți când alegi. */
+
+test('schița arată soclul, și numai când e', () => {
+  assert.match(PalModels.sketch(PalModels.paramsFor('baza-2usi-soclu', T)), /sk-soclu/);
+  assert.match(PalModels.sketch(PalModels.paramsFor('coloana-cuptor', T)), /sk-soclu/);
+  assert.ok(!/sk-soclu/.test(PalModels.sketch(PalModels.paramsFor('baza-2usi', T))),
+    'a apărut un soclu la un corp pe picioare');
+  assert.ok(!/sk-soclu/.test(PalModels.sketch(PalModels.paramsFor('sus-2usi', T))),
+    'a apărut un soclu la un corp suspendat');
+});
+
+test('în schiță, ușile se opresc deasupra soclului', () => {
+  /* Altfel desenul ar arăta o ușă care coboară peste soclu — adică exact
+     ce nu se întâmplă în atelier. */
+  const p = PalModels.paramsFor('baza-2usi-soclu', T);
+  const svg = PalModels.sketch(p);
+
+  const soclu = svg.match(/<rect x="[\d.]+" y="([\d.]+)" width="[\d.]+" height="([\d.]+)" class="sk-soclu"/);
+  assert.ok(soclu, 'nu găsesc soclul în schiță');
+  const sucluSus = Number(soclu[1]);
+
+  const fronturi = [...svg.matchAll(/<rect x="[\d.]+" y="([\d.]+)" width="[\d.]+" height="([\d.]+)" class="sk-front"/g)];
+  assert.ok(fronturi.length >= 1, 'nu găsesc ușile în schiță');
+  fronturi.forEach(f => {
+    const jos = Number(f[1]) + Number(f[2]);
+    assert.ok(jos <= sucluSus + 0.01,
+      'o ușă coboară până la ' + jos + ', peste soclul care începe la ' + sucluSus);
+  });
+});
+
+test('schița nu arată corpul mai înalt decât e', () => {
+  /* `H` e cota de la podea, soclu inclus. Golul interior trebuie să se
+     oprească deasupra soclului, nu să treacă prin el. */
+  const p = PalModels.paramsFor('baza-2usi-soclu', T);
+  const svg = PalModels.sketch(p);
+  const gol = svg.match(/y="([\d.]+)" width="[\d.]+" height="([\d.]+)" class="sk-gol"/);
+  assert.ok(gol);
+  const golJos = Number(gol[1]) + Number(gol[2]);
+  assert.ok(golJos <= (+p.H - +p.soclu) + 0.01,
+    'golul interior intră în zona soclului');
+});
+
+test('cardul spune în scris pe ce stă corpul', () => {
+  /* Desenul e mic; scrisul nu lasă loc de îndoială. */
+  const ro = JSON.parse(citeste('locales', 'ro.json'));
+  const t = PalI18n.creeaza('ro');
+  PalI18n.inregistreaza('ro', ro);
+
+  const cuSoclu = PalModels.rezumat(PalModels.paramsFor('baza-2usi-soclu', t), t);
+  assert.match(cuSoclu, /80/, 'rezumatul nu spune nimic despre soclu');
+
+  const faraSoclu = PalModels.rezumat(PalModels.paramsFor('baza-2usi', t), t);
+  assert.ok(!/soclu/i.test(faraSoclu),
+    'scrie „soclu" și la un corp pe picioare — „pe picioare" e felul obișnuit, nu se scrie pe fiecare card');
+});
+
+test('textul de pe card există în toate cele treizeci de limbi', () => {
+  const ro = JSON.parse(citeste('locales', 'ro.json'));
+  const param = t => (String(t).match(/\{[a-zA-Z]+\}/g) || []).sort().join(',');
+  PalI18n.LIMBI.forEach(l => {
+    const c = JSON.parse(citeste('locales', l.cod + '.json'));
+    const v = c.rezumat && c.rezumat.peSoclu;
+    assert.ok(v && String(v).trim(), l.cod + ': lipsește rezumat.peSoclu');
+    assert.equal(param(v), param(ro.rezumat.peSoclu), l.cod + ': parametrul {h} s-a pierdut');
+  });
+});

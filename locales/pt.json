@@ -811,7 +811,8 @@
     "coltDiagonal": "canto diagonal",
     "coltOrb": "canto cego",
     "corpDeschis": "módulo aberto",
-    "piesa": "uma só placa"
+    "piesa": "uma só placa",
+    "peSoclu": "rodapé {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "As minhas encomendas",

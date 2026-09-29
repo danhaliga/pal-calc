@@ -811,7 +811,8 @@
     "coltDiagonal": "διαγώνια γωνία",
     "coltOrb": "τυφλή γωνία",
     "corpDeschis": "ανοιχτό σώμα",
-    "piesa": "ένα μόνο φύλλο"
+    "piesa": "ένα μόνο φύλλο",
+    "peSoclu": "σοβατεπί {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Οι παραγγελίες μου",

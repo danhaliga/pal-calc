@@ -839,7 +839,8 @@
     "coltDiagonal": "زاوية قطرية",
     "coltOrb": "زاوية عمياء",
     "corpDeschis": "هيكل مفتوح",
-    "piesa": "لوح واحد"
+    "piesa": "لوح واحد",
+    "peSoclu": "قاعدة {h} مم"
   },
   "comanda": {
     "inapoiComenzi": "طلباتي",

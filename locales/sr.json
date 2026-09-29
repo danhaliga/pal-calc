@@ -818,7 +818,8 @@
     "coltDiagonal": "dijagonalni ugao",
     "coltOrb": "slepi ugao",
     "corpDeschis": "otvoren korpus",
-    "piesa": "jedna ploča"
+    "piesa": "jedna ploča",
+    "peSoclu": "sokla {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Moje porudžbine",

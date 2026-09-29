@@ -811,7 +811,8 @@
     "coltDiagonal": "diagonalt hörn",
     "coltOrb": "blint hörn",
     "corpDeschis": "öppen stomme",
-    "piesa": "en enda skiva"
+    "piesa": "en enda skiva",
+    "peSoclu": "sockel {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Mina ordrar",

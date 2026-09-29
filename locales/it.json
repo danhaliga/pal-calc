@@ -811,7 +811,8 @@
     "coltDiagonal": "angolo diagonale",
     "coltOrb": "angolo cieco",
     "corpDeschis": "mobile aperto",
-    "piesa": "un solo pannello"
+    "piesa": "un solo pannello",
+    "peSoclu": "zoccolo {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "I miei ordini",

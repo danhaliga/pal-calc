@@ -811,7 +811,8 @@
     "coltDiagonal": "斜面转角",
     "coltOrb": "盲角",
     "corpDeschis": "开放柜体",
-    "piesa": "单独一块板"
+    "piesa": "单独一块板",
+    "peSoclu": "{h} 毫米踢脚板"
   },
   "comanda": {
     "inapoiComenzi": "我的订单",

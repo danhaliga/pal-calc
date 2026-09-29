@@ -818,7 +818,8 @@
     "coltDiagonal": "диагональный угол",
     "coltOrb": "глухой угол",
     "corpDeschis": "открытый корпус",
-    "piesa": "одна панель"
+    "piesa": "одна панель",
+    "peSoclu": "цоколь {h} мм"
   },
   "comanda": {
     "inapoiComenzi": "Мои заказы",

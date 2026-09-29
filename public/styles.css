@@ -460,3 +460,9 @@ td.nr-piesa{color:var(--muted);font-size:12px}
 .intreaba p{margin:0 0 14px;font-size:14px;line-height:1.5;text-wrap:pretty}
 .intreaba .btns{margin:0;justify-content:flex-end}
 .intreaba::backdrop{background:rgba(0,0,0,.45)}
+
+/* Soclul din schita de pe card. Mai inchis la culoare decat carcasa fiindca
+   sta RETRAS fata de fronturi — asa se vede si in atelier, ca o umbra sub
+   usi. Fara el, corpul pe soclu avea exact acelasi desen ca unul pe
+   picioare, si nimeni nu avea de unde sti care pe ce sta. */
+svg.sk .sk-soclu{fill:#6b5a40;stroke:#453520;stroke-width:12}

@@ -818,7 +818,8 @@
     "coltDiagonal": "colț diagonal",
     "coltOrb": "colț orb",
     "corpDeschis": "corp deschis",
-    "piesa": "un singur panou"
+    "piesa": "un singur panou",
+    "peSoclu": "soclu {h} mm"
   },
   "comanda": {
     "inapoiComenzi": "Comenzile mele",
