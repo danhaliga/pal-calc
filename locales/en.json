@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "New order",
-    "intro": "You choose the main material now; you can add as many others to the order as you like (fronts in a different decor, drawer boxes in white board, and so on).",
+    "intro": "You choose the carcass decor now and, if you want, a second one for the fronts. More can be added later in the order.",
     "legComanda": "Order",
     "numeComanda": "Order name",
     "numeExemplu": "e.g. Smith kitchen",
@@ -545,7 +545,13 @@
     "legFormate": "Sheet formats for cutting",
     "notaFormate": "The optimiser picks the combination with the least waste on its own and tells you at the end how many whole sheets you need, including the pieces cut out of them.",
     "deschideComanda": "Open the order",
-    "cantPeComanda": "to order"
+    "cantPeComanda": "to order",
+    "legMaterialCarcase": "Carcass material",
+    "legMaterialFronturi": "Front material",
+    "frontAltDecor": "Fronts in a different decor",
+    "notaFrontAcelasi": "Unticked, the fronts are cut from the carcass decor. You can change this later in the order at any time.",
+    "cutiiDinCarcasa": "from the carcass decor",
+    "cutiiDinFronturi": "from the front decor"
   },
   "fero": {
     "legenda": "Hardware",

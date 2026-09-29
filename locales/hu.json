@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Új megrendelés",
-    "intro": "Most a fő anyagot választod ki; a megrendeléshez tetszőleges számú továbbit adhatsz (front más dekorban, fiókok fehér lapból és így tovább).",
+    "intro": "Most a korpuszok dekorját választod ki, és ha akarod, egy másodikat a frontokhoz. A többi később, a rendelésben adható hozzá.",
     "legComanda": "Megrendelés",
     "numeComanda": "A megrendelés neve",
     "numeExemplu": "pl. Nagy konyha",
@@ -545,7 +545,13 @@
     "legFormate": "Táblaméretek a szabásnál",
     "notaFormate": "Az optimalizáló magától választja ki a legkevesebb hulladékkal járó kiosztást, és a végén megmondja, hány egész tábla kell, a belőlük kivágott darabokkal együtt.",
     "deschideComanda": "Megrendelés megnyitása",
-    "cantPeComanda": "rendelésre"
+    "cantPeComanda": "rendelésre",
+    "legMaterialCarcase": "A korpuszok anyaga",
+    "legMaterialFronturi": "A frontok anyaga",
+    "frontAltDecor": "A frontok más dekorból",
+    "notaFrontAcelasi": "Pipa nélkül a frontok a korpusz dekorjából készülnek. A rendelésen belül bármikor megváltoztatható.",
+    "cutiiDinCarcasa": "a korpusz dekorjából",
+    "cutiiDinFronturi": "a front dekorjából"
   },
   "fero": {
     "legenda": "Vasalatok",

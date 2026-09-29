@@ -534,7 +534,7 @@
   },
   "comandaNoua": {
     "titlu": "Nová zákazka",
-    "intro": "Teraz vyberáš hlavný materiál; do zákazky môžeš pridať ľubovoľne veľa ďalších (čelá v inom dekore, koše zásuviek z bielej dosky a tak ďalej).",
+    "intro": "Teraz vyberáš dekor korpusov a, ak chceš, druhý na dvierka. Ďalšie sa pridajú neskôr, v zákazke.",
     "legComanda": "Zákazka",
     "numeComanda": "Názov zákazky",
     "numeExemplu": "napr. Kuchyňa Novák",
@@ -551,7 +551,13 @@
     "legFormate": "Formáty dosiek pri rezaní",
     "notaFormate": "Optimalizátor si sám vyberie kombináciu s najmenším odpadom a na konci ti povie, koľko celých dosiek treba, vrátane kusov z nich vyrezaných.",
     "deschideComanda": "Otvoriť zákazku",
-    "cantPeComanda": "na objednávku"
+    "cantPeComanda": "na objednávku",
+    "legMaterialCarcase": "Materiál korpusov",
+    "legMaterialFronturi": "Materiál dvierok",
+    "frontAltDecor": "Dvierka v inom dekore",
+    "notaFrontAcelasi": "Bez zaškrtnutia sa dvierka režú z dekoru korpusu. Kedykoľvek neskôr sa to dá v zákazke zmeniť.",
+    "cutiiDinCarcasa": "z dekoru korpusu",
+    "cutiiDinFronturi": "z dekoru dvierok"
   },
   "fero": {
     "legenda": "Kovanie",

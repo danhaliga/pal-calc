@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "新订单",
-    "intro": "现在先选主材；之后想往订单里加多少种别的材料都行（别的花色的门板、白色板做的抽屉盒，等等）。",
+    "intro": "现在选柜体饰面，需要的话再选一种做门板。其余的可以稍后在订单里添加。",
     "legComanda": "订单",
     "numeComanda": "订单名称",
     "numeExemplu": "例如：王家厨房",
@@ -545,7 +545,13 @@
     "legFormate": "开料时的板材规格",
     "notaFormate": "优化器自己挑损耗最小的组合，最后告诉你要几张整板，以及从整板上裁下来的那些块。",
     "deschideComanda": "打开订单",
-    "cantPeComanda": "订货"
+    "cantPeComanda": "订货",
+    "legMaterialCarcase": "柜体板材",
+    "legMaterialFronturi": "门板板材",
+    "frontAltDecor": "门板用另一种饰面",
+    "notaFrontAcelasi": "不勾选时，门板与柜体用同一种饰面。以后随时可以在订单里改。",
+    "cutiiDinCarcasa": "用柜体饰面",
+    "cutiiDinFronturi": "用门板饰面"
   },
   "fero": {
     "legenda": "五金",

@@ -534,7 +534,7 @@
   },
   "comandaNoua": {
     "titlu": "Comandă nouă",
-    "intro": "Alegi materialul principal acum; poți adăuga oricâte altele în comandă (fronturi în alt decor, cutii de sertar din PAL alb și așa mai departe).",
+    "intro": "Alegi acum decorul carcaselor și, dacă vrei, un al doilea pentru fronturi. Se mai pot adăuga și altele pe urmă, în comandă.",
     "legComanda": "Comanda",
     "numeComanda": "Nume comandă",
     "numeExemplu": "ex: Bucătărie Ionescu",
@@ -551,7 +551,13 @@
     "legFormate": "Formate de coală la debitare",
     "notaFormate": "Optimizatorul alege singur combinația cu cel mai puțin deșeu și îți spune la final câte coli întregi trebuie, cu tot cu bucățile tăiate din ele.",
     "deschideComanda": "Deschide comanda",
-    "cantPeComanda": "pe comandă"
+    "cantPeComanda": "pe comandă",
+    "legMaterialCarcase": "Material carcase",
+    "legMaterialFronturi": "Material fronturi",
+    "frontAltDecor": "Fronturile din alt decor",
+    "notaFrontAcelasi": "Nebifat, fronturile se taie din decorul carcasei. Se pot schimba oricând mai târziu, în comandă.",
+    "cutiiDinCarcasa": "din decorul carcasei",
+    "cutiiDinFronturi": "din decorul fronturilor"
   },
   "fero": {
     "legenda": "Feronerie",

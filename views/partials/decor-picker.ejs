@@ -1,11 +1,17 @@
-<%# selector de decor: primește p = { prefix, brandId, palId, cantGrosId, cantSubtireId, valoare } %>
+<%# selector de decor: primește p = { camp, brandId, palId, cantGrosId, cantSubtireId, valoare }
+
+    `camp` e numele câmpului din formular. Are o valoare implicită fiindcă
+    aproape peste tot e unul singur pe pagină — dar la comanda nouă sunt doi,
+    carcasa și fronturile, și atunci fiecare își cere numele lui. Două câmpuri
+    cu același nume ar trimite două valori sub aceeași cheie, iar a doua ar
+    călca peste prima în tăcere. %>
 <div class="decor-picker" data-decor
      data-brand="<%= p.brandId %>"
      data-pal="<%= p.palId || '' %>"
      data-cant-gros="<%= p.cantGrosId || '' %>"
      data-cant-subtire="<%= p.cantSubtireId || '' %>"
      data-nume="<%= p.numeId || '' %>">
-  <input type="hidden" name="decor_cod" value="<%= p.valoare || '' %>">
+  <input type="hidden" name="<%= p.camp || 'decor_cod' %>" value="<%= p.valoare || '' %>">
   <button type="button" class="decor-buton">
     <span class="decor-sw" style="background:#cfd6dd"></span><span><%= t('decor.alege') %></span>
   </button>

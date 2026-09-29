@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "新しい注文",
-    "intro": "まず主材を選びます。あとから注文に材料をいくつでも足せます（別の柄の扉、白い板の引き出し箱、など）。",
+    "intro": "まず箱の柄を選び、必要なら前板用にもう一つ選びます。ほかの材料は後から注文の中で足せます。",
     "legComanda": "注文",
     "numeComanda": "注文名",
     "numeExemplu": "例：田中様邸キッチン",
@@ -545,7 +545,13 @@
     "legFormate": "カット時の板の定尺",
     "notaFormate": "最適化がロスのいちばん少ない組み合わせを自分で選び、最後に原板が何枚必要か、そこから取る小割りも含めて教えます。",
     "deschideComanda": "注文を開く",
-    "cantPeComanda": "取り寄せ"
+    "cantPeComanda": "取り寄せ",
+    "legMaterialCarcase": "箱の材料",
+    "legMaterialFronturi": "前板の材料",
+    "frontAltDecor": "前板は別の柄で",
+    "notaFrontAcelasi": "チェックしなければ、前板は箱と同じ柄で木取りします。注文の中でいつでも変えられます。",
+    "cutiiDinCarcasa": "箱の柄で",
+    "cutiiDinFronturi": "前板の柄で"
   },
   "fero": {
     "legenda": "金物",

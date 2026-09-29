@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Yeni sipariş",
-    "intro": "Şimdi ana malzemeyi seçiyorsun; siparişe istediğin kadar başka malzeme ekleyebilirsin (başka dekorda kapaklar, beyaz levhadan çekmece kutuları vb.).",
+    "intro": "Şimdi gövde desenini seçiyorsun, istersen kapaklar için ikinci bir desen de. Diğerleri sonradan siparişte eklenir.",
     "legComanda": "Sipariş",
     "numeComanda": "Sipariş adı",
     "numeExemplu": "örn. Yılmaz mutfağı",
@@ -545,7 +545,13 @@
     "legFormate": "Kesimde levha formatları",
     "notaFormate": "Eniyileyici en az firenin çıktığı bileşimi kendisi seçer ve sonunda, içinden kesilen parçalarla birlikte kaç tam levha gerektiğini söyler.",
     "deschideComanda": "Siparişi aç",
-    "cantPeComanda": "siparişle"
+    "cantPeComanda": "siparişle",
+    "legMaterialCarcase": "Gövde malzemesi",
+    "legMaterialFronturi": "Kapak malzemesi",
+    "frontAltDecor": "Kapaklar başka bir desende",
+    "notaFrontAcelasi": "İşaretlenmezse kapaklar gövde deseninden kesilir. Siparişin içinde istediğin zaman değiştirebilirsin.",
+    "cutiiDinCarcasa": "gövde deseninden",
+    "cutiiDinFronturi": "kapak deseninden"
   },
   "fero": {
     "legenda": "Aksesuarlar",

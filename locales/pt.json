@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Encomenda nova",
-    "intro": "Escolhes agora o material principal; podes acrescentar à encomenda quantos outros quiseres (frentes noutro decor, caixas de gaveta em placa branca e por aí fora).",
+    "intro": "Escolhe agora o decor dos corpos e, se quiser, um segundo para as frentes. Os restantes acrescentam-se depois, na encomenda.",
     "legComanda": "Encomenda",
     "numeComanda": "Nome da encomenda",
     "numeExemplu": "ex.: Cozinha Silva",
@@ -545,7 +545,13 @@
     "legFormate": "Formatos de placa no corte",
     "notaFormate": "O otimizador escolhe sozinho a combinação com menos desperdício e diz-te no fim quantas placas inteiras são precisas, já com os bocados tirados delas.",
     "deschideComanda": "Abrir a encomenda",
-    "cantPeComanda": "por encomenda"
+    "cantPeComanda": "por encomenda",
+    "legMaterialCarcase": "Material dos corpos",
+    "legMaterialFronturi": "Material das frentes",
+    "frontAltDecor": "Frentes noutro decor",
+    "notaFrontAcelasi": "Sem marcar, as frentes são cortadas do decor do corpo. Pode ser mudado a qualquer momento na encomenda.",
+    "cutiiDinCarcasa": "do decor do corpo",
+    "cutiiDinFronturi": "do decor das frentes"
   },
   "fero": {
     "legenda": "Ferragens",

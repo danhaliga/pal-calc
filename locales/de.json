@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Neuer Auftrag",
-    "intro": "Du wählst jetzt das Hauptmaterial; du kannst dem Auftrag beliebig viele weitere hinzufügen (Fronten in einem anderen Dekor, Schubkästen aus weißer Platte und so weiter).",
+    "intro": "Du wählst jetzt das Dekor der Korpusse und, wenn du willst, ein zweites für die Fronten. Weitere kommen später im Auftrag dazu.",
     "legComanda": "Auftrag",
     "numeComanda": "Auftragsname",
     "numeExemplu": "z. B. Küche Müller",
@@ -545,7 +545,13 @@
     "legFormate": "Plattenformate für den Zuschnitt",
     "notaFormate": "Der Optimierer wählt selbst die Kombination mit dem geringsten Verschnitt und sagt dir am Ende, wie viele ganze Platten du brauchst, samt der daraus geschnittenen Stücke.",
     "deschideComanda": "Auftrag anlegen",
-    "cantPeComanda": "auf Bestellung"
+    "cantPeComanda": "auf Bestellung",
+    "legMaterialCarcase": "Material der Korpusse",
+    "legMaterialFronturi": "Material der Fronten",
+    "frontAltDecor": "Fronten in einem anderen Dekor",
+    "notaFrontAcelasi": "Ohne Haken werden die Fronten aus dem Korpusdekor zugeschnitten. Das lässt sich später im Auftrag jederzeit ändern.",
+    "cutiiDinCarcasa": "aus dem Korpusdekor",
+    "cutiiDinFronturi": "aus dem Frontdekor"
   },
   "fero": {
     "legenda": "Beschläge",

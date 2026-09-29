@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Pedido nuevo",
-    "intro": "Ahora eliges el material principal; puedes añadir al pedido tantos otros como quieras (frentes en otro decorativo, cajas de cajón en tablero blanco, etc.).",
+    "intro": "Eliges ahora el decorado de los cuerpos y, si quieres, un segundo para los frentes. Los demás se añaden luego, en el pedido.",
     "legComanda": "Pedido",
     "numeComanda": "Nombre del pedido",
     "numeExemplu": "p. ej.: Cocina García",
@@ -545,7 +545,13 @@
     "legFormate": "Formatos de tablero en el corte",
     "notaFormate": "El optimizador elige por sí solo la combinación con menos desperdicio y te dice al final cuántos tableros enteros hacen falta, incluidas las piezas que salen de ellos.",
     "deschideComanda": "Abrir el pedido",
-    "cantPeComanda": "bajo pedido"
+    "cantPeComanda": "bajo pedido",
+    "legMaterialCarcase": "Material de los cuerpos",
+    "legMaterialFronturi": "Material de los frentes",
+    "frontAltDecor": "Frentes en otro decorado",
+    "notaFrontAcelasi": "Sin marcar, los frentes se cortan del decorado del cuerpo. Se puede cambiar en cualquier momento dentro del pedido.",
+    "cutiiDinCarcasa": "del decorado del cuerpo",
+    "cutiiDinFronturi": "del decorado de los frentes"
   },
   "fero": {
     "legenda": "Herrajes",

@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Nouvelle commande",
-    "intro": "Vous choisissez maintenant le matériau principal ; vous pouvez en ajouter autant d'autres que nécessaire à la commande (façades dans un autre décor, caisses de tiroir en panneau blanc, etc.).",
+    "intro": "Vous choisissez maintenant le décor des caissons et, si vous voulez, un second pour les façades. Les autres s’ajoutent ensuite, dans la commande.",
     "legComanda": "Commande",
     "numeComanda": "Nom de la commande",
     "numeExemplu": "ex. : Cuisine Dupont",
@@ -545,7 +545,13 @@
     "legFormate": "Formats de panneau au débit",
     "notaFormate": "L'optimiseur choisit seul la combinaison avec le moins de chutes et vous indique à la fin combien de panneaux entiers il faut, y compris les morceaux qui en sont tirés.",
     "deschideComanda": "Ouvrir la commande",
-    "cantPeComanda": "sur commande"
+    "cantPeComanda": "sur commande",
+    "legMaterialCarcase": "Matériau des caissons",
+    "legMaterialFronturi": "Matériau des façades",
+    "frontAltDecor": "Façades dans un autre décor",
+    "notaFrontAcelasi": "Non coché, les façades sont coupées dans le décor du caisson. Cela se change à tout moment dans la commande.",
+    "cutiiDinCarcasa": "du décor du caisson",
+    "cutiiDinFronturi": "du décor des façades"
   },
   "fero": {
     "legenda": "Quincaillerie",

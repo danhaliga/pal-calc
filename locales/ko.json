@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "새 주문",
-    "intro": "먼저 주 자재를 고릅니다. 나중에 주문에 다른 자재를 얼마든지 더할 수 있습니다(다른 무늬 문짝, 흰 판으로 만든 서랍통 등).",
+    "intro": "지금 몸통 무늬를 고르고, 원하면 전면판용으로 하나 더 고릅니다. 나머지는 나중에 주문에서 추가할 수 있습니다.",
     "legComanda": "주문",
     "numeComanda": "주문 이름",
     "numeExemplu": "예: 김 선생님 댁 주방",
@@ -545,7 +545,13 @@
     "legFormate": "재단할 때 쓰는 판 규격",
     "notaFormate": "최적화가 로스가 가장 적은 조합을 알아서 고르고, 마지막에 원판이 몇 장 필요한지 —— 거기서 잘라 쓰는 조각까지 —— 알려 줍니다.",
     "deschideComanda": "주문 열기",
-    "cantPeComanda": "주문"
+    "cantPeComanda": "주문",
+    "legMaterialCarcase": "몸통 자재",
+    "legMaterialFronturi": "전면판 자재",
+    "frontAltDecor": "전면판은 다른 무늬로",
+    "notaFrontAcelasi": "체크하지 않으면 전면판은 몸통과 같은 무늬로 재단합니다. 주문 안에서 언제든 바꿀 수 있습니다.",
+    "cutiiDinCarcasa": "몸통 무늬로",
+    "cutiiDinFronturi": "전면판 무늬로"
   },
   "fero": {
     "legenda": "하드웨어",

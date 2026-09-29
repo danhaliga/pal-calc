@@ -534,7 +534,7 @@
   },
   "comandaNoua": {
     "titlu": "Nova porudžbina",
-    "intro": "Sada biraš glavni materijal; u porudžbinu možeš da dodaš koliko god drugih želiš (frontovi u drugom dekoru, kutije fioka od bele ploče i tako dalje).",
+    "intro": "Sada biraš dekor korpusa i, ako hoćeš, drugi za fronte. Ostali se dodaju kasnije, u porudžbini.",
     "legComanda": "Porudžbina",
     "numeComanda": "Naziv porudžbine",
     "numeExemplu": "npr. Kuhinja Jovanović",
@@ -551,7 +551,13 @@
     "legFormate": "Formati ploča pri krojenju",
     "notaFormate": "Optimizator sam bira kombinaciju sa najmanje otpada i na kraju ti kaže koliko je celih ploča potrebno, zajedno sa komadima isečenim iz njih.",
     "deschideComanda": "Otvori porudžbinu",
-    "cantPeComanda": "po porudžbini"
+    "cantPeComanda": "po porudžbini",
+    "legMaterialCarcase": "Materijal korpusa",
+    "legMaterialFronturi": "Materijal fronti",
+    "frontAltDecor": "Fronte u drugom dekoru",
+    "notaFrontAcelasi": "Bez kvačice fronte se kroje iz dekora korpusa. Može da se promeni bilo kada u porudžbini.",
+    "cutiiDinCarcasa": "iz dekora korpusa",
+    "cutiiDinFronturi": "iz dekora fronti"
   },
   "fero": {
     "legenda": "Okov",

@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Nuovo ordine",
-    "intro": "Adesso scegli il materiale principale; all'ordine puoi aggiungerne quanti altri vuoi (frontali in un altro decoro, cassetti in pannello bianco e così via).",
+    "intro": "Scegli adesso il decoro dei corpi e, se vuoi, un secondo per i frontali. Gli altri si aggiungono poi, nell’ordine.",
     "legComanda": "Ordine",
     "numeComanda": "Nome dell'ordine",
     "numeExemplu": "es.: Cucina Rossi",
@@ -545,7 +545,13 @@
     "legFormate": "Formati di pannello al taglio",
     "notaFormate": "L'ottimizzatore sceglie da solo la combinazione con meno sfrido e alla fine ti dice quanti pannelli interi servono, compresi i pezzi ricavati da essi.",
     "deschideComanda": "Apri l'ordine",
-    "cantPeComanda": "su ordinazione"
+    "cantPeComanda": "su ordinazione",
+    "legMaterialCarcase": "Materiale dei corpi",
+    "legMaterialFronturi": "Materiale dei frontali",
+    "frontAltDecor": "Frontali in un altro decoro",
+    "notaFrontAcelasi": "Senza spunta i frontali si tagliano dal decoro del corpo. Si può cambiare in qualsiasi momento nell’ordine.",
+    "cutiiDinCarcasa": "dal decoro del corpo",
+    "cutiiDinFronturi": "dal decoro dei frontali"
   },
   "fero": {
     "legenda": "Ferramenta",

@@ -35,8 +35,11 @@
       <p class="legend"><%= t('comanda.livrareNota') %></p>
     </fieldset>
 
+    <%# Un material E decor + grosime + cant, la un loc. De-aia cantul intra
+        in fisa materialului: cu doua materiale pe pagina, o caseta de cant
+        plutind intre ele n-ar mai spune al cui e. %>
     <fieldset>
-      <legend><%= t('comandaNoua.legMaterial') %></legend>
+      <legend><%= t('comandaNoua.legMaterialCarcase') %></legend>
       <div class="f3">
         <label><%= t('comandaNoua.producator') %>
           <select name="brand" id="brand">
@@ -54,14 +57,11 @@
         </label>
       </div>
       <label style="margin-top:10px"><%= t('comandaNoua.decor') %>
-        <%- include('../partials/decor-picker', { p: { brandId: 'brand', palId: 'pal_mm',
+        <%- include('../partials/decor-picker', { p: { camp: 'decor_cod',
+              brandId: 'brand', palId: 'pal_mm',
               cantGrosId: 'cant_gros', cantSubtireId: 'cant_subtire', valoare: values.decor_cod } }) %>
       </label>
-    </fieldset>
-
-    <fieldset>
-      <legend><%= t('comandaNoua.legCant') %></legend>
-      <div class="f3">
+      <div class="f3" style="margin-top:10px">
         <label><%= t('comandaNoua.cantGros') %>
           <select name="cant_gros" id="cant_gros">
             <% cantStandard.forEach(function (c) { %>
@@ -78,6 +78,67 @@
         </label>
       </div>
       <p class="legend"><%= t('comandaNoua.notaCant') %></p>
+    </fieldset>
+
+    <%# Fronturile din alt decor. Bifa e INAINTEA blocului si in afara
+        etichetei, nu inauntrul ei: asa o poate ajunge `~` din CSS si blocul
+        se deschide fara o linie de JavaScript. Cu script ar fi trebuit un
+        fisier nou si o gaura in politica de continut, pentru o casuta. %>
+    <fieldset>
+      <legend><%= t('comandaNoua.legMaterialFronturi') %></legend>
+      <input type="checkbox" name="front_alt" id="front_alt" value="1"
+             class="comutator" <%= values.front_alt ? 'checked' : '' %>>
+      <label class="check" for="front_alt"><span><%= t('comandaNoua.frontAltDecor') %></span></label>
+      <p class="legend"><%= t('comandaNoua.notaFrontAcelasi') %></p>
+      <div class="doar-daca">
+        <div class="f3" style="margin-top:10px">
+          <label><%= t('comandaNoua.producator') %>
+            <select name="brand_front" id="brand_front">
+              <% marci.forEach(function (m) { %>
+                <option value="<%= m %>" <%= (values.brand_front || values.brand) === m ? 'selected' : '' %>><%= m %></option>
+              <% }); %>
+            </select>
+          </label>
+          <label><%= t('comandaNoua.grosimePal') %>
+            <select name="pal_mm_front" id="pal_mm_front">
+              <% grosimi.forEach(function (g) { %>
+                <option value="<%= g %>" <%= Number(values.pal_mm_front || values.pal_mm) === g ? 'selected' : '' %>><%= g %> mm</option>
+              <% }); %>
+            </select>
+          </label>
+        </div>
+        <label style="margin-top:10px"><%= t('comandaNoua.decor') %>
+          <%- include('../partials/decor-picker', { p: { camp: 'decor_cod_front',
+                brandId: 'brand_front', palId: 'pal_mm_front',
+                cantGrosId: 'cant_gros_front', cantSubtireId: 'cant_subtire_front',
+                valoare: values.decor_cod_front } }) %>
+        </label>
+        <div class="f3" style="margin-top:10px">
+          <label><%= t('comandaNoua.cantGros') %>
+            <select name="cant_gros_front" id="cant_gros_front">
+              <% cantStandard.forEach(function (c) { %>
+                <option value="<%= c %>" <%= Number(values.cant_gros_front || values.cant_gros) === c ? 'selected' : '' %>><%= c %> mm</option>
+              <% }); %>
+            </select>
+          </label>
+          <label><%= t('comandaNoua.cantSubtire') %>
+            <select name="cant_subtire_front" id="cant_subtire_front">
+              <% cantStandard.forEach(function (c) { %>
+                <option value="<%= c %>" <%= Number(values.cant_subtire_front || values.cant_subtire) === c ? 'selected' : '' %>><%= c %> mm</option>
+              <% }); %>
+            </select>
+          </label>
+        </div>
+        <%# Cutiile de sertar sunt treaba de carcasa: se fac din decorul ei,
+            si asa ramane daca nu zice nimeni altceva. Intrebarea are rost
+            numai cand sunt doua decoruri, deci sta aici. %>
+        <label style="margin-top:10px"><%= t('rol.sertar') %>
+          <select name="sertare_din">
+            <option value="corp" <%= values.sertare_din === 'front' ? '' : 'selected' %>><%= t('comandaNoua.cutiiDinCarcasa') %></option>
+            <option value="front" <%= values.sertare_din === 'front' ? 'selected' : '' %>><%= t('comandaNoua.cutiiDinFronturi') %></option>
+          </select>
+        </label>
+      </div>
     </fieldset>
 
     <%- include('../partials/feronerie-form', { f: feroOptiuni, ales: values }) %>

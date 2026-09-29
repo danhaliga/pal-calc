@@ -31,6 +31,20 @@ const schemaComanda = z.object({
   pal_mm: z.coerce.number().refine(v => GROSIMI_PAL.includes(v), 'valid.grosimeNeacceptata'),
   cant_gros: z.coerce.number().min(0).max(5),
   cant_subtire: z.coerce.number().min(0).max(5),
+  /* Al doilea decor, al fronturilor. Tot pe `.catch()` și `.optional()`:
+     casetele lui sunt ascunse până se bifează, iar un formular trimis fără
+     ele nu e o greșeală, e cazul obișnuit — o comandă dintr-un singur
+     decor. O comandă întreagă nu se pierde fiindcă lipsește un câmp pe
+     care omul nici nu l-a văzut. */
+  front_alt: z.any().optional(),
+  brand_front: z.string().trim().max(40).optional().or(z.literal('')),
+  decor_cod_front: z.string().trim().max(60).optional().or(z.literal('')),
+  pal_mm_front: z.coerce.number().catch(0),
+  cant_gros_front: z.coerce.number().min(0).max(5).catch(0),
+  cant_subtire_front: z.coerce.number().min(0).max(5).catch(0),
+  /* Cutiile de sertar sunt treabă de carcasă: din decorul ei se fac, și așa
+     rămâne dacă nu zice nimeni altceva. */
+  sertare_din: z.enum(['corp', 'front']).catch('corp'),
   note: z.string().trim().max(500).optional().or(z.literal('')),
   /* Data livrarii ca text ISO, cum vine din <input type="date">. Goala e in
      regula: la deschiderea comenzii de multe ori inca nu se stie. */
@@ -55,6 +69,31 @@ function feronerieDinBody(body) {
     glisiere: body.glisiere,
     suspensii: body.suspensii === undefined ? false : body.suspensii === 'on' || body.suspensii === '1' || body.suspensii === 'true'
   });
+}
+
+/* Materialul de fronturi, așa cum vine din formular.
+
+   Întoarce `null` când nu s-a cerut al doilea decor — cazul obișnuit — sau
+   când s-a bifat caseta și n-a fost ales niciun decor. Fără decor n-avem ce
+   pune pe rând: un material fără decor n-ar fi decât încă o linie goală în
+   comandă, pe care omul ar trebui s-o șteargă pe urmă.
+
+   Ce lipsește se ia de la carcasă: grosimea și cantul fronturilor sunt de
+   obicei aceleași, iar o comandă cu 0 pe ele ar fi mai rea decât una cu
+   valorile carcasei. */
+function materialFronturi(d) {
+  const cerut = d.front_alt === '1' || d.front_alt === 'on' || d.front_alt === true;
+  if (!cerut || !d.decor_cod_front) return null;
+  const brand = Catalog.numeMarca(d.brand_front || d.brand);
+  const decor = Catalog.decor(brand, d.decor_cod_front);
+  if (!decor) return null;
+  return {
+    brand: brand,
+    decor: decor,
+    pal_mm: d.pal_mm_front || d.pal_mm,
+    cant_gros: d.cant_gros_front || d.cant_gros,
+    cant_subtire: d.cant_subtire_front || d.cant_subtire
+  };
 }
 
 function formateDinBody(body) {
@@ -256,6 +295,27 @@ router.post('/orders', requireAuth, (req, res) => {
       pal_mm: d.pal_mm, cant_gros: d.cant_gros, cant_subtire: d.cant_subtire,
       cant_decor_cod: decor ? decor.cod : ''
     });
+
+    /* Al doilea decor, al fronturilor. Fără el, `peRoluri()` trimite
+       fronturile pe materialul carcasei — adică o comandă dintr-un singur
+       decor, cum a fost dintotdeauna. */
+    const fr = materialFronturi(d);
+    if (fr) {
+      const randFront = {
+        nume: fr.decor.nume + ' ' + fr.decor.cod,
+        rol: 'front', brand: fr.brand, decor_cod: fr.decor.cod,
+        pal_mm: fr.pal_mm, cant_gros: fr.cant_gros, cant_subtire: fr.cant_subtire,
+        cant_decor_cod: fr.decor.cod
+      };
+      materiale.creeaza(orderId, randFront);
+      /* Cutiile din decorul fronturilor cer un rând al lor: un rând are UN
+         rol, iar `peRoluri()` caută rândul de sertare, nu se uită la cel de
+         fronturi. Două rânduri cu același decor nu dublează nimic la
+         cumpărat — croirea le pune în aceeași grupă, că au aceeași placă. */
+      if (d.sertare_din === 'front') {
+        materiale.creeaza(orderId, Object.assign({}, randFront, { rol: 'sertar' }));
+      }
+    }
     return orderId;
   });
 

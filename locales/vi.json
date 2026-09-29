@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Đơn hàng mới",
-    "intro": "Bây giờ bạn chọn vật liệu chính; có thể thêm bao nhiêu vật liệu khác tùy ý vào đơn hàng (cánh màu khác, hộc ngăn kéo bằng ván trắng, v.v.).",
+    "intro": "Bây giờ chọn vân cho thùng và, nếu muốn, thêm một vân nữa cho mặt cánh. Những vật liệu khác thêm sau, trong đơn.",
     "legComanda": "Đơn hàng",
     "numeComanda": "Tên đơn hàng",
     "numeExemplu": "vd. Bếp nhà anh Nam",
@@ -545,7 +545,13 @@
     "legFormate": "Khổ ván khi cắt",
     "notaFormate": "Bộ tối ưu tự chọn phương án ít hao hụt nhất và cuối cùng cho bạn biết cần bao nhiêu tấm nguyên, kể cả các mảnh cắt ra từ đó.",
     "deschideComanda": "Mở đơn hàng",
-    "cantPeComanda": "đặt hàng"
+    "cantPeComanda": "đặt hàng",
+    "legMaterialCarcase": "Vật liệu thùng",
+    "legMaterialFronturi": "Vật liệu mặt cánh",
+    "frontAltDecor": "Mặt cánh dùng vân khác",
+    "notaFrontAcelasi": "Không đánh dấu thì mặt cánh cắt theo vân của thùng. Có thể đổi bất cứ lúc nào trong đơn.",
+    "cutiiDinCarcasa": "theo vân của thùng",
+    "cutiiDinFronturi": "theo vân của mặt cánh"
   },
   "fero": {
     "legenda": "Phụ kiện",

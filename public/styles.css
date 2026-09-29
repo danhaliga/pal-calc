@@ -473,3 +473,11 @@ svg.sk .sk-soclu{fill:#6b5a40;stroke:#453520;stroke-width:12}
    fronturi ar arata exact ca un corp deschis, adica alt corp. */
 svg.sk .sk-front.fara{fill:none;stroke:#5c4a2e;stroke-width:10;stroke-dasharray:34 24;opacity:.75}
 svg.sk .sk-usa.fara{stroke-dasharray:60 44;opacity:.7}
+
+/* Un bloc de formular care apare numai cand se bifeaza casuta dinaintea lui.
+   Fara JavaScript inadins: pentru o casuta ar fi trebuit un fisier nou de
+   script si o gaura in politica de continut. Casuta sta IN AFARA etichetei si
+   INAINTEA blocului, ca s-o poata ajunge `~`. */
+.comutator{width:auto;flex:none;accent-color:var(--accent);vertical-align:-2px;margin-right:7px}
+.comutator + label.check{display:inline;cursor:pointer}
+.comutator:not(:checked) ~ .doar-daca{display:none}

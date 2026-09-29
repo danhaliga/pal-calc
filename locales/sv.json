@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Ny order",
-    "intro": "Du väljer huvudmaterialet nu; du kan lägga till hur många andra du vill i ordern (fronter i en annan dekor, lådor av vit skiva och så vidare).",
+    "intro": "Du väljer dekor för stommarna nu och, om du vill, ett andra för fronterna. Fler läggs till senare, i ordern.",
     "legComanda": "Order",
     "numeComanda": "Orderns namn",
     "numeExemplu": "t.ex. Kök Andersson",
@@ -545,7 +545,13 @@
     "legFormate": "Skivformat vid kapning",
     "notaFormate": "Optimeraren väljer själv den kombination som ger minst spill och talar till slut om hur många hela skivor som behövs, inklusive bitarna som kapas ur dem.",
     "deschideComanda": "Öppna ordern",
-    "cantPeComanda": "på beställning"
+    "cantPeComanda": "på beställning",
+    "legMaterialCarcase": "Material för stommarna",
+    "legMaterialFronturi": "Material för fronterna",
+    "frontAltDecor": "Fronter i ett annat dekor",
+    "notaFrontAcelasi": "Utan bock kapas fronterna ur stommens dekor. Det går att ändra när som helst inne i ordern.",
+    "cutiiDinCarcasa": "ur stommens dekor",
+    "cutiiDinFronturi": "ur frontens dekor"
   },
   "fero": {
     "legenda": "Beslag",

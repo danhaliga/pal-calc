@@ -534,7 +534,7 @@
   },
   "comandaNoua": {
     "titlu": "Nowe zlecenie",
-    "intro": "Teraz wybierasz materiał główny; do zlecenia możesz dołożyć dowolnie wiele innych (fronty w innym dekorze, skrzynki szuflad z białej płyty i tak dalej).",
+    "intro": "Wybierasz teraz dekor korpusów i, jeśli chcesz, drugi na fronty. Pozostałe dodasz później, w zamówieniu.",
     "legComanda": "Zlecenie",
     "numeComanda": "Nazwa zlecenia",
     "numeExemplu": "np. Kuchnia Kowalski",
@@ -551,7 +551,13 @@
     "legFormate": "Formaty płyty przy rozkroju",
     "notaFormate": "Optymalizator sam wybiera układ z najmniejszym odpadem i na końcu mówi, ile całych płyt trzeba kupić, razem z kawałkami z nich wyciętymi.",
     "deschideComanda": "Otwórz zlecenie",
-    "cantPeComanda": "na zamówienie"
+    "cantPeComanda": "na zamówienie",
+    "legMaterialCarcase": "Materiał korpusów",
+    "legMaterialFronturi": "Materiał frontów",
+    "frontAltDecor": "Fronty w innym dekorze",
+    "notaFrontAcelasi": "Bez zaznaczenia fronty tnie się z dekoru korpusu. Można to zmienić w zamówieniu w każdej chwili.",
+    "cutiiDinCarcasa": "z dekoru korpusu",
+    "cutiiDinFronturi": "z dekoru frontów"
   },
   "fero": {
     "legenda": "Okucia",

@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Pesanan baru",
-    "intro": "Sekarang Anda memilih material utama; Anda boleh menambahkan material lain sebanyak yang Anda mau ke pesanan (muka dengan dekor lain, kotak laci dari papan putih, dan seterusnya).",
+    "intro": "Sekarang pilih corak badan lemari dan, kalau mau, satu lagi untuk pintu depan. Sisanya bisa ditambahkan nanti di pesanan.",
     "legComanda": "Pesanan",
     "numeComanda": "Nama pesanan",
     "numeExemplu": "mis. Dapur Pak Budi",
@@ -545,7 +545,13 @@
     "legFormate": "Format papan saat memotong",
     "notaFormate": "Pengoptimal memilih sendiri kombinasi dengan sisa paling sedikit dan pada akhirnya memberi tahu berapa lembar utuh yang dibutuhkan, termasuk potongan yang diambil darinya.",
     "deschideComanda": "Buka pesanan",
-    "cantPeComanda": "pesanan"
+    "cantPeComanda": "pesanan",
+    "legMaterialCarcase": "Bahan badan lemari",
+    "legMaterialFronturi": "Bahan pintu depan",
+    "frontAltDecor": "Pintu depan dengan corak lain",
+    "notaFrontAcelasi": "Tanpa dicentang, pintu depan dipotong dari corak badan lemari. Bisa diubah kapan saja di dalam pesanan.",
+    "cutiiDinCarcasa": "dari corak badan lemari",
+    "cutiiDinFronturi": "dari corak pintu depan"
   },
   "fero": {
     "legenda": "Aksesori",

@@ -534,7 +534,7 @@
   },
   "comandaNoua": {
     "titlu": "Novi nalog",
-    "intro": "Sada biraš glavni materijal; u nalog možeš dodati koliko god drugih želiš (fronte u drugom dekoru, kutije ladica od bijele ploče i tako dalje).",
+    "intro": "Sada biraš dekor korpusa i, ako hoćeš, drugi za fronte. Ostali se dodaju kasnije, u narudžbi.",
     "legComanda": "Nalog",
     "numeComanda": "Naziv naloga",
     "numeExemplu": "npr. Kuhinja Horvat",
@@ -551,7 +551,13 @@
     "legFormate": "Formati ploča pri krojenju",
     "notaFormate": "Optimizator sam bira kombinaciju s najmanje otpada i na kraju ti kaže koliko je cijelih ploča potrebno, zajedno s komadima izrezanima iz njih.",
     "deschideComanda": "Otvori nalog",
-    "cantPeComanda": "po narudžbi"
+    "cantPeComanda": "po narudžbi",
+    "legMaterialCarcase": "Materijal korpusa",
+    "legMaterialFronturi": "Materijal fronti",
+    "frontAltDecor": "Fronte u drugom dekoru",
+    "notaFrontAcelasi": "Bez kvačice fronte se kroje iz dekora korpusa. Može se promijeniti bilo kada u narudžbi.",
+    "cutiiDinCarcasa": "iz dekora korpusa",
+    "cutiiDinFronturi": "iz dekora fronti"
   },
   "fero": {
     "legenda": "Okov",

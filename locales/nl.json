@@ -528,7 +528,7 @@
   },
   "comandaNoua": {
     "titlu": "Nieuwe opdracht",
-    "intro": "Je kiest nu het hoofdmateriaal; je kunt er zoveel andere aan de opdracht toevoegen als je wilt (fronten in een ander decor, laden van witte plaat enzovoort).",
+    "intro": "Je kiest nu het decor van de kasten en, als je wilt, een tweede voor de fronten. De rest voeg je later toe, in de opdracht.",
     "legComanda": "Opdracht",
     "numeComanda": "Naam van de opdracht",
     "numeExemplu": "bijv. Keuken De Vries",
@@ -545,7 +545,13 @@
     "legFormate": "Plaatformaten bij het zagen",
     "notaFormate": "De optimalisatie kiest zelf de combinatie met het minste afval en zegt je aan het eind hoeveel hele platen je nodig hebt, inclusief de stukken die eruit gezaagd worden.",
     "deschideComanda": "Opdracht openen",
-    "cantPeComanda": "op bestelling"
+    "cantPeComanda": "op bestelling",
+    "legMaterialCarcase": "Materiaal van de kasten",
+    "legMaterialFronturi": "Materiaal van de fronten",
+    "frontAltDecor": "Fronten in een ander decor",
+    "notaFrontAcelasi": "Niet aangevinkt worden de fronten uit het kastdecor gezaagd. Dit is later in de opdracht altijd te wijzigen.",
+    "cutiiDinCarcasa": "uit het kastdecor",
+    "cutiiDinFronturi": "uit het frontdecor"
   },
   "fero": {
     "legenda": "Beslag",
