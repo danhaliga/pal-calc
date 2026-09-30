@@ -833,7 +833,8 @@
     "bazaSubScara": "base a todo o comprimento — as ilhargas assentam nela",
     "lateralaPeBaza": "assenta na base; em cima corte a direito",
     "lateralaSusInclinata": "assenta na base; em cima corte inclinado na espessura ({u}°), de {mare} a {mic}",
-    "tavanIntreLaterale": "entre as ilhargas; extremos cortados a prumo ({u}° à face, lâmina a {panza}°)"
+    "tavanIntreLaterale": "entre as ilhargas; extremos cortados a prumo ({u}° à face, lâmina a {panza}°)",
+    "politaSubPanta": "sob a inclinação: uma ponta em bisel ({u}°), paralela à inclinação; face de cima {sus}"
   },
   "avert": {
     "politeAtipic": "Nos módulos fora de padrão as prateleiras não são calculadas sozinhas: acrescenta-as como peças à parte.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "Extremo {lit}: {u}° em relação à face interior (canto reentrante) — na serra, lâmina a {panza}°; a face interior é mais longa {d} mm",
     "rTavanLung": "Comprimento na inclinação: {mm} mm — igual nas duas faces (extremos paralelos)",
     "rTavanCapete": "Extremos cortados a prumo, paralelos: {u}° em relação à face de cima — na serra, lâmina a {panza}°",
-    "cuprins": "Peças:"
+    "cuprins": "Peças:",
+    "rPolitaJos": "Comprimento na face de baixo: {mm} mm (desde a parede)",
+    "rPolitaSus": "Comprimento na face de cima: {mm} mm",
+    "rPolitaCapat": "Ponta junto à inclinação: {u}° em relação à face de baixo — na serra, lâmina a {panza}°; a da parede reta",
+    "fataJosLunga": "face de baixo (longa)",
+    "fataSus": "face de cima",
+    "jos": "baixo {mm}",
+    "sus": "cima {mm}"
   },
   "factura": {
     "colData": "Data do pagamento",

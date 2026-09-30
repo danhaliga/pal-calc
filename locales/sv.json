@@ -833,7 +833,8 @@
     "bazaSubScara": "botten i hela längden — gavlarna står på den",
     "lateralaPeBaza": "står på botten; överst rakt kapad",
     "lateralaSusInclinata": "står på botten; överst snett genom tjockleken ({u}°), från {mare} till {mic}",
-    "tavanIntreLaterale": "mellan gavlarna; ändarna lodrätt kapade ({u}° mot ytan, klingan på {panza}°)"
+    "tavanIntreLaterale": "mellan gavlarna; ändarna lodrätt kapade ({u}° mot ytan, klingan på {panza}°)",
+    "politaSubPanta": "under lutningen: ena änden snedkapad ({u}°), parallell med lutningen; översida {sus}"
   },
   "avert": {
     "politeAtipic": "I specialstommar räknas hyllplanen inte automatiskt: lägg till dem som egna delar.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "Ände {lit}: {u}° mot innersidan (innerhörn) — på sågen klingan på {panza}°; innersidan är {d} mm längre",
     "rTavanLung": "Längd på lutningen: {mm} mm — samma på båda sidor (parallella ändar)",
     "rTavanCapete": "Ändarna kapas lodrätt, parallella: {u}° mot översidan — på sågen klingan på {panza}°",
-    "cuprins": "Delar:"
+    "cuprins": "Delar:",
+    "rPolitaJos": "Längd på undersidan: {mm} mm (från väggen)",
+    "rPolitaSus": "Längd på översidan: {mm} mm",
+    "rPolitaCapat": "Änden vid lutningen: {u}° mot undersidan — på sågen klingan på {panza}°; väggänden rak",
+    "fataJosLunga": "undersida (lång)",
+    "fataSus": "översida",
+    "jos": "under {mm}",
+    "sus": "över {mm}"
   },
   "factura": {
     "colData": "Betaldatum",

@@ -82,3 +82,18 @@ test('rama în unghi se poate alege; la alte forme atipice rămâne în unghi', 
   const cerut = PalCalc.calc(Object.assign({}, m, { imbinare: 'drept' }), T);
   assert.ok(cerut.avertismente.some(a => a.cheie === 'imbinareDreaptaNuMerge'));
 });
+
+test('polițele se împart pe toată înălțimea; cele de sub pantă se scurtează, cu capătul înclinat', () => {
+  const p = corp({ contur: PalCalc.conturSubScara(1000, 600, 1200), nPol: 3 });
+  const pol = PalCalc.calc(p, T).P.filter(x => x.cheie === 'polita');
+  const intregi = pol.filter(x => !x.notaCheie), panta = pol.filter(x => x.notaCheie === 'politaSubPanta');
+  assert.equal(intregi.reduce((s, x) => s + x.buc, 0), 2);
+  assert.equal(panta.length, 1);
+  const alfa = Math.atan2(600, 1000);
+  /* fața de sus e mai scurtă cu t / tan(pantă) */
+  assert.ok(Math.abs(panta[0].L - +panta[0].notaArgs.sus - 18 / Math.tan(alfa)) < 0.2);
+  assert.ok(panta[0].L < intregi[0].L, 'polița de sub pantă nu e mai scurtă decât golul');
+  const f = PalFisa.fise(p, ro).find(x => x.fel === 'politaPanta');
+  assert.ok(f, 'polița de sub pantă n-are fișă');
+  assert.match(f.randuri.join(' '), /30\.96° față de fața de jos — la fierăstrău pânza la 59\.04°/);
+});

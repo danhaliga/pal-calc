@@ -833,7 +833,8 @@
     "bazaSubScara": "alj teljes hosszban — az oldalak ezen állnak",
     "lateralaPeBaza": "az aljon áll; felül egyenesen vágva",
     "lateralaSusInclinata": "az aljon áll; felül ferdén a vastagságon át ({u}°), {mare}-ről {mic}-re",
-    "tavanIntreLaterale": "az oldalak között; a végek függőlegesen vágva ({u}° a laphoz, fűrészlap {panza}°)"
+    "tavanIntreLaterale": "az oldalak között; a végek függőlegesen vágva ({u}° a laphoz, fűrészlap {panza}°)",
+    "politaSubPanta": "a lejtő alatt: egyik vége ferdén vágva ({u}°), a lejtővel párhuzamosan; felső oldal {sus}"
   },
   "avert": {
     "politeAtipic": "Egyedi korpuszoknál a polcok nem számolódnak magától: add hozzá őket külön elemként.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "{lit} vég: {u}° a belső oldalhoz (belső sarok) — a fűrészen a lap {panza}°-on; a belső oldal {d} mm-rel hosszabb",
     "rTavanLung": "Hossz a lejtőn: {mm} mm — mindkét oldalon ugyanannyi (párhuzamos végek)",
     "rTavanCapete": "A végek függőlegesen, párhuzamosan vágandók: {u}° a felső oldalhoz — a fűrészen a lap {panza}°-on",
-    "cuprins": "Alkatrészek:"
+    "cuprins": "Alkatrészek:",
+    "rPolitaJos": "Hossz az alsó oldalon: {mm} mm (a faltól)",
+    "rPolitaSus": "Hossz a felső oldalon: {mm} mm",
+    "rPolitaCapat": "A lejtő felőli vég: {u}° az alsó oldalhoz — a fűrészen a lap {panza}°-on; a fal felőli vég egyenes",
+    "fataJosLunga": "alsó oldal (hosszú)",
+    "fataSus": "felső oldal",
+    "jos": "alul {mm}",
+    "sus": "felül {mm}"
   },
   "factura": {
     "colData": "Fizetés dátuma",

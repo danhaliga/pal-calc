@@ -833,7 +833,8 @@
     "bazaSubScara": "Boden auf ganzer Länge — die Seiten stehen darauf",
     "lateralaPeBaza": "steht auf dem Boden; oben gerade geschnitten",
     "lateralaSusInclinata": "steht auf dem Boden; oben über die Stärke schräg ({u}°), von {mare} auf {mic}",
-    "tavanIntreLaterale": "zwischen den Seiten; Enden lotrecht geschnitten ({u}° zur Fläche, Blatt auf {panza}°)"
+    "tavanIntreLaterale": "zwischen den Seiten; Enden lotrecht geschnitten ({u}° zur Fläche, Blatt auf {panza}°)",
+    "politaSubPanta": "unter der Schräge: ein Ende schräg ({u}°), parallel zur Schräge; Oberseite {sus}"
   },
   "avert": {
     "politeAtipic": "Bei Sonderkorpussen werden Böden nicht automatisch berechnet: füge sie als eigene Teile hinzu.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "Ende {lit}: {u}° zur Innenseite (Innenecke) — an der Säge Blatt auf {panza}°; die Innenseite ist {d} mm länger",
     "rTavanLung": "Länge auf der Schräge: {mm} mm — auf beiden Seiten gleich (parallele Enden)",
     "rTavanCapete": "Enden lotrecht und parallel geschnitten: {u}° zur Oberseite — an der Säge Blatt auf {panza}°",
-    "cuprins": "Teile:"
+    "cuprins": "Teile:",
+    "rPolitaJos": "Länge an der Unterseite: {mm} mm (von der Wand)",
+    "rPolitaSus": "Länge an der Oberseite: {mm} mm",
+    "rPolitaCapat": "Ende an der Schräge: {u}° zur Unterseite — an der Säge Blatt auf {panza}°; Wandende gerade",
+    "fataJosLunga": "Unterseite (lang)",
+    "fataSus": "Oberseite",
+    "jos": "unten {mm}",
+    "sus": "oben {mm}"
   },
   "factura": {
     "colData": "Zahlungsdatum",

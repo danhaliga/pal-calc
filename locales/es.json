@@ -833,7 +833,8 @@
     "bazaSubScara": "base, a todo lo largo — los costados se apoyan en ella",
     "lateralaPeBaza": "se apoya en la base; arriba cortado recto",
     "lateralaSusInclinata": "se apoya en la base; arriba cortado en bisel en el grosor ({u}°), de {mare} a {mic}",
-    "tavanIntreLaterale": "entre los costados; extremos cortados a plomo ({u}° a la cara, hoja a {panza}°)"
+    "tavanIntreLaterale": "entre los costados; extremos cortados a plomo ({u}° a la cara, hoja a {panza}°)",
+    "politaSubPanta": "bajo la pendiente: un extremo en bisel ({u}°), paralelo a la pendiente; cara superior {sus}"
   },
   "avert": {
     "politeAtipic": "En los módulos atípicos las baldas no se calculan solas: añádelas como piezas aparte.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "Extremo {lit}: {u}° respecto a la cara interior (rincón) — en la sierra, hoja a {panza}°; la cara interior es más larga en {d} mm",
     "rTavanLung": "Largo en la pendiente: {mm} mm — igual en ambas caras (extremos paralelos)",
     "rTavanCapete": "Extremos cortados a plomo, paralelos: {u}° respecto a la cara superior — en la sierra, hoja a {panza}°",
-    "cuprins": "Piezas:"
+    "cuprins": "Piezas:",
+    "rPolitaJos": "Largo en la cara inferior: {mm} mm (desde la pared)",
+    "rPolitaSus": "Largo en la cara superior: {mm} mm",
+    "rPolitaCapat": "Extremo junto a la pendiente: {u}° respecto a la cara inferior — en la sierra, hoja a {panza}°; el de la pared recto",
+    "fataJosLunga": "cara inferior (larga)",
+    "fataSus": "cara superior",
+    "jos": "abajo {mm}",
+    "sus": "arriba {mm}"
   },
   "factura": {
     "colData": "Fecha del pago",

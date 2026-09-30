@@ -839,7 +839,8 @@
     "bazaSubScara": "dno po celej dĺžke — boky stoja na ňom",
     "lateralaPeBaza": "stojí na dne; hore rez rovno",
     "lateralaSusInclinata": "stojí na dne; hore rez šikmo cez hrúbku ({u}°), od {mare} do {mic}",
-    "tavanIntreLaterale": "medzi bokmi; konce rezané zvislo ({u}° k ploche, píla na {panza}°)"
+    "tavanIntreLaterale": "medzi bokmi; konce rezané zvislo ({u}° k ploche, píla na {panza}°)",
+    "politaSubPanta": "pod šikminou: jeden koniec šikmo ({u}°), rovnobežne so šikminou; horná strana {sus}"
   },
   "avert": {
     "politeAtipic": "Pri atypických korpusoch sa police nepočítajú samy: pridaj ich ako samostatné diely.",
@@ -1705,7 +1706,14 @@
     "rCapatInterior": "Koniec {lit}: {u}° k vnútornej strane (vnútorný roh) — na píle kotúč na {panza}°; vnútorná strana je dlhšia o {d} mm",
     "rTavanLung": "Dĺžka na šikmine: {mm} mm — rovnaká na oboch stranách (rovnobežné konce)",
     "rTavanCapete": "Konce sa režú zvislo, rovnobežne: {u}° k hornej strane — na píle kotúč na {panza}°",
-    "cuprins": "Diely:"
+    "cuprins": "Diely:",
+    "rPolitaJos": "Dĺžka na spodnej strane: {mm} mm (od steny)",
+    "rPolitaSus": "Dĺžka na hornej strane: {mm} mm",
+    "rPolitaCapat": "Koniec pri šikmine: {u}° k spodnej strane — na píle kotúč na {panza}°; koniec pri stene rovno",
+    "fataJosLunga": "spodná strana (dlhšia)",
+    "fataSus": "horná strana",
+    "jos": "dole {mm}",
+    "sus": "hore {mm}"
   },
   "factura": {
     "colData": "Dátum platby",

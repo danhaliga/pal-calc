@@ -233,7 +233,11 @@
      La fierăstrău se dă înclinarea pânzei față de tăietura dreaptă: 90° minus
      unghiul de tăiere. La 45° e tot 45°; la celelalte NU — de-aia se scriu
      amândouă. */
-  function desenLatura(L, D, t, a, b, cant, t_, eticheta) {
+  /* `fete`: cum se cheamă cele două fețe pe desen — implicit exterioară /
+     interioară (laturile ramei); la poliță, fața de jos și cea de sus. */
+  function desenLatura(L, D, t, a, b, cant, t_, eticheta, fete) {
+    fete = fete || { lung: 'fisa.exteriorScurt', scurt: 'fisa.interiorScurt',
+                     cotaLung: 'fisa.exterior', cotaScurt: 'fisa.interior' };
     var ra = a * Math.PI / 180, rb = b * Math.PI / 180;
     var dA = t / Math.tan(ra), dB = t / Math.tan(rb);
     var Lint = L - dA - dB;
@@ -247,8 +251,8 @@
     o.push('<line x1="' + dA + '" y1="0" x2="' + dA + '" y2="' + D + '" class="fisa-ascuns"/>');
     o.push('<line x1="' + (L - dB) + '" y1="0" x2="' + (L - dB) + '" y2="' + D + '" class="fisa-ascuns"/>');
     if (cant) o.push('<line x1="0" y1="' + D + '" x2="' + L + '" y2="' + D + '" class="fisa-cant"/>');
-    o.push(cota(0, 0, L, 0, t_('fisa.exterior', { mm: fmt(L) }), -k * 2, k));
-    o.push(cota(dA, D, L - dB, D, t_('fisa.interior', { mm: fmt(Lint) }), k * 2.4, k));
+    o.push(cota(0, 0, L, 0, t_(fete.cotaLung, { mm: fmt(L) }), -k * 2, k));
+    o.push(cota(dA, D, L - dB, D, t_(fete.cotaScurt, { mm: fmt(Lint) }), k * 2.4, k));
     o.push(cota(L, 0, L, D, fmt(D), k * 2, k));
     var pad = k * 6;
     desene.push({ titlu: t_('fisa.vedereSus'), svg: svg([-pad, -pad, L + 2 * pad, D + 2 * pad], o.join(''), eticheta) });
@@ -276,9 +280,9 @@
         q.push(arcUnghi(colt, pe, jos, fmtU(unghi) + '°', t * 0.9, kk));
       }
       q.push('<text x="' + (z / 2) + '" y="' + (-kk * 1.2) + '" font-size="' + kk + '" text-anchor="middle" class="fisa-cota">' +
-             esc(t_('fisa.exteriorScurt')) + '</text>');
+             esc(t_(fete.lung)) + '</text>');
       q.push('<text x="' + (z / 2) + '" y="' + (t + kk * 1.8) + '" font-size="' + kk + '" text-anchor="middle" class="fisa-cota">' +
-             esc(t_('fisa.interiorScurt')) + '</text>');
+             esc(t_(fete.scurt)) + '</text>');
       q.push(cota(stanga ? 0 : z, 0, stanga ? 0 : z, t, fmt(t), stanga ? kk * 1.4 : -kk * 1.4, kk * 0.8));
       if (d > 0.5) q.push(cota(stanga ? 0 : z - d, t, stanga ? d : z, t, fmt(d), kk * 3.4, kk * 0.8));
       var pp = kk * 5;
@@ -392,6 +396,26 @@
             t_('fisa.rLatime', { mm: fmt(p.l), taiere: fmt(p.Tl) }),
             randCapat('A', a, d.dA, t_),
             randCapat('B', bb, d.dB, t_)
+          ]
+        }));
+        return;
+      }
+
+      /* Polița de sub pantă: un capăt la perete, drept; celălalt tăiat
+         înclinat, paralel cu panta. Fața de jos e cea lungă. */
+      if (p.cheie === 'polita' && p.notaCheie === 'politaSubPanta') {
+        var lSus = +p.notaArgs.sus;
+        var uP = Math.atan2(t, Math.max(0.01, p.L - lSus)) * 180 / Math.PI;
+        var dp = desenLatura(p.L, p.l, t, 90, uP, p.c[0] === 'g', t_, p.nume,
+          { lung: 'fisa.fataJosLunga', scurt: 'fisa.fataSus', cotaLung: 'fisa.jos', cotaScurt: 'fisa.sus' });
+        out.push(Object.assign(baza, {
+          fel: 'politaPanta', gros: t, desene: dp.desene,
+          randuri: [
+            t_('fisa.rPolitaJos', { mm: fmt(p.L) }),
+            t_('fisa.rPolitaSus', { mm: fmt(lSus) }),
+            t_('fisa.rLatime', { mm: fmt(p.l), taiere: fmt(p.Tl) }),
+            t_('fisa.rPolitaCapat', { u: fmtU(uP), panza: fmtU(90 - uP) }),
+            t_('fisa.rGrosime', { mm: fmt(t) })
           ]
         }));
         return;

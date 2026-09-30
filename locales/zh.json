@@ -833,7 +833,8 @@
     "bazaSubScara": "底板，全长 — 侧板立在其上",
     "lateralaPeBaza": "立在底板上；上端直切",
     "lateralaSusInclinata": "立在底板上；上端沿厚度斜切（{u}°），从 {mare} 到 {mic}",
-    "tavanIntreLaterale": "夹在侧板之间；两端竖直切（与板面成 {u}°，锯片 {panza}°）"
+    "tavanIntreLaterale": "夹在侧板之间；两端竖直切（与板面成 {u}°，锯片 {panza}°）",
+    "politaSubPanta": "斜面下：一端斜切（{u}°），与斜面平行；上面 {sus}"
   },
   "avert": {
     "politeAtipic": "异形柜体的层板不会自动算：单独当板件加进去。",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "端头 {lit}：与内面成 {u}°（阴角）— 锯上锯片 {panza}°；内面长 {d} 毫米",
     "rTavanLung": "斜面长度：{mm} 毫米 — 两面相同（两端平行）",
     "rTavanCapete": "两端竖直、平行切割：与上面成 {u}° — 锯上锯片 {panza}°",
-    "cuprins": "板件："
+    "cuprins": "板件：",
+    "rPolitaJos": "下面长度：{mm} 毫米（从墙起）",
+    "rPolitaSus": "上面长度：{mm} 毫米",
+    "rPolitaCapat": "靠斜面一端：与下面成 {u}° — 锯上锯片 {panza}°；靠墙一端直切",
+    "fataJosLunga": "下面（长）",
+    "fataSus": "上面",
+    "jos": "下 {mm}",
+    "sus": "上 {mm}"
   },
   "factura": {
     "colData": "付款日期",

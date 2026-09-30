@@ -1033,30 +1033,75 @@
       }
 
       /* ---- polițele, în fiecare compartiment ----
-         Dreptunghiulare, câte încap. Sub pantă o poliță se oprește acolo unde
-         compartimentul e cel mai SCUND: una pusă mai sus ar intra în panou cu
-         un colț. Compartimentele înalte primesc deci polițe mai sus decât
-         cele scunde, iar cotele lor sunt aceleași — lățimea golului. */
+
+         Se împart pe TOATĂ înălțimea compartimentului (partea lui cea mai
+         înaltă). O poliță care ajunge sub pantă se scurtează acolo unde o
+         taie panta, iar capătul dinspre pantă se taie înclinat, paralel cu
+         ea — hotărât cu Dan pe 30 septembrie. Până atunci toate stăteau sub
+         punctul cel mai jos al compartimentului, iar sus rămânea gol.
+
+         Fața de JOS e cea lungă (cota din listă); cea de sus iese mai scurtă
+         cu t / tan(pantă). Sub ~100 mm pe fața de sus nu mai are rost:
+         nu se face. */
       if (nPol > 0) {
         var polDeep = Math.max(10, Da - tp - (+c.rp || 0));
-        var boxPol = [], cate = 0;
+        var jpA = +c.jp || 0;
+        var dreptunghi = [], subPanta = {}, ordineSP = [], cate = 0;
         for (var ic2 = 0; ic2 < compA; ic2++) {
           var xa2 = xComp(ic2), xb2 = xa2 + latComp;
-          var util = Math.min(susUtil(xa2), susUtil(xb2)) - yJos;
-          if (util < 100) { avert('politeNuIncapAtipic', { comp: ic2 + 1 }); continue; }
+          var hA2 = susUtil(xa2), hB2 = susUtil(xb2);
+          var hMin2 = Math.min(hA2, hB2), hMax2 = Math.max(hA2, hB2);
+          var utilMax = hMax2 - yJos;
+          if (utilMax < 100) { avert('politeNuIncapAtipic', { comp: ic2 + 1 }); continue; }
+          /* unde coboară panta la înălțimea y, în compartimentul ăsta */
+          var xLa = function (y) {
+            return Math.abs(hB2 - hA2) < 0.01 ? xb2 : xa2 + (y - hA2) * (xb2 - xa2) / (hB2 - hA2);
+          };
+          var spreDreapta = hB2 < hA2;               /* panta coboară spre dreapta */
           for (var ip = 1; ip <= nPol; ip++) {
-            var yp = yJos + util * ip / (nPol + 1);
-            boxPol.push(bx(xa2 + (+c.jp || 0) / 2, yp - t / 2, tp,
-              latComp - (+c.jp || 0), t, polDeep,
-              F({ py: 'f', ny: 'f', pz: 'g' }),
-              [0.7 * departare(xa2 + latComp / 2, g.W), 0.5 * departare(yp, g.H), 0.6], 'polite'));
+            var yp = yJos + utilMax * ip / (nPol + 1);
+            /* Fața de jos încă sub punctul cel mai jos al pantei, dar colțul de
+               sus în pantă: o tăietură pe jumătate nu se face în atelier. Se
+               coboară polița cât să încapă întreagă, dreptunghi. */
+            if (yp - t / 2 <= hMin2 + 0.01 && yp + t / 2 > hMin2) yp = hMin2 - t / 2;
+            var exP = [0.7 * departare(xa2 + latComp / 2, g.W), 0.5 * departare(yp, g.H), 0.6];
+            if (yp + t / 2 <= hMin2 + 0.01) {
+              /* sub punctul cel mai jos: dreptunghi, cât golul */
+              dreptunghi.push(bx(xa2 + jpA / 2, yp - t / 2, tp, latComp - jpA, t, polDeep,
+                F({ py: 'f', ny: 'f', pz: 'g' }), exP, 'polite'));
+              cate++;
+              continue;
+            }
+            /* sub pantă: capătul dinspre pantă, pe fața de jos și pe cea de sus */
+            /* capetele rămân în compartiment: fața de jos poate fi încă sub
+               punctul cel mai jos al pantei, și atunci merge până la perete */
+            var inComp = function (x) { return Math.max(xa2 + jpA / 2, Math.min(xb2 - jpA / 2, x)); };
+            var xJos = inComp(xLa(yp - t / 2)), xSus = inComp(xLa(yp + t / 2));
+            var perete = spreDreapta ? xa2 + jpA / 2 : xb2 - jpA / 2;
+            var lJos = Math.abs(xJos - perete), lSus = Math.abs(xSus - perete);
+            if (lSus < 100) { avert('politeNuIncapAtipic', { comp: ic2 + 1 }); continue; }
+            var sectiune = spreDreapta
+              ? [[perete, yp - t / 2], [xJos, yp - t / 2], [xSus, yp + t / 2], [perete, yp + t / 2]]
+              : [[xJos, yp - t / 2], [perete, yp - t / 2], [perete, yp + t / 2], [xSus, yp + t / 2]];
+            var cheieSP = r1(lJos) + '|' + r1(lSus);
+            if (!subPanta[cheieSP]) { subPanta[cheieSP] = { lJos: lJos, lSus: lSus, boxes: [] }; ordineSP.push(cheieSP); }
+            subPanta[cheieSP].boxes.push({ x: Math.min(perete, xJos, xSus), y: yp - t / 2, z: tp,
+              sx: Math.abs(xJos - perete), sy: t, sz: polDeep, polyFata: sectiune, polySectiune: true,
+              f: F({ py: 'f', ny: 'f', pz: 'g' }), ex: exP, grp: 'polite' });
             cate++;
           }
         }
-        if (cate) {
-          add('polita', null, cate, r1(latComp - (+c.jp || 0)), r1(polDeep),
-              'g', '-', '-', '-', 'L', null, boxPol);
+        if (dreptunghi.length) {
+          add('polita', null, dreptunghi.length, r1(latComp - jpA), r1(polDeep),
+              'g', '-', '-', '-', 'L', null, dreptunghi);
         }
+        var uPanta = Math.atan2(Math.abs(g.puncte.length ? (susUtil(xIntA) - susUtil(xIntB)) : 0), xIntB - xIntA) * 180 / Math.PI;
+        ordineSP.forEach(function (k) {
+          var q = subPanta[k];
+          add('polita', null, q.boxes.length, r1(q.lJos), r1(polDeep), 'g', '-', '-', '-', 'L',
+              ['politaSubPanta', { sus: fmt(r1(q.lSus)), u: fmt(r1(uPanta)) }], q.boxes);
+        });
+        if (!cate && compA) { /* nimic: avertismentele de mai sus spun de ce */ }
       }
 
       return {

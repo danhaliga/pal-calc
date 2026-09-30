@@ -833,7 +833,8 @@
     "bazaSubScara": "taban, tam boy — yan paneller üstüne oturur",
     "lateralaPeBaza": "tabana oturur; üstü düz kesilir",
     "lateralaSusInclinata": "tabana oturur; üstü kalınlık boyunca eğik ({u}°), {mare} ile {mic} arası",
-    "tavanIntreLaterale": "yanların arasında; uçlar dikey kesilir (yüze {u}°, testere {panza}°)"
+    "tavanIntreLaterale": "yanların arasında; uçlar dikey kesilir (yüze {u}°, testere {panza}°)",
+    "politaSubPanta": "eğimin altında: bir uç eğik ({u}°), eğime paralel; üst yüz {sus}"
   },
   "avert": {
     "politeAtipic": "Standart dışı gövdelerde raflar kendiliğinden hesaplanmaz: onları ayrı parça olarak ekle.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "{lit} ucu: iç yüze göre {u}° (iç köşe) — testerede bıçak {panza}°; iç yüz {d} mm daha uzun",
     "rTavanLung": "Eğimdeki boy: {mm} mm — iki yüzde de aynı (paralel uçlar)",
     "rTavanCapete": "Uçlar dikey, paralel kesilir: üst yüze göre {u}° — testerede bıçak {panza}°",
-    "cuprins": "Parçalar:"
+    "cuprins": "Parçalar:",
+    "rPolitaJos": "Alt yüzdeki boy: {mm} mm (duvardan)",
+    "rPolitaSus": "Üst yüzdeki boy: {mm} mm",
+    "rPolitaCapat": "Eğim tarafındaki uç: alt yüze göre {u}° — testerede bıçak {panza}°; duvar tarafı düz",
+    "fataJosLunga": "alt yüz (uzun)",
+    "fataSus": "üst yüz",
+    "jos": "alt {mm}",
+    "sus": "üst {mm}"
   },
   "factura": {
     "colData": "Ödeme tarihi",

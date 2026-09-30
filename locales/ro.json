@@ -839,7 +839,8 @@
     "bazaSubScara": "baza, pe toată lungimea — lateralele stau pe ea",
     "lateralaPeBaza": "stă pe bază; sus tăiată drept",
     "lateralaSusInclinata": "stă pe bază; sus tăiată înclinat pe grosime ({u}°), de la {mare} la {mic}",
-    "tavanIntreLaterale": "între laterale; capetele tăiate vertical ({u}° față de față, pânza la {panza}°)"
+    "tavanIntreLaterale": "între laterale; capetele tăiate vertical ({u}° față de față, pânza la {panza}°)",
+    "politaSubPanta": "sub pantă: un capăt tăiat înclinat ({u}°), paralel cu panta; pe fața de sus {sus}"
   },
   "avert": {
     "politeAtipic": "Polițele nu se calculează automat la corpurile atipice: adaugă-le ca piese separate.",
@@ -1705,7 +1706,14 @@
     "rCapatInterior": "Capătul {lit}: {u}° față de fața interioară (colț intrând) — la fierăstrău pânza la {panza}°; fața interioară e mai lungă cu {d} mm",
     "rTavanLung": "Lungime pe pantă: {mm} mm — aceeași pe ambele fețe (capete paralele)",
     "rTavanCapete": "Capetele se taie vertical, paralele: {u}° față de fața de sus — la fierăstrău pânza la {panza}°",
-    "cuprins": "Piesele:"
+    "cuprins": "Piesele:",
+    "rPolitaJos": "Lungime pe fața de jos: {mm} mm (de la perete)",
+    "rPolitaSus": "Lungime pe fața de sus: {mm} mm",
+    "rPolitaCapat": "Capătul dinspre pantă: {u}° față de fața de jos — la fierăstrău pânza la {panza}°; capătul de la perete drept",
+    "fataJosLunga": "fața de jos (lungă)",
+    "fataSus": "fața de sus",
+    "jos": "jos {mm}",
+    "sus": "sus {mm}"
   },
   "factura": {
     "colData": "Data plății",

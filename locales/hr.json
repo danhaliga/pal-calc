@@ -839,7 +839,8 @@
     "bazaSubScara": "baza cijele duljine — stranice stoje na njoj",
     "lateralaPeBaza": "stoji na bazi; gore rezana ravno",
     "lateralaSusInclinata": "stoji na bazi; gore rezana koso kroz debljinu ({u}°), od {mare} do {mic}",
-    "tavanIntreLaterale": "između stranica; krajevi rezani okomito ({u}° prema licu, list na {panza}°)"
+    "tavanIntreLaterale": "između stranica; krajevi rezani okomito ({u}° prema licu, list na {panza}°)",
+    "politaSubPanta": "ispod kosine: jedan kraj rezan koso ({u}°), paralelno s kosinom; gornje lice {sus}"
   },
   "avert": {
     "politeAtipic": "Kod netipičnih korpusa police se ne računaju same: dodaj ih kao zasebne dijelove.",
@@ -1705,7 +1706,14 @@
     "rCapatInterior": "Kraj {lit}: {u}° prema unutarnjoj strani (unutarnji kut) — na pili list na {panza}°; unutarnja strana dulja je za {d} mm",
     "rTavanLung": "Duljina na kosini: {mm} mm — ista na oba lica (paralelni krajevi)",
     "rTavanCapete": "Krajevi se režu okomito, paralelno: {u}° prema gornjem licu — na pili list na {panza}°",
-    "cuprins": "Dijelovi:"
+    "cuprins": "Dijelovi:",
+    "rPolitaJos": "Duljina po donjem licu: {mm} mm (od zida)",
+    "rPolitaSus": "Duljina po gornjem licu: {mm} mm",
+    "rPolitaCapat": "Kraj kod kosine: {u}° prema donjem licu — na pili list na {panza}°; kraj kod zida ravan",
+    "fataJosLunga": "donje lice (dulje)",
+    "fataSus": "gornje lice",
+    "jos": "dolje {mm}",
+    "sus": "gore {mm}"
   },
   "factura": {
     "colData": "Datum plaćanja",

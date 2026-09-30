@@ -833,7 +833,8 @@
     "bazaSubScara": "base, full length — the sides stand on it",
     "lateralaPeBaza": "stands on the base; top cut square",
     "lateralaSusInclinata": "stands on the base; top bevelled across the thickness ({u}°), from {mare} to {mic}",
-    "tavanIntreLaterale": "between the sides; ends cut plumb ({u}° to the face, blade at {panza}°)"
+    "tavanIntreLaterale": "between the sides; ends cut plumb ({u}° to the face, blade at {panza}°)",
+    "politaSubPanta": "under the slope: one end bevelled ({u}°), parallel to the slope; top face {sus}"
   },
   "avert": {
     "politeAtipic": "Shelves are not calculated automatically for non-standard cabinets: add them as separate parts.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "End {lit}: {u}° to the inner face (inside corner) — on the saw, blade at {panza}°; the inner face is longer by {d} mm",
     "rTavanLung": "Length on the slope: {mm} mm — the same on both faces (parallel ends)",
     "rTavanCapete": "Ends cut plumb, parallel: {u}° to the top face — on the saw, blade at {panza}°",
-    "cuprins": "Pieces:"
+    "cuprins": "Pieces:",
+    "rPolitaJos": "Length on the bottom face: {mm} mm (from the wall)",
+    "rPolitaSus": "Length on the top face: {mm} mm",
+    "rPolitaCapat": "End at the slope: {u}° to the bottom face — on the saw, blade at {panza}°; wall end square",
+    "fataJosLunga": "bottom face (long)",
+    "fataSus": "top face",
+    "jos": "bottom {mm}",
+    "sus": "top {mm}"
   },
   "factura": {
     "colData": "Payment date",

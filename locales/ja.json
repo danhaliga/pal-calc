@@ -833,7 +833,8 @@
     "bazaSubScara": "底板、全長 — 側板をこの上に載せる",
     "lateralaPeBaza": "底板の上に立つ；上端は直角切り",
     "lateralaSusInclinata": "底板の上に立つ；上端は厚み方向に斜め切り（{u}°）、{mare} から {mic}",
-    "tavanIntreLaterale": "側板の間；両端は鉛直に切る（面に対して {u}°、刃は {panza}°）"
+    "tavanIntreLaterale": "側板の間；両端は鉛直に切る（面に対して {u}°、刃は {panza}°）",
+    "politaSubPanta": "斜面の下：片端を斜め切り（{u}°）、斜面と平行；上面 {sus}"
   },
   "avert": {
     "politeAtipic": "変形キャビネットの棚板は自動では数えません。別の部材として足してください。",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "端 {lit}：内面に対して {u}°（入隅）— 丸のこは刃を {panza}° に；内面は {d} mm 長い",
     "rTavanLung": "斜面の長さ：{mm} mm — 両面とも同じ（両端平行）",
     "rTavanCapete": "両端を鉛直・平行に切る：上面に対して {u}° — 丸のこは刃を {panza}° に",
-    "cuprins": "部材："
+    "cuprins": "部材：",
+    "rPolitaJos": "下面の長さ：{mm} mm（壁から）",
+    "rPolitaSus": "上面の長さ：{mm} mm",
+    "rPolitaCapat": "斜面側の端：下面に対して {u}° — 丸のこは刃を {panza}° に；壁側は直角",
+    "fataJosLunga": "下面（長い方）",
+    "fataSus": "上面",
+    "jos": "下 {mm}",
+    "sus": "上 {mm}"
   },
   "factura": {
     "colData": "支払日",

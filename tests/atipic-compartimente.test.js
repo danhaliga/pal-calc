@@ -156,7 +156,10 @@ test('nicio poliță nu intră în pantă', () => {
 });
 
 test('un compartiment prea scund n-are poliță, și se spune', () => {
-  const r = PalCalc.calc(subScara({ nDsp: 4, nPol: 1, contur: PalCalc.conturSubScara(2400, 60, 1800) }), T);
+  /* Polițele se împart acum pe toată înălțimea compartimentului, iar sub
+     pantă se scurtează: un compartiment de la capăt, jos de ~400 mm, primește
+     o poliță scurtă. Aici compartimentul e scund peste tot. */
+  const r = PalCalc.calc(subScara({ nDsp: 4, nPol: 1, contur: PalCalc.conturSubScara(2400, 30, 500) }), T);
   assert.ok(r.avertismente.some(a => a.cheie === 'politeNuIncapAtipic'),
     'compartimentul de la capăt e de câțiva centimetri și primește poliță');
 });

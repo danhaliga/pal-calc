@@ -833,7 +833,8 @@
     "bazaSubScara": "base per tutta la lunghezza — i fianchi appoggiano sopra",
     "lateralaPeBaza": "appoggia sulla base; in alto taglio dritto",
     "lateralaSusInclinata": "appoggia sulla base; in alto taglio inclinato nello spessore ({u}°), da {mare} a {mic}",
-    "tavanIntreLaterale": "tra i fianchi; estremità tagliate a piombo ({u}° rispetto alla faccia, lama a {panza}°)"
+    "tavanIntreLaterale": "tra i fianchi; estremità tagliate a piombo ({u}° rispetto alla faccia, lama a {panza}°)",
+    "politaSubPanta": "sotto la pendenza: un'estremità inclinata ({u}°), parallela alla pendenza; faccia superiore {sus}"
   },
   "avert": {
     "politeAtipic": "Nei mobili fuori misura i ripiani non si calcolano da soli: aggiungili come pezzi separati.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "Estremità {lit}: {u}° rispetto alla faccia interna (angolo rientrante) — alla sega, lama a {panza}°; la faccia interna è più lunga di {d} mm",
     "rTavanLung": "Lunghezza sulla pendenza: {mm} mm — uguale su entrambe le facce (estremità parallele)",
     "rTavanCapete": "Estremità tagliate a piombo, parallele: {u}° rispetto alla faccia superiore — alla sega, lama a {panza}°",
-    "cuprins": "Pezzi:"
+    "cuprins": "Pezzi:",
+    "rPolitaJos": "Lunghezza sulla faccia inferiore: {mm} mm (dalla parete)",
+    "rPolitaSus": "Lunghezza sulla faccia superiore: {mm} mm",
+    "rPolitaCapat": "Estremità verso la pendenza: {u}° rispetto alla faccia inferiore — alla sega, lama a {panza}°; lato parete dritto",
+    "fataJosLunga": "faccia inferiore (lunga)",
+    "fataSus": "faccia superiore",
+    "jos": "sotto {mm}",
+    "sus": "sopra {mm}"
   },
   "factura": {
     "colData": "Data pagamento",

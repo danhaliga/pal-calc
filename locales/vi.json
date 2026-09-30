@@ -833,7 +833,8 @@
     "bazaSubScara": "đáy, suốt chiều dài — hai hông đứng trên nó",
     "lateralaPeBaza": "đứng trên đáy; đầu trên cắt thẳng",
     "lateralaSusInclinata": "đứng trên đáy; đầu trên cắt vát theo độ dày ({u}°), từ {mare} đến {mic}",
-    "tavanIntreLaterale": "giữa hai hông; hai đầu cắt thẳng đứng ({u}° so với mặt, lưỡi {panza}°)"
+    "tavanIntreLaterale": "giữa hai hông; hai đầu cắt thẳng đứng ({u}° so với mặt, lưỡi {panza}°)",
+    "politaSubPanta": "dưới dốc: một đầu cắt vát ({u}°), song song với dốc; mặt trên {sus}"
   },
   "avert": {
     "politeAtipic": "Ở thùng tủ phi tiêu chuẩn, kệ không được tính tự động: hãy thêm chúng như chi tiết riêng.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "Đầu {lit}: {u}° so với mặt trong (góc trong) — trên máy cưa, lưỡi ở {panza}°; mặt trong dài hơn {d} mm",
     "rTavanLung": "Chiều dài theo dốc: {mm} mm — như nhau ở cả hai mặt (hai đầu song song)",
     "rTavanCapete": "Hai đầu cắt thẳng đứng, song song: {u}° so với mặt trên — trên máy cưa, lưỡi ở {panza}°",
-    "cuprins": "Các tấm:"
+    "cuprins": "Các tấm:",
+    "rPolitaJos": "Chiều dài mặt dưới: {mm} mm (từ tường)",
+    "rPolitaSus": "Chiều dài mặt trên: {mm} mm",
+    "rPolitaCapat": "Đầu phía dốc: {u}° so với mặt dưới — trên máy cưa, lưỡi ở {panza}°; đầu sát tường cắt thẳng",
+    "fataJosLunga": "mặt dưới (dài)",
+    "fataSus": "mặt trên",
+    "jos": "dưới {mm}",
+    "sus": "trên {mm}"
   },
   "factura": {
     "colData": "Ngày thanh toán",

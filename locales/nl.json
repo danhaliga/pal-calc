@@ -833,7 +833,8 @@
     "bazaSubScara": "bodem over de hele lengte — de zijkanten staan erop",
     "lateralaPeBaza": "staat op de bodem; boven recht gezaagd",
     "lateralaSusInclinata": "staat op de bodem; boven schuin over de dikte ({u}°), van {mare} naar {mic}",
-    "tavanIntreLaterale": "tussen de zijkanten; uiteinden loodrecht gezaagd ({u}° t.o.v. het vlak, blad op {panza}°)"
+    "tavanIntreLaterale": "tussen de zijkanten; uiteinden loodrecht gezaagd ({u}° t.o.v. het vlak, blad op {panza}°)",
+    "politaSubPanta": "onder de helling: één uiteinde schuin ({u}°), evenwijdig aan de helling; bovenkant {sus}"
   },
   "avert": {
     "politeAtipic": "Bij niet-standaard kasten worden legplanken niet automatisch berekend: voeg ze als losse onderdelen toe.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "Eind {lit}: {u}° t.o.v. de binnenkant (binnenhoek) — op de zaag, blad op {panza}°; de binnenkant is {d} mm langer",
     "rTavanLung": "Lengte op de helling: {mm} mm — gelijk op beide kanten (evenwijdige uiteinden)",
     "rTavanCapete": "Uiteinden loodrecht en evenwijdig gezaagd: {u}° t.o.v. de bovenkant — op de zaag, blad op {panza}°",
-    "cuprins": "Onderdelen:"
+    "cuprins": "Onderdelen:",
+    "rPolitaJos": "Lengte aan de onderkant: {mm} mm (vanaf de wand)",
+    "rPolitaSus": "Lengte aan de bovenkant: {mm} mm",
+    "rPolitaCapat": "Uiteinde bij de helling: {u}° t.o.v. de onderkant — op de zaag, blad op {panza}°; wandkant recht",
+    "fataJosLunga": "onderkant (lang)",
+    "fataSus": "bovenkant",
+    "jos": "onder {mm}",
+    "sus": "boven {mm}"
   },
   "factura": {
     "colData": "Betaaldatum",

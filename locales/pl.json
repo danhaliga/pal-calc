@@ -839,7 +839,8 @@
     "bazaSubScara": "podstawa na całą długość — boki stoją na niej",
     "lateralaPeBaza": "stoi na podstawie; góra cięta prosto",
     "lateralaSusInclinata": "stoi na podstawie; góra cięta skośnie przez grubość ({u}°), od {mare} do {mic}",
-    "tavanIntreLaterale": "między bokami; końce cięte pionowo ({u}° do płaszczyzny, piła na {panza}°)"
+    "tavanIntreLaterale": "między bokami; końce cięte pionowo ({u}° do płaszczyzny, piła na {panza}°)",
+    "politaSubPanta": "pod skosem: jeden koniec cięty ukośnie ({u}°), równolegle do skosu; strona górna {sus}"
   },
   "avert": {
     "politeAtipic": "W korpusach nietypowych półki nie liczą się same: dodaj je jako osobne elementy.",
@@ -1705,7 +1706,14 @@
     "rCapatInterior": "Koniec {lit}: {u}° do strony wewnętrznej (narożnik wklęsły) — na pile tarcza na {panza}°; strona wewnętrzna jest dłuższa o {d} mm",
     "rTavanLung": "Długość na skosie: {mm} mm — taka sama na obu stronach (końce równoległe)",
     "rTavanCapete": "Końce cięte pionowo, równolegle: {u}° do strony górnej — na pile tarcza na {panza}°",
-    "cuprins": "Elementy:"
+    "cuprins": "Elementy:",
+    "rPolitaJos": "Długość na stronie dolnej: {mm} mm (od ściany)",
+    "rPolitaSus": "Długość na stronie górnej: {mm} mm",
+    "rPolitaCapat": "Koniec przy skosie: {u}° do strony dolnej — na pile tarcza na {panza}°; koniec przy ścianie prosty",
+    "fataJosLunga": "strona dolna (dłuższa)",
+    "fataSus": "strona górna",
+    "jos": "dół {mm}",
+    "sus": "góra {mm}"
   },
   "factura": {
     "colData": "Data płatności",

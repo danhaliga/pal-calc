@@ -833,7 +833,8 @@
     "bazaSubScara": "socle sur toute la longueur — les côtés reposent dessus",
     "lateralaPeBaza": "repose sur le socle ; haut coupé droit",
     "lateralaSusInclinata": "repose sur le socle ; haut coupé en biais dans l'épaisseur ({u}°), de {mare} à {mic}",
-    "tavanIntreLaterale": "entre les côtés ; extrémités coupées d'aplomb ({u}° par rapport à la face, lame à {panza}°)"
+    "tavanIntreLaterale": "entre les côtés ; extrémités coupées d'aplomb ({u}° par rapport à la face, lame à {panza}°)",
+    "politaSubPanta": "sous la pente : une extrémité en biais ({u}°), parallèle à la pente ; face du dessus {sus}"
   },
   "avert": {
     "politeAtipic": "Les étagères ne sont pas calculées automatiquement pour les caissons hors standard : ajoutez-les comme pièces séparées.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "Extrémité {lit} : {u}° par rapport à la face intérieure (angle rentrant) — à la scie, lame à {panza}° ; la face intérieure est plus longue de {d} mm",
     "rTavanLung": "Longueur sur la pente : {mm} mm — la même sur les deux faces (extrémités parallèles)",
     "rTavanCapete": "Extrémités coupées d'aplomb, parallèles : {u}° par rapport à la face du dessus — à la scie, lame à {panza}°",
-    "cuprins": "Pièces :"
+    "cuprins": "Pièces :",
+    "rPolitaJos": "Longueur sur la face du dessous : {mm} mm (depuis le mur)",
+    "rPolitaSus": "Longueur sur la face du dessus : {mm} mm",
+    "rPolitaCapat": "Extrémité côté pente : {u}° par rapport à la face du dessous — à la scie, lame à {panza}° ; côté mur droit",
+    "fataJosLunga": "face du dessous (longue)",
+    "fataSus": "face du dessus",
+    "jos": "dessous {mm}",
+    "sus": "dessus {mm}"
   },
   "factura": {
     "colData": "Date du paiement",

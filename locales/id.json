@@ -833,7 +833,8 @@
     "bazaSubScara": "alas sepanjang penuh — sisi berdiri di atasnya",
     "lateralaPeBaza": "berdiri di atas alas; atas dipotong lurus",
     "lateralaSusInclinata": "berdiri di atas alas; atas dipotong miring menembus tebal ({u}°), dari {mare} ke {mic}",
-    "tavanIntreLaterale": "di antara sisi; ujung dipotong tegak ({u}° terhadap muka, mata {panza}°)"
+    "tavanIntreLaterale": "di antara sisi; ujung dipotong tegak ({u}° terhadap muka, mata {panza}°)",
+    "politaSubPanta": "di bawah kemiringan: satu ujung miring ({u}°), sejajar kemiringan; muka atas {sus}"
   },
   "avert": {
     "politeAtipic": "Pada boks nonstandar, rak tidak dihitung otomatis: tambahkan sebagai bagian tersendiri.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "Ujung {lit}: {u}° terhadap sisi dalam (sudut dalam) — di gergaji, mata pada {panza}°; sisi dalam lebih panjang {d} mm",
     "rTavanLung": "Panjang pada kemiringan: {mm} mm — sama di kedua sisi (ujung sejajar)",
     "rTavanCapete": "Ujung dipotong tegak, sejajar: {u}° terhadap muka atas — di gergaji, mata pada {panza}°",
-    "cuprins": "Potongan:"
+    "cuprins": "Potongan:",
+    "rPolitaJos": "Panjang di muka bawah: {mm} mm (dari dinding)",
+    "rPolitaSus": "Panjang di muka atas: {mm} mm",
+    "rPolitaCapat": "Ujung di kemiringan: {u}° terhadap muka bawah — di gergaji, mata pada {panza}°; ujung dinding lurus",
+    "fataJosLunga": "muka bawah (panjang)",
+    "fataSus": "muka atas",
+    "jos": "bawah {mm}",
+    "sus": "atas {mm}"
   },
   "factura": {
     "colData": "Tanggal bayar",

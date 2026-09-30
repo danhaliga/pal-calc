@@ -833,7 +833,8 @@
     "bazaSubScara": "밑판, 전체 길이 — 측판이 이 위에 섬",
     "lateralaPeBaza": "밑판 위에 섬; 윗부분 직각 절단",
     "lateralaSusInclinata": "밑판 위에 섬; 윗부분을 두께 방향으로 비스듬히 ({u}°), {mare}에서 {mic}까지",
-    "tavanIntreLaterale": "측판 사이; 양 끝을 수직으로 절단 (면에 대해 {u}°, 톱날 {panza}°)"
+    "tavanIntreLaterale": "측판 사이; 양 끝을 수직으로 절단 (면에 대해 {u}°, 톱날 {panza}°)",
+    "politaSubPanta": "경사 아래: 한쪽 끝을 경사와 평행하게 비스듬히 ({u}°); 윗면 {sus}"
   },
   "avert": {
     "politeAtipic": "비정형 캐비닛에서는 선반이 자동으로 계산되지 않습니다. 따로 부재로 더하세요.",
@@ -1694,7 +1695,14 @@
     "rCapatInterior": "끝 {lit}: 안쪽면에 대해 {u}° (안쪽 모서리) — 톱에서 날을 {panza}°로; 안쪽면이 {d} mm 김",
     "rTavanLung": "경사면 길이: {mm} mm — 양면 동일 (평행한 끝)",
     "rTavanCapete": "양 끝을 수직·평행으로 절단: 윗면에 대해 {u}° — 톱에서 날을 {panza}°로",
-    "cuprins": "부재:"
+    "cuprins": "부재:",
+    "rPolitaJos": "아랫면 길이: {mm} mm (벽에서)",
+    "rPolitaSus": "윗면 길이: {mm} mm",
+    "rPolitaCapat": "경사 쪽 끝: 아랫면에 대해 {u}° — 톱에서 날을 {panza}°로; 벽 쪽 끝은 직각",
+    "fataJosLunga": "아랫면 (긴 쪽)",
+    "fataSus": "윗면",
+    "jos": "아래 {mm}",
+    "sus": "위 {mm}"
   },
   "factura": {
     "colData": "결제일",
