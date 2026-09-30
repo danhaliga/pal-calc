@@ -784,7 +784,8 @@
     "soclu": "Plint",
     "traversa": "Regel",
     "montantAtipic": "Tussenwand {n}",
-    "usaAtipica": "Deur (vak {comp})"
+    "usaAtipica": "Deur (vak {comp})",
+    "tavanPanta": "Bovenblad (op de helling)"
   },
   "directie": {
     "jos": "onder",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} schuifdeuren, overlap {supr}, rails {sine}",
     "traverseSusInLocDeBlat": "in plaats van het bovenblad: één voor, één achter, {lat} breed",
     "montantSubPanta": "onder de schuinte: bovenkant op verstek gezaagd, van {mare} naar {mic}",
-    "frontPeCadruJolly": "op het frame van de korf, zonder scharnieren"
+    "frontPeCadruJolly": "op het frame van de korf, zonder scharnieren",
+    "bazaSubScara": "bodem over de hele lengte — de zijkanten staan erop",
+    "lateralaPeBaza": "staat op de bodem; boven recht gezaagd",
+    "lateralaSusInclinata": "staat op de bodem; boven schuin over de dikte ({u}°), van {mare} naar {mic}",
+    "tavanIntreLaterale": "tussen de zijkanten; uiteinden loodrecht gezaagd ({u}° t.o.v. het vlak, blad op {panza}°)"
   },
   "avert": {
     "politeAtipic": "Bij niet-standaard kasten worden legplanken niet automatisch berekend: voeg ze als losse onderdelen toe.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "In vak {comp} past geen plank: het is te laag.",
     "jollyUnFront": "De apothekerskorf heeft één front, op zijn frame. Hier staan {n} deuren: zet 1.",
     "jollyFaraPolite": "De apothekerskorf vult de hele hoogte: de {n} legplanken passen niet. Zet 0 legplanken.",
-    "jollyLatime": "Apothekerskorven worden verkocht voor kasten van {lista} mm. Deze is {lat} mm — kijk of er een korf voor is."
+    "jollyLatime": "Apothekerskorven worden verkocht voor kasten van {lista} mm. Deze is {lat} mm — kijk of er een korf voor is.",
+    "imbinareDreaptaNuMerge": "Het stompe kader (zijkanten op de bodem, bovenblad ertussen) gaat alleen bij de trapvorm. Hier is het kader in verstek."
   },
   "csv": {
     "corp": "Kast",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Deze kast zit niet in een opdracht. Meerdere kasten maak je alleen vanuit een opdracht.",
     "subScaraIntreabaPlata": "De ruimte wordt uit {cate} kasten gemaakt. De huidige wordt de eerste, en de andere {noi} komen in de opdracht en kosten {cost} lei. Je hebt {sold} lei.",
     "subScaraPreaMare": "Een kast zou groter worden dan 3000 mm (of de schuine kant langer dan 4000 mm). Verdeel de ruimte over meer kasten.",
-    "subScaraPreaIngust": "Een kast zou smaller worden dan 100 mm. Neem minder kasten of grotere breedtes."
+    "subScaraPreaIngust": "Een kast zou smaller worden dan 100 mm. Neem minder kasten of grotere breedtes.",
+    "subScaraImbinare": "Verbinding van het kader",
+    "imbinareDrept": "Zijkanten op de bodem, bovenblad ertussen",
+    "imbinareUnghi": "In verstek (lijst)",
+    "subScaraCapat": "Zijkanten boven",
+    "capatDrept": "Recht gezaagd",
+    "capatInclinat": "Op de helling gezaagd"
   },
   "fata": {
     "px": "rechts",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Diepte: {mm} mm (zaagmaat {taiere} mm, kantband afgetrokken)",
     "rMontantSus": "De bovenkant wordt schuin over de dikte gezaagd: {u}° t.o.v. de hoge kant — op de zaag, blad op {panza}°",
     "capatInterior": "Eind {lit}: zaagsnede op {u}° t.o.v. de binnenkant · zaagblad gekanteld op {panza}°",
-    "rCapatInterior": "Eind {lit}: {u}° t.o.v. de binnenkant (binnenhoek) — op de zaag, blad op {panza}°; de binnenkant is {d} mm langer"
+    "rCapatInterior": "Eind {lit}: {u}° t.o.v. de binnenkant (binnenhoek) — op de zaag, blad op {panza}°; de binnenkant is {d} mm langer",
+    "rTavanLung": "Lengte op de helling: {mm} mm — gelijk op beide kanten (evenwijdige uiteinden)",
+    "rTavanCapete": "Uiteinden loodrecht en evenwijdig gezaagd: {u}° t.o.v. de bovenkant — op de zaag, blad op {panza}°",
+    "cuprins": "Onderdelen:"
   }
 }

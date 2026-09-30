@@ -784,7 +784,8 @@
     "soclu": "Papan alas",
     "traversa": "Palang",
     "montantAtipic": "Sekat {n}",
-    "usaAtipica": "Pintu (ruang {comp})"
+    "usaAtipica": "Pintu (ruang {comp})",
+    "tavanPanta": "Atap (pada kemiringan)"
   },
   "directie": {
     "jos": "bawah",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} pintu geser, tumpang {supr}, rel {sine}",
     "traverseSusInLocDeBlat": "menggantikan papan atas: satu di depan, satu di belakang, lebar {lat}",
     "montantSubPanta": "di bawah kemiringan: tepi atas dipotong menyudut, dari {mare} ke {mic}",
-    "frontPeCadruJolly": "dipasang pada rangka keranjang, tanpa engsel"
+    "frontPeCadruJolly": "dipasang pada rangka keranjang, tanpa engsel",
+    "bazaSubScara": "alas sepanjang penuh — sisi berdiri di atasnya",
+    "lateralaPeBaza": "berdiri di atas alas; atas dipotong lurus",
+    "lateralaSusInclinata": "berdiri di atas alas; atas dipotong miring menembus tebal ({u}°), dari {mare} ke {mic}",
+    "tavanIntreLaterale": "di antara sisi; ujung dipotong tegak ({u}° terhadap muka, mata {panza}°)"
   },
   "avert": {
     "politeAtipic": "Pada boks nonstandar, rak tidak dihitung otomatis: tambahkan sebagai bagian tersendiri.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "Tidak ada rak yang muat di ruang {comp}: terlalu pendek.",
     "jollyUnFront": "Keranjang Jolly hanya punya satu muka, dipasang pada rangkanya. Di sini ada {n} pintu: isi 1.",
     "jollyFaraPolite": "Keranjang Jolly mengisi seluruh tinggi: {n} rak tidak muat. Isi 0 rak.",
-    "jollyLatime": "Keranjang Jolly dijual untuk kabinet {lista} mm. Kabinet ini {lat} mm — pastikan ada keranjangnya."
+    "jollyLatime": "Keranjang Jolly dijual untuk kabinet {lista} mm. Kabinet ini {lat} mm — pastikan ada keranjangnya.",
+    "imbinareDreaptaNuMerge": "Rangka sambungan lurus (sisi di atas alas, atap di antaranya) hanya untuk bentuk bawah tangga. Di sini rangka disambung miring."
   },
   "csv": {
     "corp": "Boks",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Lemari ini tidak ada dalam pesanan. Beberapa lemari hanya bisa dibuat dari dalam pesanan.",
     "subScaraIntreabaPlata": "Ruangnya dibuat dari {cate} lemari. Yang sekarang jadi yang pertama, dan {noi} lainnya ditambahkan ke pesanan dengan biaya {cost} lei. Kamu punya {sold} lei.",
     "subScaraPreaMare": "Sebuah kabinet akan lebih besar dari 3000 mm (atau sisi miring lebih dari 4000 mm). Bagi ruang ke lebih banyak kabinet.",
-    "subScaraPreaIngust": "Sebuah kabinet akan lebih sempit dari 100 mm. Kurangi jumlah kabinet atau perbesar lebarnya."
+    "subScaraPreaIngust": "Sebuah kabinet akan lebih sempit dari 100 mm. Kurangi jumlah kabinet atau perbesar lebarnya.",
+    "subScaraImbinare": "Sambungan rangka",
+    "imbinareDrept": "Sisi di atas alas, atap di antaranya",
+    "imbinareUnghi": "Sambungan miring (bingkai)",
+    "subScaraCapat": "Sisi, bagian atas",
+    "capatDrept": "Dipotong lurus",
+    "capatInclinat": "Dipotong mengikuti kemiringan"
   },
   "fata": {
     "px": "kanan",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Dalam: {mm} mm (ukuran potong {taiere} mm, edging dikurangi)",
     "rMontantSus": "Tepi atas dipotong miring menembus tebal: {u}° terhadap sisi tinggi — di gergaji, mata pada {panza}°",
     "capatInterior": "Ujung {lit}: potong {u}° terhadap sisi dalam · mata gergaji dimiringkan {panza}°",
-    "rCapatInterior": "Ujung {lit}: {u}° terhadap sisi dalam (sudut dalam) — di gergaji, mata pada {panza}°; sisi dalam lebih panjang {d} mm"
+    "rCapatInterior": "Ujung {lit}: {u}° terhadap sisi dalam (sudut dalam) — di gergaji, mata pada {panza}°; sisi dalam lebih panjang {d} mm",
+    "rTavanLung": "Panjang pada kemiringan: {mm} mm — sama di kedua sisi (ujung sejajar)",
+    "rTavanCapete": "Ujung dipotong tegak, sejajar: {u}° terhadap muka atas — di gergaji, mata pada {panza}°",
+    "cuprins": "Potongan:"
   }
 }

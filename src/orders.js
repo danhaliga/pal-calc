@@ -764,7 +764,7 @@ router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
     /* Fișele pe piesă ale corpurilor de sub scară: numai pe planșa CNC. */
     fiseCorpuri: req.params.tip === 'cnc'
       ? raport.corpuri.filter(c => c.params && c.params.tip === 'atipic')
-          .map(c => ({ nume: c.nume, fise: PalFisa.fise(c.params, req.t) }))
+          .map(c => ({ id: c.id, nume: c.nume, fise: PalFisa.fise(c.params, req.t) }))
       : [],
     planColi: PalRaport.planColi,
     coala: PalRaport.COALA,

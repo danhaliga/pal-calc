@@ -148,8 +148,8 @@ test('modelul din catalog folosește conturul socotit, nu unul scris de mână',
   assert.ok(!/lung: 985, unghi: 66/.test(m), 'a rămas panta veche, rotunjită');
 });
 
-test('panoul înclinat se taie la unghiul pantei, la amândouă capetele', () => {
-  const r = PalCalc.calc(subScara(), T);
+test('panoul înclinat se taie la unghiul pantei, la amândouă capetele (rama în unghi)', () => {
+  const r = PalCalc.calc(Object.assign(subScara(), { imbinare: 'unghi' }), T);
   const panta = r.P.filter(p => /Panou 3|panou.*3/i.test(p.nume) || p.L > 980)[0];
   assert.ok(panta, 'nu găsesc panoul înclinat');
   assert.ok(Math.abs(panta.L - 984.9) < 0.1, 'panta a ieșit ' + panta.L);

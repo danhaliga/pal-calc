@@ -784,7 +784,8 @@
     "soclu": "台輪",
     "traversa": "幕板",
     "montantAtipic": "仕切り {n}",
-    "usaAtipica": "扉（{comp} 番目の区画）"
+    "usaAtipica": "扉（{comp} 番目の区画）",
+    "tavanPanta": "天板（斜面）"
   },
   "directie": {
     "jos": "下",
@@ -828,7 +829,11 @@
     "usiGlisante": "引き戸 {n} 枚、重なり {supr}、レール {sine}",
     "traverseSusInLocDeBlat": "天板の代わりに、前と後ろに1枚ずつ、幅 {lat}",
     "montantSubPanta": "斜面の下：上端を角度切り、{mare} から {mic} まで",
-    "frontPeCadruJolly": "バスケットのフレームに取り付け、ヒンジなし"
+    "frontPeCadruJolly": "バスケットのフレームに取り付け、ヒンジなし",
+    "bazaSubScara": "底板、全長 — 側板をこの上に載せる",
+    "lateralaPeBaza": "底板の上に立つ；上端は直角切り",
+    "lateralaSusInclinata": "底板の上に立つ；上端は厚み方向に斜め切り（{u}°）、{mare} から {mic}",
+    "tavanIntreLaterale": "側板の間；両端は鉛直に切る（面に対して {u}°、刃は {panza}°）"
   },
   "avert": {
     "politeAtipic": "変形キャビネットの棚板は自動では数えません。別の部材として足してください。",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "{comp} 番目の区画には棚が入りません：低すぎます。",
     "jollyUnFront": "引出しバスケットの前板は1枚で、フレームに取り付けます。ここでは扉が {n} 枚です：1にしてください。",
     "jollyFaraPolite": "引出しバスケットは全高を使います：棚板 {n} 枚は入りません。棚板を0にしてください。",
-    "jollyLatime": "引出しバスケットは {lista} mm のキャビネット用に販売されています。このキャビネットは {lat} mm です。合うものがあるか確認してください。"
+    "jollyLatime": "引出しバスケットは {lista} mm のキャビネット用に販売されています。このキャビネットは {lat} mm です。合うものがあるか確認してください。",
+    "imbinareDreaptaNuMerge": "突き付けのフレーム（側板を底板の上、天板を間に）は階段下の形だけです。ここでは留め継ぎにしました。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "この箱はどの注文にも入っていません。複数の箱は注文の中でしか作れません。",
     "subScaraIntreabaPlata": "この空間を {cate} 個の箱で作ります。今の箱が一つ目になり、残り {noi} 個が注文に加わり {cost} レイかかります。残高は {sold} レイです。",
     "subScaraPreaMare": "3000 mm を超える（または斜辺が 4000 mm を超える）キャビネットになります。空間をもっと多くのキャビネットに分けてください。",
-    "subScaraPreaIngust": "100 mm より狭いキャビネットになります。数を減らすか幅を広げてください。"
+    "subScaraPreaIngust": "100 mm より狭いキャビネットになります。数を減らすか幅を広げてください。",
+    "subScaraImbinare": "フレームの継ぎ方",
+    "imbinareDrept": "側板を底板の上、天板を間に",
+    "imbinareUnghi": "留め継ぎ（額縁）",
+    "subScaraCapat": "側板の上端",
+    "capatDrept": "直角に切る",
+    "capatInclinat": "斜面に合わせて切る"
   },
   "fata": {
     "px": "右",
@@ -1661,6 +1673,9 @@
     "rAdancime": "奥行：{mm} mm（切断 {taiere} mm、エッジ分差引）",
     "rMontantSus": "上端は厚み方向に斜めに切る：高い面に対して {u}° — 丸のこは刃を {panza}° に",
     "capatInterior": "端 {lit}：内面に対して {u}° で切断 · 刃を {panza}° 傾ける",
-    "rCapatInterior": "端 {lit}：内面に対して {u}°（入隅）— 丸のこは刃を {panza}° に；内面は {d} mm 長い"
+    "rCapatInterior": "端 {lit}：内面に対して {u}°（入隅）— 丸のこは刃を {panza}° に；内面は {d} mm 長い",
+    "rTavanLung": "斜面の長さ：{mm} mm — 両面とも同じ（両端平行）",
+    "rTavanCapete": "両端を鉛直・平行に切る：上面に対して {u}° — 丸のこは刃を {panza}° に",
+    "cuprins": "部材："
   }
 }

@@ -784,7 +784,8 @@
     "soclu": "Zoccolo",
     "traversa": "Traversa",
     "montantAtipic": "Montante {n}",
-    "usaAtipica": "Anta (vano {comp})"
+    "usaAtipica": "Anta (vano {comp})",
+    "tavanPanta": "Cielo (sulla pendenza)"
   },
   "directie": {
     "jos": "basso",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} ante scorrevoli, sovrapposizione {supr}, binari {sine}",
     "traverseSusInLocDeBlat": "al posto del top: una davanti, una dietro, larghe {lat}",
     "montantSubPanta": "sotto la pendenza: bordo superiore tagliato a squadra, da {mare} a {mic}",
-    "frontPeCadruJolly": "si fissa al telaio del cestello, senza cerniere"
+    "frontPeCadruJolly": "si fissa al telaio del cestello, senza cerniere",
+    "bazaSubScara": "base per tutta la lunghezza — i fianchi appoggiano sopra",
+    "lateralaPeBaza": "appoggia sulla base; in alto taglio dritto",
+    "lateralaSusInclinata": "appoggia sulla base; in alto taglio inclinato nello spessore ({u}°), da {mare} a {mic}",
+    "tavanIntreLaterale": "tra i fianchi; estremità tagliate a piombo ({u}° rispetto alla faccia, lama a {panza}°)"
   },
   "avert": {
     "politeAtipic": "Nei mobili fuori misura i ripiani non si calcolano da soli: aggiungili come pezzi separati.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "Nel vano {comp} non ci sta nessun ripiano: è troppo basso.",
     "jollyUnFront": "Il cestello Jolly ha un solo frontale, fissato al telaio. Qui ci sono {n} ante: metti 1.",
     "jollyFaraPolite": "Il cestello Jolly occupa tutta l'altezza: i {n} ripiani non ci stanno. Metti 0 ripiani.",
-    "jollyLatime": "I cestelli Jolly si vendono per mobili da {lista} mm. Questo è di {lat} mm: verifica di trovare un cestello."
+    "jollyLatime": "I cestelli Jolly si vendono per mobili da {lista} mm. Questo è di {lat} mm: verifica di trovare un cestello.",
+    "imbinareDreaptaNuMerge": "Il telaio con giunzioni dritte (fianchi sulla base, cielo tra di loro) va solo con la forma sottoscala. Qui il telaio è a 45°."
   },
   "csv": {
     "corp": "Mobile",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Questo mobile non è in un ordine. Più mobili si fanno solo da dentro un ordine.",
     "subScaraIntreabaPlata": "Lo spazio si fa con {cate} mobili. Quello attuale diventa il primo, e gli altri {noi} si aggiungono all’ordine e costano {cost} lei. Hai {sold} lei.",
     "subScaraPreaMare": "Un mobile verrebbe più grande di 3000 mm (o con la pendenza oltre 4000 mm). Dividi lo spazio in più mobili.",
-    "subScaraPreaIngust": "Un mobile verrebbe più stretto di 100 mm. Metti meno mobili o larghezze maggiori."
+    "subScaraPreaIngust": "Un mobile verrebbe più stretto di 100 mm. Metti meno mobili o larghezze maggiori.",
+    "subScaraImbinare": "Giunzione del telaio",
+    "imbinareDrept": "Fianchi sulla base, cielo tra di loro",
+    "imbinareUnghi": "A 45° (cornice)",
+    "subScaraCapat": "Fianchi, in alto",
+    "capatDrept": "Tagliati dritti",
+    "capatInclinat": "Tagliati sulla pendenza"
   },
   "fata": {
     "px": "destra",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Profondità: {mm} mm (di taglio {taiere} mm, bordo dedotto)",
     "rMontantSus": "Lo spigolo superiore si taglia inclinato nello spessore: {u}° rispetto alla faccia alta — alla sega, lama a {panza}°",
     "capatInterior": "Estremità {lit}: taglio a {u}° rispetto alla faccia interna · lama inclinata a {panza}°",
-    "rCapatInterior": "Estremità {lit}: {u}° rispetto alla faccia interna (angolo rientrante) — alla sega, lama a {panza}°; la faccia interna è più lunga di {d} mm"
+    "rCapatInterior": "Estremità {lit}: {u}° rispetto alla faccia interna (angolo rientrante) — alla sega, lama a {panza}°; la faccia interna è più lunga di {d} mm",
+    "rTavanLung": "Lunghezza sulla pendenza: {mm} mm — uguale su entrambe le facce (estremità parallele)",
+    "rTavanCapete": "Estremità tagliate a piombo, parallele: {u}° rispetto alla faccia superiore — alla sega, lama a {panza}°",
+    "cuprins": "Pezzi:"
   }
 }

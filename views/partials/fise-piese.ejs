@@ -4,8 +4,15 @@
   <section class="doc-sect">
     <h2><%= t('fisa.titlu') %> — <%= c.nume %></h2>
     <p class="doc-nota"><%= t('fisa.intro') %></p>
+    <%# Cuprinsul: pe telefon fisele sunt lungi, iar usa vine ultima — se
+        sare direct la piesa cautata. %>
+    <p class="fisa-cuprins"><b><%= t('fisa.cuprins') %></b>
+      <% c.fise.forEach(function (f) { %>
+        <a href="#fisa-<%= c.id %>-<%= f.cod %>"><%= f.cod %>. <%= f.piesa %></a>
+      <% }); %>
+    </p>
     <% c.fise.forEach(function (f) { %>
-      <article class="fisa">
+      <article class="fisa" id="fisa-<%= c.id %>-<%= f.cod %>">
         <h3><%= t('fisa.piesaNr', { cod: f.cod }) %> · <%= f.piesa %> · <%= t('fisa.bucati', { n: f.buc }) %></h3>
         <ul><% f.randuri.forEach(function (r) { %><li><%= r %></li><% }); %></ul>
         <div class="fisa-desene">

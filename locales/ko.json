@@ -784,7 +784,8 @@
     "soclu": "걸레받이",
     "traversa": "가로대",
     "montantAtipic": "칸막이 {n}",
-    "usaAtipica": "문 ({comp}번 칸)"
+    "usaAtipica": "문 ({comp}번 칸)",
+    "tavanPanta": "천판 (경사면)"
   },
   "directie": {
     "jos": "아래",
@@ -828,7 +829,11 @@
     "usiGlisante": "미닫이 {n}짝, 겹침 {supr}, 레일 {sine}",
     "traverseSusInLocDeBlat": "상판 대신: 앞뒤로 하나씩, 폭 {lat}",
     "montantSubPanta": "경사 아래: 윗면을 비스듬히 재단, {mare}에서 {mic}까지",
-    "frontPeCadruJolly": "바스켓 프레임에 고정, 경첩 없음"
+    "frontPeCadruJolly": "바스켓 프레임에 고정, 경첩 없음",
+    "bazaSubScara": "밑판, 전체 길이 — 측판이 이 위에 섬",
+    "lateralaPeBaza": "밑판 위에 섬; 윗부분 직각 절단",
+    "lateralaSusInclinata": "밑판 위에 섬; 윗부분을 두께 방향으로 비스듬히 ({u}°), {mare}에서 {mic}까지",
+    "tavanIntreLaterale": "측판 사이; 양 끝을 수직으로 절단 (면에 대해 {u}°, 톱날 {panza}°)"
   },
   "avert": {
     "politeAtipic": "비정형 캐비닛에서는 선반이 자동으로 계산되지 않습니다. 따로 부재로 더하세요.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "{comp}번 칸에는 선반이 들어가지 않습니다: 너무 낮습니다.",
     "jollyUnFront": "Jolly 바스켓은 앞판이 하나로 프레임에 고정됩니다. 여기서는 문이 {n}개입니다: 1로 하세요.",
     "jollyFaraPolite": "Jolly 바스켓은 전체 높이를 채웁니다: 선반 {n}개가 들어갈 자리가 없습니다. 선반을 0으로 하세요.",
-    "jollyLatime": "Jolly 바스켓은 {lista} mm 장용으로 판매됩니다. 이 장은 {lat} mm입니다 — 맞는 바스켓이 있는지 확인하세요."
+    "jollyLatime": "Jolly 바스켓은 {lista} mm 장용으로 판매됩니다. 이 장은 {lat} mm입니다 — 맞는 바스켓이 있는지 확인하세요.",
+    "imbinareDreaptaNuMerge": "맞대기 프레임(측판을 밑판 위에, 천판을 사이에)은 계단 밑 형태에서만 됩니다. 여기서는 연귀 맞춤으로 했습니다."
   },
   "csv": {
     "corp": "캐비닛",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "이 몸통은 주문에 들어 있지 않습니다. 여러 몸통은 주문 안에서만 만들 수 있습니다.",
     "subScaraIntreabaPlata": "이 공간을 {cate}개의 몸통으로 만듭니다. 지금 몸통이 첫 번째가 되고, 나머지 {noi}개가 주문에 추가되며 {cost} 레이가 듭니다. 잔액은 {sold} 레이입니다.",
     "subScaraPreaMare": "장이 3000 mm보다 크게(또는 경사가 4000 mm보다 길게) 나옵니다. 공간을 더 많은 장으로 나누세요.",
-    "subScaraPreaIngust": "장이 100 mm보다 좁게 나옵니다. 장 수를 줄이거나 폭을 늘리세요."
+    "subScaraPreaIngust": "장이 100 mm보다 좁게 나옵니다. 장 수를 줄이거나 폭을 늘리세요.",
+    "subScaraImbinare": "프레임 결합",
+    "imbinareDrept": "측판을 밑판 위, 천판은 사이에",
+    "imbinareUnghi": "연귀 맞춤 (액자)",
+    "subScaraCapat": "측판 윗부분",
+    "capatDrept": "직각 절단",
+    "capatInclinat": "경사에 맞춰 절단"
   },
   "fata": {
     "px": "오른쪽",
@@ -1661,6 +1673,9 @@
     "rAdancime": "깊이: {mm} mm (절단 {taiere} mm, 엣지 공제)",
     "rMontantSus": "윗모서리는 두께 방향으로 비스듬히 자름: 높은 면에 대해 {u}° — 톱에서 날을 {panza}°로",
     "capatInterior": "끝 {lit}: 안쪽면에 대해 {u}° 절단 · 톱날 {panza}° 기울임",
-    "rCapatInterior": "끝 {lit}: 안쪽면에 대해 {u}° (안쪽 모서리) — 톱에서 날을 {panza}°로; 안쪽면이 {d} mm 김"
+    "rCapatInterior": "끝 {lit}: 안쪽면에 대해 {u}° (안쪽 모서리) — 톱에서 날을 {panza}°로; 안쪽면이 {d} mm 김",
+    "rTavanLung": "경사면 길이: {mm} mm — 양면 동일 (평행한 끝)",
+    "rTavanCapete": "양 끝을 수직·평행으로 절단: 윗면에 대해 {u}° — 톱에서 날을 {panza}°로",
+    "cuprins": "부재:"
   }
 }

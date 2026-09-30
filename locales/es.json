@@ -784,7 +784,8 @@
     "soclu": "Zócalo",
     "traversa": "Travesaño",
     "montantAtipic": "Montante {n}",
-    "usaAtipica": "Puerta (compartimento {comp})"
+    "usaAtipica": "Puerta (compartimento {comp})",
+    "tavanPanta": "Techo (en la pendiente)"
   },
   "directie": {
     "jos": "abajo",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} puertas correderas, solape {supr}, guías {sine}",
     "traverseSusInLocDeBlat": "en lugar del tablero superior: uno delante, otro detrás, de {lat} de ancho",
     "montantSubPanta": "bajo la pendiente: canto superior cortado en ángulo, de {mare} a {mic}",
-    "frontPeCadruJolly": "se fija al marco del cesto, sin bisagras"
+    "frontPeCadruJolly": "se fija al marco del cesto, sin bisagras",
+    "bazaSubScara": "base, a todo lo largo — los costados se apoyan en ella",
+    "lateralaPeBaza": "se apoya en la base; arriba cortado recto",
+    "lateralaSusInclinata": "se apoya en la base; arriba cortado en bisel en el grosor ({u}°), de {mare} a {mic}",
+    "tavanIntreLaterale": "entre los costados; extremos cortados a plomo ({u}° a la cara, hoja a {panza}°)"
   },
   "avert": {
     "politeAtipic": "En los módulos atípicos las baldas no se calculan solas: añádelas como piezas aparte.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "En el compartimento {comp} no cabe ningún estante: es demasiado bajo.",
     "jollyUnFront": "El cesto Jolly tiene un solo frente, fijado a su marco. Aquí hay {n} puertas: pon 1.",
     "jollyFaraPolite": "El cesto Jolly ocupa toda la altura: los {n} estantes no caben. Pon 0 estantes.",
-    "jollyLatime": "Los cestos Jolly se venden para muebles de {lista} mm. Este mide {lat} mm: comprueba que encuentres cesto."
+    "jollyLatime": "Los cestos Jolly se venden para muebles de {lista} mm. Este mide {lat} mm: comprueba que encuentres cesto.",
+    "imbinareDreaptaNuMerge": "El armazón con uniones rectas (costados sobre la base, techo entre ellos) solo va con la forma bajo escalera. Aquí se hizo a inglete."
   },
   "csv": {
     "corp": "Módulo",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Este mueble no está en un pedido. Varios muebles solo se hacen desde un pedido.",
     "subScaraIntreabaPlata": "El espacio se hace con {cate} muebles. El actual pasa a ser el primero, y los otros {noi} se añaden al pedido y cuestan {cost} lei. Tienes {sold} lei.",
     "subScaraPreaMare": "Un mueble saldría de más de 3000 mm (o con la pendiente de más de 4000 mm). Divide el espacio en más muebles.",
-    "subScaraPreaIngust": "Un mueble saldría de menos de 100 mm. Pon menos muebles o anchos mayores."
+    "subScaraPreaIngust": "Un mueble saldría de menos de 100 mm. Pon menos muebles o anchos mayores.",
+    "subScaraImbinare": "Unión del armazón",
+    "imbinareDrept": "Costados sobre la base, techo entre ellos",
+    "imbinareUnghi": "A inglete (marco)",
+    "subScaraCapat": "Costados, arriba",
+    "capatDrept": "Cortados rectos",
+    "capatInclinat": "Cortados en la pendiente"
   },
   "fata": {
     "px": "derecha",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Fondo: {mm} mm (de corte {taiere} mm, con el canto descontado)",
     "rMontantSus": "El borde superior se corta inclinado en el grosor: {u}° respecto a la cara alta — en la sierra, hoja a {panza}°",
     "capatInterior": "Extremo {lit}: corte a {u}° respecto a la cara interior · hoja inclinada a {panza}°",
-    "rCapatInterior": "Extremo {lit}: {u}° respecto a la cara interior (rincón) — en la sierra, hoja a {panza}°; la cara interior es más larga en {d} mm"
+    "rCapatInterior": "Extremo {lit}: {u}° respecto a la cara interior (rincón) — en la sierra, hoja a {panza}°; la cara interior es más larga en {d} mm",
+    "rTavanLung": "Largo en la pendiente: {mm} mm — igual en ambas caras (extremos paralelos)",
+    "rTavanCapete": "Extremos cortados a plomo, paralelos: {u}° respecto a la cara superior — en la sierra, hoja a {panza}°",
+    "cuprins": "Piezas:"
   }
 }

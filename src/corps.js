@@ -301,7 +301,7 @@ router.get('/corps/:id/fise', requireAuth, (req, res, next) => {
     title: req.t('fisa.titlu') + ' – ' + corp.name,
     titlu: req.t('fisa.titlu'),
     corp, order,
-    fiseCorpuri: [{ nume: corp.name, fise: PalFisa.fise(params, req.t) }],
+    fiseCorpuri: [{ id: corp.id, nume: corp.name, fise: PalFisa.fise(params, req.t) }],
     print: true
   });
 });

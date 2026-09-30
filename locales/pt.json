@@ -784,7 +784,8 @@
     "soclu": "Rodapé",
     "traversa": "Travessa",
     "montantAtipic": "Montante {n}",
-    "usaAtipica": "Porta (compartimento {comp})"
+    "usaAtipica": "Porta (compartimento {comp})",
+    "tavanPanta": "Tampo (na inclinação)"
   },
   "directie": {
     "jos": "baixo",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} portas de correr, sobreposição {supr}, calhas {sine}",
     "traverseSusInLocDeBlat": "em vez do tampo: uma à frente, outra atrás, com {lat} de largura",
     "montantSubPanta": "sob a inclinação: topo cortado em ângulo, de {mare} a {mic}",
-    "frontPeCadruJolly": "fixa-se no caixilho do cesto, sem dobradiças"
+    "frontPeCadruJolly": "fixa-se no caixilho do cesto, sem dobradiças",
+    "bazaSubScara": "base a todo o comprimento — as ilhargas assentam nela",
+    "lateralaPeBaza": "assenta na base; em cima corte a direito",
+    "lateralaSusInclinata": "assenta na base; em cima corte inclinado na espessura ({u}°), de {mare} a {mic}",
+    "tavanIntreLaterale": "entre as ilhargas; extremos cortados a prumo ({u}° à face, lâmina a {panza}°)"
   },
   "avert": {
     "politeAtipic": "Nos módulos fora de padrão as prateleiras não são calculadas sozinhas: acrescenta-as como peças à parte.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "Não cabe nenhuma prateleira no compartimento {comp}: é baixo demais.",
     "jollyUnFront": "O cesto Jolly tem uma só frente, fixa no caixilho. Aqui há {n} portas: ponha 1.",
     "jollyFaraPolite": "O cesto Jolly ocupa toda a altura: as {n} prateleiras não cabem. Ponha 0 prateleiras.",
-    "jollyLatime": "Os cestos Jolly vendem-se para móveis de {lista} mm. Este tem {lat} mm — confirme se há cesto para ele."
+    "jollyLatime": "Os cestos Jolly vendem-se para móveis de {lista} mm. Este tem {lat} mm — confirme se há cesto para ele.",
+    "imbinareDreaptaNuMerge": "A estrutura com uniões retas (ilhargas na base, tampo entre elas) só serve para a forma sob escada. Aqui fez-se em meia-esquadria."
   },
   "csv": {
     "corp": "Módulo",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Este móvel não está numa encomenda. Vários móveis só se fazem a partir de uma encomenda.",
     "subScaraIntreabaPlata": "O espaço faz-se com {cate} móveis. O atual passa a ser o primeiro, e os outros {noi} são acrescentados à encomenda e custam {cost} lei. Tem {sold} lei.",
     "subScaraPreaMare": "Um móvel ficaria com mais de 3000 mm (ou com a inclinação acima de 4000 mm). Divida o espaço em mais móveis.",
-    "subScaraPreaIngust": "Um móvel ficaria com menos de 100 mm. Use menos móveis ou larguras maiores."
+    "subScaraPreaIngust": "Um móvel ficaria com menos de 100 mm. Use menos móveis ou larguras maiores.",
+    "subScaraImbinare": "União da estrutura",
+    "imbinareDrept": "Ilhargas na base, tampo entre elas",
+    "imbinareUnghi": "Em meia-esquadria (moldura)",
+    "subScaraCapat": "Ilhargas, em cima",
+    "capatDrept": "Corte a direito",
+    "capatInclinat": "Corte na inclinação"
   },
   "fata": {
     "px": "direita",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Profundidade: {mm} mm (de corte {taiere} mm, com a orla descontada)",
     "rMontantSus": "A aresta de cima corta-se inclinada na espessura: {u}° em relação à face alta — na serra, lâmina a {panza}°",
     "capatInterior": "Extremo {lit}: corte a {u}° em relação à face interior · lâmina inclinada a {panza}°",
-    "rCapatInterior": "Extremo {lit}: {u}° em relação à face interior (canto reentrante) — na serra, lâmina a {panza}°; a face interior é mais longa {d} mm"
+    "rCapatInterior": "Extremo {lit}: {u}° em relação à face interior (canto reentrante) — na serra, lâmina a {panza}°; a face interior é mais longa {d} mm",
+    "rTavanLung": "Comprimento na inclinação: {mm} mm — igual nas duas faces (extremos paralelos)",
+    "rTavanCapete": "Extremos cortados a prumo, paralelos: {u}° em relação à face de cima — na serra, lâmina a {panza}°",
+    "cuprins": "Peças:"
   }
 }

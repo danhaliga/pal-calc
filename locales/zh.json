@@ -784,7 +784,8 @@
     "soclu": "踢脚板",
     "traversa": "横档",
     "montantAtipic": "立板 {n}",
-    "usaAtipica": "门板（第 {comp} 格）"
+    "usaAtipica": "门板（第 {comp} 格）",
+    "tavanPanta": "顶板（沿斜面）"
   },
   "directie": {
     "jos": "下",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} 扇推拉门，搭接 {supr}，轨道 {sine}",
     "traverseSusInLocDeBlat": "代替顶板：前后各一条，宽 {lat}",
     "montantSubPanta": "斜面下：顶边斜切，从 {mare} 到 {mic}",
-    "frontPeCadruJolly": "固定在拉篮框架上，无铰链"
+    "frontPeCadruJolly": "固定在拉篮框架上，无铰链",
+    "bazaSubScara": "底板，全长 — 侧板立在其上",
+    "lateralaPeBaza": "立在底板上；上端直切",
+    "lateralaSusInclinata": "立在底板上；上端沿厚度斜切（{u}°），从 {mare} 到 {mic}",
+    "tavanIntreLaterale": "夹在侧板之间；两端竖直切（与板面成 {u}°，锯片 {panza}°）"
   },
   "avert": {
     "politeAtipic": "异形柜体的层板不会自动算：单独当板件加进去。",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "第 {comp} 格放不下隔板：太矮了。",
     "jollyUnFront": "Jolly 拉篮只有一块面板，固定在框架上。这里设了 {n} 扇门：请设为 1。",
     "jollyFaraPolite": "Jolly 拉篮占满整个高度：{n} 块层板放不下。请把层板设为 0。",
-    "jollyLatime": "Jolly 拉篮按 {lista} 毫米柜宽出售。此柜宽 {lat} 毫米——请确认有合适的拉篮。"
+    "jollyLatime": "Jolly 拉篮按 {lista} 毫米柜宽出售。此柜宽 {lat} 毫米——请确认有合适的拉篮。",
+    "imbinareDreaptaNuMerge": "直角对接的框架（侧板立在底板上、顶板夹在中间）只适用于楼梯下形状。这里框架用斜接。"
   },
   "csv": {
     "corp": "柜体",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "这个柜不属于任何订单。多个柜只能在订单里制作。",
     "subScaraIntreabaPlata": "这块空间做成 {cate} 个柜。当前的柜成为第一个，其余 {noi} 个加入订单，费用 {cost} 列伊。你有 {sold} 列伊。",
     "subScaraPreaMare": "有柜体会超过 3000 毫米（或斜边超过 4000 毫米）。请把空间分成更多柜体。",
-    "subScaraPreaIngust": "有柜体会窄于 100 毫米。请减少柜体数量或加大宽度。"
+    "subScaraPreaIngust": "有柜体会窄于 100 毫米。请减少柜体数量或加大宽度。",
+    "subScaraImbinare": "框架连接",
+    "imbinareDrept": "侧板在底板上，顶板在中间",
+    "imbinareUnghi": "斜接（画框式）",
+    "subScaraCapat": "侧板上端",
+    "capatDrept": "直切",
+    "capatInclinat": "按斜面切"
   },
   "fata": {
     "px": "右",
@@ -1661,6 +1673,9 @@
     "rAdancime": "深度：{mm} 毫米（开料 {taiere} 毫米，已减封边）",
     "rMontantSus": "上边沿厚度斜切：与高面成 {u}° — 锯上锯片 {panza}°",
     "capatInterior": "端头 {lit}：与内面成 {u}° 切割 · 锯片倾斜 {panza}°",
-    "rCapatInterior": "端头 {lit}：与内面成 {u}°（阴角）— 锯上锯片 {panza}°；内面长 {d} 毫米"
+    "rCapatInterior": "端头 {lit}：与内面成 {u}°（阴角）— 锯上锯片 {panza}°；内面长 {d} 毫米",
+    "rTavanLung": "斜面长度：{mm} 毫米 — 两面相同（两端平行）",
+    "rTavanCapete": "两端竖直、平行切割：与上面成 {u}° — 锯上锯片 {panza}°",
+    "cuprins": "板件："
   }
 }

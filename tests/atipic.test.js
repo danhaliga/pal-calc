@@ -8,7 +8,10 @@ const { raport } = require('../shared/raport');
 
 const atipic = (contur, over) => Object.assign(defaults(), {
   tip: 'atipic', D: 560, t: 18, cg: 2, cs: 0.4, nUsi: 0, nPol: 0, nSer: 0,
-  spate: 'aplicat', tp: 3, contur
+  /* Testele de aici sunt despre rama ÎN UNGHI. La forma de sub scară (și
+     la dreptunghi) implicit e acum rama cu îmbinări drepte — vezi
+     tests/sub-scara-drept.test.js. */
+  spate: 'aplicat', tp: 3, imbinare: 'unghi', contur
 }, over);
 
 /* ---------------- geometria conturului ---------------- */

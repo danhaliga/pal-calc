@@ -790,7 +790,8 @@
     "soclu": "Cokół",
     "traversa": "Trawersa",
     "montantAtipic": "Przegroda {n}",
-    "usaAtipica": "Drzwi (przegroda {comp})"
+    "usaAtipica": "Drzwi (przegroda {comp})",
+    "tavanPanta": "Wieniec (na skosie)"
   },
   "directie": {
     "jos": "dół",
@@ -834,7 +835,11 @@
     "usiGlisante": "{n} fronty przesuwne, zachodzenie {supr}, szyny {sine}",
     "traverseSusInLocDeBlat": "zamiast wieńca: jedna z przodu, druga z tyłu, szerokie na {lat}",
     "montantSubPanta": "pod skosem: górna krawędź cięta pod kątem, od {mare} do {mic}",
-    "frontPeCadruJolly": "mocowany na ramie kosza, bez zawiasów"
+    "frontPeCadruJolly": "mocowany na ramie kosza, bez zawiasów",
+    "bazaSubScara": "podstawa na całą długość — boki stoją na niej",
+    "lateralaPeBaza": "stoi na podstawie; góra cięta prosto",
+    "lateralaSusInclinata": "stoi na podstawie; góra cięta skośnie przez grubość ({u}°), od {mare} do {mic}",
+    "tavanIntreLaterale": "między bokami; końce cięte pionowo ({u}° do płaszczyzny, piła na {panza}°)"
   },
   "avert": {
     "politeAtipic": "W korpusach nietypowych półki nie liczą się same: dodaj je jako osobne elementy.",
@@ -890,7 +895,8 @@
     "politeNuIncapAtipic": "W komorze {comp} nie mieści się żadna półka: jest za niska.",
     "jollyUnFront": "Cargo Jolly ma jeden front, mocowany na ramie. Tu jest {n} drzwiczek: daj 1.",
     "jollyFaraPolite": "Cargo Jolly wypełnia całą wysokość: {n} półek się nie zmieści. Daj 0 półek.",
-    "jollyLatime": "Cargo Jolly sprzedaje się do szafek {lista} mm. Ta ma {lat} mm — sprawdź, czy jest do niej kosz."
+    "jollyLatime": "Cargo Jolly sprzedaje się do szafek {lista} mm. Ta ma {lat} mm — sprawdź, czy jest do niej kosz.",
+    "imbinareDreaptaNuMerge": "Korpus na styk (boki na podstawie, wieniec między nimi) jest tylko dla kształtu pod schodami. Tu korpus jest na ukos."
   },
   "csv": {
     "corp": "Korpus",
@@ -1477,7 +1483,13 @@
     "subScaraFaraComanda": "Ten korpus nie jest w zamówieniu. Kilka korpusów robi się tylko z poziomu zamówienia.",
     "subScaraIntreabaPlata": "Przestrzeń robi się z {cate} korpusów. Obecny staje się pierwszym, a pozostałe {noi} dochodzą do zamówienia i kosztują {cost} lei. Masz {sold} lei.",
     "subScaraPreaMare": "Szafka wyszłaby większa niż 3000 mm (albo skos dłuższy niż 4000 mm). Podziel przestrzeń na więcej szafek.",
-    "subScaraPreaIngust": "Szafka wyszłaby węższa niż 100 mm. Daj mniej szafek albo większe szerokości."
+    "subScaraPreaIngust": "Szafka wyszłaby węższa niż 100 mm. Daj mniej szafek albo większe szerokości.",
+    "subScaraImbinare": "Łączenie korpusu",
+    "imbinareDrept": "Boki na podstawie, wieniec między nimi",
+    "imbinareUnghi": "Na ukos (rama)",
+    "subScaraCapat": "Boki u góry",
+    "capatDrept": "Cięte prosto",
+    "capatInclinat": "Cięte po skosie"
   },
   "fata": {
     "px": "prawo",
@@ -1672,6 +1684,9 @@
     "rAdancime": "Głębokość: {mm} mm (do cięcia {taiere} mm, po odjęciu obrzeża)",
     "rMontantSus": "Górną krawędź tnie się ukośnie przez grubość: {u}° do strony wysokiej — na pile tarcza na {panza}°",
     "capatInterior": "Koniec {lit}: cięcie pod {u}° do strony wewnętrznej · piła pochylona na {panza}°",
-    "rCapatInterior": "Koniec {lit}: {u}° do strony wewnętrznej (narożnik wklęsły) — na pile tarcza na {panza}°; strona wewnętrzna jest dłuższa o {d} mm"
+    "rCapatInterior": "Koniec {lit}: {u}° do strony wewnętrznej (narożnik wklęsły) — na pile tarcza na {panza}°; strona wewnętrzna jest dłuższa o {d} mm",
+    "rTavanLung": "Długość na skosie: {mm} mm — taka sama na obu stronach (końce równoległe)",
+    "rTavanCapete": "Końce cięte pionowo, równolegle: {u}° do strony górnej — na pile tarcza na {panza}°",
+    "cuprins": "Elementy:"
   }
 }

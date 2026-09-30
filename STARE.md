@@ -16,7 +16,7 @@ piese se taie, la ce cotă finită și la ce cotă de tăiere, cu ce cant pe
 fiecare muchie, plus feroneria, croirea în coli și fișa de montaj.
 
 - **51 de modele** în catalog, **7 categorii**, **30 de limbi**
-- **606 de teste**, toate trec: `npm test`
+- **615 de teste**, toate trec: `npm test`
 - Node ≥ 20, Express 4, EJS, better-sqlite3, zod, bcryptjs
 - Motorul de calcul (`shared/*.js`) e UMD: **același fișier rulează și pe
   server, și în browser**. Nu-l rupe în două.
@@ -342,6 +342,25 @@ atipic; numai corp plătit). `layout-print.ejs` merge acum și fără comandă.
   WordPress și o autentificare greșită. Erorile „unable to open database file"
   din 15:31 sunt de la punerea serverului, dinainte de permisiuni.
 
+## 6h. Sub scară: laterale pe bază, tavan între ele (30 septembrie)
+
+Hotărât cu Dan: la corpul de sub scară lateralele stau PE bază, tavanul
+(panta) stă ÎNTRE laterale, prindere cu eurosurub, fiecare corp cu lateralele
+lui. Param `imbinare`: '' = drept la forma de sub scară (4 laturi: bază,
+dreapta, pantă, stânga), 'unghi' = rama veche în unghi (rămâne la mansardă și
+la celelalte forme). `capatLaterala`: 'drept' (implicit, varianta „a" a lui
+Dan — tăiat drept la fața cea mai joasă, treaptă mică spre scară, ascunsă)
+sau 'inclinat' („b" — pe pantă, înclinat pe grosime).
+
+Piese: `fund` (baza, W), două `laterala` (polyFata = secțiunea lor),
+`tavanPanta` ((W − 2t)/cos(pantă), capete verticale paralele, aceeași lungime
+pe ambele fețe). Golul dinăuntru e același ca la rama în unghi, deci polițele,
+montanții și ușile nu se schimbă. Secțiunile (`polySectiune: true`) NU sunt
+contur de decupat în lista CNC — acolo ies la „tăiere la unghi".
+Corpurile de sub scară deja făcute trec singure pe construcția nouă.
+
+Fișele au acum un cuprins sus (pe telefon ușa venea ultima și nu se vedea).
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E
@@ -425,7 +444,7 @@ src/                rutele Express, baza de date, conturile, plata
 views/              paginile EJS
 public/app.js       editorul de corp: formular, tabel, vederea 3D
 locales/*.json      textele, 30 de fișiere
-tests/              30 de fișiere, 606 de teste
+tests/              31 de fișiere, 615 de teste
 .lucru/             scripturi de-o dată: traduceri, petice, probe
 db/migrations/      schema, se aplică singură la pornire
 ```

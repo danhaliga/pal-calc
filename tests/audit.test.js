@@ -24,7 +24,7 @@ test('polița corpului de sub scară intră între laturi: cât fața interioar�
   /* Laturile stau ÎNĂUNTRUL conturului (cota lor e pe muchia exterioară).
      Se socotea cu o jumătate de grosime: polița ieșea de 982 într-un gol de
      964 — nu intra. */
-  const p = subScara(1000, 600, 1200, { nPol: 1 });
+  const p = subScara(1000, 600, 1200, { nPol: 1, imbinare: 'unghi' });
   const pol = PalCalc.calc(p, T).P.find(x => x.cheie === 'polita');
   const fund = PalFisa.fise(p, PalI18n.creeaza('ro')).find(f => f.cheie === 'panouLatura');   /* primul e cel de jos */
   const interior = +/(\d+(?:\.\d+)?) mm/.exec(fund.randuri[1])[1];
@@ -105,7 +105,7 @@ test('ușile glisante primesc sistemul de glisare, nu balamale', () => {
 
 test('la „explodat" laturile corpului de sub scară ies spre exterior', () => {
   /* Dan, cu poză: rama rămânea lipită, ieșeau doar ușa și spatele. */
-  const r = PalCalc.calc(subScara(800, 2385, 2300), T);
+  const r = PalCalc.calc(subScara(800, 2385, 2300, { imbinare: 'unghi' }), T);
   const lat = r.P.filter(x => x.cheie === 'panouLatura');
   assert.equal(lat.length, 4);
   const [jos, dreapta, panta, stanga] = lat.map(x => x.boxes[0].ex);

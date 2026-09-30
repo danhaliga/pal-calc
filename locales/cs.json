@@ -790,7 +790,8 @@
     "soclu": "Sokl",
     "traversa": "Výztuha",
     "montantAtipic": "Příčka {n}",
-    "usaAtipica": "Dvířka (oddíl {comp})"
+    "usaAtipica": "Dvířka (oddíl {comp})",
+    "tavanPanta": "Strop (na šikmině)"
   },
   "directie": {
     "jos": "dole",
@@ -834,7 +835,11 @@
     "usiGlisante": "{n} posuvná dvířka, překrytí {supr}, kolejnice {sine}",
     "traverseSusInLocDeBlat": "místo horní desky: jedna vpředu, druhá vzadu, široké {lat}",
     "montantSubPanta": "pod sklonem: horní hrana řezaná pod úhlem, z {mare} na {mic}",
-    "frontPeCadruJolly": "připevněné na rám koše, bez závěsů"
+    "frontPeCadruJolly": "připevněné na rám koše, bez závěsů",
+    "bazaSubScara": "dno po celé délce — boky stojí na něm",
+    "lateralaPeBaza": "stojí na dně; nahoře řez rovně",
+    "lateralaSusInclinata": "stojí na dně; nahoře řez šikmo přes tloušťku ({u}°), od {mare} do {mic}",
+    "tavanIntreLaterale": "mezi boky; konce řezané svisle ({u}° k ploše, pila na {panza}°)"
   },
   "avert": {
     "politeAtipic": "U atypických korpusů se police nepočítají samy: přidej je jako samostatné díly.",
@@ -890,7 +895,8 @@
     "politeNuIncapAtipic": "Do oddílu {comp} se nevejde žádná police: je moc nízký.",
     "jollyUnFront": "Koš Jolly má jen jedno čelo, na svém rámu. Tady je {n} dvířek: dej 1.",
     "jollyFaraPolite": "Koš Jolly vyplní celou výšku: {n} polic se nevejde. Dej 0 polic.",
-    "jollyLatime": "Koše Jolly se prodávají pro skříňky {lista} mm. Tahle má {lat} mm — ověř, že se k ní koš najde."
+    "jollyLatime": "Koše Jolly se prodávají pro skříňky {lista} mm. Tahle má {lat} mm — ověř, že se k ní koš najde.",
+    "imbinareDreaptaNuMerge": "Korpus na tupo (boky na dně, strop mezi nimi) jde jen u tvaru pod schody. Tady je korpus na pokos."
   },
   "csv": {
     "corp": "Korpus",
@@ -1477,7 +1483,13 @@
     "subScaraFaraComanda": "Tento korpus není v zakázce. Více korpusů se dělá jen ze zakázky.",
     "subScaraIntreabaPlata": "Prostor se udělá z {cate} korpusů. Současný bude první a dalších {noi} přibude do zakázky za {cost} lei. Máš {sold} lei.",
     "subScaraPreaMare": "Skříňka by vyšla větší než 3000 mm (nebo šikmina delší než 4000 mm). Rozděl prostor do více skříněk.",
-    "subScaraPreaIngust": "Skříňka by vyšla užší než 100 mm. Dej méně skříněk nebo větší šířky."
+    "subScaraPreaIngust": "Skříňka by vyšla užší než 100 mm. Dej méně skříněk nebo větší šířky.",
+    "subScaraImbinare": "Spoj korpusu",
+    "imbinareDrept": "Boky na dně, strop mezi nimi",
+    "imbinareUnghi": "Na pokos (rám)",
+    "subScaraCapat": "Boky nahoře",
+    "capatDrept": "Řezané rovně",
+    "capatInclinat": "Řezané po šikmině"
   },
   "fata": {
     "px": "vpravo",
@@ -1672,6 +1684,9 @@
     "rAdancime": "Hloubka: {mm} mm (řezná {taiere} mm, po odečtení hrany)",
     "rMontantSus": "Horní hrana se řeže šikmo přes tloušťku: {u}° k vysoké straně — na pile kotouč na {panza}°",
     "capatInterior": "Konec {lit}: řez pod {u}° k vnitřní straně · pila nakloněná na {panza}°",
-    "rCapatInterior": "Konec {lit}: {u}° k vnitřní straně (vnitřní roh) — na pile kotouč na {panza}°; vnitřní strana je delší o {d} mm"
+    "rCapatInterior": "Konec {lit}: {u}° k vnitřní straně (vnitřní roh) — na pile kotouč na {panza}°; vnitřní strana je delší o {d} mm",
+    "rTavanLung": "Délka na šikmině: {mm} mm — stejná na obou stranách (rovnoběžné konce)",
+    "rTavanCapete": "Konce se řežou svisle, rovnoběžně: {u}° k horní straně — na pile kotouč na {panza}°",
+    "cuprins": "Díly:"
   }
 }

@@ -790,7 +790,8 @@
     "soclu": "Sokla",
     "traversa": "Traverza",
     "montantAtipic": "Pregrada {n}",
-    "usaAtipica": "Vrata (pregradak {comp})"
+    "usaAtipica": "Vrata (pregradak {comp})",
+    "tavanPanta": "Plafon (na kosini)"
   },
   "directie": {
     "jos": "dole",
@@ -834,7 +835,11 @@
     "usiGlisante": "{n} klizna vrata, preklop {supr}, šine {sine}",
     "traverseSusInLocDeBlat": "umesto gornje ploče: jedna spreda, druga pozadi, široke {lat}",
     "montantSubPanta": "ispod nagiba: gornja ivica sečena pod uglom, od {mare} do {mic}",
-    "frontPeCadruJolly": "kači se na ram korpe, bez šarki"
+    "frontPeCadruJolly": "kači se na ram korpe, bez šarki",
+    "bazaSubScara": "baza cele dužine — stranice stoje na njoj",
+    "lateralaPeBaza": "stoji na bazi; gore sečena pravo",
+    "lateralaSusInclinata": "stoji na bazi; gore sečena koso kroz debljinu ({u}°), od {mare} do {mic}",
+    "tavanIntreLaterale": "između stranica; krajevi sečeni vertikalno ({u}° prema licu, list na {panza}°)"
   },
   "avert": {
     "politeAtipic": "Kod netipičnih korpusa police se ne računaju same: dodaj ih kao zasebne delove.",
@@ -890,7 +895,8 @@
     "politeNuIncapAtipic": "U pregradak {comp} ne staje nijedna polica: prenizak je.",
     "jollyUnFront": "Korpa Jolly ima samo jedan front, na svom ramu. Ovde je {n} vrata: stavi 1.",
     "jollyFaraPolite": "Korpa Jolly zauzima celu visinu: {n} polica nema mesta. Stavi 0 polica.",
-    "jollyLatime": "Korpe Jolly se prodaju za elemente od {lista} mm. Ovaj ima {lat} mm — proveri da li postoji korpa za njega."
+    "jollyLatime": "Korpe Jolly se prodaju za elemente od {lista} mm. Ovaj ima {lat} mm — proveri da li postoji korpa za njega.",
+    "imbinareDreaptaNuMerge": "Korpus sa pravim spojevima (stranice na bazi, plafon između njih) ide samo za oblik ispod stepenica. Ovde je korpus na geru."
   },
   "csv": {
     "corp": "Korpus",
@@ -1477,7 +1483,13 @@
     "subScaraFaraComanda": "Ovaj korpus nije u porudžbini. Više korpusa se pravi samo iz porudžbine.",
     "subScaraIntreabaPlata": "Prostor se pravi od {cate} korpusa. Sadašnji postaje prvi, a ostalih {noi} se dodaje u porudžbinu i košta {cost} leja. Imaš {sold} leja.",
     "subScaraPreaMare": "Element bi izašao veći od 3000 mm (ili kosina duža od 4000 mm). Podeli prostor na više elemenata.",
-    "subScaraPreaIngust": "Element bi izašao uži od 100 mm. Stavi manje elemenata ili veće širine."
+    "subScaraPreaIngust": "Element bi izašao uži od 100 mm. Stavi manje elemenata ili veće širine.",
+    "subScaraImbinare": "Spoj korpusa",
+    "imbinareDrept": "Stranice na bazi, plafon između njih",
+    "imbinareUnghi": "Na geru (ram)",
+    "subScaraCapat": "Stranice, gore",
+    "capatDrept": "Sečene pravo",
+    "capatInclinat": "Sečene po kosini"
   },
   "fata": {
     "px": "desno",
@@ -1672,6 +1684,9 @@
     "rAdancime": "Dubina: {mm} mm (za sečenje {taiere} mm, kant oduzet)",
     "rMontantSus": "Gornja ivica se seče koso kroz debljinu: {u}° prema visokoj strani — na testeri list na {panza}°",
     "capatInterior": "Kraj {lit}: rez pod {u}° prema unutrašnjoj strani · list testere nagnut na {panza}°",
-    "rCapatInterior": "Kraj {lit}: {u}° prema unutrašnjoj strani (unutrašnji ugao) — na testeri list na {panza}°; unutrašnja strana je duža za {d} mm"
+    "rCapatInterior": "Kraj {lit}: {u}° prema unutrašnjoj strani (unutrašnji ugao) — na testeri list na {panza}°; unutrašnja strana je duža za {d} mm",
+    "rTavanLung": "Dužina na kosini: {mm} mm — ista na oba lica (paralelni krajevi)",
+    "rTavanCapete": "Krajevi se seku vertikalno, paralelno: {u}° prema gornjem licu — na testeri list na {panza}°",
+    "cuprins": "Delovi:"
   }
 }

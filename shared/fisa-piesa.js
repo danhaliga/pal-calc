@@ -267,7 +267,14 @@
       var colt = stanga ? [0, 0] : [z, 0];
       var jos = stanga ? [d, t] : [z - d, t];
       var pe = stanga ? [z, 0] : [0, 0];
-      q.push(arcUnghi(colt, pe, jos, fmtU(unghi) + '°', t * 0.9, kk));
+      /* Unghiul se arată mereu pe partea ascuțită: la tăietura obtuză față
+         de fața exterioară, în colțul de pe fața interioară. */
+      if (unghi > 90) {
+        var peInt = stanga ? [z, t] : [0, t];
+        q.push(arcUnghi(jos, peInt, colt, fmtU(180 - unghi) + '°', t * 0.9, kk));
+      } else {
+        q.push(arcUnghi(colt, pe, jos, fmtU(unghi) + '°', t * 0.9, kk));
+      }
       q.push('<text x="' + (z / 2) + '" y="' + (-kk * 1.2) + '" font-size="' + kk + '" text-anchor="middle" class="fisa-cota">' +
              esc(t_('fisa.exteriorScurt')) + '</text>');
       q.push('<text x="' + (z / 2) + '" y="' + (t + kk * 1.8) + '" font-size="' + kk + '" text-anchor="middle" class="fisa-cota">' +
@@ -390,7 +397,28 @@
         return;
       }
 
-      if (p.cheie === 'montantAtipic' && b.polyFata) {
+      /* Tavanul de sub scară, între laterale: capetele tăiate VERTICAL,
+         paralele. În secțiune e un paralelogram: aceeași lungime pe ambele
+         fețe, iar tăietura e la (90° − pantă) față de fața de sus. */
+      if (p.cheie === 'tavanPanta' && b.polyFata) {
+        var pf = b.polyFata;
+        var alfa = Math.atan2(Math.abs(pf[3][1] - pf[2][1]), Math.abs(pf[2][0] - pf[3][0])) * 180 / Math.PI;
+        var dt = desenLatura(p.L, p.l, t, 90 - alfa, 90 + alfa, p.c[0] === 'g', t_, p.nume);
+        out.push(Object.assign(baza, {
+          fel: 'tavan', gros: t, desene: dt.desene,
+          randuri: [
+            t_('fisa.rTavanLung', { mm: fmt(p.L) }),
+            t_('fisa.rLatime', { mm: fmt(p.l), taiere: fmt(p.Tl) }),
+            t_('fisa.rTavanCapete', { u: fmtU(90 - alfa), panza: fmtU(alfa) }),
+            t_('fisa.rGrosime', { mm: fmt(t) })
+          ]
+        }));
+        return;
+      }
+
+      /* Montantul, și lateralele care stau pe bază la corpul de sub scară:
+         amândouă sunt plăci verticale cu muchia de sus sub pantă. */
+      if ((p.cheie === 'montantAtipic' || p.cheie === 'laterala') && b.polyFata) {
         var hs = b.polyFata.map(function (q) { return q[1]; });
         var y0m = Math.min.apply(null, hs);
         var hA = b.polyFata[3][1] - y0m, hB = b.polyFata[2][1] - y0m;

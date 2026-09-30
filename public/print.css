@@ -152,3 +152,7 @@ svg.fisa-svg .fisa-rupt { stroke: #3b2f20; stroke-width: 1px; stroke-dasharray: 
 svg.fisa-svg .fisa-3d-spate { fill: #cdb893; stroke: #3b2f20; stroke-width: .8px; }
 svg.fisa-svg .fisa-3d-muchie { fill: #d9c4a0; stroke: #3b2f20; stroke-width: .8px; }
 svg.fisa-svg .fisa-3d-fata { fill: #f1e3c6; stroke: #3b2f20; stroke-width: .8px; }
+
+.fisa-cuprins { font-size: 13px; line-height: 2; }
+.fisa-cuprins a { display: inline-block; margin-right: 12px; white-space: nowrap; }
+@media print { .fisa-cuprins { display: none; } }

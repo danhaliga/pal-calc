@@ -784,7 +784,8 @@
     "soclu": "Plinthe",
     "traversa": "Traverse",
     "montantAtipic": "Montant {n}",
-    "usaAtipica": "Porte (compartiment {comp})"
+    "usaAtipica": "Porte (compartiment {comp})",
+    "tavanPanta": "Dessus (sur la pente)"
   },
   "directie": {
     "jos": "bas",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} portes coulissantes, recouvrement {supr}, rails {sine}",
     "traverseSusInLocDeBlat": "à la place du panneau haut : une devant, une derrière, larges de {lat}",
     "montantSubPanta": "sous la pente : chant du haut coupé en biais, de {mare} à {mic}",
-    "frontPeCadruJolly": "fixée sur le cadre du panier, sans charnières"
+    "frontPeCadruJolly": "fixée sur le cadre du panier, sans charnières",
+    "bazaSubScara": "socle sur toute la longueur — les côtés reposent dessus",
+    "lateralaPeBaza": "repose sur le socle ; haut coupé droit",
+    "lateralaSusInclinata": "repose sur le socle ; haut coupé en biais dans l'épaisseur ({u}°), de {mare} à {mic}",
+    "tavanIntreLaterale": "entre les côtés ; extrémités coupées d'aplomb ({u}° par rapport à la face, lame à {panza}°)"
   },
   "avert": {
     "politeAtipic": "Les étagères ne sont pas calculées automatiquement pour les caissons hors standard : ajoutez-les comme pièces séparées.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "Aucune étagère ne tient dans le compartiment {comp} : il est trop bas.",
     "jollyUnFront": "Le panier Jolly n'a qu'une façade, fixée sur son cadre. Ici il y a {n} portes : mettez 1.",
     "jollyFaraPolite": "Le panier Jolly occupe toute la hauteur : les {n} tablettes n'ont pas de place. Mettez 0 tablette.",
-    "jollyLatime": "Les paniers Jolly se vendent pour des meubles de {lista} mm. Celui-ci fait {lat} mm — vérifiez qu'il existe un panier."
+    "jollyLatime": "Les paniers Jolly se vendent pour des meubles de {lista} mm. Celui-ci fait {lat} mm — vérifiez qu'il existe un panier.",
+    "imbinareDreaptaNuMerge": "Le bâti à assemblages droits (côtés sur le socle, dessus entre eux) ne va qu'avec la forme sous escalier. Ici le bâti est en onglet."
   },
   "csv": {
     "corp": "Caisson",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Ce meuble n’est pas dans une commande. Plusieurs meubles ne se font que depuis une commande.",
     "subScaraIntreabaPlata": "L’espace se fait en {cate} meubles. Le meuble actuel devient le premier, et les {noi} autres sont ajoutés à la commande et coûtent {cost} lei. Vous avez {sold} lei.",
     "subScaraPreaMare": "Un meuble dépasserait 3000 mm (ou une pente de 4000 mm). Divisez l'espace en plus de meubles.",
-    "subScaraPreaIngust": "Un meuble ferait moins de 100 mm. Mettez moins de meubles ou des largeurs plus grandes."
+    "subScaraPreaIngust": "Un meuble ferait moins de 100 mm. Mettez moins de meubles ou des largeurs plus grandes.",
+    "subScaraImbinare": "Assemblage du bâti",
+    "imbinareDrept": "Côtés sur le socle, dessus entre eux",
+    "imbinareUnghi": "En onglet (cadre)",
+    "subScaraCapat": "Côtés, en haut",
+    "capatDrept": "Coupés droit",
+    "capatInclinat": "Coupés sur la pente"
   },
   "fata": {
     "px": "droite",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Profondeur : {mm} mm (de coupe {taiere} mm, chant déduit)",
     "rMontantSus": "L'arête du haut se coupe en biais dans l'épaisseur : {u}° par rapport à la face haute — à la scie, lame à {panza}°",
     "capatInterior": "Extrémité {lit} : coupe à {u}° par rapport à la face intérieure · lame inclinée à {panza}°",
-    "rCapatInterior": "Extrémité {lit} : {u}° par rapport à la face intérieure (angle rentrant) — à la scie, lame à {panza}° ; la face intérieure est plus longue de {d} mm"
+    "rCapatInterior": "Extrémité {lit} : {u}° par rapport à la face intérieure (angle rentrant) — à la scie, lame à {panza}° ; la face intérieure est plus longue de {d} mm",
+    "rTavanLung": "Longueur sur la pente : {mm} mm — la même sur les deux faces (extrémités parallèles)",
+    "rTavanCapete": "Extrémités coupées d'aplomb, parallèles : {u}° par rapport à la face du dessus — à la scie, lame à {panza}°",
+    "cuprins": "Pièces :"
   }
 }

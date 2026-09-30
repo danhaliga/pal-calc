@@ -784,7 +784,8 @@
     "soclu": "Plinth",
     "traversa": "Rail",
     "montantAtipic": "Divider {n}",
-    "usaAtipica": "Door (compartment {comp})"
+    "usaAtipica": "Door (compartment {comp})",
+    "tavanPanta": "Top (on the slope)"
   },
   "directie": {
     "jos": "bottom",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} sliding doors, overlap {supr}, tracks {sine}",
     "traverseSusInLocDeBlat": "instead of the top panel: one at the front, one at the back, {lat} wide",
     "montantSubPanta": "under the slope: top edge cut at an angle, from {mare} down to {mic}",
-    "frontPeCadruJolly": "fixed to the basket frame, no hinges"
+    "frontPeCadruJolly": "fixed to the basket frame, no hinges",
+    "bazaSubScara": "base, full length — the sides stand on it",
+    "lateralaPeBaza": "stands on the base; top cut square",
+    "lateralaSusInclinata": "stands on the base; top bevelled across the thickness ({u}°), from {mare} to {mic}",
+    "tavanIntreLaterale": "between the sides; ends cut plumb ({u}° to the face, blade at {panza}°)"
   },
   "avert": {
     "politeAtipic": "Shelves are not calculated automatically for non-standard cabinets: add them as separate parts.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "No shelf fits in compartment {comp}: it is too short.",
     "jollyUnFront": "A pull-out basket has a single front, fixed to its frame. {n} doors are set here: use 1.",
     "jollyFaraPolite": "The pull-out basket fills the full height: the {n} shelves won't fit. Set shelves to 0.",
-    "jollyLatime": "Pull-out baskets are sold for {lista} mm cabinets. This one is {lat} mm — check you can find a basket for it."
+    "jollyLatime": "Pull-out baskets are sold for {lista} mm cabinets. This one is {lat} mm — check you can find a basket for it.",
+    "imbinareDreaptaNuMerge": "The butt-jointed frame (sides on the base, top between them) only works for the under-stairs shape. Here the frame is mitred."
   },
   "csv": {
     "corp": "Cabinet",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "This cabinet is not in an order. Several cabinets can only be made from within an order.",
     "subScaraIntreabaPlata": "The space is made of {cate} cabinets. The current one becomes the first, and the other {noi} are added to the order and cost {cost} lei. You have {sold} lei.",
     "subScaraPreaMare": "A cabinet would come out larger than 3000 mm (or with a slope over 4000 mm). Split the space into more cabinets.",
-    "subScaraPreaIngust": "A cabinet would come out narrower than 100 mm. Use fewer cabinets or larger widths."
+    "subScaraPreaIngust": "A cabinet would come out narrower than 100 mm. Use fewer cabinets or larger widths.",
+    "subScaraImbinare": "Frame joints",
+    "imbinareDrept": "Sides on the base, top between them",
+    "imbinareUnghi": "Mitred (frame)",
+    "subScaraCapat": "Sides, at the top",
+    "capatDrept": "Cut square",
+    "capatInclinat": "Cut on the slope"
   },
   "fata": {
     "px": "right",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Depth: {mm} mm (cutting {taiere} mm, edging deducted)",
     "rMontantSus": "The top edge is bevelled across the thickness: {u}° to the high face — on the saw, blade at {panza}°",
     "capatInterior": "End {lit}: cut at {u}° to the inner face · blade tilted to {panza}°",
-    "rCapatInterior": "End {lit}: {u}° to the inner face (inside corner) — on the saw, blade at {panza}°; the inner face is longer by {d} mm"
+    "rCapatInterior": "End {lit}: {u}° to the inner face (inside corner) — on the saw, blade at {panza}°; the inner face is longer by {d} mm",
+    "rTavanLung": "Length on the slope: {mm} mm — the same on both faces (parallel ends)",
+    "rTavanCapete": "Ends cut plumb, parallel: {u}° to the top face — on the saw, blade at {panza}°",
+    "cuprins": "Pieces:"
   }
 }

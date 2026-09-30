@@ -784,7 +784,8 @@
     "soclu": "Süpürgelik",
     "traversa": "Kuşak",
     "montantAtipic": "Dikme {n}",
-    "usaAtipica": "Kapak ({comp}. göz)"
+    "usaAtipica": "Kapak ({comp}. göz)",
+    "tavanPanta": "Tavan (eğimde)"
   },
   "directie": {
     "jos": "alt",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} sürme kapak, bindirme {supr}, raylar {sine}",
     "traverseSusInLocDeBlat": "üst tabla yerine: biri önde biri arkada, {lat} genişliğinde",
     "montantSubPanta": "eğimin altında: üst kenar açılı kesilmiş, {mare} ile {mic} arası",
-    "frontPeCadruJolly": "sepetin çerçevesine takılır, menteşesiz"
+    "frontPeCadruJolly": "sepetin çerçevesine takılır, menteşesiz",
+    "bazaSubScara": "taban, tam boy — yan paneller üstüne oturur",
+    "lateralaPeBaza": "tabana oturur; üstü düz kesilir",
+    "lateralaSusInclinata": "tabana oturur; üstü kalınlık boyunca eğik ({u}°), {mare} ile {mic} arası",
+    "tavanIntreLaterale": "yanların arasında; uçlar dikey kesilir (yüze {u}°, testere {panza}°)"
   },
   "avert": {
     "politeAtipic": "Standart dışı gövdelerde raflar kendiliğinden hesaplanmaz: onları ayrı parça olarak ekle.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "{comp}. göze raf sığmıyor: fazla alçak.",
     "jollyUnFront": "Jolly sepetin tek kapağı olur, çerçevesine takılır. Burada {n} kapak var: 1 yap.",
     "jollyFaraPolite": "Jolly sepet tüm yüksekliği doldurur: {n} rafa yer yok. Rafı 0 yap.",
-    "jollyLatime": "Jolly sepetler {lista} mm dolaplar için satılır. Bu dolap {lat} mm — ona uygun sepet bulunduğunu kontrol et."
+    "jollyLatime": "Jolly sepetler {lista} mm dolaplar için satılır. Bu dolap {lat} mm — ona uygun sepet bulunduğunu kontrol et.",
+    "imbinareDreaptaNuMerge": "Düz birleşimli çerçeve (yanlar tabanda, tavan aralarında) yalnızca merdiven altı biçiminde olur. Burada çerçeve gönye yapıldı."
   },
   "csv": {
     "corp": "Gövde",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Bu gövde bir siparişte değil. Birden fazla gövde ancak sipariş içinden yapılır.",
     "subScaraIntreabaPlata": "Alan {cate} gövdeden yapılır. Şimdiki gövde birincisi olur, diğer {noi} tanesi siparişe eklenir ve {cost} lei tutar. {sold} lei var.",
     "subScaraPreaMare": "Bir dolap 3000 mm'den büyük (ya da eğim 4000 mm'den uzun) çıkardı. Alanı daha çok dolaba böl.",
-    "subScaraPreaIngust": "Bir dolap 100 mm'den dar çıkardı. Daha az dolap ya da daha büyük genişlik koy."
+    "subScaraPreaIngust": "Bir dolap 100 mm'den dar çıkardı. Daha az dolap ya da daha büyük genişlik koy.",
+    "subScaraImbinare": "Çerçeve birleşimi",
+    "imbinareDrept": "Yanlar tabanda, tavan aralarında",
+    "imbinareUnghi": "Gönye (çerçeve)",
+    "subScaraCapat": "Yanlar, üstte",
+    "capatDrept": "Düz kesim",
+    "capatInclinat": "Eğime göre kesim"
   },
   "fata": {
     "px": "sağ",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Derinlik: {mm} mm (kesim {taiere} mm, bant düşülmüş)",
     "rMontantSus": "Üst kenar kalınlık boyunca eğik kesilir: yüksek yüze göre {u}° — testerede bıçak {panza}°",
     "capatInterior": "{lit} ucu: iç yüze göre {u}° kesim · testere {panza}° eğik",
-    "rCapatInterior": "{lit} ucu: iç yüze göre {u}° (iç köşe) — testerede bıçak {panza}°; iç yüz {d} mm daha uzun"
+    "rCapatInterior": "{lit} ucu: iç yüze göre {u}° (iç köşe) — testerede bıçak {panza}°; iç yüz {d} mm daha uzun",
+    "rTavanLung": "Eğimdeki boy: {mm} mm — iki yüzde de aynı (paralel uçlar)",
+    "rTavanCapete": "Uçlar dikey, paralel kesilir: üst yüze göre {u}° — testerede bıçak {panza}°",
+    "cuprins": "Parçalar:"
   }
 }

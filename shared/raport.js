@@ -114,14 +114,19 @@
   function polyPiesa(p) {
     for (var i = 0; i < p.boxes.length; i++) {
       if (p.boxes[i].poly) return p.boxes[i].poly;
-      if (p.boxes[i].polyFata) return p.boxes[i].polyFata;
+      /* `polySectiune`: desenul e SECȚIUNEA piesei văzută din față (grosime ×
+         înălțime) — montantul, lateralele și tavanul de sub scară — nu fața
+         ei. Nu e contur de decupat; la ele se taie capetele înclinat. */
+      if (p.boxes[i].polyFata && !p.boxes[i].polySectiune) return p.boxes[i].polyFata;
     }
     return null;
   }
 
   /* piesele tăiate la unghi (laturile unui corp atipic) cer și ele CNC */
   function areUnghiuri(p) {
-    return p.cheie === 'panouLatura' && p.notaCheie === 'taiereLaUnghi';
+    return (p.cheie === 'panouLatura' && p.notaCheie === 'taiereLaUnghi') ||
+      p.cheie === 'tavanPanta' || p.notaCheie === 'lateralaSusInclinata' ||
+      p.notaCheie === 'montantSubPanta';
   }
 
   /* un contur care e chiar dreptunghiul de gabarit nu are ce decupa */

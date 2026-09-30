@@ -784,7 +784,8 @@
     "soclu": "Lábazat",
     "traversa": "Merevítő",
     "montantAtipic": "Válaszfal {n}",
-    "usaAtipica": "Ajtó ({comp}. rekesz)"
+    "usaAtipica": "Ajtó ({comp}. rekesz)",
+    "tavanPanta": "Tető (a lejtőn)"
   },
   "directie": {
     "jos": "alul",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} tolóajtó, átfedés {supr}, sínek {sine}",
     "traverseSusInLocDeBlat": "a fedlap helyett: egy elöl, egy hátul, {lat} szélesek",
     "montantSubPanta": "a ferde alatt: a felső él szögben vágva, {mare}-ről {mic}-re",
-    "frontPeCadruJolly": "a kosár keretére szerelve, zsanér nélkül"
+    "frontPeCadruJolly": "a kosár keretére szerelve, zsanér nélkül",
+    "bazaSubScara": "alj teljes hosszban — az oldalak ezen állnak",
+    "lateralaPeBaza": "az aljon áll; felül egyenesen vágva",
+    "lateralaSusInclinata": "az aljon áll; felül ferdén a vastagságon át ({u}°), {mare}-ről {mic}-re",
+    "tavanIntreLaterale": "az oldalak között; a végek függőlegesen vágva ({u}° a laphoz, fűrészlap {panza}°)"
   },
   "avert": {
     "politeAtipic": "Egyedi korpuszoknál a polcok nem számolódnak magától: add hozzá őket külön elemként.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "A(z) {comp}. rekeszbe nem fér polc: túl alacsony.",
     "jollyUnFront": "A Jolly kosárnak egyetlen előlapja van, a keretére szerelve. Itt {n} ajtó van: legyen 1.",
     "jollyFaraPolite": "A Jolly kosár kitölti a teljes magasságot: a {n} polc nem fér el. Legyen 0 polc.",
-    "jollyLatime": "Jolly kosarak {lista} mm-es szekrényekhez kaphatók. Ez {lat} mm — nézd meg, van-e hozzá kosár."
+    "jollyLatime": "Jolly kosarak {lista} mm-es szekrényekhez kaphatók. Ez {lat} mm — nézd meg, van-e hozzá kosár.",
+    "imbinareDreaptaNuMerge": "A tompa illesztésű keret (oldalak az aljon, tető köztük) csak a lépcső alatti formánál megy. Itt a keret gérbe készült."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Ez a korpusz nincs rendelésben. Több korpusz csak rendelésen belül készül.",
     "subScaraIntreabaPlata": "A tér {cate} korpuszból készül. A mostani lesz az első, a többi {noi} bekerül a rendelésbe és {cost} lejbe kerül. Van {sold} lejed.",
     "subScaraPreaMare": "Egy korpusz nagyobb lenne 3000 mm-nél (vagy a ferde oldal 4000 mm-nél). Oszd a teret több korpuszra.",
-    "subScaraPreaIngust": "Egy korpusz keskenyebb lenne 100 mm-nél. Kevesebb korpusz vagy nagyobb szélesség kell."
+    "subScaraPreaIngust": "Egy korpusz keskenyebb lenne 100 mm-nél. Kevesebb korpusz vagy nagyobb szélesség kell.",
+    "subScaraImbinare": "Keretillesztés",
+    "imbinareDrept": "Oldalak az aljon, tető köztük",
+    "imbinareUnghi": "Gérbe (keret)",
+    "subScaraCapat": "Oldalak felül",
+    "capatDrept": "Egyenesen vágva",
+    "capatInclinat": "A lejtő szerint vágva"
   },
   "fata": {
     "px": "jobb",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Mélység: {mm} mm (vágási {taiere} mm, élzárás levonva)",
     "rMontantSus": "A felső él ferdén vágandó a vastagságon át: {u}° a magas oldalhoz — a fűrészen a lap {panza}°-on",
     "capatInterior": "{lit} vég: vágás {u}°-ban a belső oldalhoz · fűrészlap {panza}°-ra döntve",
-    "rCapatInterior": "{lit} vég: {u}° a belső oldalhoz (belső sarok) — a fűrészen a lap {panza}°-on; a belső oldal {d} mm-rel hosszabb"
+    "rCapatInterior": "{lit} vég: {u}° a belső oldalhoz (belső sarok) — a fűrészen a lap {panza}°-on; a belső oldal {d} mm-rel hosszabb",
+    "rTavanLung": "Hossz a lejtőn: {mm} mm — mindkét oldalon ugyanannyi (párhuzamos végek)",
+    "rTavanCapete": "A végek függőlegesen, párhuzamosan vágandók: {u}° a felső oldalhoz — a fűrészen a lap {panza}°-on",
+    "cuprins": "Alkatrészek:"
   }
 }

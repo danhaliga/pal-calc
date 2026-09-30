@@ -784,7 +784,8 @@
     "soclu": "Sockel",
     "traversa": "Traverse",
     "montantAtipic": "Mittelseite {n}",
-    "usaAtipica": "Tür (Fach {comp})"
+    "usaAtipica": "Tür (Fach {comp})",
+    "tavanPanta": "Deckel (auf der Schräge)"
   },
   "directie": {
     "jos": "unten",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} Schiebetüren, Überlappung {supr}, Schienen {sine}",
     "traverseSusInLocDeBlat": "statt des Deckels: eine vorn, eine hinten, {lat} breit",
     "montantSubPanta": "unter der Schräge: obere Kante auf Gehrung, von {mare} auf {mic}",
-    "frontPeCadruJolly": "am Rahmen des Auszugs befestigt, ohne Scharniere"
+    "frontPeCadruJolly": "am Rahmen des Auszugs befestigt, ohne Scharniere",
+    "bazaSubScara": "Boden auf ganzer Länge — die Seiten stehen darauf",
+    "lateralaPeBaza": "steht auf dem Boden; oben gerade geschnitten",
+    "lateralaSusInclinata": "steht auf dem Boden; oben über die Stärke schräg ({u}°), von {mare} auf {mic}",
+    "tavanIntreLaterale": "zwischen den Seiten; Enden lotrecht geschnitten ({u}° zur Fläche, Blatt auf {panza}°)"
   },
   "avert": {
     "politeAtipic": "Bei Sonderkorpussen werden Böden nicht automatisch berechnet: füge sie als eigene Teile hinzu.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "In Fach {comp} passt kein Boden: es ist zu niedrig.",
     "jollyUnFront": "Der Apothekerauszug hat nur eine Front, am Rahmen befestigt. Hier sind {n} Türen gesetzt: nimm 1.",
     "jollyFaraPolite": "Der Apothekerauszug füllt die ganze Höhe: Die {n} Fachböden passen nicht. Setz 0 Fachböden.",
-    "jollyLatime": "Apothekerauszüge gibt es für Korpusse mit {lista} mm. Dieser hat {lat} mm — prüf, ob es einen Auszug dafür gibt."
+    "jollyLatime": "Apothekerauszüge gibt es für Korpusse mit {lista} mm. Dieser hat {lat} mm — prüf, ob es einen Auszug dafür gibt.",
+    "imbinareDreaptaNuMerge": "Der stumpf verbundene Rahmen (Seiten auf dem Boden, Deckel dazwischen) geht nur bei der Treppenform. Hier ist er auf Gehrung."
   },
   "csv": {
     "corp": "Korpus",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Dieser Schrank ist in keinem Auftrag. Mehrere Schränke entstehen nur aus einem Auftrag.",
     "subScaraIntreabaPlata": "Der Raum wird aus {cate} Schränken gemacht. Der jetzige wird der erste, die anderen {noi} kommen in den Auftrag und kosten {cost} Lei. Du hast {sold} Lei.",
     "subScaraPreaMare": "Ein Korpus würde größer als 3000 mm (oder die Schräge länger als 4000 mm). Teile den Raum in mehr Korpusse.",
-    "subScaraPreaIngust": "Ein Korpus würde schmaler als 100 mm. Weniger Korpusse oder größere Breiten nehmen."
+    "subScaraPreaIngust": "Ein Korpus würde schmaler als 100 mm. Weniger Korpusse oder größere Breiten nehmen.",
+    "subScaraImbinare": "Rahmenverbindung",
+    "imbinareDrept": "Seiten auf dem Boden, Deckel dazwischen",
+    "imbinareUnghi": "Auf Gehrung (Rahmen)",
+    "subScaraCapat": "Seiten oben",
+    "capatDrept": "Gerade geschnitten",
+    "capatInclinat": "Schräg geschnitten"
   },
   "fata": {
     "px": "rechts",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Tiefe: {mm} mm (Zuschnitt {taiere} mm, Kante abgezogen)",
     "rMontantSus": "Die Oberkante wird über die Stärke schräg geschnitten: {u}° zur hohen Seite — an der Säge Blatt auf {panza}°",
     "capatInterior": "Ende {lit}: Schnitt {u}° zur Innenseite · Sägeblatt auf {panza}° geneigt",
-    "rCapatInterior": "Ende {lit}: {u}° zur Innenseite (Innenecke) — an der Säge Blatt auf {panza}°; die Innenseite ist {d} mm länger"
+    "rCapatInterior": "Ende {lit}: {u}° zur Innenseite (Innenecke) — an der Säge Blatt auf {panza}°; die Innenseite ist {d} mm länger",
+    "rTavanLung": "Länge auf der Schräge: {mm} mm — auf beiden Seiten gleich (parallele Enden)",
+    "rTavanCapete": "Enden lotrecht und parallel geschnitten: {u}° zur Oberseite — an der Säge Blatt auf {panza}°",
+    "cuprins": "Teile:"
   }
 }

@@ -784,7 +784,8 @@
     "soclu": "Chân đế",
     "traversa": "Thanh giằng",
     "montantAtipic": "Vách ngăn {n}",
-    "usaAtipica": "Cánh (ngăn {comp})"
+    "usaAtipica": "Cánh (ngăn {comp})",
+    "tavanPanta": "Nóc (theo dốc)"
   },
   "directie": {
     "jos": "dưới",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} cánh lùa, chồng mép {supr}, ray {sine}",
     "traverseSusInLocDeBlat": "thay cho tấm nóc: một phía trước, một phía sau, rộng {lat}",
     "montantSubPanta": "dưới mái dốc: cạnh trên cắt vát, từ {mare} xuống {mic}",
-    "frontPeCadruJolly": "gắn vào khung giỏ, không bản lề"
+    "frontPeCadruJolly": "gắn vào khung giỏ, không bản lề",
+    "bazaSubScara": "đáy, suốt chiều dài — hai hông đứng trên nó",
+    "lateralaPeBaza": "đứng trên đáy; đầu trên cắt thẳng",
+    "lateralaSusInclinata": "đứng trên đáy; đầu trên cắt vát theo độ dày ({u}°), từ {mare} đến {mic}",
+    "tavanIntreLaterale": "giữa hai hông; hai đầu cắt thẳng đứng ({u}° so với mặt, lưỡi {panza}°)"
   },
   "avert": {
     "politeAtipic": "Ở thùng tủ phi tiêu chuẩn, kệ không được tính tự động: hãy thêm chúng như chi tiết riêng.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "Ngăn {comp} không vừa kệ nào: quá thấp.",
     "jollyUnFront": "Giỏ Jolly chỉ có một mặt, gắn vào khung. Ở đây có {n} cánh: hãy đặt 1.",
     "jollyFaraPolite": "Giỏ Jolly chiếm hết chiều cao: {n} đợt kệ không có chỗ. Hãy đặt 0 đợt.",
-    "jollyLatime": "Giỏ Jolly bán cho tủ rộng {lista} mm. Tủ này {lat} mm — hãy kiểm tra có giỏ phù hợp."
+    "jollyLatime": "Giỏ Jolly bán cho tủ rộng {lista} mm. Tủ này {lat} mm — hãy kiểm tra có giỏ phù hợp.",
+    "imbinareDreaptaNuMerge": "Khung ghép thẳng (hông trên đáy, nóc ở giữa) chỉ dùng cho dạng dưới cầu thang. Ở đây khung ghép vát góc."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Thùng này không nằm trong đơn nào. Nhiều thùng chỉ làm được từ trong một đơn.",
     "subScaraIntreabaPlata": "Không gian làm thành {cate} thùng. Thùng hiện tại thành thùng đầu, {noi} thùng còn lại thêm vào đơn và tốn {cost} lei. Bạn có {sold} lei.",
     "subScaraPreaMare": "Một tủ sẽ lớn hơn 3000 mm (hoặc cạnh dốc dài hơn 4000 mm). Hãy chia không gian thành nhiều tủ hơn.",
-    "subScaraPreaIngust": "Một tủ sẽ hẹp hơn 100 mm. Hãy giảm số tủ hoặc tăng chiều rộng."
+    "subScaraPreaIngust": "Một tủ sẽ hẹp hơn 100 mm. Hãy giảm số tủ hoặc tăng chiều rộng.",
+    "subScaraImbinare": "Kiểu ghép khung",
+    "imbinareDrept": "Hông trên đáy, nóc ở giữa",
+    "imbinareUnghi": "Ghép vát góc (khung tranh)",
+    "subScaraCapat": "Hông, đầu trên",
+    "capatDrept": "Cắt thẳng",
+    "capatInclinat": "Cắt theo dốc"
   },
   "fata": {
     "px": "phải",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Chiều sâu: {mm} mm (kích thước cắt {taiere} mm, đã trừ nẹp)",
     "rMontantSus": "Cạnh trên cắt xiên theo độ dày: {u}° so với mặt cao — trên máy cưa, lưỡi ở {panza}°",
     "capatInterior": "Đầu {lit}: cắt {u}° so với mặt trong · lưỡi cưa nghiêng {panza}°",
-    "rCapatInterior": "Đầu {lit}: {u}° so với mặt trong (góc trong) — trên máy cưa, lưỡi ở {panza}°; mặt trong dài hơn {d} mm"
+    "rCapatInterior": "Đầu {lit}: {u}° so với mặt trong (góc trong) — trên máy cưa, lưỡi ở {panza}°; mặt trong dài hơn {d} mm",
+    "rTavanLung": "Chiều dài theo dốc: {mm} mm — như nhau ở cả hai mặt (hai đầu song song)",
+    "rTavanCapete": "Hai đầu cắt thẳng đứng, song song: {u}° so với mặt trên — trên máy cưa, lưỡi ở {panza}°",
+    "cuprins": "Các tấm:"
   }
 }

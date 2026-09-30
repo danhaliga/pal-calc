@@ -784,7 +784,8 @@
     "soclu": "Sockel",
     "traversa": "Regel",
     "montantAtipic": "Mellanvägg {n}",
-    "usaAtipica": "Lucka (fack {comp})"
+    "usaAtipica": "Lucka (fack {comp})",
+    "tavanPanta": "Tak (på lutningen)"
   },
   "directie": {
     "jos": "ner",
@@ -828,7 +829,11 @@
     "usiGlisante": "{n} skjutdörrar, överlapp {supr}, skenor {sine}",
     "traverseSusInLocDeBlat": "i stället för topplattan: en fram, en bak, {lat} breda",
     "montantSubPanta": "under lutningen: överkanten geringssågad, från {mare} till {mic}",
-    "frontPeCadruJolly": "fäst på korgens ram, utan gångjärn"
+    "frontPeCadruJolly": "fäst på korgens ram, utan gångjärn",
+    "bazaSubScara": "botten i hela längden — gavlarna står på den",
+    "lateralaPeBaza": "står på botten; överst rakt kapad",
+    "lateralaSusInclinata": "står på botten; överst snett genom tjockleken ({u}°), från {mare} till {mic}",
+    "tavanIntreLaterale": "mellan gavlarna; ändarna lodrätt kapade ({u}° mot ytan, klingan på {panza}°)"
   },
   "avert": {
     "politeAtipic": "I specialstommar räknas hyllplanen inte automatiskt: lägg till dem som egna delar.",
@@ -884,7 +889,8 @@
     "politeNuIncapAtipic": "Ingen hylla får plats i fack {comp}: det är för lågt.",
     "jollyUnFront": "Jolly-korgen har bara en front, fäst på ramen. Här står {n} luckor: sätt 1.",
     "jollyFaraPolite": "Jolly-korgen fyller hela höjden: de {n} hyllorna får inte plats. Sätt 0 hyllor.",
-    "jollyLatime": "Jolly-korgar säljs för skåp på {lista} mm. Det här är {lat} mm — kontrollera att det finns en korg till det."
+    "jollyLatime": "Jolly-korgar säljs för skåp på {lista} mm. Det här är {lat} mm — kontrollera att det finns en korg till det.",
+    "imbinareDreaptaNuMerge": "Stommen med raka fogar (gavlar på botten, tak emellan) går bara med formen under trappa. Här är stommen i geringar."
   },
   "csv": {
     "corp": "Stomme",
@@ -1466,7 +1472,13 @@
     "subScaraFaraComanda": "Den här stommen ligger inte i en order. Flera stommar gör man bara inifrån en order.",
     "subScaraIntreabaPlata": "Utrymmet görs av {cate} stommar. Den nuvarande blir den första, och de andra {noi} läggs till i ordern och kostar {cost} lei. Du har {sold} lei.",
     "subScaraPreaMare": "Ett skåp skulle bli större än 3000 mm (eller snedsidan längre än 4000 mm). Dela upp utrymmet i fler skåp.",
-    "subScaraPreaIngust": "Ett skåp skulle bli smalare än 100 mm. Använd färre skåp eller större bredder."
+    "subScaraPreaIngust": "Ett skåp skulle bli smalare än 100 mm. Använd färre skåp eller större bredder.",
+    "subScaraImbinare": "Stommens fogar",
+    "imbinareDrept": "Gavlar på botten, tak emellan",
+    "imbinareUnghi": "I gering (ram)",
+    "subScaraCapat": "Gavlarna upptill",
+    "capatDrept": "Rakt kapade",
+    "capatInclinat": "Kapade efter lutningen"
   },
   "fata": {
     "px": "höger",
@@ -1661,6 +1673,9 @@
     "rAdancime": "Djup: {mm} mm (skärmått {taiere} mm, kantlist avdragen)",
     "rMontantSus": "Överkanten sågas snett genom tjockleken: {u}° mot den höga sidan — på sågen klingan på {panza}°",
     "capatInterior": "Ände {lit}: snitt {u}° mot innersidan · klingan lutad {panza}°",
-    "rCapatInterior": "Ände {lit}: {u}° mot innersidan (innerhörn) — på sågen klingan på {panza}°; innersidan är {d} mm längre"
+    "rCapatInterior": "Ände {lit}: {u}° mot innersidan (innerhörn) — på sågen klingan på {panza}°; innersidan är {d} mm längre",
+    "rTavanLung": "Längd på lutningen: {mm} mm — samma på båda sidor (parallella ändar)",
+    "rTavanCapete": "Ändarna kapas lodrätt, parallella: {u}° mot översidan — på sågen klingan på {panza}°",
+    "cuprins": "Delar:"
   }
 }

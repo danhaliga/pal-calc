@@ -92,6 +92,17 @@
          cotă. Nu se taie din PAL, deci ies din lista de debitare și intră
          la „de comandat" — cu balamalele lor, care nu sunt cele de PAL. */
       usiSticla: 0,
+      /* Corpul de sub scară: cum se îmbină rama.
+         'drept' — baza pe toată lungimea, lateralele stau pe ea, tavanul
+         (panta) între laterale, cu capetele tăiate vertical. Așa lucrează
+         Dan: îmbinări drepte, cu eurosurub, puține tăieturi înclinate.
+         'unghi' — toate patru laturile în unghi, ca o ramă de tablou.
+         Gol = 'drept' la forma de sub scară, 'unghi' la celelalte. */
+      imbinare: '',
+      /* Capătul de sus al lateralelor, sub pantă: 'drept' (tăiat drept, cu
+         o treaptă mică spre scară, ascunsă) sau 'inclinat' (la nivel cu
+         panta, tăiat înclinat pe grosime). */
+      capatLaterala: 'drept',
       /* Coșul Jolly (cargo): un coș glisant pe toată înălțimea, într-un corp
          îngust. Frontul se taie tot din PAL, dar se prinde pe cadrul
          coșului, nu în balamale — deci nu se cumpără balamale pentru el, se
@@ -846,6 +857,60 @@
         arieC += q[0] * u[1] - u[0] * q[1];
       });
 
+      /* Forma de sub scară: bază orizontală, două laterale verticale, pantă
+         sus. Numai la ea se poate face rama cu îmbinări drepte. */
+      var L0 = g.laturi;
+      var subScaraForma = L0.length === 4 &&
+        Math.abs(L0[0].dir) < 0.01 && Math.abs(L0[1].dir - 90) < 0.01 &&
+        Math.abs(L0[3].dir - 270) < 0.01 && L0[2].dir > 90 && L0[2].dir < 270;
+      var imbinareDreapta = subScaraForma && c.imbinare !== 'unghi';
+      if (c.imbinare === 'drept' && !subScaraForma) avert('imbinareDreaptaNuMerge');
+
+      if (imbinareDreapta) {
+        /* ---- rama cu îmbinări drepte ----
+
+           Baza pe toată lungimea, lateralele stau pe ea, tavanul între
+           laterale. Cotele din contur sunt exterioare: W baza, hSt și hDr
+           înălțimile de la podea, pe fețele din afară. */
+        var Wb = g.W, hDr = L0[1].lung, hSt = L0[3].lung;
+        var sus = function (x) { return hSt + (hDr - hSt) * x / Wb; };   /* linia pantei, pe dinafară */
+        var alfaT = Math.atan2(hSt - hDr, Wb);                            /* > 0: coboară spre dreapta */
+        var cosT = Math.cos(alfaT);
+        var uT = Math.abs(alfaT) * 180 / Math.PI;                         /* unghiul pantei, în grade */
+        var inclinat = c.capatLaterala === 'inclinat';
+
+        /* baza */
+        add('fund', null, 1, Wb, Da, 'g', '-', '-', '-', 'L', ['bazaSubScara'],
+          [bx(0, 0, 0, Wb, t, Da, F({ py: 'f', ny: 'f', pz: 'g' }), [0, -1, 0], 'corp')]);
+
+        /* lateralele, pe bază. Sus: drept la înălțimea cea mai mică dintre
+           cele două fețe (nu iese nimic peste linia scării), sau înclinat,
+           exact pe pantă. */
+        [[0, t, -1], [Wb - t, Wb, 1]].forEach(function (q, k) {
+          var xa = q[0], xb = q[1];
+          var hA = sus(xa), hB = sus(xb);
+          if (!inclinat) { var hm = Math.min(hA, hB); hA = hm; hB = hm; }
+          var mare = Math.max(hA, hB) - t, mic = Math.min(hA, hB) - t;
+          add('laterala', null, 1, r1(mare), Da, 'g', '-', '-', '-', 'LV',
+            inclinat && Math.abs(hA - hB) > 0.3
+              ? ['lateralaSusInclinata', { mare: fmt(r1(mare)), mic: fmt(r1(mic)), u: fmt(r1(uT)) }]
+              : ['lateralaPeBaza'],
+            [{ x: xa, y: t, z: 0, sx: t, sy: mare, sz: Da,
+               polyFata: [[xa, t], [xb, t], [xb, hB], [xa, hA]], polySectiune: true,
+               f: F({ px: 'f', nx: 'f', py: 'g' }), ex: [q[2], 0, 0], grp: 'corp' }]);
+        });
+
+        /* tavanul: între laterale, fața de sus pe pantă, capetele tăiate
+           VERTICAL — paralele, deci aceeași lungime pe ambele fețe. */
+        var gT = t / cosT;                                     /* grosimea pe verticală */
+        var lungT = (Wb - 2 * t) / cosT;
+        add('tavanPanta', null, 1, r1(lungT), Da, 'g', '-', '-', '-', 'L',
+          ['tavanIntreLaterale', { u: fmt(r1(90 - uT)), panza: fmt(r1(uT)) }],
+          [{ x: t, y: Math.min(sus(t), sus(Wb - t)) - gT, z: 0, sx: Wb - 2 * t, sy: Math.abs(sus(t) - sus(Wb - t)) + gT, sz: Da,
+             polyFata: [[t, sus(t) - gT], [Wb - t, sus(Wb - t) - gT], [Wb - t, sus(Wb - t)], [t, sus(t)]],
+             polySectiune: true,
+             f: F({ py: 'f', ny: 'f', pz: 'g' }), ex: [0, 1, 0], grp: 'corp' }]);
+      } else {
       /* panourile de pe laturi */
       g.laturi.forEach(function (lat, i) {
         var taiere = ['taiereLaUnghi', { a: fmt(r1(lat.unghiStart / 2)), b: fmt(r1(lat.unghiEnd / 2)) }];
@@ -868,6 +933,7 @@
                ex: [-nxL, -nyL, 0], grp: 'corp',
                rz: lat.dir * Math.PI / 180 }]);
       });
+      }
 
       /* spatele și frontul, decupate după contur */
       if (c.spate !== 'fara') {
@@ -920,7 +986,7 @@
               ? ['montantSubPanta', { mare: fmt(r1(hMare - yJos)), mic: fmt(r1(hMic - yJos)) }]
               : null,
             [{ x: xm, y: yJos, z: 0, sx: t, sy: hMare - yJos, sz: Da,
-               polyFata: [[xm, yJos], [xm + t, yJos], [xm + t, h2], [xm, h1]],
+               polyFata: [[xm, yJos], [xm + t, yJos], [xm + t, h2], [xm, h1]], polySectiune: true,
                f: F({ px: 'f', nx: 'f', py: 'g' }), ex: [0.7 * departare(xm + t / 2, g.W), 0, 0], grp: 'corp' }]);
       }
 
@@ -1683,6 +1749,8 @@
            nimic dacă valoarea vine stricată de undeva. */
         faraFront: int(0, 1).catch(0),
         usiSticla: int(0, 1).catch(0),
+        imbinare: z.enum(['', 'drept', 'unghi']).catch(''),
+        capatLaterala: z.enum(['drept', 'inclinat']).catch('drept'),
         jolly: int(0, 1).catch(0),
         pBuc: int(1, 999).catch(1),
         pcL1: cantMuchie, pcL2: cantMuchie, pcl1: cantMuchie, pcl2: cantMuchie,

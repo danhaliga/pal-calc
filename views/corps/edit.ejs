@@ -51,6 +51,18 @@
           <div class="f3" id="ssLatimiCampuri"></div>
           <p class="warn hidden" id="ssLatimiRele" style="margin:8px 0 0"></p>
         </div>
+        <%# Cum se imbina rama. Dan: lateralele stau pe baza, tavanul intre
+            ele, cu eurosurub; sus lateralele drept sau inclinat. %>
+        <div class="f3" style="margin-top:10px">
+          <label><%= t('editor.subScaraImbinare') %><select id="imbinare">
+            <option value=""><%= t('editor.imbinareDrept') %></option>
+            <option value="unghi"><%= t('editor.imbinareUnghi') %></option>
+          </select></label>
+          <label><%= t('editor.subScaraCapat') %><select id="capatLaterala">
+            <option value="drept"><%= t('editor.capatDrept') %></option>
+            <option value="inclinat"><%= t('editor.capatInclinat') %></option>
+          </select></label>
+        </div>
         <p class="warn hidden" id="subScaraStramb" style="margin:10px 0 0"></p>
         <button type="button" class="btn small primary" id="ssFa" style="margin-top:10px"><%= t('editor.subScaraFa') %></button>
         <p class="legend"><%= t('editor.subScaraNota') %></p>

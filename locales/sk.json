@@ -790,7 +790,8 @@
     "soclu": "Sokel",
     "traversa": "Výstuha",
     "montantAtipic": "Priečka {n}",
-    "usaAtipica": "Dvierka (oddiel {comp})"
+    "usaAtipica": "Dvierka (oddiel {comp})",
+    "tavanPanta": "Strop (na šikmine)"
   },
   "directie": {
     "jos": "dole",
@@ -834,7 +835,11 @@
     "usiGlisante": "{n} posuvné dvierka, prekrytie {supr}, koľajnice {sine}",
     "traverseSusInLocDeBlat": "namiesto hornej dosky: jedna vpredu, druhá vzadu, široké {lat}",
     "montantSubPanta": "pod sklonom: horná hrana rezaná pod uhlom, z {mare} na {mic}",
-    "frontPeCadruJolly": "pripevnené na rám koša, bez závesov"
+    "frontPeCadruJolly": "pripevnené na rám koša, bez závesov",
+    "bazaSubScara": "dno po celej dĺžke — boky stoja na ňom",
+    "lateralaPeBaza": "stojí na dne; hore rez rovno",
+    "lateralaSusInclinata": "stojí na dne; hore rez šikmo cez hrúbku ({u}°), od {mare} do {mic}",
+    "tavanIntreLaterale": "medzi bokmi; konce rezané zvislo ({u}° k ploche, píla na {panza}°)"
   },
   "avert": {
     "politeAtipic": "Pri atypických korpusoch sa police nepočítajú samy: pridaj ich ako samostatné diely.",
@@ -890,7 +895,8 @@
     "politeNuIncapAtipic": "Do oddielu {comp} sa nezmestí žiadna polica: je príliš nízky.",
     "jollyUnFront": "Kôš Jolly má len jedno čelo, na svojom ráme. Tu je {n} dvierok: daj 1.",
     "jollyFaraPolite": "Kôš Jolly vyplní celú výšku: {n} políc sa nezmestí. Daj 0 políc.",
-    "jollyLatime": "Koše Jolly sa predávajú pre skrinky {lista} mm. Táto má {lat} mm — over, že sa k nej kôš nájde."
+    "jollyLatime": "Koše Jolly sa predávajú pre skrinky {lista} mm. Táto má {lat} mm — over, že sa k nej kôš nájde.",
+    "imbinareDreaptaNuMerge": "Korpus na tupo (boky na dne, strop medzi nimi) ide len pri tvare pod schodmi. Tu je korpus na pokos."
   },
   "csv": {
     "corp": "Korpus",
@@ -1477,7 +1483,13 @@
     "subScaraFaraComanda": "Tento korpus nie je v zákazke. Viac korpusov sa robí len zo zákazky.",
     "subScaraIntreabaPlata": "Priestor sa urobí z {cate} korpusov. Súčasný bude prvý a ďalších {noi} pribudne do zákazky za {cost} lei. Máš {sold} lei.",
     "subScaraPreaMare": "Skrinka by vyšla väčšia ako 3000 mm (alebo šikmina dlhšia ako 4000 mm). Rozdeľ priestor do viacerých skriniek.",
-    "subScaraPreaIngust": "Skrinka by vyšla užšia ako 100 mm. Daj menej skriniek alebo väčšie šírky."
+    "subScaraPreaIngust": "Skrinka by vyšla užšia ako 100 mm. Daj menej skriniek alebo väčšie šírky.",
+    "subScaraImbinare": "Spoj korpusu",
+    "imbinareDrept": "Boky na dne, strop medzi nimi",
+    "imbinareUnghi": "Na pokos (rám)",
+    "subScaraCapat": "Boky hore",
+    "capatDrept": "Rezané rovno",
+    "capatInclinat": "Rezané po šikmine"
   },
   "fata": {
     "px": "vpravo",
@@ -1672,6 +1684,9 @@
     "rAdancime": "Hĺbka: {mm} mm (rezná {taiere} mm, po odpočítaní hrany)",
     "rMontantSus": "Horná hrana sa reže šikmo cez hrúbku: {u}° k vysokej strane — na píle kotúč na {panza}°",
     "capatInterior": "Koniec {lit}: rez pod {u}° k vnútornej strane · píla naklonená na {panza}°",
-    "rCapatInterior": "Koniec {lit}: {u}° k vnútornej strane (vnútorný roh) — na píle kotúč na {panza}°; vnútorná strana je dlhšia o {d} mm"
+    "rCapatInterior": "Koniec {lit}: {u}° k vnútornej strane (vnútorný roh) — na píle kotúč na {panza}°; vnútorná strana je dlhšia o {d} mm",
+    "rTavanLung": "Dĺžka na šikmine: {mm} mm — rovnaká na oboch stranách (rovnobežné konce)",
+    "rTavanCapete": "Konce sa režú zvislo, rovnobežne: {u}° k hornej strane — na píle kotúč na {panza}°",
+    "cuprins": "Diely:"
   }
 }

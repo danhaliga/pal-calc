@@ -790,7 +790,8 @@
     "soclu": "Soclu",
     "traversa": "Traversă",
     "montantAtipic": "Montant {n}",
-    "usaAtipica": "Ușă (compartiment {comp})"
+    "usaAtipica": "Ușă (compartiment {comp})",
+    "tavanPanta": "Tavan (pe pantă)"
   },
   "directie": {
     "jos": "jos",
@@ -834,7 +835,11 @@
     "usiGlisante": "{n} uși glisante, suprapunere {supr}, șine {sine}",
     "traverseSusInLocDeBlat": "în locul blatului: una în față, una în spate, late de {lat}",
     "montantSubPanta": "sub pantă: muchia de sus tăiată în unghi, de la {mare} la {mic}",
-    "frontPeCadruJolly": "se prinde pe cadrul coșului, fără balamale"
+    "frontPeCadruJolly": "se prinde pe cadrul coșului, fără balamale",
+    "bazaSubScara": "baza, pe toată lungimea — lateralele stau pe ea",
+    "lateralaPeBaza": "stă pe bază; sus tăiată drept",
+    "lateralaSusInclinata": "stă pe bază; sus tăiată înclinat pe grosime ({u}°), de la {mare} la {mic}",
+    "tavanIntreLaterale": "între laterale; capetele tăiate vertical ({u}° față de față, pânza la {panza}°)"
   },
   "avert": {
     "politeAtipic": "Polițele nu se calculează automat la corpurile atipice: adaugă-le ca piese separate.",
@@ -890,7 +895,8 @@
     "politeNuIncapAtipic": "În compartimentul {comp} nu încape nicio poliță: e prea scund.",
     "jollyUnFront": "Coșul Jolly are un singur front, prins pe cadrul lui. Aici sunt cerute {n} uși: pune 1.",
     "jollyFaraPolite": "Coșul Jolly umple corpul pe toată înălțimea: cele {n} polițe n-au loc. Pune 0 la polițe.",
-    "jollyLatime": "Coșurile Jolly se vând pentru corpuri de {lista} mm. Corpul are {lat} mm — verifică dacă găsești coș pentru el."
+    "jollyLatime": "Coșurile Jolly se vând pentru corpuri de {lista} mm. Corpul are {lat} mm — verifică dacă găsești coș pentru el.",
+    "imbinareDreaptaNuMerge": "Îmbinarea dreaptă (laterale pe bază, tavan între ele) merge numai la forma de sub scară. Aici rama s-a făcut în unghi."
   },
   "csv": {
     "corp": "Corp",
@@ -1477,7 +1483,13 @@
     "subScaraFaraComanda": "Corpul ăsta nu e într-o comandă. Mai multe corpuri se fac numai dintr-o comandă.",
     "subScaraIntreabaPlata": "Spațiul se face din {cate} corpuri. Corpul de acum devine primul, iar celelalte {noi} se adaugă în comandă și costă {cost} lei. Ai {sold} lei.",
     "subScaraPreaMare": "Un corp ar ieși mai mare de 3000 mm (sau cu panta peste 4000 mm). Împarte spațiul în mai multe corpuri.",
-    "subScaraPreaIngust": "Un corp ar ieși mai îngust de 100 mm. Pune mai puține corpuri sau lățimi mai mari."
+    "subScaraPreaIngust": "Un corp ar ieși mai îngust de 100 mm. Pune mai puține corpuri sau lățimi mai mari.",
+    "subScaraImbinare": "Îmbinarea ramei",
+    "imbinareDrept": "Laterale pe bază, tavan între ele",
+    "imbinareUnghi": "În unghi (ramă)",
+    "subScaraCapat": "Lateralele, sus",
+    "capatDrept": "Tăiate drept",
+    "capatInclinat": "Tăiate înclinat, pe pantă"
   },
   "fata": {
     "px": "dreapta",
@@ -1672,6 +1684,9 @@
     "rAdancime": "Adâncime: {mm} mm (de tăiere {taiere} mm, cu cantul scăzut)",
     "rMontantSus": "Muchia de sus se taie înclinat pe grosime: {u}° față de fața înaltă — la fierăstrău pânza la {panza}°",
     "capatInterior": "Capătul {lit}: tăiere la {u}° față de fața interioară · pânza înclinată la {panza}°",
-    "rCapatInterior": "Capătul {lit}: {u}° față de fața interioară (colț intrând) — la fierăstrău pânza la {panza}°; fața interioară e mai lungă cu {d} mm"
+    "rCapatInterior": "Capătul {lit}: {u}° față de fața interioară (colț intrând) — la fierăstrău pânza la {panza}°; fața interioară e mai lungă cu {d} mm",
+    "rTavanLung": "Lungime pe pantă: {mm} mm — aceeași pe ambele fețe (capete paralele)",
+    "rTavanCapete": "Capetele se taie vertical, paralele: {u}° față de fața de sus — la fierăstrău pânza la {panza}°",
+    "cuprins": "Piesele:"
   }
 }
