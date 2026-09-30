@@ -41,7 +41,9 @@ async function main() {
 
   /* Copia se verifică: se deschide și se numără conturile. O copie care nu
      se deschide e mai rea decât niciuna — crezi că o ai. */
-  const verif = new Database(tinta, { readonly: true });
+  /* Copia rămâne un singur fișier: fără jurnalul WAL alături. */
+  const verif = new Database(tinta);
+  verif.pragma('journal_mode = DELETE');
   const ok = verif.pragma('integrity_check', { simple: true });
   const conturi = verif.prepare('SELECT COUNT(*) AS n FROM users').get().n;
   verif.close();
@@ -51,7 +53,7 @@ async function main() {
   const prag = Date.now() - ZILE * 24 * 3600 * 1000;
   let sterse = 0;
   fs.readdirSync(DOSAR).forEach(f => {
-    if (!/^app-\d{8}-\d{4}.*\.db$/.test(f)) return;
+    if (!/^app-\d{8}-\d{4}.*\.db(-wal|-shm)?$/.test(f)) return;
     const p = path.join(DOSAR, f);
     if (fs.statSync(p).mtimeMs < prag) { fs.unlinkSync(p); sterse++; }
   });
