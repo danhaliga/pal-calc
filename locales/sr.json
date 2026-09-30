@@ -791,7 +791,8 @@
     "traversa": "Traverza",
     "montantAtipic": "Pregrada {n}",
     "usaAtipica": "Vrata (pregradak {comp})",
-    "tavanPanta": "Plafon (na kosini)"
+    "tavanPanta": "Plafon (na kosini)",
+    "piesaSimplaNr": "Deo {n}"
   },
   "directie": {
     "jos": "dole",
@@ -1502,7 +1503,12 @@
     "imbinareUnghi": "Na geru (ram)",
     "subScaraCapat": "Stranice, gore",
     "capatDrept": "Sečene pravo",
-    "capatInclinat": "Sečene po kosini"
+    "capatInclinat": "Sečene po kosini",
+    "altePiese": "Ostali delovi u istom proizvodu",
+    "pieseUnPret": "Svi delovi ovde su jedan proizvod i plaćaju se samo jednom, koliko god ih bilo.",
+    "adaugaPiesa": "+ Dodaj deo",
+    "stergePiesa": "Obriši deo",
+    "denumirePiesa": "Naziv"
   },
   "fata": {
     "px": "desno",

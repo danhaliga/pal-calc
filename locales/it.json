@@ -785,7 +785,8 @@
     "traversa": "Traversa",
     "montantAtipic": "Montante {n}",
     "usaAtipica": "Anta (vano {comp})",
-    "tavanPanta": "Cielo (sulla pendenza)"
+    "tavanPanta": "Cielo (sulla pendenza)",
+    "piesaSimplaNr": "Pezzo {n}"
   },
   "directie": {
     "jos": "basso",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "A 45° (cornice)",
     "subScaraCapat": "Fianchi, in alto",
     "capatDrept": "Tagliati dritti",
-    "capatInclinat": "Tagliati sulla pendenza"
+    "capatInclinat": "Tagliati sulla pendenza",
+    "altePiese": "Altri pezzi nello stesso articolo",
+    "pieseUnPret": "Tutti i pezzi qui sono un solo articolo e si pagano una sola volta, quanti che siano.",
+    "adaugaPiesa": "+ Aggiungi pezzo",
+    "stergePiesa": "Elimina pezzo",
+    "denumirePiesa": "Nome"
   },
   "fata": {
     "px": "destra",

@@ -785,7 +785,8 @@
     "traversa": "Regel",
     "montantAtipic": "Tussenwand {n}",
     "usaAtipica": "Deur (vak {comp})",
-    "tavanPanta": "Bovenblad (op de helling)"
+    "tavanPanta": "Bovenblad (op de helling)",
+    "piesaSimplaNr": "Onderdeel {n}"
   },
   "directie": {
     "jos": "onder",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "In verstek (lijst)",
     "subScaraCapat": "Zijkanten boven",
     "capatDrept": "Recht gezaagd",
-    "capatInclinat": "Op de helling gezaagd"
+    "capatInclinat": "Op de helling gezaagd",
+    "altePiese": "Meer onderdelen in hetzelfde artikel",
+    "pieseUnPret": "Alle onderdelen hier zijn één artikel en worden één keer betaald, hoeveel het er ook zijn.",
+    "adaugaPiesa": "+ Onderdeel toevoegen",
+    "stergePiesa": "Onderdeel verwijderen",
+    "denumirePiesa": "Naam"
   },
   "fata": {
     "px": "rechts",

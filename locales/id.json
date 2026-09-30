@@ -785,7 +785,8 @@
     "traversa": "Palang",
     "montantAtipic": "Sekat {n}",
     "usaAtipica": "Pintu (ruang {comp})",
-    "tavanPanta": "Atap (pada kemiringan)"
+    "tavanPanta": "Atap (pada kemiringan)",
+    "piesaSimplaNr": "Potongan {n}"
   },
   "directie": {
     "jos": "bawah",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "Sambungan miring (bingkai)",
     "subScaraCapat": "Sisi, bagian atas",
     "capatDrept": "Dipotong lurus",
-    "capatInclinat": "Dipotong mengikuti kemiringan"
+    "capatInclinat": "Dipotong mengikuti kemiringan",
+    "altePiese": "Potongan lain dalam produk yang sama",
+    "pieseUnPret": "Semua potongan di sini adalah satu produk dan dibayar sekali saja, berapa pun jumlahnya.",
+    "adaugaPiesa": "+ Tambah potongan",
+    "stergePiesa": "Hapus potongan",
+    "denumirePiesa": "Nama"
   },
   "fata": {
     "px": "kanan",

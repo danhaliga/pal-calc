@@ -785,7 +785,8 @@
     "traversa": "横档",
     "montantAtipic": "立板 {n}",
     "usaAtipica": "门板（第 {comp} 格）",
-    "tavanPanta": "顶板（沿斜面）"
+    "tavanPanta": "顶板（沿斜面）",
+    "piesaSimplaNr": "板件 {n}"
   },
   "directie": {
     "jos": "下",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "斜接（画框式）",
     "subScaraCapat": "侧板上端",
     "capatDrept": "直切",
-    "capatInclinat": "按斜面切"
+    "capatInclinat": "按斜面切",
+    "altePiese": "同一产品中的其他板件",
+    "pieseUnPret": "这里的所有板件算作一个产品，无论多少件，只付一次费用。",
+    "adaugaPiesa": "+ 添加板件",
+    "stergePiesa": "删除板件",
+    "denumirePiesa": "名称"
   },
   "fata": {
     "px": "右",

@@ -785,7 +785,8 @@
     "traversa": "幕板",
     "montantAtipic": "仕切り {n}",
     "usaAtipica": "扉（{comp} 番目の区画）",
-    "tavanPanta": "天板（斜面）"
+    "tavanPanta": "天板（斜面）",
+    "piesaSimplaNr": "部材 {n}"
   },
   "directie": {
     "jos": "下",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "留め継ぎ（額縁）",
     "subScaraCapat": "側板の上端",
     "capatDrept": "直角に切る",
-    "capatInclinat": "斜面に合わせて切る"
+    "capatInclinat": "斜面に合わせて切る",
+    "altePiese": "同じ製品のほかの部材",
+    "pieseUnPret": "ここの部材はすべて1つの製品として扱われ、いくつあっても料金は1回分です。",
+    "adaugaPiesa": "+ 部材を追加",
+    "stergePiesa": "部材を削除",
+    "denumirePiesa": "名称"
   },
   "fata": {
     "px": "右",

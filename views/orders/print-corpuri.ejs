@@ -18,12 +18,16 @@
           <%# „fara fronturi" sta in acelasi rand ca pe card si in aceeasi
               ordine: cine se uita in doua locuri la acelasi corp trebuie sa
               citeasca acelasi lucru. %>
+          <% if (c.params.tip === 'piesa') { %>
+            <%= (c.params.pieseExtra || []).length ? t('print.piese') + ': ' + (1 + c.params.pieseExtra.length) : t('rezumat.piesa') %>
+          <% } else { %>
           <%= [+c.params.nUsi ? t('corpuri.metaUsi', { n: +c.params.nUsi }) : null,
                +c.params.nSer ? t('corpuri.metaSertare', { n: +c.params.nSer }) : null,
                +c.params.nPol ? t('corpuri.metaPolite', { n: +c.params.nPol }) : null,
                +c.params.faraFront ? t('rezumat.faraFront') : null,
                c.params.spate === 'aplicat' ? t('print.spateAplicat') : t('print.spateNut')
               ].filter(Boolean).join(', ') %>
+          <% } %>
         </td>
         <td class="small">
           <%= c.materialCorp ? c.materialCorp.nume : '—' %>

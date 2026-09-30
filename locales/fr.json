@@ -785,7 +785,8 @@
     "traversa": "Traverse",
     "montantAtipic": "Montant {n}",
     "usaAtipica": "Porte (compartiment {comp})",
-    "tavanPanta": "Dessus (sur la pente)"
+    "tavanPanta": "Dessus (sur la pente)",
+    "piesaSimplaNr": "Pièce {n}"
   },
   "directie": {
     "jos": "bas",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "En onglet (cadre)",
     "subScaraCapat": "Côtés, en haut",
     "capatDrept": "Coupés droit",
-    "capatInclinat": "Coupés sur la pente"
+    "capatInclinat": "Coupés sur la pente",
+    "altePiese": "Autres pièces dans le même article",
+    "pieseUnPret": "Toutes les pièces ici forment un seul article et se paient une seule fois, quel que soit leur nombre.",
+    "adaugaPiesa": "+ Ajouter une pièce",
+    "stergePiesa": "Supprimer la pièce",
+    "denumirePiesa": "Nom"
   },
   "fata": {
     "px": "droite",

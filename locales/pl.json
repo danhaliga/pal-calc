@@ -791,7 +791,8 @@
     "traversa": "Trawersa",
     "montantAtipic": "Przegroda {n}",
     "usaAtipica": "Drzwi (przegroda {comp})",
-    "tavanPanta": "Wieniec (na skosie)"
+    "tavanPanta": "Wieniec (na skosie)",
+    "piesaSimplaNr": "Element {n}"
   },
   "directie": {
     "jos": "dół",
@@ -1502,7 +1503,12 @@
     "imbinareUnghi": "Na ukos (rama)",
     "subScaraCapat": "Boki u góry",
     "capatDrept": "Cięte prosto",
-    "capatInclinat": "Cięte po skosie"
+    "capatInclinat": "Cięte po skosie",
+    "altePiese": "Kolejne elementy w tym samym produkcie",
+    "pieseUnPret": "Wszystkie elementy tutaj to jeden produkt i płaci się za nie tylko raz, niezależnie od ich liczby.",
+    "adaugaPiesa": "+ Dodaj element",
+    "stergePiesa": "Usuń element",
+    "denumirePiesa": "Nazwa"
   },
   "fata": {
     "px": "prawo",

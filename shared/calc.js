@@ -110,7 +110,7 @@
       jolly: 0,
       tip: 'drept', W2: 900, orb: 550, contur: [],
       /* piesă simplă: bucăți, cantul pe fiecare muchie, fibra */
-      pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L',
+      pBuc: 1, pcL1: 'g', pcL2: '-', pcl1: '-', pcl2: '-', pFibra: 'L', pieseExtra: [],
       t: 18, cg: 2, cs: 0.8, spate: 'aplicat', tp: 2.5,
       nUsi: 2, montaj: 'aplicat', balama: '0', rm: 1.5, ri: 3, rinc: 2, hUsi: '', compUsi: '',
       /* Ușile glisante se suprapun una peste alta, ca să nu rămână o fantă
@@ -828,6 +828,24 @@
           muchii[0], muchii[1], muchii[2], muchii[3],
           c.pFibra === 'L' || c.pFibra === 'l' ? c.pFibra : '-', null,
           [bx(0, 0, 0, W, H, t, fetePiesa, [0, 0, 0], 'corp')]);
+
+      /* Celelalte piese din același produs: o listă întreagă (un blat, două
+         măști, cinci polițe) se plătește o singură dată, nu pe bucată. În
+         3D stau una lângă alta, la 50 mm, ca să se vadă toate. */
+      var xUrm = W + 50;
+      (Array.isArray(c.pieseExtra) ? c.pieseExtra : []).forEach(function (r, i) {
+        var L = +r.L || 0, l = +r.l || 0;
+        if (L < 20 || l < 20) return;
+        var m = [cant(r.cL1), cant(r.cL2), cant(r.cl1), cant(r.cl2)];
+        add('piesaSimplaNr', { n: i + 2 }, Math.max(1, Math.round(+r.buc || 1)), L, l,
+            m[0], m[1], m[2], m[3],
+            r.fibra === 'L' || r.fibra === 'l' ? r.fibra : '-', null,
+            [bx(xUrm, 0, 0, L, l, t, F({ pz: 'f', nz: 'f', px: m[2], nx: m[3], py: m[0], ny: m[1] }),
+                [0, 0, 0], 'corp')]);
+        var nume = String(r.nume || '').trim();
+        if (nume) P[P.length - 1].nume = nume;
+        xUrm += L + 50;
+      });
 
       return { P: P, warn: warn, avertismente: avertismente, usi: [],
                Wint: W, Hint: H, Dint: t, W: W, H: H, D: t };
@@ -1807,6 +1825,16 @@
         pBuc: int(1, 999).catch(1),
         pcL1: cantMuchie, pcL2: cantMuchie, pcl1: cantMuchie, pcl2: cantMuchie,
         pFibra: z.enum(['L', 'l', '-']).catch('L'),
+        /* Rândurile în plus ale piesei simple. Fără `.catch` pe vector, din
+           același motiv ca la contur: o cotă greșită nu trebuie să golească
+           în tăcere lista întreagă. */
+        pieseExtra: z.array(z.object({
+          nume: z.string().trim().max(60).catch(''),
+          L: mm(20, 3000), l: mm(20, 3000),
+          buc: int(1, 999).catch(1),
+          cL1: cantMuchie, cL2: cantMuchie, cl1: cantMuchie, cl2: cantMuchie,
+          fibra: z.enum(['L', 'l', '-']).catch('L')
+        }).strict()).max(99).optional(),
         t: mm(6, 50), cg: mm(0, 5), cs: mm(0, 5),
         spate: z.enum(['aplicat', 'nut', 'pal']),
         tp: mm(0, 50),

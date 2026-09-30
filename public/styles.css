@@ -248,6 +248,13 @@ td.peste{color:var(--danger);font-weight:600}
 .contur-tabel th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
 .contur-tabel td.c,.contur-tabel th.c{text-align:center}
 .contur-tabel input.dim{width:72px;text-align:right}
+.piese-extra{font-size:12.5px;min-width:760px}
+.piese-extra th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.piese-extra td.c,.piese-extra th.c{text-align:center}
+.piese-extra input.dim{width:72px;text-align:right}
+.piese-extra input[data-camp="nume"]{min-width:120px}
+.piese-extra select{width:auto}
+input.invalid{border-color:var(--danger);outline-color:var(--danger)}
 .contur-preview{background:var(--row);border:1px solid var(--line);border-radius:6px;padding:8px;
   display:flex;align-items:center;justify-content:center;min-height:150px;overflow:hidden}
 svg.ct-svg{width:100%;height:auto;max-height:260px}

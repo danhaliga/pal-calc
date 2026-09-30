@@ -785,7 +785,8 @@
     "traversa": "Траверса",
     "montantAtipic": "Преграда {n}",
     "usaAtipica": "Врата (отделение {comp})",
-    "tavanPanta": "Таван (по наклона)"
+    "tavanPanta": "Таван (по наклона)",
+    "piesaSimplaNr": "Детайл {n}"
   },
   "directie": {
     "jos": "отдолу",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "Под ъгъл (рамка)",
     "subScaraCapat": "Страниците, отгоре",
     "capatDrept": "Рязани право",
-    "capatInclinat": "Рязани по наклона"
+    "capatInclinat": "Рязани по наклона",
+    "altePiese": "Още детайли в същия продукт",
+    "pieseUnPret": "Всички детайли тук са един продукт и се плащат само веднъж, колкото и да са.",
+    "adaugaPiesa": "+ Добави детайл",
+    "stergePiesa": "Изтрий детайла",
+    "denumirePiesa": "Наименование"
   },
   "fata": {
     "px": "отдясно",

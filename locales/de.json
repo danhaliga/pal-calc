@@ -785,7 +785,8 @@
     "traversa": "Traverse",
     "montantAtipic": "Mittelseite {n}",
     "usaAtipica": "Tür (Fach {comp})",
-    "tavanPanta": "Deckel (auf der Schräge)"
+    "tavanPanta": "Deckel (auf der Schräge)",
+    "piesaSimplaNr": "Teil {n}"
   },
   "directie": {
     "jos": "unten",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "Auf Gehrung (Rahmen)",
     "subScaraCapat": "Seiten oben",
     "capatDrept": "Gerade geschnitten",
-    "capatInclinat": "Schräg geschnitten"
+    "capatInclinat": "Schräg geschnitten",
+    "altePiese": "Weitere Teile im selben Artikel",
+    "pieseUnPret": "Alle Teile hier sind ein Artikel und werden nur einmal bezahlt, egal wie viele es sind.",
+    "adaugaPiesa": "+ Teil hinzufügen",
+    "stergePiesa": "Teil löschen",
+    "denumirePiesa": "Bezeichnung"
   },
   "fata": {
     "px": "rechts",

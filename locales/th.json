@@ -785,7 +785,8 @@
     "traversa": "คานยึด",
     "montantAtipic": "แผ่นกั้น {n}",
     "usaAtipica": "บาน (ช่อง {comp})",
-    "tavanPanta": "เพดาน (ตามแนวเอียง)"
+    "tavanPanta": "เพดาน (ตามแนวเอียง)",
+    "piesaSimplaNr": "ชิ้นที่ {n}"
   },
   "directie": {
     "jos": "ล่าง",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "ต่อเฉียง (กรอบรูป)",
     "subScaraCapat": "แผงข้าง ด้านบน",
     "capatDrept": "ตัดตรง",
-    "capatInclinat": "ตัดตามแนวเอียง"
+    "capatInclinat": "ตัดตามแนวเอียง",
+    "altePiese": "ชิ้นอื่นในสินค้าเดียวกัน",
+    "pieseUnPret": "ทุกชิ้นตรงนี้เป็นสินค้าเดียว จ่ายเงินครั้งเดียว ไม่ว่าจะมีกี่ชิ้น",
+    "adaugaPiesa": "+ เพิ่มชิ้น",
+    "stergePiesa": "ลบชิ้น",
+    "denumirePiesa": "ชื่อ"
   },
   "fata": {
     "px": "ขวา",

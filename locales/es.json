@@ -785,7 +785,8 @@
     "traversa": "Travesaño",
     "montantAtipic": "Montante {n}",
     "usaAtipica": "Puerta (compartimento {comp})",
-    "tavanPanta": "Techo (en la pendiente)"
+    "tavanPanta": "Techo (en la pendiente)",
+    "piesaSimplaNr": "Pieza {n}"
   },
   "directie": {
     "jos": "abajo",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "A inglete (marco)",
     "subScaraCapat": "Costados, arriba",
     "capatDrept": "Cortados rectos",
-    "capatInclinat": "Cortados en la pendiente"
+    "capatInclinat": "Cortados en la pendiente",
+    "altePiese": "Más piezas en el mismo producto",
+    "pieseUnPret": "Todas las piezas de aquí son un solo producto y se pagan una sola vez, sean cuantas sean.",
+    "adaugaPiesa": "+ Añadir pieza",
+    "stergePiesa": "Eliminar pieza",
+    "denumirePiesa": "Nombre"
   },
   "fata": {
     "px": "derecha",

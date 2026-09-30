@@ -449,6 +449,16 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
 - Rămâne: furnizorul de email (Dan alege; merge orice SMTP). Pe server
   portul 587 trebuie să fie deschis spre ieșire.
 
+## 6n. Piesa simplă cu mai multe piese (30 septembrie)
+
+- „Piesă simplă" are acum, sub piesa de sus, tabelul „Alte piese în același
+  produs" (`params.pieseExtra`: nume, L, l, buc, cant pe 4 muchii, fibră;
+  max. 99). Tot produsul se plătește o dată (5 lei), oricâte rânduri are —
+  cererea lui Dan: nu 5 lei pe fiecare piesă.
+- În calcul rândurile devin piese `piesaSimplaNr` („Piesă {n}", sau numele
+  scris); în 3D stau una lângă alta. Schema nu are `.catch` pe listă: o cotă
+  greșită e refuzată, nu golește lista. Piesele vechi, fără listă, merg.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

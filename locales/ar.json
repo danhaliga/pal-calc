@@ -809,7 +809,8 @@
     "traversa": "عارضة",
     "montantAtipic": "فاصل {n}",
     "usaAtipica": "باب (القسم {comp})",
-    "tavanPanta": "السقف (على الميل)"
+    "tavanPanta": "السقف (على الميل)",
+    "piesaSimplaNr": "قطعة {n}"
   },
   "directie": {
     "jos": "أسفل",
@@ -1535,7 +1536,12 @@
     "imbinareUnghi": "بزاوية (إطار)",
     "subScaraCapat": "الجانبان من الأعلى",
     "capatDrept": "قص مستقيم",
-    "capatInclinat": "قص على الميل"
+    "capatInclinat": "قص على الميل",
+    "altePiese": "قطع أخرى في المنتج نفسه",
+    "pieseUnPret": "كل القطع هنا منتج واحد وتُدفع مرة واحدة فقط مهما كان عددها.",
+    "adaugaPiesa": "+ أضف قطعة",
+    "stergePiesa": "احذف القطعة",
+    "denumirePiesa": "الاسم"
   },
   "fata": {
     "px": "يمين",

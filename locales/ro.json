@@ -791,7 +791,8 @@
     "traversa": "Traversă",
     "montantAtipic": "Montant {n}",
     "usaAtipica": "Ușă (compartiment {comp})",
-    "tavanPanta": "Tavan (pe pantă)"
+    "tavanPanta": "Tavan (pe pantă)",
+    "piesaSimplaNr": "Piesă {n}"
   },
   "directie": {
     "jos": "jos",
@@ -1502,7 +1503,12 @@
     "imbinareUnghi": "În unghi (ramă)",
     "subScaraCapat": "Lateralele, sus",
     "capatDrept": "Tăiate drept",
-    "capatInclinat": "Tăiate înclinat, pe pantă"
+    "capatInclinat": "Tăiate înclinat, pe pantă",
+    "altePiese": "Alte piese în același produs",
+    "pieseUnPret": "Toate piesele de aici sunt un singur produs și se plătesc o singură dată, oricâte ar fi.",
+    "adaugaPiesa": "+ Adaugă piesă",
+    "stergePiesa": "Șterge piesa",
+    "denumirePiesa": "Denumire"
   },
   "fata": {
     "px": "dreapta",

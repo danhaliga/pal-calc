@@ -785,7 +785,8 @@
     "traversa": "가로대",
     "montantAtipic": "칸막이 {n}",
     "usaAtipica": "문 ({comp}번 칸)",
-    "tavanPanta": "천판 (경사면)"
+    "tavanPanta": "천판 (경사면)",
+    "piesaSimplaNr": "부재 {n}"
   },
   "directie": {
     "jos": "아래",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "연귀 맞춤 (액자)",
     "subScaraCapat": "측판 윗부분",
     "capatDrept": "직각 절단",
-    "capatInclinat": "경사에 맞춰 절단"
+    "capatInclinat": "경사에 맞춰 절단",
+    "altePiese": "같은 제품의 다른 부재",
+    "pieseUnPret": "여기의 모든 부재는 하나의 제품이며, 개수와 상관없이 한 번만 결제합니다.",
+    "adaugaPiesa": "+ 부재 추가",
+    "stergePiesa": "부재 삭제",
+    "denumirePiesa": "이름"
   },
   "fata": {
     "px": "오른쪽",

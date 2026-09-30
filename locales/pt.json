@@ -785,7 +785,8 @@
     "traversa": "Travessa",
     "montantAtipic": "Montante {n}",
     "usaAtipica": "Porta (compartimento {comp})",
-    "tavanPanta": "Tampo (na inclinação)"
+    "tavanPanta": "Tampo (na inclinação)",
+    "piesaSimplaNr": "Peça {n}"
   },
   "directie": {
     "jos": "baixo",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "Em meia-esquadria (moldura)",
     "subScaraCapat": "Ilhargas, em cima",
     "capatDrept": "Corte a direito",
-    "capatInclinat": "Corte na inclinação"
+    "capatInclinat": "Corte na inclinação",
+    "altePiese": "Outras peças no mesmo artigo",
+    "pieseUnPret": "Todas as peças aqui são um só artigo e pagam-se uma única vez, sejam quantas forem.",
+    "adaugaPiesa": "+ Adicionar peça",
+    "stergePiesa": "Eliminar peça",
+    "denumirePiesa": "Nome"
   },
   "fata": {
     "px": "direita",

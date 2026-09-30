@@ -155,3 +155,29 @@ test('paramsSchema acceptă valori corecte și respinge aberații', () => {
   assert.equal(coerced.data.W, 820);
   assert.equal(coerced.data.balama, '18');
 });
+
+/* Piesa simplă cu mai multe rânduri: un produs, o plată, toate piesele în listă. */
+test('piesa simplă: rândurile în plus intră în listă, cu numele și cantul lor', () => {
+  const p = Object.assign(defaults(), { tip: 'piesa', W: 1200, H: 600, pBuc: 1, pieseExtra: [
+    { nume: 'Mască', L: 720, l: 100, buc: 2, cL1: 'g', cL2: '-', cl1: '-', cl2: '-', fibra: 'L' },
+    { nume: '', L: 500, l: 300, buc: 5, cL1: '-', cL2: '-', cl1: '-', cl2: '-', fibra: 'l' }
+  ] });
+  const r = calc(p);
+  assert.equal(r.P.length, 3);
+  assert.deepEqual(r.P.map(x => x.buc), [1, 2, 5]);
+  assert.equal(r.P[1].nume, 'Mască');
+  assert.equal(r.P[2].nume, 'Piesă 3', 'fără nume, piesa își ia numărul din listă');
+  assert.equal(r.P[1].Tl, 98.5, 'cantul gros de pe L1 scade lățimea');
+  assert.equal(r.P[2].fibra, 'l');
+  /* în 3D nu stau una peste alta */
+  assert.ok(r.P[1].boxes[0].x >= 1200 && r.P[2].boxes[0].x >= r.P[1].boxes[0].x + 720);
+});
+
+test('piesa simplă: o cotă greșită într-un rând e refuzată, nu golește lista', () => {
+  const p = Object.assign(defaults(), { tip: 'piesa', W: 1200, H: 600 });
+  assert.equal(paramsSchema.safeParse(Object.assign({}, p, { pieseExtra: [{ L: 720, l: 100 }] })).success, true);
+  assert.equal(paramsSchema.safeParse(Object.assign({}, p, { pieseExtra: [{ L: 5, l: 100 }] })).success, false);
+  assert.equal(paramsSchema.safeParse(Object.assign({}, p, { pieseExtra: [{ L: '', l: 100 }] })).success, false);
+  const vechi = Object.assign({}, p); delete vechi.pieseExtra;
+  assert.equal(paramsSchema.safeParse(vechi).success, true, 'piesele salvate înainte n-au lista');
+});

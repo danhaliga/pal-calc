@@ -791,7 +791,8 @@
     "traversa": "קורה",
     "montantAtipic": "מחיצה {n}",
     "usaAtipica": "דלת (תא {comp})",
-    "tavanPanta": "תקרה (על השיפוע)"
+    "tavanPanta": "תקרה (על השיפוע)",
+    "piesaSimplaNr": "חלק {n}"
   },
   "directie": {
     "jos": "למטה",
@@ -1502,7 +1503,12 @@
     "imbinareUnghi": "במיתר (מסגרת)",
     "subScaraCapat": "הדפנות, למעלה",
     "capatDrept": "חתוכות ישר",
-    "capatInclinat": "חתוכות לפי השיפוע"
+    "capatInclinat": "חתוכות לפי השיפוע",
+    "altePiese": "חלקים נוספים באותו מוצר",
+    "pieseUnPret": "כל החלקים כאן הם מוצר אחד ומשלמים עליהם פעם אחת בלבד, לא משנה כמה יש.",
+    "adaugaPiesa": "+ הוספת חלק",
+    "stergePiesa": "מחיקת החלק",
+    "denumirePiesa": "שם"
   },
   "fata": {
     "px": "ימין",

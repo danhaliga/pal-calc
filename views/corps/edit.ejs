@@ -168,6 +168,32 @@
             </select></label>
           <% }); %>
         </div>
+
+        <%# Mai multe piese în același produs: se plătește o singură dată,
+            nu câte 5 lei pe fiecare mască sau poliță. Primul rând e piesa de
+            sus; aici stau celelalte. %>
+        <div id="pieseExtraBox">
+          <h4 style="margin:14px 0 4px"><%= t('editor.altePiese') %></h4>
+          <p class="legend"><%= t('editor.pieseUnPret') %></p>
+          <div class="tbl">
+            <table class="piese-extra">
+              <thead><tr>
+                <th class="c">#</th><th><%= t('editor.denumirePiesa') %></th>
+                <th class="c"><%= t('editor.lungimePiesa') %></th><th class="c"><%= t('editor.latimePiesa') %></th>
+                <th class="c"><%= t('editor.bucati') %></th>
+                <th class="c" title="<%= t('editor.muchieLunga1') %>">L1</th>
+                <th class="c" title="<%= t('editor.muchieLunga2') %>">L2</th>
+                <th class="c" title="<%= t('editor.muchieScurta1') %>">l1</th>
+                <th class="c" title="<%= t('editor.muchieScurta2') %>">l2</th>
+                <th class="c"><%= t('editor.fibraPiesa') %></th><th></th>
+              </tr></thead>
+              <tbody id="pieseExtraTabel"></tbody>
+            </table>
+          </div>
+          <div class="btns">
+            <button type="button" class="btn small" id="piesaAdauga"><%= t('editor.adaugaPiesa') %></button>
+          </div>
+        </div>
       </fieldset>
 
       <fieldset id="fsMaterial">

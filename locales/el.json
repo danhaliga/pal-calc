@@ -785,7 +785,8 @@
     "traversa": "Τραβέρσα",
     "montantAtipic": "Χώρισμα {n}",
     "usaAtipica": "Πόρτα (χώρος {comp})",
-    "tavanPanta": "Οροφή (στην κλίση)"
+    "tavanPanta": "Οροφή (στην κλίση)",
+    "piesaSimplaNr": "Κομμάτι {n}"
   },
   "directie": {
     "jos": "κάτω",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "Φαλτσοκομμένα (κορνίζα)",
     "subScaraCapat": "Πλαϊνά, πάνω",
     "capatDrept": "Κομμένα ίσια",
-    "capatInclinat": "Κομμένα στην κλίση"
+    "capatInclinat": "Κομμένα στην κλίση",
+    "altePiese": "Άλλα κομμάτια στο ίδιο προϊόν",
+    "pieseUnPret": "Όλα τα κομμάτια εδώ είναι ένα προϊόν και πληρώνονται μία φορά, όσα κι αν είναι.",
+    "adaugaPiesa": "+ Προσθήκη κομματιού",
+    "stergePiesa": "Διαγραφή κομματιού",
+    "denumirePiesa": "Ονομασία"
   },
   "fata": {
     "px": "δεξιά",

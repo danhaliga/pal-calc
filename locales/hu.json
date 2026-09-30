@@ -785,7 +785,8 @@
     "traversa": "Merevítő",
     "montantAtipic": "Válaszfal {n}",
     "usaAtipica": "Ajtó ({comp}. rekesz)",
-    "tavanPanta": "Tető (a lejtőn)"
+    "tavanPanta": "Tető (a lejtőn)",
+    "piesaSimplaNr": "{n}. elem"
   },
   "directie": {
     "jos": "alul",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "Gérbe (keret)",
     "subScaraCapat": "Oldalak felül",
     "capatDrept": "Egyenesen vágva",
-    "capatInclinat": "A lejtő szerint vágva"
+    "capatInclinat": "A lejtő szerint vágva",
+    "altePiese": "További elemek ugyanabban a termékben",
+    "pieseUnPret": "Az itteni elemek egy terméket alkotnak, és csak egyszer kell fizetni értük, akárhány van.",
+    "adaugaPiesa": "+ Elem hozzáadása",
+    "stergePiesa": "Elem törlése",
+    "denumirePiesa": "Megnevezés"
   },
   "fata": {
     "px": "jobb",

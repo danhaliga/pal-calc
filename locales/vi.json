@@ -785,7 +785,8 @@
     "traversa": "Thanh giằng",
     "montantAtipic": "Vách ngăn {n}",
     "usaAtipica": "Cánh (ngăn {comp})",
-    "tavanPanta": "Nóc (theo dốc)"
+    "tavanPanta": "Nóc (theo dốc)",
+    "piesaSimplaNr": "Tấm {n}"
   },
   "directie": {
     "jos": "dưới",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "Ghép vát góc (khung tranh)",
     "subScaraCapat": "Hông, đầu trên",
     "capatDrept": "Cắt thẳng",
-    "capatInclinat": "Cắt theo dốc"
+    "capatInclinat": "Cắt theo dốc",
+    "altePiese": "Các tấm khác trong cùng sản phẩm",
+    "pieseUnPret": "Tất cả các tấm ở đây là một sản phẩm và chỉ trả tiền một lần, dù có bao nhiêu tấm.",
+    "adaugaPiesa": "+ Thêm tấm",
+    "stergePiesa": "Xóa tấm",
+    "denumirePiesa": "Tên"
   },
   "fata": {
     "px": "phải",

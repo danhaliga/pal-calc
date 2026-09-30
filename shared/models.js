@@ -605,7 +605,8 @@
     if (p.tip === 'piesa') {
       /* Fără număr de bucăți: ar cere forme de plural în treizeci de limbi
          pentru o informație care se vede oricum în lista de piese. */
-      return t_('rezumat.piesa');
+      var extra = (p.pieseExtra || []).length;
+      return extra ? t_('print.piese') + ': ' + (1 + extra) : t_('rezumat.piesa');
     }
     if (p.tip === 'atipic') b.push(t_('rezumat.laturi', { n: (p.contur || []).length }));
     if (p.tip === 'colt-L') b.push(t_('rezumat.coltL'));

@@ -785,7 +785,8 @@
     "traversa": "Kuşak",
     "montantAtipic": "Dikme {n}",
     "usaAtipica": "Kapak ({comp}. göz)",
-    "tavanPanta": "Tavan (eğimde)"
+    "tavanPanta": "Tavan (eğimde)",
+    "piesaSimplaNr": "Parça {n}"
   },
   "directie": {
     "jos": "alt",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "Gönye (çerçeve)",
     "subScaraCapat": "Yanlar, üstte",
     "capatDrept": "Düz kesim",
-    "capatInclinat": "Eğime göre kesim"
+    "capatInclinat": "Eğime göre kesim",
+    "altePiese": "Aynı üründe diğer parçalar",
+    "pieseUnPret": "Buradaki tüm parçalar tek bir üründür ve kaç tane olursa olsun bir kez ödenir.",
+    "adaugaPiesa": "+ Parça ekle",
+    "stergePiesa": "Parçayı sil",
+    "denumirePiesa": "Ad"
   },
   "fata": {
     "px": "sağ",

@@ -791,7 +791,8 @@
     "traversa": "Výztuha",
     "montantAtipic": "Příčka {n}",
     "usaAtipica": "Dvířka (oddíl {comp})",
-    "tavanPanta": "Strop (na šikmině)"
+    "tavanPanta": "Strop (na šikmině)",
+    "piesaSimplaNr": "Díl {n}"
   },
   "directie": {
     "jos": "dole",
@@ -1502,7 +1503,12 @@
     "imbinareUnghi": "Na pokos (rám)",
     "subScaraCapat": "Boky nahoře",
     "capatDrept": "Řezané rovně",
-    "capatInclinat": "Řezané po šikmině"
+    "capatInclinat": "Řezané po šikmině",
+    "altePiese": "Další díly ve stejném produktu",
+    "pieseUnPret": "Všechny díly zde jsou jeden produkt a platí se jen jednou, ať je jich kolik chce.",
+    "adaugaPiesa": "+ Přidat díl",
+    "stergePiesa": "Smazat díl",
+    "denumirePiesa": "Název"
   },
   "fata": {
     "px": "vpravo",

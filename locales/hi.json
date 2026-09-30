@@ -785,7 +785,8 @@
     "traversa": "पट्टी",
     "montantAtipic": "विभाजक {n}",
     "usaAtipica": "दरवाज़ा (खाना {comp})",
-    "tavanPanta": "छत (ढलान पर)"
+    "tavanPanta": "छत (ढलान पर)",
+    "piesaSimplaNr": "टुकड़ा {n}"
   },
   "directie": {
     "jos": "नीचे",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "तिरछा जोड़ (फ्रेम)",
     "subScaraCapat": "साइडें, ऊपर",
     "capatDrept": "सीधी कटी",
-    "capatInclinat": "ढलान पर तिरछी कटी"
+    "capatInclinat": "ढलान पर तिरछी कटी",
+    "altePiese": "इसी उत्पाद में और टुकड़े",
+    "pieseUnPret": "यहाँ के सभी टुकड़े एक ही उत्पाद हैं और उनका भुगतान एक ही बार होता है, चाहे कितने भी हों।",
+    "adaugaPiesa": "+ टुकड़ा जोड़ें",
+    "stergePiesa": "टुकड़ा हटाएँ",
+    "denumirePiesa": "नाम"
   },
   "fata": {
     "px": "दाएँ",

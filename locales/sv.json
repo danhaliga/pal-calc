@@ -785,7 +785,8 @@
     "traversa": "Regel",
     "montantAtipic": "Mellanvägg {n}",
     "usaAtipica": "Lucka (fack {comp})",
-    "tavanPanta": "Tak (på lutningen)"
+    "tavanPanta": "Tak (på lutningen)",
+    "piesaSimplaNr": "Del {n}"
   },
   "directie": {
     "jos": "ner",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "I gering (ram)",
     "subScaraCapat": "Gavlarna upptill",
     "capatDrept": "Rakt kapade",
-    "capatInclinat": "Kapade efter lutningen"
+    "capatInclinat": "Kapade efter lutningen",
+    "altePiese": "Fler delar i samma artikel",
+    "pieseUnPret": "Alla delar här är en artikel och betalas en gång, hur många de än är.",
+    "adaugaPiesa": "+ Lägg till del",
+    "stergePiesa": "Ta bort del",
+    "denumirePiesa": "Benämning"
   },
   "fata": {
     "px": "höger",

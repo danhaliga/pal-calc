@@ -791,7 +791,8 @@
     "traversa": "Царга",
     "montantAtipic": "Стійка {n}",
     "usaAtipica": "Дверцята (відсік {comp})",
-    "tavanPanta": "Верх (по скосу)"
+    "tavanPanta": "Верх (по скосу)",
+    "piesaSimplaNr": "Деталь {n}"
   },
   "directie": {
     "jos": "знизу",
@@ -1502,7 +1503,12 @@
     "imbinareUnghi": "На вус (рамка)",
     "subScaraCapat": "Боковини зверху",
     "capatDrept": "Прямий пропил",
-    "capatInclinat": "Пропил по скосу"
+    "capatInclinat": "Пропил по скосу",
+    "altePiese": "Інші деталі в тому ж виробі",
+    "pieseUnPret": "Усі деталі тут — один виріб, оплачуються один раз, скільки б їх не було.",
+    "adaugaPiesa": "+ Додати деталь",
+    "stergePiesa": "Видалити деталь",
+    "denumirePiesa": "Назва"
   },
   "fata": {
     "px": "справа",

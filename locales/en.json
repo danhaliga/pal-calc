@@ -785,7 +785,8 @@
     "traversa": "Rail",
     "montantAtipic": "Divider {n}",
     "usaAtipica": "Door (compartment {comp})",
-    "tavanPanta": "Top (on the slope)"
+    "tavanPanta": "Top (on the slope)",
+    "piesaSimplaNr": "Piece {n}"
   },
   "directie": {
     "jos": "bottom",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "Mitred (frame)",
     "subScaraCapat": "Sides, at the top",
     "capatDrept": "Cut square",
-    "capatInclinat": "Cut on the slope"
+    "capatInclinat": "Cut on the slope",
+    "altePiese": "More pieces in the same item",
+    "pieseUnPret": "All pieces here are one item and are paid for once, however many there are.",
+    "adaugaPiesa": "+ Add piece",
+    "stergePiesa": "Delete piece",
+    "denumirePiesa": "Name"
   },
   "fata": {
     "px": "right",

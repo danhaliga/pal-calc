@@ -64,6 +64,10 @@ function aplicaTip() {
      are ce căuta acolo se ascunde, nu se lasă gri: un formular plin de
      câmpuri fără rost e mai rău decât unul scurt. */
   arata('fsPiesa', piesa);
+  if (piesa) {
+    var tbPe = $('pieseExtraTabel');
+    if (tbPe && tbPe.children.length !== (params.pieseExtra || []).length) randeazaPieseExtra();
+  }
   arata('fsUsi', !piesa);
   arata('fsMontanti', !piesa);
   arata('fsPolite', !piesa);
@@ -113,6 +117,91 @@ function aplicaTip() {
     if (!tbody || tbody.children.length !== params.contur.length) randeazaContur();
     else actualizeazaContur();
   }
+}
+
+/* ---------------- piesa simplă: celelalte piese din produs ----------------
+
+   Ca la contur: rândurile se redesenează doar când se schimbă numărul lor,
+   altfel câmpul în care scrii s-ar înlocui la fiecare tastă. */
+var escPE = function (x) {
+  return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+};
+var CANT_OPT = [['-', 'editor.faraCant'], ['g', 'editor.cantGrosOpt'], ['s', 'editor.cantSubtireOpt']];
+var FIBRA_OPT = [['L', 'editor.fibraPeLungime'], ['l', 'editor.fibraPeLatime'], ['-', 'editor.fibraOricum']];
+
+function optiuni(lista, ales) {
+  return lista.map(function (o) {
+    return '<option value="' + o[0] + '"' + (o[0] === ales ? ' selected' : '') + '>' + escPE(T(o[1])) + '</option>';
+  }).join('');
+}
+
+function randeazaPieseExtra() {
+  var tbody = $('pieseExtraTabel');
+  if (!tbody) return;
+  var lista = params.pieseExtra || [];
+  tbody.innerHTML = lista.map(function (r, i) {
+    var num = function (camp, min, max) {
+      return '<td class="c"><input class="dim" type="number" min="' + min + '" max="' + max + '" step="1" ' +
+             'data-pe="' + i + '" data-camp="' + camp + '" value="' + (r[camp] == null ? '' : r[camp]) + '"></td>';
+    };
+    var sel = function (camp, lista2) {
+      return '<td class="c"><select data-pe="' + i + '" data-camp="' + camp + '">' + optiuni(lista2, r[camp]) + '</select></td>';
+    };
+    return '<tr>' +
+      '<td class="c" style="color:var(--muted)">' + (i + 2) + '</td>' +
+      '<td><input data-pe="' + i + '" data-camp="nume" maxlength="60" value="' + escPE(r.nume || '') + '" ' +
+        'placeholder="' + escPE(T('piesa.piesaSimplaNr', { n: i + 2 })) + '"></td>' +
+      num('L', 20, 3000) + num('l', 20, 3000) + num('buc', 1, 999) +
+      sel('cL1', CANT_OPT) + sel('cL2', CANT_OPT) + sel('cl1', CANT_OPT) + sel('cl2', CANT_OPT) +
+      sel('fibra', FIBRA_OPT) +
+      '<td class="c"><button type="button" class="mini danger" title="' + escPE(T('editor.stergePiesa')) +
+        '" data-sterge-piesa="' + i + '">✕</button></td>' +
+      '</tr>';
+  }).join('');
+}
+
+/* O cotă scrisă pe jumătate (gol, 5 mm) nu pleacă la server: ar fi
+   refuzată. Rândul se înroșește până e bun. */
+function pieseExtraBune() {
+  var bune = true;
+  document.querySelectorAll('#pieseExtraTabel input[type=number]').forEach(function (el) {
+    var v = +el.value, ok = el.value !== '' && v >= +el.min && v <= +el.max;
+    el.classList.toggle('invalid', !ok);
+    if (!ok) bune = false;
+  });
+  return bune;
+}
+
+function legaPieseExtra() {
+  var tbody = $('pieseExtraTabel');
+  if (!tbody) return;
+  var schimba = function (e) {
+    var i = e.target.dataset.pe;
+    if (i === undefined) return;
+    var camp = e.target.dataset.camp;
+    var r = params.pieseExtra[+i];
+    r[camp] = (camp === 'L' || camp === 'l' || camp === 'buc') ? +e.target.value : e.target.value;
+    if (!pieseExtraBune()) return;
+    render();
+    scheduleSave();
+  };
+  tbody.addEventListener('input', schimba);
+  tbody.addEventListener('change', schimba);
+  tbody.addEventListener('click', function (e) {
+    var i = e.target.dataset.stergePiesa;
+    if (i === undefined) return;
+    params.pieseExtra.splice(+i, 1);
+    randeazaPieseExtra(); render(); scheduleSave();
+  });
+  $('piesaAdauga').onclick = function () {
+    params.pieseExtra = params.pieseExtra || [];
+    if (params.pieseExtra.length >= 99) return;
+    var ultim = params.pieseExtra[params.pieseExtra.length - 1];
+    params.pieseExtra.push(ultim
+      ? { nume: '', L: ultim.L, l: ultim.l, buc: 1, cL1: ultim.cL1, cL2: ultim.cL2, cl1: ultim.cl1, cl2: ultim.cl2, fibra: ultim.fibra }
+      : { nume: '', L: 600, l: 300, buc: 1, cL1: 'g', cL2: '-', cl1: '-', cl2: '-', fibra: 'L' });
+    randeazaPieseExtra(); render(); scheduleSave();
+  };
 }
 
 /* ---------------- conturul corpului atipic ---------------- */
@@ -1104,6 +1193,7 @@ var setariPuse = aplicaSetari();
 
 init3D();
 legaContur();
+legaPieseExtra();
 legaSetari();
 render();
 loadPieces();

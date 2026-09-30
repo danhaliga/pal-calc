@@ -785,7 +785,8 @@
     "traversa": "کلاف",
     "montantAtipic": "تیغه {n}",
     "usaAtipica": "در (قسمت {comp})",
-    "tavanPanta": "سقف (روی شیب)"
+    "tavanPanta": "سقف (روی شیب)",
+    "piesaSimplaNr": "قطعه {n}"
   },
   "directie": {
     "jos": "پایین",
@@ -1491,7 +1492,12 @@
     "imbinareUnghi": "فارسی‌بر (قاب)",
     "subScaraCapat": "بدنه‌ها، بالا",
     "capatDrept": "برش صاف",
-    "capatInclinat": "برش روی شیب"
+    "capatInclinat": "برش روی شیب",
+    "altePiese": "قطعه‌های دیگر در همین محصول",
+    "pieseUnPret": "همه قطعه‌های اینجا یک محصول هستند و فقط یک بار پرداخت می‌شوند، هر چند تا که باشند.",
+    "adaugaPiesa": "+ افزودن قطعه",
+    "stergePiesa": "حذف قطعه",
+    "denumirePiesa": "نام"
   },
   "fata": {
     "px": "راست",
