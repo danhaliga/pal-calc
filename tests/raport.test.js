@@ -367,3 +367,12 @@ test('comanda goală nu dă erori', () => {
   assert.equal(r.cant.total, 0);
   assert.deepEqual(r.feronerie, []);
 });
+
+test('spatele PFL decupat după contur nu primește cant', () => {
+  const r = raport(comanda(), [corp('Sub scară', { tip: 'atipic', D: 560, nUsi: 1, contur: [
+    { lung: 800, unghi: 90 }, { lung: 2385.1, unghi: 83.928 }, { lung: 804.5, unghi: 96.072 }, { lung: 2300, unghi: 90 }] })], OPT);
+  const spate = r.piese.filter(x => /PFL/.test(x.nume));
+  assert.ok(spate.length, 'există spate');
+  spate.forEach(s => { assert.equal(s.cant.special, false); assert.equal(s.cant.ml, 0); });
+  assert.ok(r.piese.some(x => x.cant.special), 'ușa decupată păstrează cantul pe contur');
+});

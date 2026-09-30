@@ -144,8 +144,12 @@
   function cantPiesa(p, cg, cs) {
     var val = function (v) { return v === 'g' ? cg : v === 's' ? cs : 0; };
     var poly = polyPiesa(p);
+    /* Spatele (PFL sau PAL) decupat după contur nu se cantuiește: stă
+       lipit de perete, nu are muchii la vedere. */
+    var rol = rolPiesa(p);
+    var faraCant = rol === 'spate' || rol === 'pfl';
 
-    if (poly) {
+    if (poly && !faraCant) {
       var ml = muchiiFrontale(poly).reduce(function (s, m) { return s + m.lung; }, 0) / 1000 * p.buc;
       return {
         muchii: ['–', '–', '–', '–'], special: true,
