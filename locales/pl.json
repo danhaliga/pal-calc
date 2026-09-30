@@ -117,7 +117,8 @@
       "montajSpate": "Plecy — trzymają korpus w kątach prostych",
       "montajUsi": "Drzwi, z wyregulowanymi zawiasami",
       "montajSticla": "Drzwi w ramie aluminiowej ze szkłem"
-    }
+    },
+    "platitPublic": "Po opłacie — {pret} / korpus"
   },
   "eroare": {
     "paginaLipsa": "Taka strona nie istnieje.",

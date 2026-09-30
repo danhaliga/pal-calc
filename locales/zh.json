@@ -117,7 +117,8 @@
       "montajSpate": "背板 — 保持柜体方正",
       "montajUsi": "门板，调好铰链",
       "montajSticla": "铝框玻璃门"
-    }
+    },
+    "platitPublic": "付款后 —— 每个柜体 {pret}"
   },
   "eroare": {
     "paginaLipsa": "这个页面不存在。",

@@ -117,7 +117,8 @@
       "montajSpate": "Lo schienale — tiene il modulo in squadra",
       "montajUsi": "Le ante, con le cerniere regolate",
       "montajSticla": "Ante con telaio in alluminio e vetro"
-    }
+    },
+    "platitPublic": "Dopo il pagamento — {pret} / mobile"
   },
   "eroare": {
     "paginaLipsa": "Questa pagina non esiste.",

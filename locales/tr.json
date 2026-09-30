@@ -117,7 +117,8 @@
       "montajSpate": "Arkalık — gövdeyi gönyede tutar",
       "montajUsi": "Kapaklar, menteşeleri ayarlanmış olarak",
       "montajSticla": "Alüminyum çerçeveli cam kapaklar"
-    }
+    },
+    "platitPublic": "Ödemeden sonra — gövde başına {pret}"
   },
   "eroare": {
     "paginaLipsa": "Bu sayfa yok.",

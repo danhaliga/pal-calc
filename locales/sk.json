@@ -117,7 +117,8 @@
       "montajSpate": "Chrbát — drží korpus v pravom uhle",
       "montajUsi": "Dvierka s nastavenými pántami",
       "montajSticla": "Dvierka s hliníkovým rámom a sklom"
-    }
+    },
+    "platitPublic": "Po zaplatení — {pret} / korpus"
   },
   "eroare": {
     "paginaLipsa": "Táto stránka neexistuje.",

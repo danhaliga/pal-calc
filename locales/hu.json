@@ -117,7 +117,8 @@
       "montajSpate": "A hátfal — derékszögben tartja a korpuszt",
       "montajUsi": "Az ajtók, beállított pántokkal",
       "montajSticla": "Az alumíniumkeretes üvegajtók"
-    }
+    },
+    "platitPublic": "Fizetés után — {pret} / korpusz"
   },
   "eroare": {
     "paginaLipsa": "Ez az oldal nem létezik.",

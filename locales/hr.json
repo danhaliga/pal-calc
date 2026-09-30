@@ -117,7 +117,8 @@
       "montajSpate": "Leđa — drže korpus pod pravim kutom",
       "montajUsi": "Vrata, s podešenim šarkama",
       "montajSticla": "Vrata s aluminijskim okvirom i staklom"
-    }
+    },
+    "platitPublic": "Nakon plaćanja — {pret} / korpus"
   },
   "eroare": {
     "paginaLipsa": "Ova stranica ne postoji.",

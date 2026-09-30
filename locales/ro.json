@@ -117,7 +117,8 @@
       "montajSpate": "Spatele — ține corpul în echer",
       "montajUsi": "Ușile, cu balamalele reglate",
       "montajSticla": "Ușile cu ramă de aluminiu și sticlă"
-    }
+    },
+    "platitPublic": "După plată — {pret} / corp"
   },
   "eroare": {
     "paginaLipsa": "Pagina nu există.",

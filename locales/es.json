@@ -117,7 +117,8 @@
       "montajSpate": "La trasera — mantiene el módulo en escuadra",
       "montajUsi": "Las puertas, con las bisagras reguladas",
       "montajSticla": "Puertas con marco de aluminio y vidrio"
-    }
+    },
+    "platitPublic": "Tras el pago — {pret} / módulo"
   },
   "eroare": {
     "paginaLipsa": "Esta página no existe.",

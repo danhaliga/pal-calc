@@ -117,7 +117,8 @@
       "montajSpate": "De achterwand — houdt de kast haaks",
       "montajUsi": "De deuren, met afgestelde scharnieren",
       "montajSticla": "Deuren met aluminium kader en glas"
-    }
+    },
+    "platitPublic": "Na betaling — {pret} / kast"
   },
   "eroare": {
     "paginaLipsa": "Deze pagina bestaat niet.",

@@ -117,7 +117,8 @@
       "montajSpate": "Bakstycket — håller stommen i vinkel",
       "montajUsi": "Dörrarna, med justerade gångjärn",
       "montajSticla": "Dörrarna med aluminiumram och glas"
-    }
+    },
+    "platitPublic": "Efter betalning — {pret} / stomme"
   },
   "eroare": {
     "paginaLipsa": "Den här sidan finns inte.",

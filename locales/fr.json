@@ -117,7 +117,8 @@
       "montajSpate": "Le fond arrière — il maintient le caisson d’équerre",
       "montajUsi": "Les portes, charnières réglées",
       "montajSticla": "Les portes à cadre aluminium et verre"
-    }
+    },
+    "platitPublic": "Après paiement — {pret} / caisson"
   },
   "eroare": {
     "paginaLipsa": "Cette page n'existe pas.",

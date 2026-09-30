@@ -18,7 +18,7 @@
     <div class="film-cta">
       <a class="btn primary mare" href="/register"><%= t('landing.faCont') %></a>
       <a class="btn mare" href="/login"><%= t('landing.amCont') %></a>
-      <span class="film-pret"><%- t('landing.film.pret', { pret: '<b>' + priceLei + ' ' + t('comun.lei') + '</b>' }) %></span>
+      <span class="film-pret"><%- t('landing.film.pret', { pret: '<b>' + String(pretPublic).replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</b>' }) %></span>
     </div>
   </div>
 
@@ -115,7 +115,7 @@
     </ul>
   </div>
   <div class="panel">
-    <h2><%= t('landing.platit', { pret: priceLei }) %></h2>
+    <h2><%= t('landing.platitPublic', { pret: pretPublic }) %></h2>
     <ul class="ticks">
       <li><%= t('landing.platit1') %></li>
       <li><%= t('landing.platit2') %></li>

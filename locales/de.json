@@ -117,7 +117,8 @@
       "montajSpate": "Die Rückwand — hält den Korpus im Winkel",
       "montajUsi": "Die Türen, mit eingestellten Scharnieren",
       "montajSticla": "Türen mit Aluminiumrahmen und Glas"
-    }
+    },
+    "platitPublic": "Nach Zahlung — {pret} / Korpus"
   },
   "eroare": {
     "paginaLipsa": "Diese Seite gibt es nicht.",

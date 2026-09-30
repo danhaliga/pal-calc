@@ -30,7 +30,9 @@ const PERMISE = ['PAYMENT_DRIVER', 'STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET',
                  'FACTURARE_TVA', 'FACTURARE_COTA',
                  /* emailul: serverul SMTP și mesajul implicit către prestatori */
                  'EMAIL_HOST', 'EMAIL_PORT', 'EMAIL_SECURE', 'EMAIL_USER', 'EMAIL_PAROLA',
-                 'EMAIL_DE', 'EMAIL_NUME', 'EMAIL_SUBIECT', 'EMAIL_TEXT'];
+                 'EMAIL_DE', 'EMAIL_NUME', 'EMAIL_SUBIECT', 'EMAIL_TEXT',
+                 /* prețul scris pe paginile de prezentare („1 €"); plata rămâne în lei */
+                 'PRET_PUBLIC'];
 const SECRETE = ['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET', 'EMAIL_PAROLA'];
 
 const SECRET_IMPLICIT = 'dev-secret-schimba-ma';   /* același ca în server.js */

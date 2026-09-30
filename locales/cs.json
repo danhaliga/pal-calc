@@ -117,7 +117,8 @@
       "montajSpate": "Záda — drží korpus v pravém úhlu",
       "montajUsi": "Dvířka se seřízenými závěsy",
       "montajSticla": "Dvířka s hliníkovým rámem a sklem"
-    }
+    },
+    "platitPublic": "Po zaplacení — {pret} / korpus"
   },
   "eroare": {
     "paginaLipsa": "Tahle stránka neexistuje.",

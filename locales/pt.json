@@ -117,7 +117,8 @@
       "montajSpate": "O fundo traseiro — mantém o módulo em esquadria",
       "montajUsi": "As portas, com as dobradiças ajustadas",
       "montajSticla": "Portas com aro de alumínio e vidro"
-    }
+    },
+    "platitPublic": "Depois do pagamento — {pret} / módulo"
   },
   "eroare": {
     "paginaLipsa": "Esta página não existe.",

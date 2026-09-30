@@ -117,7 +117,8 @@
       "montajSpate": "뒤판 — 캐비닛의 직각을 잡아줍니다",
       "montajUsi": "문, 경첩을 조정해서",
       "montajSticla": "알루미늄 프레임 유리문"
-    }
+    },
+    "platitPublic": "결제 후 —— 캐비닛 1개 {pret}"
   },
   "eroare": {
     "paginaLipsa": "이 페이지는 없습니다.",

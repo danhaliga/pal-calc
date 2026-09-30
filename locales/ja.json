@@ -117,7 +117,8 @@
       "montajSpate": "背板 — キャビネットの直角を保つ",
       "montajUsi": "扉、ヒンジを調整して",
       "montajSticla": "アルミ枠のガラス扉"
-    }
+    },
+    "platitPublic": "決済後 —— キャビネット1台 {pret}"
   },
   "eroare": {
     "paginaLipsa": "このページはありません。",

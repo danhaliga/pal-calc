@@ -117,7 +117,8 @@
       "montajSpate": "Hậu tủ — giữ thùng tủ vuông góc",
       "montajUsi": "Cánh tủ, với bản lề đã cân chỉnh",
       "montajSticla": "Cánh khung nhôm kính"
-    }
+    },
+    "platitPublic": "Sau khi thanh toán — {pret} / thùng tủ"
   },
   "eroare": {
     "paginaLipsa": "Trang này không tồn tại.",

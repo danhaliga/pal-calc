@@ -117,7 +117,8 @@
       "montajSpate": "Panel belakang — menjaga kabinet tetap siku",
       "montajUsi": "Pintu, dengan engsel yang sudah disetel",
       "montajSticla": "Pintu berbingkai aluminium dan kaca"
-    }
+    },
+    "platitPublic": "Setelah pembayaran — {pret} / boks"
   },
   "eroare": {
     "paginaLipsa": "Halaman ini tidak ada.",

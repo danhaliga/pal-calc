@@ -117,7 +117,8 @@
       "montajSpate": "The back — keeps the cabinet square",
       "montajUsi": "The doors, with hinges adjusted",
       "montajSticla": "Doors with aluminium frame and glass"
-    }
+    },
+    "platitPublic": "After payment — {pret} / cabinet"
   },
   "eroare": {
     "paginaLipsa": "This page does not exist.",

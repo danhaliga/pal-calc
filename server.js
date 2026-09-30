@@ -123,6 +123,9 @@ app.use((req, res, next) => {
   const plata = payments.stare();
   res.locals.paymentDriver = plata.pornita ? plata.driver : 'oprita';
   res.locals.priceLei = (payments.priceCents() / 100).toFixed(2);
+  /* Pe paginile de prezentare prețul se scrie în euro, cum l-a vrut Dan
+     („1 €"); în aplicație și la plată rămâne în lei. */
+  res.locals.pretPublic = require('./src/setari').citeste('PRET_PUBLIC') || '1 €';
   res.locals.currentPath = req.path;
   res.locals.soldLei = req.user ? (credit.sold(req.user.id) / 100).toFixed(2) : null;
   /* Cine e atelierul, pentru capul foilor de tipar. Null cât timp omul nu a
