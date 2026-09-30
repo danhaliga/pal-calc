@@ -459,6 +459,33 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
   scris); în 3D stau una lângă alta. Schema nu are `.catch` pe listă: o cotă
   greșită e refuzată, nu golește lista. Piesele vechi, fără listă, merg.
 
+## 6o. Design nou (varianta B2) și pagina „Prestatori" (30 septembrie)
+
+- **Aspectul**: Dan a ales varianta B („lemn cald") din machetele de pe
+  claude.ai (artifact „PAL Calc – design nou"). În `public/styles.css`
+  s-au schimbat doar variabilele de culoare (crem #f4efe6, nuc #2b2520,
+  teracotă #b4532a; tema întunecată caldă), literele (Fraunces la titluri,
+  Manrope la text, IBM Plex Mono rămâne la cifre) și colțurile. La tipărire
+  foaia e albă (`print.css`).
+- **Pagina de prezentare**: sus, „filmul" (B2). `src/film.js` calculează 4
+  corpuri reale din catalog (baza-2usi, baza-3sertare, dulap-2usi,
+  sus-vitrina) cu motorul aplicației; `public/film.js` le desenează
+  izometric (fețele spre privitor, ordinea „din spate în față"), le desface
+  după `ex` și aprinde pe rând lista de debitare, planșa CNC a lateralei și
+  pașii de montaj. Respectă `prefers-reduced-motion`. Prețul arătat e cel din
+  aplicație (lei); Dan voia „1 €" — trecerea la euro e o decizie separată
+  (plată, credit, facturare).
+- **Prestatori publici**: `/prestatori` (listă cu filtre: regiune, CNC,
+  Excel, partener Egger, „și cei de verificat") și `/prestatori/:id` (pagina
+  firmei + trimiterea comenzii, care face 307 spre `/orders/:id/trimite`).
+  Migrarea 015 adaugă câmpurile publice și cele 30 de firme din căutarea din
+  30 septembrie (site-uri, registru, lista de distribuitori Egger —
+  api.www.egger.com/cpsdis/search). 15 „recomandat", 15 „de verificat".
+  Arabesque, debitare-pal.ro și Artepal sunt pe pagină, dar nu primesc
+  comenzi (n-au o adresă de comenzi). Totul se schimbă din Administrare →
+  Prestatori. Cercetarea brută: scratchpad-ul sesiunii,
+  `prestatori-research/*.json`.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

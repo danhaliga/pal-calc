@@ -21,10 +21,33 @@
     <div class="f">
       <label><%= t('prestator.nume') %><input name="nume" required maxlength="120" value="<%= p.nume || '' %>" placeholder="HTC Cubbis"></label>
       <label><%= t('prestator.oras') %><input name="oras" maxlength="80" value="<%= p.oras || '' %>" placeholder="Iași"></label>
-      <label><%= t('prestator.email') %><input name="email" required maxlength="200" value="<%= p.email || '' %>" placeholder="comenzi@firma.ro"></label>
+      <label><%= t('prestator.email') %><input name="email" maxlength="200" value="<%= p.email || '' %>" placeholder="comenzi@firma.ro"></label>
       <label><%= t('prestator.telefon') %><input name="telefon" maxlength="40" value="<%= p.telefon || '' %>"></label>
       <label class="full"><%= t('prestator.servicii') %><input name="servicii" maxlength="200" value="<%= p.servicii || '' %>" placeholder="<%= t('prestator.serviciiExemplu') %>"></label>
       <label class="full"><%= t('prestator.nota') %><textarea name="nota" rows="3" maxlength="1000"><%= p.nota || '' %></textarea></label>
+      <label class="full"><%= t('prestator.orase') %><input name="orase" maxlength="300" value="<%= p.orase || '' %>"></label>
+      <label><%= t('prestator.regiuneLabel') %><select name="regiune">
+        <option value=""></option>
+        <% ['moldova', 'transilvania', 'banat', 'sud', 'dobrogea', 'nationale'].forEach(function (r) { %>
+          <option value="<%= r %>" <%= p.regiune === r ? 'selected' : '' %>><%= t('prestator.regiune.' + r) %></option>
+        <% }); %>
+      </select></label>
+      <label><%= t('prestator.verdictLabel') %><select name="verdict">
+        <option value="recomandat" <%= p.verdict === 'recomandat' ? 'selected' : '' %>><%= t('prestator.etRecomandat') %></option>
+        <option value="verificat" <%= p.verdict !== 'recomandat' ? 'selected' : '' %>><%= t('prestator.etVerificat') %></option>
+      </select></label>
+      <label><%= t('prestator.dinAnLabel') %><input name="din_an" inputmode="numeric" maxlength="4" value="<%= p.din_an || '' %>"></label>
+      <label><%= t('prestator.marime') %><input name="marime" maxlength="80" value="<%= p.marime || '' %>"></label>
+      <label class="full"><%= t('prestator.cumComanda') %><input name="cum_comanda" maxlength="300" value="<%= p.cum_comanda || '' %>"></label>
+      <label class="full"><%= t('prestator.deStiut') %><input name="descriere" maxlength="600" value="<%= p.descriere || '' %>"></label>
+      <label class="full"><%= t('prestator.site') %><input name="site" maxlength="300" value="<%= p.site || '' %>" placeholder="https://"></label>
+      <% [['cnc', 'filtruCnc'], ['excel', 'filtruExcel'], ['egger', 'filtruEgger']].forEach(function (c) { %>
+        <label class="check"><input type="checkbox" name="<%= c[0] %>" value="1" <%= +p[c[0]] ? 'checked' : '' %>> <%= t('prestator.' + c[1]) %></label>
+      <% }); %>
+      <label><%= t('prestator.pePagina') %><select name="public">
+        <option value="1" <%= p.public === 0 || p.public === '0' ? '' : 'selected' %>><%= t('prestator.activ') %></option>
+        <option value="0" <%= p.public === 0 || p.public === '0' ? 'selected' : '' %>><%= t('prestator.inactiv') %></option>
+      </select></label>
       <label><%= t('prestator.inLista') %><select name="activ">
         <option value="1" <%= p.activ === 0 || p.activ === '0' ? '' : 'selected' %>><%= t('prestator.activ') %></option>
         <option value="0" <%= p.activ === 0 || p.activ === '0' ? 'selected' : '' %>><%= t('prestator.inactiv') %></option>

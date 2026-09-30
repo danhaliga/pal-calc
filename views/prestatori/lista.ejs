@@ -1,0 +1,65 @@
+<%# Pagina publică a prestatorilor: firmele la care atelierele pot trimite
+    comanda. Filtrele merg în pagină (public/prestatori.js); fără JavaScript
+    se văd toate. %>
+<section class="prest-cap">
+  <div>
+    <div class="film-eticheta"><%= t('prestator.pubEticheta') %></div>
+    <h1 class="prest-titlu"><%= t('prestator.pubTitluA') %> <em><%= t('prestator.pubTitluB') %></em></h1>
+    <p class="sub"><%= t('prestator.pubIntro') %></p>
+    <div class="prest-cifre">
+      <div><b><%= nr.recomandati %></b><span><%= t('prestator.pubRecomandati') %></span></div>
+      <div><b><%= nr.verificat %></b><span><%= t('prestator.pubDeVerificat') %></span></div>
+      <div><b><%= nr.cnc %></b><span><%= t('prestator.pubCuCnc') %></span></div>
+    </div>
+  </div>
+  <aside class="prest-criterii">
+    <b><%= t('prestator.criteriiTitlu') %></b>
+    <ul>
+      <% [1, 2, 3, 4, 5].forEach(function (n) { %><li><%= t('prestator.criteriu' + n) %></li><% }); %>
+    </ul>
+    <span class="small"><%= t('prestator.verificatLa') %></span>
+  </aside>
+</section>
+
+<div class="prest-filtre" id="prestFiltre" hidden>
+  <button type="button" class="pastila on" data-regiune=""><%= t('prestator.regiuneToate') %></button>
+  <% regiuni.forEach(function (r) { %>
+    <button type="button" class="pastila" data-regiune="<%= r %>"><%= t('prestator.regiune.' + r) %></button>
+  <% }); %>
+  <span class="prest-sep"></span>
+  <button type="button" class="pastila" data-filtru="cnc"><%= t('prestator.filtruCnc') %></button>
+  <button type="button" class="pastila" data-filtru="excel"><%= t('prestator.filtruExcel') %></button>
+  <button type="button" class="pastila" data-filtru="egger"><%= t('prestator.filtruEgger') %></button>
+  <button type="button" class="pastila" data-filtru="toti"><%= t('prestator.filtruToti') %></button>
+  <span class="prest-nr muted" id="prestNr"></span>
+</div>
+
+<div class="prest-grila" id="prestGrila">
+  <% lista.forEach(function (p) { %>
+    <article class="prest-card <%= p.verdict === 'recomandat' ? '' : 'de-verificat' %>"
+             data-regiune="<%= p.regiune || '' %>" data-cnc="<%= p.cnc ? 1 : 0 %>" data-excel="<%= p.excel ? 1 : 0 %>"
+             data-egger="<%= p.egger ? 1 : 0 %>" data-recomandat="<%= p.verdict === 'recomandat' ? 1 : 0 %>">
+      <div class="prest-card-cap">
+        <div>
+          <h2><a href="/prestatori/<%= p.id %>"><%= p.nume %></a></h2>
+          <span class="muted"><%= p.orase || p.oras %></span>
+        </div>
+        <span class="eticheta-verdict <%= p.verdict === 'recomandat' ? 'rec' : 'ver' %>"><%= t(p.verdict === 'recomandat' ? 'prestator.etRecomandat' : 'prestator.etVerificat') %></span>
+      </div>
+      <div class="prest-chips">
+        <% p.etichete.forEach(function (e) { %><span><%= e %></span><% }); %>
+        <% if (p.egger) { %><span class="egger"><%= t('prestator.partenerEgger') %></span><% } %>
+      </div>
+      <div class="prest-fapte">
+        <% if (p.din_an || p.marime) { %><span><% if (p.din_an) { %><b><%= t('prestator.dinAn', { an: p.din_an }) %></b><% } %><%= p.din_an && p.marime ? ' · ' : '' %><%= p.marime || '' %></span><% } %>
+        <% if (p.cum_comanda) { %><span><%= p.cum_comanda %></span><% } %>
+        <% if (p.descriere) { %><span class="muted"><%= p.descriere %></span><% } %>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="/prestatori/<%= p.id %>#trimite"><%= t('prestator.trimiteComanda') %></a>
+        <a class="btn" href="/prestatori/<%= p.id %>"><%= t('prestator.detalii') %></a>
+      </div>
+    </article>
+  <% }); %>
+</div>
+<script src="/static/prestatori.js?v=<%= assetV %>" defer></script>

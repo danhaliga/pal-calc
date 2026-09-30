@@ -1,11 +1,52 @@
-<section class="hero">
-  <h1><%= t('landing.titlu') %></h1>
-  <p class="sub"><%= t('landing.sub') %></p>
-  <div class="btns">
-    <a class="btn primary" href="/register"><%= t('landing.faCont') %></a>
-    <a class="btn" href="/login"><%= t('landing.amCont') %></a>
+<%# Sus: „filmul". Un corp din catalog se desface piesă cu piesă, iar
+    lista de debitare, planșa CNC și fișa de montaj se aprind pe rând.
+    Datele le calculează serverul (src/film.js); public/film.js desenează. %>
+<section class="film" id="film">
+  <div class="film-text">
+    <div class="film-eticheta"><%= t('landing.film.eticheta') %></div>
+    <h1 class="film-titlu"><%= t('landing.film.titluA') %> <em><%= t('landing.film.titluB') %></em></h1>
+    <ol class="film-pasi">
+      <% [1, 2, 3, 4].forEach(function (n) { %>
+        <li<%- n === 1 ? ' class="on"' : '' %>>
+          <button type="button">
+            <span class="film-nr"><%= n %></span>
+            <span><b><%= t('landing.film.pas' + n + 'T') %></b><span><%= t('landing.film.pas' + n + 'S') %></span></span>
+          </button>
+        </li>
+      <% }); %>
+    </ol>
+    <div class="film-cta">
+      <a class="btn primary mare" href="/register"><%= t('landing.faCont') %></a>
+      <a class="btn mare" href="/login"><%= t('landing.amCont') %></a>
+      <span class="film-pret"><%- t('landing.film.pret', { pret: '<b>' + priceLei + ' ' + t('comun.lei') + '</b>' }) %></span>
+    </div>
+  </div>
+
+  <div class="film-scena">
+    <div class="film-ecran">
+      <div class="film-antet"><b class="film-nume"></b><span class="film-cote"></span></div>
+      <svg class="film-svg" viewBox="0 0 520 470" role="img" aria-label="<%= t('landing.film.desen') %>"></svg>
+      <div class="film-progres"><span></span></div>
+    </div>
+    <div class="film-carduri">
+      <div class="film-card">
+        <div class="film-card-t"><%= t('landing.film.cardDebitare') %></div>
+        <ul class="film-debitare"></ul>
+      </div>
+      <div class="film-card">
+        <div class="film-card-t"><%= t('landing.film.cardCnc') %> · <span class="film-cnc-piesa"></span></div>
+        <div class="film-cnc"></div>
+        <div class="film-cnc-nota small muted"></div>
+      </div>
+      <div class="film-card">
+        <div class="film-card-t"><%= t('landing.film.cardMontaj') %></div>
+        <ol class="film-montaj"></ol>
+      </div>
+    </div>
   </div>
 </section>
+<script type="application/json" id="film-date"><%- jsonPentruPagina(film) %></script>
+<script src="/static/film.js?v=<%= assetV %>" defer></script>
 
 <%# Exemplul nu e scris de mână: se calculează la fiecare deschidere a
     paginii, cu motorul care scoate și lucrările din atelier. Dacă se schimbă

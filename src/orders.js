@@ -880,7 +880,7 @@ router.post('/orders/:id/trimite', requireAuth, async (req, res, next) => {
   };
   try {
     const p = Prestatori.unul(req.body.prestator);
-    if (!p || !p.activ) return inapoi('prestator.eroareAlege');
+    if (!p || !p.activ || !p.email) return inapoi('prestator.eroareAlege');
     if (!email.pornit()) return inapoi('prestator.emailOprit');
     if (Prestatori.azi(req.user.id) >= Prestatori.PE_ZI) return inapoi('prestator.preaMulte', { n: Prestatori.PE_ZI });
 

@@ -24,14 +24,28 @@ const router = express.Router();
    prea puțin ca să se facă din aplicație o mașină de spam. */
 const PE_ZI = 20;
 
-const LUNGIMI = { nume: 120, oras: 80, email: 200, telefon: 40, servicii: 200, nota: 1000 };
+const LUNGIMI = { nume: 120, oras: 80, email: 200, telefon: 40, servicii: 200, nota: 1000,
+                  orase: 300, marime: 80, cum_comanda: 300, descriere: 600, site: 300 };
 const text = (v, k) => String(v == null ? '' : v).trim().slice(0, LUNGIMI[k] || 200);
 
 /* ---------- prestatorii ---------- */
 
+/* Cei la care se poate trimite: activi și cu adresă. Recomandații întâi. */
 function activi() {
-  return db.prepare('SELECT * FROM prestatori WHERE activ = 1 ORDER BY nume COLLATE NOCASE, id').all();
+  return db.prepare("SELECT * FROM prestatori WHERE activ = 1 AND email <> '' " +
+                    "ORDER BY verdict = 'recomandat' DESC, nume COLLATE NOCASE, id").all();
 }
+
+/* Cei de pe pagina publică „Prestatori". */
+function publici() {
+  return db.prepare('SELECT * FROM prestatori WHERE public = 1 ' +
+                    "ORDER BY verdict = 'recomandat' DESC, nume COLLATE NOCASE, id").all();
+}
+
+const REGIUNI = ['moldova', 'transilvania', 'banat', 'sud', 'dobrogea', 'nationale'];
+
+/* Lista serviciilor, scrisă liber cu virgulă, ca etichete. */
+const etichete = p => String(p.servicii || '').split(',').map(x => x.trim()).filter(Boolean);
 
 function toti() {
   return db.prepare('SELECT * FROM prestatori ORDER BY activ DESC, nume COLLATE NOCASE, id').all();
@@ -46,21 +60,35 @@ function salveaza(id, body) {
   const d = {
     nume: text(body.nume, 'nume'), oras: text(body.oras, 'oras'), email: text(body.email, 'email'),
     telefon: text(body.telefon, 'telefon'), servicii: text(body.servicii, 'servicii'), nota: text(body.nota, 'nota'),
-    activ: body.activ === '0' ? 0 : 1
+    activ: body.activ === '0' ? 0 : 1,
+    orase: text(body.orase, 'orase'), marime: text(body.marime, 'marime'),
+    cum_comanda: text(body.cum_comanda, 'cum_comanda'), descriere: text(body.descriere, 'descriere'),
+    site: /^https?:\/\//i.test(text(body.site, 'site')) ? text(body.site, 'site') : '',
+    regiune: REGIUNI.indexOf(body.regiune) !== -1 ? body.regiune : null,
+    verdict: body.verdict === 'recomandat' ? 'recomandat' : 'verificat',
+    din_an: /^\d{4}$/.test(String(body.din_an || '').trim()) ? Number(body.din_an) : null,
+    cnc: body.cnc === '1' ? 1 : 0, excel: body.excel === '1' ? 1 : 0, egger: body.egger === '1' ? 1 : 0,
+    public: body.public === '0' ? 0 : 1
   };
   const erori = [];
   if (!d.nume) erori.push('prestator.eroareNume');
-  /* mai multe adrese, cu virgulă: biroul și omul de la debitare */
+  /* mai multe adrese, cu virgulă: biroul și omul de la debitare. Fără
+     adresă se poate doar dacă nu e activ (apare pe pagină, dar nu primește). */
   const adrese = d.email.split(/[,;\s]+/).filter(Boolean);
-  if (!adrese.length || !adrese.every(email.emailBun)) erori.push('prestator.eroareEmail');
+  if ((adrese.length || d.activ) && (!adrese.length || !adrese.every(email.emailBun))) erori.push('prestator.eroareEmail');
   if (erori.length) return erori;
   d.email = adrese.join(', ');
   if (id) {
     db.prepare('UPDATE prestatori SET nume = @nume, oras = @oras, email = @email, telefon = @telefon, ' +
-               'servicii = @servicii, nota = @nota, activ = @activ WHERE id = @id').run(Object.assign({ id }, d));
+               'servicii = @servicii, nota = @nota, activ = @activ, orase = @orase, marime = @marime, ' +
+               'cum_comanda = @cum_comanda, descriere = @descriere, site = @site, regiune = @regiune, ' +
+               'verdict = @verdict, din_an = @din_an, cnc = @cnc, excel = @excel, egger = @egger, public = @public ' +
+               'WHERE id = @id').run(Object.assign({ id }, d));
   } else {
-    db.prepare('INSERT INTO prestatori (nume, oras, email, telefon, servicii, nota, activ) ' +
-               'VALUES (@nume, @oras, @email, @telefon, @servicii, @nota, @activ)').run(d);
+    db.prepare('INSERT INTO prestatori (nume, oras, email, telefon, servicii, nota, activ, orase, marime, cum_comanda, ' +
+               'descriere, site, regiune, verdict, din_an, cnc, excel, egger, public) ' +
+               'VALUES (@nume, @oras, @email, @telefon, @servicii, @nota, @activ, @orase, @marime, @cum_comanda, ' +
+               '@descriere, @site, @regiune, @verdict, @din_an, @cnc, @excel, @egger, @public)').run(d);
   }
   return [];
 }
@@ -226,7 +254,48 @@ router.post('/admin/prestatori/:id/sterge', requireAuth, requireAdmin, (req, res
   res.redirect('/admin/prestatori');
 });
 
+/* ---------- pagina publică ---------- */
+
+router.get('/prestatori', (req, res) => {
+  const lista = publici().map(p => Object.assign({}, p, { etichete: etichete(p) }));
+  res.render('prestatori/lista', {
+    title: req.t('prestator.pubTitlu'),
+    lista, regiuni: REGIUNI.filter(r => lista.some(p => p.regiune === r)),
+    nr: {
+      recomandati: lista.filter(p => p.verdict === 'recomandat').length,
+      verificat: lista.filter(p => p.verdict !== 'recomandat').length,
+      cnc: lista.filter(p => p.cnc).length
+    }
+  });
+});
+
+router.get('/prestatori/:id', (req, res, next) => {
+  const p = unul(req.params.id);
+  if (!p || !p.public) return next();
+  const comenzi = req.user
+    ? db.prepare('SELECT id, name, livrare_la FROM orders WHERE user_id = ? ORDER BY created_at DESC, id DESC LIMIT 100').all(req.user.id)
+    : [];
+  const poateTrimite = !!(p.activ && p.email);
+  const prop = comenzi.length ? propunere(comenzi[0], req.user, p, req.t) : { subiect: '', text: '' };
+  res.render('prestatori/profil', {
+    title: p.nume,
+    p: Object.assign({}, p, { etichete: etichete(p) }),
+    comenzi, poateTrimite, emailPornit: email.pornit(),
+    subiect: prop.subiect, text: prop.text
+  });
+});
+
+/* Trimiterea din pagina prestatorului: aceeași ca de pe pagina comenzii.
+   307 păstrează metoda și câmpurile (inclusiv _csrf), deci comanda trece
+   prin exact aceleași verificări. */
+router.post('/prestatori/:id/trimite', requireAuth, (req, res, next) => {
+  const id = Number(req.body.comanda) || 0;
+  const o = db.prepare('SELECT id FROM orders WHERE id = ? AND user_id = ?').get(id, req.user.id);
+  if (!o || String(req.body.prestator) !== String(Number(req.params.id))) return next();
+  res.redirect(307, '/orders/' + o.id + '/trimite');
+});
+
 module.exports = {
-  router, PE_ZI, activi, toti, unul, salveaza, atelier, completeaza, propunere,
+  router, PE_ZI, REGIUNI, publici, activi, toti, unul, salveaza, atelier, completeaza, propunere,
   aleComenzii, azi, noteaza
 };

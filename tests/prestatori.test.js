@@ -22,12 +22,13 @@ test('prestatorul: nume și email obligatorii, mai multe adrese cu virgulă', ()
   assert.deepEqual(P.salveaza(0, { nume: '', email: 'a@b.ro' }), ['prestator.eroareNume']);
   assert.deepEqual(P.salveaza(0, { nume: 'X', email: 'nu-e-email' }), ['prestator.eroareEmail']);
   assert.deepEqual(P.salveaza(0, { nume: 'X', email: 'a@b.ro, altul' }), ['prestator.eroareEmail']);
-  assert.deepEqual(P.salveaza(0, { nume: 'HTC Cubbis', oras: 'Iași', email: 'a@b.ro;  c@d.ro' }), []);
-  const p = P.activi()[0];
+  assert.deepEqual(P.salveaza(0, { nume: 'Firma de probă', oras: 'Iași', email: 'a@b.ro;  c@d.ro' }), []);
+  const p = P.toti().find(x => x.nume === 'Firma de probă');
   assert.equal(p.email, 'a@b.ro, c@d.ro');
-  P.salveaza(p.id, { nume: 'HTC Cubbis', email: 'a@b.ro', activ: '0' });
-  assert.equal(P.activi().length, 0, 'prestatorul ascuns nu apare atelierelor');
-  assert.equal(P.toti().length, 1);
+  assert.ok(P.activi().some(x => x.id === p.id));
+  P.salveaza(p.id, { nume: 'Firma de probă', email: 'a@b.ro', activ: '0' });
+  assert.ok(!P.activi().some(x => x.id === p.id), 'prestatorul ascuns nu apare atelierelor');
+  assert.ok(P.toti().some(x => x.id === p.id));
 });
 
 test('mesajul propus: câmpurile se înlocuiesc, cele necunoscute rămân', () => {
@@ -74,4 +75,30 @@ test('în modul de probă emailul se scrie ca fișier, cu atașamentul', async (
   assert.equal(f.raspunsLa, 'c@d.ro');
   assert.deepEqual(f.atasamente, [{ nume: 'p.zip', octeti: 3 }]);
   delete process.env.EMAIL_PROBA;
+});
+
+test('lista cercetată: 30 de firme publice, jumătate recomandate; fără adresă nu primesc comenzi', () => {
+  const pub = P.publici().filter(p => p.verificat_la === '2026-09-30');
+  assert.equal(pub.length, 30);
+  assert.equal(pub.filter(p => p.verdict === 'recomandat').length, 15);
+  assert.equal(pub[0].verdict, 'recomandat', 'recomandații stau primii');
+  const faraEmail = pub.filter(p => !p.email);
+  assert.ok(faraEmail.length >= 2);
+  const activi = P.activi();
+  faraEmail.forEach(p => assert.ok(!activi.some(a => a.id === p.id), p.nume + ' n-are adresă, nu poate primi'));
+  assert.ok(pub.some(p => p.nume === 'HTC Cubbis' && p.email === 'office@cubbis.ro' && p.cnc === 1));
+});
+
+test('administratorul schimbă câmpurile paginii publice', () => {
+  const p = P.publici().find(x => x.nume === 'Woodexpert');
+  assert.deepEqual(P.salveaza(p.id, { nume: 'Woodexpert', email: p.email, regiune: 'transilvania', verdict: 'verificat',
+    din_an: '2008', cnc: '1', excel: '1', public: '0', site: 'javascript:alert(1)' }), []);
+  const d = P.unul(p.id);
+  assert.equal(d.verdict, 'verificat');
+  assert.equal(d.public, 0);
+  assert.equal(d.egger, 0);
+  assert.equal(d.site, '', 'doar adrese http(s)');
+  /* fără adresă se poate doar dacă nu primește comenzi */
+  assert.deepEqual(P.salveaza(p.id, { nume: 'Woodexpert', email: '', activ: '1' }), ['prestator.eroareEmail']);
+  assert.deepEqual(P.salveaza(p.id, { nume: 'Woodexpert', email: '', activ: '0' }), []);
 });

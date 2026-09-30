@@ -163,7 +163,8 @@ app.get('/', (req, res) => {
     title: req.t('landing.titlu'),
     exemplu: exemplu,
     piese: calculat.P,
-    limbi: PalI18n.LIMBI
+    limbi: PalI18n.LIMBI,
+    film: require('./src/film').date(req.t)
   });
 });
 

@@ -6,7 +6,7 @@
 <title><%= typeof title !== 'undefined' && title ? title + ' · ' + appName : appName %></title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/static/styles.css?v=<%= assetV %>">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128208;</text></svg>">
 <script src="/shared/i18n.js?v=<%= assetV %>"></script>
@@ -28,6 +28,7 @@
         <a href="/orders" class="<%= currentPath.startsWith('/orders') ? 'on' : '' %>"><%= t('nav.comenzi') %></a>
         <a href="/corps" class="<%= currentPath.startsWith('/corps') ? 'on' : '' %>"><%= t('nav.corpuri') %></a>
         <a href="/ghid" class="<%= currentPath.startsWith('/ghid') ? 'on' : '' %>"><%= t('articole.titlu') %></a>
+        <a href="/prestatori" class="<%= currentPath.startsWith('/prestatori') ? 'on' : '' %>"><%= t('prestator.pubNav') %></a>
         <a href="/credit" class="credit-link <%= currentPath === '/credit' ? 'on' : '' %>">
           <%= t('nav.credit') %>: <b><%= soldLei %> <%= t('comun.lei') %></b>
         </a>
@@ -41,6 +42,7 @@
         </form>
       <% } else { %>
         <a href="/ghid" class="<%= currentPath.startsWith('/ghid') ? 'on' : '' %>"><%= t('articole.titlu') %></a>
+        <a href="/prestatori" class="<%= currentPath.startsWith('/prestatori') ? 'on' : '' %>"><%= t('prestator.pubNav') %></a>
         <%- include('partials/limba') %>
         <a href="/login"><%= t('nav.autentificare') %></a>
         <a href="/register" class="btn small primary"><%= t('nav.contNou') %></a>

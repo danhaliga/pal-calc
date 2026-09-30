@@ -1,0 +1,53 @@
+<div class="crumbs"><a href="/prestatori">← <%= t('prestator.totiPrestatorii') %></a></div>
+<section class="prest-profil">
+  <div class="prest-profil-text">
+    <div class="prest-profil-meta">
+      <span class="eticheta-verdict <%= p.verdict === 'recomandat' ? 'rec' : 'ver' %>"><%= t(p.verdict === 'recomandat' ? 'prestator.etRecomandat' : 'prestator.etVerificat') %></span>
+      <span class="muted"><%= p.orase || p.oras %><% if (p.din_an) { %> · <%= t('prestator.dinAn', { an: p.din_an }) %><% } %><% if (p.marime) { %> · <%= p.marime %><% } %></span>
+    </div>
+    <h1 class="prest-titlu"><%= p.nume %></h1>
+    <div class="prest-chips">
+      <% p.etichete.forEach(function (e) { %><span><%= e %></span><% }); %>
+      <% if (p.egger) { %><span class="egger"><%= t('prestator.partenerEgger') %></span><% } %>
+    </div>
+    <dl class="prest-detalii">
+      <% if (p.cum_comanda) { %><dt><%= t('prestator.cumComanda') %></dt><dd><%= p.cum_comanda %></dd><% } %>
+      <% if (p.descriere) { %><dt><%= t('prestator.deStiut') %></dt><dd><%= p.descriere %></dd><% } %>
+      <% if (p.nota) { %><dt><%= t('prestator.ceCer') %></dt><dd><%= p.nota %></dd><% } %>
+      <% if (p.telefon) { %><dt><%= t('prestator.telefon') %></dt><dd><%= p.telefon %></dd><% } %>
+      <% if (p.site) { %><dt><%= t('prestator.site') %></dt><dd><a href="<%= p.site %>" rel="noopener nofollow" target="_blank"><%= p.site.replace(/^https?:\/\//, '').replace(/\/$/, '') %></a></dd><% } %>
+    </dl>
+    <p class="small muted"><%= t('prestator.surse', { data: p.verificat_la || '—' }) %></p>
+  </div>
+
+  <aside class="prest-trimite" id="trimite">
+    <h2><%= t('prestator.trimiteTitlu') %></h2>
+    <% if (!poateTrimite) { %>
+      <p><%= t('prestator.nuPrimeste') %></p>
+    <% } else if (!user) { %>
+      <p><%= t('prestator.intraCaSaTrimiti') %></p>
+      <div class="btns"><a class="btn primary mare" href="/login"><%= t('nav.autentificare') %></a><a class="btn mare" href="/register"><%= t('nav.contNou') %></a></div>
+    <% } else if (!emailPornit) { %>
+      <p><%= t('prestator.emailOprit') %></p>
+    <% } else if (!comenzi.length) { %>
+      <p><%= t('prestator.faraComenzi') %></p>
+      <div class="btns"><a class="btn primary mare" href="/orders/new"><%= t('comenzi.nouaButon') %></a></div>
+    <% } else { %>
+      <form method="post" action="/prestatori/<%= p.id %>/trimite" id="formTrimite">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <input type="hidden" name="prestator" value="<%= p.id %>">
+        <label><%= t('prestator.alegeComanda') %>
+          <select name="comanda" id="alegeComanda">
+            <% comenzi.forEach(function (o) { %><option value="<%= o.id %>" data-nume="<%= o.name %>"><%= o.name %></option><% }); %>
+          </select>
+        </label>
+        <label><%= t('prestator.subiect') %><input name="subiect" maxlength="200" required value="<%= subiect %>"></label>
+        <label><%= t('prestator.text') %><textarea name="text" rows="8" maxlength="5000" required><%= text %></textarea></label>
+        <label class="check"><input type="checkbox" name="copie" value="1" checked> <%= t('prestator.copie', { email: user.email }) %></label>
+        <p class="small muted"><%= t('prestator.atasatScurt', { email: user.email }) %></p>
+        <button class="primary mare" type="submit"><%= t('prestator.trimiteLa', { email: p.email }) %></button>
+      </form>
+    <% } %>
+  </aside>
+</section>
+<script src="/static/prestatori.js?v=<%= assetV %>" defer></script>

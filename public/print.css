@@ -115,7 +115,8 @@ svg.cnc-svg .cnc-cant { stroke: #b3261e; stroke-width: 14; stroke-linecap: round
 svg.cnc-svg .cnc-cota { fill: #43372a; font-family: "IBM Plex Mono", monospace; }
 
 @media print {
-  body.doc { padding: 0; max-width: none; }
+  :root { --bg: #fff; --panel: #fff; --row: #f4f4f4; --ink: #111; }
+  body.doc { padding: 0; max-width: none; background: #fff; }
   .doc-bar { display: none !important; }
   .doc-head { border-bottom-color: #000; }
   .doc-corp, .cnc-card { border-color: #999; }
@@ -166,4 +167,4 @@ svg.mnt-svg polygon { stroke: #3b2f20; stroke-width: .9px; stroke-linejoin: roun
 svg.mnt-svg .mnt-fronturi { fill-opacity: .85; }
 svg.mnt-svg .mnt-sticla { fill-opacity: .4; }
 svg.mnt-svg .mnt-eticheta circle { fill: #1d4f91; stroke: #fff; stroke-width: 1.2px; }
-svg.mnt-svg .mnt-eticheta text { fill: #fff; font-family: "IBM Plex Sans", sans-serif; font-weight: 700; }
+svg.mnt-svg .mnt-eticheta text { fill: #fff; font-family: var(--font-body); font-weight: 700; }
