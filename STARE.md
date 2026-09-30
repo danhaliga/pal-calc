@@ -427,6 +427,28 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
   e deja în coordonatele corpului (lateralele și tavanul de sub scară
   zburau din corp). Spatele decupat după contur nu mai primește cant.
 
+## 6m. Email și prestatori (30 septembrie)
+
+- **Administrare → Email** (`/admin/email`): serverul SMTP (server, port,
+  STARTTLS/SSL, utilizator, parolă, expeditor) și titlul/textul propus
+  atelierelor, cu câmpuri {comanda} {atelier} {telefon} {email} {prestator}
+  {livrare}. Parola stă criptată în `setari` (ca cheile Stripe). La salvare
+  se încearcă legătura; buton de email de probă. Cod: `src/email.js`
+  (nodemailer).
+- **Administrare → Prestatori** (`/admin/prestatori`): lista firmelor la care
+  se trimit comenzi (nume, oraș, email — mai multe cu virgulă —, telefon,
+  servicii, ce cer, apare/ascuns). Tabelul `prestatori` (migrarea 014).
+  Adresa publică HTC Cubbis: office@cubbis.ro (nepusă; o pune Dan).
+- **Pe comandă, „Trimite la prestator"**: alegi prestatorul, titlul, textul;
+  pleacă arhiva proiectului (`proiectZip`, aceeași ca „Descarcă proiect"),
+  Reply-To = atelierul, copie la atelier (bifă). Fiecare încercare în
+  `trimiteri`, cu istoric pe comandă. Maximum 20 pe zi pe cont. Atelierul
+  nu poate trimite la altă adresă decât a unui prestator din listă.
+- Probe: `EMAIL_PROBA=1` în mediu → emailurile nu pleacă, se scriu în
+  DATA_DIR/emailuri-proba/*.json.
+- Rămâne: furnizorul de email (Dan alege; merge orice SMTP). Pe server
+  portul 587 trebuie să fie deschis spre ieșire.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

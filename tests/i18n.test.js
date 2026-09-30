@@ -296,8 +296,12 @@ const AMESTEC = new RegExp(
 
 test('nicio literă latină nu s-a strecurat într-un cuvânt chirilic sau grec', () => {
   fs.readdirSync(LOCALES).filter(f => f.endsWith('.json')).forEach(f => {
-    const text = fs.readFileSync(path.join(LOCALES, f), 'utf8');
-    const gasite = [...new Set(text.match(AMESTEC) || [])];
+    /* textele, nu fișierul brut: în fișier un rând nou e scris „\n", iar
+       „n"-ul lui lipit de o literă chirilică ar părea un cuvânt amestecat */
+    const valori = [];
+    (function strange(o) { Object.values(o).forEach(v => (typeof v === 'string' ? valori.push(v) : strange(v))); })(
+      JSON.parse(fs.readFileSync(path.join(LOCALES, f), 'utf8')));
+    const gasite = [...new Set(valori.join(' ').match(AMESTEC) || [])];
     assert.deepEqual(gasite, [],
       `${f} amestecă litere latine cu chirilice sau grece în același cuvânt: ${gasite.join(' ')}`);
   });

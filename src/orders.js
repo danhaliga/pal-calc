@@ -9,6 +9,8 @@ const credit = require('./credit');
 const util = require('./util');
 const xlsx = require('./xlsx');
 const { zip } = require('./arhiva');
+const email = require('./email');
+const Prestatori = require('./prestatori');
 const jurnal = require('./jurnal');
 const materiale = require('./materiale');
 const Catalog = require('../shared/catalog');
@@ -330,6 +332,24 @@ router.post('/orders', requireAuth, (req, res) => {
 
 /* ---------- o comandă ---------- */
 
+/* Formularul „Trimite la prestator" de pe pagina comenzii. */
+function dateTrimitere(order, req) {
+  const flash = req.session.trimiteFlash || null;
+  delete req.session.trimiteFlash;
+  const lista = Prestatori.activi();
+  const ales = flash && flash.prestator ? Prestatori.unul(flash.prestator) : null;
+  const prop = Prestatori.propunere(order, req.user, ales, req.t);
+  return {
+    prestatori: lista,
+    emailPornit: email.pornit(),
+    istoric: Prestatori.aleComenzii(order.id),
+    ales: ales ? ales.id : (lista.length === 1 ? lista[0].id : ''),
+    subiect: flash && flash.subiect != null ? flash.subiect : prop.subiect,
+    text: flash && flash.text != null ? flash.text : prop.text,
+    flash
+  };
+}
+
 router.get('/orders/:id', requireAuth, (req, res, next) => {
   const order = getOwned(req.params.id, req.user.id);
   if (!order) return notFound(next);
@@ -363,7 +383,8 @@ router.get('/orders/:id', requireAuth, (req, res, next) => {
        anume dupa el — din legatura „schimba sistemul" sau intors de la
        salvare. Un `#feronerie` singur ar duce omul in dreptul unui panou
        inchis, iar CSS nu poate deschide un <details>. */
-    deschideFeronerie: req.query.fero === '1'
+    deschideFeronerie: req.query.fero === '1',
+    trimite: dateTrimitere(order, req)
   });
 });
 
@@ -811,28 +832,86 @@ const randeazaUna = (res, view, date) => new Promise((ok, nu) =>
 const randeaza = async (res, view, date) =>
   randeazaUna(res, 'layout-print', Object.assign({}, date, { body: await randeazaUna(res, view, date) }));
 
+async function proiectZip(order, req, res) {
+  const raport = raportComenzii(order, req.t);
+  const cu = comandaCuCamera(order);
+  const comun = { raport, cu, ans: PalAnsamblu.ansamblu(cu, corpuriPozitionate(order.id), req.t) };
+  const dosar = util.numeFisierLizibil(order.name) + '/';
+  const fisiere = {};
+  const tipuri = Object.keys(PRINTURI);
+  for (let i = 0; i < tipuri.length; i++) {
+    const tip = tipuri[i];
+    const date = Object.assign(datePrint(order, req, tip, comun), { arhiva: true });
+    const html = await randeaza(res, PRINTURI[tip].view, date);
+    fisiere[dosar + (i + 1) + ' ' + util.numeFisierLizibil(req.t(PRINTURI[tip].titlu)) + '.html'] = paginaDeSine(html);
+  }
+  fisiere[dosar + util.numeFisierLizibil(req.t('print.titluDebitare')) + '.xlsx'] =
+    xlsx.xlsx([{ nume: order.name, randuri: tabelDebitare(raport, req.t) }]);
+  return { nume: util.numeFisierLizibil(order.name) + '.zip', continut: zip(fisiere) };
+}
+
 router.get('/orders/:id/proiect.zip', requireAuth, async (req, res, next) => {
   const order = getOwned(req.params.id, req.user.id);
   if (!order) return notFound(next);
   try {
-    const raport = raportComenzii(order, req.t);
-    const cu = comandaCuCamera(order);
-    const comun = { raport, cu, ans: PalAnsamblu.ansamblu(cu, corpuriPozitionate(order.id), req.t) };
-    const dosar = util.numeFisierLizibil(order.name) + '/';
-    const fisiere = {};
-    const tipuri = Object.keys(PRINTURI);
-    for (let i = 0; i < tipuri.length; i++) {
-      const tip = tipuri[i];
-      const date = Object.assign(datePrint(order, req, tip, comun), { arhiva: true });
-      const html = await randeaza(res, PRINTURI[tip].view, date);
-      fisiere[dosar + (i + 1) + ' ' + util.numeFisierLizibil(req.t(PRINTURI[tip].titlu)) + '.html'] = paginaDeSine(html);
-    }
-    fisiere[dosar + util.numeFisierLizibil(req.t('print.titluDebitare')) + '.xlsx'] =
-      xlsx.xlsx([{ nume: order.name, randuri: tabelDebitare(raport, req.t) }]);
-
+    const p = await proiectZip(order, req, res);
     res.setHeader('Content-Type', 'application/zip');
     res.setHeader('Content-Disposition', util.dispozitieAtasament(order.name, 'zip'));
-    res.send(zip(fisiere));
+    res.send(p.continut);
+  } catch (e) {
+    next(e);
+  }
+});
+
+/* ---------- trimiterea la un prestator ----------
+
+   Prestatorul se alege din lista administratorului; titlul și textul le
+   scrie atelierul. Arhiva proiectului pleacă atașată. Răspunsul
+   prestatorului vine direct la atelier (Reply-To), iar atelierul poate
+   primi o copie. Fiecare încercare se notează, reușită sau nu. */
+router.post('/orders/:id/trimite', requireAuth, async (req, res, next) => {
+  const order = getOwned(req.params.id, req.user.id);
+  if (!order) return notFound(next);
+  const t = req.t;
+  const inapoi = (cheie, arg, bun) => {
+    req.session.trimiteFlash = { mesaj: t(cheie, arg || {}), bun: !!bun,
+                                 subiect: req.body.subiect, text: req.body.text, prestator: req.body.prestator };
+    res.redirect('/orders/' + order.id + '#trimite');
+  };
+  try {
+    const p = Prestatori.unul(req.body.prestator);
+    if (!p || !p.activ) return inapoi('prestator.eroareAlege');
+    if (!email.pornit()) return inapoi('prestator.emailOprit');
+    if (Prestatori.azi(req.user.id) >= Prestatori.PE_ZI) return inapoi('prestator.preaMulte', { n: Prestatori.PE_ZI });
+
+    const subiect = String(req.body.subiect || '').replace(/[\r\n]+/g, ' ').trim().slice(0, 200);
+    const text = String(req.body.text || '').replace(/\r\n/g, '\n').trim().slice(0, 5000);
+    if (!subiect || !text) return inapoi('prestator.eroareGol');
+
+    const atas = await proiectZip(order, req, res);
+    const r = { order_id: order.id, user_id: req.user.id, prestator_id: p.id, prestator: p.nume,
+                catre: p.email, subiect, stare: 'trimis', eroare: null };
+    try {
+      await email.trimite({
+        catre: p.email,
+        cc: req.body.copie === '1' ? req.user.email : '',
+        raspunsLa: req.user.email,
+        subiect, text,
+        atasamente: [atas]
+      });
+    } catch (e) {
+      r.stare = 'eroare';
+      r.eroare = String(e.message || e).slice(0, 500);
+    }
+    Prestatori.noteaza(r);
+    jurnal[r.stare === 'trimis' ? 'fapta' : 'eroare']('email',
+      r.stare === 'trimis' ? 'comandă trimisă la prestator' : 'trimiterea la prestator a eșuat',
+      { req, detalii: { comanda: order.id, prestator: p.nume, eroare: r.eroare } });
+    if (r.stare === 'trimis') {
+      req.session.trimiteFlash = { mesaj: t('prestator.trimis', { nume: p.nume, email: p.email }), bun: true };
+      return res.redirect('/orders/' + order.id + '#trimite');
+    }
+    return inapoi('prestator.eroareTrimitere', { mesaj: r.eroare });
   } catch (e) {
     next(e);
   }

@@ -27,8 +27,11 @@ const { db } = require('./db');
    că nu merge. */
 const PERMISE = ['PAYMENT_DRIVER', 'STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET',
                  /* facturarea: plătitor de TVA ('1'/'0') și cota, în procente */
-                 'FACTURARE_TVA', 'FACTURARE_COTA'];
-const SECRETE = ['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET'];
+                 'FACTURARE_TVA', 'FACTURARE_COTA',
+                 /* emailul: serverul SMTP și mesajul implicit către prestatori */
+                 'EMAIL_HOST', 'EMAIL_PORT', 'EMAIL_SECURE', 'EMAIL_USER', 'EMAIL_PAROLA',
+                 'EMAIL_DE', 'EMAIL_NUME', 'EMAIL_SUBIECT', 'EMAIL_TEXT'];
+const SECRETE = ['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET', 'EMAIL_PAROLA'];
 
 const SECRET_IMPLICIT = 'dev-secret-schimba-ma';   /* același ca în server.js */
 

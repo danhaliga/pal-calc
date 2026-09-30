@@ -23,6 +23,7 @@ const cont = require('./src/cont');
 const jurnal = require('./src/jurnal');
 const articole = require('./src/articole');
 const legal = require('./src/legal');
+const prestatori = require('./src/prestatori');
 const i18n = require('./src/i18n');
 const PalI18n = require('./shared/i18n');
 
@@ -178,6 +179,7 @@ app.use(mesaje.router);
 app.use(cont.router);
 app.use(articole.router);
 app.use(legal.router);
+app.use(prestatori.router);
 
 /* ---- erori ---- */
 

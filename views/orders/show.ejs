@@ -439,6 +439,76 @@
     </tbody>
   </table></div>
 </div>
+
+<!-- ---------------- trimiterea la un prestator ---------------- -->
+<div class="panel" id="trimite">
+  <h2><%= t('prestator.trimiteTitlu') %></h2>
+  <p class="muted"><%= t('prestator.trimiteIntro') %></p>
+  <% if (trimite.flash) { %>
+    <div class="warn <%= trimite.flash.bun ? 'ok' : 'err' %>"><%= trimite.flash.mesaj %></div>
+  <% } %>
+  <% if (!trimite.emailPornit) { %>
+    <div class="warn"><%= t('prestator.emailOprit') %>
+      <% if (user.is_admin) { %> <a href="/admin/email"><%= t('prestator.emailConfigureaza') %></a><% } %></div>
+  <% } else if (!trimite.prestatori.length) { %>
+    <div class="warn"><%= t('prestator.faraPrestatori') %>
+      <% if (user.is_admin) { %> <a href="/admin/prestatori"><%= t('prestator.adaugaPrestatori') %></a><% } %></div>
+  <% } else { %>
+    <form method="post" action="/orders/<%= order.id %>/trimite" class="trimite-form">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <div class="f">
+        <label class="full"><%= t('prestator.alege') %>
+          <select name="prestator" required>
+            <option value=""><%= t('prestator.alegeGol') %></option>
+            <% trimite.prestatori.forEach(function (p) { %>
+              <option value="<%= p.id %>" <%= String(trimite.ales) === String(p.id) ? 'selected' : '' %>>
+                <%= p.nume %><%= p.oras ? ' — ' + p.oras : '' %><%= p.servicii ? ' (' + p.servicii + ')' : '' %>
+              </option>
+            <% }); %>
+          </select>
+        </label>
+        <label class="full"><%= t('prestator.subiect') %>
+          <input name="subiect" maxlength="200" required value="<%= trimite.subiect %>">
+        </label>
+        <label class="full"><%= t('prestator.text') %>
+          <textarea name="text" rows="9" maxlength="5000" required><%= trimite.text %></textarea>
+        </label>
+      </div>
+      <% var cuNota = trimite.prestatori.filter(function (p) { return p.nota; }); %>
+      <% if (cuNota.length) { %>
+        <details class="legend"><summary><%= t('prestator.ceCer') %></summary>
+          <% cuNota.forEach(function (p) { %><p><b><%= p.nume %>:</b> <%= p.nota %></p><% }); %>
+        </details>
+      <% } %>
+      <p><label><input type="checkbox" name="copie" value="1" checked> <%= t('prestator.copie', { email: user.email }) %></label></p>
+      <p class="legend"><%= t('prestator.atasat', { fisier: order.name + '.zip', email: user.email }) %></p>
+      <button class="btn primary" type="submit"><%= t('prestator.trimiteButon') %></button>
+    </form>
+  <% } %>
+
+  <% if (trimite.istoric.length) { %>
+    <h3><%= t('prestator.istoric') %></h3>
+    <div class="tbl"><table>
+      <thead><tr>
+        <th><%= t('prestator.colData') %></th><th><%= t('prestator.colPrestator') %></th>
+        <th><%= t('prestator.colSubiect') %></th><th><%= t('prestator.colStare') %></th>
+      </tr></thead>
+      <tbody>
+        <% trimite.istoric.forEach(function (r) { %>
+          <tr>
+            <td class="small"><%= String(r.created_at).slice(0, 16) %></td>
+            <td><%= r.prestator %> <span class="muted small"><%= r.catre %></span></td>
+            <td class="small"><%= r.subiect %></td>
+            <td class="small">
+              <% if (r.stare === 'trimis') { %><span class="chip paid"><%= t('prestator.stareTrimis') %></span>
+              <% } else { %><span class="chip err" title="<%= r.eroare %>"><%= t('prestator.stareEroare') %></span><% } %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table></div>
+  <% } %>
+</div>
 <% } %>
 
 <%# Ștergerea stătea pliată în „Setări comandă" și nimeni n-o găsea. Stă la

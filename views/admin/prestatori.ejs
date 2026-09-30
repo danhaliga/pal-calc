@@ -1,0 +1,63 @@
+<div class="top">
+  <div>
+    <div class="crumbs"><a href="/admin">← <%= t('nav.administrare') %></a></div>
+    <h1><%= t('prestator.adminTitlu') %></h1>
+    <p class="muted"><%= t('prestator.adminIntro') %></p>
+  </div>
+</div>
+
+<% erori.forEach(function (e) { %><div class="warn err"><%= e %></div><% }); %>
+<% ok.forEach(function (o) { %><div class="warn ok"><%= o %></div><% }); %>
+<% if (!emailPornit) { %>
+  <div class="warn"><%= t('prestator.emailOprit') %> <a href="/admin/email"><%= t('prestator.emailConfigureaza') %></a></div>
+<% } %>
+
+<%# Același formular pentru adăugare și pentru schimbare: `p` e prestatorul,
+    sau datele trimise când a ieșit o eroare, sau nimic. %>
+<% function formular(p, eticheta) { p = p || {}; %>
+  <form method="post" action="/admin/prestatori">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <% if (p.id) { %><input type="hidden" name="id" value="<%= p.id %>"><% } %>
+    <div class="f">
+      <label><%= t('prestator.nume') %><input name="nume" required maxlength="120" value="<%= p.nume || '' %>" placeholder="HTC Cubbis"></label>
+      <label><%= t('prestator.oras') %><input name="oras" maxlength="80" value="<%= p.oras || '' %>" placeholder="Iași"></label>
+      <label><%= t('prestator.email') %><input name="email" required maxlength="200" value="<%= p.email || '' %>" placeholder="comenzi@firma.ro"></label>
+      <label><%= t('prestator.telefon') %><input name="telefon" maxlength="40" value="<%= p.telefon || '' %>"></label>
+      <label class="full"><%= t('prestator.servicii') %><input name="servicii" maxlength="200" value="<%= p.servicii || '' %>" placeholder="<%= t('prestator.serviciiExemplu') %>"></label>
+      <label class="full"><%= t('prestator.nota') %><textarea name="nota" rows="3" maxlength="1000"><%= p.nota || '' %></textarea></label>
+      <label><%= t('prestator.inLista') %><select name="activ">
+        <option value="1" <%= p.activ === 0 || p.activ === '0' ? '' : 'selected' %>><%= t('prestator.activ') %></option>
+        <option value="0" <%= p.activ === 0 || p.activ === '0' ? 'selected' : '' %>><%= t('prestator.inactiv') %></option>
+      </select></label>
+    </div>
+    <p class="legend"><%= t('prestator.emailAjutor') %></p>
+    <button class="btn primary" type="submit"><%= eticheta %></button>
+  </form>
+<% } %>
+
+<div class="panel" style="max-width:900px">
+  <h2><%= t('prestator.lista') %></h2>
+  <% if (!prestatori.length) { %>
+    <p class="muted"><%= t('prestator.listaGoala') %></p>
+  <% } %>
+  <% prestatori.forEach(function (p) { %>
+    <details class="panel" style="margin:8px 0">
+      <summary>
+        <b><%= p.nume %></b><%= p.oras ? ' — ' + p.oras : '' %>
+        <span class="muted small"><%= p.email %></span>
+        <% if (!p.activ) { %><span class="chip draft"><%= t('prestator.inactiv') %></span><% } %>
+        <span class="muted small"> · <%= t('prestator.nrTrimise', { n: trimise[p.id] || 0 }) %></span>
+      </summary>
+      <% formular(p, t('prestator.salveaza')); %>
+      <form method="post" action="/admin/prestatori/<%= p.id %>/sterge" style="margin-top:10px">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button class="btn small danger" type="submit" data-confirma="<%= t('prestator.confirmaSterge', { nume: p.nume }) %>"><%= t('comun.sterge') %></button>
+      </form>
+    </details>
+  <% }); %>
+</div>
+
+<div class="panel" style="max-width:900px" id="adauga">
+  <h2><%= t('prestator.adauga') %></h2>
+  <% formular(date && !date.id ? date : null, t('prestator.adaugaButon')); %>
+</div>

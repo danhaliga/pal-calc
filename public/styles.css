@@ -119,6 +119,7 @@ button:disabled{opacity:.5;cursor:not-allowed}
   text-transform:uppercase;letter-spacing:.04em}
 .chip.paid{background:var(--ok-bg);border-color:var(--accent);color:var(--accent)}
 .chip.draft{background:var(--row);color:var(--muted)}
+.chip.err{border-color:var(--danger);color:var(--danger)}
 
 /* ---------- tabel ---------- */
 .tbl{overflow-x:auto}
