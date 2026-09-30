@@ -35,8 +35,16 @@ programator.** Vezi capitolul 8 înainte să-i scrii ceva.
 | Render | `palcalc.onrender.com` | **merge**, se actualizează singur la fiecare `git push` |
 | VPS propriu | **https://cutmodul.com** | **live**, cu https, din 29 septembrie. Plata e pe bani virtuali, înadins — vezi 4c |
 
-Render și VPS-ul rulează amândouă în paralel, cu baze de date separate.
-Nu s-a hotărât încă dacă Render se oprește.
+**Dan a hotărât pe 30 septembrie: se lucrează NUMAI pe cutmodul.com.** Orice
+schimbare se pune și se verifică acolo, și numai despre el i se vorbește.
+Render mai primește singur fiecare `git push`, dar pentru Dan nu există: două
+site-uri cu baze diferite l-au încurcat (a încercat o parolă pe cel greșit).
+
+Conturi pe cutmodul.com: `danhaliga@gmail.com` e administratorul (parola în
+`/root/parola-palcalc.txt`, pusă din nou pe 30 septembrie). `123` / `123` e
+un cont de PROBĂ, fără drept de administrator, cu 500 lei virtuali — cerut de
+Dan ca să nu piardă timp cu autentificarea. Nu-l face administrator: site-ul
+e public.
 
 ---
 
