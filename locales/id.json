@@ -1972,5 +1972,32 @@
     "marime": "Ukuran (mis. “46 karyawan”)",
     "pePagina": "Di halaman “Penyedia jasa”",
     "ordine": "Posisi di daftar (lebih besar = lebih atas)"
+  },
+  "planificator": {
+    "nav": "Perencana 3D",
+    "titlu": "Perencana 3D",
+    "eticheta": "Perencana 3D",
+    "titluA": "Tata furnitur di ruangan",
+    "titluB": "sebelum Anda memotongnya.",
+    "sub": "Anda buat ruangannya, tambahkan kabinet, lalu geser dengan tangan, seperti di perencana toko furnitur besar. Bedanya: setiap kabinet di ruangan sudah punya daftar potong, gambar CNC, dan lembar perakitan.",
+    "demoTitlu": "Coba sekarang, tanpa akun",
+    "demoNota": "Contoh dapur. Geser kabinet sesuka Anda: tidak ada yang disimpan.",
+    "f1T": "Tarik kabinet ke dinding",
+    "f1S": "Pegang kabinet dan bawa ke mana saja. Kabinet otomatis menempel ke dinding terdekat, menghadap ke ruangan.",
+    "f2T": "Menempel ke sudut dan tetangga",
+    "f2S": "Saat mendekat, kabinet menempel ke sudut atau ke kabinet di sebelahnya. Tidak perlu lagi mencocokkan milimeter dengan tangan.",
+    "f3T": "Merah jika tidak muat",
+    "f3S": "Jika kabinet masuk ke kabinet lain atau keluar dari ruangan, warnanya jadi merah. Anda melihat masalahnya sebelum memotong, bukan saat merakit.",
+    "f4T": "Warna dekor pilihan Anda",
+    "f4S": "Kabinet memakai warna dekor yang dipilih di pesanan: badan dalam satu dekor, pintu depan dalam dekor lain.",
+    "f5T": "Denah, tampak, dan lembar kerja otomatis",
+    "f5S": "Dari ruangan langsung jadi denah dari atas, tampak setiap dinding, dan gambar perakitan, siap dicetak.",
+    "f6T": "Di komputer dan ponsel",
+    "f6S": "Dengan mouse atau jari: geser, putar, perbesar. Di tempat klien, di bengkel, atau di lokasi proyek.",
+    "chemare": "Buat ruangan Anda sendiri",
+    "chemareSub": "Buka pesanan, tambahkan kabinet, lalu atur di ruangan dari halaman Tata letak.",
+    "landingTitlu": "Perencana 3D",
+    "landingSub": "Geser kabinet di ruangan dengan tangan, seperti di perencana toko. Coba pada contoh dapur, tanpa akun.",
+    "landingButon": "Coba perencana"
   }
 }

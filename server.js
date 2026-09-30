@@ -171,6 +171,16 @@ app.get('/', (req, res) => {
   });
 });
 
+/* Pagina publică a planificatorului 3D, cu o bucătărie de exemplu pe care
+   vizitatorul o poate rearanja fără cont (nimic nu se salvează). */
+app.get('/planificator', (req, res) => {
+  res.render('planificator', {
+    title: req.t('planificator.titlu'),
+    demo: require('./src/demo3d').date(req.t),
+    pereti: require('./shared/ansamblu').pereti(req.t)
+  });
+});
+
 app.use(i18n.router);
 app.use(auth.router);
 app.use(credit.router);

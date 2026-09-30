@@ -1972,5 +1972,32 @@
     "marime": "Size (e.g. “46 employees”)",
     "pePagina": "On the “Providers” page",
     "ordine": "Position in list (higher = further up)"
+  },
+  "planificator": {
+    "nav": "3D Planner",
+    "titlu": "3D Planner",
+    "eticheta": "3D Planner",
+    "titluA": "Arrange the furniture in the room,",
+    "titluB": "before you cut it.",
+    "sub": "Set up the room, add the cabinets and move them by hand, just like the planners of big furniture stores. The difference: every cabinet in the room already has its cut list, CNC drawings and assembly sheet.",
+    "demoTitlu": "Try it now, no account needed",
+    "demoNota": "A sample kitchen. Move the cabinets however you like: nothing is saved.",
+    "f1T": "Drag the cabinet onto the wall",
+    "f1S": "Grab a cabinet and take it wherever you want. It settles onto the nearest wall by itself, facing the room.",
+    "f2T": "Snaps to corners and neighbours",
+    "f2S": "When it gets close, the cabinet snaps to the corner or to the cabinet next to it. No more lining up millimetres by hand.",
+    "f3T": "Red when it doesn't fit",
+    "f3S": "If a cabinet overlaps another or sticks out of the room, it turns red. You see the problem before cutting, not during assembly.",
+    "f4T": "Your decor colours",
+    "f4S": "Cabinets show the colours of the decors chosen in the order: the carcass in one decor, the fronts in another.",
+    "f5T": "Plan, elevations and sheets, automatically",
+    "f5S": "From the room you get the top-down plan, a view of every wall and the assembly drawings, ready to print.",
+    "f6T": "On computer and phone",
+    "f6S": "With the mouse or your finger: drag, rotate, zoom. At the client's, in the workshop or on site.",
+    "chemare": "Build your own room",
+    "chemareSub": "Open an order, add the cabinets and arrange them in the room from the Layout page.",
+    "landingTitlu": "3D Planner",
+    "landingSub": "Move cabinets around the room by hand, like in store planners. Try it on a sample kitchen, no account needed.",
+    "landingButon": "Try the planner"
   }
 }

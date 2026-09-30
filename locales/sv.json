@@ -1972,5 +1972,32 @@
     "marime": "Storlek (t.ex. ”46 anställda”)",
     "pePagina": "På sidan ”Leverantörer”",
     "ordine": "Plats i listan (högre = längre upp)"
+  },
+  "planificator": {
+    "nav": "3D-planerare",
+    "titlu": "3D-planerare",
+    "eticheta": "3D-planerare",
+    "titluA": "Placera möblerna i rummet",
+    "titluB": "innan du sågar.",
+    "sub": "Du skapar rummet, lägger till skåpen och flyttar dem med handen, precis som i de stora möbelvaruhusens planerare. Skillnaden: varje skåp i rummet har redan sin kapningslista, sina CNC-ritningar och sitt monteringsblad.",
+    "demoTitlu": "Testa nu, utan konto",
+    "demoNota": "Ett exempelkök. Flytta skåpen som du vill: inget sparas.",
+    "f1T": "Dra skåpet mot väggen",
+    "f1S": "Ta tag i ett skåp och flytta det dit du vill. Det ställer sig själv mot närmaste vägg, med fronten mot rummet.",
+    "f2T": "Fäster mot hörn och grannar",
+    "f2S": "När det kommer nära fäster skåpet mot hörnet eller skåpet bredvid. Slut på att passa in millimetrar för hand.",
+    "f3T": "Rött när det inte får plats",
+    "f3S": "Om ett skåp går in i ett annat eller sticker ut ur rummet blir det rött. Du ser problemet före kapningen, inte vid monteringen.",
+    "f4T": "Dina dekorers färger",
+    "f4S": "Skåpen får färgerna från dekorerna som valts i ordern: stommen i en dekor, fronterna i en annan.",
+    "f5T": "Planritning, vyer och blad, automatiskt",
+    "f5S": "Ur rummet får du planritningen ovanifrån, vyn av varje vägg och sammanställningsritningarna, klara att skriva ut.",
+    "f6T": "På dator och mobil",
+    "f6S": "Med musen eller fingret: dra, rotera, zooma. Hos kunden, i verkstaden eller på bygget.",
+    "chemare": "Skapa ditt eget rum",
+    "chemareSub": "Öppna en order, lägg till skåpen och placera dem i rummet från sidan Uppställning.",
+    "landingTitlu": "3D-planerare",
+    "landingSub": "Flytta skåp runt i rummet med handen, som i butikernas planerare. Testa på ett exempelkök, utan konto.",
+    "landingButon": "Testa planeraren"
   }
 }

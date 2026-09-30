@@ -1983,5 +1983,32 @@
     "marime": "Veličina (npr. „46 zaposlenih“)",
     "pePagina": "Na stranici „Izvođači“",
     "ordine": "Položaj na popisu (veći = više)"
+  },
+  "planificator": {
+    "nav": "3D planer",
+    "titlu": "3D planer",
+    "eticheta": "3D planer",
+    "titluA": "Rasporedi namještaj u prostoriji",
+    "titluB": "prije nego što ga izrežeš.",
+    "sub": "Postaviš prostoriju, dodaš korpuse i pomičeš ih rukom, kao u planerima velikih trgovina namještaja. Razlika: svaki korpus u prostoriji već ima svoju listu rezanja, CNC nacrte i list za montažu.",
+    "demoTitlu": "Isprobaj odmah, bez računa",
+    "demoNota": "Primjer kuhinje. Pomiči korpuse kako želiš: ništa se ne sprema.",
+    "f1T": "Povuci korpus na zid",
+    "f1S": "Uhvatiš korpus i odneseš ga kamo želiš. Sam se smjesti uz najbliži zid, licem prema prostoriji.",
+    "f2T": "Prianja uz kut i susjede",
+    "f2S": "Kad se približi, korpus prione uz kut ili uz susjedni korpus. Nema više ručnog namještanja milimetara.",
+    "f3T": "Crveno kad ne stane",
+    "f3S": "Ako korpus ulazi u drugi ili izlazi iz prostorije, pocrveni. Problem vidiš prije rezanja, a ne na montaži.",
+    "f4T": "Boje tvojih dekora",
+    "f4S": "Korpusi imaju boje dekora odabranih u narudžbi: korpus u jednom dekoru, fronte u drugom.",
+    "f5T": "Tlocrt, pogledi i listovi, sami",
+    "f5S": "Iz prostorije nastaju tlocrt odozgo, pogled na svaki zid i sklopni nacrti, spremni za ispis.",
+    "f6T": "Na računalu i na mobitelu",
+    "f6S": "Mišem ili prstom: vučeš, okrećeš, zumiraš. Kod klijenta, u radionici ili na gradilištu.",
+    "chemare": "Složi svoju prostoriju",
+    "chemareSub": "Otvoriš narudžbu, dodaš korpuse i rasporediš ih u prostoriji na stranici Raspored.",
+    "landingTitlu": "3D planer",
+    "landingSub": "Pomiči korpuse po prostoriji rukom, kao u planerima trgovina. Isprobaj na primjeru kuhinje, bez računa.",
+    "landingButon": "Isprobaj planer"
   }
 }

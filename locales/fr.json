@@ -1972,5 +1972,32 @@
     "marime": "Taille (ex. « 46 salariés »)",
     "pePagina": "Sur la page « Prestataires »",
     "ordine": "Position dans la liste (plus grand = plus haut)"
+  },
+  "planificator": {
+    "nav": "Planificateur 3D",
+    "titlu": "Planificateur 3D",
+    "eticheta": "Planificateur 3D",
+    "titluA": "Placez vos meubles dans la pièce",
+    "titluB": "avant de les découper.",
+    "sub": "Vous créez la pièce, ajoutez les caissons et les déplacez à la main, comme dans les planificateurs des grandes enseignes de meubles. La différence : chaque caisson de la pièce a déjà sa liste de débit, ses plans CNC et sa fiche de montage.",
+    "demoTitlu": "Essayez maintenant, sans compte",
+    "demoNota": "Une cuisine d'exemple. Déplacez les caissons comme vous voulez : rien n'est enregistré.",
+    "f1T": "Glissez le caisson contre le mur",
+    "f1S": "Attrapez un caisson et emmenez-le où vous voulez. Il se place tout seul contre le mur le plus proche, face à la pièce.",
+    "f2T": "Il s'aimante aux angles et aux voisins",
+    "f2S": "À l'approche, le caisson se colle à l'angle ou au caisson voisin. Fini l'ajustement au millimètre à la main.",
+    "f3T": "Rouge quand ça ne rentre pas",
+    "f3S": "Si un caisson empiète sur un autre ou sort de la pièce, il devient rouge. Vous voyez le problème avant le débit, pas au montage.",
+    "f4T": "Les couleurs de vos décors",
+    "f4S": "Les caissons prennent les couleurs des décors choisis dans la commande : le corps dans un décor, les façades dans un autre.",
+    "f5T": "Plan, élévations et fiches, automatiquement",
+    "f5S": "La pièce vous donne le plan vu de dessus, la vue de chaque mur et les plans d'ensemble, prêts à imprimer.",
+    "f6T": "Sur ordinateur et sur téléphone",
+    "f6S": "À la souris ou au doigt : glissez, tournez, zoomez. Chez le client, à l'atelier ou sur le chantier.",
+    "chemare": "Créez votre pièce",
+    "chemareSub": "Ouvrez une commande, ajoutez les caissons et placez-les dans la pièce depuis la page Implantation.",
+    "landingTitlu": "Planificateur 3D",
+    "landingSub": "Déplacez les caissons dans la pièce à la main, comme dans les planificateurs des magasins. Essayez sur une cuisine d'exemple, sans compte.",
+    "landingButon": "Essayer le planificateur"
   }
 }

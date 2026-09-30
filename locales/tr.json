@@ -1972,5 +1972,32 @@
     "marime": "Büyüklük (örn. “46 çalışan”)",
     "pePagina": "“Hizmet verenler” sayfasında",
     "ordine": "Listedeki sıra (büyük = daha yukarıda)"
+  },
+  "planificator": {
+    "nav": "3D Planlayıcı",
+    "titlu": "3D Planlayıcı",
+    "eticheta": "3D Planlayıcı",
+    "titluA": "Mobilyayı kesmeden önce",
+    "titluB": "odaya yerleştirin.",
+    "sub": "Odayı kurarsınız, dolapları eklersiniz ve elinizle taşırsınız; tıpkı büyük mobilya mağazalarının planlayıcılarındaki gibi. Farkı şu: odadaki her dolabın kesim listesi, CNC çizimleri ve montaj föyü zaten hazır.",
+    "demoTitlu": "Hemen deneyin, hesap gerekmez",
+    "demoNota": "Örnek bir mutfak. Dolapları istediğiniz gibi taşıyın: hiçbir şey kaydedilmez.",
+    "f1T": "Dolabı duvara sürükleyin",
+    "f1S": "Bir dolabı tutup istediğiniz yere götürün. Kendiliğinden en yakın duvara, önü odaya bakacak şekilde yerleşir.",
+    "f2T": "Köşeye ve komşulara yapışır",
+    "f2S": "Yaklaştığında dolap köşeye veya yanındaki dolaba yapışır. Artık milimetreleri elle ayarlamak yok.",
+    "f3T": "Sığmazsa kırmızı",
+    "f3S": "Bir dolap diğerinin içine girerse veya odanın dışına taşarsa kırmızıya döner. Sorunu montajda değil, kesimden önce görürsünüz.",
+    "f4T": "Dekorlarınızın renkleri",
+    "f4S": "Dolaplar siparişte seçilen dekorların renklerini alır: gövde bir dekorda, kapaklar başka bir dekorda.",
+    "f5T": "Plan, görünüşler ve föyler kendiliğinden",
+    "f5S": "Odadan üstten plan, her duvarın görünüşü ve montaj çizimleri çıkar, yazdırmaya hazır.",
+    "f6T": "Bilgisayarda ve telefonda",
+    "f6S": "Fareyle ya da parmağınızla: sürükleyin, döndürün, yakınlaştırın. Müşteride, atölyede ya da şantiyede.",
+    "chemare": "Kendi odanızı oluşturun",
+    "chemareSub": "Bir sipariş açın, dolapları ekleyin ve Yerleşim sayfasından odaya yerleştirin.",
+    "landingTitlu": "3D Planlayıcı",
+    "landingSub": "Dolapları odada elinizle taşıyın, tıpkı mağaza planlayıcılarındaki gibi. Hesap gerekmeden örnek bir mutfakta deneyin.",
+    "landingButon": "Planlayıcıyı deneyin"
   }
 }

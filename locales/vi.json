@@ -1972,5 +1972,32 @@
     "marime": "Quy mô (vd. “46 nhân viên”)",
     "pePagina": "Trên trang “Đơn vị gia công”",
     "ordine": "Vị trí trong danh sách (lớn hơn = cao hơn)"
+  },
+  "planificator": {
+    "nav": "Trình thiết kế 3D",
+    "titlu": "Trình thiết kế 3D",
+    "eticheta": "Trình thiết kế 3D",
+    "titluA": "Sắp xếp nội thất trong phòng",
+    "titluB": "trước khi cắt ván.",
+    "sub": "Bạn tạo phòng, thêm tủ và kéo chúng bằng tay, giống như trình thiết kế của các cửa hàng nội thất lớn. Điểm khác biệt: mỗi tủ trong phòng đã có sẵn danh sách cắt, bản vẽ CNC và phiếu lắp ráp.",
+    "demoTitlu": "Dùng thử ngay, không cần tài khoản",
+    "demoNota": "Một căn bếp mẫu. Di chuyển tủ tùy ý: không có gì được lưu.",
+    "f1T": "Kéo tủ vào tường",
+    "f1S": "Nắm lấy một tủ và đưa đến bất cứ đâu. Tủ tự áp vào bức tường gần nhất, mặt hướng vào phòng.",
+    "f2T": "Tự bám vào góc và tủ bên cạnh",
+    "f2S": "Khi đến gần, tủ tự bám vào góc hoặc vào tủ bên cạnh. Không còn phải căn từng milimét bằng tay.",
+    "f3T": "Màu đỏ khi không vừa",
+    "f3S": "Nếu tủ chồng lên tủ khác hoặc lọt ra ngoài phòng, nó chuyển sang màu đỏ. Bạn thấy lỗi trước khi cắt, không phải lúc lắp.",
+    "f4T": "Màu vân gỗ của bạn",
+    "f4S": "Tủ hiển thị màu của các mẫu vân đã chọn trong đơn hàng: thùng tủ một mẫu, cánh tủ một mẫu khác.",
+    "f5T": "Mặt bằng, mặt đứng và phiếu, tự động",
+    "f5S": "Từ phòng sẽ ra mặt bằng nhìn từ trên, mặt đứng từng bức tường và bản vẽ tổng thể, sẵn sàng để in.",
+    "f6T": "Trên máy tính và điện thoại",
+    "f6S": "Bằng chuột hoặc ngón tay: kéo, xoay, phóng to. Tại nhà khách, trong xưởng hay ở công trình.",
+    "chemare": "Tạo căn phòng của bạn",
+    "chemareSub": "Mở một đơn hàng, thêm tủ và sắp xếp chúng trong phòng tại trang Bố trí.",
+    "landingTitlu": "Trình thiết kế 3D",
+    "landingSub": "Di chuyển tủ trong phòng bằng tay, giống trình thiết kế của các cửa hàng. Dùng thử với căn bếp mẫu, không cần tài khoản.",
+    "landingButon": "Dùng thử trình thiết kế"
   }
 }

@@ -408,7 +408,7 @@ function arataPanou() {
       '<label>' + scapa(TX.inaltime) + ' <input type="number" step="10" min="0" data-camp="h" value="' + Math.round(c.h) + '"></label>' +
       '<button type="button" class="btn small" data-muta="-50" aria-label="' + scapa(TX.stanga) + '">◀</button>' +
       '<button type="button" class="btn small" data-muta="50" aria-label="' + scapa(TX.dreapta) + '">▶</button>' +
-      '<a class="btn small" href="/corps/' + c.id + '">' + scapa(TX.deschide) + '</a>' +
+      (DATE.demo ? '' : '<a class="btn small" href="/corps/' + c.id + '">' + scapa(TX.deschide) + '</a>') +
     '</div>';
 }
 
@@ -447,6 +447,8 @@ function anunta(text, rau) {
 
 var reincarcare = null;
 function salveaza(c) {
+  /* pe pagina publică e doar o încercare: nu se salvează nimic */
+  if (DATE.demo) return;
   anunta(TX.seSalveaza);
   fetch('/api/corps/' + c.id + '/pozitie', {
     method: 'POST',
@@ -510,9 +512,10 @@ if (chPereti) chPereti.onchange = function () { grupPereti.visible = chPereti.ch
 info.innerHTML = '<span class="muted">' + scapa(TX.seIncarca) + '</span>';
 
 /* Limba paginii merge mai departe la API: numele pieselor vin traduse. */
-fetch('/api/orders/' + DATE.orderId + '/ansamblu?lang=' +
-      encodeURIComponent(document.documentElement.lang || ''))
-  .then(function (r) { return r.json(); })
+(DATE.demo ? Promise.resolve(DATE.demo) :
+ fetch('/api/orders/' + DATE.orderId + '/ansamblu?lang=' +
+       encodeURIComponent(document.documentElement.lang || ''))
+  .then(function (r) { return r.json(); }))
   .then(function (date) {
     construieste(date);
     resize();

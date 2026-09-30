@@ -1,0 +1,59 @@
+<%# Pagina publică a planificatorului 3D. Demonstrația folosește exact
+    planificatorul din aplicație (public/ansamblu.js), cu o bucătărie de
+    exemplu calculată pe server (src/demo3d.js); nimic nu se salvează. %>
+<section class="plan-cap">
+  <div class="film-eticheta"><%= t('planificator.eticheta') %></div>
+  <h1 class="prest-titlu"><%= t('planificator.titluA') %> <em><%= t('planificator.titluB') %></em></h1>
+  <p class="sub"><%= t('planificator.sub') %></p>
+</section>
+
+<div class="panel planificator">
+  <div class="top" style="margin-bottom:8px">
+    <div>
+      <h2 style="margin:0"><%= t('planificator.demoTitlu') %></h2>
+      <p class="muted small" style="margin:4px 0 0"><%= t('planificator.demoNota') %></p>
+    </div>
+    <div class="btns" style="margin:0">
+      <button class="btn small" data-vedere="iso"><%= t('ansamblu.vedereIzo') %></button>
+      <button class="btn small" data-vedere="fata"><%= t('ansamblu.vedereFata') %></button>
+      <button class="btn small" data-vedere="sus"><%= t('ansamblu.vedereSus') %></button>
+      <label class="check" style="margin-left:8px"><input type="checkbox" id="anPereti" checked> <%= t('ansamblu.aratPereti') %></label>
+    </div>
+  </div>
+  <div class="cvwrap" id="anWrap"><canvas id="anCanvas"></canvas><div class="an-stare" id="anStare" hidden></div></div>
+  <div class="info an-panou" id="anInfo"></div>
+</div>
+
+<section class="plan-functii">
+  <% [1, 2, 3, 4, 5, 6].forEach(function (n) { %>
+    <div class="plan-functie">
+      <b><%= t('planificator.f' + n + 'T') %></b>
+      <span><%= t('planificator.f' + n + 'S') %></span>
+    </div>
+  <% }); %>
+</section>
+
+<section class="panel zona-chemare">
+  <div>
+    <b><%= t('planificator.chemare') %></b>
+    <p class="muted small"><%= t('planificator.chemareSub') %></p>
+  </div>
+  <div class="btns">
+    <% if (user) { %>
+      <a class="btn primary" href="/orders"><%= t('nav.comenzi') %></a>
+    <% } else { %>
+      <a class="btn primary" href="/register"><%= t('landing.faCont') %></a>
+      <a class="btn" href="/login"><%= t('landing.amCont') %></a>
+    <% } %>
+  </div>
+</section>
+
+<script type="application/json" id="page-data"><%- jsonPentruPagina({
+  demo: demo,
+  t: ['indiciu', 'selectat', 'perete', 'deLaColt', 'inaltime', 'deschide', 'salvat', 'seSalveaza',
+      'eroare', 'seSuprapune', 'stanga', 'dreapta', 'seIncarca', 'nuSeIncarca', 'nu3d', 'renunta']
+     .reduce(function (o, k) { o[k] = t('ansamblu.p3d.' + k); return o; }, {}),
+  pereti: pereti.map(function (p) { return { id: p.id, nume: p.nume }; })
+}) %></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/static/ansamblu.js?v=<%= assetV %>"></script>

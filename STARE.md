@@ -502,6 +502,11 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
   `culori`); zidul dintre privitor și cameră se ascunde.
 - Test fără WebGL: scratchpad `xl/test3d.js` (jsdom + three 0.128 cu un
   renderer fals) — trage un corp și verifică salvarea.
+- Pagina publică **/planificator** (în meniu, legată și din pagina de
+  prezentare): textul de prezentare și o bucătărie de exemplu
+  (`src/demo3d.js`, 9 corpuri din catalog, fără suprapuneri — testat) în
+  același planificator, în mod `demo`: se mută, dar nu se salvează nimic și
+  nu pleacă nicio cerere la server.
 - Etapele următoare propuse: corpuri noi din catalog direct în cameră,
   ferestre/uși pe pereți, blat automat; apoi vedere „din cameră” și poze.
 

@@ -1972,5 +1972,32 @@
     "marime": "Tamaño (p. ej., «46 empleados»)",
     "pePagina": "En la página «Proveedores»",
     "ordine": "Posición en la lista (mayor = más arriba)"
+  },
+  "planificator": {
+    "nav": "Planificador 3D",
+    "titlu": "Planificador 3D",
+    "eticheta": "Planificador 3D",
+    "titluA": "Coloca los muebles en la habitación",
+    "titluB": "antes de cortarlos.",
+    "sub": "Creas la habitación, añades los módulos y los mueves con la mano, como en los planificadores de las grandes tiendas de muebles. La diferencia: cada módulo de la habitación ya tiene su lista de corte, sus planos CNC y su hoja de montaje.",
+    "demoTitlu": "Pruébalo ahora, sin cuenta",
+    "demoNota": "Una cocina de ejemplo. Mueve los módulos como quieras: no se guarda nada.",
+    "f1T": "Arrastra el módulo a la pared",
+    "f1S": "Coges un módulo y lo llevas donde quieras. Se coloca solo en la pared más cercana, mirando hacia la habitación.",
+    "f2T": "Se ajusta a las esquinas y a los vecinos",
+    "f2S": "Al acercarse, el módulo se pega a la esquina o al módulo de al lado. Se acabó ajustar milímetros a mano.",
+    "f3T": "Rojo cuando no cabe",
+    "f3S": "Si un módulo se mete en otro o se sale de la habitación, se pone rojo. Ves el problema antes del corte, no en el montaje.",
+    "f4T": "Los colores de tus decorados",
+    "f4S": "Los módulos llevan los colores de los decorados elegidos en el pedido: el casco en un decorado y los frentes en otro.",
+    "f5T": "Planta, alzados y fichas, solos",
+    "f5S": "De la habitación salen la planta vista desde arriba, la vista de cada pared y los planos de conjunto, listos para imprimir.",
+    "f6T": "En el ordenador y en el móvil",
+    "f6S": "Con el ratón o con el dedo: arrastras, giras, haces zoom. En casa del cliente, en el taller o en la obra.",
+    "chemare": "Crea tu propia habitación",
+    "chemareSub": "Abres un pedido, añades los módulos y los colocas en la habitación desde la página Distribución.",
+    "landingTitlu": "Planificador 3D",
+    "landingSub": "Mueve los módulos por la habitación con la mano, como en los planificadores de las tiendas. Pruébalo en una cocina de ejemplo, sin cuenta.",
+    "landingButon": "Probar el planificador"
   }
 }

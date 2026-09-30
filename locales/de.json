@@ -1972,5 +1972,32 @@
     "marime": "Größe (z. B. „46 Mitarbeiter“)",
     "pePagina": "Auf der Seite „Dienstleister“",
     "ordine": "Position in der Liste (größer = weiter oben)"
+  },
+  "planificator": {
+    "nav": "3D-Planer",
+    "titlu": "3D-Planer",
+    "eticheta": "3D-Planer",
+    "titluA": "Stellen Sie die Möbel in den Raum,",
+    "titluB": "bevor Sie zuschneiden.",
+    "sub": "Sie legen den Raum an, fügen die Korpusse hinzu und verschieben sie von Hand, wie in den Planern großer Möbelhäuser. Der Unterschied: Jeder Korpus im Raum hat bereits seine Zuschnittliste, CNC-Zeichnungen und sein Montageblatt.",
+    "demoTitlu": "Jetzt testen, ohne Konto",
+    "demoNota": "Eine Beispielküche. Verschieben Sie die Korpusse nach Belieben: Nichts wird gespeichert.",
+    "f1T": "Korpus an die Wand ziehen",
+    "f1S": "Greifen Sie einen Korpus und ziehen Sie ihn, wohin Sie möchten. Er setzt sich von selbst an die nächste Wand, mit der Front zum Raum.",
+    "f2T": "Rastet an Ecken und Nachbarn ein",
+    "f2S": "In der Nähe rastet der Korpus an der Ecke oder am benachbarten Korpus ein. Kein millimetergenaues Ausrichten von Hand mehr.",
+    "f3T": "Rot, wenn es nicht passt",
+    "f3S": "Ragt ein Korpus in einen anderen oder aus dem Raum heraus, wird er rot. Sie sehen das Problem vor dem Zuschnitt, nicht erst bei der Montage.",
+    "f4T": "Die Farben Ihrer Dekore",
+    "f4S": "Die Korpusse zeigen die Farben der im Auftrag gewählten Dekore: den Korpus in einem Dekor, die Fronten in einem anderen.",
+    "f5T": "Grundriss, Ansichten und Blätter, automatisch",
+    "f5S": "Aus dem Raum entstehen der Grundriss von oben, die Ansicht jeder Wand und die Gesamtzeichnungen, druckfertig.",
+    "f6T": "Am Computer und am Handy",
+    "f6S": "Mit der Maus oder dem Finger: ziehen, drehen, zoomen. Beim Kunden, in der Werkstatt oder auf der Baustelle.",
+    "chemare": "Planen Sie Ihren Raum",
+    "chemareSub": "Sie öffnen einen Auftrag, fügen die Korpusse hinzu und stellen sie auf der Seite Aufstellung in den Raum.",
+    "landingTitlu": "3D-Planer",
+    "landingSub": "Verschieben Sie Korpusse von Hand im Raum, wie in den Planern der Möbelhäuser. Testen Sie es an einer Beispielküche, ohne Konto.",
+    "landingButon": "Planer testen"
   }
 }

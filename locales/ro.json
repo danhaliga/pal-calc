@@ -1983,5 +1983,32 @@
     "marime": "Mărime (ex. „46 de angajați”)",
     "pePagina": "Pe pagina „Prestatori”",
     "ordine": "Poziție în listă (mai mare = mai sus)"
+  },
+  "planificator": {
+    "nav": "Planificator 3D",
+    "titlu": "Planificator 3D",
+    "eticheta": "Planificator 3D",
+    "titluA": "Așază mobila în cameră,",
+    "titluB": "înainte s-o tai.",
+    "sub": "Pui camera, pui corpurile și le muți cu mâna, ca în planificatoarele marilor magazine de mobilă. Diferența: fiecare corp din cameră are deja lista de debitare, planșele CNC și fișa de montaj.",
+    "demoTitlu": "Încearcă acum, fără cont",
+    "demoNota": "O bucătărie de exemplu. Mută corpurile cum vrei: nimic nu se salvează.",
+    "f1T": "Tragi corpul pe perete",
+    "f1S": "Apuci un corp și îl duci unde vrei. Se așază singur pe peretele cel mai apropiat, cu fața spre cameră.",
+    "f2T": "Se lipește de colț și de vecini",
+    "f2S": "Când ajunge aproape, corpul se lipește de colț sau de corpul de lângă el. Nu mai potrivești milimetri de mână.",
+    "f3T": "Roșu când nu încape",
+    "f3S": "Dacă un corp intră în altul sau iese din cameră, se înroșește. Vezi problema înainte de debitare, nu la montaj.",
+    "f4T": "Culorile decorurilor tale",
+    "f4S": "Corpurile au culorile decorurilor alese în comandă: carcasa într-un decor, fronturile în altul.",
+    "f5T": "Plan, elevații și fișe, singure",
+    "f5S": "Din cameră ies planul văzut de sus, vederea fiecărui perete și planșele de ansamblu, gata de tipărit.",
+    "f6T": "Pe calculator și pe telefon",
+    "f6S": "Cu mouse-ul sau cu degetul: tragi, rotești, apropii. La client, în atelier sau pe șantier.",
+    "chemare": "Fă-ți camera ta",
+    "chemareSub": "Deschizi o comandă, adaugi corpurile și le așezi în cameră din pagina Ansamblu.",
+    "landingTitlu": "Planificator 3D",
+    "landingSub": "Mută corpurile în cameră cu mâna, ca în planificatoarele magazinelor. Încearcă pe o bucătărie de exemplu, fără cont.",
+    "landingButon": "Încearcă planificatorul"
   }
 }

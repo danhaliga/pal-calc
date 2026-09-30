@@ -1983,5 +1983,32 @@
     "marime": "Velikost (např. „46 zaměstnanců“)",
     "pePagina": "Na stránce „Dodavatelé“",
     "ordine": "Pořadí v seznamu (vyšší = výš)"
+  },
+  "planificator": {
+    "nav": "3D plánovač",
+    "titlu": "3D plánovač",
+    "eticheta": "3D plánovač",
+    "titluA": "Rozmístěte nábytek v místnosti",
+    "titluB": "dřív, než ho nařežete.",
+    "sub": "Vytvoříte místnost, přidáte korpusy a posouváte je rukou, jako v plánovačích velkých obchodů s nábytkem. Rozdíl: každý korpus v místnosti už má svůj nářezový plán, CNC výkresy a montážní list.",
+    "demoTitlu": "Vyzkoušejte hned, bez účtu",
+    "demoNota": "Ukázková kuchyně. Posouvejte korpusy, jak chcete: nic se neukládá.",
+    "f1T": "Přetáhnete korpus ke zdi",
+    "f1S": "Chytíte korpus a přenesete ho, kam chcete. Sám se usadí k nejbližší zdi, čelem do místnosti.",
+    "f2T": "Přichytí se k rohu i k sousedům",
+    "f2S": "Když se přiblíží, korpus se přichytí k rohu nebo k vedlejšímu korpusu. Už žádné ruční dorovnávání milimetrů.",
+    "f3T": "Červená, když se nevejde",
+    "f3S": "Pokud korpus zasahuje do jiného nebo vyčnívá z místnosti, zčervená. Problém uvidíte před řezáním, ne při montáži.",
+    "f4T": "Barvy vašich dekorů",
+    "f4S": "Korpusy mají barvy dekorů zvolených v zakázce: korpus v jednom dekoru, dvířka v jiném.",
+    "f5T": "Půdorys, pohledy a listy, samy",
+    "f5S": "Z místnosti vzniknou půdorys shora, pohled na každou stěnu a sestavné výkresy, připravené k tisku.",
+    "f6T": "Na počítači i na telefonu",
+    "f6S": "Myší nebo prstem: táhnete, otáčíte, přibližujete. U zákazníka, v dílně nebo na stavbě.",
+    "chemare": "Vytvořte si svou místnost",
+    "chemareSub": "Otevřete zakázku, přidáte korpusy a rozmístíte je v místnosti na stránce Sestava.",
+    "landingTitlu": "3D plánovač",
+    "landingSub": "Posouvejte korpusy po místnosti rukou, jako v plánovačích obchodů. Vyzkoušejte na ukázkové kuchyni, bez účtu.",
+    "landingButon": "Vyzkoušet plánovač"
   }
 }

@@ -1972,5 +1972,32 @@
     "marime": "Grootte (bijv. ‘46 werknemers’)",
     "pePagina": "Op de pagina ‘Dienstverleners’",
     "ordine": "Positie in de lijst (hoger = verder boven)"
+  },
+  "planificator": {
+    "nav": "3D-planner",
+    "titlu": "3D-planner",
+    "eticheta": "3D-planner",
+    "titluA": "Zet de meubels in de ruimte,",
+    "titluB": "voordat je gaat zagen.",
+    "sub": "Je maakt de ruimte, voegt de kasten toe en verschuift ze met de hand, net als in de planners van grote meubelwinkels. Het verschil: elke kast in de ruimte heeft al zijn zaaglijst, CNC-tekeningen en montageblad.",
+    "demoTitlu": "Probeer het nu, zonder account",
+    "demoNota": "Een voorbeeldkeuken. Verschuif de kasten zoals je wilt: er wordt niets opgeslagen.",
+    "f1T": "Sleep de kast tegen de muur",
+    "f1S": "Pak een kast en zet hem waar je wilt. Hij plaatst zich vanzelf tegen de dichtstbijzijnde muur, met de voorkant naar de ruimte.",
+    "f2T": "Klikt vast aan hoeken en buren",
+    "f2S": "Als hij dichtbij komt, klikt de kast vast aan de hoek of aan de kast ernaast. Nooit meer millimeters met de hand uitlijnen.",
+    "f3T": "Rood als het niet past",
+    "f3S": "Als een kast in een andere steekt of buiten de ruimte uitsteekt, wordt hij rood. Je ziet het probleem vóór het zagen, niet pas bij de montage.",
+    "f4T": "De kleuren van jouw decors",
+    "f4S": "De kasten krijgen de kleuren van de decors uit de order: de korpus in het ene decor, de fronten in het andere.",
+    "f5T": "Plattegrond, aanzichten en bladen, vanzelf",
+    "f5S": "Uit de ruimte komen de plattegrond van bovenaf, het aanzicht van elke muur en de overzichtstekeningen, klaar om te printen.",
+    "f6T": "Op computer en telefoon",
+    "f6S": "Met de muis of met je vinger: slepen, draaien, zoomen. Bij de klant, in de werkplaats of op de bouwplaats.",
+    "chemare": "Maak je eigen ruimte",
+    "chemareSub": "Open een order, voeg de kasten toe en zet ze in de ruimte via de pagina Opstelling.",
+    "landingTitlu": "3D-planner",
+    "landingSub": "Verschuif kasten met de hand door de ruimte, zoals in de planners van winkels. Probeer het met een voorbeeldkeuken, zonder account.",
+    "landingButon": "Probeer de planner"
   }
 }

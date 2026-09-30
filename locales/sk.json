@@ -1983,5 +1983,32 @@
     "marime": "Veľkosť (napr. „46 zamestnancov“)",
     "pePagina": "Na stránke „Dodávatelia“",
     "ordine": "Poradie v zozname (vyššie = vyššie)"
+  },
+  "planificator": {
+    "nav": "3D plánovač",
+    "titlu": "3D plánovač",
+    "eticheta": "3D plánovač",
+    "titluA": "Rozmiestnite nábytok v miestnosti",
+    "titluB": "skôr, než ho narežete.",
+    "sub": "Vytvoríte miestnosť, pridáte korpusy a posúvate ich rukou, ako v plánovačoch veľkých obchodov s nábytkom. Rozdiel: každý korpus v miestnosti už má svoj rezný plán, CNC výkresy a montážny list.",
+    "demoTitlu": "Vyskúšajte hneď, bez účtu",
+    "demoNota": "Ukážková kuchyňa. Posúvajte korpusy, ako chcete: nič sa neukladá.",
+    "f1T": "Potiahnete korpus k stene",
+    "f1S": "Chytíte korpus a prenesiete ho, kam chcete. Sám sa usadí k najbližšej stene, čelom do miestnosti.",
+    "f2T": "Prichytí sa k rohu aj k susedom",
+    "f2S": "Keď sa priblíži, korpus sa prichytí k rohu alebo k vedľajšiemu korpusu. Už žiadne ručné dorovnávanie milimetrov.",
+    "f3T": "Červená, keď sa nezmestí",
+    "f3S": "Ak korpus zasahuje do iného alebo vyčnieva z miestnosti, sčervenie. Problém uvidíte pred rezaním, nie pri montáži.",
+    "f4T": "Farby vašich dekorov",
+    "f4S": "Korpusy majú farby dekorov zvolených v zákazke: korpus v jednom dekore, dvierka v inom.",
+    "f5T": "Pôdorys, pohľady a listy, samy",
+    "f5S": "Z miestnosti vzniknú pôdorys zhora, pohľad na každú stenu a zostavné výkresy, pripravené na tlač.",
+    "f6T": "Na počítači aj na telefóne",
+    "f6S": "Myšou alebo prstom: ťaháte, otáčate, približujete. U zákazníka, v dielni alebo na stavbe.",
+    "chemare": "Vytvorte si svoju miestnosť",
+    "chemareSub": "Otvoríte zákazku, pridáte korpusy a rozmiestnite ich v miestnosti na stránke Zostava.",
+    "landingTitlu": "3D plánovač",
+    "landingSub": "Posúvajte korpusy po miestnosti rukou, ako v plánovačoch obchodov. Vyskúšajte na ukážkovej kuchyni, bez účtu.",
+    "landingButon": "Vyskúšať plánovač"
   }
 }

@@ -1983,5 +1983,32 @@
     "marime": "Wielkość (np. „46 pracowników”)",
     "pePagina": "Na stronie „Usługodawcy”",
     "ordine": "Pozycja na liście (większa = wyżej)"
+  },
+  "planificator": {
+    "nav": "Planer 3D",
+    "titlu": "Planer 3D",
+    "eticheta": "Planer 3D",
+    "titluA": "Ustaw meble w pomieszczeniu,",
+    "titluB": "zanim je wytniesz.",
+    "sub": "Tworzysz pomieszczenie, dodajesz korpusy i przesuwasz je ręką, jak w planerach dużych sklepów meblowych. Różnica: każdy korpus w pomieszczeniu ma już swoją listę formatek, rysunki CNC i kartę montażu.",
+    "demoTitlu": "Wypróbuj teraz, bez konta",
+    "demoNota": "Przykładowa kuchnia. Przesuwaj korpusy, jak chcesz: nic się nie zapisuje.",
+    "f1T": "Przeciągasz korpus na ścianę",
+    "f1S": "Chwytasz korpus i przenosisz go, gdzie chcesz. Sam ustawia się przy najbliższej ścianie, frontem do pomieszczenia.",
+    "f2T": "Przyciąga się do narożnika i sąsiadów",
+    "f2S": "Gdy jest blisko, korpus przylega do narożnika lub do sąsiedniego korpusu. Koniec z ręcznym dopasowywaniem milimetrów.",
+    "f3T": "Czerwony, gdy się nie mieści",
+    "f3S": "Jeśli korpus wchodzi w inny lub wystaje poza pomieszczenie, robi się czerwony. Widzisz problem przed rozkrojem, a nie przy montażu.",
+    "f4T": "Kolory Twoich dekorów",
+    "f4S": "Korpusy mają kolory dekorów wybranych w zamówieniu: korpus w jednym dekorze, fronty w innym.",
+    "f5T": "Rzut, widoki i karty, same",
+    "f5S": "Z pomieszczenia powstają rzut z góry, widok każdej ściany i rysunki złożeniowe, gotowe do druku.",
+    "f6T": "Na komputerze i na telefonie",
+    "f6S": "Myszką lub palcem: przeciągasz, obracasz, przybliżasz. U klienta, w warsztacie lub na budowie.",
+    "chemare": "Zaprojektuj swoje pomieszczenie",
+    "chemareSub": "Otwierasz zamówienie, dodajesz korpusy i ustawiasz je w pomieszczeniu na stronie Zabudowa.",
+    "landingTitlu": "Planer 3D",
+    "landingSub": "Przesuwaj korpusy w pomieszczeniu ręką, jak w planerach sklepów. Wypróbuj na przykładowej kuchni, bez konta.",
+    "landingButon": "Wypróbuj planer"
   }
 }

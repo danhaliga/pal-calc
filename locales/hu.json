@@ -1972,5 +1972,32 @@
     "marime": "Méret (pl. „46 alkalmazott”)",
     "pePagina": "A „Szolgáltatók” oldalon",
     "ordine": "Hely a listában (nagyobb = feljebb)"
+  },
+  "planificator": {
+    "nav": "3D tervező",
+    "titlu": "3D tervező",
+    "eticheta": "3D tervező",
+    "titluA": "Rendezze be a bútorokat a szobába,",
+    "titluB": "mielőtt kiszabja őket.",
+    "sub": "Megadja a szobát, hozzáadja a korpuszokat, és kézzel mozgatja őket, mint a nagy bútoráruházak tervezőiben. A különbség: a szoba minden korpuszának már megvan a szabásjegyzéke, a CNC rajzai és az összeszerelési lapja.",
+    "demoTitlu": "Próbálja ki most, fiók nélkül",
+    "demoNota": "Egy mintakonyha. Mozgassa a korpuszokat, ahogy szeretné: semmi sem mentődik.",
+    "f1T": "Húzza a korpuszt a falhoz",
+    "f1S": "Megfog egy korpuszt, és oda viszi, ahová akarja. Magától a legközelebbi falhoz simul, előlappal a szoba felé.",
+    "f2T": "Illeszkedik a sarokhoz és a szomszédokhoz",
+    "f2S": "Ha közel ér, a korpusz a sarokhoz vagy a mellette lévő korpuszhoz tapad. Nincs többé kézi milliméterezés.",
+    "f3T": "Piros, ha nem fér el",
+    "f3S": "Ha egy korpusz belelóg egy másikba vagy kilóg a szobából, pirosra vált. A hibát szabás előtt látja, nem szereléskor.",
+    "f4T": "Az Ön dekorjainak színei",
+    "f4S": "A korpuszok a rendelésben választott dekorok színeit kapják: a korpusz az egyik dekorban, a frontok a másikban.",
+    "f5T": "Alaprajz, nézetek és lapok, maguktól",
+    "f5S": "A szobából elkészül a felülnézeti alaprajz, minden fal nézete és az összeállítási rajzok, nyomtatásra készen.",
+    "f6T": "Számítógépen és telefonon",
+    "f6S": "Egérrel vagy ujjal: húzza, forgatja, nagyítja. Az ügyfélnél, a műhelyben vagy a helyszínen.",
+    "chemare": "Tervezze meg a saját szobáját",
+    "chemareSub": "Megnyit egy rendelést, hozzáadja a korpuszokat, és az Elrendezés oldalon elhelyezi őket a szobában.",
+    "landingTitlu": "3D tervező",
+    "landingSub": "Mozgassa kézzel a korpuszokat a szobában, mint az áruházak tervezőiben. Próbálja ki egy mintakonyhán, fiók nélkül.",
+    "landingButon": "Kipróbálom a tervezőt"
   }
 }

@@ -28,6 +28,7 @@
         <a href="/orders" class="<%= currentPath.startsWith('/orders') ? 'on' : '' %>"><%= t('nav.comenzi') %></a>
         <a href="/corps" class="<%= currentPath.startsWith('/corps') ? 'on' : '' %>"><%= t('nav.corpuri') %></a>
         <a href="/ghid" class="<%= currentPath.startsWith('/ghid') ? 'on' : '' %>"><%= t('articole.titlu') %></a>
+        <a href="/planificator" class="<%= currentPath.startsWith('/planificator') ? 'on' : '' %>"><%= t('planificator.nav') %></a>
         <a href="/prestatori" class="<%= currentPath.startsWith('/prestatori') ? 'on' : '' %>"><%= t('prestator.pubNav') %></a>
         <a href="/credit" class="credit-link <%= currentPath === '/credit' ? 'on' : '' %>">
           <%= t('nav.credit') %>: <b><%= soldLei %> <%= t('comun.lei') %></b>
@@ -42,6 +43,7 @@
         </form>
       <% } else { %>
         <a href="/ghid" class="<%= currentPath.startsWith('/ghid') ? 'on' : '' %>"><%= t('articole.titlu') %></a>
+        <a href="/planificator" class="<%= currentPath.startsWith('/planificator') ? 'on' : '' %>"><%= t('planificator.nav') %></a>
         <a href="/prestatori" class="<%= currentPath.startsWith('/prestatori') ? 'on' : '' %>"><%= t('prestator.pubNav') %></a>
         <%- include('partials/limba') %>
         <a href="/login"><%= t('nav.autentificare') %></a>

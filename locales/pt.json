@@ -1972,5 +1972,32 @@
     "marime": "Dimensão (ex.: «46 funcionários»)",
     "pePagina": "Na página «Prestadores»",
     "ordine": "Posição na lista (maior = mais acima)"
+  },
+  "planificator": {
+    "nav": "Planejador 3D",
+    "titlu": "Planejador 3D",
+    "eticheta": "Planejador 3D",
+    "titluA": "Posicione os móveis no ambiente",
+    "titluB": "antes de cortá-los.",
+    "sub": "Você cria o ambiente, adiciona os módulos e os move com a mão, como nos planejadores das grandes lojas de móveis. A diferença: cada módulo do ambiente já tem sua lista de corte, seus desenhos CNC e sua ficha de montagem.",
+    "demoTitlu": "Experimente agora, sem conta",
+    "demoNota": "Uma cozinha de exemplo. Mova os módulos como quiser: nada é salvo.",
+    "f1T": "Arraste o módulo até a parede",
+    "f1S": "Pegue um módulo e leve-o para onde quiser. Ele se encaixa sozinho na parede mais próxima, virado para o ambiente.",
+    "f2T": "Encaixa nos cantos e nos vizinhos",
+    "f2S": "Ao se aproximar, o módulo encosta no canto ou no módulo ao lado. Chega de acertar milímetros na mão.",
+    "f3T": "Vermelho quando não cabe",
+    "f3S": "Se um módulo entra em outro ou sai do ambiente, ele fica vermelho. Você vê o problema antes do corte, não na montagem.",
+    "f4T": "As cores dos seus padrões",
+    "f4S": "Os módulos têm as cores dos padrões escolhidos no pedido: a caixa em um padrão, as frentes em outro.",
+    "f5T": "Planta, vistas e fichas, automaticamente",
+    "f5S": "Do ambiente saem a planta vista de cima, a vista de cada parede e os desenhos de conjunto, prontos para imprimir.",
+    "f6T": "No computador e no celular",
+    "f6S": "Com o mouse ou com o dedo: arraste, gire, aproxime. No cliente, na oficina ou na obra.",
+    "chemare": "Monte o seu ambiente",
+    "chemareSub": "Abra um pedido, adicione os módulos e posicione-os no ambiente pela página Disposição.",
+    "landingTitlu": "Planejador 3D",
+    "landingSub": "Mova os módulos pelo ambiente com a mão, como nos planejadores das lojas. Experimente numa cozinha de exemplo, sem conta.",
+    "landingButon": "Experimentar o planejador"
   }
 }

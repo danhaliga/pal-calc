@@ -27,3 +27,20 @@ test('filmul vorbește limba paginii', () => {
   const en = Film.date(I18n.creeaza('en'));
   assert.notEqual(en.corpuri[0].nume, Film.date(I18n.creeaza('ro')).corpuri[0].nume);
 });
+
+test('bucătăria de exemplu a planificatorului: corpuri reale, fără suprapuneri', () => {
+  const Demo = require('../src/demo3d');
+  const PalAnsamblu = require('../shared/ansamblu');
+  const PalModels = require('../shared/models');
+  const PalCalc = require('../shared/calc');
+  const t = I18n.creeaza('ro');
+  const d = Demo.date(t);
+  assert.equal(d.corpuri.length, Demo.BUCATARIE.length);
+  d.corpuri.forEach(c => {
+    assert.ok(c.piese.length > 0 && c.W > 0 && c.H > 0);
+    assert.ok(c.culori.corp && c.culori.front);
+  });
+  const corpuri = Demo.BUCATARIE.map((r, i) => ({ id: i + 1, poz: i + 1, nume: r[0],
+    params: Object.assign(PalCalc.defaults(), PalModels.paramsFor(r[0], t)), pozitie: { perete: r[1], d: r[2], h: r[3] } }));
+  assert.deepEqual(PalAnsamblu.ansamblu({ camera: Demo.CAMERA }, corpuri, t).probleme, []);
+});

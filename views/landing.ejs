@@ -48,6 +48,14 @@
 <script type="application/json" id="film-date"><%- jsonPentruPagina(film) %></script>
 <script src="/static/film.js?v=<%= assetV %>" defer></script>
 
+<section class="panel zona-chemare">
+  <div>
+    <b><%= t('planificator.landingTitlu') %></b>
+    <p class="muted small"><%= t('planificator.landingSub') %></p>
+  </div>
+  <div class="btns"><a class="btn primary" href="/planificator"><%= t('planificator.landingButon') %></a></div>
+</section>
+
 <%# Exemplul nu e scris de mână: se calculează la fiecare deschidere a
     paginii, cu motorul care scoate și lucrările din atelier. Dacă se schimbă
     regula de debitare, se schimbă și cifrele de-aici — n-are cum să rămână

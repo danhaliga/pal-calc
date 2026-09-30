@@ -1972,5 +1972,32 @@
     "marime": "Dimensione (es. «46 dipendenti»)",
     "pePagina": "Nella pagina «Fornitori»",
     "ordine": "Posizione nella lista (più alto = più in alto)"
+  },
+  "planificator": {
+    "nav": "Planner 3D",
+    "titlu": "Planner 3D",
+    "eticheta": "Planner 3D",
+    "titluA": "Disponi i mobili nella stanza",
+    "titluB": "prima di tagliarli.",
+    "sub": "Crei la stanza, aggiungi i moduli e li sposti a mano, come nei planner dei grandi negozi di mobili. La differenza: ogni modulo nella stanza ha già la sua distinta di taglio, i disegni CNC e la scheda di montaggio.",
+    "demoTitlu": "Provalo ora, senza account",
+    "demoNota": "Una cucina di esempio. Sposta i moduli come vuoi: non viene salvato nulla.",
+    "f1T": "Trascina il modulo sulla parete",
+    "f1S": "Prendi un modulo e portalo dove vuoi. Si posiziona da solo sulla parete più vicina, rivolto verso la stanza.",
+    "f2T": "Si aggancia agli angoli e ai vicini",
+    "f2S": "Quando si avvicina, il modulo si aggancia all'angolo o al modulo accanto. Basta allineare i millimetri a mano.",
+    "f3T": "Rosso quando non ci sta",
+    "f3S": "Se un modulo entra in un altro o esce dalla stanza, diventa rosso. Vedi il problema prima del taglio, non al montaggio.",
+    "f4T": "I colori dei tuoi decori",
+    "f4S": "I moduli hanno i colori dei decori scelti nell'ordine: la struttura in un decoro, i frontali in un altro.",
+    "f5T": "Pianta, prospetti e schede, in automatico",
+    "f5S": "Dalla stanza escono la pianta vista dall'alto, la vista di ogni parete e le tavole d'insieme, pronte da stampare.",
+    "f6T": "Su computer e telefono",
+    "f6S": "Con il mouse o con il dito: trascini, ruoti, ingrandisci. Dal cliente, in laboratorio o in cantiere.",
+    "chemare": "Crea la tua stanza",
+    "chemareSub": "Apri un ordine, aggiungi i moduli e disponili nella stanza dalla pagina Composizione.",
+    "landingTitlu": "Planner 3D",
+    "landingSub": "Sposta i moduli nella stanza a mano, come nei planner dei negozi. Provalo su una cucina di esempio, senza account.",
+    "landingButon": "Prova il planner"
   }
 }
