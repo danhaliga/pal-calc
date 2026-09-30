@@ -102,3 +102,15 @@ test('ușile glisante primesc sistemul de glisare, nu balamale', () => {
   assert.equal(f.filter(x => /balama/i.test(x.nume)).length, 0);
   assert.equal(f.find(x => x.nume === 'fero.art.sistemGlisant').qty, 1);
 });
+
+test('la „explodat" laturile corpului de sub scară ies spre exterior', () => {
+  /* Dan, cu poză: rama rămânea lipită, ieșeau doar ușa și spatele. */
+  const r = PalCalc.calc(subScara(800, 2385, 2300), T);
+  const lat = r.P.filter(x => x.cheie === 'panouLatura');
+  assert.equal(lat.length, 4);
+  const [jos, dreapta, panta, stanga] = lat.map(x => x.boxes[0].ex);
+  assert.ok(jos[1] < -0.9, 'latura de jos nu coboară');
+  assert.ok(dreapta[0] > 0.9, 'latura din dreapta nu iese spre dreapta');
+  assert.ok(stanga[0] < -0.9, 'latura din stânga nu iese spre stânga');
+  assert.ok(panta[1] > 0.9, 'latura de pe pantă nu urcă');
+});

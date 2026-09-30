@@ -861,7 +861,11 @@
             'L', taiere,
             [{ x: mx - lat.lung / 2, y: my - t / 2, z: 0,
                sx: lat.lung, sy: t, sz: Da, f: F({ py: 'f', ny: 'f', pz: 'g' }),
-               ex: [0, 0, 0], grp: 'corp',
+               /* La „explodat" fiecare latură iese spre EXTERIOR, pe normala
+                  ei: cea de jos coboară, cele din părți ies în lături, cea
+                  de pe pantă urcă pe diagonală. Fără asta rama rămânea
+                  lipită și ieșeau doar ușa și spatele. */
+               ex: [-nxL, -nyL, 0], grp: 'corp',
                rz: lat.dir * Math.PI / 180 }]);
       });
 
