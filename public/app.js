@@ -1049,7 +1049,14 @@ document.querySelectorAll('[data-view]').forEach(function (b) {
   b.onclick = function () { setView(b.dataset.view); };
 });
 $('explode').addEventListener('input', function (e) {
-  if (V3) { V3.E = (+e.target.value) / 100 * 260; applyExplode(); }
+  /* Depărtarea crește cu mărimea corpului: 260 mm desfac un corp de
+     bucătărie, dar la un dressing de 2400 abia se văd — ușile ieșeau în
+     față și acopereau tot. */
+  if (V3) {
+    var marime = lastRes ? Math.max(+lastRes.W || 0, +lastRes.H || 0, +lastRes.D || 0) : 0;
+    V3.E = (+e.target.value) / 100 * Math.max(260, marime * 0.28);
+    applyExplode();
+  }
 });
 document.querySelectorAll('.vis').forEach(function (cb) { cb.addEventListener('change', applyVis); });
 $('rows').addEventListener('click', function (e) {

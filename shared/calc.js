@@ -444,6 +444,15 @@
     return sus === null ? 0 : sus;
   }
 
+  /* Cât se depărtează o piesă din interior la vederea „explodat", după
+     unde stă: montanții spre laterala cea mai apropiată, polițele în sus
+     sau în jos. Fără asta rămâneau pe loc, iar la un dressing larg corpul
+     nu se desfăcea — ușile ieșeau în față și acopereau tot. -1 … 1. */
+  function departare(poz, total) {
+    if (!(total > 0)) return 0;
+    return Math.max(-1, Math.min(1, (poz - total / 2) / (total / 2)));
+  }
+
   /* Conturul mutat spre ÎNĂUNTRU cu `d` pe fiecare latură (pe normala ei).
 
      Laturile corpului atipic stau înăuntrul conturului — cota lor e pe
@@ -908,7 +917,7 @@
               : null,
             [{ x: xm, y: yJos, z: 0, sx: t, sy: hMare - yJos, sz: Da,
                polyFata: [[xm, yJos], [xm + t, yJos], [xm + t, h2], [xm, h1]],
-               f: F({ px: 'f', nx: 'f', py: 'g' }), ex: [0, 0, 0], grp: 'corp' }]);
+               f: F({ px: 'f', nx: 'f', py: 'g' }), ex: [0.7 * departare(xm + t / 2, g.W), 0, 0], grp: 'corp' }]);
       }
 
       /* ---- ușile, pe compartimente ----
@@ -969,7 +978,8 @@
             var yp = yJos + util * ip / (nPol + 1);
             boxPol.push(bx(xa2 + (+c.jp || 0) / 2, yp - t / 2, tp,
               latComp - (+c.jp || 0), t, polDeep,
-              F({ py: 'f', ny: 'f', pz: 'g' }), [0, 0, 0.6], 'polite'));
+              F({ py: 'f', ny: 'f', pz: 'g' }),
+              [0.7 * departare(xa2 + latComp / 2, g.W), 0.5 * departare(yp, g.H), 0.6], 'polite'));
             cate++;
           }
         }
@@ -1524,7 +1534,7 @@
       var boxesD = [];
       for (var d = 1; d <= nDsp; d++) {
         boxesD.push(bx(xComp(d) - t, y0, zb, t, Hint, Dp,
-          F({ px: 'f', nx: 'f', pz: 'g' }), [0, 0, 0], 'corp'));
+          F({ px: 'f', nx: 'f', pz: 'g' }), [0.7 * departare(xComp(d) - t / 2, W), 0, 0], 'corp'));
       }
       /* muchia din față se cantuiește ca la laterale, restul stau ascunse */
       add('montant', null, nDsp, Hint, Dp, 'g', '-', '-', '-', 'LV', null, boxesD);
@@ -1595,7 +1605,8 @@
       for (var ic = 0; ic < compartimente; ic++) {
         inaltimi.forEach(function (yc) {
           boxesP.push(bx(xComp(ic) + jp / 2, yc - t / 2, zin, pL, t, pl,
-            F({ py: 'f', ny: 'f', pz: 'g' }), [0, 0, 0.6], 'polite'));
+            F({ py: 'f', ny: 'f', pz: 'g' }),
+            [0.7 * departare(xComp(ic) + Wcomp / 2, W), 0.5 * departare(yc, H), 0.6], 'polite'));
         });
       }
       add('polita', null, inaltimi.length * compartimente, pL, pl, 'g', '-', '-', '-', 'L', null, boxesP);
