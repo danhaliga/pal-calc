@@ -210,3 +210,20 @@ test('piesele atipice intră normal în croire și în cant', () => {
   assert.ok(r.cant.total > 0, 'panourile au cant pe muchia din față');
   assert.equal(r.totaluri.corpuri, 1);
 });
+
+/* 3D-ul și planșa de montaj pun `polyFata` direct în coordonatele corpului.
+   Dacă un contur ar fi dat față de colțul piesei, piesa ar zbura din corp. */
+test('conturul pieselor sub scară e în coordonatele corpului, peste cutia piesei', () => {
+  const r = calc(Object.assign(defaults(), { tip: 'atipic', W: 1000, H: 2800, D: 560, nUsi: 1, nPol: 2, contur: [
+    { lung: 1000, unghi: 90 }, { lung: 2600, unghi: 101.31 }, { lung: 1019.8, unghi: 78.69 }, { lung: 2800, unghi: 90 }] }));
+  let n = 0;
+  r.P.forEach(p => (p.boxes || []).forEach(b => {
+    if (!b.polyFata) return;
+    n++;
+    b.polyFata.forEach(([x, y]) => {
+      assert.ok(x >= b.x - 2 && x <= b.x + b.sx + 2, p.cheie + ': x ' + x + ' în afara piesei ' + b.x + '+' + b.sx);
+      assert.ok(y >= b.y - 2 && y <= b.y + b.sy + 2, p.cheie + ': y ' + y + ' în afara piesei ' + b.y + '+' + b.sy);
+    });
+  }));
+  assert.ok(n >= 4);
+});

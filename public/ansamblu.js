@@ -164,7 +164,8 @@ function construieste(date) {
           });
           geo = new THREE.ExtrudeGeometry(sf, { depth: b.sz, bevelEnabled: false });
           material = mats[b.f.pz] || mats.f;
-          pozitie = [b.x, b.y, b.z];
+          /* conturul e deja în coordonatele corpului: doar z se mută */
+          pozitie = [0, 0, b.z];
         } else {
           geo = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
           material = ORDER.map(function (k) { return mats[b.f[k] || '-']; });

@@ -704,7 +704,8 @@ function build3D(c, res) {
         });
         geo = new THREE.ExtrudeGeometry(shapeF, { depth: b.sz, bevelEnabled: false });
         mat = V3.mats[b.f.pz || 'f'];
-        base = [b.x, b.y, b.z];
+        /* conturul e deja în coordonatele corpului: doar z se mută */
+        base = [0, 0, b.z];
       } else {
         geo = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
         mat = ORDER.map(function (k) { return V3.mats[b.f[k] || '-']; });
