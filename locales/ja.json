@@ -1952,6 +1952,7 @@
     "verdictLabel": "ラベル",
     "dinAnLabel": "創業年",
     "marime": "規模（例：「従業員46名」）",
-    "pePagina": "「加工業者」ページに表示"
+    "pePagina": "「加工業者」ページに表示",
+    "ordine": "一覧での順位（大きいほど上）"
   }
 }

@@ -102,3 +102,8 @@ test('administratorul schimbă câmpurile paginii publice', () => {
   assert.deepEqual(P.salveaza(p.id, { nume: 'Woodexpert', email: '', activ: '1' }), ['prestator.eroareEmail']);
   assert.deepEqual(P.salveaza(p.id, { nume: 'Woodexpert', email: '', activ: '0' }), []);
 });
+
+test('HTC Cubbis stă primul, pe pagină și în lista de trimitere', () => {
+  assert.equal(P.publici()[0].nume, 'HTC Cubbis');
+  assert.equal(P.activi()[0].nume, 'HTC Cubbis');
+});

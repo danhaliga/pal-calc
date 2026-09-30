@@ -1952,6 +1952,7 @@
     "verdictLabel": "Etiket",
     "dinAnLabel": "Faaliyet başlangıç yılı",
     "marime": "Büyüklük (örn. “46 çalışan”)",
-    "pePagina": "“Hizmet verenler” sayfasında"
+    "pePagina": "“Hizmet verenler” sayfasında",
+    "ordine": "Listedeki sıra (büyük = daha yukarıda)"
   }
 }

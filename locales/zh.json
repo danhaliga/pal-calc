@@ -1952,6 +1952,7 @@
     "verdictLabel": "标签",
     "dinAnLabel": "创立年份",
     "marime": "规模（例如“46名员工”）",
-    "pePagina": "在“加工服务商”页面"
+    "pePagina": "在“加工服务商”页面",
+    "ordine": "列表位置（数值越大越靠前）"
   }
 }

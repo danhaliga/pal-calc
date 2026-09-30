@@ -1952,6 +1952,7 @@
     "verdictLabel": "Etikett",
     "dinAnLabel": "Verksam sedan år",
     "marime": "Storlek (t.ex. ”46 anställda”)",
-    "pePagina": "På sidan ”Leverantörer”"
+    "pePagina": "På sidan ”Leverantörer”",
+    "ordine": "Plats i listan (högre = längre upp)"
   }
 }

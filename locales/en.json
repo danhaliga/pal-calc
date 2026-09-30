@@ -1952,6 +1952,7 @@
     "verdictLabel": "Label",
     "dinAnLabel": "In business since",
     "marime": "Size (e.g. “46 employees”)",
-    "pePagina": "On the “Providers” page"
+    "pePagina": "On the “Providers” page",
+    "ordine": "Position in list (higher = further up)"
   }
 }

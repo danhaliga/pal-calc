@@ -1952,6 +1952,7 @@
     "verdictLabel": "Etiqueta",
     "dinAnLabel": "Em atividade desde",
     "marime": "Dimensão (ex.: «46 funcionários»)",
-    "pePagina": "Na página «Prestadores»"
+    "pePagina": "Na página «Prestadores»",
+    "ordine": "Posição na lista (maior = mais acima)"
   }
 }

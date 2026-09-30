@@ -44,6 +44,7 @@
       <% [['cnc', 'filtruCnc'], ['excel', 'filtruExcel'], ['egger', 'filtruEgger']].forEach(function (c) { %>
         <label class="check"><input type="checkbox" name="<%= c[0] %>" value="1" <%= +p[c[0]] ? 'checked' : '' %>> <%= t('prestator.' + c[1]) %></label>
       <% }); %>
+      <label><%= t('prestator.ordine') %><input name="ordine" type="number" min="0" max="999" step="1" value="<%= p.ordine || 0 %>"></label>
       <label><%= t('prestator.pePagina') %><select name="public">
         <option value="1" <%= p.public === 0 || p.public === '0' ? '' : 'selected' %>><%= t('prestator.activ') %></option>
         <option value="0" <%= p.public === 0 || p.public === '0' ? 'selected' : '' %>><%= t('prestator.inactiv') %></option>

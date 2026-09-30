@@ -1952,6 +1952,7 @@
     "verdictLabel": "라벨",
     "dinAnLabel": "영업 시작 연도",
     "marime": "규모 (예: “직원 46명”)",
-    "pePagina": "“가공 업체” 페이지에 표시"
+    "pePagina": "“가공 업체” 페이지에 표시",
+    "ordine": "목록 순서 (클수록 위)"
   }
 }

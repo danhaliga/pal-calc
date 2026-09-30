@@ -1952,6 +1952,7 @@
     "verdictLabel": "Etiqueta",
     "dinAnLabel": "Trabaja desde el año",
     "marime": "Tamaño (p. ej., «46 empleados»)",
-    "pePagina": "En la página «Proveedores»"
+    "pePagina": "En la página «Proveedores»",
+    "ordine": "Posición en la lista (mayor = más arriba)"
   }
 }

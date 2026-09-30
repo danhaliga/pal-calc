@@ -1952,6 +1952,7 @@
     "verdictLabel": "Kennzeichnung",
     "dinAnLabel": "Tätig seit",
     "marime": "Größe (z. B. „46 Mitarbeiter“)",
-    "pePagina": "Auf der Seite „Dienstleister“"
+    "pePagina": "Auf der Seite „Dienstleister“",
+    "ordine": "Position in der Liste (größer = weiter oben)"
   }
 }

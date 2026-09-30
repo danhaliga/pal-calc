@@ -1963,6 +1963,7 @@
     "verdictLabel": "Oznaka",
     "dinAnLabel": "Radi od godine",
     "marime": "Veličina (npr. „46 zaposlenih“)",
-    "pePagina": "Na stranici „Izvođači“"
+    "pePagina": "Na stranici „Izvođači“",
+    "ordine": "Položaj na popisu (veći = više)"
   }
 }

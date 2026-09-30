@@ -1952,6 +1952,7 @@
     "verdictLabel": "Etichetta",
     "dinAnLabel": "Attivo dall’anno",
     "marime": "Dimensione (es. «46 dipendenti»)",
-    "pePagina": "Nella pagina «Fornitori»"
+    "pePagina": "Nella pagina «Fornitori»",
+    "ordine": "Posizione nella lista (più alto = più in alto)"
   }
 }

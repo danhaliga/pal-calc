@@ -1952,6 +1952,7 @@
     "verdictLabel": "Címke",
     "dinAnLabel": "Működés kezdete (év)",
     "marime": "Méret (pl. „46 alkalmazott”)",
-    "pePagina": "A „Szolgáltatók” oldalon"
+    "pePagina": "A „Szolgáltatók” oldalon",
+    "ordine": "Hely a listában (nagyobb = feljebb)"
   }
 }

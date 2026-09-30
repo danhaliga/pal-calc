@@ -1963,6 +1963,7 @@
     "verdictLabel": "Etichetă",
     "dinAnLabel": "Lucrează din anul",
     "marime": "Mărime (ex. „46 de angajați”)",
-    "pePagina": "Pe pagina „Prestatori”"
+    "pePagina": "Pe pagina „Prestatori”",
+    "ordine": "Poziție în listă (mai mare = mai sus)"
   }
 }

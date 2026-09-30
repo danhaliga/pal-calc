@@ -33,13 +33,13 @@ const text = (v, k) => String(v == null ? '' : v).trim().slice(0, LUNGIMI[k] || 
 /* Cei la care se poate trimite: activi și cu adresă. Recomandații întâi. */
 function activi() {
   return db.prepare("SELECT * FROM prestatori WHERE activ = 1 AND email <> '' " +
-                    "ORDER BY verdict = 'recomandat' DESC, nume COLLATE NOCASE, id").all();
+                    "ORDER BY ordine DESC, verdict = 'recomandat' DESC, nume COLLATE NOCASE, id").all();
 }
 
 /* Cei de pe pagina publică „Prestatori". */
 function publici() {
   return db.prepare('SELECT * FROM prestatori WHERE public = 1 ' +
-                    "ORDER BY verdict = 'recomandat' DESC, nume COLLATE NOCASE, id").all();
+                    "ORDER BY ordine DESC, verdict = 'recomandat' DESC, nume COLLATE NOCASE, id").all();
 }
 
 const REGIUNI = ['moldova', 'transilvania', 'banat', 'sud', 'dobrogea', 'nationale'];
@@ -48,7 +48,7 @@ const REGIUNI = ['moldova', 'transilvania', 'banat', 'sud', 'dobrogea', 'nationa
 const etichete = p => String(p.servicii || '').split(',').map(x => x.trim()).filter(Boolean);
 
 function toti() {
-  return db.prepare('SELECT * FROM prestatori ORDER BY activ DESC, nume COLLATE NOCASE, id').all();
+  return db.prepare('SELECT * FROM prestatori ORDER BY ordine DESC, activ DESC, nume COLLATE NOCASE, id').all();
 }
 
 function unul(id) {
@@ -68,7 +68,8 @@ function salveaza(id, body) {
     verdict: body.verdict === 'recomandat' ? 'recomandat' : 'verificat',
     din_an: /^\d{4}$/.test(String(body.din_an || '').trim()) ? Number(body.din_an) : null,
     cnc: body.cnc === '1' ? 1 : 0, excel: body.excel === '1' ? 1 : 0, egger: body.egger === '1' ? 1 : 0,
-    public: body.public === '0' ? 0 : 1
+    public: body.public === '0' ? 0 : 1,
+    ordine: Math.max(0, Math.min(999, Math.round(Number(body.ordine) || 0)))
   };
   const erori = [];
   if (!d.nume) erori.push('prestator.eroareNume');
@@ -82,13 +83,14 @@ function salveaza(id, body) {
     db.prepare('UPDATE prestatori SET nume = @nume, oras = @oras, email = @email, telefon = @telefon, ' +
                'servicii = @servicii, nota = @nota, activ = @activ, orase = @orase, marime = @marime, ' +
                'cum_comanda = @cum_comanda, descriere = @descriere, site = @site, regiune = @regiune, ' +
-               'verdict = @verdict, din_an = @din_an, cnc = @cnc, excel = @excel, egger = @egger, public = @public ' +
+               'verdict = @verdict, din_an = @din_an, cnc = @cnc, excel = @excel, egger = @egger, public = @public, ' +
+               'ordine = @ordine ' +
                'WHERE id = @id').run(Object.assign({ id }, d));
   } else {
     db.prepare('INSERT INTO prestatori (nume, oras, email, telefon, servicii, nota, activ, orase, marime, cum_comanda, ' +
-               'descriere, site, regiune, verdict, din_an, cnc, excel, egger, public) ' +
+               'descriere, site, regiune, verdict, din_an, cnc, excel, egger, public, ordine) ' +
                'VALUES (@nume, @oras, @email, @telefon, @servicii, @nota, @activ, @orase, @marime, @cum_comanda, ' +
-               '@descriere, @site, @regiune, @verdict, @din_an, @cnc, @excel, @egger, @public)').run(d);
+               '@descriere, @site, @regiune, @verdict, @din_an, @cnc, @excel, @egger, @public, @ordine)').run(d);
   }
   return [];
 }

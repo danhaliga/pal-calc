@@ -1952,6 +1952,7 @@
     "verdictLabel": "Étiquette",
     "dinAnLabel": "En activité depuis",
     "marime": "Taille (ex. « 46 salariés »)",
-    "pePagina": "Sur la page « Prestataires »"
+    "pePagina": "Sur la page « Prestataires »",
+    "ordine": "Position dans la liste (plus grand = plus haut)"
   }
 }

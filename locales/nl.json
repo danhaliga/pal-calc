@@ -1952,6 +1952,7 @@
     "verdictLabel": "Label",
     "dinAnLabel": "Actief sinds",
     "marime": "Grootte (bijv. ‘46 werknemers’)",
-    "pePagina": "Op de pagina ‘Dienstverleners’"
+    "pePagina": "Op de pagina ‘Dienstverleners’",
+    "ordine": "Positie in de lijst (hoger = verder boven)"
   }
 }

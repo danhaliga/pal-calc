@@ -1952,6 +1952,7 @@
     "verdictLabel": "Nhãn",
     "dinAnLabel": "Hoạt động từ năm",
     "marime": "Quy mô (vd. “46 nhân viên”)",
-    "pePagina": "Trên trang “Đơn vị gia công”"
+    "pePagina": "Trên trang “Đơn vị gia công”",
+    "ordine": "Vị trí trong danh sách (lớn hơn = cao hơn)"
   }
 }

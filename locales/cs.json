@@ -1963,6 +1963,7 @@
     "verdictLabel": "Štítek",
     "dinAnLabel": "Působí od roku",
     "marime": "Velikost (např. „46 zaměstnanců“)",
-    "pePagina": "Na stránce „Dodavatelé“"
+    "pePagina": "Na stránce „Dodavatelé“",
+    "ordine": "Pořadí v seznamu (vyšší = výš)"
   }
 }

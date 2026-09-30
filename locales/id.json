@@ -1952,6 +1952,7 @@
     "verdictLabel": "Label",
     "dinAnLabel": "Beroperasi sejak tahun",
     "marime": "Ukuran (mis. “46 karyawan”)",
-    "pePagina": "Di halaman “Penyedia jasa”"
+    "pePagina": "Di halaman “Penyedia jasa”",
+    "ordine": "Posisi di daftar (lebih besar = lebih atas)"
   }
 }

@@ -1963,6 +1963,7 @@
     "verdictLabel": "Etykieta",
     "dinAnLabel": "Działa od roku",
     "marime": "Wielkość (np. „46 pracowników”)",
-    "pePagina": "Na stronie „Usługodawcy”"
+    "pePagina": "Na stronie „Usługodawcy”",
+    "ordine": "Pozycja na liście (większa = wyżej)"
   }
 }
