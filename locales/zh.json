@@ -1623,7 +1623,14 @@
     "notaFoaie": "你在这里填写的内容会出现在送去开料的单子顶部。切板的人遇到尺寸不合时就有电话可打。",
     "email": "电子邮件",
     "dinCand": "注册时间",
-    "notaEmail": "电子邮件不能在这里更改。如需更改，请通过留言框联系我们。"
+    "notaEmail": "电子邮件不能在这里更改。如需更改，请通过留言框联系我们。",
+    "parolaTitlu": "修改密码",
+    "parolaVeche": "当前密码",
+    "parolaNoua": "新密码（至少 8 个字符）",
+    "parolaNoua2": "再次输入新密码",
+    "parolaSchimba": "修改密码",
+    "parolaSchimbata": "密码已修改。",
+    "parolaVecheGresita": "当前密码不正确。"
   },
   "stat": {
     "titlu": "各国的实际做法",

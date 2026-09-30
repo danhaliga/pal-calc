@@ -1634,7 +1634,14 @@
     "notaFoaie": "Ono što upišeš ovde izlazi na vrhu listova koji idu na krojenje. Onaj koji reže plotu ima broj da pozove ako se mera ne poklapa.",
     "email": "E-pošta",
     "dinCand": "Račun od",
-    "notaEmail": "E-pošta se odavde ne menja. Piši nam iz polja za poruke ako treba da se promeni."
+    "notaEmail": "E-pošta se odavde ne menja. Piši nam iz polja za poruke ako treba da se promeni.",
+    "parolaTitlu": "Promeni lozinku",
+    "parolaVeche": "Trenutna lozinka",
+    "parolaNoua": "Nova lozinka (najmanje 8 znakova)",
+    "parolaNoua2": "Nova lozinka, ponovo",
+    "parolaSchimba": "Promeni lozinku",
+    "parolaSchimbata": "Lozinka je promenjena.",
+    "parolaVecheGresita": "Trenutna lozinka nije tačna."
   },
   "stat": {
     "titlu": "Šta se pravi, po zemljama",

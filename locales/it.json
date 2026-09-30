@@ -1623,7 +1623,14 @@
     "notaFoaie": "Quello che compili qui finisce in testa ai fogli che vanno al taglio. Chi taglia il pannello ha un numero da chiamare se una quota non torna.",
     "email": "E-mail",
     "dinCand": "Account dal",
-    "notaEmail": "L'e-mail non si cambia da qui. Scrivici dalla casella dei messaggi se va cambiata."
+    "notaEmail": "L'e-mail non si cambia da qui. Scrivici dalla casella dei messaggi se va cambiata.",
+    "parolaTitlu": "Cambia password",
+    "parolaVeche": "Password attuale",
+    "parolaNoua": "Nuova password (almeno 8 caratteri)",
+    "parolaNoua2": "Nuova password, di nuovo",
+    "parolaSchimba": "Cambia password",
+    "parolaSchimbata": "La password è stata cambiata.",
+    "parolaVecheGresita": "La password attuale non è corretta."
   },
   "stat": {
     "titlu": "Che cosa si costruisce, per paese",

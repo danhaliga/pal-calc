@@ -1623,7 +1623,14 @@
     "notaFoaie": "Lo que rellenes aquí sale en la cabecera de las hojas que van al corte. Quien corta el tablero tiene un número al que llamar si una medida no encaja.",
     "email": "Correo electrónico",
     "dinCand": "Cuenta desde",
-    "notaEmail": "El correo no se cambia desde aquí. Escríbenos por el buzón de mensajes si hay que cambiarlo."
+    "notaEmail": "El correo no se cambia desde aquí. Escríbenos por el buzón de mensajes si hay que cambiarlo.",
+    "parolaTitlu": "Cambiar contraseña",
+    "parolaVeche": "Contraseña actual",
+    "parolaNoua": "Contraseña nueva (al menos 8 caracteres)",
+    "parolaNoua2": "Contraseña nueva, otra vez",
+    "parolaSchimba": "Cambiar contraseña",
+    "parolaSchimbata": "La contraseña se ha cambiado.",
+    "parolaVecheGresita": "La contraseña actual no es correcta."
   },
   "stat": {
     "titlu": "Qué se fabrica, por país",

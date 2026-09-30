@@ -1623,7 +1623,14 @@
     "notaFoaie": "Ce que vous remplissez ici figure en tête des feuilles qui partent à la découpe. Celui qui coupe le panneau a un numéro à appeler si une cote ne tombe pas juste.",
     "email": "Courriel",
     "dinCand": "Compte depuis",
-    "notaEmail": "Le courriel ne se change pas ici. Écrivez-nous depuis la boîte à messages s'il doit être changé."
+    "notaEmail": "Le courriel ne se change pas ici. Écrivez-nous depuis la boîte à messages s'il doit être changé.",
+    "parolaTitlu": "Changer le mot de passe",
+    "parolaVeche": "Mot de passe actuel",
+    "parolaNoua": "Nouveau mot de passe (au moins 8 caractères)",
+    "parolaNoua2": "Nouveau mot de passe, encore une fois",
+    "parolaSchimba": "Changer le mot de passe",
+    "parolaSchimbata": "Le mot de passe a été changé.",
+    "parolaVecheGresita": "Le mot de passe actuel est incorrect."
   },
   "stat": {
     "titlu": "Ce qui se fabrique, par pays",

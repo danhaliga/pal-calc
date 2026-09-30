@@ -1623,7 +1623,14 @@
     "notaFoaie": "Những gì bạn ghi ở đây sẽ nằm trên đầu các phiếu đưa đi cắt. Người cắt tấm ván có số điện thoại để gọi khi một kích thước không khớp.",
     "email": "E-mail",
     "dinCand": "Tài khoản từ",
-    "notaEmail": "E-mail không đổi được ở đây. Hãy viết cho chúng tôi qua hộp tin nhắn nếu cần đổi."
+    "notaEmail": "E-mail không đổi được ở đây. Hãy viết cho chúng tôi qua hộp tin nhắn nếu cần đổi.",
+    "parolaTitlu": "Đổi mật khẩu",
+    "parolaVeche": "Mật khẩu hiện tại",
+    "parolaNoua": "Mật khẩu mới (ít nhất 8 ký tự)",
+    "parolaNoua2": "Nhập lại mật khẩu mới",
+    "parolaSchimba": "Đổi mật khẩu",
+    "parolaSchimbata": "Đã đổi mật khẩu.",
+    "parolaVecheGresita": "Mật khẩu hiện tại không đúng."
   },
   "stat": {
     "titlu": "Người ta làm gì, theo từng nước",

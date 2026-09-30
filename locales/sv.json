@@ -1623,7 +1623,14 @@
     "notaFoaie": "Det du fyller i här hamnar högst upp på de lappar som går till kapning. Den som sågar skivan har ett nummer att ringa när ett mått inte stämmer.",
     "email": "E-post",
     "dinCand": "Konto sedan",
-    "notaEmail": "E-postadressen ändras inte härifrån. Skriv till oss via meddelanderutan om den behöver ändras."
+    "notaEmail": "E-postadressen ändras inte härifrån. Skriv till oss via meddelanderutan om den behöver ändras.",
+    "parolaTitlu": "Byt lösenord",
+    "parolaVeche": "Nuvarande lösenord",
+    "parolaNoua": "Nytt lösenord (minst 8 tecken)",
+    "parolaNoua2": "Nytt lösenord igen",
+    "parolaSchimba": "Byt lösenord",
+    "parolaSchimbata": "Lösenordet har bytts.",
+    "parolaVecheGresita": "Nuvarande lösenord stämmer inte."
   },
   "stat": {
     "titlu": "Vad som byggs, per land",

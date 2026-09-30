@@ -1634,7 +1634,14 @@
     "notaFoaie": "Čo tu vyplníš, sa objaví v hlavičke listov, ktoré idú na nárez. Ten, kto reže plát, má číslo, kam zavolať, keď rozmer nesedí.",
     "email": "E-mail",
     "dinCand": "Konto od",
-    "notaEmail": "E-mail sa odtiaľto nemení. Napíš nám cez okno správ, ak sa má zmeniť."
+    "notaEmail": "E-mail sa odtiaľto nemení. Napíš nám cez okno správ, ak sa má zmeniť.",
+    "parolaTitlu": "Zmeniť heslo",
+    "parolaVeche": "Súčasné heslo",
+    "parolaNoua": "Nové heslo (aspoň 8 znakov)",
+    "parolaNoua2": "Nové heslo znova",
+    "parolaSchimba": "Zmeniť heslo",
+    "parolaSchimbata": "Heslo bolo zmenené.",
+    "parolaVecheGresita": "Súčasné heslo nie je správne."
   },
   "stat": {
     "titlu": "Čo sa robí, podľa krajín",

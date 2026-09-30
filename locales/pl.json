@@ -1634,7 +1634,14 @@
     "notaFoaie": "To, co tu wpiszesz, trafia na górę arkuszy idących do rozkroju. Ten, kto ciął płytę, ma numer, pod który zadzwoni, gdy wymiar się nie zgadza.",
     "email": "E-mail",
     "dinCand": "Konto od",
-    "notaEmail": "Adresu e-mail nie zmienia się tutaj. Napisz do nas przez okno wiadomości, jeśli trzeba go zmienić."
+    "notaEmail": "Adresu e-mail nie zmienia się tutaj. Napisz do nas przez okno wiadomości, jeśli trzeba go zmienić.",
+    "parolaTitlu": "Zmień hasło",
+    "parolaVeche": "Obecne hasło",
+    "parolaNoua": "Nowe hasło (co najmniej 8 znaków)",
+    "parolaNoua2": "Nowe hasło, jeszcze raz",
+    "parolaSchimba": "Zmień hasło",
+    "parolaSchimbata": "Hasło zostało zmienione.",
+    "parolaVecheGresita": "Obecne hasło jest błędne."
   },
   "stat": {
     "titlu": "Co się robi, według krajów",

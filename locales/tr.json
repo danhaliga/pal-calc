@@ -1623,7 +1623,14 @@
     "notaFoaie": "Burada yazdıkların, kesime giden listelerin başına çıkar. Levhayı keseni bir ölçü oturmazsa arayacağı numara bulur.",
     "email": "E-posta",
     "dinCand": "Hesap tarihi",
-    "notaEmail": "E-posta buradan değişmez. Değişmesi gerekiyorsa mesaj kutusundan bize yaz."
+    "notaEmail": "E-posta buradan değişmez. Değişmesi gerekiyorsa mesaj kutusundan bize yaz.",
+    "parolaTitlu": "Şifreyi değiştir",
+    "parolaVeche": "Şu anki şifre",
+    "parolaNoua": "Yeni şifre (en az 8 karakter)",
+    "parolaNoua2": "Yeni şifre, tekrar",
+    "parolaSchimba": "Şifreyi değiştir",
+    "parolaSchimbata": "Şifre değiştirildi.",
+    "parolaVecheGresita": "Şu anki şifre yanlış."
   },
   "stat": {
     "titlu": "Ülkelere göre ne yapılıyor",

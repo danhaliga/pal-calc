@@ -216,6 +216,34 @@ router.post('/login', limiter, (req, res, next) => {
   });
 });
 
+/* ---- schimbarea parolei, din pagina contului ----
+
+   Până aici nu exista: un cont rămânea cu parola de la înregistrare, iar
+   cine o voia schimbată trebuia să ceară cuiva cu acces la server. Se cere
+   parola de acum — o sesiune lăsată deschisă pe un calculator străin nu
+   trebuie să ajungă să închidă omul pe dinafară. */
+const parolaSchema = z.object({
+  parolaVeche: z.string().min(1, 'valid.parolaLipsa').max(200),
+  parolaNoua: z.string().min(8, 'valid.parolaScurta').max(200),
+  parolaNoua2: z.string()
+}).refine(d => d.parolaNoua === d.parolaNoua2, { message: 'valid.paroleDiferite' });
+
+router.post('/cont/parola', limiter, requireAuth, (req, res) => {
+  const parsed = parolaSchema.safeParse(req.body || {});
+  const inapoi = cheie => res.redirect('/cont?parolaEroare=' + encodeURIComponent(cheie) + '#parola');
+  if (!parsed.success) return inapoi(parsed.error.issues[0].message);
+
+  const user = db.prepare('SELECT id, password_hash FROM users WHERE id = ?').get(req.user.id);
+  if (!user || !bcrypt.compareSync(parsed.data.parolaVeche, user.password_hash)) {
+    jurnal.atentie('cont', 'schimbare de parola respinsa', { req, status: 400 });
+    return inapoi('cont.parolaVecheGresita');
+  }
+  db.prepare('UPDATE users SET password_hash = ? WHERE id = ?')
+    .run(bcrypt.hashSync(parsed.data.parolaNoua, BCRYPT_COST), user.id);
+  jurnal.fapta('cont', 'si-a schimbat parola', { req });
+  res.redirect('/cont?parola=1#parola');
+});
+
 router.post('/logout', (req, res) => {
   req.session.destroy(() => res.redirect('/'));
 });

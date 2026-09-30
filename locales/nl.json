@@ -1623,7 +1623,14 @@
     "notaFoaie": "Wat je hier invult, komt boven op de briefjes die naar het zagen gaan. Wie de plaat zaagt, heeft een nummer om te bellen als een maat niet uitkomt.",
     "email": "E-mail",
     "dinCand": "Account sinds",
-    "notaEmail": "Het e-mailadres verandert hier niet. Schrijf ons via het berichtenvak als het gewijzigd moet worden."
+    "notaEmail": "Het e-mailadres verandert hier niet. Schrijf ons via het berichtenvak als het gewijzigd moet worden.",
+    "parolaTitlu": "Wachtwoord wijzigen",
+    "parolaVeche": "Huidig wachtwoord",
+    "parolaNoua": "Nieuw wachtwoord (minstens 8 tekens)",
+    "parolaNoua2": "Nieuw wachtwoord, nog eens",
+    "parolaSchimba": "Wachtwoord wijzigen",
+    "parolaSchimbata": "Het wachtwoord is gewijzigd.",
+    "parolaVecheGresita": "Het huidige wachtwoord klopt niet."
   },
   "stat": {
     "titlu": "Wat er gemaakt wordt, per land",

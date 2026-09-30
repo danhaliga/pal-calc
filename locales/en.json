@@ -1612,7 +1612,14 @@
     "notaFoaie": "What you fill in here goes at the top of the sheets that leave for cutting. Whoever cuts the board has a number to call when a dimension does not fit.",
     "email": "E-mail",
     "dinCand": "Account since",
-    "notaEmail": "The e-mail cannot be changed here. Write to us from the message box if it needs changing."
+    "notaEmail": "The e-mail cannot be changed here. Write to us from the message box if it needs changing.",
+    "parolaTitlu": "Change password",
+    "parolaVeche": "Current password",
+    "parolaNoua": "New password (at least 8 characters)",
+    "parolaNoua2": "New password, again",
+    "parolaSchimba": "Change password",
+    "parolaSchimbata": "Your password has been changed.",
+    "parolaVecheGresita": "The current password is wrong."
   },
   "unitate": {
     "mm": "millimetres",

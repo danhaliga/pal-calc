@@ -116,8 +116,15 @@ function vedere(req, valori, eroare) {
   };
 }
 
+/* Mesajele de la schimbarea parolei vin prin adresă. Se primesc numai
+   cheile știute, ca adresa să nu poată pune un text oarecare pe pagină. */
+const ERORI_PAROLA = ['valid.parolaLipsa', 'valid.parolaScurta', 'valid.paroleDiferite', 'cont.parolaVecheGresita'];
+
 router.get('/cont', requireAuth, (req, res) => {
-  res.render('cont', vedere(req, dateleFormularului(req.user)));
+  res.render('cont', Object.assign(vedere(req, dateleFormularului(req.user)), {
+    parolaOk: req.query.parola === '1',
+    parolaEroare: ERORI_PAROLA.indexOf(req.query.parolaEroare) !== -1 ? req.query.parolaEroare : null
+  }));
 });
 
 router.post('/cont', requireAuth, (req, res, next) => {

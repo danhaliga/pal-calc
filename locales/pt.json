@@ -1623,7 +1623,14 @@
     "notaFoaie": "O que você preencher aqui sai no topo das folhas que vão para o corte. Quem corta a placa tem um número para ligar se uma medida não encaixar.",
     "email": "E-mail",
     "dinCand": "Conta desde",
-    "notaEmail": "O e-mail não se muda daqui. Escreva-nos pela caixa de mensagens se for preciso mudá-lo."
+    "notaEmail": "O e-mail não se muda daqui. Escreva-nos pela caixa de mensagens se for preciso mudá-lo.",
+    "parolaTitlu": "Alterar palavra-passe",
+    "parolaVeche": "Palavra-passe atual",
+    "parolaNoua": "Palavra-passe nova (pelo menos 8 caracteres)",
+    "parolaNoua2": "Palavra-passe nova, outra vez",
+    "parolaSchimba": "Alterar palavra-passe",
+    "parolaSchimbata": "A palavra-passe foi alterada.",
+    "parolaVecheGresita": "A palavra-passe atual não está certa."
   },
   "stat": {
     "titlu": "O que se fabrica, por país",

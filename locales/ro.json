@@ -1623,7 +1623,14 @@
     "notaFoaie": "Ce completezi aici ajunge pe capul foilor care pleacă la debitare. Cel care taie palul are pe ce număr să sune dacă o cotă nu se potrivește.",
     "email": "E-mail",
     "dinCand": "Cont din",
-    "notaEmail": "E-mailul nu se schimbă de aici. Scrie-ne din căsuța de mesaje dacă trebuie schimbat."
+    "notaEmail": "E-mailul nu se schimbă de aici. Scrie-ne din căsuța de mesaje dacă trebuie schimbat.",
+    "parolaTitlu": "Schimbă parola",
+    "parolaVeche": "Parola de acum",
+    "parolaNoua": "Parola nouă (cel puțin 8 caractere)",
+    "parolaNoua2": "Parola nouă, încă o dată",
+    "parolaSchimba": "Schimbă parola",
+    "parolaSchimbata": "Parola a fost schimbată.",
+    "parolaVecheGresita": "Parola de acum nu e bună."
   },
   "unitate": {
     "mm": "milimetri",

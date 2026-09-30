@@ -1623,7 +1623,14 @@
     "notaFoaie": "Yang Anda isi di sini muncul di bagian atas lembar yang dikirim untuk dipotong. Pemotong papan punya nomor yang bisa dihubungi bila ada ukuran yang tidak pas.",
     "email": "E-mail",
     "dinCand": "Akun sejak",
-    "notaEmail": "E-mail tidak diubah dari sini. Kirim pesan kepada kami dari kotak pesan bila perlu diubah."
+    "notaEmail": "E-mail tidak diubah dari sini. Kirim pesan kepada kami dari kotak pesan bila perlu diubah.",
+    "parolaTitlu": "Ganti kata sandi",
+    "parolaVeche": "Kata sandi sekarang",
+    "parolaNoua": "Kata sandi baru (minimal 8 karakter)",
+    "parolaNoua2": "Kata sandi baru, sekali lagi",
+    "parolaSchimba": "Ganti kata sandi",
+    "parolaSchimbata": "Kata sandi sudah diganti.",
+    "parolaVecheGresita": "Kata sandi sekarang salah."
   },
   "stat": {
     "titlu": "Apa yang dibuat, menurut negara",

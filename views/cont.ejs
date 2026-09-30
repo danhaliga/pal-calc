@@ -96,3 +96,22 @@
   </form>
 </div>
 
+<%# Parola, in formularul ei: se trimite separat de datele contului, cu parola
+    de acum, ca o sesiune uitata deschisa sa nu poata inchide omul pe dinafara. %>
+<div class="panel" style="max-width:820px" id="parola">
+  <h2><%= t('cont.parolaTitlu') %></h2>
+  <% if (typeof parolaOk !== 'undefined' && parolaOk) { %><div class="warn ok"><%= t('cont.parolaSchimbata') %></div><% } %>
+  <% if (typeof parolaEroare !== 'undefined' && parolaEroare) { %><div class="warn err"><%= t(parolaEroare) %></div><% } %>
+  <form method="post" action="/cont/parola" autocomplete="off">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="f">
+      <label><%= t('cont.parolaVeche') %>
+        <input type="password" name="parolaVeche" required autocomplete="current-password"></label>
+      <label><%= t('cont.parolaNoua') %>
+        <input type="password" name="parolaNoua" required minlength="8" autocomplete="new-password"></label>
+      <label><%= t('cont.parolaNoua2') %>
+        <input type="password" name="parolaNoua2" required minlength="8" autocomplete="new-password"></label>
+    </div>
+    <button class="btn primary" type="submit"><%= t('cont.parolaSchimba') %></button>
+  </form>
+</div>

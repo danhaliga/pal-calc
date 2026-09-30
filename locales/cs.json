@@ -1634,7 +1634,14 @@
     "notaFoaie": "Co tady vyplníš, se objeví v hlavičce listů, které jdou na nářez. Ten, kdo řeže plotnu, má číslo, kam zavolat, když rozměr nesedí.",
     "email": "E-mail",
     "dinCand": "Účet od",
-    "notaEmail": "E-mail se odsud nemění. Napiš nám přes okno zpráv, pokud se má změnit."
+    "notaEmail": "E-mail se odsud nemění. Napiš nám přes okno zpráv, pokud se má změnit.",
+    "parolaTitlu": "Změnit heslo",
+    "parolaVeche": "Současné heslo",
+    "parolaNoua": "Nové heslo (aspoň 8 znaků)",
+    "parolaNoua2": "Nové heslo znovu",
+    "parolaSchimba": "Změnit heslo",
+    "parolaSchimbata": "Heslo bylo změněno.",
+    "parolaVecheGresita": "Současné heslo není správné."
   },
   "stat": {
     "titlu": "Co se dělá, podle zemí",

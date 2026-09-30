@@ -1623,7 +1623,14 @@
     "notaFoaie": "Was du hier einträgst, steht oben auf den Zetteln, die zum Zuschnitt gehen. Wer die Platte sägt, hat eine Nummer zum Anrufen, wenn ein Maß nicht passt.",
     "email": "E-Mail",
     "dinCand": "Konto seit",
-    "notaEmail": "Die E-Mail wird hier nicht geändert. Schreib uns über das Nachrichtenfeld, wenn sie geändert werden muss."
+    "notaEmail": "Die E-Mail wird hier nicht geändert. Schreib uns über das Nachrichtenfeld, wenn sie geändert werden muss.",
+    "parolaTitlu": "Passwort ändern",
+    "parolaVeche": "Aktuelles Passwort",
+    "parolaNoua": "Neues Passwort (mindestens 8 Zeichen)",
+    "parolaNoua2": "Neues Passwort, noch einmal",
+    "parolaSchimba": "Passwort ändern",
+    "parolaSchimbata": "Das Passwort wurde geändert.",
+    "parolaVecheGresita": "Das aktuelle Passwort ist falsch."
   },
   "stat": {
     "titlu": "Was gebaut wird, nach Ländern",

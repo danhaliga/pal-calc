@@ -1623,7 +1623,14 @@
     "notaFoaie": "Amit itt megadsz, a szabásra menő lapok fejébe kerül. Aki a lemezt vágja, talál egy számot, amit felhívhat, ha egy méret nem jön ki.",
     "email": "E-mail",
     "dinCand": "Fiók ettől",
-    "notaEmail": "Az e-mail innen nem módosítható. Írj nekünk az üzenetmezőből, ha meg kell változtatni."
+    "notaEmail": "Az e-mail innen nem módosítható. Írj nekünk az üzenetmezőből, ha meg kell változtatni.",
+    "parolaTitlu": "Jelszó módosítása",
+    "parolaVeche": "Jelenlegi jelszó",
+    "parolaNoua": "Új jelszó (legalább 8 karakter)",
+    "parolaNoua2": "Új jelszó még egyszer",
+    "parolaSchimba": "Jelszó módosítása",
+    "parolaSchimbata": "A jelszó megváltozott.",
+    "parolaVecheGresita": "A jelenlegi jelszó hibás."
   },
   "stat": {
     "titlu": "Mit készítenek, országonként",

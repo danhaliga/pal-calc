@@ -1623,7 +1623,14 @@
     "notaFoaie": "여기에 적은 내용은 재단하러 나가는 용지 맨 위에 나옵니다. 판을 자르는 사람은 치수가 맞지 않을 때 연락할 번호를 알게 됩니다.",
     "email": "이메일",
     "dinCand": "가입일",
-    "notaEmail": "이메일은 여기서 바꿀 수 없습니다. 변경이 필요하면 메시지 상자로 알려 주세요."
+    "notaEmail": "이메일은 여기서 바꿀 수 없습니다. 변경이 필요하면 메시지 상자로 알려 주세요.",
+    "parolaTitlu": "비밀번호 변경",
+    "parolaVeche": "현재 비밀번호",
+    "parolaNoua": "새 비밀번호 (8자 이상)",
+    "parolaNoua2": "새 비밀번호 확인",
+    "parolaSchimba": "비밀번호 변경",
+    "parolaSchimbata": "비밀번호가 변경되었습니다.",
+    "parolaVecheGresita": "현재 비밀번호가 틀립니다."
   },
   "stat": {
     "titlu": "나라별로 무엇을 만드는가",
