@@ -107,3 +107,9 @@ test('HTC Cubbis stă primul, pe pagină și în lista de trimitere', () => {
   assert.equal(P.publici()[0].nume, 'HTC Cubbis');
   assert.equal(P.activi()[0].nume, 'HTC Cubbis');
 });
+
+test('etichetele de servicii nu se rup la virgula dintr-un număr', () => {
+  assert.deepEqual(P.etichete({ servicii: 'debitare, cant ABS 0,4–2 mm, CNC' }),
+                   ['debitare', 'cant ABS 0,4–2 mm', 'CNC']);
+  assert.deepEqual(P.etichete({ servicii: 'debitare,cant,CNC' }), ['debitare', 'cant', 'CNC']);
+});

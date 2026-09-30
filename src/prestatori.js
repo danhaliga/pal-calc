@@ -44,8 +44,9 @@ function publici() {
 
 const REGIUNI = ['moldova', 'transilvania', 'banat', 'sud', 'dobrogea', 'nationale'];
 
-/* Lista serviciilor, scrisă liber cu virgulă, ca etichete. */
-const etichete = p => String(p.servicii || '').split(',').map(x => x.trim()).filter(Boolean);
+/* Lista serviciilor, scrisă liber cu virgulă, ca etichete. Virgula dintr-un
+   număr („cant 0,4–2 mm") nu desparte: altfel iese „cant 0" și „4–2 mm". */
+const etichete = p => String(p.servicii || '').split(/,(?!\d)/).map(x => x.trim()).filter(Boolean);
 
 function toti() {
   return db.prepare('SELECT * FROM prestatori ORDER BY ordine DESC, activ DESC, nume COLLATE NOCASE, id').all();
@@ -299,5 +300,5 @@ router.post('/prestatori/:id/trimite', requireAuth, (req, res, next) => {
 
 module.exports = {
   router, PE_ZI, REGIUNI, publici, activi, toti, unul, salveaza, atelier, completeaza, propunere,
-  aleComenzii, azi, noteaza
+  aleComenzii, azi, noteaza, etichete
 };
