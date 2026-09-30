@@ -1172,7 +1172,18 @@
     "pasUsi": "Monta os copos das dobradiças e as portas e depois ajusta as folgas.",
     "pasSuspensii": "Fixa os suspensores atrás do módulo e a calha na parede, e depois ajusta em altura.",
     "feronerieTotal": "Ferragens — total da encomenda",
-    "corpDeschis": "módulo aberto"
+    "corpDeschis": "módulo aberto",
+    "legendaDesen": "O móvel desmontado. Os números são os da tabela de peças.",
+    "pasPiesa": "Peça simples: aplica-se só a orla nas arestas marcadas.",
+    "pasSubScara": "Assenta as ilhargas na base ({sistem} pela base nas ilhargas), depois o tampo entre as ilhargas — as pontas cortadas a prumo encostam às ilhargas.",
+    "pasUnghi": "Os lados vão em meia-esquadria: confirma os ângulos na ficha CNC, depois cola e aperta.",
+    "pasMontanti": "Fixa as divisórias entre o fundo e o tampo, onde o desenho mostra.",
+    "pasSoclu": "Fixa o rodapé à frente, entre as ilhargas, por baixo do fundo.",
+    "pasPicioare": "Aparafusa os pés por baixo do fundo; os clipes do rodapé nos pés da frente.",
+    "pasNisa": "Deixa o nicho livre para o aparelho; confirma as medidas do fabricante.",
+    "pasGlisant": "Monta as calhas em cima e em baixo, depois as portas de correr; regula-as para fecharem por igual.",
+    "pasJolly": "Monta o cesto Jolly e fixa a frente no seu caixilho.",
+    "pasVitrina": "Monta as portas de caixilho de alumínio nas dobradiças para caixilho; regula as folgas."
   },
   "plata": {
     "reusitTitlu": "O pagamento foi registado",

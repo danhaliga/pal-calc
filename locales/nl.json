@@ -1172,7 +1172,18 @@
     "pasUsi": "Monteer de scharnierpotten en de deuren en stel daarna de naden af.",
     "pasSuspensii": "Zet de ophangers achter op de kast en de rail aan de wand, en stel daarna de hoogte af.",
     "feronerieTotal": "Beslag — totaal voor de opdracht",
-    "corpDeschis": "open kast"
+    "corpDeschis": "open kast",
+    "legendaDesen": "De kast uit elkaar. De nummers zijn die uit de onderdelentabel.",
+    "pasPiesa": "Los onderdeel: alleen kantband op de gemarkeerde kanten.",
+    "pasSubScara": "Zet de zijkanten op de bodem ({sistem} door de bodem in de zijkanten), dan het bovenblad ertussen — de loodrecht gezaagde uiteinden liggen tegen de zijkanten.",
+    "pasUnghi": "De zijden zijn in verstek: controleer de hoeken op het CNC-blad, dan lijmen en klemmen.",
+    "pasMontanti": "Zet de tussenwanden vast tussen bodem en bovenblad, waar de tekening aangeeft.",
+    "pasSoclu": "Zet de plint vast aan de voorkant, tussen de zijkanten, onder de bodem.",
+    "pasPicioare": "Schroef de poten onder de bodem; de plintclips op de voorste poten.",
+    "pasNisa": "Laat de nis vrij voor het apparaat; controleer de maten van de fabrikant.",
+    "pasGlisant": "Monteer de rails boven en onder, dan de schuifdeuren; stel ze af om gelijk te sluiten.",
+    "pasJolly": "Monteer de apothekerskorf en zet het front op zijn frame vast.",
+    "pasVitrina": "Hang de deuren met aluminium kader aan de kaderscharnieren; stel de naden af."
   },
   "plata": {
     "reusitTitlu": "De betaling is geregistreerd",

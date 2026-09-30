@@ -1172,7 +1172,18 @@
     "pasUsi": "打铰链杯孔、挂门板，再把缝调匀。",
     "pasSuspensii": "在柜体后面装吊码、在墙上装挂条，再调高低。",
     "feronerieTotal": "五金 —— 全单合计",
-    "corpDeschis": "开放柜体"
+    "corpDeschis": "开放柜体",
+    "legendaDesen": "柜体爆炸图。编号与板件表一致。",
+    "pasPiesa": "单块板件：只在标记的边上封边。",
+    "pasSubScara": "把侧板立在底板上（{sistem} 从底板打入侧板），再把顶板装在两侧板之间 — 其竖直切的两端贴住侧板。",
+    "pasUnghi": "侧边为斜接：先核对 CNC 图上的角度，再涂胶夹紧。",
+    "pasMontanti": "把隔板固定在底板和顶板之间，位置见图。",
+    "pasSoclu": "把踢脚板固定在前面、两侧板之间、底板下方。",
+    "pasPicioare": "把柜脚拧在底板下；踢脚线卡扣装在前脚上。",
+    "pasNisa": "给电器留出空位；核对厂家要求的尺寸。",
+    "pasGlisant": "装上下轨道，再装移门；调到关闭均匀。",
+    "pasJolly": "安装 Jolly 拉篮，把面板固定在其框架上。",
+    "pasVitrina": "把铝框门挂在框门铰链上；调整缝隙。"
   },
   "plata": {
     "reusitTitlu": "付款已记录",

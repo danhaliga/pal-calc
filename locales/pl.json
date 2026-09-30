@@ -1181,7 +1181,18 @@
     "pasUsi": "Zamontuj puszki zawiasów i fronty, potem wyreguluj szczeliny.",
     "pasSuspensii": "Przykręć zawieszki z tyłu korpusu i listwę do ściany, potem wyreguluj na wysokość.",
     "feronerieTotal": "Okucia — razem dla zlecenia",
-    "corpDeschis": "korpus otwarty"
+    "corpDeschis": "korpus otwarty",
+    "legendaDesen": "Szafka rozłożona. Numery są z tabeli elementów.",
+    "pasPiesa": "Pojedynczy element: tylko okleina na zaznaczonych krawędziach.",
+    "pasSubScara": "Postaw boki na podstawie ({sistem} przez podstawę w boki), potem wieniec między bokami — jego końce cięte pionowo przylegają do boków.",
+    "pasUnghi": "Boki łączone na ukos: sprawdź kąty na karcie CNC, potem klej i ściśnij.",
+    "pasMontanti": "Zamocuj przegrody między dnem a wieńcem, w miejscu z rysunku.",
+    "pasSoclu": "Zamocuj cokół z przodu, między bokami, pod dnem.",
+    "pasPicioare": "Przykręć nóżki pod dnem; klipsy listwy na przednie nóżki.",
+    "pasNisa": "Zostaw wnękę wolną na urządzenie; sprawdź wymiary producenta.",
+    "pasGlisant": "Zamontuj szyny górną i dolną, potem drzwi przesuwne; wyreguluj, by domykały się równo.",
+    "pasJolly": "Zamontuj cargo Jolly i przykręć front do jego ramy.",
+    "pasVitrina": "Zawieś drzwiczki w ramie aluminiowej na zawiasach do ram; wyreguluj szczeliny."
   },
   "plata": {
     "reusitTitlu": "Płatność została zapisana",

@@ -1172,7 +1172,18 @@
     "pasUsi": "Pasang mangkuk engsel dan pintunya, lalu setel celahnya.",
     "pasSuspensii": "Pasang gantungan di belakang boks dan rel di dinding, lalu setel ketinggiannya.",
     "feronerieTotal": "Aksesori — total pesanan",
-    "corpDeschis": "boks terbuka"
+    "corpDeschis": "boks terbuka",
+    "legendaDesen": "Kabinet dibongkar. Nomor-nomornya sama dengan tabel potongan.",
+    "pasPiesa": "Potongan tunggal: hanya pasang edging di tepi yang ditandai.",
+    "pasSubScara": "Dirikan sisi di atas alas ({sistem} dari alas ke sisi), lalu atap di antara sisi — ujungnya yang dipotong tegak menempel ke sisi.",
+    "pasUnghi": "Sisi disambung miring: periksa sudut di lembar CNC, lalu lem dan jepit.",
+    "pasMontanti": "Pasang sekat di antara dasar dan atas, di tempat yang ditunjukkan gambar.",
+    "pasSoclu": "Pasang papan alas di depan, di antara sisi, di bawah dasar.",
+    "pasPicioare": "Sekrupkan kaki di bawah dasar; klip plint pada kaki depan.",
+    "pasNisa": "Biarkan ceruk kosong untuk alat; periksa ukuran pabrikan.",
+    "pasGlisant": "Pasang rel atas dan bawah, lalu pintu geser; setel agar menutup rata.",
+    "pasJolly": "Pasang keranjang Jolly dan kencangkan muka pada rangkanya.",
+    "pasVitrina": "Pasang pintu rangka aluminium pada engsel rangka; setel celahnya."
   },
   "plata": {
     "reusitTitlu": "Pembayaran tercatat",

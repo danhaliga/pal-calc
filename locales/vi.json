@@ -1172,7 +1172,18 @@
     "pasUsi": "Lắp cốc bản lề và các cánh, rồi chỉnh khe hở.",
     "pasSuspensii": "Bắt móc treo vào mặt sau thùng tủ và thanh treo lên tường, rồi chỉnh theo chiều cao.",
     "feronerieTotal": "Phụ kiện — tổng cho cả đơn hàng",
-    "corpDeschis": "thùng tủ để mở"
+    "corpDeschis": "thùng tủ để mở",
+    "legendaDesen": "Tủ tháo rời. Các số là số trong bảng tấm.",
+    "pasPiesa": "Tấm lẻ: chỉ dán nẹp ở các cạnh đã đánh dấu.",
+    "pasSubScara": "Đặt hai hông lên đáy ({sistem} từ đáy vào hông), rồi nóc vào giữa hai hông — hai đầu cắt thẳng đứng áp vào hông.",
+    "pasUnghi": "Các cạnh ghép vát: kiểm tra góc trên phiếu CNC, rồi dán keo và kẹp.",
+    "pasMontanti": "Bắt các vách ngăn giữa đáy và nóc, đúng vị trí trên hình.",
+    "pasSoclu": "Bắt chân đế phía trước, giữa hai hông, dưới đáy.",
+    "pasPicioare": "Vặn chân dưới đáy; kẹp len chân ở các chân trước.",
+    "pasNisa": "Để trống hốc cho thiết bị; kiểm tra kích thước của nhà sản xuất.",
+    "pasGlisant": "Lắp ray trên và dưới, rồi cửa trượt; chỉnh cho đóng đều.",
+    "pasJolly": "Lắp giỏ Jolly và bắt mặt tủ vào khung giỏ.",
+    "pasVitrina": "Lắp cửa khung nhôm lên bản lề dành cho khung; chỉnh khe hở."
   },
   "plata": {
     "reusitTitlu": "Đã ghi nhận thanh toán",

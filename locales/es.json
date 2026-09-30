@@ -1172,7 +1172,18 @@
     "pasUsi": "Monta las cazoletas de bisagra y las puertas, y después ajusta las holguras.",
     "pasSuspensii": "Fija los colgadores detrás del módulo y el riel en la pared, y luego ajusta en altura.",
     "feronerieTotal": "Herrajes — total del pedido",
-    "corpDeschis": "módulo abierto"
+    "corpDeschis": "módulo abierto",
+    "legendaDesen": "El mueble desmontado. Los números son los de la tabla de piezas.",
+    "pasPiesa": "Pieza suelta: solo se aplica el canto en los bordes marcados.",
+    "pasSubScara": "Apoya los costados sobre la base ({sistem} desde la base hacia los costados), luego el techo entre los costados — sus extremos cortados a plomo quedan contra los costados.",
+    "pasUnghi": "Los lados van a inglete: comprueba los ángulos en la ficha CNC, luego encola y aprieta.",
+    "pasMontanti": "Fija los divisores entre el suelo y el techo, donde indica el dibujo.",
+    "pasSoclu": "Fija el zócalo delante, entre los costados, bajo el suelo.",
+    "pasPicioare": "Atornilla las patas bajo el suelo; los clips del rodapié en las patas delanteras.",
+    "pasNisa": "Deja el hueco libre para el aparato; comprueba las medidas del fabricante.",
+    "pasGlisant": "Monta los rieles arriba y abajo, luego las puertas correderas; ajústalas para que cierren parejas.",
+    "pasJolly": "Monta el cesto Jolly y fija el frente en su marco.",
+    "pasVitrina": "Monta las puertas de marco de aluminio en sus bisagras; ajusta las holguras."
   },
   "plata": {
     "reusitTitlu": "Se ha registrado tu pago",

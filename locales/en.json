@@ -1172,7 +1172,18 @@
     "pasUsi": "Fit the hinge cups and the doors, then adjust the gaps.",
     "pasSuspensii": "Fit the hangers behind the cabinet and the rail on the wall, then adjust vertically.",
     "feronerieTotal": "Hardware — order total",
-    "corpDeschis": "open cabinet"
+    "corpDeschis": "open cabinet",
+    "legendaDesen": "The cabinet taken apart. The numbers are those in the parts table.",
+    "pasPiesa": "Single panel: only apply the edging to the marked edges.",
+    "pasSubScara": "Stand the sides on the base ({sistem} through the base into the sides), then fit the top between the sides — its plumb-cut ends sit against the sides.",
+    "pasUnghi": "The sides are mitred: check the angles on the CNC sheet, then glue and clamp.",
+    "pasMontanti": "Fix the dividers between the bottom and the top, where the drawing shows.",
+    "pasSoclu": "Fix the plinth at the front, between the sides, under the bottom.",
+    "pasPicioare": "Screw the legs under the bottom; the kickboard clips go on the front legs.",
+    "pasNisa": "Leave the niche clear for the appliance; check the manufacturer's dimensions.",
+    "pasGlisant": "Fit the top and bottom tracks, then the sliding doors; adjust them to close evenly.",
+    "pasJolly": "Fit the pull-out basket and fix the front to its frame.",
+    "pasVitrina": "Hang the aluminium-frame doors on the frame hinges; adjust the gaps."
   },
   "plata": {
     "reusitTitlu": "Your payment has been recorded",

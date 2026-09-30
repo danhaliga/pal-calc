@@ -1181,7 +1181,18 @@
     "pasUsi": "Montiraj lončiće šarki i vrata, zatim podesi zazore.",
     "pasSuspensii": "Pričvrsti ovjese straga na korpus i letvu na zid, zatim podesi po visini.",
     "feronerieTotal": "Okov — ukupno za nalog",
-    "corpDeschis": "otvoren korpus"
+    "corpDeschis": "otvoren korpus",
+    "legendaDesen": "Element rastavljen. Brojevi su iz tablice dijelova.",
+    "pasPiesa": "Pojedinačni dio: samo rubna traka na označenim rubovima.",
+    "pasSubScara": "Postavi stranice na bazu ({sistem} kroz bazu u stranice), zatim strop između stranica — njegovi okomito rezani krajevi naliježu na stranice.",
+    "pasUnghi": "Stranice se spajaju na kut: provjeri kutove na CNC listu, zatim ljepilo i stege.",
+    "pasMontanti": "Učvrsti pregrade između dna i stropa, gdje pokazuje crtež.",
+    "pasSoclu": "Učvrsti sokl sprijeda, između stranica, ispod dna.",
+    "pasPicioare": "Pričvrsti nožice ispod dna; klipse letvice na prednje nožice.",
+    "pasNisa": "Ostavi nišu slobodnu za uređaj; provjeri mjere proizvođača.",
+    "pasGlisant": "Montiraj tračnice gore i dolje, zatim klizna vrata; podesi da se zatvaraju ravnomjerno.",
+    "pasJolly": "Montiraj košaru Jolly i pričvrsti front na njezin okvir.",
+    "pasVitrina": "Objesi vrata s aluminijskim okvirom na šarke za okvir; podesi razmake."
   },
   "plata": {
     "reusitTitlu": "Uplata je zabilježena",

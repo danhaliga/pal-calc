@@ -1172,7 +1172,18 @@
     "pasUsi": "Bandtöpfe und Türen montieren, dann die Fugen einstellen.",
     "pasSuspensii": "Die Aufhänger hinten am Korpus und die Schiene an der Wand befestigen, dann in der Höhe einstellen.",
     "feronerieTotal": "Beschläge — Auftragssumme",
-    "corpDeschis": "offener Korpus"
+    "corpDeschis": "offener Korpus",
+    "legendaDesen": "Der Korpus zerlegt. Die Nummern sind die aus der Teiletabelle.",
+    "pasPiesa": "Einzelteil: nur die markierten Kanten bekanten.",
+    "pasSubScara": "Seiten auf den Boden stellen ({sistem} durch den Boden in die Seiten), dann den Deckel zwischen die Seiten — seine lotrecht geschnittenen Enden liegen an den Seiten an.",
+    "pasUnghi": "Die Seiten sind auf Gehrung: Winkel auf dem CNC-Blatt prüfen, dann leimen und spannen.",
+    "pasMontanti": "Mittelwände zwischen Boden und Deckel befestigen, wie in der Zeichnung.",
+    "pasSoclu": "Sockel vorne zwischen den Seiten unter dem Boden befestigen.",
+    "pasPicioare": "Füße unter den Boden schrauben; die Sockelclips an die vorderen Füße.",
+    "pasNisa": "Nische für das Gerät frei lassen; Maße des Herstellers prüfen.",
+    "pasGlisant": "Laufschienen oben und unten montieren, dann die Schiebetüren; so einstellen, dass sie gleichmäßig schließen.",
+    "pasJolly": "Apothekerauszug montieren und die Front an seinem Rahmen befestigen.",
+    "pasVitrina": "Alurahmentüren an die Rahmenscharniere hängen; Fugen einstellen."
   },
   "plata": {
     "reusitTitlu": "Die Zahlung ist eingegangen",

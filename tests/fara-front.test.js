@@ -229,7 +229,8 @@ test('se cere și din comandă: pe un corp, sau pe toate', () => {
 
 test('tiparul nu cere montatorului să pună uși care nu există', () => {
   const montaj = citeste('views', 'orders', 'print-montaj.ejs');
-  assert.match(montaj, /nUsi && !\+c\.params\.faraFront.*pasUsi/,
+  assert.match(montaj, /var faraFr = \+cp\.faraFront/, 'fișa de montaj nu mai citește „fără fronturi"');
+  assert.match(montaj, /if \(\+cp\.nUsi && !faraFr\) \{[\s\S]*?pasUsi/,
     'fișa de montaj are pasul cu ușile nepăzit');
   assert.match(montaj, /faraFront \? t\('rezumat\.faraFront'\)/);
   assert.match(citeste('views', 'orders', 'print-corpuri.ejs'),

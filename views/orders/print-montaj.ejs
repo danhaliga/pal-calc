@@ -36,6 +36,11 @@
     <% if (c.avertismente.length) { %>
       <div class="doc-warn"><% c.avertismente.forEach(function (w) { %><div>⚠ <%= w %></div><% }); %></div>
     <% } %>
+    <%# Corpul desfacut, cu numarul fiecarei piese — acelasi ca in tabel. %>
+    <% var desen = desenMontaj(c.res, c.poz); %>
+    <% if (desen) { %>
+      <figure class="mnt-fig"><%- desen %><figcaption><%= t('print.legendaDesen') %></figcaption></figure>
+    <% } %>
 
     <div class="doc-doua">
       <div>
@@ -79,19 +84,41 @@
         </table>
 
         <h3><%= t('print.ordineaMontaj') %></h3>
+        <%# Pasii se aleg dupa corp: un montator care citeste „pune usile pe
+            balamale" la un dulap glisant sta si cauta balamale care nu exista. %>
+        <% var cp = c.params, cheiP = c.piese.map(function (p) { return p.cheie; }); %>
+        <% var subScaraDrept = cheiP.indexOf('tavanPanta') !== -1; %>
+        <% var inUnghi = cheiP.indexOf('panouLatura') !== -1; %>
+        <% var faraFr = +cp.faraFront; %>
         <ol class="doc-pasi">
+          <% if (cp.tip === 'piesa') { %>
+            <li><%= t('print.pasPiesa') %></li>
+          <% } else { %>
           <li><%= t('print.pasCant') %></li>
-          <li><%= t('print.pasGauri', { sistem: raport.sistemFeronerie.asamblare.nume }) %></li>
-          <% if (+c.params.nPol) { %><li><%= t('print.pasPolite') %></li><% } %>
+          <% if (subScaraDrept) { %>
+            <li><%= t('print.pasSubScara', { sistem: raport.sistemFeronerie.asamblare.nume }) %></li>
+          <% } else if (inUnghi) { %>
+            <li><%= t('print.pasUnghi') %></li>
+          <% } else { %>
+            <li><%= t('print.pasGauri', { sistem: raport.sistemFeronerie.asamblare.nume }) %></li>
+          <% } %>
+          <% if (cheiP.indexOf('montant') !== -1 || cheiP.indexOf('montantAtipic') !== -1) { %><li><%= t('print.pasMontanti') %></li><% } %>
+          <% if (+cp.nPol) { %><li><%= t('print.pasPolite') %></li><% } %>
           <li><%= t('print.pasCarcasa') %></li>
+          <% if (cheiP.indexOf('soclu') !== -1) { %><li><%= t('print.pasSoclu') %></li><% } %>
+          <% if (+cp.picioare && !(+c.res.soclu > 0)) { %><li><%= t('print.pasPicioare') %></li><% } %>
           <li><%= t('print.pasSpate') %></li>
-          <% if (+c.params.nSer) { %><li><%= t('print.pasSertare') %></li><% } %>
-          <%# Pasul cu usile se sare cand nu se fac: un montator care citeste
-              „pune usile" si n-are ce pune sta si cauta niste canaturi care
-              nu exista. Cutiile de sertar RAMAN — alea se fac oricum. %>
-          <% if (+c.params.nUsi && !+c.params.faraFront) { %><li><%= t('print.pasUsi') %></li><% } %>
-          <% if (raport.sistemFeronerie.suspensii && +c.params.D <= 450) { %>
+          <% if (+cp.hNisa > 0) { %><li><%= t('print.pasNisa') %></li><% } %>
+          <% if (+cp.nSer) { %><li><%= t('print.pasSertare') %></li><% } %>
+          <% if (+cp.nUsi && !faraFr) { %>
+            <% if (cp.montaj === 'glisant') { %><li><%= t('print.pasGlisant') %></li>
+            <% } else if (+cp.jolly) { %><li><%= t('print.pasJolly') %></li>
+            <% } else if (+cp.usiSticla) { %><li><%= t('print.pasVitrina') %></li>
+            <% } else { %><li><%= t('print.pasUsi') %></li><% } %>
+          <% } %>
+          <% if (raport.sistemFeronerie.suspensii && +cp.D <= 450 && cp.tip !== 'atipic') { %>
             <li><%= t('print.pasSuspensii') %></li>
+          <% } %>
           <% } %>
         </ol>
       </div>

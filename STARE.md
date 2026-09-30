@@ -361,6 +361,19 @@ Corpurile de sub scară deja făcute trec singure pe construcția nouă.
 
 Fișele au acum un cuprins sus (pe telefon ușa venea ultima și nu se vedea).
 
+## 6i. Planșele de montaj (30 septembrie)
+
+Dan: „verifică la toate corpurile să existe planșe de montaj". Pagina de
+montaj (`/orders/:id/print/montaj`) avea numai tabele și aceiași pași pentru
+toți. Acum fiecare corp are:
+- **desenul de montaj** (`shared/desen-montaj.js`): corpul desfăcut, în
+  proiecție oblică, făcut din aceleași cutii ca vederea 3D, cu numărul
+  fiecărei piese — același ca în tabel (1.1, 1.2 …);
+- **pașii după corp**: sub scară (laterale pe bază, tavan între ele), rama în
+  unghi, montanți, soclu, picioare, nișă, glisante (șine), Jolly, vitrină,
+  piesă simplă (numai cant).
+Verificat pe o comandă cu toate cele 52 de modele: fiecare are desen și pași.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

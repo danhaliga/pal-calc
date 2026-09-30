@@ -1172,7 +1172,18 @@
     "pasUsi": "Montez les boîtiers de charnière et les portes, puis réglez les jeux.",
     "pasSuspensii": "Fixez les suspensions à l'arrière du caisson et le rail au mur, puis réglez en hauteur.",
     "feronerieTotal": "Quincaillerie — total de la commande",
-    "corpDeschis": "caisson ouvert"
+    "corpDeschis": "caisson ouvert",
+    "legendaDesen": "Le meuble éclaté. Les numéros sont ceux du tableau des pièces.",
+    "pasPiesa": "Pièce seule : on applique seulement le chant sur les arêtes marquées.",
+    "pasSubScara": "Posez les côtés sur le socle ({sistem} à travers le socle dans les côtés), puis le dessus entre les côtés — ses extrémités coupées d'aplomb s'appuient contre les côtés.",
+    "pasUnghi": "Les côtés sont en onglet : vérifiez les angles sur la fiche CNC, puis collez et serrez.",
+    "pasMontanti": "Fixez les séparations entre le fond et le dessus, à l'endroit du dessin.",
+    "pasSoclu": "Fixez la plinthe devant, entre les côtés, sous le fond.",
+    "pasPicioare": "Vissez les pieds sous le fond ; les clips de plinthe sur les pieds avant.",
+    "pasNisa": "Laissez la niche libre pour l'appareil ; vérifiez les cotes du fabricant.",
+    "pasGlisant": "Posez les rails haut et bas, puis les portes coulissantes ; réglez-les pour qu'elles ferment régulièrement.",
+    "pasJolly": "Posez le panier Jolly et fixez la façade sur son cadre.",
+    "pasVitrina": "Posez les portes à cadre alu sur les charnières pour cadre ; réglez les jeux."
   },
   "plata": {
     "reusitTitlu": "Votre paiement a été enregistré",

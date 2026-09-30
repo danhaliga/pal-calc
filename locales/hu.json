@@ -1172,7 +1172,18 @@
     "pasUsi": "Szereld fel a pántserlegeket és az ajtókat, majd állítsd be a réseket.",
     "pasSuspensii": "Rögzítsd az akasztókat a korpusz hátuljára és a sínt a falra, majd állítsd be a magasságot.",
     "feronerieTotal": "Vasalatok — a megrendelés összesen",
-    "corpDeschis": "nyitott korpusz"
+    "corpDeschis": "nyitott korpusz",
+    "legendaDesen": "A szekrény szétszedve. A számok az alkatrésztáblázat számai.",
+    "pasPiesa": "Önálló alkatrész: csak a jelölt éleket kell élzárni.",
+    "pasSubScara": "Állítsd az oldalakat az aljra ({sistem} az aljon át az oldalakba), majd a tetőt az oldalak közé — függőlegesen vágott végei az oldalaknak feküdnek.",
+    "pasUnghi": "Az oldalak gérbe illeszkednek: ellenőrizd a szögeket a CNC-lapon, majd ragaszd és szorítsd.",
+    "pasMontanti": "Rögzítsd a válaszfalakat az alj és a tető közé, ahol a rajz mutatja.",
+    "pasSoclu": "Rögzítsd a lábazatot elöl, az oldalak közé, az alj alá.",
+    "pasPicioare": "Csavarozd a lábakat az alj alá; a lábazati klipszeket az első lábakra.",
+    "pasNisa": "Hagyd szabadon a fülkét a készüléknek; ellenőrizd a gyártó méreteit.",
+    "pasGlisant": "Szereld fel a felső és alsó síneket, majd a tolóajtókat; állítsd be, hogy egyenletesen záródjanak.",
+    "pasJolly": "Szereld fel a Jolly kosarat, és rögzítsd az előlapot a keretére.",
+    "pasVitrina": "Akaszd az alumínium keretes ajtókat a keretzsanérokra; állítsd be a réseket."
   },
   "plata": {
     "reusitTitlu": "A fizetés rögzítve",

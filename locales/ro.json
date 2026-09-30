@@ -1181,7 +1181,18 @@
     "pasUsi": "Montează cupele de balama și ușile, apoi reglează rosturile.",
     "pasSuspensii": "Prinde suspensiile în spatele corpului și șina pe perete, apoi reglează pe verticală.",
     "feronerieTotal": "Feronerie — total comandă",
-    "corpDeschis": "corp deschis"
+    "corpDeschis": "corp deschis",
+    "legendaDesen": "Corpul desfăcut. Numerele sunt cele din tabelul pieselor.",
+    "pasPiesa": "Piesă simplă: se aplică doar cantul pe muchiile marcate.",
+    "pasSubScara": "Pune lateralele pe bază ({sistem} prin bază, în laterale), apoi tavanul între laterale — capetele lui tăiate vertical stau lipite de laterale.",
+    "pasUnghi": "Laturile se îmbină în unghi: verifică unghiurile de pe fișa CNC, apoi lipește și strânge.",
+    "pasMontanti": "Prinde montanții între fund și blat, la locul din desen.",
+    "pasSoclu": "Prinde soclul în față, între laterale, sub fund.",
+    "pasPicioare": "Înșurubează picioarele sub fund; clemele de plintă pe picioarele din față.",
+    "pasNisa": "Lasă nișa liberă pentru aparat; verifică cotele cerute de producător.",
+    "pasGlisant": "Montează șinele sus și jos, apoi ușile glisante; reglează-le să închidă egal.",
+    "pasJolly": "Montează coșul Jolly și prinde frontul pe cadrul lui.",
+    "pasVitrina": "Montează ușile cu ramă de aluminiu pe balamalele pentru ramă; reglează rosturile."
   },
   "plata": {
     "reusitTitlu": "Plata a fost înregistrată",

@@ -14,6 +14,7 @@ const PalCalc = require('../shared/calc');
 const PalModels = require('../shared/models');
 const PalRaport = require('../shared/raport');
 const PalFisa = require('../shared/fisa-piesa');
+const PalMontaj = require('../shared/desen-montaj');
 const PalAnsamblu = require('../shared/ansamblu');
 const PalFeronerie = require('../shared/feronerie');
 
@@ -761,6 +762,7 @@ router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
     elevatie: PalAnsamblu.elevatie,
     materiale: materiale.aleComenzii(order.id),
     planse: PalRaport.planseCnc,
+    desenMontaj: PalMontaj.desen,
     /* Fișele pe piesă ale corpurilor de sub scară: numai pe planșa CNC. */
     fiseCorpuri: req.params.tip === 'cnc'
       ? raport.corpuri.filter(c => c.params && c.params.tip === 'atipic')

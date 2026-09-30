@@ -1172,7 +1172,18 @@
     "pasUsi": "Menteşe yuvalarını ve kapakları tak, sonra boşlukları ayarla.",
     "pasSuspensii": "Askı takozlarını gövdenin arkasına, rayı da duvara sabitle, sonra yüksekliği ayarla.",
     "feronerieTotal": "Aksesuarlar — sipariş toplamı",
-    "corpDeschis": "açık gövde"
+    "corpDeschis": "açık gövde",
+    "legendaDesen": "Dolabın açılmış hali. Numaralar parça tablosundakilerdir.",
+    "pasPiesa": "Tek parça: yalnızca işaretli kenarlara bant yapılır.",
+    "pasSubScara": "Yanları tabana oturt (tabandan yanlara {sistem}), sonra tavanı yanların arasına — dikey kesilmiş uçları yanlara dayanır.",
+    "pasUnghi": "Kenarlar gönye birleşir: CNC föyündeki açıları kontrol et, sonra tutkalla ve sık.",
+    "pasMontanti": "Bölmeleri alt ve üst arasına, çizimdeki yere tak.",
+    "pasSoclu": "Bazayı önde, yanların arasına, tabanın altına tak.",
+    "pasPicioare": "Ayakları tabanın altına vidala; baza klipslerini ön ayaklara tak.",
+    "pasNisa": "Cihaz için nişi boş bırak; üreticinin ölçülerini kontrol et.",
+    "pasGlisant": "Üst ve alt rayları tak, sonra sürgülü kapakları; eşit kapanacak şekilde ayarla.",
+    "pasJolly": "Jolly sepeti tak ve kapağı çerçevesine sabitle.",
+    "pasVitrina": "Alüminyum çerçeveli kapakları çerçeve menteşelerine tak; boşlukları ayarla."
   },
   "plata": {
     "reusitTitlu": "Ödeme kaydedildi",

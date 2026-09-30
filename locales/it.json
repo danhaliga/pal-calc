@@ -1172,7 +1172,18 @@
     "pasUsi": "Monta le tazze delle cerniere e le ante, poi regola i giochi.",
     "pasSuspensii": "Fissa gli attacchi dietro il mobile e la barra alla parete, poi regola in altezza.",
     "feronerieTotal": "Ferramenta — totale ordine",
-    "corpDeschis": "mobile aperto"
+    "corpDeschis": "mobile aperto",
+    "legendaDesen": "Il mobile esploso. I numeri sono quelli della tabella dei pezzi.",
+    "pasPiesa": "Pezzo singolo: si applica solo il bordo sugli spigoli segnati.",
+    "pasSubScara": "Appoggia i fianchi sulla base ({sistem} dalla base nei fianchi), poi il cielo tra i fianchi — le sue estremità tagliate a piombo stanno contro i fianchi.",
+    "pasUnghi": "I lati sono a 45°: controlla gli angoli sulla scheda CNC, poi incolla e stringi.",
+    "pasMontanti": "Fissa i divisori tra fondo e cielo, dove indica il disegno.",
+    "pasSoclu": "Fissa lo zoccolo davanti, tra i fianchi, sotto il fondo.",
+    "pasPicioare": "Avvita i piedini sotto il fondo; le clip dello zoccolo sui piedini anteriori.",
+    "pasNisa": "Lascia libera la nicchia per l'elettrodomestico; controlla le misure del produttore.",
+    "pasGlisant": "Monta i binari sopra e sotto, poi le ante scorrevoli; regolale perché chiudano uniformi.",
+    "pasJolly": "Monta il cestello Jolly e fissa il frontale sul suo telaio.",
+    "pasVitrina": "Monta le ante con telaio in alluminio sulle cerniere per telaio; regola le fughe."
   },
   "plata": {
     "reusitTitlu": "Il pagamento è stato registrato",

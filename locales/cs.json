@@ -1181,7 +1181,18 @@
     "pasUsi": "Namontuj misky pantů a dvířka a pak seřiď spáry.",
     "pasSuspensii": "Připevni závěsy vzadu na korpus a lištu na stěnu, pak seřiď výšku.",
     "feronerieTotal": "Kování — celkem za zakázku",
-    "corpDeschis": "otevřený korpus"
+    "corpDeschis": "otevřený korpus",
+    "legendaDesen": "Skříňka rozložená. Čísla jsou z tabulky dílů.",
+    "pasPiesa": "Samostatný díl: jen olepit označené hrany.",
+    "pasSubScara": "Postav boky na dno ({sistem} skrz dno do boků), pak strop mezi boky — jeho svisle řezané konce doléhají na boky.",
+    "pasUnghi": "Boky jsou na pokos: zkontroluj úhly na CNC listu, pak slep a stáhni.",
+    "pasMontanti": "Připevni přepážky mezi dno a strop, kde ukazuje výkres.",
+    "pasSoclu": "Připevni sokl vpředu, mezi boky, pod dno.",
+    "pasPicioare": "Přišroubuj nožky pod dno; klipy soklové lišty na přední nožky.",
+    "pasNisa": "Nech niku volnou pro spotřebič; ověř rozměry výrobce.",
+    "pasGlisant": "Namontuj kolejnice nahoře a dole, pak posuvné dveře; seřiď, aby zavíraly rovnoměrně.",
+    "pasJolly": "Namontuj koš Jolly a připevni čelo na jeho rám.",
+    "pasVitrina": "Zavěs dvířka v hliníkovém rámu na závěsy pro rám; seřiď spáry."
   },
   "plata": {
     "reusitTitlu": "Platba byla zaznamenána",

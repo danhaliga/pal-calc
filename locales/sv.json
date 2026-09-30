@@ -1172,7 +1172,18 @@
     "pasUsi": "Montera gångjärnskopparna och luckorna och justera sedan springorna.",
     "pasSuspensii": "Sätt upphängningarna bakom stommen och listen på väggen, och justera sedan i höjdled.",
     "feronerieTotal": "Beslag — totalt för ordern",
-    "corpDeschis": "öppen stomme"
+    "corpDeschis": "öppen stomme",
+    "legendaDesen": "Skåpet isärtaget. Numren är de i dellistan.",
+    "pasPiesa": "Enskild del: bara kantlist på de markerade kanterna.",
+    "pasSubScara": "Ställ gavlarna på botten ({sistem} genom botten in i gavlarna), sedan taket mellan gavlarna — dess lodrätt kapade ändar ligger mot gavlarna.",
+    "pasUnghi": "Sidorna är i gering: kontrollera vinklarna på CNC-bladet, limma sedan och spänn.",
+    "pasMontanti": "Fäst mellanväggarna mellan botten och topp, där ritningen visar.",
+    "pasSoclu": "Fäst sockeln framtill, mellan gavlarna, under botten.",
+    "pasPicioare": "Skruva benen under botten; sockelclipsen på de främre benen.",
+    "pasNisa": "Lämna nischen fri för apparaten; kontrollera tillverkarens mått.",
+    "pasGlisant": "Montera skenorna upptill och nedtill, sedan skjutdörrarna; justera så att de stänger jämnt.",
+    "pasJolly": "Montera Jolly-korgen och fäst fronten på dess ram.",
+    "pasVitrina": "Häng dörrarna med aluminiumram på ramgångjärnen; justera springorna."
   },
   "plata": {
     "reusitTitlu": "Betalningen är registrerad",
