@@ -390,6 +390,25 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
 - **De aflat de la Dan:** numele programului de facturare — ca exportul să
   fie exact pe formatul lui de import.
 
+## 6k. 30 septembrie, dimineața: copii, picioare, polițe, pagini legale
+
+- **Copii automate ale bazei** (`scripts/copie-baza.js`, `db.backup` — un `cp
+  app.db` pierde ce e încă în `app.db-wal`!). Zilnic la 03:30
+  (`palcalc-copie.timer`) și înainte de fiecare actualizare; în
+  `/var/palcalc/copii/`, 30 de zile. **Actualizarea se face de acum cu:**
+  `cd /opt/palcalc && git pull && npm ci --omit=dev && sudo -u palcalc env DATA_DIR=/var/palcalc TZ=Europe/Bucharest node scripts/copie-baza.js inainte-de-actualizare && systemctl restart palcalc`
+  Copiile `app.db.inainte-de-*` din `/var/palcalc` (făcute cu `cp`) pot să nu
+  aibă ultimele scrieri. Lipsește încă o copie ÎN AFARA serverului.
+- **4 picioare pe corp**, la orice lățime (Dan).
+- **Sub scară, polițele** se împart pe toată înălțimea; cele de sub pantă se
+  scurtează, cu capătul dinspre pantă tăiat înclinat (Dan, punctul 8).
+- **Pagini legale** `/termeni`, `/confidentialitate`, `/cookies` (text în
+  română) și subsol cu datele firmei + ANPC/SAL. Firma: **SMS FEEDBACK S.R.L.**,
+  RO39565485, J22/1736/2018, Șos. Ungheni nr. 2, Iași — în `src/firma.js`.
+  **De la Dan: emailul și telefonul firmei** (câmpurile sunt goale în
+  `src/firma.js`). Platforma europeană SOL s-a închis în iulie 2025, deci
+  rămâne doar SAL. CAEN-ul principal al firmei e 7320 — de întrebat contabilul.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

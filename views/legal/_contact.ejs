@@ -1,0 +1,1 @@
+<b><%= firma.denumire %></b>, CUI <%= firma.cui %>, <%= firma.regCom %>, sediul în <%= firma.sediu %><% if (firma.email) { %>, email <b><%= firma.email %></b><% } %><% if (firma.telefon) { %>, telefon <%= firma.telefon %><% } %><% if (!firma.email) { %>. Ne poți scrie din aplicație, prin formularul „Scrie-ne” (după autentificare)<% } %>

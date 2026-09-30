@@ -1781,5 +1781,13 @@
     "exportToate": "Stiahnuť všetky z obdobia (bez označenia)",
     "platiTitlu": "Platby kartou v období",
     "faraPlati": "V tomto období žiadne platby kartou."
+  },
+  "legal": {
+    "termeni": "Obchodné podmienky",
+    "confidentialitate": "Súkromie",
+    "cookies": "Cookies",
+    "anpcSal": "Riešenie sporov (ADR)",
+    "textRomana": "Text je v rumunčine, jazyku zmluvy.",
+    "acordCont": "Založením účtu súhlasíš s:"
   }
 }

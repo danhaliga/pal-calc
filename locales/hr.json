@@ -1781,5 +1781,13 @@
     "exportToate": "Preuzmi sva iz razdoblja (bez označavanja)",
     "platiTitlu": "Plaćanja karticom u razdoblju",
     "faraPlati": "Nema plaćanja karticom u ovom razdoblju."
+  },
+  "legal": {
+    "termeni": "Uvjeti korištenja",
+    "confidentialitate": "Privatnost",
+    "cookies": "Kolačići",
+    "anpcSal": "Rješavanje sporova (ADR)",
+    "textRomana": "Tekst je na rumunjskom, jeziku ugovora.",
+    "acordCont": "Otvaranjem računa prihvaćaš:"
   }
 }

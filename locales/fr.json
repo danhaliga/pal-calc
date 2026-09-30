@@ -1770,5 +1770,13 @@
     "exportToate": "Tout télécharger sur la période (sans marquer)",
     "platiTitlu": "Paiements par carte de la période",
     "faraPlati": "Aucun paiement par carte sur cette période."
+  },
+  "legal": {
+    "termeni": "Conditions générales",
+    "confidentialitate": "Confidentialité",
+    "cookies": "Cookies",
+    "anpcSal": "Règlement des litiges (RAL)",
+    "textRomana": "Le texte est en roumain, la langue du contrat.",
+    "acordCont": "En créant un compte, tu acceptes :"
   }
 }

@@ -1770,5 +1770,13 @@
     "exportToate": "Unduh semua dalam periode (tanpa menandai)",
     "platiTitlu": "Pembayaran kartu dalam periode",
     "faraPlati": "Tidak ada pembayaran kartu pada periode ini."
+  },
+  "legal": {
+    "termeni": "Syarat dan ketentuan",
+    "confidentialitate": "Privasi",
+    "cookies": "Cookie",
+    "anpcSal": "Penyelesaian sengketa (ADR)",
+    "textRomana": "Teks dalam bahasa Rumania, bahasa kontrak.",
+    "acordCont": "Dengan membuat akun kamu menyetujui:"
   }
 }

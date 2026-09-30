@@ -1781,5 +1781,13 @@
     "exportToate": "Pobierz wszystkie z okresu (bez oznaczania)",
     "platiTitlu": "Płatności kartą w okresie",
     "faraPlati": "Brak płatności kartą w tym okresie."
+  },
+  "legal": {
+    "termeni": "Regulamin",
+    "confidentialitate": "Prywatność",
+    "cookies": "Pliki cookie",
+    "anpcSal": "Rozwiązywanie sporów (ADR)",
+    "textRomana": "Tekst jest po rumuńsku, w języku umowy.",
+    "acordCont": "Zakładając konto, akceptujesz:"
   }
 }

@@ -499,3 +499,10 @@ svg.sk .sk-usa.fara{stroke-dasharray:60 44;opacity:.7}
 .contur-manual > summary::before{content:"▸ ";color:var(--accent)}
 .contur-manual[open] > summary::before{content:"▾ "}
 .contur-manual > summary:hover{color:var(--ink)}
+
+/* subsolul legal si paginile legale */
+.subsol-legal { margin-top: 8px; font-size: 12px; opacity: .85; display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; }
+.subsol-legal nav { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.panel.legal { max-width: 860px; line-height: 1.6; }
+.panel.legal h2 { font-size: 16px; margin: 18px 0 6px; }
+.panel.legal ul { padding-left: 20px; }

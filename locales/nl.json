@@ -1770,5 +1770,13 @@
     "exportToate": "Alles uit de periode downloaden (zonder markeren)",
     "platiTitlu": "Kaartbetalingen in de periode",
     "faraPlati": "Geen kaartbetalingen in deze periode."
+  },
+  "legal": {
+    "termeni": "Algemene voorwaarden",
+    "confidentialitate": "Privacy",
+    "cookies": "Cookies",
+    "anpcSal": "Geschillenbeslechting (ADR)",
+    "textRomana": "De tekst is in het Roemeens, de taal van het contract.",
+    "acordCont": "Door een account te maken ga je akkoord met:"
   }
 }

@@ -1770,5 +1770,13 @@
     "exportToate": "Ladda ner alla i perioden (utan markering)",
     "platiTitlu": "Kortbetalningar i perioden",
     "faraPlati": "Inga kortbetalningar i den här perioden."
+  },
+  "legal": {
+    "termeni": "Villkor",
+    "confidentialitate": "Integritet",
+    "cookies": "Kakor",
+    "anpcSal": "Tvistlösning (ADR)",
+    "textRomana": "Texten är på rumänska, avtalets språk.",
+    "acordCont": "Genom att skapa ett konto godkänner du:"
   }
 }

@@ -1770,5 +1770,13 @@
     "exportToate": "Az időszak összes letöltése (jelölés nélkül)",
     "platiTitlu": "Kártyás fizetések az időszakban",
     "faraPlati": "Ebben az időszakban nincs kártyás fizetés."
+  },
+  "legal": {
+    "termeni": "Általános szerződési feltételek",
+    "confidentialitate": "Adatvédelem",
+    "cookies": "Sütik",
+    "anpcSal": "Vitarendezés (ADR)",
+    "textRomana": "A szöveg román nyelvű, a szerződés nyelvén.",
+    "acordCont": "A fiók létrehozásával elfogadod:"
   }
 }

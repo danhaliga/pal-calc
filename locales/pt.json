@@ -1770,5 +1770,13 @@
     "exportToate": "Descarregar todos do período (sem marcar)",
     "platiTitlu": "Pagamentos com cartão do período",
     "faraPlati": "Nenhum pagamento com cartão neste período."
+  },
+  "legal": {
+    "termeni": "Termos e condições",
+    "confidentialitate": "Privacidade",
+    "cookies": "Cookies",
+    "anpcSal": "Resolução de litígios (RAL)",
+    "textRomana": "O texto está em romeno, a língua do contrato.",
+    "acordCont": "Ao criar a conta, aceita:"
   }
 }

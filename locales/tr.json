@@ -1770,5 +1770,13 @@
     "exportToate": "Dönemdekilerin hepsini indir (işaretlemeden)",
     "platiTitlu": "Dönemdeki kartlı ödemeler",
     "faraPlati": "Bu dönemde kartlı ödeme yok."
+  },
+  "legal": {
+    "termeni": "Şartlar ve koşullar",
+    "confidentialitate": "Gizlilik",
+    "cookies": "Çerezler",
+    "anpcSal": "Uyuşmazlık çözümü (ADR)",
+    "textRomana": "Metin, sözleşme dili olan Rumencedir.",
+    "acordCont": "Hesap oluşturarak şunları kabul edersin:"
   }
 }

@@ -1770,5 +1770,13 @@
     "exportToate": "Tải tất cả trong kỳ (không đánh dấu)",
     "platiTitlu": "Thanh toán bằng thẻ trong kỳ",
     "faraPlati": "Không có thanh toán bằng thẻ trong kỳ này."
+  },
+  "legal": {
+    "termeni": "Điều khoản và điều kiện",
+    "confidentialitate": "Quyền riêng tư",
+    "cookies": "Cookie",
+    "anpcSal": "Giải quyết tranh chấp (ADR)",
+    "textRomana": "Văn bản bằng tiếng Romania, ngôn ngữ của hợp đồng.",
+    "acordCont": "Khi tạo tài khoản, bạn đồng ý với:"
   }
 }

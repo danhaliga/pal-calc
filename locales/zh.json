@@ -1770,5 +1770,13 @@
     "exportToate": "下载期间内全部（不标记）",
     "platiTitlu": "期间内的刷卡付款",
     "faraPlati": "此期间没有刷卡付款。"
+  },
+  "legal": {
+    "termeni": "条款和条件",
+    "confidentialitate": "隐私",
+    "cookies": "Cookie",
+    "anpcSal": "争议解决（ADR）",
+    "textRomana": "文本为罗马尼亚语，即合同语言。",
+    "acordCont": "创建账户即表示你同意："
   }
 }

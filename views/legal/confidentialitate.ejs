@@ -1,0 +1,44 @@
+<%- include('_cap') %>
+<div class="panel legal">
+<h2>1. Cine prelucrează datele</h2>
+<p>Operatorul datelor tale este <%- include('_contact') %>.</p>
+
+<h2>2. Ce date prelucrăm</h2>
+<ul>
+  <li><b>Contul:</b> email, parola (păstrată numai criptat, nu o putem citi), nume, limba, țara și profilul (ce faci), dacă le dai.</li>
+  <li><b>Date pentru foaia de debitare și pentru factură:</b> firma, CUI, Nr. Reg. Com., adresa, orașul, județul, telefonul — dacă le completezi.</li>
+  <li><b>Ce lucrezi în aplicație:</b> corpurile, comenzile, materialele și mesajele trimise din aplicație.</li>
+  <li><b>Plățile:</b> suma, data și referința plății. Datele cardului le prelucrează numai Stripe; noi nu le vedem.</li>
+  <li><b>Jurnalul tehnic:</b> erori și acțiuni importante (autentificare, plată), cu adresa IP trunchiată (ultima parte ștearsă), ca să putem apăra site-ul și repara erorile.</li>
+</ul>
+
+<h2>3. De ce și pe ce temei</h2>
+<ul>
+  <li>Ca să-ți oferim aplicația și contul — executarea contractului (art. 6 alin. 1 lit. b din GDPR).</li>
+  <li>Ca să emitem și să păstrăm facturile — obligație legală (art. 6 alin. 1 lit. c).</li>
+  <li>Ca să apărăm site-ul de abuzuri și să reparăm erori — interes legitim (art. 6 alin. 1 lit. f).</li>
+</ul>
+<p>Nu folosim datele pentru reclame și nu le vindem.</p>
+
+<h2>4. Cui le dăm</h2>
+<ul>
+  <li><b>Stripe</b> — procesează plățile cu cardul.</li>
+  <li><b>Programul de facturare și contabilul firmei</b> — datele de facturare, pentru facturi și declarațiile fiscale (inclusiv RO e-Factura).</li>
+  <li><b>Furnizorul de găzduire</b> al serverului pe care rulează aplicația.</li>
+  <li><b>Google Fonts și Cloudflare (cdnjs)</b> — de la ei se încarcă fonturile paginii și biblioteca pentru vederea 3D; primesc, ca orice server, adresa IP a browserului tău.</li>
+</ul>
+
+<h2>5. Cât le păstrăm</h2>
+<ul>
+  <li>Datele contului: cât timp ai cont; la cerere, le ștergem.</li>
+  <li>Facturile și datele de pe ele: 10 ani, cât cere legea.</li>
+  <li>Jurnalul tehnic: cel mult 90 de zile.</li>
+  <li>Copiile de siguranță ale bazei de date: 30 de zile.</li>
+</ul>
+
+<h2>6. Drepturile tale</h2>
+<p>Ai dreptul să ceri acces la date, corectarea sau ștergerea lor, restricționarea prelucrării, portabilitatea lor și să te opui prelucrării. Îți poți corecta singur o parte din date în pagina contului. Pentru restul, scrie-ne. Ai și dreptul să faci plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (<a href="https://www.dataprotection.ro" target="_blank" rel="noopener">dataprotection.ro</a>).</p>
+
+<h2>7. Siguranța datelor</h2>
+<p>Site-ul merge numai pe conexiune criptată (https). Parolele se păstrează numai criptat, iar cheile de plată sunt criptate în baza de date. Accesul la server e restrâns.</p>
+</div>

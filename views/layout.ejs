@@ -60,6 +60,20 @@
 <footer class="site-foot">
   <div class="wrap">
     <%= t('app.subsol') %>
+    <%# Datele firmei si legaturile legale: obligatorii la vanzarea online
+        in Romania (identificarea comerciantului, termeni, GDPR, ANPC-SAL). %>
+    <% if (typeof firma !== 'undefined' && firma) { %>
+    <div class="subsol-legal">
+      <span><%= firma.denumire %> · CUI <%= firma.cui %> · <%= firma.regCom %> · <%= firma.sediu %></span>
+      <nav>
+        <a href="/termeni"><%= t('legal.termeni') %></a>
+        <a href="/confidentialitate"><%= t('legal.confidentialitate') %></a>
+        <a href="/cookies"><%= t('legal.cookies') %></a>
+        <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener"><%= t('legal.anpcSal') %></a>
+        <a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a>
+      </nav>
+    </div>
+    <% } %>
   </div>
 </footer>
 

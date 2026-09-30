@@ -1781,5 +1781,13 @@
     "exportToate": "Preuzmi sva iz perioda (bez označavanja)",
     "platiTitlu": "Plaćanja karticom u periodu",
     "faraPlati": "Nema plaćanja karticom u ovom periodu."
+  },
+  "legal": {
+    "termeni": "Uslovi korišćenja",
+    "confidentialitate": "Privatnost",
+    "cookies": "Kolačići",
+    "anpcSal": "Rešavanje sporova (ADR)",
+    "textRomana": "Tekst je na rumunskom, jeziku ugovora.",
+    "acordCont": "Otvaranjem naloga prihvataš:"
   }
 }

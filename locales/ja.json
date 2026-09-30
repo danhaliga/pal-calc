@@ -1770,5 +1770,13 @@
     "exportToate": "期間内をすべてダウンロード（印は付けない）",
     "platiTitlu": "期間内のカード決済",
     "faraPlati": "この期間にカード決済はありません。"
+  },
+  "legal": {
+    "termeni": "利用規約",
+    "confidentialitate": "プライバシー",
+    "cookies": "Cookie",
+    "anpcSal": "紛争解決（ADR）",
+    "textRomana": "本文は契約言語であるルーマニア語です。",
+    "acordCont": "アカウントを作成すると、以下に同意したことになります："
   }
 }

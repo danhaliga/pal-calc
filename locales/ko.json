@@ -1770,5 +1770,13 @@
     "exportToate": "기간 전체 받기 (표시 안 함)",
     "platiTitlu": "기간 내 카드 결제",
     "faraPlati": "이 기간에 카드 결제가 없습니다."
+  },
+  "legal": {
+    "termeni": "이용약관",
+    "confidentialitate": "개인정보",
+    "cookies": "쿠키",
+    "anpcSal": "분쟁 해결 (ADR)",
+    "textRomana": "본문은 계약 언어인 루마니아어로 되어 있습니다.",
+    "acordCont": "계정을 만들면 다음에 동의하는 것입니다:"
   }
 }

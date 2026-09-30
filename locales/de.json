@@ -1770,5 +1770,13 @@
     "exportToate": "Alle im Zeitraum herunterladen (ohne Markierung)",
     "platiTitlu": "Kartenzahlungen im Zeitraum",
     "faraPlati": "Keine Kartenzahlungen in diesem Zeitraum."
+  },
+  "legal": {
+    "termeni": "AGB",
+    "confidentialitate": "Datenschutz",
+    "cookies": "Cookies",
+    "anpcSal": "Streitbeilegung (AS)",
+    "textRomana": "Der Text ist auf Rumänisch, der Vertragssprache.",
+    "acordCont": "Mit dem Anlegen des Kontos stimmst du zu:"
   }
 }

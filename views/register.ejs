@@ -29,7 +29,10 @@
         <input type="password" name="password2" required minlength="8" autocomplete="new-password">
       </label>
       <button class="btn primary full" type="submit"><%= t('auth.creeazaContul') %></button>
-    </form>
+      <p class="legend"><%= t('legal.acordCont') %>
+    <a href="/termeni" target="_blank"><%= t('legal.termeni') %></a> ·
+    <a href="/confidentialitate" target="_blank"><%= t('legal.confidentialitate') %></a></p>
+</form>
     <p class="muted"><%= t('auth.aiDejaCont') %> <a href="/login"><%= t('auth.autentificaTe') %></a>.</p>
   </div>
 </div>

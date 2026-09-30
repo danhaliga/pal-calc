@@ -1770,5 +1770,13 @@
     "exportToate": "Download all in the period (no marking)",
     "platiTitlu": "Card payments in the period",
     "faraPlati": "No card payments in this period."
+  },
+  "legal": {
+    "termeni": "Terms and conditions",
+    "confidentialitate": "Privacy",
+    "cookies": "Cookies",
+    "anpcSal": "Dispute resolution (ADR)",
+    "textRomana": "The text is in Romanian, the language of the contract.",
+    "acordCont": "By creating an account you agree to:"
   }
 }

@@ -1781,5 +1781,13 @@
     "exportToate": "Descarcă toate din perioadă (fără marcare)",
     "platiTitlu": "Plăți cu cardul din perioadă",
     "faraPlati": "Nicio plată cu cardul în perioada asta."
+  },
+  "legal": {
+    "termeni": "Termeni și condiții",
+    "confidentialitate": "Confidențialitate",
+    "cookies": "Cookie-uri",
+    "anpcSal": "Soluționarea litigiilor (SAL)",
+    "textRomana": "Textul e în limba română, limba contractului.",
+    "acordCont": "Prin crearea contului ești de acord cu:"
   }
 }

@@ -22,6 +22,7 @@ const mesaje = require('./src/mesaje');
 const cont = require('./src/cont');
 const jurnal = require('./src/jurnal');
 const articole = require('./src/articole');
+const legal = require('./src/legal');
 const i18n = require('./src/i18n');
 const PalI18n = require('./shared/i18n');
 
@@ -79,6 +80,10 @@ app.use(session({
     maxAge: 30 * 24 * 60 * 60 * 1000
   }
 }));
+
+/* Firma, pentru subsolul fiecărei pagini (obligatoriu la vânzarea online).
+   Pusă înaintea verificărilor, ca s-o aibă și paginile de eroare. */
+app.use((req, res, next) => { res.locals.firma = legal.FIRMA; next(); });
 
 app.use(auth.loadUser);
 app.use(i18n.middleware);
@@ -172,6 +177,7 @@ app.use(admin.router);
 app.use(mesaje.router);
 app.use(cont.router);
 app.use(articole.router);
+app.use(legal.router);
 
 /* ---- erori ---- */
 
