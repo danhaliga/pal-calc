@@ -102,8 +102,13 @@
   <h2><%= t('cont.parolaTitlu') %></h2>
   <% if (typeof parolaOk !== 'undefined' && parolaOk) { %><div class="warn ok"><%= t('cont.parolaSchimbata') %></div><% } %>
   <% if (typeof parolaEroare !== 'undefined' && parolaEroare) { %><div class="warn err"><%= t(parolaEroare) %></div><% } %>
-  <form method="post" action="/cont/parola" autocomplete="off">
+  <%# Ca telefonul și browserul să țină minte parola nouă, formularul le spune
+      și al cui cont e: câmpul cu adresa, ascuns, cu autocomplete="username".
+      Fără el, managerul de parole nu știe unde s-o salveze și tace. %>
+  <form method="post" action="/cont/parola" autocomplete="on">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="text" name="username" value="<%= user.email %>" autocomplete="username" readonly
+           class="ascuns-vizual" tabindex="-1" aria-hidden="true">
     <div class="f">
       <label><%= t('cont.parolaVeche') %>
         <input type="password" name="parolaVeche" required autocomplete="current-password"></label>
