@@ -2010,5 +2010,105 @@
     "landingTitlu": "Planificator 3D",
     "landingSub": "Mută corpurile în cameră cu mâna, ca în planificatoarele magazinelor. Încearcă pe o bucătărie de exemplu, fără cont.",
     "landingButon": "Încearcă planificatorul"
+  },
+  "tutorial": {
+    "titluPagina": "Cum funcționează",
+    "nav": "Cum funcționează",
+    "eticheta": "Pas cu pas",
+    "titluA": "Fiecare setare,",
+    "titluB": "văzută pe corp.",
+    "sub": "Alege o scenă sau lasă filmul să meargă singur. La fiecare pas se schimbă o setare, iar corpul și lista de debitare se schimbă odată cu ea. Piesele noi se aprind.",
+    "pasDin": "Pasul {n} din {total}",
+    "piese": "{n} piese",
+    "lista": "Lista de debitare",
+    "colFinit": "finit",
+    "colTaiere": "tăiere",
+    "inapoi": "Pasul dinainte",
+    "inainte": "Pasul următor",
+    "pauza": "Oprește",
+    "porneste": "Pornește",
+    "seIncarca": "Se încarcă…",
+    "dimensiuni": {
+      "titlu": "Dimensiuni",
+      "pas1": "Pornim de la un corp de bază cu două uși: 800 × 720 × 560 mm.",
+      "pas2": "Lățimea: 1000 mm. Fundul, capacul, polița și ușile se lățesc singure.",
+      "pas3": "Înălțimea: 850 mm. Lateralele și ușile cresc; restul rămâne la fel.",
+      "pas4": "Adâncimea: 400 mm. Lateralele, fundul și polița se îngustează."
+    },
+    "usi": {
+      "titlu": "Uși",
+      "pas1": "Fără uși: corpul rămâne deschis.",
+      "pas2": "O ușă, cât tot frontul, cu 1,5 mm rost la margine.",
+      "pas3": "Două uși, fiecare pe jumătate, cu 3 mm rost între ele.",
+      "pas4": "Montaj încastrat: ușile intră între laterale, cu 2 mm rost jur-împrejur.",
+      "pas5": "Uși glisante pe un corp de 1200 mm: se suprapun pe șine, fără balamale și fără mânere."
+    },
+    "polite": {
+      "titlu": "Polițe",
+      "pas1": "Am scos ușile, ca să vezi înăuntru. Deocamdată, fără polițe.",
+      "pas2": "O poliță, la mijlocul înălțimii, puțin mai scurtă decât golul, ca să intre ușor.",
+      "pas3": "Trei polițe, la distanțe egale."
+    },
+    "montanti": {
+      "titlu": "Montanți",
+      "pas1": "Un corp de 1200 mm, fără uși, cu o poliță pe toată lățimea.",
+      "pas2": "Un montant împarte corpul în două compartimente; polița se taie în două.",
+      "pas3": "Doi montanți: trei compartimente, fiecare cu polița lui."
+    },
+    "sertare": {
+      "titlu": "Sertare",
+      "pas1": "Un sertar: frontul, plus cutia lui, cu laterale, față, spate și fund din PFL.",
+      "pas2": "Două sertare, unul peste altul, cu 3 mm rost între fronturi.",
+      "pas3": "Patru sertare: aplicația împarte înălțimea și calculează fiecare cutie.",
+      "pas4": "Desfăcut: se vede fiecare cutie în spatele frontului ei."
+    },
+    "spate": {
+      "titlu": "Spate",
+      "pas1": "Corpul desfăcut, ca să vezi spatele. Spate aplicat: PFL capsat peste laterale, fund și capac.",
+      "pas2": "Spate în nut: intră într-un nut la 10 mm de spatele corpului, între laterale.",
+      "pas3": "Spate din PAL de 18 mm, pentru corpurile care se văd și din spate."
+    },
+    "manere": {
+      "titlu": "Mânere",
+      "pas1": "Fără mânere: ușile se deschid prin apăsare sau cu profil.",
+      "pas2": "Mânere puse ca de obicei: verticale, lângă muchia dinspre mijloc.",
+      "pas3": "Mânere orizontale, pe mijlocul ușii.",
+      "pas4": "Mânere orizontale, sus pe ușă, unde le prinde mâna ușor la un corp de jos."
+    },
+    "soclu": {
+      "titlu": "Soclu și picioare",
+      "pas1": "Corpul stă direct pe podea.",
+      "pas2": "Soclu de 100 mm: o plintă în față, între laterale, iar fundul stă pe ea.",
+      "pas3": "Picioare reglabile în loc de soclu: aplicația le trece la feronerie, câte 4 pe corp."
+    },
+    "material": {
+      "titlu": "Material și cant",
+      "pas1": "PAL de 18 mm, cu cant de 2 mm pe muchiile care se văd.",
+      "pas2": "PAL de 25 mm: piesele dintre laterale se scurtează singure, iar lista se recalculează.",
+      "pas3": "Cant de 0,8 mm: cota de tăiere nu se mai micșorează, cantul subțire nu se scade."
+    },
+    "sticla": {
+      "titlu": "Uși de sticlă",
+      "pas1": "Vitrina suspendată, cu uși din PAL.",
+      "pas2": "Uși cu ramă de aluminiu și sticlă: ies din lista de debitare și trec la cumpărat, cu dimensiunile lor."
+    },
+    "colt": {
+      "titlu": "Corp de colț",
+      "pas1": "Corp de colț în L: blatul, fundul și polița au formă de L și se taie pe CNC.",
+      "pas2": "Brațul de pe primul perete: 1100 mm.",
+      "pas3": "Brațul de pe al doilea perete: 1100 mm. Conturul în L se reface singur."
+    },
+    "subscara": {
+      "titlu": "Corp sub scară",
+      "pas1": "Corpul de sub scară: bază pe toată lungimea, laterale pe bază, tavan înclinat între ele.",
+      "pas2": "Lateralele tăiate înclinat sus, după pantă, nu drept.",
+      "pas3": "Două polițe: cea de sub pantă se taie și ea înclinat, ca să intre întreagă."
+    },
+    "piesa": {
+      "titlu": "Piesă simplă",
+      "pas1": "O piesă simplă, cu cantul pe muchiile alese: un blat, o mască, o poliță.",
+      "pas2": "Încă două piese în același produs: se plătește o singură dată.",
+      "pas3": "Și a treia. Toate intră în debitare, în încadrarea pe coli și în Excel."
+    }
   }
 }

@@ -44,3 +44,21 @@ test('bucătăria de exemplu a planificatorului: corpuri reale, fără suprapune
     params: Object.assign(PalCalc.defaults(), PalModels.paramsFor(r[0], t)), pozitie: { perete: r[1], d: r[2], h: r[3] } }));
   assert.deepEqual(PalAnsamblu.ansamblu({ camera: Demo.CAMERA }, corpuri, t).probleme, []);
 });
+
+test('„Cum funcționează": fiecare pas are text și schimbă ceva la corp', () => {
+  const Tut = require('../src/tutorial');
+  const d = Tut.date(I18n.creeaza('ro'));
+  assert.equal(d.scene.length, Tut.SCENE.length);
+  d.scene.forEach(s => {
+    assert.ok(!/^tutorial\./.test(s.titlu), s.id + ': titlul lipsește');
+    s.pasi.forEach((p, i) => {
+      assert.ok(p.text && !/^tutorial\./.test(p.text), s.id + ' pasul ' + (i + 1) + ': textul lipsește');
+      assert.ok(p.piese.length > 0 && p.piese.every(x => x.f.length >= 5), s.id + ': piese fără fețe');
+      if (i) {
+        const a = JSON.stringify([s.pasi[i - 1].piese, s.pasi[i - 1].debitare, s.pasi[i - 1].explod]);
+        const b = JSON.stringify([p.piese, p.debitare, p.explod]);
+        assert.notEqual(a, b, s.id + ' pasul ' + (i + 1) + ': nu se schimbă nimic');
+      }
+    });
+  });
+});

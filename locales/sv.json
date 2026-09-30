@@ -1999,5 +1999,105 @@
     "landingTitlu": "3D-planerare",
     "landingSub": "Flytta skåp runt i rummet med handen, som i butikernas planerare. Testa på ett exempelkök, utan konto.",
     "landingButon": "Testa planeraren"
+  },
+  "tutorial": {
+    "titluPagina": "Så fungerar det",
+    "nav": "Så fungerar det",
+    "eticheta": "Steg för steg",
+    "titluA": "Varje inställning,",
+    "titluB": "synlig på stommen.",
+    "sub": "Välj en scen eller låt filmen spela av sig själv. I varje steg ändras en inställning, och stommen och kapplistan ändras med den. Nya delar lyser upp.",
+    "pasDin": "Steg {n} av {total}",
+    "piese": "{n} delar",
+    "lista": "Kapplista",
+    "colFinit": "färdigmått",
+    "colTaiere": "kapmått",
+    "inapoi": "Föregående steg",
+    "inainte": "Nästa steg",
+    "pauza": "Pausa",
+    "porneste": "Spela",
+    "seIncarca": "Laddar…",
+    "dimensiuni": {
+      "titlu": "Mått",
+      "pas1": "Vi börjar med en grundstomme med två dörrar: 800 × 720 × 560 mm.",
+      "pas2": "Bredd: 1000 mm. Botten, taket, hyllan och dörrarna blir bredare av sig själva.",
+      "pas3": "Höjd: 850 mm. Sidorna och dörrarna växer; resten förblir detsamma.",
+      "pas4": "Djup: 400 mm. Sidorna, botten och hyllan blir smalare."
+    },
+    "usi": {
+      "titlu": "Dörrar",
+      "pas1": "Utan dörrar: stommen förblir öppen.",
+      "pas2": "En dörr över hela fronten, med 1,5 mm springa i kanten.",
+      "pas3": "Två dörrar, var och en över halva bredden, med 3 mm springa emellan.",
+      "pas4": "Infälld montering: dörrarna sitter mellan sidorna, med 2 mm springa runt om.",
+      "pas5": "Skjutdörrar på en stomme på 1200 mm: de överlappar på skenor, utan gångjärn och utan handtag."
+    },
+    "polite": {
+      "titlu": "Hyllor",
+      "pas1": "Vi har tagit bort dörrarna så att du ser in. Än så länge utan hyllor.",
+      "pas2": "En hylla på halva höjden, lite kortare än öppningen så att den går lätt att sätta in.",
+      "pas3": "Tre hyllor med lika avstånd."
+    },
+    "montanti": {
+      "titlu": "Mellanväggar",
+      "pas1": "En stomme på 1200 mm, utan dörrar, med en hylla över hela bredden.",
+      "pas2": "En mellanvägg delar stommen i två fack; hyllan kapas i två.",
+      "pas3": "Två mellanväggar: tre fack, vart och ett med sin egen hylla."
+    },
+    "sertare": {
+      "titlu": "Lådor",
+      "pas1": "En låda: fronten plus sin lådstomme, med sidor, framstycke, bakstycke och botten av masonit.",
+      "pas2": "Två lådor ovanpå varandra, med 3 mm springa mellan fronterna.",
+      "pas3": "Fyra lådor: appen delar upp höjden och beräknar varje lådstomme.",
+      "pas4": "Isärdraget: varje lådstomme syns bakom sin front."
+    },
+    "spate": {
+      "titlu": "Bakstycke",
+      "pas1": "Stommen isärdragen så att du ser baksidan. Pålagt bakstycke: masonit häftad över sidorna, botten och taket.",
+      "pas2": "Bakstycke i spår: det sitter i ett spår 10 mm från stommens baksida, mellan sidorna.",
+      "pas3": "Bakstycke av 18 mm spånskiva, för stommar som också syns bakifrån."
+    },
+    "manere": {
+      "titlu": "Handtag",
+      "pas1": "Utan handtag: dörrarna öppnas med tryck eller med greppslist.",
+      "pas2": "Handtag som vanligt: lodräta, intill kanten mot mitten.",
+      "pas3": "Vågräta handtag, mitt på dörren.",
+      "pas4": "Vågräta handtag, högt upp på dörren, där handen lätt når dem på ett underskåp."
+    },
+    "soclu": {
+      "titlu": "Sockel och ben",
+      "pas1": "Stommen står direkt på golvet.",
+      "pas2": "Sockel på 100 mm: en sockellist framtill, mellan sidorna, och botten vilar på den.",
+      "pas3": "Ställbara ben i stället för sockel: appen lägger dem under beslag, 4 per stomme."
+    },
+    "material": {
+      "titlu": "Material och kantlist",
+      "pas1": "Melaminbelagd spånskiva 18 mm, med 2 mm kantlist på de synliga kanterna.",
+      "pas2": "Spånskiva 25 mm: delarna mellan sidorna blir kortare av sig själva och listan räknas om.",
+      "pas3": "Kantlist 0,8 mm: kapmåttet minskar inte längre, den tunna kantlisten dras inte av."
+    },
+    "sticla": {
+      "titlu": "Glasdörrar",
+      "pas1": "Det hängande vitrinskåpet, med dörrar av spånskiva.",
+      "pas2": "Dörrar med aluminiumram och glas: de lämnar kapplistan och flyttas till inköpslistan, med sina mått."
+    },
+    "colt": {
+      "titlu": "Hörnstomme",
+      "pas1": "L-formad hörnstomme: bänkskivan, botten och hyllan är L-formade och skärs i CNC.",
+      "pas2": "Armen längs den första väggen: 1100 mm.",
+      "pas3": "Armen längs den andra väggen: 1100 mm. L-konturen ritas om av sig själv."
+    },
+    "subscara": {
+      "titlu": "Skåp under trappa",
+      "pas1": "Skåpet under trappan: bas i hela längden, sidor på basen, lutande tak mellan dem.",
+      "pas2": "Sidorna kapas snett upptill, efter lutningen, inte rakt.",
+      "pas3": "Två hyllor: den under lutningen kapas också snett, så att den får plats hel."
+    },
+    "piesa": {
+      "titlu": "Enkel skivdel",
+      "pas1": "En enkel skivdel, med kantlist på valda kanter: en bänkskiva, en täcksida, en hylla.",
+      "pas2": "Två delar till i samma produkt: du betalar bara en gång.",
+      "pas3": "Och en tredje. Alla går in i kapningen, skivoptimeringen och Excel."
+    }
   }
 }

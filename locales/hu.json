@@ -1999,5 +1999,105 @@
     "landingTitlu": "3D tervező",
     "landingSub": "Mozgassa kézzel a korpuszokat a szobában, mint az áruházak tervezőiben. Próbálja ki egy mintakonyhán, fiók nélkül.",
     "landingButon": "Kipróbálom a tervezőt"
+  },
+  "tutorial": {
+    "titluPagina": "Hogyan működik",
+    "nav": "Hogyan működik",
+    "eticheta": "Lépésről lépésre",
+    "titluA": "Minden beállítás",
+    "titluB": "látszik a korpuszon.",
+    "sub": "Válasszon egy jelenetet, vagy hagyja, hogy a film magától fusson. Minden lépésben egy beállítás változik, és vele együtt változik a korpusz és a szabásjegyzék is. Az új elemek kigyulladnak.",
+    "pasDin": "{n}. lépés / {total}",
+    "piese": "{n} elem",
+    "lista": "Szabásjegyzék",
+    "colFinit": "kész méret",
+    "colTaiere": "vágási méret",
+    "inapoi": "Előző lépés",
+    "inainte": "Következő lépés",
+    "pauza": "Szünet",
+    "porneste": "Lejátszás",
+    "seIncarca": "Betöltés…",
+    "dimensiuni": {
+      "titlu": "Méretek",
+      "pas1": "Egy kétajtós alapkorpuszból indulunk: 800 × 720 × 560 mm.",
+      "pas2": "Szélesség: 1000 mm. Az alj, a tető, a polc és az ajtók maguktól szélesednek.",
+      "pas3": "Magasság: 850 mm. Az oldalak és az ajtók nőnek; a többi nem változik.",
+      "pas4": "Mélység: 400 mm. Az oldalak, az alj és a polc keskenyebb lesz."
+    },
+    "usi": {
+      "titlu": "Ajtók",
+      "pas1": "Ajtó nélkül: a korpusz nyitva marad.",
+      "pas2": "Egy ajtó a teljes előlapon, a szélén 1,5 mm réssel.",
+      "pas3": "Két ajtó, mindegyik fél szélességű, köztük 3 mm rés.",
+      "pas4": "Befekvő szerelés: az ajtók az oldalak közé kerülnek, körben 2 mm réssel.",
+      "pas5": "Tolóajtók egy 1200 mm-es korpuszon: síneken fedik egymást, zsanér és fogantyú nélkül."
+    },
+    "polite": {
+      "titlu": "Polcok",
+      "pas1": "Levettük az ajtókat, hogy belásson. Egyelőre polc nélkül.",
+      "pas2": "Egy polc a magasság felénél, kicsit rövidebb a nyílásnál, hogy könnyen beférjen.",
+      "pas3": "Három polc, egyenlő távolságra."
+    },
+    "montanti": {
+      "titlu": "Függőleges válaszfalak",
+      "pas1": "Egy 1200 mm-es korpusz, ajtó nélkül, egy teljes szélességű polccal.",
+      "pas2": "Egy függőleges válaszfal két rekeszre osztja a korpuszt; a polcot kettévágjuk.",
+      "pas3": "Két függőleges válaszfal: három rekesz, mindegyikben saját polc."
+    },
+    "sertare": {
+      "titlu": "Fiókok",
+      "pas1": "Egy fiók: az előlap, plusz a fiókdoboz, oldalakkal, elejével, hátuljával és farostlemez aljjal.",
+      "pas2": "Két fiók egymás fölött, az előlapok között 3 mm réssel.",
+      "pas3": "Négy fiók: az alkalmazás felosztja a magasságot, és kiszámolja az összes fiókdobozt.",
+      "pas4": "Robbantott nézet: minden fiókdoboz látszik az előlapja mögött."
+    },
+    "spate": {
+      "titlu": "Hátfal",
+      "pas1": "A korpusz robbantott nézetben, hogy lássa a hátfalat. Ráhelyezett hátfal: farostlemez, az oldalakra, az aljra és a tetőre tűzve.",
+      "pas2": "Hornyos hátfal: a korpusz hátuljától 10 mm-re lévő horonyba kerül, az oldalak közé.",
+      "pas3": "18 mm-es forgácslap hátfal, olyan korpuszokhoz, amelyek hátulról is látszanak."
+    },
+    "manere": {
+      "titlu": "Fogantyúk",
+      "pas1": "Fogantyú nélkül: az ajtók nyomásra vagy fogantyúprofillal nyílnak.",
+      "pas2": "Fogantyúk a szokásos módon: függőlegesen, a középső él mellett.",
+      "pas3": "Vízszintes fogantyúk, az ajtó közepén.",
+      "pas4": "Vízszintes fogantyúk, az ajtó tetején, ahol alsó szekrénynél könnyen kézre esnek."
+    },
+    "soclu": {
+      "titlu": "Lábazat és lábak",
+      "pas1": "A korpusz közvetlenül a padlón áll.",
+      "pas2": "100 mm-es lábazat: elöl egy lábazati léc az oldalak között, ezen nyugszik az alj.",
+      "pas3": "Állítható lábak lábazat helyett: az alkalmazás felveszi őket a vasalatok közé, korpuszonként 4 darabot."
+    },
+    "material": {
+      "titlu": "Anyag és élzáró",
+      "pas1": "18 mm-es laminált forgácslap, a látható éleken 2 mm-es élzáróval.",
+      "pas2": "25 mm-es forgácslap: az oldalak közötti elemek maguktól rövidülnek, és a lista újraszámolódik.",
+      "pas3": "0,8 mm-es élzáró: a vágási méret már nem csökken, a vékony élzárót nem vonjuk le."
+    },
+    "sticla": {
+      "titlu": "Üvegajtók",
+      "pas1": "A felső vitrinszekrény, forgácslap ajtókkal.",
+      "pas2": "Alumíniumkeretes üvegajtók: kikerülnek a szabásjegyzékből, és méreteikkel a beszerzendők közé kerülnek."
+    },
+    "colt": {
+      "titlu": "Sarokkorpusz",
+      "pas1": "L alakú sarokkorpusz: a munkalap, az alj és a polc L alakú, és CNC-n vágjuk őket.",
+      "pas2": "Az első fal menti szár: 1100 mm.",
+      "pas3": "A második fal menti szár: 1100 mm. Az L körvonal magától frissül."
+    },
+    "subscara": {
+      "titlu": "Lépcső alatti szekrény",
+      "pas1": "A lépcső alatti szekrény: teljes hosszúságú alap, az alapon oldalak, köztük ferde tető.",
+      "pas2": "Az oldalak teteje a lejtést követve ferdén van vágva, nem egyenesen.",
+      "pas3": "Két polc: a lejtés alattit is ferdén vágjuk, hogy egészben beférjen."
+    },
+    "piesa": {
+      "titlu": "Egyedi lapelem",
+      "pas1": "Egy egyedi lapelem, élzáróval a kiválasztott éleken: munkalap, takaróelem, polc.",
+      "pas2": "Még két elem ugyanabban a termékben: csak egyszer fizet.",
+      "pas3": "És egy harmadik. Mind bekerülnek a lapszabásba, a táblára tervezésbe és az Excelbe."
+    }
   }
 }

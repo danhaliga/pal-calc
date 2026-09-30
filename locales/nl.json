@@ -1999,5 +1999,105 @@
     "landingTitlu": "3D-planner",
     "landingSub": "Verschuif kasten met de hand door de ruimte, zoals in de planners van winkels. Probeer het met een voorbeeldkeuken, zonder account.",
     "landingButon": "Probeer de planner"
+  },
+  "tutorial": {
+    "titluPagina": "Hoe het werkt",
+    "nav": "Hoe het werkt",
+    "eticheta": "Stap voor stap",
+    "titluA": "Elke instelling,",
+    "titluB": "zichtbaar op de kast.",
+    "sub": "Kies een scène of laat de film vanzelf lopen. Bij elke stap verandert één instelling, en de kast en de zaaglijst veranderen mee. Nieuwe onderdelen lichten op.",
+    "pasDin": "Stap {n} van {total}",
+    "piese": "{n} onderdelen",
+    "lista": "Zaaglijst",
+    "colFinit": "eindmaat",
+    "colTaiere": "zaagmaat",
+    "inapoi": "Vorige stap",
+    "inainte": "Volgende stap",
+    "pauza": "Pauze",
+    "porneste": "Afspelen",
+    "seIncarca": "Laden…",
+    "dimensiuni": {
+      "titlu": "Afmetingen",
+      "pas1": "We beginnen met een basiskast met twee deuren: 800 × 720 × 560 mm.",
+      "pas2": "Breedte: 1000 mm. Bodem, bovenblad, legplank en deuren worden vanzelf breder.",
+      "pas3": "Hoogte: 850 mm. Zijwanden en deuren groeien mee; de rest blijft gelijk.",
+      "pas4": "Diepte: 400 mm. Zijwanden, bodem en legplank worden smaller."
+    },
+    "usi": {
+      "titlu": "Deuren",
+      "pas1": "Zonder deuren: de kast blijft open.",
+      "pas2": "Eén deur over de hele voorkant, met 1,5 mm naad aan de rand.",
+      "pas3": "Twee deuren, elk over de halve breedte, met 3 mm naad ertussen.",
+      "pas4": "Inliggende montage: de deuren zitten tussen de zijwanden, met 2 mm naad rondom.",
+      "pas5": "Schuifdeuren op een kast van 1200 mm: ze overlappen op rails, zonder scharnieren en zonder grepen."
+    },
+    "polite": {
+      "titlu": "Legplanken",
+      "pas1": "We hebben de deuren weggehaald, zodat u naar binnen kunt kijken. Voorlopig zonder legplanken.",
+      "pas2": "Eén legplank op halve hoogte, iets korter dan de opening, zodat hij er makkelijk in gaat.",
+      "pas3": "Drie legplanken, op gelijke afstand."
+    },
+    "montanti": {
+      "titlu": "Tussenwanden",
+      "pas1": "Een kast van 1200 mm, zonder deuren, met één legplank over de hele breedte.",
+      "pas2": "Een tussenwand verdeelt de kast in twee vakken; de legplank wordt in tweeën gezaagd.",
+      "pas3": "Twee tussenwanden: drie vakken, elk met een eigen legplank."
+    },
+    "sertare": {
+      "titlu": "Laden",
+      "pas1": "Eén lade: het front, plus de ladebak, met zijkanten, voorkant, achterkant en een bodem van hardboard.",
+      "pas2": "Twee laden boven elkaar, met 3 mm naad tussen de fronten.",
+      "pas3": "Vier laden: de app verdeelt de hoogte en berekent elke ladebak.",
+      "pas4": "Uiteengetrokken: je ziet elke ladebak achter zijn front."
+    },
+    "spate": {
+      "titlu": "Achterwand",
+      "pas1": "De kast uiteengetrokken, zodat u de achterwand ziet. Opgelegde achterwand: hardboard geniet op zijwanden, bodem en bovenblad.",
+      "pas2": "Achterwand in groef: hij zit in een groef op 10 mm van de achterkant van de kast, tussen de zijwanden.",
+      "pas3": "Achterwand van 18 mm spaanplaat, voor kasten die ook van achteren zichtbaar zijn."
+    },
+    "manere": {
+      "titlu": "Grepen",
+      "pas1": "Zonder grepen: de deuren openen met push-to-open of met een grepenprofiel.",
+      "pas2": "Grepen zoals gebruikelijk: verticaal, bij de rand aan de middenkant.",
+      "pas3": "Horizontale grepen, midden op de deur.",
+      "pas4": "Horizontale grepen, bovenaan de deur, waar de hand ze bij een onderkast makkelijk pakt."
+    },
+    "soclu": {
+      "titlu": "Plint en poten",
+      "pas1": "De kast staat direct op de vloer.",
+      "pas2": "Plint van 100 mm: een plintplank aan de voorkant, tussen de zijwanden, waarop de bodem rust.",
+      "pas3": "Stelpoten in plaats van een plint: de app zet ze bij het beslag, 4 per kast."
+    },
+    "material": {
+      "titlu": "Materiaal en kantenband",
+      "pas1": "Melamine spaanplaat van 18 mm, met 2 mm kantenband op de zichtbare kanten.",
+      "pas2": "Spaanplaat van 25 mm: de onderdelen tussen de zijwanden worden vanzelf korter en de lijst wordt herberekend.",
+      "pas3": "Kantenband van 0,8 mm: de zaagmaat wordt niet meer kleiner, want dunne kantenband wordt niet afgetrokken."
+    },
+    "sticla": {
+      "titlu": "Glazen deuren",
+      "pas1": "De hangende vitrinekast, met spaanplaat deuren.",
+      "pas2": "Deuren met aluminium kader en glas: ze gaan van de zaaglijst naar de inkooplijst, met hun afmetingen."
+    },
+    "colt": {
+      "titlu": "Hoekkast",
+      "pas1": "L-vormige hoekkast: het werkblad, de bodem en de legplank zijn L-vormig en worden op een CNC gezaagd.",
+      "pas2": "De arm langs de eerste wand: 1100 mm.",
+      "pas3": "De arm langs de tweede wand: 1100 mm. De L-contour past zich vanzelf aan."
+    },
+    "subscara": {
+      "titlu": "Trapkast",
+      "pas1": "De kast onder de trap: bodem over de hele lengte, zijwanden op de bodem, schuin bovenblad ertussen.",
+      "pas2": "De zijwanden zijn bovenaan schuin gezaagd, volgens de helling, niet recht.",
+      "pas3": "Twee legplanken: die onder de helling wordt ook schuin gezaagd, zodat hij er in zijn geheel in past."
+    },
+    "piesa": {
+      "titlu": "Los onderdeel",
+      "pas1": "Een los onderdeel, met kantenband op de gekozen kanten: een werkblad, een afdekpaneel, een legplank.",
+      "pas2": "Nog twee onderdelen in hetzelfde product: u betaalt maar één keer.",
+      "pas3": "En een derde. Alles gaat mee in het zagen, de plaatindeling en Excel."
+    }
   }
 }

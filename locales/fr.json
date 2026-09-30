@@ -1999,5 +1999,105 @@
     "landingTitlu": "Planificateur 3D",
     "landingSub": "Déplacez les caissons dans la pièce à la main, comme dans les planificateurs des magasins. Essayez sur une cuisine d'exemple, sans compte.",
     "landingButon": "Essayer le planificateur"
+  },
+  "tutorial": {
+    "titluPagina": "Comment ça marche",
+    "nav": "Comment ça marche",
+    "eticheta": "Étape par étape",
+    "titluA": "Chaque réglage,",
+    "titluB": "visible sur le caisson.",
+    "sub": "Choisissez une scène ou laissez l’animation défiler toute seule. À chaque étape, un réglage change, et le caisson et la liste de débit changent avec lui. Les nouvelles pièces s’allument.",
+    "pasDin": "Étape {n} sur {total}",
+    "piese": "{n} pièces",
+    "lista": "Liste de débit",
+    "colFinit": "fini",
+    "colTaiere": "coupe",
+    "inapoi": "Étape précédente",
+    "inainte": "Étape suivante",
+    "pauza": "Pause",
+    "porneste": "Lecture",
+    "seIncarca": "Chargement…",
+    "dimensiuni": {
+      "titlu": "Dimensions",
+      "pas1": "Nous partons d’un caisson de base à deux portes : 800 × 720 × 560 mm.",
+      "pas2": "Largeur : 1000 mm. Le fond, le dessus, l’étagère et les portes s’élargissent d’eux-mêmes.",
+      "pas3": "Hauteur : 850 mm. Les côtés et les portes grandissent ; le reste ne change pas.",
+      "pas4": "Profondeur : 400 mm. Les côtés, le fond et l’étagère se rétrécissent."
+    },
+    "usi": {
+      "titlu": "Portes",
+      "pas1": "Sans portes : le caisson reste ouvert.",
+      "pas2": "Une porte sur toute la façade, avec 1,5 mm de jeu au bord.",
+      "pas3": "Deux portes, chacune sur la moitié, avec 3 mm de jeu entre elles.",
+      "pas4": "Pose encastrée : les portes se logent entre les côtés, avec 2 mm de jeu tout autour.",
+      "pas5": "Portes coulissantes sur un caisson de 1200 mm : elles se chevauchent sur des rails, sans charnières ni poignées."
+    },
+    "polite": {
+      "titlu": "Étagères",
+      "pas1": "Nous avons retiré les portes pour que vous voyiez l’intérieur. Pour l’instant, sans étagères.",
+      "pas2": "Une étagère à mi-hauteur, un peu plus courte que l’ouverture pour qu’elle entre facilement.",
+      "pas3": "Trois étagères, à égale distance."
+    },
+    "montanti": {
+      "titlu": "Séparations verticales",
+      "pas1": "Un caisson de 1200 mm, sans portes, avec une étagère sur toute la largeur.",
+      "pas2": "Une séparation verticale divise le caisson en deux compartiments ; l’étagère est coupée en deux.",
+      "pas3": "Deux séparations verticales : trois compartiments, chacun avec son étagère."
+    },
+    "sertare": {
+      "titlu": "Tiroirs",
+      "pas1": "Un tiroir : la façade, plus son caisson, avec côtés, avant, arrière et fond en panneau de fibres.",
+      "pas2": "Deux tiroirs, l’un au-dessus de l’autre, avec 3 mm de jeu entre les façades.",
+      "pas3": "Quatre tiroirs : l’application répartit la hauteur et calcule chaque caisson de tiroir.",
+      "pas4": "Vue éclatée : on voit chaque caisson de tiroir derrière sa façade."
+    },
+    "spate": {
+      "titlu": "Fond arrière",
+      "pas1": "Le caisson en vue éclatée pour que vous voyiez l’arrière. Fond rapporté : panneau de fibres agrafé sur les côtés, le fond et le dessus.",
+      "pas2": "Fond en rainure : il s’insère dans une rainure à 10 mm de l’arrière du caisson, entre les côtés.",
+      "pas3": "Fond en panneau mélaminé de 18 mm, pour les caissons visibles aussi de dos."
+    },
+    "manere": {
+      "titlu": "Poignées",
+      "pas1": "Sans poignées : les portes s’ouvrent par pression ou avec un profilé.",
+      "pas2": "Poignées posées comme d’habitude : verticales, près du bord côté centre.",
+      "pas3": "Poignées horizontales, au milieu de la porte.",
+      "pas4": "Poignées horizontales, en haut de la porte, là où la main les attrape facilement sur un meuble bas."
+    },
+    "soclu": {
+      "titlu": "Socle et pieds",
+      "pas1": "Le caisson repose directement sur le sol.",
+      "pas2": "Socle de 100 mm : une plinthe à l’avant, entre les côtés, sur laquelle repose le fond.",
+      "pas3": "Pieds réglables à la place du socle : l’application les ajoute à la quincaillerie, 4 par caisson."
+    },
+    "material": {
+      "titlu": "Matériau et chant",
+      "pas1": "Panneau mélaminé de 18 mm, avec un chant de 2 mm sur les bords visibles.",
+      "pas2": "Panneau de 25 mm : les pièces entre les côtés se raccourcissent d’elles-mêmes et la liste est recalculée.",
+      "pas3": "Chant de 0,8 mm : la cote de coupe ne diminue plus, car le chant fin n’est pas déduit."
+    },
+    "sticla": {
+      "titlu": "Portes vitrées",
+      "pas1": "La vitrine suspendue, avec des portes en panneau mélaminé.",
+      "pas2": "Portes à cadre aluminium et verre : elles quittent la liste de débit et passent dans les achats, avec leurs dimensions."
+    },
+    "colt": {
+      "titlu": "Caisson d’angle",
+      "pas1": "Caisson d’angle en L : le plan, le fond et l’étagère sont en forme de L et découpés sur CNC.",
+      "pas2": "Le bras le long du premier mur : 1100 mm.",
+      "pas3": "Le bras le long du deuxième mur : 1100 mm. Le contour en L se redessine tout seul."
+    },
+    "subscara": {
+      "titlu": "Meuble sous escalier",
+      "pas1": "Le meuble sous escalier : une base sur toute la longueur, des côtés sur la base, un dessus incliné entre eux.",
+      "pas2": "Les côtés sont coupés en biais en haut, selon la pente, et non droits.",
+      "pas3": "Deux étagères : celle sous la pente est elle aussi coupée en biais pour entrer d’un seul tenant."
+    },
+    "piesa": {
+      "titlu": "Pièce simple",
+      "pas1": "Une pièce simple, avec du chant sur les bords choisis : un plan de travail, un panneau de finition, une étagère.",
+      "pas2": "Deux pièces de plus dans le même produit : vous ne payez qu’une fois.",
+      "pas3": "Et une troisième. Toutes entrent dans le débit, le calepinage des panneaux et Excel."
+    }
   }
 }

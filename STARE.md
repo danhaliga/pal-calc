@@ -510,6 +510,24 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
 - Etapele următoare propuse: corpuri noi din catalog direct în cameră,
   ferestre/uși pe pereți, blat automat; apoi vedere „din cameră” și poze.
 
+## 6q. „Cum funcționează" (30 septembrie)
+
+- Pagina publică **/cum-functioneaza** (în meniu): 13 scene (dimensiuni,
+  uși, polițe, montanți, sertare, spate, mânere, soclu/picioare, material și
+  cant, uși de sticlă, colț, sub scară, piesă simplă), fiecare cu 2–5 pași.
+  La fiecare pas se schimbă o setare; corpul se redesenează, piesele noi se
+  aprind, iar lângă el stă lista de debitare (cotele de tăiere).
+- `src/tutorial.js` definește scenele (model + schimbări, cumulate) și
+  calculează fiecare pas cu motorul aplicației; piesele merg ca liste de
+  fețe (cutii, contur în plan sau contur din față), deci se desenează și
+  colțul în L și corpul sub scară. Datele: `/cum-functioneaza/date.json`,
+  ținute în memorie pe limbă. `public/tutorial.js` desenează (aceeași
+  proiecție și ordine de desen ca `public/film.js`).
+- Testul verifică că fiecare pas are text și schimbă ceva la corp (așa s-a
+  prins mânerul „centru", identic cu cel orizontal obișnuit).
+- `#id-scena` în adresă duce direct la scena ei (ex. /cum-functioneaza#sertare);
+  se pot pune legături din editor pe fiecare grup de setări.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

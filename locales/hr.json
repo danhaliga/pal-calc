@@ -2010,5 +2010,105 @@
     "landingTitlu": "3D planer",
     "landingSub": "Pomiči korpuse po prostoriji rukom, kao u planerima trgovina. Isprobaj na primjeru kuhinje, bez računa.",
     "landingButon": "Isprobaj planer"
+  },
+  "tutorial": {
+    "titluPagina": "Kako radi",
+    "nav": "Kako radi",
+    "eticheta": "Korak po korak",
+    "titluA": "Svaka postavka,",
+    "titluB": "vidljiva na korpusu.",
+    "sub": "Odaberite scenu ili pustite da se animacija vrti sama. U svakom koraku mijenja se jedna postavka, a korpus i popis za rezanje mijenjaju se s njom. Novi dijelovi zasvijetle.",
+    "pasDin": "Korak {n} od {total}",
+    "piese": "Dijelova: {n}",
+    "lista": "Popis za rezanje",
+    "colFinit": "gotova mjera",
+    "colTaiere": "mjera rezanja",
+    "inapoi": "Prethodni korak",
+    "inainte": "Sljedeći korak",
+    "pauza": "Pauza",
+    "porneste": "Pokreni",
+    "seIncarca": "Učitavanje…",
+    "dimensiuni": {
+      "titlu": "Dimenzije",
+      "pas1": "Krećemo od osnovnog korpusa s dvoja vrata: 800 × 720 × 560 mm.",
+      "pas2": "Širina: 1000 mm. Dno, strop, polica i vrata sami se proširuju.",
+      "pas3": "Visina: 850 mm. Stranice i vrata rastu; ostalo ostaje isto.",
+      "pas4": "Dubina: 400 mm. Stranice, dno i polica se sužavaju."
+    },
+    "usi": {
+      "titlu": "Vrata",
+      "pas1": "Bez vrata: korpus ostaje otvoren.",
+      "pas2": "Jedna vrata preko cijele fronte, s razmakom od 1,5 mm na rubu.",
+      "pas3": "Dvoja vrata, svaka na pola širine, s razmakom od 3 mm između njih.",
+      "pas4": "Uvučena montaža: vrata ulaze između stranica, s razmakom od 2 mm okolo.",
+      "pas5": "Klizna vrata na korpusu od 1200 mm: preklapaju se na vodilicama, bez šarki i bez ručki."
+    },
+    "polite": {
+      "titlu": "Police",
+      "pas1": "Skinuli smo vrata da vidite unutrašnjost. Za sada bez polica.",
+      "pas2": "Jedna polica na pola visine, malo kraća od otvora, da lako uđe.",
+      "pas3": "Tri police, na jednakim razmacima."
+    },
+    "montanti": {
+      "titlu": "Vertikalne pregrade",
+      "pas1": "Korpus od 1200 mm, bez vrata, s jednom policom preko cijele širine.",
+      "pas2": "Vertikalna pregrada dijeli korpus na dva pretinca; polica se reže na dva dijela.",
+      "pas3": "Dvije vertikalne pregrade: tri pretinca, svaki sa svojom policom."
+    },
+    "sertare": {
+      "titlu": "Ladice",
+      "pas1": "Jedna ladica: fronta, plus njezina kutija, sa stranicama, prednjom i stražnjom stranom i dnom od lesonita.",
+      "pas2": "Dvije ladice, jedna iznad druge, s razmakom od 3 mm između fronti.",
+      "pas3": "Četiri ladice: aplikacija dijeli visinu i izračunava svaku kutiju.",
+      "pas4": "Rastavljeni prikaz: vidi se svaka kutija iza svoje fronte."
+    },
+    "spate": {
+      "titlu": "Leđa",
+      "pas1": "Korpus u rastavljenom prikazu, da vidite leđa. Nalegla leđa: lesonit pričvršćen klamericama preko stranica, dna i stropa.",
+      "pas2": "Leđa u utoru: ulaze u utor 10 mm od stražnje strane korpusa, između stranica.",
+      "pas3": "Leđa od iverice 18 mm, za korpuse koji se vide i straga."
+    },
+    "manere": {
+      "titlu": "Ručke",
+      "pas1": "Bez ručki: vrata se otvaraju pritiskom ili pomoću profila.",
+      "pas2": "Ručke postavljene uobičajeno: okomito, uz rub prema sredini.",
+      "pas3": "Vodoravne ručke, na sredini vrata.",
+      "pas4": "Vodoravne ručke, gore na vratima, gdje ih ruka lako dohvati kod donjeg elementa."
+    },
+    "soclu": {
+      "titlu": "Sokl i nogice",
+      "pas1": "Korpus stoji izravno na podu.",
+      "pas2": "Sokl od 100 mm: sokl-letva sprijeda, između stranica, a dno leži na njoj.",
+      "pas3": "Podesive nogice umjesto sokla: aplikacija ih dodaje u okove, po 4 na korpus."
+    },
+    "material": {
+      "titlu": "Materijal i rubna traka",
+      "pas1": "Oplemenjena iverica 18 mm, s rubnom trakom od 2 mm na vidljivim rubovima.",
+      "pas2": "Iverica 25 mm: dijelovi između stranica sami se skraćuju, a popis se ponovno izračunava.",
+      "pas3": "Rubna traka od 0,8 mm: mjera rezanja se više ne smanjuje, tanka traka se ne oduzima."
+    },
+    "sticla": {
+      "titlu": "Staklena vrata",
+      "pas1": "Viseća vitrina s vratima od iverice.",
+      "pas2": "Vrata s aluminijskim okvirom i staklom: izlaze iz popisa za rezanje i prelaze u nabavu, sa svojim dimenzijama."
+    },
+    "colt": {
+      "titlu": "Kutni korpus",
+      "pas1": "Kutni korpus u obliku slova L: radna ploča, dno i polica imaju oblik slova L i režu se na CNC-u.",
+      "pas2": "Krak uz prvi zid: 1100 mm.",
+      "pas3": "Krak uz drugi zid: 1100 mm. Obris u obliku L sam se ponovno iscrta."
+    },
+    "subscara": {
+      "titlu": "Ormar ispod stepenica",
+      "pas1": "Ormar ispod stepenica: baza po cijeloj duljini, stranice na bazi, kosi strop između njih.",
+      "pas2": "Stranice su gore rezane koso, prema nagibu, a ne ravno.",
+      "pas3": "Dvije police: ona ispod nagiba također se reže koso, da uđe cijela."
+    },
+    "piesa": {
+      "titlu": "Pojedinačni dio",
+      "pas1": "Pojedinačni dio, s rubnom trakom na odabranim rubovima: radna ploča, maska, polica.",
+      "pas2": "Još dva dijela u istom proizvodu: plaća se samo jednom.",
+      "pas3": "I treći. Svi ulaze u rezanje, raspored na pločama i u Excel."
+    }
   }
 }

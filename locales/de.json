@@ -1999,5 +1999,105 @@
     "landingTitlu": "3D-Planer",
     "landingSub": "Verschieben Sie Korpusse von Hand im Raum, wie in den Planern der Möbelhäuser. Testen Sie es an einer Beispielküche, ohne Konto.",
     "landingButon": "Planer testen"
+  },
+  "tutorial": {
+    "titluPagina": "So funktioniert’s",
+    "nav": "So funktioniert’s",
+    "eticheta": "Schritt für Schritt",
+    "titluA": "Jede Einstellung,",
+    "titluB": "direkt am Korpus sichtbar.",
+    "sub": "Wählen Sie eine Szene oder lassen Sie den Film einfach laufen. Bei jedem Schritt ändert sich eine Einstellung, und Korpus und Zuschnittliste ändern sich mit. Neue Teile leuchten auf.",
+    "pasDin": "Schritt {n} von {total}",
+    "piese": "{n} Teile",
+    "lista": "Zuschnittliste",
+    "colFinit": "Fertigmaß",
+    "colTaiere": "Zuschnitt",
+    "inapoi": "Vorheriger Schritt",
+    "inainte": "Nächster Schritt",
+    "pauza": "Pause",
+    "porneste": "Abspielen",
+    "seIncarca": "Wird geladen…",
+    "dimensiuni": {
+      "titlu": "Maße",
+      "pas1": "Wir beginnen mit einem Grundkorpus mit zwei Türen: 800 × 720 × 560 mm.",
+      "pas2": "Breite: 1000 mm. Boden, Deckel, Fachboden und Türen werden automatisch breiter.",
+      "pas3": "Höhe: 850 mm. Seiten und Türen wachsen; alles andere bleibt gleich.",
+      "pas4": "Tiefe: 400 mm. Seiten, Boden und Fachboden werden schmaler."
+    },
+    "usi": {
+      "titlu": "Türen",
+      "pas1": "Ohne Türen: Der Korpus bleibt offen.",
+      "pas2": "Eine Tür über die ganze Front, mit 1,5 mm Fuge am Rand.",
+      "pas3": "Zwei Türen, jede über die halbe Breite, mit 3 mm Fuge dazwischen.",
+      "pas4": "Innenliegende Montage: Die Türen sitzen zwischen den Seiten, mit 2 mm Fuge rundum.",
+      "pas5": "Schiebetüren an einem 1200-mm-Korpus: Sie überlappen auf Schienen, ohne Scharniere und ohne Griffe."
+    },
+    "polite": {
+      "titlu": "Fachböden",
+      "pas1": "Wir haben die Türen entfernt, damit Sie hineinsehen können. Vorerst ohne Fachböden.",
+      "pas2": "Ein Fachboden auf halber Höhe, etwas kürzer als die Öffnung, damit er leicht hineinpasst.",
+      "pas3": "Drei Fachböden in gleichen Abständen."
+    },
+    "montanti": {
+      "titlu": "Mittelwände",
+      "pas1": "Ein 1200-mm-Korpus ohne Türen, mit einem Fachboden über die ganze Breite.",
+      "pas2": "Eine Mittelwand teilt den Korpus in zwei Fächer; der Fachboden wird in zwei Teile geschnitten.",
+      "pas3": "Zwei Mittelwände: drei Fächer, jedes mit eigenem Fachboden."
+    },
+    "sertare": {
+      "titlu": "Schubladen",
+      "pas1": "Eine Schublade: die Front plus ihr Kasten, mit Seiten, Vorder- und Rückstück sowie einem Boden aus Hartfaserplatte.",
+      "pas2": "Zwei Schubladen übereinander, mit 3 mm Fuge zwischen den Fronten.",
+      "pas3": "Vier Schubladen: Die App teilt die Höhe auf und berechnet jeden Kasten.",
+      "pas4": "Explosionsansicht: Jeder Kasten ist hinter seiner Front zu sehen."
+    },
+    "spate": {
+      "titlu": "Rückwand",
+      "pas1": "Der Korpus in Explosionsansicht, damit Sie die Rückwand sehen. Aufgesetzte Rückwand: Hartfaserplatte, auf Seiten, Boden und Deckel geklammert.",
+      "pas2": "Rückwand in Nut: Sie sitzt in einer Nut 10 mm von der Korpusrückseite, zwischen den Seiten.",
+      "pas3": "Rückwand aus 18-mm-Spanplatte, für Korpusse, die auch von hinten sichtbar sind."
+    },
+    "manere": {
+      "titlu": "Griffe",
+      "pas1": "Ohne Griffe: Die Türen öffnen per Druck oder mit Griffleiste.",
+      "pas2": "Griffe wie üblich: senkrecht, nahe der Kante zur Mitte hin.",
+      "pas3": "Waagerechte Griffe, mittig auf der Tür.",
+      "pas4": "Waagerechte Griffe, oben an der Tür, wo die Hand sie bei einem Unterschrank leicht erreicht."
+    },
+    "soclu": {
+      "titlu": "Sockel und Füße",
+      "pas1": "Der Korpus steht direkt auf dem Boden.",
+      "pas2": "Sockel 100 mm: eine Sockelblende vorne zwischen den Seiten, auf der der Boden aufliegt.",
+      "pas3": "Stellfüße statt Sockel: Die App übernimmt sie in die Beschläge, 4 pro Korpus."
+    },
+    "material": {
+      "titlu": "Material und Kante",
+      "pas1": "18 mm melaminbeschichtete Spanplatte, mit 2-mm-Kante an den sichtbaren Kanten.",
+      "pas2": "25-mm-Spanplatte: Die Teile zwischen den Seiten werden automatisch kürzer, und die Liste wird neu berechnet.",
+      "pas3": "0,8-mm-Kante: Das Zuschnittmaß wird nicht mehr kleiner, weil die dünne Kante nicht abgezogen wird."
+    },
+    "sticla": {
+      "titlu": "Glastüren",
+      "pas1": "Die Hängevitrine mit Türen aus Spanplatte.",
+      "pas2": "Türen mit Aluminiumrahmen und Glas: Sie verlassen die Zuschnittliste und wandern mit ihren Maßen in die Einkaufsliste."
+    },
+    "colt": {
+      "titlu": "Eckkorpus",
+      "pas1": "L-förmiger Eckkorpus: Arbeitsplatte, Boden und Fachboden sind L-förmig und werden auf der CNC geschnitten.",
+      "pas2": "Der Schenkel an der ersten Wand: 1100 mm.",
+      "pas3": "Der Schenkel an der zweiten Wand: 1100 mm. Die L-Kontur passt sich automatisch an."
+    },
+    "subscara": {
+      "titlu": "Schrank unter der Treppe",
+      "pas1": "Der Schrank unter der Treppe: Unterboden über die ganze Länge, Seiten auf dem Unterboden, schräger Deckel dazwischen.",
+      "pas2": "Die Seiten werden oben schräg nach der Neigung geschnitten, nicht gerade.",
+      "pas3": "Zwei Fachböden: Der unter der Schräge wird ebenfalls schräg geschnitten, damit er ganz hineinpasst."
+    },
+    "piesa": {
+      "titlu": "Einzelteil",
+      "pas1": "Ein Einzelteil mit Kante an den gewählten Kanten: eine Arbeitsplatte, eine Blende, ein Fachboden.",
+      "pas2": "Zwei weitere Teile im selben Produkt: Sie zahlen nur einmal.",
+      "pas3": "Und ein drittes. Alle fließen in den Zuschnitt, den Plattenzuschnittplan und Excel ein."
+    }
   }
 }

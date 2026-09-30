@@ -633,3 +633,37 @@ svg.sk .sk-usa.fara{stroke-dasharray:60 44;opacity:.7}
 .plan-camera b{align-self:center;font-size:14px}
 .plan-camera label{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--muted)}
 .plan-camera input{width:120px}
+
+/* ---------- „Cum funcționează" ---------- */
+.tutorial{display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;align-items:start;margin-bottom:24px}
+.tut-scene{display:flex;flex-direction:column;gap:4px;position:sticky;top:80px}
+.tut-scene button{all:unset;box-sizing:border-box;cursor:pointer;padding:10px 14px;border-radius:12px;font-weight:600;font-size:14.5px;color:var(--muted)}
+.tut-scene button:hover{color:var(--ink)}
+.tut-scene button:focus-visible{outline:2px solid var(--accent)}
+.tut-scene button.on{background:var(--panel);color:var(--ink);box-shadow:inset 3px 0 0 var(--accent)}
+.tut-scena{display:flex;flex-direction:column;gap:12px;min-width:0}
+.tut-ecran{position:relative;background:#2b2520;border-radius:24px;overflow:hidden;aspect-ratio:560/470}
+.tut-svg{position:absolute;inset:0;width:100%;height:100%}
+.tut-antet{position:absolute;left:20px;top:16px;right:20px;display:flex;justify-content:space-between;align-items:baseline;color:#f4efe6;z-index:1}
+.tut-antet b{font-family:var(--font-display);font-size:22px;font-weight:600}
+.tut-antet span{font-size:13px;color:#cbbfb1}
+.tut-puncte{position:absolute;left:0;right:0;bottom:16px;display:flex;justify-content:center;gap:6px}
+.tut-puncte span{width:8px;height:8px;border-radius:999px;background:#5a4f45;transition:width .4s,background .4s}
+.tut-puncte span.trecut{background:#8a7a6a}
+.tut-puncte span.on{width:26px;background:var(--accent)}
+.tut-piesa.noua{animation:tutApare .9s ease both}
+.tut-piesa.noua path{stroke:#fffaf2;stroke-width:2}
+@keyframes tutApare{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tut-piesa.noua{animation:none}}
+.tut-jos{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px}
+.tut-explicatie{background:var(--panel);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.tut-text{font-size:17px;line-height:1.5;margin:0;min-height:3em}
+.tut-cote{margin:0}
+.tut-card{background:var(--panel);border-radius:18px;padding:14px}
+@media (max-width:900px){
+  .tutorial{grid-template-columns:minmax(0,1fr)}
+  .tut-scene{position:static;flex-direction:row;overflow-x:auto;padding-bottom:4px}
+  .tut-scene button{white-space:nowrap}
+  .tut-scene button.on{box-shadow:inset 0 -3px 0 var(--accent)}
+  .tut-jos{grid-template-columns:minmax(0,1fr)}
+}

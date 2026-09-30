@@ -1999,5 +1999,105 @@
     "landingTitlu": "Planner 3D",
     "landingSub": "Sposta i moduli nella stanza a mano, come nei planner dei negozi. Provalo su una cucina di esempio, senza account.",
     "landingButon": "Prova il planner"
+  },
+  "tutorial": {
+    "titluPagina": "Come funziona",
+    "nav": "Come funziona",
+    "eticheta": "Passo dopo passo",
+    "titluA": "Ogni impostazione,",
+    "titluB": "visibile sul mobile.",
+    "sub": "Scegli una scena o lascia che l’animazione vada da sola. A ogni passo cambia un’impostazione, e il mobile e la distinta di taglio cambiano con essa. I pezzi nuovi si illuminano.",
+    "pasDin": "Passo {n} di {total}",
+    "piese": "{n} pezzi",
+    "lista": "Distinta di taglio",
+    "colFinit": "finito",
+    "colTaiere": "taglio",
+    "inapoi": "Passo precedente",
+    "inainte": "Passo successivo",
+    "pauza": "Pausa",
+    "porneste": "Avvia",
+    "seIncarca": "Caricamento…",
+    "dimensiuni": {
+      "titlu": "Dimensioni",
+      "pas1": "Partiamo da un mobile base con due ante: 800 × 720 × 560 mm.",
+      "pas2": "Larghezza: 1000 mm. Fondo, cielo, ripiano e ante si allargano da soli.",
+      "pas3": "Altezza: 850 mm. Fianchi e ante crescono; il resto rimane uguale.",
+      "pas4": "Profondità: 400 mm. Fianchi, fondo e ripiano si restringono."
+    },
+    "usi": {
+      "titlu": "Ante",
+      "pas1": "Senza ante: il mobile resta aperto.",
+      "pas2": "Un’anta su tutto il frontale, con 1,5 mm di fuga sul bordo.",
+      "pas3": "Due ante, ciascuna per metà, con 3 mm di fuga tra loro.",
+      "pas4": "Montaggio a filo: le ante stanno tra i fianchi, con 2 mm di fuga tutto intorno.",
+      "pas5": "Ante scorrevoli su un mobile da 1200 mm: si sovrappongono sui binari, senza cerniere e senza maniglie."
+    },
+    "polite": {
+      "titlu": "Ripiani",
+      "pas1": "Abbiamo tolto le ante per farti vedere l’interno. Per ora, niente ripiani.",
+      "pas2": "Un ripiano a metà altezza, un po’ più corto del vano, così entra facilmente.",
+      "pas3": "Tre ripiani, a distanze uguali."
+    },
+    "montanti": {
+      "titlu": "Divisori verticali",
+      "pas1": "Un mobile da 1200 mm, senza ante, con un ripiano su tutta la larghezza.",
+      "pas2": "Un divisorio verticale divide il mobile in due vani; il ripiano viene tagliato in due.",
+      "pas3": "Due divisori verticali: tre vani, ciascuno con il suo ripiano."
+    },
+    "sertare": {
+      "titlu": "Cassetti",
+      "pas1": "Un cassetto: il frontale, più la sua scatola, con fianchi, davanti, retro e fondo in faesite.",
+      "pas2": "Due cassetti, uno sopra l’altro, con 3 mm di fuga tra i frontali.",
+      "pas3": "Quattro cassetti: l’app divide l’altezza e calcola ogni scatola.",
+      "pas4": "Esploso: si vede ogni scatola dietro il suo frontale."
+    },
+    "spate": {
+      "titlu": "Schienale",
+      "pas1": "Il mobile esploso, per farti vedere lo schienale. Schienale applicato: faesite graffata su fianchi, fondo e cielo.",
+      "pas2": "Schienale in scanalatura: entra in una scanalatura a 10 mm dal retro del mobile, tra i fianchi.",
+      "pas3": "Schienale in truciolare da 18 mm, per i mobili visibili anche da dietro."
+    },
+    "manere": {
+      "titlu": "Maniglie",
+      "pas1": "Senza maniglie: le ante si aprono a pressione o con profilo.",
+      "pas2": "Maniglie montate come al solito: verticali, vicino al bordo verso il centro.",
+      "pas3": "Maniglie orizzontali, al centro dell’anta.",
+      "pas4": "Maniglie orizzontali, in alto sull’anta, dove la mano le raggiunge facilmente su un mobile basso."
+    },
+    "soclu": {
+      "titlu": "Zoccolo e piedini",
+      "pas1": "Il mobile poggia direttamente sul pavimento.",
+      "pas2": "Zoccolo da 100 mm: una zoccolatura davanti, tra i fianchi, su cui poggia il fondo.",
+      "pas3": "Piedini regolabili al posto dello zoccolo: l’app li aggiunge alla ferramenta, 4 per mobile."
+    },
+    "material": {
+      "titlu": "Materiale e bordo",
+      "pas1": "Truciolare melaminico da 18 mm, con bordo da 2 mm sui lati a vista.",
+      "pas2": "Truciolare da 25 mm: i pezzi tra i fianchi si accorciano da soli e la distinta viene ricalcolata.",
+      "pas3": "Bordo da 0,8 mm: la misura di taglio non diminuisce più, perché il bordo sottile non viene sottratto."
+    },
+    "sticla": {
+      "titlu": "Ante in vetro",
+      "pas1": "La vetrina pensile, con ante in truciolare.",
+      "pas2": "Ante con telaio in alluminio e vetro: escono dalla distinta di taglio e passano agli acquisti, con le loro misure."
+    },
+    "colt": {
+      "titlu": "Mobile angolare",
+      "pas1": "Mobile angolare a L: piano, fondo e ripiano hanno forma a L e si tagliano a CNC.",
+      "pas2": "Il braccio sulla prima parete: 1100 mm.",
+      "pas3": "Il braccio sulla seconda parete: 1100 mm. Il profilo a L si ridisegna da solo."
+    },
+    "subscara": {
+      "titlu": "Mobile sottoscala",
+      "pas1": "Il mobile sottoscala: base su tutta la lunghezza, fianchi sulla base, cielo inclinato tra di essi.",
+      "pas2": "I fianchi tagliati inclinati in alto, seguendo la pendenza, non dritti.",
+      "pas3": "Due ripiani: quello sotto la pendenza è tagliato anch’esso inclinato, così entra intero."
+    },
+    "piesa": {
+      "titlu": "Pezzo singolo",
+      "pas1": "Un pezzo singolo, con il bordo sui lati scelti: un piano, un pannello di finitura, un ripiano.",
+      "pas2": "Altri due pezzi nello stesso prodotto: si paga una sola volta.",
+      "pas3": "E un terzo. Tutti entrano nel taglio, nell’ottimizzazione dei pannelli e in Excel."
+    }
   }
 }

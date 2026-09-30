@@ -2010,5 +2010,105 @@
     "landingTitlu": "3D plánovač",
     "landingSub": "Posouvejte korpusy po místnosti rukou, jako v plánovačích obchodů. Vyzkoušejte na ukázkové kuchyni, bez účtu.",
     "landingButon": "Vyzkoušet plánovač"
+  },
+  "tutorial": {
+    "titluPagina": "Jak to funguje",
+    "nav": "Jak to funguje",
+    "eticheta": "Krok za krokem",
+    "titluA": "Každé nastavení",
+    "titluB": "vidíte na korpusu.",
+    "sub": "Vyberte scénu, nebo nechte animaci běžet samotnou. V každém kroku se změní jedno nastavení a korpus i seznam dílců pro řezání se změní spolu s ním. Nové dílce se rozsvítí.",
+    "pasDin": "Krok {n} z {total}",
+    "piese": "Dílce: {n}",
+    "lista": "Seznam dílců pro řezání",
+    "colFinit": "hotový",
+    "colTaiere": "řez",
+    "inapoi": "Předchozí krok",
+    "inainte": "Další krok",
+    "pauza": "Pozastavit",
+    "porneste": "Přehrát",
+    "seIncarca": "Načítání…",
+    "dimensiuni": {
+      "titlu": "Rozměry",
+      "pas1": "Začneme základním korpusem se dvěma dvířky: 800 × 720 × 560 mm.",
+      "pas2": "Šířka: 1000 mm. Dno, strop, police i dvířka se samy rozšíří.",
+      "pas3": "Výška: 850 mm. Boky a dvířka se prodlouží; zbytek zůstane stejný.",
+      "pas4": "Hloubka: 400 mm. Boky, dno a police se zúží."
+    },
+    "usi": {
+      "titlu": "Dvířka",
+      "pas1": "Bez dvířek: korpus zůstane otevřený.",
+      "pas2": "Jedna dvířka přes celou čelní stranu, s mezerou 1,5 mm na okraji.",
+      "pas3": "Dvoje dvířka, každá na polovinu šířky, s mezerou 3 mm mezi nimi.",
+      "pas4": "Vložená montáž: dvířka jsou mezi boky, s mezerou 2 mm dokola.",
+      "pas5": "Posuvné dveře na korpusu 1200 mm: překrývají se na kolejnicích, bez závěsů a bez úchytek."
+    },
+    "polite": {
+      "titlu": "Police",
+      "pas1": "Dvířka jsme sundali, abyste viděli dovnitř. Zatím bez polic.",
+      "pas2": "Jedna police v polovině výšky, o něco kratší než otvor, aby šla snadno vložit.",
+      "pas3": "Tři police ve stejných rozestupech."
+    },
+    "montanti": {
+      "titlu": "Svislé přepážky",
+      "pas1": "Korpus 1200 mm, bez dvířek, s jednou policí přes celou šířku.",
+      "pas2": "Svislá přepážka rozdělí korpus na dvě části; police se rozřízne na dvě.",
+      "pas3": "Dvě svislé přepážky: tři části, každá s vlastní policí."
+    },
+    "sertare": {
+      "titlu": "Zásuvky",
+      "pas1": "Jedna zásuvka: čelo plus korpus zásuvky, s boky, přední a zadní stěnou a dnem z HDF.",
+      "pas2": "Dvě zásuvky nad sebou, s mezerou 3 mm mezi čely.",
+      "pas3": "Čtyři zásuvky: aplikace rozdělí výšku a spočítá každý korpus zásuvky.",
+      "pas4": "Rozložený pohled: za každým čelem je vidět jeho korpus zásuvky."
+    },
+    "spate": {
+      "titlu": "Záda",
+      "pas1": "Korpus v rozloženém pohledu, abyste viděli záda. Přiložená záda: HDF přisponkovaná na boky, dno a strop.",
+      "pas2": "Záda v drážce: zasunou se do drážky 10 mm od zadní hrany korpusu, mezi boky.",
+      "pas3": "Záda z 18mm dřevotřísky, pro korpusy, které jsou vidět i zezadu."
+    },
+    "manere": {
+      "titlu": "Úchytky",
+      "pas1": "Bez úchytek: dvířka se otevírají zatlačením nebo pomocí profilu.",
+      "pas2": "Úchytky jako obvykle: svisle, u hrany směrem ke středu.",
+      "pas3": "Vodorovné úchytky, uprostřed dvířek.",
+      "pas4": "Vodorovné úchytky, nahoře na dvířkách, kde na ně u spodní skříňky ruka snadno dosáhne."
+    },
+    "soclu": {
+      "titlu": "Sokl a nožičky",
+      "pas1": "Korpus stojí přímo na podlaze.",
+      "pas2": "Sokl 100 mm: soklová lišta vpředu mezi boky, na které leží dno.",
+      "pas3": "Stavitelné nožičky místo soklu: aplikace je přidá ke kování, 4 na korpus."
+    },
+    "material": {
+      "titlu": "Materiál a hrana",
+      "pas1": "Lamino 18 mm, s hranou 2 mm na viditelných hranách.",
+      "pas2": "Lamino 25 mm: dílce mezi boky se samy zkrátí a seznam se přepočítá.",
+      "pas3": "Hrana 0,8 mm: řezný rozměr se už nezmenšuje, tenká hrana se neodečítá."
+    },
+    "sticla": {
+      "titlu": "Skleněná dvířka",
+      "pas1": "Závěsná vitrína s dvířky z lamina.",
+      "pas2": "Dvířka s hliníkovým rámem a sklem: vypadnou ze seznamu pro řezání a přejdou do nákupu, se svými rozměry."
+    },
+    "colt": {
+      "titlu": "Rohový korpus",
+      "pas1": "Rohový korpus ve tvaru L: pracovní deska, dno a police mají tvar L a řežou se na CNC.",
+      "pas2": "Rameno podél první stěny: 1100 mm.",
+      "pas3": "Rameno podél druhé stěny: 1100 mm. Obrys L se sám překreslí."
+    },
+    "subscara": {
+      "titlu": "Skříň pod schody",
+      "pas1": "Skříň pod schody: základna po celé délce, boky na základně, šikmý strop mezi nimi.",
+      "pas2": "Boky jsou nahoře zkosené podle sklonu, ne rovné.",
+      "pas3": "Dvě police: ta pod sklonem se také řeže šikmo, aby se vešla celá."
+    },
+    "piesa": {
+      "titlu": "Samostatný dílec",
+      "pas1": "Samostatný dílec s hranou na zvolených hranách: pracovní deska, krycí panel, police.",
+      "pas2": "Další dva dílce ve stejném produktu: platíte jen jednou.",
+      "pas3": "A třetí. Všechny jdou do řezání, rozvržení na desky i do Excelu."
+    }
   }
 }

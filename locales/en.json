@@ -1999,5 +1999,105 @@
     "landingTitlu": "3D Planner",
     "landingSub": "Move cabinets around the room by hand, like in store planners. Try it on a sample kitchen, no account needed.",
     "landingButon": "Try the planner"
+  },
+  "tutorial": {
+    "titluPagina": "How it works",
+    "nav": "How it works",
+    "eticheta": "Step by step",
+    "titluA": "Every setting,",
+    "titluB": "seen on the cabinet.",
+    "sub": "Pick a scene or let the film play on its own. At each step one setting changes, and the cabinet and the cut list change with it. New panels light up.",
+    "pasDin": "Step {n} of {total}",
+    "piese": "{n} panels",
+    "lista": "Cut list",
+    "colFinit": "finished",
+    "colTaiere": "cutting",
+    "inapoi": "Previous step",
+    "inainte": "Next step",
+    "pauza": "Pause",
+    "porneste": "Play",
+    "seIncarca": "Loading…",
+    "dimensiuni": {
+      "titlu": "Dimensions",
+      "pas1": "We start from a basic cabinet with two doors: 800 × 720 × 560 mm.",
+      "pas2": "Width: 1000 mm. The bottom, top, shelf and doors widen on their own.",
+      "pas3": "Height: 850 mm. The sides and doors grow; everything else stays the same.",
+      "pas4": "Depth: 400 mm. The sides, bottom and shelf get narrower."
+    },
+    "usi": {
+      "titlu": "Doors",
+      "pas1": "No doors: the cabinet stays open.",
+      "pas2": "One door covering the whole front, with a 1.5 mm gap at the edge.",
+      "pas3": "Two doors, each half the width, with a 3 mm gap between them.",
+      "pas4": "Inset mounting: the doors fit between the sides, with a 2 mm gap all around.",
+      "pas5": "Sliding doors on a 1200 mm cabinet: they overlap on rails, with no hinges and no handles."
+    },
+    "polite": {
+      "titlu": "Shelves",
+      "pas1": "We removed the doors so you can see inside. No shelves for now.",
+      "pas2": "One shelf at mid-height, slightly shorter than the opening so it slides in easily.",
+      "pas3": "Three shelves, evenly spaced."
+    },
+    "montanti": {
+      "titlu": "Vertical dividers",
+      "pas1": "A 1200 mm cabinet, no doors, with one full-width shelf.",
+      "pas2": "A vertical divider splits the cabinet into two compartments; the shelf is cut in two.",
+      "pas3": "Two vertical dividers: three compartments, each with its own shelf."
+    },
+    "sertare": {
+      "titlu": "Drawers",
+      "pas1": "One drawer: the front, plus its box, with sides, front, back and a hardboard bottom.",
+      "pas2": "Two drawers, one above the other, with a 3 mm gap between the fronts.",
+      "pas3": "Four drawers: the app divides the height and calculates each box.",
+      "pas4": "Exploded view: you can see each box behind its front."
+    },
+    "spate": {
+      "titlu": "Back panel",
+      "pas1": "The cabinet exploded so you can see the back. Surface-mounted back: hardboard stapled over the sides, bottom and top.",
+      "pas2": "Back in a groove: it fits into a groove 10 mm from the back of the cabinet, between the sides.",
+      "pas3": "An 18 mm chipboard back, for cabinets that are also seen from behind."
+    },
+    "manere": {
+      "titlu": "Handles",
+      "pas1": "No handles: the doors open with push-to-open or with a handle profile.",
+      "pas2": "Handles placed the usual way: vertical, next to the edge toward the middle.",
+      "pas3": "Horizontal handles, in the middle of the door.",
+      "pas4": "Horizontal handles, high on the door, where your hand reaches them easily on a base cabinet."
+    },
+    "soclu": {
+      "titlu": "Plinth and legs",
+      "pas1": "The cabinet sits directly on the floor.",
+      "pas2": "100 mm plinth: a kickboard at the front, between the sides, with the bottom resting on it.",
+      "pas3": "Adjustable legs instead of a plinth: the app adds them to the hardware, 4 per cabinet."
+    },
+    "material": {
+      "titlu": "Material and edge banding",
+      "pas1": "18 mm melamine chipboard, with 2 mm edge banding on the visible edges.",
+      "pas2": "25 mm chipboard: the panels between the sides shorten on their own, and the list is recalculated.",
+      "pas3": "0.8 mm edge banding: the cutting size no longer shrinks, since thin banding isn't deducted."
+    },
+    "sticla": {
+      "titlu": "Glass doors",
+      "pas1": "The wall display cabinet, with chipboard doors.",
+      "pas2": "Doors with an aluminium frame and glass: they leave the cut list and move to the shopping list, with their dimensions."
+    },
+    "colt": {
+      "titlu": "Corner cabinet",
+      "pas1": "L-shaped corner cabinet: the top, bottom and shelf are L-shaped and cut on a CNC.",
+      "pas2": "The arm along the first wall: 1100 mm.",
+      "pas3": "The arm along the second wall: 1100 mm. The L outline redraws itself."
+    },
+    "subscara": {
+      "titlu": "Under-stairs cabinet",
+      "pas1": "The under-stairs cabinet: a base along the full length, sides on the base, a sloped top between them.",
+      "pas2": "The sides are cut at an angle at the top, following the slope, not straight.",
+      "pas3": "Two shelves: the one under the slope is also cut at an angle so it fits in whole."
+    },
+    "piesa": {
+      "titlu": "Single panel item",
+      "pas1": "A single panel, with edge banding on the edges you choose: a worktop, a cover panel, a shelf.",
+      "pas2": "Two more panels in the same product: you pay only once.",
+      "pas3": "And a third. They all go into the panel cutting, the sheet layout and Excel."
+    }
   }
 }

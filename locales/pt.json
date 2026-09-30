@@ -1999,5 +1999,105 @@
     "landingTitlu": "Planejador 3D",
     "landingSub": "Mova os módulos pelo ambiente com a mão, como nos planejadores das lojas. Experimente numa cozinha de exemplo, sem conta.",
     "landingButon": "Experimentar o planejador"
+  },
+  "tutorial": {
+    "titluPagina": "Como funciona",
+    "nav": "Como funciona",
+    "eticheta": "Passo a passo",
+    "titluA": "Cada configuração,",
+    "titluB": "vista no módulo.",
+    "sub": "Escolha uma cena ou deixe a animação correr sozinha. A cada passo muda uma configuração, e o módulo e a lista de corte mudam com ela. As peças novas acendem.",
+    "pasDin": "Passo {n} de {total}",
+    "piese": "{n} peças",
+    "lista": "Lista de corte",
+    "colFinit": "acabado",
+    "colTaiere": "corte",
+    "inapoi": "Passo anterior",
+    "inainte": "Próximo passo",
+    "pauza": "Pausar",
+    "porneste": "Reproduzir",
+    "seIncarca": "Carregando…",
+    "dimensiuni": {
+      "titlu": "Dimensões",
+      "pas1": "Começamos com um módulo básico de duas portas: 800 × 720 × 560 mm.",
+      "pas2": "Largura: 1000 mm. A base, o tampo, a prateleira e as portas se alargam sozinhos.",
+      "pas3": "Altura: 850 mm. As laterais e as portas crescem; o resto continua igual.",
+      "pas4": "Profundidade: 400 mm. As laterais, a base e a prateleira ficam mais estreitas."
+    },
+    "usi": {
+      "titlu": "Portas",
+      "pas1": "Sem portas: o módulo fica aberto.",
+      "pas2": "Uma porta cobrindo toda a frente, com 1,5 mm de folga na borda.",
+      "pas3": "Duas portas, cada uma com metade da largura, com 3 mm de folga entre elas.",
+      "pas4": "Montagem embutida: as portas ficam entre as laterais, com 2 mm de folga em volta.",
+      "pas5": "Portas de correr num módulo de 1200 mm: se sobrepõem nos trilhos, sem dobradiças e sem puxadores."
+    },
+    "polite": {
+      "titlu": "Prateleiras",
+      "pas1": "Tiramos as portas para você ver o interior. Por enquanto, sem prateleiras.",
+      "pas2": "Uma prateleira na meia altura, um pouco mais curta que o vão, para entrar com facilidade.",
+      "pas3": "Três prateleiras, à mesma distância."
+    },
+    "montanti": {
+      "titlu": "Divisórias verticais",
+      "pas1": "Um módulo de 1200 mm, sem portas, com uma prateleira em toda a largura.",
+      "pas2": "Uma divisória vertical separa o módulo em dois compartimentos; a prateleira é cortada em duas.",
+      "pas3": "Duas divisórias verticais: três compartimentos, cada um com sua prateleira."
+    },
+    "sertare": {
+      "titlu": "Gavetas",
+      "pas1": "Uma gaveta: a frente, mais a sua caixa, com laterais, frente, traseira e fundo de chapa de fibra.",
+      "pas2": "Duas gavetas, uma sobre a outra, com 3 mm de folga entre as frentes.",
+      "pas3": "Quatro gavetas: o app divide a altura e calcula cada caixa.",
+      "pas4": "Vista explodida: dá para ver cada caixa atrás da sua frente."
+    },
+    "spate": {
+      "titlu": "Fundo",
+      "pas1": "O módulo explodido, para você ver o fundo. Fundo sobreposto: chapa de fibra grampeada sobre as laterais, a base e o tampo.",
+      "pas2": "Fundo em rasgo: encaixa num rasgo a 10 mm da traseira do módulo, entre as laterais.",
+      "pas3": "Fundo em aglomerado de 18 mm, para módulos que também são vistos por trás."
+    },
+    "manere": {
+      "titlu": "Puxadores",
+      "pas1": "Sem puxadores: as portas abrem por toque ou com perfil puxador.",
+      "pas2": "Puxadores na posição de sempre: verticais, junto à borda voltada para o centro.",
+      "pas3": "Puxadores horizontais, no meio da porta.",
+      "pas4": "Puxadores horizontais, no alto da porta, onde a mão os alcança facilmente num módulo inferior."
+    },
+    "soclu": {
+      "titlu": "Rodapé e pés",
+      "pas1": "O módulo fica apoiado direto no chão.",
+      "pas2": "Rodapé de 100 mm: uma testeira na frente, entre as laterais, e a base se apoia nela.",
+      "pas3": "Pés reguláveis em vez de rodapé: o app os inclui nas ferragens, 4 por módulo."
+    },
+    "material": {
+      "titlu": "Material e fita de borda",
+      "pas1": "Aglomerado melamínico de 18 mm, com fita de borda de 2 mm nas bordas visíveis.",
+      "pas2": "Aglomerado de 25 mm: as peças entre as laterais encurtam sozinhas e a lista é recalculada.",
+      "pas3": "Fita de borda de 0,8 mm: a medida de corte não diminui mais, pois a fita fina não é descontada."
+    },
+    "sticla": {
+      "titlu": "Portas de vidro",
+      "pas1": "A cristaleira suspensa, com portas de aglomerado.",
+      "pas2": "Portas com moldura de alumínio e vidro: saem da lista de corte e vão para as compras, com suas medidas."
+    },
+    "colt": {
+      "titlu": "Módulo de canto",
+      "pas1": "Módulo de canto em L: o tampo, a base e a prateleira têm forma de L e são cortados em CNC.",
+      "pas2": "O braço na primeira parede: 1100 mm.",
+      "pas3": "O braço na segunda parede: 1100 mm. O contorno em L se refaz sozinho."
+    },
+    "subscara": {
+      "titlu": "Módulo sob escada",
+      "pas1": "O módulo sob escada: base em todo o comprimento, laterais sobre a base, tampo inclinado entre elas.",
+      "pas2": "As laterais cortadas inclinadas em cima, seguindo a inclinação, e não retas.",
+      "pas3": "Duas prateleiras: a que fica sob a inclinação também é cortada inclinada, para entrar inteira."
+    },
+    "piesa": {
+      "titlu": "Peça avulsa",
+      "pas1": "Uma peça avulsa, com fita de borda nas bordas escolhidas: um tampo, um painel de acabamento, uma prateleira.",
+      "pas2": "Mais duas peças no mesmo produto: paga-se uma só vez.",
+      "pas3": "E uma terceira. Todas entram no corte, no plano de corte das chapas e no Excel."
+    }
   }
 }

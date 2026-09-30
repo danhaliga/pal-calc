@@ -1999,5 +1999,105 @@
     "landingTitlu": "Perencana 3D",
     "landingSub": "Geser kabinet di ruangan dengan tangan, seperti di perencana toko. Coba pada contoh dapur, tanpa akun.",
     "landingButon": "Coba perencana"
+  },
+  "tutorial": {
+    "titluPagina": "Cara kerjanya",
+    "nav": "Cara kerjanya",
+    "eticheta": "Langkah demi langkah",
+    "titluA": "Setiap pengaturan,",
+    "titluB": "terlihat pada kabinet.",
+    "sub": "Pilih satu adegan atau biarkan film berjalan sendiri. Di setiap langkah, satu pengaturan berubah, dan kabinet serta daftar potong ikut berubah. Panel baru akan menyala.",
+    "pasDin": "Langkah {n} dari {total}",
+    "piese": "{n} panel",
+    "lista": "Daftar potong",
+    "colFinit": "jadi",
+    "colTaiere": "potong",
+    "inapoi": "Langkah sebelumnya",
+    "inainte": "Langkah berikutnya",
+    "pauza": "Jeda",
+    "porneste": "Putar",
+    "seIncarca": "Memuat…",
+    "dimensiuni": {
+      "titlu": "Ukuran",
+      "pas1": "Kita mulai dari kabinet dasar dengan dua pintu: 800 × 720 × 560 mm.",
+      "pas2": "Lebar: 1000 mm. Alas, atap, rak, dan pintu melebar dengan sendirinya.",
+      "pas3": "Tinggi: 850 mm. Sisi samping dan pintu bertambah tinggi; sisanya tetap sama.",
+      "pas4": "Kedalaman: 400 mm. Sisi samping, alas, dan rak menjadi lebih sempit."
+    },
+    "usi": {
+      "titlu": "Pintu",
+      "pas1": "Tanpa pintu: kabinet tetap terbuka.",
+      "pas2": "Satu pintu menutupi seluruh bagian depan, dengan celah 1,5 mm di tepi.",
+      "pas3": "Dua pintu, masing-masing selebar setengah, dengan celah 3 mm di antaranya.",
+      "pas4": "Pemasangan inset: pintu masuk di antara sisi samping, dengan celah 2 mm di sekelilingnya.",
+      "pas5": "Pintu geser pada kabinet 1200 mm: saling tumpang tindih di atas rel, tanpa engsel dan tanpa pegangan."
+    },
+    "polite": {
+      "titlu": "Rak",
+      "pas1": "Pintu kami lepas agar Anda bisa melihat ke dalam. Untuk sementara, tanpa rak.",
+      "pas2": "Satu rak di setengah tinggi, sedikit lebih pendek dari bukaan agar mudah masuk.",
+      "pas3": "Tiga rak dengan jarak yang sama."
+    },
+    "montanti": {
+      "titlu": "Sekat vertikal",
+      "pas1": "Kabinet 1200 mm, tanpa pintu, dengan satu rak selebar penuh.",
+      "pas2": "Satu sekat vertikal membagi kabinet menjadi dua ruang; rak dipotong menjadi dua.",
+      "pas3": "Dua sekat vertikal: tiga ruang, masing-masing dengan raknya sendiri."
+    },
+    "sertare": {
+      "titlu": "Laci",
+      "pas1": "Satu laci: panel depan, ditambah kotaknya, dengan sisi samping, depan, belakang, dan alas dari hardboard.",
+      "pas2": "Dua laci, satu di atas yang lain, dengan celah 3 mm di antara panel depan.",
+      "pas3": "Empat laci: aplikasi membagi tinggi dan menghitung setiap kotak.",
+      "pas4": "Tampilan terurai: setiap kotak terlihat di balik panel depannya."
+    },
+    "spate": {
+      "titlu": "Panel belakang",
+      "pas1": "Kabinet diurai agar Anda bisa melihat bagian belakang. Panel belakang tempel: hardboard yang distaples di atas sisi samping, alas, dan atap.",
+      "pas2": "Panel belakang dalam alur: masuk ke alur 10 mm dari bagian belakang kabinet, di antara sisi samping.",
+      "pas3": "Panel belakang dari particle board 18 mm, untuk kabinet yang juga terlihat dari belakang."
+    },
+    "manere": {
+      "titlu": "Pegangan",
+      "pas1": "Tanpa pegangan: pintu dibuka dengan ditekan atau dengan profil.",
+      "pas2": "Pegangan dipasang seperti biasa: vertikal, di dekat tepi yang menghadap ke tengah.",
+      "pas3": "Pegangan horizontal, di tengah pintu.",
+      "pas4": "Pegangan horizontal, di bagian atas pintu, tempat tangan mudah meraihnya pada kabinet bawah."
+    },
+    "soclu": {
+      "titlu": "Plint dan kaki",
+      "pas1": "Kabinet berdiri langsung di lantai.",
+      "pas2": "Plint 100 mm: papan plint di depan, di antara sisi samping, dan alas bertumpu di atasnya.",
+      "pas3": "Kaki yang bisa disetel sebagai pengganti plint: aplikasi memasukkannya ke perangkat keras, 4 per kabinet."
+    },
+    "material": {
+      "titlu": "Bahan dan edge banding",
+      "pas1": "Particle board melamin 18 mm, dengan edge banding 2 mm pada tepi yang terlihat.",
+      "pas2": "Particle board 25 mm: panel di antara sisi samping memendek sendiri, dan daftar dihitung ulang.",
+      "pas3": "Edge banding 0,8 mm: ukuran potong tidak lagi dikurangi, karena edge banding tipis tidak diperhitungkan."
+    },
+    "sticla": {
+      "titlu": "Pintu kaca",
+      "pas1": "Lemari pajang gantung, dengan pintu particle board.",
+      "pas2": "Pintu dengan rangka aluminium dan kaca: keluar dari daftar potong dan pindah ke daftar belanja, lengkap dengan ukurannya."
+    },
+    "colt": {
+      "titlu": "Kabinet sudut",
+      "pas1": "Kabinet sudut berbentuk L: meja atas, alas, dan rak berbentuk L dan dipotong dengan CNC.",
+      "pas2": "Lengan di dinding pertama: 1100 mm.",
+      "pas3": "Lengan di dinding kedua: 1100 mm. Kontur L tergambar ulang dengan sendirinya."
+    },
+    "subscara": {
+      "titlu": "Kabinet bawah tangga",
+      "pas1": "Kabinet bawah tangga: alas sepanjang penuh, sisi samping di atas alas, atap miring di antaranya.",
+      "pas2": "Sisi samping dipotong miring di bagian atas, mengikuti kemiringan, bukan lurus.",
+      "pas3": "Dua rak: rak di bawah kemiringan juga dipotong miring agar masuk utuh."
+    },
+    "piesa": {
+      "titlu": "Panel tunggal",
+      "pas1": "Satu panel tunggal, dengan edge banding pada tepi yang dipilih: meja atas, panel penutup, rak.",
+      "pas2": "Dua panel lagi dalam produk yang sama: hanya dibayar sekali.",
+      "pas3": "Dan yang ketiga. Semuanya masuk ke pemotongan, tata letak lembaran, dan Excel."
+    }
   }
 }

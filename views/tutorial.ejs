@@ -1,0 +1,49 @@
+<%# „Cum funcționează": fiecare setare a corpului, arătată pe corp, ca un
+    film. Pașii îi calculează serverul (src/tutorial.js); public/tutorial.js
+    îi desenează. %>
+<section class="plan-cap">
+  <div class="film-eticheta"><%= t('tutorial.eticheta') %></div>
+  <h1 class="prest-titlu"><%= t('tutorial.titluA') %> <em><%= t('tutorial.titluB') %></em></h1>
+  <p class="sub"><%= t('tutorial.sub') %></p>
+</section>
+
+<section class="tutorial" id="tutorial">
+  <nav class="tut-scene" aria-label="<%= t('tutorial.titluPagina') %>"></nav>
+  <div class="tut-scena">
+    <div class="tut-ecran">
+      <div class="tut-antet"><b class="tut-scena-titlu"></b><span class="tut-pas"></span></div>
+      <svg class="tut-svg" viewBox="0 0 560 470" role="img" aria-live="polite"></svg>
+      <div class="tut-puncte" aria-hidden="true"></div>
+    </div>
+    <div class="tut-jos">
+      <div class="tut-explicatie">
+        <p class="tut-text"><%= t('tutorial.seIncarca') %></p>
+        <p class="tut-cote muted small"></p>
+        <div class="btns">
+          <button type="button" class="btn tut-ant" aria-label="<%= t('tutorial.inapoi') %>">◀</button>
+          <button type="button" class="btn primary tut-play"><%= t('tutorial.pauza') %></button>
+          <button type="button" class="btn tut-urm" aria-label="<%= t('tutorial.inainte') %>">▶</button>
+        </div>
+      </div>
+      <div class="tut-card">
+        <div class="film-card-t"><%= t('tutorial.lista') %> · <%= t('tutorial.colTaiere') %></div>
+        <ul class="tut-lista film-debitare"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel zona-chemare">
+  <div>
+    <b><%= t('planificator.chemare') %></b>
+    <p class="muted small"><%= t('tutorial.sub') %></p>
+  </div>
+  <div class="btns">
+    <% if (user) { %><a class="btn primary" href="/orders"><%= t('nav.comenzi') %></a>
+    <% } else { %><a class="btn primary" href="/register"><%= t('landing.faCont') %></a><% } %>
+  </div>
+</section>
+
+<script type="application/json" id="tutorial-texte"><%- jsonPentruPagina(['pasDin', 'piese', 'colTaiere', 'pauza', 'porneste']
+  .reduce(function (o, k) { o[k] = t('tutorial.' + k); return o; }, {})) %></script>
+<script src="/static/tutorial.js?v=<%= assetV %>" defer></script>

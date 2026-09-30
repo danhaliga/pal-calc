@@ -171,6 +171,18 @@ app.get('/', (req, res) => {
   });
 });
 
+/* „Cum funcționează": pagina, apoi pașii ca JSON (calculați o dată pe
+   limbă și ținuți în memorie: nu depind de nimic din baza de date). */
+app.get('/cum-functioneaza', (req, res) => {
+  res.render('tutorial', { title: req.t('tutorial.titluPagina') });
+});
+const tutorialPeLimba = {};
+app.get('/cum-functioneaza/date.json', (req, res) => {
+  const cheie = req.lang || 'ro';
+  if (!tutorialPeLimba[cheie]) tutorialPeLimba[cheie] = JSON.stringify(require('./src/tutorial').date(req.t));
+  res.type('application/json').set('Cache-Control', 'public, max-age=3600').send(tutorialPeLimba[cheie]);
+});
+
 /* Pagina publică a planificatorului 3D, cu o bucătărie de exemplu pe care
    vizitatorul o poate rearanja fără cont (nimic nu se salvează). */
 app.get('/planificator', (req, res) => {

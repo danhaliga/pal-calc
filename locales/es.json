@@ -1999,5 +1999,105 @@
     "landingTitlu": "Planificador 3D",
     "landingSub": "Mueve los módulos por la habitación con la mano, como en los planificadores de las tiendas. Pruébalo en una cocina de ejemplo, sin cuenta.",
     "landingButon": "Probar el planificador"
+  },
+  "tutorial": {
+    "titluPagina": "Cómo funciona",
+    "nav": "Cómo funciona",
+    "eticheta": "Paso a paso",
+    "titluA": "Cada ajuste,",
+    "titluB": "visto en el mueble.",
+    "sub": "Elige una escena o deja que la animación avance sola. En cada paso cambia un ajuste, y el mueble y la lista de corte cambian con él. Las piezas nuevas se iluminan.",
+    "pasDin": "Paso {n} de {total}",
+    "piese": "{n} piezas",
+    "lista": "Lista de corte",
+    "colFinit": "acabado",
+    "colTaiere": "corte",
+    "inapoi": "Paso anterior",
+    "inainte": "Paso siguiente",
+    "pauza": "Pausa",
+    "porneste": "Reproducir",
+    "seIncarca": "Cargando…",
+    "dimensiuni": {
+      "titlu": "Dimensiones",
+      "pas1": "Partimos de un mueble básico con dos puertas: 800 × 720 × 560 mm.",
+      "pas2": "Ancho: 1000 mm. La base, el techo, el estante y las puertas se ensanchan solos.",
+      "pas3": "Alto: 850 mm. Los laterales y las puertas crecen; el resto no cambia.",
+      "pas4": "Fondo: 400 mm. Los laterales, la base y el estante se estrechan."
+    },
+    "usi": {
+      "titlu": "Puertas",
+      "pas1": "Sin puertas: el mueble queda abierto.",
+      "pas2": "Una puerta que cubre todo el frente, con 1,5 mm de holgura en el borde.",
+      "pas3": "Dos puertas, cada una de la mitad del ancho, con 3 mm de holgura entre ellas.",
+      "pas4": "Montaje embutido: las puertas van entre los laterales, con 2 mm de holgura alrededor.",
+      "pas5": "Puertas correderas en un mueble de 1200 mm: se solapan sobre rieles, sin bisagras ni tiradores."
+    },
+    "polite": {
+      "titlu": "Estantes",
+      "pas1": "Quitamos las puertas para que veas el interior. Por ahora, sin estantes.",
+      "pas2": "Un estante a media altura, un poco más corto que el hueco para que entre con facilidad.",
+      "pas3": "Tres estantes, a la misma distancia."
+    },
+    "montanti": {
+      "titlu": "Divisores verticales",
+      "pas1": "Un mueble de 1200 mm, sin puertas, con un estante de todo el ancho.",
+      "pas2": "Un divisor vertical separa el mueble en dos compartimentos; el estante se corta en dos.",
+      "pas3": "Dos divisores verticales: tres compartimentos, cada uno con su estante."
+    },
+    "sertare": {
+      "titlu": "Cajones",
+      "pas1": "Un cajón: el frente, más su caja, con laterales, frente, trasera y fondo de tablero de fibra.",
+      "pas2": "Dos cajones, uno encima del otro, con 3 mm de holgura entre los frentes.",
+      "pas3": "Cuatro cajones: la aplicación reparte la altura y calcula cada caja.",
+      "pas4": "Vista despiezada: se ve cada caja detrás de su frente."
+    },
+    "spate": {
+      "titlu": "Trasera",
+      "pas1": "El mueble despiezado para que veas la trasera. Trasera superpuesta: tablero de fibra grapado sobre los laterales, la base y el techo.",
+      "pas2": "Trasera en ranura: entra en una ranura a 10 mm de la parte trasera del mueble, entre los laterales.",
+      "pas3": "Trasera de aglomerado de 18 mm, para muebles que también se ven por detrás."
+    },
+    "manere": {
+      "titlu": "Tiradores",
+      "pas1": "Sin tiradores: las puertas se abren por presión o con perfil tirador.",
+      "pas2": "Tiradores en la posición habitual: verticales, junto al borde hacia el centro.",
+      "pas3": "Tiradores horizontales, en el centro de la puerta.",
+      "pas4": "Tiradores horizontales, arriba en la puerta, donde la mano los alcanza fácilmente en un mueble bajo."
+    },
+    "soclu": {
+      "titlu": "Zócalo y patas",
+      "pas1": "El mueble se apoya directamente en el suelo.",
+      "pas2": "Zócalo de 100 mm: un rodapié delante, entre los laterales, y la base descansa sobre él.",
+      "pas3": "Patas regulables en lugar de zócalo: la aplicación las añade a los herrajes, 4 por mueble."
+    },
+    "material": {
+      "titlu": "Material y canto",
+      "pas1": "Aglomerado melamínico de 18 mm, con canto de 2 mm en los bordes visibles.",
+      "pas2": "Aglomerado de 25 mm: las piezas entre los laterales se acortan solas y la lista se recalcula.",
+      "pas3": "Canto de 0,8 mm: la medida de corte ya no se reduce, porque el canto fino no se descuenta."
+    },
+    "sticla": {
+      "titlu": "Puertas de vidrio",
+      "pas1": "La vitrina colgada, con puertas de aglomerado.",
+      "pas2": "Puertas con marco de aluminio y vidrio: salen de la lista de corte y pasan a la lista de compras, con sus medidas."
+    },
+    "colt": {
+      "titlu": "Mueble esquinero",
+      "pas1": "Mueble esquinero en L: la encimera, la base y el estante tienen forma de L y se cortan en CNC.",
+      "pas2": "El brazo en la primera pared: 1100 mm.",
+      "pas3": "El brazo en la segunda pared: 1100 mm. El contorno en L se rehace solo."
+    },
+    "subscara": {
+      "titlu": "Mueble bajo escalera",
+      "pas1": "El mueble bajo escalera: base en todo el largo, laterales sobre la base y techo inclinado entre ellos.",
+      "pas2": "Los laterales se cortan inclinados arriba, siguiendo la pendiente, no rectos.",
+      "pas3": "Dos estantes: el que queda bajo la pendiente también se corta inclinado para que entre entero."
+    },
+    "piesa": {
+      "titlu": "Pieza simple",
+      "pas1": "Una pieza simple, con canto en los bordes elegidos: una encimera, un panel embellecedor, un estante.",
+      "pas2": "Dos piezas más en el mismo producto: se paga una sola vez.",
+      "pas3": "Y una tercera. Todas entran en el corte, en la optimización de tableros y en Excel."
+    }
   }
 }

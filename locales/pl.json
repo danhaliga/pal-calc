@@ -2010,5 +2010,105 @@
     "landingTitlu": "Planer 3D",
     "landingSub": "Przesuwaj korpusy w pomieszczeniu ręką, jak w planerach sklepów. Wypróbuj na przykładowej kuchni, bez konta.",
     "landingButon": "Wypróbuj planer"
+  },
+  "tutorial": {
+    "titluPagina": "Jak to działa",
+    "nav": "Jak to działa",
+    "eticheta": "Krok po kroku",
+    "titluA": "Każde ustawienie",
+    "titluB": "widać na korpusie.",
+    "sub": "Wybierz scenę albo pozwól, by animacja leciała sama. Na każdym kroku zmienia się jedno ustawienie, a korpus i lista rozkroju zmieniają się razem z nim. Nowe elementy się podświetlają.",
+    "pasDin": "Krok {n} z {total}",
+    "piese": "Elementy: {n}",
+    "lista": "Lista rozkroju",
+    "colFinit": "wymiar gotowy",
+    "colTaiere": "wymiar cięcia",
+    "inapoi": "Poprzedni krok",
+    "inainte": "Następny krok",
+    "pauza": "Pauza",
+    "porneste": "Odtwórz",
+    "seIncarca": "Ładowanie…",
+    "dimensiuni": {
+      "titlu": "Wymiary",
+      "pas1": "Zaczynamy od podstawowego korpusu z dwojgiem drzwi: 800 × 720 × 560 mm.",
+      "pas2": "Szerokość: 1000 mm. Wieniec dolny, górny, półka i drzwi same się poszerzają.",
+      "pas3": "Wysokość: 850 mm. Boki i drzwi rosną; reszta się nie zmienia.",
+      "pas4": "Głębokość: 400 mm. Boki, wieniec dolny i półka się zwężają."
+    },
+    "usi": {
+      "titlu": "Drzwi",
+      "pas1": "Bez drzwi: korpus pozostaje otwarty.",
+      "pas2": "Jedne drzwi na cały front, z 1,5 mm szczeliny przy krawędzi.",
+      "pas3": "Dwoje drzwi, każde na połowę szerokości, z 3 mm szczeliny między nimi.",
+      "pas4": "Montaż wpuszczany: drzwi wchodzą między boki, z 2 mm szczeliny dookoła.",
+      "pas5": "Drzwi przesuwne w korpusie 1200 mm: nachodzą na siebie na szynach, bez zawiasów i bez uchwytów."
+    },
+    "polite": {
+      "titlu": "Półki",
+      "pas1": "Zdjęliśmy drzwi, żeby było widać wnętrze. Na razie bez półek.",
+      "pas2": "Jedna półka w połowie wysokości, trochę krótsza niż światło korpusu, żeby łatwo wchodziła.",
+      "pas3": "Trzy półki, w równych odstępach."
+    },
+    "montanti": {
+      "titlu": "Przegrody pionowe",
+      "pas1": "Korpus 1200 mm, bez drzwi, z jedną półką na całą szerokość.",
+      "pas2": "Przegroda pionowa dzieli korpus na dwie komory; półka zostaje przecięta na dwie.",
+      "pas3": "Dwie przegrody pionowe: trzy komory, każda z własną półką."
+    },
+    "sertare": {
+      "titlu": "Szuflady",
+      "pas1": "Jedna szuflada: front plus skrzynka, z bokami, przodem, tyłem i dnem z płyty HDF.",
+      "pas2": "Dwie szuflady, jedna nad drugą, z 3 mm szczeliny między frontami.",
+      "pas3": "Cztery szuflady: aplikacja dzieli wysokość i oblicza każdą skrzynkę.",
+      "pas4": "Widok rozłożony: widać każdą skrzynkę za jej frontem."
+    },
+    "spate": {
+      "titlu": "Plecy",
+      "pas1": "Korpus rozłożony, żeby było widać plecy. Plecy nakładane: płyta HDF przybita zszywkami do boków, wieńca dolnego i górnego.",
+      "pas2": "Plecy we wpuście: wchodzą we wpust 10 mm od tyłu korpusu, między boki.",
+      "pas3": "Plecy z płyty wiórowej 18 mm, dla korpusów widocznych także od tyłu."
+    },
+    "manere": {
+      "titlu": "Uchwyty",
+      "pas1": "Bez uchwytów: drzwi otwierają się przez naciśnięcie lub za pomocą profilu.",
+      "pas2": "Uchwyty jak zwykle: pionowe, przy krawędzi od strony środka.",
+      "pas3": "Uchwyty poziome, na środku drzwi.",
+      "pas4": "Uchwyty poziome, u góry drzwi, gdzie w szafce dolnej łatwo sięgnąć ręką."
+    },
+    "soclu": {
+      "titlu": "Cokół i nóżki",
+      "pas1": "Korpus stoi bezpośrednio na podłodze.",
+      "pas2": "Cokół 100 mm: listwa cokołowa z przodu, między bokami, a wieniec dolny się na niej opiera.",
+      "pas3": "Nóżki regulowane zamiast cokołu: aplikacja dodaje je do okuć, po 4 na korpus."
+    },
+    "material": {
+      "titlu": "Materiał i obrzeże",
+      "pas1": "Płyta wiórowa laminowana 18 mm, z obrzeżem 2 mm na widocznych krawędziach.",
+      "pas2": "Płyta 25 mm: elementy między bokami same się skracają, a lista jest przeliczana.",
+      "pas3": "Obrzeże 0,8 mm: wymiar cięcia już się nie zmniejsza, bo cienkiego obrzeża się nie odejmuje."
+    },
+    "sticla": {
+      "titlu": "Drzwi szklane",
+      "pas1": "Witryna wisząca z drzwiami z płyty wiórowej.",
+      "pas2": "Drzwi w ramie aluminiowej ze szkłem: wypadają z listy rozkroju i trafiają do zakupów, z własnymi wymiarami."
+    },
+    "colt": {
+      "titlu": "Korpus narożny",
+      "pas1": "Korpus narożny w kształcie L: blat, wieniec dolny i półka mają kształt litery L i są cięte na CNC.",
+      "pas2": "Ramię przy pierwszej ścianie: 1100 mm.",
+      "pas3": "Ramię przy drugiej ścianie: 1100 mm. Obrys L przerysowuje się sam."
+    },
+    "subscara": {
+      "titlu": "Szafa pod schodami",
+      "pas1": "Szafa pod schodami: podstawa na całej długości, boki na podstawie, skośny wieniec górny między nimi.",
+      "pas2": "Boki przycięte u góry skośnie, zgodnie ze spadkiem, a nie prosto.",
+      "pas3": "Dwie półki: ta pod skosem też jest cięta skośnie, żeby weszła w całości."
+    },
+    "piesa": {
+      "titlu": "Pojedynczy element",
+      "pas1": "Pojedynczy element z obrzeżem na wybranych krawędziach: blat, maskownica, półka.",
+      "pas2": "Jeszcze dwa elementy w tym samym produkcie: płacisz tylko raz.",
+      "pas3": "I trzeci. Wszystkie trafiają do rozkroju, rozmieszczenia na płytach i do Excela."
+    }
   }
 }

@@ -1999,5 +1999,105 @@
     "landingTitlu": "Trình thiết kế 3D",
     "landingSub": "Di chuyển tủ trong phòng bằng tay, giống trình thiết kế của các cửa hàng. Dùng thử với căn bếp mẫu, không cần tài khoản.",
     "landingButon": "Dùng thử trình thiết kế"
+  },
+  "tutorial": {
+    "titluPagina": "Cách hoạt động",
+    "nav": "Cách hoạt động",
+    "eticheta": "Từng bước một",
+    "titluA": "Mỗi thiết lập",
+    "titluB": "đều hiện ngay trên thùng tủ.",
+    "sub": "Chọn một cảnh hoặc để đoạn phim tự chạy. Ở mỗi bước, một thiết lập thay đổi, và thùng tủ cùng danh sách cắt cũng thay đổi theo. Các tấm mới sẽ sáng lên.",
+    "pasDin": "Bước {n} / {total}",
+    "piese": "{n} tấm",
+    "lista": "Danh sách cắt",
+    "colFinit": "thành phẩm",
+    "colTaiere": "cắt",
+    "inapoi": "Bước trước",
+    "inainte": "Bước tiếp theo",
+    "pauza": "Tạm dừng",
+    "porneste": "Phát",
+    "seIncarca": "Đang tải…",
+    "dimensiuni": {
+      "titlu": "Kích thước",
+      "pas1": "Chúng ta bắt đầu với một thùng tủ cơ bản có hai cánh: 800 × 720 × 560 mm.",
+      "pas2": "Chiều rộng: 1000 mm. Tấm đáy, tấm nóc, đợt kệ và cánh tủ tự rộng ra.",
+      "pas3": "Chiều cao: 850 mm. Hai hông và cánh tủ cao lên; phần còn lại giữ nguyên.",
+      "pas4": "Chiều sâu: 400 mm. Hai hông, tấm đáy và đợt kệ hẹp lại."
+    },
+    "usi": {
+      "titlu": "Cánh tủ",
+      "pas1": "Không có cánh: thùng tủ để mở.",
+      "pas2": "Một cánh phủ toàn bộ mặt trước, với khe hở 1,5 mm ở mép.",
+      "pas3": "Hai cánh, mỗi cánh một nửa, với khe hở 3 mm giữa hai cánh.",
+      "pas4": "Lắp lọt lòng: cánh nằm giữa hai hông, với khe hở 2 mm xung quanh.",
+      "pas5": "Cánh lùa trên thùng tủ 1200 mm: chồng lên nhau trên ray, không bản lề và không tay nắm."
+    },
+    "polite": {
+      "titlu": "Đợt kệ",
+      "pas1": "Chúng tôi đã tháo cánh để bạn nhìn vào bên trong. Tạm thời chưa có đợt kệ.",
+      "pas2": "Một đợt kệ ở giữa chiều cao, ngắn hơn lòng tủ một chút để dễ đặt vào.",
+      "pas3": "Ba đợt kệ, cách đều nhau."
+    },
+    "montanti": {
+      "titlu": "Vách chia đứng",
+      "pas1": "Một thùng tủ 1200 mm, không cánh, với một đợt kệ suốt chiều rộng.",
+      "pas2": "Một vách chia đứng chia thùng tủ thành hai ngăn; đợt kệ được cắt làm hai.",
+      "pas3": "Hai vách chia đứng: ba ngăn, mỗi ngăn có đợt kệ riêng."
+    },
+    "sertare": {
+      "titlu": "Ngăn kéo",
+      "pas1": "Một ngăn kéo: mặt ngăn kéo, cùng hộp của nó, gồm hai hông, tấm trước, tấm sau và đáy bằng ván sợi cứng.",
+      "pas2": "Hai ngăn kéo chồng lên nhau, với khe hở 3 mm giữa các mặt.",
+      "pas3": "Bốn ngăn kéo: ứng dụng chia chiều cao và tính từng hộp.",
+      "pas4": "Tách rời: thấy rõ từng hộp phía sau mặt của nó."
+    },
+    "spate": {
+      "titlu": "Hậu tủ",
+      "pas1": "Thùng tủ được tách rời để bạn thấy hậu. Hậu ốp ngoài: ván sợi cứng bắn ghim lên hai hông, tấm đáy và tấm nóc.",
+      "pas2": "Hậu âm rãnh: lắp vào một rãnh cách mặt sau thùng tủ 10 mm, giữa hai hông.",
+      "pas3": "Hậu bằng ván dăm 18 mm, cho những thùng tủ nhìn thấy cả từ phía sau."
+    },
+    "manere": {
+      "titlu": "Tay nắm",
+      "pas1": "Không tay nắm: cánh mở bằng cách nhấn hoặc bằng thanh tay nắm.",
+      "pas2": "Tay nắm lắp như thường lệ: đặt dọc, gần mép phía giữa.",
+      "pas3": "Tay nắm ngang, ở giữa cánh.",
+      "pas4": "Tay nắm ngang, phía trên cánh, chỗ tay dễ với tới ở tủ dưới."
+    },
+    "soclu": {
+      "titlu": "Chân đế và chân tủ",
+      "pas1": "Thùng tủ đặt thẳng trên sàn.",
+      "pas2": "Chân đế 100 mm: một tấm len chân phía trước, giữa hai hông, tấm đáy tựa lên đó.",
+      "pas3": "Chân tăng chỉnh thay cho chân đế: ứng dụng đưa chúng vào phụ kiện, 4 cái mỗi thùng."
+    },
+    "material": {
+      "titlu": "Vật liệu và nẹp cạnh",
+      "pas1": "Ván dăm phủ melamine 18 mm, với nẹp cạnh 2 mm trên các cạnh lộ ra.",
+      "pas2": "Ván dăm 25 mm: các tấm nằm giữa hai hông tự ngắn lại và danh sách được tính lại.",
+      "pas3": "Nẹp cạnh 0,8 mm: kích thước cắt không còn nhỏ đi, vì nẹp mỏng không được trừ."
+    },
+    "sticla": {
+      "titlu": "Cánh kính",
+      "pas1": "Tủ trưng bày treo, với cánh bằng ván dăm.",
+      "pas2": "Cánh khung nhôm và kính: rời khỏi danh sách cắt và chuyển sang danh sách mua, kèm kích thước của chúng."
+    },
+    "colt": {
+      "titlu": "Tủ góc",
+      "pas1": "Tủ góc chữ L: mặt bàn, tấm đáy và đợt kệ có hình chữ L và được cắt bằng CNC.",
+      "pas2": "Cánh tay dọc bức tường thứ nhất: 1100 mm.",
+      "pas3": "Cánh tay dọc bức tường thứ hai: 1100 mm. Đường viền chữ L tự vẽ lại."
+    },
+    "subscara": {
+      "titlu": "Tủ gầm cầu thang",
+      "pas1": "Tủ gầm cầu thang: đế chạy suốt chiều dài, hai hông đặt trên đế, nóc nghiêng nằm giữa.",
+      "pas2": "Hai hông được cắt xiên ở phía trên theo độ dốc, chứ không cắt thẳng.",
+      "pas3": "Hai đợt kệ: đợt nằm dưới phần dốc cũng được cắt xiên để lắp vào nguyên tấm."
+    },
+    "piesa": {
+      "titlu": "Tấm đơn lẻ",
+      "pas1": "Một tấm đơn lẻ, có nẹp cạnh ở các cạnh được chọn: một mặt bàn, một tấm che, một đợt kệ.",
+      "pas2": "Thêm hai tấm nữa trong cùng một sản phẩm: chỉ trả tiền một lần.",
+      "pas3": "Và tấm thứ ba. Tất cả đều được đưa vào khâu cắt, sơ đồ xếp tấm và Excel."
+    }
   }
 }

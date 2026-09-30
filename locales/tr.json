@@ -1999,5 +1999,105 @@
     "landingTitlu": "3D Planlayıcı",
     "landingSub": "Dolapları odada elinizle taşıyın, tıpkı mağaza planlayıcılarındaki gibi. Hesap gerekmeden örnek bir mutfakta deneyin.",
     "landingButon": "Planlayıcıyı deneyin"
+  },
+  "tutorial": {
+    "titluPagina": "Nasıl çalışır",
+    "nav": "Nasıl çalışır",
+    "eticheta": "Adım adım",
+    "titluA": "Her ayar",
+    "titluB": "gövdenin üzerinde görünür.",
+    "sub": "Bir sahne seçin ya da filmin kendi kendine oynamasına izin verin. Her adımda bir ayar değişir; gövde ve kesim listesi de onunla birlikte değişir. Yeni parçalar yanar.",
+    "pasDin": "Adım {n} / {total}",
+    "piese": "{n} parça",
+    "lista": "Kesim listesi",
+    "colFinit": "net ölçü",
+    "colTaiere": "kesim",
+    "inapoi": "Önceki adım",
+    "inainte": "Sonraki adım",
+    "pauza": "Duraklat",
+    "porneste": "Oynat",
+    "seIncarca": "Yükleniyor…",
+    "dimensiuni": {
+      "titlu": "Ölçüler",
+      "pas1": "İki kapaklı temel bir gövdeyle başlıyoruz: 800 × 720 × 560 mm.",
+      "pas2": "Genişlik: 1000 mm. Alt tabla, üst tabla, raf ve kapaklar kendiliğinden genişler.",
+      "pas3": "Yükseklik: 850 mm. Yan paneller ve kapaklar uzar; gerisi aynı kalır.",
+      "pas4": "Derinlik: 400 mm. Yan paneller, alt tabla ve raf daralır."
+    },
+    "usi": {
+      "titlu": "Kapaklar",
+      "pas1": "Kapaksız: gövde açık kalır.",
+      "pas2": "Tüm ön yüzü kaplayan tek kapak, kenarda 1,5 mm boşlukla.",
+      "pas3": "Her biri yarım genişlikte iki kapak, aralarında 3 mm boşlukla.",
+      "pas4": "Gömme montaj: kapaklar yan panellerin arasına girer, çevresinde 2 mm boşlukla.",
+      "pas5": "1200 mm gövdede sürgülü kapaklar: raylar üzerinde üst üste biner, menteşesiz ve kulpsuz."
+    },
+    "polite": {
+      "titlu": "Raflar",
+      "pas1": "İçini görebilmeniz için kapakları çıkardık. Şimdilik raf yok.",
+      "pas2": "Yüksekliğin ortasında bir raf, kolayca girsin diye boşluktan biraz daha kısa.",
+      "pas3": "Eşit aralıklarla üç raf."
+    },
+    "montanti": {
+      "titlu": "Dikey bölmeler",
+      "pas1": "Kapaksız, tam genişlikte bir rafı olan 1200 mm bir gövde.",
+      "pas2": "Bir dikey bölme gövdeyi iki bölmeye ayırır; raf ikiye kesilir.",
+      "pas3": "İki dikey bölme: her birinin kendi rafı olan üç bölme."
+    },
+    "sertare": {
+      "titlu": "Çekmeceler",
+      "pas1": "Bir çekmece: ön panel ve kutusu; yanlar, ön, arka ve sert lif levhadan bir taban.",
+      "pas2": "Üst üste iki çekmece, ön paneller arasında 3 mm boşlukla.",
+      "pas3": "Dört çekmece: uygulama yüksekliği paylaştırır ve her kutuyu hesaplar.",
+      "pas4": "Patlatılmış görünüm: her kutu kendi ön panelinin arkasında görünür."
+    },
+    "spate": {
+      "titlu": "Arkalık",
+      "pas1": "Arkalığı görebilmeniz için gövde patlatılmış görünümde. Bindirme arkalık: yanlara, alt ve üst tablaya zımbalanmış sert lif levha.",
+      "pas2": "Kanallı arkalık: gövdenin arkasından 10 mm içerideki bir kanala, yan panellerin arasına girer.",
+      "pas3": "Arkadan da görünen gövdeler için 18 mm yonga levha arkalık."
+    },
+    "manere": {
+      "titlu": "Kulplar",
+      "pas1": "Kulpsuz: kapaklar bas-aç sistemiyle ya da profille açılır.",
+      "pas2": "Her zamanki gibi takılmış kulplar: dikey, ortaya bakan kenarın yanında.",
+      "pas3": "Yatay kulplar, kapağın ortasında.",
+      "pas4": "Yatay kulplar, kapağın üst kısmında; alt dolapta elin kolayca uzandığı yerde."
+    },
+    "soclu": {
+      "titlu": "Baza ve ayaklar",
+      "pas1": "Gövde doğrudan zemine oturur.",
+      "pas2": "100 mm baza: önde, yan paneller arasında bir baza paneli; alt tabla bunun üzerine oturur.",
+      "pas3": "Baza yerine ayarlı ayaklar: uygulama bunları hırdavata ekler, gövde başına 4 adet."
+    },
+    "material": {
+      "titlu": "Malzeme ve kenar bandı",
+      "pas1": "18 mm melaminli yonga levha, görünen kenarlarda 2 mm kenar bandıyla.",
+      "pas2": "25 mm yonga levha: yan paneller arasındaki parçalar kendiliğinden kısalır ve liste yeniden hesaplanır.",
+      "pas3": "0,8 mm kenar bandı: kesim ölçüsü artık küçülmez, ince bant düşülmez."
+    },
+    "sticla": {
+      "titlu": "Cam kapaklar",
+      "pas1": "Yonga levha kapaklı asma vitrin.",
+      "pas2": "Alüminyum çerçeveli cam kapaklar: kesim listesinden çıkar ve ölçüleriyle birlikte satın alınacaklara geçer."
+    },
+    "colt": {
+      "titlu": "Köşe gövdesi",
+      "pas1": "L köşe gövdesi: tezgâh, alt tabla ve raf L şeklindedir ve CNC’de kesilir.",
+      "pas2": "Birinci duvardaki kol: 1100 mm.",
+      "pas3": "İkinci duvardaki kol: 1100 mm. L kontur kendiliğinden yeniden çizilir."
+    },
+    "subscara": {
+      "titlu": "Merdiven altı dolabı",
+      "pas1": "Merdiven altı dolabı: tüm uzunlukta taban, tabanın üzerinde yanlar, aralarında eğimli üst tabla.",
+      "pas2": "Yanlar üstte düz değil, eğime göre açılı kesilir.",
+      "pas3": "İki raf: eğimin altındaki de bütün olarak girsin diye açılı kesilir."
+    },
+    "piesa": {
+      "titlu": "Tekil parça",
+      "pas1": "Seçilen kenarlarında bant olan tekil bir parça: bir tezgâh, bir kapama paneli, bir raf.",
+      "pas2": "Aynı üründe iki parça daha: yalnızca bir kez ödersiniz.",
+      "pas3": "Bir de üçüncüsü. Hepsi kesime, levha yerleşimine ve Excel’e girer."
+    }
   }
 }
