@@ -744,7 +744,7 @@
       "obsCupleazaFronturi": "เชื่อมหน้าบานสองใบเข้าด้วยกัน",
       "piciorPlinta": "ขาพลาสติกปรับระดับ สำหรับบัวเชิง H{h}",
       "picior": "ขาพลาสติกปรับระดับ",
-      "obsPicioare": "{n} ต่อตู้ {m} เมื่อกว้างเกิน {lat} มม.",
+      "obsPicioare": "{n} ต่อตู้",
       "clemaPlinta": "คลิปบัวเชิง",
       "obsClemaPlinta": "หนึ่งตัวต่อขาหน้าแต่ละขา",
       "plintaBara": "บัวเชิงอะลูมิเนียม H{h} เส้นยาว {bara} มม.",

@@ -84,12 +84,12 @@ test('plinta se adună pe toată comanda și se cumpără în bare întregi', ()
   assert.equal(bara[0].qty, 2);
 });
 
-test('picioare: 4 pe corp, 6 la cele late; clemă pe fiecare picior din față', () => {
+test('picioare: 4 pe corp, la orice lățime (Dan); clemă pe fiecare picior din față', () => {
   const r = raport(comanda('alu-120'), [dinModel('baza-2usi'), dinModel('baza-2usi', { W: 1200 })], OPT);
   const pic = rand(r, 'fero.art.piciorPlinta');
   assert.equal(pic.length, 1);
-  assert.equal(pic[0].qty, 4 + 6);
-  assert.equal(rand(r, 'fero.art.clemaPlinta')[0].qty, 2 + 3);
+  assert.equal(pic[0].qty, 4 + 4);
+  assert.equal(rand(r, 'fero.art.clemaPlinta')[0].qty, 2 + 2);
 });
 
 test('fără plintă, picioarele tot se cumpără, dar nu și bara sau clemele', () => {

@@ -744,7 +744,7 @@
       "obsCupleazaFronturi": "문짝 2장을 잇습니다",
       "piciorPlinta": "높이 조절 플라스틱 다리(H{h} 몰딩용)",
       "picior": "높이 조절 플라스틱 다리",
-      "obsPicioare": "장당 {n}개, 폭 {lat} mm 초과 시 {m}개",
+      "obsPicioare": "장당 {n}개",
       "clemaPlinta": "하부 몰딩 클립",
       "obsClemaPlinta": "앞다리마다 하나",
       "plintaBara": "알루미늄 하부 몰딩 H{h}, {bara} mm 바",

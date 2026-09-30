@@ -124,12 +124,11 @@
      e lungimea plintei Häfele cu garnitură (P-01549881); distribuitorii
      vând și bare de 2 m, tăiate din ea.
 
-     Câte picioare pe corp NU e o măsurătoare: 4, și 6 când corpul trece de
-     1000 mm lățime, ca să nu se lase fundul la mijloc. E valoare de
-     pornire — se schimbă aici când atelierul spune altceva. Clemele de
-     plintă merg pe picioarele din față, deci câte o clemă pentru fiecare
-     picior din față. */
-  var PICIOARE = { peCorp: 4, peCorpLat: 6, latDeLa: 1000 };
+     Câte picioare pe corp: 4, la orice lățime — spus de Dan pe 30
+     septembrie („la picioare 4"). Înainte era o valoare de pornire (6 peste
+     1000 mm), nemăsurată. Clemele de plintă merg pe picioarele din față,
+     deci câte o clemă pentru fiecare picior din față. */
+  var PICIOARE = { peCorp: 4, peCorpLat: 4, latDeLa: 1000 };
 
   var PLINTE = {
     'alu-100': { id: 'alu-100', h: 100, bara: 4000 },

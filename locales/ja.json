@@ -744,7 +744,7 @@
       "obsCupleazaFronturi": "扉2枚をつなぎます",
       "piciorPlinta": "樹脂製アジャスター脚（幅木 H{h} 用）",
       "picior": "樹脂製アジャスター脚",
-      "obsPicioare": "1台につき {n}、幅 {lat} mm 超は {m}",
+      "obsPicioare": "1台につき {n}",
       "clemaPlinta": "幅木クリップ",
       "obsClemaPlinta": "前脚1本につき1個",
       "plintaBara": "アルミ幅木 H{h}、{bara} mm 材",
