@@ -25,7 +25,9 @@ const { db } = require('./db');
    .env: adresa site-ului sau secretul de sesiune se citesc la pornire, și o
    schimbare din pagină n-ar prinde decât după repornire — adică ar părea
    că nu merge. */
-const PERMISE = ['PAYMENT_DRIVER', 'STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET'];
+const PERMISE = ['PAYMENT_DRIVER', 'STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET',
+                 /* facturarea: plătitor de TVA ('1'/'0') și cota, în procente */
+                 'FACTURARE_TVA', 'FACTURARE_COTA'];
 const SECRETE = ['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET'];
 
 const SECRET_IMPLICIT = 'dev-secret-schimba-ma';   /* același ca în server.js */

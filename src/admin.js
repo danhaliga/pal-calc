@@ -10,6 +10,7 @@ const cont = require('./cont');
 const statistici = require('./statistici');
 const PalTari = require('../shared/tari');
 const setari = require('./setari');
+const util = require('./util');
 const plati = require('./payments');
 const { eLocal } = require('./pornire');
 
@@ -107,6 +108,51 @@ router.get('/admin/jurnal', requireAuth, requireAdmin, (req, res) => {
     zile: jurnal.ZILE,
     maxim: jurnal.MAXIM
   });
+});
+
+/* ---- Facturare: TVA și exportul plăților spre programul de facturare ----
+
+   Aplicația nu face facturi. Dan le face în programul lui, care le trimite
+   și în SPV; de aici ia CSV-ul cu plățile și datele clienților. */
+const facturare = require('./facturare');
+const azi = () => new Date().toISOString().slice(0, 10);
+const ziBuna = s => (/^\d{4}-\d{2}-\d{2}$/.test(String(s || '')) ? String(s) : '');
+
+router.get('/admin/facturare', requireAuth, requireAdmin, (req, res) => {
+  const de = ziBuna(req.query.de) || azi().slice(0, 8) + '01';
+  const pana = ziBuna(req.query.pana) || azi();
+  const toate = facturare.platiDeExportat({ de, pana, doarNoi: false });
+  res.render('admin/facturare', {
+    title: req.t('factura.adminTitlu'),
+    tva: facturare.tva(), de, pana,
+    plati: toate.map(p => Object.assign({}, p, { d: facturare.datelePlatii(p),
+                                                 lipsa: facturare.lipsuri(facturare.datelePlatii(p)) })),
+    neexportate: toate.filter(p => !p.exportat_la).length,
+    salvat: req.query.salvat === '1'
+  });
+});
+
+router.post('/admin/facturare', requireAuth, requireAdmin, (req, res) => {
+  const cota = Number(String(req.body.cota || '').replace(',', '.'));
+  setari.pune('FACTURARE_TVA', req.body.platitor === '1' ? '1' : '0', req.user.id);
+  if (Number.isFinite(cota) && cota > 0 && cota < 100) setari.pune('FACTURARE_COTA', String(cota), req.user.id);
+  jurnal.fapta('plata', 'setarile de facturare schimbate', { req, detalii: { tva: req.body.platitor === '1', cota } });
+  res.redirect('/admin/facturare?salvat=1');
+});
+
+/* Exportul: CSV cu „;", deschis direct în Excel și importat în programul de
+   facturare. Cu „doar neexportate", plățile scoase se marchează — a doua
+   descărcare nu le mai aduce, ca să nu se facă două facturi pe aceeași plată. */
+router.get('/admin/facturare/export.csv', requireAuth, requireAdmin, (req, res) => {
+  const de = ziBuna(req.query.de), pana = ziBuna(req.query.pana);
+  const doarNoi = req.query.doarNoi === '1';
+  const plati = facturare.platiDeExportat({ de, pana, doarNoi });
+  const body = facturare.csv(plati, req.t);
+  if (doarNoi) facturare.marcheazaExportate(plati.map(p => p.id));
+  jurnal.fapta('plata', 'export pentru facturare', { req, detalii: { de, pana, doarNoi, plati: plati.length } });
+  res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+  res.setHeader('Content-Disposition', util.dispozitieAtasament('facturare-' + (de || 'inceput') + '-' + (pana || azi())));
+  res.send(body);
 });
 
 /* Plata: driverul (credit virtual de probă sau Stripe) și cheile Stripe.

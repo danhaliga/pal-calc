@@ -1,0 +1,70 @@
+<div class="top">
+  <div>
+    <div class="crumbs"><a href="/admin">← <%= t('nav.administrare') %></a></div>
+    <h1><%= t('factura.adminTitlu') %></h1>
+    <p class="muted"><%= t('factura.adminIntro') %></p>
+  </div>
+</div>
+
+<% if (salvat) { %><div class="warn ok"><%= t('factura.tvaSalvat') %></div><% } %>
+
+<div class="panel" style="max-width:820px">
+  <h2><%= t('factura.tvaTitlu') %></h2>
+  <form method="post" action="/admin/facturare">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="f">
+      <label><%= t('factura.tvaPlatitor') %><select name="platitor">
+        <option value="1" <%= tva.platitor ? 'selected' : '' %>><%= t('factura.da') %></option>
+        <option value="0" <%= tva.platitor ? '' : 'selected' %>><%= t('factura.nu') %></option>
+      </select></label>
+      <label><%= t('factura.tvaCota') %><input name="cota" type="number" step="0.5" min="1" max="99" value="<%= tva.cota %>"></label>
+    </div>
+    <p class="legend"><%= t('factura.tvaNota') %></p>
+    <button class="btn primary" type="submit"><%= t('factura.tvaSalveaza') %></button>
+  </form>
+</div>
+
+<div class="panel" style="max-width:820px">
+  <h2><%= t('factura.exportTitlu') %></h2>
+  <form method="get" action="/admin/facturare">
+    <div class="f">
+      <label><%= t('factura.de') %><input type="date" name="de" value="<%= de %>"></label>
+      <label><%= t('factura.pana') %><input type="date" name="pana" value="<%= pana %>"></label>
+    </div>
+    <button class="btn small" type="submit"><%= t('factura.arata') %></button>
+  </form>
+  <p class="legend"><%= t('factura.exportNota', { n: plati.length, noi: neexportate }) %></p>
+  <div class="btns">
+    <a class="btn primary" href="/admin/facturare/export.csv?de=<%= de %>&pana=<%= pana %>&doarNoi=1"><%= t('factura.exportNoi', { n: neexportate }) %></a>
+    <a class="btn" href="/admin/facturare/export.csv?de=<%= de %>&pana=<%= pana %>"><%= t('factura.exportToate') %></a>
+  </div>
+</div>
+
+<div class="panel">
+  <h2><%= t('factura.platiTitlu') %></h2>
+  <% if (!plati.length) { %>
+    <p class="muted"><%= t('factura.faraPlati') %></p>
+  <% } else { %>
+  <div class="tbl"><table>
+    <thead><tr>
+      <th><%= t('factura.colData') %></th><th class="num"><%= t('factura.colNrPlata') %></th>
+      <th><%= t('factura.colTipClient') %></th><th><%= t('factura.colNume') %></th><th><%= t('factura.colCui') %></th>
+      <th class="num"><%= t('factura.colTotal') %></th><th><%= t('factura.colExportat') %></th>
+    </tr></thead>
+    <tbody>
+      <% plati.forEach(function (p) { %>
+        <tr>
+          <td class="small"><%= String(p.created_at).slice(0, 16) %></td>
+          <td class="num"><%= p.id %></td>
+          <td><%= p.d.tip ? t(p.d.tip === 'pj' ? 'factura.tipPj' : 'factura.tipPf') : '—' %></td>
+          <td><%= p.d.tip === 'pj' ? p.d.firma : p.d.nume %>
+            <% if (p.lipsa.length) { %><div class="warn err small"><%= t('factura.dateIncomplete') %></div><% } %></td>
+          <td><%= p.d.tip === 'pj' ? p.d.cui : '' %></td>
+          <td class="num"><%= (p.amount_cents / 100).toFixed(2) %> <%= String(p.currency).toUpperCase() %></td>
+          <td class="small"><%= p.exportat_la ? String(p.exportat_la).slice(0, 16) : '—' %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table></div>
+  <% } %>
+</div>

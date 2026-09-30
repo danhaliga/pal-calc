@@ -25,6 +25,9 @@
     <% if (!plataPornita) { %>
       <div class="warn"><%= t('credit.plataNepornita') %></div>
     <% } else { %>
+    <% if (cereFacturare && lipsaFacturare.length) { %>
+      <div class="warn"><a href="#facturare"><%= t('factura.inainteDePlata') %></a></div>
+    <% } %>
     <div class="pachete">
       <% pachete.forEach(function (p) { %>
         <form method="post" action="/credit/topup" class="inline">
@@ -42,6 +45,37 @@
     </p>
     <% } %>
   </div>
+</div>
+
+<%# Datele de facturare: cu bani adevarati nu se alimenteaza fara ele —
+    din ele face Dan factura in programul lui de facturare (si in SPV). %>
+<div class="panel" id="facturare">
+  <h2><%= t('factura.dateTitlu') %></h2>
+  <p class="hint"><%= t('factura.dateIntro') %></p>
+  <% if (facturareSalvata && !lipsaFacturare.length) { %><div class="warn ok"><%= t('factura.dateSalvate') %></div><% } %>
+  <% if (cereFacturare && lipsaFacturare.length) { %>
+    <div class="warn err"><%= t('factura.dateLipsa', { campuri: lipsaFacturare.map(function (k) { return t('factura.camp.' + k); }).join(', ') }) %></div>
+  <% } %>
+  <form method="post" action="/credit/facturare">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <p>
+      <label class="inline"><input type="radio" name="tip_facturare" value="pf" <%= facturare.tip === 'pf' ? 'checked' : '' %>> <%= t('factura.tipPf') %></label>
+      &nbsp;&nbsp;
+      <label class="inline"><input type="radio" name="tip_facturare" value="pj" <%= facturare.tip === 'pj' ? 'checked' : '' %>> <%= t('factura.tipPj') %></label>
+    </p>
+    <div class="f">
+      <label><%= t('factura.camp.nume') %><input name="name" maxlength="80" value="<%= facturare.nume %>" autocomplete="name"></label>
+      <label><%= t('factura.camp.firma') %><input name="firma" maxlength="120" value="<%= facturare.firma %>" autocomplete="organization"></label>
+      <label><%= t('factura.camp.cui') %><input name="cui" maxlength="40" value="<%= facturare.cui %>"></label>
+      <label><%= t('factura.camp.regCom') %><input name="reg_com" maxlength="40" value="<%= facturare.regCom %>"></label>
+      <label class="full"><%= t('factura.camp.adresa') %><input name="adresa" maxlength="200" value="<%= facturare.adresa %>" autocomplete="street-address"></label>
+      <label><%= t('factura.camp.oras') %><input name="oras" maxlength="80" value="<%= facturare.oras %>" autocomplete="address-level2"></label>
+      <label><%= t('factura.camp.judet') %><input name="judet" maxlength="60" value="<%= facturare.judet %>" autocomplete="address-level1"></label>
+      <label><%= t('factura.camp.telefon') %><input name="telefon" maxlength="40" value="<%= facturare.telefon %>" autocomplete="tel"></label>
+    </div>
+    <p class="legend"><%= t('factura.dateNota', { email: facturare.email }) %></p>
+    <button class="btn primary" type="submit"><%= t('factura.dateSalveaza') %></button>
+  </form>
 </div>
 
 <div class="panel">

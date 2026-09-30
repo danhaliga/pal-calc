@@ -108,12 +108,15 @@ const webhookUrl = () => appUrl() + '/webhooks/stripe';
 
 /* ---------- rânduri în payments ---------- */
 
+/* `facturare`: datele de facturare din clipa plății (vezi src/facturare.js),
+   copiate pe plată ca factura să iasă cu ele. */
 function creeazaPlata({ userId, corpId = null, kind = 'corp', provider, providerRef = null,
-                        amountCents, status = 'pending' }) {
+                        amountCents, status = 'pending', facturare = null }) {
   const info = db.prepare(
-    'INSERT INTO payments (user_id, corp_id, kind, provider, provider_ref, amount_cents, currency, status) ' +
-    'VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
-  ).run(userId, corpId, kind, provider, providerRef, amountCents, currency(), status);
+    'INSERT INTO payments (user_id, corp_id, kind, provider, provider_ref, amount_cents, currency, status, facturare) ' +
+    'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
+  ).run(userId, corpId, kind, provider, providerRef, amountCents, currency(), status,
+        facturare ? JSON.stringify(facturare) : null);
   return Number(info.lastInsertRowid);
 }
 
@@ -136,7 +139,8 @@ const confirmaTopup = db.transaction((plataId, userId, cents) => {
 
 async function checkoutTopup({ user, cents, descriere }) {
   const plataId = creeazaPlata({
-    userId: user.id, kind: 'topup', provider: 'stripe', amountCents: cents
+    userId: user.id, kind: 'topup', provider: 'stripe', amountCents: cents,
+    facturare: require('./facturare').dinCont(user)
   });
 
   const session = await stripe().checkout.sessions.create({

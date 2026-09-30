@@ -16,7 +16,7 @@ piese se taie, la ce cotă finită și la ce cotă de tăiere, cu ce cant pe
 fiecare muchie, plus feroneria, croirea în coli și fișa de montaj.
 
 - **51 de modele** în catalog, **7 categorii**, **30 de limbi**
-- **615 de teste**, toate trec: `npm test`
+- **623 de teste**, toate trec: `npm test`
 - Node ≥ 20, Express 4, EJS, better-sqlite3, zod, bcryptjs
 - Motorul de calcul (`shared/*.js`) e UMD: **același fișier rulează și pe
   server, și în browser**. Nu-l rupe în două.
@@ -374,6 +374,22 @@ toți. Acum fiecare corp are:
   piesă simplă (numai cant).
 Verificat pe o comandă cu toate cele 52 de modele: fiecare are desen și pași.
 
+## 6j. Facturarea (30 septembrie)
+
+Dan are un program de facturare care face facturile și le trimite în SPV.
+Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
+- **Date de facturare** pe pagina de credit (`/credit#facturare`):
+  persoană fizică / juridică, nume sau firmă, CUI, Reg. Com., adresă, oraș,
+  județ, telefon (coloane noi în `users`: `tip_facturare`, `reg_com`, `judet`).
+  Cu Stripe nu se alimentează fără ele; cu bani virtuali nu se cer.
+- La plată, datele se copiază pe plată (`payments.facturare`, JSON).
+- **Administrare → Facturare**: TVA (Dan: „da da" → plătitor, 21%), export
+  CSV (`;`, virgulă zecimală, BOM) pe perioadă; „doar cele noi" marchează
+  `payments.exportat_la` → nu se facturează de două ori. Plățile `fake` nu
+  intră niciodată. `src/facturare.js`.
+- **De aflat de la Dan:** numele programului de facturare — ca exportul să
+  fie exact pe formatul lui de import.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E
@@ -457,7 +473,7 @@ src/                rutele Express, baza de date, conturile, plata
 views/              paginile EJS
 public/app.js       editorul de corp: formular, tabel, vederea 3D
 locales/*.json      textele, 30 de fișiere
-tests/              31 de fișiere, 615 de teste
+tests/              34 de fișiere, 623 de teste
 .lucru/             scripturi de-o dată: traduceri, petice, probe
 db/migrations/      schema, se aplică singură la pornire
 ```

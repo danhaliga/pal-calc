@@ -59,8 +59,16 @@ function istoric(userId, limit = 50) {
 
 /* ---------- pagini ---------- */
 
+const facturare = require('./facturare');
+
 router.get('/credit', requireAuth, (req, res) => {
+  const date = facturare.dinCont(req.user);
   res.render('credit', {
+    facturare: date,
+    lipsaFacturare: facturare.lipsuri(date),
+    /* Cu bani adevărați factura e obligatorie; cu bani virtuali nu se cer. */
+    cereFacturare: plati.stare().driver === 'stripe',
+    facturareSalvata: req.query.fact === '1',
     title: req.t('credit.titlu'),
     sold: sold(req.user.id),
     pachete: PACHETE,
@@ -82,6 +90,10 @@ router.post('/credit/topup', requireAuth, async (req, res, next) => {
 
   /* Plata nepusă pe un site public: nu se alimentează nimic, nici gratis. */
   const stare = plati.stare();
+  /* Cu bani adevărați se face factură: fără datele omului n-ar avea din ce. */
+  if (stare.driver === 'stripe' && facturare.lipsuri(facturare.dinCont(req.user)).length) {
+    return res.redirect('/credit?date=1#facturare');
+  }
   if (!stare.pornita) {
     require('./jurnal').scrie('atentie', 'plata', 'alimentare cerută cu plata nepornită',
       { req, detalii: { driver: stare.driver } });
@@ -104,6 +116,14 @@ router.post('/credit/topup', requireAuth, async (req, res, next) => {
     });
     res.redirect(303, url);
   } catch (e) { next(e); }
+});
+
+/* Datele de facturare, din pagina creditului. */
+router.post('/credit/facturare', requireAuth, (req, res) => {
+  const lipsa = facturare.salveaza(req.user.id, req.body);
+  require('./jurnal').fapta('cont', 'date de facturare salvate',
+    { req, detalii: { tip: req.body.tip_facturare || '', lipsa: lipsa.join(',') } });
+  res.redirect('/credit?fact=1#facturare');
 });
 
 module.exports = { router, sold, adauga, scade, istoric, pretCorp, PACHETE };
