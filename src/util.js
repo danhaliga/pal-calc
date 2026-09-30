@@ -15,6 +15,19 @@ function numeFisier(nume, fallback) {
   return curat || fallback || 'export';
 }
 
+/* Nume de fișier sau de dosar într-o arhivă: diacriticele și spațiile
+   rămân (acolo nu e antet HTTP), pleacă doar ce nu e voie în Windows. */
+function numeFisierLizibil(nume, fallback) {
+  const curat = String(nume == null ? '' : nume)
+    .replace(/[\u0000-\u001f<>:"/\\|?*]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^\.+/, '')
+    .replace(/[. ]+$/, '')
+    .slice(0, 80);
+  return curat || fallback || 'proiect';
+}
+
 function dispozitieAtasament(nume, extensie) {
   const ext = extensie || 'csv';
   const ascii = numeFisier(nume) + '.' + ext;
@@ -65,4 +78,4 @@ function eroare(cheie, status) {
 
 module.exports = {
   catalogPagina,
-  eroare, faraDiacritice, numeFisier, dispozitieAtasament, jsonPentruPagina };
+  eroare, faraDiacritice, numeFisier, numeFisierLizibil, dispozitieAtasament, jsonPentruPagina };

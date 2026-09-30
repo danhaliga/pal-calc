@@ -78,7 +78,7 @@
     "platit": "Po zaplacení — {pret} RON / korpus",
     "platit1": "Rozměry řezu (hotový mínus hrana, na každé straně)",
     "platit2": "Hrana na každé úzké ploše: L1 · L2 · l1 · l2",
-    "platit3": "Export CSV pro nářezové centrum",
+    "platit3": "Export Excel pro nářezové centrum",
     "platit4": "Korpus zůstává po zaplacení upravitelný",
     "cum": "Jak to funguje",
     "cum1": "Zadáš Š × V × H, tloušťku desky a hranu.",
@@ -1059,7 +1059,8 @@
     "cantScos": "už se nevyrábí",
     "faraFronturi": "bez dvířek",
     "toateFaraFronturi": "všechny bez dvířek",
-    "puneFronturileInapoi": "vrátit dvířka"
+    "puneFronturileInapoi": "vrátit dvířka",
+    "descarcaProiect": "Stáhnout projekt"
   },
   "rol": {
     "corp": "Korpus",
@@ -1373,7 +1374,7 @@
     "listaPiese": "Seznam dílů",
     "listaPieseCorp": "Seznam dílů – {nume}",
     "copiazaCsv": "Kopírovat CSV",
-    "descarcaCsv": "Stáhnout CSV",
+    "descarcaCsv": "Stáhnout Excel",
     "dupaDeblocare": "Dostupné po odemčení",
     "copiat": "CSV zkopírováno.",
     "nuSaCopiat": "CSV se nepodařilo zkopírovat.",

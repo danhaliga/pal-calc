@@ -78,7 +78,7 @@
     "platit": "決済後 —— キャビネット1台 {pret} RON",
     "platit1": "カット寸法（仕上がり寸法から各辺の木口を引いた値）",
     "platit2": "各辺の木口：長1 ・ 長2 ・ 幅1 ・ 幅2",
-    "platit3": "カット工場向けCSV書き出し",
+    "platit3": "カット工場向けExcel書き出し",
     "platit4": "決済後もキャビネットは編集できます",
     "cum": "使い方",
     "cum1": "幅 × 高 × 奥行、板厚、木口を入れます。",
@@ -1050,7 +1050,8 @@
     "cantScos": "生産終了",
     "faraFronturi": "前板なし",
     "toateFaraFronturi": "すべて前板なし",
-    "puneFronturileInapoi": "前板を戻す"
+    "puneFronturileInapoi": "前板を戻す",
+    "descarcaProiect": "プロジェクトをダウンロード"
   },
   "rol": {
     "corp": "本体",
@@ -1363,7 +1364,7 @@
     "listaPiese": "部材リスト",
     "listaPieseCorp": "部材リスト —— {nume}",
     "copiazaCsv": "CSVをコピー",
-    "descarcaCsv": "CSVをダウンロード",
+    "descarcaCsv": "Excelをダウンロード",
     "dupaDeblocare": "ロック解除後に見られます",
     "copiat": "CSVをコピーしました。",
     "nuSaCopiat": "CSVをコピーできませんでした。",

@@ -35,8 +35,8 @@
   </form>
   <p class="legend"><%= t('factura.exportNota', { n: plati.length, noi: neexportate }) %></p>
   <div class="btns">
-    <a class="btn primary" href="/admin/facturare/export.csv?de=<%= de %>&pana=<%= pana %>&doarNoi=1"><%= t('factura.exportNoi', { n: neexportate }) %></a>
-    <a class="btn" href="/admin/facturare/export.csv?de=<%= de %>&pana=<%= pana %>"><%= t('factura.exportToate') %></a>
+    <a class="btn primary" href="/admin/facturare/export.xlsx?de=<%= de %>&pana=<%= pana %>&doarNoi=1"><%= t('factura.exportNoi', { n: neexportate }) %></a>
+    <a class="btn" href="/admin/facturare/export.xlsx?de=<%= de %>&pana=<%= pana %>"><%= t('factura.exportToate') %></a>
   </div>
 </div>
 

@@ -379,7 +379,7 @@
         <div class="btns" style="margin:0">
           <% if (corp.paid) { %>
             <button class="btn small" id="copyCorp"><%= t('editor.copiazaCsv') %></button>
-            <a class="btn small" href="/corps/<%= corp.id %>/export.csv"><%= t('editor.descarcaCsv') %></a>
+            <a class="btn small" href="/corps/<%= corp.id %>/export.xlsx" download><%= t('editor.descarcaCsv') %></a>
             <%# Fisele CNC pe piesa: numai la corpul atipic (sub scara). %>
             <a class="btn small primary<%= corp.params && corp.params.tip === 'atipic' ? '' : ' hidden' %>" id="fiseCnc"
                href="/corps/<%= corp.id %>/fise" target="_blank"><%= t('fisa.buton') %></a>

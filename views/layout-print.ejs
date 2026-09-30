@@ -14,6 +14,8 @@
 </head>
 <body class="doc">
 
+<%# În arhiva proiectului foaia stă singură: fără bara cu legături în site. %>
+<% if (!locals.arhiva) { %>
 <div class="doc-bar no-print">
   <% if (typeof order === 'undefined' || !order) { %>
   <a href="/corps/<%= corp.id %>">← <%= corp.name %></a>
@@ -26,12 +28,14 @@
     <a href="/orders/<%= order.id %>/print/incadrare"><%= t('print.linkIncadrare') %></a>
     <a href="/orders/<%= order.id %>/print/montaj"><%= t('print.linkMontaj') %></a>
     <a href="/orders/<%= order.id %>/print/cnc"><%= t('print.linkCnc') %></a>
-    <a href="/orders/<%= order.id %>/export.csv">CSV</a>
+    <a href="/orders/<%= order.id %>/export.xlsx">Excel</a>
+    <a href="/orders/<%= order.id %>/proiect.zip"><%= t('comanda.descarcaProiect') %></a>
   </span>
   <% } %>
   <%- include('partials/limba') %>
   <button data-tipareste class="btn small primary"><%= t('comun.tipareste') %></button>
 </div>
+<% } %>
 
 <%# Foaia unui corp singur (fișele CNC ale corpului de sub scară) n-are
     neapărat o comandă: atunci capul foii spune corpul. %>

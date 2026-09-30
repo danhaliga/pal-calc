@@ -78,7 +78,7 @@
     "platit": "Tras el pago — {pret} RON / módulo",
     "platit1": "Medidas de corte (acabada menos canto, en cada lado)",
     "platit2": "El canto de cada borde: L1 · L2 · l1 · l2",
-    "platit3": "Exportación CSV para el servicio de corte",
+    "platit3": "Exportación Excel para el servicio de corte",
     "platit4": "El módulo sigue siendo editable después del pago",
     "cum": "Cómo funciona",
     "cum1": "Introduces L × H × P, el grosor del tablero y el canto.",
@@ -1050,7 +1050,8 @@
     "cantScos": "ya no se fabrica",
     "faraFronturi": "sin frentes",
     "toateFaraFronturi": "todos sin frentes",
-    "puneFronturileInapoi": "volver a poner los frentes"
+    "puneFronturileInapoi": "volver a poner los frentes",
+    "descarcaProiect": "Descargar proyecto"
   },
   "rol": {
     "corp": "Carcasa",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Lista de piezas",
     "listaPieseCorp": "Lista de piezas – {nume}",
     "copiazaCsv": "Copiar CSV",
-    "descarcaCsv": "Descargar CSV",
+    "descarcaCsv": "Descargar Excel",
     "dupaDeblocare": "Disponible tras el desbloqueo",
     "copiat": "CSV copiado.",
     "nuSaCopiat": "No se ha podido copiar el CSV.",

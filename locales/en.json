@@ -78,7 +78,7 @@
     "platit": "After payment — {pret} RON / cabinet",
     "platit1": "Cut sizes (finished minus edging, on each side)",
     "platit2": "Edging on every edge: L1 · L2 · l1 · l2",
-    "platit3": "CSV export for the cutting service",
+    "platit3": "Excel export for the cutting service",
     "platit4": "The cabinet stays editable after payment",
     "cum": "How it works",
     "cum1": "Enter L × H × D, the board thickness and the edging.",
@@ -1050,7 +1050,8 @@
     "cantScos": "no longer made",
     "faraFronturi": "no fronts",
     "toateFaraFronturi": "all without fronts",
-    "puneFronturileInapoi": "put the fronts back"
+    "puneFronturileInapoi": "put the fronts back",
+    "descarcaProiect": "Download project"
   },
   "rol": {
     "corp": "Carcass",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Parts list",
     "listaPieseCorp": "Parts list – {nume}",
     "copiazaCsv": "Copy CSV",
-    "descarcaCsv": "Download CSV",
+    "descarcaCsv": "Download Excel",
     "dupaDeblocare": "Available once unlocked",
     "copiat": "CSV copied.",
     "nuSaCopiat": "The CSV could not be copied.",

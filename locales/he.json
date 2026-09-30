@@ -78,7 +78,7 @@
     "platit": "אחרי התשלום — {pret} RON לגוף",
     "platit1": "מידות חיתוך (מידה סופית פחות הקנט, בכל צד)",
     "platit2": "קנט בכל צד: א1 · א2 · ר1 · ר2",
-    "platit3": "ייצוא CSV לניסור",
+    "platit3": "ייצוא Excel לניסור",
     "platit4": "הגוף נשאר פתוח לעריכה גם אחרי התשלום",
     "cum": "איך זה עובד",
     "cum1": "אתם מזינים ר × ג × ע, עובי לוח וקנט.",
@@ -1059,7 +1059,8 @@
     "cantScos": "לא מיוצר עוד",
     "faraFronturi": "בלי חזיתות",
     "toateFaraFronturi": "הכול בלי חזיתות",
-    "puneFronturileInapoi": "החזרת החזיתות"
+    "puneFronturileInapoi": "החזרת החזיתות",
+    "descarcaProiect": "הורדת הפרויקט"
   },
   "rol": {
     "corp": "גוף",
@@ -1373,7 +1374,7 @@
     "listaPiese": "רשימת החלקים",
     "listaPieseCorp": "רשימת החלקים – {nume}",
     "copiazaCsv": "העתקת CSV",
-    "descarcaCsv": "הורדת CSV",
+    "descarcaCsv": "הורדת Excel",
     "dupaDeblocare": "זמין לאחר השחרור",
     "copiat": "ה־CSV הועתק.",
     "nuSaCopiat": "לא הצלחנו להעתיק את ה־CSV.",

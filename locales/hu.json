@@ -78,7 +78,7 @@
     "platit": "Fizetés után — {pret} RON / korpusz",
     "platit1": "Szabásméretek (készméret mínusz élzáró, oldalanként)",
     "platit2": "Az élzáró minden élen: L1 · L2 · l1 · l2",
-    "platit3": "CSV-export a szabászatnak",
+    "platit3": "Excel-export a szabászatnak",
     "platit4": "A korpusz fizetés után is szerkeszthető marad",
     "cum": "Hogyan működik",
     "cum1": "Megadod a Sz × M × Mé méretet, a lapvastagságot és az élzárót.",
@@ -1050,7 +1050,8 @@
     "cantScos": "már nem gyártják",
     "faraFronturi": "front nélkül",
     "toateFaraFronturi": "mind front nélkül",
-    "puneFronturileInapoi": "frontok visszatétele"
+    "puneFronturileInapoi": "frontok visszatétele",
+    "descarcaProiect": "Projekt letöltése"
   },
   "rol": {
     "corp": "Korpusz",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Elemjegyzék",
     "listaPieseCorp": "Elemjegyzék – {nume}",
     "copiazaCsv": "CSV másolása",
-    "descarcaCsv": "CSV letöltése",
+    "descarcaCsv": "Excel letöltése",
     "dupaDeblocare": "Feloldás után érhető el",
     "copiat": "CSV másolva.",
     "nuSaCopiat": "A CSV-t nem sikerült másolni.",

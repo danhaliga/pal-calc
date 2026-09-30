@@ -1739,20 +1739,27 @@
   var COLOANE_CSV = ['corp', 'piesa', 'buc', 'finitL', 'finitl', 'cantL1', 'cantL2', 'cantl1', 'cantl2',
                      'taiereL', 'taierel', 'fibra', 'nota'];
 
-  function csv(list, tr) {
+  /* Tabelul de debitare: primul rând e capul de tabel. Cotele rămân numere,
+     ca să se poată aduna în Excel. */
+  function tabel(list, tr) {
     var t_ = traducator(tr);
-    var head = COLOANE_CSV.map(function (k) { return t_('csv.' + k); });
     var ev = function (c, v) { return v === 'g' ? c.cg : v === 's' ? c.cs : 0; };
-    var rows = [head.join(';')];
+    var rows = [COLOANE_CSV.map(function (k) { return t_('csv.' + k); })];
     list.forEach(function (c) {
       calc(c, t_).P.forEach(function (p) {
         rows.push([c.nume, p.nume, p.buc, p.L, p.l,
                    ev(c, p.c[0]), ev(c, p.c[1]), ev(c, p.c[2]), ev(c, p.c[3]),
-                   p.TL, p.Tl, p.fibraText, p.nota || '']
-          .map(function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(';'));
+                   p.TL, p.Tl, p.fibraText, p.nota || '']);
       });
     });
-    return rows.join('\n');
+    return rows;
+  }
+
+  function csv(list, tr) {
+    /* capul de tabel fără ghilimele, cum era de la început */
+    return tabel(list, tr).map(function (r, i) {
+      return i ? r.map(function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(';') : r.join(';');
+    }).join('\n');
   }
 
   /* ---- validare (doar pe server, unde exista zod) ---- */
@@ -1863,7 +1870,7 @@
     defaults: defaults,
     balamale: balamale,
     asezareManer: asezareManer,
-    csv: csv,
+    csv: csv, tabel: tabel,
     conturGeometrie: conturGeometrie,
     conturImplicit: conturImplicit,
     conturDinPuncte: conturDinPuncte,

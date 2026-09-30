@@ -49,6 +49,9 @@ test('exportul: numai plăți adevărate, cu TVA despărțit, fără dubluri', (
   assert.ok(csv.startsWith('﻿'), 'fără BOM, Excel strică diacriticele');
   assert.match(csv, /Mobila SRL;RO123456;/);
   assert.match(csv, /;82,64;21;17,36;100,00;RON/);
+  /* în Excel sumele sunt numere, nu text cu virgulă */
+  const r = F.tabel(noi, t)[1];
+  assert.deepEqual(r.slice(16), [82.64, 21, 17.36, 100, 'RON']);
   F.marcheazaExportate(noi.map(p => p.id));
   assert.equal(F.platiDeExportat({ doarNoi: true }).length, 0, 'aceeași plată ar fi facturată de două ori');
   assert.equal(F.platiDeExportat({ doarNoi: false }).length, 1);

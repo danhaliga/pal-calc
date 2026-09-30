@@ -166,7 +166,7 @@ test('antetul CSV al comenzii vine din catalog, nu scris de mână', () => {
   /* până la `;`, ca să prindem și `.map(k => req.t(k))` de după paranteza dreaptă */
   const bloc = SURSA_ORDERS.match(/const head = \[[\s\S]*?;/);
   assert.ok(bloc, 'nu am găsit antetul CSV');
-  assert.match(bloc[0], /req\.t/, 'antetul CSV trebuie să treacă prin req.t');
+  assert.match(bloc[0], /\bt\(k\)/, 'antetul CSV trebuie să treacă prin traducător');
   assert.doesNotMatch(bloc[0], /'Piesa'|'Taiere L'|'Fibra'/,
     'antetul CSV conține încă text scris de mână în română');
 });

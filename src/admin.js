@@ -11,6 +11,7 @@ const statistici = require('./statistici');
 const PalTari = require('../shared/tari');
 const setari = require('./setari');
 const util = require('./util');
+const xlsx = require('./xlsx');
 const plati = require('./payments');
 const { eLocal } = require('./pornire');
 
@@ -140,18 +141,23 @@ router.post('/admin/facturare', requireAuth, requireAdmin, (req, res) => {
   res.redirect('/admin/facturare?salvat=1');
 });
 
-/* Exportul: CSV cu „;", deschis direct în Excel și importat în programul de
-   facturare. Cu „doar neexportate", plățile scoase se marchează — a doua
-   descărcare nu le mai aduce, ca să nu se facă două facturi pe aceeași plată. */
-router.get('/admin/facturare/export.csv', requireAuth, requireAdmin, (req, res) => {
+/* Exportul: fișier Excel, importat în programul de facturare (CSV-ul
+   rămâne pentru legăturile vechi). Cu „doar neexportate", plățile scoase se
+   marchează — a doua descărcare nu le mai aduce, ca să nu se facă două
+   facturi pe aceeași plată. */
+router.get('/admin/facturare/export.:fmt(csv|xlsx)', requireAuth, requireAdmin, (req, res) => {
   const de = ziBuna(req.query.de), pana = ziBuna(req.query.pana);
   const doarNoi = req.query.doarNoi === '1';
   const plati = facturare.platiDeExportat({ de, pana, doarNoi });
-  const body = facturare.csv(plati, req.t);
+  const excel = req.params.fmt === 'xlsx';
+  const body = excel
+    ? xlsx.xlsx([{ nume: req.t('factura.adminTitlu'), randuri: facturare.tabel(plati, req.t) }])
+    : facturare.csv(plati, req.t);
   if (doarNoi) facturare.marcheazaExportate(plati.map(p => p.id));
   jurnal.fapta('plata', 'export pentru facturare', { req, detalii: { de, pana, doarNoi, plati: plati.length } });
-  res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-  res.setHeader('Content-Disposition', util.dispozitieAtasament('facturare-' + (de || 'inceput') + '-' + (pana || azi())));
+  res.setHeader('Content-Type', excel ? xlsx.TIP : 'text/csv; charset=utf-8');
+  res.setHeader('Content-Disposition', util.dispozitieAtasament('facturare-' + (de || 'inceput') + '-' + (pana || azi()),
+                                                                excel ? 'xlsx' : 'csv'));
   res.send(body);
 });
 

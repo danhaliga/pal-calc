@@ -78,7 +78,7 @@
     "platit": "Na betaling — {pret} RON / kast",
     "platit1": "Zaagmaten (eindmaat min kantenband, aan elke zijde)",
     "platit2": "Het kantenband op elke smalle zijde: L1 · L2 · l1 · l2",
-    "platit3": "CSV-export voor de zaagservice",
+    "platit3": "Excel-export voor de zaagservice",
     "platit4": "De kast blijft na betaling bewerkbaar",
     "cum": "Hoe het werkt",
     "cum1": "Je voert B × H × D in, de plaatdikte en het kantenband.",
@@ -1050,7 +1050,8 @@
     "cantScos": "wordt niet meer gemaakt",
     "faraFronturi": "zonder fronten",
     "toateFaraFronturi": "alle zonder fronten",
-    "puneFronturileInapoi": "fronten terugzetten"
+    "puneFronturileInapoi": "fronten terugzetten",
+    "descarcaProiect": "Project downloaden"
   },
   "rol": {
     "corp": "Korpus",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Onderdelenlijst",
     "listaPieseCorp": "Onderdelenlijst – {nume}",
     "copiazaCsv": "CSV kopiëren",
-    "descarcaCsv": "CSV downloaden",
+    "descarcaCsv": "Excel downloaden",
     "dupaDeblocare": "Beschikbaar na ontgrendeling",
     "copiat": "CSV gekopieerd.",
     "nuSaCopiat": "De CSV kon niet worden gekopieerd.",

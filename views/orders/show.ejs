@@ -318,7 +318,8 @@
       <% if (raport.cnc.length) { %>
         <a class="btn small" href="/orders/<%= order.id %>/print/cnc"><%= t('comanda.linkCnc', { n: raport.cnc.length }) %></a>
       <% } %>
-      <a class="btn small" href="/orders/<%= order.id %>/export.csv">CSV</a>
+      <a class="btn small" href="/orders/<%= order.id %>/export.xlsx" download>Excel</a>
+      <a class="btn small" href="/orders/<%= order.id %>/proiect.zip" download><%= t('comanda.descarcaProiect') %></a>
     </div>
   </div>
 

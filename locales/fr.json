@@ -78,7 +78,7 @@
     "platit": "Après paiement — {pret} RON / caisson",
     "platit1": "Cotes de coupe (fini moins chant, sur chaque côté)",
     "platit2": "Le chant sur chaque rive : L1 · L2 · l1 · l2",
-    "platit3": "Export CSV pour le service de débit",
+    "platit3": "Export Excel pour le service de débit",
     "platit4": "Le caisson reste modifiable après le paiement",
     "cum": "Comment ça marche",
     "cum1": "Vous saisissez L × H × P, l'épaisseur du panneau et le chant.",
@@ -1050,7 +1050,8 @@
     "cantScos": "ne se fabrique plus",
     "faraFronturi": "sans façades",
     "toateFaraFronturi": "tous sans façades",
-    "puneFronturileInapoi": "remettre les façades"
+    "puneFronturileInapoi": "remettre les façades",
+    "descarcaProiect": "Télécharger le projet"
   },
   "rol": {
     "corp": "Caisson",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Liste des pièces",
     "listaPieseCorp": "Liste des pièces – {nume}",
     "copiazaCsv": "Copier le CSV",
-    "descarcaCsv": "Télécharger le CSV",
+    "descarcaCsv": "Télécharger en Excel",
     "dupaDeblocare": "Disponible après déblocage",
     "copiat": "CSV copié.",
     "nuSaCopiat": "Le CSV n'a pas pu être copié.",

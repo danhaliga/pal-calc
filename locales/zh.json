@@ -78,7 +78,7 @@
     "platit": "付款后 —— 每个柜体 {pret} RON",
     "platit1": "开料尺寸（成品尺寸减去每一边的封边）",
     "platit2": "每条边的封边：长1 · 长2 · 宽1 · 宽2",
-    "platit3": "导出 CSV 给开料车间",
+    "platit3": "导出 Excel 给开料车间",
     "platit4": "付款之后柜体仍然可以修改",
     "cum": "怎么用",
     "cum1": "输入 宽 × 高 × 深、板材厚度和封边。",
@@ -1050,7 +1050,8 @@
     "cantScos": "已停产",
     "faraFronturi": "无门板",
     "toateFaraFronturi": "全部不做门板",
-    "puneFronturileInapoi": "恢复门板"
+    "puneFronturileInapoi": "恢复门板",
+    "descarcaProiect": "下载项目"
   },
   "rol": {
     "corp": "柜体",
@@ -1363,7 +1364,7 @@
     "listaPiese": "板件清单",
     "listaPieseCorp": "板件清单 —— {nume}",
     "copiazaCsv": "复制 CSV",
-    "descarcaCsv": "下载 CSV",
+    "descarcaCsv": "下载 Excel",
     "dupaDeblocare": "解锁后可看",
     "copiat": "CSV 已复制。",
     "nuSaCopiat": "CSV 没复制上。",

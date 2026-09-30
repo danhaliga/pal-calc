@@ -78,7 +78,7 @@
     "platit": "Posle plaćanja — {pret} RON / korpus",
     "platit1": "Mere reza (gotova minus kant, sa svake strane)",
     "platit2": "Kant na svakoj ivici: L1 · L2 · l1 · l2",
-    "platit3": "CSV izvoz za krojačnicu",
+    "platit3": "Excel izvoz za krojačnicu",
     "platit4": "Korpus ostaje izmenjiv i posle plaćanja",
     "cum": "Kako radi",
     "cum1": "Upišeš Š × V × D, debljinu ploče i kant.",
@@ -1059,7 +1059,8 @@
     "cantScos": "više se ne proizvodi",
     "faraFronturi": "bez fronti",
     "toateFaraFronturi": "sve bez fronti",
-    "puneFronturileInapoi": "vrati fronte"
+    "puneFronturileInapoi": "vrati fronte",
+    "descarcaProiect": "Preuzmi projekat"
   },
   "rol": {
     "corp": "Korpus",
@@ -1373,7 +1374,7 @@
     "listaPiese": "Spisak delova",
     "listaPieseCorp": "Spisak delova – {nume}",
     "copiazaCsv": "Kopiraj CSV",
-    "descarcaCsv": "Preuzmi CSV",
+    "descarcaCsv": "Preuzmi Excel",
     "dupaDeblocare": "Dostupno posle otključavanja",
     "copiat": "CSV kopiran.",
     "nuSaCopiat": "CSV nije bilo moguće kopirati.",

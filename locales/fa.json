@@ -78,7 +78,7 @@
     "platit": "پس از پرداخت — {pret} RON برای هر بدنه",
     "platit1": "اندازه‌های برش (اندازهٔ نهایی منهای نوار، از هر طرف)",
     "platit2": "نوار روی هر لبه: ط1 · ط2 · ع1 · ع2",
-    "platit3": "برون‌بری CSV برای کارگاه برش",
+    "platit3": "برون‌بری Excel برای کارگاه برش",
     "platit4": "بدنه پس از پرداخت هم قابل ویرایش می‌ماند",
     "cum": "چطور کار می‌کند",
     "cum1": "ع × ا × ق، ضخامت ورق و نوار را وارد می‌کنید.",
@@ -1050,7 +1050,8 @@
     "cantScos": "دیگر تولید نمی‌شود",
     "faraFronturi": "بدون در",
     "toateFaraFronturi": "همه بدون در",
-    "puneFronturileInapoi": "بازگرداندن درها"
+    "puneFronturileInapoi": "بازگرداندن درها",
+    "descarcaProiect": "دانلود پروژه"
   },
   "rol": {
     "corp": "بدنه",
@@ -1363,7 +1364,7 @@
     "listaPiese": "فهرست قطعه‌ها",
     "listaPieseCorp": "فهرست قطعه‌ها — {nume}",
     "copiazaCsv": "رونوشت CSV",
-    "descarcaCsv": "دانلود CSV",
+    "descarcaCsv": "دانلود Excel",
     "dupaDeblocare": "پس از باز شدن در دسترس",
     "copiat": "CSV رونوشت شد.",
     "nuSaCopiat": "CSV رونوشت نشد.",

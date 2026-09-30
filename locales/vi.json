@@ -78,7 +78,7 @@
     "platit": "Sau khi thanh toán — {pret} RON / thùng tủ",
     "platit1": "Kích thước cắt (hoàn thiện trừ chỉ cạnh, ở từng cạnh)",
     "platit2": "Chỉ cạnh trên từng cạnh: L1 · L2 · l1 · l2",
-    "platit3": "Xuất CSV cho xưởng cắt",
+    "platit3": "Xuất Excel cho xưởng cắt",
     "platit4": "Thùng tủ vẫn sửa được sau khi thanh toán",
     "cum": "Cách hoạt động",
     "cum1": "Bạn nhập R × C × S, độ dày ván và chỉ cạnh.",
@@ -1050,7 +1050,8 @@
     "cantScos": "không còn sản xuất",
     "faraFronturi": "không mặt cánh",
     "toateFaraFronturi": "tất cả không mặt cánh",
-    "puneFronturileInapoi": "đặt lại mặt cánh"
+    "puneFronturileInapoi": "đặt lại mặt cánh",
+    "descarcaProiect": "Tải dự án"
   },
   "rol": {
     "corp": "Thùng tủ",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Bảng chi tiết",
     "listaPieseCorp": "Bảng chi tiết – {nume}",
     "copiazaCsv": "Sao chép CSV",
-    "descarcaCsv": "Tải CSV",
+    "descarcaCsv": "Tải Excel",
     "dupaDeblocare": "Có sau khi mở khóa",
     "copiat": "Đã sao chép CSV.",
     "nuSaCopiat": "Không sao chép được CSV.",

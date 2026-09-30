@@ -78,7 +78,7 @@
     "platit": "După plată — {pret} lei / corp",
     "platit1": "Cotele de tăiere (finit minus cant, pe fiecare latură)",
     "platit2": "Cantul pe fiecare muchie: L1 · L2 · l1 · l2",
-    "platit3": "Export CSV pentru serviciul de debitare",
+    "platit3": "Export Excel pentru serviciul de debitare",
     "platit4": "Corpul rămâne editabil după plată",
     "cum": "Cum lucrează",
     "cum1": "Introduci L × H × A, grosimea PAL-ului și cantul.",
@@ -1059,7 +1059,8 @@
     "cantScos": "nu se mai fabrică",
     "faraFronturi": "fără fronturi",
     "toateFaraFronturi": "toate fără fronturi",
-    "puneFronturileInapoi": "pune fronturile înapoi"
+    "puneFronturileInapoi": "pune fronturile înapoi",
+    "descarcaProiect": "Descarcă proiect"
   },
   "rol": {
     "corp": "Carcasă",
@@ -1373,7 +1374,7 @@
     "listaPiese": "Listă piese",
     "listaPieseCorp": "Listă piese – {nume}",
     "copiazaCsv": "Copiază CSV",
-    "descarcaCsv": "Descarcă CSV",
+    "descarcaCsv": "Descarcă Excel",
     "dupaDeblocare": "Disponibil după deblocare",
     "copiat": "CSV copiat.",
     "nuSaCopiat": "CSV-ul nu a putut fi copiat.",

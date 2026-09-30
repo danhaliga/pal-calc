@@ -36,6 +36,7 @@
           <div class="btns">
             <a class="btn small" href="/orders/<%= o.id %>"><%= t('comenzi.deschide') %></a>
             <a class="btn small" href="/orders/<%= o.id %>/print/debitare"><%= t('comenzi.debitare') %></a>
+            <a class="btn small" href="/orders/<%= o.id %>/proiect.zip" download><%= t('comanda.descarcaProiect') %></a>
             <form method="post" action="/orders/<%= o.id %>/delete" style="display:inline">
               <input type="hidden" name="_csrf" value="<%= csrfToken %>">
               <button class="btn small danger" type="submit"

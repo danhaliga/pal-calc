@@ -409,6 +409,24 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
   `src/firma.js`). Platforma europeană SOL s-a închis în iulie 2025, deci
   rămâne doar SAL. CAEN-ul principal al firmei e 7320 — de întrebat contabilul.
 
+## 6l. Excel și „Descarcă proiect" (30 septembrie)
+
+- Exporturile ies în **Excel (.xlsx)**, nu CSV: debitarea comenzii
+  (`/orders/:id/export.xlsx`), a corpului (`/corps/:id/export.xlsx`) și
+  facturarea (`/admin/facturare/export.xlsx`). Fișierul îl scrie
+  `src/xlsx.js`, fără bibliotecă; numerele rămân numere. Rutele `.csv` merg
+  în continuare, pentru legături vechi, dar nu mai au butoane.
+- **Descarcă proiect** (în Comenzile mele, pe pagina comenzii și în bara
+  planșelor): `/orders/:id/proiect.zip`, cu numele comenzii. Înăuntru, un
+  dosar cu toate planșele (ansamblu, corpuri, debitare, încadrare, montaj,
+  CNC cu fișele pe piesă), ca pagini HTML de sine stătătoare (CSS pus în
+  pagină, fără scripturi, fără bara de navigare), plus debitarea în Excel.
+  Arhiva o face `src/arhiva.js`. Planșele se fac cu `datePrint()`, aceleași
+  date ca pagina de print.
+- Tot azi: în 3D, piesele cu contur (`polyFata`) se pun doar pe z — conturul
+  e deja în coordonatele corpului (lateralele și tavanul de sub scară
+  zburau din corp). Spatele decupat după contur nu mai primește cant.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

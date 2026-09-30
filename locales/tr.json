@@ -78,7 +78,7 @@
     "platit": "Ödemeden sonra — gövde başına {pret} RON",
     "platit1": "Kesim ölçüleri (bitmiş eksi bant, her kenarda)",
     "platit2": "Her kenardaki bant: L1 · L2 · l1 · l2",
-    "platit3": "Kesim servisi için CSV dışa aktarma",
+    "platit3": "Kesim servisi için Excel dışa aktarma",
     "platit4": "Gövde ödemeden sonra da düzenlenebilir kalır",
     "cum": "Nasıl çalışır",
     "cum1": "G × Y × D, levha kalınlığını ve bandı girersin.",
@@ -1050,7 +1050,8 @@
     "cantScos": "artık üretilmiyor",
     "faraFronturi": "kapaksız",
     "toateFaraFronturi": "hepsi kapaksız",
-    "puneFronturileInapoi": "kapakları geri koy"
+    "puneFronturileInapoi": "kapakları geri koy",
+    "descarcaProiect": "Projeyi indir"
   },
   "rol": {
     "corp": "Gövde",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Parça listesi",
     "listaPieseCorp": "Parça listesi – {nume}",
     "copiazaCsv": "CSV kopyala",
-    "descarcaCsv": "CSV indir",
+    "descarcaCsv": "Excel indir",
     "dupaDeblocare": "Kilit açıldıktan sonra",
     "copiat": "CSV kopyalandı.",
     "nuSaCopiat": "CSV kopyalanamadı.",

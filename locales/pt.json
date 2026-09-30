@@ -78,7 +78,7 @@
     "platit": "Depois do pagamento — {pret} RON / módulo",
     "platit1": "Medidas de corte (acabado menos orla, em cada lado)",
     "platit2": "A orla em cada topo: L1 · L2 · l1 · l2",
-    "platit3": "Exportação CSV para o serviço de corte",
+    "platit3": "Exportação Excel para o serviço de corte",
     "platit4": "O módulo continua editável depois do pagamento",
     "cum": "Como funciona",
     "cum1": "Introduzes C × A × P, a espessura da placa e a orla.",
@@ -1050,7 +1050,8 @@
     "cantScos": "já não se fabrica",
     "faraFronturi": "sem frentes",
     "toateFaraFronturi": "todos sem frentes",
-    "puneFronturileInapoi": "pôr as frentes de volta"
+    "puneFronturileInapoi": "pôr as frentes de volta",
+    "descarcaProiect": "Transferir projeto"
   },
   "rol": {
     "corp": "Estrutura",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Lista de peças",
     "listaPieseCorp": "Lista de peças – {nume}",
     "copiazaCsv": "Copiar CSV",
-    "descarcaCsv": "Transferir CSV",
+    "descarcaCsv": "Transferir Excel",
     "dupaDeblocare": "Disponível depois de desbloquear",
     "copiat": "CSV copiado.",
     "nuSaCopiat": "Não foi possível copiar o CSV.",

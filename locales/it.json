@@ -78,7 +78,7 @@
     "platit": "Dopo il pagamento — {pret} RON / mobile",
     "platit1": "Misure di taglio (finito meno bordo, su ogni lato)",
     "platit2": "Il bordo su ogni costa: L1 · L2 · l1 · l2",
-    "platit3": "Esportazione CSV per il servizio di sezionatura",
+    "platit3": "Esportazione Excel per il servizio di sezionatura",
     "platit4": "Il mobile resta modificabile dopo il pagamento",
     "cum": "Come funziona",
     "cum1": "Inserisci L × H × P, lo spessore del pannello e il bordo.",
@@ -1050,7 +1050,8 @@
     "cantScos": "non si produce più",
     "faraFronturi": "senza frontali",
     "toateFaraFronturi": "tutti senza frontali",
-    "puneFronturileInapoi": "rimetti i frontali"
+    "puneFronturileInapoi": "rimetti i frontali",
+    "descarcaProiect": "Scarica il progetto"
   },
   "rol": {
     "corp": "Struttura",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Distinta dei pezzi",
     "listaPieseCorp": "Distinta dei pezzi – {nume}",
     "copiazaCsv": "Copia il CSV",
-    "descarcaCsv": "Scarica il CSV",
+    "descarcaCsv": "Scarica in Excel",
     "dupaDeblocare": "Disponibile dopo lo sblocco",
     "copiat": "CSV copiato.",
     "nuSaCopiat": "Non è stato possibile copiare il CSV.",

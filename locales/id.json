@@ -78,7 +78,7 @@
     "platit": "Setelah pembayaran — {pret} RON / boks",
     "platit1": "Ukuran potong (jadi dikurangi tepi, di setiap sisi)",
     "platit2": "Tepi di setiap sisi: L1 · L2 · l1 · l2",
-    "platit3": "Ekspor CSV untuk jasa potong",
+    "platit3": "Ekspor Excel untuk jasa potong",
     "platit4": "Boks tetap bisa diubah setelah dibayar",
     "cum": "Cara kerjanya",
     "cum1": "Anda memasukkan L × T × D, ketebalan papan, dan tepi.",
@@ -1050,7 +1050,8 @@
     "cantScos": "tidak diproduksi lagi",
     "faraFronturi": "tanpa pintu depan",
     "toateFaraFronturi": "semua tanpa pintu depan",
-    "puneFronturileInapoi": "pasang kembali pintu depan"
+    "puneFronturileInapoi": "pasang kembali pintu depan",
+    "descarcaProiect": "Unduh proyek"
   },
   "rol": {
     "corp": "Boks",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Daftar bagian",
     "listaPieseCorp": "Daftar bagian – {nume}",
     "copiazaCsv": "Salin CSV",
-    "descarcaCsv": "Unduh CSV",
+    "descarcaCsv": "Unduh Excel",
     "dupaDeblocare": "Tersedia setelah dibuka",
     "copiat": "CSV tersalin.",
     "nuSaCopiat": "CSV tidak bisa disalin.",

@@ -78,7 +78,7 @@
     "platit": "Po opłacie — {pret} RON / korpus",
     "platit1": "Wymiary cięcia (gotowy minus obrzeże, z każdej strony)",
     "platit2": "Obrzeże na każdym wąskim boku: L1 · L2 · l1 · l2",
-    "platit3": "Eksport CSV dla rozkrojowni",
+    "platit3": "Eksport Excel dla rozkrojowni",
     "platit4": "Korpus pozostaje edytowalny po opłacie",
     "cum": "Jak to działa",
     "cum1": "Podajesz szer. × wys. × gł., grubość płyty i obrzeże.",
@@ -1059,7 +1059,8 @@
     "cantScos": "już nie produkowane",
     "faraFronturi": "bez frontów",
     "toateFaraFronturi": "wszystkie bez frontów",
-    "puneFronturileInapoi": "przywróć fronty"
+    "puneFronturileInapoi": "przywróć fronty",
+    "descarcaProiect": "Pobierz projekt"
   },
   "rol": {
     "corp": "Korpus",
@@ -1373,7 +1374,7 @@
     "listaPiese": "Lista elementów",
     "listaPieseCorp": "Lista elementów – {nume}",
     "copiazaCsv": "Kopiuj CSV",
-    "descarcaCsv": "Pobierz CSV",
+    "descarcaCsv": "Pobierz Excel",
     "dupaDeblocare": "Dostępne po odblokowaniu",
     "copiat": "CSV skopiowany.",
     "nuSaCopiat": "Nie udało się skopiować CSV.",

@@ -78,7 +78,7 @@
     "platit": "결제 후 —— 캐비닛 1개 {pret} RON",
     "platit1": "재단 치수(완성 치수에서 각 변의 엣지를 뺀 값)",
     "platit2": "각 변의 엣지: 길1 · 길2 · 폭1 · 폭2",
-    "platit3": "재단 업체용 CSV 내보내기",
+    "platit3": "재단 업체용 Excel 내보내기",
     "platit4": "결제한 뒤에도 캐비닛을 계속 수정할 수 있습니다",
     "cum": "이렇게 씁니다",
     "cum1": "폭 × 높이 × 깊이, 판 두께, 엣지를 넣습니다.",
@@ -1050,7 +1050,8 @@
     "cantScos": "단종",
     "faraFronturi": "전면판 없음",
     "toateFaraFronturi": "전부 전면판 없이",
-    "puneFronturileInapoi": "전면판 되돌리기"
+    "puneFronturileInapoi": "전면판 되돌리기",
+    "descarcaProiect": "프로젝트 내려받기"
   },
   "rol": {
     "corp": "몸통",
@@ -1363,7 +1364,7 @@
     "listaPiese": "부재 목록",
     "listaPieseCorp": "부재 목록 —— {nume}",
     "copiazaCsv": "CSV 복사",
-    "descarcaCsv": "CSV 내려받기",
+    "descarcaCsv": "Excel 내려받기",
     "dupaDeblocare": "잠금 해제 뒤에 볼 수 있습니다",
     "copiat": "CSV를 복사했습니다.",
     "nuSaCopiat": "CSV를 복사하지 못했습니다.",

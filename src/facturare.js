@@ -122,37 +122,43 @@ function datelePlatii(p) {
   });
 }
 
-/* Suma în lei, cu virgulă — cum o citește Excel-ul românesc. */
-const lei = c => (Math.round(c) / 100).toFixed(2).replace('.', ',');
-
-/* CSV cu „;", cum îl deschide Excel în română, cu BOM pentru diacritice. */
-function csv(plati, t) {
+/* Tabelul pentru programul de facturare: primul rând e capul de tabel.
+   Sumele sunt numere în lei (82.64), ca Excel să le poată aduna. */
+function tabel(plati, t) {
   const tv = tva();
-  const cel = v => {
-    const s = String(v == null ? '' : v);
-    return /[;"\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
-  };
   const cap = ['colData', 'colNrPlata', 'colReferinta', 'colTipClient', 'colNume', 'colCui', 'colRegCom',
                'colAdresa', 'colOras', 'colJudet', 'colTara', 'colEmail', 'colTelefon', 'colProdus',
                'colCantitate', 'colUm', 'colPretFaraTva', 'colCotaTva', 'colValoareTva', 'colTotal', 'colMoneda']
     .map(k => t('factura.' + k));
-  const randuri = [cap.map(cel).join(';')];
-  plati.forEach(p => {
+  const lei = c => Math.round(c) / 100;
+  return [cap].concat(plati.map(p => {
     const d = datelePlatii(p);
     const total = +p.amount_cents || 0;
     const baza = tv.platitor ? Math.round(total / (1 + tv.cota / 100)) : total;
-    const tvaC = total - baza;
-    randuri.push([
+    return [
       String(p.created_at || '').slice(0, 10), p.id, p.provider_ref || '',
       t(d.tip === 'pj' ? 'factura.tipPj' : 'factura.tipPf'),
       d.tip === 'pj' ? d.firma : d.nume, d.tip === 'pj' ? d.cui : '', d.tip === 'pj' ? d.regCom : '',
       d.adresa, d.oras, d.judet, d.tara, d.email, d.telefon,
       t('factura.produs'), 1, t('factura.um'),
-      lei(baza), tv.platitor ? tv.cota : 0, lei(tvaC), lei(total),
+      lei(baza), tv.platitor ? tv.cota : 0, lei(total - baza), lei(total),
       String(p.currency || 'ron').toUpperCase()
-    ].map(cel).join(';'));
-  });
-  return '﻿' + randuri.join('\r\n') + '\r\n';
+    ];
+  }));
+}
+
+/* CSV cu „;", cum îl deschide Excel în română, cu BOM pentru diacritice.
+   Sumele cu virgulă. Rămâne pentru legăturile vechi; exportul e în Excel. */
+function csv(plati, t) {
+  const cel = v => {
+    const s = typeof v === 'number' ? String(v).replace('.', ',') : String(v == null ? '' : v);
+    return /[;"\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  };
+  const r = tabel(plati, t);
+  /* sumele (ultimele coloane) cu două zecimale, cum stau pe factură */
+  const bani = [16, 18, 19];
+  return '\ufeff' + r.map((rand, i) => rand.map((v, j) =>
+    cel(i && bani.indexOf(j) !== -1 ? v.toFixed(2).replace('.', ',') : v)).join(';')).join('\r\n') + '\r\n';
 }
 
 const marcheazaExportate = db.transaction(ids => {
@@ -162,5 +168,5 @@ const marcheazaExportate = db.transaction(ids => {
 
 module.exports = {
   TIPURI, LUNGIMI, COTA_IMPLICITA, dinCont, lipsuri, cuiBun, salveaza, tva,
-  platiDeExportat, datelePlatii, csv, marcheazaExportate
+  platiDeExportat, datelePlatii, tabel, csv, marcheazaExportate
 };

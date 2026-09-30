@@ -78,7 +78,7 @@
     "platit": "पेमेंट के बाद — {pret} RON प्रति कैबिनेट",
     "platit1": "कटिंग साइज़ (फ़िनिश साइज़ में से हर तरफ़ का एज घटाकर)",
     "platit2": "हर किनारे पर एज: ल1 · ल2 · चौ1 · चौ2",
-    "platit3": "कटिंग वाले के लिए CSV एक्सपोर्ट",
+    "platit3": "कटिंग वाले के लिए Excel एक्सपोर्ट",
     "platit4": "पेमेंट के बाद भी कैबिनेट बदला जा सकता है",
     "cum": "यह कैसे चलता है",
     "cum1": "आप चौ × ऊ × ग, बोर्ड की मोटाई और एज डालते हैं।",
@@ -1050,7 +1050,8 @@
     "cantScos": "अब नहीं बनता",
     "faraFronturi": "फ़्रंट नहीं",
     "toateFaraFronturi": "सब बिना फ़्रंट",
-    "puneFronturileInapoi": "फ़्रंट वापस लगाएँ"
+    "puneFronturileInapoi": "फ़्रंट वापस लगाएँ",
+    "descarcaProiect": "प्रोजेक्ट डाउनलोड करें"
   },
   "rol": {
     "corp": "बॉडी",
@@ -1363,7 +1364,7 @@
     "listaPiese": "पीस की सूची",
     "listaPieseCorp": "पीस की सूची — {nume}",
     "copiazaCsv": "CSV कॉपी करें",
-    "descarcaCsv": "CSV डाउनलोड करें",
+    "descarcaCsv": "Excel डाउनलोड करें",
     "dupaDeblocare": "खुलने के बाद मिलेगा",
     "copiat": "CSV कॉपी हो गया।",
     "nuSaCopiat": "CSV कॉपी नहीं हुआ।",

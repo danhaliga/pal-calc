@@ -78,7 +78,7 @@
     "platit": "بعد الدفع — {pret} RON للهيكل",
     "platit1": "مقاسات القص (المقاس النهائي ناقص الشريط، من كل جهة)",
     "platit2": "الشريط على كل ضلع: ط1 · ط2 · ع1 · ع2",
-    "platit3": "تصدير CSV لورشة القص",
+    "platit3": "تصدير Excel لورشة القص",
     "platit4": "يبقى الهيكل قابلًا للتعديل بعد الدفع أيضًا",
     "cum": "كيف يعمل",
     "cum1": "تُدخل ع × ا × ق، وسُمك اللوح، والشريط.",
@@ -1086,7 +1086,8 @@
     "cantScos": "لم يعد يُصنع",
     "faraFronturi": "بدون واجهات",
     "toateFaraFronturi": "الكل بدون واجهات",
-    "puneFronturileInapoi": "إعادة الواجهات"
+    "puneFronturileInapoi": "إعادة الواجهات",
+    "descarcaProiect": "نزّل المشروع"
   },
   "rol": {
     "corp": "الهيكل",
@@ -1403,7 +1404,7 @@
     "listaPiese": "قائمة القطع",
     "listaPieseCorp": "قائمة القطع — {nume}",
     "copiazaCsv": "انسخ CSV",
-    "descarcaCsv": "نزّل CSV",
+    "descarcaCsv": "نزّل Excel",
     "dupaDeblocare": "متاح بعد الفتح",
     "copiat": "نُسخ ملف CSV.",
     "nuSaCopiat": "لم يُنسخ ملف CSV.",

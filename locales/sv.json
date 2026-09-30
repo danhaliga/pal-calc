@@ -78,7 +78,7 @@
     "platit": "Efter betalning — {pret} RON / stomme",
     "platit1": "Kapmått (färdigmått minus kantlist, på varje sida)",
     "platit2": "Kantlisten på varje kant: L1 · L2 · l1 · l2",
-    "platit3": "CSV-export till kaptjänsten",
+    "platit3": "Excel-export till kaptjänsten",
     "platit4": "Stommen går att ändra även efter betalning",
     "cum": "Så fungerar det",
     "cum1": "Du anger B × H × D, skivtjockleken och kantlisten.",
@@ -1050,7 +1050,8 @@
     "cantScos": "tillverkas inte längre",
     "faraFronturi": "utan fronter",
     "toateFaraFronturi": "alla utan fronter",
-    "puneFronturileInapoi": "sätt tillbaka fronterna"
+    "puneFronturileInapoi": "sätt tillbaka fronterna",
+    "descarcaProiect": "Ladda ner projektet"
   },
   "rol": {
     "corp": "Stomme",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Dellista",
     "listaPieseCorp": "Dellista – {nume}",
     "copiazaCsv": "Kopiera CSV",
-    "descarcaCsv": "Ladda ner CSV",
+    "descarcaCsv": "Ladda ner Excel",
     "dupaDeblocare": "Tillgängligt efter upplåsning",
     "copiat": "CSV kopierad.",
     "nuSaCopiat": "CSV-filen kunde inte kopieras.",

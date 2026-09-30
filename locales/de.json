@@ -78,7 +78,7 @@
     "platit": "Nach Zahlung — {pret} RON / Korpus",
     "platit1": "Zuschnittmaße (Fertigmaß minus Kante, auf jeder Seite)",
     "platit2": "Kante auf jeder Schmalseite: L1 · L2 · l1 · l2",
-    "platit3": "CSV-Export für den Zuschnittservice",
+    "platit3": "Excel-Export für den Zuschnittservice",
     "platit4": "Der Korpus bleibt nach der Zahlung bearbeitbar",
     "cum": "So funktioniert es",
     "cum1": "Du gibst L × H × T, die Plattenstärke und die Kante ein.",
@@ -1050,7 +1050,8 @@
     "cantScos": "wird nicht mehr hergestellt",
     "faraFronturi": "ohne Fronten",
     "toateFaraFronturi": "alle ohne Fronten",
-    "puneFronturileInapoi": "Fronten wieder einsetzen"
+    "puneFronturileInapoi": "Fronten wieder einsetzen",
+    "descarcaProiect": "Projekt herunterladen"
   },
   "rol": {
     "corp": "Korpus",
@@ -1363,7 +1364,7 @@
     "listaPiese": "Teileliste",
     "listaPieseCorp": "Teileliste – {nume}",
     "copiazaCsv": "CSV kopieren",
-    "descarcaCsv": "CSV herunterladen",
+    "descarcaCsv": "Excel herunterladen",
     "dupaDeblocare": "Nach der Freischaltung verfügbar",
     "copiat": "CSV kopiert.",
     "nuSaCopiat": "Die CSV-Datei konnte nicht kopiert werden.",

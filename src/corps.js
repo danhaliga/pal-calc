@@ -10,6 +10,7 @@ const PalModels = require('../shared/models');
 const PalFisa = require('../shared/fisa-piesa');
 const credit = require('./credit');
 const util = require('./util');
+const xlsx = require('./xlsx');
 const jurnal = require('./jurnal');
 
 const router = express.Router();
@@ -306,9 +307,9 @@ router.get('/corps/:id/fise', requireAuth, (req, res, next) => {
   });
 });
 
-/* ---- export CSV (doar corpuri platite) ---- */
+/* ---- export (doar corpuri platite): Excel, iar CSV pentru legăturile vechi ---- */
 
-router.get('/corps/:id/export.csv', requireAuth, (req, res, next) => {
+router.get('/corps/:id/export.:fmt(csv|xlsx)', requireAuth, (req, res, next) => {
   const corp = getOwned(req.params.id, req.user.id);
   if (!corp) return notFound(next);
   if (corp.status !== 'paid') {
@@ -318,11 +319,16 @@ router.get('/corps/:id/export.csv', requireAuth, (req, res, next) => {
   }
 
   const params = parseParams(corp.params);
+  if (req.params.fmt === 'xlsx') {
+    res.setHeader('Content-Type', xlsx.TIP);
+    res.setHeader('Content-Disposition', util.dispozitieAtasament('debitare-' + corp.name, 'xlsx'));
+    return res.send(xlsx.xlsx([{ nume: corp.name, randuri: PalCalc.tabel([params], req.t) }]));
+  }
   const body = PalCalc.csv([params], req.t);
 
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
   res.setHeader('Content-Disposition', util.dispozitieAtasament('debitare-' + corp.name));
-  res.send('﻿' + body); /* BOM, ca Excel sa deschida corect diacriticele */
+  res.send('\ufeff' + body); /* BOM, ca Excel sa deschida corect diacriticele */
 });
 
 /* Deblocarea unui corp mai vechi, rămas în starea draft: se plătește din credit. */

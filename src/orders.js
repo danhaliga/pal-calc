@@ -7,6 +7,8 @@ const { db } = require('./db');
 const { requireAuth } = require('./auth');
 const credit = require('./credit');
 const util = require('./util');
+const xlsx = require('./xlsx');
+const { zip } = require('./arhiva');
 const jurnal = require('./jurnal');
 const materiale = require('./materiale');
 const Catalog = require('../shared/catalog');
@@ -742,18 +744,15 @@ const PRINTURI = {
   cnc: { view: 'orders/print-cnc', titlu: 'print.titluCnc' }
 };
 
-router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
-  const order = getOwned(req.params.id, req.user.id);
-  if (!order) return notFound(next);
-
-  const cfg = PRINTURI[req.params.tip];
-  if (!cfg) return notFound(next);
-
-  const raport = raportComenzii(order, req.t);
-  const cu = comandaCuCamera(order);
-  const ans = PalAnsamblu.ansamblu(cu, corpuriPozitionate(order.id), req.t);
-
-  res.render(cfg.view, {
+/* Tot ce trebuie unei planșe tipărite. Aceleași date le folosește și
+   arhiva proiectului, ca foaia din arhivă să fie aceeași cu cea din site. */
+function datePrint(order, req, tip, comun) {
+  const cfg = PRINTURI[tip];
+  const c = comun || {};
+  const raport = c.raport || raportComenzii(order, req.t);
+  const cu = c.cu || comandaCuCamera(order);
+  const ans = c.ans || PalAnsamblu.ansamblu(cu, corpuriPozitionate(order.id), req.t);
+  return {
     title: req.t(cfg.titlu) + ' – ' + order.name,
     titlu: req.t(cfg.titlu),
     order: cu, raport,
@@ -764,44 +763,117 @@ router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
     planse: PalRaport.planseCnc,
     desenMontaj: PalMontaj.desen,
     /* Fișele pe piesă ale corpurilor de sub scară: numai pe planșa CNC. */
-    fiseCorpuri: req.params.tip === 'cnc'
-      ? raport.corpuri.filter(c => c.params && c.params.tip === 'atipic')
-          .map(c => ({ id: c.id, nume: c.nume, fise: PalFisa.fise(c.params, req.t) }))
+    fiseCorpuri: tip === 'cnc'
+      ? raport.corpuri.filter(x => x.params && x.params.tip === 'atipic')
+          .map(x => ({ id: x.id, nume: x.nume, fise: PalFisa.fise(x.params, req.t) }))
       : [],
     planColi: PalRaport.planColi,
     coala: PalRaport.COALA,
     /* adaosul la cant rămâne intern: clientul vede metrii exacți */
     aratAdaos: !!req.user.is_admin,
     print: true
-  });
-});
+  };
+}
 
-/* ---------- export CSV pentru fabrică ---------- */
-
-router.get('/orders/:id/export.csv', requireAuth, (req, res, next) => {
+router.get('/orders/:id/print/:tip', requireAuth, (req, res, next) => {
   const order = getOwned(req.params.id, req.user.id);
   if (!order) return notFound(next);
 
-  const raport = raportComenzii(order, req.t);
+  const cfg = PRINTURI[req.params.tip];
+  if (!cfg) return notFound(next);
+
+  res.render(cfg.view, datePrint(order, req, req.params.tip));
+});
+
+/* ---------- proiectul întreg, într-o arhivă ----------
+
+   Un singur fișier cu numele comenzii: toate planșele (ca pagini care se
+   deschid în orice browser și se tipăresc, fără internet și fără cont) și
+   debitarea în Excel. Pentru atelier, pentru fabrica de debitare, sau ca să
+   rămână la dosar. Stilurile se pun în pagină, scripturile nu intră. */
+
+const fs = require('fs');
+const path = require('path');
+const STILURI = ['styles.css', 'print.css'].map(f => path.join(__dirname, '..', 'public', f));
+
+function paginaDeSine(html) {
+  const css = STILURI.map(f => fs.readFileSync(f, 'utf8')).join('\n');
+  return html
+    .replace(/<link rel="stylesheet" href="\/static\/styles\.css[^"]*">/, () => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>')
+    .replace(/<link rel="stylesheet" href="\/static\/print\.css[^"]*">\n?/, '')
+    .replace(/<script\b[^>]*>\s*<\/script>\n?/g, '');
+}
+
+/* res.render cu funcție de întoarcere dă doar corpul paginii (vezi
+   server.js); foaia întreagă se face ca acolo, în layout-print. */
+const randeazaUna = (res, view, date) => new Promise((ok, nu) =>
+  res.render(view, date, (err, html) => (err ? nu(err) : ok(html))));
+const randeaza = async (res, view, date) =>
+  randeazaUna(res, 'layout-print', Object.assign({}, date, { body: await randeazaUna(res, view, date) }));
+
+router.get('/orders/:id/proiect.zip', requireAuth, async (req, res, next) => {
+  const order = getOwned(req.params.id, req.user.id);
+  if (!order) return notFound(next);
+  try {
+    const raport = raportComenzii(order, req.t);
+    const cu = comandaCuCamera(order);
+    const comun = { raport, cu, ans: PalAnsamblu.ansamblu(cu, corpuriPozitionate(order.id), req.t) };
+    const dosar = util.numeFisierLizibil(order.name) + '/';
+    const fisiere = {};
+    const tipuri = Object.keys(PRINTURI);
+    for (let i = 0; i < tipuri.length; i++) {
+      const tip = tipuri[i];
+      const date = Object.assign(datePrint(order, req, tip, comun), { arhiva: true });
+      const html = await randeaza(res, PRINTURI[tip].view, date);
+      fisiere[dosar + (i + 1) + ' ' + util.numeFisierLizibil(req.t(PRINTURI[tip].titlu)) + '.html'] = paginaDeSine(html);
+    }
+    fisiere[dosar + util.numeFisierLizibil(req.t('print.titluDebitare')) + '.xlsx'] =
+      xlsx.xlsx([{ nume: order.name, randuri: tabelDebitare(raport, req.t) }]);
+
+    res.setHeader('Content-Type', 'application/zip');
+    res.setHeader('Content-Disposition', util.dispozitieAtasament(order.name, 'zip'));
+    res.send(zip(fisiere));
+  } catch (e) {
+    next(e);
+  }
+});
+
+/* ---------- exportul pentru fabrică: Excel, iar CSV pentru legăturile vechi ---------- */
+
+/* „0.8" → 0.8, ca în Excel cantul să fie număr; „–" rămâne așa. */
+const numar = v => (typeof v === 'string' && /^\d+(\.\d+)?$/.test(v) ? +v : v);
+
+function tabelDebitare(raport, t) {
   const head = ['csv.corp', 'comanda.colCod', 'csv.piesa', 'csv.buc', 'csv.taiereL', 'csv.taierel',
                 'comanda.colMaterial', 'comanda.colDecor',
                 'csv.cantL1', 'csv.cantL2', 'csv.cantl1', 'csv.cantl2',
-                'csv.fibra', 'print.linkCnc', 'csv.nota'].map(k => req.t(k));
-  const linii = [head.join(';')];
+                'csv.fibra', 'print.linkCnc', 'csv.nota'].map(k => t(k));
+  return [head].concat(raport.piese.map(p => [
+    p.corpNume, p.cod, p.nume, p.buc, p.TL, p.Tl,
+    p.material.tip + ' ' + p.material.gros,
+    p.material.decorNume || p.material.decor || '',
+    numar(p.cant.muchii[0]), numar(p.cant.muchii[1]), numar(p.cant.muchii[2]), numar(p.cant.muchii[3]),
+    p.fibra, p.cnc ? t('comun.da') : '', p.nota
+  ]));
+}
 
-  raport.piese.forEach(p => {
-    linii.push([
-      p.corpNume, p.cod, p.nume, p.buc, p.TL, p.Tl,
-      p.material.tip + ' ' + p.material.gros,
-      p.material.decorNume || p.material.decor || '',
-      p.cant.muchii[0], p.cant.muchii[1], p.cant.muchii[2], p.cant.muchii[3],
-      p.fibra, p.cnc ? req.t('comun.da') : '', p.nota
-    ].map(v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"').join(';'));
-  });
+router.get('/orders/:id/export.:fmt(csv|xlsx)', requireAuth, (req, res, next) => {
+  const order = getOwned(req.params.id, req.user.id);
+  if (!order) return notFound(next);
 
+  const randuri = tabelDebitare(raportComenzii(order, req.t), req.t);
+
+  if (req.params.fmt === 'xlsx') {
+    res.setHeader('Content-Type', xlsx.TIP);
+    res.setHeader('Content-Disposition', util.dispozitieAtasament('debitare-' + order.name, 'xlsx'));
+    return res.send(xlsx.xlsx([{ nume: order.name, randuri }]));
+  }
+
+  const linii = randuri.map(r =>
+    r.map(v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"').join(';'));
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
   res.setHeader('Content-Disposition', util.dispozitieAtasament('debitare-' + order.name));
-  res.send('﻿' + linii.join('\n'));
+  res.send('\ufeff' + linii.join('\n'));
 });
 
 module.exports = { router, getOwned, corpuriComenzii, raportComenzii, GROSIMI_PAL, FORMATE_ID, adaosCant };

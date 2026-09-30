@@ -78,7 +78,7 @@
     "platit": "หลังชำระเงิน — {pret} RON ต่อตัวตู้",
     "platit1": "ขนาดตัด (ขนาดสำเร็จลบขอบทุกด้าน)",
     "platit2": "ขอบแต่ละด้าน: ย1 · ย2 · ก1 · ก2",
-    "platit3": "ส่งออก CSV ให้ร้านตัด",
+    "platit3": "ส่งออก Excel ให้ร้านตัด",
     "platit4": "แก้ไขตัวตู้ได้แม้ชำระเงินแล้ว",
     "cum": "ใช้งานอย่างไร",
     "cum1": "กรอก ก × ส × ล ความหนาแผ่น และขอบ",
@@ -1050,7 +1050,8 @@
     "cantScos": "เลิกผลิตแล้ว",
     "faraFronturi": "ไม่มีหน้าบาน",
     "toateFaraFronturi": "ทั้งหมดไม่มีหน้าบาน",
-    "puneFronturileInapoi": "ใส่หน้าบานกลับ"
+    "puneFronturileInapoi": "ใส่หน้าบานกลับ",
+    "descarcaProiect": "ดาวน์โหลดโปรเจกต์"
   },
   "rol": {
     "corp": "ตัวตู้",
@@ -1363,7 +1364,7 @@
     "listaPiese": "รายการชิ้นงาน",
     "listaPieseCorp": "รายการชิ้นงาน — {nume}",
     "copiazaCsv": "คัดลอก CSV",
-    "descarcaCsv": "ดาวน์โหลด CSV",
+    "descarcaCsv": "ดาวน์โหลด Excel",
     "dupaDeblocare": "ใช้ได้หลังปลดล็อก",
     "copiat": "คัดลอก CSV แล้ว",
     "nuSaCopiat": "คัดลอก CSV ไม่สำเร็จ",
