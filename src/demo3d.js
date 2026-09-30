@@ -15,9 +15,13 @@ const PalAnsamblu = require('../shared/ansamblu');
 const CAMERA = { A: 3800, B: 2800, H: 2600 };
 const CULORI = { corp: '#f3ece0', front: '#b4532a' };
 
-/* [model, perete, distanța de la colț, înălțimea de la podea] */
+/* Corpurile înalte au aceeași înălțime și se termină sus odată cu
+   suspendatele (1450 + 720 = 2170 mm), cum se face într-o bucătărie. */
+const INALT = { H: 2170 };
+
+/* [model, perete, distanța de la colț, înălțimea de la podea, cote schimbate] */
 const BUCATARIE = [
-  ['coloana-frigider', 'A', 0, 0],
+  ['coloana-frigider', 'A', 0, 0, INALT],
   ['baza-chiuveta', 'A', 600, 0],
   ['baza-3sertare', 'A', 1400, 0],
   ['baza-cuptor', 'A', 2000, 0],
@@ -25,14 +29,14 @@ const BUCATARIE = [
   ['sus-2usi', 'A', 600, 1450],
   ['sus-hota', 'A', 2000, 1810],
   ['sus-vitrina', 'A', 2600, 1450],
-  ['coloana-cuptor', 'B', 600, 0]
+  ['coloana-cuptor', 'B', 600, 0, INALT]
 ];
 
 function date(t) {
   const corpuri = BUCATARIE.map((r, i) => ({
     id: i + 1, poz: i + 1,
     nume: PalModels.numeCorp(r[0], t),
-    params: Object.assign(PalCalc.defaults(), PalModels.paramsFor(r[0], t)),
+    params: Object.assign(PalCalc.defaults(), PalModels.paramsFor(r[0], t), r[4] || {}),
     pozitie: { perete: r[1], d: r[2], h: r[3] }
   }));
   const ans = PalAnsamblu.ansamblu({ camera: CAMERA }, corpuri, t);

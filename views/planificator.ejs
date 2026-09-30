@@ -20,6 +20,13 @@
       <label class="check" style="margin-left:8px"><input type="checkbox" id="anPereti" checked> <%= t('ansamblu.aratPereti') %></label>
     </div>
   </div>
+  <%# Camera se schimbă pe loc, în pagină; nu se salvează nimic. %>
+  <div class="plan-camera" id="demoCamera">
+    <b><%= t('ansamblu.camera') %></b>
+    <label><%= t('ansamblu.laturaA') %><input type="number" data-cam="A" min="1500" max="20000" step="10" value="<%= demo.camera.A %>"></label>
+    <label><%= t('ansamblu.laturaB') %><input type="number" data-cam="B" min="1500" max="20000" step="10" value="<%= demo.camera.B %>"></label>
+    <label><%= t('ansamblu.inaltime') %><input type="number" data-cam="H" min="2000" max="5000" step="10" value="<%= demo.camera.H %>"></label>
+  </div>
   <div class="cvwrap" id="anWrap"><canvas id="anCanvas"></canvas><div class="an-stare" id="anStare" hidden></div></div>
   <div class="info an-panou" id="anInfo"></div>
 </div>

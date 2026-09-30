@@ -479,6 +479,29 @@ function reincarcaPagina() {
   }).catch(function () { /* rămâne pagina de dinainte */ });
 }
 
+/* ---------- camera din pagina publică ----------
+   Pe pagina de demonstrație dimensiunile camerei se schimbă pe loc: se
+   redesenează pereții, corpurile rămân unde erau și se înroșesc dacă nu mai
+   încap. Nu se salvează nimic. */
+var formCamera = document.getElementById('demoCamera');
+if (formCamera && DATE.demo) {
+  formCamera.addEventListener('change', function (e) {
+    var k = e.target.dataset && e.target.dataset.cam;
+    var v = Number(e.target.value);
+    if (!k || !isFinite(v)) return;
+    var min = Number(e.target.min) || 0, max = Number(e.target.max) || 20000;
+    v = Math.max(min, Math.min(max, v));
+    e.target.value = v;
+    CAM[k] = v;
+    deseneazaPereti(CAM);
+    CORPURI.forEach(pune);
+    coloreaza();
+    arataPanou();
+    T.target.set(CAM.A / 2, CAM.H * 0.3, CAM.B / 2);
+    T.r = Math.max(CAM.A, CAM.B, CAM.H) * 1.9;
+  });
+}
+
 /* ---------- vederi, pereți, buclă ---------- */
 
 document.querySelectorAll('[data-vedere]').forEach(function (b) {
