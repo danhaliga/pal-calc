@@ -179,8 +179,19 @@ app.get('/cum-functioneaza', (req, res) => {
 const tutorialPeLimba = {};
 app.get('/cum-functioneaza/date.json', (req, res) => {
   const cheie = req.lang || 'ro';
-  if (!tutorialPeLimba[cheie]) tutorialPeLimba[cheie] = JSON.stringify(require('./src/tutorial').date(req.t));
-  res.type('application/json').set('Cache-Control', 'public, max-age=3600').send(tutorialPeLimba[cheie]);
+  if (!tutorialPeLimba[cheie]) {
+    const text = JSON.stringify(require('./src/tutorial').date(req.t));
+    /* ~200 KB de coordonate; comprimat iese de câteva ori mai mic, iar
+       serverul web din față nu comprimă JSON-ul */
+    tutorialPeLimba[cheie] = { text, gz: require('zlib').gzipSync(text) };
+  }
+  const d = tutorialPeLimba[cheie];
+  res.type('application/json').set('Cache-Control', 'public, max-age=3600').vary('Accept-Encoding');
+  if (/\bgzip\b/.test(req.get('accept-encoding') || '')) {
+    res.set('Content-Encoding', 'gzip').send(d.gz);
+  } else {
+    res.send(d.text);
+  }
 });
 
 /* Pagina publică a planificatorului 3D, cu o bucătărie de exemplu pe care
