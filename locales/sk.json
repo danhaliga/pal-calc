@@ -1300,7 +1300,25 @@
     "colAdancime": "Hĺbka",
     "colDistanta": "Vzdialenosť (mm)",
     "colInaltime": "Výška (mm)",
-    "pune": "Umiestniť"
+    "pune": "Umiestniť",
+    "p3d": {
+      "indiciu": "Potiahnite skrinku a presuňte ju: priloží sa k najbližšej stene a prilepí sa k susedným. Ťahaním po prázdnom mieste otočíte miestnosť; približujte dvoma prstami alebo kolieskom myši. Ťuknutím na skrinku ju vyberiete.",
+      "selectat": "Vybraná skrinka",
+      "perete": "Stena",
+      "deLaColt": "Od rohu (mm)",
+      "inaltime": "Od podlahy (mm)",
+      "deschide": "Otvoriť skrinku",
+      "salvat": "Uložené",
+      "seSalveaza": "Ukladá sa…",
+      "eroare": "Pozícia sa neuložila. Skúste to znova.",
+      "seSuprapune": "Zasahuje do inej skrinky alebo mimo miestnosti",
+      "stanga": "Posunúť doľava",
+      "dreapta": "Posunúť doprava",
+      "seIncarca": "Načítava sa zostava…",
+      "nuSeIncarca": "Zostavu sa nepodarilo načítať.",
+      "nu3d": "3D pohľad sa nepodarilo načítať (3D knižnica je blokovaná). Pôdorys a pohľady fungujú normálne.",
+      "renunta": "Zrušiť"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Moje korpusy",

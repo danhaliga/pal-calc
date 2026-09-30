@@ -1290,7 +1290,25 @@
     "colAdancime": "Fondo",
     "colDistanta": "Distancia (mm)",
     "colInaltime": "Altura (mm)",
-    "pune": "Colocar"
+    "pune": "Colocar",
+    "p3d": {
+      "indiciu": "Arrastra un mueble para moverlo: se coloca en la pared más cercana y se une a sus vecinos. Arrastra en un espacio vacío para girar la habitación; usa dos dedos o la rueda del ratón para hacer zoom. Toca un mueble para seleccionarlo.",
+      "selectat": "Mueble seleccionado",
+      "perete": "Pared",
+      "deLaColt": "Desde la esquina (mm)",
+      "inaltime": "Desde el suelo (mm)",
+      "deschide": "Abrir mueble",
+      "salvat": "Guardado",
+      "seSalveaza": "Guardando…",
+      "eroare": "No se guardó la posición. Inténtalo de nuevo.",
+      "seSuprapune": "Choca con otro mueble o sale de la habitación",
+      "stanga": "Mover a la izquierda",
+      "dreapta": "Mover a la derecha",
+      "seIncarca": "Cargando el conjunto…",
+      "nuSeIncarca": "No se pudo cargar el conjunto.",
+      "nu3d": "No se pudo cargar la vista 3D (la biblioteca 3D está bloqueada). La planta y los alzados funcionan con normalidad.",
+      "renunta": "Cancelar"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Mis módulos",

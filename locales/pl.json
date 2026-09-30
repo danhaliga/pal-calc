@@ -1300,7 +1300,25 @@
     "colAdancime": "Głębokość",
     "colDistanta": "Odległość (mm)",
     "colInaltime": "Wysokość (mm)",
-    "pune": "Ustaw"
+    "pune": "Ustaw",
+    "p3d": {
+      "indiciu": "Przeciągnij szafkę, aby ją przesunąć: ustawi się przy najbliższej ścianie i przylgnie do sąsiednich. Przeciągnij po pustym miejscu, aby obrócić pokój; powiększaj dwoma palcami lub kółkiem myszy. Stuknij szafkę, aby ją wybrać.",
+      "selectat": "Wybrana szafka",
+      "perete": "Ściana",
+      "deLaColt": "Od narożnika (mm)",
+      "inaltime": "Od podłogi (mm)",
+      "deschide": "Otwórz szafkę",
+      "salvat": "Zapisano",
+      "seSalveaza": "Zapisywanie…",
+      "eroare": "Nie zapisano pozycji. Spróbuj ponownie.",
+      "seSuprapune": "Nachodzi na inną szafkę lub wychodzi poza pokój",
+      "stanga": "Przesuń w lewo",
+      "dreapta": "Przesuń w prawo",
+      "seIncarca": "Wczytywanie zestawu…",
+      "nuSeIncarca": "Nie udało się wczytać zestawu.",
+      "nu3d": "Nie udało się wczytać widoku 3D (biblioteka 3D jest zablokowana). Rzut i widoki ścian działają normalnie.",
+      "renunta": "Anuluj"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Moje korpusy",

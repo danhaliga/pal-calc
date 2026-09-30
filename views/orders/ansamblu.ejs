@@ -19,6 +19,24 @@
   </div>
 </div>
 
+<!-- ---------------- planificatorul 3D ---------------- -->
+<%# Corpurile se mută cu mâna: tragi de un corp și se așază pe peretele cel
+    mai apropiat, lipit de vecini. Poziția se salvează singură (public/ansamblu.js). %>
+<div class="panel planificator">
+  <div class="top" style="margin-bottom:8px">
+    <h2 style="margin:0"><%= t('ansamblu.in3d') %></h2>
+    <div class="btns" style="margin:0">
+      <button class="btn small" data-vedere="iso"><%= t('ansamblu.vedereIzo') %></button>
+      <button class="btn small" data-vedere="fata"><%= t('ansamblu.vedereFata') %></button>
+      <button class="btn small" data-vedere="sus"><%= t('ansamblu.vedereSus') %></button>
+      <label class="check" style="margin-left:8px"><input type="checkbox" id="anPereti" checked> <%= t('ansamblu.aratPereti') %></label>
+    </div>
+  </div>
+  <div class="cvwrap" id="anWrap"><canvas id="anCanvas"></canvas><div class="an-stare" id="anStare" hidden></div></div>
+  <div class="info an-panou" id="anInfo"></div>
+</div>
+
+<div id="anProbleme">
 <% if (ansamblu.probleme.length) { %>
   <div class="warn err">
     <b><%= t('ansamblu.deReglat') %></b>
@@ -26,6 +44,9 @@
   </div>
 <% } %>
 
+</div>
+
+<div id="anSus">
 <div class="ansamblu-sus">
   <div class="panel">
     <h2><%= t('ansamblu.camerariDeSus') %></h2>
@@ -76,21 +97,9 @@
   </div>
 </div>
 
-<!-- ---------------- vederea 3D a ansamblului ---------------- -->
-<div class="panel">
-  <div class="top" style="margin-bottom:8px">
-    <h2 style="margin:0"><%= t('ansamblu.in3d') %></h2>
-    <div class="btns" style="margin:0">
-      <button class="btn small" data-vedere="iso"><%= t('ansamblu.vedereIzo') %></button>
-      <button class="btn small" data-vedere="fata"><%= t('ansamblu.vedereFata') %></button>
-      <button class="btn small" data-vedere="sus"><%= t('ansamblu.vedereSus') %></button>
-      <label class="check" style="margin-left:8px"><input type="checkbox" id="anPereti" checked> <%= t('ansamblu.aratPereti') %></label>
-    </div>
-  </div>
-  <div class="cvwrap" id="anWrap"><canvas id="anCanvas"></canvas></div>
-  <div class="info" id="anInfo"></div>
 </div>
 
+<div id="anElevatii">
 <!-- ---------------- elevațiile ---------------- -->
 <% pereti.forEach(function (per) {
      var p = ansamblu.pereti.find(function (x) { return x.id === per.id; });
@@ -101,6 +110,9 @@
   </div>
 <% }); %>
 
+</div>
+
+<div id="anPozitii">
 <!-- ---------------- poziția fiecărui corp ---------------- -->
 <div class="panel">
   <h2><%= t('ansamblu.pozitiaCorpurilor') %></h2>
@@ -142,6 +154,14 @@
   </table></div>
 </div>
 
-<script type="application/json" id="page-data"><%- jsonPentruPagina({ orderId: order.id }) %></script>
+</div>
+
+<script type="application/json" id="page-data"><%- jsonPentruPagina({
+  orderId: order.id,
+  t: ['indiciu', 'selectat', 'perete', 'deLaColt', 'inaltime', 'deschide', 'salvat', 'seSalveaza',
+      'eroare', 'seSuprapune', 'stanga', 'dreapta', 'seIncarca', 'nuSeIncarca', 'nu3d', 'renunta']
+     .reduce(function (o, k) { o[k] = t('ansamblu.p3d.' + k); return o; }, {}),
+  pereti: pereti.map(function (p) { return { id: p.id, nume: p.nume }; })
+}) %></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="/static/ansamblu.js?v=<%= assetV %>"></script>

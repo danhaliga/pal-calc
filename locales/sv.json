@@ -1290,7 +1290,25 @@
     "colAdancime": "Djup",
     "colDistanta": "Avstånd (mm)",
     "colInaltime": "Höjd (mm)",
-    "pune": "Placera"
+    "pune": "Placera",
+    "p3d": {
+      "indiciu": "Dra ett skåp för att flytta det: det hamnar vid närmaste vägg och fäster mot grannarna. Dra på en tom yta för att vrida rummet; zooma med två fingrar eller mushjulet. Tryck på ett skåp för att välja det.",
+      "selectat": "Valt skåp",
+      "perete": "Vägg",
+      "deLaColt": "Från hörnet (mm)",
+      "inaltime": "Från golvet (mm)",
+      "deschide": "Öppna skåpet",
+      "salvat": "Sparat",
+      "seSalveaza": "Sparar…",
+      "eroare": "Positionen sparades inte. Försök igen.",
+      "seSuprapune": "Krockar med ett annat skåp eller sticker ut ur rummet",
+      "stanga": "Flytta åt vänster",
+      "dreapta": "Flytta åt höger",
+      "seIncarca": "Laddar uppställningen…",
+      "nuSeIncarca": "Uppställningen kunde inte laddas.",
+      "nu3d": "3D-vyn kunde inte laddas (3D-biblioteket är blockerat). Planen och vyerna fungerar som vanligt.",
+      "renunta": "Avbryt"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Mina stommar",

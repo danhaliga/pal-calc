@@ -1290,7 +1290,25 @@
     "colAdancime": "Profondità",
     "colDistanta": "Distanza (mm)",
     "colInaltime": "Altezza (mm)",
-    "pune": "Posiziona"
+    "pune": "Posiziona",
+    "p3d": {
+      "indiciu": "Trascina un mobile per spostarlo: si appoggia alla parete più vicina e si attacca ai vicini. Trascina su uno spazio vuoto per ruotare la stanza; usa due dita o la rotella del mouse per lo zoom. Tocca un mobile per selezionarlo.",
+      "selectat": "Mobile selezionato",
+      "perete": "Parete",
+      "deLaColt": "Dall'angolo (mm)",
+      "inaltime": "Dal pavimento (mm)",
+      "deschide": "Apri il mobile",
+      "salvat": "Salvato",
+      "seSalveaza": "Salvataggio…",
+      "eroare": "La posizione non è stata salvata. Riprova.",
+      "seSuprapune": "Si sovrappone a un altro mobile o esce dalla stanza",
+      "stanga": "Sposta a sinistra",
+      "dreapta": "Sposta a destra",
+      "seIncarca": "Caricamento dell'insieme…",
+      "nuSeIncarca": "Impossibile caricare l'insieme.",
+      "nu3d": "Impossibile caricare la vista 3D (la libreria 3D è bloccata). Pianta e prospetti funzionano normalmente.",
+      "renunta": "Annulla"
+    }
   },
   "editor": {
     "inapoiCorpuri": "I miei mobili",

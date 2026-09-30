@@ -1300,7 +1300,25 @@
     "colAdancime": "Adâncime",
     "colDistanta": "Distanță (mm)",
     "colInaltime": "Înălțime (mm)",
-    "pune": "Pune"
+    "pune": "Pune",
+    "p3d": {
+      "indiciu": "Trage un corp ca să-l muți: se așază pe peretele cel mai apropiat și se lipește de vecini. Trage pe gol ca să rotești camera; cu două degete sau cu rotița faci zoom. Apasă pe un corp ca să-l alegi.",
+      "selectat": "Corpul ales",
+      "perete": "Peretele",
+      "deLaColt": "De la colț (mm)",
+      "inaltime": "De la podea (mm)",
+      "deschide": "Deschide corpul",
+      "salvat": "Salvat",
+      "seSalveaza": "Se salvează…",
+      "eroare": "Poziția nu s-a salvat. Încearcă din nou.",
+      "seSuprapune": "Intră în alt corp sau iese din cameră",
+      "stanga": "Mută spre stânga",
+      "dreapta": "Mută spre dreapta",
+      "seIncarca": "Se încarcă ansamblul…",
+      "nuSeIncarca": "Ansamblul nu s-a putut încărca.",
+      "nu3d": "Vederea 3D nu s-a putut încărca (biblioteca 3D este blocată). Planul și elevațiile funcționează normal.",
+      "renunta": "Renunță"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Corpurile mele",

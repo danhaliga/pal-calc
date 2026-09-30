@@ -1290,7 +1290,25 @@
     "colAdancime": "深",
     "colDistanta": "距离（毫米）",
     "colInaltime": "高度（毫米）",
-    "pune": "放上"
+    "pune": "放上",
+    "p3d": {
+      "indiciu": "拖动柜体即可移动：它会靠到最近的墙上，并贴合相邻柜体。在空白处拖动可旋转房间；用两根手指或鼠标滚轮缩放。点按柜体即可选中。",
+      "selectat": "已选柜体",
+      "perete": "墙面",
+      "deLaColt": "距墙角 (mm)",
+      "inaltime": "距地面 (mm)",
+      "deschide": "打开柜体",
+      "salvat": "已保存",
+      "seSalveaza": "正在保存…",
+      "eroare": "位置未保存，请重试。",
+      "seSuprapune": "与其他柜体重叠或超出房间",
+      "stanga": "向左移动",
+      "dreapta": "向右移动",
+      "seIncarca": "正在加载组合…",
+      "nuSeIncarca": "无法加载组合。",
+      "nu3d": "无法加载 3D 视图（3D 库被阻止）。平面图和立面图可正常使用。",
+      "renunta": "取消"
+    }
   },
   "editor": {
     "inapoiCorpuri": "我的柜体",

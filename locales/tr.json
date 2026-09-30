@@ -1290,7 +1290,25 @@
     "colAdancime": "Derinlik",
     "colDistanta": "Mesafe (mm)",
     "colInaltime": "Yükseklik (mm)",
-    "pune": "Yerleştir"
+    "pune": "Yerleştir",
+    "p3d": {
+      "indiciu": "Taşımak için bir dolabı sürükle: en yakın duvara yerleşir ve komşularına yapışır. Odayı döndürmek için boş alanda sürükle; yakınlaştırmak için iki parmak ya da fare tekerleğini kullan. Seçmek için bir dolaba dokun.",
+      "selectat": "Seçili dolap",
+      "perete": "Duvar",
+      "deLaColt": "Köşeden (mm)",
+      "inaltime": "Zeminden (mm)",
+      "deschide": "Dolabı aç",
+      "salvat": "Kaydedildi",
+      "seSalveaza": "Kaydediliyor…",
+      "eroare": "Konum kaydedilemedi. Tekrar dene.",
+      "seSuprapune": "Başka bir dolaba giriyor veya odanın dışına taşıyor",
+      "stanga": "Sola taşı",
+      "dreapta": "Sağa taşı",
+      "seIncarca": "Takım yükleniyor…",
+      "nuSeIncarca": "Takım yüklenemedi.",
+      "nu3d": "3D görünüm yüklenemedi (3D kitaplığı engellendi). Plan ve görünüşler normal çalışıyor.",
+      "renunta": "Vazgeç"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Gövdelerim",

@@ -1290,7 +1290,25 @@
     "colAdancime": "Diepte",
     "colDistanta": "Afstand (mm)",
     "colInaltime": "Hoogte (mm)",
-    "pune": "Plaatsen"
+    "pune": "Plaatsen",
+    "p3d": {
+      "indiciu": "Sleep een kast om hem te verplaatsen: hij gaat naar de dichtstbijzijnde muur en sluit aan op zijn buren. Sleep op een lege plek om de kamer te draaien; zoom met twee vingers of het muiswiel. Tik op een kast om hem te selecteren.",
+      "selectat": "Geselecteerde kast",
+      "perete": "Muur",
+      "deLaColt": "Vanaf hoek (mm)",
+      "inaltime": "Vanaf vloer (mm)",
+      "deschide": "Kast openen",
+      "salvat": "Opgeslagen",
+      "seSalveaza": "Opslaan…",
+      "eroare": "De positie is niet opgeslagen. Probeer het opnieuw.",
+      "seSuprapune": "Overlapt een andere kast of steekt buiten de kamer",
+      "stanga": "Naar links",
+      "dreapta": "Naar rechts",
+      "seIncarca": "Opstelling laden…",
+      "nuSeIncarca": "De opstelling kon niet worden geladen.",
+      "nu3d": "De 3D-weergave kon niet worden geladen (de 3D-bibliotheek is geblokkeerd). Plattegrond en aanzichten werken normaal.",
+      "renunta": "Annuleren"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Mijn kasten",

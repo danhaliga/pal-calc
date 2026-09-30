@@ -486,6 +486,25 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
   Prestatori. Cercetarea brută: scratchpad-ul sesiunii,
   `prestatori-research/*.json`.
 
+## 6p. Planificatorul 3D, etapa 1 (30 septembrie)
+
+- Pagina Ansamblu a comenzii are sus planificatorul 3D (`public/ansamblu.js`,
+  rescris). Tragi de un corp: se pune pe peretele cel mai apropiat (A/B/C/D),
+  cu fața spre cameră, și se lipește de colțuri și de vecinii de la aceeași
+  înălțime (prag 90 mm, altfel din 5 în 5 mm). Se calculează la înălțimea de
+  unde a fost apucat (corpurile suspendate nu sar) și păstrează locul apucat.
+  Roșu = intră în alt corp sau iese din cameră. Panou: perete, distanța de la
+  colț, înălțimea, ◀ ▶, săgeți pe tastatură (Shift = 100 mm).
+- Salvare: `POST /api/corps/:id/pozitie` (JSON, x-csrf-token), apoi pagina
+  își reia planul, problemele, elevațiile și tabelul (`#anProbleme`,
+  `#anSus`, `#anElevatii`, `#anPozitii`) fără să piardă unghiul camerei.
+- Culorile decorurilor vin din materialele corpului/comenzii (API-ul trimite
+  `culori`); zidul dintre privitor și cameră se ascunde.
+- Test fără WebGL: scratchpad `xl/test3d.js` (jsdom + three 0.128 cu un
+  renderer fals) — trage un corp și verifică salvarea.
+- Etapele următoare propuse: corpuri noi din catalog direct în cameră,
+  ferestre/uși pe pereți, blat automat; apoi vedere „din cameră” și poze.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

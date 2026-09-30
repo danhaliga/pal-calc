@@ -1290,7 +1290,25 @@
     "colAdancime": "Dalam",
     "colDistanta": "Jarak (mm)",
     "colInaltime": "Tinggi (mm)",
-    "pune": "Tempatkan"
+    "pune": "Tempatkan",
+    "p3d": {
+      "indiciu": "Seret kabinet untuk memindahkannya: kabinet akan menempel ke dinding terdekat dan ke kabinet di sebelahnya. Seret di area kosong untuk memutar ruangan; gunakan dua jari atau roda mouse untuk zoom. Ketuk kabinet untuk memilihnya.",
+      "selectat": "Kabinet terpilih",
+      "perete": "Dinding",
+      "deLaColt": "Dari sudut (mm)",
+      "inaltime": "Dari lantai (mm)",
+      "deschide": "Buka kabinet",
+      "salvat": "Tersimpan",
+      "seSalveaza": "Menyimpan…",
+      "eroare": "Posisi tidak tersimpan. Coba lagi.",
+      "seSuprapune": "Bertumpuk dengan kabinet lain atau keluar dari ruangan",
+      "stanga": "Geser ke kiri",
+      "dreapta": "Geser ke kanan",
+      "seIncarca": "Memuat rangkaian…",
+      "nuSeIncarca": "Rangkaian tidak dapat dimuat.",
+      "nu3d": "Tampilan 3D tidak dapat dimuat (pustaka 3D diblokir). Denah dan tampak tetap berfungsi normal.",
+      "renunta": "Batal"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Boks saya",

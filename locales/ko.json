@@ -1290,7 +1290,25 @@
     "colAdancime": "깊이",
     "colDistanta": "거리 (mm)",
     "colInaltime": "높이 (mm)",
-    "pune": "놓기"
+    "pune": "놓기",
+    "p3d": {
+      "indiciu": "캐비닛을 드래그해 옮기세요. 가장 가까운 벽에 붙고 옆 캐비닛에 맞춰 붙습니다. 빈 곳을 드래그하면 방이 회전하고, 두 손가락이나 마우스 휠로 확대/축소할 수 있어요. 캐비닛을 탭하면 선택됩니다.",
+      "selectat": "선택한 캐비닛",
+      "perete": "벽",
+      "deLaColt": "모서리에서 (mm)",
+      "inaltime": "바닥에서 (mm)",
+      "deschide": "캐비닛 열기",
+      "salvat": "저장됨",
+      "seSalveaza": "저장 중…",
+      "eroare": "위치를 저장하지 못했어요. 다시 시도해 주세요.",
+      "seSuprapune": "다른 캐비닛과 겹치거나 방 밖으로 나갑니다",
+      "stanga": "왼쪽으로 이동",
+      "dreapta": "오른쪽으로 이동",
+      "seIncarca": "세트 불러오는 중…",
+      "nuSeIncarca": "세트를 불러올 수 없습니다.",
+      "nu3d": "3D 보기를 불러올 수 없습니다(3D 라이브러리가 차단됨). 평면도와 입면도는 정상적으로 작동합니다.",
+      "renunta": "취소"
+    }
   },
   "editor": {
     "inapoiCorpuri": "내 캐비닛",

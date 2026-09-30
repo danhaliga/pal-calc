@@ -1290,7 +1290,25 @@
     "colAdancime": "Profundidade",
     "colDistanta": "Distância (mm)",
     "colInaltime": "Altura (mm)",
-    "pune": "Colocar"
+    "pune": "Colocar",
+    "p3d": {
+      "indiciu": "Arraste um móvel para movê-lo: ele vai para a parede mais próxima e se encaixa nos vizinhos. Arraste num espaço vazio para girar o ambiente; use dois dedos ou a roda do mouse para dar zoom. Toque num móvel para selecioná-lo.",
+      "selectat": "Móvel selecionado",
+      "perete": "Parede",
+      "deLaColt": "Do canto (mm)",
+      "inaltime": "Do chão (mm)",
+      "deschide": "Abrir móvel",
+      "salvat": "Salvo",
+      "seSalveaza": "Salvando…",
+      "eroare": "A posição não foi salva. Tente novamente.",
+      "seSuprapune": "Sobrepõe outro móvel ou sai do ambiente",
+      "stanga": "Mover para a esquerda",
+      "dreapta": "Mover para a direita",
+      "seIncarca": "Carregando o conjunto…",
+      "nuSeIncarca": "Não foi possível carregar o conjunto.",
+      "nu3d": "Não foi possível carregar a vista 3D (a biblioteca 3D está bloqueada). A planta e as elevações funcionam normalmente.",
+      "renunta": "Cancelar"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Os meus módulos",

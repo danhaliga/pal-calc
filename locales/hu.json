@@ -1290,7 +1290,25 @@
     "colAdancime": "Mélység",
     "colDistanta": "Távolság (mm)",
     "colInaltime": "Magasság (mm)",
-    "pune": "Elhelyez"
+    "pune": "Elhelyez",
+    "p3d": {
+      "indiciu": "Húzz egy elemet az áthelyezéséhez: a legközelebbi falhoz kerül, és a szomszédaihoz tapad. Húzz egy üres helyen a szoba forgatásához; két ujjal vagy az egér görgőjével nagyíthatsz. Koppints egy elemre a kijelöléséhez.",
+      "selectat": "Kijelölt elem",
+      "perete": "Fal",
+      "deLaColt": "A saroktól (mm)",
+      "inaltime": "A padlótól (mm)",
+      "deschide": "Elem megnyitása",
+      "salvat": "Mentve",
+      "seSalveaza": "Mentés…",
+      "eroare": "A pozíció nem mentődött el. Próbáld újra.",
+      "seSuprapune": "Belelóg egy másik elembe vagy kilóg a szobából",
+      "stanga": "Mozgatás balra",
+      "dreapta": "Mozgatás jobbra",
+      "seIncarca": "Az összeállítás betöltése…",
+      "nuSeIncarca": "Az összeállítást nem sikerült betölteni.",
+      "nu3d": "A 3D nézetet nem sikerült betölteni (a 3D könyvtár le van tiltva). Az alaprajz és a nézetek rendesen működnek.",
+      "renunta": "Mégse"
+    }
   },
   "editor": {
     "inapoiCorpuri": "A korpuszaim",

@@ -735,6 +735,19 @@ router.get('/api/orders/:id/ansamblu', requireAuth, (req, res, next) => {
   const corpuri = corpuriPozitionate(order.id);
   const ans = PalAnsamblu.ansamblu(cu, corpuri, req.t);
 
+  /* culorile decorurilor: ale corpului, altfel ale comenzii */
+  const mats = materiale.aleComenzii(order.id);
+  const hexDupaId = {};
+  mats.forEach(m => { hexDupaId[m.id] = m.hex; });
+  const rol = r => (mats.find(m => m.rol === r) || mats[0] || {}).hex || null;
+  const culori = {};
+  db.prepare('SELECT id, mat_corp_id, mat_front_id FROM corps WHERE order_id = ?').all(order.id).forEach(c => {
+    culori[c.id] = {
+      corp: hexDupaId[c.mat_corp_id] || rol('corp'),
+      front: hexDupaId[c.mat_front_id] || rol('front') || rol('corp')
+    };
+  });
+
   res.json({
     camera: ans.camera,
     corpuri: ans.asezari.map(a => {
@@ -746,12 +759,36 @@ router.get('/api/orders/:id/ansamblu', requireAuth, (req, res, next) => {
            codurile de piese. `perete` și `d` le citea deja panoul din vederea
            3D (public/ansamblu.js), dar nu i le trimitea nimeni, așa că scria
            mereu „peretele —, la 0 mm de colț". */
-        nr: a.nr, perete: a.perete.id, d: a.poz.d,
+        nr: a.nr, perete: a.perete.id, d: a.poz.d, h: a.poz.h,
+        /* gabaritul, ca pagina să poată muta corpul fără să întrebe serverul */
+        W: a.W, D: a.D, H: a.H, colt: a.colt, W2: a.W2 || 0,
+        culori: culori[a.id] || {},
         origine: a.origine, rotatie: a.rotatie,
         piese: rez.P.map(p => ({ nume: p.nume, boxes: p.boxes }))
       };
     })
   });
+});
+
+/* Poziția unui corp, mutat cu mâna în vederea 3D. Răspunsul aduce
+   problemele ansamblului (depășiri, suprapuneri), în limba paginii. */
+const schemaPozitie = z.object({
+  perete: z.enum(['A', 'B', 'C', 'D']),
+  d: z.coerce.number().min(-5000).max(20000),
+  h: z.coerce.number().min(0).max(5000)
+});
+
+router.post('/api/corps/:id/pozitie', requireAuth, (req, res) => {
+  const corp = db.prepare('SELECT * FROM corps WHERE id = ? AND user_id = ?').get(Number(req.params.id), req.user.id);
+  if (!corp || !corp.order_id) return res.status(404).json({ error: req.t('eroare.corpLipsa') });
+  const p = schemaPozitie.safeParse(req.body || {});
+  if (!p.success) return res.status(400).json({ error: req.t('eroare.cerere') });
+  const poz = { perete: p.data.perete, d: Math.round(Math.max(0, p.data.d) * 10) / 10, h: Math.round(p.data.h * 10) / 10 };
+  db.prepare("UPDATE corps SET pozitie = ?, updated_at = datetime('now') WHERE id = ?").run(JSON.stringify(poz), corp.id);
+
+  const order = getOwned(corp.order_id, req.user.id);
+  const ans = PalAnsamblu.ansamblu(comandaCuCamera(order), corpuriPozitionate(order.id), req.t);
+  res.json({ ok: true, pozitie: poz, probleme: ans.probleme.length });
 });
 
 /* ---------- listele de producție ---------- */

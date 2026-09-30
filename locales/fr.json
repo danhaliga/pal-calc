@@ -1290,7 +1290,25 @@
     "colAdancime": "Profondeur",
     "colDistanta": "Distance (mm)",
     "colInaltime": "Hauteur (mm)",
-    "pune": "Poser"
+    "pune": "Poser",
+    "p3d": {
+      "indiciu": "Faites glisser un caisson pour le déplacer : il se place contre le mur le plus proche et se colle à ses voisins. Faites glisser dans le vide pour faire pivoter la pièce ; zoomez avec deux doigts ou la molette de la souris. Touchez un caisson pour le sélectionner.",
+      "selectat": "Caisson sélectionné",
+      "perete": "Mur",
+      "deLaColt": "Depuis le coin (mm)",
+      "inaltime": "Depuis le sol (mm)",
+      "deschide": "Ouvrir le caisson",
+      "salvat": "Enregistré",
+      "seSalveaza": "Enregistrement…",
+      "eroare": "La position n'a pas été enregistrée. Veuillez réessayer.",
+      "seSuprapune": "Chevauche un autre caisson ou dépasse de la pièce",
+      "stanga": "Déplacer à gauche",
+      "dreapta": "Déplacer à droite",
+      "seIncarca": "Chargement de l'ensemble…",
+      "nuSeIncarca": "Impossible de charger l'ensemble.",
+      "nu3d": "Impossible de charger la vue 3D (la bibliothèque 3D est bloquée). Le plan et les élévations fonctionnent normalement.",
+      "renunta": "Annuler"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Mes caissons",

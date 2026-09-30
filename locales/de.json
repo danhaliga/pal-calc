@@ -1290,7 +1290,25 @@
     "colAdancime": "Tiefe",
     "colDistanta": "Abstand (mm)",
     "colInaltime": "Höhe (mm)",
-    "pune": "Setzen"
+    "pune": "Setzen",
+    "p3d": {
+      "indiciu": "Ziehen Sie einen Korpus, um ihn zu verschieben: Er setzt sich an die nächste Wand und schließt an seine Nachbarn an. Ziehen Sie auf einer freien Fläche, um den Raum zu drehen; zoomen Sie mit zwei Fingern oder dem Mausrad. Tippen Sie auf einen Korpus, um ihn auszuwählen.",
+      "selectat": "Ausgewählter Korpus",
+      "perete": "Wand",
+      "deLaColt": "Ab Ecke (mm)",
+      "inaltime": "Ab Boden (mm)",
+      "deschide": "Korpus öffnen",
+      "salvat": "Gespeichert",
+      "seSalveaza": "Wird gespeichert…",
+      "eroare": "Die Position wurde nicht gespeichert. Bitte versuchen Sie es erneut.",
+      "seSuprapune": "Überschneidet einen anderen Korpus oder ragt aus dem Raum",
+      "stanga": "Nach links",
+      "dreapta": "Nach rechts",
+      "seIncarca": "Baugruppe wird geladen…",
+      "nuSeIncarca": "Die Baugruppe konnte nicht geladen werden.",
+      "nu3d": "Die 3D-Ansicht konnte nicht geladen werden (die 3D-Bibliothek ist blockiert). Grundriss und Ansichten funktionieren normal.",
+      "renunta": "Abbrechen"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Meine Korpusse",

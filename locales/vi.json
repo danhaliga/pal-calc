@@ -1290,7 +1290,25 @@
     "colAdancime": "Sâu",
     "colDistanta": "Khoảng cách (mm)",
     "colInaltime": "Chiều cao (mm)",
-    "pune": "Đặt"
+    "pune": "Đặt",
+    "p3d": {
+      "indiciu": "Kéo một tủ để di chuyển: tủ sẽ áp vào bức tường gần nhất và dính vào các tủ bên cạnh. Kéo trên chỗ trống để xoay phòng; dùng hai ngón tay hoặc con lăn chuột để thu phóng. Chạm vào tủ để chọn.",
+      "selectat": "Tủ đã chọn",
+      "perete": "Tường",
+      "deLaColt": "Từ góc (mm)",
+      "inaltime": "Từ sàn (mm)",
+      "deschide": "Mở tủ",
+      "salvat": "Đã lưu",
+      "seSalveaza": "Đang lưu…",
+      "eroare": "Chưa lưu được vị trí. Hãy thử lại.",
+      "seSuprapune": "Chồng lên tủ khác hoặc ra ngoài phòng",
+      "stanga": "Dời sang trái",
+      "dreapta": "Dời sang phải",
+      "seIncarca": "Đang tải bộ tủ…",
+      "nuSeIncarca": "Không thể tải bộ tủ.",
+      "nu3d": "Không thể tải chế độ xem 3D (thư viện 3D bị chặn). Mặt bằng và mặt đứng vẫn hoạt động bình thường.",
+      "renunta": "Hủy"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Thùng tủ của tôi",

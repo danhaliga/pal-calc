@@ -1300,7 +1300,25 @@
     "colAdancime": "Hloubka",
     "colDistanta": "Vzdálenost (mm)",
     "colInaltime": "Výška (mm)",
-    "pune": "Umístit"
+    "pune": "Umístit",
+    "p3d": {
+      "indiciu": "Přetáhněte skříňku a přesuňte ji: přisadí se k nejbližší stěně a přilne k sousedním. Tažením po prázdném místě otočíte místnost; přibližujte dvěma prsty nebo kolečkem myši. Klepnutím na skříňku ji vyberete.",
+      "selectat": "Vybraná skříňka",
+      "perete": "Stěna",
+      "deLaColt": "Od rohu (mm)",
+      "inaltime": "Od podlahy (mm)",
+      "deschide": "Otevřít skříňku",
+      "salvat": "Uloženo",
+      "seSalveaza": "Ukládání…",
+      "eroare": "Pozice se neuložila. Zkuste to znovu.",
+      "seSuprapune": "Zasahuje do jiné skříňky nebo mimo místnost",
+      "stanga": "Posunout doleva",
+      "dreapta": "Posunout doprava",
+      "seIncarca": "Načítání sestavy…",
+      "nuSeIncarca": "Sestavu se nepodařilo načíst.",
+      "nu3d": "3D pohled se nepodařilo načíst (3D knihovna je blokována). Půdorys a pohledy fungují normálně.",
+      "renunta": "Zrušit"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Moje korpusy",

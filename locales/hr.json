@@ -1300,7 +1300,25 @@
     "colAdancime": "Dubina",
     "colDistanta": "Udaljenost (mm)",
     "colInaltime": "Visina (mm)",
-    "pune": "Postavi"
+    "pune": "Postavi",
+    "p3d": {
+      "indiciu": "Povuci element da ga pomakneš: smjestit će se uz najbliži zid i prilijepiti uz susjedne. Povuci po praznom prostoru da rotiraš prostoriju; zumiraj s dva prsta ili kotačićem miša. Dodirni element da ga odabereš.",
+      "selectat": "Odabrani element",
+      "perete": "Zid",
+      "deLaColt": "Od kuta (mm)",
+      "inaltime": "Od poda (mm)",
+      "deschide": "Otvori element",
+      "salvat": "Spremljeno",
+      "seSalveaza": "Spremanje…",
+      "eroare": "Položaj nije spremljen. Pokušaj ponovno.",
+      "seSuprapune": "Ulazi u drugi element ili izlazi iz prostorije",
+      "stanga": "Pomakni ulijevo",
+      "dreapta": "Pomakni udesno",
+      "seIncarca": "Učitavanje sklopa…",
+      "nuSeIncarca": "Sklop se nije mogao učitati.",
+      "nu3d": "3D prikaz se nije mogao učitati (3D biblioteka je blokirana). Tlocrt i pogledi rade normalno.",
+      "renunta": "Odustani"
+    }
   },
   "editor": {
     "inapoiCorpuri": "Moji korpusi",

@@ -609,3 +609,16 @@ svg.sk .sk-usa.fara{stroke-dasharray:60 44;opacity:.7}
 .prest-trimite .muted{color:#b3a697}
 .prest-trimite button.primary{padding:15px;font-size:15.5px;border-radius:14px}
 @media (max-width:900px){.prest-cap,.prest-profil{grid-template-columns:minmax(0,1fr)}.prest-detalii{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- planificatorul 3D (ansamblu) ---------- */
+.an-stare{position:absolute;right:12px;top:12px;padding:6px 12px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-size:13px;font-weight:600}
+.an-stare.rau{color:var(--danger);border-color:var(--danger)}
+.an-panou{display:flex;flex-direction:column;gap:8px;padding-top:10px}
+.an-sel{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.an-sel b{font-family:var(--font-display);font-size:18px}
+.an-rau{color:var(--danger);font-size:13px;font-weight:700}
+.an-unelte{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.an-unelte label{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.an-unelte input{width:90px}
+.an-unelte .pastila{padding:6px 12px;min-width:40px}
+.an-et{font-size:13px;color:var(--muted)}

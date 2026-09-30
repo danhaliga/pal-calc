@@ -1290,7 +1290,25 @@
     "colAdancime": "Depth",
     "colDistanta": "Distance (mm)",
     "colInaltime": "Height (mm)",
-    "pune": "Place"
+    "pune": "Place",
+    "p3d": {
+      "indiciu": "Drag a cabinet to move it: it goes to the nearest wall and sticks to its neighbours. Drag on empty space to rotate the room; use two fingers or the mouse wheel to zoom. Tap a cabinet to select it.",
+      "selectat": "Selected cabinet",
+      "perete": "Wall",
+      "deLaColt": "From corner (mm)",
+      "inaltime": "From floor (mm)",
+      "deschide": "Open cabinet",
+      "salvat": "Saved",
+      "seSalveaza": "Saving…",
+      "eroare": "The position wasn't saved. Please try again.",
+      "seSuprapune": "Overlaps another cabinet or sticks out of the room",
+      "stanga": "Move left",
+      "dreapta": "Move right",
+      "seIncarca": "Loading the assembly…",
+      "nuSeIncarca": "The assembly couldn't be loaded.",
+      "nu3d": "The 3D view couldn't be loaded (the 3D library is blocked). The plan and elevations work normally.",
+      "renunta": "Cancel"
+    }
   },
   "editor": {
     "inapoiCorpuri": "My cabinets",
