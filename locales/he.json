@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "מחשבון חיתוך לוחות סיבית",
     "subsol": "כל המידות במ״מ. תמיד תשאלו בניסור אם הם רוצים את המידה הסופית או את מידת החיתוך.",
     "platatest": "תשלום ניסיון — הדרייבר {driver} פעיל, לא נגבה כלום."
@@ -1848,7 +1848,7 @@
     "colExportat": "יוצא",
     "tipPf": "אדם פרטי",
     "tipPj": "חברה",
-    "produs": "קרדיט PAL Calc",
+    "produs": "קרדיט CutModul",
     "um": "יח׳",
     "dateTitlu": "פרטי חשבונית",
     "dateIntro": "לפיהם מופקת חשבונית לכל טעינת קרדיט. ממלאים פעם אחת.",
@@ -1932,7 +1932,7 @@
     "probaTitlu": "הודעת ניסיון",
     "probaAjutor": "שליחת הודעת ניסיון אל {email}, כדי לוודא שהיא מגיעה.",
     "probaButon": "שליחת הודעת ניסיון",
-    "probaSubiect": "PAL Calc – הודעת ניסיון",
+    "probaSubiect": "CutModul – הודעת ניסיון",
     "probaText": "אם קיבלת הודעה זו, שליחת ההזמנות לספקי השירות עובדת.",
     "probaTrimisa": "הודעת הניסיון נשלחה אל {email}.",
     "adminLegatura": "ספקי שירות",

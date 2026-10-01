@@ -112,7 +112,7 @@ router.post('/credit/topup', requireAuth, async (req, res, next) => {
 
     const url = await plati.checkoutTopup({
       user: req.user, cents,
-      descriere: 'Credit PAL Calc – ' + lei(cents) + ' RON'
+      descriere: 'Credit CutModul – ' + lei(cents) + ' RON'
     });
     res.redirect(303, url);
   } catch (e) { next(e); }

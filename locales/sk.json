@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Kalkulačka rezania drevotriesky",
     "subsol": "Všetky rozmery sú v mm. Vždy si v rezacom centre over, či chcú hotový rozmer, alebo rozmer rezu.",
     "platatest": "Testovacia platba — ovládač {driver} je aktívny, nič sa nestrháva."
@@ -1848,7 +1848,7 @@
     "colExportat": "Exportované",
     "tipPf": "Fyzická osoba",
     "tipPj": "Firma",
-    "produs": "Kredit PAL Calc",
+    "produs": "Kredit CutModul",
     "um": "ks",
     "dateTitlu": "Fakturačné údaje",
     "dateIntro": "Podľa nich sa fakturuje každé dobitie kreditu. Vyplnia sa raz.",
@@ -1932,7 +1932,7 @@
     "probaTitlu": "Testovací e-mail",
     "probaAjutor": "Pošlite testovací e-mail na {email} a overte si, že príde.",
     "probaButon": "Odoslať testovací e-mail",
-    "probaSubiect": "PAL Calc – testovací e-mail",
+    "probaSubiect": "CutModul – testovací e-mail",
     "probaText": "Ak vám tento e-mail prišiel, odosielanie objednávok dodávateľom funguje.",
     "probaTrimisa": "Testovací e-mail bol odoslaný na {email}.",
     "adminLegatura": "Dodávatelia",

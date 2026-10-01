@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Chipboard cutting calculator",
     "subsol": "All sizes are in mm. Always check with your cutting service whether they want the finished size or the raw size.",
     "platatest": "Test payment — the {driver} driver is active, no money is charged."
@@ -1837,7 +1837,7 @@
     "colExportat": "Exported",
     "tipPf": "Individual",
     "tipPj": "Company",
-    "produs": "PAL Calc credit",
+    "produs": "CutModul credit",
     "um": "pcs",
     "dateTitlu": "Billing details",
     "dateIntro": "Used to invoice each credit top-up. Filled in once.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Test email",
     "probaAjutor": "Send a test email to {email} to check that it arrives.",
     "probaButon": "Send test email",
-    "probaSubiect": "PAL Calc – test email",
+    "probaSubiect": "CutModul – test email",
     "probaText": "If you received this email, sending orders to service providers works.",
     "probaTrimisa": "The test email was sent to {email}.",
     "adminLegatura": "Providers",

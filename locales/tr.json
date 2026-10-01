@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Suntalam kesim hesaplayıcı",
     "subsol": "Tüm ölçüler mm cinsindendir. Kesim servisine her zaman bitmiş ölçüyü mü yoksa kesim ölçüsünü mü istediklerini sor.",
     "platatest": "Test ödemesi — {driver} sürücüsü etkin, hiçbir tutar tahsil edilmiyor."
@@ -1837,7 +1837,7 @@
     "colExportat": "Dışa aktarıldı",
     "tipPf": "Gerçek kişi",
     "tipPj": "Tüzel kişi",
-    "produs": "PAL Calc kredisi",
+    "produs": "CutModul kredisi",
     "um": "adet",
     "dateTitlu": "Fatura bilgileri",
     "dateIntro": "Her kredi yüklemesi bunlarla faturalanır. Bir kez doldurulur.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Deneme e-postası",
     "probaAjutor": "Ulaştığını görmek için {email} adresine bir deneme e-postası gönderin.",
     "probaButon": "Deneme e-postası gönder",
-    "probaSubiect": "PAL Calc – deneme e-postası",
+    "probaSubiect": "CutModul – deneme e-postası",
     "probaText": "Bu e-postayı aldıysanız, siparişlerin hizmet sağlayıcılara gönderilmesi çalışıyor.",
     "probaTrimisa": "Deneme e-postası {email} adresine gönderildi.",
     "adminLegatura": "Hizmet sağlayıcılar",

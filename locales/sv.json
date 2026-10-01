@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Kapkalkylator för spånskiva",
     "subsol": "Alla mått är i mm. Fråga alltid kaptjänsten om de vill ha färdigmåttet eller kapmåttet.",
     "platatest": "Testbetalning — drivrutinen {driver} är aktiv, inga pengar dras."
@@ -1837,7 +1837,7 @@
     "colExportat": "Exporterad",
     "tipPf": "Privatperson",
     "tipPj": "Företag",
-    "produs": "PAL Calc-kredit",
+    "produs": "CutModul-kredit",
     "um": "st",
     "dateTitlu": "Faktureringsuppgifter",
     "dateIntro": "Används för att fakturera varje påfyllning. Fylls i en gång.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Testmejl",
     "probaAjutor": "Skicka ett testmejl till {email} för att se att det kommer fram.",
     "probaButon": "Skicka testmejl",
-    "probaSubiect": "PAL Calc – testmejl",
+    "probaSubiect": "CutModul – testmejl",
     "probaText": "Om du har fått det här mejlet fungerar det att skicka beställningar till leverantörer.",
     "probaTrimisa": "Testmejlet har skickats till {email}.",
     "adminLegatura": "Leverantörer",

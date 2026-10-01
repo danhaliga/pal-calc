@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "पार्टिकल बोर्ड कटिंग कैलकुलेटर",
     "subsol": "सभी माप मिमी में। कटिंग वाले से हमेशा पूछ लें कि उन्हें फ़िनिश साइज़ चाहिए या कटिंग साइज़।",
     "platatest": "टेस्ट पेमेंट — {driver} ड्राइवर चल रहा है, कोई पैसा नहीं कटता।"
@@ -1837,7 +1837,7 @@
     "colExportat": "निर्यात",
     "tipPf": "व्यक्ति",
     "tipPj": "कंपनी",
-    "produs": "PAL Calc क्रेडिट",
+    "produs": "CutModul क्रेडिट",
     "um": "नग",
     "dateTitlu": "बिलिंग विवरण",
     "dateIntro": "इन्हीं से हर क्रेडिट रिचार्ज का चालान बनता है। एक बार भरें।",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "टेस्ट ईमेल",
     "probaAjutor": "{email} पर एक टेस्ट ईमेल भेजें, ताकि पता चले कि वह पहुँचता है।",
     "probaButon": "टेस्ट ईमेल भेजें",
-    "probaSubiect": "PAL Calc – टेस्ट ईमेल",
+    "probaSubiect": "CutModul – टेस्ट ईमेल",
     "probaText": "अगर आपको यह ईमेल मिला है, तो सर्विस प्रोवाइडरों को ऑर्डर भेजना काम कर रहा है।",
     "probaTrimisa": "टेस्ट ईमेल {email} पर भेज दिया गया।",
     "adminLegatura": "सर्विस प्रोवाइडर",

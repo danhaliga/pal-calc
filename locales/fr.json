@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Calculateur de débit pour panneaux de particules",
     "subsol": "Toutes les cotes sont en mm. Vérifiez toujours auprès du service de débit s'il demande la cote finie ou la cote brute.",
     "platatest": "Paiement de test — le pilote {driver} est actif, aucun montant n'est prélevé."
@@ -1837,7 +1837,7 @@
     "colExportat": "Exporté",
     "tipPf": "Particulier",
     "tipPj": "Entreprise",
-    "produs": "Crédit PAL Calc",
+    "produs": "Crédit CutModul",
     "um": "pcs",
     "dateTitlu": "Données de facturation",
     "dateIntro": "Elles servent à facturer chaque recharge de crédit. À remplir une fois.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "E-mail de test",
     "probaAjutor": "Envoyez un e-mail de test à {email} pour vérifier qu’il arrive bien.",
     "probaButon": "Envoyer un e-mail de test",
-    "probaSubiect": "PAL Calc – e-mail de test",
+    "probaSubiect": "CutModul – e-mail de test",
     "probaText": "Si vous avez reçu cet e-mail, l’envoi des commandes aux prestataires fonctionne.",
     "probaTrimisa": "L’e-mail de test a été envoyé à {email}.",
     "adminLegatura": "Prestataires",

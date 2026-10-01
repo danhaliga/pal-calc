@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Kalkulator rozkroju płyty wiórowej",
     "subsol": "Wszystkie wymiary w mm. Zawsze upewnij się w rozkrojowni, czy chce wymiar gotowy, czy wymiar cięcia.",
     "platatest": "Płatność testowa — sterownik {driver} jest aktywny, nic nie jest pobierane."
@@ -1848,7 +1848,7 @@
     "colExportat": "Wyeksportowano",
     "tipPf": "Osoba fizyczna",
     "tipPj": "Firma",
-    "produs": "Kredyt PAL Calc",
+    "produs": "Kredyt CutModul",
     "um": "szt",
     "dateTitlu": "Dane do faktury",
     "dateIntro": "Z nich wystawia się fakturę za każde doładowanie. Wypełnia się raz.",
@@ -1932,7 +1932,7 @@
     "probaTitlu": "Testowy e-mail",
     "probaAjutor": "Wyślij testowy e-mail na {email}, aby sprawdzić, czy dochodzi.",
     "probaButon": "Wyślij testowy e-mail",
-    "probaSubiect": "PAL Calc – testowy e-mail",
+    "probaSubiect": "CutModul – testowy e-mail",
     "probaText": "Jeśli otrzymałeś tę wiadomość, wysyłanie zamówień do usługodawców działa.",
     "probaTrimisa": "Testowy e-mail został wysłany na {email}.",
     "adminLegatura": "Usługodawcy",

@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "파티클보드 재단 계산기",
     "subsol": "모든 치수는 mm입니다. 재단 맡기기 전에 꼭 확인하세요. 완성 치수인지 재단 치수인지.",
     "platatest": "테스트 결제 —— {driver} 드라이버로 돌아가며, 실제로 결제되지 않습니다."
@@ -1837,7 +1837,7 @@
     "colExportat": "내보냄",
     "tipPf": "개인",
     "tipPj": "법인",
-    "produs": "PAL Calc 크레딧",
+    "produs": "CutModul 크레딧",
     "um": "개",
     "dateTitlu": "청구 정보",
     "dateIntro": "크레딧 충전마다 이것으로 계산서를 발행합니다. 한 번만 입력합니다.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "테스트 이메일",
     "probaAjutor": "{email}(으)로 테스트 이메일을 보내 수신되는지 확인합니다.",
     "probaButon": "테스트 이메일 보내기",
-    "probaSubiect": "PAL Calc – 테스트 이메일",
+    "probaSubiect": "CutModul – 테스트 이메일",
     "probaText": "이 이메일을 받으셨다면 가공 업체로의 주문 발송이 정상적으로 작동합니다.",
     "probaTrimisa": "테스트 이메일을 {email}(으)로 보냈습니다.",
     "adminLegatura": "가공 업체",

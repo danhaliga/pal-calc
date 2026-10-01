@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "パーティクルボードのカット計算",
     "subsol": "寸法はすべてmmです。カットに出す前に必ず確認してください。仕上がり寸法とカット寸法、どちらで出すのか。",
     "platatest": "テスト決済 —— {driver} ドライバで動いています。実際の引き落としはありません。"
@@ -1837,7 +1837,7 @@
     "colExportat": "出力済み",
     "tipPf": "個人",
     "tipPj": "法人",
-    "produs": "PAL Calc クレジット",
+    "produs": "CutModul クレジット",
     "um": "個",
     "dateTitlu": "請求先情報",
     "dateIntro": "クレジット入金ごとの請求書に使います。一度だけ入力します。",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "テストメール",
     "probaAjutor": "{email} にテストメールを送信して、届くかどうかを確認します。",
     "probaButon": "テストメールを送信",
-    "probaSubiect": "PAL Calc – テストメール",
+    "probaSubiect": "CutModul – テストメール",
     "probaText": "このメールが届いていれば、加工業者への注文送信は正常に機能しています。",
     "probaTrimisa": "テストメールを {email} に送信しました。",
     "adminLegatura": "加工業者",

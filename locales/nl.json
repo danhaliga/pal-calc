@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Zaagrekenmachine voor spaanplaat",
     "subsol": "Alle maten in mm. Vraag altijd bij de zaagservice na of ze de eindmaat of de zaagmaat willen.",
     "platatest": "Testbetaling — de driver {driver} staat aan, er wordt niets afgeschreven."
@@ -1837,7 +1837,7 @@
     "colExportat": "Geëxporteerd",
     "tipPf": "Particulier",
     "tipPj": "Bedrijf",
-    "produs": "PAL Calc-tegoed",
+    "produs": "CutModul-tegoed",
     "um": "st",
     "dateTitlu": "Factuurgegevens",
     "dateIntro": "Hiermee wordt elke opwaardering gefactureerd. Eén keer invullen.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Test-e-mail",
     "probaAjutor": "Stuur een test-e-mail naar {email} om te controleren of die aankomt.",
     "probaButon": "Test-e-mail versturen",
-    "probaSubiect": "PAL Calc – test-e-mail",
+    "probaSubiect": "CutModul – test-e-mail",
     "probaText": "Als je deze e-mail hebt ontvangen, werkt het versturen van opdrachten naar dienstverleners.",
     "probaTrimisa": "De test-e-mail is verstuurd naar {email}.",
     "adminLegatura": "Dienstverleners",

@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Calculadora de despiece para aglomerado",
     "subsol": "Todas las medidas están en mm. Consulta siempre con el servicio de corte si pide la medida acabada o la medida bruta.",
     "platatest": "Pago de prueba — el controlador {driver} está activo, no se cobra nada."
@@ -1837,7 +1837,7 @@
     "colExportat": "Exportado",
     "tipPf": "Persona física",
     "tipPj": "Persona jurídica",
-    "produs": "Crédito PAL Calc",
+    "produs": "Crédito CutModul",
     "um": "ud",
     "dateTitlu": "Datos de facturación",
     "dateIntro": "Con ellos se factura cada recarga de crédito. Se rellenan una vez.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Email de prueba",
     "probaAjutor": "Envía un email de prueba a {email} para comprobar que llega.",
     "probaButon": "Enviar email de prueba",
-    "probaSubiect": "PAL Calc – email de prueba",
+    "probaSubiect": "CutModul – email de prueba",
     "probaText": "Si has recibido este email, el envío de pedidos a los proveedores funciona.",
     "probaTrimisa": "El email de prueba se ha enviado a {email}.",
     "adminLegatura": "Proveedores",

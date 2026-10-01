@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Kalkulator krojenja iverice",
     "subsol": "Sve mere su u mm. Uvek proveri u krojačnici da li traže gotovu meru ili meru reza.",
     "platatest": "Probna uplata — pokretač {driver} je uključen, ništa se ne naplaćuje."
@@ -1848,7 +1848,7 @@
     "colExportat": "Izvezeno",
     "tipPf": "Fizičko lice",
     "tipPj": "Pravno lice",
-    "produs": "PAL Calc kredit",
+    "produs": "CutModul kredit",
     "um": "kom",
     "dateTitlu": "Podaci za fakturu",
     "dateIntro": "Po njima se fakturiše svaka dopuna kredita. Popunjavaju se jednom.",
@@ -1932,7 +1932,7 @@
     "probaTitlu": "Probni imejl",
     "probaAjutor": "Pošaljite probni imejl na {email} da proverite da li stiže.",
     "probaButon": "Pošalji probni imejl",
-    "probaSubiect": "PAL Calc – probni imejl",
+    "probaSubiect": "CutModul – probni imejl",
     "probaText": "Ako ste primili ovaj imejl, slanje porudžbina pružaocima usluga radi.",
     "probaTrimisa": "Probni imejl je poslat na {email}.",
     "adminLegatura": "Pružaoci usluga",

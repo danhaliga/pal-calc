@@ -99,7 +99,7 @@ async function facWebhook(key, url) {
   const w = await s.webhookEndpoints.create({
     url: url,
     enabled_events: EVENIMENTE,
-    description: 'PAL Calc: confirmarea alimentărilor de credit'
+    description: 'CutModul: confirmarea alimentărilor de credit'
   });
   return w.secret;
 }

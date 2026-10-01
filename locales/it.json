@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Calcolatore di taglio per pannello truciolare",
     "subsol": "Tutte le misure sono in mm. Chiedi sempre al servizio di sezionatura se vuole la misura finita o quella grezza.",
     "platatest": "Pagamento di prova — il driver {driver} è attivo, non viene addebitato nulla."
@@ -1837,7 +1837,7 @@
     "colExportat": "Esportato",
     "tipPf": "Persona fisica",
     "tipPj": "Persona giuridica",
-    "produs": "Credito PAL Calc",
+    "produs": "Credito CutModul",
     "um": "pz",
     "dateTitlu": "Dati di fatturazione",
     "dateIntro": "Servono per fatturare ogni ricarica di credito. Si compilano una volta.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Email di prova",
     "probaAjutor": "Invia un’email di prova a {email} per verificare che arrivi.",
     "probaButon": "Invia email di prova",
-    "probaSubiect": "PAL Calc – email di prova",
+    "probaSubiect": "CutModul – email di prova",
     "probaText": "Se hai ricevuto questa email, l’invio degli ordini ai fornitori funziona.",
     "probaTrimisa": "L’email di prova è stata inviata a {email}.",
     "adminLegatura": "Fornitori",

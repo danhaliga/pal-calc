@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Forgácslap szabáskalkulátor",
     "subsol": "Minden méret mm-ben. Mindig kérdezd meg a szabászatnál, hogy a készméretet vagy a szabásméretet kérik-e.",
     "platatest": "Tesztfizetés — a(z) {driver} meghajtó aktív, nem történik terhelés."
@@ -1837,7 +1837,7 @@
     "colExportat": "Exportálva",
     "tipPf": "Magánszemély",
     "tipPj": "Cég",
-    "produs": "PAL Calc kredit",
+    "produs": "CutModul kredit",
     "um": "db",
     "dateTitlu": "Számlázási adatok",
     "dateIntro": "Ezekből készül a számla minden feltöltésről. Egyszer kell kitölteni.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Teszt e-mail",
     "probaAjutor": "Küldj egy teszt e-mailt a(z) {email} címre, hogy lásd, megérkezik-e.",
     "probaButon": "Teszt e-mail küldése",
-    "probaSubiect": "PAL Calc – teszt e-mail",
+    "probaSubiect": "CutModul – teszt e-mail",
     "probaText": "Ha megkaptad ezt az e-mailt, a megrendelések küldése a szolgáltatóknak működik.",
     "probaTrimisa": "A teszt e-mail elment a(z) {email} címre.",
     "adminLegatura": "Szolgáltatók",

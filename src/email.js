@@ -36,7 +36,7 @@ function config() {
     user: setari.citeste('EMAIL_USER'),
     parola: setari.citeste('EMAIL_PAROLA'),
     de: setari.citeste('EMAIL_DE') || setari.citeste('EMAIL_USER'),
-    nume: setari.citeste('EMAIL_NUME') || 'PAL Calc'
+    nume: setari.citeste('EMAIL_NUME') || 'CutModul'
   };
 }
 

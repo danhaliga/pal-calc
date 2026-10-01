@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Calculator debitare PAL",
     "subsol": "Cotele sunt în mm. Verifică întotdeauna cu serviciul de debitare dacă cere cota finită sau cea brută.",
     "platatest": "Plată de test — driverul {driver} este activ, nu se încasează bani."
@@ -1848,7 +1848,7 @@
     "colExportat": "Exportată",
     "tipPf": "Persoană fizică",
     "tipPj": "Persoană juridică",
-    "produs": "Credit PAL Calc",
+    "produs": "Credit CutModul",
     "um": "buc",
     "dateTitlu": "Date de facturare",
     "dateIntro": "Din ele se face factura pentru fiecare alimentare de credit. Se completează o dată.",
@@ -1932,7 +1932,7 @@
     "probaTitlu": "Email de probă",
     "probaAjutor": "Trimite un email de probă la {email}, ca să vezi că ajunge.",
     "probaButon": "Trimite email de probă",
-    "probaSubiect": "PAL Calc – email de probă",
+    "probaSubiect": "CutModul – email de probă",
     "probaText": "Dacă ai primit acest email, trimiterea comenzilor la prestatori funcționează.",
     "probaTrimisa": "Emailul de probă a plecat la {email}.",
     "adminLegatura": "Prestatori",

@@ -117,7 +117,7 @@ app.use((req, res, next) => {
   res.locals.jsonPentruPagina = require('./src/util').jsonPentruPagina;
   res.locals.catalogPagina = (...spatii) =>
     require('./src/util').catalogPagina(req.lang, spatii);
-  res.locals.appName = 'PAL Calc';
+  res.locals.appName = 'CutModul';
   /* „fake" doar când chiar merge: pe un site public driverul fals nu pune
      credit (vezi payments.stare), deci bara „plată de test" ar minți. */
   const plata = payments.stare();
@@ -264,7 +264,7 @@ if (require.main === module) {
   if (!pornire.aplica(pornire.verifica(mediu, admini))) process.exit(1);
 
   app.listen(PORT, () => {
-    console.log(`PAL Calc pornit pe http://localhost:${PORT}  (plată: ${payments.driver()})`);
+    console.log(`CutModul pornit pe http://localhost:${PORT}  (plată: ${payments.driver()})`);
   });
 }
 

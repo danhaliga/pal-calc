@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "حاسبة قص ألواح الخشب الحبيبي",
     "subsol": "كل المقاسات بالمليمتر. اسأل دائمًا في ورشة القص: هل يريدون المقاس النهائي أم مقاس القص؟",
     "platatest": "دفع تجريبي — المشغّل {driver} يعمل، ولا يُخصم أي مبلغ."
@@ -1881,7 +1881,7 @@
     "colExportat": "صُدّرت",
     "tipPf": "شخص طبيعي",
     "tipPj": "شخص اعتباري",
-    "produs": "رصيد PAL Calc",
+    "produs": "رصيد CutModul",
     "um": "قطعة",
     "dateTitlu": "بيانات الفاتورة",
     "dateIntro": "بها تُصدر فاتورة لكل شحن رصيد. تُملأ مرة واحدة.",
@@ -1965,7 +1965,7 @@
     "probaTitlu": "رسالة تجريبية",
     "probaAjutor": "أرسل رسالة تجريبية إلى {email} للتأكد من وصولها.",
     "probaButon": "إرسال رسالة تجريبية",
-    "probaSubiect": "PAL Calc – رسالة تجريبية",
+    "probaSubiect": "CutModul – رسالة تجريبية",
     "probaText": "إذا وصلتك هذه الرسالة، فإن إرسال الطلبات إلى مقدمي الخدمات يعمل.",
     "probaTrimisa": "أُرسلت الرسالة التجريبية إلى {email}.",
     "adminLegatura": "مقدمو الخدمات",

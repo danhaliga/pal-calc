@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Kalkulator potong papan partikel",
     "subsol": "Semua ukuran dalam mm. Selalu tanyakan ke jasa potong apakah mereka meminta ukuran jadi atau ukuran potong.",
     "platatest": "Pembayaran uji — driver {driver} aktif, tidak ada dana yang ditarik."
@@ -1837,7 +1837,7 @@
     "colExportat": "Diekspor",
     "tipPf": "Perorangan",
     "tipPj": "Badan usaha",
-    "produs": "Kredit PAL Calc",
+    "produs": "Kredit CutModul",
     "um": "buah",
     "dateTitlu": "Data penagihan",
     "dateIntro": "Dipakai untuk menagih setiap isi ulang kredit. Diisi sekali.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Email uji",
     "probaAjutor": "Kirim email uji ke {email} untuk memastikan email sampai.",
     "probaButon": "Kirim email uji",
-    "probaSubiect": "PAL Calc – email uji",
+    "probaSubiect": "CutModul – email uji",
     "probaText": "Jika Anda menerima email ini, pengiriman pesanan ke penyedia jasa berfungsi.",
     "probaTrimisa": "Email uji telah dikirim ke {email}.",
     "adminLegatura": "Penyedia jasa",

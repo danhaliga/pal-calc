@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Zuschnittrechner für Spanplatten",
     "subsol": "Alle Maße in mm. Frag immer beim Zuschnittservice nach, ob das Fertigmaß oder das Rohmaß gebraucht wird.",
     "platatest": "Testzahlung — der Treiber {driver} ist aktiv, es wird kein Geld abgebucht."
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Test-E-Mail",
     "probaAjutor": "Senden Sie eine Test-E-Mail an {email}, um zu prüfen, ob sie ankommt.",
     "probaButon": "Test-E-Mail senden",
-    "probaSubiect": "PAL Calc – Test-E-Mail",
+    "probaSubiect": "CutModul – Test-E-Mail",
     "probaText": "Wenn Sie diese E-Mail erhalten haben, funktioniert das Senden von Aufträgen an Dienstleister.",
     "probaTrimisa": "Die Test-E-Mail wurde an {email} gesendet.",
     "adminLegatura": "Dienstleister",

@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "刨花板开料计算器",
     "subsol": "所有尺寸均为毫米。下单开料前务必问清楚：他们要成品尺寸还是开料尺寸。",
     "platatest": "测试付款 —— 当前使用 {driver} 驱动，不会真的扣款。"
@@ -1837,7 +1837,7 @@
     "colExportat": "已导出",
     "tipPf": "个人",
     "tipPj": "企业",
-    "produs": "PAL Calc 额度",
+    "produs": "CutModul 额度",
     "um": "件",
     "dateTitlu": "开票信息",
     "dateIntro": "每次充值额度都用它开发票。只需填写一次。",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "测试邮件",
     "probaAjutor": "向 {email} 发送一封测试邮件，确认能否收到。",
     "probaButon": "发送测试邮件",
-    "probaSubiect": "PAL Calc – 测试邮件",
+    "probaSubiect": "CutModul – 测试邮件",
     "probaText": "如果您收到这封邮件，说明向服务商发送订单的功能正常。",
     "probaTrimisa": "测试邮件已发送至 {email}。",
     "adminLegatura": "服务商",

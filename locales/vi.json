@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Máy tính cắt ván dăm",
     "subsol": "Mọi kích thước đều tính bằng mm. Luôn hỏi xưởng cắt xem họ cần kích thước hoàn thiện hay kích thước cắt.",
     "platatest": "Thanh toán thử — trình {driver} đang bật, không trừ tiền."
@@ -1837,7 +1837,7 @@
     "colExportat": "Đã xuất",
     "tipPf": "Cá nhân",
     "tipPj": "Doanh nghiệp",
-    "produs": "Tín dụng PAL Calc",
+    "produs": "Tín dụng CutModul",
     "um": "cái",
     "dateTitlu": "Thông tin hóa đơn",
     "dateIntro": "Dùng để xuất hóa đơn cho mỗi lần nạp tín dụng. Điền một lần.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Email thử",
     "probaAjutor": "Gửi một email thử tới {email} để kiểm tra xem thư có đến không.",
     "probaButon": "Gửi email thử",
-    "probaSubiect": "PAL Calc – email thử",
+    "probaSubiect": "CutModul – email thử",
     "probaText": "Nếu bạn nhận được email này, việc gửi đơn hàng tới nhà cung cấp dịch vụ đang hoạt động.",
     "probaTrimisa": "Đã gửi email thử tới {email}.",
     "adminLegatura": "Nhà cung cấp",

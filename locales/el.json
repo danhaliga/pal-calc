@@ -1,7 +1,7 @@
 {
   "app": {
-    "nume": "PAL Calc",
-    "domeniu": "corpuri-mobila.ro",
+    "nume": "CutModul",
+    "domeniu": "cutmodul.com",
     "titlu": "Υπολογιστής κοπής μοριοσανίδας",
     "subsol": "Όλες οι διαστάσεις σε mm. Ρωτάτε πάντα στην κοπή τι διαστάσεις θέλουν: τις τελικές ή τις διαστάσεις κοπής.",
     "platatest": "Δοκιμαστική πληρωμή — τρέχει ο driver {driver}, δεν χρεώνεται τίποτα."
@@ -1837,7 +1837,7 @@
     "colExportat": "Εξήχθη",
     "tipPf": "Ιδιώτης",
     "tipPj": "Εταιρεία",
-    "produs": "Πίστωση PAL Calc",
+    "produs": "Πίστωση CutModul",
     "um": "τεμ",
     "dateTitlu": "Στοιχεία τιμολόγησης",
     "dateIntro": "Με αυτά τιμολογείται κάθε φόρτιση πίστωσης. Συμπληρώνονται μία φορά.",
@@ -1921,7 +1921,7 @@
     "probaTitlu": "Δοκιμαστικό email",
     "probaAjutor": "Στείλτε ένα δοκιμαστικό email στο {email}, για να δείτε ότι φτάνει.",
     "probaButon": "Αποστολή δοκιμαστικού email",
-    "probaSubiect": "PAL Calc – δοκιμαστικό email",
+    "probaSubiect": "CutModul – δοκιμαστικό email",
     "probaText": "Αν λάβατε αυτό το email, η αποστολή παραγγελιών στους συνεργάτες κοπής λειτουργεί.",
     "probaTrimisa": "Το δοκιμαστικό email στάλθηκε στο {email}.",
     "adminLegatura": "Συνεργάτες",
