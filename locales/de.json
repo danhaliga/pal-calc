@@ -396,8 +396,8 @@
         "corpNume": "Backofenschrank"
       },
       "sus-2usi": {
-        "nume": "Hängeschrank mit 2 Türen",
-        "descriere": "Hoher Wandschrank mit zwei Böden.",
+        "nume": "Hängeschrank",
+        "descriere": "Der Wandschrank. Im Editor gestalten Sie ihn mit einer oder zwei Türen, niedriger oder höher, als Vitrine, über der Dunstabzugshaube oder als offenes Regal.",
         "corpNume": "Hängeschrank 2 Türen"
       },
       "sus-1usa": {
@@ -421,8 +421,8 @@
         "corpNume": "Hängevitrine"
       },
       "dulap-2usi": {
-        "nume": "Kleiderschrank mit 2 Türen",
-        "descriere": "Schlafzimmerschrank mit vier Böden. Über 2000 mm brauchen die Türen ein fünftes Band, deshalb endet die Höhe hier; für mehr kommt ein eigener Aufsatzschrank dazu.",
+        "nume": "Kleiderschrank oder Wohnmöbel",
+        "descriere": "Schlafzimmerschrank mit Türen. Im Editor machen Sie daraus einen Schiebetürenschrank, Ankleide, 3-türigen Schrank, Vitrine, Bücherschrank, Regal, Sideboard, Schuhschrank, Kommode, Nachttisch oder TV-Möbel.",
         "corpNume": "Kleiderschrank 2 Türen"
       },
       "dulap-3usi": {
@@ -456,8 +456,8 @@
         "corpNume": "Vitrine"
       },
       "baie-lavoar": {
-        "nume": "Waschtischunterschrank",
-        "descriere": "Ohne Boden, wegen des Siphons. Aufgesetzte Rückwand aus Hartfaserplatte.",
+        "nume": "Badschrank",
+        "descriere": "Der Waschbeckenunterschrank, ohne Fachboden, für den Siphon. Im Editor machen Sie daraus auch einen Bad-Hochschrank.",
         "corpNume": "Waschtischunterschrank"
       },
       "baie-coloana": {
@@ -466,8 +466,8 @@
         "corpNume": "Bad-Hochschrank"
       },
       "colt-jos-L": {
-        "nume": "Küchen-Eckunterschrank, L-förmig",
-        "descriere": "Der klassische Eckschrank unter der Arbeitsplatte, mit zwei Fronten an einem Faltenband. Ohne Boden: bei dieser Spannweite würde er sich durchbiegen, nimm ein Karussell.",
+        "nume": "Eckschrank",
+        "descriere": "Die Küchenecke unter der Arbeitsplatte. Im Editor machen Sie ihn diagonal, als Blindeckschrank, hängend oder als Eckmöbel für Wohnzimmer, Bad oder Ankleide.",
         "corpNume": "Eckunterschrank L"
       },
       "colt-jos-diagonal": {
@@ -501,8 +501,8 @@
         "corpNume": "Bad-Eckschrank"
       },
       "atipic-sub-scara": {
-        "nume": "Korpus unter der Treppe",
-        "descriere": "Trapez mit niedriger rechter Seite und einer Schräge, die nach links ansteigt. Ändere Seiten und Winkel nach deiner Treppe.",
+        "nume": "Sonderform",
+        "descriere": "Ein Schrank aus Seiten und Winkeln gezeichnet: unter der Treppe, im Dachgeschoss oder mit beliebiger Kontur. Im Editor wählen Sie die Ausgangsform.",
         "corpNume": "Korpus unter der Treppe"
       },
       "atipic-mansarda": {
@@ -562,8 +562,8 @@
         "corpNume": "Oberschrank 1000"
       },
       "coloana-camara": {
-        "nume": "Vorratshochschrank",
-        "descriere": "Vom Boden bis oben, fünf Böden und Türen über die ganze Höhe.",
+        "nume": "Hochschrank",
+        "descriere": "Vom Boden bis nach oben. Im Editor machen Sie daraus einen Vorratsschrank, Besenschrank, Backofen- oder Kühlschrankumbau.",
         "corpNume": "Vorratsschrank"
       },
       "coloana-matura": {
@@ -1556,7 +1556,9 @@
     "impDouaMici": "2 klein + 1 groß",
     "colFront": "Front",
     "colCutie": "Zarge (mm)",
-    "notaFronturi": "Von oben nach unten. Geben Sie bei der Front mm ein, „r“ für den Rest (wird gleichmäßig auf alle „r“ verteilt) oder einen Prozentsatz der Gesamthöhe, z. B. 50%. Die Zarge wird aus der Front berechnet (Front minus 40 mm, gerundet auf 60, 80, 100, 120, 150 oder 180); Sie können sie auch von Hand eingeben."
+    "notaFronturi": "Von oben nach unten. Geben Sie bei der Front mm ein, „r“ für den Rest (wird gleichmäßig auf alle „r“ verteilt) oder einen Prozentsatz der Gesamthöhe, z. B. 50%. Die Zarge wird aus der Front berechnet (Front minus 40 mm, gerundet auf 60, 80, 100, 120, 150 oder 180); Sie können sie auch von Hand eingeben.",
+    "familieRapid": "Familie",
+    "configRapideNota2": "Ein Klick setzt den gewählten Schrank ein. Beim Unterschrank bleiben Ihre Breite und Höhe erhalten; bei den anderen Familien werden auch die Maße übernommen, wie bei der alten Katalogkarte. Sie können auch aus einer anderen Familie wählen."
   },
   "fata": {
     "px": "rechts",

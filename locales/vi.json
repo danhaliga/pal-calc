@@ -396,8 +396,8 @@
         "corpNume": "Tủ lò nướng"
       },
       "sus-2usi": {
-        "nume": "Tủ treo 2 cánh",
-        "descriere": "Tủ tường cao, có hai kệ.",
+        "nume": "Tủ treo",
+        "descriere": "Tủ gắn tường. Trong trình chỉnh sửa, bạn làm tủ một hoặc hai cánh, thấp hơn hoặc cao hơn, tủ kính, trên máy hút mùi hoặc kệ mở.",
         "corpNume": "Tủ treo 2 cánh"
       },
       "sus-1usa": {
@@ -421,8 +421,8 @@
         "corpNume": "Tủ kính treo"
       },
       "dulap-2usi": {
-        "nume": "Tủ quần áo 2 cánh",
-        "descriere": "Tủ phòng ngủ với bốn kệ. Trên 2000 mm thì cánh cần bản lề thứ năm, nên chiều cao dừng ở đây; muốn cao hơn thì thêm một tủ nóc riêng.",
+        "nume": "Tủ quần áo hoặc tủ phòng khách",
+        "descriere": "Tủ quần áo phòng ngủ có cánh. Trong trình chỉnh sửa, bạn làm thành tủ cửa lùa, phòng thay đồ, tủ 3 cánh, tủ kính, tủ sách, kệ, tủ buffet, tủ giày, tủ ngăn kéo, tủ đầu giường hoặc kệ TV.",
         "corpNume": "Tủ quần áo 2 cánh"
       },
       "dulap-3usi": {
@@ -456,8 +456,8 @@
         "corpNume": "Tủ kính"
       },
       "baie-lavoar": {
-        "nume": "Tủ lavabo",
-        "descriere": "Không có kệ, vì xi phông. Tấm hậu HDF đóng ngoài.",
+        "nume": "Tủ phòng tắm",
+        "descriere": "Tủ dưới chậu rửa, không có đợt, để chừa chỗ cho xi phông. Trong trình chỉnh sửa, bạn cũng làm thành tủ cao phòng tắm.",
         "corpNume": "Tủ lavabo"
       },
       "baie-coloana": {
@@ -466,8 +466,8 @@
         "corpNume": "Tủ cao phòng tắm"
       },
       "colt-jos-L": {
-        "nume": "Góc bếp dưới, hình L",
-        "descriere": "Thùng tủ góc cổ điển dưới mặt bàn, hai cánh nối bằng bản lề gấp. Không kệ: với khẩu độ này kệ sẽ võng, hãy dùng mâm xoay.",
+        "nume": "Tủ góc",
+        "descriere": "Góc bếp dưới mặt bàn. Trong trình chỉnh sửa, bạn làm tủ chéo, góc mù, tủ treo, tủ góc phòng khách, phòng tắm hoặc phòng thay đồ.",
         "corpNume": "Góc dưới L"
       },
       "colt-jos-diagonal": {
@@ -501,8 +501,8 @@
         "corpNume": "Góc phòng tắm"
       },
       "atipic-sub-scara": {
-        "nume": "Thùng tủ gầm cầu thang",
-        "descriere": "Hình thang với cạnh phải thấp và phần dốc nâng dần sang trái. Hãy chỉnh các cạnh và góc theo cầu thang của bạn.",
+        "nume": "Tủ hình dạng tùy chỉnh",
+        "descriere": "Tủ được vẽ từ các cạnh và góc: dưới gầm cầu thang, trên gác mái hoặc bất kỳ đường viền nào. Trong trình chỉnh sửa, bạn chọn hình dạng ban đầu.",
         "corpNume": "Thùng tủ gầm cầu thang"
       },
       "atipic-mansarda": {
@@ -562,8 +562,8 @@
         "corpNume": "Thùng treo 1000"
       },
       "coloana-camara": {
-        "nume": "Tủ cao đựng thực phẩm",
-        "descriere": "Từ sàn lên tới đỉnh, năm kệ và cánh suốt chiều cao.",
+        "nume": "Tủ cao",
+        "descriere": "Từ sàn lên đến trên cùng. Trong trình chỉnh sửa, bạn làm thành tủ đồ khô, tủ để chổi, tủ lò nướng hoặc tủ tủ lạnh.",
         "corpNume": "Tủ cao thực phẩm"
       },
       "coloana-matura": {
@@ -1556,7 +1556,9 @@
     "impDouaMici": "2 nhỏ + 1 lớn",
     "colFront": "Mặt",
     "colCutie": "Ngăn kéo (mm)",
-    "notaFronturi": "Từ trên xuống dưới. Ở mặt, bạn nhập mm, “r” cho phần còn lại (chia đều cho tất cả các “r”) hoặc phần trăm tổng chiều cao, ví dụ 50%. Ngăn kéo được tính từ mặt (mặt trừ 40 mm, làm tròn thành 60, 80, 100, 120, 150 hoặc 180); bạn cũng có thể tự nhập."
+    "notaFronturi": "Từ trên xuống dưới. Ở mặt, bạn nhập mm, “r” cho phần còn lại (chia đều cho tất cả các “r”) hoặc phần trăm tổng chiều cao, ví dụ 50%. Ngăn kéo được tính từ mặt (mặt trừ 40 mm, làm tròn thành 60, 80, 100, 120, 150 hoặc 180); bạn cũng có thể tự nhập.",
+    "familieRapid": "Nhóm",
+    "configRapideNota2": "Một cú nhấp sẽ đặt tủ đã chọn. Với tủ dưới, bạn giữ nguyên chiều rộng và chiều cao; với các nhóm khác, kích thước cũng được áp dụng, như thẻ danh mục cũ. Bạn cũng có thể chọn từ nhóm khác."
   },
   "fata": {
     "px": "phải",

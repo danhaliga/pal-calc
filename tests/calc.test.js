@@ -210,16 +210,23 @@ test('schema: fronturile acceptă mm, „r" și procente; altceva se refuză', (
     assert.equal(paramsSchema.safeParse(Object.assign({}, p, { sertareH: v })).success, false, v));
 });
 
-test('configurările rapide ale corpului de jos dau corpurile din catalog', () => {
+test('un card pe categorie; configurările rapide dau corpurile din catalog', () => {
   const PalModels = require('../shared/models');
   const piese = p => calc(p).P.map(x => x.cheie + ' ' + x.buc + ' ' + x.TL + 'x' + x.Tl).sort().join('|');
-  const baza = PalModels.paramsFor('baza-2usi');
-  const cfg = PalModels.configurariRapide();
-  assert.ok(cfg.length >= 14);
-  assert.deepEqual(PalModels.modele().filter(m => m.cat === 'bucatarie-jos').map(m => m.id), ['baza-2usi']);
-  cfg.forEach(c => {
-    const tinta = PalModels.paramsFor(c.id);
-    const p = Object.assign({}, baza, { W: tinta.W, H: tinta.H }, c.set);
-    assert.equal(piese(p), piese(tinta), c.id);
+  const grupe = PalModels.configurariRapide();
+  const carduri = PalModels.modele();
+  assert.equal(carduri.length, grupe.length, 'câte un card pe categorie');
+  grupe.forEach(g => {
+    assert.ok(carduri.some(m => m.cat === g.cat));
+    const baza = PalModels.paramsFor(PalModels.BAZA_FAMILIE[g.cat]);
+    g.configs.forEach(c => {
+      const tinta = PalModels.paramsFor(c.id);
+      const p = Object.assign({}, baza, g.cat === 'bucatarie-jos' ? { W: tinta.W, H: tinta.H } : {}, c.set);
+      assert.equal(paramsSchema.safeParse(p).success, true, c.id + ': schema');
+      assert.equal(piese(p), piese(tinta), c.id);
+      assert.equal(c.set.familie, g.cat);
+    });
   });
+  assert.equal(grupe.reduce((s, g) => s + g.configs.length, 0), PalModels.MODELS.filter(m => m.id !== 'piesa-simpla').length,
+               'niciun model pierdut');
 });

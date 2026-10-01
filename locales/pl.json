@@ -402,8 +402,8 @@
         "corpNume": "Szafka piekarnik"
       },
       "sus-2usi": {
-        "nume": "Szafka wisząca z 2 frontami",
-        "descriere": "Wysoka szafka ścienna z dwiema półkami.",
+        "nume": "Szafka wisząca",
+        "descriere": "Szafka ścienna. W edytorze zrobisz ją z jednymi lub dwojgiem drzwi, niższą lub wyższą, witrynę, nad okapem lub otwartą półkę.",
         "corpNume": "Wisząca 2 fronty"
       },
       "sus-1usa": {
@@ -427,8 +427,8 @@
         "corpNume": "Witryna wisząca"
       },
       "dulap-2usi": {
-        "nume": "Szafa z 2 frontami",
-        "descriere": "Szafa do sypialni z czterema półkami. Powyżej 2000 mm fronty potrzebują piątego zawiasu, więc wysokość kończy się tutaj; wyżej dokłada się osobną nadstawkę.",
+        "nume": "Szafa lub mebel do salonu",
+        "descriere": "Szafa do sypialni z drzwiami. W edytorze zrobisz ją przesuwną, garderobę, 3-drzwiową, witrynę, biblioteczkę, regał, kredens, szafkę na buty, komodę, szafkę nocną lub szafkę RTV.",
         "corpNume": "Szafa 2 fronty"
       },
       "dulap-3usi": {
@@ -462,8 +462,8 @@
         "corpNume": "Witryna"
       },
       "baie-lavoar": {
-        "nume": "Szafka podumywalkowa",
-        "descriere": "Bez półki, ze względu na syfon. Plecy z HDF nakładane.",
+        "nume": "Szafka łazienkowa",
+        "descriere": "Szafka pod umywalkę, bez półki, na syfon. W edytorze zrobisz z niej też słupek łazienkowy.",
         "corpNume": "Szafka podumywalkowa"
       },
       "baie-coloana": {
@@ -472,8 +472,8 @@
         "corpNume": "Słupek łazienkowy"
       },
       "colt-jos-L": {
-        "nume": "Narożnik kuchenny dolny, w L",
-        "descriere": "Klasyczny korpus narożny pod blatem, z dwoma frontami sprzężonymi na zawiasie łamanym. Bez półki: przy tej rozpiętości by się ugięła, lepiej karuzela.",
+        "nume": "Szafka narożna",
+        "descriere": "Narożnik kuchni pod blatem. W edytorze zrobisz ją skośną, ślepą, wiszącą, narożnik do salonu, łazienki lub garderoby.",
         "corpNume": "Narożnik dolny L"
       },
       "colt-jos-diagonal": {
@@ -507,8 +507,8 @@
         "corpNume": "Narożnik łazienkowy"
       },
       "atipic-sub-scara": {
-        "nume": "Korpus pod schodami",
-        "descriere": "Trapez z niskim bokiem po prawej i skosem wznoszącym się w lewo. Zmień boki i kąty pod swoje schody.",
+        "nume": "Szafka nietypowa",
+        "descriere": "Szafka rysowana z boków i kątów: pod schodami, na poddaszu lub o dowolnym obrysie. W edytorze wybierasz kształt początkowy.",
         "corpNume": "Korpus pod schodami"
       },
       "atipic-mansarda": {
@@ -568,8 +568,8 @@
         "corpNume": "Górna 1000"
       },
       "coloana-camara": {
-        "nume": "Słupek spiżarnia",
-        "descriere": "Od podłogi do góry, pięć półek i fronty na całą wysokość.",
+        "nume": "Słupek",
+        "descriere": "Od podłogi do góry. W edytorze zrobisz z niego spiżarnię, schowek na miotły, zabudowę piekarnika lub lodówki.",
         "corpNume": "Słupek spiżarnia"
       },
       "coloana-matura": {
@@ -1567,7 +1567,9 @@
     "impDouaMici": "2 małe + 1 duży",
     "colFront": "Front",
     "colCutie": "Szuflada (mm)",
-    "notaFronturi": "Od góry do dołu. W polu frontu wpisz mm, „r” dla reszty (dzielonej równo między wszystkie „r”) albo procent całkowitej wysokości, np. 50%. Szuflada liczy się z frontu (front minus 40 mm, zaokrąglone do 60, 80, 100, 120, 150 lub 180); możesz ją też wpisać ręcznie."
+    "notaFronturi": "Od góry do dołu. W polu frontu wpisz mm, „r” dla reszty (dzielonej równo między wszystkie „r”) albo procent całkowitej wysokości, np. 50%. Szuflada liczy się z frontu (front minus 40 mm, zaokrąglone do 60, 80, 100, 120, 150 lub 180); możesz ją też wpisać ręcznie.",
+    "familieRapid": "Rodzina",
+    "configRapideNota2": "Jedno kliknięcie wstawia wybraną szafkę. Przy szafce dolnej zostają Twoja szerokość i wysokość; w pozostałych rodzinach ustawiane są też wymiary, jak na dawnej karcie katalogu. Możesz też wybrać z innej rodziny."
   },
   "fata": {
     "px": "prawo",

@@ -396,8 +396,8 @@
         "corpNume": "Ovenkast"
       },
       "sus-2usi": {
-        "nume": "Bovenkast met 2 deuren",
-        "descriere": "Hoge wandkast met twee legplanken.",
+        "nume": "Bovenkast",
+        "descriere": "De wandkast. In de editor maak je hem met één of twee deuren, lager of hoger, als vitrine, boven de afzuigkap of als open plank.",
         "corpNume": "Bovenkast 2 deuren"
       },
       "sus-1usa": {
@@ -421,8 +421,8 @@
         "corpNume": "Hangvitrine"
       },
       "dulap-2usi": {
-        "nume": "Kledingkast met 2 deuren",
-        "descriere": "Slaapkamerkast met vier legplanken. Boven 2000 mm hebben de deuren een vijfde scharnier nodig, daarom stopt de hoogte hier; wil je hoger, zet er dan een aparte opzetkast op.",
+        "nume": "Kledingkast of woonkast",
+        "descriere": "Slaapkamerkast met deuren. In de editor maak je er een schuifdeurkast, inloopkast, 3-deurskast, vitrinekast, boekenkast, open kast, dressoir, schoenenkast, ladekast, nachtkastje of tv-meubel van.",
         "corpNume": "Kledingkast 2 deuren"
       },
       "dulap-3usi": {
@@ -456,8 +456,8 @@
         "corpNume": "Vitrinekast"
       },
       "baie-lavoar": {
-        "nume": "Wastafelonderkast",
-        "descriere": "Zonder legplank, vanwege de sifon. Opgelegde achterwand van hardboard.",
+        "nume": "Badkamerkast",
+        "descriere": "De kast onder de wastafel, zonder legplank, voor de sifon. In de editor maak je er ook een hoge badkamerkast van.",
         "corpNume": "Wastafelonderkast"
       },
       "baie-coloana": {
@@ -466,8 +466,8 @@
         "corpNume": "Badkamerkolom"
       },
       "colt-jos-L": {
-        "nume": "Keukenhoek onder, L-vormig",
-        "descriere": "De klassieke hoekkast onder het werkblad, met twee fronten gekoppeld met een vouwscharnier. Zonder legplank: bij deze overspanning zou hij doorbuigen, gebruik een carrousel.",
+        "nume": "Hoekkast",
+        "descriere": "De keukenhoek onder het werkblad. In de editor maak je hem diagonaal, blind, hangend, of als hoekkast voor woonkamer, badkamer of inloopkast.",
         "corpNume": "Hoekonderkast L"
       },
       "colt-jos-diagonal": {
@@ -501,8 +501,8 @@
         "corpNume": "Badkamerhoek"
       },
       "atipic-sub-scara": {
-        "nume": "Kast onder de trap",
-        "descriere": "Trapezium met een lage rechterzijde en een schuine kant die naar links oploopt. Pas de zijden en hoeken aan op jouw trap.",
+        "nume": "Vrije vorm",
+        "descriere": "Een kast getekend uit zijden en hoeken: onder de trap, op zolder of met elke contour. In de editor kies je de beginvorm.",
         "corpNume": "Kast onder de trap"
       },
       "atipic-mansarda": {
@@ -562,8 +562,8 @@
         "corpNume": "Bovenkast 1000"
       },
       "coloana-camara": {
-        "nume": "Voorraadkast",
-        "descriere": "Van de vloer tot boven, vijf legplanken en deuren over de volle hoogte.",
+        "nume": "Hoge kast",
+        "descriere": "Van de vloer tot boven. In de editor maak je er een voorraadkast, bezemkast, ovenkast of koelkastkast van.",
         "corpNume": "Voorraadkast"
       },
       "coloana-matura": {
@@ -1556,7 +1556,9 @@
     "impDouaMici": "2 klein + 1 groot",
     "colFront": "Front",
     "colCutie": "Lade (mm)",
-    "notaFronturi": "Van boven naar beneden. Vul bij het front mm in, “r” voor de rest (gelijk verdeeld over alle “r”) of een percentage van de totale hoogte, bijvoorbeeld 50%. De lade wordt berekend uit het front (front min 40 mm, afgerond op 60, 80, 100, 120, 150 of 180); je kunt hem ook zelf invullen."
+    "notaFronturi": "Van boven naar beneden. Vul bij het front mm in, “r” voor de rest (gelijk verdeeld over alle “r”) of een percentage van de totale hoogte, bijvoorbeeld 50%. De lade wordt berekend uit het front (front min 40 mm, afgerond op 60, 80, 100, 120, 150 of 180); je kunt hem ook zelf invullen.",
+    "familieRapid": "Familie",
+    "configRapideNota2": "Eén klik plaatst de gekozen kast. Bij de onderkast blijven je breedte en hoogte behouden; bij de andere families worden ook de afmetingen ingesteld, zoals bij de oude catalogus-kaart. Je kunt ook uit een andere familie kiezen."
   },
   "fata": {
     "px": "rechts",

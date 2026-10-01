@@ -547,6 +547,14 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
   cu fiecare sertar.
 - Modelele vechi rămân în cod (filmul, demonstrația, „Cum funcționează" și
   corpurile deja făcute le folosesc).
+- Apoi la fel pentru toate categoriile: în catalog e câte UN card pe
+  categorie (primul model din ea, `BAZA_FAMILIE`), restul devin configurări
+  rapide. `configurariRapide()` întoarce grupe pe familie; la corpul de jos
+  butonul pune doar configurarea, la celelalte corpul întreg (dimensiuni,
+  `tip`, `W2`, `contur`). Corpul ține familia în `params.familie` (pusă de
+  `paramsFor`); la corpurile vechi editorul o ghicește din formă. În editor:
+  lista „Familia" + butoanele ei. Testat: toate configurările dau corpurile
+  identice cu cardurile vechi.
 
 ## 7. Ce a rămas nefăcut, din tot proiectul
 

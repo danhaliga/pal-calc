@@ -281,7 +281,8 @@ test('niciun model atipic nu mai are contur strâmb', () => {
   /* Gabaritul iese rotund numai daca laturile drepte chiar sunt drepte.
      Scrise de mana, cu unghiurile rotunjite la grad, ramaneau doua zecimi in
      colt: 1200.2 x 1100.2 in loc de 1200 x 1100. */
-  const atipice = PalModels.modele(T)
+  /* cu tot cu cele devenite configurări rapide în editor */
+  const atipice = PalModels.MODELS.filter(m => !m.ascuns || m.rapid)
     .map(m => m.id)
     .filter(id => PalModels.paramsFor(id, T).tip === 'atipic');
   assert.ok(atipice.length >= 3, 'nu mai sunt modele atipice');

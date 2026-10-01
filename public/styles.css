@@ -675,3 +675,4 @@ svg.sk .sk-usa.fara{stroke-dasharray:60 44;opacity:.7}
 .sertare-impartire .pastila{font-size:12.5px;padding:6px 11px}
 .sertare-tabel{min-width:0}
 .sertare-tabel input.dim{width:86px;text-align:right}
+.config-familie{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);margin-bottom:8px}.config-familie select{width:auto}

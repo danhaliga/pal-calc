@@ -65,7 +65,7 @@ function aplicaTip() {
      câmpuri fără rost e mai rău decât unul scurt. */
   arata('fsPiesa', piesa);
   /* configurările rapide sunt ale corpului de jos: drept și nu mai înalt de 1 m */
-  arata('fsRapid', tip === 'drept' && +params.H <= 1000 && (DATA.configRapide || []).length > 0);
+  arata('fsRapid', !piesa && (DATA.configRapide || []).length > 0);
   if (piesa) {
     var tbPe = $('pieseExtraTabel');
     if (tbPe && tbPe.children.length !== (params.pieseExtra || []).length) randeazaPieseExtra();
@@ -301,33 +301,69 @@ function legaSertare() {
   });
 }
 
-/* ---------------- configurările rapide ale corpului de jos ---------------- */
+/* ---------------- configurările rapide ----------------
+
+   Câte o grupă pe familie de corpuri (corpul de jos, suspendat, coloană,
+   living, baie, colț, atipic). Corpul își vede întâi familia lui — o ține
+   în `params.familie` de când a fost făcut din catalog; la corpurile mai
+   vechi o ghicim din formă — și se poate alege alta din listă. */
+var familieAleasa = null;
+
+function familieCorp() {
+  if (params.familie) return params.familie;
+  var tip = params.tip || 'drept';
+  if (/^colt/.test(tip)) return 'colt';
+  if (tip === 'atipic') return 'atipic';
+  if (+params.H > 1500) return +params.D >= 500 ? 'bucatarie-inalt' : 'living';
+  return +params.D >= 450 ? 'bucatarie-jos' : 'bucatarie-sus';
+}
+
+function grupaRapida() {
+  var grupe = DATA.configRapide || [];
+  var cat = familieAleasa || familieCorp();
+  return grupe.filter(function (g) { return g.cat === cat; })[0] || grupe[0];
+}
 
 function randeazaRapide() {
-  var box = $('configRapide');
+  var box = $('configRapide'), sel = $('familieRapid');
   if (!box) return;
-  var lista = DATA.configRapide || [];
-  if (!box.children.length) {
-    box.innerHTML = lista.map(function (c, i) {
+  var grupe = DATA.configRapide || [];
+  var g = grupaRapida();
+  if (!g) return;
+  if (sel && !sel.options.length) {
+    sel.innerHTML = grupe.map(function (x) { return '<option value="' + esc(x.cat) + '">' + esc(x.nume) + '</option>'; }).join('');
+  }
+  if (sel) sel.value = g.cat;
+  if (box.dataset.cat !== g.cat) {
+    box.dataset.cat = g.cat;
+    box.innerHTML = g.configs.map(function (c, i) {
       return '<button type="button" class="pastila" data-rapid="' + i + '">' + esc(c.nume) + '</button>';
     }).join('');
   }
   box.querySelectorAll('[data-rapid]').forEach(function (b) {
-    var c = lista[+b.dataset.rapid];
-    var la = Object.keys(c.set).every(function (k) { return String(params[k] == null ? '' : params[k]) === String(c.set[k]); });
+    var c = g.configs[+b.dataset.rapid];
+    var la = Object.keys(c.set).every(function (k) {
+      return k === 'familie' || JSON.stringify(params[k] == null ? '' : params[k]) === JSON.stringify(c.set[k]);
+    });
     b.classList.toggle('on', la);
   });
 }
 
 function legaRapide() {
-  var box = $('configRapide');
+  var box = $('configRapide'), sel = $('familieRapid');
   if (!box) return;
+  if (sel) sel.addEventListener('change', function () { familieAleasa = sel.value; randeazaRapide(); });
   box.addEventListener('click', function (e) {
     var b = e.target.closest('[data-rapid]');
     if (!b) return;
-    var c = (DATA.configRapide || [])[+b.dataset.rapid];
+    var c = grupaRapida().configs[+b.dataset.rapid];
     if (!c) return;
-    Object.keys(c.set).forEach(function (k) { params[k] = c.set[k]; });
+    Object.keys(c.set).forEach(function (k) {
+      params[k] = Array.isArray(c.set[k]) ? JSON.parse(JSON.stringify(c.set[k])) : c.set[k];
+    });
+    familieAleasa = null;
+    /* conturul are tabelul lui: se reface, altfel ar rămâne laturile vechi */
+    if (c.set.contur && typeof randeazaContur === 'function') { render(); randeazaContur(); }
     render(); scheduleSave();
     toast(c.nume);
   });

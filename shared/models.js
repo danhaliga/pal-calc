@@ -336,6 +336,18 @@
     }
   ];
 
+  /* Un card pe categorie (Dan, 1 octombrie 2026): primul model din fiecare
+     categorie rămâne în catalog, celelalte devin configurări rapide în
+     editor. Modelele rămân aici întregi: filmul, demonstrația, „Cum
+     funcționează" și corpurile deja făcute le folosesc. */
+  var BAZA_FAMILIE = {};
+  MODELS.forEach(function (m) {
+    if (m.id === 'piesa-simpla') return;
+    if (!BAZA_FAMILIE[m.cat]) { BAZA_FAMILIE[m.cat] = m.id; return; }
+    m.ascuns = true;
+    m.rapid = true;
+  });
+
   function byId(id) {
     for (var i = 0; i < MODELS.length; i++) if (MODELS[i].id === id) return MODELS[i];
     return null;
@@ -347,6 +359,8 @@
     if (!m) return null;
     var p = Object.assign(PalCalc.defaults(tr), m.set);
     p.nume = numeCorp(id, tr);
+    /* din ce familie e: editorul arată configurările rapide ale ei */
+    p.familie = m.cat;
     /* Corpurile de bucătărie de pe podea vin pe picioare, cu plintă de
        aluminiu în față — felul bucătăriei puse în șir. Numai bucătăria:
        la living și baie nu s-a spus așa, deci acolo se pune din editor.
@@ -652,26 +666,53 @@
                      'hNisa', 'jolly', 'soclu', 'picioare', 'faraFront', 'nDsp'];
   var PASTREAZA_LATIMEA = ['baza-jolly', 'baza-jolly-200', 'baza-jolly-150', 'baza-ingusta'];
 
+  /* Grupele de configurări rapide, câte una pe categorie: corpul din
+     catalog plus celelalte modele ale categoriei. La corpul de jos un
+     buton pune doar configurarea (lățimea rămâne a omului); la celelalte
+     pune corpul întreg, cu dimensiuni, formă și contur — ca și cum ai fi
+     ales cardul vechi: o noptieră n-are ce face cu lățimea unui dulap. */
   function configurariRapide(tr) {
     var t_ = PalCalc.traducator(tr);
-    var baza = paramsFor('baza-2usi', tr);
-    return ['baza-2usi'].concat(MODELS.filter(function (m) { return m.rapid; }).map(function (m) { return m.id; }))
-      .map(function (id) {
+    return CATEGORIES.map(function (cat) {
+      var bazaId = BAZA_FAMILIE[cat.id];
+      if (!bazaId) return null;
+      var membri = [bazaId].concat(MODELS.filter(function (m) { return m.rapid && m.cat === cat.id; })
+                                         .map(function (m) { return m.id; }));
+      var baza = paramsFor(bazaId, tr);
+      var jos = cat.id === 'bucatarie-jos';
+      /* tipul intră mereu: un buton apăsat pe un corp din altă familie
+         (un colț făcut corp de jos) trebuie să-i schimbe și forma */
+      var chei = (jos ? CHEI_CONFIG.slice() : []).concat(['tip']);
+      if (!jos) {
+        membri.forEach(function (id) {
+          var p = paramsFor(id, tr);
+          Object.keys(p).forEach(function (k) {
+            if (k === 'nume' || k === 'familie' || chei.indexOf(k) !== -1) return;
+            if (JSON.stringify(p[k]) !== JSON.stringify(baza[k])) chei.push(k);
+          });
+        });
+        ['sertareH', 'sertareC'].forEach(function (k) { if (chei.indexOf(k) === -1) chei.push(k); });
+      }
+      var configs = membri.map(function (id) {
         var p = paramsFor(id, tr);
-        var set = {};
-        CHEI_CONFIG.forEach(function (k) { set[k] = p[k] != null ? p[k] : baza[k]; });
+        var set = { familie: cat.id };
+        chei.forEach(function (k) { set[k] = p[k] != null ? p[k] : (baza[k] != null ? baza[k] : ''); });
         if (!set.sertareH) set.sertareH = '';
         if (!set.sertareC) set.sertareC = '';
-        if (+set.nSer > 0 && +set.nUsi === 0 && !(+set.hNisa > 0)) {
-          var r = [];
-          for (var i = 0; i < +set.nSer; i++) r.push('r');
-          set.sertareH = r.join(',');
-          set.sertareC = '';
+        if (jos) {
+          if (+set.nSer > 0 && +set.nUsi === 0 && !(+set.hNisa > 0)) {
+            var r = [];
+            for (var i = 0; i < +set.nSer; i++) r.push('r');
+            set.sertareH = r.join(',');
+            set.sertareC = '';
+          }
+          if (PASTREAZA_LATIMEA.indexOf(id) !== -1) set.W = p.W;
+          if (+p.soclu > 0) set.H = p.H;
         }
-        if (PASTREAZA_LATIMEA.indexOf(id) !== -1) set.W = p.W;
-        if (+p.soclu > 0) set.H = p.H;
         return { id: id, nume: numeCorp(id, tr), set: set };
       });
+      return { cat: cat.id, nume: t_('modele.cat.' + cat.id + '.nume'), configs: configs };
+    }).filter(Boolean);
   }
 
   function categorii(tr) {
@@ -711,7 +752,7 @@
     PE_PODEA: PE_PODEA,
     staPePodea: staPePodea,    CATEGORIES: CATEGORIES,
     MODELS: MODELS,
-    categorii: categorii, configurariRapide: configurariRapide,
+    categorii: categorii, configurariRapide: configurariRapide, BAZA_FAMILIE: BAZA_FAMILIE,
     modele: modele,
     numeCorp: numeCorp,
     byId: byId,

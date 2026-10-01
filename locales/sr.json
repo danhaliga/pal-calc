@@ -402,8 +402,8 @@
         "corpNume": "Element rerna"
       },
       "sus-2usi": {
-        "nume": "Viseći element sa 2 vrata",
-        "descriere": "Visoki zidni element sa dve police.",
+        "nume": "Viseći element",
+        "descriere": "Zidni element. U editoru ga pravite sa jednim ili dvoja vrata, nižim ili višim, kao vitrinu, iznad aspiratora ili otvorenu policu.",
         "corpNume": "Viseći 2 vrata"
       },
       "sus-1usa": {
@@ -427,8 +427,8 @@
         "corpNume": "Viseća vitrina"
       },
       "dulap-2usi": {
-        "nume": "Ormar sa 2 vrata",
-        "descriere": "Ormar za spavaću sobu sa četiri police. Iznad 2000 mm vratima treba peta šarka, pa visina tu staje; više se dodaje zaseban nadgradni element.",
+        "nume": "Orman ili element za dnevnu sobu",
+        "descriere": "Orman za spavaću sobu sa vratima. U editoru ga pravite kliznim, garderoberom, sa 3 vrata, vitrinom, bibliotekom, policom, komodom za posuđe, cipelarnikom, komodom, noćnim ormarićem ili TV elementom.",
         "corpNume": "Ormar 2 vrata"
       },
       "dulap-3usi": {
@@ -462,8 +462,8 @@
         "corpNume": "Vitrina"
       },
       "baie-lavoar": {
-        "nume": "Element ispod lavaboa",
-        "descriere": "Bez police, zbog sifona. Nabijena leđa od HDF-a.",
+        "nume": "Kupatilski element",
+        "descriere": "Element ispod lavaboa, bez police, zbog sifona. U editoru od njega pravite i visoki kupatilski element.",
         "corpNume": "Element pod lavabo"
       },
       "baie-coloana": {
@@ -472,8 +472,8 @@
         "corpNume": "Kupatilski visoki element"
       },
       "colt-jos-L": {
-        "nume": "Kuhinjski donji ugao, u L",
-        "descriere": "Klasičan ugaoni korpus ispod radne ploče, sa dva fronta spojena preklopnom šarkom. Bez police: na tom rasponu bi se ugnula, koristi karusel.",
+        "nume": "Ugaoni element",
+        "descriere": "Kuhinjski ugao ispod radne ploče. U editoru ga pravite dijagonalnim, slepim, visećim, ugaonim za dnevnu sobu, kupatilo ili garderober.",
         "corpNume": "Donji ugao L"
       },
       "colt-jos-diagonal": {
@@ -507,8 +507,8 @@
         "corpNume": "Kupatilski ugao"
       },
       "atipic-sub-scara": {
-        "nume": "Korpus ispod stepenica",
-        "descriere": "Trapez sa niskom desnom stranom i kosinom koja raste ulevo. Strane i uglove prilagodi svojim stepenicama.",
+        "nume": "Atipični element",
+        "descriere": "Element nacrtan od stranica i uglova: ispod stepeništa, u potkrovlju ili bilo koji obris. U editoru birate početni oblik.",
         "corpNume": "Korpus ispod stepenica"
       },
       "atipic-mansarda": {
@@ -568,8 +568,8 @@
         "corpNume": "Viseći 1000"
       },
       "coloana-camara": {
-        "nume": "Visoki element ostava",
-        "descriere": "Od poda do vrha, pet polica i vrata pune visine.",
+        "nume": "Visoki element",
+        "descriere": "Od poda do vrha. U editoru od njega pravite ostavu, orman za metle, element za rernu ili za frižider.",
         "corpNume": "Element ostava"
       },
       "coloana-matura": {
@@ -1567,7 +1567,9 @@
     "impDouaMici": "2 male + 1 velika",
     "colFront": "Front",
     "colCutie": "Fioka (mm)",
-    "notaFronturi": "Odozgo nadole. Kod fronta upiši mm, „r” za ostatak (deli se jednako na sva „r”) ili procenat ukupne visine, npr. 50%. Fioka se računa iz fronta (front minus 40 mm, zaokruženo na 60, 80, 100, 120, 150 ili 180); možeš je upisati i ručno."
+    "notaFronturi": "Odozgo nadole. Kod fronta upiši mm, „r” za ostatak (deli se jednako na sva „r”) ili procenat ukupne visine, npr. 50%. Fioka se računa iz fronta (front minus 40 mm, zaokruženo na 60, 80, 100, 120, 150 ili 180); možeš je upisati i ručno.",
+    "familieRapid": "Porodica",
+    "configRapideNota2": "Jedan klik postavlja izabrani element. Kod donjeg elementa zadržavate širinu i visinu; kod ostalih porodica postavljaju se i dimenzije, kao na staroj kartici kataloga. Možete birati i iz druge porodice."
   },
   "fata": {
     "px": "desno",

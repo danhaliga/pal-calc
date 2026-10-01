@@ -402,8 +402,8 @@
         "corpNume": "Skříňka trouba"
       },
       "sus-2usi": {
-        "nume": "Horní skříňka se 2 dvířky",
-        "descriere": "Vysoká nástěnná skříňka se dvěma policemi.",
+        "nume": "Horní skříňka",
+        "descriere": "Nástěnná skříňka. V editoru ji uděláte s jedněmi nebo dvojími dvířky, nižší nebo vyšší, vitrínu, nad digestoř nebo otevřenou polici.",
         "corpNume": "Horní 2 dvířka"
       },
       "sus-1usa": {
@@ -427,8 +427,8 @@
         "corpNume": "Závěsná vitrína"
       },
       "dulap-2usi": {
-        "nume": "Šatní skříň se 2 dvířky",
-        "descriere": "Ložnicová skříň se čtyřmi policemi. Nad 2000 mm potřebují dvířka pátý pant, proto výška končí tady; výš se přidává samostatný nástavec.",
+        "nume": "Šatní skříň nebo obývací nábytek",
+        "descriere": "Ložnicová skříň s dveřmi. V editoru z ní uděláte posuvnou, šatnu, třídveřovou, vitrínu, knihovnu, regál, příborník, botník, komodu, noční stolek nebo TV stolek.",
         "corpNume": "Skříň 2 dvířka"
       },
       "dulap-3usi": {
@@ -462,8 +462,8 @@
         "corpNume": "Vitrína"
       },
       "baie-lavoar": {
-        "nume": "Skříňka pod umyvadlo",
-        "descriere": "Bez police, kvůli sifonu. Nastřelená záda z HDF.",
+        "nume": "Koupelnová skříňka",
+        "descriere": "Skříňka pod umyvadlo, bez police, kvůli sifonu. V editoru z ní uděláte i vysokou koupelnovou skříň.",
         "corpNume": "Skříňka pod umyvadlo"
       },
       "baie-coloana": {
@@ -472,8 +472,8 @@
         "corpNume": "Koupelnový sloup"
       },
       "colt-jos-L": {
-        "nume": "Kuchyňský spodní roh, do L",
-        "descriere": "Klasický rohový korpus pod pracovní deskou, se dvěma čely spojenými knižním pantem. Bez police: na takovém rozpětí by se prohnula, použij karusel.",
+        "nume": "Rohová skříňka",
+        "descriere": "Kuchyňský roh pod pracovní deskou. V editoru ji uděláte diagonální, slepou, horní, rohovou do obývacího pokoje, koupelny nebo šatny.",
         "corpNume": "Spodní roh L"
       },
       "colt-jos-diagonal": {
@@ -507,8 +507,8 @@
         "corpNume": "Koupelnový roh"
       },
       "atipic-sub-scara": {
-        "nume": "Korpus pod schody",
-        "descriere": "Lichoběžník s nízkou pravou stranou a šikminou stoupající doleva. Strany a úhly si uprav podle svých schodů.",
+        "nume": "Atypická skříňka",
+        "descriere": "Skříňka nakreslená ze stran a úhlů: pod schody, v podkroví nebo libovolný obrys. V editoru zvolíte výchozí tvar.",
         "corpNume": "Korpus pod schody"
       },
       "atipic-mansarda": {
@@ -568,8 +568,8 @@
         "corpNume": "Horní 1000"
       },
       "coloana-camara": {
-        "nume": "Potravinová skříň",
-        "descriere": "Od podlahy nahoru, pět polic a dvířka přes celou výšku.",
+        "nume": "Vysoká skříň",
+        "descriere": "Od podlahy až nahoru. V editoru z ní uděláte spíž, skříň na košťata, vestavbu trouby nebo lednice.",
         "corpNume": "Potravinová skříň"
       },
       "coloana-matura": {
@@ -1567,7 +1567,9 @@
     "impDouaMici": "2 malá + 1 velké",
     "colFront": "Čelo",
     "colCutie": "Zásuvka (mm)",
-    "notaFronturi": "Shora dolů. U čela napište mm, „r“ pro zbytek (rozdělí se rovným dílem mezi všechna „r“) nebo procento z celkové výšky, například 50%. Zásuvka se počítá z čela (čelo minus 40 mm, zaokrouhleno na 60, 80, 100, 120, 150 nebo 180); můžete ji napsat i ručně."
+    "notaFronturi": "Shora dolů. U čela napište mm, „r“ pro zbytek (rozdělí se rovným dílem mezi všechna „r“) nebo procento z celkové výšky, například 50%. Zásuvka se počítá z čela (čelo minus 40 mm, zaokrouhleno na 60, 80, 100, 120, 150 nebo 180); můžete ji napsat i ručně.",
+    "familieRapid": "Rodina",
+    "configRapideNota2": "Jedno kliknutí vloží zvolenou skříňku. U spodní skříňky zůstane vaše šířka a výška; u ostatních rodin se nastaví i rozměry, jako u staré karty katalogu. Můžete vybírat i z jiné rodiny."
   },
   "fata": {
     "px": "vpravo",

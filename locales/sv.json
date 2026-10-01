@@ -396,8 +396,8 @@
         "corpNume": "Ugnsskåp"
       },
       "sus-2usi": {
-        "nume": "Överskåp med 2 luckor",
-        "descriere": "Högt väggskåp med två hyllplan.",
+        "nume": "Väggskåp",
+        "descriere": "Skåpet på väggen. I redigeraren gör du det med en eller två dörrar, lägre eller högre, vitrin, över köksfläkten eller som öppen hylla.",
         "corpNume": "Överskåp 2 luckor"
       },
       "sus-1usa": {
@@ -421,8 +421,8 @@
         "corpNume": "Väggvitrin"
       },
       "dulap-2usi": {
-        "nume": "Garderob med 2 luckor",
-        "descriere": "Sovrumsgarderob med fyra hyllplan. Över 2000 mm behöver luckorna ett femte gångjärn, därför slutar höjden här; vill du högre sätter du ett eget överskåp ovanpå.",
+        "nume": "Garderob eller vardagsrumsmöbel",
+        "descriere": "Sovrumsgarderob med dörrar. I redigeraren gör du den med skjutdörrar, som walk-in-closet, 3-dörrars, vitrinskåp, bokhylla, hyllställ, skänk, skoskåp, byrå, sängbord eller TV-bänk.",
         "corpNume": "Garderob 2 luckor"
       },
       "dulap-3usi": {
@@ -456,8 +456,8 @@
         "corpNume": "Vitrinskåp"
       },
       "baie-lavoar": {
-        "nume": "Tvättställsskåp",
-        "descriere": "Utan hyllplan, på grund av vattenlåset. Påspikat bakstycke av board.",
+        "nume": "Badrumsskåp",
+        "descriere": "Kommoden under handfatet, utan hylla, för vattenlåset. I redigeraren gör du den även till högskåp för badrum.",
         "corpNume": "Tvättställsskåp"
       },
       "baie-coloana": {
@@ -466,8 +466,8 @@
         "corpNume": "Badrumshögskåp"
       },
       "colt-jos-L": {
-        "nume": "Kökshörn nedtill, L-format",
-        "descriere": "Den klassiska hörnstommen under bänkskivan, med två fronter kopplade med vikgångjärn. Utan hyllplan: på det här spannet skulle det svikta, använd karusell.",
+        "nume": "Hörnskåp",
+        "descriere": "Kökshörnet under bänkskivan. I redigeraren gör du det diagonalt, blint, som väggskåp eller som hörnmöbel för vardagsrum, badrum eller walk-in-closet.",
         "corpNume": "Hörnunderskåp L"
       },
       "colt-jos-diagonal": {
@@ -501,8 +501,8 @@
         "corpNume": "Badrumshörn"
       },
       "atipic-sub-scara": {
-        "nume": "Stomme under trappan",
-        "descriere": "Trapets med låg högersida och en lutning som stiger åt vänster. Ändra sidor och vinklar efter din trappa.",
+        "nume": "Specialformat skåp",
+        "descriere": "Skåp ritat utifrån sidor och vinklar: under trappan, på vinden eller med valfri kontur. I redigeraren väljer du startformen.",
         "corpNume": "Stomme under trappan"
       },
       "atipic-mansarda": {
@@ -562,8 +562,8 @@
         "corpNume": "Väggskåp 1000"
       },
       "coloana-camara": {
-        "nume": "Skafferihögskåp",
-        "descriere": "Från golv till tak, fem hyllor och dörrar i full höjd.",
+        "nume": "Högskåp",
+        "descriere": "Från golv till tak. I redigeraren gör du det till skafferi, städskåp, ugnsskåp eller kylskåp.",
         "corpNume": "Skafferiskåp"
       },
       "coloana-matura": {
@@ -1556,7 +1556,9 @@
     "impDouaMici": "2 små + 1 stor",
     "colFront": "Front",
     "colCutie": "Låda (mm)",
-    "notaFronturi": "Uppifrån och ner. Vid fronten skriver du mm, ”r” för resten (delas lika mellan alla ”r”) eller en procent av totala höjden, t.ex. 50%. Lådan räknas fram ur fronten (fronten minus 40 mm, avrundat till 60, 80, 100, 120, 150 eller 180); du kan också skriva in den för hand."
+    "notaFronturi": "Uppifrån och ner. Vid fronten skriver du mm, ”r” för resten (delas lika mellan alla ”r”) eller en procent av totala höjden, t.ex. 50%. Lådan räknas fram ur fronten (fronten minus 40 mm, avrundat till 60, 80, 100, 120, 150 eller 180); du kan också skriva in den för hand.",
+    "familieRapid": "Familj",
+    "configRapideNota2": "Ett klick placerar det valda skåpet. För underskåpet behåller du bredd och höjd; för de andra familjerna sätts även måtten, som på det gamla katalogkortet. Du kan också välja från en annan familj."
   },
   "fata": {
     "px": "höger",

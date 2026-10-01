@@ -402,8 +402,8 @@
         "corpNume": "Skrinka rúra"
       },
       "sus-2usi": {
-        "nume": "Horná skrinka s 2 dvierkami",
-        "descriere": "Vysoká nástenná skrinka s dvoma policami.",
+        "nume": "Horná skrinka",
+        "descriere": "Nástenná skrinka. V editore ju urobíte s jednými alebo dvoma dvierkami, nižšiu alebo vyššiu, vitrínu, nad digestor alebo otvorenú policu.",
         "corpNume": "Horná 2 dvierka"
       },
       "sus-1usa": {
@@ -427,8 +427,8 @@
         "corpNume": "Závesná vitrína"
       },
       "dulap-2usi": {
-        "nume": "Šatníková skriňa s 2 dvierkami",
-        "descriere": "Spálňová skriňa so štyrmi policami. Nad 2000 mm potrebujú dvierka piaty pánt, preto výška končí tu; vyššie sa pridáva samostatný nadstavec.",
+        "nume": "Šatník alebo obývací nábytok",
+        "descriere": "Spálňová skriňa s dverami. V editore z nej urobíte posuvnú, šatňu, trojdverovú, vitrínu, knižnicu, regál, príborník, botník, komodu, nočný stolík alebo TV stolík.",
         "corpNume": "Skriňa 2 dvierka"
       },
       "dulap-3usi": {
@@ -462,8 +462,8 @@
         "corpNume": "Vitrína"
       },
       "baie-lavoar": {
-        "nume": "Skrinka pod umývadlo",
-        "descriere": "Bez police, kvôli sifónu. Nastrelená zadná stena z HDF.",
+        "nume": "Kúpeľňová skrinka",
+        "descriere": "Skrinka pod umývadlo, bez police, kvôli sifónu. V editore z nej urobíte aj vysokú kúpeľňovú skriňu.",
         "corpNume": "Skrinka pod umývadlo"
       },
       "baie-coloana": {
@@ -472,8 +472,8 @@
         "corpNume": "Kúpeľňový stĺp"
       },
       "colt-jos-L": {
-        "nume": "Kuchynský spodný roh, do L",
-        "descriere": "Klasický rohový korpus pod pracovnou doskou, s dvoma čelami spojenými knižným pántom. Bez police: na takom rozpätí by sa prehla, použi karusel.",
+        "nume": "Rohová skrinka",
+        "descriere": "Kuchynský roh pod pracovnou doskou. V editore ju urobíte diagonálnu, slepú, hornú, rohovú do obývačky, kúpeľne alebo šatne.",
         "corpNume": "Spodný roh L"
       },
       "colt-jos-diagonal": {
@@ -507,8 +507,8 @@
         "corpNume": "Kúpeľňový roh"
       },
       "atipic-sub-scara": {
-        "nume": "Korpus pod schodmi",
-        "descriere": "Lichobežník s nízkou pravou stranou a šikminou stúpajúcou doľava. Strany a uhly si uprav podľa svojich schodov.",
+        "nume": "Atypická skrinka",
+        "descriere": "Skrinka nakreslená zo strán a uhlov: pod schodmi, v podkroví alebo ľubovoľný obrys. V editore zvolíte východiskový tvar.",
         "corpNume": "Korpus pod schodmi"
       },
       "atipic-mansarda": {
@@ -568,8 +568,8 @@
         "corpNume": "Horná 1000"
       },
       "coloana-camara": {
-        "nume": "Potravinová skriňa",
-        "descriere": "Od podlahy nahor, päť políc a dvierka cez celú výšku.",
+        "nume": "Vysoká skriňa",
+        "descriere": "Od podlahy až hore. V editore z nej urobíte špajzu, skriňu na metly, vstavbu rúry alebo chladničky.",
         "corpNume": "Potravinová skriňa"
       },
       "coloana-matura": {
@@ -1567,7 +1567,9 @@
     "impDouaMici": "2 malé + 1 veľké",
     "colFront": "Čelo",
     "colCutie": "Zásuvka (mm)",
-    "notaFronturi": "Zhora nadol. Pri čele napíšte mm, „r“ pre zvyšok (rozdelí sa rovnakým dielom medzi všetky „r“) alebo percento z celkovej výšky, napríklad 50%. Zásuvka sa počíta z čela (čelo mínus 40 mm, zaokrúhlené na 60, 80, 100, 120, 150 alebo 180); môžete ju napísať aj ručne."
+    "notaFronturi": "Zhora nadol. Pri čele napíšte mm, „r“ pre zvyšok (rozdelí sa rovnakým dielom medzi všetky „r“) alebo percento z celkovej výšky, napríklad 50%. Zásuvka sa počíta z čela (čelo mínus 40 mm, zaokrúhlené na 60, 80, 100, 120, 150 alebo 180); môžete ju napísať aj ručne.",
+    "familieRapid": "Rodina",
+    "configRapideNota2": "Jedno kliknutie vloží zvolenú skrinku. Pri spodnej skrinke vám zostane šírka a výška; pri ostatných rodinách sa nastavia aj rozmery, ako pri starej karte katalógu. Môžete vyberať aj z inej rodiny."
   },
   "fata": {
     "px": "vpravo",

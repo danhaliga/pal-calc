@@ -186,7 +186,7 @@
          `hNisa` e cât cere aparatul — corpul bază de cuptor. */
       hNisa: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
-      nSer: 0, hFront: 150, hCutie: 100, sertareH: '', sertareC: '', jg: 12.5, ts: 18, lg: '',
+      nSer: 0, hFront: 150, hCutie: 100, sertareH: '', sertareC: '', familie: '', jg: 12.5, ts: 18, lg: '',
       /* Mânerul. Se poate scoate cu totul: la push-to-open, la profil gola
          sau la fronturile cu prindere frezată nu se cumpără niciunul și nu
          se găurește nimic. Direcția și locul pe front au fiecare o valoare
@@ -1954,6 +1954,8 @@
           .regex(/^$|^\s*(\d+(?:[.,]\d+)?%?|r)\s*(;\s*(\d+(?:[.,]\d+)?%?|r)\s*)*$|^\s*(\d+(?:\.\d+)?%?|r)\s*(,\s*(\d+(?:\.\d+)?%?|r)\s*)*$/i)
           .optional(),
         sertareC: z.string().trim().max(200).regex(/^[\d.\s,;]*$/).optional(),
+        /* familia din catalog (pentru configurările rapide din editor) */
+        familie: z.string().trim().max(40).regex(/^[a-z-]*$/).optional(),
         /* Un semn, nu o cotă: 0 = sertarele sus, ca până acum. */
         sertareJos: int(0, 1).catch(0),
         maner: int(0, 1).catch(1),

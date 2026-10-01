@@ -396,8 +396,8 @@
         "corpNume": "Mueble horno"
       },
       "sus-2usi": {
-        "nume": "Mueble alto de 2 puertas",
-        "descriere": "Módulo de pared alto, con dos baldas.",
+        "nume": "Mueble alto",
+        "descriere": "El mueble de pared. En el editor lo haces con una o dos puertas, más bajo o más alto, vitrina, sobre la campana o estante abierto.",
         "corpNume": "Alto 2 puertas"
       },
       "sus-1usa": {
@@ -421,8 +421,8 @@
         "corpNume": "Vitrina de pared"
       },
       "dulap-2usi": {
-        "nume": "Armario de 2 puertas",
-        "descriere": "Armario de dormitorio con cuatro baldas. Por encima de 2000 mm las puertas necesitan una quinta bisagra, así que la altura se detiene aquí; para más, añade un altillo aparte.",
+        "nume": "Armario o mueble de salón",
+        "descriere": "Armario de dormitorio con puertas. En el editor lo haces corredero, vestidor, de 3 puertas, vitrina, librería, estantería, aparador, zapatero, cómoda, mesita de noche o mueble de TV.",
         "corpNume": "Armario 2 puertas"
       },
       "dulap-3usi": {
@@ -456,8 +456,8 @@
         "corpNume": "Vitrina"
       },
       "baie-lavoar": {
-        "nume": "Mueble de lavabo",
-        "descriere": "Sin balda, por el sifón. Trasera de tablero duro aplicada.",
+        "nume": "Mueble de baño",
+        "descriere": "El mueble bajo el lavabo, sin balda, para el sifón. En el editor también lo conviertes en columna de baño.",
         "corpNume": "Mueble de lavabo"
       },
       "baie-coloana": {
@@ -466,8 +466,8 @@
         "corpNume": "Columna de baño"
       },
       "colt-jos-L": {
-        "nume": "Esquina de cocina baja, en L",
-        "descriere": "El módulo de esquina clásico bajo la encimera, con dos frentes unidos por bisagra de libro. Sin balda: con esta luz se combaría, usa un carrusel.",
+        "nume": "Mueble de esquina",
+        "descriere": "La esquina de la cocina bajo la encimera. En el editor lo haces diagonal, ciego, alto, rinconera de salón, de baño o de vestidor.",
         "corpNume": "Esquina baja en L"
       },
       "colt-jos-diagonal": {
@@ -501,8 +501,8 @@
         "corpNume": "Esquina de baño"
       },
       "atipic-sub-scara": {
-        "nume": "Módulo bajo escalera",
-        "descriere": "Trapecio con el lado derecho bajo y la pendiente subiendo hacia la izquierda. Ajusta los lados y los ángulos a tu escalera.",
+        "nume": "Mueble a medida",
+        "descriere": "Mueble dibujado a partir de lados y ángulos: bajo la escalera, en la buhardilla o cualquier contorno. En el editor eliges la forma inicial.",
         "corpNume": "Módulo bajo escalera"
       },
       "atipic-mansarda": {
@@ -562,8 +562,8 @@
         "corpNume": "Alto 1000"
       },
       "coloana-camara": {
-        "nume": "Columna despensa",
-        "descriere": "Del suelo arriba, cinco baldas y puertas de altura completa.",
+        "nume": "Columna",
+        "descriere": "Del suelo hasta arriba. En el editor la conviertes en despensa, columna de escobas, para horno o para frigorífico.",
         "corpNume": "Columna despensa"
       },
       "coloana-matura": {
@@ -1556,7 +1556,9 @@
     "impDouaMici": "2 pequeños + 1 grande",
     "colFront": "Frente",
     "colCutie": "Cajón (mm)",
-    "notaFronturi": "De arriba abajo. En el frente escribe mm, “r” para el resto (se reparte por igual entre todas las “r”) o un porcentaje de la altura total, por ejemplo 50%. El cajón se calcula a partir del frente (frente menos 40 mm, redondeado a 60, 80, 100, 120, 150 o 180); también puedes escribirlo a mano."
+    "notaFronturi": "De arriba abajo. En el frente escribe mm, “r” para el resto (se reparte por igual entre todas las “r”) o un porcentaje de la altura total, por ejemplo 50%. El cajón se calcula a partir del frente (frente menos 40 mm, redondeado a 60, 80, 100, 120, 150 o 180); también puedes escribirlo a mano.",
+    "familieRapid": "Familia",
+    "configRapideNota2": "Un clic coloca el mueble elegido. En el mueble bajo se mantienen el ancho y el alto; en las demás familias también se aplican las medidas, como en la antigua tarjeta del catálogo. También puedes elegir de otra familia."
   },
   "fata": {
     "px": "derecha",

@@ -396,8 +396,8 @@
         "corpNume": "Base forno"
       },
       "sus-2usi": {
-        "nume": "Pensile con 2 ante",
-        "descriere": "Pensile alto, con due ripiani.",
+        "nume": "Pensile",
+        "descriere": "Il mobile a parete. Nell'editor lo fai a una o due ante, più basso o più alto, vetrina, sopra la cappa o a giorno.",
         "corpNume": "Pensile 2 ante"
       },
       "sus-1usa": {
@@ -421,8 +421,8 @@
         "corpNume": "Vetrina pensile"
       },
       "dulap-2usi": {
-        "nume": "Armadio con 2 ante",
-        "descriere": "Armadio da camera con quattro ripiani. Oltre 2000 mm le ante richiedono una quinta cerniera, perciò l'altezza si ferma qui; per andare più in alto si aggiunge un sopralzo separato.",
+        "nume": "Armadio o mobile soggiorno",
+        "descriere": "Armadio da camera con ante. Nell'editor lo fai scorrevole, cabina armadio, a 3 ante, vetrina, libreria, scaffale, credenza, scarpiera, cassettiera, comodino o mobile TV.",
         "corpNume": "Armadio 2 ante"
       },
       "dulap-3usi": {
@@ -456,8 +456,8 @@
         "corpNume": "Vetrina"
       },
       "baie-lavoar": {
-        "nume": "Mobile sottolavabo",
-        "descriere": "Senza ripiano, per il sifone. Schienale in pannello di fibra applicato.",
+        "nume": "Mobile bagno",
+        "descriere": "Il mobile sotto il lavabo, senza ripiano, per il sifone. Nell'editor lo trasformi anche in colonna bagno.",
         "corpNume": "Mobile sottolavabo"
       },
       "baie-coloana": {
@@ -466,8 +466,8 @@
         "corpNume": "Colonna bagno"
       },
       "colt-jos-L": {
-        "nume": "Angolo cucina base, a L",
-        "descriere": "Il classico mobile angolare sotto il piano, con due frontali uniti da cerniera a libro. Senza ripiano: a questa luce si imbarcherebbe, meglio un cestello girevole.",
+        "nume": "Mobile angolare",
+        "descriere": "L'angolo della cucina sotto il piano di lavoro. Nell'editor lo fai diagonale, cieco, pensile, angolare per soggiorno, bagno o cabina armadio.",
         "corpNume": "Angolo base a L"
       },
       "colt-jos-diagonal": {
@@ -501,8 +501,8 @@
         "corpNume": "Angolo bagno"
       },
       "atipic-sub-scara": {
-        "nume": "Mobile sottoscala",
-        "descriere": "Trapezio con il lato destro basso e la pendenza che sale verso sinistra. Cambia lati e angoli in base alla tua scala.",
+        "nume": "Mobile su misura",
+        "descriere": "Mobile disegnato da lati e angoli: sotto la scala, in mansarda o con qualsiasi contorno. Nell'editor scegli la forma di partenza.",
         "corpNume": "Mobile sottoscala"
       },
       "atipic-mansarda": {
@@ -562,8 +562,8 @@
         "corpNume": "Pensile 1000"
       },
       "coloana-camara": {
-        "nume": "Colonna dispensa",
-        "descriere": "Da terra fino in alto, cinque ripiani e ante a tutta altezza.",
+        "nume": "Colonna",
+        "descriere": "Dal pavimento fino in alto. Nell'editor la trasformi in dispensa, colonna portascope, per forno o per frigorifero.",
         "corpNume": "Colonna dispensa"
       },
       "coloana-matura": {
@@ -1556,7 +1556,9 @@
     "impDouaMici": "2 piccoli + 1 grande",
     "colFront": "Frontale",
     "colCutie": "Cassetto (mm)",
-    "notaFronturi": "Dall'alto in basso. Nel frontale scrivi i mm, “r” per il resto (diviso in parti uguali tra tutte le “r”) o una percentuale dell'altezza totale, ad esempio 50%. Il cassetto si calcola dal frontale (frontale meno 40 mm, arrotondato a 60, 80, 100, 120, 150 o 180); puoi anche scriverlo a mano."
+    "notaFronturi": "Dall'alto in basso. Nel frontale scrivi i mm, “r” per il resto (diviso in parti uguali tra tutte le “r”) o una percentuale dell'altezza totale, ad esempio 50%. Il cassetto si calcola dal frontale (frontale meno 40 mm, arrotondato a 60, 80, 100, 120, 150 o 180); puoi anche scriverlo a mano.",
+    "familieRapid": "Famiglia",
+    "configRapideNota2": "Un clic inserisce il mobile scelto. Per il mobile base restano la larghezza e l'altezza; per le altre famiglie vengono impostate anche le misure, come nella vecchia scheda del catalogo. Puoi scegliere anche da un'altra famiglia."
   },
   "fata": {
     "px": "destra",
