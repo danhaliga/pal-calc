@@ -584,6 +584,17 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
   glisierei implicit pe corp a trecut la 13 mm (corpurile vechi au 12,5 și
   primesc avertismentul de joc).
 
+## 6t. Serverul pregătit pentru Stripe (1 octombrie)
+
+- `.env`: `APP_URL=https://cutmodul.com` (era localhost): de el depind
+  adresa de întoarcere din Stripe Checkout, webhook-ul
+  (`https://cutmodul.com/webhooks/stripe`, făcut singur la salvarea cheii
+  din Administrare → Plata) și cookie-ul de sesiune, acum `Secure`.
+- Apache, `palcalc-le-ssl.conf`: `RequestHeader set X-Forwarded-Proto
+  "https"` (mod_headers), ca aplicația (`trust proxy 1`) să vadă https și
+  să trimită cookie-ul Secure. Copii de dinainte: /root/palcalc-le-ssl.conf.*.bak,
+  /root/palcalc.env.*.bak. Verificat: logarea merge.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E
