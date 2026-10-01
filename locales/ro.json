@@ -701,31 +701,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Cu amortizare în balama. Cupă Ø35, adâncime 13 mm."
-      },
-      "universal": {
-        "nume": "Balama universală Ø35",
-        "descriere": "Balama obișnuită cu cupă de 35. Amortizorul se pune separat, pe corp."
-      },
       "fara": {
         "nume": "Fără balamale",
         "descriere": "Corpuri deschise sau cu alt sistem de front."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Cu amortizare, prindere clip pe placă. Cupă Ø35, adâncime 12 mm, șuruburi la 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Cu amortizare, placă K. Cupă Ø35, șuruburi la 48/6. Varianta încastrată se comandă cu cod de la furnizor."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Glisiere cu bilă, extragere totală",
-        "descriere": "Cutie din PAL, glisiera prinsă pe laterala cutiei și pe laterala corpului."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (sub cutie)",
-        "descriere": "Glisiera stă sub cutie, nu se vede. Cere decupaj în fundul cutiei."
-      },
       "fara": {
         "nume": "Fără sertare",
         "descriere": "Comanda nu are sertare."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, cu bilă",
+        "descriere": "Extragere totală, cu amortizare, 30 kg. Glisiera e prinsă pe laterala cutiei și pe laterala corpului."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, ascunsă",
+        "descriere": "Stă sub cutie, cu amortizare, 30 kg, pentru laterale de cutie de 18–19 mm. Verifică jocul pe parte în fișa Häfele."
       }
     },
     "plinta": {
@@ -794,7 +794,13 @@
       "obsSistemGlisant": "{n} uși, corp de {lat} mm",
       "piciorTip": "{fam}, H {h} mm (reglaj {min}–{max}) — Häfele {cod}",
       "suportPicior": "Suport pentru picior {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Clemă de plintă — Häfele {cod}"
+      "clemaPlintaCod": "Clemă de plintă — Häfele {cod}",
+      "balamaCod": "{nume}, cot {cot} — Häfele {cod}",
+      "placaBalama": "Placă de montaj pentru balama — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Mâner {nume}, interax {l} mm — Häfele {cod}",
+      "manerFaraCod": "Mâner {nume}, interax {l} mm",
+      "obsFaraCod": "fără cod confirmat la mărimea asta: se cere la furnizor"
     },
     "optPicior": "{fam} · H {h} mm (reglaj {min}–{max})",
     "piciorFam": {
@@ -803,7 +809,26 @@
       "logo": "Picior reglabil din 2 componente",
       "otel": "Picior reglabil din oțel zincat",
       "aluVizibil": "Picior vizibil din aluminiu, pătrat 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, negru mat",
+        "descriere": "Aliaj de zinc. Cod Häfele la interax 160 și 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, alb mat",
+        "descriere": "Aliaj de zinc. Cod Häfele la interax 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, aluminiu cu bază",
+        "descriere": "Cod Häfele la interax 128 mm, filet M4."
+      },
+      "oarecare": {
+        "nume": "Alt mâner",
+        "descriere": "Se trece doar numărul de mânere, fără cod."
+      }
+    },
+    "intrebareManer": "Ce mânere?"
   },
   "piesa": {
     "laterala": "Laterală",

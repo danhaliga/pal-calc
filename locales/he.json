@@ -701,31 +701,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "הבולם כבר בתוך הציר. כוס Ø35, עומק 13 מ״מ."
-      },
-      "universal": {
-        "nume": "ציר אוניברסלי Ø35",
-        "descriere": "ציר רגיל עם כוס 35. הבולם מותקן בנפרד, על הגוף."
-      },
       "fara": {
         "nume": "בלי צירים",
         "descriere": "גוף פתוח או מערכת חזיתות אחרת."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "עם בולם טריקה, הרכבת קליפס על הפלטה. כוס Ø35, עומק 12 mm, ברגים ב-48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "עם בולם טריקה, פלטה K. כוס Ø35, ברגים ב-48/6. הגרסה השקועה מוזמנת בקוד מהספק."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "מסילות כפולות, פתיחה מלאה",
-        "descriere": "ארגז מלוח סיבית, המסילה מוברגת לדופן הארגז ולדופן הגוף."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (מתחת לארגז)",
-        "descriere": "המסילה עוברת מתחת לארגז ולא נראית. צריך פתחים בתחתית הארגז."
-      },
       "fara": {
         "nume": "בלי מגירות",
         "descriere": "בהזמנה הזאת אין מגירות."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, עם מסבים כדוריים",
+        "descriere": "שליפה מלאה, עם בולם טריקה, 30 kg. המסילה מחוברת לדופן המגירה ולדופן הארון."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, נסתרת",
+        "descriere": "מותקנת מתחת למגירה, עם בולם טריקה, 30 kg, לדפנות מגירה של 18–19 mm. בדקו את המרווח הצדדי בדף הנתונים של Häfele."
       }
     },
     "plinta": {
@@ -794,7 +794,13 @@
       "obsSistemGlisant": "{n} דלתות, ארון {lat} מ״מ",
       "piciorTip": "{fam}, H {h} mm (כוונון {min}–{max}) — Häfele {cod}",
       "suportPicior": "פלטת הרכבה לרגל {fam} — Häfele {cod}",
-      "clemaPlintaCod": "תפס לסוקל — Häfele {cod}"
+      "clemaPlintaCod": "תפס לסוקל — Häfele {cod}",
+      "balamaCod": "{nume}, כיפוף {cot} — Häfele {cod}",
+      "placaBalama": "פלטת הרכבה לציר — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "ידית {nume}, מרחק חורים {l} mm — Häfele {cod}",
+      "manerFaraCod": "ידית {nume}, מרחק חורים {l} mm",
+      "obsFaraCod": "אין קוד מאושר למידה הזו: יש לבקש מהספק"
     },
     "optPicior": "{fam} · H {h} mm (כוונון {min}–{max})",
     "piciorFam": {
@@ -803,7 +809,26 @@
       "logo": "רגל מתכווננת מ-2 חלקים",
       "otel": "רגל מתכווננת מפלדה מגולוונת",
       "aluVizibil": "רגל גלויה מאלומיניום, ריבוע 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, שחור מט",
+        "descriere": "סגסוגת אבץ. קוד Häfele למרחק חורים 160 ו-192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, לבן מט",
+        "descriere": "סגסוגת אבץ. קוד Häfele למרחק חורים 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, אלומיניום עם בסיס",
+        "descriere": "קוד Häfele למרחק חורים 128 mm, תבריג M4."
+      },
+      "oarecare": {
+        "nume": "ידית אחרת",
+        "descriere": "רושמים רק את מספר הידיות, ללא קוד."
+      }
+    },
+    "intrebareManer": "אילו ידיות?"
   },
   "piesa": {
     "laterala": "דופן",

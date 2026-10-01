@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Com amortecimento na própria dobradiça. Copo Ø35, 13 mm de profundidade."
-      },
-      "universal": {
-        "nume": "Dobradiça universal Ø35",
-        "descriere": "Dobradiça comum com copo de 35. O amortecedor põe-se à parte, no módulo."
-      },
       "fara": {
         "nume": "Sem dobradiças",
         "descriere": "Módulos abertos ou com outro sistema de frente."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Com amortecimento, fixação por clip na base. Copa Ø35, profundidade 12 mm, parafusos a 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Com amortecimento, base K. Copa Ø35, parafusos a 48/6. A versão embutida encomenda-se com código do fornecedor."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Corrediças de esferas, extração total",
-        "descriere": "Caixa em aglomerado, com a corrediça fixa na lateral da caixa e na lateral do módulo."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (sob a caixa)",
-        "descriere": "A corrediça fica por baixo da caixa, escondida. Precisa de um recorte no fundo da caixa."
-      },
       "fara": {
         "nume": "Sem gavetas",
         "descriere": "Esta encomenda não tem gavetas."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, de esferas",
+        "descriere": "Extração total, com amortecimento, 30 kg. A corrediça fixa-se na lateral da gaveta e na lateral do móvel."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, oculta",
+        "descriere": "Fica por baixo da gaveta, com amortecimento, 30 kg, para laterais de gaveta de 18–19 mm. Verifique a folga lateral na ficha Häfele."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} portas, móvel de {lat} mm",
       "piciorTip": "{fam}, H {h} mm (regulação {min}–{max}) — Häfele {cod}",
       "suportPicior": "Placa de montagem para pé {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Clipe de rodapé — Häfele {cod}"
+      "clemaPlintaCod": "Clipe de rodapé — Häfele {cod}",
+      "balamaCod": "{nume}, curvatura {cot} — Häfele {cod}",
+      "placaBalama": "Base de montagem para dobradiça — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Puxador {nume}, entre-eixos {l} mm — Häfele {cod}",
+      "manerFaraCod": "Puxador {nume}, entre-eixos {l} mm",
+      "obsFaraCod": "sem código confirmado para esta medida: pedir ao fornecedor"
     },
     "optPicior": "{fam} · H {h} mm (regulação {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "Pé regulável de 2 peças",
       "otel": "Pé regulável em aço galvanizado",
       "aluVizibil": "Pé visível em alumínio, quadrado 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, preto mate",
+        "descriere": "Liga de zinco. Código Häfele para entre-eixos de 160 e 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, branco mate",
+        "descriere": "Liga de zinco. Código Häfele para entre-eixos de 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, alumínio com base",
+        "descriere": "Código Häfele para entre-eixos de 128 mm, rosca M4."
+      },
+      "oarecare": {
+        "nume": "Outro puxador",
+        "descriere": "Indica-se apenas o número de puxadores, sem código."
+      }
+    },
+    "intrebareManer": "Que puxadores?"
   },
   "piesa": {
     "laterala": "Lateral",

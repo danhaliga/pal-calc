@@ -5,7 +5,7 @@
    îmbinare. Numele și explicațiile stau în locales/, sub „fero.*”, ca să
    poată fi citite în oricare din limbile aplicației.
 
-   Cotele sunt cele standard din cataloagele Blum și Häfele; când articolul
+   Cotele și codurile sunt din catalogul Häfele; când articolul
    cumpărat diferă, se schimbă aici, într-un singur loc.
    ============================================================ */
 (function (root, factory) {
@@ -57,48 +57,78 @@
     }
   };
 
-  /* ---------- balamale ---------- */
+  /* ---------- balamale ----------
 
+     Numai Häfele (Dan, 1 octombrie 2026: „scoatem Blum"). Codurile sunt pe
+     cot — 0 aplicată, 9 semi-aplicată, 18 încastrată — și sunt cele văzute
+     pe paginile produselor la distribuitori (hafele.ro nu se lasă citit).
+     Cupa Ø35 cu șuruburi la 48/6; placa în cruce la 37 mm de muchie, cu
+     șuruburile la 32 mm. Unde un cod n-a putut fi confirmat, nu-l scriem:
+     în listă iese balamaua fără cod, iar codul se cere la furnizor. */
   var BALAMALE = {
-    'blum-clip': {
-      id: 'blum-clip',
-      cupa: { d: 35, adancime: 13, deLaMuchieLaCentru: 23 },
-      suruburiCupa: { intre: 45, inSpateleAxei: 9.5, d: 2.5 },
+    'hafele-m310': {
+      id: 'hafele-m310',
+      cupa: { d: 35, adancime: 12, deLaMuchieLaCentru: 22.5 },
+      suruburiCupa: { intre: 48, inSpateleAxei: 6, d: 2.5 },
       placa: { deLaMuchieFata: 37, pas: 32, d: 5 },
       deLaCapatUsii: 100,
+      coduri: { '0': '311.04.249', '9': '311.04.252', '18': '311.04.255' },
+      placaCod: '311.70.610',
       consumabile: [{ art: 'eurosurub', peBalama: 4 }]
     },
-    'universal': {
-      id: 'universal',
-      cupa: { d: 35, adancime: 11.5, deLaMuchieLaCentru: 22.5 },
-      suruburiCupa: { intre: 45, inSpateleAxei: 9.5, d: 2.5 },
+    'hafele-m510': {
+      id: 'hafele-m510',
+      cupa: { d: 35, adancime: 12, deLaMuchieLaCentru: 22.5 },
+      suruburiCupa: { intre: 48, inSpateleAxei: 6, d: 2.5 },
       placa: { deLaMuchieFata: 37, pas: 32, d: 5 },
       deLaCapatUsii: 100,
-      consumabile: [
-        { art: 'surubBalamale', peBalama: 4 },
-        { art: 'amortizorAplicat', peBalama: 0.5 }
-      ]
+      coduri: { '0': '329.14.300', '9': '329.14.301' },
+      placaCod: '329.87.000',
+      consumabile: [{ art: 'eurosurub', peBalama: 4 }]
     },
     'fara': { id: 'fara' }
   };
 
-  /* ---------- glisiere ---------- */
+  /* ---------- glisiere ----------
 
+     Matrix BB S30: cu bilă, extragere totală, cu amortizare, 45 mm înaltă,
+     13 mm lată (atâta joc pe fiecare parte), cod pe lungime. Matrix UM S30:
+     ascunsă sub cutie, cu amortizare, pentru laterale de cutie de 18–19 mm;
+     jocul pe parte de 21 mm e cel obișnuit la glisierele de sub cutie și
+     trebuie verificat în fișa Häfele. */
   var GLISIERE = {
-    'bila': {
-      id: 'bila',
-      jocPeParte: 12.5,
+    'hafele-bb': {
+      id: 'hafele-bb',
+      jocPeParte: 13,
       suruburiPeSet: 8,
-      gauri: { d: 4, adancime: 12, deLaFata: 37, inaltimeDeLaFundCutie: 0 }
+      gauri: { d: 4, adancime: 12, deLaFata: 37, inaltimeDeLaFundCutie: 0 },
+      coduri: { 300: '494.02.181', 350: '494.02.182', 400: '494.02.183', 450: '494.02.184',
+                500: '494.02.185', 550: '494.02.186', 600: '494.02.187' }
     },
-    'tandem': {
-      id: 'tandem',
+    'hafele-um': {
+      id: 'hafele-um',
       jocPeParte: 21,
       suruburiPeSet: 8,
-      gauri: { d: 5, adancime: 13, deLaFata: 37 }
+      gauri: { d: 5, adancime: 13, deLaFata: 37 },
+      coduri: { 350: '433.07.113', 400: '433.07.114', 450: '433.07.115', 500: '433.07.116' }
     },
     'fara': { id: 'fara' }
   };
+
+  /* ---------- mânere ----------
+
+     Codul se ia după distanța dintre găuri (interaxul), care e lungimea
+     mânerului scrisă pe corp. Unde Häfele n-are cod confirmat la interaxul
+     cerut, iese mânerul fără cod. */
+  var MANERE = {
+    'hafele-gesico-negru': { id: 'hafele-gesico-negru', coduri: { 160: '110.34.306', 192: '110.34.307' } },
+    'hafele-gesico-alb':   { id: 'hafele-gesico-alb', coduri: { 160: '110.34.706' } },
+    'hafele-alu':          { id: 'hafele-alu', coduri: { 128: '155.00.970' } },
+    'oarecare':            { id: 'oarecare', coduri: {} }
+  };
+
+  /* Comenzile făcute cu Blum trec pe echivalentul Häfele. */
+  var VECHI = { 'blum-clip': 'hafele-m310', 'universal': 'hafele-m310', 'bila': 'hafele-bb', 'tandem': 'hafele-um' };
 
   /* ---------- suspensii de perete ---------- */
 
@@ -138,8 +168,8 @@
   };
 
   function implicit() {
-    return { asamblare: 'minifix', balama: 'blum-clip', glisiere: 'bila', suspensii: true,
-             plinta: 'alu-100' };
+    return { asamblare: 'minifix', balama: 'hafele-m310', glisiere: 'hafele-bb', suspensii: true,
+             plinta: 'alu-100', maner: 'hafele-gesico-negru' };
   }
 
   function citeste(valoare) {
@@ -148,10 +178,11 @@
     v = v || {};
     return {
       asamblare: ASAMBLARE[v.asamblare] ? v.asamblare : 'minifix',
-      balama: BALAMALE[v.balama] ? v.balama : 'blum-clip',
-      glisiere: GLISIERE[v.glisiere] ? v.glisiere : 'bila',
+      balama: BALAMALE[VECHI[v.balama] || v.balama] ? (VECHI[v.balama] || v.balama) : 'hafele-m310',
+      glisiere: GLISIERE[VECHI[v.glisiere] || v.glisiere] ? (VECHI[v.glisiere] || v.glisiere) : 'hafele-bb',
       suspensii: v.suspensii === undefined ? true : !!v.suspensii,
-      plinta: PLINTE[v.plinta] ? v.plinta : 'alu-100'
+      plinta: PLINTE[v.plinta] ? v.plinta : 'alu-100',
+      maner: MANERE[v.maner] ? v.maner : 'hafele-gesico-negru'
     };
   }
 
@@ -182,6 +213,7 @@
       glisiere: cuNume('glisiere', GLISIERE[a.glisiere], t),
       suspensii: susp,
       plinta: cuNume('plinta', PLINTE[a.plinta], t),
+      maner: cuNume('maner', MANERE[a.maner], t),
       picioare: PICIOARE
     };
   }
@@ -201,13 +233,14 @@
       balama: lista('balama', BALAMALE),
       glisiere: lista('glisiere', GLISIERE),
       plinta: lista('plinta', PLINTE),
+      maner: lista('maner', MANERE),
       suspensii: susp
     };
   }
 
   return {
     ASAMBLARE: ASAMBLARE, BALAMALE: BALAMALE, GLISIERE: GLISIERE, SUSPENSII: SUSPENSII,
-    PLINTE: PLINTE, PICIOARE: PICIOARE,
+    PLINTE: PLINTE, PICIOARE: PICIOARE, MANERE: MANERE,
     implicit: implicit, citeste: citeste, sistem: sistem, optiuni: optiuni
   };
 });

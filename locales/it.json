@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Con ammortizzatore nella cerniera. Tazza Ø35, profondità 13 mm."
-      },
-      "universal": {
-        "nume": "Cerniera universale Ø35",
-        "descriere": "Cerniera normale con tazza da 35. L'ammortizzatore si monta a parte, sul mobile."
-      },
       "fara": {
         "nume": "Senza cerniere",
         "descriere": "Mobili aperti o con un altro sistema di frontale."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Con ammortizzatore, aggancio a clip sulla basetta. Scodellino Ø35, profondità 12 mm, viti a 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Con ammortizzatore, basetta K. Scodellino Ø35, viti a 48/6. La versione a incasso si ordina con codice del fornitore."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Guide a sfere, estrazione totale",
-        "descriere": "Cassetto in truciolare, guida fissata sul fianco del cassetto e sul fianco del mobile."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (sotto il cassetto)",
-        "descriere": "La guida sta sotto il cassetto e non si vede. Richiede un intaglio nel fondo del cassetto."
-      },
       "fara": {
         "nume": "Senza cassetti",
         "descriere": "Questo ordine non ha cassetti."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, a sfere",
+        "descriere": "Estrazione totale, con ammortizzatore, 30 kg. La guida si fissa sul fianco del cassetto e sul fianco del mobile."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, nascosta",
+        "descriere": "Si monta sotto il cassetto, con ammortizzatore, 30 kg, per fianchi cassetto da 18–19 mm. Verifica il gioco laterale nella scheda Häfele."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} ante, mobile da {lat} mm",
       "piciorTip": "{fam}, H {h} mm (regolazione {min}–{max}) — Häfele {cod}",
       "suportPicior": "Piastra di montaggio per piedino {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Clip per zoccolo — Häfele {cod}"
+      "clemaPlintaCod": "Clip per zoccolo — Häfele {cod}",
+      "balamaCod": "{nume}, curvatura {cot} — Häfele {cod}",
+      "placaBalama": "Basetta di montaggio per cerniera — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Maniglia {nume}, interasse {l} mm — Häfele {cod}",
+      "manerFaraCod": "Maniglia {nume}, interasse {l} mm",
+      "obsFaraCod": "nessun codice confermato per questa misura: si chiede al fornitore"
     },
     "optPicior": "{fam} · H {h} mm (regolazione {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "Piedino regolabile in 2 parti",
       "otel": "Piedino regolabile in acciaio zincato",
       "aluVizibil": "Piedino a vista in alluminio, quadrato 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, nero opaco",
+        "descriere": "Lega di zinco. Codice Häfele per interasse 160 e 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, bianco opaco",
+        "descriere": "Lega di zinco. Codice Häfele per interasse 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, alluminio con base",
+        "descriere": "Codice Häfele per interasse 128 mm, filetto M4."
+      },
+      "oarecare": {
+        "nume": "Altra maniglia",
+        "descriere": "Si indica solo il numero di maniglie, senza codice."
+      }
+    },
+    "intrebareManer": "Quali maniglie?"
   },
   "piesa": {
     "laterala": "Fianco",

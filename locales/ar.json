@@ -719,31 +719,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "المُخمِّد داخل المفصلة نفسها. كأس Ø35، بعمق 13 مم."
-      },
-      "universal": {
-        "nume": "مفصلة عادية Ø35",
-        "descriere": "مفصلة اعتيادية بكأس 35. المُخمِّد يُركَّب على حدة، على الهيكل."
-      },
       "fara": {
         "nume": "بدون مفصلات",
         "descriere": "هيكل مفتوح أو نظام واجهات آخر."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "مع إغلاق هادئ، تركيب بالكبس على القاعدة. كأس Ø35، عمق 12 mm، براغٍ على 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "مع إغلاق هادئ، قاعدة K. كأس Ø35، براغٍ على 48/6. النسخة الداخلية تُطلب برمز من المورّد."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "مجاري كُرية، فتح كامل",
-        "descriere": "صندوق من الخشب الحبيبي، والمجرى يُبرَغ على جانب الصندوق وعلى جانب الهيكل."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (تحت الصندوق)",
-        "descriere": "المجرى يمرّ تحت الصندوق ولا يُرى. يحتاج تفريغات في قاعدة الصندوق."
-      },
       "fara": {
         "nume": "بدون أدراج",
         "descriere": "هذا الطلب بلا أدراج."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30، بكريات",
+        "descriere": "سحب كامل، مع إغلاق هادئ، 30 kg. يُثبَّت المجرى على جانب الدرج وعلى جانب الخزانة."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30، مخفية",
+        "descriere": "تُركَّب تحت الدرج، مع إغلاق هادئ، 30 kg، لجوانب درج بسماكة 18–19 mm. تحقّق من الخلوص الجانبي في نشرة Häfele."
       }
     },
     "plinta": {
@@ -812,7 +812,13 @@
       "obsSistemGlisant": "{n} أبواب، خزانة {lat} مم",
       "piciorTip": "{fam}, H {h} mm (ضبط {min}–{max}) — Häfele {cod}",
       "suportPicior": "قاعدة تثبيت للرجل {fam} — Häfele {cod}",
-      "clemaPlintaCod": "مشبك الوزرة — Häfele {cod}"
+      "clemaPlintaCod": "مشبك الوزرة — Häfele {cod}",
+      "balamaCod": "{nume}، تراكب {cot} — Häfele {cod}",
+      "placaBalama": "قاعدة تركيب للمفصلة — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "مقبض {nume}، المسافة بين الثقوب {l} mm — Häfele {cod}",
+      "manerFaraCod": "مقبض {nume}، المسافة بين الثقوب {l} mm",
+      "obsFaraCod": "لا يوجد رمز مؤكد لهذا المقاس: يُطلب من المورّد"
     },
     "optPicior": "{fam} · H {h} mm (ضبط {min}–{max})",
     "piciorFam": {
@@ -821,7 +827,26 @@
       "logo": "رجل قابلة للضبط من قطعتين",
       "otel": "رجل قابلة للضبط من الفولاذ المجلفن",
       "aluVizibil": "رجل ظاهرة من الألومنيوم، مربعة 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico، أسود مطفأ",
+        "descriere": "سبيكة زنك. رمز Häfele للمسافة بين الثقوب 160 و192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico، أبيض مطفأ",
+        "descriere": "سبيكة زنك. رمز Häfele للمسافة بين الثقوب 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele، ألمنيوم مع قاعدة",
+        "descriere": "رمز Häfele للمسافة بين الثقوب 128 mm، سن M4."
+      },
+      "oarecare": {
+        "nume": "مقبض آخر",
+        "descriere": "يُكتب عدد المقابض فقط، دون رمز."
+      }
+    },
+    "intrebareManer": "أي مقابض؟"
   },
   "piesa": {
     "laterala": "جانب",

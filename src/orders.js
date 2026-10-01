@@ -64,6 +64,7 @@ const schemaComanda = z.object({
   balama: z.string().trim().max(30).optional(),
   glisiere: z.string().trim().max(30).optional(),
   plinta: z.string().trim().max(30).optional(),
+  maner: z.string().trim().max(40).optional(),
   suspensii: z.any().optional()
 });
 
@@ -75,6 +76,7 @@ function feronerieDinBody(body) {
     balama: body.balama,
     glisiere: body.glisiere,
     plinta: body.plinta,
+    maner: body.maner,
     suspensii: body.suspensii === undefined ? false : body.suspensii === 'on' || body.suspensii === '1' || body.suspensii === 'true'
   });
 }

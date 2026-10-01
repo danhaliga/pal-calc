@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Giảm chấn tích hợp ngay trong bản lề. Cốc Ø35, sâu 13 mm."
-      },
-      "universal": {
-        "nume": "Bản lề thông dụng Ø35",
-        "descriere": "Bản lề thường với cốc 35. Bộ giảm chấn lắp riêng, trên thùng tủ."
-      },
       "fara": {
         "nume": "Không bản lề",
         "descriere": "Thùng tủ để mở hoặc dùng hệ cánh khác."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Có giảm chấn, lắp kiểu clip lên đế. Cốc Ø35, sâu 12 mm, vít theo 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Có giảm chấn, đế K. Cốc Ø35, vít theo 48/6. Loại lọt lòng đặt hàng bằng mã của nhà cung cấp."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Ray bi, mở toàn phần",
-        "descriere": "Hộc bằng ván dăm, ray bắt vào hông hộc và hông thùng tủ."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (dưới hộc)",
-        "descriere": "Ray nằm dưới hộc, không nhìn thấy. Cần khoét rãnh ở đáy hộc."
-      },
       "fara": {
         "nume": "Không ngăn kéo",
         "descriere": "Đơn hàng này không có ngăn kéo."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, bi",
+        "descriere": "Kéo toàn phần, có giảm chấn, 30 kg. Ray được bắt vào thành ngăn kéo và thành tủ."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, âm",
+        "descriere": "Lắp dưới ngăn kéo, có giảm chấn, 30 kg, cho thành ngăn kéo 18–19 mm. Kiểm tra khe hở bên trong tài liệu Häfele."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} cánh, tủ {lat} mm",
       "piciorTip": "{fam}, H {h} mm (chỉnh {min}–{max}) — Häfele {cod}",
       "suportPicior": "Đế lắp cho chân {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Kẹp len chân — Häfele {cod}"
+      "clemaPlintaCod": "Kẹp len chân — Häfele {cod}",
+      "balamaCod": "{nume}, độ trùm {cot} — Häfele {cod}",
+      "placaBalama": "Đế lắp bản lề — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Tay nắm {nume}, khoảng cách lỗ {l} mm — Häfele {cod}",
+      "manerFaraCod": "Tay nắm {nume}, khoảng cách lỗ {l} mm",
+      "obsFaraCod": "chưa có mã xác nhận cho kích thước này: hỏi nhà cung cấp"
     },
     "optPicior": "{fam} · H {h} mm (chỉnh {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "Chân tăng chỉnh 2 phần",
       "otel": "Chân tăng chỉnh bằng thép mạ kẽm",
       "aluVizibil": "Chân nhôm lộ, vuông 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, đen mờ",
+        "descriere": "Hợp kim kẽm. Mã Häfele cho khoảng cách lỗ 160 và 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, trắng mờ",
+        "descriere": "Hợp kim kẽm. Mã Häfele cho khoảng cách lỗ 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, nhôm có đế",
+        "descriere": "Mã Häfele cho khoảng cách lỗ 128 mm, ren M4."
+      },
+      "oarecare": {
+        "nume": "Tay nắm khác",
+        "descriere": "Chỉ ghi số lượng tay nắm, không có mã."
+      }
+    },
+    "intrebareManer": "Tay nắm nào?"
   },
   "piesa": {
     "laterala": "Hông tủ",

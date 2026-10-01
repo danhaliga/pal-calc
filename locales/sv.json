@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Med dämpning i själva gångjärnet. Kopp Ø35, 13 mm djup."
-      },
-      "universal": {
-        "nume": "Universalgångjärn Ø35",
-        "descriere": "Vanligt gångjärn med 35-kopp. Dämparen monteras separat, på stommen."
-      },
       "fara": {
         "nume": "Utan gångjärn",
         "descriere": "Öppna stommar eller ett annat frontsystem."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Med dämpning, klickfäste på monteringsplattan. Kopp Ø35, 12 mm djup, skruvar på 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Med dämpning, K-platta. Kopp Ø35, skruvar på 48/6. Inliggande variant beställs med kod från leverantören."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Kullagerskenor, fullutdrag",
-        "descriere": "Låda av spånskiva, skenan skruvas på lådans sida och på stommens gavel."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (under lådan)",
-        "descriere": "Skenan sitter under lådan och syns inte. Kräver ett urtag i lådbotten."
-      },
       "fara": {
         "nume": "Utan lådor",
         "descriere": "Den här ordern har inga lådor."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, kullagrad",
+        "descriere": "Fullt utdrag, med dämpning, 30 kg. Skenan fästs på lådsidan och på stommens sida."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, dold",
+        "descriere": "Sitter under lådan, med dämpning, 30 kg, för lådsidor på 18–19 mm. Kontrollera sidospelet i Häfele-databladet."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} dörrar, {lat} mm skåp",
       "piciorTip": "{fam}, H {h} mm (justering {min}–{max}) — Häfele {cod}",
       "suportPicior": "Monteringsplatta för ben {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Sockelclips — Häfele {cod}"
+      "clemaPlintaCod": "Sockelclips — Häfele {cod}",
+      "balamaCod": "{nume}, krökning {cot} — Häfele {cod}",
+      "placaBalama": "Monteringsplatta för gångjärn — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Handtag {nume}, hålavstånd {l} mm — Häfele {cod}",
+      "manerFaraCod": "Handtag {nume}, hålavstånd {l} mm",
+      "obsFaraCod": "ingen bekräftad kod för denna storlek: fråga leverantören"
     },
     "optPicior": "{fam} · H {h} mm (justering {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "Ställbart ben, 2-delat",
       "otel": "Ställbart ben i förzinkat stål",
       "aluVizibil": "Synligt aluminiumben, fyrkantigt 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, mattsvart",
+        "descriere": "Zinklegering. Häfele-kod för hålavstånd 160 och 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, mattvit",
+        "descriere": "Zinklegering. Häfele-kod för hålavstånd 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, aluminium med bas",
+        "descriere": "Häfele-kod för hålavstånd 128 mm, gänga M4."
+      },
+      "oarecare": {
+        "nume": "Annat handtag",
+        "descriere": "Endast antalet handtag anges, utan kod."
+      }
+    },
+    "intrebareManer": "Vilka handtag?"
   },
   "piesa": {
     "laterala": "Gavel",

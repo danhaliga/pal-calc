@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "With soft close built into the hinge. Ø35 cup, 13 mm deep."
-      },
-      "universal": {
-        "nume": "Universal Ø35 hinge",
-        "descriere": "An ordinary hinge with a 35 mm cup. The damper is fitted separately, on the cabinet."
-      },
       "fara": {
         "nume": "No hinges",
         "descriere": "Open cabinets, or another front system."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Soft-close, clip-on mounting to the plate. Ø35 cup, 12 mm deep, screws at 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Soft-close, K plate. Ø35 cup, screws at 48/6. The inset version is ordered with a code from the supplier."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Ball-bearing runners, full extension",
-        "descriere": "A chipboard box, with the runner fixed to the side of the box and to the side of the cabinet."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (under the box)",
-        "descriere": "The runner sits under the box, out of sight. It needs a notch in the bottom of the box."
-      },
       "fara": {
         "nume": "No drawers",
         "descriere": "This order has no drawers."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, ball-bearing",
+        "descriere": "Full extension, soft-close, 30 kg. The runner is fixed to the drawer side and to the cabinet side."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, concealed",
+        "descriere": "Mounts under the drawer, soft-close, 30 kg, for 18–19 mm drawer sides. Check the side clearance in the Häfele data sheet."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} doors, {lat} mm cabinet",
       "piciorTip": "{fam}, H {h} mm (adj. {min}–{max}) — Häfele {cod}",
       "suportPicior": "Mounting plate for {fam} leg — Häfele {cod}",
-      "clemaPlintaCod": "Plinth clip — Häfele {cod}"
+      "clemaPlintaCod": "Plinth clip — Häfele {cod}",
+      "balamaCod": "{nume}, crank {cot} — Häfele {cod}",
+      "placaBalama": "Hinge mounting plate — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Handle {nume}, {l} mm hole centres — Häfele {cod}",
+      "manerFaraCod": "Handle {nume}, {l} mm hole centres",
+      "obsFaraCod": "no confirmed code for this size: ask the supplier"
     },
     "optPicior": "{fam} · H {h} mm (adj. {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "2-part adjustable leg",
       "otel": "Galvanized steel adjustable leg",
       "aluVizibil": "Visible aluminium foot, 40 mm square"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, matt black",
+        "descriere": "Zinc alloy. Häfele code for 160 and 192 mm hole centres."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, matt white",
+        "descriere": "Zinc alloy. Häfele code for 160 mm hole centres."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, aluminium with base",
+        "descriere": "Häfele code for 128 mm hole centres, M4 thread."
+      },
+      "oarecare": {
+        "nume": "Other handle",
+        "descriere": "Only the number of handles is listed, without a code."
+      }
+    },
+    "intrebareManer": "Which handles?"
   },
   "piesa": {
     "laterala": "Side panel",

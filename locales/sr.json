@@ -701,31 +701,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Sa prigušenjem u samoj šarki. Lončić Ø35, dubina 13 mm."
-      },
-      "universal": {
-        "nume": "Univerzalna šarka Ø35",
-        "descriere": "Obična šarka sa lončićem 35. Prigušivač se stavlja odvojeno, na korpus."
-      },
       "fara": {
         "nume": "Bez šarki",
         "descriere": "Otvoreni korpusi ili drugi sistem frontova."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Sa usporivačem, klik montaža na pločicu. Čašica Ø35, dubina 12 mm, šrafovi na 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Sa usporivačem, pločica K. Čašica Ø35, šrafovi na 48/6. Unutrašnja varijanta se naručuje sa šifrom od dobavljača."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Kuglaste vođice, potpuno izvlačenje",
-        "descriere": "Kutija od iverice, vođica pričvršćena na bok kutije i na bok korpusa."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (ispod kutije)",
-        "descriere": "Vođica stoji ispod kutije i ne vidi se. Traži izrez u dnu kutije."
-      },
       "fara": {
         "nume": "Bez fioka",
         "descriere": "Ova porudžbina nema fioke."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, sa kuglicama",
+        "descriere": "Puno izvlačenje, sa usporivačem, 30 kg. Klizač se pričvršćuje na stranicu fioke i na stranicu korpusa."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, skriveni",
+        "descriere": "Nalazi se ispod fioke, sa usporivačem, 30 kg, za stranice fioke od 18–19 mm. Proveri bočni zazor u Häfele listu."
       }
     },
     "plinta": {
@@ -794,7 +794,13 @@
       "obsSistemGlisant": "{n} vrata, element {lat} mm",
       "piciorTip": "{fam}, H {h} mm (podešavanje {min}–{max}) — Häfele {cod}",
       "suportPicior": "Montažna pločica za nogicu {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Kopča za soklu — Häfele {cod}"
+      "clemaPlintaCod": "Kopča za soklu — Häfele {cod}",
+      "balamaCod": "{nume}, koleno {cot} — Häfele {cod}",
+      "placaBalama": "Montažna pločica za šarku — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Ručka {nume}, razmak rupa {l} mm — Häfele {cod}",
+      "manerFaraCod": "Ručka {nume}, razmak rupa {l} mm",
+      "obsFaraCod": "nema potvrđene šifre za ovu veličinu: traži se od dobavljača"
     },
     "optPicior": "{fam} · H {h} mm (podešavanje {min}–{max})",
     "piciorFam": {
@@ -803,7 +809,26 @@
       "logo": "Podesiva nogica iz 2 dela",
       "otel": "Podesiva nogica od pocinkovanog čelika",
       "aluVizibil": "Vidljiva aluminijumska nogica, kvadrat 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, crna mat",
+        "descriere": "Legura cinka. Häfele šifra za razmak rupa 160 i 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, bela mat",
+        "descriere": "Legura cinka. Häfele šifra za razmak rupa 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, aluminijum sa bazom",
+        "descriere": "Häfele šifra za razmak rupa 128 mm, navoj M4."
+      },
+      "oarecare": {
+        "nume": "Druga ručka",
+        "descriere": "Upisuje se samo broj ručki, bez šifre."
+      }
+    },
+    "intrebareManer": "Koje ručke?"
   },
   "piesa": {
     "laterala": "Bok",

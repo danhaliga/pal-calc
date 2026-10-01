@@ -701,31 +701,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "S tlmením priamo v pánte. Miska Ø35, hĺbka 13 mm."
-      },
-      "universal": {
-        "nume": "Univerzálny pánt Ø35",
-        "descriere": "Bežný pánt s miskou 35. Tlmič sa montuje zvlášť, na korpus."
-      },
       "fara": {
         "nume": "Bez pántov",
         "descriere": "Otvorené korpusy alebo iný systém čiel."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "S tlmením, nasadenie na klip na podložku. Miska Ø35, hĺbka 12 mm, skrutky 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "S tlmením, podložka K. Miska Ø35, skrutky 48/6. Vložená varianta sa objednáva s kódom od dodávateľa."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Guľôčkové výsuvy, plný výsuv",
-        "descriere": "Kôš z drevotriesky, výsuv priskrutkovaný na bok koša a na bok korpusu."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (pod košom)",
-        "descriere": "Výsuv je pod košom a nevidieť ho. Vyžaduje výrez v dne koša."
-      },
       "fara": {
         "nume": "Bez zásuviek",
         "descriere": "Táto zákazka zásuvky nemá."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, guľôčkový",
+        "descriere": "Plný výsuv, s tlmením, 30 kg. Výsuv sa upevňuje na bok zásuvky a na bok korpusu."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, skrytý",
+        "descriere": "Je pod zásuvkou, s tlmením, 30 kg, pre boky zásuvky 18–19 mm. Bočnú vôľu overte v liste Häfele."
       }
     },
     "plinta": {
@@ -794,7 +794,13 @@
       "obsSistemGlisant": "{n} dverí, skrinka {lat} mm",
       "piciorTip": "{fam}, H {h} mm (nastavenie {min}–{max}) — Häfele {cod}",
       "suportPicior": "Montážna doštička pre nožičku {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Klip sokla — Häfele {cod}"
+      "clemaPlintaCod": "Klip sokla — Häfele {cod}",
+      "balamaCod": "{nume}, zalomenie {cot} — Häfele {cod}",
+      "placaBalama": "Montážna podložka pre záves — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Úchytka {nume}, rozteč {l} mm — Häfele {cod}",
+      "manerFaraCod": "Úchytka {nume}, rozteč {l} mm",
+      "obsFaraCod": "pre túto veľkosť nie je potvrdený kód: vyžiadajte si ho od dodávateľa"
     },
     "optPicior": "{fam} · H {h} mm (nastavenie {min}–{max})",
     "piciorFam": {
@@ -803,7 +809,26 @@
       "logo": "Nastaviteľná nožička, 2-dielna",
       "otel": "Nastaviteľná nožička z pozinkovanej ocele",
       "aluVizibil": "Viditeľná hliníková nožička, štvorec 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, čierna matná",
+        "descriere": "Zliatina zinku. Kód Häfele pre rozteč 160 a 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, biela matná",
+        "descriere": "Zliatina zinku. Kód Häfele pre rozteč 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, hliník s podstavou",
+        "descriere": "Kód Häfele pre rozteč 128 mm, závit M4."
+      },
+      "oarecare": {
+        "nume": "Iná úchytka",
+        "descriere": "Uvádza sa len počet úchytiek, bez kódu."
+      }
+    },
+    "intrebareManer": "Aké úchytky?"
   },
   "piesa": {
     "laterala": "Bok",

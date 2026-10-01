@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Peredam sudah ada di dalam engsel. Mangkuk Ø35, dalam 13 mm."
-      },
-      "universal": {
-        "nume": "Engsel universal Ø35",
-        "descriere": "Engsel biasa dengan mangkuk 35. Peredamnya dipasang terpisah, pada boks."
-      },
       "fara": {
         "nume": "Tanpa engsel",
         "descriere": "Boks terbuka atau sistem muka yang lain."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Dengan soft-close, pemasangan klip pada pelat. Cup Ø35, kedalaman 12 mm, sekrup pada 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Dengan soft-close, pelat K. Cup Ø35, sekrup pada 48/6. Varian inset dipesan dengan kode dari pemasok."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Rel peluru, tarikan penuh",
-        "descriere": "Kotak laci dari papan partikel, rel disekrup ke sisi kotak dan ke sisi boks."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (di bawah kotak)",
-        "descriere": "Rel berada di bawah kotak dan tidak terlihat. Perlu takik di dasar kotak."
-      },
       "fara": {
         "nume": "Tanpa laci",
         "descriere": "Pesanan ini tidak punya laci."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, dengan bola",
+        "descriere": "Tarikan penuh, dengan soft-close, 30 kg. Rel dipasang pada sisi laci dan sisi badan kabinet."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, tersembunyi",
+        "descriere": "Dipasang di bawah laci, dengan soft-close, 30 kg, untuk sisi laci 18–19 mm. Periksa celah samping di lembar data Häfele."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} pintu, kabinet {lat} mm",
       "piciorTip": "{fam}, H {h} mm (setelan {min}–{max}) — Häfele {cod}",
       "suportPicior": "Pelat dudukan untuk kaki {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Klip plint — Häfele {cod}"
+      "clemaPlintaCod": "Klip plint — Häfele {cod}",
+      "balamaCod": "{nume}, crank {cot} — Häfele {cod}",
+      "placaBalama": "Pelat pemasangan untuk engsel — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Pegangan {nume}, jarak lubang {l} mm — Häfele {cod}",
+      "manerFaraCod": "Pegangan {nume}, jarak lubang {l} mm",
+      "obsFaraCod": "tidak ada kode terkonfirmasi untuk ukuran ini: tanyakan ke pemasok"
     },
     "optPicior": "{fam} · H {h} mm (setelan {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "Kaki setel 2 bagian",
       "otel": "Kaki setel baja galvanis",
       "aluVizibil": "Kaki aluminium terlihat, persegi 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, hitam doff",
+        "descriere": "Paduan seng. Kode Häfele untuk jarak lubang 160 dan 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, putih doff",
+        "descriere": "Paduan seng. Kode Häfele untuk jarak lubang 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, aluminium dengan dudukan",
+        "descriere": "Kode Häfele untuk jarak lubang 128 mm, ulir M4."
+      },
+      "oarecare": {
+        "nume": "Pegangan lain",
+        "descriere": "Hanya jumlah pegangan yang dicatat, tanpa kode."
+      }
+    },
+    "intrebareManer": "Pegangan apa?"
   },
   "piesa": {
     "laterala": "Sisi",

@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "阻尼就在铰链里。杯孔 Ø35，深 13 毫米。"
-      },
-      "universal": {
-        "nume": "普通铰链 Ø35",
-        "descriere": "常规 35 杯铰链。阻尼另外装在柜体上。"
-      },
       "fara": {
         "nume": "不用铰链",
         "descriere": "开放柜体或者另一套门板方案。"
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "带阻尼，卡扣式安装在底座上。杯 Ø35，深 12 mm，螺丝孔距 48/6。"
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "带阻尼，K 型底座。杯 Ø35，螺丝孔距 48/6。内嵌款需用供应商代码订购。"
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "钢珠滑轨，全展开",
-        "descriere": "抽屉盒用刨花板做，滑轨一边打在抽屉盒侧板上，一边打在柜体侧板上。"
-      },
-      "tandem": {
-        "nume": "Blum TANDEM（藏在抽屉盒下面）",
-        "descriere": "滑轨走在抽屉盒下面，看不见。抽屉盒底板要开缺口。"
-      },
       "fara": {
         "nume": "没有抽屉",
         "descriere": "这张订单里没有抽屉。"
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30，钢珠",
+        "descriere": "全拉出，带阻尼，30 kg。滑轨固定在抽屉侧板和柜体侧板上。"
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30，隐藏式",
+        "descriere": "装在抽屉下方，带阻尼，30 kg，适用于 18–19 mm 抽屉侧板。请在 Häfele 资料表中核对侧面间隙。"
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} 扇门，{lat} 毫米柜",
       "piciorTip": "{fam}, H {h} mm (调节 {min}–{max}) — Häfele {cod}",
       "suportPicior": "{fam} 柜脚安装座 — Häfele {cod}",
-      "clemaPlintaCod": "踢脚板卡扣 — Häfele {cod}"
+      "clemaPlintaCod": "踢脚板卡扣 — Häfele {cod}",
+      "balamaCod": "{nume}，弯度 {cot} — Häfele {cod}",
+      "placaBalama": "铰链安装底座 — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "拉手 {nume}，孔距 {l} mm — Häfele {cod}",
+      "manerFaraCod": "拉手 {nume}，孔距 {l} mm",
+      "obsFaraCod": "此尺寸暂无确认代码：向供应商询问"
     },
     "optPicior": "{fam} · H {h} mm (调节 {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "两件式调节脚",
       "otel": "镀锌钢调节脚",
       "aluVizibil": "外露铝合金脚，40 mm 方形"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico，哑光黑",
+        "descriere": "锌合金。孔距 160 和 192 mm 的 Häfele 代码。"
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico，哑光白",
+        "descriere": "锌合金。孔距 160 mm 的 Häfele 代码。"
+      },
+      "hafele-alu": {
+        "nume": "Häfele，带底座铝合金",
+        "descriere": "孔距 128 mm 的 Häfele 代码，M4 螺纹。"
+      },
+      "oarecare": {
+        "nume": "其他拉手",
+        "descriere": "只填写拉手数量，不带代码。"
+      }
+    },
+    "intrebareManer": "哪种拉手？"
   },
   "piesa": {
     "laterala": "侧板",

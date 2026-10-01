@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "آرام‌بند درون خودِ لولا است. فنجان Ø35، عمق 13 میلی‌متر."
-      },
-      "universal": {
-        "nume": "لولای معمولی Ø35",
-        "descriere": "لولای ساده با فنجان 35. آرام‌بند جداگانه و روی بدنه نصب می‌شود."
-      },
       "fara": {
         "nume": "بی لولا",
         "descriere": "بدنهٔ باز یا سیستم رویهٔ دیگر."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "با آرام‌بند، نصب کلیپسی روی صفحه. کاسه Ø35، عمق 12 mm، پیچ‌ها روی 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "با آرام‌بند، صفحه K. کاسه Ø35، پیچ‌ها روی 48/6. نوع توکار با کد تأمین‌کننده سفارش داده می‌شود."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "ریل ساچمه‌ای، کشش کامل",
-        "descriere": "جعبهٔ کشو از نئوپان، ریل به پهلوی جعبه و به پهلوی بدنه پیچ می‌شود."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (زیر جعبه)",
-        "descriere": "ریل از زیر جعبه می‌گذرد و دیده نمی‌شود. کف جعبه بریدگی می‌خواهد."
-      },
       "fara": {
         "nume": "بی کشو",
         "descriere": "این سفارش کشو ندارد."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30، ساچمه‌ای",
+        "descriere": "بازشوی کامل، با آرام‌بند، 30 kg. ریل به بدنه کشو و بدنه کابینت بسته می‌شود."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30، مخفی",
+        "descriere": "زیر کشو قرار می‌گیرد، با آرام‌بند، 30 kg، برای بدنه کشو 18–19 mm. فاصله کناری را در برگه فنی Häfele بررسی کنید."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} در، کابینت {lat} میلی‌متری",
       "piciorTip": "{fam}, H {h} mm (تنظیم {min}–{max}) — Häfele {cod}",
       "suportPicior": "صفحه نصب برای پایه {fam} — Häfele {cod}",
-      "clemaPlintaCod": "گیره قرنیز — Häfele {cod}"
+      "clemaPlintaCod": "گیره قرنیز — Häfele {cod}",
+      "balamaCod": "{nume}، گازور {cot} — Häfele {cod}",
+      "placaBalama": "صفحه نصب لولا — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "دستگیره {nume}، فاصله سوراخ {l} mm — Häfele {cod}",
+      "manerFaraCod": "دستگیره {nume}، فاصله سوراخ {l} mm",
+      "obsFaraCod": "برای این اندازه کد تأییدشده‌ای نیست: از تأمین‌کننده بپرسید"
     },
     "optPicior": "{fam} · H {h} mm (تنظیم {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "پایه قابل تنظیم دو تکه",
       "otel": "پایه قابل تنظیم از فولاد گالوانیزه",
       "aluVizibil": "پایه نمایان آلومینیومی، مربع 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico، مشکی مات",
+        "descriere": "آلیاژ روی. کد Häfele برای فاصله سوراخ‌های 160 و 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico، سفید مات",
+        "descriere": "آلیاژ روی. کد Häfele برای فاصله سوراخ‌های 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele، آلومینیوم با پایه",
+        "descriere": "کد Häfele برای فاصله سوراخ‌های 128 mm، رزوه M4."
+      },
+      "oarecare": {
+        "nume": "دستگیره دیگر",
+        "descriere": "فقط تعداد دستگیره‌ها نوشته می‌شود، بدون کد."
+      }
+    },
+    "intrebareManer": "چه دستگیره‌هایی؟"
   },
   "piesa": {
     "laterala": "پهلو",

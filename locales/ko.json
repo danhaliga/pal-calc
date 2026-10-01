@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "댐퍼가 경첩 안에 들어 있습니다. 컵 Ø35, 깊이 13mm."
-      },
-      "universal": {
-        "nume": "일반 경첩 Ø35",
-        "descriere": "보통 35컵 경첩. 댐퍼는 따로 몸통에 붙입니다."
-      },
       "fara": {
         "nume": "경첩 없음",
         "descriere": "오픈 캐비닛이거나 다른 문짝 방식."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "소프트 클로즈, 플레이트에 클립 장착. 컵 Ø35, 깊이 12 mm, 나사 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "소프트 클로즈, K 플레이트. 컵 Ø35, 나사 48/6. 인셋 타입은 공급업체 코드로 주문합니다."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "볼베어링 레일, 전체 인출",
-        "descriere": "서랍통은 파티클보드. 레일을 서랍통 측판과 몸통 측판에 나사로 붙입니다."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (서랍통 아래)",
-        "descriere": "레일이 서랍통 아래로 지나가 보이지 않습니다. 서랍통 하판에 파냄이 필요합니다."
-      },
       "fara": {
         "nume": "서랍 없음",
         "descriere": "이 주문에는 서랍이 없습니다."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, 볼 베어링",
+        "descriere": "풀 익스텐션, 소프트 클로즈, 30 kg. 레일은 서랍 측판과 본체 측판에 고정합니다."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, 언더마운트",
+        "descriere": "서랍 아래에 장착, 소프트 클로즈, 30 kg, 서랍 측판 18–19 mm용. 측면 유격은 Häfele 데이터시트에서 확인하세요."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "문 {n}개, {lat} mm 장",
       "piciorTip": "{fam}, H {h} mm (조절 {min}–{max}) — Häfele {cod}",
       "suportPicior": "{fam} 다리용 장착 플레이트 — Häfele {cod}",
-      "clemaPlintaCod": "걸레받이 클립 — Häfele {cod}"
+      "clemaPlintaCod": "걸레받이 클립 — Häfele {cod}",
+      "balamaCod": "{nume}, 크랭크 {cot} — Häfele {cod}",
+      "placaBalama": "경첩 장착 플레이트 — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "손잡이 {nume}, 홀 간격 {l} mm — Häfele {cod}",
+      "manerFaraCod": "손잡이 {nume}, 홀 간격 {l} mm",
+      "obsFaraCod": "이 크기에 확인된 코드 없음: 공급업체에 문의"
     },
     "optPicior": "{fam} · H {h} mm (조절 {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "2피스 조절 다리",
       "otel": "아연도금 강철 조절 다리",
       "aluVizibil": "노출형 알루미늄 다리, 40 mm 사각"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, 무광 블랙",
+        "descriere": "아연 합금. 홀 간격 160 및 192 mm용 Häfele 코드."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, 무광 화이트",
+        "descriere": "아연 합금. 홀 간격 160 mm용 Häfele 코드."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, 베이스 포함 알루미늄",
+        "descriere": "홀 간격 128 mm용 Häfele 코드, M4 나사산."
+      },
+      "oarecare": {
+        "nume": "기타 손잡이",
+        "descriere": "손잡이 개수만 기재하며 코드는 없습니다."
+      }
+    },
+    "intrebareManer": "어떤 손잡이?"
   },
   "piesa": {
     "laterala": "측판",

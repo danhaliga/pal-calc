@@ -171,8 +171,8 @@ test('toate articolele de feronerie au nume în română', () => {
   const params = Object.assign(defaults(), { nUsi: 2, nSer: 2, nPol: 2, D: 320,
                                              hFront: 200, hCutie: 150, tip: 'colt-L' });
   ['minifix', 'confirmat', 'cepuri-suruburi'].forEach(asamblare => {
-    ['blum-clip', 'universal', 'fara'].forEach(balama => {
-      ['bila', 'tandem', 'fara'].forEach(glisiere => {
+    ['hafele-m310', 'hafele-m510', 'fara'].forEach(balama => {
+      ['hafele-bb', 'hafele-um', 'fara'].forEach(glisiere => {
         const s = Fero.sistem({ asamblare, balama, glisiere, suspensii: true }, t);
         feronerie(params, calc(params), s, t).forEach(f => {
           assert.ok(f.nume && !/^fero\./.test(f.nume), `articol netradus: ${f.nume}`);

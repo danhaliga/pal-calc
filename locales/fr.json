@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Amortissement intégré à la charnière. Boîtier Ø35, profondeur 13 mm."
-      },
-      "universal": {
-        "nume": "Charnière universelle Ø35",
-        "descriere": "Charnière ordinaire à boîtier de 35. L'amortisseur se pose à part, sur le caisson."
-      },
       "fara": {
         "nume": "Sans charnières",
         "descriere": "Caissons ouverts ou autre système de façade."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Avec amortisseur, fixation clip sur l'embase. Boîtier Ø35, profondeur 12 mm, vis à 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Avec amortisseur, embase K. Boîtier Ø35, vis à 48/6. La version encastrée se commande avec un code du fournisseur."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Coulisses à billes, sortie totale",
-        "descriere": "Caisse en panneau, coulisse fixée sur le côté de la caisse et sur le côté du caisson."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (sous la caisse)",
-        "descriere": "La coulisse se place sous la caisse, invisible. Elle demande une entaille dans le fond de la caisse."
-      },
       "fara": {
         "nume": "Sans tiroirs",
         "descriere": "Cette commande n'a pas de tiroirs."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, à billes",
+        "descriere": "Sortie totale, avec amortisseur, 30 kg. La coulisse se fixe sur le côté du tiroir et sur le côté du caisson."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, invisible",
+        "descriere": "Se place sous le tiroir, avec amortisseur, 30 kg, pour côtés de tiroir de 18–19 mm. Vérifiez le jeu latéral dans la fiche Häfele."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} portes, meuble de {lat} mm",
       "piciorTip": "{fam}, H {h} mm (réglage {min}–{max}) — Häfele {cod}",
       "suportPicior": "Platine de fixation pour pied {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Clip de plinthe — Häfele {cod}"
+      "clemaPlintaCod": "Clip de plinthe — Häfele {cod}",
+      "balamaCod": "{nume}, coudure {cot} — Häfele {cod}",
+      "placaBalama": "Embase de montage pour charnière — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Poignée {nume}, entraxe {l} mm — Häfele {cod}",
+      "manerFaraCod": "Poignée {nume}, entraxe {l} mm",
+      "obsFaraCod": "pas de code confirmé pour cette taille : à demander au fournisseur"
     },
     "optPicior": "{fam} · H {h} mm (réglage {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "Pied réglable en 2 parties",
       "otel": "Pied réglable en acier galvanisé",
       "aluVizibil": "Pied apparent en aluminium, carré 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, noir mat",
+        "descriere": "Alliage de zinc. Code Häfele pour entraxe 160 et 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, blanc mat",
+        "descriere": "Alliage de zinc. Code Häfele pour entraxe 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, aluminium avec embase",
+        "descriere": "Code Häfele pour entraxe 128 mm, filetage M4."
+      },
+      "oarecare": {
+        "nume": "Autre poignée",
+        "descriere": "Seul le nombre de poignées est indiqué, sans code."
+      }
+    },
+    "intrebareManer": "Quelles poignées ?"
   },
   "piesa": {
     "laterala": "Côté",

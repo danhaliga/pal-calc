@@ -484,13 +484,13 @@ async function sold(j) {
     method: 'POST', headers: FORM,
     body: form({ _csrf: t, name: 'Audit feronerie', brand: 'Egger', decor_cod: '', pal_mm: 18,
                  cant_gros: 2, cant_subtire: 0.4, formate: ['intreaga'],
-                 asamblare: 'confirmat', balama: 'universal', glisiere: 'tandem' })
+                 asamblare: 'confirmat', balama: 'hafele-m510', glisiere: 'hafele-um' })
   });
   const orderFero = Number((r.headers.get('location') || '').split('/').pop());
   let hFero = await (await req(A, `/orders/${orderFero}`)).text();
   verifica('feronerie', 'alegerea de la deschiderea comenzii se pastreaza',
            /value="confirmat"\s+checked/.test(hFero) && /value="universal"\s+checked/.test(hFero) &&
-           /value="tandem"\s+checked/.test(hFero), 'mediu');
+           /value="hafele-um"\s+checked/.test(hFero), 'mediu');
   verifica('feronerie', 'suspensiile nebifate raman nebifate',
            !/name="suspensii"[^>]*checked/.test(hFero), 'mediu');
 

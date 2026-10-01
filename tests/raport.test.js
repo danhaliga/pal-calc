@@ -203,13 +203,14 @@ test('feroneria unui corp cu două uși și o poliță, pe sistemul implicit', (
   const items = feronerie(params, calc(params), Fero.sistem(null));
   const get = n => cauta(items, n);
 
-  assert.equal(get('^Blum CLIP top'), 4);
+  assert.equal(get('^Häfele Metalla 310 SM 110°, cot 0 — Häfele 311.04.249'), 4);
+  assert.equal(get('^Placă de montaj pentru balama — Häfele 311.70.610'), 4);
   assert.equal(get('Euroșurub'), 16);
   assert.equal(get('Suport poliță'), 4);
   assert.equal(get('^Excentric Minifix'), 4);
   assert.equal(get('^Bolț Minifix'), 4);
   assert.equal(get('^Cep lemn'), 8);
-  assert.equal(get('^Mâner$'), 2);
+  assert.equal(get('^Mâner Häfele Gesico, negru mat, interax 128 mm$'), 2, 'la 128 Gesico n-are cod confirmat');
   assert.equal(get('Holșurub'), 21);
   assert.equal(get('Confirmat'), undefined, 'minifix nu cere confirmat');
 });
@@ -218,17 +219,16 @@ test('sistemul ales schimbă articolele, nu numărul de îmbinări', () => {
   const params = Object.assign(defaults(), { W: 800, H: 720, D: 560, nUsi: 2, nPol: 0 });
   const res = calc(params);
   const items = feronerie(params, res, Fero.sistem({
-    asamblare: 'confirmat', balama: 'universal', glisiere: 'fara', suspensii: false
+    asamblare: 'confirmat', balama: 'hafele-m510', glisiere: 'fara', suspensii: false
   }));
   const get = n => cauta(items, n);
 
   assert.equal(get('^Confirmat 6.3×50'), 12, 'trei pe fiecare din cele patru îmbinări');
   assert.equal(get('^Capac mascare'), 12);
   assert.equal(get('^Diblu lemn'), 8);
-  assert.equal(get('^Balama universală'), 4);
-  assert.equal(get('Amortizor aplicat'), 2, 'un amortizor la două balamale, rotunjit în sus');
+  assert.equal(get('^Häfele Metalla 510 SM 105°, cot 0 — Häfele 329.14.300'), 4);
+  assert.equal(get('^Placă de montaj pentru balama — Häfele 329.87.000'), 4);
   assert.equal(get('^Excentric Minifix'), undefined);
-  assert.equal(get('Euroșurub'), undefined, 'balamaua universală vine cu șuruburi obișnuite');
 });
 
 test('corpul suspendat primește suspensii, cel de jos nu', () => {
@@ -246,15 +246,16 @@ test('corpul suspendat primește suspensii, cel de jos nu', () => {
 test('feroneria unui corp cu sertare include glisierele', () => {
   const params = Object.assign(defaults(), { nUsi: 0, nPol: 0, nSer: 3, hFront: 237, hCutie: 180 });
   const items = feronerie(params, calc(params), Fero.sistem(null));
-  const glis = items.find(x => /^Glisiere cu bilă/.test(x.nume));
+  const glis = items.find(x => /^Häfele Matrix BB S30/.test(x.nume));
 
   assert.equal(glis.qty, 3);
   assert.equal(glis.um, 'set');
-  assert.match(glis.nume, /500 mm/);
+  assert.match(glis.nume, /500 mm — Häfele 494\.02\.185/);
   assert.equal(items.find(x => x.nume === 'Șurub 3.5×16 (glisiere)').qty, 24);
 
+  /* comenzile vechi cu Blum TANDEM trec pe glisiera ascunsă Häfele */
   const tandem = feronerie(params, calc(params), Fero.sistem({ glisiere: 'tandem' }));
-  assert.match(tandem.find(x => x.um === 'set').nume, /^Blum TANDEM/);
+  assert.match(tandem.find(x => x.um === 'set').nume, /^Häfele Matrix UM S30/);
 
   const fara = feronerie(params, calc(params), Fero.sistem({ glisiere: 'fara' }));
   assert.equal(fara.filter(x => x.um === 'set').length, 0);
@@ -275,12 +276,12 @@ test('glisiera cu alt joc decât cel din corp dă avertisment', () => {
   const c = Object.assign(comanda(), { feronerie: { glisiere: 'tandem' } });
   const r = raport(c, [corp('Sertare', { nUsi: 0, nPol: 0, nSer: 3, hFront: 237, hCutie: 180, jg: 12.5 })], OPT);
 
-  assert.ok(r.avertismente.some(a => /TANDEM/.test(a) && /21 mm/.test(a)),
+  assert.ok(r.avertismente.some(a => /Matrix UM/.test(a) && /21 mm/.test(a)),
             'trebuie semnalat jocul greșit: ' + JSON.stringify(r.avertismente));
 
   const bun = raport(Object.assign(comanda(), { feronerie: { glisiere: 'tandem' } }),
     [corp('Sertare', { nUsi: 0, nPol: 0, nSer: 3, hFront: 237, hCutie: 180, jg: 21 })], OPT);
-  assert.equal(bun.avertismente.filter(a => /TANDEM/.test(a)).length, 0);
+  assert.equal(bun.avertismente.filter(a => /Matrix UM/.test(a)).length, 0);
 });
 
 /* ---------------- CNC ---------------- */

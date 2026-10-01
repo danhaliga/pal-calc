@@ -571,6 +571,18 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
   sau „· fără picioare" (doar la corpurile de pe podea). În feronerie:
   piciorul cu tipul și codul, suportul (AXILO) și clema cu codul ei.
   Avertisment când plinta comenzii nu intră în reglajul picioarelor.
+- Tot pe 1 octombrie: **Blum scos**, feroneria e numai Häfele
+  (`shared/feronerie.js`). Balamale: Metalla 310 SM 110° (implicită; cot 0/9/18
+  = 311.04.249/.252/.255, placă 311.70.610), Metalla 510 SM 105° (cot 0/9 =
+  329.14.300/.301, placă 329.87.000; încastrata fără cod confirmat).
+  Glisiere: Matrix BB S30 cu bilă (implicită, 13 mm pe parte, 300–600 =
+  494.02.181–187), Matrix UM S30 ascunsă (350–500 = 433.07.113–116; jocul
+  de 21 mm de verificat). Mânere, alese pe comandă: Gesico negru (160/192),
+  Gesico alb (160), aluminiu cu bază (128), „alt mâner"; codul după
+  interax (`manerL`); fără cod confirmat iese mânerul fără cod.
+  Comenzile vechi cu Blum trec singure pe echivalent (`VECHI`). Jocul
+  glisierei implicit pe corp a trecut la 13 mm (corpurile vechi au 12,5 și
+  primesc avertismentul de joc).
 
 ## 7. Ce a rămas nefăcut, din tot proiectul
 

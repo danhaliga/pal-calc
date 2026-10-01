@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Con amortiguación en la propia bisagra. Cazoleta Ø35, 13 mm de profundidad."
-      },
-      "universal": {
-        "nume": "Bisagra universal Ø35",
-        "descriere": "Bisagra corriente con cazoleta de 35. El amortiguador se pone aparte, en el módulo."
-      },
       "fara": {
         "nume": "Sin bisagras",
         "descriere": "Módulos abiertos o con otro sistema de frente."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Con amortiguación, montaje clip en la placa. Cazoleta Ø35, profundidad 12 mm, tornillos a 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Con amortiguación, placa K. Cazoleta Ø35, tornillos a 48/6. La versión embutida se pide con código del proveedor."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Guías de bolas, extracción total",
-        "descriere": "Caja de aglomerado, con la guía fijada al costado de la caja y al costado del módulo."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (bajo la caja)",
-        "descriere": "La guía va bajo la caja, oculta. Necesita un rebaje en el fondo de la caja."
-      },
       "fara": {
         "nume": "Sin cajones",
         "descriere": "Este pedido no lleva cajones."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, de bolas",
+        "descriere": "Extracción total, con amortiguación, 30 kg. La guía se fija al lateral del cajón y al lateral del mueble."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, oculta",
+        "descriere": "Va bajo el cajón, con amortiguación, 30 kg, para laterales de cajón de 18–19 mm. Comprueba la holgura lateral en la ficha de Häfele."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} puertas, mueble de {lat} mm",
       "piciorTip": "{fam}, H {h} mm (regulación {min}–{max}) — Häfele {cod}",
       "suportPicior": "Placa de montaje para pata {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Clip de zócalo — Häfele {cod}"
+      "clemaPlintaCod": "Clip de zócalo — Häfele {cod}",
+      "balamaCod": "{nume}, acodado {cot} — Häfele {cod}",
+      "placaBalama": "Placa de montaje para bisagra — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Tirador {nume}, entre ejes {l} mm — Häfele {cod}",
+      "manerFaraCod": "Tirador {nume}, entre ejes {l} mm",
+      "obsFaraCod": "sin código confirmado para esta medida: se pide al proveedor"
     },
     "optPicior": "{fam} · H {h} mm (regulación {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "Pata regulable de 2 piezas",
       "otel": "Pata regulable de acero galvanizado",
       "aluVizibil": "Pata vista de aluminio, cuadrada 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, negro mate",
+        "descriere": "Aleación de zinc. Código Häfele para entre ejes de 160 y 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, blanco mate",
+        "descriere": "Aleación de zinc. Código Häfele para entre ejes de 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, aluminio con base",
+        "descriere": "Código Häfele para entre ejes de 128 mm, rosca M4."
+      },
+      "oarecare": {
+        "nume": "Otro tirador",
+        "descriere": "Solo se indica el número de tiradores, sin código."
+      }
+    },
+    "intrebareManer": "¿Qué tiradores?"
   },
   "piesa": {
     "laterala": "Costado",

@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "ダンパーが丁番の中に入っています。カップ Ø35、深さ13mm。"
-      },
-      "universal": {
-        "nume": "一般的な丁番 Ø35",
-        "descriere": "ふつうの35カップ丁番。ダンパーは別に本体側へ付けます。"
-      },
       "fara": {
         "nume": "丁番なし",
         "descriere": "オープンなキャビネット、または別の扉方式。"
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "ソフトクローズ付き、プレートにクリップ取付。カップ Ø35、深さ 12 mm、ネジ 48/6。"
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "ソフトクローズ付き、Kプレート。カップ Ø35、ネジ 48/6。インセット仕様はサプライヤーのコードで注文します。"
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "ボールベアリングレール、全開",
-        "descriere": "引き出し箱はパーティクルボード。レールは箱の側板と本体の側板にビス留めします。"
-      },
-      "tandem": {
-        "nume": "Blum TANDEM（箱の下）",
-        "descriere": "レールが箱の下を通るので見えません。箱の地板に切り欠きが必要です。"
-      },
       "fara": {
         "nume": "引き出しなし",
         "descriere": "この注文に引き出しはありません。"
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30、ボールベアリング",
+        "descriere": "フルエクステンション、ソフトクローズ付き、30 kg。スライドは引出し側板と本体側板に取り付けます。"
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30、アンダーマウント",
+        "descriere": "引出しの下に取付、ソフトクローズ付き、30 kg、引出し側板 18–19 mm 用。側面クリアランスは Häfele のデータシートで確認してください。"
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "扉 {n} 枚、{lat} mm キャビネット",
       "piciorTip": "{fam}, H {h} mm (調整 {min}–{max}) — Häfele {cod}",
       "suportPicior": "{fam}脚用取付プレート — Häfele {cod}",
-      "clemaPlintaCod": "幅木クリップ — Häfele {cod}"
+      "clemaPlintaCod": "幅木クリップ — Häfele {cod}",
+      "balamaCod": "{nume}、かぶせ {cot} — Häfele {cod}",
+      "placaBalama": "ヒンジ用取付プレート — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "取っ手 {nume}、穴ピッチ {l} mm — Häfele {cod}",
+      "manerFaraCod": "取っ手 {nume}、穴ピッチ {l} mm",
+      "obsFaraCod": "このサイズの確定コードなし：サプライヤーに確認"
     },
     "optPicior": "{fam} · H {h} mm (調整 {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "2ピース式アジャスター脚",
       "otel": "亜鉛めっき鋼製アジャスター脚",
       "aluVizibil": "見せ脚 アルミ製 40 mm角"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico、マットブラック",
+        "descriere": "亜鉛合金。穴ピッチ 160 mm と 192 mm の Häfele コード。"
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico、マットホワイト",
+        "descriere": "亜鉛合金。穴ピッチ 160 mm の Häfele コード。"
+      },
+      "hafele-alu": {
+        "nume": "Häfele、ベース付きアルミ",
+        "descriere": "穴ピッチ 128 mm の Häfele コード、M4 ネジ。"
+      },
+      "oarecare": {
+        "nume": "その他の取っ手",
+        "descriere": "取っ手の数だけを記載し、コードはなし。"
+      }
+    },
+    "intrebareManer": "どの取っ手？"
   },
   "piesa": {
     "laterala": "側板",

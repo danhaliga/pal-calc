@@ -285,8 +285,12 @@
       perUsa = Math.max(perUsa, n);
     });
     if (totalBalamale && s.balama && s.balama.id !== 'fara') {
-      pune(t_('fero.art.balamaCu', { nume: t_('fero.balama.' + s.balama.id + '.nume'), cot: c.balama }),
+      var numeBal = t_('fero.balama.' + s.balama.id + '.nume');
+      var codBal = s.balama.coduri && s.balama.coduri[String(c.balama)];
+      pune(codBal ? t_('fero.art.balamaCod', { nume: numeBal, cot: c.balama, cod: codBal })
+                  : t_('fero.art.balamaCu', { nume: numeBal, cot: c.balama }),
            totalBalamale, 'buc', t_('fero.art.obsPeUsa', { n: perUsa }));
+      if (s.balama.placaCod) pune(t_('fero.art.placaBalama', { cod: s.balama.placaCod }), totalBalamale);
       (s.balama.consumabile || []).forEach(function (x) {
         pune(art(x.art), totalBalamale * x.peBalama);
       });
@@ -328,9 +332,11 @@
     if (nSer > 0 && s.glisiere && s.glisiere.id !== 'fara') {
       var lg = +c.lg;
       if (!lg) lg = Math.floor((res.Dint - 10) / 50) * 50;
-      pune(t_('fero.art.glisieraCu',
-               { nume: t_('fero.glisiere.' + s.glisiere.id + '.nume'), mm: lg }),
-           nSer, 'set', t_('fero.art.obsPeSet'));
+      var numeGl = t_('fero.glisiere.' + s.glisiere.id + '.nume');
+      var codGl = s.glisiere.coduri && s.glisiere.coduri[lg];
+      pune(codGl ? t_('fero.art.glisieraCod', { nume: numeGl, mm: lg, cod: codGl })
+                 : t_('fero.art.glisieraCu', { nume: numeGl, mm: lg }),
+           nSer, 'set', codGl ? t_('fero.art.obsPeSet') : t_('fero.art.obsFaraCod'));
       pune(art('surubGlisiere'), nSer * (s.glisiere.suruburiPeSet || 8));
     }
 
@@ -397,7 +403,14 @@
     /* Fără mâner nu se cumpără niciunul: la push-to-open, la profil gola sau
        la prinderea frezată în front nu intră nimic în listă. */
     if (!(+c.maner === 0)) {
-      pune(art('maner'), cateFronturi);
+      var mn = s.maner;
+      var interax = Math.round(+c.manerL || 128);
+      var codMn = mn && mn.coduri && mn.coduri[interax];
+      pune(mn && mn.id !== 'oarecare'
+             ? (codMn ? t_('fero.art.manerCod', { nume: t_('fero.maner.' + mn.id + '.nume'), l: interax, cod: codMn })
+                      : t_('fero.art.manerFaraCod', { nume: t_('fero.maner.' + mn.id + '.nume'), l: interax }))
+             : art('maner'),
+           cateFronturi, 'buc', mn && mn.id !== 'oarecare' && !codMn ? t_('fero.art.obsFaraCod') : '');
       pune(art('surubManer'), cateFronturi * 2);
     }
 

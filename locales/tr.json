@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Frenleme menteşenin içinde. Yuva Ø35, derinlik 13 mm."
-      },
-      "universal": {
-        "nume": "Üniversal menteşe Ø35",
-        "descriere": "35'lik yuvalı sıradan menteşe. Amortisör ayrıca, gövdeye takılır."
-      },
       "fara": {
         "nume": "Menteşesiz",
         "descriere": "Açık gövdeler veya başka bir kapak sistemi."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Frenli, montaj plakasına klipsli takma. Ø35 çanak, 12 mm derinlik, vidalar 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Frenli, K plaka. Ø35 çanak, vidalar 48/6. Gömme versiyon tedarikçiden alınan kodla sipariş edilir."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Bilyalı ray, tam açılım",
-        "descriere": "Suntalam kutu, ray kutunun yanına ve gövdenin yanına vidalanır."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (kutunun altında)",
-        "descriere": "Ray kutunun altında kalır, görünmez. Kutu tabanında oyuk ister."
-      },
       "fara": {
         "nume": "Çekmecesiz",
         "descriere": "Bu siparişte çekmece yok."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, bilyalı",
+        "descriere": "Tam açılım, frenli, 30 kg. Ray çekmece yanına ve gövde yanına sabitlenir."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, gizli",
+        "descriere": "Çekmecenin altına takılır, frenli, 30 kg, 18–19 mm çekmece yanları için. Yan boşluğu Häfele teknik föyünden kontrol edin."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} kapak, {lat} mm dolap",
       "piciorTip": "{fam}, H {h} mm (ayar {min}–{max}) — Häfele {cod}",
       "suportPicior": "{fam} ayağı için montaj plakası — Häfele {cod}",
-      "clemaPlintaCod": "Baza klipsi — Häfele {cod}"
+      "clemaPlintaCod": "Baza klipsi — Häfele {cod}",
+      "balamaCod": "{nume}, dirsek {cot} — Häfele {cod}",
+      "placaBalama": "Menteşe montaj plakası — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Kulp {nume}, delik aralığı {l} mm — Häfele {cod}",
+      "manerFaraCod": "Kulp {nume}, delik aralığı {l} mm",
+      "obsFaraCod": "bu ölçü için onaylı kod yok: tedarikçiden istenir"
     },
     "optPicior": "{fam} · H {h} mm (ayar {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "2 parçalı ayarlı ayak",
       "otel": "Galvanizli çelik ayarlı ayak",
       "aluVizibil": "Görünür alüminyum ayak, 40 mm kare"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, mat siyah",
+        "descriere": "Çinko alaşım. 160 ve 192 mm delik aralığı için Häfele kodu."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, mat beyaz",
+        "descriere": "Çinko alaşım. 160 mm delik aralığı için Häfele kodu."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, tabanlı alüminyum",
+        "descriere": "128 mm delik aralığı için Häfele kodu, M4 diş."
+      },
+      "oarecare": {
+        "nume": "Diğer kulp",
+        "descriere": "Yalnızca kulp sayısı yazılır, kod olmadan."
+      }
+    },
+    "intrebareManer": "Hangi kulplar?"
   },
   "piesa": {
     "laterala": "Yan panel",

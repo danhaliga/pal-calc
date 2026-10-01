@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Mit Dämpfung im Band. Topf Ø35, 13 mm tief."
-      },
-      "universal": {
-        "nume": "Universalband Ø35",
-        "descriere": "Gewöhnliches Band mit 35er Topf. Der Dämpfer wird getrennt am Korpus montiert."
-      },
       "fara": {
         "nume": "Ohne Bänder",
         "descriere": "Offene Korpusse oder ein anderes Frontsystem."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Mit Dämpfung, Clip-Montage auf der Montageplatte. Topf Ø35, 12 mm tief, Schrauben auf 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Mit Dämpfung, K-Platte. Topf Ø35, Schrauben auf 48/6. Die einliegende Variante wird mit einem Code vom Lieferanten bestellt."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Kugelauszüge, Vollauszug",
-        "descriere": "Kasten aus Spanplatte, der Auszug wird an der Kastenseite und an der Korpusseite befestigt."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (unter dem Kasten)",
-        "descriere": "Der Auszug sitzt unter dem Kasten und bleibt unsichtbar. Er braucht eine Aussparung im Kastenboden."
-      },
       "fara": {
         "nume": "Ohne Schubladen",
         "descriere": "Dieser Auftrag hat keine Schubladen."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, kugelgelagert",
+        "descriere": "Vollauszug, mit Dämpfung, 30 kg. Die Schiene wird an der Schubkastenzarge und an der Korpusseite befestigt."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, verdeckt",
+        "descriere": "Sitzt unter dem Schubkasten, mit Dämpfung, 30 kg, für Schubkastenzargen von 18–19 mm. Seitliches Spiel im Häfele-Datenblatt prüfen."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} Türen, Korpus {lat} mm",
       "piciorTip": "{fam}, H {h} mm (Verstellung {min}–{max}) — Häfele {cod}",
       "suportPicior": "Montageplatte für Fuß {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Sockelclip — Häfele {cod}"
+      "clemaPlintaCod": "Sockelclip — Häfele {cod}",
+      "balamaCod": "{nume}, Kröpfung {cot} — Häfele {cod}",
+      "placaBalama": "Montageplatte für Scharnier — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Griff {nume}, Lochabstand {l} mm — Häfele {cod}",
+      "manerFaraCod": "Griff {nume}, Lochabstand {l} mm",
+      "obsFaraCod": "kein bestätigter Code für diese Größe: beim Lieferanten anfragen"
     },
     "optPicior": "{fam} · H {h} mm (Verstellung {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "2-teiliger Stellfuß",
       "otel": "Stellfuß aus verzinktem Stahl",
       "aluVizibil": "Sichtbarer Aluminiumfuß, 40 mm quadratisch"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, schwarz matt",
+        "descriere": "Zinklegierung. Häfele-Code für Lochabstand 160 und 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, weiß matt",
+        "descriere": "Zinklegierung. Häfele-Code für Lochabstand 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, Aluminium mit Sockel",
+        "descriere": "Häfele-Code für Lochabstand 128 mm, Gewinde M4."
+      },
+      "oarecare": {
+        "nume": "Anderer Griff",
+        "descriere": "Es wird nur die Anzahl der Griffe angegeben, ohne Code."
+      }
+    },
+    "intrebareManer": "Welche Griffe?"
   },
   "piesa": {
     "laterala": "Seite",

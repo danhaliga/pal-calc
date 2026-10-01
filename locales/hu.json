@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Csillapítás magában a pántban. Serleg Ø35, mélység 13 mm."
-      },
-      "universal": {
-        "nume": "Univerzális pánt Ø35",
-        "descriere": "Hagyományos pánt 35-ös serleggel. A csillapítót külön, a korpuszra szereljük."
-      },
       "fara": {
         "nume": "Pánt nélkül",
         "descriere": "Nyitott korpusz vagy más frontrendszer."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Csillapítással, klipszes rögzítés a talpra. Ø35 csésze, 12 mm mély, csavarok 48/6 szerint."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Csillapítással, K talp. Ø35 csésze, csavarok 48/6 szerint. A beütődő változat a beszállító kódjával rendelhető."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Golyós sín, teljes kihúzás",
-        "descriere": "Forgácslap fiók, a sín a fiók oldalára és a korpusz oldalára csavarozva."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (a fiók alatt)",
-        "descriere": "A sín a fiók alatt fut, nem látszik. A fiókfenékbe kivágás kell hozzá."
-      },
       "fara": {
         "nume": "Fiók nélkül",
         "descriere": "Ebben a megrendelésben nincs fiók."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, golyós",
+        "descriere": "Teljes kihúzás, csillapítással, 30 kg. A sín a fiók oldalára és a korpusz oldalára rögzül."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, rejtett",
+        "descriere": "A fiók alatt helyezkedik el, csillapítással, 30 kg, 18–19 mm-es fiókoldalakhoz. Az oldalsó hézagot ellenőrizd a Häfele adatlapon."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} ajtó, {lat} mm-es korpusz",
       "piciorTip": "{fam}, H {h} mm (állítás {min}–{max}) — Häfele {cod}",
       "suportPicior": "Rögzítőlap {fam} lábhoz — Häfele {cod}",
-      "clemaPlintaCod": "Lábazati klip — Häfele {cod}"
+      "clemaPlintaCod": "Lábazati klip — Häfele {cod}",
+      "balamaCod": "{nume}, könyök {cot} — Häfele {cod}",
+      "placaBalama": "Szerelőtalp a pánthoz — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Fogantyú {nume}, furattávolság {l} mm — Häfele {cod}",
+      "manerFaraCod": "Fogantyú {nume}, furattávolság {l} mm",
+      "obsFaraCod": "ehhez a mérethez nincs megerősített kód: kérd a beszállítótól"
     },
     "optPicior": "{fam} · H {h} mm (állítás {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "2 részes állítható láb",
       "otel": "Horganyzott acél állítható láb",
       "aluVizibil": "Látható alumínium láb, 40 mm négyzetes"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, matt fekete",
+        "descriere": "Cinkötvözet. Häfele kód 160 és 192 mm furattávolsághoz."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, matt fehér",
+        "descriere": "Cinkötvözet. Häfele kód 160 mm furattávolsághoz."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, alumínium talppal",
+        "descriere": "Häfele kód 128 mm furattávolsághoz, M4 menet."
+      },
+      "oarecare": {
+        "nume": "Egyéb fogantyú",
+        "descriere": "Csak a fogantyúk száma szerepel, kód nélkül."
+      }
+    },
+    "intrebareManer": "Milyen fogantyúk?"
   },
   "piesa": {
     "laterala": "Oldal",

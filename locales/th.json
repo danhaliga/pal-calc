@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "ตัวหน่วงอยู่ในบานพับแล้ว ถ้วย Ø35 ลึก 13 มม."
-      },
-      "universal": {
-        "nume": "บานพับทั่วไป Ø35",
-        "descriere": "บานพับธรรมดาถ้วย 35 ตัวหน่วงติดแยกที่ตัวตู้"
-      },
       "fara": {
         "nume": "ไม่มีบานพับ",
         "descriere": "ตัวตู้แบบเปิดหรือใช้ระบบหน้าบานอื่น"
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "ระบบปิดนุ่มนวล ติดตั้งแบบคลิปบนเพลท ถ้วย Ø35 ลึก 12 mm สกรูที่ 48/6"
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "ระบบปิดนุ่มนวล เพลท K ถ้วย Ø35 สกรูที่ 48/6 รุ่นบานฝังสั่งด้วยรหัสจากผู้จำหน่าย"
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "รางลูกปืน ดึงออกเต็มระยะ",
-        "descriere": "กล่องลิ้นชักทำจากไม้ปาร์ติเกิล รางขันกับข้างกล่องและข้างตัวตู้"
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (ใต้กล่อง)",
-        "descriere": "รางอยู่ใต้กล่องและมองไม่เห็น ต้องเซาะร่องที่ฝาล่างของกล่อง"
-      },
       "fara": {
         "nume": "ไม่มีลิ้นชัก",
         "descriere": "ออเดอร์นี้ไม่มีลิ้นชัก"
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, แบบลูกปืน",
+        "descriere": "ดึงออกได้สุด ระบบปิดนุ่มนวล 30 kg รางยึดกับด้านข้างลิ้นชักและด้านข้างตู้"
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, แบบซ่อน",
+        "descriere": "ติดตั้งใต้ลิ้นชัก ระบบปิดนุ่มนวล 30 kg สำหรับข้างลิ้นชักหนา 18–19 mm ตรวจสอบระยะเผื่อด้านข้างในเอกสาร Häfele"
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} บาน ตู้ {lat} มม.",
       "piciorTip": "{fam}, H {h} mm (ปรับได้ {min}–{max}) — Häfele {cod}",
       "suportPicior": "ฐานยึดสำหรับขา {fam} — Häfele {cod}",
-      "clemaPlintaCod": "คลิปบัวเชิงตู้ — Häfele {cod}"
+      "clemaPlintaCod": "คลิปบัวเชิงตู้ — Häfele {cod}",
+      "balamaCod": "{nume}, ระยะทับขอบ {cot} — Häfele {cod}",
+      "placaBalama": "เพลทติดตั้งบานพับ — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "มือจับ {nume}, ระยะห่างรู {l} mm — Häfele {cod}",
+      "manerFaraCod": "มือจับ {nume}, ระยะห่างรู {l} mm",
+      "obsFaraCod": "ยังไม่มีรหัสยืนยันสำหรับขนาดนี้: สอบถามผู้จำหน่าย"
     },
     "optPicior": "{fam} · H {h} mm (ปรับได้ {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "ขาปรับระดับ 2 ชิ้น",
       "otel": "ขาปรับระดับเหล็กชุบสังกะสี",
       "aluVizibil": "ขาอะลูมิเนียมแบบโชว์ สี่เหลี่ยม 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, ดำด้าน",
+        "descriere": "โลหะผสมสังกะสี รหัส Häfele สำหรับระยะห่างรู 160 และ 192 mm"
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, ขาวด้าน",
+        "descriere": "โลหะผสมสังกะสี รหัส Häfele สำหรับระยะห่างรู 160 mm"
+      },
+      "hafele-alu": {
+        "nume": "Häfele, อะลูมิเนียมพร้อมฐาน",
+        "descriere": "รหัส Häfele สำหรับระยะห่างรู 128 mm เกลียว M4"
+      },
+      "oarecare": {
+        "nume": "มือจับอื่น",
+        "descriere": "ระบุเฉพาะจำนวนมือจับ ไม่มีรหัส"
+      }
+    },
+    "intrebareManer": "มือจับแบบไหน?"
   },
   "piesa": {
     "laterala": "แผ่นข้าง",

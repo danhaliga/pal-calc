@@ -701,31 +701,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Z hamulcem w samym zawiasie. Puszka Ø35, głębokość 13 mm."
-      },
-      "universal": {
-        "nume": "Zawias uniwersalny Ø35",
-        "descriere": "Zwykły zawias z puszką 35. Hamulec montuje się osobno, na korpusie."
-      },
       "fara": {
         "nume": "Bez zawiasów",
         "descriere": "Korpusy otwarte albo z innym systemem frontów."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Z cichym domykiem, montaż clip na płytce. Puszka Ø35, głębokość 12 mm, wkręty w rozstawie 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Z cichym domykiem, płytka K. Puszka Ø35, wkręty w rozstawie 48/6. Wersję wpuszczaną zamawia się z kodem od dostawcy."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Prowadnice kulkowe, pełny wysuw",
-        "descriere": "Skrzynka z płyty, prowadnica przykręcona do boku skrzynki i do boku korpusu."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (pod skrzynką)",
-        "descriere": "Prowadnica siedzi pod skrzynką i jej nie widać. Wymaga wycięcia w dnie skrzynki."
-      },
       "fara": {
         "nume": "Bez szuflad",
         "descriere": "To zlecenie nie ma szuflad."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, kulkowa",
+        "descriere": "Pełny wysuw, z cichym domykiem, 30 kg. Prowadnica mocowana do boku szuflady i do boku korpusu."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, ukryta",
+        "descriere": "Montowana pod szufladą, z cichym domykiem, 30 kg, do boków szuflady 18–19 mm. Sprawdź luz boczny w karcie Häfele."
       }
     },
     "plinta": {
@@ -794,7 +794,13 @@
       "obsSistemGlisant": "{n} drzwi, szafka {lat} mm",
       "piciorTip": "{fam}, H {h} mm (regulacja {min}–{max}) — Häfele {cod}",
       "suportPicior": "Płytka montażowa do nóżki {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Klips cokołu — Häfele {cod}"
+      "clemaPlintaCod": "Klips cokołu — Häfele {cod}",
+      "balamaCod": "{nume}, wygięcie {cot} — Häfele {cod}",
+      "placaBalama": "Płytka montażowa do zawiasu — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Uchwyt {nume}, rozstaw {l} mm — Häfele {cod}",
+      "manerFaraCod": "Uchwyt {nume}, rozstaw {l} mm",
+      "obsFaraCod": "brak potwierdzonego kodu dla tego rozmiaru: zapytaj dostawcę"
     },
     "optPicior": "{fam} · H {h} mm (regulacja {min}–{max})",
     "piciorFam": {
@@ -803,7 +809,26 @@
       "logo": "Nóżka regulowana 2-częściowa",
       "otel": "Nóżka regulowana ze stali ocynkowanej",
       "aluVizibil": "Widoczna nóżka aluminiowa, kwadrat 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, czarny mat",
+        "descriere": "Stop cynku. Kod Häfele dla rozstawu 160 i 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, biały mat",
+        "descriere": "Stop cynku. Kod Häfele dla rozstawu 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, aluminium z podstawą",
+        "descriere": "Kod Häfele dla rozstawu 128 mm, gwint M4."
+      },
+      "oarecare": {
+        "nume": "Inny uchwyt",
+        "descriere": "Podaje się tylko liczbę uchwytów, bez kodu."
+      }
+    },
+    "intrebareManer": "Jakie uchwyty?"
   },
   "piesa": {
     "laterala": "Bok",

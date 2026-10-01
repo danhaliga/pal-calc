@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "Met demping in het scharnier zelf. Pot Ø35, 13 mm diep."
-      },
-      "universal": {
-        "nume": "Universeel scharnier Ø35",
-        "descriere": "Gewoon scharnier met een pot van 35. De demper komt er apart op, op de kast."
-      },
       "fara": {
         "nume": "Zonder scharnieren",
         "descriere": "Open kasten of een ander frontsysteem."
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "Met demping, clipbevestiging op de montageplaat. Pot Ø35, 12 mm diep, schroeven op 48/6."
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "Met demping, K-plaat. Pot Ø35, schroeven op 48/6. De inliggende variant bestel je met een code van de leverancier."
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "Kogelgeleiders, volledig uittrekbaar",
-        "descriere": "Lade van spaanplaat, geleider vast op de zijkant van de lade en op de zijwand van de kast."
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (onder de lade)",
-        "descriere": "De geleider zit onder de lade en blijft uit het zicht. Vraagt om een uitsparing in de ladebodem."
-      },
       "fara": {
         "nume": "Zonder lades",
         "descriere": "Deze opdracht heeft geen lades."
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, met kogellagers",
+        "descriere": "Volledig uittrekbaar, met demping, 30 kg. De geleider wordt op de ladezijkant en op de kastzijde bevestigd."
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, verdekt",
+        "descriere": "Zit onder de lade, met demping, 30 kg, voor ladezijkanten van 18–19 mm. Controleer de zijdelingse speling in het Häfele-datablad."
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} deuren, kast van {lat} mm",
       "piciorTip": "{fam}, H {h} mm (verstelling {min}–{max}) — Häfele {cod}",
       "suportPicior": "Montageplaat voor poot {fam} — Häfele {cod}",
-      "clemaPlintaCod": "Plintclip — Häfele {cod}"
+      "clemaPlintaCod": "Plintclip — Häfele {cod}",
+      "balamaCod": "{nume}, kropping {cot} — Häfele {cod}",
+      "placaBalama": "Montageplaat voor scharnier — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "Greep {nume}, gatafstand {l} mm — Häfele {cod}",
+      "manerFaraCod": "Greep {nume}, gatafstand {l} mm",
+      "obsFaraCod": "geen bevestigde code voor deze maat: navragen bij de leverancier"
     },
     "optPicior": "{fam} · H {h} mm (verstelling {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "Verstelbare poot, 2-delig",
       "otel": "Verstelbare poot van verzinkt staal",
       "aluVizibil": "Zichtbare aluminium poot, vierkant 40 mm"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, mat zwart",
+        "descriere": "Zinklegering. Häfele-code voor gatafstand 160 en 192 mm."
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, mat wit",
+        "descriere": "Zinklegering. Häfele-code voor gatafstand 160 mm."
+      },
+      "hafele-alu": {
+        "nume": "Häfele, aluminium met voet",
+        "descriere": "Häfele-code voor gatafstand 128 mm, schroefdraad M4."
+      },
+      "oarecare": {
+        "nume": "Andere greep",
+        "descriere": "Alleen het aantal grepen wordt vermeld, zonder code."
+      }
+    },
+    "intrebareManer": "Welke grepen?"
   },
   "piesa": {
     "laterala": "Zijwand",

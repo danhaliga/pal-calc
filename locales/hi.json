@@ -695,31 +695,31 @@
       }
     },
     "balama": {
-      "blum-clip": {
-        "nume": "Blum CLIP top BLUMOTION",
-        "descriere": "डैंपर हिंज के अंदर ही है। कप Ø35, गहराई 13 मिमी।"
-      },
-      "universal": {
-        "nume": "सामान्य हिंज Ø35",
-        "descriere": "35 कप वाला आम हिंज। डैंपर अलग से, बॉडी पर लगता है।"
-      },
       "fara": {
         "nume": "हिंज के बिना",
         "descriere": "खुला कैबिनेट या शटर का दूसरा सिस्टम।"
+      },
+      "hafele-m310": {
+        "nume": "Häfele Metalla 310 SM 110°",
+        "descriere": "सॉफ्ट-क्लोज़ के साथ, प्लेट पर क्लिप माउंटिंग। Ø35 कप, 12 mm गहराई, स्क्रू 48/6 पर।"
+      },
+      "hafele-m510": {
+        "nume": "Häfele Metalla 510 SM 105°",
+        "descriere": "सॉफ्ट-क्लोज़ के साथ, K प्लेट। Ø35 कप, स्क्रू 48/6 पर। इनसेट वेरिएंट सप्लायर के कोड से ऑर्डर किया जाता है।"
       }
     },
     "glisiere": {
-      "bila": {
-        "nume": "बॉल-बेयरिंग चैनल, पूरा खुलने वाला",
-        "descriere": "पार्टिकल बोर्ड का दराज़ बॉक्स, चैनल बॉक्स के साइड और बॉडी के साइड पर कसा जाता है।"
-      },
-      "tandem": {
-        "nume": "Blum TANDEM (बॉक्स के नीचे)",
-        "descriere": "चैनल बॉक्स के नीचे जाता है और दिखता नहीं। बॉक्स के बॉटम में कटआउट चाहिए।"
-      },
       "fara": {
         "nume": "दराज़ के बिना",
         "descriere": "इस ऑर्डर में दराज़ नहीं हैं।"
+      },
+      "hafele-bb": {
+        "nume": "Häfele Matrix BB S30, बॉल-बेयरिंग",
+        "descriere": "फुल एक्सटेंशन, सॉफ्ट-क्लोज़ के साथ, 30 kg। रनर दराज़ की साइड और कैबिनेट की साइड पर लगाया जाता है।"
+      },
+      "hafele-um": {
+        "nume": "Häfele Matrix UM S30, छिपी हुई",
+        "descriere": "दराज़ के नीचे लगती है, सॉफ्ट-क्लोज़ के साथ, 30 kg, 18–19 mm दराज़ साइड के लिए। साइड क्लीयरेंस Häfele डेटा शीट में जाँचें।"
       }
     },
     "plinta": {
@@ -788,7 +788,13 @@
       "obsSistemGlisant": "{n} दरवाज़े, {lat} mm कैबिनेट",
       "piciorTip": "{fam}, H {h} mm (समायोजन {min}–{max}) — Häfele {cod}",
       "suportPicior": "{fam} पैर के लिए माउंटिंग प्लेट — Häfele {cod}",
-      "clemaPlintaCod": "प्लिंथ क्लिप — Häfele {cod}"
+      "clemaPlintaCod": "प्लिंथ क्लिप — Häfele {cod}",
+      "balamaCod": "{nume}, क्रैंक {cot} — Häfele {cod}",
+      "placaBalama": "हिंज माउंटिंग प्लेट — Häfele {cod}",
+      "glisieraCod": "{nume} {mm} mm — Häfele {cod}",
+      "manerCod": "हैंडल {nume}, होल सेंटर {l} mm — Häfele {cod}",
+      "manerFaraCod": "हैंडल {nume}, होल सेंटर {l} mm",
+      "obsFaraCod": "इस साइज़ के लिए पुष्ट कोड नहीं: सप्लायर से माँगें"
     },
     "optPicior": "{fam} · H {h} mm (समायोजन {min}–{max})",
     "piciorFam": {
@@ -797,7 +803,26 @@
       "logo": "2-भाग वाला समायोज्य पैर",
       "otel": "जस्तीकृत स्टील का समायोज्य पैर",
       "aluVizibil": "दिखने वाला एल्यूमिनियम पैर, 40 mm वर्गाकार"
-    }
+    },
+    "maner": {
+      "hafele-gesico-negru": {
+        "nume": "Häfele Gesico, मैट काला",
+        "descriere": "ज़िंक मिश्रधातु। 160 और 192 mm होल सेंटर के लिए Häfele कोड।"
+      },
+      "hafele-gesico-alb": {
+        "nume": "Häfele Gesico, मैट सफ़ेद",
+        "descriere": "ज़िंक मिश्रधातु। 160 mm होल सेंटर के लिए Häfele कोड।"
+      },
+      "hafele-alu": {
+        "nume": "Häfele, बेस वाला एल्युमिनियम",
+        "descriere": "128 mm होल सेंटर के लिए Häfele कोड, M4 थ्रेड।"
+      },
+      "oarecare": {
+        "nume": "अन्य हैंडल",
+        "descriere": "केवल हैंडलों की संख्या लिखी जाती है, बिना कोड के।"
+      }
+    },
+    "intrebareManer": "कौन से हैंडल?"
   },
   "piesa": {
     "laterala": "साइड",

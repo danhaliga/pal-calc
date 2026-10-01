@@ -46,7 +46,7 @@ test('în listă: coșul, fără balamale, cu mâner', () => {
   const f = lista(PalModels.paramsFor('baza-jolly-200', T));
   assert.equal(f.filter(x => x.nume.indexOf('fero.art.cosJolly') === 0).length, 1);
   assert.equal(f.filter(x => /balama/i.test(x.nume)).length, 0, 'balamale pentru un front fără balamale');
-  assert.equal(f.find(x => x.nume === 'fero.art.maner').qty, 1);
+  assert.equal(f.find(x => x.nume.indexOf('fero.art.maner') === 0).qty, 1);
 });
 
 test('se spune ce nu se potrivește cu un coș', () => {

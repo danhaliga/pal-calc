@@ -209,7 +209,7 @@
          `hNisa` e cât cere aparatul — corpul bază de cuptor. */
       hNisa: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
-      nSer: 0, hFront: 150, hCutie: 100, sertareH: '', sertareC: '', familie: '', jg: 12.5, ts: 18, lg: '',
+      nSer: 0, hFront: 150, hCutie: 100, sertareH: '', sertareC: '', familie: '', jg: 13, ts: 18, lg: '',
       /* Mânerul. Se poate scoate cu totul: la push-to-open, la profil gola
          sau la fronturile cu prindere frezată nu se cumpără niciunul și nu
          se găurește nimic. Direcția și locul pe front au fiecare o valoare
