@@ -35,7 +35,9 @@
     "limba": "Idioma",
     "alegeLimba": "Escolher idioma",
     "schimbaLimba": "Mudar de idioma",
-    "colt": "canto"
+    "colt": "canto",
+    "dimPicioare": "H {h} + pés {p} = {t}",
+    "dimFaraPicioare": "sem pés"
   },
   "nav": {
     "comenzi": "Encomendas",
@@ -783,7 +785,18 @@
       "cosJolly": "Cesto Jolly para móvel de {lat} mm",
       "obsCosJolly": "escolhe-se pela largura do móvel; a frente fixa-se nele",
       "sistemGlisant": "Sistema de portas de correr (calhas e roletes)",
-      "obsSistemGlisant": "{n} portas, móvel de {lat} mm"
+      "obsSistemGlisant": "{n} portas, móvel de {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (regulação {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Placa de montagem para pé {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Clipe de rodapé — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (regulação {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Pé regulável de 2 peças",
+      "otel": "Pé regulável em aço galvanizado",
+      "aluVizibil": "Pé visível em alumínio, quadrado 40 mm"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "A estrutura com uniões retas (ilhargas na base, tampo entre elas) só serve para a forma sob escada. Aqui fez-se em meia-esquadria.",
     "sertareGolRest": "As frentes das gavetas não enchem o móvel: sobram {gol} mm. Ponha “r” numa das frentes para ficar com o resto.",
     "sertarePreaMari": "As frentes das gavetas excedem o móvel em {mm} mm. Reduza uma delas ou ponha “r”.",
-    "frontSertarPreaMic": "Uma frente de gaveta tem menos de 40 mm: não cabe nenhuma gaveta atrás dela."
+    "frontSertarPreaMic": "Uma frente de gaveta tem menos de 40 mm: não cabe nenhuma gaveta atrás dela.",
+    "plintaPicior": "O rodapé de {plinta} mm não é compatível com os pés escolhidos (regulação {min}–{max} mm). Escolha pés de outra altura ou outro rodapé."
   },
   "csv": {
     "corp": "Módulo",
@@ -1558,7 +1572,8 @@
     "colCutie": "Gaveta (mm)",
     "notaFronturi": "De cima para baixo. Na frente escreva mm, “r” para o resto (dividido igualmente entre todos os “r”) ou uma percentagem da altura total, por exemplo 50%. A gaveta é calculada a partir da frente (frente menos 40 mm, arredondada para 60, 80, 100, 120, 150 ou 180); também pode escrevê-la à mão.",
     "familieRapid": "Família",
-    "configRapideNota2": "Um clique coloca o móvel escolhido. No móvel de base mantêm-se a largura e a altura; nas outras famílias também são aplicadas as medidas, como no antigo cartão do catálogo. Também pode escolher de outra família."
+    "configRapideNota2": "Um clique coloca o móvel escolhido. No móvel de base mantêm-se a largura e a altura; nas outras famílias também são aplicadas as medidas, como no antigo cartão do catálogo. Também pode escolher de outra família.",
+    "tipPicior": "Tipo de pés (Häfele)"
   },
   "fata": {
     "px": "direita",

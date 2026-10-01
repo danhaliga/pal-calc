@@ -35,7 +35,9 @@
     "limba": "Nyelv",
     "alegeLimba": "Nyelv választása",
     "schimbaLimba": "Nyelvváltás",
-    "colt": "sarok"
+    "colt": "sarok",
+    "dimPicioare": "H {h} + láb {p} = {t}",
+    "dimFaraPicioare": "láb nélkül"
   },
   "nav": {
     "comenzi": "Megrendelések",
@@ -783,7 +785,18 @@
       "cosJolly": "Jolly kosár {lat} mm-es szekrényhez",
       "obsCosJolly": "a szekrény szélessége szerint választandó; az előlap erre kerül",
       "sistemGlisant": "Tolóajtó-rendszer (sínek és görgők)",
-      "obsSistemGlisant": "{n} ajtó, {lat} mm-es korpusz"
+      "obsSistemGlisant": "{n} ajtó, {lat} mm-es korpusz",
+      "piciorTip": "{fam}, H {h} mm (állítás {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Rögzítőlap {fam} lábhoz — Häfele {cod}",
+      "clemaPlintaCod": "Lábazati klip — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (állítás {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "2 részes állítható láb",
+      "otel": "Horganyzott acél állítható láb",
+      "aluVizibil": "Látható alumínium láb, 40 mm négyzetes"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "A tompa illesztésű keret (oldalak az aljon, tető köztük) csak a lépcső alatti formánál megy. Itt a keret gérbe készült.",
     "sertareGolRest": "A fiókfrontok nem töltik ki a korpuszt: {gol} mm marad. Írj „r”-t az egyik fronthoz, hogy az vegye fel a maradékot.",
     "sertarePreaMari": "A fiókfrontok {mm} mm-rel nagyobbak a korpusznál. Csökkentsd az egyiket, vagy írj „r”-t.",
-    "frontSertarPreaMic": "Egy fiókfront 40 mm alatti: mögé nem fér fiók."
+    "frontSertarPreaMic": "Egy fiókfront 40 mm alatti: mögé nem fér fiók.",
+    "plintaPicior": "A {plinta} mm-es lábazat nem illik a választott lábakhoz (állítás {min}–{max} mm). Válasszon más magasságú lábat vagy másik lábazatot."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1558,7 +1572,8 @@
     "colCutie": "Fiók (mm)",
     "notaFronturi": "Fentről lefelé. A fronthoz írj mm-t, „r”-t a maradékhoz (egyenlően oszlik el az összes „r” között) vagy a teljes magasság százalékát, például 50%. A fiók a frontból számolódik (front mínusz 40 mm, kerekítve 60, 80, 100, 120, 150 vagy 180 értékre); kézzel is beírhatod.",
     "familieRapid": "Család",
-    "configRapideNota2": "Egy kattintás beteszi a kiválasztott szekrényt. Az alsó szekrénynél megmarad a szélesség és a magasság; a többi családnál a méretek is beállnak, mint a régi katalóguskártyánál. Más családból is választhatsz."
+    "configRapideNota2": "Egy kattintás beteszi a kiválasztott szekrényt. Az alsó szekrénynél megmarad a szélesség és a magasság; a többi családnál a méretek is beállnak, mint a régi katalóguskártyánál. Más családból is választhatsz.",
+    "tipPicior": "Lábtípus (Häfele)"
   },
   "fata": {
     "px": "jobb",

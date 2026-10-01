@@ -35,7 +35,9 @@
     "limba": "Lingua",
     "alegeLimba": "Scegli la lingua",
     "schimbaLimba": "Cambia lingua",
-    "colt": "angolo"
+    "colt": "angolo",
+    "dimPicioare": "H {h} + piedini {p} = {t}",
+    "dimFaraPicioare": "senza piedini"
   },
   "nav": {
     "comenzi": "Ordini",
@@ -783,7 +785,18 @@
       "cosJolly": "Cestello Jolly per mobile da {lat} mm",
       "obsCosJolly": "si sceglie dalla larghezza del mobile; il frontale si fissa sopra",
       "sistemGlisant": "Sistema per ante scorrevoli (binari e carrelli)",
-      "obsSistemGlisant": "{n} ante, mobile da {lat} mm"
+      "obsSistemGlisant": "{n} ante, mobile da {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (regolazione {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Piastra di montaggio per piedino {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Clip per zoccolo — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (regolazione {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Piedino regolabile in 2 parti",
+      "otel": "Piedino regolabile in acciaio zincato",
+      "aluVizibil": "Piedino a vista in alluminio, quadrato 40 mm"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "Il telaio con giunzioni dritte (fianchi sulla base, cielo tra di loro) va solo con la forma sottoscala. Qui il telaio è a 45°.",
     "sertareGolRest": "I frontali dei cassetti non riempiono il mobile: restano {gol} mm. Metti “r” su uno dei frontali perché prenda il resto.",
     "sertarePreaMari": "I frontali dei cassetti superano il mobile di {mm} mm. Riduci uno di essi o metti “r”.",
-    "frontSertarPreaMic": "Un frontale di cassetto è sotto i 40 mm: dietro non ci sta nessun cassetto."
+    "frontSertarPreaMic": "Un frontale di cassetto è sotto i 40 mm: dietro non ci sta nessun cassetto.",
+    "plintaPicior": "Lo zoccolo da {plinta} mm non è compatibile con i piedini scelti (regolazione {min}–{max} mm). Scegli piedini di altra altezza o un altro zoccolo."
   },
   "csv": {
     "corp": "Mobile",
@@ -1558,7 +1572,8 @@
     "colCutie": "Cassetto (mm)",
     "notaFronturi": "Dall'alto in basso. Nel frontale scrivi i mm, “r” per il resto (diviso in parti uguali tra tutte le “r”) o una percentuale dell'altezza totale, ad esempio 50%. Il cassetto si calcola dal frontale (frontale meno 40 mm, arrotondato a 60, 80, 100, 120, 150 o 180); puoi anche scriverlo a mano.",
     "familieRapid": "Famiglia",
-    "configRapideNota2": "Un clic inserisce il mobile scelto. Per il mobile base restano la larghezza e l'altezza; per le altre famiglie vengono impostate anche le misure, come nella vecchia scheda del catalogo. Puoi scegliere anche da un'altra famiglia."
+    "configRapideNota2": "Un clic inserisce il mobile scelto. Per il mobile base restano la larghezza e l'altezza; per le altre famiglie vengono impostate anche le misure, come nella vecchia scheda del catalogo. Puoi scegliere anche da un'altra famiglia.",
+    "tipPicior": "Tipo di piedini (Häfele)"
   },
   "fata": {
     "px": "destra",

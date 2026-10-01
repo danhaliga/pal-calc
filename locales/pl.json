@@ -35,7 +35,9 @@
     "limba": "Język",
     "alegeLimba": "Wybierz język",
     "schimbaLimba": "Zmień język",
-    "colt": "narożnik"
+    "colt": "narożnik",
+    "dimPicioare": "H {h} + nóżki {p} = {t}",
+    "dimFaraPicioare": "bez nóżek"
   },
   "nav": {
     "comenzi": "Zlecenia",
@@ -789,7 +791,18 @@
       "cosJolly": "Cargo Jolly do szafki {lat} mm",
       "obsCosJolly": "dobierane do szerokości szafki; front mocuje się na nim",
       "sistemGlisant": "System drzwi przesuwnych (szyny i wózki)",
-      "obsSistemGlisant": "{n} drzwi, szafka {lat} mm"
+      "obsSistemGlisant": "{n} drzwi, szafka {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (regulacja {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Płytka montażowa do nóżki {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Klips cokołu — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (regulacja {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Nóżka regulowana 2-częściowa",
+      "otel": "Nóżka regulowana ze stali ocynkowanej",
+      "aluVizibil": "Widoczna nóżka aluminiowa, kwadrat 40 mm"
     }
   },
   "piesa": {
@@ -929,7 +942,8 @@
     "imbinareDreaptaNuMerge": "Korpus na styk (boki na podstawie, wieniec między nimi) jest tylko dla kształtu pod schodami. Tu korpus jest na ukos.",
     "sertareGolRest": "Fronty szuflad nie wypełniają korpusu: zostaje {gol} mm. Wpisz „r” przy jednym z frontów, żeby zajął resztę.",
     "sertarePreaMari": "Fronty szuflad są większe od korpusu o {mm} mm. Zmniejsz jeden z nich albo wpisz „r”.",
-    "frontSertarPreaMic": "Front szuflady ma mniej niż 40 mm: nie zmieści się za nim żadna szuflada."
+    "frontSertarPreaMic": "Front szuflady ma mniej niż 40 mm: nie zmieści się za nim żadna szuflada.",
+    "plintaPicior": "Cokół {plinta} mm nie pasuje do wybranych nóżek (regulacja {min}–{max} mm). Wybierz nóżki o innej wysokości lub inny cokół."
   },
   "csv": {
     "corp": "Korpus",
@@ -1569,7 +1583,8 @@
     "colCutie": "Szuflada (mm)",
     "notaFronturi": "Od góry do dołu. W polu frontu wpisz mm, „r” dla reszty (dzielonej równo między wszystkie „r”) albo procent całkowitej wysokości, np. 50%. Szuflada liczy się z frontu (front minus 40 mm, zaokrąglone do 60, 80, 100, 120, 150 lub 180); możesz ją też wpisać ręcznie.",
     "familieRapid": "Rodzina",
-    "configRapideNota2": "Jedno kliknięcie wstawia wybraną szafkę. Przy szafce dolnej zostają Twoja szerokość i wysokość; w pozostałych rodzinach ustawiane są też wymiary, jak na dawnej karcie katalogu. Możesz też wybrać z innej rodziny."
+    "configRapideNota2": "Jedno kliknięcie wstawia wybraną szafkę. Przy szafce dolnej zostają Twoja szerokość i wysokość; w pozostałych rodzinach ustawiane są też wymiary, jak na dawnej karcie katalogu. Możesz też wybrać z innej rodziny.",
+    "tipPicior": "Typ nóżek (Häfele)"
   },
   "fata": {
     "px": "prawo",

@@ -35,7 +35,9 @@
     "limba": "Jezik",
     "alegeLimba": "Odaberi jezik",
     "schimbaLimba": "Promijeni jezik",
-    "colt": "kut"
+    "colt": "kut",
+    "dimPicioare": "H {h} + nogice {p} = {t}",
+    "dimFaraPicioare": "bez nogica"
   },
   "nav": {
     "comenzi": "Nalozi",
@@ -789,7 +791,18 @@
       "cosJolly": "Košara Jolly za element od {lat} mm",
       "obsCosJolly": "bira se po širini elementa; front se pričvrsti na nju",
       "sistemGlisant": "Sustav kliznih vrata (tračnice i kotačići)",
-      "obsSistemGlisant": "{n} vrata, element {lat} mm"
+      "obsSistemGlisant": "{n} vrata, element {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (podešavanje {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Montažna pločica za nogicu {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Kopča za soklu — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (podešavanje {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Podesiva nogica iz 2 dijela",
+      "otel": "Podesiva nogica od pocinčanog čelika",
+      "aluVizibil": "Vidljiva aluminijska nogica, kvadrat 40 mm"
     }
   },
   "piesa": {
@@ -929,7 +942,8 @@
     "imbinareDreaptaNuMerge": "Korpus s ravnim spojevima (stranice na bazi, strop između njih) ide samo za oblik ispod stepenica. Ovdje je korpus na kut.",
     "sertareGolRest": "Fronte ladica ne popunjavaju korpus: ostaje {gol} mm. Stavi „r” na jednu od fronti da uzme ostatak.",
     "sertarePreaMari": "Fronte ladica veće su od korpusa za {mm} mm. Smanji jednu od njih ili stavi „r”.",
-    "frontSertarPreaMic": "Fronta ladice ima manje od 40 mm: iza nje ne stane nijedna ladica."
+    "frontSertarPreaMic": "Fronta ladice ima manje od 40 mm: iza nje ne stane nijedna ladica.",
+    "plintaPicior": "Sokla od {plinta} mm ne odgovara odabranim nogicama (podešavanje {min}–{max} mm). Odaberite nogice druge visine ili drugu soklu."
   },
   "csv": {
     "corp": "Korpus",
@@ -1569,7 +1583,8 @@
     "colCutie": "Ladica (mm)",
     "notaFronturi": "Odozgo prema dolje. Kod fronte upiši mm, „r” za ostatak (dijeli se jednako na sve „r”) ili postotak ukupne visine, npr. 50%. Ladica se računa iz fronte (fronta minus 40 mm, zaokruženo na 60, 80, 100, 120, 150 ili 180); možeš je upisati i ručno.",
     "familieRapid": "Obitelj",
-    "configRapideNota2": "Jedan klik postavlja odabrani element. Kod donjeg elementa zadržavate širinu i visinu; kod ostalih obitelji postavljaju se i dimenzije, kao na staroj kartici kataloga. Možete birati i iz druge obitelji."
+    "configRapideNota2": "Jedan klik postavlja odabrani element. Kod donjeg elementa zadržavate širinu i visinu; kod ostalih obitelji postavljaju se i dimenzije, kao na staroj kartici kataloga. Možete birati i iz druge obitelji.",
+    "tipPicior": "Vrsta nogica (Häfele)"
   },
   "fata": {
     "px": "desno",

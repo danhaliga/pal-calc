@@ -35,7 +35,9 @@
     "limba": "Jazyk",
     "alegeLimba": "Vybrať jazyk",
     "schimbaLimba": "Zmeniť jazyk",
-    "colt": "roh"
+    "colt": "roh",
+    "dimPicioare": "H {h} + nožičky {p} = {t}",
+    "dimFaraPicioare": "bez nožičiek"
   },
   "nav": {
     "comenzi": "Zákazky",
@@ -789,7 +791,18 @@
       "cosJolly": "Kôš Jolly pre skrinku {lat} mm",
       "obsCosJolly": "vyberá sa podľa šírky skrinky; čelo sa pripevní naň",
       "sistemGlisant": "Systém posuvných dverí (koľajnice a kladky)",
-      "obsSistemGlisant": "{n} dverí, skrinka {lat} mm"
+      "obsSistemGlisant": "{n} dverí, skrinka {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (nastavenie {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Montážna doštička pre nožičku {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Klip sokla — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (nastavenie {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Nastaviteľná nožička, 2-dielna",
+      "otel": "Nastaviteľná nožička z pozinkovanej ocele",
+      "aluVizibil": "Viditeľná hliníková nožička, štvorec 40 mm"
     }
   },
   "piesa": {
@@ -929,7 +942,8 @@
     "imbinareDreaptaNuMerge": "Korpus na tupo (boky na dne, strop medzi nimi) ide len pri tvare pod schodmi. Tu je korpus na pokos.",
     "sertareGolRest": "Čelá zásuviek nevypĺňajú korpus: zostáva {gol} mm. Dajte „r“ k jednému z čiel, aby vzalo zvyšok.",
     "sertarePreaMari": "Čelá zásuviek sú o {mm} mm väčšie ako korpus. Zmenšite jedno z nich alebo dajte „r“.",
-    "frontSertarPreaMic": "Čelo zásuvky má menej ako 40 mm: za neho sa nezmestí žiadna zásuvka."
+    "frontSertarPreaMic": "Čelo zásuvky má menej ako 40 mm: za neho sa nezmestí žiadna zásuvka.",
+    "plintaPicior": "Sokel {plinta} mm nezodpovedá zvoleným nožičkám (nastavenie {min}–{max} mm). Zvoľte nožičky inej výšky alebo iný sokel."
   },
   "csv": {
     "corp": "Korpus",
@@ -1569,7 +1583,8 @@
     "colCutie": "Zásuvka (mm)",
     "notaFronturi": "Zhora nadol. Pri čele napíšte mm, „r“ pre zvyšok (rozdelí sa rovnakým dielom medzi všetky „r“) alebo percento z celkovej výšky, napríklad 50%. Zásuvka sa počíta z čela (čelo mínus 40 mm, zaokrúhlené na 60, 80, 100, 120, 150 alebo 180); môžete ju napísať aj ručne.",
     "familieRapid": "Rodina",
-    "configRapideNota2": "Jedno kliknutie vloží zvolenú skrinku. Pri spodnej skrinke vám zostane šírka a výška; pri ostatných rodinách sa nastavia aj rozmery, ako pri starej karte katalógu. Môžete vyberať aj z inej rodiny."
+    "configRapideNota2": "Jedno kliknutie vloží zvolenú skrinku. Pri spodnej skrinke vám zostane šírka a výška; pri ostatných rodinách sa nastavia aj rozmery, ako pri starej karte katalógu. Môžete vyberať aj z inej rodiny.",
+    "tipPicior": "Typ nožičiek (Häfele)"
   },
   "fata": {
     "px": "vpravo",

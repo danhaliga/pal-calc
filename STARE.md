@@ -556,6 +556,22 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
   lista „Familia" + butoanele ei. Testat: toate configurările dau corpurile
   identice cu cardurile vechi.
 
+## 6s. Picioare Häfele (1 octombrie)
+
+- `PalCalc.PICIOARE_HAFELE`: AXILO 78 (H 80/100/125/150, cod 637.76.35x,
+  suport 637.76.333, clemă plintă 637.38.054), AXILO 48 (H 80/100/120,
+  637.45.33x, suport 637.38.404, clemă 637.83.391), picior 2 componente
+  (637.83.332), oțel zincat (637.59.901), picior vizibil aluminiu
+  (634.24.933, fără plintă). Date de la distribuitori (hafele.ro a dat 403):
+  `scratchpad/hafele-picioare.json` în sesiunea din 1 oct.
+- Pe corp: `picior` (implicit axilo78-100), ales în editor când stă pe
+  picioare și n-are soclu. `calc()` întoarce `picior`, `inaltimeTotala` și
+  `picioare3d` (desenate în 3D sub corp).
+- Peste tot unde apar dimensiunile corpului: „· H 720 + picioare 100 = 820"
+  sau „· fără picioare" (doar la corpurile de pe podea). În feronerie:
+  piciorul cu tipul și codul, suportul (AXILO) și clema cu codul ei.
+  Avertisment când plinta comenzii nu intră în reglajul picioarelor.
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

@@ -373,9 +373,16 @@
       var lat = Math.max(+c.W || 0, c.tip === 'colt-L' || c.tip === 'colt-diagonal' ? +c.W2 || 0 : 0);
       var nPic = lat > pic.latDeLa ? pic.peCorpLat : pic.peCorp;
       var plinta = s.plinta && s.plinta.id !== 'fara' ? s.plinta : null;
-      pune(plinta ? t_('fero.art.piciorPlinta', { h: plinta.h }) : art('picior'), nPic, 'buc',
+      /* tipul de picior ales pe corp, din catalogul Häfele (shared/calc.js) */
+      var tp = (res && res.picior) || Object.assign({ id: PalCalc.PICIOR_IMPLICIT }, PalCalc.PICIOARE_HAFELE[PalCalc.PICIOR_IMPLICIT]);
+      var fam = t_('fero.piciorFam.' + tp.fam);
+      pune(t_('fero.art.piciorTip', { fam: fam, h: tp.h, min: tp.min, max: tp.max, cod: tp.cod }), nPic, 'buc',
            t_('fero.art.obsPicioare', { n: pic.peCorp, m: pic.peCorpLat, lat: pic.latDeLa }));
-      if (plinta) pune(art('clemaPlinta'), nPic / 2, 'buc', t_('fero.art.obsClemaPlinta'));
+      if (tp.suport) pune(t_('fero.art.suportPicior', { fam: fam, cod: tp.suport }), nPic, 'buc');
+      if (plinta && !tp.vizibil) {
+        pune(tp.clema ? t_('fero.art.clemaPlintaCod', { cod: tp.clema }) : art('clemaPlinta'), nPic / 2, 'buc',
+             t_('fero.art.obsClemaPlinta'));
+      }
     }
 
     /* ---- fronturi ----
@@ -402,6 +409,25 @@
      fronturilor: la colțul în L pe cele două brațe, la cel pe diagonală pe
      diagonală, la colțul orb numai pe partea care se vede — restul stă
      sub corpul vecin, care are plinta lui. */
+  /* „ · H 720 + picioare 100 = 820" sau „ · fără picioare" — al doilea
+     doar la corpurile de pe podea (jos, coloane), unde contează. */
+  /* plinta comenzii trebuie să încapă în reglajul picioarelor alese */
+  function avertPlinta(res, sis, t_) {
+    var pl = sis && sis.plinta;
+    if (!res || !res.picior || res.picior.vizibil || !pl || pl.id === 'fara' || !pl.h) return [];
+    if (pl.h >= res.picior.min && pl.h <= res.picior.max) return [];
+    return [t_('avert.plintaPicior', { plinta: pl.h, min: res.picior.min, max: res.picior.max })];
+  }
+
+  function picioareText(c, res, t_) {
+    if (res && res.picior) {
+      return ' · ' + t_('comun.dimPicioare', { h: c.H, p: res.picior.h, t: res.inaltimeTotala });
+    }
+    var podea = c.familie === 'bucatarie-jos' || c.familie === 'bucatarie-inalt' ||
+                (!c.familie && c.tip === 'drept' && +c.D >= 450 && !(+c.soclu > 0));
+    return podea && !(res && +res.soclu > 0) ? ' · ' + t_('comun.dimFaraPicioare') : '';
+  }
+
   function lungimePlinta(c, res) {
     /* Soclul care chiar s-a pus (din calcul), nu cel cerut: un soclu cerut
        la o construcție care nu-l primește lasă corpul pe picioare. */
@@ -597,11 +623,11 @@
       corpuriOut.push({
         id: corp.id, nume: corp.name, poz: pozCorp, params: params, res: resCorp,
         piese: piese, feronerie: fero,
-        avertismente: resCorp.warn,
+        avertismente: resCorp.warn.concat(avertPlinta(resCorp, sist, t_)),
         materialCorp: matCorp, materialFront: matFront,
-        dimensiuni: (params.tip === 'colt-L' || params.tip === 'colt-diagonal')
+        dimensiuni: ((params.tip === 'colt-L' || params.tip === 'colt-diagonal')
           ? params.W + ' × ' + params.H + ' × ' + params.W2 + ' (' + t_('comun.colt') + ')'
-          : params.W + ' × ' + params.H + ' × ' + params.D,
+          : params.W + ' × ' + params.H + ' × ' + params.D) + picioareText(params, resCorp, t_),
         bucati: piese.reduce(function (s, p) { return s + p.buc; }, 0)
       });
     });

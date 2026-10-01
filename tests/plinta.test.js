@@ -86,17 +86,20 @@ test('plinta se adună pe toată comanda și se cumpără în bare întregi', ()
 
 test('picioare: 4 pe corp, la orice lățime (Dan); clemă pe fiecare picior din față', () => {
   const r = raport(comanda('alu-120'), [dinModel('baza-2usi'), dinModel('baza-2usi', { W: 1200 })], OPT);
-  const pic = rand(r, 'fero.art.piciorPlinta');
+  /* picioarele au acum tipul lor din catalogul Häfele (implicit AXILO 78, H 100) */
+  const pic = rand(r, 'fero.art.piciorTip');
   assert.equal(pic.length, 1);
   assert.equal(pic[0].qty, 4 + 4);
-  assert.equal(rand(r, 'fero.art.clemaPlinta')[0].qty, 2 + 2);
+  assert.equal(r.corpuri[0].res.picior.cod, '637.76.353');
+  assert.equal(rand(r, 'fero.art.suportPicior')[0].qty, 4 + 4, 'un suport la fiecare picior AXILO');
+  assert.equal(rand(r, 'fero.art.clemaPlintaCod')[0].qty, 2 + 2);
 });
 
 test('fără plintă, picioarele tot se cumpără, dar nu și bara sau clemele', () => {
   const r = raport(comanda('fara'), [dinModel('baza-2usi')], OPT);
   assert.equal(rand(r, 'fero.art.plintaBara').length, 0);
-  assert.equal(rand(r, 'fero.art.clemaPlinta').length, 0);
-  assert.equal(rand(r, 'fero.art.picior')[0].qty, 4);
+  assert.equal(rand(r, 'fero.art.clemaPlintaCod').length, 0);
+  assert.equal(rand(r, 'fero.art.piciorTip')[0].qty, 4);
 });
 
 test('un corp pe soclu sau suspendat nu cere nici picioare, nici plintă', () => {
@@ -149,4 +152,25 @@ test('textele plintei și ale picioarelor există în toate limbile, cu aceiași
       assert.equal(param(v), param(ia(ro, k)), l.cod + ': parametri schimbați la ' + k);
     });
   });
+});
+
+test('picioarele Häfele: înălțimea totală, textul din listă și plinta potrivită', () => {
+  const t = require('../shared/i18n').creeaza('ro');
+  const p = PalModels.paramsFor('baza-2usi', t);
+  const r = PalCalc.calc(Object.assign({}, p, { picior: 'axilo78-150' }), t);
+  assert.equal(r.picior.h, 150);
+  assert.equal(r.inaltimeTotala, 720 + 150);
+  assert.equal(r.picioare3d.length, 4);
+  assert.ok(r.picioare3d.every(b => b.y === -150 && b.sy === 150), 'picioarele stau sub corp');
+  /* cu soclu, fără picioare */
+  const s = PalCalc.calc(Object.assign({}, p, { soclu: 100 }), t);
+  assert.equal(s.picior, null);
+  assert.equal(s.inaltimeTotala, 720);
+  /* în listă: „H 720 + picioare 150 = 870" */
+  const R = raport({ id: 1, name: 'x', formate: ['intreaga'], materiale: [mat], feronerie: JSON.stringify({ plinta: 'alu-100' }) },
+    [{ id: 1, name: 'c', poz: 1, params: Object.assign({}, p, { picior: 'axilo78-150' }), materiale: { corp: mat, front: mat, sertar: mat } }],
+    { effortMs: 0, adaosCant: 15, t });
+  assert.match(R.corpuri[0].dimensiuni, /H 720 \+ picioare 150 = 870/);
+  /* plinta de 100 nu intră în reglajul 140–170 */
+  assert.ok(R.corpuri[0].avertismente.some(w => /Plinta de 100 mm/.test(w)));
 });

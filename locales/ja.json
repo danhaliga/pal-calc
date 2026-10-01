@@ -35,7 +35,9 @@
     "limba": "言語",
     "alegeLimba": "言語を選ぶ",
     "schimbaLimba": "言語を変える",
-    "colt": "コーナー"
+    "colt": "コーナー",
+    "dimPicioare": "H {h} + 脚 {p} = {t}",
+    "dimFaraPicioare": "脚なし"
   },
   "nav": {
     "comenzi": "注文",
@@ -783,7 +785,18 @@
       "cosJolly": "{lat} mm キャビネット用引出しバスケット",
       "obsCosJolly": "キャビネット幅で選ぶ；前板はこれに取り付ける",
       "sistemGlisant": "引き戸システム（レールとローラー）",
-      "obsSistemGlisant": "扉 {n} 枚、{lat} mm キャビネット"
+      "obsSistemGlisant": "扉 {n} 枚、{lat} mm キャビネット",
+      "piciorTip": "{fam}, H {h} mm (調整 {min}–{max}) — Häfele {cod}",
+      "suportPicior": "{fam}脚用取付プレート — Häfele {cod}",
+      "clemaPlintaCod": "幅木クリップ — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (調整 {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "2ピース式アジャスター脚",
+      "otel": "亜鉛めっき鋼製アジャスター脚",
+      "aluVizibil": "見せ脚 アルミ製 40 mm角"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "突き付けのフレーム（側板を底板の上、天板を間に）は階段下の形だけです。ここでは留め継ぎにしました。",
     "sertareGolRest": "引き出しの前板がキャビネットを埋めていません: {gol} mm 余っています。いずれかの前板に「r」を入れると残りを割り当てます。",
     "sertarePreaMari": "引き出しの前板がキャビネットより {mm} mm 大きくなっています。どれかを小さくするか「r」を入れてください。",
-    "frontSertarPreaMic": "40 mm 未満の引き出し前板があります: 後ろに引き出し箱が入りません。"
+    "frontSertarPreaMic": "40 mm 未満の引き出し前板があります: 後ろに引き出し箱が入りません。",
+    "plintaPicior": "{plinta} mmの幅木は選択した脚に合いません（調整 {min}–{max} mm）。別の高さの脚か別の幅木を選んでください。"
   },
   "csv": {
     "corp": "キャビネット",
@@ -1558,7 +1572,8 @@
     "colCutie": "引き出し箱 (mm)",
     "notaFronturi": "上から下へ。前板には mm、残りを表す「r」(すべての「r」で均等に分配)、または全体の高さに対する割合(例: 50%)を入力します。引き出し箱は前板から計算されます(前板から 40 mm を引き、60、80、100、120、150、180 のいずれかに丸め)。手入力も可能です。",
     "familieRapid": "ファミリー",
-    "configRapideNota2": "1クリックで選んだキャビネットを配置します。下台ではお使いの幅と高さがそのまま残り、他のファミリーでは旧カタログのカードと同じく寸法も設定されます。別のファミリーから選ぶこともできます。"
+    "configRapideNota2": "1クリックで選んだキャビネットを配置します。下台ではお使いの幅と高さがそのまま残り、他のファミリーでは旧カタログのカードと同じく寸法も設定されます。別のファミリーから選ぶこともできます。",
+    "tipPicior": "脚の種類 (Häfele)"
   },
   "fata": {
     "px": "右",

@@ -132,6 +132,14 @@
             <option value="0"><%= t('editor.picioareNu') %></option>
             <option value="1"><%= t('editor.picioareDa') %></option>
           </select></label>
+          <%# Tipul picioarelor, din catalogul Häfele: înălțimea lor intră în
+              înălțimea totală a corpului. Se vede doar când stă pe picioare. %>
+          <label id="wrapPicior"><%= t('editor.tipPicior') %><select id="picior">
+            <% Object.keys(picioareHafele).forEach(function (id) { var p = picioareHafele[id]; %>
+              <option value="<%= id %>"><%= t('fero.optPicior', { fam: t('fero.piciorFam.' + p.fam), h: p.h, min: p.min, max: p.max }) %></option>
+            <% }); %>
+          </select></label>
+          <p class="legend full" id="hTotal"></p>
           <%# Traversele: in locul blatului intreg, doua fasii, una in fata
               si una in spate. Sub blatul de bucatarie un panou pe toata
               adancimea e PAL aruncat — il acopera blatul oricum. %>
@@ -489,7 +497,7 @@
 <div class="toast" id="toast"></div>
 
 <script type="application/json" id="i18n"><%- jsonPentruPagina(catalogPagina(
-  'editor', 'setari', 'piesa', 'nota', 'avert', 'fibra', 'directie', 'fata', 'csv', 'comun', 'modele'
+  'editor', 'setari', 'piesa', 'nota', 'avert', 'fibra', 'directie', 'fata', 'csv', 'comun', 'modele', 'fero'
 )) %></script>
 <script type="application/json" id="page-data"><%- jsonPentruPagina({
   corpId: corp.id,

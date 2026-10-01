@@ -35,7 +35,9 @@
     "limba": "Langue",
     "alegeLimba": "Choisir la langue",
     "schimbaLimba": "Changer de langue",
-    "colt": "angle"
+    "colt": "angle",
+    "dimPicioare": "H {h} + pieds {p} = {t}",
+    "dimFaraPicioare": "sans pieds"
   },
   "nav": {
     "comenzi": "Commandes",
@@ -783,7 +785,18 @@
       "cosJolly": "Panier Jolly pour meuble de {lat} mm",
       "obsCosJolly": "choisi selon la largeur du meuble ; la façade s'y fixe",
       "sistemGlisant": "Système de portes coulissantes (rails et galets)",
-      "obsSistemGlisant": "{n} portes, meuble de {lat} mm"
+      "obsSistemGlisant": "{n} portes, meuble de {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (réglage {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Platine de fixation pour pied {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Clip de plinthe — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (réglage {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Pied réglable en 2 parties",
+      "otel": "Pied réglable en acier galvanisé",
+      "aluVizibil": "Pied apparent en aluminium, carré 40 mm"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "Le bâti à assemblages droits (côtés sur le socle, dessus entre eux) ne va qu'avec la forme sous escalier. Ici le bâti est en onglet.",
     "sertareGolRest": "Les façades de tiroir ne remplissent pas le caisson : il reste {gol} mm. Mettez « r » sur l'une des façades pour qu'elle prenne le reste.",
     "sertarePreaMari": "Les façades de tiroir dépassent le caisson de {mm} mm. Réduisez l'une d'elles ou mettez « r ».",
-    "frontSertarPreaMic": "Une façade de tiroir fait moins de 40 mm : aucun tiroir ne tient derrière."
+    "frontSertarPreaMic": "Une façade de tiroir fait moins de 40 mm : aucun tiroir ne tient derrière.",
+    "plintaPicior": "La plinthe de {plinta} mm ne convient pas aux pieds choisis (réglage {min}–{max} mm). Choisissez des pieds d'une autre hauteur ou une autre plinthe."
   },
   "csv": {
     "corp": "Caisson",
@@ -1558,7 +1572,8 @@
     "colCutie": "Caisson (mm)",
     "notaFronturi": "De haut en bas. Pour chaque façade, saisissez des mm, « r » pour le reste (partagé à parts égales entre tous les « r ») ou un pourcentage de la hauteur totale, par exemple 50%. Le tiroir est calculé à partir de la façade (façade moins 40 mm, arrondie à 60, 80, 100, 120, 150 ou 180) ; vous pouvez aussi le saisir à la main.",
     "familieRapid": "Famille",
-    "configRapideNota2": "Un clic place le meuble choisi. Pour le meuble bas, vous conservez la largeur et la hauteur ; pour les autres familles, les dimensions sont aussi appliquées, comme sur l'ancienne fiche du catalogue. Vous pouvez aussi choisir dans une autre famille."
+    "configRapideNota2": "Un clic place le meuble choisi. Pour le meuble bas, vous conservez la largeur et la hauteur ; pour les autres familles, les dimensions sont aussi appliquées, comme sur l'ancienne fiche du catalogue. Vous pouvez aussi choisir dans une autre famille.",
+    "tipPicior": "Type de pieds (Häfele)"
   },
   "fata": {
     "px": "droite",

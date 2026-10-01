@@ -35,7 +35,9 @@
     "limba": "Jezik",
     "alegeLimba": "Izaberi jezik",
     "schimbaLimba": "Promeni jezik",
-    "colt": "ugao"
+    "colt": "ugao",
+    "dimPicioare": "H {h} + nogice {p} = {t}",
+    "dimFaraPicioare": "bez nogica"
   },
   "nav": {
     "comenzi": "Porudžbine",
@@ -789,7 +791,18 @@
       "cosJolly": "Korpa Jolly za element od {lat} mm",
       "obsCosJolly": "bira se po širini elementa; front se kači na nju",
       "sistemGlisant": "Sistem kliznih vrata (šine i točkići)",
-      "obsSistemGlisant": "{n} vrata, element {lat} mm"
+      "obsSistemGlisant": "{n} vrata, element {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (podešavanje {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Montažna pločica za nogicu {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Kopča za soklu — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (podešavanje {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Podesiva nogica iz 2 dela",
+      "otel": "Podesiva nogica od pocinkovanog čelika",
+      "aluVizibil": "Vidljiva aluminijumska nogica, kvadrat 40 mm"
     }
   },
   "piesa": {
@@ -929,7 +942,8 @@
     "imbinareDreaptaNuMerge": "Korpus sa pravim spojevima (stranice na bazi, plafon između njih) ide samo za oblik ispod stepenica. Ovde je korpus na geru.",
     "sertareGolRest": "Frontovi fioka ne popunjavaju korpus: ostaje {gol} mm. Stavi „r” na jedan od frontova da uzme ostatak.",
     "sertarePreaMari": "Frontovi fioka su veći od korpusa za {mm} mm. Smanji jedan od njih ili stavi „r”.",
-    "frontSertarPreaMic": "Front fioke ima manje od 40 mm: iza njega ne staje nijedna fioka."
+    "frontSertarPreaMic": "Front fioke ima manje od 40 mm: iza njega ne staje nijedna fioka.",
+    "plintaPicior": "Sokla od {plinta} mm ne odgovara izabranim nogicama (podešavanje {min}–{max} mm). Izaberite nogice druge visine ili drugu soklu."
   },
   "csv": {
     "corp": "Korpus",
@@ -1569,7 +1583,8 @@
     "colCutie": "Fioka (mm)",
     "notaFronturi": "Odozgo nadole. Kod fronta upiši mm, „r” za ostatak (deli se jednako na sva „r”) ili procenat ukupne visine, npr. 50%. Fioka se računa iz fronta (front minus 40 mm, zaokruženo na 60, 80, 100, 120, 150 ili 180); možeš je upisati i ručno.",
     "familieRapid": "Porodica",
-    "configRapideNota2": "Jedan klik postavlja izabrani element. Kod donjeg elementa zadržavate širinu i visinu; kod ostalih porodica postavljaju se i dimenzije, kao na staroj kartici kataloga. Možete birati i iz druge porodice."
+    "configRapideNota2": "Jedan klik postavlja izabrani element. Kod donjeg elementa zadržavate širinu i visinu; kod ostalih porodica postavljaju se i dimenzije, kao na staroj kartici kataloga. Možete birati i iz druge porodice.",
+    "tipPicior": "Tip nogica (Häfele)"
   },
   "fata": {
     "px": "desno",

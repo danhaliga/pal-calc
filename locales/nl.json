@@ -35,7 +35,9 @@
     "limba": "Taal",
     "alegeLimba": "Taal kiezen",
     "schimbaLimba": "Taal wijzigen",
-    "colt": "hoek"
+    "colt": "hoek",
+    "dimPicioare": "H {h} + poten {p} = {t}",
+    "dimFaraPicioare": "zonder poten"
   },
   "nav": {
     "comenzi": "Opdrachten",
@@ -783,7 +785,18 @@
       "cosJolly": "Apothekerskorf voor kast van {lat} mm",
       "obsCosJolly": "gekozen op de kastbreedte; het front zit erop",
       "sistemGlisant": "Schuifdeursysteem (rails en rollen)",
-      "obsSistemGlisant": "{n} deuren, kast van {lat} mm"
+      "obsSistemGlisant": "{n} deuren, kast van {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (verstelling {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Montageplaat voor poot {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Plintclip — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (verstelling {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Verstelbare poot, 2-delig",
+      "otel": "Verstelbare poot van verzinkt staal",
+      "aluVizibil": "Zichtbare aluminium poot, vierkant 40 mm"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "Het stompe kader (zijkanten op de bodem, bovenblad ertussen) gaat alleen bij de trapvorm. Hier is het kader in verstek.",
     "sertareGolRest": "De ladefronten vullen de kast niet: er blijft {gol} mm over. Zet “r” bij een van de fronten zodat die de rest krijgt.",
     "sertarePreaMari": "De ladefronten zijn {mm} mm groter dan de kast. Maak er een kleiner of gebruik “r”.",
-    "frontSertarPreaMic": "Een ladefront is kleiner dan 40 mm: er past geen lade achter."
+    "frontSertarPreaMic": "Een ladefront is kleiner dan 40 mm: er past geen lade achter.",
+    "plintaPicior": "De plint van {plinta} mm past niet bij de gekozen poten (verstelling {min}–{max} mm). Kies poten met een andere hoogte of een andere plint."
   },
   "csv": {
     "corp": "Kast",
@@ -1558,7 +1572,8 @@
     "colCutie": "Lade (mm)",
     "notaFronturi": "Van boven naar beneden. Vul bij het front mm in, “r” voor de rest (gelijk verdeeld over alle “r”) of een percentage van de totale hoogte, bijvoorbeeld 50%. De lade wordt berekend uit het front (front min 40 mm, afgerond op 60, 80, 100, 120, 150 of 180); je kunt hem ook zelf invullen.",
     "familieRapid": "Familie",
-    "configRapideNota2": "Eén klik plaatst de gekozen kast. Bij de onderkast blijven je breedte en hoogte behouden; bij de andere families worden ook de afmetingen ingesteld, zoals bij de oude catalogus-kaart. Je kunt ook uit een andere familie kiezen."
+    "configRapideNota2": "Eén klik plaatst de gekozen kast. Bij de onderkast blijven je breedte en hoogte behouden; bij de andere families worden ook de afmetingen ingesteld, zoals bij de oude catalogus-kaart. Je kunt ook uit een andere familie kiezen.",
+    "tipPicior": "Type poten (Häfele)"
   },
   "fata": {
     "px": "rechts",

@@ -27,6 +27,28 @@
   var NUT_AD = 8;        /* adancimea nutului */
   var PFL_SERTAR = 3;    /* grosimea fundului de sertar */
 
+  /* ---- picioarele de sub corp, din catalogul Häfele ----
+
+     Corpul de jos fără soclu stă pe picioare reglabile; cât de înalte sunt
+     schimbă înălțimea totală a bucătăriei și plinta care se potrivește.
+     Codurile și reglajele sunt cele din catalogul Häfele (verificate pe
+     1 octombrie 2026 la distribuitori). AXILO se prind într-un suport
+     înșurubat sub fund; piciorul vizibil e pentru mobila fără plintă. */
+  var PICIOARE_HAFELE = {
+    'axilo78-80':  { fam: 'axilo78', cod: '637.76.352', h: 80,  min: 70,  max: 100, suport: '637.76.333', clema: '637.38.054' },
+    'axilo78-100': { fam: 'axilo78', cod: '637.76.353', h: 100, min: 90,  max: 120, suport: '637.76.333', clema: '637.38.054' },
+    'axilo78-125': { fam: 'axilo78', cod: '637.76.354', h: 125, min: 115, max: 145, suport: '637.76.333', clema: '637.38.054' },
+    'axilo78-150': { fam: 'axilo78', cod: '637.76.355', h: 150, min: 140, max: 170, suport: '637.76.333', clema: '637.38.054' },
+    'axilo48-80':  { fam: 'axilo48', cod: '637.45.330', h: 80,  min: 75,  max: 92,  suport: '637.38.404', clema: '637.83.391' },
+    'axilo48-100': { fam: 'axilo48', cod: '637.45.331', h: 100, min: 92,  max: 120, suport: '637.38.404', clema: '637.83.391' },
+    'axilo48-120': { fam: 'axilo48', cod: '637.45.332', h: 120, min: 105, max: 140, suport: '637.38.404', clema: '637.83.391' },
+    'logo-100':    { fam: 'logo',    cod: '637.83.332', h: 100, min: 95,  max: 115, clema: '637.83.391' },
+    'otel-90':     { fam: 'otel',    cod: '637.59.901', h: 90,  min: 85,  max: 110 },
+    'alu-100':     { fam: 'aluVizibil', cod: '634.24.933', h: 100, min: 100, max: 110, vizibil: true }
+  };
+  var PICIOR_IMPLICIT = 'axilo78-100';
+  function picior(id) { return PICIOARE_HAFELE[id] || PICIOARE_HAFELE[PICIOR_IMPLICIT]; }
+
   /* ---- împărțirea fronturilor de sertar ----
 
      `sertareH` e lista fronturilor, de sus în jos, cu virgulă: un număr
@@ -137,6 +159,7 @@
          nimic din PAL: picioarele și plinta intră la feronerie (vezi
          shared/raport.js). Cu soclu pus, soclul câștigă. */
       picioare: 0,
+      picior: 'axilo78-100',
       /* Lățimea traverselor de sus. 0 înseamnă blat întreg, adică felul de
          până acum. Peste 0, în locul blatului se pun două traverse — una
          în față, una în spate — fiindcă sub blatul de bucătărie un panou
@@ -1837,9 +1860,21 @@
       avert('usiJosFaraPolita');
     }
 
-    return { P: P, warn: warn, avertismente: avertismente, manere: manere,
+    /* stă pe picioare: le-a cerut și n-a primit soclu */
+    var peP = !!(+c.picioare) && !(+soclu > 0);
+        return { P: P, warn: warn, avertismente: avertismente, manere: manere,
              deComandat: deComandat, sticla3d: sticla3d, usi: scoateFronturile(usi), Wint: Wint, Hint: Hint, Dint: Dint,
              W: W, H: H, D: D, soclu: soclu,
+             /* picioarele: tipul, înălțimea totală și cele patru, pentru 3D */
+             picior: peP ? Object.assign({ id: c.picior in PICIOARE_HAFELE ? c.picior : PICIOR_IMPLICIT }, picior(c.picior)) : null,
+             inaltimeTotala: H + (peP ? picior(c.picior).h : 0),
+             picioare3d: peP ? (function () {
+               var p = picior(c.picior), g = 40, m = 50, o = [];
+               [[m, m], [W - m - g, m], [m, D - m - g], [W - m - g, D - m - g]].forEach(function (q) {
+                 o.push(bx(q[0], -p.h, q[1], g, p.h, g, F({ px: 'p', nx: 'p', py: 'p', ny: 'p', pz: 'p', nz: 'p' }), [0, -1, 0], 'manere'));
+               });
+               return o;
+             })() : [],
              /* fronturile și cutiile de sertar, de sus în jos, gata socotite */
              sertare: nSer > 0 ? SRT.hs.map(function (h, k) { return { front: h, cutie: SRT.hcs[k] }; }) : [] };
   }
@@ -1904,6 +1939,7 @@
         constr: z.enum(['intre', 'peste']),
         soclu: mm(0, 300).catch(0),
         picioare: int(0, 1).catch(0),
+        picior: z.string().trim().max(30).catch('axilo78-100'),
         traverse: mm(0, TRAVERSA_MAX).catch(0),
         /* Un semn, nu o cotă: 0 sau 1. Orice altceva înseamnă corp cu
            fronturi — felul de până acum, adică cel în care nu se pierde
@@ -2012,7 +2048,7 @@
     coteSubScara: coteSubScara,
     reducereCant: reducereCant,
     compartimenteAlese: compartimenteAlese,
-    TIPURI: TIPURI,
+    TIPURI: TIPURI, PICIOARE_HAFELE: PICIOARE_HAFELE, PICIOR_IMPLICIT: PICIOR_IMPLICIT,
     paramsSchema: paramsSchema,
     NUT_OFF: NUT_OFF,
     NUT_AD: NUT_AD,

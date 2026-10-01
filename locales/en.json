@@ -35,7 +35,9 @@
     "limba": "Language",
     "alegeLimba": "Choose language",
     "schimbaLimba": "Change language",
-    "colt": "corner"
+    "colt": "corner",
+    "dimPicioare": "H {h} + legs {p} = {t}",
+    "dimFaraPicioare": "no legs"
   },
   "nav": {
     "comenzi": "Orders",
@@ -783,7 +785,18 @@
       "cosJolly": "Pull-out basket for {lat} mm cabinet",
       "obsCosJolly": "chosen by cabinet width; the front is fixed to it",
       "sistemGlisant": "Sliding door system (tracks and rollers)",
-      "obsSistemGlisant": "{n} doors, {lat} mm cabinet"
+      "obsSistemGlisant": "{n} doors, {lat} mm cabinet",
+      "piciorTip": "{fam}, H {h} mm (adj. {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Mounting plate for {fam} leg — Häfele {cod}",
+      "clemaPlintaCod": "Plinth clip — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (adj. {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "2-part adjustable leg",
+      "otel": "Galvanized steel adjustable leg",
+      "aluVizibil": "Visible aluminium foot, 40 mm square"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "The butt-jointed frame (sides on the base, top between them) only works for the under-stairs shape. Here the frame is mitred.",
     "sertareGolRest": "The drawer fronts don't fill the cabinet: {gol} mm left. Put “r” on one of the fronts so it takes the rest.",
     "sertarePreaMari": "The drawer fronts are {mm} mm taller than the cabinet. Make one of them smaller or use “r”.",
-    "frontSertarPreaMic": "A drawer front is under 40 mm: no drawer box fits behind it."
+    "frontSertarPreaMic": "A drawer front is under 40 mm: no drawer box fits behind it.",
+    "plintaPicior": "The {plinta} mm plinth does not fit the selected legs (adjustment {min}–{max} mm). Choose legs of a different height or a different plinth."
   },
   "csv": {
     "corp": "Cabinet",
@@ -1558,7 +1572,8 @@
     "colCutie": "Box (mm)",
     "notaFronturi": "Top to bottom. For each front, type mm, “r” for rest (shared equally among all “r” fronts) or a percentage of the total height, e.g. 50%. The box is calculated from the front (front minus 40 mm, rounded to 60, 80, 100, 120, 150 or 180); you can also type it by hand.",
     "familieRapid": "Family",
-    "configRapideNota2": "One click places the chosen cabinet. For the base cabinet you keep your width and height; for the other families the dimensions are set too, as on the old catalog card. You can also pick from another family."
+    "configRapideNota2": "One click places the chosen cabinet. For the base cabinet you keep your width and height; for the other families the dimensions are set too, as on the old catalog card. You can also pick from another family.",
+    "tipPicior": "Leg type (Häfele)"
   },
   "fata": {
     "px": "right",

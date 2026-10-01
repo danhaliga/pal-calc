@@ -168,6 +168,7 @@ router.get('/corps/:id', requireAuth, (req, res, next) => {
     cheiModel: cheileModelului(req.query.model),
     /* butoanele „Configurări rapide" ale corpului de jos */
     configRapide: PalModels.configurariRapide(req.t),
+    picioareHafele: PalCalc.PICIOARE_HAFELE,
     /* Când corpul stă într-o comandă, placa și cantul vin din materialul
        comenzii, nu din browser. Editorul sare atunci peste grupa „material". */
     matFixat: !!corp.mat_corp_id,

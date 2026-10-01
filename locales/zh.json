@@ -35,7 +35,9 @@
     "limba": "语言",
     "alegeLimba": "选择语言",
     "schimbaLimba": "切换语言",
-    "colt": "转角"
+    "colt": "转角",
+    "dimPicioare": "H {h} + 柜脚 {p} = {t}",
+    "dimFaraPicioare": "无柜脚"
   },
   "nav": {
     "comenzi": "订单",
@@ -783,7 +785,18 @@
       "cosJolly": "{lat} 毫米柜用 Jolly 拉篮",
       "obsCosJolly": "按柜宽选择；面板固定在其上",
       "sistemGlisant": "移门系统（轨道和滑轮）",
-      "obsSistemGlisant": "{n} 扇门，{lat} 毫米柜"
+      "obsSistemGlisant": "{n} 扇门，{lat} 毫米柜",
+      "piciorTip": "{fam}, H {h} mm (调节 {min}–{max}) — Häfele {cod}",
+      "suportPicior": "{fam} 柜脚安装座 — Häfele {cod}",
+      "clemaPlintaCod": "踢脚板卡扣 — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (调节 {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "两件式调节脚",
+      "otel": "镀锌钢调节脚",
+      "aluVizibil": "外露铝合金脚，40 mm 方形"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "直角对接的框架（侧板立在底板上、顶板夹在中间）只适用于楼梯下形状。这里框架用斜接。",
     "sertareGolRest": "抽屉面板未填满柜体：还剩 {gol} mm。在其中一个面板填“r”以占用剩余部分。",
     "sertarePreaMari": "抽屉面板比柜体高出 {mm} mm。请缩小其中一个或填“r”。",
-    "frontSertarPreaMic": "有抽屉面板小于 40 mm：后面放不下任何抽屉。"
+    "frontSertarPreaMic": "有抽屉面板小于 40 mm：后面放不下任何抽屉。",
+    "plintaPicior": "{plinta} mm 踢脚板与所选柜脚不匹配（调节 {min}–{max} mm）。请选择其他高度的柜脚或其他踢脚板。"
   },
   "csv": {
     "corp": "柜体",
@@ -1558,7 +1572,8 @@
     "colCutie": "抽屉 (mm)",
     "notaFronturi": "从上到下。面板处可填 mm、“r”表示剩余（在所有“r”之间平均分配），或总高度的百分比，例如 50%。抽屉根据面板计算（面板减 40 mm，取整到 60、80、100、120、150 或 180）；也可以手动填写。",
     "familieRapid": "系列",
-    "configRapideNota2": "单击即可放置所选柜体。地柜保留您的宽度和高度；其他系列也会套用尺寸，与旧目录卡片相同。也可以从其他系列中选择。"
+    "configRapideNota2": "单击即可放置所选柜体。地柜保留您的宽度和高度；其他系列也会套用尺寸，与旧目录卡片相同。也可以从其他系列中选择。",
+    "tipPicior": "柜脚类型 (Häfele)"
   },
   "fata": {
     "px": "右",

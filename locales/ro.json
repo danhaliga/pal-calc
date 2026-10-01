@@ -35,7 +35,9 @@
     "limba": "Limba",
     "alegeLimba": "Alege limba",
     "schimbaLimba": "Schimbă limba",
-    "colt": "colț"
+    "colt": "colț",
+    "dimPicioare": "H {h} + picioare {p} = {t}",
+    "dimFaraPicioare": "fără picioare"
   },
   "nav": {
     "comenzi": "Comenzi",
@@ -789,7 +791,18 @@
       "cosJolly": "Coș Jolly pentru corp de {lat} mm",
       "obsCosJolly": "se alege după lățimea corpului; frontul se prinde pe el",
       "sistemGlisant": "Sistem pentru uși glisante (șine și role)",
-      "obsSistemGlisant": "{n} uși, corp de {lat} mm"
+      "obsSistemGlisant": "{n} uși, corp de {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (reglaj {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Suport pentru picior {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Clemă de plintă — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (reglaj {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Picior reglabil din 2 componente",
+      "otel": "Picior reglabil din oțel zincat",
+      "aluVizibil": "Picior vizibil din aluminiu, pătrat 40 mm"
     }
   },
   "piesa": {
@@ -929,7 +942,8 @@
     "imbinareDreaptaNuMerge": "Îmbinarea dreaptă (laterale pe bază, tavan între ele) merge numai la forma de sub scară. Aici rama s-a făcut în unghi.",
     "sertareGolRest": "Fronturile de sertar nu umplu corpul: rămân {gol} mm. Pune „r” la unul dintre fronturi ca să ia restul.",
     "sertarePreaMari": "Fronturile de sertar sunt mai mari decât corpul cu {mm} mm. Micșorează unul dintre ele sau pune „r”.",
-    "frontSertarPreaMic": "Un front de sertar are sub 40 mm: nu încape nicio cutie în spatele lui."
+    "frontSertarPreaMic": "Un front de sertar are sub 40 mm: nu încape nicio cutie în spatele lui.",
+    "plintaPicior": "Plinta de {plinta} mm nu se potrivește cu picioarele alese (reglaj {min}–{max} mm). Alege picioare de altă înălțime sau altă plintă."
   },
   "csv": {
     "corp": "Corp",
@@ -1569,7 +1583,8 @@
     "colCutie": "Cutie (mm)",
     "notaFronturi": "De sus în jos. La front scrii mm, „r” pentru rest (se împarte egal între toate „r”-urile) sau un procent din tot frontul, de exemplu 50%. Cutia se calculează din front (frontul minus 40 mm, rotunjit la 60, 80, 100, 120, 150 sau 180); o poți scrie și de mână.",
     "familieRapid": "Familia",
-    "configRapideNota2": "Un clic pune corpul ales. La corpul de jos îți rămân lățimea și înălțimea; la celelalte familii se pun și dimensiunile, ca la cardul vechi din catalog. Poți alege și din altă familie."
+    "configRapideNota2": "Un clic pune corpul ales. La corpul de jos îți rămân lățimea și înălțimea; la celelalte familii se pun și dimensiunile, ca la cardul vechi din catalog. Poți alege și din altă familie.",
+    "tipPicior": "Tipul picioarelor (Häfele)"
   },
   "fata": {
     "px": "dreapta",

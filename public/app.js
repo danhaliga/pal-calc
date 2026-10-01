@@ -13,7 +13,7 @@ var params = DATA.params;
 var paid = !!DATA.paid;
 
 var fields = ['nume','tip','W','H','D','W2','orb','constr','soclu','picioare','traverse','t','cg','cs','spate','tp','faraFront','usiSticla','jolly','imbinare','capatLaterala','nUsi','montaj','balama','supr','hSine',
-              'rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','sertareJos','hFront','hCutie','jg','ts','lg','maner','manerDir','manerPoz','manerL',
+              'picior','rm','ri','rinc','hUsi','hNisa','nDsp','nPol','jp','rp','nSer','sertareJos','hFront','hCutie','jg','ts','lg','maner','manerDir','manerPoz','manerL',
               'pBuc','pFibra','pcL1','pcL2','pcl1','pcl2'];
 
 /* Compartimentele care primesc uși. Bife, nu un câmp de scris: numerele se
@@ -64,6 +64,8 @@ function aplicaTip() {
      are ce căuta acolo se ascunde, nu se lasă gri: un formular plin de
      câmpuri fără rost e mai rău decât unul scurt. */
   arata('fsPiesa', piesa);
+  /* tipul picioarelor: numai când corpul chiar stă pe ele */
+  arata('wrapPicior', !piesa && !!+params.picioare && !(+params.soclu > 0));
   /* configurările rapide sunt ale corpului de jos: drept și nu mai înalt de 1 m */
   arata('fsRapid', !piesa && (DATA.configRapide || []).length > 0);
   if (piesa) {
@@ -799,6 +801,16 @@ function render() {
     }).join('');
 
   renderTable();
+  /* înălțimea totală, cu picioare */
+  var hT = $('hTotal');
+  if (hT) {
+    hT.textContent = res.picior
+      ? T('comun.dimPicioare', { h: params.H, p: res.picior.h, t: res.inaltimeTotala }) + ' mm · ' +
+        T('fero.optPicior', { fam: T('fero.piciorFam.' + res.picior.fam), h: res.picior.h, min: res.picior.min, max: res.picior.max }) +
+        ' · Häfele ' + res.picior.cod
+      : '';
+    hT.classList.toggle('hidden', !res.picior);
+  }
   randeazaSertare();
   randeazaRapide();
   $('formule').innerHTML = formule(params, res);
@@ -980,6 +992,16 @@ function build3D(c, res) {
   /* Manerele nu sunt piese de taiat, deci nu stau in `res.P` si n-au rand in
      lista. Intra aici, cu grupa lor, ca sa se poata stinge singure — cine se
      uita la imbinari nu vrea barele in fata. */
+  /* Picioarele de sub corp: nici ele nu se taie, se văd doar, cu mânerele. */
+  (res.picioare3d || []).forEach(function (b, bi) {
+    var geoP = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
+    var meshP = new THREE.Mesh(geoP, V3.mats.m);
+    meshP.userData = { p: null, pi: -1, bi: bi, b: b,
+                       base: [b.x + b.sx / 2, b.y + b.sy / 2, b.z + b.sz / 2] };
+    meshP.add(new THREE.LineSegments(new THREE.EdgesGeometry(geoP), V3.lineMat));
+    g.add(meshP); V3.meshes.push(meshP);
+  });
+
   (res.manere || []).forEach(function (b, bi) {
     var geoM = new THREE.BoxGeometry(b.sx, b.sy, b.sz);
     var meshM = new THREE.Mesh(geoM, V3.mats.m);

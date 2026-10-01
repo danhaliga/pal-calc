@@ -35,7 +35,9 @@
     "limba": "언어",
     "alegeLimba": "언어 선택",
     "schimbaLimba": "언어 바꾸기",
-    "colt": "코너"
+    "colt": "코너",
+    "dimPicioare": "H {h} + 다리 {p} = {t}",
+    "dimFaraPicioare": "다리 없음"
   },
   "nav": {
     "comenzi": "주문",
@@ -783,7 +785,18 @@
       "cosJolly": "{lat} mm 장용 Jolly 바스켓",
       "obsCosJolly": "장 폭에 맞춰 고름; 앞판을 여기에 고정",
       "sistemGlisant": "미닫이문 시스템 (레일과 롤러)",
-      "obsSistemGlisant": "문 {n}개, {lat} mm 장"
+      "obsSistemGlisant": "문 {n}개, {lat} mm 장",
+      "piciorTip": "{fam}, H {h} mm (조절 {min}–{max}) — Häfele {cod}",
+      "suportPicior": "{fam} 다리용 장착 플레이트 — Häfele {cod}",
+      "clemaPlintaCod": "걸레받이 클립 — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (조절 {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "2피스 조절 다리",
+      "otel": "아연도금 강철 조절 다리",
+      "aluVizibil": "노출형 알루미늄 다리, 40 mm 사각"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "맞대기 프레임(측판을 밑판 위에, 천판을 사이에)은 계단 밑 형태에서만 됩니다. 여기서는 연귀 맞춤으로 했습니다.",
     "sertareGolRest": "서랍 전면판이 캐비닛을 채우지 않습니다: {gol} mm 남습니다. 전면판 하나에 “r”을 넣어 나머지를 채우세요.",
     "sertarePreaMari": "서랍 전면판이 캐비닛보다 {mm} mm 큽니다. 하나를 줄이거나 “r”을 넣으세요.",
-    "frontSertarPreaMic": "40 mm 미만인 서랍 전면판이 있습니다: 뒤에 서랍이 들어가지 않습니다."
+    "frontSertarPreaMic": "40 mm 미만인 서랍 전면판이 있습니다: 뒤에 서랍이 들어가지 않습니다.",
+    "plintaPicior": "{plinta} mm 걸레받이가 선택한 다리와 맞지 않습니다(조절 {min}–{max} mm). 다른 높이의 다리나 다른 걸레받이를 선택하세요."
   },
   "csv": {
     "corp": "캐비닛",
@@ -1558,7 +1572,8 @@
     "colCutie": "서랍 (mm)",
     "notaFronturi": "위에서 아래로. 전면판에 mm, 나머지는 “r”(모든 “r”에 균등 분배), 또는 전체 높이의 비율(예: 50%)을 입력하세요. 서랍은 전면판에서 계산됩니다(전면판에서 40 mm를 빼고 60, 80, 100, 120, 150 또는 180으로 반올림). 직접 입력해도 됩니다.",
     "familieRapid": "패밀리",
-    "configRapideNota2": "한 번 클릭하면 선택한 캐비닛이 배치됩니다. 하부장은 너비와 높이가 그대로 유지되고, 다른 패밀리는 예전 카탈로그 카드처럼 치수도 함께 적용됩니다. 다른 패밀리에서도 고를 수 있습니다."
+    "configRapideNota2": "한 번 클릭하면 선택한 캐비닛이 배치됩니다. 하부장은 너비와 높이가 그대로 유지되고, 다른 패밀리는 예전 카탈로그 카드처럼 치수도 함께 적용됩니다. 다른 패밀리에서도 고를 수 있습니다.",
+    "tipPicior": "다리 종류 (Häfele)"
   },
   "fata": {
     "px": "오른쪽",

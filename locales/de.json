@@ -35,7 +35,9 @@
     "limba": "Sprache",
     "alegeLimba": "Sprache wählen",
     "schimbaLimba": "Sprache wechseln",
-    "colt": "Ecke"
+    "colt": "Ecke",
+    "dimPicioare": "H {h} + Füße {p} = {t}",
+    "dimFaraPicioare": "ohne Füße"
   },
   "nav": {
     "comenzi": "Aufträge",
@@ -783,7 +785,18 @@
       "cosJolly": "Apothekerauszug für {lat}-mm-Korpus",
       "obsCosJolly": "wird nach der Korpusbreite gewählt; die Front sitzt darauf",
       "sistemGlisant": "Schiebetürsystem (Schienen und Rollen)",
-      "obsSistemGlisant": "{n} Türen, Korpus {lat} mm"
+      "obsSistemGlisant": "{n} Türen, Korpus {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (Verstellung {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Montageplatte für Fuß {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Sockelclip — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (Verstellung {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "2-teiliger Stellfuß",
+      "otel": "Stellfuß aus verzinktem Stahl",
+      "aluVizibil": "Sichtbarer Aluminiumfuß, 40 mm quadratisch"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "Der stumpf verbundene Rahmen (Seiten auf dem Boden, Deckel dazwischen) geht nur bei der Treppenform. Hier ist er auf Gehrung.",
     "sertareGolRest": "Die Schubladenfronten füllen den Korpus nicht aus: Es bleiben {gol} mm übrig. Setzen Sie „r“ bei einer der Fronten, damit sie den Rest übernimmt.",
     "sertarePreaMari": "Die Schubladenfronten sind {mm} mm größer als der Korpus. Verkleinern Sie eine davon oder setzen Sie „r“.",
-    "frontSertarPreaMic": "Eine Schubladenfront ist kleiner als 40 mm: Dahinter passt keine Zarge."
+    "frontSertarPreaMic": "Eine Schubladenfront ist kleiner als 40 mm: Dahinter passt keine Zarge.",
+    "plintaPicior": "Die Sockelblende {plinta} mm passt nicht zu den gewählten Füßen (Verstellung {min}–{max} mm). Wählen Sie Füße mit anderer Höhe oder eine andere Sockelblende."
   },
   "csv": {
     "corp": "Korpus",
@@ -1558,7 +1572,8 @@
     "colCutie": "Zarge (mm)",
     "notaFronturi": "Von oben nach unten. Geben Sie bei der Front mm ein, „r“ für den Rest (wird gleichmäßig auf alle „r“ verteilt) oder einen Prozentsatz der Gesamthöhe, z. B. 50%. Die Zarge wird aus der Front berechnet (Front minus 40 mm, gerundet auf 60, 80, 100, 120, 150 oder 180); Sie können sie auch von Hand eingeben.",
     "familieRapid": "Familie",
-    "configRapideNota2": "Ein Klick setzt den gewählten Schrank ein. Beim Unterschrank bleiben Ihre Breite und Höhe erhalten; bei den anderen Familien werden auch die Maße übernommen, wie bei der alten Katalogkarte. Sie können auch aus einer anderen Familie wählen."
+    "configRapideNota2": "Ein Klick setzt den gewählten Schrank ein. Beim Unterschrank bleiben Ihre Breite und Höhe erhalten; bei den anderen Familien werden auch die Maße übernommen, wie bei der alten Katalogkarte. Sie können auch aus einer anderen Familie wählen.",
+    "tipPicior": "Fußtyp (Häfele)"
   },
   "fata": {
     "px": "rechts",

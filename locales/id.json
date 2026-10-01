@@ -35,7 +35,9 @@
     "limba": "Bahasa",
     "alegeLimba": "Pilih bahasa",
     "schimbaLimba": "Ganti bahasa",
-    "colt": "sudut"
+    "colt": "sudut",
+    "dimPicioare": "H {h} + kaki {p} = {t}",
+    "dimFaraPicioare": "tanpa kaki"
   },
   "nav": {
     "comenzi": "Pesanan",
@@ -783,7 +785,18 @@
       "cosJolly": "Keranjang Jolly untuk kabinet {lat} mm",
       "obsCosJolly": "dipilih menurut lebar kabinet; muka dipasang padanya",
       "sistemGlisant": "Sistem pintu geser (rel dan roda)",
-      "obsSistemGlisant": "{n} pintu, kabinet {lat} mm"
+      "obsSistemGlisant": "{n} pintu, kabinet {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (setelan {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Pelat dudukan untuk kaki {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Klip plint — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (setelan {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Kaki setel 2 bagian",
+      "otel": "Kaki setel baja galvanis",
+      "aluVizibil": "Kaki aluminium terlihat, persegi 40 mm"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "Rangka sambungan lurus (sisi di atas alas, atap di antaranya) hanya untuk bentuk bawah tangga. Di sini rangka disambung miring.",
     "sertareGolRest": "Depan laci tidak mengisi kabinet: tersisa {gol} mm. Tulis “r” di salah satu depan laci agar mengambil sisanya.",
     "sertarePreaMari": "Depan laci lebih besar {mm} mm dari kabinet. Perkecil salah satunya atau tulis “r”.",
-    "frontSertarPreaMic": "Ada depan laci di bawah 40 mm: tidak ada laci yang muat di belakangnya."
+    "frontSertarPreaMic": "Ada depan laci di bawah 40 mm: tidak ada laci yang muat di belakangnya.",
+    "plintaPicior": "Plint {plinta} mm tidak cocok dengan kaki yang dipilih (setelan {min}–{max} mm). Pilih kaki dengan tinggi lain atau plint lain."
   },
   "csv": {
     "corp": "Boks",
@@ -1558,7 +1572,8 @@
     "colCutie": "Laci (mm)",
     "notaFronturi": "Dari atas ke bawah. Di kolom depan, tulis mm, “r” untuk sisa (dibagi rata ke semua “r”) atau persentase dari tinggi total, misalnya 50%. Laci dihitung dari depan (depan dikurangi 40 mm, dibulatkan ke 60, 80, 100, 120, 150, atau 180); kamu juga bisa menulisnya manual.",
     "familieRapid": "Keluarga",
-    "configRapideNota2": "Satu klik memasang kabinet yang dipilih. Pada kabinet bawah, lebar dan tinggi Anda tetap; pada keluarga lain ukurannya juga dipasang, seperti pada kartu katalog lama. Anda juga bisa memilih dari keluarga lain."
+    "configRapideNota2": "Satu klik memasang kabinet yang dipilih. Pada kabinet bawah, lebar dan tinggi Anda tetap; pada keluarga lain ukurannya juga dipasang, seperti pada kartu katalog lama. Anda juga bisa memilih dari keluarga lain.",
+    "tipPicior": "Jenis kaki (Häfele)"
   },
   "fata": {
     "px": "kanan",

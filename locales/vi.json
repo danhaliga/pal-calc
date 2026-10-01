@@ -35,7 +35,9 @@
     "limba": "Ngôn ngữ",
     "alegeLimba": "Chọn ngôn ngữ",
     "schimbaLimba": "Đổi ngôn ngữ",
-    "colt": "góc"
+    "colt": "góc",
+    "dimPicioare": "H {h} + chân {p} = {t}",
+    "dimFaraPicioare": "không chân"
   },
   "nav": {
     "comenzi": "Đơn hàng",
@@ -783,7 +785,18 @@
       "cosJolly": "Giỏ Jolly cho tủ {lat} mm",
       "obsCosJolly": "chọn theo chiều rộng tủ; mặt tủ gắn vào giỏ",
       "sistemGlisant": "Hệ cửa trượt (ray và bánh xe)",
-      "obsSistemGlisant": "{n} cánh, tủ {lat} mm"
+      "obsSistemGlisant": "{n} cánh, tủ {lat} mm",
+      "piciorTip": "{fam}, H {h} mm (chỉnh {min}–{max}) — Häfele {cod}",
+      "suportPicior": "Đế lắp cho chân {fam} — Häfele {cod}",
+      "clemaPlintaCod": "Kẹp len chân — Häfele {cod}"
+    },
+    "optPicior": "{fam} · H {h} mm (chỉnh {min}–{max})",
+    "piciorFam": {
+      "axilo78": "AXILO 78",
+      "axilo48": "AXILO 48",
+      "logo": "Chân tăng chỉnh 2 phần",
+      "otel": "Chân tăng chỉnh bằng thép mạ kẽm",
+      "aluVizibil": "Chân nhôm lộ, vuông 40 mm"
     }
   },
   "piesa": {
@@ -923,7 +936,8 @@
     "imbinareDreaptaNuMerge": "Khung ghép thẳng (hông trên đáy, nóc ở giữa) chỉ dùng cho dạng dưới cầu thang. Ở đây khung ghép vát góc.",
     "sertareGolRest": "Các mặt ngăn kéo chưa lấp đầy thùng: còn dư {gol} mm. Đặt “r” cho một mặt để nó nhận phần còn lại.",
     "sertarePreaMari": "Các mặt ngăn kéo lớn hơn thùng {mm} mm. Hãy giảm một mặt hoặc đặt “r”.",
-    "frontSertarPreaMic": "Có mặt ngăn kéo dưới 40 mm: không ngăn kéo nào vừa phía sau."
+    "frontSertarPreaMic": "Có mặt ngăn kéo dưới 40 mm: không ngăn kéo nào vừa phía sau.",
+    "plintaPicior": "Len chân {plinta} mm không phù hợp với chân đã chọn (chỉnh {min}–{max} mm). Hãy chọn chân có chiều cao khác hoặc len chân khác."
   },
   "csv": {
     "corp": "Thùng tủ",
@@ -1558,7 +1572,8 @@
     "colCutie": "Ngăn kéo (mm)",
     "notaFronturi": "Từ trên xuống dưới. Ở mặt, bạn nhập mm, “r” cho phần còn lại (chia đều cho tất cả các “r”) hoặc phần trăm tổng chiều cao, ví dụ 50%. Ngăn kéo được tính từ mặt (mặt trừ 40 mm, làm tròn thành 60, 80, 100, 120, 150 hoặc 180); bạn cũng có thể tự nhập.",
     "familieRapid": "Nhóm",
-    "configRapideNota2": "Một cú nhấp sẽ đặt tủ đã chọn. Với tủ dưới, bạn giữ nguyên chiều rộng và chiều cao; với các nhóm khác, kích thước cũng được áp dụng, như thẻ danh mục cũ. Bạn cũng có thể chọn từ nhóm khác."
+    "configRapideNota2": "Một cú nhấp sẽ đặt tủ đã chọn. Với tủ dưới, bạn giữ nguyên chiều rộng và chiều cao; với các nhóm khác, kích thước cũng được áp dụng, như thẻ danh mục cũ. Bạn cũng có thể chọn từ nhóm khác.",
+    "tipPicior": "Loại chân (Häfele)"
   },
   "fata": {
     "px": "phải",
