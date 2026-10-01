@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Alsószekrény 2 ajtóval",
-        "descriere": "A szabványos korpusz a munkalap alatt, egy belső polccal.",
+        "nume": "Alsó szekrény",
+        "descriere": "A munkalap alatti korpusz. A szerkesztőben ajtókkal, egyenlő vagy eltérő fiókokkal, mosogatóhoz, sütőhöz vagy Jolly kosárhoz készítheted.",
         "corpNume": "Alsó 2 ajtós"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "A Jolly kosárnak egyetlen előlapja van, a keretére szerelve. Itt {n} ajtó van: legyen 1.",
     "jollyFaraPolite": "A Jolly kosár kitölti a teljes magasságot: a {n} polc nem fér el. Legyen 0 polc.",
     "jollyLatime": "Jolly kosarak {lista} mm-es szekrényekhez kaphatók. Ez {lat} mm — nézd meg, van-e hozzá kosár.",
-    "imbinareDreaptaNuMerge": "A tompa illesztésű keret (oldalak az aljon, tető köztük) csak a lépcső alatti formánál megy. Itt a keret gérbe készült."
+    "imbinareDreaptaNuMerge": "A tompa illesztésű keret (oldalak az aljon, tető köztük) csak a lépcső alatti formánál megy. Itt a keret gérbe készült.",
+    "sertareGolRest": "A fiókfrontok nem töltik ki a korpuszt: {gol} mm marad. Írj „r”-t az egyik fronthoz, hogy az vegye fel a maradékot.",
+    "sertarePreaMari": "A fiókfrontok {mm} mm-rel nagyobbak a korpusznál. Csökkentsd az egyiket, vagy írj „r”-t.",
+    "frontSertarPreaMic": "Egy fiókfront 40 mm alatti: mögé nem fér fiók."
   },
   "csv": {
     "corp": "Korpusz",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Az itteni elemek egy terméket alkotnak, és csak egyszer kell fizetni értük, akárhány van.",
     "adaugaPiesa": "+ Elem hozzáadása",
     "stergePiesa": "Elem törlése",
-    "denumirePiesa": "Megnevezés"
+    "denumirePiesa": "Megnevezés",
+    "configRapide": "Gyorsbeállítások",
+    "configRapideNota": "Egy kattintás beállítja az ajtókat, fiókokat, polcokat és a többi beállítást a választott korpusztípushoz. A szélesség és a magasság a tiéd marad, kivéve a Jolly kosarat, a keskeny korpuszt és a lábazatot.",
+    "impartireFronturi": "Frontok felosztása:",
+    "impEgale": "Egyenlő",
+    "impUnMic": "1 kicsi fent + 2",
+    "impJumatate": "Fele lent + 2 fent",
+    "impDouaMici": "2 kicsi + 1 nagy",
+    "colFront": "Front",
+    "colCutie": "Fiók (mm)",
+    "notaFronturi": "Fentről lefelé. A fronthoz írj mm-t, „r”-t a maradékhoz (egyenlően oszlik el az összes „r” között) vagy a teljes magasság százalékát, például 50%. A fiók a frontból számolódik (front mínusz 40 mm, kerekítve 60, 80, 100, 120, 150 vagy 180 értékre); kézzel is beírhatod."
   },
   "fata": {
     "px": "jobb",

@@ -367,8 +367,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Corp bază cu 2 uși",
-        "descriere": "Corpul standard de sub blat, cu o poliță interioară.",
+        "nume": "Corp de jos",
+        "descriere": "Corpul de sub blat. Din editor îl faci cu uși, cu sertare egale sau inegale, pentru chiuvetă, cuptor sau coș Jolly.",
         "corpNume": "Corp bază 2 uși"
       },
       "baza-1usa": {
@@ -926,7 +926,10 @@
     "jollyUnFront": "Coșul Jolly are un singur front, prins pe cadrul lui. Aici sunt cerute {n} uși: pune 1.",
     "jollyFaraPolite": "Coșul Jolly umple corpul pe toată înălțimea: cele {n} polițe n-au loc. Pune 0 la polițe.",
     "jollyLatime": "Coșurile Jolly se vând pentru corpuri de {lista} mm. Corpul are {lat} mm — verifică dacă găsești coș pentru el.",
-    "imbinareDreaptaNuMerge": "Îmbinarea dreaptă (laterale pe bază, tavan între ele) merge numai la forma de sub scară. Aici rama s-a făcut în unghi."
+    "imbinareDreaptaNuMerge": "Îmbinarea dreaptă (laterale pe bază, tavan între ele) merge numai la forma de sub scară. Aici rama s-a făcut în unghi.",
+    "sertareGolRest": "Fronturile de sertar nu umplu corpul: rămân {gol} mm. Pune „r” la unul dintre fronturi ca să ia restul.",
+    "sertarePreaMari": "Fronturile de sertar sunt mai mari decât corpul cu {mm} mm. Micșorează unul dintre ele sau pune „r”.",
+    "frontSertarPreaMic": "Un front de sertar are sub 40 mm: nu încape nicio cutie în spatele lui."
   },
   "csv": {
     "corp": "Corp",
@@ -1554,7 +1557,17 @@
     "pieseUnPret": "Toate piesele de aici sunt un singur produs și se plătesc o singură dată, oricâte ar fi.",
     "adaugaPiesa": "+ Adaugă piesă",
     "stergePiesa": "Șterge piesa",
-    "denumirePiesa": "Denumire"
+    "denumirePiesa": "Denumire",
+    "configRapide": "Configurări rapide",
+    "configRapideNota": "Un clic pune ușile, sertarele, polițele și restul setărilor pentru felul de corp ales. Lățimea și înălțimea rămân ale tale, în afară de coșul Jolly, corpul îngust și soclul.",
+    "impartireFronturi": "Împărțirea fronturilor:",
+    "impEgale": "Egale",
+    "impUnMic": "1 mic sus + 2",
+    "impJumatate": "Jumătate jos + 2 sus",
+    "impDouaMici": "2 mici + 1 mare",
+    "colFront": "Front",
+    "colCutie": "Cutie (mm)",
+    "notaFronturi": "De sus în jos. La front scrii mm, „r” pentru rest (se împarte egal între toate „r”-urile) sau un procent din tot frontul, de exemplu 50%. Cutia se calculează din front (frontul minus 40 mm, rotunjit la 60, 80, 100, 120, 150 sau 180); o poți scrie și de mână."
   },
   "fata": {
     "px": "dreapta",

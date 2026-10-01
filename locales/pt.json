@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Móvel baixo de 2 portas",
-        "descriere": "O módulo padrão sob a bancada, com uma prateleira interior.",
+        "nume": "Móvel baixo",
+        "descriere": "O móvel por baixo da bancada. No editor faz-se com portas, com gavetas iguais ou diferentes, para lava-loiça, forno ou cesto Jolly.",
         "corpNume": "Baixo 2 portas"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "O cesto Jolly tem uma só frente, fixa no caixilho. Aqui há {n} portas: ponha 1.",
     "jollyFaraPolite": "O cesto Jolly ocupa toda a altura: as {n} prateleiras não cabem. Ponha 0 prateleiras.",
     "jollyLatime": "Os cestos Jolly vendem-se para móveis de {lista} mm. Este tem {lat} mm — confirme se há cesto para ele.",
-    "imbinareDreaptaNuMerge": "A estrutura com uniões retas (ilhargas na base, tampo entre elas) só serve para a forma sob escada. Aqui fez-se em meia-esquadria."
+    "imbinareDreaptaNuMerge": "A estrutura com uniões retas (ilhargas na base, tampo entre elas) só serve para a forma sob escada. Aqui fez-se em meia-esquadria.",
+    "sertareGolRest": "As frentes das gavetas não enchem o móvel: sobram {gol} mm. Ponha “r” numa das frentes para ficar com o resto.",
+    "sertarePreaMari": "As frentes das gavetas excedem o móvel em {mm} mm. Reduza uma delas ou ponha “r”.",
+    "frontSertarPreaMic": "Uma frente de gaveta tem menos de 40 mm: não cabe nenhuma gaveta atrás dela."
   },
   "csv": {
     "corp": "Módulo",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Todas as peças aqui são um só artigo e pagam-se uma única vez, sejam quantas forem.",
     "adaugaPiesa": "+ Adicionar peça",
     "stergePiesa": "Eliminar peça",
-    "denumirePiesa": "Nome"
+    "denumirePiesa": "Nome",
+    "configRapide": "Configurações rápidas",
+    "configRapideNota": "Um clique define as portas, gavetas, prateleiras e o resto das definições para o tipo de móvel escolhido. A largura e a altura continuam suas, exceto no cesto Jolly, no móvel estreito e no rodapé.",
+    "impartireFronturi": "Divisão das frentes:",
+    "impEgale": "Iguais",
+    "impUnMic": "1 pequena em cima + 2",
+    "impJumatate": "Metade em baixo + 2 em cima",
+    "impDouaMici": "2 pequenas + 1 grande",
+    "colFront": "Frente",
+    "colCutie": "Gaveta (mm)",
+    "notaFronturi": "De cima para baixo. Na frente escreva mm, “r” para o resto (dividido igualmente entre todos os “r”) ou uma percentagem da altura total, por exemplo 50%. A gaveta é calculada a partir da frente (frente menos 40 mm, arredondada para 60, 80, 100, 120, 150 ou 180); também pode escrevê-la à mão."
   },
   "fata": {
     "px": "direita",

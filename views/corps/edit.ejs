@@ -142,6 +142,14 @@
         <p class="legend hidden" id="notaColt"></p>
       </fieldset>
 
+      <%# Corpul de jos are un singur card în catalog; felurile lui (uși,
+          sertare, chiuvetă, cuptor, Jolly…) se pun de aici dintr-un clic. %>
+      <fieldset id="fsRapid" class="hidden">
+        <legend><%= t('editor.configRapide') %></legend>
+        <div class="config-rapide" id="configRapide"></div>
+        <p class="legend"><%= t('editor.configRapideNota') %></p>
+      </fieldset>
+
       <%# Piesa simplă: un singur panou, cu cantul lui pe fiecare muchie.
           Se vede doar la tipul „piesă"; restul fieldset-urilor se ascund. %>
       <fieldset id="fsPiesa" class="hidden">
@@ -308,6 +316,26 @@
           <label><%= t('editor.palCutie') %><select id="ts"><option>16</option><option>18</option></select></label>
           <label><%= t('editor.lungimeGlisiera') %><input id="lg" type="number" step="50" min="0" max="1200" placeholder="<%= t('editor.auto') %>"></label>
         </div>
+        <%# Fronturile pot fi inegale: un sertar mic de tacâmuri sus, unul
+            mare de oale jos. Butoanele pun împărțiri obișnuite; tabelul
+            arată fiecare sertar, cu frontul și cutia lui. %>
+        <div class="sertare-impartire">
+          <span class="an-et"><%= t('editor.impartireFronturi') %></span>
+          <button type="button" class="pastila" data-impartire="egale"><%= t('editor.impEgale') %></button>
+          <button type="button" class="pastila" data-impartire="unMic"><%= t('editor.impUnMic') %></button>
+          <button type="button" class="pastila" data-impartire="jumatate"><%= t('editor.impJumatate') %></button>
+          <button type="button" class="pastila" data-impartire="douaMici"><%= t('editor.impDouaMici') %></button>
+        </div>
+        <div class="tbl hidden" id="sertareBox">
+          <table class="piese-extra sertare-tabel">
+            <thead><tr>
+              <th class="c">#</th><th class="c"><%= t('editor.colFront') %></th><th class="c">=</th>
+              <th class="c"><%= t('editor.colCutie') %></th>
+            </tr></thead>
+            <tbody id="sertareTabel"></tbody>
+          </table>
+          <p class="legend"><%= t('editor.notaFronturi') %></p>
+        </div>
       </fieldset>
 
       <%# Manerul sta in grupa lui, nu la usi: e si al sertarelor. Bifa
@@ -471,6 +499,7 @@
   nou: nou,
   matFixat: matFixat,
   cheiModel: cheiModel,
+  configRapide: configRapide,
   pePodea: pePodea,
   orderId: order ? order.id : null,
   pretCorp: priceLei,

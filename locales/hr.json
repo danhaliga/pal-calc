@@ -367,8 +367,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Donji element s 2 vrata",
-        "descriere": "Standardni korpus ispod radne ploče, s jednom policom unutra.",
+        "nume": "Donji element",
+        "descriere": "Korpus ispod radne ploče. U editoru ga radiš s vratima, s jednakim ili nejednakim ladicama, za sudoper, pećnicu ili Jolly košaru.",
         "corpNume": "Donji 2 vrata"
       },
       "baza-1usa": {
@@ -926,7 +926,10 @@
     "jollyUnFront": "Košara Jolly ima samo jedan front, na svom okviru. Ovdje je {n} vrata: stavi 1.",
     "jollyFaraPolite": "Košara Jolly zauzima cijelu visinu: {n} polica nema mjesta. Stavi 0 polica.",
     "jollyLatime": "Košare Jolly prodaju se za elemente od {lista} mm. Ovaj ima {lat} mm — provjeri postoji li košara za njega.",
-    "imbinareDreaptaNuMerge": "Korpus s ravnim spojevima (stranice na bazi, strop između njih) ide samo za oblik ispod stepenica. Ovdje je korpus na kut."
+    "imbinareDreaptaNuMerge": "Korpus s ravnim spojevima (stranice na bazi, strop između njih) ide samo za oblik ispod stepenica. Ovdje je korpus na kut.",
+    "sertareGolRest": "Fronte ladica ne popunjavaju korpus: ostaje {gol} mm. Stavi „r” na jednu od fronti da uzme ostatak.",
+    "sertarePreaMari": "Fronte ladica veće su od korpusa za {mm} mm. Smanji jednu od njih ili stavi „r”.",
+    "frontSertarPreaMic": "Fronta ladice ima manje od 40 mm: iza nje ne stane nijedna ladica."
   },
   "csv": {
     "corp": "Korpus",
@@ -1554,7 +1557,17 @@
     "pieseUnPret": "Svi dijelovi ovdje su jedan proizvod i plaćaju se samo jednom, koliko god ih bilo.",
     "adaugaPiesa": "+ Dodaj dio",
     "stergePiesa": "Obriši dio",
-    "denumirePiesa": "Naziv"
+    "denumirePiesa": "Naziv",
+    "configRapide": "Brze postavke",
+    "configRapideNota": "Jedan klik postavlja vrata, ladice, police i ostale postavke za odabranu vrstu korpusa. Širina i visina ostaju tvoje, osim kod Jolly košare, uskog korpusa i sokla.",
+    "impartireFronturi": "Podjela fronti:",
+    "impEgale": "Jednake",
+    "impUnMic": "1 mala gore + 2",
+    "impJumatate": "Pola dolje + 2 gore",
+    "impDouaMici": "2 male + 1 velika",
+    "colFront": "Fronta",
+    "colCutie": "Ladica (mm)",
+    "notaFronturi": "Odozgo prema dolje. Kod fronte upiši mm, „r” za ostatak (dijeli se jednako na sve „r”) ili postotak ukupne visine, npr. 50%. Ladica se računa iz fronte (fronta minus 40 mm, zaokruženo na 60, 80, 100, 120, 150 ili 180); možeš je upisati i ručno."
   },
   "fata": {
     "px": "desno",

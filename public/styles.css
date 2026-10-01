@@ -667,3 +667,11 @@ svg.sk .sk-usa.fara{stroke-dasharray:60 44;opacity:.7}
   .tut-scene button.on{box-shadow:inset 0 -3px 0 var(--accent)}
   .tut-jos{grid-template-columns:minmax(0,1fr)}
 }
+
+/* ---------- configurări rapide și împărțirea sertarelor ---------- */
+.config-rapide{display:flex;flex-wrap:wrap;gap:6px}
+.config-rapide .pastila{font-size:12.5px;padding:6px 11px}
+.sertare-impartire{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 6px}
+.sertare-impartire .pastila{font-size:12.5px;padding:6px 11px}
+.sertare-tabel{min-width:0}
+.sertare-tabel input.dim{width:86px;text-align:right}

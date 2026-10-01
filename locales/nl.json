@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Onderkast met 2 deuren",
-        "descriere": "De standaardkast onder het werkblad, met één legplank binnenin.",
+        "nume": "Onderkast",
+        "descriere": "De kast onder het werkblad. In de editor maak je hem met deuren, met gelijke of ongelijke lades, voor spoelbak, oven of Jolly-korf.",
         "corpNume": "Onderkast 2 deuren"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "De apothekerskorf heeft één front, op zijn frame. Hier staan {n} deuren: zet 1.",
     "jollyFaraPolite": "De apothekerskorf vult de hele hoogte: de {n} legplanken passen niet. Zet 0 legplanken.",
     "jollyLatime": "Apothekerskorven worden verkocht voor kasten van {lista} mm. Deze is {lat} mm — kijk of er een korf voor is.",
-    "imbinareDreaptaNuMerge": "Het stompe kader (zijkanten op de bodem, bovenblad ertussen) gaat alleen bij de trapvorm. Hier is het kader in verstek."
+    "imbinareDreaptaNuMerge": "Het stompe kader (zijkanten op de bodem, bovenblad ertussen) gaat alleen bij de trapvorm. Hier is het kader in verstek.",
+    "sertareGolRest": "De ladefronten vullen de kast niet: er blijft {gol} mm over. Zet “r” bij een van de fronten zodat die de rest krijgt.",
+    "sertarePreaMari": "De ladefronten zijn {mm} mm groter dan de kast. Maak er een kleiner of gebruik “r”.",
+    "frontSertarPreaMic": "Een ladefront is kleiner dan 40 mm: er past geen lade achter."
   },
   "csv": {
     "corp": "Kast",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Alle onderdelen hier zijn één artikel en worden één keer betaald, hoeveel het er ook zijn.",
     "adaugaPiesa": "+ Onderdeel toevoegen",
     "stergePiesa": "Onderdeel verwijderen",
-    "denumirePiesa": "Naam"
+    "denumirePiesa": "Naam",
+    "configRapide": "Snelle instellingen",
+    "configRapideNota": "Eén klik zet de deuren, lades, legplanken en overige instellingen voor het gekozen kasttype. Breedte en hoogte blijven van jou, behalve bij de Jolly-korf, de smalle kast en de plint.",
+    "impartireFronturi": "Frontverdeling:",
+    "impEgale": "Gelijk",
+    "impUnMic": "1 klein boven + 2",
+    "impJumatate": "Helft onder + 2 boven",
+    "impDouaMici": "2 klein + 1 groot",
+    "colFront": "Front",
+    "colCutie": "Lade (mm)",
+    "notaFronturi": "Van boven naar beneden. Vul bij het front mm in, “r” voor de rest (gelijk verdeeld over alle “r”) of een percentage van de totale hoogte, bijvoorbeeld 50%. De lade wordt berekend uit het front (front min 40 mm, afgerond op 60, 80, 100, 120, 150 of 180); je kunt hem ook zelf invullen."
   },
   "fata": {
     "px": "rechts",

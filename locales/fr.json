@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Meuble bas 2 portes",
-        "descriere": "Le caisson standard sous le plan de travail, avec une étagère intérieure.",
+        "nume": "Meuble bas",
+        "descriere": "Le caisson sous le plan de travail. Dans l'éditeur, vous le réalisez avec portes, avec tiroirs égaux ou inégaux, pour évier, four ou panier Jolly.",
         "corpNume": "Meuble bas 2 portes"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "Le panier Jolly n'a qu'une façade, fixée sur son cadre. Ici il y a {n} portes : mettez 1.",
     "jollyFaraPolite": "Le panier Jolly occupe toute la hauteur : les {n} tablettes n'ont pas de place. Mettez 0 tablette.",
     "jollyLatime": "Les paniers Jolly se vendent pour des meubles de {lista} mm. Celui-ci fait {lat} mm — vérifiez qu'il existe un panier.",
-    "imbinareDreaptaNuMerge": "Le bâti à assemblages droits (côtés sur le socle, dessus entre eux) ne va qu'avec la forme sous escalier. Ici le bâti est en onglet."
+    "imbinareDreaptaNuMerge": "Le bâti à assemblages droits (côtés sur le socle, dessus entre eux) ne va qu'avec la forme sous escalier. Ici le bâti est en onglet.",
+    "sertareGolRest": "Les façades de tiroir ne remplissent pas le caisson : il reste {gol} mm. Mettez « r » sur l'une des façades pour qu'elle prenne le reste.",
+    "sertarePreaMari": "Les façades de tiroir dépassent le caisson de {mm} mm. Réduisez l'une d'elles ou mettez « r ».",
+    "frontSertarPreaMic": "Une façade de tiroir fait moins de 40 mm : aucun tiroir ne tient derrière."
   },
   "csv": {
     "corp": "Caisson",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Toutes les pièces ici forment un seul article et se paient une seule fois, quel que soit leur nombre.",
     "adaugaPiesa": "+ Ajouter une pièce",
     "stergePiesa": "Supprimer la pièce",
-    "denumirePiesa": "Nom"
+    "denumirePiesa": "Nom",
+    "configRapide": "Configurations rapides",
+    "configRapideNota": "Un clic définit les portes, tiroirs, étagères et autres réglages pour le type de caisson choisi. La largeur et la hauteur restent les vôtres, sauf pour le panier Jolly, le caisson étroit et la plinthe.",
+    "impartireFronturi": "Répartition des façades :",
+    "impEgale": "Égales",
+    "impUnMic": "1 petite en haut + 2",
+    "impJumatate": "Moitié en bas + 2 en haut",
+    "impDouaMici": "2 petites + 1 grande",
+    "colFront": "Façade",
+    "colCutie": "Caisson (mm)",
+    "notaFronturi": "De haut en bas. Pour chaque façade, saisissez des mm, « r » pour le reste (partagé à parts égales entre tous les « r ») ou un pourcentage de la hauteur totale, par exemple 50%. Le tiroir est calculé à partir de la façade (façade moins 40 mm, arrondie à 60, 80, 100, 120, 150 ou 180) ; vous pouvez aussi le saisir à la main."
   },
   "fata": {
     "px": "droite",

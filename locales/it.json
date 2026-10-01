@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Base con 2 ante",
-        "descriere": "Il mobile standard sotto il piano di lavoro, con un ripiano interno.",
+        "nume": "Mobile base",
+        "descriere": "Il mobile sotto il piano di lavoro. Dall'editor lo fai con ante, con cassetti uguali o diversi, per lavello, forno o cestello Jolly.",
         "corpNume": "Base 2 ante"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "Il cestello Jolly ha un solo frontale, fissato al telaio. Qui ci sono {n} ante: metti 1.",
     "jollyFaraPolite": "Il cestello Jolly occupa tutta l'altezza: i {n} ripiani non ci stanno. Metti 0 ripiani.",
     "jollyLatime": "I cestelli Jolly si vendono per mobili da {lista} mm. Questo è di {lat} mm: verifica di trovare un cestello.",
-    "imbinareDreaptaNuMerge": "Il telaio con giunzioni dritte (fianchi sulla base, cielo tra di loro) va solo con la forma sottoscala. Qui il telaio è a 45°."
+    "imbinareDreaptaNuMerge": "Il telaio con giunzioni dritte (fianchi sulla base, cielo tra di loro) va solo con la forma sottoscala. Qui il telaio è a 45°.",
+    "sertareGolRest": "I frontali dei cassetti non riempiono il mobile: restano {gol} mm. Metti “r” su uno dei frontali perché prenda il resto.",
+    "sertarePreaMari": "I frontali dei cassetti superano il mobile di {mm} mm. Riduci uno di essi o metti “r”.",
+    "frontSertarPreaMic": "Un frontale di cassetto è sotto i 40 mm: dietro non ci sta nessun cassetto."
   },
   "csv": {
     "corp": "Mobile",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Tutti i pezzi qui sono un solo articolo e si pagano una sola volta, quanti che siano.",
     "adaugaPiesa": "+ Aggiungi pezzo",
     "stergePiesa": "Elimina pezzo",
-    "denumirePiesa": "Nome"
+    "denumirePiesa": "Nome",
+    "configRapide": "Configurazioni rapide",
+    "configRapideNota": "Un clic imposta ante, cassetti, ripiani e le altre impostazioni per il tipo di mobile scelto. Larghezza e altezza restano le tue, tranne che per il cestello Jolly, il mobile stretto e lo zoccolo.",
+    "impartireFronturi": "Divisione dei frontali:",
+    "impEgale": "Uguali",
+    "impUnMic": "1 piccolo sopra + 2",
+    "impJumatate": "Metà sotto + 2 sopra",
+    "impDouaMici": "2 piccoli + 1 grande",
+    "colFront": "Frontale",
+    "colCutie": "Cassetto (mm)",
+    "notaFronturi": "Dall'alto in basso. Nel frontale scrivi i mm, “r” per il resto (diviso in parti uguali tra tutte le “r”) o una percentuale dell'altezza totale, ad esempio 50%. Il cassetto si calcola dal frontale (frontale meno 40 mm, arrotondato a 60, 80, 100, 120, 150 o 180); puoi anche scriverlo a mano."
   },
   "fata": {
     "px": "destra",

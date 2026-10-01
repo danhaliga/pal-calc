@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "2 kapaklı alt dolap",
-        "descriere": "Tezgâh altındaki standart gövde, içinde bir rafla.",
+        "nume": "Alt dolap",
+        "descriere": "Tezgahın altındaki gövde. Editörde kapaklı, eşit ya da farklı çekmeceli, eviye, fırın veya Jolly sepet için yapabilirsin.",
         "corpNume": "Alt dolap 2 kapak"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "Jolly sepetin tek kapağı olur, çerçevesine takılır. Burada {n} kapak var: 1 yap.",
     "jollyFaraPolite": "Jolly sepet tüm yüksekliği doldurur: {n} rafa yer yok. Rafı 0 yap.",
     "jollyLatime": "Jolly sepetler {lista} mm dolaplar için satılır. Bu dolap {lat} mm — ona uygun sepet bulunduğunu kontrol et.",
-    "imbinareDreaptaNuMerge": "Düz birleşimli çerçeve (yanlar tabanda, tavan aralarında) yalnızca merdiven altı biçiminde olur. Burada çerçeve gönye yapıldı."
+    "imbinareDreaptaNuMerge": "Düz birleşimli çerçeve (yanlar tabanda, tavan aralarında) yalnızca merdiven altı biçiminde olur. Burada çerçeve gönye yapıldı.",
+    "sertareGolRest": "Çekmece ön panelleri gövdeyi doldurmuyor: {gol} mm kalıyor. Kalanı alması için ön panellerden birine “r” yaz.",
+    "sertarePreaMari": "Çekmece ön panelleri gövdeden {mm} mm büyük. Birini küçült ya da “r” yaz.",
+    "frontSertarPreaMic": "Bir çekmece ön paneli 40 mm'nin altında: arkasına hiçbir çekmece sığmaz."
   },
   "csv": {
     "corp": "Gövde",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Buradaki tüm parçalar tek bir üründür ve kaç tane olursa olsun bir kez ödenir.",
     "adaugaPiesa": "+ Parça ekle",
     "stergePiesa": "Parçayı sil",
-    "denumirePiesa": "Ad"
+    "denumirePiesa": "Ad",
+    "configRapide": "Hızlı ayarlar",
+    "configRapideNota": "Tek tıkla seçilen gövde türü için kapaklar, çekmeceler, raflar ve diğer ayarlar yapılır. Genişlik ve yükseklik sende kalır; Jolly sepet, dar gövde ve baza hariç.",
+    "impartireFronturi": "Ön panel bölümü:",
+    "impEgale": "Eşit",
+    "impUnMic": "1 küçük üstte + 2",
+    "impJumatate": "Yarısı altta + 2 üstte",
+    "impDouaMici": "2 küçük + 1 büyük",
+    "colFront": "Ön panel",
+    "colCutie": "Çekmece (mm)",
+    "notaFronturi": "Yukarıdan aşağıya. Ön panele mm, kalan için “r” (tüm “r” değerleri arasında eşit bölünür) ya da toplam yüksekliğin yüzdesini yaz, örneğin 50%. Çekmece ön panelden hesaplanır (ön panel eksi 40 mm, 60, 80, 100, 120, 150 veya 180 değerine yuvarlanır); elle de yazabilirsin."
   },
   "fata": {
     "px": "sağ",

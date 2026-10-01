@@ -31,7 +31,8 @@ test('carcasa iese la milimetru aceeași, la toate modelele din catalog', () => 
   /* Dacă asta cade, undeva am legat o cotă de corp la existența unui front —
      și atunci un corp comandat fără uși nu se mai potrivește cu ușile pe
      care le aduce omul mai târziu. */
-  const toate = PalModels.modele(T).map(m => m.id);
+  /* cu tot cu corpurile de jos care au devenit configurări rapide în editor */
+  const toate = PalModels.MODELS.filter(m => !m.ascuns || m.rapid).map(m => m.id);
   assert.ok(toate.length >= 40, 'catalogul s-a subțiat: ' + toate.length);
 
   toate.forEach(id => {

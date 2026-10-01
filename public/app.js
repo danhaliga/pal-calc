@@ -64,6 +64,8 @@ function aplicaTip() {
      are ce căuta acolo se ascunde, nu se lasă gri: un formular plin de
      câmpuri fără rost e mai rău decât unul scurt. */
   arata('fsPiesa', piesa);
+  /* configurările rapide sunt ale corpului de jos: drept și nu mai înalt de 1 m */
+  arata('fsRapid', tip === 'drept' && +params.H <= 1000 && (DATA.configRapide || []).length > 0);
   if (piesa) {
     var tbPe = $('pieseExtraTabel');
     if (tbPe && tbPe.children.length !== (params.pieseExtra || []).length) randeazaPieseExtra();
@@ -202,6 +204,133 @@ function legaPieseExtra() {
       : { nume: '', L: 600, l: 300, buc: 1, cL1: 'g', cL2: '-', cl1: '-', cl2: '-', fibra: 'L' });
     randeazaPieseExtra(); render(); scheduleSave();
   };
+}
+
+/* ---------------- sertare: împărțirea fronturilor ----------------
+
+   `sertareH` ține fronturile de sus în jos („140,r,50%"): mm, „r" = restul
+   (împărțit egal între toate „r"-urile) sau procent din tot frontul.
+   `sertareC` ține cutiile; un loc gol = se calculează din front. Câtă vreme
+   `sertareH` e gol, sertarele merg ca înainte, cu `hFront` și `hCutie`. */
+var IMPARTIRI = {
+  egale: function (n) { var r = []; for (var i = 0; i < n; i++) r.push('r'); return r.join(','); },
+  unMic: function () { return '140,r,r'; },
+  jumatate: function () { return '140,r,50%'; },
+  douaMici: function () { return '140,140,r'; }
+};
+var FRONT_BUN = /^(\d+([.,]\d+)?%?|r)$/i;
+var listaS = function (s) { s = String(s == null ? '' : s).trim(); return s ? s.split(',').map(function (x) { return x.trim(); }) : []; };
+var fmtMm = function (v) { return (Math.round(v * 10) / 10).toString().replace('.', ','); };
+
+function randeazaSertare() {
+  var box = $('sertareBox'), tb = $('sertareTabel');
+  if (!box || !tb) return;
+  var lista = listaS(params.sertareH);
+  var nou = lista.length > 0 && +params.nSer > 0;
+  box.classList.toggle('hidden', !nou);
+  ['hFront', 'hCutie'].forEach(function (id) {
+    var el = $(id); if (el) el.closest('label').classList.toggle('hidden', nou);
+  });
+  document.querySelectorAll('[data-impartire]').forEach(function (b) {
+    var v = IMPARTIRI[b.dataset.impartire](+params.nSer || 3);
+    b.classList.toggle('on', nou && params.sertareH === v);
+  });
+  if (!nou) return;
+  var rez = (lastRes && lastRes.sertare) || [];
+  var cl = listaS(params.sertareC);
+  /* cât timp omul scrie în tabel, nu-l refacem: doar cifrele calculate */
+  if (tb.contains(document.activeElement) && tb.children.length === lista.length) {
+    rez.forEach(function (r, k) {
+      var c = tb.querySelector('[data-calc="' + k + '"]'); if (c) c.textContent = fmtMm(r.front) + ' mm';
+      var i = tb.querySelector('[data-sc="' + k + '"]'); if (i) i.placeholder = T('editor.auto') + ' ' + r.cutie;
+    });
+    return;
+  }
+  tb.innerHTML = lista.map(function (x, k) {
+    var r = rez[k] || {};
+    return '<tr><td class="c" style="color:var(--muted)">' + (k + 1) + '</td>' +
+      '<td class="c"><input class="dim" data-sh="' + k + '" value="' + esc(x) + '" aria-label="' + esc(T('editor.colFront')) + ' ' + (k + 1) + '"></td>' +
+      '<td class="c small" data-calc="' + k + '">' + (r.front != null ? fmtMm(r.front) + ' mm' : '') + '</td>' +
+      '<td class="c"><input class="dim" type="number" min="20" max="1200" step="1" data-sc="' + k + '" value="' + esc(cl[k] || '') +
+        '" placeholder="' + esc(T('editor.auto') + (r.cutie != null ? ' ' + r.cutie : '')) + '" aria-label="' + esc(T('editor.colCutie')) + ' ' + (k + 1) + '"></td></tr>';
+  }).join('');
+}
+
+/* numărul de sertare schimbat: lista fronturilor se lungește cu „r" sau se taie */
+function potrivesteSertare() {
+  var lista = listaS(params.sertareH);
+  if (!lista.length) return;
+  var n = +params.nSer || 0;
+  if (n <= 0) return;
+  while (lista.length < n) lista.push('r');
+  params.sertareH = lista.slice(0, n).join(',');
+  var cl = listaS(params.sertareC);
+  params.sertareC = cl.length ? cl.slice(0, n).join(',') : '';
+}
+
+function legaSertare() {
+  var tb = $('sertareTabel');
+  if (!tb) return;
+  tb.addEventListener('input', function (e) {
+    var el = e.target;
+    if (el.dataset.sh != null) {
+      var v = el.value.trim();
+      var bun = FRONT_BUN.test(v);
+      el.classList.toggle('invalid', !bun);
+      if (!bun) return;
+      var lista = listaS(params.sertareH);
+      lista[+el.dataset.sh] = v.toLowerCase().replace(',', '.');
+      params.sertareH = lista.join(',');
+    } else if (el.dataset.sc != null) {
+      var cl = listaS(params.sertareC);
+      while (cl.length < +params.nSer) cl.push('');
+      cl[+el.dataset.sc] = el.value.trim();
+      params.sertareC = cl.some(function (x) { return x !== ''; }) ? cl.join(',') : '';
+    } else return;
+    render(); scheduleSave();
+  });
+  document.querySelectorAll('[data-impartire]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var tip = b.dataset.impartire;
+      var n = tip === 'egale' ? (+params.nSer || 3) : 3;
+      params.nSer = n;
+      params.sertareH = IMPARTIRI[tip](n);
+      params.sertareC = '';
+      render(); scheduleSave();
+    });
+  });
+}
+
+/* ---------------- configurările rapide ale corpului de jos ---------------- */
+
+function randeazaRapide() {
+  var box = $('configRapide');
+  if (!box) return;
+  var lista = DATA.configRapide || [];
+  if (!box.children.length) {
+    box.innerHTML = lista.map(function (c, i) {
+      return '<button type="button" class="pastila" data-rapid="' + i + '">' + esc(c.nume) + '</button>';
+    }).join('');
+  }
+  box.querySelectorAll('[data-rapid]').forEach(function (b) {
+    var c = lista[+b.dataset.rapid];
+    var la = Object.keys(c.set).every(function (k) { return String(params[k] == null ? '' : params[k]) === String(c.set[k]); });
+    b.classList.toggle('on', la);
+  });
+}
+
+function legaRapide() {
+  var box = $('configRapide');
+  if (!box) return;
+  box.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-rapid]');
+    if (!b) return;
+    var c = (DATA.configRapide || [])[+b.dataset.rapid];
+    if (!c) return;
+    Object.keys(c.set).forEach(function (k) { params[k] = c.set[k]; });
+    render(); scheduleSave();
+    toast(c.nume);
+  });
 }
 
 /* ---------------- conturul corpului atipic ---------------- */
@@ -634,6 +763,8 @@ function render() {
     }).join('');
 
   renderTable();
+  randeazaSertare();
+  randeazaRapide();
   $('formule').innerHTML = formule(params, res);
   build3D(params, res);
 }
@@ -1124,6 +1255,7 @@ $('form').addEventListener('input', function (e) {
     : e.target.type === 'number'
       ? (e.target.value === '' ? '' : +e.target.value)
       : e.target.value;
+  if (f === 'nSer') potrivesteSertare();
   render();
   scheduleSave();
 });
@@ -1194,6 +1326,8 @@ var setariPuse = aplicaSetari();
 init3D();
 legaContur();
 legaPieseExtra();
+legaSertare();
+legaRapide();
 legaSetari();
 render();
 loadPieces();

@@ -367,8 +367,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Donji element sa 2 vrata",
-        "descriere": "Standardni korpus ispod radne ploče, sa jednom policom unutra.",
+        "nume": "Donji element",
+        "descriere": "Korpus ispod radne ploče. U editoru ga praviš sa vratima, sa jednakim ili nejednakim fiokama, za sudoperu, rernu ili Jolly korpu.",
         "corpNume": "Donji 2 vrata"
       },
       "baza-1usa": {
@@ -926,7 +926,10 @@
     "jollyUnFront": "Korpa Jolly ima samo jedan front, na svom ramu. Ovde je {n} vrata: stavi 1.",
     "jollyFaraPolite": "Korpa Jolly zauzima celu visinu: {n} polica nema mesta. Stavi 0 polica.",
     "jollyLatime": "Korpe Jolly se prodaju za elemente od {lista} mm. Ovaj ima {lat} mm — proveri da li postoji korpa za njega.",
-    "imbinareDreaptaNuMerge": "Korpus sa pravim spojevima (stranice na bazi, plafon između njih) ide samo za oblik ispod stepenica. Ovde je korpus na geru."
+    "imbinareDreaptaNuMerge": "Korpus sa pravim spojevima (stranice na bazi, plafon između njih) ide samo za oblik ispod stepenica. Ovde je korpus na geru.",
+    "sertareGolRest": "Frontovi fioka ne popunjavaju korpus: ostaje {gol} mm. Stavi „r” na jedan od frontova da uzme ostatak.",
+    "sertarePreaMari": "Frontovi fioka su veći od korpusa za {mm} mm. Smanji jedan od njih ili stavi „r”.",
+    "frontSertarPreaMic": "Front fioke ima manje od 40 mm: iza njega ne staje nijedna fioka."
   },
   "csv": {
     "corp": "Korpus",
@@ -1554,7 +1557,17 @@
     "pieseUnPret": "Svi delovi ovde su jedan proizvod i plaćaju se samo jednom, koliko god ih bilo.",
     "adaugaPiesa": "+ Dodaj deo",
     "stergePiesa": "Obriši deo",
-    "denumirePiesa": "Naziv"
+    "denumirePiesa": "Naziv",
+    "configRapide": "Brza podešavanja",
+    "configRapideNota": "Jedan klik postavlja vrata, fioke, police i ostala podešavanja za izabranu vrstu korpusa. Širina i visina ostaju tvoje, osim kod Jolly korpe, uskog korpusa i sokle.",
+    "impartireFronturi": "Podela fronti:",
+    "impEgale": "Jednake",
+    "impUnMic": "1 mala gore + 2",
+    "impJumatate": "Pola dole + 2 gore",
+    "impDouaMici": "2 male + 1 velika",
+    "colFront": "Front",
+    "colCutie": "Fioka (mm)",
+    "notaFronturi": "Odozgo nadole. Kod fronta upiši mm, „r” za ostatak (deli se jednako na sva „r”) ili procenat ukupne visine, npr. 50%. Fioka se računa iz fronta (front minus 40 mm, zaokruženo na 60, 80, 100, 120, 150 ili 180); možeš je upisati i ručno."
   },
   "fata": {
     "px": "desno",

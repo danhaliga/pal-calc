@@ -60,63 +60,63 @@
       set: { W: 800, H: 720, D: 560, nUsi: 2, nPol: 1 }
     },
     {
-      id: 'baza-1usa', cat: 'bucatarie-jos',
+      id: 'baza-1usa', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 400, H: 720, D: 560, nUsi: 1, nPol: 1 }
     },
     {
       /* Corpul care stă pe podea, fără picioare: lateralele merg până jos,
          iar în față intră soclul. H e cota de la podea, deci 800 = 720 de
          corp folositor plus 80 de soclu. */
-      id: 'baza-2usi-soclu', cat: 'bucatarie-jos',
+      id: 'baza-2usi-soclu', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 800, H: 800, D: 560, soclu: 80, nUsi: 2, nPol: 1 }
     },
     {
-      id: 'baza-2sertare', cat: 'bucatarie-jos',
+      id: 'baza-2sertare', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0,
              nSer: 2, hFront: frontEgal(720, 2, 1.5, 3), hCutie: 180 }
     },
     {
-      id: 'baza-4sertare', cat: 'bucatarie-jos',
+      id: 'baza-4sertare', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0,
              nSer: 4, hFront: frontEgal(720, 4, 1.5, 3), hCutie: 120 }
     },
     {
       /* Corpul îngust de umplut golul rămas la capăt de front. */
-      id: 'baza-ingusta', cat: 'bucatarie-jos',
+      id: 'baza-ingusta', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 200, H: 720, D: 560, nUsi: 1, nPol: 2 }
     },
     {
       /* Cargoul glisant umple corpul pe toată înălțimea, deci n-are poliță.
          Frontul se prinde de cadrul cargoului, nu de balamale — dar în
          lista de debitare tot o ușă e, cu aceleași cote. */
-      id: 'baza-jolly', cat: 'bucatarie-jos',
+      id: 'baza-jolly', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 300, H: 720, D: 560, nUsi: 1, nPol: 0, jolly: 1 }
     },
     {
       /* Coșurile Jolly se vând pentru corpuri de 150, 200 și 300. */
-      id: 'baza-jolly-200', cat: 'bucatarie-jos',
+      id: 'baza-jolly-200', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 200, H: 720, D: 560, nUsi: 1, nPol: 0, jolly: 1 }
     },
     {
-      id: 'baza-jolly-150', cat: 'bucatarie-jos',
+      id: 'baza-jolly-150', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 150, H: 720, D: 560, nUsi: 1, nPol: 0, jolly: 1 }
     },
     {
-      id: 'baza-3sertare', cat: 'bucatarie-jos',
+      id: 'baza-3sertare', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0,
              nSer: 3, hFront: frontEgal(720, 3, 1.5, 3), hCutie: 180 }
     },
     {
-      id: 'baza-sertar-usa', cat: 'bucatarie-jos',
+      id: 'baza-sertar-usa', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 600, H: 720, D: 560, nUsi: 1, nPol: 1,
              nSer: 1, hFront: 150, hCutie: 110 }
     },
     {
-      id: 'baza-chiuveta', cat: 'bucatarie-jos',
+      id: 'baza-chiuveta', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 800, H: 720, D: 560, nUsi: 2, nPol: 0 }
     },
     {
-      id: 'baza-nisa', cat: 'bucatarie-jos',
+      id: 'baza-nisa', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 0 }
     },
     {
@@ -125,7 +125,7 @@
          sertarului. Nișa de 600 încape cuptoarele obișnuite de 60; verifică
          totuși ce cere producătorul. Cu front de 100, cutia sertarului
          poate avea cel mult 64 — se pune 60, ca să rămână un joc. */
-      id: 'baza-cuptor', cat: 'bucatarie-jos',
+      id: 'baza-cuptor', cat: 'bucatarie-jos', ascuns: true, rapid: true,
       set: { W: 600, H: 720, D: 560, nUsi: 0, nPol: 1,
              nSer: 1, sertareJos: 1, hFront: 100, hCutie: 60, hNisa: 600 }
     },
@@ -637,6 +637,43 @@
   }
 
   /* Catalogul cu numele scrise în limba cerută. */
+  /* Configurările rapide ale corpului de jos.
+     ==========================================================
+     În catalog a rămas un singur „Corp de jos" (Dan, 1 octombrie 2026): în
+     loc de paisprezece carduri, unul, iar celelalte devin butoane în editor
+     care îi pun setările dintr-un clic. Un buton pune TOATE câmpurile de
+     configurare (ușile, sertarele, polițele, nișa, coșul), ca să nu rămână
+     ceva de la configurarea de dinainte. Lățimea și înălțimea rămân ale
+     omului, în afară de corpurile care sunt ce sunt tocmai prin lățime
+     (Jolly, îngust) sau prin înălțime (soclul).
+     Sertarele fără uși se fac cu fronturi „r" (egale, cât umplu corpul),
+     cutia calculându-se singură — iese la fel ca modelele vechi. */
+  var CHEI_CONFIG = ['nUsi', 'nPol', 'nSer', 'hFront', 'hCutie', 'sertareH', 'sertareC', 'sertareJos',
+                     'hNisa', 'jolly', 'soclu', 'picioare', 'faraFront', 'nDsp'];
+  var PASTREAZA_LATIMEA = ['baza-jolly', 'baza-jolly-200', 'baza-jolly-150', 'baza-ingusta'];
+
+  function configurariRapide(tr) {
+    var t_ = PalCalc.traducator(tr);
+    var baza = paramsFor('baza-2usi', tr);
+    return ['baza-2usi'].concat(MODELS.filter(function (m) { return m.rapid; }).map(function (m) { return m.id; }))
+      .map(function (id) {
+        var p = paramsFor(id, tr);
+        var set = {};
+        CHEI_CONFIG.forEach(function (k) { set[k] = p[k] != null ? p[k] : baza[k]; });
+        if (!set.sertareH) set.sertareH = '';
+        if (!set.sertareC) set.sertareC = '';
+        if (+set.nSer > 0 && +set.nUsi === 0 && !(+set.hNisa > 0)) {
+          var r = [];
+          for (var i = 0; i < +set.nSer; i++) r.push('r');
+          set.sertareH = r.join(',');
+          set.sertareC = '';
+        }
+        if (PASTREAZA_LATIMEA.indexOf(id) !== -1) set.W = p.W;
+        if (+p.soclu > 0) set.H = p.H;
+        return { id: id, nume: numeCorp(id, tr), set: set };
+      });
+  }
+
   function categorii(tr) {
     var t_ = PalCalc.traducator(tr);
     return CATEGORIES.map(function (c) {
@@ -674,7 +711,7 @@
     PE_PODEA: PE_PODEA,
     staPePodea: staPePodea,    CATEGORIES: CATEGORIES,
     MODELS: MODELS,
-    categorii: categorii,
+    categorii: categorii, configurariRapide: configurariRapide,
     modele: modele,
     numeCorp: numeCorp,
     byId: byId,

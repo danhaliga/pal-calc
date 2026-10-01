@@ -171,7 +171,8 @@ test('catalogul n-a fost șters de scriptul de traduceri', () => {
      înlocuit spațiul „modele" cu cele două intrări noi — adică a șters tot
      catalogul din toate cele treizeci de limbi, tăcut. Testul ăsta cade
      dacă se mai întâmplă o dată. */
-  const toate = PalModels.modele(T).map(m => m.id);
+  /* cu tot cu corpurile de jos care au devenit configurări rapide în editor */
+  const toate = PalModels.MODELS.filter(m => !m.ascuns || m.rapid).map(m => m.id);
   assert.ok(toate.length >= 40, 'catalogul s-a subțiat: ' + toate.length + ' modele');
   PalI18n.LIMBI.forEach(l => {
     const c = JSON.parse(citeste('locales', l.cod + '.json'));

@@ -27,6 +27,65 @@
   var NUT_AD = 8;        /* adancimea nutului */
   var PFL_SERTAR = 3;    /* grosimea fundului de sertar */
 
+  /* ---- împărțirea fronturilor de sertar ----
+
+     `sertareH` e lista fronturilor, de sus în jos, cu virgulă: un număr
+     (mm), „r" (restul, împărțit egal între toate „r"-urile) sau un procent
+     din tot frontul („50%"). Goală = felul vechi: toate fronturile de
+     `hFront`, toate cutiile de `hCutie` — corpurile făcute înainte rămân
+     neatinse. `sertareC` sunt cutiile, în aceeași ordine; un loc gol =
+     cutia se calculează din front (vezi cutieDinFront). */
+  var CUTII_STANDARD = [60, 80, 100, 120, 150, 180];
+  var REZERVA_CUTIE = 40;
+
+  /* Cutia: frontul minus 40 mm, rotunjit în jos la o înălțime de cutie
+     care se găsește (60…180). Sub 60 rămâne cât încape. */
+  function cutieDinFront(front) {
+    var v = front - REZERVA_CUTIE;
+    var bun = null;
+    CUTII_STANDARD.forEach(function (h) { if (h <= v + 0.01) bun = h; });
+    return bun !== null ? bun : Math.max(20, Math.floor(v));
+  }
+
+  var SERTAR_BUC = /^\s*(\d+(?:[.,]\d+)?%?|r)\s*$/i;
+
+  function listaSertare(text) {
+    var s = String(text == null ? '' : text).trim();
+    return s ? s.split(';').join(',').split(',').map(function (x) { return x.trim().toLowerCase().replace(',', '.'); }) : [];
+  }
+
+  /* Înălțimile fronturilor și ale cutiilor, gata socotite.
+     `fata` = tot frontul pe care se pot pune sertare; `usi` = are și uși
+     (atunci „r" nu înseamnă restul corpului, ci frontul obișnuit). */
+  function inaltimiSertare(c, nSer, fata, ri, usi) {
+    var hF = +c.hFront, hc = +c.hCutie;
+    var lista = listaSertare(c.sertareH);
+    if (!lista.length || nSer <= 0) {
+      var hs0 = [], hcs0 = [];
+      for (var i0 = 0; i0 < nSer; i0++) { hs0.push(hF); hcs0.push(hc); }
+      return { hs: hs0, hcs: hcs0, nou: false };
+    }
+    while (lista.length < nSer) lista.push('r');
+    lista = lista.slice(0, nSer);
+    var fix = 0, nr = 0;
+    lista.forEach(function (x) {
+      if (x === 'r') nr++;
+      else if (/%$/.test(x)) fix += fata * (parseFloat(x) || 0) / 100;
+      else fix += parseFloat(x) || 0;
+    });
+    var rest = (!usi && nr > 0) ? (fata - (nSer - 1) * ri - fix) / nr : hF;
+    var hs = lista.map(function (x) {
+      var v = x === 'r' ? rest : /%$/.test(x) ? fata * (parseFloat(x) || 0) / 100 : (parseFloat(x) || hF);
+      return Math.round(v * 10) / 10;
+    });
+    var cl = listaSertare(c.sertareC);
+    var hcs = hs.map(function (h, k) {
+      var v = parseFloat(cl[k]);
+      return v > 0 ? v : cutieDinFront(h);
+    });
+    return { hs: hs, hcs: hcs, nou: true, rest: nr > 0 && !usi ? rest : null };
+  }
+
   var r1 = function (v) { return Math.round(v * 10) / 10; };
 
   /* Cât se scade din cotă pentru o bandă de cant, la debitare.
@@ -127,7 +186,7 @@
          `hNisa` e cât cere aparatul — corpul bază de cuptor. */
       hNisa: '',
       nPol: 1, jp: 1, rp: 20, nDsp: 0,
-      nSer: 0, hFront: 150, hCutie: 100, jg: 12.5, ts: 18, lg: '',
+      nSer: 0, hFront: 150, hCutie: 100, sertareH: '', sertareC: '', jg: 12.5, ts: 18, lg: '',
       /* Mânerul. Se poate scoate cu totul: la push-to-open, la profil gola
          sau la fronturile cu prindere frezată nu se cumpără niciunul și nu
          se găurește nimic. Direcția și locul pe front au fiecare o valoare
@@ -1355,7 +1414,10 @@
        fără el s-ar atinge. Sertarele de sus se lipesc de tavan, cele de jos
        de fund, iar rostul rămâne întotdeauna spre uși. */
     var sertareJos = !!(+c.sertareJos) && nSer > 0;
-    var cereSertare = nSer > 0 ? nSer * (+c.hFront) + nSer * ri : 0;
+    /* fronturile pot fi inegale: lista lor, de sus în jos */
+    var SRT = inaltimiSertare(c, nSer, (apl ? Hutil - 2 * rm : Hint - 2 * rinc), ri, nUsi > 0);
+    var sumaFronturi = SRT.hs.reduce(function (a, b) { return a + b; }, 0);
+    var cereSertare = nSer > 0 ? sumaFronturi + nSer * ri : 0;
     var usedTop = sertareJos ? 0 : cereSertare;
     var usedBot = sertareJos ? cereSertare : 0;
     /* Fâșia care rămâne ușilor, între sertare și capetele corpului. Tot ce
@@ -1594,45 +1656,63 @@
 
     /* ---- sertare ---- */
     if (nSer > 0) {
-      var jg = +c.jg, ts = +c.ts, hF = +c.hFront, hc = +c.hCutie;
+      var jg = +c.jg, ts = +c.ts;
+      var hsS = SRT.hs, hcsS = SRT.hcs;
       var lg = +c.lg;
       if (!lg) { lg = Math.floor((Dint - 10) / 50) * 50; }
       if (lg > Dint) avert('glisieraNuIncape', { lg: lg, dint: fmt(Dint) });
-      if (hc > hF) avert('cutiePreaInalta');
+      if (hcsS.some(function (h, k) { return h > hsS[k]; })) avert('cutiePreaInalta');
+      if (hsS.some(function (h) { return h < 40; })) avert('frontSertarPreaMic');
 
       /* De unde pornește șirul de sertare. Sus se lipesc de tavan; jos, de
          fund — iar rostul de `ri` rămâne spre uși, nu sub ele. */
       var ySertare = sertareJos ? yBot + usedBot - ri : yTop;
+      /* unde începe frontul k, numărat de sus: fronturile de deasupra lui
+         plus rosturile dintre ele */
+      var deasupra = function (k) {
+        var s0 = 0;
+        for (var i = 0; i < k; i++) s0 += hsS[i] + ri;
+        return s0;
+      };
 
       /* Sertarele se așază de sus în jos. Dacă fronturile nu ajung până la
          fund și nici nu urmează o ușă dedesubt, rămâne un gol pe care omul
          îl vede în desen și nu-și explică de unde vine. Spunem și cât ar
          trebui să aibă fronturile ca să umple corpul. */
       var fataLibera = (apl ? Hutil - 2 * rm : Hint - 2 * rinc);
-      var golSertare = fataLibera - (nSer * hF + (nSer - 1) * ri);
+      var golSertare = fataLibera - (sumaFronturi + (nSer - 1) * ri);
       /* Cu nișă cerută golul e voit — nu se spune de două ori, o dată ca
          nișă care nu încape și o dată ca gol. */
       if (nUsi === 0 && golSertare > 20 && !(hNisaCerut > 0)) {
-        avert('sertareNuUmplu', {
-          gol: fmt(golSertare),
-          front: Math.round((fataLibera - (nSer - 1) * ri) / nSer)
-        });
+        if (SRT.nou) {
+          avert('sertareGolRest', { gol: fmt(golSertare) });
+        } else {
+          avert('sertareNuUmplu', {
+            gol: fmt(golSertare),
+            front: Math.round((fataLibera - (nSer - 1) * ri) / nSer)
+          });
+        }
       }
+      if (nUsi === 0 && golSertare < -0.5) avert('sertarePreaMari', { mm: fmt(-golSertare) });
       var cut = Wint - 2 * jg;
       var zf = zF - 2, dz = [0, 0, 1.1];
-      var fr = [], lat = [], fsp = [], fnd = [];
+      /* piesele se strâng pe înălțimi: fronturile egale pe un rând, cutiile
+         egale pe alt rând — cu fronturi inegale ies mai multe rânduri */
+      var grupe = { fr: {}, lat: {}, fsp: {} }, fnd = [];
+      var inGrupa = function (g, cheie, box) { (g[cheie] = g[cheie] || []).push(box); };
       for (var k = 0; k < nSer; k++) {
-        var yt = ySertare - k * (hF + ri), yb0 = yt - hF;
+        var hF = hsS[k], hc = hcsS[k];
+        var yt = ySertare - deasupra(k), yb0 = yt - hF;
         var yb = yb0 + Math.max(0, (hF - hc) / 2);
-        fr.push(bx(xoff, yb0, zF, fL, hF, t, FD, [0, 0, 1.6], 'fronturi'));
+        inGrupa(grupe.fr, hF, bx(xoff, yb0, zF, fL, hF, t, FD, [0, 0, 1.6], 'fronturi'));
         puneManer(xoff, yb0, fL, hF, zF, 'orizontal');
-        lat.push(bx(t + jg, yb, zf - lg, ts, hc, lg,
+        inGrupa(grupe.lat, hc, bx(t + jg, yb, zf - lg, ts, hc, lg,
           F({ px: 'f', nx: 'f', py: 's', ny: 's', pz: 's', nz: 's' }), dz, 'sertare'));
-        lat.push(bx(W - t - jg - ts, yb, zf - lg, ts, hc, lg,
+        inGrupa(grupe.lat, hc, bx(W - t - jg - ts, yb, zf - lg, ts, hc, lg,
           F({ px: 'f', nx: 'f', py: 's', ny: 's', pz: 's', nz: 's' }), dz, 'sertare'));
-        fsp.push(bx(t + jg + ts, yb, zf - ts, cut - 2 * ts, hc, ts,
+        inGrupa(grupe.fsp, hc, bx(t + jg + ts, yb, zf - ts, cut - 2 * ts, hc, ts,
           F({ pz: 'f', nz: 'f', py: 's', ny: 's' }), dz, 'sertare'));
-        fsp.push(bx(t + jg + ts, yb, zf - lg, cut - 2 * ts, hc, ts,
+        inGrupa(grupe.fsp, hc, bx(t + jg + ts, yb, zf - lg, cut - 2 * ts, hc, ts,
           F({ pz: 'f', nz: 'f', py: 's', ny: 's' }), dz, 'sertare'));
         fnd.push(bx(t + jg, yb - PFL_SERTAR, zf - lg, cut, PFL_SERTAR, lg,
           F({ px: 'p', nx: 'p', py: 'p', ny: 'p', pz: 'p', nz: 'p' }), dz, 'sertare'));
@@ -1642,19 +1722,28 @@
       if (yPolitaNisa !== null) {
         /* Cutia stă pe mijlocul frontului ei, iar fundul de PFL sub ea. */
         var kLangaNisa = sertareJos ? 0 : nSer - 1;
-        var frontJos = ySertare - kLangaNisa * (hF + ri) - hF;
+        var hFN = hsS[kLangaNisa], hcN = hcsS[kLangaNisa];
+        var frontJos = ySertare - deasupra(kLangaNisa) - hFN;
         var hcMax = sertareJos
-          ? 2 * ((yPolitaNisa - t / 2) - frontJos) - hF
-          : hF - 2 * ((yPolitaNisa + t / 2) + PFL_SERTAR - frontJos);
-        if (hc > hcMax + 0.01) {
-          avert('cutieSubPolitaNisa', { cutie: fmt(hc), max: fmt(Math.max(0, Math.floor(hcMax))) });
+          ? 2 * ((yPolitaNisa - t / 2) - frontJos) - hFN
+          : hFN - 2 * ((yPolitaNisa + t / 2) + PFL_SERTAR - frontJos);
+        if (hcN > hcMax + 0.01) {
+          avert('cutieSubPolitaNisa', { cutie: fmt(hcN), max: fmt(Math.max(0, Math.floor(hcMax))) });
         }
       }
-      add('frontSertar', null, nSer, hF, fL, 'g', 'g', 'g', 'g', 'LO',
-        ['rostFronturi', { rost: ri }], fr);
-      add('sertarLaterala', null, 2 * nSer, lg, hc, 's', 's', 's', 's', 'L',
-        ['glisieraDe', { lg: lg }], lat);
-      add('sertarFataSpate', null, 2 * nSer, cut - 2 * ts, hc, 's', 's', '-', '-', 'L', null, fsp);
+      /* ordinea rândurilor: înălțimile mari întâi, ca în orice listă */
+      var chei = function (g) { return Object.keys(g).map(Number).sort(function (a, b) { return b - a; }); };
+      chei(grupe.fr).forEach(function (h) {
+        add('frontSertar', null, grupe.fr[h].length, h, fL, 'g', 'g', 'g', 'g', 'LO',
+          ['rostFronturi', { rost: ri }], grupe.fr[h]);
+      });
+      chei(grupe.lat).forEach(function (h) {
+        add('sertarLaterala', null, grupe.lat[h].length, lg, h, 's', 's', 's', 's', 'L',
+          ['glisieraDe', { lg: lg }], grupe.lat[h]);
+      });
+      chei(grupe.fsp).forEach(function (h) {
+        add('sertarFataSpate', null, grupe.fsp[h].length, cut - 2 * ts, h, 's', 's', '-', '-', 'L', null, grupe.fsp[h]);
+      });
       add('sertarFund', null, nSer, lg, cut, '-', '-', '-', '-', '-', ['subCutie'], fnd);
     }
 
@@ -1750,7 +1839,9 @@
 
     return { P: P, warn: warn, avertismente: avertismente, manere: manere,
              deComandat: deComandat, sticla3d: sticla3d, usi: scoateFronturile(usi), Wint: Wint, Hint: Hint, Dint: Dint,
-             W: W, H: H, D: D, soclu: soclu };
+             W: W, H: H, D: D, soclu: soclu,
+             /* fronturile și cutiile de sertar, de sus în jos, gata socotite */
+             sertare: nSer > 0 ? SRT.hs.map(function (h, k) { return { front: h, cutie: SRT.hcs[k] }; }) : [] };
   }
 
   /* ---- CSV (acelasi format ca in calculatorul original, in limba paginii) ---- */
@@ -1857,6 +1948,12 @@
         /* montanți (despărțitori) — 0 înseamnă corp fără compartimentare */
         nDsp: int(0, 6).catch(0),
         nSer: int(0, 12), hFront: mm(20, 1200), hCutie: mm(20, 1200),
+        /* fronturile inegale: „140,r,50%" — număr, „r" sau procent, cu virgulă;
+           cutiile: numere sau locuri goale. Goale = felul vechi. */
+        sertareH: z.string().trim().max(200)
+          .regex(/^$|^\s*(\d+(?:[.,]\d+)?%?|r)\s*(;\s*(\d+(?:[.,]\d+)?%?|r)\s*)*$|^\s*(\d+(?:\.\d+)?%?|r)\s*(,\s*(\d+(?:\.\d+)?%?|r)\s*)*$/i)
+          .optional(),
+        sertareC: z.string().trim().max(200).regex(/^[\d.\s,;]*$/).optional(),
         /* Un semn, nu o cotă: 0 = sertarele sus, ca până acum. */
         sertareJos: int(0, 1).catch(0),
         maner: int(0, 1).catch(1),

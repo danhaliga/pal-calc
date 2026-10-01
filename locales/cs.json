@@ -367,8 +367,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Spodní skříňka se 2 dvířky",
-        "descriere": "Standardní korpus pod pracovní deskou, s jednou vnitřní policí.",
+        "nume": "Spodní skříňka",
+        "descriere": "Korpus pod pracovní deskou. V editoru ho uděláte s dvířky, se stejnými nebo nestejnými zásuvkami, pro dřez, troubu nebo koš Jolly.",
         "corpNume": "Spodní 2 dvířka"
       },
       "baza-1usa": {
@@ -926,7 +926,10 @@
     "jollyUnFront": "Koš Jolly má jen jedno čelo, na svém rámu. Tady je {n} dvířek: dej 1.",
     "jollyFaraPolite": "Koš Jolly vyplní celou výšku: {n} polic se nevejde. Dej 0 polic.",
     "jollyLatime": "Koše Jolly se prodávají pro skříňky {lista} mm. Tahle má {lat} mm — ověř, že se k ní koš najde.",
-    "imbinareDreaptaNuMerge": "Korpus na tupo (boky na dně, strop mezi nimi) jde jen u tvaru pod schody. Tady je korpus na pokos."
+    "imbinareDreaptaNuMerge": "Korpus na tupo (boky na dně, strop mezi nimi) jde jen u tvaru pod schody. Tady je korpus na pokos.",
+    "sertareGolRest": "Čela zásuvek nevyplňují korpus: zbývá {gol} mm. Dejte „r“ k jednomu z čel, aby vzalo zbytek.",
+    "sertarePreaMari": "Čela zásuvek jsou o {mm} mm větší než korpus. Zmenšete jedno z nich nebo dejte „r“.",
+    "frontSertarPreaMic": "Čelo zásuvky má méně než 40 mm: za něj se nevejde žádná zásuvka."
   },
   "csv": {
     "corp": "Korpus",
@@ -1554,7 +1557,17 @@
     "pieseUnPret": "Všechny díly zde jsou jeden produkt a platí se jen jednou, ať je jich kolik chce.",
     "adaugaPiesa": "+ Přidat díl",
     "stergePiesa": "Smazat díl",
-    "denumirePiesa": "Název"
+    "denumirePiesa": "Název",
+    "configRapide": "Rychlá nastavení",
+    "configRapideNota": "Jedno kliknutí nastaví dvířka, zásuvky, police a ostatní nastavení pro zvolený typ korpusu. Šířka a výška zůstávají vaše, kromě koše Jolly, úzkého korpusu a soklu.",
+    "impartireFronturi": "Rozdělení čel:",
+    "impEgale": "Stejná",
+    "impUnMic": "1 malá nahoře + 2",
+    "impJumatate": "Polovina dole + 2 nahoře",
+    "impDouaMici": "2 malá + 1 velké",
+    "colFront": "Čelo",
+    "colCutie": "Zásuvka (mm)",
+    "notaFronturi": "Shora dolů. U čela napište mm, „r“ pro zbytek (rozdělí se rovným dílem mezi všechna „r“) nebo procento z celkové výšky, například 50%. Zásuvka se počítá z čela (čelo minus 40 mm, zaokrouhleno na 60, 80, 100, 120, 150 nebo 180); můžete ji napsat i ručně."
   },
   "fata": {
     "px": "vpravo",

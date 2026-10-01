@@ -367,8 +367,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Szafka dolna z 2 frontami",
-        "descriere": "Standardowy korpus pod blatem, z jedną półką w środku.",
+        "nume": "Szafka dolna",
+        "descriere": "Korpus pod blatem. W edytorze zrobisz go z drzwiami, z równymi lub nierównymi szufladami, pod zlew, piekarnik albo kosz Jolly.",
         "corpNume": "Dolna 2 fronty"
       },
       "baza-1usa": {
@@ -926,7 +926,10 @@
     "jollyUnFront": "Cargo Jolly ma jeden front, mocowany na ramie. Tu jest {n} drzwiczek: daj 1.",
     "jollyFaraPolite": "Cargo Jolly wypełnia całą wysokość: {n} półek się nie zmieści. Daj 0 półek.",
     "jollyLatime": "Cargo Jolly sprzedaje się do szafek {lista} mm. Ta ma {lat} mm — sprawdź, czy jest do niej kosz.",
-    "imbinareDreaptaNuMerge": "Korpus na styk (boki na podstawie, wieniec między nimi) jest tylko dla kształtu pod schodami. Tu korpus jest na ukos."
+    "imbinareDreaptaNuMerge": "Korpus na styk (boki na podstawie, wieniec między nimi) jest tylko dla kształtu pod schodami. Tu korpus jest na ukos.",
+    "sertareGolRest": "Fronty szuflad nie wypełniają korpusu: zostaje {gol} mm. Wpisz „r” przy jednym z frontów, żeby zajął resztę.",
+    "sertarePreaMari": "Fronty szuflad są większe od korpusu o {mm} mm. Zmniejsz jeden z nich albo wpisz „r”.",
+    "frontSertarPreaMic": "Front szuflady ma mniej niż 40 mm: nie zmieści się za nim żadna szuflada."
   },
   "csv": {
     "corp": "Korpus",
@@ -1554,7 +1557,17 @@
     "pieseUnPret": "Wszystkie elementy tutaj to jeden produkt i płaci się za nie tylko raz, niezależnie od ich liczby.",
     "adaugaPiesa": "+ Dodaj element",
     "stergePiesa": "Usuń element",
-    "denumirePiesa": "Nazwa"
+    "denumirePiesa": "Nazwa",
+    "configRapide": "Szybkie ustawienia",
+    "configRapideNota": "Jedno kliknięcie ustawia drzwi, szuflady, półki i pozostałe ustawienia dla wybranego typu korpusu. Szerokość i wysokość pozostają twoje, oprócz kosza Jolly, wąskiego korpusu i cokołu.",
+    "impartireFronturi": "Podział frontów:",
+    "impEgale": "Równe",
+    "impUnMic": "1 mały u góry + 2",
+    "impJumatate": "Połowa na dole + 2 u góry",
+    "impDouaMici": "2 małe + 1 duży",
+    "colFront": "Front",
+    "colCutie": "Szuflada (mm)",
+    "notaFronturi": "Od góry do dołu. W polu frontu wpisz mm, „r” dla reszty (dzielonej równo między wszystkie „r”) albo procent całkowitej wysokości, np. 50%. Szuflada liczy się z frontu (front minus 40 mm, zaokrąglone do 60, 80, 100, 120, 150 lub 180); możesz ją też wpisać ręcznie."
   },
   "fata": {
     "px": "prawo",

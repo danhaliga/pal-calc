@@ -166,6 +166,8 @@ router.get('/corps/:id', requireAuth, (req, res, next) => {
     /* Cheile pe care le-a hotărât modelul ales. Setările din browser nu au
        voie să calce peste ele. */
     cheiModel: cheileModelului(req.query.model),
+    /* butoanele „Configurări rapide" ale corpului de jos */
+    configRapide: PalModels.configurariRapide(req.t),
     /* Când corpul stă într-o comandă, placa și cantul vin din materialul
        comenzii, nu din browser. Editorul sare atunci peste grupa „material". */
     matFixat: !!corp.mat_corp_id,

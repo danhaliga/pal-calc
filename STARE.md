@@ -528,6 +528,26 @@ Aplicația NU face facturi: îi dă un CSV cu plățile și datele clienților.
 - `#id-scena` în adresă duce direct la scena ei (ex. /cum-functioneaza#sertare);
   se pot pune legături din editor pe fiecare grup de setări.
 
+## 6r. Un singur „Corp de jos", sertare inegale (1 octombrie)
+
+- În catalog, la Bucătărie jos, a rămas doar `baza-2usi`, afișat „Corp de
+  jos". Celelalte 13 modele au `ascuns: true, rapid: true`: nu mai au card,
+  dar sunt butoane „Configurări rapide" în editor
+  (`PalModels.configurariRapide`): un clic pune toate câmpurile de
+  configurare (uși, sertare, polițe, nișă, Jolly, soclu, picioare…);
+  lățimea/înălțimea rămân ale omului, afară de Jolly, îngust și soclu.
+  Testat: fiecare configurare dă corpul identic cu modelul vechi.
+- Sertare inegale: `sertareH` = fronturile de sus în jos („140,r,50%":
+  mm, „r" = restul împărțit egal, procent din tot frontul); `sertareC` =
+  cutiile (gol = automat: front − 40, rotunjit în jos la 60/80/100/120/150/
+  180). Gol `sertareH` = felul vechi (`hFront`/`hCutie`), deci corpurile
+  vechi nu se schimbă. Piesele se grupează pe înălțimi (rânduri separate).
+  `calc()` întoarce `sertare: [{front, cutie}]`. În editor: butoanele
+  Egale / 1 mic sus + 2 / Jumătate jos + 2 sus / 2 mici + 1 mare și tabelul
+  cu fiecare sertar.
+- Modelele vechi rămân în cod (filmul, demonstrația, „Cum funcționează" și
+  corpurile deja făcute le folosesc).
+
 ## 7. Ce a rămas nefăcut, din tot proiectul
 
 - **Picioarele pe corp: 4, și 6 peste 1000 mm lățime — NU e măsurat.** E

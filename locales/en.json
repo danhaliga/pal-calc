@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Base unit with 2 doors",
-        "descriere": "The standard unit under the worktop, with one internal shelf.",
+        "nume": "Base cabinet",
+        "descriere": "The cabinet under the worktop. In the editor you can make it with doors, with equal or unequal drawers, for a sink, an oven or a Jolly basket.",
         "corpNume": "Base unit 2 doors"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "A pull-out basket has a single front, fixed to its frame. {n} doors are set here: use 1.",
     "jollyFaraPolite": "The pull-out basket fills the full height: the {n} shelves won't fit. Set shelves to 0.",
     "jollyLatime": "Pull-out baskets are sold for {lista} mm cabinets. This one is {lat} mm — check you can find a basket for it.",
-    "imbinareDreaptaNuMerge": "The butt-jointed frame (sides on the base, top between them) only works for the under-stairs shape. Here the frame is mitred."
+    "imbinareDreaptaNuMerge": "The butt-jointed frame (sides on the base, top between them) only works for the under-stairs shape. Here the frame is mitred.",
+    "sertareGolRest": "The drawer fronts don't fill the cabinet: {gol} mm left. Put “r” on one of the fronts so it takes the rest.",
+    "sertarePreaMari": "The drawer fronts are {mm} mm taller than the cabinet. Make one of them smaller or use “r”.",
+    "frontSertarPreaMic": "A drawer front is under 40 mm: no drawer box fits behind it."
   },
   "csv": {
     "corp": "Cabinet",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "All pieces here are one item and are paid for once, however many there are.",
     "adaugaPiesa": "+ Add piece",
     "stergePiesa": "Delete piece",
-    "denumirePiesa": "Name"
+    "denumirePiesa": "Name",
+    "configRapide": "Quick setups",
+    "configRapideNota": "One click sets the doors, drawers, shelves and other settings for the chosen cabinet type. Width and height stay yours, except for the Jolly basket, the narrow cabinet and the plinth.",
+    "impartireFronturi": "Front split:",
+    "impEgale": "Equal",
+    "impUnMic": "1 small top + 2",
+    "impJumatate": "Half bottom + 2 top",
+    "impDouaMici": "2 small + 1 large",
+    "colFront": "Front",
+    "colCutie": "Box (mm)",
+    "notaFronturi": "Top to bottom. For each front, type mm, “r” for rest (shared equally among all “r” fronts) or a percentage of the total height, e.g. 50%. The box is calculated from the front (front minus 40 mm, rounded to 60, 80, 100, 120, 150 or 180); you can also type it by hand."
   },
   "fata": {
     "px": "right",

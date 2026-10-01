@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "하부장, 문짝 2장",
-        "descriere": "작업 상판 아래의 보통 캐비닛. 안에 선반 1장.",
+        "nume": "하부장",
+        "descriere": "상판 아래의 캐비닛. 편집기에서 문, 균등 또는 불균등 서랍, 싱크대, 오븐 또는 Jolly 바스켓용으로 만들 수 있습니다.",
         "corpNume": "하부장 문짝 2장"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "Jolly 바스켓은 앞판이 하나로 프레임에 고정됩니다. 여기서는 문이 {n}개입니다: 1로 하세요.",
     "jollyFaraPolite": "Jolly 바스켓은 전체 높이를 채웁니다: 선반 {n}개가 들어갈 자리가 없습니다. 선반을 0으로 하세요.",
     "jollyLatime": "Jolly 바스켓은 {lista} mm 장용으로 판매됩니다. 이 장은 {lat} mm입니다 — 맞는 바스켓이 있는지 확인하세요.",
-    "imbinareDreaptaNuMerge": "맞대기 프레임(측판을 밑판 위에, 천판을 사이에)은 계단 밑 형태에서만 됩니다. 여기서는 연귀 맞춤으로 했습니다."
+    "imbinareDreaptaNuMerge": "맞대기 프레임(측판을 밑판 위에, 천판을 사이에)은 계단 밑 형태에서만 됩니다. 여기서는 연귀 맞춤으로 했습니다.",
+    "sertareGolRest": "서랍 전면판이 캐비닛을 채우지 않습니다: {gol} mm 남습니다. 전면판 하나에 “r”을 넣어 나머지를 채우세요.",
+    "sertarePreaMari": "서랍 전면판이 캐비닛보다 {mm} mm 큽니다. 하나를 줄이거나 “r”을 넣으세요.",
+    "frontSertarPreaMic": "40 mm 미만인 서랍 전면판이 있습니다: 뒤에 서랍이 들어가지 않습니다."
   },
   "csv": {
     "corp": "캐비닛",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "여기의 모든 부재는 하나의 제품이며, 개수와 상관없이 한 번만 결제합니다.",
     "adaugaPiesa": "+ 부재 추가",
     "stergePiesa": "부재 삭제",
-    "denumirePiesa": "이름"
+    "denumirePiesa": "이름",
+    "configRapide": "빠른 설정",
+    "configRapideNota": "클릭 한 번으로 선택한 캐비닛 유형에 맞는 문, 서랍, 선반 등 설정이 적용됩니다. 너비와 높이는 그대로 유지됩니다(Jolly 바스켓, 좁은 캐비닛, 걸레받이 제외).",
+    "impartireFronturi": "전면판 분할:",
+    "impEgale": "균등",
+    "impUnMic": "위 작은 1 + 2",
+    "impJumatate": "아래 절반 + 위 2",
+    "impDouaMici": "작은 2 + 큰 1",
+    "colFront": "전면판",
+    "colCutie": "서랍 (mm)",
+    "notaFronturi": "위에서 아래로. 전면판에 mm, 나머지는 “r”(모든 “r”에 균등 분배), 또는 전체 높이의 비율(예: 50%)을 입력하세요. 서랍은 전면판에서 계산됩니다(전면판에서 40 mm를 빼고 60, 80, 100, 120, 150 또는 180으로 반올림). 직접 입력해도 됩니다."
   },
   "fata": {
     "px": "오른쪽",

@@ -181,3 +181,45 @@ test('piesa simplă: o cotă greșită într-un rând e refuzată, nu golește l
   const vechi = Object.assign({}, p); delete vechi.pieseExtra;
   assert.equal(paramsSchema.safeParse(vechi).success, true, 'piesele salvate înainte n-au lista');
 });
+
+/* Sertarele cu fronturi inegale (1 octombrie 2026). */
+test('sertare inegale: fronturile umplu exact corpul, cutia se ia din front', () => {
+  const PalModels = require('../shared/models');
+  const b = Object.assign(defaults(), PalModels.paramsFor('baza-2usi'), { W: 600, nUsi: 0, nPol: 0, nSer: 3 });
+  const plin = r => r.sertare.reduce((s, x) => s + x.front, 0) + (r.sertare.length - 1) * 3;
+  const jum = calc(Object.assign({}, b, { sertareH: '140,r,50%' }));
+  assert.deepEqual(jum.sertare.map(x => x.front), [140, 212.5, 358.5]);
+  assert.deepEqual(jum.sertare.map(x => x.cutie), [100, 150, 180]);
+  assert.equal(plin(jum), 717, 'fronturile + rosturile = tot frontul');
+  assert.equal(jum.warn.length, 0);
+  /* cutia scrisă de mână bate regula */
+  const mana = calc(Object.assign({}, b, { sertareH: '140,r,50%', sertareC: ',120,' }));
+  assert.deepEqual(mana.sertare.map(x => x.cutie), [100, 120, 180]);
+  /* fronturi care nu umplu: avertisment cu „r" */
+  assert.ok(calc(Object.assign({}, b, { sertareH: '140,140,140' })).warn.some(w => /„r”|"r"|r”/.test(w) || /rest/.test(w)));
+  /* lista goală = felul vechi, neschimbat */
+  const vechi = calc(Object.assign({}, b, { hFront: 237, hCutie: 180 }));
+  assert.deepEqual(vechi.sertare.map(x => [x.front, x.cutie]), [[237, 180], [237, 180], [237, 180]]);
+});
+
+test('schema: fronturile acceptă mm, „r" și procente; altceva se refuză', () => {
+  const p = Object.assign(defaults(), { nSer: 3, nUsi: 0 });
+  ['', 'r,r,r', '140,r,50%', '140.5,r'].forEach(v =>
+    assert.equal(paramsSchema.safeParse(Object.assign({}, p, { sertareH: v })).success, true, v));
+  ['abc', '140,,r', '<script>'].forEach(v =>
+    assert.equal(paramsSchema.safeParse(Object.assign({}, p, { sertareH: v })).success, false, v));
+});
+
+test('configurările rapide ale corpului de jos dau corpurile din catalog', () => {
+  const PalModels = require('../shared/models');
+  const piese = p => calc(p).P.map(x => x.cheie + ' ' + x.buc + ' ' + x.TL + 'x' + x.Tl).sort().join('|');
+  const baza = PalModels.paramsFor('baza-2usi');
+  const cfg = PalModels.configurariRapide();
+  assert.ok(cfg.length >= 14);
+  assert.deepEqual(PalModels.modele().filter(m => m.cat === 'bucatarie-jos').map(m => m.id), ['baza-2usi']);
+  cfg.forEach(c => {
+    const tinta = PalModels.paramsFor(c.id);
+    const p = Object.assign({}, baza, { W: tinta.W, H: tinta.H }, c.set);
+    assert.equal(piese(p), piese(tinta), c.id);
+  });
+});

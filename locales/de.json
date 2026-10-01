@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Unterschrank mit 2 Türen",
-        "descriere": "Der Standardkorpus unter der Arbeitsplatte, mit einem Einlegeboden.",
+        "nume": "Unterschrank",
+        "descriere": "Der Korpus unter der Arbeitsplatte. Im Editor gestalten Sie ihn mit Türen, mit gleichen oder ungleichen Schubladen, für Spüle, Backofen oder Jolly-Korb.",
         "corpNume": "Unterschrank 2 Türen"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "Der Apothekerauszug hat nur eine Front, am Rahmen befestigt. Hier sind {n} Türen gesetzt: nimm 1.",
     "jollyFaraPolite": "Der Apothekerauszug füllt die ganze Höhe: Die {n} Fachböden passen nicht. Setz 0 Fachböden.",
     "jollyLatime": "Apothekerauszüge gibt es für Korpusse mit {lista} mm. Dieser hat {lat} mm — prüf, ob es einen Auszug dafür gibt.",
-    "imbinareDreaptaNuMerge": "Der stumpf verbundene Rahmen (Seiten auf dem Boden, Deckel dazwischen) geht nur bei der Treppenform. Hier ist er auf Gehrung."
+    "imbinareDreaptaNuMerge": "Der stumpf verbundene Rahmen (Seiten auf dem Boden, Deckel dazwischen) geht nur bei der Treppenform. Hier ist er auf Gehrung.",
+    "sertareGolRest": "Die Schubladenfronten füllen den Korpus nicht aus: Es bleiben {gol} mm übrig. Setzen Sie „r“ bei einer der Fronten, damit sie den Rest übernimmt.",
+    "sertarePreaMari": "Die Schubladenfronten sind {mm} mm größer als der Korpus. Verkleinern Sie eine davon oder setzen Sie „r“.",
+    "frontSertarPreaMic": "Eine Schubladenfront ist kleiner als 40 mm: Dahinter passt keine Zarge."
   },
   "csv": {
     "corp": "Korpus",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Alle Teile hier sind ein Artikel und werden nur einmal bezahlt, egal wie viele es sind.",
     "adaugaPiesa": "+ Teil hinzufügen",
     "stergePiesa": "Teil löschen",
-    "denumirePiesa": "Bezeichnung"
+    "denumirePiesa": "Bezeichnung",
+    "configRapide": "Schnellkonfiguration",
+    "configRapideNota": "Ein Klick setzt Türen, Schubladen, Fachböden und alle übrigen Einstellungen für den gewählten Korpustyp. Breite und Höhe bleiben Ihre, außer beim Jolly-Korb, beim schmalen Korpus und beim Sockel.",
+    "impartireFronturi": "Frontaufteilung:",
+    "impEgale": "Gleich",
+    "impUnMic": "1 klein oben + 2",
+    "impJumatate": "Hälfte unten + 2 oben",
+    "impDouaMici": "2 klein + 1 groß",
+    "colFront": "Front",
+    "colCutie": "Zarge (mm)",
+    "notaFronturi": "Von oben nach unten. Geben Sie bei der Front mm ein, „r“ für den Rest (wird gleichmäßig auf alle „r“ verteilt) oder einen Prozentsatz der Gesamthöhe, z. B. 50%. Die Zarge wird aus der Front berechnet (Front minus 40 mm, gerundet auf 60, 80, 100, 120, 150 oder 180); Sie können sie auch von Hand eingeben."
   },
   "fata": {
     "px": "rechts",

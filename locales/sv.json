@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Underskåp med 2 luckor",
-        "descriere": "Standardstommen under bänkskivan, med ett hyllplan inuti.",
+        "nume": "Bänkskåp",
+        "descriere": "Skåpet under bänkskivan. I redigeraren gör du det med dörrar, med lika eller olika lådor, för diskho, ugn eller Jolly-korg.",
         "corpNume": "Underskåp 2 luckor"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "Jolly-korgen har bara en front, fäst på ramen. Här står {n} luckor: sätt 1.",
     "jollyFaraPolite": "Jolly-korgen fyller hela höjden: de {n} hyllorna får inte plats. Sätt 0 hyllor.",
     "jollyLatime": "Jolly-korgar säljs för skåp på {lista} mm. Det här är {lat} mm — kontrollera att det finns en korg till det.",
-    "imbinareDreaptaNuMerge": "Stommen med raka fogar (gavlar på botten, tak emellan) går bara med formen under trappa. Här är stommen i geringar."
+    "imbinareDreaptaNuMerge": "Stommen med raka fogar (gavlar på botten, tak emellan) går bara med formen under trappa. Här är stommen i geringar.",
+    "sertareGolRest": "Lådfronterna fyller inte stommen: {gol} mm blir över. Sätt ”r” på en av fronterna så tar den resten.",
+    "sertarePreaMari": "Lådfronterna är {mm} mm större än stommen. Minska en av dem eller sätt ”r”.",
+    "frontSertarPreaMic": "En lådfront är under 40 mm: ingen låda får plats bakom den."
   },
   "csv": {
     "corp": "Stomme",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Alla delar här är en artikel och betalas en gång, hur många de än är.",
     "adaugaPiesa": "+ Lägg till del",
     "stergePiesa": "Ta bort del",
-    "denumirePiesa": "Benämning"
+    "denumirePiesa": "Benämning",
+    "configRapide": "Snabbinställningar",
+    "configRapideNota": "Ett klick ställer in dörrar, lådor, hyllplan och övriga inställningar för vald stomtyp. Bredd och höjd förblir dina, utom för Jolly-korgen, den smala stommen och sockeln.",
+    "impartireFronturi": "Frontindelning:",
+    "impEgale": "Lika",
+    "impUnMic": "1 liten upptill + 2",
+    "impJumatate": "Hälften nertill + 2 upptill",
+    "impDouaMici": "2 små + 1 stor",
+    "colFront": "Front",
+    "colCutie": "Låda (mm)",
+    "notaFronturi": "Uppifrån och ner. Vid fronten skriver du mm, ”r” för resten (delas lika mellan alla ”r”) eller en procent av totala höjden, t.ex. 50%. Lådan räknas fram ur fronten (fronten minus 40 mm, avrundat till 60, 80, 100, 120, 150 eller 180); du kan också skriva in den för hand."
   },
   "fata": {
     "px": "höger",

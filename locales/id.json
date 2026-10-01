@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Kabinet bawah 2 pintu",
-        "descriere": "Boks standar di bawah meja kerja, dengan satu rak di dalam.",
+        "nume": "Kabinet bawah",
+        "descriere": "Kabinet di bawah meja dapur. Di editor kamu bisa membuatnya dengan pintu, dengan laci sama atau tidak sama, untuk bak cuci, oven, atau keranjang Jolly.",
         "corpNume": "Bawah 2 pintu"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "Keranjang Jolly hanya punya satu muka, dipasang pada rangkanya. Di sini ada {n} pintu: isi 1.",
     "jollyFaraPolite": "Keranjang Jolly mengisi seluruh tinggi: {n} rak tidak muat. Isi 0 rak.",
     "jollyLatime": "Keranjang Jolly dijual untuk kabinet {lista} mm. Kabinet ini {lat} mm — pastikan ada keranjangnya.",
-    "imbinareDreaptaNuMerge": "Rangka sambungan lurus (sisi di atas alas, atap di antaranya) hanya untuk bentuk bawah tangga. Di sini rangka disambung miring."
+    "imbinareDreaptaNuMerge": "Rangka sambungan lurus (sisi di atas alas, atap di antaranya) hanya untuk bentuk bawah tangga. Di sini rangka disambung miring.",
+    "sertareGolRest": "Depan laci tidak mengisi kabinet: tersisa {gol} mm. Tulis “r” di salah satu depan laci agar mengambil sisanya.",
+    "sertarePreaMari": "Depan laci lebih besar {mm} mm dari kabinet. Perkecil salah satunya atau tulis “r”.",
+    "frontSertarPreaMic": "Ada depan laci di bawah 40 mm: tidak ada laci yang muat di belakangnya."
   },
   "csv": {
     "corp": "Boks",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Semua potongan di sini adalah satu produk dan dibayar sekali saja, berapa pun jumlahnya.",
     "adaugaPiesa": "+ Tambah potongan",
     "stergePiesa": "Hapus potongan",
-    "denumirePiesa": "Nama"
+    "denumirePiesa": "Nama",
+    "configRapide": "Pengaturan cepat",
+    "configRapideNota": "Satu klik mengatur pintu, laci, rak, dan pengaturan lain untuk jenis badan kabinet yang dipilih. Lebar dan tinggi tetap milikmu, kecuali untuk keranjang Jolly, kabinet sempit, dan plint.",
+    "impartireFronturi": "Pembagian depan laci:",
+    "impEgale": "Sama",
+    "impUnMic": "1 kecil atas + 2",
+    "impJumatate": "Separuh bawah + 2 atas",
+    "impDouaMici": "2 kecil + 1 besar",
+    "colFront": "Depan",
+    "colCutie": "Laci (mm)",
+    "notaFronturi": "Dari atas ke bawah. Di kolom depan, tulis mm, “r” untuk sisa (dibagi rata ke semua “r”) atau persentase dari tinggi total, misalnya 50%. Laci dihitung dari depan (depan dikurangi 40 mm, dibulatkan ke 60, 80, 100, 120, 150, atau 180); kamu juga bisa menulisnya manual."
   },
   "fata": {
     "px": "kanan",

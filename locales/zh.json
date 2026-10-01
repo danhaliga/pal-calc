@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "地柜，双门",
-        "descriere": "台面下的普通柜体，里面一块层板。",
+        "nume": "地柜",
+        "descriere": "台面下方的柜体。在编辑器中可做成带门、带等高或不等高抽屉，用于水槽、烤箱或 Jolly 拉篮。",
         "corpNume": "地柜 双门"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "Jolly 拉篮只有一块面板，固定在框架上。这里设了 {n} 扇门：请设为 1。",
     "jollyFaraPolite": "Jolly 拉篮占满整个高度：{n} 块层板放不下。请把层板设为 0。",
     "jollyLatime": "Jolly 拉篮按 {lista} 毫米柜宽出售。此柜宽 {lat} 毫米——请确认有合适的拉篮。",
-    "imbinareDreaptaNuMerge": "直角对接的框架（侧板立在底板上、顶板夹在中间）只适用于楼梯下形状。这里框架用斜接。"
+    "imbinareDreaptaNuMerge": "直角对接的框架（侧板立在底板上、顶板夹在中间）只适用于楼梯下形状。这里框架用斜接。",
+    "sertareGolRest": "抽屉面板未填满柜体：还剩 {gol} mm。在其中一个面板填“r”以占用剩余部分。",
+    "sertarePreaMari": "抽屉面板比柜体高出 {mm} mm。请缩小其中一个或填“r”。",
+    "frontSertarPreaMic": "有抽屉面板小于 40 mm：后面放不下任何抽屉。"
   },
   "csv": {
     "corp": "柜体",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "这里的所有板件算作一个产品，无论多少件，只付一次费用。",
     "adaugaPiesa": "+ 添加板件",
     "stergePiesa": "删除板件",
-    "denumirePiesa": "名称"
+    "denumirePiesa": "名称",
+    "configRapide": "快速配置",
+    "configRapideNota": "一键为所选柜体类型设置门板、抽屉、层板及其他参数。宽度和高度保持你的设置，Jolly 拉篮、窄柜和踢脚除外。",
+    "impartireFronturi": "面板分配：",
+    "impEgale": "均分",
+    "impUnMic": "上方 1 小 + 2",
+    "impJumatate": "下方一半 + 上方 2",
+    "impDouaMici": "2 小 + 1 大",
+    "colFront": "面板",
+    "colCutie": "抽屉 (mm)",
+    "notaFronturi": "从上到下。面板处可填 mm、“r”表示剩余（在所有“r”之间平均分配），或总高度的百分比，例如 50%。抽屉根据面板计算（面板减 40 mm，取整到 60、80、100、120、150 或 180）；也可以手动填写。"
   },
   "fata": {
     "px": "右",

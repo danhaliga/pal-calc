@@ -361,8 +361,8 @@
     },
     "m": {
       "baza-2usi": {
-        "nume": "Mueble bajo de 2 puertas",
-        "descriere": "El módulo estándar bajo la encimera, con una balda interior.",
+        "nume": "Mueble bajo",
+        "descriere": "El mueble bajo la encimera. En el editor lo haces con puertas, con cajones iguales o desiguales, para fregadero, horno o cesto Jolly.",
         "corpNume": "Bajo 2 puertas"
       },
       "baza-1usa": {
@@ -920,7 +920,10 @@
     "jollyUnFront": "El cesto Jolly tiene un solo frente, fijado a su marco. Aquí hay {n} puertas: pon 1.",
     "jollyFaraPolite": "El cesto Jolly ocupa toda la altura: los {n} estantes no caben. Pon 0 estantes.",
     "jollyLatime": "Los cestos Jolly se venden para muebles de {lista} mm. Este mide {lat} mm: comprueba que encuentres cesto.",
-    "imbinareDreaptaNuMerge": "El armazón con uniones rectas (costados sobre la base, techo entre ellos) solo va con la forma bajo escalera. Aquí se hizo a inglete."
+    "imbinareDreaptaNuMerge": "El armazón con uniones rectas (costados sobre la base, techo entre ellos) solo va con la forma bajo escalera. Aquí se hizo a inglete.",
+    "sertareGolRest": "Los frentes de cajón no llenan el mueble: sobran {gol} mm. Pon “r” en uno de los frentes para que ocupe el resto.",
+    "sertarePreaMari": "Los frentes de cajón superan el mueble en {mm} mm. Reduce uno de ellos o pon “r”.",
+    "frontSertarPreaMic": "Un frente de cajón mide menos de 40 mm: no cabe ningún cajón detrás."
   },
   "csv": {
     "corp": "Módulo",
@@ -1543,7 +1546,17 @@
     "pieseUnPret": "Todas las piezas de aquí son un solo producto y se pagan una sola vez, sean cuantas sean.",
     "adaugaPiesa": "+ Añadir pieza",
     "stergePiesa": "Eliminar pieza",
-    "denumirePiesa": "Nombre"
+    "denumirePiesa": "Nombre",
+    "configRapide": "Configuraciones rápidas",
+    "configRapideNota": "Un clic pone las puertas, cajones, baldas y el resto de ajustes para el tipo de mueble elegido. El ancho y el alto siguen siendo tuyos, salvo en el cesto Jolly, el mueble estrecho y el zócalo.",
+    "impartireFronturi": "División de frentes:",
+    "impEgale": "Iguales",
+    "impUnMic": "1 pequeño arriba + 2",
+    "impJumatate": "Mitad abajo + 2 arriba",
+    "impDouaMici": "2 pequeños + 1 grande",
+    "colFront": "Frente",
+    "colCutie": "Cajón (mm)",
+    "notaFronturi": "De arriba abajo. En el frente escribe mm, “r” para el resto (se reparte por igual entre todas las “r”) o un porcentaje de la altura total, por ejemplo 50%. El cajón se calcula a partir del frente (frente menos 40 mm, redondeado a 60, 80, 100, 120, 150 o 180); también puedes escribirlo a mano."
   },
   "fata": {
     "px": "derecha",
